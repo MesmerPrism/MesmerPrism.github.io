@@ -24,6 +24,12 @@
         content="Writing, XR systems, and research prototypes across altered perception, embodiment, and designed transformation."
     >
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600;1,700&display=swap"
+        rel="stylesheet"
+    >
     <script type="application/ld+json">
         {
             "@context": "https://schema.org",
@@ -68,56 +74,60 @@
 
     <main class="shell">
         <section class="hero" id="top">
-            <p class="eyebrow">Till Holzapfel</p>
-            <h1>Mesmer Prism</h1>
-            <p class="lede">
-                Writing, XR systems, and research prototypes across altered perception,
-                embodiment, and designed transformation.
-            </p>
-            <p class="hero-copy">
-                My work moves between long-form writing and technical implementation: XR
-                environments, biofeedback systems, browser experiments, perceptual studies, and
-                research tooling. I am interested in the boundary where bodies, tools, stories,
-                and systems reshape one another without collapsing into either mysticism or flat
-                reduction.
-            </p>
-            <div class="plasmatic-intro" data-pretext-hero="on">
-                <p class="plasmatic-intro__fallback">
-                    I keep returning to how one might live with transformation without giving up
-                    coherence: how strange perception can be taken seriously without hardening
-                    into dogma, how weakly bounded bodies can remain inhabitable, and how forms
-                    can loosen, split, and gather again without dissolving into noise. Plasmatic
-                    Multitudes names one strand of that inquiry: a search for forms that stay
-                    porous, legible, and in motion at once. Mesmer Prism is the public surface
-                    where that writing meets systems, experiments, and tools.
+            <div class="hero-shell">
+                <p class="eyebrow">Till Holzapfel</p>
+                <h1>Mesmer Prism</h1>
+                <p class="lede">
+                    A writing and systems practice around altered perception, weakly bounded
+                    embodiment, and forms that stay legible while they change.
                 </p>
-                <div class="plasmatic-intro__viewport" aria-hidden="true"></div>
-            </div>
-            <ul class="hero-meta">
-                <li>Based in Osnabr&uuml;ck, Germany</li>
-                <li>Current role: Viscereality Project</li>
-                <li>Writing + systems across perception, embodiment, and morphogenesis</li>
-            </ul>
-            <div class="hero-actions">
-                <a class="action-link action-link--strong" href="#work">Selected work</a>
-                <a class="action-link" href="#publications">Publications</a>
-                <a class="action-link" href="mailto:tillholzapfel@gmail.com">Email</a>
-                <a class="action-link" href="https://www.linkedin.com/in/till-holzapfel-intangiblerealitieslab/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <div class="plasmatic-intro" data-pretext-hero="on">
+                    <p class="plasmatic-intro__fallback">
+                        I return to the question of how one might live with transformation without
+                        giving up coherence: how strange perception can be taken seriously without
+                        hardening into dogma, how weakly bounded bodies can remain inhabitable,
+                        and how forms can loosen, split, and gather again without dissolving into
+                        noise. <em>Plasmatic Multitudes</em> is one name for that inquiry.
+                        <em>Mesmer Prism</em> is the surface where those questions pass into
+                        writing, systems, and experiments.
+                    </p>
+                    <div class="plasmatic-intro__viewport" aria-hidden="true"></div>
+                </div>
+                <p class="hero-bridge">
+                    Below is the organized surface: live projects, public writing, publications,
+                    background, and ways to get in touch.
+                </p>
+                <div class="hero-actions">
+                    <a class="action-link action-link--strong" href="#work">Enter the work</a>
+                    <a class="action-link" href="#publications">Publications</a>
+                    <a class="action-link" href="#contact">Contact</a>
+                </div>
             </div>
         </section>
 
-        <section class="section" id="work">
-            <div class="section-heading">
-                <h2>Selected work</h2>
+        <section class="section section--tight" id="work">
+            <div class="section-heading section-heading--center">
+                <p class="section-kicker">Organized surface</p>
+                <h2>Entry points</h2>
                 <p>
-                    The public surface of the work alternates between conceptual writing and
-                    technical systems. The writing projects stabilize questions about altered
-                    perception, weakly bounded embodiment, and morphogenesis; the software side
-                    turns those questions into environments, interfaces, experiments, and tooling.
+                    The work splits between public-facing projects and deeper private notebooks.
+                    This section keeps the public edge legible: what is live, what is published,
+                    and where each thread currently touches the world.
                 </p>
             </div>
+            <nav class="surface-map" aria-label="Entry points">
+                <a class="surface-link" href="#viscereality">Viscereality</a>
+                <a class="surface-link" href="#plasmatic-multitudes">Plasmatic Multitudes</a>
+                <a class="surface-link" href="#psychotic-warlocks">Psychotic Warlocks / SANE</a>
+                <a class="surface-link" href="#altered-perception">Brain Candy / Deep Dream / Optical Movement Illusions</a>
+                <a class="surface-link" href="#phenomenological-control">Phenomenological Control / Fractal Optics</a>
+                <a class="surface-link" href="#publications">Publications</a>
+                <a class="surface-link" href="#background">Background</a>
+                <a class="surface-link" href="#contact">Contact</a>
+                <a class="surface-link" href="https://github.com/MesmerPrism" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </nav>
             <div class="project-grid">
-                <article class="project-card">
+                <article class="project-card" id="viscereality">
                     <p class="project-kicker">Current project</p>
                     <h3>Viscereality</h3>
                     <p>
@@ -133,7 +143,7 @@
                     </p>
                 </article>
 
-                <article class="project-card">
+                <article class="project-card" id="plasmatic-multitudes">
                     <p class="project-kicker">Writing and design research</p>
                     <h3>Plasmatic Multitudes</h3>
                     <p>
@@ -145,11 +155,11 @@
                     <p class="project-meta">Embodiment / XR / Media theory / Interface design</p>
                     <p class="project-links">
                         <a href="https://mesmerprism.github.io/plasmatic-multitudes-pages/" target="_blank" rel="noopener noreferrer">Public microsite</a>
-                        <a href="https://github.com/MesmerPrism/plasmatic-multitudes" target="_blank" rel="noopener noreferrer">Repository</a>
+                        <a href="https://github.com/MesmerPrism/plasmatic-multitudes-pages" target="_blank" rel="noopener noreferrer">Pages repository</a>
                     </p>
                 </article>
 
-                <article class="project-card">
+                <article class="project-card" id="psychotic-warlocks">
                     <p class="project-kicker">Writing and conceptual synthesis</p>
                     <h3>Psychotic Warlocks / SANE</h3>
                     <p>
@@ -159,9 +169,13 @@
                         imagination, relation, and methodological discipline meet in my work.
                     </p>
                     <p class="project-meta">SANE / Morphogenesis / Relation / Technopaganism</p>
+                    <p class="project-links">
+                        <a href="#background">Context</a>
+                        <a href="mailto:tillholzapfel@gmail.com?subject=Psychotic%20Warlocks%20writing%20sample">Request excerpt</a>
+                    </p>
                 </article>
 
-                <article class="project-card">
+                <article class="project-card" id="altered-perception">
                     <p class="project-kicker">Altered perception and induced vision</p>
                     <h3>Brain Candy, Deep Dream, and Optical Movement Illusions</h3>
                     <p>
@@ -171,9 +185,13 @@
                         test rather than mythologize.
                     </p>
                     <p class="project-meta">Altered perception / Cyberdelics / Vision science / VR</p>
+                    <p class="project-links">
+                        <a href="#publications">Related outputs</a>
+                        <a href="mailto:tillholzapfel@gmail.com?subject=Brain%20Candy%20and%20perception%20writing">Request notes</a>
+                    </p>
                 </article>
 
-                <article class="project-card">
+                <article class="project-card" id="phenomenological-control">
                     <p class="project-kicker">Imagery, suggestion, and mechanism</p>
                     <h3>Phenomenological Control and Fractal Optics</h3>
                     <p>
@@ -183,9 +201,13 @@
                         carefully rather than hand-wave.
                     </p>
                     <p class="project-meta">Imagery / Suggestion / Retinal stimulation / Source discipline</p>
+                    <p class="project-links">
+                        <a href="#background">Method context</a>
+                        <a href="mailto:tillholzapfel@gmail.com?subject=Phenomenological%20Control%20and%20Fractal%20Optics">Request references</a>
+                    </p>
                 </article>
 
-                <article class="project-card">
+                <article class="project-card" id="tooling">
                     <p class="project-kicker">Code and prototyping surface</p>
                     <h3>GitHub and research tooling</h3>
                     <p>
