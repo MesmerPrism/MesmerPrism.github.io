@@ -63,6 +63,7 @@ async function startPretextHero(rootNode) {
     previewMode,
     currentField: null,
     targetField: null,
+    viewportHeight: 0,
     lastWidth: 0,
     lastHeight: 0,
     rafId: 0,
@@ -131,9 +132,11 @@ async function startPretextHero(rootNode) {
 
   function renderFrame() {
     const width = viewport.clientWidth
-    const height = viewport.clientHeight
 
-    if (width <= 0 || height <= 0) return false
+    if (width <= 0) return false
+
+    const height = ensureViewportHeight(state, viewport, width)
+    if (height <= 0) return false
 
     if (width !== state.lastWidth || height !== state.lastHeight) {
       stage.style.width = `${width}px`
@@ -166,7 +169,7 @@ function buildCanvasFont(computed) {
 function computeHeroLayout(width, height, field) {
   return {
     insetX: Math.max(10, width * 0.014),
-    insetY: Math.max(18, height * 0.09),
+    insetY: Math.max(18, height * 0.082, 0),
     minSlotWidth: Math.max(188, width * 0.27),
     slotPaddingX: Math.max(14, width * 0.02),
     slotPaddingY: 4,
@@ -174,13 +177,58 @@ function computeHeroLayout(width, height, field) {
   }
 }
 
+function ensureViewportHeight(state, viewport, width) {
+  const widthInset = Math.max(10, width * 0.014)
+  const naturalWidth = Math.max(120, width - widthInset * 2)
+  const naturalLineCount = countWrappedLines(state.prepared, naturalWidth)
+  let viewportHeight = Math.ceil(Math.max(
+    naturalLineCount * state.lineHeight + state.lineHeight * 2.5,
+    state.lineHeight * 7.5,
+  ))
+
+  for (let iteration = 0; iteration < 14; iteration++) {
+    const sampleField = buildActiveField(width * 0.72, viewportHeight * 0.38, width, viewportHeight)
+    const layout = computeHeroLayout(width, viewportHeight, sampleField)
+    const sample = collectHeroLines(state.prepared, state.lineHeight, layout, width, viewportHeight)
+    const reserve = state.lineHeight * 1.2
+    const requiredHeight = Math.ceil(sample.lastBottom + layout.insetY + reserve)
+
+    if (sample.consumedAll && viewportHeight >= requiredHeight) {
+      viewportHeight = requiredHeight
+      break
+    }
+
+    viewportHeight = Math.max(viewportHeight + state.lineHeight, requiredHeight)
+  }
+
+  if (viewportHeight !== state.viewportHeight) {
+    state.viewportHeight = viewportHeight
+    viewport.style.minHeight = `${viewportHeight}px`
+  }
+
+  return viewportHeight
+}
+
 function layoutHeroText(state, layout, width, height) {
+  const { lines } = collectHeroLines(state.prepared, state.lineHeight, layout, width, height)
+
+  syncLinePool(state.lineStates, lines.length, state.stage)
+  state.measureContext.font = state.font
+
+  for (let index = 0; index < lines.length; index++) {
+    const lineState = state.lineStates[index]
+    const line = lines[index]
+    updateLineState(lineState, line, layout.field, state)
+  }
+}
+
+function collectHeroLines(prepared, lineHeight, layout, width, height) {
   const lines = []
   let cursor = { segmentIndex: 0, graphemeIndex: 0 }
   let lineTop = layout.insetY
   const maxY = height - layout.insetY
 
-  while (lineTop + state.lineHeight <= maxY) {
+  while (lineTop + lineHeight <= maxY) {
     const blocked = []
 
     if (layout.field.layoutRadius > 6) {
@@ -191,7 +239,7 @@ function layoutHeroText(state, layout, width, height) {
           radius: layout.field.layoutRadius,
         },
         lineTop,
-        lineTop + state.lineHeight,
+        lineTop + lineHeight,
         layout.slotPaddingX,
         layout.slotPaddingY,
       )
@@ -208,7 +256,7 @@ function layoutHeroText(state, layout, width, height) {
     const preferredSlots = pickPreferredSlots(slots, layout.field, width)
 
     if (preferredSlots.length === 0) {
-      lineTop += state.lineHeight
+      lineTop += lineHeight
       continue
     }
 
@@ -216,7 +264,7 @@ function layoutHeroText(state, layout, width, height) {
 
     for (let index = 0; index < preferredSlots.length; index++) {
       const slot = preferredSlots[index]
-      const line = layoutNextLine(state.prepared, cursor, slot.right - slot.left)
+      const line = layoutNextLine(prepared, cursor, slot.right - slot.left)
 
       if (line === null) {
         exhausted = true
@@ -232,17 +280,14 @@ function layoutHeroText(state, layout, width, height) {
     }
 
     if (exhausted) break
-    lineTop += state.lineHeight
+    lineTop += lineHeight
   }
 
-  syncLinePool(state.lineStates, lines.length, state.stage)
-  state.measureContext.font = state.font
+  const maxLineWidth = Math.max(120, width - layout.insetX * 2)
+  const consumedAll = layoutNextLine(prepared, cursor, maxLineWidth) === null
+  const lastBottom = lines.length === 0 ? layout.insetY : lines[lines.length - 1].y + lineHeight
 
-  for (let index = 0; index < lines.length; index++) {
-    const lineState = state.lineStates[index]
-    const line = lines[index]
-    updateLineState(lineState, line, layout.field, state)
-  }
+  return { lines, consumedAll, lastBottom }
 }
 
 function updateLineState(lineState, line, field, state) {
@@ -475,6 +520,20 @@ function segmentGraphemes(text) {
   }
 
   return Array.from(graphemeSegmenter.segment(text), part => part.segment)
+}
+
+function countWrappedLines(prepared, availableWidth) {
+  let cursor = { segmentIndex: 0, graphemeIndex: 0 }
+  let lineCount = 0
+
+  while (true) {
+    const line = layoutNextLine(prepared, cursor, availableWidth)
+    if (line === null) break
+    lineCount += 1
+    cursor = line.end
+  }
+
+  return Math.max(lineCount, 1)
 }
 
 function computeGlyphOpacity(field, x, y) {

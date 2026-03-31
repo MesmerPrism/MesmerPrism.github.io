@@ -183,7 +183,7 @@ li {
     position: relative;
     width: min(100%, 49rem);
     max-width: 49rem;
-    min-height: clamp(17rem, 34vw, 19.5rem);
+    min-height: 1px;
     margin: 0 auto;
     overflow: hidden;
     touch-action: pan-y;
@@ -487,10 +487,6 @@ li {
 
     .hero {
         padding-top: 3rem;
-    }
-
-    .plasmatic-intro__viewport {
-        min-height: 17rem;
     }
 
     .surface-map,
