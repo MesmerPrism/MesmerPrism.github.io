@@ -4,6 +4,9 @@ import {
 } from 'https://cdn.jsdelivr.net/npm/@chenglou/pretext@0.0.3/dist/layout.js'
 
 const root = document.querySelector('.plasmatic-intro[data-pretext-hero]')
+const graphemeSegmenter = typeof Intl !== 'undefined' && 'Segmenter' in Intl
+  ? new Intl.Segmenter(undefined, { granularity: 'grapheme' })
+  : null
 
 if (root instanceof HTMLDivElement && root.dataset.pretextHero !== 'off') {
   startPretextHero(root).catch(error => {
@@ -41,16 +44,21 @@ async function startPretextHero(rootNode) {
   stage.setAttribute('aria-hidden', 'true')
   viewport.appendChild(stage)
 
-  const lineNodes = []
+  const measureContext = document.createElement('canvas').getContext('2d')
+  if (measureContext === null) {
+    throw new Error('Failed to create measurement canvas for pretext hero')
+  }
+
   const previewMode = new URLSearchParams(window.location.search).get('pretext-demo')
   const coarsePointer = window.matchMedia('(pointer: coarse)').matches
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
   const state = {
     prepared,
+    font,
     lineHeight,
-    lineNodes,
+    lineStates: [],
     stage,
-    reducedMotion,
+    measureContext,
     interactive: !coarsePointer && !reducedMotion,
     previewMode,
     currentField: null,
@@ -61,7 +69,6 @@ async function startPretextHero(rootNode) {
   }
 
   rootNode.classList.add('is-enhanced')
-
   renderFrame()
 
   if (state.previewMode === 'cursor') {
@@ -91,6 +98,7 @@ async function startPretextHero(rootNode) {
     if (state.currentField === null) {
       state.currentField = activeField
     }
+
     state.targetField = activeField
     ensureAnimation()
   }
@@ -144,7 +152,7 @@ async function startPretextHero(rootNode) {
 
     const field = getCurrentField(state, width, height)
     const layout = computeHeroLayout(width, height, field)
-    layoutHeroText(state, layout, font, width, height)
+    layoutHeroText(state, layout, width, height)
     return true
   }
 }
@@ -157,16 +165,16 @@ function buildCanvasFont(computed) {
 
 function computeHeroLayout(width, height, field) {
   return {
-    insetX: Math.max(8, width * 0.012),
-    insetY: Math.max(16, height * 0.08),
-    minSlotWidth: Math.max(174, width * 0.28),
-    slotPaddingX: Math.max(12, width * 0.018),
-    slotPaddingY: 3,
+    insetX: Math.max(10, width * 0.014),
+    insetY: Math.max(18, height * 0.09),
+    minSlotWidth: Math.max(188, width * 0.27),
+    slotPaddingX: Math.max(14, width * 0.02),
+    slotPaddingY: 4,
     field,
   }
 }
 
-function layoutHeroText(state, layout, font, width, height) {
+function layoutHeroText(state, layout, width, height) {
   const lines = []
   let cursor = { segmentIndex: 0, graphemeIndex: 0 }
   let lineTop = layout.insetY
@@ -175,14 +183,19 @@ function layoutHeroText(state, layout, font, width, height) {
   while (lineTop + state.lineHeight <= maxY) {
     const blocked = []
 
-    if (layout.field.radius > 6) {
+    if (layout.field.layoutRadius > 6) {
       const interval = circleIntervalForBand(
-        layout.field,
+        {
+          x: layout.field.x,
+          y: layout.field.y,
+          radius: layout.field.layoutRadius,
+        },
         lineTop,
         lineTop + state.lineHeight,
         layout.slotPaddingX,
         layout.slotPaddingY,
       )
+
       if (interval !== null) blocked.push(interval)
     }
 
@@ -222,24 +235,43 @@ function layoutHeroText(state, layout, font, width, height) {
     lineTop += state.lineHeight
   }
 
-  syncLinePool(state.lineNodes, lines.length, state.stage)
+  syncLinePool(state.lineStates, lines.length, state.stage)
+  state.measureContext.font = state.font
 
   for (let index = 0; index < lines.length; index++) {
-    const node = state.lineNodes[index]
+    const lineState = state.lineStates[index]
     const line = lines[index]
-    node.textContent = line.text
-    node.style.left = `${line.x}px`
-    node.style.top = `${line.y}px`
-    node.style.font = font
-    node.style.lineHeight = `${state.lineHeight}px`
+    updateLineState(lineState, line, layout.field, state)
+  }
+}
+
+function updateLineState(lineState, line, field, state) {
+  lineState.node.style.left = `${line.x}px`
+  lineState.node.style.top = `${line.y}px`
+  lineState.node.style.font = state.font
+  lineState.node.style.lineHeight = `${state.lineHeight}px`
+
+  syncGlyphPool(lineState, line.text)
+
+  let offsetX = 0
+  for (let index = 0; index < lineState.glyphStates.length; index++) {
+    const glyphState = lineState.glyphStates[index]
+    const width = state.measureContext.measureText(glyphState.value).width
+    const centerX = line.x + offsetX + width * 0.5
+    const centerY = line.y + state.lineHeight * 0.58
+    const opacity = computeGlyphOpacity(field, centerX, centerY)
+
+    glyphState.node.style.opacity = opacity.toFixed(3)
+    offsetX += width
   }
 }
 
 function buildRestField(width, height) {
   return {
     x: width * 0.82,
-    y: height * 0.45,
-    radius: 0,
+    y: height * 0.43,
+    layoutRadius: 0,
+    fadeRadius: 0,
   }
 }
 
@@ -248,14 +280,15 @@ function buildActiveField(x, y, width, height) {
   return {
     x,
     y,
-    radius: baseRadius * (width < 640 ? 0.15 : 0.17),
+    layoutRadius: baseRadius * (width < 640 ? 0.115 : 0.135),
+    fadeRadius: baseRadius * (width < 640 ? 0.24 : 0.275),
   }
 }
 
 function getPreviewField(viewport) {
   return buildActiveField(
-    viewport.clientWidth * 0.68,
-    viewport.clientHeight * 0.46,
+    viewport.clientWidth * 0.7,
+    viewport.clientHeight * 0.42,
     viewport.clientWidth,
     viewport.clientHeight,
   )
@@ -283,20 +316,22 @@ function getCurrentField(state, width, height) {
 }
 
 function tweenField(current, target) {
-  const ease = 0.18
+  const ease = 0.12
   return {
     x: current.x + (target.x - current.x) * ease,
     y: current.y + (target.y - current.y) * ease,
-    radius: current.radius + (target.radius - current.radius) * ease,
+    layoutRadius: current.layoutRadius + (target.layoutRadius - current.layoutRadius) * ease,
+    fadeRadius: current.fadeRadius + (target.fadeRadius - current.fadeRadius) * ease,
   }
 }
 
 function normalizeField(field, width, height) {
-  const maxRadius = Math.min(width, height) * 0.22
+  const baseRadius = Math.min(width, height)
   return {
     x: clamp(field.x, 0, width),
     y: clamp(field.y, 0, height),
-    radius: clamp(field.radius, 0, maxRadius),
+    layoutRadius: clamp(field.layoutRadius, 0, baseRadius * 0.18),
+    fadeRadius: clamp(field.fadeRadius, 0, baseRadius * 0.36),
   }
 }
 
@@ -306,9 +341,10 @@ function needsAnotherFrame(state) {
   }
 
   return (
-    Math.abs(state.currentField.x - state.targetField.x) > 0.6 ||
-    Math.abs(state.currentField.y - state.targetField.y) > 0.6 ||
-    Math.abs(state.currentField.radius - state.targetField.radius) > 0.6
+    Math.abs(state.currentField.x - state.targetField.x) > 0.25 ||
+    Math.abs(state.currentField.y - state.targetField.y) > 0.25 ||
+    Math.abs(state.currentField.layoutRadius - state.targetField.layoutRadius) > 0.25 ||
+    Math.abs(state.currentField.fadeRadius - state.targetField.fadeRadius) > 0.25
   )
 }
 
@@ -375,13 +411,13 @@ function carveSlots(base, blockedIntervals, minSlotWidth) {
 }
 
 function pickPreferredSlots(slots, field, width) {
-  if (slots.length <= 1 || field.radius <= 6) {
+  if (slots.length <= 1 || field.layoutRadius <= 6) {
     return slots
   }
 
   const leftmost = slots[0]
   const rightmost = slots[slots.length - 1]
-  const preferLeft = field.x >= width * 0.5
+  const preferLeft = field.x >= width * 0.52
   const preferred = preferLeft ? leftmost : rightmost
 
   return preferred === undefined ? slots : [preferred]
@@ -391,14 +427,81 @@ function syncLinePool(pool, targetLength, parent) {
   while (pool.length < targetLength) {
     const node = document.createElement('span')
     node.className = 'pretext-hero__line'
-    pool.push(node)
     parent.appendChild(node)
+    pool.push({
+      node,
+      glyphStates: [],
+      text: '',
+    })
   }
 
   while (pool.length > targetLength) {
-    const node = pool.pop()
-    node.remove()
+    const lineState = pool.pop()
+    lineState.node.remove()
   }
+}
+
+function syncGlyphPool(lineState, text) {
+  const glyphs = segmentGraphemes(text)
+
+  while (lineState.glyphStates.length < glyphs.length) {
+    const node = document.createElement('span')
+    node.className = 'pretext-hero__glyph'
+    lineState.node.appendChild(node)
+    lineState.glyphStates.push({ node, value: '' })
+  }
+
+  while (lineState.glyphStates.length > glyphs.length) {
+    const glyphState = lineState.glyphStates.pop()
+    glyphState.node.remove()
+  }
+
+  for (let index = 0; index < glyphs.length; index++) {
+    const glyphState = lineState.glyphStates[index]
+    const value = glyphs[index]
+
+    if (glyphState.value !== value) {
+      glyphState.value = value
+      glyphState.node.textContent = value
+    }
+  }
+
+  lineState.text = text
+}
+
+function segmentGraphemes(text) {
+  if (graphemeSegmenter === null) {
+    return Array.from(text)
+  }
+
+  return Array.from(graphemeSegmenter.segment(text), part => part.segment)
+}
+
+function computeGlyphOpacity(field, x, y) {
+  if (field.fadeRadius <= 6) return 1
+
+  const distance = Math.hypot(x - field.x, (y - field.y) * 1.08)
+  const inner = field.fadeRadius * 0.16
+  const outer = field.fadeRadius * 1.1
+  const t = smootherstep(inner, outer, distance)
+
+  return 0.12 + Math.pow(t, 1.18) * 0.88
+}
+
+function smoothstep(edge0, edge1, value) {
+  if (value <= edge0) return 0
+  if (value >= edge1) return 1
+
+  const t = clamp((value - edge0) / (edge1 - edge0), 0, 1)
+  return t * t * (3 - 2 * t)
+}
+
+function smootherstep(edge0, edge1, value) {
+  if (value <= edge0) return 0
+  if (value >= edge1) return 1
+
+  const t = clamp((value - edge0) / (edge1 - edge0), 0, 1)
+  return t * t * t * (t * (t * 6 - 15) + 10)
 }
 
 function clamp(value, min, max) {

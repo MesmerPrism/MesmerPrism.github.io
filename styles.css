@@ -116,9 +116,10 @@ h3 {
 }
 
 h1 {
-    max-width: 11ch;
+    max-width: none;
     margin: 0 0 1.25rem;
-    font-size: clamp(2.9rem, 7vw, 5.15rem);
+    font-size: clamp(3.2rem, 8vw, 5.8rem);
+    line-height: 0.98;
 }
 
 h2 {
@@ -139,13 +140,13 @@ li {
 }
 
 .lede {
-    max-width: 36rem;
-    font-size: 1.28rem;
+    max-width: 40rem;
+    font-size: 1.22rem;
     color: var(--muted);
 }
 
 .hero-copy {
-    max-width: 42rem;
+    max-width: 44rem;
 }
 
 .plasmatic-intro {
@@ -160,21 +161,21 @@ li {
 
 .plasmatic-intro__fallback,
 .pretext-hero__line {
-    font-size: 1.08rem;
-    line-height: 1.7;
+    font-size: 1.1rem;
+    line-height: 1.76;
 }
 
 .plasmatic-intro__fallback {
-    max-width: 43rem;
+    max-width: 47rem;
     margin: 0;
-    padding: 1.2rem 0 1.25rem;
+    padding: 1.3rem 0 1.4rem;
 }
 
 .plasmatic-intro__viewport {
     display: none;
     position: relative;
-    max-width: 43rem;
-    min-height: clamp(15.25rem, 31vw, 18.75rem);
+    max-width: 47rem;
+    min-height: clamp(17.5rem, 34vw, 21rem);
     overflow: hidden;
     touch-action: pan-y;
 }
@@ -208,6 +209,13 @@ li {
     white-space: pre;
     color: var(--text);
     pointer-events: none;
+}
+
+.pretext-hero__glyph {
+    display: inline-block;
+    opacity: 1;
+    transition: opacity 140ms linear;
+    will-change: opacity;
 }
 
 .hero-meta {
@@ -443,7 +451,7 @@ li {
     }
 
     .plasmatic-intro__viewport {
-        min-height: 15rem;
+        min-height: 18rem;
     }
 
     .project-grid,
