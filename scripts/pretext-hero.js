@@ -41,20 +41,20 @@ async function startPretextHero(rootNode) {
   stage.setAttribute('aria-hidden', 'true')
   viewport.appendChild(stage)
 
-  const orbNodes = [
-    createOrb('pretext-hero__orb pretext-hero__orb--accent'),
-    createOrb('pretext-hero__orb pretext-hero__orb--stone'),
-    createOrb('pretext-hero__orb pretext-hero__orb--paper'),
-  ]
-  stage.append(...orbNodes)
-
   const lineNodes = []
+  const previewMode = new URLSearchParams(window.location.search).get('pretext-demo')
+  const coarsePointer = window.matchMedia('(pointer: coarse)').matches
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
   const state = {
     prepared,
     lineHeight,
     lineNodes,
-    orbNodes,
-    reducedMotion: window.matchMedia('(prefers-reduced-motion: reduce)').matches,
+    stage,
+    reducedMotion,
+    interactive: !coarsePointer && !reducedMotion,
+    previewMode,
+    currentField: null,
+    targetField: null,
     lastWidth: 0,
     lastHeight: 0,
     rafId: 0,
@@ -62,39 +62,90 @@ async function startPretextHero(rootNode) {
 
   rootNode.classList.add('is-enhanced')
 
-  renderFrame(performance.now())
+  renderFrame()
 
-  if (state.reducedMotion) return
-
-  window.addEventListener('resize', scheduleRender, { passive: true })
-  state.rafId = window.requestAnimationFrame(renderFrame)
-
-  function scheduleRender() {
-    if (state.rafId !== 0) return
-    state.rafId = window.requestAnimationFrame(renderFrame)
+  if (state.previewMode === 'cursor') {
+    const previewField = getPreviewField(viewport)
+    state.currentField = previewField
+    state.targetField = previewField
+    renderFrame()
   }
 
-  function renderFrame(now) {
+  window.addEventListener('resize', handleResize, { passive: true })
+
+  if (state.interactive) {
+    viewport.addEventListener('pointerenter', handlePointer)
+    viewport.addEventListener('pointermove', handlePointer)
+    viewport.addEventListener('pointerleave', handleLeave)
+  }
+
+  function handlePointer(event) {
+    const bounds = viewport.getBoundingClientRect()
+    const activeField = buildActiveField(
+      clamp(event.clientX - bounds.left, 0, bounds.width),
+      clamp(event.clientY - bounds.top, 0, bounds.height),
+      bounds.width,
+      bounds.height,
+    )
+
+    if (state.currentField === null) {
+      state.currentField = activeField
+    }
+    state.targetField = activeField
+    ensureAnimation()
+  }
+
+  function handleLeave() {
+    state.targetField = buildRestField(viewport.clientWidth, viewport.clientHeight)
+    ensureAnimation()
+  }
+
+  function handleResize() {
+    state.currentField = null
+    state.targetField = null
+    renderFrame()
+  }
+
+  function ensureAnimation() {
+    if (state.rafId !== 0) return
+    state.rafId = window.requestAnimationFrame(stepFrame)
+  }
+
+  function stepFrame() {
     state.rafId = 0
+
+    if (!renderFrame()) return
+
+    if (needsAnotherFrame(state)) {
+      state.rafId = window.requestAnimationFrame(stepFrame)
+    }
+  }
+
+  function renderFrame() {
     const width = viewport.clientWidth
     const height = viewport.clientHeight
 
-    if (width <= 0 || height <= 0) return
-
-    const layout = computeHeroLayout(now, width, height, state.reducedMotion)
+    if (width <= 0 || height <= 0) return false
 
     if (width !== state.lastWidth || height !== state.lastHeight) {
-      stage.style.height = `${height}px`
       stage.style.width = `${width}px`
+      stage.style.height = `${height}px`
       state.lastWidth = width
       state.lastHeight = height
+
+      if (state.currentField !== null) {
+        state.currentField = normalizeField(state.currentField, width, height)
+      }
+
+      if (state.targetField !== null) {
+        state.targetField = normalizeField(state.targetField, width, height)
+      }
     }
 
+    const field = getCurrentField(state, width, height)
+    const layout = computeHeroLayout(width, height, field)
     layoutHeroText(state, layout, font, width, height)
-
-    if (!state.reducedMotion) {
-      state.rafId = window.requestAnimationFrame(renderFrame)
-    }
+    return true
   }
 }
 
@@ -104,43 +155,14 @@ function buildCanvasFont(computed) {
   return `${style}${weight}${computed.fontSize} ${computed.fontFamily}`.trim()
 }
 
-function createOrb(className) {
-  const node = document.createElement('div')
-  node.className = className
-  return node
-}
-
-function computeHeroLayout(now, width, height, reducedMotion) {
-  const time = reducedMotion ? 0 : now * 0.001
-  const narrow = width < 640
-  const baseRadius = Math.min(width, height)
-
+function computeHeroLayout(width, height, field) {
   return {
     insetX: Math.max(8, width * 0.012),
     insetY: Math.max(16, height * 0.08),
-    minSlotWidth: Math.max(184, width * 0.32),
+    minSlotWidth: Math.max(174, width * 0.28),
     slotPaddingX: Math.max(12, width * 0.018),
     slotPaddingY: 3,
-    orbs: [
-      {
-        x: width * 0.81 + Math.sin(time * 0.31) * width * 0.045,
-        y: height * 0.44 + Math.cos(time * 0.24) * height * 0.12,
-        r: baseRadius * (narrow ? 0.16 : 0.18),
-        blocksText: true,
-      },
-      {
-        x: width * 0.19 + Math.cos(time * 0.22 + 0.8) * width * 0.05,
-        y: height * 0.75 + Math.sin(time * 0.28 + 0.3) * height * 0.06,
-        r: baseRadius * (narrow ? 0.11 : 0.12),
-        blocksText: false,
-      },
-      {
-        x: width * 0.58 + Math.sin(time * 0.18 + 2.2) * width * 0.05,
-        y: height * 0.84 + Math.cos(time * 0.2 + 0.5) * height * 0.04,
-        r: baseRadius * (narrow ? 0.075 : 0.09),
-        blocksText: false,
-      },
-    ],
+    field,
   }
 }
 
@@ -153,12 +175,9 @@ function layoutHeroText(state, layout, font, width, height) {
   while (lineTop + state.lineHeight <= maxY) {
     const blocked = []
 
-    for (let index = 0; index < layout.orbs.length; index++) {
-      const orb = layout.orbs[index]
-      if (!orb.blocksText) continue
-
+    if (layout.field.radius > 6) {
       const interval = circleIntervalForBand(
-        orb,
+        layout.field,
         lineTop,
         lineTop + state.lineHeight,
         layout.slotPaddingX,
@@ -173,15 +192,17 @@ function layoutHeroText(state, layout, font, width, height) {
       layout.minSlotWidth,
     )
 
-    if (slots.length === 0) {
+    const preferredSlots = pickPreferredSlots(slots, layout.field, width)
+
+    if (preferredSlots.length === 0) {
       lineTop += state.lineHeight
       continue
     }
 
     let exhausted = false
 
-    for (let index = 0; index < slots.length; index++) {
-      const slot = slots[index]
+    for (let index = 0; index < preferredSlots.length; index++) {
+      const slot = preferredSlots[index]
       const line = layoutNextLine(state.prepared, cursor, slot.right - slot.left)
 
       if (line === null) {
@@ -201,7 +222,7 @@ function layoutHeroText(state, layout, font, width, height) {
     lineTop += state.lineHeight
   }
 
-  syncLinePool(state.lineNodes, lines.length, state.orbNodes[0].parentElement)
+  syncLinePool(state.lineNodes, lines.length, state.stage)
 
   for (let index = 0; index < lines.length; index++) {
     const node = state.lineNodes[index]
@@ -212,22 +233,90 @@ function layoutHeroText(state, layout, font, width, height) {
     node.style.font = font
     node.style.lineHeight = `${state.lineHeight}px`
   }
+}
 
-  for (let index = 0; index < layout.orbs.length; index++) {
-    const orb = layout.orbs[index]
-    const node = state.orbNodes[index]
-    node.style.left = `${Math.round(orb.x - orb.r)}px`
-    node.style.top = `${Math.round(orb.y - orb.r)}px`
-    node.style.width = `${Math.round(orb.r * 2)}px`
-    node.style.height = `${Math.round(orb.r * 2)}px`
+function buildRestField(width, height) {
+  return {
+    x: width * 0.82,
+    y: height * 0.45,
+    radius: 0,
   }
+}
+
+function buildActiveField(x, y, width, height) {
+  const baseRadius = Math.min(width, height)
+  return {
+    x,
+    y,
+    radius: baseRadius * (width < 640 ? 0.15 : 0.17),
+  }
+}
+
+function getPreviewField(viewport) {
+  return buildActiveField(
+    viewport.clientWidth * 0.68,
+    viewport.clientHeight * 0.46,
+    viewport.clientWidth,
+    viewport.clientHeight,
+  )
+}
+
+function getCurrentField(state, width, height) {
+  const restField = buildRestField(width, height)
+
+  if (state.currentField === null) {
+    state.currentField = state.targetField ?? restField
+  }
+
+  if (state.targetField === null) {
+    state.targetField = restField
+  }
+
+  if (!state.interactive) {
+    state.currentField = state.previewMode === 'cursor' ? state.currentField : restField
+    state.targetField = state.currentField
+    return state.currentField
+  }
+
+  state.currentField = tweenField(state.currentField, state.targetField)
+  return state.currentField
+}
+
+function tweenField(current, target) {
+  const ease = 0.18
+  return {
+    x: current.x + (target.x - current.x) * ease,
+    y: current.y + (target.y - current.y) * ease,
+    radius: current.radius + (target.radius - current.radius) * ease,
+  }
+}
+
+function normalizeField(field, width, height) {
+  const maxRadius = Math.min(width, height) * 0.22
+  return {
+    x: clamp(field.x, 0, width),
+    y: clamp(field.y, 0, height),
+    radius: clamp(field.radius, 0, maxRadius),
+  }
+}
+
+function needsAnotherFrame(state) {
+  if (!state.interactive || state.currentField === null || state.targetField === null) {
+    return false
+  }
+
+  return (
+    Math.abs(state.currentField.x - state.targetField.x) > 0.6 ||
+    Math.abs(state.currentField.y - state.targetField.y) > 0.6 ||
+    Math.abs(state.currentField.radius - state.targetField.radius) > 0.6
+  )
 }
 
 function circleIntervalForBand(circle, top, bottom, horizontalPadding, verticalPadding) {
   const bandTop = top - verticalPadding
   const bandBottom = bottom + verticalPadding
 
-  if (bandTop >= circle.y + circle.r || bandBottom <= circle.y - circle.r) {
+  if (bandTop >= circle.y + circle.radius || bandBottom <= circle.y - circle.radius) {
     return null
   }
 
@@ -237,9 +326,9 @@ function circleIntervalForBand(circle, top, bottom, horizontalPadding, verticalP
       ? circle.y - bandBottom
       : 0
 
-  if (minDy >= circle.r) return null
+  if (minDy >= circle.radius) return null
 
-  const maxDx = Math.sqrt(circle.r * circle.r - minDy * minDy)
+  const maxDx = Math.sqrt(circle.radius * circle.radius - minDy * minDy)
   return {
     left: circle.x - maxDx - horizontalPadding,
     right: circle.x + maxDx + horizontalPadding,
@@ -285,6 +374,19 @@ function carveSlots(base, blockedIntervals, minSlotWidth) {
   return slots
 }
 
+function pickPreferredSlots(slots, field, width) {
+  if (slots.length <= 1 || field.radius <= 6) {
+    return slots
+  }
+
+  const leftmost = slots[0]
+  const rightmost = slots[slots.length - 1]
+  const preferLeft = field.x >= width * 0.5
+  const preferred = preferLeft ? leftmost : rightmost
+
+  return preferred === undefined ? slots : [preferred]
+}
+
 function syncLinePool(pool, targetLength, parent) {
   while (pool.length < targetLength) {
     const node = document.createElement('span')
@@ -297,4 +399,8 @@ function syncLinePool(pool, targetLength, parent) {
     const node = pool.pop()
     node.remove()
   }
+}
+
+function clamp(value, min, max) {
+  return Math.min(Math.max(value, min), max)
 }

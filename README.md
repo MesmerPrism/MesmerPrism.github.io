@@ -34,6 +34,9 @@ The homepage includes an optional experimental hero enhancement in
 
 - It uses `@chenglou/pretext` via a pinned jsDelivr ESM import.
 - The fallback text stays in the HTML for no-JS and failure cases.
+- On desktop pointers, the intro text reflows around the cursor and settles back to a
+  static block when the pointer leaves.
+- On touch devices and reduced-motion setups, it stays static.
 - Disable it instantly by changing
   `data-pretext-hero="on"` to `data-pretext-hero="off"` in
   [`index.html`](index.html).
