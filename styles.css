@@ -148,6 +148,88 @@ li {
     max-width: 42rem;
 }
 
+.plasmatic-intro {
+    margin-top: 1.6rem;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    background:
+        radial-gradient(circle at 18% 28%, rgba(138, 70, 56, 0.08), transparent 18rem),
+        radial-gradient(circle at 78% 64%, rgba(99, 88, 80, 0.08), transparent 20rem),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.36), rgba(255, 255, 255, 0.1));
+}
+
+.plasmatic-intro__fallback,
+.pretext-hero__line {
+    font-size: 1.08rem;
+    line-height: 1.7;
+}
+
+.plasmatic-intro__fallback {
+    max-width: 43rem;
+    margin: 0;
+    padding: 1.2rem 0 1.25rem;
+}
+
+.plasmatic-intro__viewport {
+    display: none;
+    position: relative;
+    max-width: 43rem;
+    min-height: clamp(15.25rem, 31vw, 18.75rem);
+    overflow: hidden;
+}
+
+.plasmatic-intro.is-enhanced .plasmatic-intro__viewport {
+    display: block;
+}
+
+.plasmatic-intro.is-enhanced .plasmatic-intro__fallback {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.pretext-hero {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.pretext-hero__line {
+    position: absolute;
+    display: block;
+    margin: 0;
+    white-space: pre;
+    color: var(--text);
+    pointer-events: none;
+}
+
+.pretext-hero__orb {
+    position: absolute;
+    border-radius: 999px;
+    pointer-events: none;
+    mix-blend-mode: multiply;
+    filter: blur(0.45px);
+    opacity: 0.92;
+}
+
+.pretext-hero__orb--accent {
+    background: radial-gradient(circle at 35% 35%, rgba(138, 70, 56, 0.28), rgba(138, 70, 56, 0.12) 55%, transparent 76%);
+}
+
+.pretext-hero__orb--stone {
+    background: radial-gradient(circle at 45% 40%, rgba(99, 88, 80, 0.22), rgba(99, 88, 80, 0.09) 58%, transparent 78%);
+}
+
+.pretext-hero__orb--paper {
+    background: radial-gradient(circle at 32% 32%, rgba(239, 226, 220, 0.82), rgba(239, 226, 220, 0.34) 58%, transparent 80%);
+}
+
 .hero-meta {
     display: flex;
     flex-wrap: wrap;
@@ -378,6 +460,10 @@ li {
 
     .hero {
         padding-top: 3rem;
+    }
+
+    .plasmatic-intro__viewport {
+        min-height: 15rem;
     }
 
     .project-grid,

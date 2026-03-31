@@ -26,3 +26,14 @@ The target public domain for this site is:
 The repository includes a `CNAME` file for the custom domain and a
 [`DOMAIN_SETUP.md`](DOMAIN_SETUP.md) checklist for the Squarespace -> GitHub
 Pages DNS cutover.
+
+## Pretext Hero
+
+The homepage includes an optional experimental hero enhancement in
+[`scripts/pretext-hero.js`](scripts/pretext-hero.js).
+
+- It uses `@chenglou/pretext` via a pinned jsDelivr ESM import.
+- The fallback text stays in the HTML for no-JS and failure cases.
+- Disable it instantly by changing
+  `data-pretext-hero="on"` to `data-pretext-hero="off"` in
+  [`index.html`](index.html).
