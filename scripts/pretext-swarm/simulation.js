@@ -2,7 +2,7 @@ import { SWARM_STATES } from './config.js'
 import { applyFieldForces, applySecondaryBoids, advanceBurstField } from './forces.js'
 import { createParticleSystem, measureParticleStats } from './particles.js'
 import { SpatialHash } from './spatial-hash.js'
-import { getAlignedAnchorTarget } from './wrap.js'
+import { getAlignedAnchorTarget, getTileIndex } from './wrap.js'
 
 function clamp(value, min, max) {
   return Math.min(Math.max(value, min), max)
@@ -44,9 +44,22 @@ function integrateParticles(particles, dt, config) {
   }
 }
 
-function solveDistanceConstraint(constraint, particles) {
+function getWrapTiles(particle, bounds) {
+  return {
+    x: getTileIndex(particle.x, bounds.width),
+    y: getTileIndex(particle.y, bounds.height),
+  }
+}
+
+function isWrappedParticle(particle, bounds) {
+  const tiles = getWrapTiles(particle, bounds)
+  return tiles.x !== 0 || tiles.y !== 0
+}
+
+function solveDistanceConstraint(constraint, particles, bounds) {
   const a = particles[constraint.a]
   const b = particles[constraint.b]
+  if (isWrappedParticle(a, bounds) || isWrappedParticle(b, bounds)) return
   const dx = b.x - a.x
   const dy = b.y - a.y
   const distance = Math.hypot(dx, dy)
@@ -64,6 +77,8 @@ function solveDistanceConstraint(constraint, particles) {
 }
 
 function clampDisplacement(particle, bounds, maxDisplacement) {
+  if (isWrappedParticle(particle, bounds)) return
+
   const targetX = getAlignedAnchorTarget(particle.x, particle.baseX, bounds.width)
   const targetY = getAlignedAnchorTarget(particle.y, particle.baseY, bounds.height)
   const dx = particle.x - targetX
@@ -75,6 +90,30 @@ function clampDisplacement(particle, bounds, maxDisplacement) {
   const scale = maxDisplacement / displacement
   particle.x = targetX + dx * scale
   particle.y = targetY + dy * scale
+}
+
+function rejoinWrappedParticles(particles, bounds, config) {
+  for (let index = 0; index < particles.length; index++) {
+    const particle = particles[index]
+    const tiles = getWrapTiles(particle, bounds)
+    if (tiles.x === 0 && tiles.y === 0) continue
+
+    const targetX = getAlignedAnchorTarget(particle.x, particle.baseX, bounds.width)
+    const targetY = getAlignedAnchorTarget(particle.y, particle.baseY, bounds.height)
+    const distance = Math.hypot(particle.x - targetX, particle.y - targetY)
+    const velocity = Math.hypot(particle.x - particle.px, particle.y - particle.py)
+
+    if (distance > config.wrapRejoinDistance || velocity > config.wrapRejoinVelocity) {
+      continue
+    }
+
+    const shiftX = -tiles.x * bounds.width
+    const shiftY = -tiles.y * bounds.height
+    particle.x += shiftX
+    particle.y += shiftY
+    particle.px += shiftX
+    particle.py += shiftY
+  }
 }
 
 function solveConstraints(system, bounds, config) {
@@ -91,21 +130,23 @@ function solveConstraints(system, bounds, config) {
     }
 
     for (let index = 0; index < neighborConstraints.length; index++) {
-      solveDistanceConstraint(neighborConstraints[index], particles)
+      solveDistanceConstraint(neighborConstraints[index], particles, bounds)
     }
 
     for (let index = 0; index < wordConstraints.length; index++) {
-      solveDistanceConstraint(wordConstraints[index], particles)
+      solveDistanceConstraint(wordConstraints[index], particles, bounds)
     }
 
     for (let index = 0; index < lineConstraints.length; index++) {
-      solveDistanceConstraint(lineConstraints[index], particles)
+      solveDistanceConstraint(lineConstraints[index], particles, bounds)
     }
 
     for (let index = 0; index < particles.length; index++) {
       clampDisplacement(particles[index], bounds, config.maxDisplacement)
     }
   }
+
+  rejoinWrappedParticles(particles, bounds, config)
 }
 
 function limitVector(x, y, maxLength) {

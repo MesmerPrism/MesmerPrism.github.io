@@ -1,4 +1,4 @@
-import { getAlignedAnchorTarget, getNearestWrappedValue } from './wrap.js'
+import { getAlignedAnchorTarget, getNearestWrappedValue, getTileIndex } from './wrap.js'
 
 function clamp(value, min, max) {
   return Math.min(Math.max(value, min), max)
@@ -166,6 +166,13 @@ export function applyFieldForces(particles, fields, bounds = null) {
 export function applySecondaryBoids(particles, spatialHash, config, bounds = null) {
   for (let index = 0; index < particles.length; index++) {
     const particle = particles[index]
+    if (
+      bounds !== null &&
+      (getTileIndex(particle.x, bounds.width) !== 0 || getTileIndex(particle.y, bounds.height) !== 0)
+    ) {
+      continue
+    }
+
     const targetX = bounds === null
       ? particle.baseX
       : getAlignedAnchorTarget(particle.x, particle.baseX, bounds.width)
@@ -195,6 +202,12 @@ export function applySecondaryBoids(particles, spatialHash, config, bounds = nul
       if (otherId === index) continue
 
       const other = particles[otherId]
+      if (
+        bounds !== null &&
+        (getTileIndex(other.x, bounds.width) !== 0 || getTileIndex(other.y, bounds.height) !== 0)
+      ) {
+        continue
+      }
       const dx = particle.x - other.x
       const dy = particle.y - other.y
       const distance = Math.hypot(dx, dy)
