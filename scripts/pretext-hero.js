@@ -2,6 +2,12 @@ import {
   layoutNextLine,
   prepareWithSegments,
 } from 'https://cdn.jsdelivr.net/npm/@chenglou/pretext@0.0.3/dist/layout.js'
+import {
+  HERO_MODES,
+  resolveHeroMode,
+  supportsCanvas2D,
+} from './pretext-swarm/config.js'
+import { startPretextSwarm } from './pretext-swarm/index.js'
 
 const root = document.querySelector('.plasmatic-intro[data-pretext-hero]')
 const graphemeSegmenter = typeof Intl !== 'undefined' && 'Segmenter' in Intl
@@ -38,6 +44,62 @@ async function startPretextHero(rootNode) {
     throw new Error('Expected an explicit line-height for the fallback text')
   }
 
+  const searchParams = new URLSearchParams(window.location.search)
+  const previewMode = searchParams.get('pretext-demo')
+  const requestedMode = rootNode.dataset.pretextMode ?? searchParams.get('pretext-mode') ?? HERO_MODES.AUTO
+  const coarsePointer = window.matchMedia('(pointer: coarse)').matches
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  const interactive = !coarsePointer && !reducedMotion
+  const mode = resolveHeroMode(requestedMode, interactive, supportsCanvas2D())
+
+  viewport.replaceChildren()
+  viewport.style.height = ''
+  viewport.style.minHeight = ''
+  rootNode.style.minHeight = ''
+  rootNode.classList.remove('is-enhanced', 'is-ready', 'is-dom-mode', 'is-canvas-mode')
+
+  if (mode === HERO_MODES.STATIC) return
+
+  if (mode === HERO_MODES.SWARM_CANVAS) {
+    try {
+      await startPretextSwarm({
+        rootNode,
+        viewport,
+        fallback,
+        sourceText,
+        font,
+        lineHeight,
+        interactive,
+        previewMode,
+      })
+      return
+    } catch (error) {
+      console.error('Pretext swarm setup failed, falling back to DOM renderer:', error)
+    }
+  }
+
+  startDomHero({
+    rootNode,
+    fallback,
+    viewport,
+    sourceText,
+    font,
+    lineHeight,
+    interactive,
+    previewMode,
+  })
+}
+
+function startDomHero({
+  rootNode,
+  fallback,
+  viewport,
+  sourceText,
+  font,
+  lineHeight,
+  interactive,
+  previewMode,
+}) {
   const prepared = prepareWithSegments(sourceText, font)
   const stage = document.createElement('div')
   stage.className = 'pretext-hero'
@@ -49,17 +111,17 @@ async function startPretextHero(rootNode) {
     throw new Error('Failed to create measurement canvas for pretext hero')
   }
 
-  const previewMode = new URLSearchParams(window.location.search).get('pretext-demo')
-  const coarsePointer = window.matchMedia('(pointer: coarse)').matches
-  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
   const state = {
+    rootNode,
+    fallback,
+    viewport,
     prepared,
     font,
     lineHeight,
     lineStates: [],
     stage,
     measureContext,
-    interactive: !coarsePointer && !reducedMotion,
+    interactive,
     previewMode,
     currentField: null,
     targetField: null,
@@ -69,14 +131,9 @@ async function startPretextHero(rootNode) {
     rafId: 0,
   }
 
-  rootNode.classList.add('is-enhanced')
-  renderFrame()
-
-  if (state.previewMode === 'cursor') {
-    const previewField = getPreviewField(viewport)
-    state.currentField = previewField
-    state.targetField = previewField
-    renderFrame()
+  rootNode.classList.add('is-enhanced', 'is-dom-mode')
+  if (renderFrame()) {
+    rootNode.classList.add('is-ready')
   }
 
   window.addEventListener('resize', handleResize, { passive: true })
@@ -105,7 +162,7 @@ async function startPretextHero(rootNode) {
   }
 
   function handleLeave() {
-    state.targetField = buildRestField(viewport.clientWidth, viewport.clientHeight)
+    state.targetField = buildRestField(state.lastWidth, state.lastHeight)
     ensureAnimation()
   }
 
@@ -131,11 +188,11 @@ async function startPretextHero(rootNode) {
   }
 
   function renderFrame() {
-    const width = viewport.clientWidth
+    const width = getLayoutWidth(rootNode, fallback, viewport)
 
     if (width <= 0) return false
 
-    const height = ensureViewportHeight(state, viewport, width)
+    const height = ensureViewportHeight(state, rootNode, viewport, width)
     if (height <= 0) return false
 
     if (width !== state.lastWidth || height !== state.lastHeight) {
@@ -166,6 +223,16 @@ function buildCanvasFont(computed) {
   return `${style}${weight}${computed.fontSize} ${computed.fontFamily}`.trim()
 }
 
+function getLayoutWidth(rootNode, fallback, viewport) {
+  const viewportWidth = viewport.clientWidth
+  if (viewportWidth > 0) return Math.round(viewportWidth)
+
+  const fallbackWidth = fallback.getBoundingClientRect().width
+  if (fallbackWidth > 0) return Math.round(fallbackWidth)
+
+  return Math.round(rootNode.getBoundingClientRect().width)
+}
+
 function computeHeroLayout(width, height, field) {
   return {
     insetX: Math.max(10, width * 0.014),
@@ -177,7 +244,7 @@ function computeHeroLayout(width, height, field) {
   }
 }
 
-function ensureViewportHeight(state, viewport, width) {
+function ensureViewportHeight(state, rootNode, viewport, width) {
   const widthInset = Math.max(10, width * 0.014)
   const naturalWidth = Math.max(120, width - widthInset * 2)
   const naturalLineCount = countWrappedLines(state.prepared, naturalWidth)
@@ -203,7 +270,9 @@ function ensureViewportHeight(state, viewport, width) {
 
   if (viewportHeight !== state.viewportHeight) {
     state.viewportHeight = viewportHeight
+    viewport.style.height = `${viewportHeight}px`
     viewport.style.minHeight = `${viewportHeight}px`
+    rootNode.style.minHeight = `${viewportHeight}px`
   }
 
   return viewportHeight
@@ -330,24 +399,27 @@ function buildActiveField(x, y, width, height) {
   }
 }
 
-function getPreviewField(viewport) {
-  return buildActiveField(
-    viewport.clientWidth * 0.7,
-    viewport.clientHeight * 0.42,
-    viewport.clientWidth,
-    viewport.clientHeight,
-  )
+function getPreviewField(width, height) {
+  return buildActiveField(width * 0.7, height * 0.42, width, height)
 }
 
 function getCurrentField(state, width, height) {
   const restField = buildRestField(width, height)
 
   if (state.currentField === null) {
-    state.currentField = state.targetField ?? restField
+    state.currentField = (
+      !state.interactive && state.previewMode === 'cursor'
+        ? getPreviewField(width, height)
+        : state.targetField ?? restField
+    )
   }
 
   if (state.targetField === null) {
-    state.targetField = restField
+    state.targetField = (
+      !state.interactive && state.previewMode === 'cursor'
+        ? getPreviewField(width, height)
+        : restField
+    )
   }
 
   if (!state.interactive) {
@@ -545,14 +617,6 @@ function computeGlyphOpacity(field, x, y) {
   const t = smootherstep(inner, outer, distance)
 
   return 0.12 + Math.pow(t, 1.18) * 0.88
-}
-
-function smoothstep(edge0, edge1, value) {
-  if (value <= edge0) return 0
-  if (value >= edge1) return 1
-
-  const t = clamp((value - edge0) / (edge1 - edge0), 0, 1)
-  return t * t * (3 - 2 * t)
 }
 
 function smootherstep(edge0, edge1, value) {
