@@ -24,6 +24,45 @@ function normalize(x, y, fallbackX = 1, fallbackY = 0) {
   return { x: x / length, y: y / length }
 }
 
+function shortestWrappedDelta(delta, extent) {
+  if (!Number.isFinite(extent) || extent <= 0) return delta
+
+  if (delta > extent * 0.5) return delta - extent
+  if (delta < -extent * 0.5) return delta + extent
+  return delta
+}
+
+function wrapCoordinate(value, extent) {
+  if (!Number.isFinite(extent) || extent <= 0) return value
+
+  let wrapped = value
+  while (wrapped < 0) wrapped += extent
+  while (wrapped >= extent) wrapped -= extent
+  return wrapped
+}
+
+function wrapParticleToBounds(particle, bounds) {
+  const nextX = wrapCoordinate(particle.x, bounds.width)
+  const shiftX = nextX - particle.x
+  if (shiftX !== 0) {
+    particle.x = nextX
+    particle.px += shiftX
+  }
+
+  const nextY = wrapCoordinate(particle.y, bounds.height)
+  const shiftY = nextY - particle.y
+  if (shiftY !== 0) {
+    particle.y = nextY
+    particle.py += shiftY
+  }
+}
+
+function wrapParticlesToBounds(particles, bounds) {
+  for (let index = 0; index < particles.length; index++) {
+    wrapParticleToBounds(particles[index], bounds)
+  }
+}
+
 function integrateParticles(particles, dt, config) {
   const dtSquared = dt * dt
 
@@ -43,11 +82,11 @@ function integrateParticles(particles, dt, config) {
   }
 }
 
-function solveDistanceConstraint(constraint, particles) {
+function solveDistanceConstraint(constraint, particles, bounds) {
   const a = particles[constraint.a]
   const b = particles[constraint.b]
-  const dx = b.x - a.x
-  const dy = b.y - a.y
+  const dx = shortestWrappedDelta(b.x - a.x, bounds.width)
+  const dy = shortestWrappedDelta(b.y - a.y, bounds.height)
   const distance = Math.hypot(dx, dy)
 
   if (distance <= 0.0001) return
@@ -62,19 +101,23 @@ function solveDistanceConstraint(constraint, particles) {
   b.y -= correctionY
 }
 
-function clampDisplacement(particle, maxDisplacement) {
+function clampDisplacement(particle, bounds, maxDisplacement) {
   const dx = particle.x - particle.baseX
   const dy = particle.y - particle.baseY
   const displacement = Math.hypot(dx, dy)
+  const crossFieldReturn = (
+    Math.abs(dx) > bounds.width * 0.5 ||
+    Math.abs(dy) > bounds.height * 0.5
+  )
 
-  if (displacement <= maxDisplacement || displacement <= 0.0001) return
+  if (crossFieldReturn || displacement <= maxDisplacement || displacement <= 0.0001) return
 
   const scale = maxDisplacement / displacement
   particle.x = particle.baseX + dx * scale
   particle.y = particle.baseY + dy * scale
 }
 
-function solveConstraints(system, config) {
+function solveConstraints(system, bounds, config) {
   const { particles, lines, neighborConstraints, wordConstraints, lineConstraints } = system
 
   for (let iteration = 0; iteration < config.solverIterations; iteration++) {
@@ -86,20 +129,22 @@ function solveConstraints(system, config) {
     }
 
     for (let index = 0; index < neighborConstraints.length; index++) {
-      solveDistanceConstraint(neighborConstraints[index], particles)
+      solveDistanceConstraint(neighborConstraints[index], particles, bounds)
     }
 
     for (let index = 0; index < wordConstraints.length; index++) {
-      solveDistanceConstraint(wordConstraints[index], particles)
+      solveDistanceConstraint(wordConstraints[index], particles, bounds)
     }
 
     for (let index = 0; index < lineConstraints.length; index++) {
-      solveDistanceConstraint(lineConstraints[index], particles)
+      solveDistanceConstraint(lineConstraints[index], particles, bounds)
     }
 
     for (let index = 0; index < particles.length; index++) {
-      clampDisplacement(particles[index], config.maxDisplacement)
+      clampDisplacement(particles[index], bounds, config.maxDisplacement)
     }
+
+    wrapParticlesToBounds(particles, bounds)
   }
 }
 
@@ -184,6 +229,7 @@ export class SwarmSimulation {
     this.burstFields = []
     this.spatialHash = new SpatialHash(config.hashCellSize)
     this.stats = measureParticleStats([])
+    this.bounds = { width: 0, height: 0 }
   }
 
   reset(layout) {
@@ -191,6 +237,10 @@ export class SwarmSimulation {
     this.stats = measureParticleStats(this.system.particles)
     this.state = SWARM_STATES.IDLE
     this.burstFields = []
+    this.bounds = {
+      width: layout.width,
+      height: layout.height,
+    }
   }
 
   setHoverField(field) {
@@ -234,7 +284,8 @@ export class SwarmSimulation {
     applyFieldForces(particles, activeFields)
     applySecondaryBoids(particles, this.spatialHash, this.config)
     integrateParticles(particles, clamp(dt, this.config.dtMin, this.config.dtMax), this.config)
-    solveConstraints(this.system, this.config)
+    wrapParticlesToBounds(particles, this.bounds)
+    solveConstraints(this.system, this.bounds, this.config)
 
     this.stats = measureParticleStats(particles)
 
