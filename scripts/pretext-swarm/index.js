@@ -37,14 +37,14 @@ function getPreviewPoint(width, height) {
 function publishSwarmDebug(rootNode, interactive, state, simulation) {
   rootNode.dataset.pretextRenderer = 'swarm-canvas'
   rootNode.dataset.pretextInteractive = String(interactive)
-  rootNode.dataset.pretextWrap = 'teleport-direct-home'
+  rootNode.dataset.pretextWrap = 'toroidal-tile-home'
 
   if (typeof window === 'undefined') return
 
   window.__pretextHero = {
     mode: 'swarm-canvas',
     interactive,
-    wrap: 'teleport-direct-home',
+    wrap: 'toroidal-tile-home',
     root: rootNode,
     get snapshot() {
       return {

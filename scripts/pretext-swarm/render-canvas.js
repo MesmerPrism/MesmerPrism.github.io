@@ -1,5 +1,38 @@
+import { getAlignedAnchorTarget, wrapValue } from './wrap.js'
+
 function clamp(value, min, max) {
   return Math.min(Math.max(value, min), max)
+}
+
+function getWrapOffsets(position, extent, margin) {
+  const offsets = [0]
+
+  if (position < margin) {
+    offsets.push(extent)
+  }
+
+  if (position > extent - margin) {
+    offsets.push(-extent)
+  }
+
+  return offsets
+}
+
+function renderWrappedGlyph(context, renderer, particle, wrappedX, wrappedY, baselineOffset, wrapMargin) {
+  const drawX = wrappedX - particle.width * 0.5
+  const drawY = wrappedY + baselineOffset
+  const xOffsets = getWrapOffsets(wrappedX, renderer.width, wrapMargin)
+  const yOffsets = getWrapOffsets(wrappedY, renderer.height, wrapMargin)
+
+  for (let xIndex = 0; xIndex < xOffsets.length; xIndex++) {
+    for (let yIndex = 0; yIndex < yOffsets.length; yIndex++) {
+      context.fillText(
+        particle.glyph,
+        drawX + xOffsets[xIndex],
+        drawY + yOffsets[yIndex],
+      )
+    }
+  }
 }
 
 export function createCanvasStage(viewport) {
@@ -47,6 +80,7 @@ export function renderCanvasSwarm(renderer, particles, options) {
     lineHeight,
     color,
     maxDisplacement,
+    wrapMargin = Math.max(lineHeight * 1.2, maxDisplacement * 0.85),
   } = options
 
   const context = renderer.context
@@ -63,12 +97,21 @@ export function renderCanvasSwarm(renderer, particles, options) {
     const particle = particles[index]
     if (particle.glyph.trim().length === 0) continue
 
-    const displacement = Math.hypot(particle.x - particle.baseX, particle.y - particle.baseY)
+    const targetX = getAlignedAnchorTarget(particle.x, particle.baseX, renderer.width)
+    const targetY = getAlignedAnchorTarget(particle.y, particle.baseY, renderer.height)
+    const wrappedX = wrapValue(particle.x, renderer.width)
+    const wrappedY = wrapValue(particle.y, renderer.height)
+    const displacement = Math.hypot(particle.x - targetX, particle.y - targetY)
+
     context.globalAlpha = clamp(1 - displacement / (maxDisplacement * 4), 0.78, 1)
-    context.fillText(
-      particle.glyph,
-      particle.x - particle.width * 0.5,
-      particle.y + baselineOffset,
+    renderWrappedGlyph(
+      context,
+      renderer,
+      particle,
+      wrappedX,
+      wrappedY,
+      baselineOffset,
+      wrapMargin,
     )
   }
 
