@@ -34,6 +34,26 @@ function getPreviewPoint(width, height) {
   }
 }
 
+function publishSwarmDebug(rootNode, interactive, state, simulation) {
+  rootNode.dataset.pretextRenderer = 'swarm-canvas'
+  rootNode.dataset.pretextInteractive = String(interactive)
+
+  if (typeof window === 'undefined') return
+
+  window.__pretextHero = {
+    mode: 'swarm-canvas',
+    interactive,
+    root: rootNode,
+    get snapshot() {
+      return {
+        state: state.phase,
+        stats: { ...state.stats },
+        particleCount: simulation.getParticles().length,
+      }
+    },
+  }
+}
+
 export async function startPretextSwarm({
   rootNode,
   viewport,
@@ -67,10 +87,13 @@ export async function startPretextSwarm({
     velocityY: 0,
     hasPointer: false,
     ready: false,
+    phase: simulation.state,
+    stats: simulation.stats,
   }
 
   rootNode.classList.add('is-enhanced', 'is-canvas-mode')
   rootNode.classList.remove('is-dom-mode')
+  publishSwarmDebug(rootNode, interactive, state, simulation)
 
   function rebuildLayout() {
     const width = getLayoutWidth(rootNode, fallback, viewport)
@@ -116,6 +139,11 @@ export async function startPretextSwarm({
   }
 
   function render(snapshot = null) {
+    if (snapshot !== null) {
+      state.phase = snapshot.state
+      state.stats = snapshot.stats
+    }
+
     renderCanvasSwarm(
       renderer,
       simulation.getParticles(),

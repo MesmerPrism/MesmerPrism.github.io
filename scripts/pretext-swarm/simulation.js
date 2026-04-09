@@ -7,6 +7,23 @@ function clamp(value, min, max) {
   return Math.min(Math.max(value, min), max)
 }
 
+function smoothstep(edge0, edge1, value) {
+  if (value <= edge0) return 0
+  if (value >= edge1) return 1
+
+  const t = clamp((value - edge0) / (edge1 - edge0), 0, 1)
+  return t * t * (3 - 2 * t)
+}
+
+function normalize(x, y, fallbackX = 1, fallbackY = 0) {
+  const length = Math.hypot(x, y)
+  if (length <= 0.0001) {
+    return { x: fallbackX, y: fallbackY }
+  }
+
+  return { x: x / length, y: y / length }
+}
+
 function integrateParticles(particles, dt, config) {
   const dtSquared = dt * dt
 
@@ -63,14 +80,9 @@ function solveConstraints(system, config) {
   for (let iteration = 0; iteration < config.solverIterations; iteration++) {
     for (let index = 0; index < particles.length; index++) {
       const particle = particles[index]
-      const line = lines[particle.lineIndex]
 
       particle.x += (particle.baseX - particle.x) * config.anchorK
       particle.y += (particle.baseY - particle.y) * config.anchorK
-
-      if (line !== undefined) {
-        particle.y += (line.centerY - particle.y) * config.lineK
-      }
     }
 
     for (let index = 0; index < neighborConstraints.length; index++) {
@@ -88,6 +100,78 @@ function solveConstraints(system, config) {
     for (let index = 0; index < particles.length; index++) {
       clampDisplacement(particles[index], config.maxDisplacement)
     }
+  }
+}
+
+function limitVector(x, y, maxLength) {
+  const length = Math.hypot(x, y)
+  if (length <= maxLength || length <= 0.0001) {
+    return { x, y }
+  }
+
+  const scale = maxLength / length
+  return {
+    x: x * scale,
+    y: y * scale,
+  }
+}
+
+function updateMacroWordDrift(system, activeFields, dt, config) {
+  const ease = activeFields.length > 0 ? config.macroWordEase : config.macroSettleEase
+
+  for (let index = 0; index < system.words.length; index++) {
+    const word = system.words[index]
+    let targetOffsetX = 0
+    let targetOffsetY = 0
+    const probeX = word.centroidX + word.offsetX
+    const probeY = word.centroidY + word.offsetY
+
+    for (let fieldIndex = 0; fieldIndex < activeFields.length; fieldIndex++) {
+      const field = activeFields[fieldIndex]
+      const dx = probeX - field.x
+      const dy = probeY - field.y
+      const distance = Math.hypot(dx, dy)
+      const influenceRadius = field.falloff * 1.08
+
+      if (distance >= influenceRadius) continue
+
+      const radial = normalize(dx, dy, dx >= 0 ? 1 : -1, 0)
+      const tangent = {
+        x: -radial.y,
+        y: radial.x,
+      }
+      const intensity = 1 - smoothstep(field.radius * 0.18, influenceRadius, distance)
+      const push = (
+        field.kind === 'burst'
+          ? config.macroBurstPush
+          : config.macroHoverPush
+      ) * intensity
+      const swirl = (
+        field.kind === 'burst'
+          ? config.macroBurstSwirl
+          : config.macroHoverSwirl
+      ) * intensity
+      const flow = (
+        field.kind === 'burst'
+          ? config.macroBurstFlow
+          : config.macroHoverFlow
+      ) * intensity
+
+      targetOffsetX += radial.x * push + tangent.x * swirl + field.directionX * flow
+      targetOffsetY += radial.y * push + tangent.y * swirl + field.directionY * flow
+    }
+
+    const limited = limitVector(targetOffsetX, targetOffsetY, config.macroDriftLimit)
+    word.offsetX += (limited.x - word.offsetX) * ease * dt
+    word.offsetY += (limited.y - word.offsetY) * ease * dt
+  }
+
+  for (let index = 0; index < system.particles.length; index++) {
+    const particle = system.particles[index]
+    const word = system.words[particle.wordIndex]
+
+    particle.baseX = particle.homeX + (word?.offsetX ?? 0)
+    particle.baseY = particle.homeY + (word?.offsetY ?? 0)
   }
 }
 
@@ -140,6 +224,12 @@ export class SwarmSimulation {
       ? [...this.burstFields]
       : [this.hoverField, ...this.burstFields]
 
+    updateMacroWordDrift(
+      this.system,
+      activeFields,
+      clamp(dt, this.config.dtMin, this.config.dtMax),
+      this.config,
+    )
     this.spatialHash.rebuild(particles)
     applyFieldForces(particles, activeFields)
     applySecondaryBoids(particles, this.spatialHash, this.config)
@@ -150,7 +240,8 @@ export class SwarmSimulation {
 
     const settling = (
       this.stats.averageVelocity > this.config.sleepVelocityThreshold ||
-      this.stats.averageDisplacement > this.config.sleepDisplacementThreshold
+      this.stats.averageDisplacement > this.config.sleepDisplacementThreshold ||
+      this.stats.averageAnchorDisplacement > this.config.sleepDisplacementThreshold * 0.72
     )
 
     if (this.burstFields.length > 0) {

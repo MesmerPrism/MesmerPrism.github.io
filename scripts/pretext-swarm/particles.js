@@ -7,10 +7,33 @@ function createConstraint(a, b, restLength, stiffness) {
 }
 
 export function createParticleSystem(layout, config) {
-  const particles = layout.anchors.map(anchor => ({ ...anchor }))
+  const particles = layout.anchors.map(anchor => ({
+    ...anchor,
+    homeX: anchor.baseX,
+    homeY: anchor.baseY,
+  }))
   const neighborConstraints = []
   const wordConstraints = []
   const lineConstraints = []
+  const words = layout.words.map(word => {
+    let centroidX = 0
+    let centroidY = 0
+
+    for (let index = 0; index < word.anchorIds.length; index++) {
+      const anchor = layout.anchors[word.anchorIds[index]]
+      centroidX += anchor.baseX
+      centroidY += anchor.baseY
+    }
+
+    const count = Math.max(word.anchorIds.length, 1)
+    return {
+      ...word,
+      centroidX: centroidX / count,
+      centroidY: centroidY / count,
+      offsetX: 0,
+      offsetY: 0,
+    }
+  })
 
   for (let index = 0; index < particles.length; index++) {
     const particle = particles[index]
@@ -26,8 +49,8 @@ export function createParticleSystem(layout, config) {
     )
   }
 
-  for (let wordIndex = 0; wordIndex < layout.words.length; wordIndex++) {
-    const word = layout.words[wordIndex]
+  for (let wordIndex = 0; wordIndex < words.length; wordIndex++) {
+    const word = words[wordIndex]
     if (word.anchorIds.length < 2) continue
 
     const firstId = word.anchorIds[0]
@@ -67,7 +90,7 @@ export function createParticleSystem(layout, config) {
           a,
           b,
           distanceBetweenAnchors(layout.anchors[a], layout.anchors[b]),
-          config.lineK,
+          config.lineK * 0.5,
         ),
       )
     }
@@ -76,7 +99,7 @@ export function createParticleSystem(layout, config) {
   return {
     particles,
     lines: layout.lines,
-    words: layout.words,
+    words,
     neighborConstraints,
     wordConstraints,
     lineConstraints,
@@ -87,27 +110,35 @@ export function measureParticleStats(particles) {
   if (particles.length === 0) {
     return {
       averageDisplacement: 0,
+      averageAnchorDisplacement: 0,
       averageVelocity: 0,
       maxDisplacement: 0,
     }
   }
 
   let displacementSum = 0
+  let anchorDisplacementSum = 0
   let velocitySum = 0
   let maxDisplacement = 0
 
   for (let index = 0; index < particles.length; index++) {
     const particle = particles[index]
-    const displacement = Math.hypot(particle.x - particle.baseX, particle.y - particle.baseY)
+    const displacement = Math.hypot(particle.x - particle.homeX, particle.y - particle.homeY)
+    const anchorDisplacement = Math.hypot(
+      particle.baseX - particle.homeX,
+      particle.baseY - particle.homeY,
+    )
     const velocity = Math.hypot(particle.x - particle.px, particle.y - particle.py)
 
     displacementSum += displacement
+    anchorDisplacementSum += anchorDisplacement
     velocitySum += velocity
     maxDisplacement = Math.max(maxDisplacement, displacement)
   }
 
   return {
     averageDisplacement: displacementSum / particles.length,
+    averageAnchorDisplacement: anchorDisplacementSum / particles.length,
     averageVelocity: velocitySum / particles.length,
     maxDisplacement,
   }

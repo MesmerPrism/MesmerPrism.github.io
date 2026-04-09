@@ -57,8 +57,13 @@ async function startPretextHero(rootNode) {
   viewport.style.minHeight = ''
   rootNode.style.minHeight = ''
   rootNode.classList.remove('is-enhanced', 'is-ready', 'is-dom-mode', 'is-canvas-mode')
+  rootNode.dataset.pretextInteractive = String(interactive)
 
-  if (mode === HERO_MODES.STATIC) return
+  if (mode === HERO_MODES.STATIC) {
+    rootNode.dataset.pretextRenderer = HERO_MODES.STATIC
+    publishDomDebug(rootNode, HERO_MODES.STATIC, interactive)
+    return
+  }
 
   if (mode === HERO_MODES.SWARM_CANVAS) {
     try {
@@ -132,6 +137,8 @@ function startDomHero({
   }
 
   rootNode.classList.add('is-enhanced', 'is-dom-mode')
+  rootNode.dataset.pretextRenderer = HERO_MODES.CURRENT_DOM
+  publishDomDebug(rootNode, HERO_MODES.CURRENT_DOM, interactive)
   if (renderFrame()) {
     rootNode.classList.add('is-ready')
   }
@@ -221,6 +228,16 @@ function buildCanvasFont(computed) {
   const style = computed.fontStyle === 'normal' ? '' : `${computed.fontStyle} `
   const weight = computed.fontWeight ? `${computed.fontWeight} ` : ''
   return `${style}${weight}${computed.fontSize} ${computed.fontFamily}`.trim()
+}
+
+function publishDomDebug(rootNode, mode, interactive) {
+  if (typeof window === 'undefined') return
+
+  window.__pretextHero = {
+    mode,
+    interactive,
+    root: rootNode,
+  }
 }
 
 function getLayoutWidth(rootNode, fallback, viewport) {
