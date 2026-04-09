@@ -1,5 +1,3 @@
-import { getAlignedAnchorTarget, getNearestWrappedValue, getTileIndex } from './wrap.js'
-
 function clamp(value, min, max) {
   return Math.min(Math.max(value, min), max)
 }
@@ -55,16 +53,10 @@ function capsuleDistance(x, y, ax, ay, bx, by, radius) {
   }
 }
 
-function strongestShapeSample(field, particle, bounds) {
-  const sampleX = bounds === null
-    ? particle.x
-    : getNearestWrappedValue(particle.x, field.x, bounds.width)
-  const sampleY = bounds === null
-    ? particle.y
-    : getNearestWrappedValue(particle.y, field.y, bounds.height)
+function strongestShapeSample(field, particle) {
   const circle = circleDistance(
-    sampleX,
-    sampleY,
+    particle.x,
+    particle.y,
     field.x,
     field.y,
     field.radius,
@@ -77,8 +69,8 @@ function strongestShapeSample(field, particle, bounds) {
     const endY = field.y + field.directionY * field.length
     shapeSamples.push(
       capsuleDistance(
-        sampleX,
-        sampleY,
+        particle.x,
+        particle.y,
         field.x,
         field.y,
         endX,
@@ -144,13 +136,13 @@ export function advanceBurstField(field, elapsedMs, config) {
   }
 }
 
-export function applyFieldForces(particles, fields, bounds = null) {
+export function applyFieldForces(particles, fields) {
   for (let index = 0; index < particles.length; index++) {
     const particle = particles[index]
 
     for (let fieldIndex = 0; fieldIndex < fields.length; fieldIndex++) {
       const field = fields[fieldIndex]
-      const sample = strongestShapeSample(field, particle, bounds)
+      const sample = strongestShapeSample(field, particle)
 
       if (sample.distance >= field.falloff) continue
 
@@ -163,23 +155,10 @@ export function applyFieldForces(particles, fields, bounds = null) {
   }
 }
 
-export function applySecondaryBoids(particles, spatialHash, config, bounds = null) {
+export function applySecondaryBoids(particles, spatialHash, config) {
   for (let index = 0; index < particles.length; index++) {
     const particle = particles[index]
-    if (
-      bounds !== null &&
-      (getTileIndex(particle.x, bounds.width) !== 0 || getTileIndex(particle.y, bounds.height) !== 0)
-    ) {
-      continue
-    }
-
-    const targetX = bounds === null
-      ? particle.baseX
-      : getAlignedAnchorTarget(particle.x, particle.baseX, bounds.width)
-    const targetY = bounds === null
-      ? particle.baseY
-      : getAlignedAnchorTarget(particle.y, particle.baseY, bounds.height)
-    const displacement = Math.hypot(particle.x - targetX, particle.y - targetY)
+    const displacement = Math.hypot(particle.x - particle.baseX, particle.y - particle.baseY)
 
     if (displacement < config.boidDetachThreshold) continue
 
@@ -202,12 +181,6 @@ export function applySecondaryBoids(particles, spatialHash, config, bounds = nul
       if (otherId === index) continue
 
       const other = particles[otherId]
-      if (
-        bounds !== null &&
-        (getTileIndex(other.x, bounds.width) !== 0 || getTileIndex(other.y, bounds.height) !== 0)
-      ) {
-        continue
-      }
       const dx = particle.x - other.x
       const dy = particle.y - other.y
       const distance = Math.hypot(dx, dy)

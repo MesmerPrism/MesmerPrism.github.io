@@ -1,5 +1,3 @@
-import { getAlignedAnchorTarget } from './wrap.js'
-
 function distanceBetweenAnchors(anchorA, anchorB) {
   return Math.hypot(anchorB.baseX - anchorA.baseX, anchorB.baseY - anchorA.baseY)
 }
@@ -108,7 +106,7 @@ export function createParticleSystem(layout, config) {
   }
 }
 
-export function measureParticleStats(particles, bounds = null) {
+export function measureParticleStats(particles) {
   if (particles.length === 0) {
     return {
       averageDisplacement: 0,
@@ -125,13 +123,7 @@ export function measureParticleStats(particles, bounds = null) {
 
   for (let index = 0; index < particles.length; index++) {
     const particle = particles[index]
-    const homeTargetX = bounds === null
-      ? particle.homeX
-      : getAlignedAnchorTarget(particle.x, particle.homeX, bounds.width)
-    const homeTargetY = bounds === null
-      ? particle.homeY
-      : getAlignedAnchorTarget(particle.y, particle.homeY, bounds.height)
-    const displacement = Math.hypot(particle.x - homeTargetX, particle.y - homeTargetY)
+    const displacement = Math.hypot(particle.x - particle.homeX, particle.y - particle.homeY)
     const anchorDisplacement = Math.hypot(
       particle.baseX - particle.homeX,
       particle.baseY - particle.homeY,

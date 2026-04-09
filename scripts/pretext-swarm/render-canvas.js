@@ -1,5 +1,3 @@
-import { getAlignedAnchorTarget, wrapValue } from './wrap.js'
-
 function clamp(value, min, max) {
   return Math.min(Math.max(value, min), max)
 }
@@ -18,11 +16,11 @@ function getWrapOffsets(position, extent, margin) {
   return offsets
 }
 
-function renderWrappedGlyph(context, renderer, particle, wrappedX, wrappedY, baselineOffset, wrapMargin) {
-  const drawX = wrappedX - particle.width * 0.5
-  const drawY = wrappedY + baselineOffset
-  const xOffsets = getWrapOffsets(wrappedX, renderer.width, wrapMargin)
-  const yOffsets = getWrapOffsets(wrappedY, renderer.height, wrapMargin)
+function renderWrappedGlyph(context, renderer, particle, baselineOffset, wrapMargin) {
+  const drawX = particle.x - particle.width * 0.5
+  const drawY = particle.y + baselineOffset
+  const xOffsets = getWrapOffsets(particle.x, renderer.width, wrapMargin)
+  const yOffsets = getWrapOffsets(particle.y, renderer.height, wrapMargin)
 
   for (let xIndex = 0; xIndex < xOffsets.length; xIndex++) {
     for (let yIndex = 0; yIndex < yOffsets.length; yIndex++) {
@@ -97,22 +95,9 @@ export function renderCanvasSwarm(renderer, particles, options) {
     const particle = particles[index]
     if (particle.glyph.trim().length === 0) continue
 
-    const targetX = getAlignedAnchorTarget(particle.x, particle.baseX, renderer.width)
-    const targetY = getAlignedAnchorTarget(particle.y, particle.baseY, renderer.height)
-    const wrappedX = wrapValue(particle.x, renderer.width)
-    const wrappedY = wrapValue(particle.y, renderer.height)
-    const displacement = Math.hypot(particle.x - targetX, particle.y - targetY)
-
+    const displacement = Math.hypot(particle.x - particle.baseX, particle.y - particle.baseY)
     context.globalAlpha = clamp(1 - displacement / (maxDisplacement * 4), 0.78, 1)
-    renderWrappedGlyph(
-      context,
-      renderer,
-      particle,
-      wrappedX,
-      wrappedY,
-      baselineOffset,
-      wrapMargin,
-    )
+    renderWrappedGlyph(context, renderer, particle, baselineOffset, wrapMargin)
   }
 
   context.globalAlpha = 1

@@ -2,7 +2,6 @@ import { SWARM_STATES } from './config.js'
 import { applyFieldForces, applySecondaryBoids, advanceBurstField } from './forces.js'
 import { createParticleSystem, measureParticleStats } from './particles.js'
 import { SpatialHash } from './spatial-hash.js'
-import { getAlignedAnchorTarget, getTileIndex } from './wrap.js'
 
 function clamp(value, min, max) {
   return Math.min(Math.max(value, min), max)
@@ -44,22 +43,9 @@ function integrateParticles(particles, dt, config) {
   }
 }
 
-function getWrapTiles(particle, bounds) {
-  return {
-    x: getTileIndex(particle.x, bounds.width),
-    y: getTileIndex(particle.y, bounds.height),
-  }
-}
-
-function isWrappedParticle(particle, bounds) {
-  const tiles = getWrapTiles(particle, bounds)
-  return tiles.x !== 0 || tiles.y !== 0
-}
-
-function solveDistanceConstraint(constraint, particles, bounds) {
+function solveDistanceConstraint(constraint, particles) {
   const a = particles[constraint.a]
   const b = particles[constraint.b]
-  if (isWrappedParticle(a, bounds) || isWrappedParticle(b, bounds)) return
   const dx = b.x - a.x
   const dy = b.y - a.y
   const distance = Math.hypot(dx, dy)
@@ -76,77 +62,45 @@ function solveDistanceConstraint(constraint, particles, bounds) {
   b.y -= correctionY
 }
 
-function clampDisplacement(particle, bounds, maxDisplacement) {
-  if (isWrappedParticle(particle, bounds)) return
-
-  const targetX = getAlignedAnchorTarget(particle.x, particle.baseX, bounds.width)
-  const targetY = getAlignedAnchorTarget(particle.y, particle.baseY, bounds.height)
-  const dx = particle.x - targetX
-  const dy = particle.y - targetY
+function clampDisplacement(particle, maxDisplacement) {
+  const dx = particle.x - particle.baseX
+  const dy = particle.y - particle.baseY
   const displacement = Math.hypot(dx, dy)
 
   if (displacement <= maxDisplacement || displacement <= 0.0001) return
 
   const scale = maxDisplacement / displacement
-  particle.x = targetX + dx * scale
-  particle.y = targetY + dy * scale
+  particle.x = particle.baseX + dx * scale
+  particle.y = particle.baseY + dy * scale
 }
 
-function rejoinWrappedParticles(particles, bounds, config) {
-  for (let index = 0; index < particles.length; index++) {
-    const particle = particles[index]
-    const tiles = getWrapTiles(particle, bounds)
-    if (tiles.x === 0 && tiles.y === 0) continue
-
-    const targetX = getAlignedAnchorTarget(particle.x, particle.baseX, bounds.width)
-    const targetY = getAlignedAnchorTarget(particle.y, particle.baseY, bounds.height)
-    const distance = Math.hypot(particle.x - targetX, particle.y - targetY)
-    const velocity = Math.hypot(particle.x - particle.px, particle.y - particle.py)
-
-    if (distance > config.wrapRejoinDistance || velocity > config.wrapRejoinVelocity) {
-      continue
-    }
-
-    const shiftX = -tiles.x * bounds.width
-    const shiftY = -tiles.y * bounds.height
-    particle.x += shiftX
-    particle.y += shiftY
-    particle.px += shiftX
-    particle.py += shiftY
-  }
-}
-
-function solveConstraints(system, bounds, config) {
-  const { particles, neighborConstraints, wordConstraints, lineConstraints } = system
+function solveConstraints(system, config) {
+  const { particles, lines, neighborConstraints, wordConstraints, lineConstraints } = system
 
   for (let iteration = 0; iteration < config.solverIterations; iteration++) {
     for (let index = 0; index < particles.length; index++) {
       const particle = particles[index]
-      const targetX = getAlignedAnchorTarget(particle.x, particle.baseX, bounds.width)
-      const targetY = getAlignedAnchorTarget(particle.y, particle.baseY, bounds.height)
 
-      particle.x += (targetX - particle.x) * config.anchorK
-      particle.y += (targetY - particle.y) * config.anchorK
+      particle.x += (particle.baseX - particle.x) * config.anchorK
+      particle.y += (particle.baseY - particle.y) * config.anchorK
     }
 
     for (let index = 0; index < neighborConstraints.length; index++) {
-      solveDistanceConstraint(neighborConstraints[index], particles, bounds)
+      solveDistanceConstraint(neighborConstraints[index], particles)
     }
 
     for (let index = 0; index < wordConstraints.length; index++) {
-      solveDistanceConstraint(wordConstraints[index], particles, bounds)
+      solveDistanceConstraint(wordConstraints[index], particles)
     }
 
     for (let index = 0; index < lineConstraints.length; index++) {
-      solveDistanceConstraint(lineConstraints[index], particles, bounds)
+      solveDistanceConstraint(lineConstraints[index], particles)
     }
 
     for (let index = 0; index < particles.length; index++) {
-      clampDisplacement(particles[index], bounds, config.maxDisplacement)
+      clampDisplacement(particles[index], config.maxDisplacement)
     }
   }
-
-  rejoinWrappedParticles(particles, bounds, config)
 }
 
 function limitVector(x, y, maxLength) {
@@ -230,16 +184,11 @@ export class SwarmSimulation {
     this.burstFields = []
     this.spatialHash = new SpatialHash(config.hashCellSize)
     this.stats = measureParticleStats([])
-    this.bounds = { width: 0, height: 0 }
   }
 
   reset(layout) {
     this.system = createParticleSystem(layout, this.config)
-    this.bounds = {
-      width: layout.width,
-      height: layout.height,
-    }
-    this.stats = measureParticleStats(this.system.particles, this.bounds)
+    this.stats = measureParticleStats(this.system.particles)
     this.state = SWARM_STATES.IDLE
     this.burstFields = []
   }
@@ -282,12 +231,12 @@ export class SwarmSimulation {
       this.config,
     )
     this.spatialHash.rebuild(particles)
-    applyFieldForces(particles, activeFields, this.bounds)
-    applySecondaryBoids(particles, this.spatialHash, this.config, this.bounds)
+    applyFieldForces(particles, activeFields)
+    applySecondaryBoids(particles, this.spatialHash, this.config)
     integrateParticles(particles, clamp(dt, this.config.dtMin, this.config.dtMax), this.config)
-    solveConstraints(this.system, this.bounds, this.config)
+    solveConstraints(this.system, this.config)
 
-    this.stats = measureParticleStats(particles, this.bounds)
+    this.stats = measureParticleStats(particles)
 
     const settling = (
       this.stats.averageVelocity > this.config.sleepVelocityThreshold ||
