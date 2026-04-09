@@ -58,6 +58,7 @@ async function startPretextHero(rootNode) {
   rootNode.style.minHeight = ''
   rootNode.classList.remove('is-enhanced', 'is-ready', 'is-dom-mode', 'is-canvas-mode')
   rootNode.dataset.pretextInteractive = String(interactive)
+  rootNode.dataset.pretextWrap = 'none'
 
   if (mode === HERO_MODES.STATIC) {
     rootNode.dataset.pretextRenderer = HERO_MODES.STATIC
@@ -236,6 +237,7 @@ function publishDomDebug(rootNode, mode, interactive) {
   window.__pretextHero = {
     mode,
     interactive,
+    wrap: 'none',
     root: rootNode,
   }
 }

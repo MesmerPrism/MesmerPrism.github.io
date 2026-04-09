@@ -2,6 +2,37 @@ function clamp(value, min, max) {
   return Math.min(Math.max(value, min), max)
 }
 
+function getWrapOffsets(position, extent, margin) {
+  const offsets = [0]
+
+  if (position < margin) {
+    offsets.push(extent)
+  }
+
+  if (position > extent - margin) {
+    offsets.push(-extent)
+  }
+
+  return offsets
+}
+
+function renderWrappedGlyph(context, renderer, particle, baselineOffset, wrapMargin) {
+  const drawX = particle.x - particle.width * 0.5
+  const drawY = particle.y + baselineOffset
+  const xOffsets = getWrapOffsets(particle.x, renderer.width, wrapMargin)
+  const yOffsets = getWrapOffsets(particle.y, renderer.height, wrapMargin)
+
+  for (let xIndex = 0; xIndex < xOffsets.length; xIndex++) {
+    for (let yIndex = 0; yIndex < yOffsets.length; yIndex++) {
+      context.fillText(
+        particle.glyph,
+        drawX + xOffsets[xIndex],
+        drawY + yOffsets[yIndex],
+      )
+    }
+  }
+}
+
 export function createCanvasStage(viewport) {
   const stage = document.createElement('div')
   stage.className = 'pretext-swarm'
@@ -47,6 +78,7 @@ export function renderCanvasSwarm(renderer, particles, options) {
     lineHeight,
     color,
     maxDisplacement,
+    wrapMargin = Math.max(lineHeight * 1.2, maxDisplacement * 0.85),
   } = options
 
   const context = renderer.context
@@ -65,11 +97,7 @@ export function renderCanvasSwarm(renderer, particles, options) {
 
     const displacement = Math.hypot(particle.x - particle.baseX, particle.y - particle.baseY)
     context.globalAlpha = clamp(1 - displacement / (maxDisplacement * 4), 0.78, 1)
-    context.fillText(
-      particle.glyph,
-      particle.x - particle.width * 0.5,
-      particle.y + baselineOffset,
-    )
+    renderWrappedGlyph(context, renderer, particle, baselineOffset, wrapMargin)
   }
 
   context.globalAlpha = 1
