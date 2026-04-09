@@ -158,6 +158,8 @@ export function applyFieldForces(particles, fields) {
 export function applySecondaryBoids(particles, spatialHash, config) {
   for (let index = 0; index < particles.length; index++) {
     const particle = particles[index]
+    if (particle.returningFromWrap) continue
+
     const displacement = Math.hypot(particle.x - particle.baseX, particle.y - particle.baseY)
 
     if (displacement < config.boidDetachThreshold) continue
@@ -181,6 +183,7 @@ export function applySecondaryBoids(particles, spatialHash, config) {
       if (otherId === index) continue
 
       const other = particles[otherId]
+      if (other.returningFromWrap) continue
       const dx = particle.x - other.x
       const dy = particle.y - other.y
       const distance = Math.hypot(dx, dy)

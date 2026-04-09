@@ -55,6 +55,8 @@ export const DEFAULT_SWARM_CONFIG = Object.freeze({
   boidSeparationWeight: 0.012,
   boidAlignmentWeight: 0.004,
   boidCohesionWeight: 0.003,
+  wrapRejoinDistance: 22,
+  wrapRejoinVelocity: 0.82,
   sleepVelocityThreshold: 0.06,
   sleepDisplacementThreshold: 1.2,
   dtMin: 0.6,

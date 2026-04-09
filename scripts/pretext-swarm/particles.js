@@ -11,6 +11,7 @@ export function createParticleSystem(layout, config) {
     ...anchor,
     homeX: anchor.baseX,
     homeY: anchor.baseY,
+    returningFromWrap: false,
   }))
   const neighborConstraints = []
   const wordConstraints = []

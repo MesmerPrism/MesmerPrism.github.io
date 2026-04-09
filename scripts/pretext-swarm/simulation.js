@@ -24,42 +24,69 @@ function normalize(x, y, fallbackX = 1, fallbackY = 0) {
   return { x: x / length, y: y / length }
 }
 
-function shortestWrappedDelta(delta, extent) {
-  if (!Number.isFinite(extent) || extent <= 0) return delta
-
-  if (delta > extent * 0.5) return delta - extent
-  if (delta < -extent * 0.5) return delta + extent
-  return delta
-}
-
-function wrapCoordinate(value, extent) {
-  if (!Number.isFinite(extent) || extent <= 0) return value
+function wrapValueWithShift(value, extent) {
+  if (!Number.isFinite(extent) || extent <= 0) {
+    return { value, shift: 0 }
+  }
 
   let wrapped = value
-  while (wrapped < 0) wrapped += extent
-  while (wrapped >= extent) wrapped -= extent
-  return wrapped
-}
+  let shift = 0
 
-function wrapParticleToBounds(particle, bounds) {
-  const nextX = wrapCoordinate(particle.x, bounds.width)
-  const shiftX = nextX - particle.x
-  if (shiftX !== 0) {
-    particle.x = nextX
-    particle.px += shiftX
+  while (wrapped < 0) {
+    wrapped += extent
+    shift += extent
   }
 
-  const nextY = wrapCoordinate(particle.y, bounds.height)
-  const shiftY = nextY - particle.y
-  if (shiftY !== 0) {
-    particle.y = nextY
-    particle.py += shiftY
+  while (wrapped >= extent) {
+    wrapped -= extent
+    shift -= extent
+  }
+
+  return {
+    value: wrapped,
+    shift,
   }
 }
 
-function wrapParticlesToBounds(particles, bounds) {
+function teleportParticlesAcrossBounds(particles, bounds) {
   for (let index = 0; index < particles.length; index++) {
-    wrapParticleToBounds(particles[index], bounds)
+    const particle = particles[index]
+    let wrapped = false
+
+    const wrapX = wrapValueWithShift(particle.x, bounds.width)
+    if (wrapX.shift !== 0) {
+      particle.x = wrapX.value
+      particle.px += wrapX.shift
+      wrapped = true
+    }
+
+    const wrapY = wrapValueWithShift(particle.y, bounds.height)
+    if (wrapY.shift !== 0) {
+      particle.y = wrapY.value
+      particle.py += wrapY.shift
+      wrapped = true
+    }
+
+    if (wrapped) {
+      particle.returningFromWrap = true
+    }
+  }
+}
+
+function updateWrappedReturnState(particles, config) {
+  for (let index = 0; index < particles.length; index++) {
+    const particle = particles[index]
+    if (!particle.returningFromWrap) continue
+
+    const distance = Math.hypot(particle.x - particle.baseX, particle.y - particle.baseY)
+    const velocity = Math.hypot(particle.x - particle.px, particle.y - particle.py)
+
+    if (
+      distance <= config.wrapRejoinDistance &&
+      velocity <= config.wrapRejoinVelocity
+    ) {
+      particle.returningFromWrap = false
+    }
   }
 }
 
@@ -82,11 +109,13 @@ function integrateParticles(particles, dt, config) {
   }
 }
 
-function solveDistanceConstraint(constraint, particles, bounds) {
+function solveDistanceConstraint(constraint, particles) {
   const a = particles[constraint.a]
   const b = particles[constraint.b]
-  const dx = shortestWrappedDelta(b.x - a.x, bounds.width)
-  const dy = shortestWrappedDelta(b.y - a.y, bounds.height)
+  if (a.returningFromWrap || b.returningFromWrap) return
+
+  const dx = b.x - a.x
+  const dy = b.y - a.y
   const distance = Math.hypot(dx, dy)
 
   if (distance <= 0.0001) return
@@ -101,16 +130,14 @@ function solveDistanceConstraint(constraint, particles, bounds) {
   b.y -= correctionY
 }
 
-function clampDisplacement(particle, bounds, maxDisplacement) {
+function clampDisplacement(particle, maxDisplacement) {
+  if (particle.returningFromWrap) return
+
   const dx = particle.x - particle.baseX
   const dy = particle.y - particle.baseY
   const displacement = Math.hypot(dx, dy)
-  const crossFieldReturn = (
-    Math.abs(dx) > bounds.width * 0.5 ||
-    Math.abs(dy) > bounds.height * 0.5
-  )
 
-  if (crossFieldReturn || displacement <= maxDisplacement || displacement <= 0.0001) return
+  if (displacement <= maxDisplacement || displacement <= 0.0001) return
 
   const scale = maxDisplacement / displacement
   particle.x = particle.baseX + dx * scale
@@ -118,7 +145,7 @@ function clampDisplacement(particle, bounds, maxDisplacement) {
 }
 
 function solveConstraints(system, bounds, config) {
-  const { particles, lines, neighborConstraints, wordConstraints, lineConstraints } = system
+  const { particles, neighborConstraints, wordConstraints, lineConstraints } = system
 
   for (let iteration = 0; iteration < config.solverIterations; iteration++) {
     for (let index = 0; index < particles.length; index++) {
@@ -129,22 +156,20 @@ function solveConstraints(system, bounds, config) {
     }
 
     for (let index = 0; index < neighborConstraints.length; index++) {
-      solveDistanceConstraint(neighborConstraints[index], particles, bounds)
+      solveDistanceConstraint(neighborConstraints[index], particles)
     }
 
     for (let index = 0; index < wordConstraints.length; index++) {
-      solveDistanceConstraint(wordConstraints[index], particles, bounds)
+      solveDistanceConstraint(wordConstraints[index], particles)
     }
 
     for (let index = 0; index < lineConstraints.length; index++) {
-      solveDistanceConstraint(lineConstraints[index], particles, bounds)
+      solveDistanceConstraint(lineConstraints[index], particles)
     }
 
     for (let index = 0; index < particles.length; index++) {
-      clampDisplacement(particles[index], bounds, config.maxDisplacement)
+      clampDisplacement(particles[index], config.maxDisplacement)
     }
-
-    wrapParticlesToBounds(particles, bounds)
   }
 }
 
@@ -284,8 +309,9 @@ export class SwarmSimulation {
     applyFieldForces(particles, activeFields)
     applySecondaryBoids(particles, this.spatialHash, this.config)
     integrateParticles(particles, clamp(dt, this.config.dtMin, this.config.dtMax), this.config)
-    wrapParticlesToBounds(particles, this.bounds)
+    teleportParticlesAcrossBounds(particles, this.bounds)
     solveConstraints(this.system, this.bounds, this.config)
+    updateWrappedReturnState(particles, this.config)
 
     this.stats = measureParticleStats(particles)
 
