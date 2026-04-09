@@ -2,7 +2,7 @@ import { SWARM_STATES } from './config.js'
 import { applyFieldForces, applySecondaryBoids, advanceBurstField } from './forces.js'
 import { createParticleSystem, measureParticleStats } from './particles.js'
 import { SpatialHash } from './spatial-hash.js'
-import { getAlignedAnchorTarget, getShortestWrappedDelta } from './wrap.js'
+import { getAlignedAnchorTarget } from './wrap.js'
 
 function clamp(value, min, max) {
   return Math.min(Math.max(value, min), max)
@@ -44,11 +44,11 @@ function integrateParticles(particles, dt, config) {
   }
 }
 
-function solveDistanceConstraint(constraint, particles, bounds) {
+function solveDistanceConstraint(constraint, particles) {
   const a = particles[constraint.a]
   const b = particles[constraint.b]
-  const dx = getShortestWrappedDelta(b.x, a.x, bounds.width)
-  const dy = getShortestWrappedDelta(b.y, a.y, bounds.height)
+  const dx = b.x - a.x
+  const dy = b.y - a.y
   const distance = Math.hypot(dx, dy)
 
   if (distance <= 0.0001) return
@@ -91,15 +91,15 @@ function solveConstraints(system, bounds, config) {
     }
 
     for (let index = 0; index < neighborConstraints.length; index++) {
-      solveDistanceConstraint(neighborConstraints[index], particles, bounds)
+      solveDistanceConstraint(neighborConstraints[index], particles)
     }
 
     for (let index = 0; index < wordConstraints.length; index++) {
-      solveDistanceConstraint(wordConstraints[index], particles, bounds)
+      solveDistanceConstraint(wordConstraints[index], particles)
     }
 
     for (let index = 0; index < lineConstraints.length; index++) {
-      solveDistanceConstraint(lineConstraints[index], particles, bounds)
+      solveDistanceConstraint(lineConstraints[index], particles)
     }
 
     for (let index = 0; index < particles.length; index++) {
