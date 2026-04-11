@@ -1,0 +1,44 @@
+[
+  {
+    "key": "paperWarm",
+    "label": "Warm paper",
+    "hex": "#D8C4A0",
+    "source": "met-letter-of-invitation",
+    "note": "Curated base paper tone from the Koetsu scroll and CMA paper fields."
+  },
+  {
+    "key": "paperSage",
+    "label": "Sage mount",
+    "hex": "#B8C1A6",
+    "source": "nmaa-manuscript-letter",
+    "note": "Quiet alternative field color for secondary surfaces."
+  },
+  {
+    "key": "inkDeep",
+    "label": "Dense ink",
+    "hex": "#241C16",
+    "source": "cma-semi-cursive",
+    "note": "Primary headline and divider ink."
+  },
+  {
+    "key": "inkSoft",
+    "label": "Soft ink",
+    "hex": "#5E4B37",
+    "source": "met-letter-of-invitation",
+    "note": "Secondary text and less aggressive brush marks."
+  },
+  {
+    "key": "sealRed",
+    "label": "Seal red",
+    "hex": "#92453B",
+    "source": "nmaa-two-poems",
+    "note": "Accent only; use sparingly."
+  },
+  {
+    "key": "mountBrown",
+    "label": "Mount brown",
+    "hex": "#8C7656",
+    "source": "nmaa-two-poems",
+    "note": "Muted border and divider support tone."
+  }
+]

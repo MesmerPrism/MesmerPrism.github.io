@@ -1,0 +1,326 @@
+{
+  "generated_at": "2026-03-24T13:34:34Z",
+  "pack": "calligraphy-reference-pack",
+  "purpose": "Museum-backed calligraphy references and derivative elements for future Plasmatic Multitudes styling passes.",
+  "sources": [
+    {
+      "slug": "cma-semi-cursive",
+      "institution": "Cleveland Museum of Art",
+      "title": "Calligraphy in Semi-Cursive Style (xing-caoshu)",
+      "creator": "Wang Duo",
+      "date": "c. 1660-1709",
+      "culture": "China, Qing dynasty (1644-1911)",
+      "medium": "Hanging scroll; ink on paper",
+      "rights": "CC0",
+      "rights_proof": "share_license_status = CC0",
+      "source_page": "https://clevelandart.org/art/2003.353",
+      "rights_url": "https://openaccess-api.clevelandart.org/",
+      "query_url": "https://openaccess-api.clevelandart.org/api/artworks/?q=calligraphy&cc0&has_image=1",
+      "image_url": "https://openaccess-cdn.clevelandart.org/2003.353/2003.353_web.jpg",
+      "local_file": "original/cma-semi-cursive.jpg",
+      "visual_tags": [
+        "bold brush mass",
+        "seal red",
+        "warm paper",
+        "horizontal composition"
+      ],
+      "integration_ideas": [
+        "hero accent image",
+        "brushstroke detail crop",
+        "vermilion seal reference"
+      ],
+      "note": "Strongest single-source example for dense black gesture plus stamp contrast."
+    },
+    {
+      "slug": "cma-running-standard",
+      "institution": "Cleveland Museum of Art",
+      "title": "Poem on Imperial Gift of an Embroidered Silk",
+      "creator": "Wen Zhengming",
+      "date": "c. 1525",
+      "culture": "China, Suzhou, Ming dynasty (1368-1644)",
+      "medium": "Hanging scroll; ink on paper",
+      "rights": "CC0",
+      "rights_proof": "share_license_status = CC0",
+      "source_page": "https://clevelandart.org/art/1998.169",
+      "rights_url": "https://openaccess-api.clevelandart.org/",
+      "query_url": "https://openaccess-api.clevelandart.org/api/artworks/?q=calligraphy&cc0&has_image=1",
+      "image_url": "https://openaccess-cdn.clevelandart.org/1998.169/1998.169_web.jpg",
+      "local_file": "original/cma-running-standard.jpg",
+      "visual_tags": [
+        "vertical column",
+        "quiet ink rhythm",
+        "narrow scroll",
+        "soft paper field"
+      ],
+      "integration_ideas": [
+        "side rail motif",
+        "separator strip",
+        "vertical nav accent"
+      ],
+      "note": "Useful when we need a disciplined vertical reading order instead of a dramatic gesture."
+    },
+    {
+      "slug": "cma-couplet",
+      "institution": "Cleveland Museum of Art",
+      "title": "Calligraphy Couplet",
+      "creator": "Unknown",
+      "date": "after 1911",
+      "culture": "China, Republican period (1912-49)",
+      "medium": "Pair of hanging scrolls; ink on paper",
+      "rights": "CC0",
+      "rights_proof": "share_license_status = CC0",
+      "source_page": "https://clevelandart.org/art/2023.162",
+      "rights_url": "https://openaccess-api.clevelandart.org/",
+      "query_url": "https://openaccess-api.clevelandart.org/api/artworks/?q=calligraphy&cc0&has_image=1",
+      "image_url": "https://openaccess-cdn.clevelandart.org/2023.162/2023.162_web.jpg",
+      "local_file": "original/cma-couplet.jpg",
+      "visual_tags": [
+        "paired scrolls",
+        "strong negative space",
+        "vertical framing",
+        "vermilion stamps"
+      ],
+      "integration_ideas": [
+        "two-column section framing",
+        "paired promo cards",
+        "vertical margin study"
+      ],
+      "note": "Best reference in the set for twin-column composition and the pacing between scroll bodies."
+    },
+    {
+      "slug": "met-abiding-nowhere",
+      "institution": "The Met",
+      "title": "\"Abiding nowhere, the awakened mind arises\"",
+      "creator": "Muso Soseki",
+      "date": "early to mid-14th century",
+      "culture": "Japan",
+      "medium": "Hanging scroll; ink on paper",
+      "rights": "CC0 / Open Access",
+      "rights_proof": "isPublicDomain = true",
+      "source_page": "https://www.metmuseum.org/art/collection/search/816189",
+      "rights_url": "https://www.metmuseum.org/about-the-met/policies-and-documents/open-access",
+      "query_url": "https://collectionapi.metmuseum.org/public/collection/v1/search?hasImages=true&q=calligraphy",
+      "image_url": "https://images.metmuseum.org/CRDImages/as/web-large/DP-17101-002.jpg",
+      "local_file": "original/met-abiding-nowhere.jpg",
+      "visual_tags": [
+        "vertical drama",
+        "dark field edges",
+        "single statement",
+        "brush taper"
+      ],
+      "integration_ideas": [
+        "hero side image",
+        "section opener reference",
+        "ink density benchmark"
+      ],
+      "note": "Good check against over-lightening the interface; the ink should still read as deep and decisive."
+    },
+    {
+      "slug": "met-letter-of-invitation",
+      "institution": "The Met",
+      "title": "Letter of Invitation",
+      "creator": "Hon'ami Koetsu",
+      "date": "after 1615",
+      "culture": "Japan",
+      "medium": "Hanging scroll; ink on paper",
+      "rights": "CC0 / Open Access",
+      "rights_proof": "isPublicDomain = true",
+      "source_page": "https://www.metmuseum.org/art/collection/search/913850",
+      "rights_url": "https://www.metmuseum.org/about-the-met/policies-and-documents/open-access",
+      "query_url": "https://collectionapi.metmuseum.org/public/collection/v1/search?hasImages=true&q=calligraphy",
+      "image_url": "https://images.metmuseum.org/CRDImages/as/web-large/DP-38242-002.jpg",
+      "local_file": "original/met-letter-of-invitation.jpg",
+      "visual_tags": [
+        "paper band",
+        "decorative mount",
+        "quiet script",
+        "horizontal strip"
+      ],
+      "integration_ideas": [
+        "card background reference",
+        "scroll band motif",
+        "subtle panel ornament"
+      ],
+      "note": "Useful for understated panel treatments where the mount and paper strip matter more than raw stroke aggression."
+    },
+    {
+      "slug": "met-yan-zhenqing",
+      "institution": "The Met",
+      "title": "Calligraphy after three texts by Yan Zhenqing",
+      "creator": "Wang Shu",
+      "date": "dated 1729",
+      "culture": "China",
+      "medium": "Handscroll; ink on paper",
+      "rights": "CC0 / Open Access",
+      "rights_proof": "isPublicDomain = true",
+      "source_page": "https://www.metmuseum.org/art/collection/search/36145",
+      "rights_url": "https://www.metmuseum.org/about-the-met/policies-and-documents/open-access",
+      "query_url": "https://collectionapi.metmuseum.org/public/collection/v1/search?hasImages=true&q=calligraphy",
+      "image_url": "https://images.metmuseum.org/CRDImages/as/web-large/sf1986.22_CRD.jpg",
+      "local_file": "original/met-yan-zhenqing.jpg",
+      "visual_tags": [
+        "fine line",
+        "seal red",
+        "wide scroll",
+        "ample paper margin"
+      ],
+      "integration_ideas": [
+        "thin divider study",
+        "headline contrast reference",
+        "wide banner reference"
+      ],
+      "note": "Keeps us from making every brush cue too heavy; this one is precise, airy, and still legible."
+    },
+    {
+      "slug": "nmaa-manuscript-letter",
+      "institution": "National Museum of Asian Art",
+      "title": "Manuscript letter",
+      "creator": "Unknown",
+      "date": "ca. 1627-37",
+      "culture": "Kyoto, Japan",
+      "medium": "Ink on paper, mounted as hanging scroll",
+      "rights": "CC0 / Smithsonian Open Access",
+      "rights_proof": "NMAA search filter media_usage = CC0 and object page exposes Download Image",
+      "source_page": "https://asia.si.edu/explore-art-culture/collections/search/edanmdm:fsg_F1907.149/",
+      "rights_url": "https://asia.si.edu/explore-art-culture/collections/search/?edan_fq%5B%5D=media_usage%3ACC0&edan_fq%5B%5D=object_type%3ACalligraphy+%28visual+works%29",
+      "query_url": "https://www.si.edu/openaccess/devtools",
+      "image_url": "https://ids.si.edu/ids/deliveryService?id=FS-8042_05&max=1600",
+      "local_file": "original/nmaa-manuscript-letter.jpg",
+      "visual_tags": [
+        "sage paper field",
+        "mount textile",
+        "quiet handwriting",
+        "large empty area"
+      ],
+      "integration_ideas": [
+        "background wash reference",
+        "card surface reference",
+        "paper texture sample"
+      ],
+      "note": "Best source for pale paper atmosphere and restrained field color without losing archival character."
+    },
+    {
+      "slug": "nmaa-two-poems",
+      "institution": "National Museum of Asian Art",
+      "title": "Two poems and postscript in standard script",
+      "creator": "Unknown",
+      "date": "17th century",
+      "culture": "China",
+      "medium": "Ink on fan paper",
+      "rights": "CC0 / Smithsonian Open Access",
+      "rights_proof": "NMAA search filter media_usage = CC0 and object page exposes Download Image",
+      "source_page": "https://asia.si.edu/explore-art-culture/collections/search/edanmdm:fsg_F1909.398b/",
+      "rights_url": "https://asia.si.edu/explore-art-culture/collections/search/?edan_fq%5B%5D=media_usage%3ACC0&edan_fq%5B%5D=object_type%3ACalligraphy+%28visual+works%29",
+      "query_url": "https://www.si.edu/openaccess/devtools",
+      "image_url": "https://ids.si.edu/ids/deliveryService?id=FS-7410_20&max=1600",
+      "local_file": "original/nmaa-two-poems.jpg",
+      "visual_tags": [
+        "fan arc",
+        "bronze paper",
+        "seal red",
+        "dense but airy writing"
+      ],
+      "integration_ideas": [
+        "arched ornament reference",
+        "warm metallic paper reference",
+        "accent stamp detail"
+      ],
+      "note": "Useful when we need curvature, warmer substrate color, and a more ceremonial accent structure."
+    }
+  ],
+  "derived": [
+    {
+      "slug": "hero-gesture-cma-semi-cursive",
+      "source": "cma-semi-cursive",
+      "file": "derived/hero-gesture-cma-semi-cursive.jpg",
+      "description": "Large black gesture with adjacent seal.",
+      "purpose": "Hero accent image or low-opacity header ornament."
+    },
+    {
+      "slug": "seal-column-cma-semi-cursive",
+      "source": "cma-semi-cursive",
+      "file": "derived/seal-column-cma-semi-cursive.jpg",
+      "description": "Seal cluster and left margin detail.",
+      "purpose": "Vermilion accent reference and stamp study."
+    },
+    {
+      "slug": "vertical-run-cma-running-standard",
+      "source": "cma-running-standard",
+      "file": "derived/vertical-run-cma-running-standard.jpg",
+      "description": "Tight vertical text rhythm.",
+      "purpose": "Side rail or vertical separator study."
+    },
+    {
+      "slug": "letter-band-met-letter-of-invitation",
+      "source": "met-letter-of-invitation",
+      "file": "derived/letter-band-met-letter-of-invitation.jpg",
+      "description": "Mounted paper strip with handwritten line.",
+      "purpose": "Panel interior treatment or banner strip."
+    },
+    {
+      "slug": "paper-field-nmaa-manuscript-letter",
+      "source": "nmaa-manuscript-letter",
+      "file": "derived/paper-field-nmaa-manuscript-letter.jpg",
+      "description": "Large pale paper field from the manuscript mount.",
+      "purpose": "Background texture reference for calm sections."
+    },
+    {
+      "slug": "fan-arc-nmaa-two-poems",
+      "source": "nmaa-two-poems",
+      "file": "derived/fan-arc-nmaa-two-poems.jpg",
+      "description": "Full fan arc with text flow preserved.",
+      "purpose": "Decorative arc motif or section-end flourish."
+    },
+    {
+      "slug": "seal-detail-nmaa-two-poems",
+      "source": "nmaa-two-poems",
+      "file": "derived/seal-detail-nmaa-two-poems.jpg",
+      "description": "Lower-left vermilion seal detail.",
+      "purpose": "Accent color sample and micro-ornament."
+    }
+  ],
+  "palette": [
+    {
+      "key": "paperWarm",
+      "label": "Warm paper",
+      "hex": "#D8C4A0",
+      "source": "met-letter-of-invitation",
+      "note": "Curated base paper tone from the Koetsu scroll and CMA paper fields."
+    },
+    {
+      "key": "paperSage",
+      "label": "Sage mount",
+      "hex": "#B8C1A6",
+      "source": "nmaa-manuscript-letter",
+      "note": "Quiet alternative field color for secondary surfaces."
+    },
+    {
+      "key": "inkDeep",
+      "label": "Dense ink",
+      "hex": "#241C16",
+      "source": "cma-semi-cursive",
+      "note": "Primary headline and divider ink."
+    },
+    {
+      "key": "inkSoft",
+      "label": "Soft ink",
+      "hex": "#5E4B37",
+      "source": "met-letter-of-invitation",
+      "note": "Secondary text and less aggressive brush marks."
+    },
+    {
+      "key": "sealRed",
+      "label": "Seal red",
+      "hex": "#92453B",
+      "source": "nmaa-two-poems",
+      "note": "Accent only; use sparingly."
+    },
+    {
+      "key": "mountBrown",
+      "label": "Mount brown",
+      "hex": "#8C7656",
+      "source": "nmaa-two-poems",
+      "note": "Muted border and divider support tone."
+    }
+  ]
+}

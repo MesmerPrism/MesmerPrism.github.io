@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Calligraphy Reference Pack</title>
+    <style>
+      :root {
+        --paper: #f4eddc;
+        --paper-strong: #ebe0c8;
+        --ink: #1a1713;
+        --muted: #685947;
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        margin: 0;
+        font: 16px/1.6 Georgia, serif;
+        color: var(--ink);
+        background:
+          linear-gradient(180deg, rgba(255, 255, 255, 0.45), rgba(255, 255, 255, 0)),
+          linear-gradient(180deg, #efe3cc, #f8f1e5 30%, #f1e7d7);
+      }
+
+      main {
+        width: min(100% - 2rem, 84rem);
+        margin: 0 auto;
+        padding: 2rem 0 4rem;
+      }
+
+      h1, h2 {
+        line-height: 1;
+        margin: 0;
+      }
+
+      h1 { font-size: clamp(2.5rem, 6vw, 4rem); }
+      h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); margin-bottom: 1rem; }
+
+      p { max-width: 70ch; }
+
+      .intro,
+      .swatch,
+      .card {
+        background: rgba(255, 255, 255, 0.45);
+        border: 1px solid rgba(86, 65, 42, 0.15);
+      }
+
+      .intro { padding: 1.75rem; }
+
+      .grid,
+      .palette {
+        display: grid;
+        gap: 1rem;
+        margin-top: 1rem;
+      }
+
+      .grid { grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr)); }
+      .palette { grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr)); }
+
+      .card { overflow: hidden; }
+      .card img {
+        display: block;
+        width: 100%;
+        background: var(--paper-strong);
+      }
+
+      .card__body { padding: 1rem 1rem 1.15rem; }
+
+      .eyebrow {
+        margin: 0 0 0.45rem;
+        color: var(--muted);
+        font-size: 0.78rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+
+      .card h3 {
+        margin: 0 0 0.45rem;
+        font-size: 1.2rem;
+        line-height: 1.15;
+      }
+
+      .meta,
+      .tags {
+        margin: 0.45rem 0 0;
+        color: var(--muted);
+        font-size: 0.92rem;
+      }
+
+      .tags strong,
+      .meta strong { color: var(--ink); }
+
+      .swatch { padding: 0.85rem; }
+      .swatch__chip {
+        height: 4rem;
+        margin-bottom: 0.6rem;
+        border: 1px solid rgba(86, 65, 42, 0.15);
+      }
+
+      section { margin-top: 2rem; }
+      a { color: #754130; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header class="intro">
+        <p class="eyebrow">Museum-backed pack</p>
+        <h1>Calligraphy Reference Pack</h1>
+        <p>
+          A small styling set built from the official museum sources already discussed for the site
+          redesign: Cleveland Museum of Art, The Met, and the National Museum of Asian Art.
+        </p>
+        <p>
+          Metadata and rights proof live in <a href="manifest.json">manifest.json</a>. Sampled
+          tokens live in <a href="palette.json">palette.json</a>.
+        </p>
+      </header>
+
+      <section>
+        <h2>Palette Direction</h2>
+        <div class="palette">
+          <article class="swatch"><div class="swatch__chip" style="background:#D8C4A0;"></div><strong>Warm paper</strong><div class="meta">base surfaces and article backgrounds</div></article>
+          <article class="swatch"><div class="swatch__chip" style="background:#B8C1A6;"></div><strong>Sage mount</strong><div class="meta">secondary surfaces and soft field blocks</div></article>
+          <article class="swatch"><div class="swatch__chip" style="background:#241C16;"></div><strong>Dense ink</strong><div class="meta">headlines, dividers, marks</div></article>
+          <article class="swatch"><div class="swatch__chip" style="background:#5E4B37;"></div><strong>Soft ink</strong><div class="meta">secondary text and quieter brush marks</div></article>
+          <article class="swatch"><div class="swatch__chip" style="background:#92453B;"></div><strong>Seal red</strong><div class="meta">accent only; keep sparse</div></article>
+          <article class="swatch"><div class="swatch__chip" style="background:#8C7656;"></div><strong>Mount brown</strong><div class="meta">supporting borders and ornament</div></article>
+        </div>
+      </section>
+
+      <section>
+        <h2>Original References</h2>
+        <div class="grid">
+          <article class="card"><img src="original/cma-semi-cursive.jpg" alt="Cleveland Museum of Art calligraphy in semi-cursive style"><div class="card__body"><p class="eyebrow">Cleveland Museum of Art</p><h3>Calligraphy in Semi-Cursive Style</h3><p class="meta">Bold black gesture, warm paper, and visible seals.</p><p class="tags"><strong>Use for:</strong> hero marks, accent rhythm, seal placement.</p><a href="https://clevelandart.org/art/2003.353">Official object page</a></div></article>
+          <article class="card"><img src="original/cma-running-standard.jpg" alt="Cleveland Museum of Art poem on imperial gift"><div class="card__body"><p class="eyebrow">Cleveland Museum of Art</p><h3>Poem on Imperial Gift</h3><p class="meta">A disciplined vertical scroll with narrow column pacing.</p><p class="tags"><strong>Use for:</strong> side ornaments, section rails, narrow dividers.</p><a href="https://clevelandart.org/art/1998.169">Official object page</a></div></article>
+          <article class="card"><img src="original/cma-couplet.jpg" alt="Cleveland Museum of Art calligraphy couplet"><div class="card__body"><p class="eyebrow">Cleveland Museum of Art</p><h3>Calligraphy Couplet</h3><p class="meta">Twin-scroll composition and clear negative space between columns.</p><p class="tags"><strong>Use for:</strong> paired panels, mirrored blocks, vertical framing.</p><a href="https://clevelandart.org/art/2023.162">Official object page</a></div></article>
+          <article class="card"><img src="original/met-abiding-nowhere.jpg" alt="The Met hanging scroll Abiding nowhere"><div class="card__body"><p class="eyebrow">The Met</p><h3>Abiding Nowhere</h3><p class="meta">High-contrast vertical drama with decisive brush pressure.</p><p class="tags"><strong>Use for:</strong> headline weight checks and hero-side imagery.</p><a href="https://www.metmuseum.org/art/collection/search/816189">Official object page</a></div></article>
+          <article class="card"><img src="original/met-letter-of-invitation.jpg" alt="The Met letter of invitation hanging scroll"><div class="card__body"><p class="eyebrow">The Met</p><h3>Letter of Invitation</h3><p class="meta">Subtle paper band and mount details with quiet script.</p><p class="tags"><strong>Use for:</strong> panel backgrounds and ornamental strips.</p><a href="https://www.metmuseum.org/art/collection/search/913850">Official object page</a></div></article>
+          <article class="card"><img src="original/met-yan-zhenqing.jpg" alt="The Met calligraphy after three texts by Yan Zhenqing"><div class="card__body"><p class="eyebrow">The Met</p><h3>After Yan Zhenqing</h3><p class="meta">Thin linework, airy spacing, and restrained seals.</p><p class="tags"><strong>Use for:</strong> fine dividers and calmer banner references.</p><a href="https://www.metmuseum.org/art/collection/search/36145">Official object page</a></div></article>
+          <article class="card"><img src="original/nmaa-manuscript-letter.jpg" alt="National Museum of Asian Art manuscript letter hanging scroll"><div class="card__body"><p class="eyebrow">National Museum of Asian Art</p><h3>Manuscript Letter</h3><p class="meta">Best paper-field source in the pack, with quiet sage mount color.</p><p class="tags"><strong>Use for:</strong> calm section backgrounds and surface textures.</p><a href="https://asia.si.edu/explore-art-culture/collections/search/edanmdm:fsg_F1907.149/">Official object page</a></div></article>
+          <article class="card"><img src="original/nmaa-two-poems.jpg" alt="National Museum of Asian Art two poems and postscript"><div class="card__body"><p class="eyebrow">National Museum of Asian Art</p><h3>Two Poems and Postscript</h3><p class="meta">Arc composition, warm fan paper, and concentrated vermilion stamp detail.</p><p class="tags"><strong>Use for:</strong> curved ornaments and accent studies.</p><a href="https://asia.si.edu/explore-art-culture/collections/search/edanmdm:fsg_F1909.398b/">Official object page</a></div></article>
+        </div>
+      </section>
+
+      <section>
+        <h2>Direct-Use Derived Elements</h2>
+        <div class="grid">
+          <article class="card"><img src="derived/hero-gesture-cma-semi-cursive.jpg" alt="Derived gesture crop"><div class="card__body"><h3>Hero Gesture</h3><p class="meta">Low-opacity hero ornament or masthead-side mark.</p></div></article>
+          <article class="card"><img src="derived/seal-column-cma-semi-cursive.jpg" alt="Derived seal column crop"><div class="card__body"><h3>Seal Column</h3><p class="meta">Reference for sparse vermilion accents and margin details.</p></div></article>
+          <article class="card"><img src="derived/vertical-run-cma-running-standard.jpg" alt="Derived vertical run crop"><div class="card__body"><h3>Vertical Run</h3><p class="meta">Side divider, rail study, or narrow decorative insert.</p></div></article>
+          <article class="card"><img src="derived/letter-band-met-letter-of-invitation.jpg" alt="Derived letter band crop"><div class="card__body"><h3>Letter Band</h3><p class="meta">Panel stripe, footer band, or card ornament.</p></div></article>
+          <article class="card"><img src="derived/paper-field-nmaa-manuscript-letter.jpg" alt="Derived pale paper field crop"><div class="card__body"><h3>Paper Field</h3><p class="meta">Calm surface texture for low-contrast content areas.</p></div></article>
+          <article class="card"><img src="derived/fan-arc-nmaa-two-poems.jpg" alt="Derived fan arc crop"><div class="card__body"><h3>Fan Arc</h3><p class="meta">Section-end flourish or decorative framing device.</p></div></article>
+          <article class="card"><img src="derived/seal-detail-nmaa-two-poems.jpg" alt="Derived seal detail crop"><div class="card__body"><h3>Seal Detail</h3><p class="meta">Micro-accent reference for buttons, markers, or inline labels.</p></div></article>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

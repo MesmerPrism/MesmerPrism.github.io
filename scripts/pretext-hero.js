@@ -257,8 +257,8 @@ function computeHeroLayout(width, height, field) {
     insetX: Math.max(10, width * 0.014),
     insetY: Math.max(18, height * 0.082, 0),
     minSlotWidth: Math.max(188, width * 0.27),
-    slotPaddingX: Math.max(14, width * 0.02),
-    slotPaddingY: 4,
+    slotPaddingX: Math.max(8, width * 0.012),
+    slotPaddingY: 2,
     field,
   }
 }
@@ -413,8 +413,8 @@ function buildActiveField(x, y, width, height) {
   return {
     x,
     y,
-    layoutRadius: baseRadius * (width < 640 ? 0.115 : 0.135),
-    fadeRadius: baseRadius * (width < 640 ? 0.24 : 0.275),
+    layoutRadius: baseRadius * (width < 640 ? 0.09 : 0.105),
+    fadeRadius: baseRadius * (width < 640 ? 0.17 : 0.2),
   }
 }
 
@@ -466,8 +466,8 @@ function normalizeField(field, width, height) {
   return {
     x: clamp(field.x, 0, width),
     y: clamp(field.y, 0, height),
-    layoutRadius: clamp(field.layoutRadius, 0, baseRadius * 0.18),
-    fadeRadius: clamp(field.fadeRadius, 0, baseRadius * 0.36),
+    layoutRadius: clamp(field.layoutRadius, 0, baseRadius * 0.145),
+    fadeRadius: clamp(field.fadeRadius, 0, baseRadius * 0.26),
   }
 }
 
@@ -631,8 +631,8 @@ function computeGlyphOpacity(field, x, y) {
   if (field.fadeRadius <= 6) return 1
 
   const distance = Math.hypot(x - field.x, (y - field.y) * 1.08)
-  const inner = field.fadeRadius * 0.16
-  const outer = field.fadeRadius * 1.1
+  const inner = field.fadeRadius * 0.12
+  const outer = field.fadeRadius * 0.9
   const t = smootherstep(inner, outer, distance)
 
   return 0.12 + Math.pow(t, 1.18) * 0.88

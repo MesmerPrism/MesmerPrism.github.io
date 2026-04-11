@@ -112,6 +112,11 @@ a:hover {
     text-align: center;
 }
 
+.hero-shell--page {
+    justify-items: start;
+    text-align: left;
+}
+
 .eyebrow {
     margin: 0 0 1rem;
     color: var(--muted);
@@ -141,6 +146,13 @@ h1 {
     letter-spacing: -0.035em;
 }
 
+.project-page h1 {
+    max-width: 46rem;
+    font-size: clamp(3.2rem, 9vw, 5.8rem);
+    line-height: 0.92;
+    white-space: normal;
+}
+
 h2 {
     margin: 0 0 1.2rem;
     font-size: clamp(1.7rem, 3vw, 2.25rem);
@@ -161,7 +173,7 @@ li {
 .plasmatic-intro {
     position: relative;
     width: 100%;
-    max-width: 54rem;
+    max-width: 49rem;
     margin-top: 0.35rem;
 }
 
@@ -172,7 +184,7 @@ li {
 }
 
 .plasmatic-intro__fallback {
-    max-width: 49rem;
+    max-width: none;
     margin: 0 auto;
     padding: 0;
     text-align: left;
@@ -183,11 +195,10 @@ li {
     display: none;
     position: absolute;
     top: 0;
-    left: 50%;
-    width: min(100%, 49rem);
-    max-width: 49rem;
+    left: 0;
+    width: 100%;
+    max-width: none;
     min-height: 1px;
-    transform: translateX(-50%);
     overflow: hidden;
     touch-action: pan-y;
     opacity: 0;
@@ -259,6 +270,10 @@ li {
     justify-content: center;
     gap: 0.75rem;
     margin-top: 1.8rem;
+}
+
+.project-page .hero-actions {
+    justify-content: flex-start;
 }
 
 .action-link {
@@ -354,6 +369,12 @@ li {
     gap: 1rem;
 }
 
+.reference-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+}
+
 .project-card {
     display: flex;
     flex-direction: column;
@@ -366,6 +387,15 @@ li {
 .project-card h3 {
     margin-bottom: 0.55rem;
     font-size: 1.38rem;
+}
+
+.project-card h3 a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.project-card h3 a:hover {
+    color: var(--accent);
 }
 
 .project-kicker {
@@ -478,6 +508,11 @@ li {
     text-transform: uppercase;
 }
 
+.project-lede {
+    font-size: clamp(1.12rem, 2vw, 1.32rem);
+    line-height: 1.68;
+}
+
 .site-footer {
     border-top: 1px solid var(--line);
 }
@@ -517,6 +552,7 @@ li {
 
     .surface-map,
     .project-grid,
+    .reference-grid,
     .two-column,
     .contact-list {
         grid-template-columns: 1fr;
