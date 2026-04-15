@@ -126,12 +126,60 @@ export function buildAnchorLayout({
     lineTop + insetY,
     lineHeight * config.minHeightLines,
   ))
+  const wrapBounds = buildWrapBounds({
+    anchors,
+    lines,
+    lineHeight,
+    width,
+    height,
+    config,
+  })
 
   return {
     anchors,
     lines,
     words: words.filter(Boolean),
+    wrapBounds,
     width,
     height,
+  }
+}
+
+function buildWrapBounds({
+  anchors,
+  lines,
+  lineHeight,
+  width,
+  height,
+  config,
+}) {
+  if (anchors.length === 0 || lines.length === 0) {
+    return {
+      left: 0,
+      top: 0,
+      right: width,
+      bottom: height,
+    }
+  }
+
+  let left = Infinity
+  let right = -Infinity
+
+  for (let index = 0; index < anchors.length; index++) {
+    const anchor = anchors[index]
+    left = Math.min(left, anchor.baseX - anchor.width * 0.5)
+    right = Math.max(right, anchor.baseX + anchor.width * 0.5)
+  }
+
+  const firstLine = lines[0]
+  const lastLine = lines[lines.length - 1]
+  const paddingX = config.wrapPaddingX
+  const paddingY = lineHeight * config.wrapPaddingYLines
+
+  return {
+    left: Math.max(0, Math.floor(left - paddingX)),
+    top: Math.max(0, Math.floor(firstLine.top - paddingY)),
+    right: Math.min(width, Math.ceil(right + paddingX)),
+    bottom: Math.min(height, Math.ceil(lastLine.top + lineHeight + paddingY)),
   }
 }

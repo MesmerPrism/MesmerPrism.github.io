@@ -13,6 +13,7 @@
     --font-mono: Consolas, "Cascadia Mono", "SFMono-Regular", monospace;
     --measure: 46rem;
     --shell: 72rem;
+    --sticky-scroll-offset: 5.75rem;
 }
 
 *,
@@ -23,6 +24,7 @@
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: var(--sticky-scroll-offset);
 }
 
 body {
@@ -533,6 +535,10 @@ li {
 }
 
 @media (max-width: 720px) {
+    :root {
+        --sticky-scroll-offset: 1rem;
+    }
+
     .site-header {
         position: static;
     }

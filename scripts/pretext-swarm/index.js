@@ -50,6 +50,7 @@ function publishSwarmDebug(rootNode, interactive, state, simulation) {
       return {
         state: state.phase,
         stats: { ...state.stats },
+        wrapBounds: state.wrapBounds === null ? null : { ...state.wrapBounds },
         particleCount: simulation.getParticles().length,
       }
     },
@@ -91,6 +92,7 @@ export async function startPretextSwarm({
     ready: false,
     phase: simulation.state,
     stats: simulation.stats,
+    wrapBounds: null,
   }
 
   rootNode.classList.add('is-enhanced', 'is-canvas-mode')
@@ -113,6 +115,7 @@ export async function startPretextSwarm({
     viewport.style.height = `${layout.height}px`
     viewport.style.minHeight = `${layout.height}px`
     rootNode.style.minHeight = `${layout.height}px`
+    state.wrapBounds = layout.wrapBounds
     resizeCanvasStage(renderer, width, layout.height)
     simulation.reset(layout)
     render()
@@ -154,6 +157,8 @@ export async function startPretextSwarm({
         lineHeight,
         color,
         maxDisplacement: config.maxDisplacement,
+        wrapBounds: state.wrapBounds,
+        wrapMargin: config.wrapActivationMargin,
       },
     )
 

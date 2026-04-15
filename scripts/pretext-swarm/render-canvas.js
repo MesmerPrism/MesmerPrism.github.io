@@ -2,25 +2,37 @@ function clamp(value, min, max) {
   return Math.min(Math.max(value, min), max)
 }
 
-function getWrapOffsets(position, extent, margin) {
+function getWrapOffsets(position, start, end, margin) {
+  const extent = end - start
   const offsets = [0]
 
-  if (position < margin) {
+  if (position < start + margin) {
     offsets.push(extent)
   }
 
-  if (position > extent - margin) {
+  if (position > end - margin) {
     offsets.push(-extent)
   }
 
   return offsets
 }
 
-function renderWrappedGlyph(context, renderer, particle, baselineOffset, wrapMargin) {
+function normalizeWrapBounds(renderer, wrapBounds) {
+  const left = Math.max(0, Math.min(wrapBounds?.left ?? 0, renderer.width))
+  const top = Math.max(0, Math.min(wrapBounds?.top ?? 0, renderer.height))
+  const right = Math.max(left + 1, Math.min(wrapBounds?.right ?? renderer.width, renderer.width))
+  const bottom = Math.max(top + 1, Math.min(wrapBounds?.bottom ?? renderer.height, renderer.height))
+
+  return { left, top, right, bottom }
+}
+
+function renderWrappedGlyph(context, renderer, particle, baselineOffset, wrapBounds, wrapMargin) {
   const drawX = particle.x - particle.width * 0.5
   const drawY = particle.y + baselineOffset
-  const xOffsets = getWrapOffsets(particle.x, renderer.width, wrapMargin)
-  const yOffsets = getWrapOffsets(particle.y, renderer.height, wrapMargin)
+  const width = wrapBounds.right - wrapBounds.left
+  const height = wrapBounds.bottom - wrapBounds.top
+  const xOffsets = getWrapOffsets(particle.x, wrapBounds.left, wrapBounds.right, Math.min(wrapMargin, width * 0.5))
+  const yOffsets = getWrapOffsets(particle.y, wrapBounds.top, wrapBounds.bottom, Math.min(wrapMargin, height * 0.5))
 
   for (let xIndex = 0; xIndex < xOffsets.length; xIndex++) {
     for (let yIndex = 0; yIndex < yOffsets.length; yIndex++) {
@@ -78,10 +90,12 @@ export function renderCanvasSwarm(renderer, particles, options) {
     lineHeight,
     color,
     maxDisplacement,
+    wrapBounds,
     wrapMargin = Math.max(lineHeight * 1.2, maxDisplacement * 0.85),
   } = options
 
   const context = renderer.context
+  const activeWrapBounds = normalizeWrapBounds(renderer, wrapBounds)
   context.setTransform(renderer.dpr, 0, 0, renderer.dpr, 0, 0)
   context.clearRect(0, 0, renderer.width, renderer.height)
   context.font = font
@@ -97,7 +111,7 @@ export function renderCanvasSwarm(renderer, particles, options) {
 
     const displacement = Math.hypot(particle.x - particle.baseX, particle.y - particle.baseY)
     context.globalAlpha = clamp(1 - displacement / (maxDisplacement * 4), 0.78, 1)
-    renderWrappedGlyph(context, renderer, particle, baselineOffset, wrapMargin)
+    renderWrappedGlyph(context, renderer, particle, baselineOffset, activeWrapBounds, wrapMargin)
   }
 
   context.globalAlpha = 1
