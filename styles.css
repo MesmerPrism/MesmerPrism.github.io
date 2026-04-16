@@ -482,6 +482,17 @@ li {
     margin-bottom: 0.65rem;
 }
 
+.reference-link,
+.reference-link:visited {
+    color: inherit;
+    text-decoration-color: var(--line);
+}
+
+.reference-link:hover {
+    color: var(--accent);
+    text-decoration-color: currentColor;
+}
+
 .contact-list {
     list-style: none;
     padding: 0;
