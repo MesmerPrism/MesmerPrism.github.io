@@ -102,6 +102,15 @@ export function renderCanvasSwarm(renderer, particles, options) {
   context.textBaseline = 'alphabetic'
   context.textAlign = 'left'
   context.fillStyle = color
+  context.save()
+  context.beginPath()
+  context.rect(
+    activeWrapBounds.left,
+    activeWrapBounds.top,
+    activeWrapBounds.right - activeWrapBounds.left,
+    activeWrapBounds.bottom - activeWrapBounds.top,
+  )
+  context.clip()
 
   const baselineOffset = lineHeight * (0.78 - 0.56)
 
@@ -114,5 +123,6 @@ export function renderCanvasSwarm(renderer, particles, options) {
     renderWrappedGlyph(context, renderer, particle, baselineOffset, activeWrapBounds, wrapMargin)
   }
 
+  context.restore()
   context.globalAlpha = 1
 }
