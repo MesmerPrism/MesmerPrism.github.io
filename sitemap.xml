@@ -81,6 +81,11 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://mesmerprism.com/projects/prophantasia.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://mesmerprism.com/projects/fractal-optics.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
