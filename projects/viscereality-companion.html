@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viscereality Companion | Mesmer Prism</title>
+    <link rel="canonical" href="https://mesmerprism.com/projects/viscereality-companion.html">
+    <meta
+        name="description"
+        content="Viscereality Companion is the Windows operator surface for researchers and labs using Viscereality: install study builds, connect Quest, monitor telemetry, and run operator workflows from one place."
+    >
+    <meta property="og:title" content="Viscereality Companion | Mesmer Prism">
+    <meta
+        property="og:description"
+        content="Public-facing overview of the Windows companion app for Viscereality, including current Sussex-focused delivery, capabilities, docs, downloads, and custom adaptation work."
+    >
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mesmerprism.com/projects/viscereality-companion.html">
+    <meta name="theme-color" content="#f4efe7">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600;1,700&display=swap"
+        rel="stylesheet"
+    >
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body class="project-page">
+    <header class="site-header">
+        <div class="shell header-row">
+            <a class="site-name" href="/">Mesmer Prism</a>
+            <nav class="site-nav" aria-label="Primary">
+                <a href="/#work">Work</a>
+                <a href="/#publications">Publications</a>
+                <a href="/#background">Background</a>
+                <a href="/#contact">Contact</a>
+                <a href="https://github.com/MesmerPrism" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="shell">
+        <section class="hero">
+            <div class="hero-shell hero-shell--page">
+                <p class="eyebrow">Windows operator app</p>
+                <h1>Viscereality Companion</h1>
+                <p class="project-lede">
+                    Viscereality Companion is the Windows operator surface for researchers, labs,
+                    and collaborators who want to use Viscereality without stitching together ADB,
+                    packaging, monitoring, and operator workflows by hand. It keeps install,
+                    launch, live telemetry, study-shell guidance, and session control in one
+                    place.
+                </p>
+                <div class="hero-actions">
+                    <a class="action-link action-link--strong" href="https://mesmerprism.github.io/ViscerealityCompanion/" target="_blank" rel="noopener noreferrer">Docs &amp; downloads</a>
+                    <a class="action-link" href="https://viscereality.org/" target="_blank" rel="noopener noreferrer">Project site</a>
+                    <a class="action-link" href="https://github.com/MesmerPrism/ViscerealityCompanion" target="_blank" rel="noopener noreferrer">Source repo</a>
+                    <a class="action-link" href="/#contact">Contact</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section two-column">
+            <div>
+                <div class="section-heading">
+                    <p class="section-kicker">Purpose</p>
+                    <h2>Why this app exists</h2>
+                </div>
+                <p>
+                    The broader Viscereality system includes a participant-facing Quest runtime,
+                    but researchers should not need to live inside that runtime project just to
+                    run a study. The companion app exists to translate Viscereality into a stable
+                    Windows operator surface: connect the headset, install the right build, check
+                    the live transport, and guide the session from one place.
+                </p>
+                <p>
+                    That matters both for first-time collaborators and for labs that need a
+                    reproducible operator workflow. A good researcher-facing tool should reduce
+                    setup friction, narrow room for protocol mistakes, and make it obvious which
+                    parts of the session are healthy before a participant is already waiting.
+                </p>
+            </div>
+            <div class="detail-stack">
+                <section class="detail-block">
+                    <h3>Current capabilities</h3>
+                    <ul class="plain-list">
+                        <li>USB and Wi-Fi ADB connection from Windows</li>
+                        <li>Install and launch for the bundled Sussex build or another supplied APK</li>
+                        <li>Live Quest, LSL, twin-state, and diagnostics monitoring</li>
+                        <li>Runtime profile, device-profile, and study-shell workflows</li>
+                        <li>Researcher-facing sequential guidance for the current Sussex protocol</li>
+                    </ul>
+                </section>
+                <section class="detail-block">
+                    <h3>Who it is for</h3>
+                    <ul class="plain-list">
+                        <li>Research labs adopting Viscereality for a study or pilot</li>
+                        <li>Operators who need one clear GUI in place of several lab utilities</li>
+                        <li>Collaborators validating builds, telemetry, and participant handoff</li>
+                        <li>Teams that want a dedicated study shell, not a general debug surface</li>
+                    </ul>
+                </section>
+            </div>
+        </section>
+
+        <section class="section two-column">
+            <div>
+                <div class="section-heading">
+                    <p class="section-kicker">Current release</p>
+                    <h2>Sussex first, broader reuse next</h2>
+                </div>
+                <p>
+                    The current public iteration is focused on getting the version for the
+                    collaboration with <a href="https://www.sussex.ac.uk/research/centres/sussex-neuroscience/phd/4yearphd/supervisors/translational-projects/hugo-critchley-project" target="_blank" rel="noopener noreferrer">Hugo Critchley's lab at Sussex</a>
+                    working cleanly end to end. That means the present release is not yet trying
+                    to be every possible multi-study operator surface. It is deliberately focused
+                    on a reliable install, launch, monitoring, and guided-session path for that
+                    collaboration first.
+                </p>
+                <p>
+                    Once that path is stable, the same companion framework can be widened into a
+                    more general-purpose entry point for other Viscereality applications, other
+                    study shells, and other research or deployment contexts that need a clearer
+                    Windows-side control surface.
+                </p>
+            </div>
+            <div class="detail-stack">
+                <section class="detail-block">
+                    <h3>What the Sussex-first release includes</h3>
+                    <ul class="plain-list">
+                        <li>`Sussex University experiment mode` as the dedicated operator surface</li>
+                        <li>Bundled approved Sussex APK, pinned device profile, and operator diagnostics</li>
+                        <li>Sequential Guide and Experiment Session windows for researcher workflow</li>
+                        <li>Packaged Windows install path for reproducible lab handoff</li>
+                    </ul>
+                </section>
+                <section class="detail-block">
+                    <h3>What comes after that</h3>
+                    <ul class="plain-list">
+                        <li>Broader multi-study launcher and reusable shell templates</li>
+                        <li>More generalized operator UX for non-Sussex protocols</li>
+                        <li>Cleaner reusable packaging for other collaborators and deployments</li>
+                    </ul>
+                </section>
+            </div>
+        </section>
+
+        <section class="section two-column">
+            <div>
+                <div class="section-heading">
+                    <p class="section-kicker">Adaptation work</p>
+                    <h2>Custom builds and lab-specific variants</h2>
+                </div>
+                <p>
+                    I am open for hire if a team needs specific adaptations to either the broader
+                    Viscereality app itself or the Windows companion. In practice that can mean
+                    narrowing the UI to a specific protocol, adding or simplifying telemetry,
+                    packaging a dedicated study surface, or aligning the operator workflow with the
+                    reality of a lab's setup rather than the assumptions of a generic tool.
+                </p>
+                <p>
+                    The useful work here is usually translational: making a research system
+                    legible, reproducible, and operable by the people who actually need to use it.
+                </p>
+            </div>
+            <div class="detail-stack">
+                <section class="detail-block">
+                    <h3>Typical adaptation areas</h3>
+                    <ul class="plain-list">
+                        <li>Custom study shells and locked-down operator flows</li>
+                        <li>Telemetry, export, and session-review adaptations</li>
+                        <li>Protocol-specific startup profiles and packaged releases</li>
+                        <li>Lab deployment hardening and researcher onboarding</li>
+                    </ul>
+                </section>
+                <section class="detail-block">
+                    <h3>Public surfaces</h3>
+                    <ul class="plain-list">
+                        <li><a href="https://mesmerprism.github.io/ViscerealityCompanion/" target="_blank" rel="noopener noreferrer">Docs and downloads</a> for install, walkthroughs, and operator documentation</li>
+                        <li><a href="https://viscereality.org/" target="_blank" rel="noopener noreferrer">viscereality.org</a> for the broader project framing</li>
+                        <li><a href="https://github.com/MesmerPrism/ViscerealityCompanion" target="_blank" rel="noopener noreferrer">Public source repo</a> for the Windows companion code</li>
+                        <li><a href="/#contact">Mesmer Prism contact</a> for adaptation work and collaboration</li>
+                    </ul>
+                </section>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="shell footer-row">
+            <p>Mesmer Prism is the public home for selected work by Till Holzapfel.</p>
+            <p>Static site, published via GitHub Pages.</p>
+        </div>
+    </footer>
+</body>
+</html>

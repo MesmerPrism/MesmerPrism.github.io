@@ -41,12 +41,22 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://mesmerprism.com/projects/viscereality-companion.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://mesmerprism.com/projects/plasmatic-multitudes.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://mesmerprism.com/projects/sane.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mesmerprism.com/projects/scientific-surrealism.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
