@@ -545,6 +545,43 @@ li {
     color: var(--muted);
 }
 
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem 1rem;
+    font-family: var(--font-ui);
+    font-size: 0.92rem;
+}
+
+.footer-links a {
+    color: var(--muted);
+}
+
+.footer-links a:hover,
+.footer-links a:focus-visible {
+    color: var(--accent);
+}
+
+.legal-page .hero {
+    padding-bottom: 2rem;
+}
+
+.legal-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1rem;
+}
+
+.legal-grid .detail-block h2 {
+    margin-bottom: 0.75rem;
+    font-size: 1.35rem;
+}
+
+.legal-grid address {
+    margin-bottom: 1rem;
+    font-style: normal;
+}
+
 @media (max-width: 720px) {
     :root {
         --sticky-scroll-offset: 1rem;

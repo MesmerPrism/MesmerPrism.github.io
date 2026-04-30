@@ -1,7 +1,7 @@
 import {
   layoutNextLine,
   prepareWithSegments,
-} from 'https://cdn.jsdelivr.net/npm/@chenglou/pretext@0.0.3/dist/layout.js'
+} from './vendor/pretext-layout.js'
 import {
   HERO_MODES,
   resolveHeroMode,

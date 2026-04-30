@@ -430,6 +430,18 @@ main.shell {
   font-size: 0.96rem;
 }
 
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.7rem 1rem;
+  margin-top: 0.55rem;
+}
+
+.footer-links a {
+  color: inherit;
+}
+
 @media (max-width: 900px) {
   .intro-grid {
     grid-template-columns: 1fr;
