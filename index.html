@@ -44,7 +44,10 @@
                 "VR",
                 "Unity",
                 "C#",
+                "Rust",
+                "OpenXR",
                 "Meta Quest",
+                "Quest operator tooling",
                 "Mixed reality passthrough",
                 "Biofeedback",
                 "HCI",
@@ -110,6 +113,8 @@
             <nav class="surface-map" aria-label="Entry points">
                 <a class="surface-link" href="#viscereality">Viscereality</a>
                 <a class="surface-link" href="#meta-passthrough-stack">Meta Passthrough Stack</a>
+                <a class="surface-link" href="#quest-companion-tools">Quest Companion Tools</a>
+                <a class="surface-link" href="#rusty-xr">Rusty XR</a>
                 <a class="surface-link" href="#plasmatic-multitudes">Plasmatic Multitudes</a>
                 <a class="surface-link" href="#sane">SANE</a>
                 <a class="surface-link" href="#scientific-surrealism">Scientific Surrealism</a>
@@ -130,14 +135,14 @@
                     <h3><a href="/projects/viscereality.html">Viscereality</a></h3>
                     <p>
                         A Quest-based bioresponsive VR platform pairing a participant-facing runtime
-                        with a Windows operator surface for breath-linked interaction, coherence
-                        training, oscillator-driven visuals, and study control.
+                        with companion-tool workflows for breath-linked interaction, coherence
+                        training, oscillator-driven visuals, diagnostics, and study control.
                     </p>
                     <p class="project-meta">XR / Biofeedback / Quest / Operator tooling / Research</p>
                     <p class="project-links">
                         <a href="/projects/viscereality.html">Research overview</a>
                         <a href="https://viscereality.org/" target="_blank" rel="noopener noreferrer">Project site</a>
-                        <a href="/projects/viscereality-companion.html">Companion app</a>
+                        <a href="/projects/viscereality-companion.html">Quest companion tools</a>
                         <a href="https://mesmerprism.github.io/ViscerealityCompanion/" target="_blank" rel="noopener noreferrer">Docs &amp; downloads</a>
                     </p>
                 </article>
@@ -148,12 +153,47 @@
                     <p>
                         A public source map separating Quest compositor passthrough, Passthrough
                         Camera API access, depth, occlusion, scene sensing, patents, and
-                        implementation boundaries for mixed-reality prototypes.
+                        implementation boundaries for mixed-reality prototypes and Rust/OpenXR
+                        experiments.
                     </p>
                     <p class="project-meta">Meta Quest / OpenXR / Passthrough / Camera API / Depth</p>
                     <p class="project-links">
                         <a href="/projects/meta-passthrough-stack.html">Source map</a>
                         <a href="/projects/meta-passthrough-stack.html#references">References</a>
+                        <a href="/projects/rusty-xr.html">Rusty XR</a>
+                    </p>
+                </article>
+
+                <article class="project-card" id="quest-companion-tools">
+                    <p class="project-kicker">Meta Quest operator tooling</p>
+                    <h3><a href="/projects/viscereality-companion.html">Quest Companion Tools</a></h3>
+                    <p>
+                        A Windows and Android tooling line for making Meta Quest workflows easier:
+                        device discovery, USB and Wi-Fi ADB, APK install and launch, display
+                        casting, screenshots, runtime profiles, diagnostics, and remote monitoring
+                        from outside the headset.
+                    </p>
+                    <p class="project-meta">Quest / Windows app / Android companion / ADB / Diagnostics</p>
+                    <p class="project-links">
+                        <a href="/projects/viscereality-companion.html">Tooling overview</a>
+                        <a href="https://github.com/MesmerPrism/Rusty-XR-Companion-Apps" target="_blank" rel="noopener noreferrer">Current repo</a>
+                        <a href="https://mesmerprism.github.io/ViscerealityCompanion/" target="_blank" rel="noopener noreferrer">Earlier docs</a>
+                    </p>
+                </article>
+
+                <article class="project-card" id="rusty-xr">
+                    <p class="project-kicker">Rust for XR and Quest experiments</p>
+                    <h3><a href="/projects/rusty-xr.html">Rusty XR</a></h3>
+                    <p>
+                        A public Rust workspace for reusable XR contracts, runtime configuration,
+                        Quest diagnostics, camera and depth models, BLE/LSL/Polar bridges,
+                        OpenXR/Vulkan Quest examples, and companion-app handoff.
+                    </p>
+                    <p class="project-meta">Rust / OpenXR / Vulkan / Meta Quest / Tooling</p>
+                    <p class="project-links">
+                        <a href="/projects/rusty-xr.html">Project overview</a>
+                        <a href="https://github.com/MesmerPrism/Rusty-XR" target="_blank" rel="noopener noreferrer">Source repo</a>
+                        <a href="/projects/meta-passthrough-stack.html">Source map</a>
                     </p>
                 </article>
 
@@ -297,14 +337,15 @@
                     <p class="project-kicker">Code and prototyping surface</p>
                     <h3>GitHub and research tooling</h3>
                     <p>
-                        The public code surface includes the current Quest runtime, the Windows
-                        operator app, browser prototypes, and research tooling that sit behind the
-                        writing and systems work.
+                        The public code surface includes the current Quest runtime, Rusty XR,
+                        companion apps, browser prototypes, and research tooling that sit behind
+                        the writing and systems work.
                     </p>
                     <p class="project-meta">Repositories / Simulations / Tooling / Infrastructure</p>
                     <p class="project-links">
                         <a href="https://github.com/MesmerPrism" target="_blank" rel="noopener noreferrer">GitHub profile</a>
-                        <a href="https://github.com/MesmerPrism/ViscerealityCompanion" target="_blank" rel="noopener noreferrer">Viscereality Companion</a>
+                        <a href="https://github.com/MesmerPrism/Rusty-XR" target="_blank" rel="noopener noreferrer">Rusty-XR</a>
+                        <a href="https://github.com/MesmerPrism/Rusty-XR-Companion-Apps" target="_blank" rel="noopener noreferrer">Rusty-XR Companion Apps</a>
                         <a href="https://github.com/braincandyapp" target="_blank" rel="noopener noreferrer">braincandyapp</a>
                     </p>
                 </article>
@@ -370,6 +411,8 @@
                     Across <a href="/projects/plasmatic-multitudes.html">Plasmatic Multitudes</a>,
                     <a href="/projects/sane.html">SANE</a>,
                     <a href="/projects/scientific-surrealism.html">Scientific Surrealism</a>,
+                    <a href="/projects/rusty-xr.html">Rusty XR</a>,
+                    <a href="/projects/viscereality-companion.html">Quest Companion Tools</a>,
                     <a href="/projects/meta-passthrough-stack.html">Meta Passthrough Stack</a>,
                     <a href="/projects/brain-candy.html">Brain Candy</a>,
                     <a href="/projects/deep-dream.html">Deep Dream</a>,

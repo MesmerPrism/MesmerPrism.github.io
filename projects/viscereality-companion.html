@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Viscereality Companion | Mesmer Prism</title>
+    <title>Quest Companion Tools | Mesmer Prism</title>
     <link rel="canonical" href="https://mesmerprism.com/projects/viscereality-companion.html">
     <meta
         name="description"
-        content="Viscereality Companion is the Windows operator surface for researchers and labs using Viscereality: install study builds, connect Quest, monitor telemetry, and run operator workflows from one place."
+        content="Quest Companion Tools is Till Holzapfel's Windows and Android companion-tooling line for Meta Quest workflows: install, launch, cast, monitor, verify, and diagnose XR apps from outside the headset."
     >
-    <meta property="og:title" content="Viscereality Companion | Mesmer Prism">
+    <meta property="og:title" content="Quest Companion Tools | Mesmer Prism">
     <meta
         property="og:description"
-        content="Public-facing overview of the Windows companion app for Viscereality, including current Sussex-focused delivery, capabilities, docs, downloads, and custom adaptation work."
+        content="A public overview of the Windows and Android companion tools that make Meta Quest development, monitoring, casting, diagnostics, and remote control easier."
     >
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://mesmerprism.com/projects/viscereality-companion.html">
@@ -38,19 +38,19 @@
     <main class="shell">
         <section class="hero">
             <div class="hero-shell hero-shell--page">
-                <p class="eyebrow">Windows operator app</p>
-                <h1>Viscereality Companion</h1>
+                <p class="eyebrow">Meta Quest operator tooling</p>
+                <h1>Quest Companion Tools</h1>
                 <p class="project-lede">
-                    Viscereality Companion is the Windows operator surface for researchers, labs,
-                    and collaborators who want to use Viscereality without stitching together ADB,
-                    packaging, monitoring, and operator workflows by hand. It keeps install,
-                    launch, live telemetry, study-shell guidance, and session control in one
-                    place.
+                    Quest Companion Tools is the shared project line behind the Windows and
+                    Android utilities I build around Meta Quest work. The common problem is an
+                    outside-the-headset control surface that can install a build, launch it, cast
+                    the display, capture proof, monitor device state, and package diagnostics
+                    without asking every project to rebuild the same operator workflow.
                 </p>
                 <div class="hero-actions">
-                    <a class="action-link action-link--strong" href="https://mesmerprism.github.io/ViscerealityCompanion/" target="_blank" rel="noopener noreferrer">Docs &amp; downloads</a>
-                    <a class="action-link" href="https://viscereality.org/" target="_blank" rel="noopener noreferrer">Project site</a>
-                    <a class="action-link" href="https://github.com/MesmerPrism/ViscerealityCompanion" target="_blank" rel="noopener noreferrer">Source repo</a>
+                    <a class="action-link action-link--strong" href="https://github.com/MesmerPrism/Rusty-XR-Companion-Apps" target="_blank" rel="noopener noreferrer">Current companion repo</a>
+                    <a class="action-link" href="/projects/rusty-xr.html">Rusty XR</a>
+                    <a class="action-link" href="https://github.com/MesmerPrism/Rusty-XR" target="_blank" rel="noopener noreferrer">Rusty XR source</a>
                     <a class="action-link" href="/#contact">Contact</a>
                 </div>
             </div>
@@ -60,40 +60,42 @@
             <div>
                 <div class="section-heading">
                     <p class="section-kicker">Purpose</p>
-                    <h2>Why this app exists</h2>
+                    <h2>Why the companion layer exists</h2>
                 </div>
                 <p>
-                    The broader Viscereality system includes a participant-facing Quest runtime,
-                    but researchers should not need to live inside that runtime project just to
-                    run a study. The companion app exists to translate Viscereality into a stable
-                    Windows operator surface: connect the headset, install the right build, check
-                    the live transport, and guide the session from one place.
+                    A Quest project is rarely only the APK running in the headset. Developers,
+                    researchers, and operators also need a reliable way to discover the device,
+                    move between USB and Wi-Fi ADB, install the right build, start and stop the
+                    target package, watch the final display, and record enough state to understand
+                    what happened when something fails.
                 </p>
                 <p>
-                    That matters both for first-time collaborators and for labs that need a
-                    reproducible operator workflow. A good researcher-facing tool should reduce
-                    setup friction, narrow room for protocol mistakes, and make it obvious which
-                    parts of the session are healthy before a participant is already waiting.
+                    This work turns that repeated friction into a reusable tooling layer. The
+                    Windows tools are the main surface today, and the Android phone
+                    lane covers the same theme for mobile operator workflows: USB-host bootstrap,
+                    Wi-Fi handoff, staged install and launch, display or screenshot proof, and
+                    diagnostics export.
                 </p>
             </div>
             <div class="detail-stack">
                 <section class="detail-block">
-                    <h3>Current capabilities</h3>
+                    <h3>Tools implemented</h3>
                     <ul class="plain-list">
-                        <li>USB and Wi-Fi ADB connection from Windows</li>
-                        <li>Install and launch for the bundled Sussex build or another supplied APK</li>
-                        <li>Live Quest, LSL, twin-state, and diagnostics monitoring</li>
-                        <li>Runtime profile, device-profile, and study-shell workflows</li>
-                        <li>Researcher-facing sequential guidance for the current Sussex protocol</li>
+                        <li>USB and Wi-Fi ADB connection management for Meta Quest devices</li>
+                        <li>Managed discovery or installation of public tools such as <code>adb</code>, <code>hzdb</code>, and <code>scrcpy</code></li>
+                        <li>APK install, launch, stop, catalog verification, and runtime-profile handoff</li>
+                        <li>Display casting, screenshot capture, and MediaProjection final-display frame receiving</li>
+                        <li>Headset and controller battery readback, foreground-app checks, wake/proximity state, and process diagnostics</li>
+                        <li>Portable diagnostics bundles for collaborators who do not have the source checkout</li>
                     </ul>
                 </section>
                 <section class="detail-block">
-                    <h3>Who it is for</h3>
+                    <h3>What it abstracts</h3>
                     <ul class="plain-list">
-                        <li>Research labs adopting Viscereality for a study or pilot</li>
-                        <li>Operators who need one clear GUI in place of several lab utilities</li>
-                        <li>Collaborators validating builds, telemetry, and participant handoff</li>
-                        <li>Teams that want a dedicated study shell, not a general debug surface</li>
+                        <li>Device setup that otherwise lives in terminal notes and lab memory</li>
+                        <li>Operator actions that should be repeatable during research sessions</li>
+                        <li>Visual proof that a build actually launched and rendered on-device</li>
+                        <li>Release and support workflows for people outside the development repo</li>
                     </ul>
                 </section>
             </div>
@@ -102,80 +104,75 @@
         <section class="section two-column">
             <div>
                 <div class="section-heading">
-                    <p class="section-kicker">Current release</p>
-                    <h2>Sussex first, broader reuse next</h2>
+                    <p class="section-kicker">Current direction</p>
+                    <h2>Rusty XR Companion is the active public surface</h2>
                 </div>
                 <p>
-                    The current public iteration is focused on getting the version for the
-                    collaboration with <a href="https://www.sussex.ac.uk/research/centres/sussex-neuroscience/phd/4yearphd/supervisors/translational-projects/hugo-critchley-project" target="_blank" rel="noopener noreferrer">Hugo Critchley's lab at Sussex</a>
-                    working cleanly end to end. That means the present release is not yet trying
-                    to be every possible multi-study operator surface. It is deliberately focused
-                    on a reliable install, launch, monitoring, and guided-session path for that
-                    collaboration first.
+                    The newest iteration lives in
+                    <a href="https://github.com/MesmerPrism/Rusty-XR-Companion-Apps" target="_blank" rel="noopener noreferrer">Rusty-XR-Companion-Apps</a>.
+                    It is a Windows-first workspace with a WPF app, CLI, core library, diagnostics
+                    library, and release tooling. It is designed to sit next to
+                    <a href="/projects/rusty-xr.html">Rusty XR</a>, which owns the reusable Rust
+                    contracts, schemas, examples, and Quest-side source code.
                 </p>
                 <p>
-                    Once that path is stable, the same companion framework can be widened into a
-                    more general-purpose entry point for other Viscereality applications, other
-                    study shells, and other research or deployment contexts that need a clearer
-                    Windows-side control surface.
+                    Older utilities remain part of the lineage: the Viscereality Companion shaped
+                    the researcher-facing operator surface, the Android phone companion explored
+                    mobile ADB handoff and diagnostics, and Quest Multi Stream explored multi-device
+                    casting and visual-test capture. The public website now treats these as one
+                    companion-tooling theme rather than as separate project pitches.
                 </p>
             </div>
             <div class="detail-stack">
-                <section class="detail-block">
-                    <h3>What the Sussex-first release includes</h3>
-                    <ul class="plain-list">
-                        <li>`Sussex University experiment mode` as the dedicated operator surface</li>
-                        <li>Bundled approved Sussex APK, pinned device profile, and operator diagnostics</li>
-                        <li>Sequential Guide and Experiment Session windows for researcher workflow</li>
-                        <li>Packaged Windows install path for reproducible lab handoff</li>
-                    </ul>
-                </section>
-                <section class="detail-block">
-                    <h3>What comes after that</h3>
-                    <ul class="plain-list">
-                        <li>Broader multi-study launcher and reusable shell templates</li>
-                        <li>More generalized operator UX for non-Sussex protocols</li>
-                        <li>Cleaner reusable packaging for other collaborators and deployments</li>
-                    </ul>
-                </section>
-            </div>
-        </section>
-
-        <section class="section two-column">
-            <div>
-                <div class="section-heading">
-                    <p class="section-kicker">Adaptation work</p>
-                    <h2>Custom builds and lab-specific variants</h2>
-                </div>
-                <p>
-                    I am open for hire if a team needs specific adaptations to either the broader
-                    Viscereality app itself or the Windows companion. In practice that can mean
-                    narrowing the UI to a specific protocol, adding or simplifying telemetry,
-                    packaging a dedicated study surface, or aligning the operator workflow with the
-                    reality of a lab's setup rather than the assumptions of a generic tool.
-                </p>
-                <p>
-                    The useful work here is usually translational: making a research system
-                    legible, reproducible, and operable by the people who actually need to use it.
-                </p>
-            </div>
-            <div class="detail-stack">
-                <section class="detail-block">
-                    <h3>Typical adaptation areas</h3>
-                    <ul class="plain-list">
-                        <li>Custom study shells and locked-down operator flows</li>
-                        <li>Telemetry, export, and session-review adaptations</li>
-                        <li>Protocol-specific startup profiles and packaged releases</li>
-                        <li>Lab deployment hardening and researcher onboarding</li>
-                    </ul>
-                </section>
                 <section class="detail-block">
                     <h3>Public surfaces</h3>
                     <ul class="plain-list">
-                        <li><a href="https://mesmerprism.github.io/ViscerealityCompanion/" target="_blank" rel="noopener noreferrer">Docs and downloads</a> for install, walkthroughs, and operator documentation</li>
-                        <li><a href="https://viscereality.org/" target="_blank" rel="noopener noreferrer">viscereality.org</a> for the broader project framing</li>
-                        <li><a href="https://github.com/MesmerPrism/ViscerealityCompanion" target="_blank" rel="noopener noreferrer">Public source repo</a> for the Windows companion code</li>
-                        <li><a href="/#contact">Mesmer Prism contact</a> for adaptation work and collaboration</li>
+                        <li><a href="https://github.com/MesmerPrism/Rusty-XR-Companion-Apps" target="_blank" rel="noopener noreferrer">Rusty-XR-Companion-Apps</a> for the current Windows companion, CLI, diagnostics, and release tooling</li>
+                        <li><a href="https://github.com/MesmerPrism/Rusty-XR" target="_blank" rel="noopener noreferrer">Rusty-XR</a> for the reusable Rust XR crates, Quest examples, and public source taxonomy</li>
+                        <li><a href="https://mesmerprism.github.io/ViscerealityCompanion/" target="_blank" rel="noopener noreferrer">Viscereality Companion docs</a> for the earlier researcher-facing Windows operator path</li>
+                        <li><a href="https://viscereality.org/" target="_blank" rel="noopener noreferrer">Viscereality</a> for the broader Quest research system that motivated part of this tooling</li>
+                    </ul>
+                </section>
+                <section class="detail-block">
+                    <h3>Boundary</h3>
+                    <ul class="plain-list">
+                        <li>Companion tools inspect and operate Quest workflows; they are not the headset runtime itself</li>
+                        <li>Casting and MediaProjection are final-display inspection paths, not raw camera sources</li>
+                        <li>Catalogs and profiles are public handoff contracts, not private lab protocol dumps</li>
+                        <li>Individual app names are implementation history; the reusable theme is remote Quest operation and support</li>
+                    </ul>
+                </section>
+            </div>
+        </section>
+
+        <section class="section two-column">
+            <div>
+                <div class="section-heading">
+                    <p class="section-kicker">Use cases</p>
+                    <h2>What this makes easier</h2>
+                </div>
+                <p>
+                    The practical target is a calmer Quest workflow. A contributor should be able
+                    to install a known APK, pass a runtime profile, launch the package, see the
+                    headset display, verify the foreground app, capture a screenshot, and export a
+                    diagnostic report without memorizing every command. A lab operator should be
+                    able to run the same sequence without becoming the build engineer.
+                </p>
+                <p>
+                    The companion layer also makes mixed Rust, Unity, Android, and OpenXR work less
+                    fragile. It gives the system an external test and support surface while the
+                    headset-side code keeps evolving.
+                </p>
+            </div>
+            <div class="detail-stack">
+                <section class="detail-block">
+                    <h3>Typical workflows</h3>
+                    <ul class="plain-list">
+                        <li>Install a local or release-asset APK and verify that it can be launched</li>
+                        <li>Run a camera, depth, or display-profile experiment with a recorded operator trace</li>
+                        <li>Cast the final headset display to Windows for inspection or demonstration</li>
+                        <li>Collect device, process, graphics, memory, and foreground-activity snapshots for bug reports</li>
+                        <li>Hand a portable tool to a collaborator without asking them to clone the full source tree</li>
                     </ul>
                 </section>
             </div>

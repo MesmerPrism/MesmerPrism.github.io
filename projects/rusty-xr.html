@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rusty XR | Mesmer Prism</title>
+    <link rel="canonical" href="https://mesmerprism.com/projects/rusty-xr.html">
+    <meta
+        name="description"
+        content="Rusty XR is Till Holzapfel's public Rust workspace for reusable XR contracts, Quest diagnostics, camera and depth models, OpenXR/Vulkan examples, and companion-app handoff."
+    >
+    <meta property="og:title" content="Rusty XR | Mesmer Prism">
+    <meta
+        property="og:description"
+        content="A public Rust workspace for XR contracts, Meta Quest examples, camera/depth source discipline, diagnostics, and companion-tool integration."
+    >
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mesmerprism.com/projects/rusty-xr.html">
+    <meta name="theme-color" content="#f4efe7">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/assets/fonts.css">
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body class="project-page">
+    <header class="site-header">
+        <div class="shell header-row">
+            <a class="site-name" href="/">Mesmer Prism</a>
+            <nav class="site-nav" aria-label="Primary">
+                <a href="/#work">Work</a>
+                <a href="/#publications">Publications</a>
+                <a href="/#background">Background</a>
+                <a href="/#contact">Contact</a>
+                <a href="https://github.com/MesmerPrism" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="shell">
+        <section class="hero">
+            <div class="hero-shell hero-shell--page">
+                <p class="eyebrow">Rust for XR and Meta Quest experiments</p>
+                <h1>Rusty XR</h1>
+                <p class="project-lede">
+                    Rusty XR is a public Rust workspace for reusable XR tooling: data contracts,
+                    runtime configuration, Quest diagnostics, camera and depth models, BLE and LSL
+                    bridges, polar sensor helpers, SDF and particle modules, and small Quest
+                    examples. It is the source-side counterpart to the companion apps: Rusty XR
+                    owns the reusable contracts and examples; the companion tools own the operator
+                    UX, device workflows, and release handoff.
+                </p>
+                <div class="hero-actions">
+                    <a class="action-link action-link--strong" href="https://github.com/MesmerPrism/Rusty-XR" target="_blank" rel="noopener noreferrer">Source repo</a>
+                    <a class="action-link" href="/projects/viscereality-companion.html">Quest companion tools</a>
+                    <a class="action-link" href="/projects/meta-passthrough-stack.html">Meta passthrough stack</a>
+                    <a class="action-link" href="#references">Docs</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section two-column">
+            <div>
+                <div class="section-heading">
+                    <p class="section-kicker">Purpose</p>
+                    <h2>What the core owns</h2>
+                </div>
+                <p>
+                    The repository is not a single Quest product and not an APK distribution
+                    channel. Its job is to keep reusable Rust-side pieces public, testable, and
+                    separate from app-specific shells. That includes schemas for companion
+                    catalogs, runtime profiles, diagnostics, sensor contracts, and example code
+                    that can be exercised without mixing private application logic into the public
+                    repo.
+                </p>
+                <p>
+                    The current public work is especially focused on Quest development boundaries:
+                    what counts as compositor passthrough, what counts as app-visible camera
+                    input, what environment depth is, and which paths are only final-display
+                    inspection through casting or MediaProjection.
+                </p>
+            </div>
+            <div class="detail-stack">
+                <section class="detail-block">
+                    <h3>Workspace crates</h3>
+                    <ul class="plain-list">
+                        <li><code>rusty-xr-contracts</code> for shared schemas and data contracts</li>
+                        <li><code>rusty-xr-runtime-config</code> for launch and runtime-profile configuration</li>
+                        <li><code>rusty-xr-quest-diagnostics</code> for Quest device and runtime diagnostics</li>
+                        <li><code>rusty-xr-camera-model</code> and <code>rusty-xr-depth-model</code> for camera/depth source modelling</li>
+                        <li><code>rusty-xr-ble</code>, <code>rusty-xr-lsl</code>, and <code>rusty-xr-polar</code> for sensor and stream bridges</li>
+                        <li><code>rusty-xr-sdf</code> and <code>rusty-xr-particles</code> for reusable visual and simulation primitives</li>
+                    </ul>
+                </section>
+                <section class="detail-block">
+                    <h3>Public boundary</h3>
+                    <ul class="plain-list">
+                        <li>Reusable Rust modules and examples stay in the public core</li>
+                        <li>Operator UX, Windows releases, and device support live in the companion-app workspace</li>
+                        <li>Private app paths, package identities, and unreleased artifacts stay out of the public docs</li>
+                    </ul>
+                </section>
+            </div>
+        </section>
+
+        <section class="section two-column">
+            <div>
+                <div class="section-heading">
+                    <p class="section-kicker">Quest examples</p>
+                    <h2>Camera, depth, and display-source discipline</h2>
+                </div>
+                <p>
+                    The Quest examples are small on purpose. They include contracts-only demos, a
+                    minimal Rust-native Android smoke-test APK, and a more ambitious
+                    OpenXR/Vulkan composite-layer example that can exercise synthetic, CPU
+                    diagnostic, GPU-buffer probe, and paired-camera projection tiers.
+                </p>
+                <p>
+                    The important discipline is source separation. Native passthrough compositor
+                    layers make the room visible but do not hand the app a sampleable camera
+                    texture. Raw Camera2 or Quest camera access is a different input class.
+                    Environment depth is a runtime-generated depth surface, not raw sensor access.
+                    Scrcpy, casting, screen recording, and MediaProjection are final-display
+                    inspection paths. Rusty XR keeps those lanes separate so prototype claims do
+                    not drift.
+                </p>
+            </div>
+            <div class="detail-stack">
+                <section class="detail-block">
+                    <h3>Current example work</h3>
+                    <ul class="plain-list">
+                        <li>Rust-native Android smoke testing for Quest packaging and startup checks</li>
+                        <li>OpenXR/Vulkan composite-layer APK with camera-projection shader experiments</li>
+                        <li>Public projected-stereo modes such as screen homography and quad-surface profiles</li>
+                        <li>Paired Camera2 GPU-buffer experiments with explicit calibration and visual-proof gates</li>
+                        <li>Companion-driven runs that collect logs, screenshots, foreground-app state, and diagnostics</li>
+                    </ul>
+                </section>
+                <section class="detail-block">
+                    <h3>Connected projects</h3>
+                    <ul class="plain-list">
+                        <li><a href="/projects/viscereality-companion.html">Quest Companion Tools</a> for the Windows and Android operator surface</li>
+                        <li><a href="/projects/meta-passthrough-stack.html">Meta Passthrough Stack</a> for the public API/source map</li>
+                        <li><a href="/projects/viscereality.html">Viscereality</a> for the broader Quest-based research-system lineage</li>
+                    </ul>
+                </section>
+            </div>
+        </section>
+
+        <section class="section" id="references">
+            <div class="section-heading">
+                <p class="section-kicker">References</p>
+                <h2>Public docs and source anchors</h2>
+                <p>
+                    These links define the public Rusty XR surface and its relationship to the
+                    companion-app tooling. The GitHub documentation is treated as the source of
+                    truth for implementation details that should not be repeated loosely on this
+                    overview page.
+                </p>
+            </div>
+            <div class="reference-grid">
+                <section class="detail-block">
+                    <h3>Rusty XR</h3>
+                    <ul class="plain-list">
+                        <li><strong>MesmerPrism.</strong> "<a class="reference-link" href="https://github.com/MesmerPrism/Rusty-XR" target="_blank" rel="noopener noreferrer">Rusty-XR</a>." Public GitHub repository.</li>
+                        <li><strong>Rusty XR.</strong> "<a class="reference-link" href="https://github.com/MesmerPrism/Rusty-XR/blob/main/README.md" target="_blank" rel="noopener noreferrer">README</a>." Public repository overview.</li>
+                        <li><strong>Rusty XR.</strong> "<a class="reference-link" href="https://github.com/MesmerPrism/Rusty-XR/blob/main/docs/IMPLEMENTATION_PLAN.md" target="_blank" rel="noopener noreferrer">Implementation Plan</a>." Public roadmap and architecture notes.</li>
+                        <li><strong>Rusty XR.</strong> "<a class="reference-link" href="https://github.com/MesmerPrism/Rusty-XR/blob/main/docs/QUEST_VISUAL_SOURCE_TAXONOMY.md" target="_blank" rel="noopener noreferrer">Quest Visual Source Taxonomy</a>." Camera, depth, passthrough, and display-source boundary map.</li>
+                    </ul>
+                </section>
+                <section class="detail-block">
+                    <h3>Companion integration</h3>
+                    <ul class="plain-list">
+                        <li><strong>Rusty XR.</strong> "<a class="reference-link" href="https://github.com/MesmerPrism/Rusty-XR/blob/main/docs/RUSTY_XR_COMPANION_INTEGRATION.md" target="_blank" rel="noopener noreferrer">Rusty XR Companion Integration</a>." Public handoff contract between core and companion apps.</li>
+                        <li><strong>MesmerPrism.</strong> "<a class="reference-link" href="https://github.com/MesmerPrism/Rusty-XR-Companion-Apps" target="_blank" rel="noopener noreferrer">Rusty-XR-Companion-Apps</a>." Windows companion, CLI, diagnostics, and release-tooling repository.</li>
+                        <li><strong>Rusty XR Companion.</strong> "<a class="reference-link" href="https://github.com/MesmerPrism/Rusty-XR-Companion-Apps/blob/main/docs/architecture.md" target="_blank" rel="noopener noreferrer">Architecture</a>." Companion app structure and device-tooling boundary.</li>
+                        <li><strong>Rusty XR Companion.</strong> "<a class="reference-link" href="https://github.com/MesmerPrism/Rusty-XR-Companion-Apps/blob/main/docs/diagnostics.md" target="_blank" rel="noopener noreferrer">Diagnostics</a>." Public diagnostics and catalog-verification workflow.</li>
+                    </ul>
+                </section>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="shell footer-row">
+            <p>Mesmer Prism is the public home for selected work by Till Holzapfel.</p>
+            <nav class="footer-links" aria-label="Legal">
+                <a href="/impressum.html">Impressum</a>
+                <a href="/datenschutz.html">Datenschutz</a>
+            </nav>
+        </div>
+    </footer>
+</body>
+</html>
