@@ -7,12 +7,12 @@
     <link rel="canonical" href="https://mesmerprism.com/projects/rusty-xr.html">
     <meta
         name="description"
-        content="Rusty XR is Till Holzapfel's public Rust workspace for reusable XR contracts, Quest diagnostics, camera and depth models, OpenXR/Vulkan examples, and companion-app handoff."
+        content="Rusty XR is Till Holzapfel's Rust foundation for Meta Quest and XR experimentation, connecting reusable contracts, diagnostics, camera/depth work, and companion-tool workflows."
     >
     <meta property="og:title" content="Rusty XR | Mesmer Prism">
     <meta
         property="og:description"
-        content="A public Rust workspace for XR contracts, Meta Quest examples, camera/depth source discipline, diagnostics, and companion-tool integration."
+        content="A Rust foundation for Quest and XR experiments that connects reusable technical contracts, source-aware camera/depth work, diagnostics, and companion-tool workflows."
     >
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://mesmerprism.com/projects/rusty-xr.html">
@@ -41,18 +41,19 @@
                 <p class="eyebrow">Rust for XR and Meta Quest experiments</p>
                 <h1>Rusty XR</h1>
                 <p class="project-lede">
-                    Rusty XR is a public Rust workspace for reusable XR tooling: data contracts,
-                    runtime configuration, Quest diagnostics, camera and depth models, BLE and LSL
-                    bridges, polar sensor helpers, SDF and particle modules, and small Quest
-                    examples. It is the source-side counterpart to the companion apps: Rusty XR
-                    owns the reusable contracts and examples; the companion tools own the operator
-                    UX, device workflows, and release handoff.
+                    Rusty XR is the Rust foundation I use to make Quest and XR experiments easier
+                    to repeat, inspect, and connect to outside tooling. It gives the work shared
+                    contracts, diagnostics, sensor bridges, camera and depth models, and small
+                    reference examples so experiments can move from one-off prototype to reusable
+                    workflow. On Mesmer Prism, the point is how it fits into the broader practice:
+                    it is the technical spine behind my Quest source mapping, companion apps, and
+                    research systems.
                 </p>
                 <div class="hero-actions">
                     <a class="action-link action-link--strong" href="https://github.com/MesmerPrism/Rusty-XR" target="_blank" rel="noopener noreferrer">Source repo</a>
+                    <a class="action-link" href="https://github.com/MesmerPrism/Rusty-XR/tree/main/docs" target="_blank" rel="noopener noreferrer">Project docs</a>
+                    <a class="action-link" href="https://mesmerprism.github.io/Rusty-XR-Companion-Apps/" target="_blank" rel="noopener noreferrer">Companion docs</a>
                     <a class="action-link" href="/projects/viscereality-companion.html">Quest companion tools</a>
-                    <a class="action-link" href="/projects/meta-passthrough-stack.html">Meta passthrough stack</a>
-                    <a class="action-link" href="#references">Docs</a>
                 </div>
             </div>
         </section>
@@ -61,41 +62,40 @@
             <div>
                 <div class="section-heading">
                     <p class="section-kicker">Purpose</p>
-                    <h2>What the core owns</h2>
+                    <h2>What it is good for</h2>
                 </div>
                 <p>
-                    The repository is not a single Quest product and not an APK distribution
-                    channel. Its job is to keep reusable Rust-side pieces public, testable, and
-                    separate from app-specific shells. That includes schemas for companion
-                    catalogs, runtime profiles, diagnostics, sensor contracts, and example code
-                    that can be exercised without mixing private application logic into the public
-                    repo.
+                    Rusty XR is good for the parts of XR work that need to survive beyond a single
+                    prototype: shared schemas, repeatable diagnostics, camera and depth reasoning,
+                    sensor integration, runtime profiles, and small reference examples that can be
+                    exercised by companion tools. It makes the technical layer more portable, so
+                    the same ideas can support Viscereality, Meta Quest source mapping, and future
+                    Rust-native XR experiments.
                 </p>
                 <p>
-                    The current public work is especially focused on Quest development boundaries:
-                    what counts as compositor passthrough, what counts as app-visible camera
-                    input, what environment depth is, and which paths are only final-display
-                    inspection through casting or MediaProjection.
+                    The current emphasis is Meta Quest because it is where the practical need is
+                    sharpest. Quest experiments involve headset builds, operator tools, raw camera
+                    questions, depth surfaces, display casting, and diagnostics. Rusty XR gives
+                    those pieces a common language so the work can stay coherent as it moves
+                    between research prototypes, documentation examples, and field tools.
                 </p>
             </div>
             <div class="detail-stack">
                 <section class="detail-block">
-                    <h3>Workspace crates</h3>
+                    <h3>Useful for</h3>
                     <ul class="plain-list">
-                        <li><code>rusty-xr-contracts</code> for shared schemas and data contracts</li>
-                        <li><code>rusty-xr-runtime-config</code> for launch and runtime-profile configuration</li>
-                        <li><code>rusty-xr-quest-diagnostics</code> for Quest device and runtime diagnostics</li>
-                        <li><code>rusty-xr-camera-model</code> and <code>rusty-xr-depth-model</code> for camera/depth source modelling</li>
-                        <li><code>rusty-xr-ble</code>, <code>rusty-xr-lsl</code>, and <code>rusty-xr-polar</code> for sensor and stream bridges</li>
-                        <li><code>rusty-xr-sdf</code> and <code>rusty-xr-particles</code> for reusable visual and simulation primitives</li>
+                        <li>Keeping Quest experiments reproducible across machines and collaborators</li>
+                        <li>Sharing runtime profiles, diagnostics, and catalog metadata with companion tools</li>
+                        <li>Testing camera, depth, passthrough, and final-display workflows with clearer source labels</li>
+                        <li>Connecting sensor streams, visual primitives, and operator-side evidence capture</li>
                     </ul>
                 </section>
                 <section class="detail-block">
-                    <h3>Public boundary</h3>
+                    <h3>Broader fit</h3>
                     <ul class="plain-list">
-                        <li>Reusable Rust modules and examples stay in the public core</li>
-                        <li>Operator UX, Windows releases, and device support live in the companion-app workspace</li>
-                        <li>Private app paths, package identities, and unreleased artifacts stay out of the public docs</li>
+                        <li><a href="/projects/meta-passthrough-stack.html">Meta Passthrough Stack</a> supplies the API and source-map discipline</li>
+                        <li><a href="/projects/viscereality-companion.html">Quest Companion Tools</a> turn the same contracts into install, launch, cast, and diagnostics workflows</li>
+                        <li><a href="/projects/viscereality.html">Viscereality</a> provides the research-system context where this kind of tooling becomes necessary</li>
                     </ul>
                 </section>
             </div>
@@ -105,40 +105,38 @@
             <div>
                 <div class="section-heading">
                     <p class="section-kicker">Quest examples</p>
-                    <h2>Camera, depth, and display-source discipline</h2>
+                    <h2>Source-aware XR experiments</h2>
                 </div>
                 <p>
-                    The Quest examples are small on purpose. They include contracts-only demos, a
-                    minimal Rust-native Android smoke-test APK, and a more ambitious
-                    OpenXR/Vulkan composite-layer example that can exercise synthetic, CPU
-                    diagnostic, GPU-buffer probe, and paired-camera projection tiers.
+                    A lot of Quest work becomes confusing when every visual surface gets called
+                    passthrough. Rusty XR helps keep the experimental vocabulary clean: compositor
+                    passthrough, app-visible camera input, environment depth, casting, and
+                    MediaProjection each describe a different kind of evidence. That distinction
+                    matters when I am trying to build a tool, debug capture behavior, or explain
+                    what a prototype can actually access.
                 </p>
                 <p>
-                    The important discipline is source separation. Native passthrough compositor
-                    layers make the room visible but do not hand the app a sampleable camera
-                    texture. Raw Camera2 or Quest camera access is a different input class.
-                    Environment depth is a runtime-generated depth surface, not raw sensor access.
-                    Scrcpy, casting, screen recording, and MediaProjection are final-display
-                    inspection paths. Rusty XR keeps those lanes separate so prototype claims do
-                    not drift.
+                    That source-aware approach also supports the companion apps. A Windows or
+                    Android operator tool can install a build, launch a profile, cast the final
+                    display, capture a screenshot, and export diagnostics while Rusty XR supplies
+                    the shared contracts and reference behavior behind the run.
                 </p>
             </div>
             <div class="detail-stack">
                 <section class="detail-block">
-                    <h3>Current example work</h3>
+                    <h3>Current themes</h3>
                     <ul class="plain-list">
-                        <li>Rust-native Android smoke testing for Quest packaging and startup checks</li>
-                        <li>OpenXR/Vulkan composite-layer APK with camera-projection shader experiments</li>
-                        <li>Public projected-stereo modes such as screen homography and quad-surface profiles</li>
-                        <li>Paired Camera2 GPU-buffer experiments with explicit calibration and visual-proof gates</li>
-                        <li>Companion-driven runs that collect logs, screenshots, foreground-app state, and diagnostics</li>
+                        <li>Rust-native XR examples that can be launched and verified from companion tools</li>
+                        <li>Camera and depth experiments that keep source, display, and diagnostic evidence distinct</li>
+                        <li>Shared runtime profiles for repeatable Quest runs</li>
+                        <li>Diagnostics and visual proof that make headset behavior easier to discuss remotely</li>
                     </ul>
                 </section>
                 <section class="detail-block">
                     <h3>Connected projects</h3>
                     <ul class="plain-list">
                         <li><a href="/projects/viscereality-companion.html">Quest Companion Tools</a> for the Windows and Android operator surface</li>
-                        <li><a href="/projects/meta-passthrough-stack.html">Meta Passthrough Stack</a> for the public API/source map</li>
+                        <li><a href="/projects/meta-passthrough-stack.html">Meta Passthrough Stack</a> for the API and source-map discipline</li>
                         <li><a href="/projects/viscereality.html">Viscereality</a> for the broader Quest-based research-system lineage</li>
                     </ul>
                 </section>
@@ -148,12 +146,11 @@
         <section class="section" id="references">
             <div class="section-heading">
                 <p class="section-kicker">References</p>
-                <h2>Public docs and source anchors</h2>
+                <h2>Project docs</h2>
                 <p>
-                    These links define the public Rusty XR surface and its relationship to the
-                    companion-app tooling. The GitHub documentation is treated as the source of
-                    truth for implementation details that should not be repeated loosely on this
-                    overview page.
+                    Mesmer Prism keeps the conceptual overview here. Implementation details,
+                    onboarding, release notes, and command-level workflows belong in the dedicated
+                    project documentation.
                 </p>
             </div>
             <div class="reference-grid">
@@ -161,18 +158,15 @@
                     <h3>Rusty XR</h3>
                     <ul class="plain-list">
                         <li><strong>MesmerPrism.</strong> "<a class="reference-link" href="https://github.com/MesmerPrism/Rusty-XR" target="_blank" rel="noopener noreferrer">Rusty-XR</a>." Public GitHub repository.</li>
-                        <li><strong>Rusty XR.</strong> "<a class="reference-link" href="https://github.com/MesmerPrism/Rusty-XR/blob/main/README.md" target="_blank" rel="noopener noreferrer">README</a>." Public repository overview.</li>
-                        <li><strong>Rusty XR.</strong> "<a class="reference-link" href="https://github.com/MesmerPrism/Rusty-XR/blob/main/docs/IMPLEMENTATION_PLAN.md" target="_blank" rel="noopener noreferrer">Implementation Plan</a>." Public roadmap and architecture notes.</li>
-                        <li><strong>Rusty XR.</strong> "<a class="reference-link" href="https://github.com/MesmerPrism/Rusty-XR/blob/main/docs/QUEST_VISUAL_SOURCE_TAXONOMY.md" target="_blank" rel="noopener noreferrer">Quest Visual Source Taxonomy</a>." Camera, depth, passthrough, and display-source boundary map.</li>
+                        <li><strong>Rusty XR.</strong> "<a class="reference-link" href="https://github.com/MesmerPrism/Rusty-XR/tree/main/docs" target="_blank" rel="noopener noreferrer">Project Documentation</a>." Technical docs, architecture notes, and workflow guidance.</li>
+                        <li><strong>Rusty XR.</strong> "<a class="reference-link" href="https://github.com/MesmerPrism/Rusty-XR/blob/main/docs/QUEST_VISUAL_SOURCE_TAXONOMY.md" target="_blank" rel="noopener noreferrer">Quest Visual Source Taxonomy</a>." The detailed source-map document for camera, depth, passthrough, and display evidence.</li>
                     </ul>
                 </section>
                 <section class="detail-block">
-                    <h3>Companion integration</h3>
+                    <h3>Companion tooling</h3>
                     <ul class="plain-list">
-                        <li><strong>Rusty XR.</strong> "<a class="reference-link" href="https://github.com/MesmerPrism/Rusty-XR/blob/main/docs/RUSTY_XR_COMPANION_INTEGRATION.md" target="_blank" rel="noopener noreferrer">Rusty XR Companion Integration</a>." Public handoff contract between core and companion apps.</li>
-                        <li><strong>MesmerPrism.</strong> "<a class="reference-link" href="https://github.com/MesmerPrism/Rusty-XR-Companion-Apps" target="_blank" rel="noopener noreferrer">Rusty-XR-Companion-Apps</a>." Windows companion, CLI, diagnostics, and release-tooling repository.</li>
-                        <li><strong>Rusty XR Companion.</strong> "<a class="reference-link" href="https://github.com/MesmerPrism/Rusty-XR-Companion-Apps/blob/main/docs/architecture.md" target="_blank" rel="noopener noreferrer">Architecture</a>." Companion app structure and device-tooling boundary.</li>
-                        <li><strong>Rusty XR Companion.</strong> "<a class="reference-link" href="https://github.com/MesmerPrism/Rusty-XR-Companion-Apps/blob/main/docs/diagnostics.md" target="_blank" rel="noopener noreferrer">Diagnostics</a>." Public diagnostics and catalog-verification workflow.</li>
+                        <li><strong>MesmerPrism.</strong> "<a class="reference-link" href="https://mesmerprism.github.io/Rusty-XR-Companion-Apps/" target="_blank" rel="noopener noreferrer">Rusty XR Companion Docs</a>." User-facing docs for install, launch, casting, diagnostics, and releases.</li>
+                        <li><strong>MesmerPrism.</strong> "<a class="reference-link" href="https://github.com/MesmerPrism/Rusty-XR-Companion-Apps" target="_blank" rel="noopener noreferrer">Rusty-XR-Companion-Apps</a>." Source repository for the Windows companion and related tooling.</li>
                     </ul>
                 </section>
             </div>
