@@ -33,7 +33,8 @@ The homepage includes an optional experimental hero enhancement in
 [`scripts/pretext-hero.js`](scripts/pretext-hero.js).
 
 - It uses a local vendored copy of the MIT-licensed `@chenglou/pretext`
-  layout module, so the public site does not contact jsDelivr during page load.
+  layout module and its runtime dependencies, so the public site does not
+  contact jsDelivr during page load.
 - The fallback text stays in the HTML for no-JS and failure cases.
 - On desktop pointers, the intro text reflows around the cursor and settles back to a
   static block when the pointer leaves.
