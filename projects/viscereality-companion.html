@@ -7,12 +7,12 @@
     <link rel="canonical" href="https://mesmerprism.com/projects/viscereality-companion.html">
     <meta
         name="description"
-        content="Quest Companion Tools is Till Holzapfel's Windows and Android companion-tooling line for Meta Quest workflows: install, launch, cast, monitor, verify, and diagnose XR apps from outside the headset."
+        content="Quest Companion Tools is Till Holzapfel's companion-tooling line for Meta Quest workflows, centered on Rusty XR Companion Apps and earlier Viscereality operator tools."
     >
     <meta property="og:title" content="Quest Companion Tools | Mesmer Prism">
     <meta
         property="og:description"
-        content="A public overview of the Windows and Android companion tools that make Meta Quest development, monitoring, casting, diagnostics, and remote control easier."
+        content="A public overview of the Windows-first Rusty XR Companion Apps line and related Android/operator tools for Meta Quest install, launch, casting, diagnostics, and evidence capture."
     >
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://mesmerprism.com/projects/viscereality-companion.html">
@@ -41,11 +41,13 @@
                 <p class="eyebrow">Meta Quest operator tooling</p>
                 <h1>Quest Companion Tools</h1>
                 <p class="project-lede">
-                    Quest Companion Tools is the shared project line behind the Windows and
-                    Android utilities I build around Meta Quest work. The common problem is an
-                    outside-the-headset control surface that can install a build, launch it, cast
-                    the display, capture proof, monitor device state, and package diagnostics
-                    without asking every project to rebuild the same operator workflow.
+                    Quest Companion Tools is the shared project line behind the Windows and Android
+                    utilities I build around Meta Quest work. The active public surface is Rusty XR
+                    Companion Apps; earlier Viscereality operator tooling and phone-side ADB
+                    experiments remain part of the lineage. The common problem is simple: an
+                    outside-the-headset control surface should install a build, launch it, cast the
+                    display, capture proof, monitor state, and package diagnostics without asking
+                    every project to rebuild the same workflow.
                 </p>
                 <div class="hero-actions">
                     <a class="action-link action-link--strong" href="https://github.com/MesmerPrism/Rusty-XR-Companion-Apps" target="_blank" rel="noopener noreferrer">Current companion repo</a>
@@ -71,10 +73,9 @@
                 </p>
                 <p>
                     This work turns that repeated friction into a reusable tooling layer. The
-                    Windows tools are the main surface today, and the Android phone
-                    lane covers the same theme for mobile operator workflows: USB-host bootstrap,
-                    Wi-Fi handoff, staged install and launch, display or screenshot proof, and
-                    diagnostics export.
+                    Windows tools are the main surface today. The Android phone lane covers the
+                    same theme for mobile operator workflows: USB-host bootstrap, Wi-Fi handoff,
+                    staged install and launch, display or screenshot proof, and diagnostics export.
                 </p>
             </div>
             <div class="detail-stack">
@@ -110,8 +111,8 @@
                 <p>
                     The newest iteration lives in
                     <a href="https://github.com/MesmerPrism/Rusty-XR-Companion-Apps" target="_blank" rel="noopener noreferrer">Rusty-XR-Companion-Apps</a>.
-                    It is a Windows-first workspace with a WPF app, CLI, core library, diagnostics
-                    library, and release tooling. It is designed to sit next to
+                    It is a Windows-first workspace with a WPF app, CLI, MCP surface, core library,
+                    diagnostics library, and release tooling. It is designed to sit next to
                     <a href="/projects/rusty-xr.html">Rusty XR</a>, which owns the reusable Rust
                     contracts, schemas, examples, and Quest-side source code.
                 </p>
@@ -119,8 +120,8 @@
                     Older utilities remain part of the lineage: the Viscereality Companion shaped
                     the researcher-facing operator surface, the Android phone companion explored
                     mobile ADB handoff and diagnostics, and Quest Multi Stream explored multi-device
-                    casting and visual-test capture. The public website now treats these as one
-                    companion-tooling theme rather than as separate project pitches.
+                    casting and visual-test capture. This page treats those as one companion-tooling
+                    theme rather than as separate project pitches.
                 </p>
             </div>
             <div class="detail-stack">
@@ -139,7 +140,7 @@
                         <li>Companion tools inspect and operate Quest workflows; they are not the headset runtime itself</li>
                         <li>Casting and MediaProjection are final-display inspection paths, not raw camera sources</li>
                         <li>Catalogs and profiles are public handoff contracts, not private lab protocol dumps</li>
-                        <li>Individual app names are implementation history; the reusable theme is remote Quest operation and support</li>
+                        <li>Individual app names are implementation history; the reusable theme is remote Quest operation, support, and evidence capture</li>
                     </ul>
                 </section>
             </div>

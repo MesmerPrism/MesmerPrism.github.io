@@ -7,12 +7,12 @@
     <link rel="canonical" href="https://mesmerprism.com/projects/rusty-xr.html">
     <meta
         name="description"
-        content="Rusty XR is Till Holzapfel's Rust foundation for Meta Quest and XR experimentation, connecting reusable contracts, diagnostics, camera/depth work, and companion-tool workflows."
+        content="Rusty XR is Till Holzapfel's public Rust workspace for reusable XR contracts, Quest diagnostics, camera/depth source taxonomy, broker models, examples, and companion-tool workflows."
     >
     <meta property="og:title" content="Rusty XR | Mesmer Prism">
     <meta
         property="og:description"
-        content="A Rust foundation for Quest and XR experiments that connects reusable technical contracts, source-aware camera/depth work, diagnostics, and companion-tool workflows."
+        content="A public Rust workspace for Quest and XR experiments: contracts, diagnostics, camera/depth source taxonomy, broker models, examples, and companion-tool workflows."
     >
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://mesmerprism.com/projects/rusty-xr.html">
@@ -41,13 +41,12 @@
                 <p class="eyebrow">Rust for XR and Meta Quest experiments</p>
                 <h1>Rusty XR</h1>
                 <p class="project-lede">
-                    Rusty XR is the Rust foundation I use to make Quest and XR experiments easier
-                    to repeat, inspect, and connect to outside tooling. It gives the work shared
-                    contracts, diagnostics, sensor bridges, camera and depth models, and small
-                    reference examples so experiments can move from one-off prototype to reusable
-                    workflow. On Mesmer Prism, the point is how it fits into the broader practice:
-                    it is the technical spine behind my Quest source mapping, companion apps, and
-                    research systems.
+                    Rusty XR is the public Rust workspace I use to make Quest and XR experiments
+                    easier to repeat, inspect, and connect to outside tooling. It is not a single
+                    headset app. It holds the shared contracts, schemas, diagnostics, camera and
+                    depth models, broker shapes, and public examples that app shells and companion
+                    tools can reuse without inheriting private package names, study logic, or
+                    visual-effect code.
                 </p>
                 <div class="hero-actions">
                     <a class="action-link action-link--strong" href="https://github.com/MesmerPrism/Rusty-XR" target="_blank" rel="noopener noreferrer">Source repo</a>
@@ -66,18 +65,19 @@
                 </div>
                 <p>
                     Rusty XR is good for the parts of XR work that need to survive beyond a single
-                    prototype: shared schemas, repeatable diagnostics, camera and depth reasoning,
-                    sensor integration, runtime profiles, and small reference examples that can be
-                    exercised by companion tools. It makes the technical layer more portable, so
-                    the same ideas can support Viscereality, Meta Quest source mapping, and future
-                    Rust-native XR experiments.
+                    prototype: typed schemas, repeatable diagnostics, camera and depth reasoning,
+                    runtime profiles, broker messages, sensor payloads, and small examples that
+                    companion tools can install or verify. It makes the technical layer portable
+                    enough to support Viscereality, Meta Quest source mapping, public examples, and
+                    future Rust-native XR experiments without collapsing them into one app.
                 </p>
                 <p>
                     The current emphasis is Meta Quest because it is where the practical need is
                     sharpest. Quest experiments involve headset builds, operator tools, raw camera
-                    questions, depth surfaces, display casting, and diagnostics. Rusty XR gives
-                    those pieces a common language so the work can stay coherent as it moves
-                    between research prototypes, documentation examples, and field tools.
+                    questions, environment-depth surfaces, display casting, MediaProjection
+                    inspection, and diagnostics. Rusty XR gives those pieces a common language so
+                    the work can move between research prototypes, documentation examples, and
+                    field tools without losing the source boundary.
                 </p>
             </div>
             <div class="detail-stack">
@@ -85,9 +85,9 @@
                     <h3>Useful for</h3>
                     <ul class="plain-list">
                         <li>Keeping Quest experiments reproducible across machines and collaborators</li>
-                        <li>Sharing runtime profiles, diagnostics, and catalog metadata with companion tools</li>
-                        <li>Testing camera, depth, passthrough, and final-display workflows with clearer source labels</li>
-                        <li>Connecting sensor streams, visual primitives, and operator-side evidence capture</li>
+                        <li>Sharing runtime profiles, diagnostics, catalog metadata, and schema contracts with companion tools</li>
+                        <li>Testing camera, depth, passthrough, final-display, broker, and strobe workflows with clear source labels</li>
+                        <li>Connecting sensor streams, visual primitives, hand/particle data, and operator-side evidence capture</li>
                     </ul>
                 </section>
                 <section class="detail-block">
@@ -112,23 +112,25 @@
                     passthrough. Rusty XR helps keep the experimental vocabulary clean: compositor
                     passthrough, app-visible camera input, environment depth, casting, and
                     MediaProjection each describe a different kind of evidence. That distinction
-                    matters when I am trying to build a tool, debug capture behavior, or explain
+                    matters when I am building a tool, debugging capture behavior, or explaining
                     what a prototype can actually access.
                 </p>
                 <p>
                     That source-aware approach also supports the companion apps. A Windows or
                     Android operator tool can install a build, launch a profile, cast the final
-                    display, capture a screenshot, and export diagnostics while Rusty XR supplies
-                    the shared contracts and reference behavior behind the run.
+                    display, capture a screenshot, run a broker or media probe, and export
+                    diagnostics while Rusty XR supplies the shared contracts and reference behavior
+                    behind the run.
                 </p>
             </div>
             <div class="detail-stack">
                 <section class="detail-block">
                     <h3>Current themes</h3>
                     <ul class="plain-list">
-                        <li>Rust-native XR examples that can be launched and verified from companion tools</li>
-                        <li>Camera and depth experiments that keep source, display, and diagnostic evidence distinct</li>
-                        <li>Shared runtime profiles for repeatable Quest runs</li>
+                        <li>Rust-native Quest examples that can be launched and verified from companion tools</li>
+                        <li>Camera, depth, passthrough, and MediaProjection experiments with separate evidence labels</li>
+                        <li>Broker, OSC, LSL, Polar, and stream-manifest contracts for research-facing data paths</li>
+                        <li>Hand mesh, particles, SDF, room mesh, and visual-strobe descriptors kept as reusable public contracts</li>
                         <li>Diagnostics and visual proof that make headset behavior easier to discuss remotely</li>
                     </ul>
                 </section>

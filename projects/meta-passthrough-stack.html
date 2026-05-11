@@ -7,12 +7,12 @@
     <link rel="canonical" href="https://mesmerprism.com/projects/meta-passthrough-stack.html">
     <meta
         name="description"
-        content="Meta Passthrough Stack is Till Holzapfel's public source map around Meta Quest passthrough layers, camera access, depth, occlusion, patents, and implementation boundaries."
+        content="Meta Passthrough Stack is Till Holzapfel's public source map for Quest compositor passthrough, app-visible camera access, environment depth, MediaProjection, and implementation boundaries."
     >
     <meta property="og:title" content="Meta Passthrough Stack | Mesmer Prism">
     <meta
         property="og:description"
-        content="A public source map for separating Meta Quest compositor passthrough, Passthrough Camera API access, environment depth, occlusion, patents, and implementation notes."
+        content="A public source map separating Meta Quest compositor passthrough, app-visible camera access, environment depth, final-display capture, patents, and implementation notes."
     >
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://mesmerprism.com/projects/meta-passthrough-stack.html">
@@ -44,8 +44,8 @@
                     Meta Passthrough Stack is a public source map for a specific mixed-reality
                     problem: what a Quest app can render, sense, and process when it uses
                     passthrough. The project separates compositor passthrough, app-visible camera
-                    frames, environment depth, scene understanding, patents, and local
-                    implementation notes so design claims do not outrun the APIs.
+                    frames, environment depth, scene understanding, final-display capture, patents,
+                    and local implementation notes so design claims do not outrun the APIs.
                 </p>
                 <div class="hero-actions">
                     <a class="action-link action-link--strong" href="/#work">Back to work</a>
@@ -67,8 +67,10 @@
                     The Passthrough Camera API is a different surface: it exposes forward-facing
                     RGB camera frames for computer-vision and machine-learning use cases under
                     device, OS, permission, and policy constraints. Environment depth is separate
-                    again, and is mainly useful for occlusion, raycasting, and grounding virtual
-                    content in the room.
+                    again, and is mainly useful for occlusion, raycasting, diagnostics, and
+                    grounding virtual content in the room. MediaProjection is another lane: it can
+                    show the final display for inspection, but it is not raw passthrough or camera
+                    input.
                 </p>
                 <p>
                     That separation matters for implementation and for public claims. The local
@@ -91,7 +93,8 @@
                     <ul class="plain-list">
                         <li>OpenXR and compositor-layer passthrough semantics</li>
                         <li>Passthrough Camera API access, permissions, samples, and privacy boundaries</li>
-                        <li>Depth API, occlusion, raycasting, and scene-understanding separation</li>
+                        <li>Depth API, occlusion, raycasting, diagnostics, and scene-understanding separation</li>
+                        <li>MediaProjection treated as final-display inspection, not app access to compositor pixels</li>
                         <li>Passthrough+, neural view synthesis, and patent lineage as design context</li>
                         <li>Implementation notes for mixed-reality prototypes without overclaiming API access</li>
                     </ul>
@@ -118,13 +121,16 @@
                     Mixed-reality writing often collapses passthrough visibility into camera
                     access. This project keeps those apart. Seeing the room through a headset,
                     compositing virtual content over it, receiving camera frames, receiving depth,
-                    and inferring scene structure are related but different affordances.
+                    capturing the final display, and inferring scene structure are related but
+                    different affordances.
                 </p>
                 <p>
                     The public usefulness of the archive is therefore corrective: it blocks vague
                     claims before they turn into design assumptions. It also
                     gives experimental work a cleaner checklist for what must be tested on-device
                     rather than inferred from marketing language, patents, or old forum answers.
+                    Detailed capture datasets and prototype-specific tuning stay in the local
+                    implementation repos; this page keeps the public boundary and source taxonomy.
                 </p>
             </div>
             <div class="detail-stack">
@@ -133,6 +139,7 @@
                     <ul class="plain-list">
                         <li>Compositor passthrough separated from raw camera access</li>
                         <li>Depth and scene APIs treated as distinct sensing layers</li>
+                        <li>MediaProjection framed as final-display evidence only</li>
                         <li>Official docs preferred over rumor, demos, and patent extrapolation</li>
                         <li>Private prototype details kept out of the public source map</li>
                     </ul>
