@@ -352,12 +352,40 @@ li {
     text-transform: uppercase;
 }
 
+.surface-groups {
+    display: grid;
+    gap: 1rem;
+    max-width: 60rem;
+    margin: 0 auto 1.8rem;
+}
+
+.surface-group {
+    display: grid;
+    gap: 0.75rem;
+    padding: 1rem;
+    border: 1px solid var(--line);
+    background: rgba(251, 248, 242, 0.46);
+}
+
+.surface-group h3 {
+    margin: 0;
+    color: var(--muted);
+    font-family: var(--font-ui);
+    font-size: 0.8rem;
+    font-style: normal;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
 .surface-map {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 0.85rem;
-    max-width: 60rem;
-    margin: 0 auto 1.8rem;
+}
+
+.surface-map--general {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
 .surface-link {
@@ -647,6 +675,7 @@ li {
     }
 
     .surface-map,
+    .surface-map--general,
     .project-grid,
     .reference-grid,
     .two-column,
