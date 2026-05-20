@@ -3,194 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meta Passthrough Stack | Mesmer Prism</title>
-    <link rel="canonical" href="https://mesmerprism.com/projects/meta-passthrough-stack.html">
+    <title>Quest Passthrough Source Boundary | Mesmer Prism</title>
+    <link rel="canonical" href="https://mesmerprism.github.io/Rusty-XR/passthrough.html">
     <meta
         name="description"
-        content="Meta Passthrough Stack is Till Holzapfel's public source map for Quest compositor passthrough, app-visible camera access, environment depth, MediaProjection, and implementation boundaries."
+        content="The Meta Quest passthrough source-boundary notes now live with Rusty XR, where the public camera, depth, compositor, and final-display contracts are maintained."
     >
-    <meta property="og:title" content="Meta Passthrough Stack | Mesmer Prism">
+    <meta http-equiv="refresh" content="0; url=https://mesmerprism.github.io/Rusty-XR/passthrough.html">
+    <meta property="og:title" content="Quest Passthrough Source Boundary | Rusty XR">
     <meta
         property="og:description"
-        content="A public source map separating Meta Quest compositor passthrough, app-visible camera access, environment depth, final-display capture, patents, and implementation notes."
+        content="Rusty XR carries the public source-boundary notes for compositor passthrough, raw camera frames, environment depth, and final-display inspection."
     >
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://mesmerprism.com/projects/meta-passthrough-stack.html">
+    <meta property="og:url" content="https://mesmerprism.github.io/Rusty-XR/passthrough.html">
     <meta name="theme-color" content="#f4efe7">
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="/assets/fonts.css">
     <link rel="stylesheet" href="/styles.css">
 </head>
 <body class="project-page">
-    <header class="site-header">
-        <div class="shell header-row">
-            <a class="site-name" href="/">Mesmer Prism</a>
-            <nav class="site-nav" aria-label="Primary">
-                <a href="/#work">Work</a>
-                <a href="/#publications">Publications</a>
-                <a href="/#background">Background</a>
-                <a href="/#contact">Contact</a>
-                <a href="https://github.com/MesmerPrism" target="_blank" rel="noopener noreferrer">GitHub</a>
-            </nav>
-        </div>
-    </header>
-
     <main class="shell">
         <section class="hero">
             <div class="hero-shell hero-shell--page">
-                <p class="eyebrow">Mixed reality implementation boundaries</p>
-                <h1>Meta Passthrough Stack</h1>
+                <p class="eyebrow">Moved into Rusty XR</p>
+                <h1>Quest Passthrough Source Boundary</h1>
                 <p class="project-lede">
-                    Meta Passthrough Stack is a public source map for a specific mixed-reality
-                    problem: what a Quest app can render, sense, and process when it uses
-                    passthrough. The project separates compositor passthrough, app-visible camera
-                    frames, environment depth, scene understanding, final-display capture, patents,
-                    and local implementation notes so design claims do not outrun the APIs.
+                    The Quest passthrough source-boundary notes now live in the Rusty XR
+                    documentation, alongside the public contracts and examples that use the same
+                    camera, depth, compositor, and final-display vocabulary.
                 </p>
                 <div class="hero-actions">
-                    <a class="action-link action-link--strong" href="/#work">Back to work</a>
-                    <a class="action-link" href="/projects/viscereality.html">Viscereality</a>
-                    <a class="action-link" href="#references">References</a>
+                    <a class="action-link action-link--strong" href="https://mesmerprism.github.io/Rusty-XR/passthrough.html">Open Rusty XR passthrough notes</a>
+                    <a class="action-link" href="/projects/rusty-xr.html">Rusty XR overview</a>
                 </div>
-            </div>
-        </section>
-
-        <section class="section two-column">
-            <div>
-                <div class="section-heading">
-                    <p class="section-kicker">Direction</p>
-                    <h2>What the stack separates</h2>
-                </div>
-                <p>
-                    Passthrough is not one thing. A compositor passthrough layer can make the real
-                    room visible behind virtual content without giving the app raw camera pixels.
-                    The Passthrough Camera API is a different surface: it exposes forward-facing
-                    RGB camera frames for computer-vision and machine-learning use cases under
-                    device, OS, permission, and policy constraints. Environment depth is separate
-                    again, and is mainly useful for occlusion, raycasting, diagnostics, and
-                    grounding virtual content in the room. MediaProjection is another lane: it can
-                    show the final display for inspection, but it is not raw passthrough or camera
-                    input.
-                </p>
-                <p>
-                    That separation matters for implementation and for public claims. The local
-                    notes use Meta and Khronos documentation, sample projects, view-synthesis
-                    papers, and patents as a source map. Patents and research systems are treated
-                    as design signals, not as evidence that a shipped headset exposes a hidden
-                    capability.
-                </p>
-                <p>
-                    The practical thread now runs through Rusty XR and companion-app
-                    experimentation around what can be built with the exposed stack. Rusty XR
-                    keeps compositor passthrough, raw camera input, environment depth, and
-                    final-display inspection in separate lanes so implementation notes do not turn
-                    into vague API claims.
-                </p>
-            </div>
-            <div class="detail-stack">
-                <section class="detail-block">
-                    <h3>Current work</h3>
-                    <ul class="plain-list">
-                        <li>OpenXR and compositor-layer passthrough semantics</li>
-                        <li>Passthrough Camera API access, permissions, samples, and privacy boundaries</li>
-                        <li>Depth API, occlusion, raycasting, diagnostics, and scene-understanding separation</li>
-                        <li>MediaProjection treated as final-display inspection, not app access to compositor pixels</li>
-                        <li>Passthrough+, neural view synthesis, and patent lineage as design context</li>
-                        <li>Implementation notes for mixed-reality prototypes without overclaiming API access</li>
-                    </ul>
-                </section>
-                <section class="detail-block">
-                    <h3>Connected projects</h3>
-                    <ul class="plain-list">
-                        <li><a href="/projects/rusty-xr.html">Rusty XR</a> for public Rust/OpenXR examples and camera/depth source taxonomy</li>
-                        <li><a href="/projects/viscereality.html">Viscereality</a> for Quest-based research systems and operator tooling</li>
-                        <li><a href="/projects/viscereality-companion.html">Quest Companion Tools</a> for the public tooling surface</li>
-                        <li><a href="/projects/plasmatic-multitudes.html">Plasmatic Multitudes</a> for weakly bounded embodiment and mixed-reality body design</li>
-                    </ul>
-                </section>
-            </div>
-        </section>
-
-        <section class="section two-column">
-            <div>
-                <div class="section-heading">
-                    <p class="section-kicker">Boundary</p>
-                    <h2>Why the distinction matters</h2>
-                </div>
-                <p>
-                    Mixed-reality writing often collapses passthrough visibility into camera
-                    access. This project keeps those apart. Seeing the room through a headset,
-                    compositing virtual content over it, receiving camera frames, receiving depth,
-                    capturing the final display, and inferring scene structure are related but
-                    different affordances.
-                </p>
-                <p>
-                    The public usefulness of the archive is therefore corrective: it blocks vague
-                    claims before they turn into design assumptions. It also
-                    gives experimental work a cleaner checklist for what must be tested on-device
-                    rather than inferred from marketing language, patents, or old forum answers.
-                    Detailed capture datasets and prototype-specific tuning stay in the local
-                    implementation repos; the project keeps the public boundary and source
-                    taxonomy.
-                </p>
-            </div>
-            <div class="detail-stack">
-                <section class="detail-block">
-                    <h3>Public focus</h3>
-                    <ul class="plain-list">
-                        <li>Compositor passthrough separated from raw camera access</li>
-                        <li>Depth and scene APIs treated as distinct sensing layers</li>
-                        <li>MediaProjection framed as final-display evidence only</li>
-                        <li>Official docs preferred over rumor, demos, and patent extrapolation</li>
-                        <li>Private prototype details kept out of the public source map</li>
-                    </ul>
-                </section>
-            </div>
-        </section>
-
-        <section class="section" id="references">
-            <div class="section-heading">
-                <p class="section-kicker">References</p>
-                <h2>Current references</h2>
-                <p>
-                    These are the main anchors defining the Meta Passthrough Stack. Official API
-                    documentation defines the developer surface; papers and
-                    patents provide design context only.
-                </p>
-            </div>
-            <div class="reference-grid">
-                <section class="detail-block">
-                    <h3>Developer surface</h3>
-                    <ul class="plain-list">
-                        <li><strong>Meta.</strong> "<a class="reference-link" href="https://developers.meta.com/horizon/documentation/unity/unity-pca-overview/" target="_blank" rel="noopener noreferrer">Passthrough Camera API Overview</a>." Meta Horizon documentation, updated April 21, 2026.</li>
-                        <li><strong>Meta.</strong> "<a class="reference-link" href="https://developers.meta.com/horizon/documentation/unity/unity-depthapi-overview/" target="_blank" rel="noopener noreferrer">Depth API Overview</a>." Meta Horizon documentation, updated March 20, 2025.</li>
-                        <li><strong>Khronos Group.</strong> "<a class="reference-link" href="https://registry.khronos.org/OpenXR/specs/1.1/man/html/XrCompositionLayerPassthroughFB.html" target="_blank" rel="noopener noreferrer">XrCompositionLayerPassthroughFB</a>." OpenXR 1.1 reference page.</li>
-                        <li><strong>Oculus Samples.</strong> "<a class="reference-link" href="https://github.com/oculus-samples/Unity-PassthroughCameraApiSamples" target="_blank" rel="noopener noreferrer">Unity Passthrough Camera API Samples</a>." Public sample repository.</li>
-                        <li><strong>Rusty XR.</strong> "<a class="reference-link" href="https://github.com/MesmerPrism/Rusty-XR/blob/main/docs/QUEST_VISUAL_SOURCE_TAXONOMY.md" target="_blank" rel="noopener noreferrer">Quest Visual Source Taxonomy</a>." Public Rusty XR source-boundary note.</li>
-                        <li><strong>Rusty XR.</strong> "<a class="reference-link" href="https://github.com/MesmerPrism/Rusty-XR/blob/main/docs/RUSTY_XR_COMPANION_INTEGRATION.md" target="_blank" rel="noopener noreferrer">Rusty XR Companion Integration</a>." Public core-to-companion handoff note.</li>
-                    </ul>
-                </section>
-                <section class="detail-block">
-                    <h3>View-synthesis and patent context</h3>
-                    <ul class="plain-list">
-                        <li><strong>Chaurasia et al.</strong> "<a class="reference-link" href="https://doi.org/10.1145/3384540" target="_blank" rel="noopener noreferrer">Passthrough+: Real-Time Stereoscopic View Synthesis for Mobile Mixed Reality</a>." <em>Proceedings of the ACM on Computer Graphics and Interactive Techniques</em> (2020).</li>
-                        <li><strong>Andersson et al.</strong> "<a class="reference-link" href="https://arxiv.org/abs/2207.02186" target="_blank" rel="noopener noreferrer">NeuralPassthrough: Learned Real-Time View Synthesis for VR</a>." arXiv (2022).</li>
-                        <li><strong>Meta Platforms Technologies.</strong> "<a class="reference-link" href="https://patents.google.com/patent/EP4470211A1/en" target="_blank" rel="noopener noreferrer">Display System with Machine Learning Based Stereoscopic View Synthesis over a Wide Field of View</a>." Patent publication family.</li>
-                        <li><strong>Justia Patents.</strong> "<a class="reference-link" href="https://patents.justia.com/patent/12231615" target="_blank" rel="noopener noreferrer">US Patent 12,231,615</a>." Patent index page for ML-based stereoscopic view synthesis.</li>
-                    </ul>
-                </section>
             </div>
         </section>
     </main>
-
-    <footer class="site-footer">
-        <div class="shell footer-row">
-            <p>Mesmer Prism is the public home for selected work by Till Holzapfel.</p>
-            <nav class="footer-links" aria-label="Legal">
-                <a href="/impressum.html">Impressum</a>
-                <a href="/datenschutz.html">Datenschutz</a>
-            </nav>
-        </div>
-    </footer>
 </body>
 </html>
