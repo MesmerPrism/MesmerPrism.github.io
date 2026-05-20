@@ -43,6 +43,13 @@ The homepage includes an optional experimental hero enhancement in
   `data-pretext-hero="on"` to `data-pretext-hero="off"` in
   [`index.html`](index.html).
 
+## Plasmatic Multitudes
+
+The Plasmatic Multitudes public pages live directly inside this site under
+[`plasmatic-multitudes/`](plasmatic-multitudes/). The former standalone
+`plasmatic-multitudes-pages` repo is only a legacy redirect shell for old
+GitHub Pages links.
+
 ## Privacy-sensitive assets
 
 The site serves its fonts from [`assets/fonts.css`](assets/fonts.css) and local

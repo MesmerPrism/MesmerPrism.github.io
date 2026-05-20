@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hollow Face Lab | Mesmer Prism</title>
+    <link rel="canonical" href="https://mesmerprism.com/projects/hollow-face-lab.html">
+    <meta
+        name="description"
+        content="Hollow Face Lab maps WebGL, WebXR, and Rusty XR implementation choices against hollow-face and depth-inversion research."
+    >
+    <meta property="og:title" content="Hollow Face Lab | Mesmer Prism">
+    <meta
+        property="og:description"
+        content="Stimulus variables, WebXR and flat-web implementation, mesh provenance, runtime standards, and published hollow-face references."
+    >
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mesmerprism.com/projects/hollow-face-lab.html">
+    <meta name="theme-color" content="#f4efe7">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/assets/fonts.css">
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body class="project-page">
+    <header class="site-header">
+        <div class="shell header-row">
+            <a class="site-name" href="/">Mesmer Prism</a>
+            <nav class="site-nav" aria-label="Primary">
+                <a href="/#work">Work</a>
+                <a href="/#publications">Publications</a>
+                <a href="/#background">Background</a>
+                <a href="/#contact">Contact</a>
+                <a href="https://github.com/MesmerPrism" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="shell">
+        <section class="hero">
+            <div class="hero-shell hero-shell--page">
+                <p class="eyebrow">Depth inversion and research tooling</p>
+                <h1>Hollow Face Lab</h1>
+                <p class="project-lede">
+                    The hollow-face and hollow-mask illusion exposes a difficult boundary
+                    between bottom-up depth cues and top-down face interpretation. Hollow
+                    Face Lab treats that boundary as an instrument problem: a concave face
+                    stimulus has to run flat in a browser, enter WebXR where supported,
+                    and later share backend contracts with Rusty XR / OpenXR lab runtimes
+                    while preserving source-traceable variables.
+                </p>
+                <div class="hero-actions">
+                    <a class="action-link action-link--strong" href="#source-map">Source map</a>
+                    <a class="action-link" href="#implementation">Implementation</a>
+                    <a class="action-link" href="#references">References</a>
+                    <a class="action-link" href="/projects/rusty-xr.html">Rusty XR</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section two-column" id="source-map">
+            <div>
+                <div class="section-heading">
+                    <p class="section-kicker">Instrument problem</p>
+                    <h2>From illusion demo to instrument</h2>
+                </div>
+                <p>
+                    The hollow-face illusion is useful because a concave face can be experienced
+                    as convex even when some depth cues point the other way. The app is therefore
+                    being built around logged variables rather than a single polished visual trick:
+                    mesh identity, concavity, texture/noise, lighting, material, stereo/XR status,
+                    local probes, response timing, and runtime quality all need to survive export.
+                </p>
+                <p>
+                    Published sources and implementation choices have to stay separate:
+                    evidence can support variables and caveats without turning every
+                    design idea into an established finding.
+                </p>
+            </div>
+            <div class="detail-stack">
+                <section class="detail-block">
+                    <h3>Source-backed variables</h3>
+                    <ul class="plain-list">
+                        <li>Orientation, face familiarity, pigmentation, and shading.</li>
+                        <li>Realistic face texture versus random-dot or noise texture.</li>
+                        <li>Stereo, motion parallax, depth scaling, and local probe targets.</li>
+                        <li>Perceptual report, slow action, rapid action, and vergence as separable channels.</li>
+                    </ul>
+                </section>
+                <section class="detail-block">
+                    <h3>Open design variables</h3>
+                    <ul class="plain-list">
+                        <li>Triangle-particle surfaces and mesh oversampling as gestalt manipulations.</li>
+                        <li>Feature apertures around eyes, mouth, and nostrils.</li>
+                        <li>Shadow-factorial and specular-reflection conditions.</li>
+                        <li>Rights-reviewed face-mesh families beyond the V0 baseline mesh.</li>
+                    </ul>
+                </section>
+            </div>
+        </section>
+
+        <section class="section two-column" id="implementation">
+            <div>
+                <div class="section-heading">
+                    <p class="section-kicker">Implementation stack</p>
+                    <h2>Flat web, WebXR, and Rusty XR</h2>
+                </div>
+                <p>
+                    V0 is a Three.js/WebGL browser app with WebXR session detection and flat-web
+                    fallback. It currently uses the Apache-2.0 MediaPipe canonical face OBJ as a
+                    neutral runtime baseline. That asset is useful for topology, UVs, and
+                    coordinate mapping, but it is not being presented as an accepted hollow-face
+                    research mesh.
+                </p>
+                <p>
+                    The longer-term stack keeps three evidence tiers separate: flat browser use for
+                    public/low-control tasks, WebXR for browser-based immersive sessions where
+                    supported, and a later lab-native Rusty XR / OpenXR lane for controlled HMD
+                    studies, action endpoints, eye tracking, and timing-sensitive instrumentation.
+                </p>
+            </div>
+            <div class="detail-stack">
+                <section class="detail-block">
+                    <h3>Current V0 controls</h3>
+                    <ul class="plain-list">
+                        <li>Concave/convex face mode and concavity depth scale.</li>
+                        <li>Lighting presets with explicit key, fill, ambient, and reflectance values.</li>
+                        <li>Feature aperture modes for eyes, mouth, and nostrils.</li>
+                        <li>Native and oversampled mesh resolutions.</li>
+                        <li>Continuous mesh and triangle-particle rendering.</li>
+                        <li>Global and local response logging with confidence and timing.</li>
+                    </ul>
+                </section>
+                <section class="detail-block">
+                    <h3>Public boundary</h3>
+                    <ul class="plain-list">
+                        <li>No diagnostic, therapeutic, or psychosis-prediction claim.</li>
+                        <li>No unsupervised strobe or physiology module in V0.</li>
+                        <li>No third-party asset import without a license and provenance note.</li>
+                        <li>No silent pooling of flat-web, WebXR, and lab-native data.</li>
+                    </ul>
+                </section>
+            </div>
+        </section>
+
+        <section class="section" id="references">
+            <div class="section-heading">
+                <p class="section-kicker">References</p>
+                <h2>Source routes</h2>
+                <p>
+                    These links anchor the current implementation map. Some sources support
+                    scientific variables; others support asset provenance or runtime
+                    standards.
+                </p>
+            </div>
+            <div class="reference-grid">
+                <section class="detail-block">
+                    <h3>Hollow-face research</h3>
+                    <ul class="plain-list">
+                        <li><strong>Hill and Johnston.</strong> "<a class="reference-link" href="https://ro.uow.edu.au/ndownloader/files/50499303" target="_blank" rel="noopener noreferrer">The hollow-face illusion: Object-specific knowledge, general assumptions or properties of the stimulus?</a>" <em>Perception</em>, 2007.</li>
+                        <li><strong>Krolikzak, Heard, Goodale, and Gregory.</strong> "<a class="reference-link" href="https://www.uwo.ca/bmi/goodalelab/pdf/hollow_face.pdf" target="_blank" rel="noopener noreferrer">Dissociation of perception and action unmasked by the hollow-face illusion.</a>" <em>Brain Research</em>, 2006.</li>
+                        <li><strong>Grosjean, Rinkenauer, and Jainta.</strong> "<a class="reference-link" href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0044706" target="_blank" rel="noopener noreferrer">Where Do the Eyes Really Go in the Hollow-Face Illusion?</a>" <em>PLOS ONE</em>, 2012.</li>
+                        <li><strong>Keane, Silverstein, Wang, and Papathomas.</strong> "<a class="reference-link" href="https://ruccs.rutgers.edu/faculty/pylyshyn/Proseminar13/Keane-Papathomas_Depth-Schizophrenia_JournAbn.pdf" target="_blank" rel="noopener noreferrer">Reduced Depth Inversion Illusions in Schizophrenia Are State-Specific and Occur for Multiple Object Types and Viewing Conditions.</a>" <em>Journal of Abnormal Psychology</em>, 2013.</li>
+                        <li><strong>Farkas, Papathomas, Silverstein, Kourtev, and Papayanopoulos.</strong> "<a class="reference-link" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5156401/" target="_blank" rel="noopener noreferrer">Dynamic 3-D computer graphics for designing a diagnostic tool for patients with schizophrenia.</a>" <em>The Visual Computer</em>, 2016.</li>
+                    </ul>
+                </section>
+                <section class="detail-block">
+                    <h3>Implementation and provenance</h3>
+                    <ul class="plain-list">
+                        <li><strong>Google AI Edge / MediaPipe.</strong> "<a class="reference-link" href="https://github.com/google-ai-edge/mediapipe/blob/master/mediapipe/modules/face_geometry/data/canonical_face_model.obj" target="_blank" rel="noopener noreferrer">canonical_face_model.obj</a>" and "<a class="reference-link" href="https://github.com/google-ai-edge/mediapipe/blob/master/LICENSE" target="_blank" rel="noopener noreferrer">Apache-2.0 license route</a>."</li>
+                        <li><strong>W3C Immersive Web Working Group.</strong> "<a class="reference-link" href="https://www.w3.org/TR/webxr/" target="_blank" rel="noopener noreferrer">WebXR Device API.</a>" Candidate Recommendation Draft.</li>
+                        <li><strong>MDN Web Docs.</strong> "<a class="reference-link" href="https://developer.mozilla.org/en-US/docs/Web/API/WebXR_Device_API" target="_blank" rel="noopener noreferrer">WebXR Device API.</a>" Browser support and secure-context notes.</li>
+                        <li><strong>Khronos Group.</strong> "<a class="reference-link" href="https://registry.khronos.org/glTF/specs/2.0/glTF-2.0.html" target="_blank" rel="noopener noreferrer">glTF 2.0 Specification.</a>" Runtime-neutral 3D asset format.</li>
+                        <li><strong>Khronos Group.</strong> "<a class="reference-link" href="https://registry.khronos.org/OpenXR/" target="_blank" rel="noopener noreferrer">OpenXR Registry.</a>" Native XR runtime route for later lab builds.</li>
+                        <li><strong>Michael Bach.</strong> "<a class="reference-link" href="https://michaelbach.de/ot/fcs-hollowFace/" target="_blank" rel="noopener noreferrer">Rotating face mask.</a>" Teaching/demo reference, not an implementation source to copy.</li>
+                    </ul>
+                </section>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="shell footer-row">
+            <p>Mesmer Prism is the public home for selected work by Till Holzapfel.</p>
+            <nav class="footer-links" aria-label="Legal">
+                <a href="/impressum.html">Impressum</a>
+                <a href="/datenschutz.html">Datenschutz</a>
+            </nav>
+        </div>
+    </footer>
+</body>
+</html>

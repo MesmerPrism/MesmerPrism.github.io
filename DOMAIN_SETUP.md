@@ -58,6 +58,27 @@ Add a `CNAME` record:
 
 Do not point `www` to `mesmerprism.com`.
 
+### Rusty XR relay subdomain
+
+The Quest-to-Quest relay is not hosted by GitHub Pages. Keep the existing
+`@` and `www` records pointed at GitHub Pages, and add a separate record for
+the relay host after the relay VM or public relay endpoint exists:
+
+- type: `A`
+- host: `relay`
+- value: `<public IPv4 address of the relay server>`
+- TTL: default or 300 seconds while testing
+
+If the relay provider gives a stable hostname instead of a fixed IP, use a
+`CNAME` record instead:
+
+- type: `CNAME`
+- host: `relay`
+- value: `<provider relay hostname>`
+
+Do not point `relay` to `MesmerPrism.github.io` or `mesmerprism.com`; GitHub
+Pages can only serve static web content, not the TCP relay process.
+
 ## After changing DNS
 
 1. Wait for propagation.
@@ -73,7 +94,11 @@ Use PowerShell:
 ```powershell
 Resolve-DnsName mesmerprism.com
 Resolve-DnsName www.mesmerprism.com
+Resolve-DnsName relay.mesmerprism.com
 ```
 
 You want to see the GitHub Pages `A` records on the apex and a `CNAME` from
 `www` to `MesmerPrism.github.io`.
+
+For the relay subdomain, you want to see either the relay server IPv4 address
+or a CNAME chain that eventually resolves to it.

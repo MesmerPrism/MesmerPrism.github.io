@@ -1,6 +1,7 @@
 # Calligraphy Reference Pack
 
-This folder holds a small, rights-checked museum reference set for future `plasmatic-multitudes-pages` styling passes.
+This folder holds a small, rights-checked museum reference set for future
+`MesmerPrism.github.io/plasmatic-multitudes` styling passes.
 
 It is intentionally narrow:
 
