@@ -563,6 +563,22 @@ li {
     text-decoration-color: currentColor;
 }
 
+.inline-citation,
+.inline-citation:visited {
+    color: var(--accent);
+    font-family: var(--font-ui);
+    font-size: 0.88em;
+    font-weight: 700;
+    overflow-wrap: anywhere;
+    text-decoration-color: color-mix(in srgb, var(--accent) 45%, transparent);
+    text-underline-offset: 0.18em;
+}
+
+.inline-citation:hover {
+    color: var(--ink);
+    text-decoration-color: currentColor;
+}
+
 .contact-list {
     list-style: none;
     padding: 0;
