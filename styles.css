@@ -680,6 +680,13 @@ li {
         max-width: 100%;
     }
 
+    .project-page p,
+    .project-page li,
+    .project-page .project-lede,
+    .project-page .essay-block {
+        max-width: 100%;
+    }
+
     .surface-map,
     .surface-map--general,
     .project-grid,
