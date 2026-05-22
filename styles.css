@@ -668,10 +668,16 @@ li {
 
     .site-nav {
         justify-content: flex-start;
+        width: 100%;
     }
 
     .hero {
         padding-top: 3rem;
+    }
+
+    .project-page .hero-shell--page {
+        width: 100%;
+        max-width: 100%;
     }
 
     .surface-map,
@@ -695,8 +701,14 @@ li {
     }
 
     .hero-actions {
-        justify-content: center;
-        align-items: center;
+        justify-content: flex-start;
+        align-items: stretch;
+        width: 100%;
+    }
+
+    .project-page .action-link {
+        flex: 1 1 9rem;
+        min-width: 0;
     }
 
     .section-heading--center {
@@ -715,6 +727,7 @@ li {
     p,
     li {
         font-size: 1rem;
+        overflow-wrap: break-word;
     }
 
 }
