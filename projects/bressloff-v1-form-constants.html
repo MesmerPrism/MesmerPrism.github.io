@@ -51,6 +51,7 @@
                 </p>
                 <div class="hero-actions">
                     <a class="action-link action-link--strong" href="#animated-figures">Animated figures</a>
+                    <a class="action-link" href="#paper-calibration">Paper calibration</a>
                     <a class="action-link" href="https://github.com/MesmerPrism/bressloff-v1-form-constants" target="_blank" rel="noopener noreferrer">Source code</a>
                     <a class="action-link" href="https://github.com/karacsm/V1-sim" target="_blank" rel="noopener noreferrer">Original notebook</a>
                     <a class="action-link" href="#references">References</a>
@@ -93,7 +94,7 @@
                         <li>Slow browser animations of the main planform families</li>
                         <li>Retino-cortical remapping from cortical stripes to visual-field forms</li>
                         <li>Orientation-contour glyphs drawn as short local line segments</li>
-                        <li>Starting points for paper-figure presets in the Rust implementation</li>
+                        <li>Named paper-figure presets with lattice-local branch readouts</li>
                     </ul>
                 </section>
                 <section class="detail-block">
@@ -183,6 +184,124 @@
             </div>
         </section>
 
+        <section class="section" id="paper-calibration">
+            <div class="section-heading">
+                <p class="section-kicker">Paper calibration</p>
+                <h2>Named figures, generated panels, and branch notes</h2>
+                <p>
+                    Each row links the original paper figure and places the current generated
+                    implementation beside the formula path used in the Rust renderer. The hosted
+                    images are generated assets from this repository; original-paper scans remain
+                    source references until reuse permission is clear.
+                </p>
+            </div>
+            <div class="bressloff-calibration-grid" aria-label="Bressloff paper figure calibration">
+                <article class="bressloff-calibration-row">
+                    <div class="bressloff-source-panel">
+                        <h3>Figure 31 original</h3>
+                        <p>
+                            Square/cobweb even planform in the detailed Bressloff et al. Royal
+                            Society treatment.
+                        </p>
+                        <a class="reference-link" href="https://doi.org/10.1098/rstb.2000.0769" target="_blank" rel="noopener noreferrer">Open paper reference</a>
+                    </div>
+                    <figure class="bressloff-generated-panel">
+                        <picture>
+                            <source media="(prefers-reduced-motion: no-preference)" srcset="/assets/bressloff-v1/fig31-square-even.webp" type="image/webp">
+                            <img src="/assets/bressloff-v1/fig31-square-even.png" width="360" height="360" alt="Generated Figure 31 square even cobweb preset through the retino-cortical map" loading="lazy">
+                        </picture>
+                        <figcaption>Generated <code>fig31_square_even</code> preset</figcaption>
+                    </figure>
+                    <div class="bressloff-note-panel">
+                        <h3>Implementation note</h3>
+                        <p>
+                            Two orthogonal cortical modes are rendered through the double map.
+                            The target planform renders as cobweb/square; the same-lattice
+                            branch readout currently selects the roll/spiral branch.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="bressloff-calibration-row">
+                    <div class="bressloff-source-panel">
+                        <h3>Figure 32 original</h3>
+                        <p>
+                            Odd square/cobweb variant for checking parity-dependent contour
+                            structure.
+                        </p>
+                        <a class="reference-link" href="https://doi.org/10.1098/rstb.2000.0769" target="_blank" rel="noopener noreferrer">Open paper reference</a>
+                    </div>
+                    <figure class="bressloff-generated-panel">
+                        <picture>
+                            <source media="(prefers-reduced-motion: no-preference)" srcset="/assets/bressloff-v1/fig32-square-odd.webp" type="image/webp">
+                            <img src="/assets/bressloff-v1/fig32-square-odd.png" width="360" height="360" alt="Generated Figure 32 square odd cobweb preset through the retino-cortical map" loading="lazy">
+                        </picture>
+                        <figcaption>Generated <code>fig32_square_odd</code> preset</figcaption>
+                    </figure>
+                    <div class="bressloff-note-panel">
+                        <h3>Implementation note</h3>
+                        <p>
+                            The odd branch uses the same square lattice target with the odd
+                            orientation eigenfunction. The rendered family matches the target;
+                            the local stability readout again falls to roll/spiral.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="bressloff-calibration-row">
+                    <div class="bressloff-source-panel">
+                        <h3>Figure 33 original</h3>
+                        <p>
+                            Rhombic even planform, used here as the cleanest current
+                            same-family calibration case.
+                        </p>
+                        <a class="reference-link" href="https://doi.org/10.1098/rstb.2000.0769" target="_blank" rel="noopener noreferrer">Open paper reference</a>
+                    </div>
+                    <figure class="bressloff-generated-panel">
+                        <picture>
+                            <source media="(prefers-reduced-motion: no-preference)" srcset="/assets/bressloff-v1/fig33-rhombic-even.webp" type="image/webp">
+                            <img src="/assets/bressloff-v1/fig33-rhombic-even.png" width="360" height="360" alt="Generated Figure 33 rhombic even preset through the retino-cortical map" loading="lazy">
+                        </picture>
+                        <figcaption>Generated <code>fig33_rhombic_even</code> preset</figcaption>
+                    </figure>
+                    <div class="bressloff-note-panel">
+                        <h3>Implementation note</h3>
+                        <p>
+                            The rendered planform, family check, and same-lattice branch
+                            selector currently agree. This is the baseline for the later
+                            figure-by-figure geometry calibration.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="bressloff-calibration-row">
+                    <div class="bressloff-source-panel">
+                        <h3>Figure 35 original</h3>
+                        <p>
+                            Hexagonal even phase variant. This row is the current phase-selection
+                            test for the quadratic amplitude term.
+                        </p>
+                        <a class="reference-link" href="https://doi.org/10.1098/rstb.2000.0769" target="_blank" rel="noopener noreferrer">Open paper reference</a>
+                    </div>
+                    <figure class="bressloff-generated-panel">
+                        <picture>
+                            <source media="(prefers-reduced-motion: no-preference)" srcset="/assets/bressloff-v1/fig35-hex-even.webp" type="image/webp">
+                            <img src="/assets/bressloff-v1/fig35-hex-even.png" width="360" height="360" alt="Generated Figure 35 hex pi preset through the retino-cortical map" loading="lazy">
+                        </picture>
+                        <figcaption>Generated <code>fig35_hex_even</code> preset</figcaption>
+                    </figure>
+                    <div class="bressloff-note-panel">
+                        <h3>Implementation note</h3>
+                        <p>
+                            The renderer draws the requested hex-pi variant. The same-lattice
+                            branch selector chooses the honeycomb phase partner under the current
+                            quadratic-term sign convention.
+                        </p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
         <section class="section two-column">
             <div>
                 <div class="section-heading">
@@ -203,10 +322,9 @@
                     <a class="inline-citation" href="https://github.com/karacsm/V1-sim" target="_blank" rel="noopener noreferrer">karacsm/V1-sim</a>
                     notebook lineage. Brain Candy is relevant only as adjacent
                     state-shift context; the implementation itself focuses on Bressloff's
-                    model equations. Planned work is side-by-side calibration: named
-                    paper-figure presets, orientation-channel exports, and comparisons
-                    between the mathematical descriptions and the forms they are meant to
-                    explain.
+                    model equations. The current calibration layer exposes named paper-figure
+                    presets, orientation-channel exports, and side-by-side checks between
+                    target planforms, same-lattice branch selection, and generated output.
                 </p>
             </div>
             <div class="detail-stack">
@@ -280,6 +398,7 @@
                     <h3>Core model papers</h3>
                     <ul class="plain-list">
                         <li><strong>Ermentrout, G. B., and J. D. Cowan.</strong> "<a class="reference-link" href="https://doi.org/10.1007/BF00336965" target="_blank" rel="noopener noreferrer">A Mathematical Theory of Visual Hallucination Patterns</a>." <em>Biological Cybernetics</em> 34 (1979).</li>
+                        <li><strong>Bressloff, P. C., J. D. Cowan, M. Golubitsky, P. J. Thomas, and M. C. Wiener.</strong> "<a class="reference-link" href="https://doi.org/10.1098/rstb.2000.0769" target="_blank" rel="noopener noreferrer">Geometric Visual Hallucinations, Euclidean Symmetry and the Functional Architecture of Striate Cortex</a>." <em>Philosophical Transactions of the Royal Society B</em> 356 (2001).</li>
                         <li><strong>Bressloff, P. C., J. D. Cowan, M. Golubitsky, P. J. Thomas, and M. C. Wiener.</strong> "<a class="reference-link" href="https://doi.org/10.1162/089976602317250861" target="_blank" rel="noopener noreferrer">What Geometric Visual Hallucinations Tell Us About the Visual Cortex</a>." <em>Neural Computation</em> 14, no. 3 (2002).</li>
                         <li><strong>Rule, M., M. Stoffregen, and B. Ermentrout.</strong> "<a class="reference-link" href="https://doi.org/10.1371/journal.pcbi.1002158" target="_blank" rel="noopener noreferrer">A Model for the Origin and Properties of Flicker-Induced Geometric Phosphenes</a>." <em>PLOS Computational Biology</em> 7, no. 9 (2011).</li>
                     </ul>

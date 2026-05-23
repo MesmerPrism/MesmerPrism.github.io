@@ -463,6 +463,73 @@ li {
     line-height: 1.45;
 }
 
+.bressloff-calibration-grid {
+    display: grid;
+    gap: 1rem;
+}
+
+.bressloff-calibration-row {
+    display: grid;
+    grid-template-columns: minmax(0, 0.85fr) minmax(15rem, 0.9fr) minmax(0, 1fr);
+    gap: 1rem;
+    align-items: stretch;
+    padding: 1rem;
+    border: 1px solid var(--line);
+    background: var(--panel);
+}
+
+.bressloff-source-panel,
+.bressloff-note-panel {
+    display: grid;
+    align-content: start;
+    gap: 0.7rem;
+}
+
+.bressloff-source-panel h3,
+.bressloff-note-panel h3 {
+    margin: 0;
+    font-family: var(--font-ui);
+    font-size: 0.96rem;
+}
+
+.bressloff-source-panel p,
+.bressloff-note-panel p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.98rem;
+    line-height: 1.5;
+}
+
+.bressloff-generated-panel {
+    display: grid;
+    gap: 0.55rem;
+    margin: 0;
+}
+
+.bressloff-generated-panel picture,
+.bressloff-generated-panel img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1;
+}
+
+.bressloff-generated-panel img {
+    height: auto;
+    border: 1px solid rgba(30, 23, 19, 0.22);
+    background: #1f1712;
+}
+
+.bressloff-generated-panel figcaption {
+    color: var(--muted);
+    font-size: 0.9rem;
+    line-height: 1.35;
+}
+
+.bressloff-generated-panel code {
+    font-family: var(--font-ui);
+    color: var(--text);
+}
+
 .essay-corpus {
     display: grid;
     gap: 1.55rem;
@@ -751,6 +818,7 @@ li {
     .surface-map--general,
     .project-grid,
     .bressloff-figure-grid,
+    .bressloff-calibration-row,
     .reference-grid,
     .two-column,
     .contact-list {
