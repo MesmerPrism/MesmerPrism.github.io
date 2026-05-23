@@ -419,6 +419,45 @@ li {
     gap: 1rem;
 }
 
+.bressloff-figure-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.bressloff-figure {
+    display: grid;
+    gap: 0.75rem;
+    margin: 0;
+    padding: 1rem;
+    border: 1px solid var(--line);
+    background: var(--panel);
+}
+
+.bressloff-figure canvas {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1;
+    border: 1px solid rgba(30, 23, 19, 0.22);
+    background: #1f1712;
+}
+
+.bressloff-figure figcaption {
+    display: grid;
+    gap: 0.25rem;
+}
+
+.bressloff-figure figcaption strong {
+    font-family: var(--font-ui);
+    font-size: 0.94rem;
+}
+
+.bressloff-figure figcaption span {
+    color: var(--muted);
+    font-size: 0.98rem;
+    line-height: 1.45;
+}
+
 .essay-corpus {
     display: grid;
     gap: 1.55rem;
@@ -706,6 +745,7 @@ li {
     .surface-map,
     .surface-map--general,
     .project-grid,
+    .bressloff-figure-grid,
     .reference-grid,
     .two-column,
     .contact-list {

@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bressloff V1 Form Constants | Mesmer Prism</title>
+    <link rel="canonical" href="https://mesmerprism.com/projects/bressloff-v1-form-constants.html">
+    <meta
+        name="description"
+        content="Animated notes on the Bressloff visual-cortex model for geometric hallucination patterns, with retino-cortical planform sketches and a source lab link."
+    >
+    <meta property="og:title" content="Bressloff V1 Form Constants | Mesmer Prism">
+    <meta
+        property="og:description"
+        content="A public note on visualizing Bressloff-style V1 planforms, Kluver form constants, and the limits of mapping cortical pattern models onto flicker reports."
+    >
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mesmerprism.com/projects/bressloff-v1-form-constants.html">
+    <meta name="theme-color" content="#f4efe7">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/assets/fonts.css">
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/scripts/bressloff-figures.js" defer></script>
+</head>
+<body class="project-page">
+    <header class="site-header">
+        <div class="shell header-row">
+            <a class="site-name" href="/">Mesmer Prism</a>
+            <nav class="site-nav" aria-label="Primary">
+                <a href="/#work">Work</a>
+                <a href="/#publications">Publications</a>
+                <a href="/#background">Background</a>
+                <a href="/#contact">Contact</a>
+                <a href="https://github.com/MesmerPrism" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="shell">
+        <section class="hero">
+            <div class="hero-shell hero-shell--page">
+                <p class="eyebrow">Visual cortex and form constants</p>
+                <h1>Bressloff V1 Form Constants</h1>
+                <p class="project-lede">
+                    The Bressloff visual-cortex model gives a concrete way to ask how
+                    simple activity patterns in primary visual cortex could appear as
+                    tunnels, spirals, cobwebs, lattices, and honeycombs after the
+                    retino-cortical map. The point is not to claim that a browser sketch
+                    reproduces a whole hallucination. It is to make the mathematical
+                    claim inspectable: choose a cortical planform, transform it through
+                    the visual-field map, and see whether the named Kluver-like form
+                    appears
+                    (<a class="inline-citation" href="https://doi.org/10.1162/089976602317250861" target="_blank" rel="noopener noreferrer">Bressloff et al., 2002</a>).
+                </p>
+                <div class="hero-actions">
+                    <a class="action-link action-link--strong" href="#animated-figures">Animated figures</a>
+                    <a class="action-link" href="https://github.com/MesmerPrism/brain-candy-bressloff-v1-lab" target="_blank" rel="noopener noreferrer">Source lab</a>
+                    <a class="action-link" href="/projects/brain-candy.html">Brain Candy</a>
+                    <a class="action-link" href="#references">References</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section two-column">
+            <div>
+                <div class="section-heading">
+                    <p class="section-kicker">Claim boundary</p>
+                    <h2>What this model can and cannot say</h2>
+                </div>
+                <p>
+                    The useful claim is narrow. The model says that if V1 is treated as a
+                    two-dimensional cortical sheet with orientation structure, then
+                    symmetry-breaking activity patterns can become recognizable geometric
+                    visual forms after projection into retinal coordinates. This is a
+                    strong mechanistic sketch for form constants, not a full account of
+                    psychedelic imagery, visual meaning, or a specific strobe frequency
+                    (<a class="inline-citation" href="https://doi.org/10.1007/BF00336965" target="_blank" rel="noopener noreferrer">Ermentrout and Cowan, 1979</a>;
+                    <a class="inline-citation" href="https://doi.org/10.1162/089976602317250861" target="_blank" rel="noopener noreferrer">Bressloff et al., 2002</a>).
+                </p>
+                <p>
+                    Flicker can induce geometric visual hallucinations, and newer work
+                    studies those reports with richer phenomenological instruments. But a
+                    V1 planform model does not automatically map "12 Hz" or "40 Hz" to one
+                    exact shape. A responsible simulator should first make the cortical
+                    pattern families tunable and visible. Only then should it try to
+                    connect input frequency, neural drive, participant state, and report
+                    structure
+                    (<a class="inline-citation" href="https://doi.org/10.1371/journal.pcbi.1002158" target="_blank" rel="noopener noreferrer">Rule et al., 2011</a>;
+                    <a class="inline-citation" href="https://doi.org/10.1093/nc/niaf020" target="_blank" rel="noopener noreferrer">Hewitt et al., 2025</a>).
+                </p>
+            </div>
+            <div class="detail-stack">
+                <section class="detail-block">
+                    <h3>What the page shows</h3>
+                    <ul class="plain-list">
+                        <li>Slow browser animations of the main planform families</li>
+                        <li>Retino-cortical remapping from cortical stripes to visual-field forms</li>
+                        <li>Orientation-contour glyphs drawn as short local line segments</li>
+                        <li>Starting points for the figure presets in the Rust source lab</li>
+                    </ul>
+                </section>
+                <section class="detail-block">
+                    <h3>What it does not claim</h3>
+                    <ul class="plain-list">
+                        <li>No calibrated flicker-frequency prediction</li>
+                        <li>No claim to reproduce a whole altered state</li>
+                        <li>No clinical or therapeutic claim</li>
+                        <li>No replacement for participant reconstruction data</li>
+                    </ul>
+                </section>
+            </div>
+        </section>
+
+        <section class="section" id="animated-figures">
+            <div class="section-heading">
+                <p class="section-kicker">Animated figure presets</p>
+                <h2>Planforms through the retino-cortical map</h2>
+                <p>
+                    These are lightweight public animations of the same families exposed
+                    in the Rust lab. They drift slowly to reveal structure, not to induce
+                    flicker. If reduced motion is enabled, the canvases render static
+                    frames.
+                </p>
+            </div>
+            <div class="bressloff-figure-grid" aria-label="Animated Bressloff planform presets">
+                <figure class="bressloff-figure">
+                    <canvas class="bressloff-animation" data-pattern="rings" width="360" height="360" aria-label="Animated rings and tunnel planform"></canvas>
+                    <figcaption>
+                        <strong>Rings / tunnel</strong>
+                        <span>Cortical stripes across log-radius become concentric visual-field structure.</span>
+                    </figcaption>
+                </figure>
+                <figure class="bressloff-figure">
+                    <canvas class="bressloff-animation" data-pattern="rays" width="360" height="360" aria-label="Animated rays and funnel planform"></canvas>
+                    <figcaption>
+                        <strong>Rays / funnel</strong>
+                        <span>Stripes along cortical angle become radial spokes and funnel-like geometry.</span>
+                    </figcaption>
+                </figure>
+                <figure class="bressloff-figure">
+                    <canvas class="bressloff-animation" data-pattern="spiral" width="360" height="360" aria-label="Animated spiral planform"></canvas>
+                    <figcaption>
+                        <strong>Spiral</strong>
+                        <span>A tilted cortical wave combines log-radius and polar angle.</span>
+                    </figcaption>
+                </figure>
+                <figure class="bressloff-figure">
+                    <canvas class="bressloff-animation" data-pattern="cobweb" width="360" height="360" aria-label="Animated cobweb square planform"></canvas>
+                    <figcaption>
+                        <strong>Cobweb / square</strong>
+                        <span>Two near-orthogonal cortical modes create nested rings crossed by rays.</span>
+                    </figcaption>
+                </figure>
+                <figure class="bressloff-figure">
+                    <canvas class="bressloff-animation" data-pattern="honeycomb" width="360" height="360" aria-label="Animated honeycomb planform"></canvas>
+                    <figcaption>
+                        <strong>Hexagonal / honeycomb</strong>
+                        <span>Three wavevectors form a hexagonal branch before the retino-cortical transform.</span>
+                    </figcaption>
+                </figure>
+                <figure class="bressloff-figure">
+                    <canvas class="bressloff-animation" data-pattern="rhombic" width="360" height="360" aria-label="Animated rhombic planform"></canvas>
+                    <figcaption>
+                        <strong>Rhombic</strong>
+                        <span>Two oblique modes show why branch selection matters for the final visible shape.</span>
+                    </figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section class="section two-column">
+            <div>
+                <div class="section-heading">
+                    <p class="section-kicker">Implementation note</p>
+                    <h2>Why there is a source lab behind the article</h2>
+                </div>
+                <p>
+                    The public page is deliberately simple. The working simulator is the
+                    Rust V1 lab: it exposes kernel parameters, an even/odd stability scan,
+                    perturbative orientation eigenfunctions, branch selection, and a
+                    retino-cortical viewer. That lab is where the model can be tuned,
+                    profiled, and compared against the paper figures.
+                </p>
+                <p>
+                    The current source lab started from the public
+                    <a class="inline-citation" href="https://github.com/karacsm/V1-sim" target="_blank" rel="noopener noreferrer">karacsm/V1-sim</a>
+                    notebook and now includes a faster Rust rendering path. The next
+                    fidelity step is not more decoration; it is side-by-side calibration:
+                    expose the named paper figure presets, export orientation-channel
+                    payloads, and test whether the mathematical descriptions reproduce
+                    the forms they are meant to explain.
+                </p>
+            </div>
+            <div class="detail-stack">
+                <section class="detail-block">
+                    <h3>Source and collaboration</h3>
+                    <ul class="plain-list">
+                        <li><a href="https://github.com/MesmerPrism/brain-candy-bressloff-v1-lab" target="_blank" rel="noopener noreferrer">MesmerPrism/brain-candy-bressloff-v1-lab</a></li>
+                        <li><a href="https://github.com/karacsm/V1-sim" target="_blank" rel="noopener noreferrer">Original V1-sim notebook</a></li>
+                        <li><a href="/projects/deep-dream.html">Deep Dream</a> for a different machine-vision hallucination lineage</li>
+                        <li><a href="/projects/brain-candy.html">Brain Candy</a> for the broader state-shift context</li>
+                    </ul>
+                </section>
+                <section class="detail-block">
+                    <h3>Current model surfaces</h3>
+                    <ul class="plain-list">
+                        <li>Kernel tuning for local and lateral interactions</li>
+                        <li>Linear critical-wavenumber scan</li>
+                        <li>Amplitude-equation branch readout</li>
+                        <li>Orientation-contour overlays</li>
+                    </ul>
+                </section>
+            </div>
+        </section>
+
+        <section class="section essay-corpus">
+            <div class="section-heading">
+                <p class="section-kicker">Reading the animations</p>
+                <h2>The pattern is the argument</h2>
+            </div>
+            <article class="essay-block">
+                <h3>The cortical pattern is not what the viewer sees</h3>
+                <p>
+                    A stripe in cortical coordinates can become a ring, a ray, or a
+                    spiral in visual-field coordinates because the V1 map is not a
+                    rectangular copy of the image. Near the center of gaze, retinal
+                    eccentricity and polar angle are expanded into a log-polar cortical
+                    sheet. The same wave family can therefore look qualitatively
+                    different after remapping.
+                </p>
+            </article>
+            <article class="essay-block">
+                <h3>Contour glyphs are orientation hypotheses</h3>
+                <p>
+                    The short line overlays mark local dominant orientation channels.
+                    They are not extra particles and not separate neurons. They are a
+                    compact way to show how an orientation-resolved model can turn scalar
+                    activity into contoured hallucination sketches, which is central to
+                    the later Bressloff account.
+                </p>
+            </article>
+            <article class="essay-block">
+                <h3>The honest use is exploratory first</h3>
+                <p>
+                    A simulator is useful here when it lets the model fail in public.
+                    If the equations cannot generate the named family under any plausible
+                    parameter setting, that is informative. If a small parameter shift
+                    moves the model from cobweb to rhombic to honeycomb, that is also
+                    informative. The point is to put the mathematical description close
+                    enough to the image that the comparison becomes checkable.
+                </p>
+            </article>
+        </section>
+
+        <section class="section" id="references">
+            <div class="section-heading">
+                <p class="section-kicker">References</p>
+                <h2>Sources and model lineage</h2>
+            </div>
+            <div class="reference-grid">
+                <section class="detail-block">
+                    <h3>Core model papers</h3>
+                    <ul class="plain-list">
+                        <li><strong>Ermentrout, G. B., and J. D. Cowan.</strong> "<a class="reference-link" href="https://doi.org/10.1007/BF00336965" target="_blank" rel="noopener noreferrer">A Mathematical Theory of Visual Hallucination Patterns</a>." <em>Biological Cybernetics</em> 34 (1979).</li>
+                        <li><strong>Bressloff, P. C., J. D. Cowan, M. Golubitsky, P. J. Thomas, and M. C. Wiener.</strong> "<a class="reference-link" href="https://doi.org/10.1162/089976602317250861" target="_blank" rel="noopener noreferrer">What Geometric Visual Hallucinations Tell Us About the Visual Cortex</a>." <em>Neural Computation</em> 14, no. 3 (2002).</li>
+                        <li><strong>Rule, M., M. Stoffregen, and B. Ermentrout.</strong> "<a class="reference-link" href="https://doi.org/10.1371/journal.pcbi.1002158" target="_blank" rel="noopener noreferrer">A Model for the Origin and Properties of Flicker-Induced Geometric Phosphenes</a>." <em>PLOS Computational Biology</em> 7, no. 9 (2011).</li>
+                    </ul>
+                </section>
+                <section class="detail-block">
+                    <h3>Phenomenology and tools</h3>
+                    <ul class="plain-list">
+                        <li><strong>Hewitt et al.</strong> "<a class="reference-link" href="https://doi.org/10.1093/nc/niaf020" target="_blank" rel="noopener noreferrer">Stroboscopically Induced Visual Hallucinations: Historical, Phenomenological, and Neurobiological Perspectives</a>." <em>Neuroscience of Consciousness</em> (2025).</li>
+                        <li><strong>karacsm.</strong> "<a class="reference-link" href="https://github.com/karacsm/V1-sim" target="_blank" rel="noopener noreferrer">V1-sim</a>." Public GitHub notebook for simulating V1 activity and retino-cortical visualization.</li>
+                        <li><strong>Mesmer Prism.</strong> "<a class="reference-link" href="https://github.com/MesmerPrism/brain-candy-bressloff-v1-lab" target="_blank" rel="noopener noreferrer">brain-candy-bressloff-v1-lab</a>." Rust-based working lab for the animated planform and stability experiments.</li>
+                        <li><strong>Mesmer Prism.</strong> "<a class="reference-link" href="/projects/deep-dream.html">Deep Dream</a>." Related public page on machine-vision hallucination simulation and cyberdelic comparison.</li>
+                    </ul>
+                </section>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="shell footer-row">
+            <p>Mesmer Prism is the public home for selected work by Till Holzapfel.</p>
+            <nav class="footer-links" aria-label="Legal">
+                <a href="/impressum.html">Impressum</a>
+                <a href="/datenschutz.html">Datenschutz</a>
+            </nav>
+        </div>
+    </footer>
+</body>
+</html>
