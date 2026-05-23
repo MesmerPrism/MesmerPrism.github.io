@@ -7,7 +7,7 @@
     <link rel="canonical" href="https://mesmerprism.com/projects/bressloff-v1-form-constants.html">
     <meta
         name="description"
-        content="Animated notes on the Bressloff visual-cortex model for geometric hallucination patterns, with retino-cortical planform sketches and a source lab link."
+        content="Animated notes on the Bressloff visual-cortex model for geometric hallucination patterns, with retino-cortical planform sketches and source code."
     >
     <meta property="og:title" content="Bressloff V1 Form Constants | Mesmer Prism">
     <meta
@@ -51,7 +51,7 @@
                 </p>
                 <div class="hero-actions">
                     <a class="action-link action-link--strong" href="#animated-figures">Animated figures</a>
-                    <a class="action-link" href="https://github.com/MesmerPrism/bressloff-v1-form-constants" target="_blank" rel="noopener noreferrer">Source lab</a>
+                    <a class="action-link" href="https://github.com/MesmerPrism/bressloff-v1-form-constants" target="_blank" rel="noopener noreferrer">Source code</a>
                     <a class="action-link" href="https://github.com/karacsm/V1-sim" target="_blank" rel="noopener noreferrer">Original notebook</a>
                     <a class="action-link" href="#references">References</a>
                 </div>
@@ -88,12 +88,12 @@
             </div>
             <div class="detail-stack">
                 <section class="detail-block">
-                    <h3>What the page shows</h3>
+                    <h3>Current visualization</h3>
                     <ul class="plain-list">
                         <li>Slow browser animations of the main planform families</li>
                         <li>Retino-cortical remapping from cortical stripes to visual-field forms</li>
                         <li>Orientation-contour glyphs drawn as short local line segments</li>
-                        <li>Starting points for the figure presets in the Rust source lab</li>
+                        <li>Starting points for paper-figure presets in the Rust implementation</li>
                     </ul>
                 </section>
                 <section class="detail-block">
@@ -186,35 +186,34 @@
         <section class="section two-column">
             <div>
                 <div class="section-heading">
-                    <p class="section-kicker">Implementation note</p>
-                    <h2>Why there is a source lab behind the article</h2>
+                    <p class="section-kicker">Interactive implementation</p>
+                    <h2>Model controls behind the animations</h2>
                 </div>
                 <p>
-                    The public page is deliberately simple. The animations are generated
-                    from a Rust V1 planform renderer that exposes kernel parameters, an
-                    even/odd stability scan, perturbative orientation eigenfunctions,
-                    branch selection, and a retino-cortical viewer. That renderer is the
-                    place where the model can be tuned, profiled, and compared against the
-                    paper figures.
+                    The animations come from a Rust V1 planform renderer with kernel
+                    parameters, an even/odd stability scan, perturbative orientation
+                    eigenfunctions, branch selection, and a retino-cortical viewer. Those
+                    controls make the model tunable enough to compare against the paper
+                    figures instead of treating each image as a fixed illustration.
                 </p>
                 <p>
                     The
-                    <a class="inline-citation" href="https://github.com/MesmerPrism/bressloff-v1-form-constants" target="_blank" rel="noopener noreferrer">public source lab</a>
+                    <a class="inline-citation" href="https://github.com/MesmerPrism/bressloff-v1-form-constants" target="_blank" rel="noopener noreferrer">MIT-licensed implementation</a>
                     is MIT licensed and credits the public
                     <a class="inline-citation" href="https://github.com/karacsm/V1-sim" target="_blank" rel="noopener noreferrer">karacsm/V1-sim</a>
-                    notebook lineage. The source lab keeps Brain Candy as related context
-                    only; its direct focus is Bressloff's model equations. The next
-                    fidelity step is side-by-side calibration: expose the named
-                    paper figure presets, export orientation-channel payloads, and test
-                    whether the mathematical descriptions reproduce the forms they are
-                    meant to explain.
+                    notebook lineage. Brain Candy is relevant only as adjacent
+                    state-shift context; the implementation itself focuses on Bressloff's
+                    model equations. Planned work is side-by-side calibration: named
+                    paper-figure presets, orientation-channel exports, and comparisons
+                    between the mathematical descriptions and the forms they are meant to
+                    explain.
                 </p>
             </div>
             <div class="detail-stack">
                 <section class="detail-block">
-                    <h3>Source and collaboration</h3>
+                    <h3>Code and related context</h3>
                     <ul class="plain-list">
-                        <li><a href="https://github.com/MesmerPrism/bressloff-v1-form-constants" target="_blank" rel="noopener noreferrer">Bressloff V1 form constants source lab</a></li>
+                        <li><a href="https://github.com/MesmerPrism/bressloff-v1-form-constants" target="_blank" rel="noopener noreferrer">Bressloff V1 form constants repository</a></li>
                         <li><a href="https://github.com/karacsm/V1-sim" target="_blank" rel="noopener noreferrer">Original V1-sim notebook</a></li>
                         <li><a href="/projects/deep-dream.html">Deep Dream</a> for a different machine-vision hallucination lineage</li>
                         <li><a href="/projects/brain-candy.html">Brain Candy</a> as adjacent state-shift context</li>
@@ -289,9 +288,9 @@
                     <h3>Phenomenology and tools</h3>
                     <ul class="plain-list">
                         <li><strong>Hewitt et al.</strong> "<a class="reference-link" href="https://doi.org/10.1093/nc/niaf020" target="_blank" rel="noopener noreferrer">Stroboscopically Induced Visual Hallucinations: Historical, Phenomenological, and Neurobiological Perspectives</a>." <em>Neuroscience of Consciousness</em> (2025).</li>
-                        <li><strong>Mesmer Prism.</strong> "<a class="reference-link" href="https://github.com/MesmerPrism/bressloff-v1-form-constants" target="_blank" rel="noopener noreferrer">Bressloff V1 Form Constants Lab</a>." MIT-licensed interactive source lab for the figures on this page.</li>
+                        <li><strong>Mesmer Prism.</strong> "<a class="reference-link" href="https://github.com/MesmerPrism/bressloff-v1-form-constants" target="_blank" rel="noopener noreferrer">Bressloff V1 Form Constants Lab</a>." MIT-licensed Rust and browser implementation used for the animations.</li>
                         <li><strong>karacsm.</strong> "<a class="reference-link" href="https://github.com/karacsm/V1-sim" target="_blank" rel="noopener noreferrer">V1-sim</a>." Public GitHub notebook for simulating V1 activity and retino-cortical visualization.</li>
-                        <li><strong>Mesmer Prism.</strong> "<a class="reference-link" href="/projects/deep-dream.html">Deep Dream</a>." Related public page on machine-vision hallucination simulation and cyberdelic comparison.</li>
+                        <li><strong>Mesmer Prism.</strong> "<a class="reference-link" href="/projects/deep-dream.html">Deep Dream</a>." Related article on machine-vision hallucination simulation and cyberdelic comparison.</li>
                     </ul>
                 </section>
             </div>
