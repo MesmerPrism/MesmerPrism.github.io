@@ -434,10 +434,15 @@ li {
     background: var(--panel);
 }
 
-.bressloff-figure canvas {
+.bressloff-figure picture,
+.bressloff-figure img {
     display: block;
     width: 100%;
     aspect-ratio: 1;
+}
+
+.bressloff-figure img {
+    height: auto;
     border: 1px solid rgba(30, 23, 19, 0.22);
     background: #1f1712;
 }

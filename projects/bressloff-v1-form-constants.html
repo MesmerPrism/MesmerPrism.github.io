@@ -20,7 +20,6 @@
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="/assets/fonts.css">
     <link rel="stylesheet" href="/styles.css">
-    <script src="/scripts/bressloff-figures.js" defer></script>
 </head>
 <body class="project-page">
     <header class="site-header">
@@ -54,7 +53,7 @@
                 </p>
                 <div class="hero-actions">
                     <a class="action-link action-link--strong" href="#animated-figures">Animated figures</a>
-                    <a class="action-link" href="https://github.com/MesmerPrism/brain-candy-bressloff-v1-lab" target="_blank" rel="noopener noreferrer">Source lab</a>
+                    <a class="action-link" href="https://github.com/karacsm/V1-sim" target="_blank" rel="noopener noreferrer">Original notebook</a>
                     <a class="action-link" href="/projects/brain-candy.html">Brain Candy</a>
                     <a class="action-link" href="#references">References</a>
                 </div>
@@ -116,50 +115,68 @@
                 <p class="section-kicker">Animated figure presets</p>
                 <h2>Planforms through the retino-cortical map</h2>
                 <p>
-                    These are lightweight public animations of the same families exposed
-                    in the Rust lab. They drift slowly to reveal structure, not to induce
-                    flicker. If reduced motion is enabled, the canvases render static
-                    frames.
+                    These animations are exported from the Rust V1 planform renderer,
+                    then served as static WebP loops. They drift slowly to reveal
+                    structure, not to induce flicker. If reduced motion is enabled, the
+                    browser receives static PNG poster frames instead.
                 </p>
             </div>
             <div class="bressloff-figure-grid" aria-label="Animated Bressloff planform presets">
                 <figure class="bressloff-figure">
-                    <canvas class="bressloff-animation" data-pattern="rings" width="360" height="360" aria-label="Animated rings and tunnel planform"></canvas>
+                    <picture>
+                        <source media="(prefers-reduced-motion: no-preference)" srcset="/assets/bressloff-v1/rings.webp" type="image/webp">
+                        <img class="bressloff-animation" src="/assets/bressloff-v1/rings.png" width="360" height="360" alt="Bressloff V1 rings and tunnel planform rendered through the retino-cortical map" loading="lazy">
+                    </picture>
                     <figcaption>
                         <strong>Rings / tunnel</strong>
                         <span>Cortical stripes across log-radius become concentric visual-field structure.</span>
                     </figcaption>
                 </figure>
                 <figure class="bressloff-figure">
-                    <canvas class="bressloff-animation" data-pattern="rays" width="360" height="360" aria-label="Animated rays and funnel planform"></canvas>
+                    <picture>
+                        <source media="(prefers-reduced-motion: no-preference)" srcset="/assets/bressloff-v1/rays.webp" type="image/webp">
+                        <img class="bressloff-animation" src="/assets/bressloff-v1/rays.png" width="360" height="360" alt="Bressloff V1 rays and funnel planform rendered through the retino-cortical map" loading="lazy">
+                    </picture>
                     <figcaption>
                         <strong>Rays / funnel</strong>
                         <span>Stripes along cortical angle become radial spokes and funnel-like geometry.</span>
                     </figcaption>
                 </figure>
                 <figure class="bressloff-figure">
-                    <canvas class="bressloff-animation" data-pattern="spiral" width="360" height="360" aria-label="Animated spiral planform"></canvas>
+                    <picture>
+                        <source media="(prefers-reduced-motion: no-preference)" srcset="/assets/bressloff-v1/spiral.webp" type="image/webp">
+                        <img class="bressloff-animation" src="/assets/bressloff-v1/spiral.png" width="360" height="360" alt="Bressloff V1 spiral planform rendered through the retino-cortical map" loading="lazy">
+                    </picture>
                     <figcaption>
                         <strong>Spiral</strong>
                         <span>A tilted cortical wave combines log-radius and polar angle.</span>
                     </figcaption>
                 </figure>
                 <figure class="bressloff-figure">
-                    <canvas class="bressloff-animation" data-pattern="cobweb" width="360" height="360" aria-label="Animated cobweb square planform"></canvas>
+                    <picture>
+                        <source media="(prefers-reduced-motion: no-preference)" srcset="/assets/bressloff-v1/cobweb.webp" type="image/webp">
+                        <img class="bressloff-animation" src="/assets/bressloff-v1/cobweb.png" width="360" height="360" alt="Bressloff V1 cobweb square planform rendered through the retino-cortical map" loading="lazy">
+                    </picture>
                     <figcaption>
                         <strong>Cobweb / square</strong>
                         <span>Two near-orthogonal cortical modes create nested rings crossed by rays.</span>
                     </figcaption>
                 </figure>
                 <figure class="bressloff-figure">
-                    <canvas class="bressloff-animation" data-pattern="honeycomb" width="360" height="360" aria-label="Animated honeycomb planform"></canvas>
+                    <picture>
+                        <source media="(prefers-reduced-motion: no-preference)" srcset="/assets/bressloff-v1/honeycomb.webp" type="image/webp">
+                        <img class="bressloff-animation" src="/assets/bressloff-v1/honeycomb.png" width="360" height="360" alt="Bressloff V1 hexagonal honeycomb planform rendered through the retino-cortical map" loading="lazy">
+                    </picture>
                     <figcaption>
                         <strong>Hexagonal / honeycomb</strong>
                         <span>Three wavevectors form a hexagonal branch before the retino-cortical transform.</span>
                     </figcaption>
                 </figure>
                 <figure class="bressloff-figure">
-                    <canvas class="bressloff-animation" data-pattern="rhombic" width="360" height="360" aria-label="Animated rhombic planform"></canvas>
+                    <picture>
+                        <source media="(prefers-reduced-motion: no-preference)" srcset="/assets/bressloff-v1/rhombic.webp" type="image/webp">
+                        <img class="bressloff-animation" src="/assets/bressloff-v1/rhombic.png" width="360" height="360" alt="Bressloff V1 rhombic planform rendered through the retino-cortical map" loading="lazy">
+                    </picture>
                     <figcaption>
                         <strong>Rhombic</strong>
                         <span>Two oblique modes show why branch selection matters for the final visible shape.</span>
@@ -175,28 +192,29 @@
                     <h2>Why there is a source lab behind the article</h2>
                 </div>
                 <p>
-                    The public page is deliberately simple. The working simulator is the
-                    Rust V1 lab: it exposes kernel parameters, an even/odd stability scan,
-                    perturbative orientation eigenfunctions, branch selection, and a
-                    retino-cortical viewer. That lab is where the model can be tuned,
-                    profiled, and compared against the paper figures.
+                    The public page is deliberately simple. The animations are generated
+                    from a Rust V1 planform renderer that exposes kernel parameters, an
+                    even/odd stability scan, perturbative orientation eigenfunctions,
+                    branch selection, and a retino-cortical viewer. That renderer is the
+                    place where the model can be tuned, profiled, and compared against the
+                    paper figures.
                 </p>
                 <p>
                     The current source lab started from the public
                     <a class="inline-citation" href="https://github.com/karacsm/V1-sim" target="_blank" rel="noopener noreferrer">karacsm/V1-sim</a>
-                    notebook and now includes a faster Rust rendering path. The next
-                    fidelity step is not more decoration; it is side-by-side calibration:
-                    expose the named paper figure presets, export orientation-channel
-                    payloads, and test whether the mathematical descriptions reproduce
-                    the forms they are meant to explain.
+                    notebook and the Bressloff model equations. The next fidelity step is
+                    not more decoration; it is side-by-side calibration: expose the named
+                    paper figure presets, export orientation-channel payloads, and test
+                    whether the mathematical descriptions reproduce the forms they are
+                    meant to explain.
                 </p>
             </div>
             <div class="detail-stack">
                 <section class="detail-block">
                     <h3>Source and collaboration</h3>
                     <ul class="plain-list">
-                        <li><a href="https://github.com/MesmerPrism/brain-candy-bressloff-v1-lab" target="_blank" rel="noopener noreferrer">MesmerPrism/brain-candy-bressloff-v1-lab</a></li>
                         <li><a href="https://github.com/karacsm/V1-sim" target="_blank" rel="noopener noreferrer">Original V1-sim notebook</a></li>
+                        <li><a href="https://github.com/MesmerPrism" target="_blank" rel="noopener noreferrer">Mesmer Prism on GitHub</a></li>
                         <li><a href="/projects/deep-dream.html">Deep Dream</a> for a different machine-vision hallucination lineage</li>
                         <li><a href="/projects/brain-candy.html">Brain Candy</a> for the broader state-shift context</li>
                     </ul>
@@ -271,7 +289,6 @@
                     <ul class="plain-list">
                         <li><strong>Hewitt et al.</strong> "<a class="reference-link" href="https://doi.org/10.1093/nc/niaf020" target="_blank" rel="noopener noreferrer">Stroboscopically Induced Visual Hallucinations: Historical, Phenomenological, and Neurobiological Perspectives</a>." <em>Neuroscience of Consciousness</em> (2025).</li>
                         <li><strong>karacsm.</strong> "<a class="reference-link" href="https://github.com/karacsm/V1-sim" target="_blank" rel="noopener noreferrer">V1-sim</a>." Public GitHub notebook for simulating V1 activity and retino-cortical visualization.</li>
-                        <li><strong>Mesmer Prism.</strong> "<a class="reference-link" href="https://github.com/MesmerPrism/brain-candy-bressloff-v1-lab" target="_blank" rel="noopener noreferrer">brain-candy-bressloff-v1-lab</a>." Rust-based working lab for the animated planform and stability experiments.</li>
                         <li><strong>Mesmer Prism.</strong> "<a class="reference-link" href="/projects/deep-dream.html">Deep Dream</a>." Related public page on machine-vision hallucination simulation and cyberdelic comparison.</li>
                     </ul>
                 </section>
