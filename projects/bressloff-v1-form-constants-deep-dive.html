@@ -19,9 +19,10 @@
     <meta name="theme-color" content="#f4efe7">
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="/assets/fonts.css">
+    <link rel="stylesheet" href="/assets/vendor/katex/katex.min.css">
     <link rel="stylesheet" href="/styles.css">
 </head>
-<body class="project-page">
+<body class="project-page" data-math-render>
     <header class="site-header">
         <div class="shell header-row">
             <a class="site-name" href="/">Mesmer Prism</a>
@@ -136,8 +137,14 @@
             <div class="equation-grid">
                 <article class="equation-card">
                     <h3>Position map</h3>
-                    <pre><code>x ~= log r_R
-y ~= theta_R</code></pre>
+                    <div class="math-block">
+                        \[
+                        \begin{aligned}
+                        x &\simeq \log r_R \\
+                        y &\simeq \theta_R
+                        \end{aligned}
+                        \]
+                    </div>
                     <p>
                         Circles, rays, and logarithmic spirals in visual space become vertical,
                         horizontal, and oblique stripes in cortical coordinates.
@@ -145,9 +152,13 @@ y ~= theta_R</code></pre>
                 </article>
                 <article class="equation-card">
                     <h3>Orientation map</h3>
-                    <pre><code>phi = phi_R - theta_R
-equivalently:
-phi_R = phi + theta_R</code></pre>
+                    <div class="math-block">
+                        \[
+                        \phi = \phi_R - \theta_R,
+                        \qquad
+                        \phi_R = \phi + \theta_R
+                        \]
+                    </div>
                     <p>
                         Local retinal contour orientation is measured relative to angular
                         visual-field position. The renderer uses the equivalent drawing
@@ -156,9 +167,17 @@ phi_R = phi + theta_R</code></pre>
                 </article>
                 <article class="equation-card">
                     <h3>Hypercolumn field</h3>
-                    <pre><code>da(r, phi, t)/dt =
-  -a(r, phi, t)
-  + mu integral w sigma(a)</code></pre>
+                    <div class="math-block">
+                        \[
+                        \frac{\partial a(\mathbf r,\phi,t)}{\partial t}
+                        =
+                        -a(\mathbf r,\phi,t)
+                        + \mu \int
+                        w(\mathbf r,\phi;\mathbf r',\phi')\,
+                        \sigma(a(\mathbf r',\phi',t))\,
+                        d\mathbf r'\,d\phi'
+                        \]
+                    </div>
                     <p>
                         The weight separates local isotropic coupling inside a hypercolumn from
                         anisotropic long-range coupling between similarly tuned orientation
@@ -167,9 +186,14 @@ phi_R = phi + theta_R</code></pre>
                 </article>
                 <article class="equation-card">
                     <h3>Planform modes</h3>
-                    <pre><code>a(r, phi) ~
-  sum_j c_j u(phi - phi_j)
-        exp(i k_j dot r)</code></pre>
+                    <div class="math-block">
+                        \[
+                        a(\mathbf r,\phi)
+                        \sim
+                        \sum_j c_j\,u(\phi-\phi_j)\,
+                        \exp(i\,\mathbf k_j\cdot\mathbf r)
+                        \]
+                    </div>
                     <p>
                         Rolls, squares, rhombs, and hexagonal branches are selected from finite
                         wavevector sets and then mapped into retinal space.
@@ -401,11 +425,18 @@ phi_R = phi + theta_R</code></pre>
             <div class="equation-grid">
                 <article class="equation-card">
                     <h3>E/I field</h3>
-                    <pre><code>tau_e dUe/dt =
-  -Ue + F(aee Ke*Ue - aei Ki*Ui - theta_e + ge S)
-
-tau_i dUi/dt =
-  -Ui + F(aie Ke*Ue - aii Ki*Ui - theta_i + gi S)</code></pre>
+                    <div class="math-block">
+                        \[
+                        \begin{aligned}
+                        \tau_e \frac{\partial U_e}{\partial t}
+                        &=
+                        -U_e + F(a_{ee}K_e * U_e - a_{ei}K_i * U_i - \theta_e + g_e S(t)) \\
+                        \tau_i \frac{\partial U_i}{\partial t}
+                        &=
+                        -U_i + F(a_{ie}K_e * U_e - a_{ii}K_i * U_i - \theta_i + g_i S(t))
+                        \end{aligned}
+                        \]
+                    </div>
                     <p>
                         The implementation uses two scalar fields over a periodic two-dimensional
                         domain with normalized Gaussian kernels.
@@ -413,16 +444,25 @@ tau_i dUi/dt =
                 </article>
                 <article class="equation-card">
                     <h3>Flicker stimulus</h3>
-                    <pre><code>S(t) = A H(sin(2 pi t / T) - threshold)</code></pre>
+                    <div class="math-block">
+                        \[
+                        S(t) = A\,H\!\left(\sin\!\left(\frac{2\pi t}{T}\right)-\vartheta\right)
+                        \]
+                    </div>
                     <p>
-                        Period <code>T</code>, amplitude <code>A</code>, threshold, smoothing,
+                        Period \(T\), amplitude \(A\), threshold, smoothing,
                         and inhibitory feed-forward fraction are exposed as explicit parameters.
                     </p>
                 </article>
                 <article class="equation-card">
                     <h3>Temporal check</h3>
-                    <pre><code>high frequency: response period ~= 2T
-low frequency:  response period ~= T</code></pre>
+                    <div class="math-block">
+                        \[
+                        C(T)\approx -1,\quad C(2T)\approx 1
+                        \qquad\text{versus}\qquad
+                        C(T)>0
+                        \]
+                    </div>
                     <p>
                         The qualitative report compares frames one and two forcing periods apart,
                         which is enough for a first period-doubling sanity check.
@@ -430,10 +470,15 @@ low frequency:  response period ~= T</code></pre>
                 </article>
                 <article class="equation-card">
                     <h3>Deferred stability</h3>
-                    <pre><code>homogeneous periodic orbit
-linearized mode equation
-monodromy matrix
-Floquet multipliers</code></pre>
+                    <div class="math-block">
+                        \[
+                        \dot v = D_u f(u_0(t),t;k)\,v,
+                        \qquad
+                        v(T)=M(k)v(0),
+                        \qquad
+                        \lambda\in\sigma(M(k))
+                        \]
+                    </div>
                     <p>
                         These are the next rigorous layer for reproducing Rule's phase diagrams
                         and stability islands.
@@ -570,5 +615,8 @@ Floquet multipliers</code></pre>
             </nav>
         </div>
     </footer>
+    <script defer src="/assets/vendor/katex/katex.min.js"></script>
+    <script defer src="/assets/vendor/katex/contrib/auto-render.min.js"></script>
+    <script defer src="/scripts/math-render.js"></script>
 </body>
 </html>
