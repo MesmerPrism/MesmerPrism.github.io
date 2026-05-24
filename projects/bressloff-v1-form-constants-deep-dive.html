@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bressloff and Rule Modeling Deep Dive | Mesmer Prism</title>
+    <link rel="canonical" href="https://mesmerprism.com/projects/bressloff-v1-form-constants-deep-dive.html">
+    <meta
+        name="description"
+        content="A notebook-style deep dive into Bressloff orientation-hypercolumn form constants and Rule, Stoffregen, and Ermentrout flicker-induced phosphene modeling."
+    >
+    <meta property="og:title" content="Bressloff and Rule Modeling Deep Dive | Mesmer Prism">
+    <meta
+        property="og:description"
+        content="Sequential generated examples, model equations, calibration notes, and source boundaries for Bressloff V1 planforms and Rule flicker E/I simulations."
+    >
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://mesmerprism.com/projects/bressloff-v1-form-constants-deep-dive.html">
+    <meta name="theme-color" content="#f4efe7">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/assets/fonts.css">
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body class="project-page">
+    <header class="site-header">
+        <div class="shell header-row">
+            <a class="site-name" href="/">Mesmer Prism</a>
+            <nav class="site-nav" aria-label="Primary">
+                <a href="/#work">Work</a>
+                <a href="/#publications">Publications</a>
+                <a href="/#background">Background</a>
+                <a href="/#contact">Contact</a>
+                <a href="https://github.com/MesmerPrism" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="shell">
+        <section class="hero">
+            <div class="hero-shell hero-shell--page">
+                <p class="eyebrow">Modeling deep dive</p>
+                <h1>Bressloff and Rule Modeling Deep Dive</h1>
+                <p class="project-lede">
+                    Geometric hallucination models become useful when their equations stay close
+                    to the image. Bressloff's orientation-hypercolumn account asks how cortical
+                    symmetry and retino-cortical mapping can generate tunnels, cobwebs, lattices,
+                    and honeycombs. Rule, Stoffregen, and Ermentrout ask a different question:
+                    how periodic flicker can destabilize a scalar excitatory/inhibitory field into
+                    high-frequency period-doubled stripes or lower-frequency hexagonal patterns
+                    (<a class="inline-citation" href="https://doi.org/10.1098/rstb.2000.0769" target="_blank" rel="noopener noreferrer">Bressloff et al., 2001</a>;
+                    <a class="inline-citation" href="https://doi.org/10.1371/journal.pcbi.1002158" target="_blank" rel="noopener noreferrer">Rule et al., 2011</a>).
+                </p>
+                <div class="hero-actions">
+                    <a class="action-link action-link--strong" href="#examples">Sequential examples</a>
+                    <a class="action-link" href="#model-split">Model split</a>
+                    <a class="action-link" href="#rule">Rule flicker model</a>
+                    <a class="action-link" href="/projects/bressloff-v1-form-constants.html">Bressloff overview</a>
+                    <a class="action-link" href="#references">References</a>
+                </div>
+            </div>
+        </section>
+
+        <nav class="article-toc" aria-label="Deep dive sections">
+            <a href="#history">History</a>
+            <a href="#model-split">Model families</a>
+            <a href="#bressloff">Bressloff equations</a>
+            <a href="#examples">Examples</a>
+            <a href="#reports">Reports</a>
+            <a href="#rule">Rule equations</a>
+            <a href="#ledger">Claim ledger</a>
+            <a href="#references">References</a>
+        </nav>
+
+        <section class="section two-column" id="history">
+            <div>
+                <div class="section-heading">
+                    <p class="section-kicker">Historical problem</p>
+                    <h2>Why these shapes invite a cortical model</h2>
+                </div>
+                <p>
+                    Reports of geometric visual hallucinations recur around a small vocabulary:
+                    tunnels, spirals, rays, cobwebs, lattices, checkerboards, funnels, and
+                    honeycombs. The modeling question is not whether those pictures can be
+                    drawn. It is whether a plausible cortical system has natural pattern-forming
+                    modes that resemble them after the map from visual space to V1 is taken
+                    seriously (<a class="inline-citation" href="https://doi.org/10.1007/BF00336965" target="_blank" rel="noopener noreferrer">Ermentrout and Cowan, 1979</a>;
+                    <a class="inline-citation" href="https://doi.org/10.1162/089976602317250861" target="_blank" rel="noopener noreferrer">Bressloff et al., 2002</a>).
+                </p>
+                <p>
+                    The older scalar cortical-sheet story already explains why stripes, squares,
+                    and hexagons matter. Bressloff, Cowan, Golubitsky, Thomas, and Wiener add
+                    the retino-cortical transform and V1 orientation preference structure, so
+                    some hallucinations become locally oriented contour fields rather than only
+                    bright and dark scalar activity.
+                </p>
+            </div>
+            <div class="detail-stack" id="model-split">
+                <section class="detail-block">
+                    <h3>Scalar cortical sheet</h3>
+                    <p>
+                        Useful for rings, rays, spirals, and some light-dark lattices because
+                        cortical stripes map cleanly through the complex-log retino-cortical
+                        transform.
+                    </p>
+                </section>
+                <section class="detail-block">
+                    <h3>Orientation hypercolumns</h3>
+                    <p>
+                        Needed for cobwebs, honeycombs, and lattice tunnels that are better
+                        described as locally oriented contours than as only bright and dark
+                        regions.
+                    </p>
+                </section>
+                <section class="detail-block">
+                    <h3>Flicker E/I field</h3>
+                    <p>
+                        Rule's model belongs beside Bressloff's track, not inside it: the core
+                        object is a periodically forced excitatory/inhibitory field with scalar
+                        spatial kernels.
+                    </p>
+                </section>
+            </div>
+        </section>
+
+        <section class="section" id="bressloff">
+            <div class="section-heading">
+                <p class="section-kicker">Bressloff model family</p>
+                <h2>Orientation-hypercolumn planforms</h2>
+                <p>
+                    The implementation keeps Bressloff's family as
+                    <code>model_family = bressloff_orientation_hypercolumn</code>. It reuses
+                    retino-cortical rendering where the mathematics calls for it, but does not
+                    treat later flicker models as Bressloff paper presets.
+                </p>
+            </div>
+            <div class="equation-grid">
+                <article class="equation-card">
+                    <h3>Position map</h3>
+                    <pre><code>x ~= log r_R
+y ~= theta_R</code></pre>
+                    <p>
+                        Circles, rays, and logarithmic spirals in visual space become vertical,
+                        horizontal, and oblique stripes in cortical coordinates.
+                    </p>
+                </article>
+                <article class="equation-card">
+                    <h3>Orientation map</h3>
+                    <pre><code>phi = phi_R - theta_R
+equivalently:
+phi_R = phi + theta_R</code></pre>
+                    <p>
+                        Local retinal contour orientation is measured relative to angular
+                        visual-field position. The renderer uses the equivalent drawing
+                        convention when it places contour glyphs.
+                    </p>
+                </article>
+                <article class="equation-card">
+                    <h3>Hypercolumn field</h3>
+                    <pre><code>da(r, phi, t)/dt =
+  -a(r, phi, t)
+  + mu integral w sigma(a)</code></pre>
+                    <p>
+                        The weight separates local isotropic coupling inside a hypercolumn from
+                        anisotropic long-range coupling between similarly tuned orientation
+                        patches.
+                    </p>
+                </article>
+                <article class="equation-card">
+                    <h3>Planform modes</h3>
+                    <pre><code>a(r, phi) ~
+  sum_j c_j u(phi - phi_j)
+        exp(i k_j dot r)</code></pre>
+                    <p>
+                        Rolls, squares, rhombs, and hexagonal branches are selected from finite
+                        wavevector sets and then mapped into retinal space.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section" id="examples">
+            <div class="section-heading">
+                <p class="section-kicker">Sequential examples</p>
+                <h2>Generated cells from the current implementation</h2>
+                <p>
+                    These loops are static exports from the Rust/browser implementation. They
+                    are generated images, not scans of the source papers, and they should be read
+                    as qualitative model illustrations unless a row explicitly says it has passed
+                    a calibration check.
+                </p>
+            </div>
+
+            <article class="deep-dive-cell" id="cell-fig5">
+                <div class="deep-dive-copy">
+                    <p class="cell-kicker">Cell 01</p>
+                    <h3>2002 roll mode: cortical stripes before remapping</h3>
+                    <p>
+                        The simplest Bressloff example is a cortical roll: a striped activity
+                        pattern in cortical coordinates. In the visual field, the same family can
+                        become rings, rays, or spirals depending on stripe orientation.
+                    </p>
+                    <dl class="cell-meta">
+                        <div><dt>Preset</dt><dd><code>fig5_roll_cortical</code></dd></div>
+                        <div><dt>Source</dt><dd>Bressloff et al. 2002 Figure 5</dd></div>
+                        <div><dt>Model family</dt><dd>Bressloff orientation hypercolumn</dd></div>
+                    </dl>
+                </div>
+                <figure class="deep-dive-figure">
+                    <picture>
+                        <source media="(prefers-reduced-motion: no-preference)" srcset="/assets/bressloff-v1/deep-dive/fig5-roll-cortical.webp" type="image/webp">
+                        <img src="/assets/bressloff-v1/deep-dive/fig5-roll-cortical.png" width="360" height="360" alt="Generated cortical roll stripe animation from the Bressloff Figure 5 preset" loading="lazy">
+                    </picture>
+                    <figcaption>Cortical-domain roll preset. The image is intentionally not yet retino-cortically warped.</figcaption>
+                </figure>
+            </article>
+
+            <article class="deep-dive-cell" id="cell-fig7">
+                <div class="deep-dive-copy">
+                    <p class="cell-kicker">Cell 02</p>
+                    <h3>Lattice tunnel through the retino-cortical map</h3>
+                    <p>
+                        The lattice tunnel shows why the mapping step matters. A structured V1
+                        planform becomes a tunnel-like field when projected into visual-field
+                        coordinates, making the radial expansion of the retino-cortical map
+                        visible.
+                    </p>
+                    <dl class="cell-meta">
+                        <div><dt>Preset</dt><dd><code>fig7_lattice_tunnel</code></dd></div>
+                        <div><dt>Source</dt><dd>Bressloff et al. 2002 Figure 7</dd></div>
+                        <div><dt>Status</dt><dd>qualitative rendered target pass</dd></div>
+                    </dl>
+                </div>
+                <figure class="deep-dive-figure">
+                    <picture>
+                        <source media="(prefers-reduced-motion: no-preference)" srcset="/assets/bressloff-v1/deep-dive/fig7-lattice-tunnel.webp" type="image/webp">
+                        <img src="/assets/bressloff-v1/deep-dive/fig7-lattice-tunnel.png" width="360" height="360" alt="Generated Bressloff lattice tunnel animation through the retino-cortical map" loading="lazy">
+                    </picture>
+                    <figcaption>Retinal-domain lattice tunnel preset.</figcaption>
+                </figure>
+            </article>
+
+            <article class="deep-dive-cell" id="cell-fig29">
+                <div class="deep-dive-copy">
+                    <p class="cell-kicker">Cell 03</p>
+                    <h3>Single inverse map: non-contoured square cells</h3>
+                    <p>
+                        Figures 29 and 30 in the 2001 paper show scalar activity before local
+                        contour orientation is drawn. The implementation thresholds bright and
+                        dark regions, maps them back to visual-field coordinates, and leaves the
+                        orientation-glyph layer out.
+                    </p>
+                    <dl class="cell-meta">
+                        <div><dt>Preset</dt><dd><code>fig29_square_noncontoured</code></dd></div>
+                        <div><dt>Source</dt><dd>Bressloff et al. 2001 Figure 29, Table 2</dd></div>
+                        <div><dt>Status</dt><dd>rendered target pass; threshold geometry approximate</dd></div>
+                    </dl>
+                </div>
+                <figure class="deep-dive-figure">
+                    <picture>
+                        <source media="(prefers-reduced-motion: no-preference)" srcset="/assets/bressloff-v1/deep-dive/fig29-square-noncontoured.webp" type="image/webp">
+                        <img src="/assets/bressloff-v1/deep-dive/fig29-square-noncontoured.png" width="360" height="360" alt="Generated non-contoured Bressloff square-cell preset" loading="lazy">
+                    </picture>
+                    <figcaption>Single inverse-map scalar image without orientation contours.</figcaption>
+                </figure>
+            </article>
+
+            <article class="deep-dive-cell" id="cell-fig31">
+                <div class="deep-dive-copy">
+                    <p class="cell-kicker">Cell 04</p>
+                    <h3>Double map: square even contours</h3>
+                    <p>
+                        The square even case adds the local orientation field, so the output is
+                        closer to a cobweb of contour fragments than to a scalar checkerboard.
+                        The current renderer draws the target family, while the local branch
+                        selector still prefers a roll branch under the same diagnostics.
+                    </p>
+                    <dl class="cell-meta">
+                        <div><dt>Preset</dt><dd><code>fig31_square_even</code></dd></div>
+                        <div><dt>Source</dt><dd>Bressloff et al. 2001 Figure 31</dd></div>
+                        <div><dt>Status</dt><dd>rendered target review; branch diagnostic mismatch</dd></div>
+                    </dl>
+                </div>
+                <figure class="deep-dive-figure">
+                    <picture>
+                        <source media="(prefers-reduced-motion: no-preference)" srcset="/assets/bressloff-v1/deep-dive/fig31-square-even.webp" type="image/webp">
+                        <img src="/assets/bressloff-v1/deep-dive/fig31-square-even.png" width="360" height="360" alt="Generated Bressloff Figure 31 square even cobweb preset" loading="lazy">
+                    </picture>
+                    <figcaption>Double-map square even contour preset.</figcaption>
+                </figure>
+            </article>
+
+            <article class="deep-dive-cell" id="cell-fig33">
+                <div class="deep-dive-copy">
+                    <p class="cell-kicker">Cell 05</p>
+                    <h3>Rhombic even branch as a cleaner calibration case</h3>
+                    <p>
+                        The rhombic example is currently the cleanest agreement case: the
+                        rendered family and branch selector both identify the rhombic target.
+                        That makes it a useful baseline for later figure-level image metrics.
+                    </p>
+                    <dl class="cell-meta">
+                        <div><dt>Preset</dt><dd><code>fig33_rhombic_even</code></dd></div>
+                        <div><dt>Source</dt><dd>Bressloff et al. 2001 Figure 33</dd></div>
+                        <div><dt>Status</dt><dd>rendered target pass; branch diagnostic pass</dd></div>
+                    </dl>
+                </div>
+                <figure class="deep-dive-figure">
+                    <picture>
+                        <source media="(prefers-reduced-motion: no-preference)" srcset="/assets/bressloff-v1/deep-dive/fig33-rhombic-even.webp" type="image/webp">
+                        <img src="/assets/bressloff-v1/deep-dive/fig33-rhombic-even.png" width="360" height="360" alt="Generated Bressloff Figure 33 rhombic even preset" loading="lazy">
+                    </picture>
+                    <figcaption>Retinal-domain rhombic even contour preset.</figcaption>
+                </figure>
+            </article>
+
+            <article class="deep-dive-cell" id="cell-fig35">
+                <div class="deep-dive-copy">
+                    <p class="cell-kicker">Cell 06</p>
+                    <h3>Zero-phase hexagonal even branch</h3>
+                    <p>
+                        The zero-phase hexagonal even example gives a honeycomb-like retinal
+                        image. It tests whether the preset registry can distinguish hexagonal
+                        phase partners instead of treating every three-wave branch as the same
+                        picture.
+                    </p>
+                    <dl class="cell-meta">
+                        <div><dt>Preset</dt><dd><code>fig35_hex_zero_even</code></dd></div>
+                        <div><dt>Source</dt><dd>Bressloff et al. 2001 Figure 35</dd></div>
+                        <div><dt>Status</dt><dd>rendered target pass</dd></div>
+                    </dl>
+                </div>
+                <figure class="deep-dive-figure">
+                    <picture>
+                        <source media="(prefers-reduced-motion: no-preference)" srcset="/assets/bressloff-v1/deep-dive/fig35-hex-zero-even.webp" type="image/webp">
+                        <img src="/assets/bressloff-v1/deep-dive/fig35-hex-zero-even.png" width="360" height="360" alt="Generated zero-phase hexagonal even Bressloff preset" loading="lazy">
+                    </picture>
+                    <figcaption>Zero-phase hexagonal even contour preset.</figcaption>
+                </figure>
+            </article>
+
+            <article class="deep-dive-cell" id="cell-fig36">
+                <div class="deep-dive-copy">
+                    <p class="cell-kicker">Cell 07</p>
+                    <h3>Triangular odd branch and the current fidelity limit</h3>
+                    <p>
+                        The triangular odd target is useful because it exposes a limit of the
+                        first-pass implementation. The renderer can draw the requested triangular
+                        family, but the present stability and branch diagnostics do not yet
+                        reproduce the full higher-order odd-hexagonal selection described in the
+                        paper.
+                    </p>
+                    <dl class="cell-meta">
+                        <div><dt>Preset</dt><dd><code>fig36_triangle_odd</code></dd></div>
+                        <div><dt>Source</dt><dd>Bressloff et al. 2001 Figure 36</dd></div>
+                        <div><dt>Status</dt><dd>rendered target review; higher-order branch work deferred</dd></div>
+                    </dl>
+                </div>
+                <figure class="deep-dive-figure">
+                    <picture>
+                        <source media="(prefers-reduced-motion: no-preference)" srcset="/assets/bressloff-v1/deep-dive/fig36-triangle-odd.webp" type="image/webp">
+                        <img src="/assets/bressloff-v1/deep-dive/fig36-triangle-odd.png" width="360" height="360" alt="Generated triangular odd Bressloff preset" loading="lazy">
+                    </picture>
+                    <figcaption>Triangular odd contour preset.</figcaption>
+                </figure>
+            </article>
+        </section>
+
+        <section class="section two-column" id="reports">
+            <div>
+                <div class="section-heading">
+                    <p class="section-kicker">Calibration reports</p>
+                    <h2>What the current registry can say</h2>
+                </div>
+                <p>
+                    The implementation currently separates paper-figure identity, rendered
+                    target, contour mode, and branch-selection diagnostics. That is deliberately
+                    conservative: the page can say that a generated figure resembles a source
+                    target without pretending that all stability curves, phase conventions, or
+                    higher-order amplitude terms have already been recovered.
+                </p>
+            </div>
+            <div class="report-strip" aria-label="Bressloff calibration status">
+                <div><strong>24</strong><span>Bressloff paper and convenience presets</span></div>
+                <div><strong>17</strong><span>rendered target passes</span></div>
+                <div><strong>7</strong><span>review targets for branch or stability fidelity</span></div>
+            </div>
+        </section>
+
+        <section class="section" id="rule">
+            <div class="section-heading">
+                <p class="section-kicker">Rule flicker model family</p>
+                <h2>A separate scalar E/I simulation track</h2>
+                <p>
+                    Rule, Stoffregen, and Ermentrout model flicker-induced phosphenes using a
+                    forced excitatory/inhibitory neural field and then study spatial instabilities
+                    over flicker frequency and stimulus parameters. The public implementation
+                    names this as <code>model_family = rule_flicker_ei</code> and keeps it
+                    separate from Bressloff's orientation-hypercolumn registry.
+                </p>
+            </div>
+            <div class="equation-grid">
+                <article class="equation-card">
+                    <h3>E/I field</h3>
+                    <pre><code>tau_e dUe/dt =
+  -Ue + F(aee Ke*Ue - aei Ki*Ui - theta_e + ge S)
+
+tau_i dUi/dt =
+  -Ui + F(aie Ke*Ue - aii Ki*Ui - theta_i + gi S)</code></pre>
+                    <p>
+                        The implementation uses two scalar fields over a periodic two-dimensional
+                        domain with normalized Gaussian kernels.
+                    </p>
+                </article>
+                <article class="equation-card">
+                    <h3>Flicker stimulus</h3>
+                    <pre><code>S(t) = A H(sin(2 pi t / T) - threshold)</code></pre>
+                    <p>
+                        Period <code>T</code>, amplitude <code>A</code>, threshold, smoothing,
+                        and inhibitory feed-forward fraction are exposed as explicit parameters.
+                    </p>
+                </article>
+                <article class="equation-card">
+                    <h3>Temporal check</h3>
+                    <pre><code>high frequency: response period ~= 2T
+low frequency:  response period ~= T</code></pre>
+                    <p>
+                        The qualitative report compares frames one and two forcing periods apart,
+                        which is enough for a first period-doubling sanity check.
+                    </p>
+                </article>
+                <article class="equation-card">
+                    <h3>Deferred stability</h3>
+                    <pre><code>homogeneous periodic orbit
+linearized mode equation
+monodromy matrix
+Floquet multipliers</code></pre>
+                    <p>
+                        These are the next rigorous layer for reproducing Rule's phase diagrams
+                        and stability islands.
+                    </p>
+                </article>
+            </div>
+
+            <article class="deep-dive-cell" id="cell-rule-stripes">
+                <div class="deep-dive-copy">
+                    <p class="cell-kicker">Cell 08</p>
+                    <h3>High-frequency flicker: period-doubled stripes</h3>
+                    <p>
+                        The high-frequency qualitative preset represents the stripe island in
+                        Rule's Figure 4. The period-doubling signature is temporal: after one
+                        forcing cycle, foreground and background approximately exchange; after
+                        two cycles, the pattern matches again.
+                    </p>
+                    <dl class="cell-meta">
+                        <div><dt>Preset</dt><dd><code>rule_fig4_high_freq_stripes</code></dd></div>
+                        <div><dt>Stimulus</dt><dd>55 ms representative period</dd></div>
+                        <div><dt>Check</dt><dd><code>rT = -0.99</code>, <code>r2T = 0.98</code></dd></div>
+                    </dl>
+                </div>
+                <figure class="deep-dive-figure">
+                    <picture>
+                        <source media="(prefers-reduced-motion: no-preference)" srcset="/assets/bressloff-v1/deep-dive/rule-high-frequency-stripes.webp" type="image/webp">
+                        <img src="/assets/bressloff-v1/deep-dive/rule-high-frequency-stripes.png" width="360" height="360" alt="Generated Rule high-frequency stripe flicker preset" loading="lazy">
+                    </picture>
+                    <figcaption>Rule flicker E/I preset, seeded high-frequency stripe regime.</figcaption>
+                </figure>
+            </article>
+
+            <article class="deep-dive-cell" id="cell-rule-hexagons">
+                <div class="deep-dive-copy">
+                    <p class="cell-kicker">Cell 09</p>
+                    <h3>Lower-frequency flicker: one-to-one hexagons</h3>
+                    <p>
+                        The lower-frequency qualitative preset represents the hexagonal island.
+                        The current version uses a 120 ms representative rather than claiming
+                        exact reproduction of the 110 ms panel in the paper.
+                    </p>
+                    <dl class="cell-meta">
+                        <div><dt>Preset</dt><dd><code>rule_fig4_low_freq_hexagons</code></dd></div>
+                        <div><dt>Stimulus</dt><dd>120 ms qualitative representative</dd></div>
+                        <div><dt>Check</dt><dd><code>rT = 0.30</code>, <code>r2T = 0.90</code></dd></div>
+                    </dl>
+                </div>
+                <figure class="deep-dive-figure">
+                    <picture>
+                        <source media="(prefers-reduced-motion: no-preference)" srcset="/assets/bressloff-v1/deep-dive/rule-low-frequency-hexagons.webp" type="image/webp">
+                        <img src="/assets/bressloff-v1/deep-dive/rule-low-frequency-hexagons.png" width="360" height="360" alt="Generated Rule low-frequency hexagonal flicker preset" loading="lazy">
+                    </picture>
+                    <figcaption>Rule flicker E/I preset, seeded low-frequency hexagonal regime.</figcaption>
+                </figure>
+            </article>
+        </section>
+
+        <section class="section" id="ledger">
+            <div class="section-heading">
+                <p class="section-kicker">Claim ledger</p>
+                <h2>What is solid, partial, or deferred</h2>
+            </div>
+            <div class="status-table-wrap">
+                <table class="status-table">
+                    <thead>
+                        <tr>
+                            <th>Claim</th>
+                            <th>Current level</th>
+                            <th>Next work</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Bressloff and Rule are separate model families.</td>
+                            <td>Implemented in public metadata and page structure.</td>
+                            <td>Design a cross-model registry only when more families need shared indexing.</td>
+                        </tr>
+                        <tr>
+                            <td>Bressloff examples reproduce named visual families.</td>
+                            <td>Qualitative generated target checks for the current preset catalog.</td>
+                            <td>Digitize source figures and add image metrics.</td>
+                        </tr>
+                        <tr>
+                            <td>Rule high-frequency and low-frequency examples show different regimes.</td>
+                            <td>Qualitative seeded E/I simulations with temporal-correlation checks.</td>
+                            <td>Add Floquet stability and parameter sweeps.</td>
+                        </tr>
+                        <tr>
+                            <td>Flicker frequency predicts individual visual experience.</td>
+                            <td>Not claimed here.</td>
+                            <td>Requires participant data, safety constraints, and calibrated stimulus hardware.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="section" id="references">
+            <div class="section-heading">
+                <p class="section-kicker">References</p>
+                <h2>Sources and implementation lineage</h2>
+            </div>
+            <div class="reference-grid">
+                <section class="detail-block">
+                    <h3>Model papers</h3>
+                    <ul class="plain-list">
+                        <li><strong>Ermentrout, G. B., and J. D. Cowan.</strong> "<a class="reference-link" href="https://doi.org/10.1007/BF00336965" target="_blank" rel="noopener noreferrer">A Mathematical Theory of Visual Hallucination Patterns</a>." <em>Biological Cybernetics</em> 34 (1979).</li>
+                        <li><strong>Bressloff, P. C., J. D. Cowan, M. Golubitsky, P. J. Thomas, and M. C. Wiener.</strong> "<a class="reference-link" href="https://doi.org/10.1098/rstb.2000.0769" target="_blank" rel="noopener noreferrer">Geometric Visual Hallucinations, Euclidean Symmetry and the Functional Architecture of Striate Cortex</a>." <em>Philosophical Transactions of the Royal Society B</em> 356 (2001).</li>
+                        <li><strong>Bressloff, P. C., J. D. Cowan, M. Golubitsky, P. J. Thomas, and M. C. Wiener.</strong> "<a class="reference-link" href="https://doi.org/10.1162/089976602317250861" target="_blank" rel="noopener noreferrer">What Geometric Visual Hallucinations Tell Us About the Visual Cortex</a>." <em>Neural Computation</em> 14, no. 3 (2002).</li>
+                        <li><strong>Bressloff, P. C.</strong> "<a class="reference-link" href="https://doi.org/10.1088/1751-8113/45/3/033001" target="_blank" rel="noopener noreferrer">Spatiotemporal Dynamics of Continuum Neural Fields</a>." <em>Journal of Physics A: Mathematical and Theoretical</em> 45, no. 3 (2012).</li>
+                        <li><strong>Rule, M., M. Stoffregen, and B. Ermentrout.</strong> "<a class="reference-link" href="https://doi.org/10.1371/journal.pcbi.1002158" target="_blank" rel="noopener noreferrer">A Model for the Origin and Properties of Flicker-Induced Geometric Phosphenes</a>." <em>PLOS Computational Biology</em> 7, no. 9 (2011).</li>
+                    </ul>
+                </section>
+                <section class="detail-block">
+                    <h3>Public implementation and context</h3>
+                    <ul class="plain-list">
+                        <li><strong>Mesmer Prism.</strong> "<a class="reference-link" href="https://github.com/MesmerPrism/bressloff-v1-form-constants" target="_blank" rel="noopener noreferrer">Bressloff V1 Form Constants Lab</a>." MIT-licensed Rust and browser implementation used for these generated assets.</li>
+                        <li><strong>Mesmer Prism.</strong> "<a class="reference-link" href="/projects/bressloff-v1-form-constants.html">Bressloff V1 Form Constants</a>." Public overview page for the same implementation.</li>
+                        <li><strong>karacsm.</strong> "<a class="reference-link" href="https://github.com/karacsm/V1-sim" target="_blank" rel="noopener noreferrer">V1-sim</a>." Public notebook lineage for V1 activity and retino-cortical visualization.</li>
+                        <li><strong>CountYourCulture.</strong> "<a class="reference-link" href="https://isomerdesign.com/countyourculture/2011/03/13/form-constants-visual-cortex/" target="_blank" rel="noopener noreferrer">Form Constants and the Visual Cortex</a>." Public visual explainer for the form-constant comparison lineage.</li>
+                        <li><strong>Hewitt et al.</strong> "<a class="reference-link" href="https://doi.org/10.1093/nc/niaf020" target="_blank" rel="noopener noreferrer">Stroboscopically Induced Visual Hallucinations: Historical, Phenomenological, and Neurobiological Perspectives</a>." <em>Neuroscience of Consciousness</em> (2025).</li>
+                    </ul>
+                </section>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="shell footer-row">
+            <p>XR systems, perception research, and essays by Till Holzapfel.</p>
+            <nav class="footer-links" aria-label="Legal">
+                <a href="/impressum.html">Impressum</a>
+                <a href="/datenschutz.html">Datenschutz</a>
+            </nav>
+        </div>
+    </footer>
+</body>
+</html>
