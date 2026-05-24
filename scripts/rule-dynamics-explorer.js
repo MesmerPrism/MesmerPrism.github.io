@@ -247,6 +247,56 @@
         return `${hint}; beta ${mode.beta_cycles.toFixed(1)}, |lambda| ${mode.max_abs_multiplier.toFixed(2)}`;
     }
 
+    function pointRegime(point) {
+        if (!point) {
+            return "pending";
+        }
+        if (point.status_level === "suppressed") {
+            return "weak / near homogeneous";
+        }
+        return formatResponseMode(point.response_mode);
+    }
+
+    function pointRegimeKey(point) {
+        if (!point) {
+            return "pending";
+        }
+        if (point.status_level === "suppressed") {
+            return "suppressed";
+        }
+        if (point.response_mode === "period_doubled") {
+            return "period-doubled";
+        }
+        if (point.response_mode === "one_to_one") {
+            return "one-to-one";
+        }
+        return "mixed";
+    }
+
+    function pointSpatialLabel(point) {
+        if (!point) {
+            return "pending";
+        }
+        const spatial = point.spatial || {};
+        const confidence = Number.isFinite(spatial.confidence) ? spatial.confidence.toFixed(2) : "0.00";
+        const entropy = Number.isFinite(spatial.mode_entropy) ? spatial.mode_entropy.toFixed(2) : "0.00";
+        return `${point.spatial_family}, ${point.dominant_cycles.toFixed(1)} cyc; confidence ${confidence}, entropy ${entropy}`;
+    }
+
+    function pointTemporalLabel(point) {
+        if (!point || !point.temporal) {
+            return "pending";
+        }
+        const t = point.temporal;
+        return `C(T) ${t.corr_t.toFixed(2)}, C(2T) ${t.corr_2t.toFixed(2)}, C(3T) ${t.corr_3t.toFixed(2)}; confidence ${t.confidence.toFixed(2)}`;
+    }
+
+    function sortedUnique(values, descending = false) {
+        const unique = Array.from(new Set(values.map((value) => Number(value).toFixed(6))));
+        const sorted = unique.map(Number).sort((a, b) => a - b);
+        return descending ? sorted.reverse() : sorted;
+    }
+
     function stimulusAt(preset, t) {
         const phase = Math.sin((tau * t) / preset.periodMs);
         const x = (phase - preset.threshold) * preset.smoothing;
@@ -577,7 +627,18 @@
             this.viewSelect = root.querySelector("[data-rule-view]");
             this.playButton = root.querySelector("[data-rule-play]");
             this.sweepReport = null;
+            this.mapReport = null;
+            this.selectedMapPoint = null;
             this.sweepSource = root.querySelector("[data-rule-sweep-source]");
+            this.mapSource = root.querySelector("[data-rule-map-source]");
+            this.mapRoot = root.querySelector("[data-rule-map]");
+            this.mapPreview = root.querySelector("[data-rule-map-preview]");
+            this.mapFields = Object.fromEntries(
+                Array.from(root.querySelectorAll("[data-rule-map-field]")).map((node) => [
+                    node.dataset.ruleMapField,
+                    node,
+                ]),
+            );
             this.floquetFields = Object.fromEntries(
                 Array.from(root.querySelectorAll("[data-rule-floquet-field]")).map((node) => [
                     node.dataset.ruleFloquetField,
@@ -614,6 +675,7 @@
             this.updatePlayButton();
             this.paint();
             this.loadSweepReport();
+            this.loadMapReport();
             window.requestAnimationFrame((now) => this.tick(now));
         }
 
@@ -678,6 +740,38 @@
                     this.sweepSource.textContent = "Using explanatory sweep projection; simulator JSON was not available.";
                 }
                 this.paintFloquet();
+            }
+        }
+
+        async loadMapReport() {
+            const source = this.root.dataset.ruleMapSrc || this.root.dataset.ruleSweepSrc;
+            if (!source || !this.mapRoot) {
+                if (this.mapSource) {
+                    this.mapSource.textContent = "Dense sweep map not configured.";
+                }
+                return;
+            }
+            try {
+                const response = await window.fetch(source, { cache: "no-cache" });
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}`);
+                }
+                const report = await response.json();
+                if (report.model_family !== "rule_flicker_ei" || !Array.isArray(report.points)) {
+                    throw new Error("Unexpected Rule map report shape");
+                }
+                this.mapReport = report;
+                if (this.mapSource) {
+                    const grid = report.grid || {};
+                    this.mapSource.textContent = `Dense Rule sweep map: ${report.points.length} grid points, ${grid.period_steps || "?"} periods x ${grid.amplitude_steps || "?"} amplitudes.`;
+                }
+                this.renderMap();
+            } catch (error) {
+                this.mapReport = null;
+                if (this.mapSource) {
+                    this.mapSource.textContent = "Dense sweep map was not available.";
+                }
+                this.selectMapPoint(null);
             }
         }
 
@@ -779,6 +873,102 @@
             }
             if (this.floquetFields.high) {
                 this.floquetFields.high.textContent = formatFloquetHint(closest(55));
+            }
+        }
+
+        renderMap() {
+            if (!this.mapRoot || !this.mapReport || !Array.isArray(this.mapReport.points)) {
+                return;
+            }
+            const points = this.mapReport.points;
+            const periods = sortedUnique(points.map((point) => point.period_ms));
+            const amplitudes = sortedUnique(points.map((point) => point.amplitude), true);
+            this.mapRoot.textContent = "";
+            this.mapRoot.style.gridTemplateColumns = `var(--rule-map-axis, 3.6rem) repeat(${periods.length}, minmax(var(--rule-map-cell, 1.7rem), 1fr))`;
+
+            const corner = document.createElement("span");
+            corner.className = "rule-explorer__map-axis";
+            corner.textContent = "A / T";
+            this.mapRoot.appendChild(corner);
+            periods.forEach((period) => {
+                const label = document.createElement("span");
+                label.className = "rule-explorer__map-axis";
+                label.textContent = `${period.toFixed(0)} ms`;
+                this.mapRoot.appendChild(label);
+            });
+
+            amplitudes.forEach((amplitude) => {
+                const label = document.createElement("span");
+                label.className = "rule-explorer__map-axis";
+                label.textContent = amplitude.toFixed(2);
+                this.mapRoot.appendChild(label);
+                periods.forEach((period) => {
+                    const point = points.find(
+                        (candidate) =>
+                            Math.abs(candidate.period_ms - period) < 0.001 &&
+                            Math.abs(candidate.amplitude - amplitude) < 0.001,
+                    );
+                    const button = document.createElement("button");
+                    button.type = "button";
+                    button.className = "rule-explorer__map-cell";
+                    button.dataset.regime = pointRegimeKey(point);
+                    button.dataset.period = period.toFixed(6);
+                    button.dataset.amplitude = amplitude.toFixed(6);
+                    button.setAttribute(
+                        "aria-label",
+                        point
+                            ? `${period.toFixed(0)} ms, amplitude ${amplitude.toFixed(2)}: ${pointRegime(point)}, ${point.spatial_family}`
+                            : `${period.toFixed(0)} ms, amplitude ${amplitude.toFixed(2)}: no data`,
+                    );
+                    if (point) {
+                        const intensity = clamp(point.pattern_strength * 90, 0.14, 1);
+                        button.style.setProperty("--rule-map-weight", `${Math.round(intensity * 100)}%`);
+                        button.addEventListener("click", () => this.selectMapPoint(point));
+                    } else {
+                        button.disabled = true;
+                    }
+                    this.mapRoot.appendChild(button);
+                });
+            });
+
+            const defaultPoint =
+                points.find((point) => Math.abs(point.period_ms - 120) < 0.001 && Math.abs(point.amplitude - 1) < 0.001) ||
+                points.find((point) => point.status_level !== "suppressed") ||
+                points[0] ||
+                null;
+            this.selectMapPoint(defaultPoint);
+        }
+
+        selectMapPoint(point) {
+            this.selectedMapPoint = point;
+            if (this.mapRoot) {
+                Array.from(this.mapRoot.querySelectorAll(".rule-explorer__map-cell")).forEach((cell) => {
+                    const isSelected =
+                        point &&
+                        Math.abs(Number(cell.dataset.period) - point.period_ms) < 0.001 &&
+                        Math.abs(Number(cell.dataset.amplitude) - point.amplitude) < 0.001;
+                    cell.classList.toggle("is-selected", Boolean(isSelected));
+                });
+            }
+            if (this.mapPreview && point) {
+                drawThumbnail(this.mapPreview, point.thumbnail);
+            }
+            if (this.mapFields.point) {
+                this.mapFields.point.textContent = point
+                    ? `${point.period_ms.toFixed(0)} ms, amplitude ${point.amplitude.toFixed(2)}`
+                    : "pending";
+            }
+            if (this.mapFields.regime) {
+                this.mapFields.regime.textContent = point ? `${pointRegime(point)}; ${point.status_level}` : "pending";
+            }
+            if (this.mapFields.spatial) {
+                this.mapFields.spatial.textContent = pointSpatialLabel(point);
+            }
+            if (this.mapFields.temporal) {
+                this.mapFields.temporal.textContent = pointTemporalLabel(point);
+            }
+            if (this.mapFields.note) {
+                this.mapFields.note.textContent = point ? point.classification_note : "pending";
             }
         }
 

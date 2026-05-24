@@ -488,7 +488,7 @@
                 </article>
             </div>
 
-            <article class="rule-explorer" id="rule-explorer" data-rule-explorer data-rule-sweep-src="/assets/bressloff-v1/deep-dive/rule-2011-sweep.json">
+            <article class="rule-explorer" id="rule-explorer" data-rule-explorer data-rule-sweep-src="/assets/bressloff-v1/deep-dive/rule-2011-sweep.json" data-rule-map-src="/assets/bressloff-v1/deep-dive/rule-2011-sweep-dense.json">
                 <div class="rule-explorer__intro">
                     <div>
                         <p class="cell-kicker">Rule Dynamics Explorer v1</p>
@@ -683,6 +683,26 @@
                     </div>
                 </section>
 
+                <section class="rule-explorer__panel rule-explorer__panel--wide">
+                    <h4>Frequency-amplitude map</h4>
+                    <p class="rule-explorer__source" data-rule-map-source>
+                        Loading dense simulator-backed sweep map.
+                    </p>
+                    <div class="rule-explorer__map-wrap">
+                        <div class="rule-explorer__map" data-rule-map aria-label="Rule frequency-amplitude sweep map"></div>
+                        <div class="rule-explorer__map-detail">
+                            <canvas data-rule-map-preview width="150" height="150" aria-label="Selected Rule sweep frame"></canvas>
+                            <dl>
+                                <div><dt>Point</dt><dd data-rule-map-field="point">pending</dd></div>
+                                <div><dt>Regime</dt><dd data-rule-map-field="regime">pending</dd></div>
+                                <div><dt>Spatial score</dt><dd data-rule-map-field="spatial">pending</dd></div>
+                                <div><dt>Temporal score</dt><dd data-rule-map-field="temporal">pending</dd></div>
+                                <div><dt>Note</dt><dd data-rule-map-field="note">pending</dd></div>
+                            </dl>
+                        </div>
+                    </div>
+                </section>
+
                 <section class="rule-notebook" aria-label="Rule computation notebook cells">
                     <article>
                         <h4>A. Flicker input</h4>
@@ -725,17 +745,17 @@
                     <article>
                         <h4>F. Deferred stability map</h4>
                         <p>
-                            The sweep strip now reads a first simulator report. Dense phase
-                            boundaries and exact Rule figure-level calibration remain the
-                            next rigorous layer.
+                            The sweep strip and frequency-amplitude map now read simulator
+                            reports. Exact Rule figure-level phase-boundary calibration remains
+                            the next rigorous layer.
                         </p>
                     </article>
                 </section>
 
                 <p class="rule-explorer__note">
                     The live field and trace controls are an explanatory browser projection of
-                    the current qualitative presets. The sweep strip and monodromy hints read
-                    the Rust simulator report when the JSON asset is available.
+                    the current qualitative presets. The sweep strip, map, and monodromy hints
+                    read Rust simulator reports when the JSON assets are available.
                 </p>
             </article>
 
@@ -816,12 +836,12 @@
                         </tr>
                         <tr>
                             <td>Rule high-frequency and low-frequency examples show different regimes.</td>
-                            <td>Qualitative seeded E/I simulations with temporal-correlation checks.</td>
-                            <td>Add Floquet stability and parameter sweeps.</td>
+                            <td>Qualitative seeded E/I simulations with temporal-correlation checks, Fourier-family scores, and first sweep-map diagnostics.</td>
+                            <td>Calibrate exact Rule Figure 5 and Figure 6 parameter locations.</td>
                         </tr>
                         <tr>
                             <td>The public article explains Rule's temporal mechanism visually.</td>
-                            <td>Client-side explorer links flicker, E/I traces, mode family, period checks, and a first simulator-backed sweep report.</td>
+                            <td>Client-side explorer links flicker, E/I traces, mode family, period checks, sweep strip, dense map, and monodromy hints.</td>
                             <td>Calibrate dense Rule Figure 6 and Figure 8 phase boundaries.</td>
                         </tr>
                         <tr>
