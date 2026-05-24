@@ -1761,6 +1761,11 @@ li {
         --sticky-scroll-offset: 1rem;
     }
 
+    .shell {
+        width: calc(100vw - 2rem);
+        max-width: calc(100vw - 2rem);
+    }
+
     .site-header {
         position: static;
     }
@@ -1771,17 +1776,44 @@ li {
     }
 
     .site-nav {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         justify-content: flex-start;
+        gap: 0.7rem 1rem;
+        max-width: 100%;
         width: 100%;
+    }
+
+    .site-nav a {
+        min-width: 0;
+        overflow-wrap: anywhere;
     }
 
     .hero {
         padding-top: 3rem;
     }
 
+    .project-page main,
+    .project-page .hero,
+    .project-page .hero-shell,
+    .project-page .section,
+    .project-page .two-column,
+    .project-page .reference-grid,
+    .project-page .detail-block {
+        min-width: 0;
+        max-width: 100%;
+    }
+
     .project-page .hero-shell--page {
         width: 100%;
         max-width: 100%;
+    }
+
+    .project-page h1 {
+        width: 100%;
+        max-width: 100%;
+        font-size: clamp(2.8rem, 13vw, 3.5rem);
+        overflow-wrap: anywhere;
     }
 
     .project-page p,
@@ -1899,15 +1931,20 @@ li {
         align-items: flex-start;
     }
 
-    .hero-actions {
+    .project-page .hero-actions {
+        flex-direction: column;
         justify-content: flex-start;
         align-items: stretch;
         width: 100%;
     }
 
     .project-page .action-link {
-        flex: 1 1 9rem;
+        flex: 0 1 auto;
         min-width: 0;
+        width: 100%;
+        white-space: normal;
+        text-align: center;
+        overflow-wrap: anywhere;
     }
 
     .section-heading--center {

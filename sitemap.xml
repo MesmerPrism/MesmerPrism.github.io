@@ -56,6 +56,11 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://mesmerprism.com/projects/polar-h10.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://mesmerprism.com/projects/hollow-face-lab.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
