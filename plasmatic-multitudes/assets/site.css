@@ -312,7 +312,7 @@ main.shell {
 
 .concept-diagram__grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
   gap: 0.8rem;
 }
 
@@ -521,6 +521,12 @@ main.shell {
     max-width: 7.8ch;
     font-size: clamp(2.75rem, 12vw, 3.65rem);
     overflow-wrap: break-word;
+  }
+
+  .page-terminology .hero h1,
+  .page-references .hero h1 {
+    max-width: 100%;
+    overflow-wrap: normal;
   }
 
   .deck {

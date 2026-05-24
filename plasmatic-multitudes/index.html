@@ -6,7 +6,7 @@
     <title>Semi-Corporeal Avatar Aesthetics | Plasmatic Multitudes</title>
     <meta
       name="description"
-      content="A somaesthetic essay on semi-corporeal avatars, boundary precision, bodily coherence, and collective embodiment across media history, XR, and pain translation."
+      content="A somaesthetic essay on semi-corporeal avatars, boundary precision, bodily coherence, computational morphogenesis, collective embodiment, and cautious pain translation."
     >
     <link rel="stylesheet" href="/assets/fonts.css">
     <link rel="stylesheet" href="assets/site.css">
@@ -30,12 +30,12 @@
 
     <main id="top" class="shell">
       <section class="hero">
-        <p class="eyebrow">Essay | Updated March 26, 2026</p>
+        <p class="eyebrow">Essay | Updated May 24, 2026</p>
         <h1>Semi-Corporeal Avatar Aesthetics</h1>
         <p class="deck">
-          This essay asks how avatars can soften, dissolve, glow, or become collective without
+          This essay asks how bodies can soften, dissolve, glow, swarm, or become collective without
           losing the coherence needed for embodiment and trust. Boundary design is treated here as
-          a lived bodily variable.
+          a lived bodily variable and as a computational problem of many-part form.
         </p>
 
         <div class="intro-grid">
@@ -58,6 +58,7 @@
               <li><a href="#question">The design problem</a></li>
               <li><a href="#lineage">Historical and conceptual lineage</a></li>
               <li><a href="#xr">Contemporary XR precedents</a></li>
+              <li><a href="#morphogenesis">Computational morphogenesis</a></li>
               <li><a href="#pain">Why the pain track belongs here</a></li>
               <li><a href="#design">Working design rules</a></li>
               <li><a href="#closing">How the argument holds together</a></li>
@@ -91,8 +92,9 @@
           </p>
           <p>
             This essay follows that claim across media history, XR precedent, pseudo-haptic
-            materiality, and pain translation. The through-line is intentionally narrow: bodies do
-            not need sealed surfaces to be experientially real, but they do need coherence.
+            materiality, computational morphogenesis, and pain translation. The through-line is
+            intentionally narrow: bodies do not need sealed surfaces to be experientially real, but
+            they do need coherence.
           </p>
         </section>
 
@@ -278,6 +280,33 @@
           </p>
         </section>
 
+        <section id="morphogenesis">
+          <h2>Computational morphogenesis</h2>
+          <p>
+            The particle line now has a newer computational bridge. Particle systems gave fuzzy,
+            temporally evolving form; flocking showed how local rules can make collective motion
+            cohere. DiffeoMorph extends that lineage into learned morphogenesis: a population of
+            agents shares an update rule, receives signals from other agents, and learns to move
+            toward target 3D shapes through differentiable simulation
+            <span class="citation">(<a href="references.html#ref-reeves">Reeves</a>; <a href="references.html#ref-reynolds">Reynolds</a>; <a href="references.html#ref-diffeomorph">Pahng et al.</a>)</span>.
+          </p>
+          <p>
+            The technical detail matters because it changes what "multitude" can mean. In the
+            DiffeoMorph paper, shape is not treated as a finished mesh with particles attached to
+            it. Form emerges from many agents, an SE(3)-equivariant force model, and a
+            Zernike-spectrum loss that compares predicted and target shapes as continuous spatial
+            distributions rather than as fixed point lists
+            <span class="citation">(<a href="references.html#ref-diffeomorph">Pahng et al.</a>; <a href="references.html#ref-diffeomorph-github">hormoz-lab</a>)</span>.
+          </p>
+          <p>
+            For Plasmatic Multitudes, this is a design translation, not an embodiment result.
+            DiffeoMorph does not show that a person will own, trust, or feel such a form as a body.
+            It does give a concrete way to think about weakly bounded bodies as dynamics: local
+            rules, signals, target tendencies, and coherence over time, rather than a static surface
+            style.
+          </p>
+        </section>
+
         <section id="pain">
           <h2>Why the pain track belongs here</h2>
           <p>
@@ -330,9 +359,9 @@
             The second is that permeability should be stateful. Semi-corporeality works best as a
             changing condition rather than a static look. Bodies gather, disperse, overlap, merge,
             and re-individuate. Treating permeability as a state machine instead of a shader choice
-            aligns this line of work with both the plasmatic historical line and the logic of distributed
+            aligns this line of work with the plasmatic historical line, the logic of distributed
             simulation
-            <span class="citation">(<a href="references.html#ref-eisenstein">Eisenstein</a>; <a href="references.html#ref-reeves">Reeves</a>; <a href="references.html#ref-reynolds">Reynolds</a>)</span>.
+            <span class="citation">(<a href="references.html#ref-eisenstein">Eisenstein</a>; <a href="references.html#ref-reeves">Reeves</a>; <a href="references.html#ref-reynolds">Reynolds</a>; <a href="references.html#ref-diffeomorph">Pahng et al.</a>)</span>.
           </p>
           <p>
             The third is that stylization still needs a physical scaffold. Gilland's point is that
@@ -371,11 +400,12 @@
           <p>
             Media history supplies a repertoire of boundary operations, perception research explains
             how coherence survives without sealed surfaces, XR work shows that abstract bodies can
-            still be owned and socially meaningful, and pain studies make the stakes experimentally
+            still be owned and socially meaningful, computational morphogenesis shows how many-part
+            form can be organized as dynamics, and pain studies make the stakes experimentally
             sharp. That is the common line linking Gilland's physical logic of transformation,
-            pseudo-haptics, Danceroom's physics-based interaction, ETC's aura-touch grammar, and
-            Isness's collective light bodies
-            <span class="citation">(<a href="references.html#ref-gilland-2009">Gilland 2009</a>; <a href="references.html#ref-wagemans">Wagemans et al.</a>; <a href="references.html#ref-lecuyer-2009">Lecuyer</a>; <a href="references.html#ref-danceroom">Mitchell et al.</a>; <a href="references.html#ref-etc">Desnoyers-Stewart et al.</a>; <a href="references.html#ref-glowacki-2024">Glowacki</a>; <a href="references.html#ref-ho-2022">Ho et al.</a>)</span>.
+            pseudo-haptics, Danceroom's physics-based interaction, DiffeoMorph's agent-based
+            morphogenesis, ETC's aura-touch grammar, and Isness's collective light bodies
+            <span class="citation">(<a href="references.html#ref-gilland-2009">Gilland 2009</a>; <a href="references.html#ref-wagemans">Wagemans et al.</a>; <a href="references.html#ref-lecuyer-2009">Lecuyer</a>; <a href="references.html#ref-danceroom">Mitchell et al.</a>; <a href="references.html#ref-diffeomorph">Pahng et al.</a>; <a href="references.html#ref-etc">Desnoyers-Stewart et al.</a>; <a href="references.html#ref-glowacki-2024">Glowacki</a>; <a href="references.html#ref-ho-2022">Ho et al.</a>)</span>.
           </p>
           <p>
             Read together, these essays move from broad theory to intervention design while the
