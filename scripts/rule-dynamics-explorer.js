@@ -856,7 +856,10 @@
                 if (this.floquetSource) {
                     const exact = report.boundary_candidates.filter((candidate) => candidate.evidence === "sign_change").length;
                     const nearest = report.boundary_candidates.length - exact;
-                    this.floquetSource.textContent = `First-pass Floquet markers: ${exact} sign-change crossings, ${nearest} nearest-threshold hints.`;
+                    const refined = Array.isArray(report.boundary_curves)
+                        ? report.boundary_curves.reduce((sum, curve) => sum + (curve.point_count || 0), 0)
+                        : 0;
+                    this.floquetSource.textContent = `First-pass Floquet markers: ${exact} sign-change crossings, ${refined} refined beta-curve points, ${nearest} nearest-threshold hints.`;
                 }
                 if (this.mapReport) {
                     this.renderMap();
