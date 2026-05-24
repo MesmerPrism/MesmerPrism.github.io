@@ -434,6 +434,71 @@
         ctx.restore();
     }
 
+    function sourceCurvePoints(curve) {
+        return Array.isArray(curve.points)
+            ? curve.points
+                  .map((point) => ({
+                      period: Number(point.period_ms),
+                      beta: Number(point.wave_number_beta),
+                  }))
+                  .filter((point) => Number.isFinite(point.period) && Number.isFinite(point.beta))
+                  .sort((a, b) => a.period - b.period)
+            : [];
+    }
+
+    function averagePoints(points) {
+        if (!points.length) {
+            return null;
+        }
+        return {
+            period: points.reduce((sum, point) => sum + point.period, 0) / points.length,
+            beta: points.reduce((sum, point) => sum + point.beta, 0) / points.length,
+        };
+    }
+
+    function closeEnoughEndpoints(points) {
+        const periods = points.map((point) => point.period);
+        const betas = points.map((point) => point.beta);
+        return Math.max(...periods) - Math.min(...periods) <= 4 && Math.max(...betas) - Math.min(...betas) <= 0.08;
+    }
+
+    function drawDot(ctx, x, y, radius, fill) {
+        ctx.fillStyle = fill;
+        ctx.beginPath();
+        ctx.arc(x, y, radius, 0, tau);
+        ctx.fill();
+    }
+
+    function drawTriangle(ctx, x, y, size, fill) {
+        ctx.fillStyle = fill;
+        ctx.beginPath();
+        ctx.moveTo(x + size * 0.95, y);
+        ctx.lineTo(x - size * 0.65, y - size * 0.55);
+        ctx.lineTo(x - size * 0.25, y + size * 0.9);
+        ctx.closePath();
+        ctx.fill();
+    }
+
+    function drawArrow(ctx, fromX, fromY, toX, toY, color) {
+        const angle = Math.atan2(toY - fromY, toX - fromX);
+        const head = 7;
+        ctx.save();
+        ctx.strokeStyle = color;
+        ctx.fillStyle = color;
+        ctx.lineWidth = 1.4;
+        ctx.beginPath();
+        ctx.moveTo(fromX, fromY);
+        ctx.lineTo(toX, toY);
+        ctx.stroke();
+        ctx.beginPath();
+        ctx.moveTo(toX, toY);
+        ctx.lineTo(toX - Math.cos(angle - 0.45) * head, toY - Math.sin(angle - 0.45) * head);
+        ctx.lineTo(toX - Math.cos(angle + 0.45) * head, toY - Math.sin(angle + 0.45) * head);
+        ctx.closePath();
+        ctx.fill();
+        ctx.restore();
+    }
+
     function renderRuleCurvePlot(canvas, report, sourceReport) {
         if (!canvas || !report || !Array.isArray(report.boundary_curves)) {
             return;
@@ -476,10 +541,10 @@
         }
 
         const compact = w < 460;
-        const left = 54;
-        const right = compact ? 14 : 18;
+        const left = compact ? 62 : 66;
+        const right = compact ? 18 : 24;
         const top = compact ? 46 : 18;
-        const bottom = compact ? 54 : 44;
+        const bottom = compact ? 62 : 54;
         const plotW = w - left - right;
         const plotH = h - top - bottom;
         const sourceAxes = sourceReport && sourceReport.source_axes ? sourceReport.source_axes : {};
@@ -492,11 +557,6 @@
         const xFor = (period) => left + ((period - xMin) / Math.max(1e-9, xMax - xMin)) * plotW;
         const yFor = (wave) => top + (1 - (wave - yMin) / Math.max(1e-9, yMax - yMin)) * plotH;
 
-        ctx.strokeStyle = `rgba(${colors.line.join(",")},0.9)`;
-        ctx.lineWidth = 1;
-        ctx.beginPath();
-        ctx.rect(left, top, plotW, plotH);
-        ctx.stroke();
         ctx.font = `${Math.round(11 * (window.devicePixelRatio || 1))}px Georgia`;
         ctx.fillStyle = `rgb(${colors.muted.join(",")})`;
         const xTickCount = compact ? 3 : 4;
@@ -509,9 +569,16 @@
             ctx.moveTo(x, top);
             ctx.lineTo(x, top + plotH);
             ctx.stroke();
+            ctx.strokeStyle = `rgba(${colors.text.join(",")},0.55)`;
+            ctx.beginPath();
+            ctx.moveTo(x, top);
+            ctx.lineTo(x, top + 5);
+            ctx.moveTo(x, top + plotH);
+            ctx.lineTo(x, top + plotH - 5);
+            ctx.stroke();
             const label = `${period.toFixed(0)} ms`;
             ctx.textAlign = i === 0 ? "left" : i === xTickCount ? "right" : "center";
-            ctx.fillText(label, x, top + plotH + 22);
+            ctx.fillText(label, x, top + plotH + 20);
         }
         ctx.textAlign = "left";
         for (let i = 0; i <= 4; i += 1) {
@@ -523,33 +590,69 @@
             ctx.moveTo(left, y);
             ctx.lineTo(left + plotW, y);
             ctx.stroke();
-            ctx.fillText(wave.toFixed(2), 12, y + 4);
+            ctx.strokeStyle = `rgba(${colors.text.join(",")},0.55)`;
+            ctx.beginPath();
+            ctx.moveTo(left, y);
+            ctx.lineTo(left + 5, y);
+            ctx.moveTo(left + plotW, y);
+            ctx.lineTo(left + plotW - 5, y);
+            ctx.stroke();
+            ctx.textAlign = "right";
+            ctx.fillText(wave.toFixed(2), left - 9, y + 4);
         }
+        ctx.textAlign = "left";
+        ctx.strokeStyle = `rgba(${colors.line.join(",")},0.95)`;
+        ctx.lineWidth = 1.2;
+        ctx.beginPath();
+        ctx.rect(left, top, plotW, plotH);
+        ctx.stroke();
         ctx.fillStyle = `rgb(${colors.text.join(",")})`;
-        ctx.fillText("forcing period T", left, h - 9);
+        ctx.textAlign = "center";
+        ctx.fillText("forcing period T", left + plotW / 2, h - 13);
+        ctx.textAlign = "left";
         ctx.save();
-        ctx.translate(14, top + plotH * 0.62);
+        ctx.translate(compact ? 18 : 20, top + plotH * 0.5);
         ctx.rotate(-Math.PI / 2);
+        ctx.textAlign = "center";
         ctx.fillText("source figure beta", 0, 0);
         ctx.restore();
 
+        const sourceGroups = new Map();
         sourceCurves.forEach((curve) => {
-            const curvePoints = Array.isArray(curve.points)
-                ? curve.points
-                      .map((point) => ({
-                          period: Number(point.period_ms),
-                          beta: Number(point.wave_number_beta),
-                      }))
-                      .filter((point) => Number.isFinite(point.period) && Number.isFinite(point.beta))
-                      .sort((a, b) => a.period - b.period)
-                : [];
+            const curvePoints = sourceCurvePoints(curve);
+            const group = sourceGroups.get(curve.kind) || [];
+            group.push(curvePoints);
+            sourceGroups.set(curve.kind, group);
             drawCurvePath(ctx, curvePoints, xFor, yFor, ruleCurveColor(curve.kind), 0.98, 2.4);
+        });
+        sourceGroups.forEach((group, kind) => {
+            if (group.length < 2) {
+                return;
+            }
+            const starts = group.map((pointsForCurve) => pointsForCurve[0]).filter(Boolean);
+            const ends = group.map((pointsForCurve) => pointsForCurve[pointsForCurve.length - 1]).filter(Boolean);
+            if (closeEnoughEndpoints(starts)) {
+                const start = averagePoints(starts);
+                drawDot(ctx, xFor(start.period), yFor(start.beta), compact ? 3.2 : 4.2, `rgb(${colors.deep.join(",")})`);
+            } else {
+                starts.forEach((point) => drawDot(ctx, xFor(point.period), yFor(point.beta), compact ? 3.2 : 4.2, `rgb(${colors.deep.join(",")})`));
+            }
+            if (closeEnoughEndpoints(ends)) {
+                const end = averagePoints(ends);
+                drawCurvePath(ctx, [ends[0], ends[1]], xFor, yFor, ruleCurveColor(kind), 0.98, 2.4);
+                drawDot(ctx, xFor(end.period), yFor(end.beta), compact ? 3.2 : 4.2, `rgb(${colors.deep.join(",")})`);
+                if (kind === "minus_period_doubling") {
+                    drawTriangle(ctx, xFor(end.period) + (compact ? 10 : 14), yFor(end.beta) + (compact ? 3 : 5), compact ? 7 : 10, `rgb(${colors.deep.join(",")})`);
+                }
+            } else {
+                ends.forEach((point) => drawDot(ctx, xFor(point.period), yFor(point.beta), compact ? 3.2 : 4.2, `rgb(${colors.deep.join(",")})`));
+            }
         });
 
         curves.forEach((curve, index) => {
             const isMinus = curve.kind === "minus_period_doubling";
             const color = ruleCurveColor(curve.kind);
-            const alpha = 0.64 - Math.min(index, 8) * 0.035;
+            const alpha = 0.6 - Math.min(index, 8) * 0.025;
             const curvePoints = Array.isArray(curve.points)
                 ? curve.points
                       .map((point) => ({
@@ -559,33 +662,52 @@
                       .filter((point) => Number.isFinite(point.period) && Number.isFinite(point.beta))
                       .sort((a, b) => a.period - b.period)
                 : [];
-            if (curvePoints.length >= 2) {
-                drawCurvePath(ctx, curvePoints, xFor, yFor, color, alpha, isMinus ? 1.8 : 1.6, [6, 4]);
-            }
             curvePoints.forEach((point) => {
-                ctx.fillStyle = `rgba(${color},0.78)`;
-                ctx.beginPath();
-                ctx.arc(xFor(point.period), yFor(point.beta), isMinus ? 2.5 : 2.2, 0, tau);
-                ctx.fill();
+                ctx.fillStyle = `rgba(${color},${alpha})`;
+                const x = xFor(point.period);
+                const y = yFor(point.beta);
+                if (isMinus) {
+                    ctx.fillRect(x - 2.2, y - 2.2, 4.4, 4.4);
+                } else {
+                    ctx.beginPath();
+                    ctx.arc(x, y, 2.2, 0, tau);
+                    ctx.fill();
+                }
             });
         });
+
+        ctx.fillStyle = `rgb(${colors.text.join(",")})`;
+        ctx.font = `${Math.round((compact ? 16 : 19) * (window.devicePixelRatio || 1))}px Georgia`;
+        ctx.fillText("-1", xFor(71), yFor(0.83));
+        ctx.fillText("+1", xFor(118), yFor(0.37));
+        ctx.font = `${Math.round((compact ? 14 : 17) * (window.devicePixelRatio || 1))}px Georgia`;
+        ctx.fillText("\u03b2*", xFor(82), yFor(0.56));
+        drawArrow(ctx, xFor(87), yFor(0.56), xFor(103), yFor(0.47), `rgb(${colors.deep.join(",")})`);
 
         const legend = [
             [ruleCurveLabel("minus_period_doubling"), "142,73,58", []],
             [ruleCurveLabel("plus_one_to_one"), "70,88,56", []],
-            [`generated ${mapping.model} beta`, "99,88,80", [6, 4]],
+            [`generated samples (${mapping.model})`, "99,88,80", "marker"],
         ];
-        legend.forEach(([label, color, dash], index) => {
+        ctx.font = `${Math.round(10.5 * (window.devicePixelRatio || 1))}px Georgia`;
+        legend.forEach(([label, color, style], index) => {
             const x = compact ? left + 8 : left + index * 168;
             const y = compact ? 15 + index * 12 : top + 14;
             ctx.save();
-            ctx.strokeStyle = `rgb(${color})`;
-            ctx.lineWidth = 2;
-            ctx.setLineDash(dash);
-            ctx.beginPath();
-            ctx.moveTo(x, y - 7);
-            ctx.lineTo(x + 20, y - 7);
-            ctx.stroke();
+            if (style === "marker") {
+                ctx.fillStyle = `rgb(${color})`;
+                ctx.fillRect(x, y - 10, 5, 5);
+                ctx.beginPath();
+                ctx.arc(x + 15, y - 7.5, 2.8, 0, tau);
+                ctx.fill();
+            } else {
+                ctx.strokeStyle = `rgb(${color})`;
+                ctx.lineWidth = 2;
+                ctx.beginPath();
+                ctx.moveTo(x, y - 7);
+                ctx.lineTo(x + 20, y - 7);
+                ctx.stroke();
+            }
             ctx.restore();
             ctx.fillStyle = `rgb(${colors.text.join(",")})`;
             ctx.fillText(label, x + 26, y - 4);
@@ -634,7 +756,7 @@
             const refinement = report.curve_refinement || {};
             const fitScore = Number.isFinite(objective.score) ? `, fit score ${formatScientific(objective.score)}` : "";
             const raw = Number.isFinite(mapping.rawRms) ? `, raw RMS ${formatScientific(mapping.rawRms)}` : "";
-            sourceNode.textContent = `Source Figure 8C curves with generated branches on the affine beta axis: ${sourceCurves.length || 0} source branches, ${pointCount} generated points, tolerance ${formatScientific(refinement.tolerance)}${fitScore}${raw}.`;
+            sourceNode.textContent = `Source Figure 8C curves with generated samples on the affine beta axis: ${sourceCurves.length || 0} source branches, ${pointCount} generated points, tolerance ${formatScientific(refinement.tolerance)}${fitScore}${raw}.`;
         }
     }
 
