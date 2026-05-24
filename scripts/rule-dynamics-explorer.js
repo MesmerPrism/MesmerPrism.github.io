@@ -348,7 +348,8 @@
                   : candidate.kind === "unstable_complex"
                     ? "complex instability"
                     : "unknown";
-        const evidence = candidate.evidence === "sign_change" ? "grid crossing" : "nearest margin";
+        const axis = typeof candidate.axis === "string" ? candidate.axis : "grid";
+        const evidence = candidate.evidence === "sign_change" ? `${axis} sign change` : "nearest margin";
         const margin = Number.isFinite(candidate.margin_from) ? candidate.margin_from.toFixed(2) : "n/a";
         return `${kind}; beta ${candidate.beta_cycles.toFixed(1)}, ${evidence}, margin ${margin}`;
     }
@@ -855,7 +856,7 @@
                 if (this.floquetSource) {
                     const exact = report.boundary_candidates.filter((candidate) => candidate.evidence === "sign_change").length;
                     const nearest = report.boundary_candidates.length - exact;
-                    this.floquetSource.textContent = `First-pass Floquet markers: ${exact} grid crossings, ${nearest} nearest-threshold hints.`;
+                    this.floquetSource.textContent = `First-pass Floquet markers: ${exact} sign-change crossings, ${nearest} nearest-threshold hints.`;
                 }
                 if (this.mapReport) {
                     this.renderMap();
