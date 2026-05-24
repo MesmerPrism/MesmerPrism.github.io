@@ -55,6 +55,7 @@
                     <a class="action-link action-link--strong" href="#examples">Sequential examples</a>
                     <a class="action-link" href="#model-split">Model split</a>
                     <a class="action-link" href="#rule">Rule flicker model</a>
+                    <a class="action-link" href="#rule-explorer">Rule explorer</a>
                     <a class="action-link" href="/projects/bressloff-v1-form-constants.html">Bressloff overview</a>
                     <a class="action-link" href="#references">References</a>
                 </div>
@@ -68,6 +69,7 @@
             <a href="#examples">Examples</a>
             <a href="#reports">Reports</a>
             <a href="#rule">Rule equations</a>
+            <a href="#rule-explorer">Rule explorer</a>
             <a href="#ledger">Claim ledger</a>
             <a href="#references">References</a>
         </nav>
@@ -486,6 +488,125 @@
                 </article>
             </div>
 
+            <article class="rule-explorer" id="rule-explorer" data-rule-explorer>
+                <div class="rule-explorer__intro">
+                    <div>
+                        <p class="cell-kicker">Rule Dynamics Explorer v1</p>
+                        <h3>Synchronized flicker, E/I response, and spatial modes</h3>
+                        <p>
+                            This browser-side explorer shows the two qualitative Rule regimes as
+                            linked views: stimulus pulse, reduced excitatory/inhibitory response,
+                            scalar cortical field, dominant Fourier family, and the
+                            one-period versus two-period temporal check.
+                        </p>
+                    </div>
+                    <dl class="rule-explorer__summary">
+                        <div>
+                            <dt>Model family</dt>
+                            <dd><code>rule_flicker_ei</code></dd>
+                        </div>
+                        <div>
+                            <dt>Active preset</dt>
+                            <dd data-rule-readout="preset">High-frequency stripes</dd>
+                        </div>
+                        <div>
+                            <dt>Response</dt>
+                            <dd data-rule-readout="response">period doubled</dd>
+                        </div>
+                    </dl>
+                </div>
+
+                <div class="rule-explorer__controls" aria-label="Rule dynamics explorer controls">
+                    <div class="rule-explorer__preset-buttons" role="group" aria-label="Preset">
+                        <button class="rule-explorer__button is-active" type="button" data-rule-preset="high">
+                            High-frequency stripes
+                        </button>
+                        <button class="rule-explorer__button" type="button" data-rule-preset="low">
+                            Low-frequency hexagons
+                        </button>
+                    </div>
+                    <button class="rule-explorer__button" type="button" data-rule-play aria-pressed="true">
+                        Pause
+                    </button>
+                    <label class="rule-explorer__select">
+                        <span>View</span>
+                        <select data-rule-view>
+                            <option value="cortical">Cortical field</option>
+                            <option value="retinal">Retinal projection</option>
+                        </select>
+                    </label>
+                    <label class="rule-explorer__time">
+                        <span>Time</span>
+                        <input data-rule-time type="range" min="0" max="1000" value="0">
+                    </label>
+                </div>
+
+                <div class="rule-explorer__layout">
+                    <figure class="rule-explorer__field">
+                        <canvas data-rule-field width="420" height="420" aria-label="Animated scalar activity field"></canvas>
+                        <figcaption data-rule-readout="field-caption">
+                            Period-doubled stripe field; the foreground and background exchange after one forcing cycle.
+                        </figcaption>
+                    </figure>
+
+                    <div class="rule-explorer__stack">
+                        <section class="rule-explorer__panel">
+                            <h4>Stimulus and E/I traces</h4>
+                            <canvas data-rule-trace width="620" height="210" aria-label="Flicker stimulus and excitatory inhibitory response traces"></canvas>
+                            <div class="rule-explorer__legend" aria-hidden="true">
+                                <span><i class="rule-explorer__swatch rule-explorer__swatch--stim"></i>stimulus</span>
+                                <span><i class="rule-explorer__swatch rule-explorer__swatch--e"></i>excitatory</span>
+                                <span><i class="rule-explorer__swatch rule-explorer__swatch--i"></i>inhibitory</span>
+                            </div>
+                        </section>
+
+                        <section class="rule-explorer__panel">
+                            <h4>Fourier mode readout</h4>
+                            <div class="rule-explorer__mode-row">
+                                <span>Stripe axis</span>
+                                <div class="rule-explorer__bar"><i data-rule-bar="stripe"></i></div>
+                                <strong data-rule-bar-value="stripe">0.92</strong>
+                            </div>
+                            <div class="rule-explorer__mode-row">
+                                <span>Hexagonal triplet</span>
+                                <div class="rule-explorer__bar"><i data-rule-bar="hex"></i></div>
+                                <strong data-rule-bar-value="hex">0.18</strong>
+                            </div>
+                            <canvas data-rule-modes width="620" height="150" aria-label="Dominant Fourier wavevectors"></canvas>
+                        </section>
+
+                        <section class="rule-explorer__panel">
+                            <h4>Period check</h4>
+                            <div class="rule-explorer__snapshots">
+                                <figure>
+                                    <canvas data-rule-snapshot="0" width="120" height="120" aria-label="Frame at current time"></canvas>
+                                    <figcaption>t</figcaption>
+                                </figure>
+                                <figure>
+                                    <canvas data-rule-snapshot="1" width="120" height="120" aria-label="Frame one forcing period later"></canvas>
+                                    <figcaption>t + T</figcaption>
+                                </figure>
+                                <figure>
+                                    <canvas data-rule-snapshot="2" width="120" height="120" aria-label="Frame two forcing periods later"></canvas>
+                                    <figcaption>t + 2T</figcaption>
+                                </figure>
+                            </div>
+                            <dl class="rule-explorer__correlations">
+                                <div><dt>C(T)</dt><dd data-rule-readout="corr-t">-0.99</dd></div>
+                                <div><dt>C(2T)</dt><dd data-rule-readout="corr-2t">0.98</dd></div>
+                                <div><dt>Stimulus period</dt><dd data-rule-readout="period">55 ms</dd></div>
+                            </dl>
+                        </section>
+                    </div>
+                </div>
+
+                <p class="rule-explorer__note">
+                    The field view is an explanatory projection of the current qualitative
+                    presets. The Rust simulator remains the source for generated assets and
+                    later Floquet or frequency-amplitude reports.
+                </p>
+            </article>
+
             <article class="deep-dive-cell" id="cell-rule-stripes">
                 <div class="deep-dive-copy">
                     <p class="cell-kicker">Cell 08</p>
@@ -567,6 +688,11 @@
                             <td>Add Floquet stability and parameter sweeps.</td>
                         </tr>
                         <tr>
+                            <td>The public article explains Rule's temporal mechanism visually.</td>
+                            <td>Client-side explorer links flicker, E/I traces, mode family, and period checks.</td>
+                            <td>Replace the explanatory projection with sweep-backed reports once Rule Figure 6 calibration is available.</td>
+                        </tr>
+                        <tr>
                             <td>Flicker frequency predicts individual visual experience.</td>
                             <td>Not claimed here.</td>
                             <td>Requires participant data, safety constraints, and calibrated stimulus hardware.</td>
@@ -615,6 +741,7 @@
             </nav>
         </div>
     </footer>
+    <script defer src="/scripts/rule-dynamics-explorer.js"></script>
     <script defer src="/assets/vendor/katex/katex.min.js"></script>
     <script defer src="/assets/vendor/katex/contrib/auto-render.min.js"></script>
     <script defer src="/scripts/math-render.js"></script>
