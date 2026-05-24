@@ -488,16 +488,17 @@
                 </article>
             </div>
 
-            <article class="rule-explorer" id="rule-explorer" data-rule-explorer>
+            <article class="rule-explorer" id="rule-explorer" data-rule-explorer data-rule-sweep-src="/assets/bressloff-v1/deep-dive/rule-2011-sweep.json">
                 <div class="rule-explorer__intro">
                     <div>
                         <p class="cell-kicker">Rule Dynamics Explorer v1</p>
                         <h3>Synchronized flicker, E/I response, and spatial modes</h3>
                         <p>
-                            This browser-side explorer shows the two qualitative Rule regimes as
-                            linked views: stimulus pulse, reduced excitatory/inhibitory response,
-                            scalar cortical field, dominant Fourier family, and the
-                            one-period versus two-period temporal check.
+                            This explorer shows the two qualitative Rule regimes as linked
+                            views: stimulus pulse, reduced excitatory/inhibitory response,
+                            scalar cortical field, dominant Fourier family, the one-period
+                            versus two-period temporal check, and a simulator-backed sweep
+                            report where available.
                         </p>
                     </div>
                     <dl class="rule-explorer__summary">
@@ -616,8 +617,11 @@
 
                 <section class="rule-explorer__panel rule-explorer__panel--wide">
                     <h4>Frequency sweep strip</h4>
+                    <p class="rule-explorer__source" data-rule-sweep-source>
+                        Loading simulator-backed sweep report.
+                    </p>
                     <div class="rule-explorer__sweep" aria-label="Frequency sweep across qualitative Rule regimes">
-                        <article class="rule-explorer__sweep-cell" data-rule-sweep="140">
+                        <article class="rule-explorer__sweep-cell" data-rule-sweep="140" data-rule-sweep-amplitude="0.65">
                             <canvas width="150" height="150" aria-label="140 millisecond low-frequency sweep cell"></canvas>
                             <h5>140 ms</h5>
                             <dl>
@@ -626,7 +630,7 @@
                                 <div><dt>Peak</dt><dd data-rule-sweep-field="peak">0.00</dd></div>
                             </dl>
                         </article>
-                        <article class="rule-explorer__sweep-cell" data-rule-sweep="120">
+                        <article class="rule-explorer__sweep-cell" data-rule-sweep="120" data-rule-sweep-amplitude="1.00">
                             <canvas width="150" height="150" aria-label="120 millisecond hexagonal sweep cell"></canvas>
                             <h5>120 ms</h5>
                             <dl>
@@ -635,7 +639,7 @@
                                 <div><dt>Peak</dt><dd data-rule-sweep-field="peak">0.00</dd></div>
                             </dl>
                         </article>
-                        <article class="rule-explorer__sweep-cell" data-rule-sweep="85">
+                        <article class="rule-explorer__sweep-cell" data-rule-sweep="85" data-rule-sweep-amplitude="0.80">
                             <canvas width="150" height="150" aria-label="85 millisecond transition sweep cell"></canvas>
                             <h5>85 ms</h5>
                             <dl>
@@ -644,7 +648,7 @@
                                 <div><dt>Peak</dt><dd data-rule-sweep-field="peak">0.00</dd></div>
                             </dl>
                         </article>
-                        <article class="rule-explorer__sweep-cell" data-rule-sweep="65">
+                        <article class="rule-explorer__sweep-cell" data-rule-sweep="65" data-rule-sweep-amplitude="0.80">
                             <canvas width="150" height="150" aria-label="65 millisecond stripe onset sweep cell"></canvas>
                             <h5>65 ms</h5>
                             <dl>
@@ -653,7 +657,7 @@
                                 <div><dt>Peak</dt><dd data-rule-sweep-field="peak">0.00</dd></div>
                             </dl>
                         </article>
-                        <article class="rule-explorer__sweep-cell" data-rule-sweep="55">
+                        <article class="rule-explorer__sweep-cell" data-rule-sweep="55" data-rule-sweep-amplitude="0.80">
                             <canvas width="150" height="150" aria-label="55 millisecond high-frequency sweep cell"></canvas>
                             <h5>55 ms</h5>
                             <dl>
@@ -662,6 +666,20 @@
                                 <div><dt>Peak</dt><dd data-rule-sweep-field="peak">0.00</dd></div>
                             </dl>
                         </article>
+                    </div>
+                    <div class="rule-explorer__stability" aria-label="Rule monodromy stability hints">
+                        <div>
+                            <span>Low-frequency mode</span>
+                            <strong data-rule-floquet-field="low">pending</strong>
+                        </div>
+                        <div>
+                            <span>Transition mode</span>
+                            <strong data-rule-floquet-field="mid">pending</strong>
+                        </div>
+                        <div>
+                            <span>High-frequency mode</span>
+                            <strong data-rule-floquet-field="high">pending</strong>
+                        </div>
                     </div>
                 </section>
 
@@ -707,16 +725,17 @@
                     <article>
                         <h4>F. Deferred stability map</h4>
                         <p>
-                            The sweep strip is explanatory. The next rigorous layer is still
-                            the Rule frequency-amplitude sweep and Floquet monodromy report.
+                            The sweep strip now reads a first simulator report. Dense phase
+                            boundaries and exact Rule figure-level calibration remain the
+                            next rigorous layer.
                         </p>
                     </article>
                 </section>
 
                 <p class="rule-explorer__note">
-                    The field view is an explanatory projection of the current qualitative
-                    presets. The Rust simulator remains the source for generated assets and
-                    later Floquet or frequency-amplitude reports.
+                    The live field and trace controls are an explanatory browser projection of
+                    the current qualitative presets. The sweep strip and monodromy hints read
+                    the Rust simulator report when the JSON asset is available.
                 </p>
             </article>
 
@@ -802,8 +821,8 @@
                         </tr>
                         <tr>
                             <td>The public article explains Rule's temporal mechanism visually.</td>
-                            <td>Client-side explorer links flicker, E/I traces, mode family, and period checks.</td>
-                            <td>Replace the explanatory projection with sweep-backed reports once Rule Figure 6 calibration is available.</td>
+                            <td>Client-side explorer links flicker, E/I traces, mode family, period checks, and a first simulator-backed sweep report.</td>
+                            <td>Calibrate dense Rule Figure 6 and Figure 8 phase boundaries.</td>
                         </tr>
                         <tr>
                             <td>Flicker frequency predicts individual visual experience.</td>

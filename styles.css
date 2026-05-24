@@ -944,6 +944,13 @@ li {
     background: var(--accent);
 }
 
+.rule-explorer__source {
+    margin: -0.1rem 0 0;
+    color: var(--muted);
+    font-family: var(--font-ui);
+    font-size: 0.82rem;
+}
+
 .rule-explorer__mode-row {
     display: grid;
     grid-template-columns: 8.5rem minmax(0, 1fr) 3.2rem;
@@ -1027,6 +1034,38 @@ li {
     color: var(--text);
     font-family: var(--font-ui);
     font-size: 0.8rem;
+    line-height: 1.35;
+}
+
+.rule-explorer__stability {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.75rem;
+    margin-top: 0.85rem;
+}
+
+.rule-explorer__stability div {
+    display: grid;
+    gap: 0.25rem;
+    min-width: 0;
+    padding: 0.65rem 0;
+    border-top: 1px solid var(--line);
+}
+
+.rule-explorer__stability span {
+    color: var(--muted);
+    font-family: var(--font-ui);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.rule-explorer__stability strong {
+    color: var(--text);
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+    font-weight: 400;
     line-height: 1.35;
 }
 
@@ -1544,6 +1583,7 @@ li {
     .rule-explorer__correlations,
     .rule-explorer__snapshots,
     .rule-explorer__sweep,
+    .rule-explorer__stability,
     .rule-notebook {
         grid-template-columns: 1fr;
     }

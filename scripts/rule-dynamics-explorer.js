@@ -159,6 +159,11 @@
 
     function colorFor(value) {
         const x = clamp((Math.tanh(value * 1.25) + 1) / 2, 0, 1);
+        return colorForUnit(x);
+    }
+
+    function colorForUnit(value) {
+        const x = clamp(value, 0, 1);
         if (x < 0.5) {
             return mix(colors.deep, colors.mid, x / 0.5);
         }
@@ -176,6 +181,70 @@
             canvas.height = height;
         }
         return canvas.getContext("2d");
+    }
+
+    function decodeBase64U8(value) {
+        const binary = window.atob(value || "");
+        const bytes = new Uint8Array(binary.length);
+        for (let i = 0; i < binary.length; i += 1) {
+            bytes[i] = binary.charCodeAt(i);
+        }
+        return bytes;
+    }
+
+    function drawThumbnail(canvas, thumbnail) {
+        if (!thumbnail || !thumbnail.data_base64) {
+            return false;
+        }
+        const width = thumbnail.width || 1;
+        const height = thumbnail.height || width;
+        const resolution = Math.max(width, height);
+        const { work, workCtx, image } = rasterBufferFor(canvas, resolution);
+        if (!thumbnail.bytes) {
+            thumbnail.bytes = decodeBase64U8(thumbnail.data_base64);
+        }
+        for (let i = 0; i < image.data.length; i += 4) {
+            const pixel = i / 4;
+            const row = Math.floor(pixel / resolution);
+            const col = pixel % resolution;
+            const source = row < height && col < width ? thumbnail.bytes[row * width + col] || 0 : 0;
+            const rgb = colorForUnit(source / 255);
+            image.data[i] = rgb[0];
+            image.data[i + 1] = rgb[1];
+            image.data[i + 2] = rgb[2];
+            image.data[i + 3] = 255;
+        }
+        workCtx.putImageData(image, 0, 0);
+        const ctx = resizeCanvas(canvas, 150, 150);
+        ctx.imageSmoothingEnabled = false;
+        ctx.drawImage(work, 0, 0, canvas.width, canvas.height);
+        return true;
+    }
+
+    function formatResponseMode(mode) {
+        if (mode === "period_doubled") {
+            return "period doubled";
+        }
+        if (mode === "one_to_one") {
+            return "one to one";
+        }
+        return mode || "mixed";
+    }
+
+    function formatFloquetHint(report) {
+        if (!report || !report.strongest_mode) {
+            return "pending";
+        }
+        const mode = report.strongest_mode;
+        const hint =
+            mode.crossing_hint === "minus_period_doubling"
+                ? "-1 period-doubling"
+                : mode.crossing_hint === "plus_one_to_one"
+                  ? "+1 one-to-one"
+                  : mode.crossing_hint === "unstable_complex"
+                    ? "complex unstable"
+                    : "stable";
+        return `${hint}; beta ${mode.beta_cycles.toFixed(1)}, |lambda| ${mode.max_abs_multiplier.toFixed(2)}`;
     }
 
     function stimulusAt(preset, t) {
@@ -507,6 +576,14 @@
             this.timeInput = root.querySelector("[data-rule-time]");
             this.viewSelect = root.querySelector("[data-rule-view]");
             this.playButton = root.querySelector("[data-rule-play]");
+            this.sweepReport = null;
+            this.sweepSource = root.querySelector("[data-rule-sweep-source]");
+            this.floquetFields = Object.fromEntries(
+                Array.from(root.querySelectorAll("[data-rule-floquet-field]")).map((node) => [
+                    node.dataset.ruleFloquetField,
+                    node,
+                ]),
+            );
             this.presetButtons = Array.from(root.querySelectorAll("[data-rule-preset]"));
             this.paramInputs = Object.fromEntries(
                 Array.from(root.querySelectorAll("[data-rule-param]")).map((node) => [node.dataset.ruleParam, node]),
@@ -517,6 +594,7 @@
             this.sweepCells = Array.from(root.querySelectorAll("[data-rule-sweep]")).map((node) => ({
                 root: node,
                 periodMs: Number(node.dataset.ruleSweep),
+                targetAmplitude: Number(node.dataset.ruleSweepAmplitude),
                 canvas: node.querySelector("canvas"),
                 regime: node.querySelector("[data-rule-sweep-field=\"regime\"]"),
                 modes: node.querySelector("[data-rule-sweep-field=\"modes\"]"),
@@ -535,6 +613,7 @@
             this.syncParamControls();
             this.updatePlayButton();
             this.paint();
+            this.loadSweepReport();
             window.requestAnimationFrame((now) => this.tick(now));
         }
 
@@ -567,6 +646,39 @@
             window.addEventListener("resize", () => {
                 this.needsPaint = true;
             });
+        }
+
+        async loadSweepReport() {
+            const source = this.root.dataset.ruleSweepSrc;
+            if (!source) {
+                if (this.sweepSource) {
+                    this.sweepSource.textContent = "Using explanatory sweep projection.";
+                }
+                return;
+            }
+            try {
+                const response = await window.fetch(source, { cache: "no-cache" });
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}`);
+                }
+                const report = await response.json();
+                if (report.model_family !== "rule_flicker_ei" || !Array.isArray(report.points)) {
+                    throw new Error("Unexpected Rule sweep report shape");
+                }
+                this.sweepReport = report;
+                if (this.sweepSource) {
+                    const floquetCount = Array.isArray(report.floquet_reports) ? report.floquet_reports.length : 0;
+                    this.sweepSource.textContent = `Simulator-backed Rule sweep: ${report.points.length} grid points, ${floquetCount} monodromy reports.`;
+                }
+                this.paintFloquet();
+                this.needsPaint = true;
+            } catch (error) {
+                this.sweepReport = null;
+                if (this.sweepSource) {
+                    this.sweepSource.textContent = "Using explanatory sweep projection; simulator JSON was not available.";
+                }
+                this.paintFloquet();
+            }
         }
 
         setPreset(key) {
@@ -627,9 +739,63 @@
             this.barValues.hex.textContent = hex.toFixed(2);
         }
 
+        findSweepPoint(cell) {
+            const points = this.sweepReport && Array.isArray(this.sweepReport.points) ? this.sweepReport.points : [];
+            const candidates = points.filter((point) => Math.abs(point.period_ms - cell.periodMs) < 0.001);
+            if (!candidates.length) {
+                return null;
+            }
+            const targetAmplitude = Number.isFinite(cell.targetAmplitude) ? cell.targetAmplitude : this.controls.amplitude;
+            const targetInhibition = this.controls.inhibition || 0;
+            return candidates.reduce((best, point) => {
+                const score =
+                    Math.abs(point.amplitude - targetAmplitude) +
+                    0.35 * Math.abs((point.stim_i_fraction || 0) - targetInhibition);
+                if (!best || score < best.score) {
+                    return { point, score };
+                }
+                return best;
+            }, null).point;
+        }
+
+        paintFloquet() {
+            const reports =
+                this.sweepReport && Array.isArray(this.sweepReport.floquet_reports)
+                    ? this.sweepReport.floquet_reports
+                    : [];
+            const closest = (periodMs) =>
+                reports.reduce((best, report) => {
+                    const distance = Math.abs(report.period_ms - periodMs);
+                    if (!best || distance < best.distance) {
+                        return { report, distance };
+                    }
+                    return best;
+                }, null)?.report;
+            if (this.floquetFields.low) {
+                this.floquetFields.low.textContent = formatFloquetHint(closest(120));
+            }
+            if (this.floquetFields.mid) {
+                this.floquetFields.mid.textContent = formatFloquetHint(closest(85));
+            }
+            if (this.floquetFields.high) {
+                this.floquetFields.high.textContent = formatFloquetHint(closest(55));
+            }
+        }
+
         paintSweep() {
             const phase = this.trace ? this.time / this.trace.duration : 0;
             this.sweepCells.forEach((cell) => {
+                const point = this.findSweepPoint(cell);
+                if (point && drawThumbnail(cell.canvas, point.thumbnail)) {
+                    cell.regime.textContent =
+                        point.status_level === "suppressed" ? "weak / near homogeneous" : formatResponseMode(point.response_mode);
+                    cell.modes.textContent =
+                        point.spatial_family === "homogeneous"
+                            ? "homogeneous"
+                            : `${point.spatial_family}, ${point.dominant_cycles.toFixed(1)} cyc`;
+                    cell.peak.textContent = point.peak_activity.toFixed(2);
+                    return;
+                }
                 const base = sweepBaseForPeriod(cell.periodMs);
                 const preset = makeEffectivePreset(base, this.controls);
                 const trace = buildTrace(preset);
