@@ -1218,6 +1218,31 @@ li {
     line-height: 1.35;
 }
 
+.rule-explorer__curve-wrap {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(14rem, 0.35fr);
+    gap: 1rem;
+    align-items: start;
+}
+
+.rule-explorer__curve-wrap canvas {
+    min-height: 15rem;
+}
+
+.rule-explorer__curve-summary {
+    display: grid;
+    gap: 0.45rem;
+    margin: 0;
+}
+
+.rule-explorer__curve-summary div {
+    display: grid;
+    gap: 0.12rem;
+    min-width: 0;
+    padding-bottom: 0.45rem;
+    border-bottom: 1px solid color-mix(in srgb, var(--line) 65%, transparent);
+}
+
 .rule-explorer__snapshots {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1314,6 +1339,107 @@ li {
     font-family: var(--font-ui);
     font-size: 0.9rem;
     line-height: 1.45;
+}
+
+.calibration-summary {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1px;
+    margin-bottom: 0.8rem;
+    border: 1px solid var(--line);
+    background: var(--line);
+}
+
+.calibration-summary div {
+    display: grid;
+    gap: 0.35rem;
+    min-width: 0;
+    padding: 0.9rem 1rem;
+    background: var(--panel);
+}
+
+.calibration-summary span,
+.bressloff-calibration-card dt,
+.rule-explorer__curve-summary dt {
+    color: var(--muted);
+    font-family: var(--font-ui);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.calibration-summary strong {
+    color: var(--text);
+    font-family: var(--font-mono);
+    font-size: 0.86rem;
+    font-weight: 400;
+    overflow-wrap: anywhere;
+}
+
+.calibration-source {
+    margin-top: 0;
+    color: var(--muted);
+    font-family: var(--font-ui);
+    font-size: 0.86rem;
+}
+
+.bressloff-calibration-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.85rem;
+}
+
+.bressloff-calibration-card {
+    display: grid;
+    gap: 0.5rem;
+    min-width: 0;
+    padding: 0.72rem;
+    border: 1px solid var(--line);
+    background: rgba(251, 248, 242, 0.66);
+}
+
+.bressloff-calibration-card canvas {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1;
+    border: 1px solid rgba(30, 23, 19, 0.22);
+    background: #171413;
+    image-rendering: pixelated;
+}
+
+.bressloff-calibration-card h3 {
+    margin: 0;
+    font-family: var(--font-ui);
+    font-size: 0.9rem;
+}
+
+.bressloff-calibration-card p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.82rem;
+    line-height: 1.35;
+}
+
+.bressloff-calibration-card dl {
+    display: grid;
+    gap: 0.28rem;
+    margin: 0;
+}
+
+.bressloff-calibration-card div {
+    display: grid;
+    gap: 0.08rem;
+}
+
+.bressloff-calibration-card dd,
+.rule-explorer__curve-summary dd {
+    margin: 0;
+    color: var(--text);
+    font-family: var(--font-ui);
+    font-size: 0.8rem;
+    line-height: 1.35;
+    overflow-wrap: anywhere;
 }
 
 .status-table-wrap {
@@ -1670,6 +1796,8 @@ li {
     .project-grid,
     .bressloff-figure-grid,
     .bressloff-calibration-row,
+    .bressloff-calibration-grid,
+    .calibration-summary,
     .equation-grid,
     .deep-dive-cell,
     .rule-explorer__intro,
@@ -1735,6 +1863,7 @@ li {
     .rule-explorer__stability,
     .rule-explorer__map-wrap,
     .rule-explorer__map-detail,
+    .rule-explorer__curve-wrap,
     .rule-notebook {
         grid-template-columns: 1fr;
     }

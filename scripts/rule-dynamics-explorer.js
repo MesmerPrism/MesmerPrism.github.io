@@ -354,6 +354,207 @@
         return `${kind}; beta ${candidate.beta_cycles.toFixed(1)}, ${evidence}, margin ${margin}`;
     }
 
+    function formatScientific(value) {
+        if (!Number.isFinite(value)) {
+            return "n/a";
+        }
+        if (Math.abs(value) < 0.001) {
+            return value.toExponential(2);
+        }
+        return value.toFixed(4);
+    }
+
+    function polynomialAt(fit, periodMs) {
+        if (!fit || !Array.isArray(fit.coefficients) || !fit.coefficients.length) {
+            return null;
+        }
+        const x = (periodMs - (fit.x_origin_ms || 0)) / (fit.x_scale_ms || 1);
+        return fit.coefficients.reduceRight((acc, coefficient) => acc * x + coefficient, 0);
+    }
+
+    function renderRuleCurvePlot(canvas, report) {
+        if (!canvas || !report || !Array.isArray(report.boundary_curves)) {
+            return;
+        }
+        const curves = report.boundary_curves.filter(
+            (curve) => curve.kind === "plus_one_to_one" || curve.kind === "minus_period_doubling",
+        );
+        const points = curves.flatMap((curve) => (Array.isArray(curve.points) ? curve.points : []));
+        const ctx = resizeCanvas(canvas, 760, 340);
+        const w = canvas.width;
+        const h = canvas.height;
+        ctx.clearRect(0, 0, w, h);
+        ctx.fillStyle = `rgb(${colors.paper.join(",")})`;
+        ctx.fillRect(0, 0, w, h);
+        if (!points.length) {
+            ctx.fillStyle = `rgb(${colors.muted.join(",")})`;
+            ctx.font = `${Math.round(13 * (window.devicePixelRatio || 1))}px Georgia`;
+            ctx.fillText("No refined +1/-1 curve points available.", 24, 42);
+            return;
+        }
+
+        const left = 54;
+        const right = 18;
+        const top = 18;
+        const bottom = 44;
+        const plotW = w - left - right;
+        const plotH = h - top - bottom;
+        const xMin = Math.min(...points.map((point) => point.period_ms));
+        const xMax = Math.max(...points.map((point) => point.period_ms));
+        const yMinRaw = Math.min(...points.map((point) => point.wave_number_radians));
+        const yMaxRaw = Math.max(...points.map((point) => point.wave_number_radians));
+        const yPad = Math.max(0.025, (yMaxRaw - yMinRaw) * 0.12);
+        const yMin = Math.max(0, yMinRaw - yPad);
+        const yMax = yMaxRaw + yPad;
+        const xFor = (period) => left + ((period - xMin) / Math.max(1e-9, xMax - xMin)) * plotW;
+        const yFor = (wave) => top + (1 - (wave - yMin) / Math.max(1e-9, yMax - yMin)) * plotH;
+
+        ctx.strokeStyle = `rgba(${colors.line.join(",")},0.9)`;
+        ctx.lineWidth = 1;
+        ctx.beginPath();
+        ctx.rect(left, top, plotW, plotH);
+        ctx.stroke();
+        ctx.font = `${Math.round(11 * (window.devicePixelRatio || 1))}px Georgia`;
+        ctx.fillStyle = `rgb(${colors.muted.join(",")})`;
+        for (let i = 0; i <= 4; i += 1) {
+            const t = i / 4;
+            const x = left + t * plotW;
+            const period = xMin + t * (xMax - xMin);
+            ctx.strokeStyle = `rgba(${colors.line.join(",")},0.45)`;
+            ctx.beginPath();
+            ctx.moveTo(x, top);
+            ctx.lineTo(x, top + plotH);
+            ctx.stroke();
+            const label = `${period.toFixed(0)} ms`;
+            const labelX = i === 0 ? x - 2 : i === 4 ? x - 42 : x - 17;
+            ctx.fillText(label, labelX, top + plotH + 22);
+        }
+        for (let i = 0; i <= 4; i += 1) {
+            const t = i / 4;
+            const y = top + t * plotH;
+            const wave = yMax - t * (yMax - yMin);
+            ctx.strokeStyle = `rgba(${colors.line.join(",")},0.45)`;
+            ctx.beginPath();
+            ctx.moveTo(left, y);
+            ctx.lineTo(left + plotW, y);
+            ctx.stroke();
+            ctx.fillText(wave.toFixed(2), 12, y + 4);
+        }
+        ctx.fillStyle = `rgb(${colors.text.join(",")})`;
+        ctx.fillText("forcing period T", left, h - 9);
+        ctx.save();
+        ctx.translate(14, top + plotH * 0.62);
+        ctx.rotate(-Math.PI / 2);
+        ctx.fillText("wave number b", 0, 0);
+        ctx.restore();
+
+        curves.forEach((curve, index) => {
+            const isMinus = curve.kind === "minus_period_doubling";
+            const color = isMinus ? "142,73,58" : "70,88,56";
+            const alpha = 0.96 - Math.min(index, 5) * 0.06;
+            const curvePoints = Array.isArray(curve.points) ? curve.points.slice() : [];
+            curvePoints.sort((a, b) => a.period_ms - b.period_ms);
+            if (curvePoints.length >= 2) {
+                ctx.strokeStyle = `rgba(${color},${alpha})`;
+                ctx.lineWidth = isMinus ? 2.2 : 2;
+                ctx.beginPath();
+                curvePoints.forEach((point, pointIndex) => {
+                    const x = xFor(point.period_ms);
+                    const y = yFor(point.wave_number_radians);
+                    if (pointIndex === 0) {
+                        ctx.moveTo(x, y);
+                    } else {
+                        ctx.lineTo(x, y);
+                    }
+                });
+                ctx.stroke();
+            }
+            if (curve.fit && Array.isArray(curve.fit.coefficients) && curve.fit.coefficients.length) {
+                ctx.strokeStyle = `rgba(${color},0.35)`;
+                ctx.lineWidth = 1;
+                ctx.setLineDash([5, 4]);
+                ctx.beginPath();
+                for (let step = 0; step <= 80; step += 1) {
+                    const period = xMin + (step / 80) * (xMax - xMin);
+                    const wave = polynomialAt(curve.fit, period);
+                    if (!Number.isFinite(wave)) {
+                        continue;
+                    }
+                    const x = xFor(period);
+                    const y = yFor(wave);
+                    if (step === 0) {
+                        ctx.moveTo(x, y);
+                    } else {
+                        ctx.lineTo(x, y);
+                    }
+                }
+                ctx.stroke();
+                ctx.setLineDash([]);
+            }
+            curvePoints.forEach((point) => {
+                ctx.fillStyle = `rgba(${color},0.95)`;
+                ctx.beginPath();
+                ctx.arc(xFor(point.period_ms), yFor(point.wave_number_radians), isMinus ? 4 : 3.5, 0, tau);
+                ctx.fill();
+            });
+        });
+
+        const legend = [
+            ["-1 period-doubling", "142,73,58"],
+            ["+1 one-to-one", "70,88,56"],
+            ["dashed fitted curve", "99,88,80"],
+        ];
+        legend.forEach(([label, color], index) => {
+            const x = left + index * 145;
+            const y = top + 14;
+            ctx.fillStyle = `rgb(${color})`;
+            ctx.fillRect(x, y - 8, 18, 3);
+            ctx.fillStyle = `rgb(${colors.text.join(",")})`;
+            ctx.fillText(label, x + 24, y - 4);
+        });
+    }
+
+    function updateRuleCurveSummary(fields, sourceNode, report) {
+        if (!fields || !report || !Array.isArray(report.boundary_curves)) {
+            return;
+        }
+        const curves = report.boundary_curves.filter(
+            (curve) => curve.kind === "plus_one_to_one" || curve.kind === "minus_period_doubling",
+        );
+        const pointCount = curves.reduce((sum, curve) => sum + (curve.point_count || 0), 0);
+        const plus = curves.filter((curve) => curve.kind === "plus_one_to_one").length;
+        const minus = curves.filter((curve) => curve.kind === "minus_period_doubling").length;
+        const meanResidual = curves.length
+            ? curves.reduce((sum, curve) => sum + (curve.mean_residual_abs || 0), 0) / curves.length
+            : 0;
+        const meanContinuity = curves.length
+            ? curves.reduce((sum, curve) => sum + (curve.continuity_score || 0), 0) / curves.length
+            : 0;
+        if (fields.parameter) {
+            fields.parameter.textContent = report.parameter_set || "current defaults";
+        }
+        if (fields.curves) {
+            fields.curves.textContent = `${minus} -1, ${plus} +1`;
+        }
+        if (fields.points) {
+            fields.points.textContent = String(pointCount);
+        }
+        if (fields.residual) {
+            fields.residual.textContent = formatScientific(meanResidual);
+        }
+        if (fields.continuity) {
+            fields.continuity.textContent = meanContinuity.toFixed(2);
+        }
+        if (fields.axes) {
+            const axes = report.source_axes || {};
+            fields.axes.textContent = `${axes.x_axis || "period"} / ${axes.y_axis || "wave number"}`;
+        }
+        if (sourceNode) {
+            const refinement = report.curve_refinement || {};
+            sourceNode.textContent = `Refined source-axis curves: ${curves.length} branches, ${pointCount} curve points, tolerance ${formatScientific(refinement.tolerance)}.`;
+        }
+    }
+
     function stimulusAt(preset, t) {
         const phase = Math.sin((tau * t) / preset.periodMs);
         const x = (phase - preset.threshold) * preset.smoothing;
@@ -690,11 +891,19 @@
             this.sweepSource = root.querySelector("[data-rule-sweep-source]");
             this.mapSource = root.querySelector("[data-rule-map-source]");
             this.floquetSource = root.querySelector("[data-rule-floquet-source]");
+            this.curveSource = root.querySelector("[data-rule-curve-source]");
             this.mapRoot = root.querySelector("[data-rule-map]");
             this.mapPreview = root.querySelector("[data-rule-map-preview]");
+            this.curveCanvas = root.querySelector("[data-rule-curve-plot]");
             this.mapFields = Object.fromEntries(
                 Array.from(root.querySelectorAll("[data-rule-map-field]")).map((node) => [
                     node.dataset.ruleMapField,
+                    node,
+                ]),
+            );
+            this.curveFields = Object.fromEntries(
+                Array.from(root.querySelectorAll("[data-rule-curve-field]")).map((node) => [
+                    node.dataset.ruleCurveField,
                     node,
                 ]),
             );
@@ -767,6 +976,7 @@
             });
             window.addEventListener("resize", () => {
                 this.needsPaint = true;
+                this.renderCurvePlot();
             });
         }
 
@@ -861,6 +1071,7 @@
                         : 0;
                     this.floquetSource.textContent = `First-pass Floquet markers: ${exact} sign-change crossings, ${refined} refined beta-curve points, ${nearest} nearest-threshold hints.`;
                 }
+                this.renderCurvePlot();
                 if (this.mapReport) {
                     this.renderMap();
                 }
@@ -869,10 +1080,18 @@
                 if (this.floquetSource) {
                     this.floquetSource.textContent = "Floquet boundary markers were not available.";
                 }
+                if (this.curveSource) {
+                    this.curveSource.textContent = "Refined boundary curves were not available.";
+                }
                 if (this.selectedMapPoint) {
                     this.selectMapPoint(this.selectedMapPoint);
                 }
             }
+        }
+
+        renderCurvePlot() {
+            renderRuleCurvePlot(this.curveCanvas, this.floquetBoundaryReport);
+            updateRuleCurveSummary(this.curveFields, this.curveSource, this.floquetBoundaryReport);
         }
 
         setPreset(key) {

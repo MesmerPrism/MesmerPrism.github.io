@@ -68,6 +68,7 @@
             <a href="#bressloff">Bressloff equations</a>
             <a href="#examples">Examples</a>
             <a href="#reports">Reports</a>
+            <a href="#bressloff-calibration">Bressloff calibration</a>
             <a href="#rule">Rule equations</a>
             <a href="#rule-explorer">Rule explorer</a>
             <a href="#ledger">Claim ledger</a>
@@ -412,6 +413,29 @@
             </div>
         </section>
 
+        <section class="section" id="bressloff-calibration" data-bressloff-calibration data-bressloff-geometry-src="/assets/bressloff-v1/figure-targets/bressloff-generated-stills.json">
+            <div class="section-heading">
+                <p class="section-kicker">Bressloff geometry calibration</p>
+                <h2>Generated stills against private numeric targets</h2>
+                <p>
+                    This surface shows generated implementation stills and public-safe metric
+                    summaries. Original paper scans and crops are not displayed here; when a
+                    private source-derived profile exists, only derived numeric comparison
+                    fields are loaded.
+                </p>
+            </div>
+            <div class="calibration-summary" aria-label="Bressloff geometry metric summary">
+                <div><span>Format</span><strong data-bressloff-calibration-field="format">loading</strong></div>
+                <div><span>Generated stills</span><strong data-bressloff-calibration-field="stills">loading</strong></div>
+                <div><span>Source comparisons</span><strong data-bressloff-calibration-field="compared">loading</strong></div>
+                <div><span>Mean edge density</span><strong data-bressloff-calibration-field="edge">loading</strong></div>
+            </div>
+            <p class="calibration-source" data-bressloff-calibration-field="source">
+                Loading Bressloff generated-still report.
+            </p>
+            <div class="bressloff-calibration-grid" data-bressloff-calibration-grid aria-label="Generated Bressloff stills and metric summaries"></div>
+        </section>
+
         <section class="section" id="rule">
             <div class="section-heading">
                 <p class="section-kicker">Rule flicker model family</p>
@@ -707,6 +731,24 @@
                     </div>
                 </section>
 
+                <section class="rule-explorer__panel rule-explorer__panel--wide">
+                    <h4>Rule Figure 8 refined boundary curves</h4>
+                    <p class="rule-explorer__source" data-rule-curve-source>
+                        Loading refined +1 and -1 source-axis curves.
+                    </p>
+                    <div class="rule-explorer__curve-wrap">
+                        <canvas data-rule-curve-plot width="760" height="340" aria-label="Rule Figure 8 refined boundary curves"></canvas>
+                        <dl class="rule-explorer__curve-summary">
+                            <div><dt>Parameter set</dt><dd data-rule-curve-field="parameter">pending</dd></div>
+                            <div><dt>Curves</dt><dd data-rule-curve-field="curves">pending</dd></div>
+                            <div><dt>Curve points</dt><dd data-rule-curve-field="points">pending</dd></div>
+                            <div><dt>Mean residual</dt><dd data-rule-curve-field="residual">pending</dd></div>
+                            <div><dt>Continuity</dt><dd data-rule-curve-field="continuity">pending</dd></div>
+                            <div><dt>Axes</dt><dd data-rule-curve-field="axes">pending</dd></div>
+                        </dl>
+                    </div>
+                </section>
+
                 <section class="rule-notebook" aria-label="Rule computation notebook cells">
                     <article>
                         <h4>A. Flicker input</h4>
@@ -900,6 +942,7 @@
         </div>
     </footer>
     <script defer src="/scripts/rule-dynamics-explorer.js"></script>
+    <script defer src="/scripts/bressloff-calibration-panel.js"></script>
     <script defer src="/assets/vendor/katex/katex.min.js"></script>
     <script defer src="/assets/vendor/katex/contrib/auto-render.min.js"></script>
     <script defer src="/scripts/math-render.js"></script>
