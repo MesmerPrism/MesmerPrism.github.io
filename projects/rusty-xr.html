@@ -71,8 +71,9 @@
                     prototype: typed schemas, repeatable diagnostics, camera and depth reasoning,
                     runtime profiles, broker messages, sensor payloads, and small examples that
                     companion tools can install or verify. It makes the technical layer portable
-                    enough to support Viscereality, Meta Quest source vocabulary, public examples, and
-                    future Rust-native XR experiments without collapsing them into one app.
+                    enough to support Viscereality, Meta Quest signal-source vocabulary, public
+                    examples, and future Rust-native XR experiments without collapsing them into
+                    one app.
                 </p>
                 <p>
                     The current emphasis is Meta Quest because it is where the practical need is
@@ -81,6 +82,11 @@
                     inspection, and diagnostics. Rusty XR gives those pieces a common language so
                     the work can move between research prototypes, documentation examples, and
                     field tools without losing the source labels.
+                </p>
+                <p>
+                    Here, "source" means where a visual or sensor signal actually comes from:
+                    compositor passthrough, app-visible camera input, environment depth, casting,
+                    MediaProjection, or a generated app render.
                 </p>
             </div>
             <div class="detail-stack">
@@ -104,7 +110,7 @@
                 <section class="detail-block">
                     <h3>Connected work</h3>
                     <ul class="plain-list">
-                        <li><a href="https://mesmerprism.github.io/Rusty-XR/passthrough.html" target="_blank" rel="noopener noreferrer">Quest passthrough guide</a> supplies the API and source-vocabulary discipline</li>
+                        <li><a href="https://mesmerprism.github.io/Rusty-XR/passthrough.html" target="_blank" rel="noopener noreferrer">Quest passthrough guide</a> supplies the API and signal-source discipline</li>
                         <li><a href="/projects/viscereality-companion.html">Quest Companion Tools</a> turn the same contracts into install, launch, cast, and diagnostics workflows</li>
                         <li><a href="/projects/viscereality.html">Viscereality</a> provides the research-system context where this kind of tooling becomes necessary</li>
                     </ul>

@@ -407,6 +407,17 @@ li {
     border-color: var(--accent);
 }
 
+.surface-rule {
+    max-width: 60rem;
+    margin: -0.35rem auto 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+    font-family: var(--font-ui);
+    font-size: 0.95rem;
+    line-height: 1.58;
+}
+
 .project-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
