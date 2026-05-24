@@ -513,6 +513,10 @@
                             <dt>Response</dt>
                             <dd data-rule-readout="response">period doubled</dd>
                         </div>
+                        <div>
+                            <dt>Pattern depth</dt>
+                            <dd data-rule-readout="depth">0.82</dd>
+                        </div>
                     </dl>
                 </div>
 
@@ -538,6 +542,16 @@
                     <label class="rule-explorer__time">
                         <span>Time</span>
                         <input data-rule-time type="range" min="0" max="1000" value="0">
+                    </label>
+                    <label class="rule-explorer__slider">
+                        <span>Amplitude</span>
+                        <input data-rule-param="amplitude" type="range" min="0.35" max="1.25" step="0.05" value="0.80">
+                        <output data-rule-param-output="amplitude">0.80</output>
+                    </label>
+                    <label class="rule-explorer__slider">
+                        <span>I drive</span>
+                        <input data-rule-param="inhibition" type="range" min="0" max="0.8" step="0.05" value="0.00">
+                        <output data-rule-param-output="inhibition">0.00</output>
                     </label>
                 </div>
 
@@ -599,6 +613,105 @@
                         </section>
                     </div>
                 </div>
+
+                <section class="rule-explorer__panel rule-explorer__panel--wide">
+                    <h4>Frequency sweep strip</h4>
+                    <div class="rule-explorer__sweep" aria-label="Frequency sweep across qualitative Rule regimes">
+                        <article class="rule-explorer__sweep-cell" data-rule-sweep="140">
+                            <canvas width="150" height="150" aria-label="140 millisecond low-frequency sweep cell"></canvas>
+                            <h5>140 ms</h5>
+                            <dl>
+                                <div><dt>Regime</dt><dd data-rule-sweep-field="regime">low frequency</dd></div>
+                                <div><dt>Modes</dt><dd data-rule-sweep-field="modes">hexagonal</dd></div>
+                                <div><dt>Peak</dt><dd data-rule-sweep-field="peak">0.00</dd></div>
+                            </dl>
+                        </article>
+                        <article class="rule-explorer__sweep-cell" data-rule-sweep="120">
+                            <canvas width="150" height="150" aria-label="120 millisecond hexagonal sweep cell"></canvas>
+                            <h5>120 ms</h5>
+                            <dl>
+                                <div><dt>Regime</dt><dd data-rule-sweep-field="regime">one to one</dd></div>
+                                <div><dt>Modes</dt><dd data-rule-sweep-field="modes">hexagonal</dd></div>
+                                <div><dt>Peak</dt><dd data-rule-sweep-field="peak">0.00</dd></div>
+                            </dl>
+                        </article>
+                        <article class="rule-explorer__sweep-cell" data-rule-sweep="85">
+                            <canvas width="150" height="150" aria-label="85 millisecond transition sweep cell"></canvas>
+                            <h5>85 ms</h5>
+                            <dl>
+                                <div><dt>Regime</dt><dd data-rule-sweep-field="regime">transition</dd></div>
+                                <div><dt>Modes</dt><dd data-rule-sweep-field="modes">mixed</dd></div>
+                                <div><dt>Peak</dt><dd data-rule-sweep-field="peak">0.00</dd></div>
+                            </dl>
+                        </article>
+                        <article class="rule-explorer__sweep-cell" data-rule-sweep="65">
+                            <canvas width="150" height="150" aria-label="65 millisecond stripe onset sweep cell"></canvas>
+                            <h5>65 ms</h5>
+                            <dl>
+                                <div><dt>Regime</dt><dd data-rule-sweep-field="regime">stripe onset</dd></div>
+                                <div><dt>Modes</dt><dd data-rule-sweep-field="modes">stripe</dd></div>
+                                <div><dt>Peak</dt><dd data-rule-sweep-field="peak">0.00</dd></div>
+                            </dl>
+                        </article>
+                        <article class="rule-explorer__sweep-cell" data-rule-sweep="55">
+                            <canvas width="150" height="150" aria-label="55 millisecond high-frequency sweep cell"></canvas>
+                            <h5>55 ms</h5>
+                            <dl>
+                                <div><dt>Regime</dt><dd data-rule-sweep-field="regime">period doubled</dd></div>
+                                <div><dt>Modes</dt><dd data-rule-sweep-field="modes">stripe</dd></div>
+                                <div><dt>Peak</dt><dd data-rule-sweep-field="peak">0.00</dd></div>
+                            </dl>
+                        </article>
+                    </div>
+                </section>
+
+                <section class="rule-notebook" aria-label="Rule computation notebook cells">
+                    <article>
+                        <h4>A. Flicker input</h4>
+                        <p>
+                            The forcing term \(S(t)\) supplies periodic drive with exposed
+                            amplitude and period. It is a temporal input before any spatial
+                            pattern is visible.
+                        </p>
+                    </article>
+                    <article>
+                        <h4>B. Homogeneous E/I response</h4>
+                        <p>
+                            The reduced traces show the driven excitatory and inhibitory
+                            populations. Their relative timing sets the gain available to
+                            spatial modes.
+                        </p>
+                    </article>
+                    <article>
+                        <h4>C. Spatial perturbation growth</h4>
+                        <p>
+                            The scalar field view shows pattern amplitude riding on the E/I
+                            response. The amplitude and I-drive sliders expose weak,
+                            patterned, and suppressed cases.
+                        </p>
+                    </article>
+                    <article>
+                        <h4>D. Low-frequency branch</h4>
+                        <p>
+                            Longer forcing periods are represented as one-to-one hexagonal
+                            responses, matching the qualitative low-frequency island.
+                        </p>
+                    </article>
+                    <article>
+                        <h4>E. High-frequency branch</h4>
+                        <p>
+                            Shorter periods favor stripe-like modes with a two-cycle temporal
+                            signature: \(C(T)\) is negative while \(C(2T)\) returns positive.
+                        </p>
+                    </article>
+                    <article>
+                        <h4>F. Deferred stability map</h4>
+                        <p>
+                            The sweep strip is explanatory. The next rigorous layer is still
+                            the Rule frequency-amplitude sweep and Floquet monodromy report.
+                        </p>
+                    </article>
+                </section>
 
                 <p class="rule-explorer__note">
                     The field view is an explanatory projection of the current qualitative
