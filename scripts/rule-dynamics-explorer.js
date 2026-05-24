@@ -364,22 +364,104 @@
         return value.toFixed(4);
     }
 
-    function polynomialAt(fit, periodMs) {
-        if (!fit || !Array.isArray(fit.coefficients) || !fit.coefficients.length) {
-            return null;
-        }
-        const x = (periodMs - (fit.x_origin_ms || 0)) / (fit.x_scale_ms || 1);
-        return fit.coefficients.reduceRight((acc, coefficient) => acc * x + coefficient, 0);
+    function ruleCurveColor(kind) {
+        return kind === "minus_period_doubling" ? "142,73,58" : "70,88,56";
     }
 
-    function renderRuleCurvePlot(canvas, report) {
+    function ruleCurveLabel(kind) {
+        return kind === "minus_period_doubling" ? "-1 period-doubling" : "+1 one-to-one";
+    }
+
+    function sourceFigureCurves(sourceReport) {
+        if (!sourceReport || !Array.isArray(sourceReport.curves)) {
+            return [];
+        }
+        return sourceReport.curves.filter(
+            (curve) => curve.kind === "plus_one_to_one" || curve.kind === "minus_period_doubling",
+        );
+    }
+
+    function generatedFigureCurves(report) {
+        if (!report || !Array.isArray(report.boundary_curves)) {
+            return [];
+        }
+        return report.boundary_curves.filter(
+            (curve) => curve.kind === "plus_one_to_one" || curve.kind === "minus_period_doubling",
+        );
+    }
+
+    function betaMapping(report) {
+        const comparison = report && report.source_curve_comparison ? report.source_curve_comparison : {};
+        const mapping = comparison.affine_beta_mapping || comparison.scale_only_beta_mapping || comparison.raw_beta_mapping;
+        const scale = Number(mapping && mapping.scale);
+        const offset = Number(mapping && mapping.offset);
+        return {
+            model: mapping && mapping.model ? mapping.model : "identity",
+            scale: Number.isFinite(scale) ? scale : 1,
+            offset: Number.isFinite(offset) ? offset : 0,
+            rms: Number(mapping && mapping.rms_error),
+            rawRms: Number(comparison.raw_beta_mapping && comparison.raw_beta_mapping.rms_error),
+        };
+    }
+
+    function mappedGeneratedBeta(point, mapping) {
+        const beta = Number(point && point.beta_cycles);
+        if (!Number.isFinite(beta)) {
+            return null;
+        }
+        return mapping.scale * beta + mapping.offset;
+    }
+
+    function drawCurvePath(ctx, points, xFor, yFor, color, alpha, width, dash = []) {
+        if (!points.length) {
+            return;
+        }
+        ctx.save();
+        ctx.strokeStyle = `rgba(${color},${alpha})`;
+        ctx.lineWidth = width;
+        ctx.setLineDash(dash);
+        ctx.beginPath();
+        points.forEach((point, index) => {
+            const x = xFor(point.period);
+            const y = yFor(point.beta);
+            if (index === 0) {
+                ctx.moveTo(x, y);
+            } else {
+                ctx.lineTo(x, y);
+            }
+        });
+        ctx.stroke();
+        ctx.restore();
+    }
+
+    function renderRuleCurvePlot(canvas, report, sourceReport) {
         if (!canvas || !report || !Array.isArray(report.boundary_curves)) {
             return;
         }
-        const curves = report.boundary_curves.filter(
-            (curve) => curve.kind === "plus_one_to_one" || curve.kind === "minus_period_doubling",
+        const curves = generatedFigureCurves(report);
+        const sourceCurves = sourceFigureCurves(sourceReport);
+        const mapping = betaMapping(report);
+        const sourcePoints = sourceCurves.flatMap((curve) =>
+            Array.isArray(curve.points)
+                ? curve.points
+                      .map((point) => ({
+                          period: Number(point.period_ms),
+                          beta: Number(point.wave_number_beta),
+                      }))
+                      .filter((point) => Number.isFinite(point.period) && Number.isFinite(point.beta))
+                : [],
         );
-        const points = curves.flatMap((curve) => (Array.isArray(curve.points) ? curve.points : []));
+        const generatedPoints = curves.flatMap((curve) =>
+            Array.isArray(curve.points)
+                ? curve.points
+                      .map((point) => ({
+                          period: Number(point.period_ms),
+                          beta: mappedGeneratedBeta(point, mapping),
+                      }))
+                      .filter((point) => Number.isFinite(point.period) && Number.isFinite(point.beta))
+                : [],
+        );
+        const points = sourcePoints.length ? sourcePoints.concat(generatedPoints) : generatedPoints;
         const ctx = resizeCanvas(canvas, 760, 340);
         const w = canvas.width;
         const h = canvas.height;
@@ -389,23 +471,24 @@
         if (!points.length) {
             ctx.fillStyle = `rgb(${colors.muted.join(",")})`;
             ctx.font = `${Math.round(13 * (window.devicePixelRatio || 1))}px Georgia`;
-            ctx.fillText("No refined +1/-1 curve points available.", 24, 42);
+            ctx.fillText("No Figure 8 curve points available.", 24, 42);
             return;
         }
 
+        const compact = w < 460;
         const left = 54;
-        const right = 18;
-        const top = 18;
-        const bottom = 44;
+        const right = compact ? 14 : 18;
+        const top = compact ? 46 : 18;
+        const bottom = compact ? 54 : 44;
         const plotW = w - left - right;
         const plotH = h - top - bottom;
-        const xMin = Math.min(...points.map((point) => point.period_ms));
-        const xMax = Math.max(...points.map((point) => point.period_ms));
-        const yMinRaw = Math.min(...points.map((point) => point.wave_number_radians));
-        const yMaxRaw = Math.max(...points.map((point) => point.wave_number_radians));
-        const yPad = Math.max(0.025, (yMaxRaw - yMinRaw) * 0.12);
-        const yMin = Math.max(0, yMinRaw - yPad);
-        const yMax = yMaxRaw + yPad;
+        const sourceAxes = sourceReport && sourceReport.source_axes ? sourceReport.source_axes : {};
+        const xMin = Number.isFinite(Number(sourceAxes.x_min)) ? Number(sourceAxes.x_min) : Math.min(...points.map((point) => point.period));
+        const xMax = Number.isFinite(Number(sourceAxes.x_max)) ? Number(sourceAxes.x_max) : Math.max(...points.map((point) => point.period));
+        const yMinRaw = Math.min(...points.map((point) => point.beta));
+        const yMaxRaw = Math.max(...points.map((point) => point.beta));
+        const yMin = Number.isFinite(Number(sourceAxes.y_min)) ? Number(sourceAxes.y_min) : Math.max(0, yMinRaw - 0.05);
+        const yMax = Number.isFinite(Number(sourceAxes.y_max)) ? Number(sourceAxes.y_max) : yMaxRaw + 0.05;
         const xFor = (period) => left + ((period - xMin) / Math.max(1e-9, xMax - xMin)) * plotW;
         const yFor = (wave) => top + (1 - (wave - yMin) / Math.max(1e-9, yMax - yMin)) * plotH;
 
@@ -416,8 +499,9 @@
         ctx.stroke();
         ctx.font = `${Math.round(11 * (window.devicePixelRatio || 1))}px Georgia`;
         ctx.fillStyle = `rgb(${colors.muted.join(",")})`;
-        for (let i = 0; i <= 4; i += 1) {
-            const t = i / 4;
+        const xTickCount = compact ? 3 : 4;
+        for (let i = 0; i <= xTickCount; i += 1) {
+            const t = i / xTickCount;
             const x = left + t * plotW;
             const period = xMin + t * (xMax - xMin);
             ctx.strokeStyle = `rgba(${colors.line.join(",")},0.45)`;
@@ -426,9 +510,10 @@
             ctx.lineTo(x, top + plotH);
             ctx.stroke();
             const label = `${period.toFixed(0)} ms`;
-            const labelX = i === 0 ? x - 2 : i === 4 ? x - 42 : x - 17;
-            ctx.fillText(label, labelX, top + plotH + 22);
+            ctx.textAlign = i === 0 ? "left" : i === xTickCount ? "right" : "center";
+            ctx.fillText(label, x, top + plotH + 22);
         }
+        ctx.textAlign = "left";
         for (let i = 0; i <= 4; i += 1) {
             const t = i / 4;
             const y = top + t * plotH;
@@ -445,88 +530,81 @@
         ctx.save();
         ctx.translate(14, top + plotH * 0.62);
         ctx.rotate(-Math.PI / 2);
-        ctx.fillText("wave number b", 0, 0);
+        ctx.fillText("source figure beta", 0, 0);
         ctx.restore();
+
+        sourceCurves.forEach((curve) => {
+            const curvePoints = Array.isArray(curve.points)
+                ? curve.points
+                      .map((point) => ({
+                          period: Number(point.period_ms),
+                          beta: Number(point.wave_number_beta),
+                      }))
+                      .filter((point) => Number.isFinite(point.period) && Number.isFinite(point.beta))
+                      .sort((a, b) => a.period - b.period)
+                : [];
+            drawCurvePath(ctx, curvePoints, xFor, yFor, ruleCurveColor(curve.kind), 0.98, 2.4);
+        });
 
         curves.forEach((curve, index) => {
             const isMinus = curve.kind === "minus_period_doubling";
-            const color = isMinus ? "142,73,58" : "70,88,56";
-            const alpha = 0.96 - Math.min(index, 5) * 0.06;
-            const curvePoints = Array.isArray(curve.points) ? curve.points.slice() : [];
-            curvePoints.sort((a, b) => a.period_ms - b.period_ms);
+            const color = ruleCurveColor(curve.kind);
+            const alpha = 0.64 - Math.min(index, 8) * 0.035;
+            const curvePoints = Array.isArray(curve.points)
+                ? curve.points
+                      .map((point) => ({
+                          period: Number(point.period_ms),
+                          beta: mappedGeneratedBeta(point, mapping),
+                      }))
+                      .filter((point) => Number.isFinite(point.period) && Number.isFinite(point.beta))
+                      .sort((a, b) => a.period - b.period)
+                : [];
             if (curvePoints.length >= 2) {
-                ctx.strokeStyle = `rgba(${color},${alpha})`;
-                ctx.lineWidth = isMinus ? 2.2 : 2;
-                ctx.beginPath();
-                curvePoints.forEach((point, pointIndex) => {
-                    const x = xFor(point.period_ms);
-                    const y = yFor(point.wave_number_radians);
-                    if (pointIndex === 0) {
-                        ctx.moveTo(x, y);
-                    } else {
-                        ctx.lineTo(x, y);
-                    }
-                });
-                ctx.stroke();
-            }
-            if (curve.fit && Array.isArray(curve.fit.coefficients) && curve.fit.coefficients.length) {
-                ctx.strokeStyle = `rgba(${color},0.35)`;
-                ctx.lineWidth = 1;
-                ctx.setLineDash([5, 4]);
-                ctx.beginPath();
-                for (let step = 0; step <= 80; step += 1) {
-                    const period = xMin + (step / 80) * (xMax - xMin);
-                    const wave = polynomialAt(curve.fit, period);
-                    if (!Number.isFinite(wave)) {
-                        continue;
-                    }
-                    const x = xFor(period);
-                    const y = yFor(wave);
-                    if (step === 0) {
-                        ctx.moveTo(x, y);
-                    } else {
-                        ctx.lineTo(x, y);
-                    }
-                }
-                ctx.stroke();
-                ctx.setLineDash([]);
+                drawCurvePath(ctx, curvePoints, xFor, yFor, color, alpha, isMinus ? 1.8 : 1.6, [6, 4]);
             }
             curvePoints.forEach((point) => {
-                ctx.fillStyle = `rgba(${color},0.95)`;
+                ctx.fillStyle = `rgba(${color},0.78)`;
                 ctx.beginPath();
-                ctx.arc(xFor(point.period_ms), yFor(point.wave_number_radians), isMinus ? 4 : 3.5, 0, tau);
+                ctx.arc(xFor(point.period), yFor(point.beta), isMinus ? 2.5 : 2.2, 0, tau);
                 ctx.fill();
             });
         });
 
         const legend = [
-            ["-1 period-doubling", "142,73,58"],
-            ["+1 one-to-one", "70,88,56"],
-            ["dashed fitted curve", "99,88,80"],
+            [ruleCurveLabel("minus_period_doubling"), "142,73,58", []],
+            [ruleCurveLabel("plus_one_to_one"), "70,88,56", []],
+            [`generated ${mapping.model} beta`, "99,88,80", [6, 4]],
         ];
-        legend.forEach(([label, color], index) => {
-            const x = left + index * 145;
-            const y = top + 14;
-            ctx.fillStyle = `rgb(${color})`;
-            ctx.fillRect(x, y - 8, 18, 3);
+        legend.forEach(([label, color, dash], index) => {
+            const x = compact ? left + 8 : left + index * 168;
+            const y = compact ? 15 + index * 12 : top + 14;
+            ctx.save();
+            ctx.strokeStyle = `rgb(${color})`;
+            ctx.lineWidth = 2;
+            ctx.setLineDash(dash);
+            ctx.beginPath();
+            ctx.moveTo(x, y - 7);
+            ctx.lineTo(x + 20, y - 7);
+            ctx.stroke();
+            ctx.restore();
             ctx.fillStyle = `rgb(${colors.text.join(",")})`;
-            ctx.fillText(label, x + 24, y - 4);
+            ctx.fillText(label, x + 26, y - 4);
         });
     }
 
-    function updateRuleCurveSummary(fields, sourceNode, report) {
+    function updateRuleCurveSummary(fields, sourceNode, report, sourceReport) {
         if (!fields || !report || !Array.isArray(report.boundary_curves)) {
             return;
         }
-        const curves = report.boundary_curves.filter(
-            (curve) => curve.kind === "plus_one_to_one" || curve.kind === "minus_period_doubling",
-        );
+        const curves = generatedFigureCurves(report);
+        const sourceCurves = sourceFigureCurves(sourceReport);
         const pointCount = curves.reduce((sum, curve) => sum + (curve.point_count || 0), 0);
+        const sourcePointCount = sourceCurves.reduce((sum, curve) => sum + (curve.point_count || 0), 0);
         const plus = curves.filter((curve) => curve.kind === "plus_one_to_one").length;
         const minus = curves.filter((curve) => curve.kind === "minus_period_doubling").length;
-        const meanResidual = curves.length
-            ? curves.reduce((sum, curve) => sum + (curve.mean_residual_abs || 0), 0) / curves.length
-            : 0;
+        const comparison = report.source_curve_comparison || {};
+        const objective = comparison.fit_objective || {};
+        const mapping = betaMapping(report);
         const meanContinuity = curves.length
             ? curves.reduce((sum, curve) => sum + (curve.continuity_score || 0), 0) / curves.length
             : 0;
@@ -534,24 +612,29 @@
             fields.parameter.textContent = report.parameter_set || "current defaults";
         }
         if (fields.curves) {
-            fields.curves.textContent = `${minus} -1, ${plus} +1`;
+            fields.curves.textContent = `${sourceCurves.length || 0} source, ${minus + plus} generated`;
         }
         if (fields.points) {
-            fields.points.textContent = String(pointCount);
+            fields.points.textContent = `${sourcePointCount || 0} source, ${pointCount} generated`;
         }
         if (fields.residual) {
-            fields.residual.textContent = formatScientific(meanResidual);
+            fields.residual.textContent = Number.isFinite(mapping.rms)
+                ? formatScientific(mapping.rms)
+                : formatScientific(comparison.mean_rms_wave_number_error);
         }
         if (fields.continuity) {
-            fields.continuity.textContent = meanContinuity.toFixed(2);
+            fields.continuity.textContent = Number.isFinite(objective.continuity_score)
+                ? objective.continuity_score.toFixed(2)
+                : meanContinuity.toFixed(2);
         }
         if (fields.axes) {
-            const axes = report.source_axes || {};
-            fields.axes.textContent = `${axes.x_axis || "period"} / ${axes.y_axis || "wave number"}`;
+            fields.axes.textContent = `b'=${mapping.scale.toFixed(4)}b${mapping.offset >= 0 ? "+" : ""}${mapping.offset.toFixed(4)}`;
         }
         if (sourceNode) {
             const refinement = report.curve_refinement || {};
-            sourceNode.textContent = `Refined source-axis curves: ${curves.length} branches, ${pointCount} curve points, tolerance ${formatScientific(refinement.tolerance)}.`;
+            const fitScore = Number.isFinite(objective.score) ? `, fit score ${formatScientific(objective.score)}` : "";
+            const raw = Number.isFinite(mapping.rawRms) ? `, raw RMS ${formatScientific(mapping.rawRms)}` : "";
+            sourceNode.textContent = `Source Figure 8C curves with generated branches on the affine beta axis: ${sourceCurves.length || 0} source branches, ${pointCount} generated points, tolerance ${formatScientific(refinement.tolerance)}${fitScore}${raw}.`;
         }
     }
 
@@ -887,6 +970,7 @@
             this.sweepReport = null;
             this.mapReport = null;
             this.floquetBoundaryReport = null;
+            this.sourceCurveReport = null;
             this.selectedMapPoint = null;
             this.sweepSource = root.querySelector("[data-rule-sweep-source]");
             this.mapSource = root.querySelector("[data-rule-map-source]");
@@ -945,6 +1029,7 @@
             this.loadSweepReport();
             this.loadMapReport();
             this.loadFloquetBoundaryReport();
+            this.loadSourceCurveReport();
             window.requestAnimationFrame((now) => this.tick(now));
         }
 
@@ -1069,7 +1154,12 @@
                     const refined = Array.isArray(report.boundary_curves)
                         ? report.boundary_curves.reduce((sum, curve) => sum + (curve.point_count || 0), 0)
                         : 0;
-                    this.floquetSource.textContent = `First-pass Floquet markers: ${exact} sign-change crossings, ${refined} refined beta-curve points, ${nearest} nearest-threshold hints.`;
+                    const comparison = report.source_curve_comparison || {};
+                    const objective = comparison.fit_objective || {};
+                    const mapping = comparison.affine_beta_mapping || {};
+                    const fitText = Number.isFinite(objective.score) ? `, fit score ${formatScientific(objective.score)}` : "";
+                    const affineText = Number.isFinite(mapping.rms_error) ? `, affine beta RMS ${formatScientific(mapping.rms_error)}` : "";
+                    this.floquetSource.textContent = `First-pass Floquet markers: ${exact} sign-change crossings, ${refined} refined beta-curve points, ${nearest} nearest-threshold hints${fitText}${affineText}.`;
                 }
                 this.renderCurvePlot();
                 if (this.mapReport) {
@@ -1089,9 +1179,32 @@
             }
         }
 
+        async loadSourceCurveReport() {
+            const source = this.root.dataset.ruleSourceCurvesSrc;
+            if (!source) {
+                this.renderCurvePlot();
+                return;
+            }
+            try {
+                const response = await window.fetch(source, { cache: "no-cache" });
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}`);
+                }
+                const report = await response.json();
+                if (report.format !== "rule-2011-figure8-source-curves-v1" || !Array.isArray(report.curves)) {
+                    throw new Error("Unexpected Rule source-curve report shape");
+                }
+                this.sourceCurveReport = report;
+                this.renderCurvePlot();
+            } catch (error) {
+                this.sourceCurveReport = null;
+                this.renderCurvePlot();
+            }
+        }
+
         renderCurvePlot() {
-            renderRuleCurvePlot(this.curveCanvas, this.floquetBoundaryReport);
-            updateRuleCurveSummary(this.curveFields, this.curveSource, this.floquetBoundaryReport);
+            renderRuleCurvePlot(this.curveCanvas, this.floquetBoundaryReport, this.sourceCurveReport);
+            updateRuleCurveSummary(this.curveFields, this.curveSource, this.floquetBoundaryReport, this.sourceCurveReport);
         }
 
         setPreset(key) {
