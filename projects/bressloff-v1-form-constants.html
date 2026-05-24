@@ -7,12 +7,12 @@
     <link rel="canonical" href="https://mesmerprism.com/projects/bressloff-v1-form-constants.html">
     <meta
         name="description"
-        content="Animated notes on the Bressloff visual-cortex model for geometric hallucination patterns, with retino-cortical planform sketches, paper-figure presets, calibration reports, and source code."
+        content="Animated notes on the Bressloff visual-cortex model for geometric hallucination patterns, with retino-cortical planform sketches, source-target presets, calibration reports, and source code."
     >
     <meta property="og:title" content="Bressloff V1 Form Constants | Mesmer Prism">
     <meta
         property="og:description"
-        content="A public note on visualizing Bressloff-style V1 planforms, Kluver form constants, paper-figure presets, and the limits of mapping cortical pattern models onto flicker reports."
+        content="A public note on visualizing Bressloff-style V1 planforms, Kluver form constants, source-target presets, and the limits of mapping cortical pattern models onto flicker reports."
     >
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://mesmerprism.com/projects/bressloff-v1-form-constants.html">
@@ -54,11 +54,65 @@
                 <div class="hero-actions">
                     <a class="action-link action-link--strong" href="#animated-figures">Animated figures</a>
                     <a class="action-link" href="/projects/bressloff-v1-form-constants-deep-dive.html">Model deep dive</a>
-                    <a class="action-link" href="#paper-calibration">Paper calibration</a>
+                    <a class="action-link" href="#after-rule">After Rule</a>
+                    <a class="action-link" href="#paper-calibration">Source-target registry</a>
                     <a class="action-link" href="https://github.com/MesmerPrism/bressloff-v1-form-constants" target="_blank" rel="noopener noreferrer">Source code</a>
                     <a class="action-link" href="https://github.com/karacsm/V1-sim" target="_blank" rel="noopener noreferrer">Original notebook</a>
                     <a class="action-link" href="#references">References</a>
                 </div>
+            </div>
+        </section>
+
+        <section class="section two-column" aria-labelledby="bressloff-public-status">
+            <div>
+                <div class="section-heading">
+                    <p class="section-kicker">Public status</p>
+                    <h2 id="bressloff-public-status">Status and rights boundary</h2>
+                </div>
+                <p>
+                    This page uses generated model images unless a caption explicitly says
+                    otherwise. Source-paper figures are named as calibration targets and
+                    references, not reproduced assets. No source-paper scans or crops are
+                    hosted here unless a license or permission statement appears in the caption.
+                    Full PDFs, page images, and source-figure crops are not published from this
+                    page.
+                </p>
+                <p>
+                    Rule et al. 2011 figures may be reused from PLOS Computational Biology
+                    under Creative Commons Attribution terms with attribution and change notes.
+                    Bressloff/Royal Society, Bressloff/Neural Computation, Ermentrout and
+                    Cowan/Springer, and IOP review figures require separate license
+                    verification or permission before direct reproduction
+                    (<a class="inline-citation" href="https://journals.plos.org/ploscompbiol/s/licenses-and-copyright" target="_blank" rel="noopener noreferrer">PLOS license policy</a>;
+                    <a class="inline-citation" href="https://royalsociety.org/journals/permissions/" target="_blank" rel="noopener noreferrer">Royal Society permissions</a>;
+                    <a class="inline-citation" href="https://mitpress.mit.edu/rights-permissions/" target="_blank" rel="noopener noreferrer">MIT Press permissions</a>;
+                    <a class="inline-citation" href="https://www.springernature.com/gp/partners/rights-permissions-third-party-distribution" target="_blank" rel="noopener noreferrer">Springer Nature permissions</a>;
+                    <a class="inline-citation" href="https://publishingsupport.iopscience.iop.org/permissionsfaq/" target="_blank" rel="noopener noreferrer">IOP permissions FAQ</a>).
+                </p>
+                <p>
+                    The animations test whether V1 planforms can produce recognizable
+                    geometric forms after visual-field mapping. They do not predict individual
+                    hallucinations, psychedelic experience, clinical outcomes, or safe flicker
+                    exposure.
+                </p>
+            </div>
+            <div class="detail-stack">
+                <section class="detail-block">
+                    <h3>How to read this page</h3>
+                    <ul class="plain-list">
+                        <li>Start with the generated animations.</li>
+                        <li>Read the claim boundary before treating a visual match as evidence.</li>
+                        <li>Use the named presets to compare generated forms with source-paper targets.</li>
+                        <li>Open the deep dive for equations, calibration notes, and the Rule flicker model.</li>
+                    </ul>
+                </section>
+                <section class="detail-block">
+                    <h3>Animation safety boundary</h3>
+                    <p>
+                        These animations are explanatory model loops, not flicker stimuli or
+                        safety-cleared visual stimulation protocols.
+                    </p>
+                </section>
             </div>
         </section>
 
@@ -97,7 +151,7 @@
                         <li>Slow browser animations of the main planform families</li>
                         <li>Retino-cortical remapping from cortical stripes to visual-field forms</li>
                         <li>Orientation-contour glyphs drawn as short local line segments</li>
-                        <li>24 named paper-figure presets with source metadata and lattice-local branch readouts</li>
+                        <li>24 named source-target presets with source metadata and lattice-local branch readouts</li>
                         <li>Calibration reports for rendered targets and stability diagnostics</li>
                     </ul>
                 </section>
@@ -190,16 +244,17 @@
 
         <section class="section" id="paper-calibration">
             <div class="section-heading">
-                <p class="section-kicker">Paper calibration</p>
-                <h2>Named figures, generated panels, and branch notes</h2>
+                <p class="section-kicker">Source-target registry</p>
+                <h2>Generated presets against named paper targets</h2>
                 <p>
-                    Each row links the original paper figure and places the current generated
+                    Each row links the source figure reference and places the current generated
                     implementation beside the formula path used in the Rust renderer. The hosted
-                    images are generated assets from this repository; original-paper scans remain
-                    source references until reuse permission is clear. For readers who want to see
-                    the paper images without crossing a journal paywall, CountYourCulture's
-                    open visual explainer reproduces the main form-constant comparison images
-                    and links the same model lineage.
+                    images are generated assets from this repository; source-paper scans remain
+                    references until reuse permission or an open license is clear. For a
+                    non-journal visual explainer of this model lineage, see CountYourCulture's
+                    Bressloff notebook. Rights for original journal figures remain separate;
+                    this page uses generated images unless permission or an open license is
+                    stated.
                 </p>
                 <p>
                     The interactive implementation now carries 24 named Bressloff presets:
@@ -214,15 +269,15 @@
                     while its current branch selector still prefers the roll family.
                 </p>
             </div>
-            <div class="bressloff-calibration-grid" aria-label="Bressloff paper figure calibration">
+            <div class="bressloff-calibration-grid" aria-label="Bressloff source-target calibration">
                 <article class="bressloff-calibration-row">
                     <div class="bressloff-source-panel">
-                        <h3>Figure 31 original</h3>
+                        <h3>Figure 31 source target</h3>
                         <p>
                             Square/cobweb even planform in the detailed Bressloff et al. Royal
                             Society treatment.
                         </p>
-                        <a class="reference-link" href="https://doi.org/10.1098/rstb.2000.0769" target="_blank" rel="noopener noreferrer">Original paper reference</a>
+                        <a class="reference-link" href="https://doi.org/10.1098/rstb.2000.0769" target="_blank" rel="noopener noreferrer">Source figure reference</a>
                         <a class="reference-link" href="https://isomerdesign.com/countyourculture/2011/03/13/form-constants-visual-cortex/" target="_blank" rel="noopener noreferrer">Open visual comparison</a>
                     </div>
                     <figure class="bressloff-generated-panel">
@@ -244,12 +299,12 @@
 
                 <article class="bressloff-calibration-row">
                     <div class="bressloff-source-panel">
-                        <h3>Figure 32 original</h3>
+                        <h3>Figure 32 source target</h3>
                         <p>
                             Odd square/cobweb variant for checking parity-dependent contour
                             structure.
                         </p>
-                        <a class="reference-link" href="https://doi.org/10.1098/rstb.2000.0769" target="_blank" rel="noopener noreferrer">Original paper reference</a>
+                        <a class="reference-link" href="https://doi.org/10.1098/rstb.2000.0769" target="_blank" rel="noopener noreferrer">Source figure reference</a>
                         <a class="reference-link" href="https://isomerdesign.com/countyourculture/2011/03/13/form-constants-visual-cortex/" target="_blank" rel="noopener noreferrer">Open visual comparison</a>
                     </div>
                     <figure class="bressloff-generated-panel">
@@ -271,12 +326,12 @@
 
                 <article class="bressloff-calibration-row">
                     <div class="bressloff-source-panel">
-                        <h3>Figure 33 original</h3>
+                        <h3>Figure 33 source target</h3>
                         <p>
                             Rhombic even planform, used here as the cleanest current
                             same-family calibration case.
                         </p>
-                        <a class="reference-link" href="https://doi.org/10.1098/rstb.2000.0769" target="_blank" rel="noopener noreferrer">Original paper reference</a>
+                        <a class="reference-link" href="https://doi.org/10.1098/rstb.2000.0769" target="_blank" rel="noopener noreferrer">Source figure reference</a>
                         <a class="reference-link" href="https://isomerdesign.com/countyourculture/2011/03/13/form-constants-visual-cortex/" target="_blank" rel="noopener noreferrer">Open visual comparison</a>
                     </div>
                     <figure class="bressloff-generated-panel">
@@ -298,12 +353,12 @@
 
                 <article class="bressloff-calibration-row">
                     <div class="bressloff-source-panel">
-                        <h3>Figure 35 original</h3>
+                        <h3>Figure 35 source target</h3>
                         <p>
                             Hexagonal even phase variant. This row is the current phase-selection
                             test for the quadratic amplitude term.
                         </p>
-                        <a class="reference-link" href="https://doi.org/10.1098/rstb.2000.0769" target="_blank" rel="noopener noreferrer">Original paper reference</a>
+                        <a class="reference-link" href="https://doi.org/10.1098/rstb.2000.0769" target="_blank" rel="noopener noreferrer">Source figure reference</a>
                         <a class="reference-link" href="https://isomerdesign.com/countyourculture/2011/03/13/form-constants-visual-cortex/" target="_blank" rel="noopener noreferrer">Open visual comparison</a>
                     </div>
                     <figure class="bressloff-generated-panel">
@@ -345,7 +400,7 @@
                     <a class="inline-citation" href="https://github.com/karacsm/V1-sim" target="_blank" rel="noopener noreferrer">karacsm/V1-sim</a>
                     notebook lineage. Brain Candy is relevant only as adjacent
                     state-shift context; the implementation itself focuses on Bressloff's
-                    model equations. The current calibration layer exposes named paper-figure
+                    model equations. The current calibration layer exposes named source-target
                     presets, orientation-channel exports, and side-by-side checks between
                     target planforms, contour mode, same-lattice branch selection, stability
                     diagnostics, and generated output.
@@ -369,7 +424,7 @@
                         <li>Linear critical-wavenumber scan</li>
                         <li>Amplitude-equation branch readout</li>
                         <li>Orientation-contour overlays</li>
-                        <li>Paper-preset catalog and v3 JSON calibration report</li>
+                        <li>Source-target catalog and v4 JSON calibration report</li>
                     </ul>
                 </section>
             </div>
@@ -382,7 +437,7 @@
                     <h2>The remaining work is calibration, not source collection</h2>
                 </div>
                 <p>
-                    The Bressloff papers now map to a public preset registry and calibration
+                    The Bressloff papers now map to a public source-target registry and calibration
                     report. The next fidelity layer is narrower: measure how well generated
                     images match the source figures, fit phase and threshold conventions,
                     digitize stability curves, and resolve the odd-hexagonal branch cases
@@ -414,6 +469,54 @@
                         <li>Rule enters as a flicker-driven scalar E/I track</li>
                         <li>Both can share visual-field rendering where the math warrants it</li>
                     </ul>
+                </section>
+            </div>
+        </section>
+
+        <section class="section two-column" id="after-rule">
+            <div>
+                <div class="section-heading">
+                    <p class="section-kicker">After Rule</p>
+                    <h2>From spontaneous forms to driven fields</h2>
+                </div>
+                <p>
+                    Later neural-field work extends the classic form-constant lineage from
+                    spontaneous planforms and diffuse flicker toward driven systems. Nicks,
+                    Cocks, Avitabile, Johnston, and Coombes model Billock-Tsou-style
+                    orthogonal responses using spatial forcing and a 2:1 resonance
+                    (<a class="inline-citation" href="https://doi.org/10.1137/20M1366885" target="_blank" rel="noopener noreferrer">Nicks et al., 2021</a>).
+                    Tamekue, Prandi, and Chitour treat MacKay-style effects as localized
+                    input-output problems in an Amari neural field
+                    (<a class="inline-citation" href="https://doi.org/10.1137/23M1616686" target="_blank" rel="noopener noreferrer">Tamekue et al., 2024</a>).
+                    Bolelli and Prandi add time-periodic localized inputs and relate model
+                    afterimage contour width to flicker frequency and inhibition strength
+                    (<a class="inline-citation" href="https://doi.org/10.1007/s10851-025-01257-7" target="_blank" rel="noopener noreferrer">Bolelli and Prandi, 2025</a>).
+                </p>
+                <p>
+                    These papers do not make the simulator a perception predictor. They show
+                    how the model family has moved from spontaneous forms toward
+                    stimulus-driven fields.
+                </p>
+            </div>
+            <div class="detail-stack">
+                <section class="detail-block">
+                    <h3>Public-page use</h3>
+                    <ul class="plain-list">
+                        <li>Nicks et al.: spatial forcing and orthogonal response.</li>
+                        <li>Tamekue et al.: localized MacKay input and symmetry breaking.</li>
+                        <li>Bolelli and Prandi: localized time-periodic input and inhibition-sensitive contour width.</li>
+                    </ul>
+                </section>
+                <section class="detail-block">
+                    <h3>Claim boundary</h3>
+                    <p>
+                        Frequency and input parameters are model variables, not safe exposure
+                        recommendations or promises about what an individual viewer will see.
+                    </p>
+                    <p>
+                        The <a href="/projects/bressloff-v1-form-constants-deep-dive.html#after-rule">deep dive</a>
+                        carries the full taxonomy, rights ledger, and extension notes.
+                    </p>
                 </section>
             </div>
         </section>
@@ -471,12 +574,15 @@
                         <li><strong>Bressloff, P. C., J. D. Cowan, M. Golubitsky, P. J. Thomas, and M. C. Wiener.</strong> "<a class="reference-link" href="https://doi.org/10.1162/089976602317250861" target="_blank" rel="noopener noreferrer">What Geometric Visual Hallucinations Tell Us About the Visual Cortex</a>." <em>Neural Computation</em> 14, no. 3 (2002). <a class="reference-link" href="https://gwern.net/doc/psychology/vision/2002-bressloff.pdf" target="_blank" rel="noopener noreferrer">Public PDF mirror</a>.</li>
                         <li><strong>Bressloff, P. C.</strong> "<a class="reference-link" href="https://doi.org/10.1088/1751-8113/45/3/033001" target="_blank" rel="noopener noreferrer">Spatiotemporal Dynamics of Continuum Neural Fields</a>." <em>Journal of Physics A: Mathematical and Theoretical</em> 45, no. 3 (2012). Stable DOI/IOP landing page for the review section that revisits cortical pattern formation and geometric hallucinations.</li>
                         <li><strong>Rule, M., M. Stoffregen, and B. Ermentrout.</strong> "<a class="reference-link" href="https://doi.org/10.1371/journal.pcbi.1002158" target="_blank" rel="noopener noreferrer">A Model for the Origin and Properties of Flicker-Induced Geometric Phosphenes</a>." <em>PLOS Computational Biology</em> 7, no. 9 (2011).</li>
+                        <li><strong>Nicks, R., A. Cocks, D. Avitabile, A. Johnston, and S. Coombes.</strong> "<a class="reference-link" href="https://doi.org/10.1137/20M1366885" target="_blank" rel="noopener noreferrer">Understanding Sensory Induced Hallucinations: From Neural Fields to Amplitude Equations</a>." <em>SIAM Journal on Applied Dynamical Systems</em> 20, no. 4 (2021).</li>
+                        <li><strong>Tamekue, C., D. Prandi, and Y. Chitour.</strong> "<a class="reference-link" href="https://doi.org/10.1137/23M1616686" target="_blank" rel="noopener noreferrer">A Mathematical Model of the Visual MacKay Effect</a>." <em>SIAM Journal on Applied Dynamical Systems</em> 23, no. 3 (2024).</li>
+                        <li><strong>Bolelli, M. V., and D. Prandi.</strong> "<a class="reference-link" href="https://doi.org/10.1007/s10851-025-01257-7" target="_blank" rel="noopener noreferrer">Neural Field Equations with Time-Periodic External Inputs and Some Applications to Visual Processing</a>." <em>Journal of Mathematical Imaging and Vision</em> 67 (2025).</li>
                     </ul>
                 </section>
                 <section class="detail-block">
                     <h3>Open visual comparisons</h3>
                     <ul class="plain-list">
-                        <li><strong>CountYourCulture.</strong> "<a class="reference-link" href="https://isomerdesign.com/countyourculture/2011/03/13/form-constants-visual-cortex/" target="_blank" rel="noopener noreferrer">Form Constants and the Visual Cortex</a>." Public explainer showing the core form-constant comparison images and retino-cortical transform examples.</li>
+                        <li><strong>CountYourCulture.</strong> "<a class="reference-link" href="https://isomerdesign.com/countyourculture/2011/03/13/form-constants-visual-cortex/" target="_blank" rel="noopener noreferrer">Form Constants and the Visual Cortex</a>." Non-journal visual explainer for the form-constant comparison lineage; source-journal figure rights remain separate.</li>
                         <li><strong>CountYourCulture.</strong> "<a class="reference-link" href="https://isomerdesign.com/countyourculture/2011/03/16/form-constant-visualization-type-1/" target="_blank" rel="noopener noreferrer">Form Constant Visualization - Type I</a>." Public tunnel, ripple, and spiral visualizations from sinusoidal cortical-noise examples.</li>
                         <li><strong>Qualia Research Institute.</strong> "<a class="reference-link" href="https://qri.org/oscilleditor/doc/reference-manual" target="_blank" rel="noopener noreferrer">Oscilleditor Reference Manual</a>." Public oscillator-tool documentation with log-polar controls for form-constant-like patterns.</li>
                         <li><strong>Amaya, I. A., et al.</strong> "<a class="reference-link" href="https://doi.org/10.1371/journal.pone.0284271" target="_blank" rel="noopener noreferrer">Effect of Frequency and Rhythmicity on Flicker Light-Induced Hallucinatory Phenomena</a>." <em>PLOS ONE</em> 18, no. 4 (2023).</li>
@@ -486,6 +592,7 @@
                         <li><strong>Mesmer Prism.</strong> "<a class="reference-link" href="https://github.com/MesmerPrism/bressloff-v1-form-constants/blob/main/docs/BRESSLOFF_FUTURE_IMPLEMENTATION_PLAN.md" target="_blank" rel="noopener noreferrer">Bressloff Future Implementation Plan</a>." Public implementation roadmap for calibration and cross-model work.</li>
                         <li><strong>karacsm.</strong> "<a class="reference-link" href="https://github.com/karacsm/V1-sim" target="_blank" rel="noopener noreferrer">V1-sim</a>." Public GitHub notebook for simulating V1 activity and retino-cortical visualization.</li>
                         <li><strong>Mesmer Prism.</strong> "<a class="reference-link" href="/projects/deep-dream.html">Deep Dream</a>." Related article on machine-vision hallucination simulation and cyberdelic comparison.</li>
+                        <li><strong>Publisher rights pages.</strong> <a class="reference-link" href="https://journals.plos.org/ploscompbiol/s/licenses-and-copyright" target="_blank" rel="noopener noreferrer">PLOS licenses and copyright</a>; <a class="reference-link" href="https://royalsociety.org/journals/permissions/" target="_blank" rel="noopener noreferrer">Royal Society permissions</a>; <a class="reference-link" href="https://mitpress.mit.edu/rights-permissions/" target="_blank" rel="noopener noreferrer">MIT Press rights and permissions</a>; <a class="reference-link" href="https://www.springernature.com/gp/partners/rights-permissions-third-party-distribution" target="_blank" rel="noopener noreferrer">Springer Nature rights and permissions</a>; <a class="reference-link" href="https://publishingsupport.iopscience.iop.org/permissionsfaq/" target="_blank" rel="noopener noreferrer">IOP permissions FAQ</a>.</li>
                     </ul>
                 </section>
             </div>

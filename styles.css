@@ -1384,7 +1384,7 @@ li {
     font-size: 0.86rem;
 }
 
-.bressloff-calibration-grid {
+.bressloff-calibration-grid[data-bressloff-calibration-grid] {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 0.85rem;
@@ -1828,6 +1828,7 @@ li {
     .project-grid,
     .bressloff-figure-grid,
     .bressloff-calibration-row,
+    .bressloff-calibration-grid[data-bressloff-calibration-grid],
     .bressloff-calibration-grid,
     .calibration-summary,
     .equation-grid,

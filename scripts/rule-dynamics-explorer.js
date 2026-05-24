@@ -233,7 +233,7 @@
 
     function formatFloquetHint(report) {
         if (!report || !report.strongest_mode) {
-            return "pending";
+            return "available after report load";
         }
         const mode = report.strongest_mode;
         const hint =
@@ -249,7 +249,7 @@
 
     function pointRegime(point) {
         if (!point) {
-            return "pending";
+            return "available after report load";
         }
         if (point.status_level === "suppressed") {
             return "weak / near homogeneous";
@@ -259,7 +259,7 @@
 
     function pointRegimeKey(point) {
         if (!point) {
-            return "pending";
+            return "unavailable";
         }
         if (point.status_level === "suppressed") {
             return "suppressed";
@@ -275,7 +275,7 @@
 
     function pointSpatialLabel(point) {
         if (!point) {
-            return "pending";
+            return "available after report load";
         }
         const spatial = point.spatial || {};
         const confidence = Number.isFinite(spatial.confidence) ? spatial.confidence.toFixed(2) : "0.00";
@@ -285,7 +285,7 @@
 
     function pointTemporalLabel(point) {
         if (!point || !point.temporal) {
-            return "pending";
+            return "available after report load";
         }
         const t = point.temporal;
         return `C(T) ${t.corr_t.toFixed(2)}, C(2T) ${t.corr_2t.toFixed(2)}, C(3T) ${t.corr_3t.toFixed(2)}; confidence ${t.confidence.toFixed(2)}`;
@@ -392,7 +392,11 @@
 
     function betaMapping(report) {
         const comparison = report && report.source_curve_comparison ? report.source_curve_comparison : {};
-        const mapping = comparison.affine_beta_mapping || comparison.scale_only_beta_mapping || comparison.raw_beta_mapping;
+        const mapping =
+            comparison.domain_beta_mapping ||
+            comparison.scale_only_beta_mapping ||
+            comparison.affine_beta_mapping ||
+            comparison.raw_beta_mapping;
         const scale = Number(mapping && mapping.scale);
         const offset = Number(mapping && mapping.offset);
         return {
@@ -750,13 +754,13 @@
                 : meanContinuity.toFixed(2);
         }
         if (fields.axes) {
-            fields.axes.textContent = `b'=${mapping.scale.toFixed(4)}b${mapping.offset >= 0 ? "+" : ""}${mapping.offset.toFixed(4)}`;
+            fields.axes.textContent = `source beta = ${mapping.scale.toFixed(4)} x model beta${mapping.offset ? ` ${mapping.offset >= 0 ? "+" : "-"} ${Math.abs(mapping.offset).toFixed(4)}` : ""}`;
         }
         if (sourceNode) {
             const refinement = report.curve_refinement || {};
             const fitScore = Number.isFinite(objective.score) ? `, fit score ${formatScientific(objective.score)}` : "";
             const raw = Number.isFinite(mapping.rawRms) ? `, raw RMS ${formatScientific(mapping.rawRms)}` : "";
-            sourceNode.textContent = `Source Figure 8C curves with generated samples on the affine beta axis: ${sourceCurves.length || 0} source branches, ${pointCount} generated points, tolerance ${formatScientific(refinement.tolerance)}${fitScore}${raw}.`;
+            sourceNode.textContent = `Source Figure 8C curves with generated samples on the domain-normalized beta axis: ${sourceCurves.length || 0} source branches, ${pointCount} generated points, tolerance ${formatScientific(refinement.tolerance)}${fitScore}${raw}.`;
         }
     }
 
@@ -1278,10 +1282,14 @@
                         : 0;
                     const comparison = report.source_curve_comparison || {};
                     const objective = comparison.fit_objective || {};
-                    const mapping = comparison.affine_beta_mapping || {};
+                    const mapping =
+                        comparison.domain_beta_mapping ||
+                        comparison.scale_only_beta_mapping ||
+                        comparison.affine_beta_mapping ||
+                        {};
                     const fitText = Number.isFinite(objective.score) ? `, fit score ${formatScientific(objective.score)}` : "";
-                    const affineText = Number.isFinite(mapping.rms_error) ? `, affine beta RMS ${formatScientific(mapping.rms_error)}` : "";
-                    this.floquetSource.textContent = `First-pass Floquet markers: ${exact} sign-change crossings, ${refined} refined beta-curve points, ${nearest} nearest-threshold hints${fitText}${affineText}.`;
+                    const betaText = Number.isFinite(mapping.rms_error) ? `, beta RMS ${formatScientific(mapping.rms_error)}` : "";
+                    this.floquetSource.textContent = `First-pass Floquet markers: ${exact} sign-change crossings, ${refined} refined beta-curve points, ${nearest} nearest-threshold hints${fitText}${betaText}.`;
                 }
                 this.renderCurvePlot();
                 if (this.mapReport) {
@@ -1547,10 +1555,10 @@
             if (this.mapFields.point) {
                 this.mapFields.point.textContent = point
                     ? `${point.period_ms.toFixed(0)} ms, amplitude ${point.amplitude.toFixed(2)}`
-                    : "pending";
+                    : "available after report load";
             }
             if (this.mapFields.regime) {
-                this.mapFields.regime.textContent = point ? `${pointRegime(point)}; ${point.status_level}` : "pending";
+                this.mapFields.regime.textContent = point ? `${pointRegime(point)}; ${point.status_level}` : "available after report load";
             }
             if (this.mapFields.spatial) {
                 this.mapFields.spatial.textContent = pointSpatialLabel(point);
@@ -1564,10 +1572,10 @@
                     ? boundaries.length
                         ? boundaries.slice(0, 2).map(floquetBoundaryLabel).join("; ")
                         : "no nearby boundary hint"
-                    : "pending";
+                    : "available after report load";
             }
             if (this.mapFields.note) {
-                this.mapFields.note.textContent = point ? point.classification_note : "pending";
+                this.mapFields.note.textContent = point ? point.classification_note : "available after report load";
             }
         }
 

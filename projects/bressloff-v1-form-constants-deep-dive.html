@@ -56,6 +56,7 @@
                     <a class="action-link" href="#model-split">Model split</a>
                     <a class="action-link" href="#rule">Rule flicker model</a>
                     <a class="action-link" href="#rule-explorer">Rule explorer</a>
+                    <a class="action-link" href="#after-rule">After Rule</a>
                     <a class="action-link" href="/projects/bressloff-v1-form-constants.html">Bressloff overview</a>
                     <a class="action-link" href="#references">References</a>
                 </div>
@@ -63,6 +64,7 @@
         </section>
 
         <nav class="article-toc" aria-label="Deep dive sections">
+            <a href="#what-this-page-adds">What it adds</a>
             <a href="#history">History</a>
             <a href="#model-split">Model families</a>
             <a href="#bressloff">Bressloff equations</a>
@@ -71,9 +73,51 @@
             <a href="#bressloff-calibration">Bressloff calibration</a>
             <a href="#rule">Rule equations</a>
             <a href="#rule-explorer">Rule explorer</a>
+            <a href="#after-rule">After Rule</a>
             <a href="#ledger">Claim ledger</a>
+            <a href="#rights-ledger">Rights ledger</a>
             <a href="#references">References</a>
         </nav>
+
+        <section class="section two-column" id="what-this-page-adds">
+            <div>
+                <div class="section-heading">
+                    <p class="section-kicker">What this page adds</p>
+                    <h2>Two model families, one calibration record</h2>
+                </div>
+                <p>
+                    The shorter Bressloff page shows generated visual forms. This deep dive
+                    separates the model families behind them: Bressloff's orientation-hypercolumn
+                    planforms and retino-cortical mapping, and Rule's periodically forced
+                    excitatory/inhibitory field for flicker-induced phosphenes. The two tracks
+                    share visual-field questions but not claims.
+                </p>
+                <p>
+                    The status tables record which generated targets currently pass, which remain
+                    approximate, and which published figures are not reproduced here for rights
+                    reasons.
+                </p>
+            </div>
+            <div class="detail-stack">
+                <section class="detail-block">
+                    <h3>Figure-use policy</h3>
+                    <p>
+                        Mesmer Prism uses generated model outputs unless an original article
+                        figure is clearly open-licensed or reproduced with permission. Generated
+                        images cite the source model but are not scans, crops, or reproductions
+                        of the paper figures.
+                    </p>
+                </section>
+                <section class="detail-block">
+                    <h3>Safety boundary</h3>
+                    <p>
+                        The visuals here are explanatory model outputs, not a photic-stimulation
+                        protocol. Frequency parameters are model parameters, not safety-cleared
+                        exposure recommendations.
+                    </p>
+                </section>
+            </div>
+        </section>
 
         <section class="section two-column" id="history">
             <div>
@@ -399,7 +443,7 @@
                     <h2>What the current registry can say</h2>
                 </div>
                 <p>
-                    The implementation currently separates paper-figure identity, rendered
+                    The implementation currently separates source-figure identity, rendered
                     target, contour mode, and branch-selection diagnostics. That is deliberately
                     conservative: the page can say that a generated figure resembles a source
                     target without pretending that all stability curves, phase conventions, or
@@ -425,13 +469,13 @@
                 </p>
             </div>
             <div class="calibration-summary" aria-label="Bressloff geometry metric summary">
-                <div><span>Format</span><strong data-bressloff-calibration-field="format">loading</strong></div>
-                <div><span>Generated stills</span><strong data-bressloff-calibration-field="stills">loading</strong></div>
-                <div><span>Source comparisons</span><strong data-bressloff-calibration-field="compared">loading</strong></div>
-                <div><span>Mean edge density</span><strong data-bressloff-calibration-field="edge">loading</strong></div>
+                <div><span>Format</span><strong data-bressloff-calibration-field="format">available after report load</strong></div>
+                <div><span>Generated stills</span><strong data-bressloff-calibration-field="stills">available after report load</strong></div>
+                <div><span>Source comparisons</span><strong data-bressloff-calibration-field="compared">available after report load</strong></div>
+                <div><span>Mean edge density</span><strong data-bressloff-calibration-field="edge">available after report load</strong></div>
             </div>
             <p class="calibration-source" data-bressloff-calibration-field="source">
-                Loading Bressloff generated-still report.
+                Generated-still metric summary appears here when the report asset is available.
             </p>
             <div class="bressloff-calibration-grid" data-bressloff-calibration-grid aria-label="Generated Bressloff stills and metric summaries"></div>
         </section>
@@ -495,7 +539,7 @@
                     </p>
                 </article>
                 <article class="equation-card">
-                    <h3>Deferred stability</h3>
+                    <h3>Floquet boundary check</h3>
                     <div class="math-block">
                         \[
                         \dot v = D_u f(u_0(t),t;k)\,v,
@@ -506,10 +550,32 @@
                         \]
                     </div>
                     <p>
-                        These are the next rigorous layer for reproducing Rule's phase diagrams
-                        and stability islands.
+                        The current report computes first-pass monodromy boundary markers and
+                        Figure 8 curve comparisons. Published-axis reproduction remains
+                        calibration work, not a settled claim.
                     </p>
                 </article>
+            </div>
+
+            <div class="reference-grid" aria-label="Rule model public status">
+                <section class="detail-block">
+                    <h3>Rule model status</h3>
+                    <ul class="plain-list">
+                        <li>Implemented: qualitative high-frequency and low-frequency presets, one-period/two-period correlation checks, and Fourier-family readouts.</li>
+                        <li>Partial: sweep maps, monodromy hints, and domain-normalized Figure 8 beta-axis comparison.</li>
+                        <li>Deferred: exact digitized reproduction of published phase-boundary figures.</li>
+                        <li>Not claimed: prediction of a viewer's hallucinations from stimulus frequency.</li>
+                    </ul>
+                </section>
+                <section class="detail-block">
+                    <h3>Explorer status</h3>
+                    <p>
+                        The public explorer loads static JSON reports when they are present.
+                        If a report asset is absent, the qualitative Rule presets and claim
+                        ledger remain the public surface rather than showing repeated empty
+                        map states.
+                    </p>
+                </section>
             </div>
 
             <article class="rule-explorer" id="rule-explorer" data-rule-explorer data-rule-sweep-src="/assets/bressloff-v1/deep-dive/rule-2011-sweep.json" data-rule-map-src="/assets/bressloff-v1/deep-dive/rule-2011-sweep-dense.json" data-rule-floquet-src="/assets/bressloff-v1/deep-dive/rule-2011-floquet.json" data-rule-source-curves-src="/assets/bressloff-v1/deep-dive/rule-2011-fig8-source-curves.json">
@@ -522,7 +588,8 @@
                             views: stimulus pulse, reduced excitatory/inhibitory response,
                             scalar cortical field, dominant Fourier family, the one-period
                             versus two-period temporal check, and a simulator-backed sweep
-                            report where available.
+                            report where available. It is an explanatory model view, not a
+                            stimulus protocol.
                         </p>
                     </div>
                     <dl class="rule-explorer__summary">
@@ -642,7 +709,7 @@
                 <section class="rule-explorer__panel rule-explorer__panel--wide">
                     <h4>Frequency sweep strip</h4>
                     <p class="rule-explorer__source" data-rule-sweep-source>
-                        Loading simulator-backed sweep report.
+                        Sweep report summary appears here when the JSON asset is available.
                     </p>
                     <div class="rule-explorer__sweep" aria-label="Frequency sweep across qualitative Rule regimes">
                         <article class="rule-explorer__sweep-cell" data-rule-sweep="140" data-rule-sweep-amplitude="0.65">
@@ -694,15 +761,15 @@
                     <div class="rule-explorer__stability" aria-label="Rule monodromy stability hints">
                         <div>
                             <span>Low-frequency mode</span>
-                            <strong data-rule-floquet-field="low">pending</strong>
+                            <strong data-rule-floquet-field="low">available after report load</strong>
                         </div>
                         <div>
                             <span>Transition mode</span>
-                            <strong data-rule-floquet-field="mid">pending</strong>
+                            <strong data-rule-floquet-field="mid">available after report load</strong>
                         </div>
                         <div>
                             <span>High-frequency mode</span>
-                            <strong data-rule-floquet-field="high">pending</strong>
+                            <strong data-rule-floquet-field="high">available after report load</strong>
                         </div>
                     </div>
                 </section>
@@ -710,22 +777,22 @@
                 <section class="rule-explorer__panel rule-explorer__panel--wide">
                     <h4>Frequency-amplitude map</h4>
                     <p class="rule-explorer__source" data-rule-map-source>
-                        Loading dense simulator-backed sweep map.
+                        Dense sweep-map summary appears here when the JSON asset is available.
                     </p>
                     <p class="rule-explorer__source" data-rule-floquet-source>
-                        Loading first-pass Floquet boundary markers.
+                        Floquet boundary summary appears here when the JSON asset is available.
                     </p>
                     <div class="rule-explorer__map-wrap">
                         <div class="rule-explorer__map" data-rule-map aria-label="Rule frequency-amplitude sweep map"></div>
                         <div class="rule-explorer__map-detail">
                             <canvas data-rule-map-preview width="150" height="150" aria-label="Selected Rule sweep frame"></canvas>
                             <dl>
-                                <div><dt>Point</dt><dd data-rule-map-field="point">pending</dd></div>
-                                <div><dt>Regime</dt><dd data-rule-map-field="regime">pending</dd></div>
-                                <div><dt>Spatial score</dt><dd data-rule-map-field="spatial">pending</dd></div>
-                                <div><dt>Temporal score</dt><dd data-rule-map-field="temporal">pending</dd></div>
-                                <div><dt>Floquet</dt><dd data-rule-map-field="floquet">pending</dd></div>
-                                <div><dt>Note</dt><dd data-rule-map-field="note">pending</dd></div>
+                                <div><dt>Point</dt><dd data-rule-map-field="point">available after report load</dd></div>
+                                <div><dt>Regime</dt><dd data-rule-map-field="regime">available after report load</dd></div>
+                                <div><dt>Spatial score</dt><dd data-rule-map-field="spatial">available after report load</dd></div>
+                                <div><dt>Temporal score</dt><dd data-rule-map-field="temporal">available after report load</dd></div>
+                                <div><dt>Floquet</dt><dd data-rule-map-field="floquet">available after report load</dd></div>
+                                <div><dt>Note</dt><dd data-rule-map-field="note">available after report load</dd></div>
                             </dl>
                         </div>
                     </div>
@@ -734,17 +801,17 @@
                 <section class="rule-explorer__panel rule-explorer__panel--wide">
                     <h4>Rule Figure 8 refined boundary curves</h4>
                     <p class="rule-explorer__source" data-rule-curve-source>
-                        Loading refined +1 and -1 source-axis curves.
+                        Figure 8 curve comparison appears here when the report assets are available.
                     </p>
                     <div class="rule-explorer__curve-wrap">
                         <canvas data-rule-curve-plot width="760" height="340" aria-label="Rule Figure 8 source curves with generated fit samples"></canvas>
                         <dl class="rule-explorer__curve-summary">
-                            <div><dt>Parameter set</dt><dd data-rule-curve-field="parameter">pending</dd></div>
-                            <div><dt>Branches</dt><dd data-rule-curve-field="curves">pending</dd></div>
-                            <div><dt>Points</dt><dd data-rule-curve-field="points">pending</dd></div>
-                            <div><dt>Affine RMS</dt><dd data-rule-curve-field="residual">pending</dd></div>
-                            <div><dt>Continuity</dt><dd data-rule-curve-field="continuity">pending</dd></div>
-                            <div><dt>Beta map</dt><dd data-rule-curve-field="axes">pending</dd></div>
+                            <div><dt>Parameter set</dt><dd data-rule-curve-field="parameter">available after report load</dd></div>
+                            <div><dt>Branches</dt><dd data-rule-curve-field="curves">available after report load</dd></div>
+                            <div><dt>Points</dt><dd data-rule-curve-field="points">available after report load</dd></div>
+                            <div><dt>Beta RMS</dt><dd data-rule-curve-field="residual">available after report load</dd></div>
+                            <div><dt>Continuity</dt><dd data-rule-curve-field="continuity">available after report load</dd></div>
+                            <div><dt>Beta map</dt><dd data-rule-curve-field="axes">available after report load</dd></div>
                         </dl>
                     </div>
                 </section>
@@ -857,6 +924,165 @@
             </article>
         </section>
 
+        <section class="section" id="after-rule">
+            <div class="section-heading">
+                <p class="section-kicker">After Rule</p>
+                <h2>Driven neural fields, not one straight line</h2>
+                <p>
+                    The lineage after Rule splits into driven-input problems and architecture
+                    extensions. Rule models diffuse periodic flicker. Nicks, Cocks,
+                    Avitabile, Johnston, and Coombes model spatial forcing and orthogonal
+                    response in Billock-Tsou-style effects. Tamekue, Prandi, and Chitour
+                    treat MacKay stimuli as localized inputs that break symmetry and act as
+                    controls in an Amari neural field. Bolelli and Prandi then combine
+                    localization with time-periodic input, giving a current framework for
+                    flickering visual stimuli whose model contours depend on frequency and
+                    inhibition
+                    (<a class="inline-citation" href="https://doi.org/10.1137/20M1366885" target="_blank" rel="noopener noreferrer">Nicks et al., 2021</a>;
+                    <a class="inline-citation" href="https://doi.org/10.1137/23M1616686" target="_blank" rel="noopener noreferrer">Tamekue et al., 2024</a>;
+                    <a class="inline-citation" href="https://doi.org/10.1007/s10851-025-01257-7" target="_blank" rel="noopener noreferrer">Bolelli and Prandi, 2025</a>).
+                </p>
+                <p>
+                    A second branch complicates the cortical architecture itself: pinwheel
+                    lattices, long-range connections, color dimensions, contrast polarity, and
+                    perceptual grouping. These do not replace the Bressloff simulator; they
+                    show what it abstracts away
+                    (<a class="inline-citation" href="https://doi.org/10.1186/s13408-015-0023-8" target="_blank" rel="noopener noreferrer">Veltz et al., 2015</a>;
+                    <a class="inline-citation" href="https://doi.org/10.5802/crmath.289" target="_blank" rel="noopener noreferrer">Faugeras et al., 2022</a>;
+                    <a class="inline-citation" href="https://doi.org/10.1137/16M1076125" target="_blank" rel="noopener noreferrer">Carroll and Bressloff, 2018</a>;
+                    <a class="inline-citation" href="https://doi.org/10.1007/s10827-014-0540-6" target="_blank" rel="noopener noreferrer">Sarti and Citti, 2015</a>).
+                </p>
+            </div>
+
+            <div class="status-table-wrap">
+                <table class="status-table">
+                    <thead>
+                        <tr>
+                            <th>Branch</th>
+                            <th>Source</th>
+                            <th>Input type</th>
+                            <th>Model output</th>
+                            <th>Use in Mesmer Prism</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Spontaneous form constants</td>
+                            <td>Ermentrout-Cowan; Bressloff et al.</td>
+                            <td>No visual input or parameter shift</td>
+                            <td>Planforms mapped to tunnels, spirals, lattices, and cobwebs</td>
+                            <td>Current simulator core</td>
+                        </tr>
+                        <tr>
+                            <td>Diffuse flicker</td>
+                            <td>Rule et al. 2011</td>
+                            <td>Spatially homogeneous time-periodic forcing</td>
+                            <td>Frequency-dependent phosphene regimes</td>
+                            <td>Rule panel and explorer</td>
+                        </tr>
+                        <tr>
+                            <td>Spatial forcing</td>
+                            <td>Nicks et al. 2021</td>
+                            <td>Periodic spatial input</td>
+                            <td>Orthogonal response and 2:1 resonance</td>
+                            <td>Billock-Tsou explanation</td>
+                        </tr>
+                        <tr>
+                            <td>Localized static input</td>
+                            <td>Tamekue et al. 2024</td>
+                            <td>MacKay rays or target plus localized control</td>
+                            <td>Input-biased orthogonal contours</td>
+                            <td>MacKay branch</td>
+                        </tr>
+                        <tr>
+                            <td>Localized time-periodic input</td>
+                            <td>Bolelli and Prandi 2025</td>
+                            <td>Flickering localized input</td>
+                            <td>Periodic state and contour width versus frequency/inhibition</td>
+                            <td>Modern endpoint and Brain Candy bridge</td>
+                        </tr>
+                        <tr>
+                            <td>Pinwheel architecture</td>
+                            <td>Veltz et al. 2015</td>
+                            <td>More realistic V1 lattice and long-range connections</td>
+                            <td>Symmetry-restricted planforms and hexagonal robustness</td>
+                            <td>Architecture caveat</td>
+                        </tr>
+                        <tr>
+                            <td>Color V1</td>
+                            <td>Faugeras et al. 2022</td>
+                            <td>Hue and saturation dimensions</td>
+                            <td>Spatio-chromatic planforms and localized snaking states</td>
+                            <td>Extension layer</td>
+                        </tr>
+                        <tr>
+                            <td>Contrast gradients</td>
+                            <td>Carroll and Bressloff 2018</td>
+                            <td>Contrast-polarity/orientation field</td>
+                            <td>Gradient-direction encoding</td>
+                            <td>"Not hallucination only" sidebar</td>
+                        </tr>
+                        <tr>
+                            <td>Perceptual units</td>
+                            <td>Sarti and Citti 2015</td>
+                            <td>Visual input plus neurogeometry</td>
+                            <td>Eigenmodes as perceptual units</td>
+                            <td>Grouping note</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="reference-grid" aria-label="Driven neural field continuation">
+                <section class="detail-block">
+                    <h3>Spatial forcing and orthogonal response</h3>
+                    <p>
+                        Nicks et al. provide the bridge from diffuse flicker toward
+                        Billock-Tsou-style sensory-induced hallucinations. Under the
+                        retino-cortical map, rings and arms become orthogonal cortical stripe
+                        families, and a spatially forced neural field can support an
+                        orthogonal response when the resonance conditions are right.
+                    </p>
+                </section>
+                <section class="detail-block">
+                    <h3>Localized MacKay input</h3>
+                    <p>
+                        Tamekue, Prandi, and Chitour recast the MacKay branch as an
+                        input-output problem. The stimulus is represented as a cortical input
+                        through the retino-cortical map, and localized information breaks the
+                        global symmetry of a regular funnel or tunnel pattern.
+                    </p>
+                </section>
+                <section class="detail-block">
+                    <h3>Time-periodic localized input</h3>
+                    <p>
+                        Bolelli and Prandi are the current endpoint for this page: localized
+                        geometric input and periodic forcing are studied in one neural-field
+                        framework. Frequency remains a model parameter, not a safe exposure
+                        recommendation.
+                    </p>
+                </section>
+                <section class="detail-block">
+                    <h3>Architecture and extensions</h3>
+                    <p>
+                        Pinwheel lattices, color dimensions, contrast-polarity fields, and
+                        perceptual-unit models show that V1 neural-field mathematics is broader
+                        than hallucination geometry. The page should use them to clarify the
+                        simulator's abstractions, not to broaden its claims.
+                    </p>
+                </section>
+                <section class="detail-block">
+                    <h3>Generated visual policy</h3>
+                    <p>
+                        No full PDFs, paper figure scans, page renders, or source-figure crops
+                        are hosted for this branch. New visuals should be generated in Mesmer
+                        Prism style unless a paper figure is clearly reusable and captioned with
+                        its license, source, and change notes.
+                    </p>
+                </section>
+            </div>
+        </section>
+
         <section class="section" id="ledger">
             <div class="section-heading">
                 <p class="section-kicker">Claim ledger</p>
@@ -893,9 +1119,104 @@
                             <td>Calibrate dense Rule Figure 6 and Figure 8 phase boundaries.</td>
                         </tr>
                         <tr>
+                            <td>Later work extends the lineage toward driven neural fields.</td>
+                            <td>Public taxonomy separates spatial forcing, localized MacKay input, localized time-periodic input, pinwheel architecture, color extensions, contrast-gradient encoding, and perceptual grouping.</td>
+                            <td>Generate original diagrams for the Nicks, MacKay, and Bolelli-Prandi branches before adding visual panels.</td>
+                        </tr>
+                        <tr>
+                            <td>Spatial forcing, localized input, and time-periodic input can explain every viewer's percept.</td>
+                            <td>Not claimed here.</td>
+                            <td>Requires participant-level data, stimulus calibration, and safety review outside this public model note.</td>
+                        </tr>
+                        <tr>
                             <td>Flicker frequency predicts individual visual experience.</td>
                             <td>Not claimed here.</td>
                             <td>Requires participant data, safety constraints, and calibrated stimulus hardware.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="section" id="rights-ledger">
+            <div class="section-heading">
+                <p class="section-kicker">Figure rights ledger</p>
+                <h2>Which figures can be hosted here</h2>
+            </div>
+            <div class="status-table-wrap">
+                <table class="status-table">
+                    <thead>
+                        <tr>
+                            <th>Figure source</th>
+                            <th>Public-page treatment</th>
+                            <th>Rights basis</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Generated Mesmer Prism images</td>
+                            <td>Hosted here.</td>
+                            <td>Created by the Mesmer Prism renderer from the described model families.</td>
+                        </tr>
+                        <tr>
+                            <td>Rule et al. 2011 PLOS figures</td>
+                            <td>Can be reproduced or adapted with attribution and change notes.</td>
+                            <td>PLOS Computational Biology articles are covered by Creative Commons Attribution reuse terms.</td>
+                        </tr>
+                        <tr>
+                            <td>Bressloff et al. 2001 Royal Society figures</td>
+                            <td>Reference only unless permission or a specific open license is verified.</td>
+                            <td>Royal Society journal reuse is routed through its permissions process unless the article license already permits the use.</td>
+                        </tr>
+                        <tr>
+                            <td>Bressloff et al. 2002 Neural Computation figures</td>
+                            <td>Reference only unless MIT Press permission or a specific open license is verified.</td>
+                            <td>MIT Press provides a rights and permissions process for journal reuse.</td>
+                        </tr>
+                        <tr>
+                            <td>Ermentrout and Cowan 1979 Springer figures</td>
+                            <td>Reference only unless Springer permission or a specific open license is verified.</td>
+                            <td>Springer Nature distinguishes openly licensed material from content requiring reuse permission.</td>
+                        </tr>
+                        <tr>
+                            <td>Bressloff 2012 IOP figures</td>
+                            <td>Check the article first page; treat as permission-required unless clearly open.</td>
+                            <td>IOP permissions guidance treats adaptations as permission-bound unless the source license allows reuse.</td>
+                        </tr>
+                        <tr>
+                            <td>Nicks et al. 2021 SIAM figures</td>
+                            <td>Reference only; redraw concepts for public diagrams.</td>
+                            <td>Version of record is SIAM-published and the user-provided PDF was a review-purpose manuscript.</td>
+                        </tr>
+                        <tr>
+                            <td>Tamekue et al. 2024 SIAM figures</td>
+                            <td>Reference only; redraw MacKay examples unless permission is obtained.</td>
+                            <td>Version of record is SIAM-published; the arXiv manuscript is not treated as figure-reuse permission.</td>
+                        </tr>
+                        <tr>
+                            <td>Bolelli and Prandi 2025 figures</td>
+                            <td>Reusable only with CC BY attribution and caption-level third-party checks.</td>
+                            <td>The Springer article is open access under CC BY 4.0 with a third-party material caveat.</td>
+                        </tr>
+                        <tr>
+                            <td>Veltz et al. 2015 figures</td>
+                            <td>Reusable only with CC BY attribution and caption-level third-party checks.</td>
+                            <td>The Journal of Mathematical Neuroscience article is distributed under CC BY 4.0.</td>
+                        </tr>
+                        <tr>
+                            <td>Faugeras et al. 2022 figures</td>
+                            <td>Reusable only with CC BY attribution and caption-level third-party checks.</td>
+                            <td>The Comptes Rendus Mathematique article page states CC BY 4.0.</td>
+                        </tr>
+                        <tr>
+                            <td>Carroll and Bressloff 2018 SIAM figures</td>
+                            <td>Reference only unless permission is obtained.</td>
+                            <td>SIAM copyright applies to the version of record.</td>
+                        </tr>
+                        <tr>
+                            <td>Sarti and Citti 2015 figures</td>
+                            <td>Reference only; redraw concepts.</td>
+                            <td>No clear reusable figure license was identified in the local copy; treat Springer version as permission-required unless verified otherwise.</td>
                         </tr>
                     </tbody>
                 </table>
@@ -919,6 +1240,24 @@
                     </ul>
                 </section>
                 <section class="detail-block">
+                    <h3>Driven-field continuation</h3>
+                    <ul class="plain-list">
+                        <li><strong>Billock, V. A., and B. H. Tsou.</strong> "<a class="reference-link" href="https://doi.org/10.1073/pnas.0610813104" target="_blank" rel="noopener noreferrer">Neural Interactions Between Flicker-Induced Self-Organized Visual Hallucinations and Physical Stimuli</a>." <em>PNAS</em> 104, no. 20 (2007).</li>
+                        <li><strong>Nicks, R., A. Cocks, D. Avitabile, A. Johnston, and S. Coombes.</strong> "<a class="reference-link" href="https://doi.org/10.1137/20M1366885" target="_blank" rel="noopener noreferrer">Understanding Sensory Induced Hallucinations: From Neural Fields to Amplitude Equations</a>." <em>SIAM Journal on Applied Dynamical Systems</em> 20, no. 4 (2021).</li>
+                        <li><strong>Tamekue, C., D. Prandi, and Y. Chitour.</strong> "<a class="reference-link" href="https://doi.org/10.1137/23M1616686" target="_blank" rel="noopener noreferrer">A Mathematical Model of the Visual MacKay Effect</a>." <em>SIAM Journal on Applied Dynamical Systems</em> 23, no. 3 (2024).</li>
+                        <li><strong>Bolelli, M. V., and D. Prandi.</strong> "<a class="reference-link" href="https://doi.org/10.1007/s10851-025-01257-7" target="_blank" rel="noopener noreferrer">Neural Field Equations with Time-Periodic External Inputs and Some Applications to Visual Processing</a>." <em>Journal of Mathematical Imaging and Vision</em> 67 (2025).</li>
+                    </ul>
+                </section>
+                <section class="detail-block">
+                    <h3>Architecture and perception extensions</h3>
+                    <ul class="plain-list">
+                        <li><strong>Veltz, R., P. Chossat, and O. Faugeras.</strong> "<a class="reference-link" href="https://doi.org/10.1186/s13408-015-0023-8" target="_blank" rel="noopener noreferrer">On the Effects on Cortical Spontaneous Activity of the Symmetries of the Network of Pinwheels in Visual Area V1</a>." <em>Journal of Mathematical Neuroscience</em> 5 (2015).</li>
+                        <li><strong>Faugeras, O. D., A. Song, and R. Veltz.</strong> "<a class="reference-link" href="https://doi.org/10.5802/crmath.289" target="_blank" rel="noopener noreferrer">Spatial and Color Hallucinations in a Mathematical Model of Primary Visual Cortex</a>." <em>Comptes Rendus Mathematique</em> 360 (2022).</li>
+                        <li><strong>Carroll, S. R., and P. C. Bressloff.</strong> "<a class="reference-link" href="https://doi.org/10.1137/16M1076125" target="_blank" rel="noopener noreferrer">Symmetric Bifurcations in a Neural Field Model for Encoding the Direction of Spatial Contrast Gradients</a>." <em>SIAM Journal on Applied Dynamical Systems</em> 17, no. 1 (2018).</li>
+                        <li><strong>Sarti, A., and G. Citti.</strong> "<a class="reference-link" href="https://doi.org/10.1007/s10827-014-0540-6" target="_blank" rel="noopener noreferrer">The Constitution of Visual Perceptual Units in the Functional Architecture of V1</a>." <em>Journal of Computational Neuroscience</em> 38, no. 2 (2015). See also the <a class="reference-link" href="https://arxiv.org/abs/1406.0289" target="_blank" rel="noopener noreferrer">arXiv record</a>.</li>
+                    </ul>
+                </section>
+                <section class="detail-block">
                     <h3>Public implementation and context</h3>
                     <ul class="plain-list">
                         <li><strong>Mesmer Prism.</strong> "<a class="reference-link" href="https://github.com/MesmerPrism/bressloff-v1-form-constants" target="_blank" rel="noopener noreferrer">Bressloff V1 Form Constants Lab</a>." MIT-licensed Rust and browser implementation used for these generated assets.</li>
@@ -926,6 +1265,7 @@
                         <li><strong>karacsm.</strong> "<a class="reference-link" href="https://github.com/karacsm/V1-sim" target="_blank" rel="noopener noreferrer">V1-sim</a>." Public notebook lineage for V1 activity and retino-cortical visualization.</li>
                         <li><strong>CountYourCulture.</strong> "<a class="reference-link" href="https://isomerdesign.com/countyourculture/2011/03/13/form-constants-visual-cortex/" target="_blank" rel="noopener noreferrer">Form Constants and the Visual Cortex</a>." Public visual explainer for the form-constant comparison lineage.</li>
                         <li><strong>Hewitt et al.</strong> "<a class="reference-link" href="https://doi.org/10.1093/nc/niaf020" target="_blank" rel="noopener noreferrer">Stroboscopically Induced Visual Hallucinations: Historical, Phenomenological, and Neurobiological Perspectives</a>." <em>Neuroscience of Consciousness</em> (2025).</li>
+                        <li><strong>Figure-rights sources.</strong> <a class="reference-link" href="https://journals.plos.org/ploscompbiol/s/licenses-and-copyright" target="_blank" rel="noopener noreferrer">PLOS licenses and copyright</a>; <a class="reference-link" href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">Creative Commons Attribution 4.0</a>; <a class="reference-link" href="https://royalsociety.org/journals/permissions/" target="_blank" rel="noopener noreferrer">Royal Society permissions</a>; <a class="reference-link" href="https://mitpress.mit.edu/rights-permissions/" target="_blank" rel="noopener noreferrer">MIT Press rights and permissions</a>; <a class="reference-link" href="https://www.springernature.com/gp/partners/rights-permissions-third-party-distribution" target="_blank" rel="noopener noreferrer">Springer Nature rights and permissions</a>; <a class="reference-link" href="https://publishingsupport.iopscience.iop.org/permissionsfaq/" target="_blank" rel="noopener noreferrer">IOP permissions FAQ</a>.</li>
                     </ul>
                 </section>
             </div>
