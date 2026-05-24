@@ -7,12 +7,12 @@
     <link rel="canonical" href="https://mesmerprism.com/projects/bressloff-v1-form-constants.html">
     <meta
         name="description"
-        content="Animated notes on the Bressloff visual-cortex model for geometric hallucination patterns, with retino-cortical planform sketches and source code."
+        content="Animated notes on the Bressloff visual-cortex model for geometric hallucination patterns, with retino-cortical planform sketches, paper-figure presets, calibration reports, and source code."
     >
     <meta property="og:title" content="Bressloff V1 Form Constants | Mesmer Prism">
     <meta
         property="og:description"
-        content="A public note on visualizing Bressloff-style V1 planforms, Kluver form constants, and the limits of mapping cortical pattern models onto flicker reports."
+        content="A public note on visualizing Bressloff-style V1 planforms, Kluver form constants, paper-figure presets, and the limits of mapping cortical pattern models onto flicker reports."
     >
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://mesmerprism.com/projects/bressloff-v1-form-constants.html">
@@ -41,6 +41,8 @@
                 <p class="eyebrow">Visual cortex and form constants</p>
                 <h1>Bressloff V1 Form Constants</h1>
                 <p class="project-lede">
+                    Use this page to compare animated V1 planforms with classic form-constant
+                    shapes: tunnels, spirals, cobwebs, lattices, and honeycombs.
                     The Bressloff visual-cortex model gives a concrete way to ask how
                     simple activity patterns in primary visual cortex could appear as
                     tunnels, spirals, cobwebs, lattices, and honeycombs after the
@@ -62,7 +64,7 @@
         <section class="section two-column">
             <div>
                 <div class="section-heading">
-                    <p class="section-kicker">Claim boundary</p>
+                    <p class="section-kicker">Limits</p>
                     <h2>The useful claim is narrow</h2>
                 </div>
                 <p>
@@ -94,7 +96,8 @@
                         <li>Slow browser animations of the main planform families</li>
                         <li>Retino-cortical remapping from cortical stripes to visual-field forms</li>
                         <li>Orientation-contour glyphs drawn as short local line segments</li>
-                        <li>Named paper-figure presets with lattice-local branch readouts</li>
+                        <li>24 named paper-figure presets with source metadata and lattice-local branch readouts</li>
+                        <li>Calibration reports for rendered targets and stability diagnostics</li>
                     </ul>
                 </section>
                 <section class="detail-block">
@@ -196,6 +199,18 @@
                     the paper images without crossing a journal paywall, CountYourCulture's
                     open visual explainer reproduces the main form-constant comparison images
                     and links the same model lineage.
+                </p>
+                <p>
+                    The interactive implementation now carries 24 named Bressloff presets:
+                    Figure 16/17 stability examples, Figure 29/30 non-contoured single-map
+                    planforms, Figure 31-36 double-map contour planforms including roll
+                    subpanels, and 2002 Figure 5-7 convenience targets
+                    (<a class="inline-citation" href="https://doi.org/10.1098/rstb.2000.0769" target="_blank" rel="noopener noreferrer">Bressloff et al., 2001</a>;
+                    <a class="inline-citation" href="https://doi.org/10.1162/089976602317250861" target="_blank" rel="noopener noreferrer">Bressloff et al., 2002</a>;
+                    <a class="inline-citation" href="https://github.com/MesmerPrism/bressloff-v1-form-constants" target="_blank" rel="noopener noreferrer">implementation repository</a>).
+                    The generated report separates rendered-target checks from amplitude-branch
+                    diagnostics, so a square/cobweb image can be marked as visually rendered
+                    while its current branch selector still prefers the roll family.
                 </p>
             </div>
             <div class="bressloff-calibration-grid" aria-label="Bressloff paper figure calibration">
@@ -331,7 +346,8 @@
                     state-shift context; the implementation itself focuses on Bressloff's
                     model equations. The current calibration layer exposes named paper-figure
                     presets, orientation-channel exports, and side-by-side checks between
-                    target planforms, same-lattice branch selection, and generated output.
+                    target planforms, contour mode, same-lattice branch selection, stability
+                    diagnostics, and generated output.
                 </p>
             </div>
             <div class="detail-stack">
@@ -345,12 +361,56 @@
                     </ul>
                 </section>
                 <section class="detail-block">
-                    <h3>Current model surfaces</h3>
+                    <h3>Current model outputs</h3>
                     <ul class="plain-list">
                         <li>Kernel tuning for local and lateral interactions</li>
                         <li>Linear critical-wavenumber scan</li>
                         <li>Amplitude-equation branch readout</li>
                         <li>Orientation-contour overlays</li>
+                        <li>Paper-preset catalog and v3 JSON calibration report</li>
+                    </ul>
+                </section>
+            </div>
+        </section>
+
+        <section class="section two-column">
+            <div>
+                <div class="section-heading">
+                    <p class="section-kicker">Implementation roadmap</p>
+                    <h2>The remaining work is calibration, not source collection</h2>
+                </div>
+                <p>
+                    The Bressloff papers now map to a public preset registry and calibration
+                    report. The next fidelity layer is narrower: measure how well generated
+                    images match the source figures, fit phase and threshold conventions,
+                    digitize stability curves, and resolve the odd-hexagonal branch cases
+                    where higher-order terms matter
+                    (<a class="inline-citation" href="https://github.com/MesmerPrism/bressloff-v1-form-constants/blob/main/docs/BRESSLOFF_FUTURE_IMPLEMENTATION_PLAN.md" target="_blank" rel="noopener noreferrer">future implementation plan</a>).
+                </p>
+                <p>
+                    That distinction matters for later flicker work. Rule, Stoffregen, and
+                    Ermentrout's flicker-induced phosphene model belongs beside this V1
+                    planform lab, but it should enter as a separate scalar excitatory/inhibitory
+                    model family rather than being folded into Bressloff's orientation-hypercolumn
+                    presets.
+                </p>
+            </div>
+            <div class="detail-stack">
+                <section class="detail-block">
+                    <h3>Calibration layers</h3>
+                    <ul class="plain-list">
+                        <li>Figure geometry and threshold matching</li>
+                        <li>Phase-specific square, honeycomb, hex-pi, and triangular variants</li>
+                        <li>Stability and bifurcation curve digitization</li>
+                        <li>Higher-order odd-hexagonal branch selection</li>
+                    </ul>
+                </section>
+                <section class="detail-block">
+                    <h3>Model-family bridge</h3>
+                    <ul class="plain-list">
+                        <li>Bressloff remains the orientation-hypercolumn track</li>
+                        <li>Rule enters as a flicker-driven scalar E/I track</li>
+                        <li>Both can share visual-field rendering where the math warrants it</li>
                     </ul>
                 </section>
             </div>
@@ -421,6 +481,7 @@
                         <li><strong>Hewitt et al.</strong> "<a class="reference-link" href="https://doi.org/10.1093/nc/niaf020" target="_blank" rel="noopener noreferrer">Stroboscopically Induced Visual Hallucinations: Historical, Phenomenological, and Neurobiological Perspectives</a>." <em>Neuroscience of Consciousness</em> (2025).</li>
                         <li><strong>Hewitt, T., E. J. Grove, A. Seth, and D. J. Schwartzman.</strong> "<a class="reference-link" href="https://doi.org/10.31234/osf.io/2gtsy_v1" target="_blank" rel="noopener noreferrer">Image Recreation Methods Enable Quantitative Characterization of Geometric Visual Hallucinations</a>." PsyArXiv preprint (2026). See also the <a class="reference-link" href="https://imagerecreationdataviz.netlify.app/" target="_blank" rel="noopener noreferrer">interactive image-recreation visualization</a>.</li>
                         <li><strong>Mesmer Prism.</strong> "<a class="reference-link" href="https://github.com/MesmerPrism/bressloff-v1-form-constants" target="_blank" rel="noopener noreferrer">Bressloff V1 Form Constants Lab</a>." MIT-licensed Rust and browser implementation used for the animations.</li>
+                        <li><strong>Mesmer Prism.</strong> "<a class="reference-link" href="https://github.com/MesmerPrism/bressloff-v1-form-constants/blob/main/docs/BRESSLOFF_FUTURE_IMPLEMENTATION_PLAN.md" target="_blank" rel="noopener noreferrer">Bressloff Future Implementation Plan</a>." Public implementation roadmap for calibration and cross-model work.</li>
                         <li><strong>karacsm.</strong> "<a class="reference-link" href="https://github.com/karacsm/V1-sim" target="_blank" rel="noopener noreferrer">V1-sim</a>." Public GitHub notebook for simulating V1 activity and retino-cortical visualization.</li>
                         <li><strong>Mesmer Prism.</strong> "<a class="reference-link" href="/projects/deep-dream.html">Deep Dream</a>." Related article on machine-vision hallucination simulation and cyberdelic comparison.</li>
                     </ul>
@@ -431,7 +492,7 @@
 
     <footer class="site-footer">
         <div class="shell footer-row">
-            <p>Mesmer Prism is the public home for selected work by Till Holzapfel.</p>
+            <p>XR systems, perception research, and essays by Till Holzapfel.</p>
             <nav class="footer-links" aria-label="Legal">
                 <a href="/impressum.html">Impressum</a>
                 <a href="/datenschutz.html">Datenschutz</a>

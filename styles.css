@@ -591,6 +591,34 @@ li {
     text-transform: uppercase;
 }
 
+.project-facts {
+    display: grid;
+    grid-template-columns: max-content minmax(0, 1fr);
+    gap: 0.25rem 0.75rem;
+    margin: 0.1rem 0 1rem;
+    padding: 0.75rem 0;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    font-family: var(--font-ui);
+}
+
+.project-facts dt,
+.project-facts dd {
+    margin: 0;
+    max-width: none;
+    font-size: 0.84rem;
+    line-height: 1.45;
+}
+
+.project-facts dt {
+    color: var(--muted);
+    font-weight: 700;
+}
+
+.project-facts dd {
+    color: var(--text);
+}
+
 .project-meta {
     margin-top: auto;
     margin-bottom: 0.9rem;
