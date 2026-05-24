@@ -297,6 +297,62 @@
         return descending ? sorted.reverse() : sorted;
     }
 
+    function medianStep(values) {
+        const sorted = values.slice().sort((a, b) => a - b);
+        const steps = sorted
+            .slice(1)
+            .map((value, index) => Math.abs(value - sorted[index]))
+            .filter((value) => value > 1e-6)
+            .sort((a, b) => a - b);
+        if (!steps.length) {
+            return 0;
+        }
+        return steps[Math.floor(steps.length / 2)];
+    }
+
+    function floquetBoundaryKey(kind) {
+        if (kind === "minus_period_doubling") {
+            return "minus";
+        }
+        if (kind === "plus_one_to_one") {
+            return "plus";
+        }
+        if (kind === "unstable_complex") {
+            return "complex";
+        }
+        return "unknown";
+    }
+
+    function floquetBoundaryShortLabel(kind) {
+        if (kind === "minus_period_doubling") {
+            return "-1";
+        }
+        if (kind === "plus_one_to_one") {
+            return "+1";
+        }
+        if (kind === "unstable_complex") {
+            return "cx";
+        }
+        return "?";
+    }
+
+    function floquetBoundaryLabel(candidate) {
+        if (!candidate) {
+            return "no nearby Floquet boundary hint";
+        }
+        const kind =
+            candidate.kind === "minus_period_doubling"
+                ? "-1 period-doubling"
+                : candidate.kind === "plus_one_to_one"
+                  ? "+1 one-to-one"
+                  : candidate.kind === "unstable_complex"
+                    ? "complex instability"
+                    : "unknown";
+        const evidence = candidate.evidence === "sign_change" ? "grid crossing" : "nearest margin";
+        const margin = Number.isFinite(candidate.margin_from) ? candidate.margin_from.toFixed(2) : "n/a";
+        return `${kind}; beta ${candidate.beta_cycles.toFixed(1)}, ${evidence}, margin ${margin}`;
+    }
+
     function stimulusAt(preset, t) {
         const phase = Math.sin((tau * t) / preset.periodMs);
         const x = (phase - preset.threshold) * preset.smoothing;
@@ -628,9 +684,11 @@
             this.playButton = root.querySelector("[data-rule-play]");
             this.sweepReport = null;
             this.mapReport = null;
+            this.floquetBoundaryReport = null;
             this.selectedMapPoint = null;
             this.sweepSource = root.querySelector("[data-rule-sweep-source]");
             this.mapSource = root.querySelector("[data-rule-map-source]");
+            this.floquetSource = root.querySelector("[data-rule-floquet-source]");
             this.mapRoot = root.querySelector("[data-rule-map]");
             this.mapPreview = root.querySelector("[data-rule-map-preview]");
             this.mapFields = Object.fromEntries(
@@ -676,6 +734,7 @@
             this.paint();
             this.loadSweepReport();
             this.loadMapReport();
+            this.loadFloquetBoundaryReport();
             window.requestAnimationFrame((now) => this.tick(now));
         }
 
@@ -772,6 +831,43 @@
                     this.mapSource.textContent = "Dense sweep map was not available.";
                 }
                 this.selectMapPoint(null);
+            }
+        }
+
+        async loadFloquetBoundaryReport() {
+            const source = this.root.dataset.ruleFloquetSrc;
+            if (!source) {
+                if (this.floquetSource) {
+                    this.floquetSource.textContent = "Floquet boundary markers not configured.";
+                }
+                return;
+            }
+            try {
+                const response = await window.fetch(source, { cache: "no-cache" });
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}`);
+                }
+                const report = await response.json();
+                if (report.model_family !== "rule_flicker_ei" || !Array.isArray(report.boundary_candidates)) {
+                    throw new Error("Unexpected Rule Floquet report shape");
+                }
+                this.floquetBoundaryReport = report;
+                if (this.floquetSource) {
+                    const exact = report.boundary_candidates.filter((candidate) => candidate.evidence === "sign_change").length;
+                    const nearest = report.boundary_candidates.length - exact;
+                    this.floquetSource.textContent = `First-pass Floquet markers: ${exact} grid crossings, ${nearest} nearest-threshold hints.`;
+                }
+                if (this.mapReport) {
+                    this.renderMap();
+                }
+            } catch (error) {
+                this.floquetBoundaryReport = null;
+                if (this.floquetSource) {
+                    this.floquetSource.textContent = "Floquet boundary markers were not available.";
+                }
+                if (this.selectedMapPoint) {
+                    this.selectMapPoint(this.selectedMapPoint);
+                }
             }
         }
 
@@ -876,6 +972,34 @@
             }
         }
 
+        boundariesForPoint(point) {
+            const candidates =
+                this.floquetBoundaryReport && Array.isArray(this.floquetBoundaryReport.boundary_candidates)
+                    ? this.floquetBoundaryReport.boundary_candidates
+                    : [];
+            if (!point || !candidates.length || !this.mapReport || !Array.isArray(this.mapReport.points)) {
+                return [];
+            }
+            const periods = sortedUnique(this.mapReport.points.map((candidate) => candidate.period_ms));
+            const amplitudes = sortedUnique(this.mapReport.points.map((candidate) => candidate.amplitude));
+            const periodStep = medianStep(periods) || 10;
+            const amplitudeStep = medianStep(amplitudes) || 0.2;
+            return candidates
+                .filter(
+                    (candidate) =>
+                        Math.abs(candidate.period_ms - point.period_ms) <= periodStep / 2 + 1e-6 &&
+                        Math.abs(candidate.amplitude - point.amplitude) <= amplitudeStep / 2 + 1e-6 &&
+                        Math.abs((candidate.stim_i_fraction || 0) - (point.stim_i_fraction || 0)) < 1e-6,
+                )
+                .sort((a, b) => {
+                    const evidenceRank = (b.evidence === "sign_change") - (a.evidence === "sign_change");
+                    if (evidenceRank) {
+                        return evidenceRank;
+                    }
+                    return (b.confidence || 0) - (a.confidence || 0);
+                });
+        }
+
         renderMap() {
             if (!this.mapRoot || !this.mapReport || !Array.isArray(this.mapReport.points)) {
                 return;
@@ -914,15 +1038,24 @@
                     button.dataset.regime = pointRegimeKey(point);
                     button.dataset.period = period.toFixed(6);
                     button.dataset.amplitude = amplitude.toFixed(6);
+                    const boundary = point ? this.boundariesForPoint(point)[0] : null;
                     button.setAttribute(
                         "aria-label",
                         point
-                            ? `${period.toFixed(0)} ms, amplitude ${amplitude.toFixed(2)}: ${pointRegime(point)}, ${point.spatial_family}`
+                            ? `${period.toFixed(0)} ms, amplitude ${amplitude.toFixed(2)}: ${pointRegime(point)}, ${point.spatial_family}${boundary ? `, Floquet ${floquetBoundaryLabel(boundary)}` : ""}`
                             : `${period.toFixed(0)} ms, amplitude ${amplitude.toFixed(2)}: no data`,
                     );
                     if (point) {
                         const intensity = clamp(point.pattern_strength * 90, 0.14, 1);
                         button.style.setProperty("--rule-map-weight", `${Math.round(intensity * 100)}%`);
+                        if (boundary) {
+                            const marker = document.createElement("span");
+                            marker.className = "rule-explorer__map-marker";
+                            marker.dataset.kind = floquetBoundaryKey(boundary.kind);
+                            marker.dataset.evidence = boundary.evidence || "unknown";
+                            marker.textContent = floquetBoundaryShortLabel(boundary.kind);
+                            button.appendChild(marker);
+                        }
                         button.addEventListener("click", () => this.selectMapPoint(point));
                     } else {
                         button.disabled = true;
@@ -966,6 +1099,14 @@
             }
             if (this.mapFields.temporal) {
                 this.mapFields.temporal.textContent = pointTemporalLabel(point);
+            }
+            if (this.mapFields.floquet) {
+                const boundaries = this.boundariesForPoint(point);
+                this.mapFields.floquet.textContent = point
+                    ? boundaries.length
+                        ? boundaries.slice(0, 2).map(floquetBoundaryLabel).join("; ")
+                        : "no nearby boundary hint"
+                    : "pending";
             }
             if (this.mapFields.note) {
                 this.mapFields.note.textContent = point ? point.classification_note : "pending";

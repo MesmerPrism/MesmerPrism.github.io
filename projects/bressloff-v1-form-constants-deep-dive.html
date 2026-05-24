@@ -488,7 +488,7 @@
                 </article>
             </div>
 
-            <article class="rule-explorer" id="rule-explorer" data-rule-explorer data-rule-sweep-src="/assets/bressloff-v1/deep-dive/rule-2011-sweep.json" data-rule-map-src="/assets/bressloff-v1/deep-dive/rule-2011-sweep-dense.json">
+            <article class="rule-explorer" id="rule-explorer" data-rule-explorer data-rule-sweep-src="/assets/bressloff-v1/deep-dive/rule-2011-sweep.json" data-rule-map-src="/assets/bressloff-v1/deep-dive/rule-2011-sweep-dense.json" data-rule-floquet-src="/assets/bressloff-v1/deep-dive/rule-2011-floquet.json">
                 <div class="rule-explorer__intro">
                     <div>
                         <p class="cell-kicker">Rule Dynamics Explorer v1</p>
@@ -688,6 +688,9 @@
                     <p class="rule-explorer__source" data-rule-map-source>
                         Loading dense simulator-backed sweep map.
                     </p>
+                    <p class="rule-explorer__source" data-rule-floquet-source>
+                        Loading first-pass Floquet boundary markers.
+                    </p>
                     <div class="rule-explorer__map-wrap">
                         <div class="rule-explorer__map" data-rule-map aria-label="Rule frequency-amplitude sweep map"></div>
                         <div class="rule-explorer__map-detail">
@@ -697,6 +700,7 @@
                                 <div><dt>Regime</dt><dd data-rule-map-field="regime">pending</dd></div>
                                 <div><dt>Spatial score</dt><dd data-rule-map-field="spatial">pending</dd></div>
                                 <div><dt>Temporal score</dt><dd data-rule-map-field="temporal">pending</dd></div>
+                                <div><dt>Floquet</dt><dd data-rule-map-field="floquet">pending</dd></div>
                                 <div><dt>Note</dt><dd data-rule-map-field="note">pending</dd></div>
                             </dl>
                         </div>

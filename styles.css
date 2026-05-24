@@ -1108,12 +1108,54 @@ li {
 }
 
 .rule-explorer__map-cell {
+    position: relative;
+    display: grid;
+    place-items: center;
     width: 100%;
     aspect-ratio: 1;
     min-height: 1.45rem;
     border: 1px solid color-mix(in srgb, var(--line) 78%, transparent);
     background: color-mix(in srgb, #77604f var(--rule-map-weight, 40%), rgba(244, 239, 231, 0.78));
     cursor: pointer;
+}
+
+.rule-explorer__map-marker {
+    box-sizing: border-box;
+    display: grid;
+    place-items: center;
+    width: min(1.05rem, calc(100% - 2px));
+    max-width: calc(100% - 2px);
+    min-width: 0;
+    min-height: 0.86rem;
+    padding: 0 0.12rem;
+    border: 1px solid rgba(30, 23, 19, 0.28);
+    background: rgba(251, 248, 242, 0.9);
+    color: var(--text);
+    font-family: var(--font-mono);
+    font-size: 0.52rem;
+    line-height: 1;
+    overflow: hidden;
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+.rule-explorer__map-marker[data-kind="minus"] {
+    border-color: rgba(142, 73, 58, 0.64);
+    color: #743829;
+}
+
+.rule-explorer__map-marker[data-kind="plus"] {
+    border-color: rgba(88, 95, 64, 0.64);
+    color: #465032;
+}
+
+.rule-explorer__map-marker[data-kind="complex"] {
+    border-color: rgba(68, 87, 111, 0.64);
+    color: #34475e;
+}
+
+.rule-explorer__map-marker[data-evidence="nearest_margin"] {
+    background: rgba(251, 248, 242, 0.72);
 }
 
 .rule-explorer__map-cell[data-regime="period-doubled"] {
@@ -1701,6 +1743,12 @@ li {
         --rule-map-axis: 2.4rem;
         --rule-map-cell: 1rem;
         min-width: 0;
+    }
+
+    .rule-explorer__map-marker {
+        min-height: 0.72rem;
+        padding: 0;
+        font-size: 0.44rem;
     }
 
     .rule-explorer__map-detail canvas {
