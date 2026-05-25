@@ -122,6 +122,14 @@
         const nicksOrthogonalRows = nicksRows.filter((row) =>
             String(row.metrics?.classification || "").includes("orthogonal"),
         );
+        const nicksFigure8Rows = nicksRows.filter((row) => {
+            const region = row.source_target?.figure8_region;
+            return Boolean(
+                region?.source_parameter_match &&
+                    region?.gamma_on_source_grid &&
+                    region?.detuning_on_source_grid,
+            );
+        });
         const bestNicks = nicksOrthogonalRows.reduce((best, row) => {
             const error = row.wavevectors?.orthogonality_error_degrees;
             if (!Number.isFinite(error)) {
@@ -132,6 +140,7 @@
             }
             return best;
         }, null)?.row;
+        const bestNicksRegion = bestNicks?.source_target?.figure8_region || {};
         const sourceTargetCount =
             bolelliRows.filter((row) => row.source_target?.source_target_comparison).length +
             nicksRows.filter((row) => row.source_target?.source_target_comparison).length;
@@ -159,13 +168,13 @@
         setText(
             fields,
             "nicksSummary",
-            `${nicksOrthogonalRows.length}/${nicksRows.length} orthogonal-response sweep rows`,
+            `${nicksFigure8Rows.length}/${nicksRows.length} Figure 8-style source-grid rows`,
         );
         setText(
             fields,
             "nicksDetail",
             bestNicks
-                ? `detuning ${number(bestNicks.detuning_fraction, 2)}, target angle ${number(bestNicks.source_target?.target_response_angle_degrees, 1)} deg, angle error ${number(bestNicks.source_target?.angle_error_degrees, 1)} deg`
+                ? `detuning ${number(bestNicks.detuning_fraction, 2)}, angle error ${number(bestNicks.source_target?.angle_error_degrees, 1)} deg, ${bestNicksRegion.boundary_side || "region boundary diagnostic"}`
                 : "orthogonal-response rows unavailable",
         );
         setText(
