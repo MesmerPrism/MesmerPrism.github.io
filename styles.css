@@ -1341,6 +1341,96 @@ li {
     line-height: 1.45;
 }
 
+.report-strip--four {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.driven-diagnostics {
+    display: grid;
+    gap: 1rem;
+}
+
+.driven-diagnostics__grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1px;
+    border: 1px solid var(--line);
+    background: var(--line);
+}
+
+.driven-diagnostics__item {
+    display: grid;
+    gap: 0.8rem;
+    min-width: 0;
+    margin: 0;
+    padding: 1rem;
+    background: var(--panel);
+}
+
+.driven-diagnostics__item canvas {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1;
+    border: 1px solid rgba(30, 23, 19, 0.22);
+    background: #171413;
+    image-rendering: pixelated;
+}
+
+.driven-diagnostics__item figcaption {
+    display: grid;
+    gap: 0.35rem;
+    color: var(--muted);
+    font-family: var(--font-ui);
+    font-size: 0.86rem;
+    line-height: 1.42;
+}
+
+.driven-diagnostics__item figcaption strong {
+    color: var(--text);
+    font-size: 0.95rem;
+}
+
+.driven-diagnostics__meta {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1px;
+    border: 1px solid var(--line);
+    background: var(--line);
+}
+
+.driven-diagnostics__meta div {
+    display: grid;
+    gap: 0.2rem;
+    min-width: 0;
+    padding: 0.85rem 1rem;
+    background: rgba(251, 248, 242, 0.74);
+}
+
+.driven-diagnostics__meta dt {
+    color: var(--muted);
+    font-family: var(--font-ui);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.driven-diagnostics__meta dd {
+    margin: 0;
+    color: var(--text);
+    font-family: var(--font-ui);
+    font-size: 0.85rem;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+}
+
+.driven-diagnostics__source {
+    margin: 0;
+    color: var(--muted);
+    font-family: var(--font-ui);
+    font-size: 0.86rem;
+}
+
 .calibration-summary {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -1836,6 +1926,8 @@ li {
     .rule-explorer__intro,
     .rule-explorer__layout,
     .report-strip,
+    .driven-diagnostics__grid,
+    .driven-diagnostics__meta,
     .reference-grid,
     .two-column,
     .contact-list {

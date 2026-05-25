@@ -7,12 +7,12 @@
     <link rel="canonical" href="https://mesmerprism.com/projects/bressloff-v1-form-constants-deep-dive.html">
     <meta
         name="description"
-        content="A notebook-style deep dive into Bressloff orientation-hypercolumn form constants and Rule, Stoffregen, and Ermentrout flicker-induced phosphene modeling."
+        content="A notebook-style deep dive into Bressloff form constants, Rule flicker modeling, and generated driven neural-field diagnostics after Rule."
     >
     <meta property="og:title" content="Bressloff and Rule Modeling Deep Dive | Mesmer Prism">
     <meta
         property="og:description"
-        content="Sequential generated examples, model equations, calibration notes, and source boundaries for Bressloff V1 planforms and Rule flicker E/I simulations."
+        content="Generated examples, model equations, calibration notes, and source boundaries for Bressloff, Rule, MacKay, Bolelli, and Nicks neural-field diagnostics."
     >
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://mesmerprism.com/projects/bressloff-v1-form-constants-deep-dive.html">
@@ -57,6 +57,7 @@
                     <a class="action-link" href="#rule">Rule flicker model</a>
                     <a class="action-link" href="#rule-explorer">Rule explorer</a>
                     <a class="action-link" href="#after-rule">After Rule</a>
+                    <a class="action-link" href="#driven-reports">Driven reports</a>
                     <a class="action-link" href="/projects/bressloff-v1-form-constants.html">Bressloff overview</a>
                     <a class="action-link" href="#references">References</a>
                 </div>
@@ -74,6 +75,7 @@
             <a href="#rule">Rule equations</a>
             <a href="#rule-explorer">Rule explorer</a>
             <a href="#after-rule">After Rule</a>
+            <a href="#driven-reports">Driven reports</a>
             <a href="#ledger">Claim ledger</a>
             <a href="#rights-ledger">Rights ledger</a>
             <a href="#references">References</a>
@@ -985,21 +987,21 @@
                             <td>Nicks et al. 2021</td>
                             <td>Periodic spatial input</td>
                             <td>Orthogonal response and 2:1 resonance</td>
-                            <td>Billock-Tsou explanation</td>
+                            <td>Nicks generated diagnostic report</td>
                         </tr>
                         <tr>
                             <td>Localized static input</td>
                             <td>Tamekue et al. 2024</td>
                             <td>MacKay rays or target plus localized control</td>
                             <td>Input-biased orthogonal contours</td>
-                            <td>MacKay branch</td>
+                            <td>MacKay generated diagnostic report</td>
                         </tr>
                         <tr>
                             <td>Localized time-periodic input</td>
                             <td>Bolelli and Prandi 2025</td>
                             <td>Flickering localized input</td>
                             <td>Periodic state and contour width versus frequency/inhibition</td>
-                            <td>Modern endpoint and Brain Candy bridge</td>
+                            <td>Bolelli generated diagnostic report</td>
                         </tr>
                         <tr>
                             <td>Pinwheel architecture</td>
@@ -1083,6 +1085,86 @@
             </div>
         </section>
 
+        <section class="section" id="driven-reports">
+            <div class="section-heading">
+                <p class="section-kicker">Driven report surface</p>
+                <h2>The implemented continuation is diagnostic, not calibrated</h2>
+                <p>
+                    The current public assets expose three generated driven-field report
+                    families. The MacKay report covers localized stationary input. The
+                    Bolelli report covers localized time-periodic input and period-lock
+                    diagnostics. The Nicks report covers normalized 2:1 orthogonal-response
+                    amplitude diagnostics. None of these are paper-figure reproductions.
+                </p>
+            </div>
+            <div
+                class="driven-diagnostics"
+                data-driven-diagnostics
+                data-driven-registry-src="/assets/bressloff-v1/driven/driven-neural-fields-registry.json"
+                data-driven-mackay-src="/assets/bressloff-v1/driven/mackay-localized-input.json"
+                data-driven-bolelli-src="/assets/bressloff-v1/driven/bolelli-time-periodic-input.json"
+                data-driven-nicks-src="/assets/bressloff-v1/driven/nicks-orthogonal-response.json"
+            >
+                <div class="report-strip report-strip--four" aria-label="Driven neural-field implementation summary">
+                    <div>
+                        <strong data-driven-field="registryCount">...</strong>
+                        <span>registered driven examples in the public-safe model registry.</span>
+                    </div>
+                    <div>
+                        <strong data-driven-field="implementedCount">...</strong>
+                        <span>implemented entries with generated report targets.</span>
+                    </div>
+                    <div>
+                        <strong data-driven-field="partialCount">...</strong>
+                        <span>partial entries awaiting stronger source-target metrics.</span>
+                    </div>
+                    <div>
+                        <strong data-driven-field="reportCount">...</strong>
+                        <span>JSON report families mirrored into the website assets.</span>
+                    </div>
+                </div>
+                <div class="driven-diagnostics__grid" aria-label="Generated driven neural-field thumbnails">
+                    <figure class="driven-diagnostics__item">
+                        <canvas width="96" height="96" data-driven-canvas="mackay" aria-label="Generated MacKay localized input diagnostic"></canvas>
+                        <figcaption>
+                            <strong>MacKay localized input</strong>
+                            <span data-driven-field="mackaySummary">Generated fixed-point diagnostics loading...</span>
+                        </figcaption>
+                    </figure>
+                    <figure class="driven-diagnostics__item">
+                        <canvas width="192" height="40" data-driven-canvas="bolelli" aria-label="Generated Bolelli localized periodic input profile"></canvas>
+                        <figcaption>
+                            <strong>Bolelli localized periodic input</strong>
+                            <span data-driven-field="bolelliSummary">Generated period-lock diagnostics loading...</span>
+                            <span data-driven-field="bolelliDetail">Representative frequency loading...</span>
+                        </figcaption>
+                    </figure>
+                    <figure class="driven-diagnostics__item">
+                        <canvas width="96" height="96" data-driven-canvas="nicks" aria-label="Generated Nicks orthogonal-response map"></canvas>
+                        <figcaption>
+                            <strong>Nicks orthogonal response</strong>
+                            <span data-driven-field="nicksSummary">Generated amplitude-equation diagnostics loading...</span>
+                            <span data-driven-field="nicksDetail">Representative detuning loading...</span>
+                        </figcaption>
+                    </figure>
+                </div>
+                <dl class="driven-diagnostics__meta">
+                    <div>
+                        <dt>Claim level</dt>
+                        <dd data-driven-field="claimLevel">first-pass diagnostic</dd>
+                    </div>
+                    <div>
+                        <dt>Formats</dt>
+                        <dd data-driven-field="reportFormats">loading report formats...</dd>
+                    </div>
+                    <div>
+                        <dt>Source</dt>
+                        <dd data-driven-field="source">loading generated report JSON...</dd>
+                    </div>
+                </dl>
+            </div>
+        </section>
+
         <section class="section" id="ledger">
             <div class="section-heading">
                 <p class="section-kicker">Claim ledger</p>
@@ -1120,8 +1202,8 @@
                         </tr>
                         <tr>
                             <td>Later work extends the lineage toward driven neural fields.</td>
-                            <td>Public taxonomy separates spatial forcing, localized MacKay input, localized time-periodic input, pinwheel architecture, color extensions, contrast-gradient encoding, and perceptual grouping.</td>
-                            <td>Generate original diagrams for the Nicks, MacKay, and Bolelli-Prandi branches before adding visual panels.</td>
+                            <td>Public taxonomy separates spatial forcing, localized MacKay input, localized time-periodic input, pinwheel architecture, color extensions, contrast-gradient encoding, and perceptual grouping. MacKay, Bolelli, and Nicks now have generated first-pass diagnostic reports.</td>
+                            <td>Add source-derived numeric targets before calling any driven output calibrated.</td>
                         </tr>
                         <tr>
                             <td>Spatial forcing, localized input, and time-periodic input can explain every viewer's percept.</td>
@@ -1261,6 +1343,7 @@
                     <h3>Public implementation and context</h3>
                     <ul class="plain-list">
                         <li><strong>Mesmer Prism.</strong> "<a class="reference-link" href="https://github.com/MesmerPrism/bressloff-v1-form-constants" target="_blank" rel="noopener noreferrer">Bressloff V1 Form Constants Lab</a>." MIT-licensed Rust and browser implementation used for these generated assets.</li>
+                        <li><strong>Mesmer Prism.</strong> "<a class="reference-link" href="https://github.com/MesmerPrism/bressloff-v1-form-constants/blob/main/docs/DRIVEN_NEURAL_FIELDS_IMPLEMENTATION_PLAN.md" target="_blank" rel="noopener noreferrer">Driven Neural Fields Implementation Plan</a>." Public-safe implementation plan for generated MacKay, Bolelli, and Nicks diagnostics.</li>
                         <li><strong>Mesmer Prism.</strong> "<a class="reference-link" href="/projects/bressloff-v1-form-constants.html">Bressloff V1 Form Constants</a>." Public overview page for the same implementation.</li>
                         <li><strong>karacsm.</strong> "<a class="reference-link" href="https://github.com/karacsm/V1-sim" target="_blank" rel="noopener noreferrer">V1-sim</a>." Public notebook lineage for V1 activity and retino-cortical visualization.</li>
                         <li><strong>CountYourCulture.</strong> "<a class="reference-link" href="https://isomerdesign.com/countyourculture/2011/03/13/form-constants-visual-cortex/" target="_blank" rel="noopener noreferrer">Form Constants and the Visual Cortex</a>." Public visual explainer for the form-constant comparison lineage.</li>
@@ -1283,6 +1366,7 @@
     </footer>
     <script defer src="/scripts/rule-dynamics-explorer.js"></script>
     <script defer src="/scripts/bressloff-calibration-panel.js"></script>
+    <script defer src="/scripts/driven-field-diagnostics.js"></script>
     <script defer src="/assets/vendor/katex/katex.min.js"></script>
     <script defer src="/assets/vendor/katex/contrib/auto-render.min.js"></script>
     <script defer src="/scripts/math-render.js"></script>
