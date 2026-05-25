@@ -118,6 +118,7 @@
             : [];
         const mackayFirst = mackayExamples[0] || {};
         const bolelliRepresentative = nearestRow(bolelliRows, "frequency_lambda", 20) || {};
+        const bolelliTarget = bolelliRepresentative.source_target || {};
         const nicksOrthogonalRows = nicksRows.filter((row) =>
             String(row.metrics?.classification || "").includes("orthogonal"),
         );
@@ -131,12 +132,15 @@
             }
             return best;
         }, null)?.row;
+        const sourceTargetCount =
+            bolelliRows.filter((row) => row.source_target?.source_target_comparison).length +
+            nicksRows.filter((row) => row.source_target?.source_target_comparison).length;
 
         setText(fields, "registryCount", String(registryExamples.length));
         setText(fields, "implementedCount", `${implementedCount} implemented`);
         setText(fields, "partialCount", `${partialCount} partial`);
         setText(fields, "reportCount", "3 generated reports");
-        setText(fields, "claimLevel", "first-pass diagnostic");
+        setText(fields, "claimLevel", `${sourceTargetCount} source-target diagnostics; calibrated=false`);
         setText(
             fields,
             "mackaySummary",
@@ -150,7 +154,7 @@
         setText(
             fields,
             "bolelliDetail",
-            `lambda ${number(bolelliRepresentative.frequency_lambda, 0)}, residual ${scientific(bolelliRepresentative.metrics?.periodic_residual_linf)}, width ${number(bolelliRepresentative.metrics?.stripe_width_half_max, 2)}`,
+            `lambda ${number(bolelliRepresentative.frequency_lambda, 0)}, residual ${scientific(bolelliRepresentative.metrics?.periodic_residual_linf)}, generated width ${number(bolelliRepresentative.metrics?.stripe_width_half_max, 2)}, pole target ${number(bolelliTarget.target_width_principal_pole, 2)}`,
         );
         setText(
             fields,
@@ -161,7 +165,7 @@
             fields,
             "nicksDetail",
             bestNicks
-                ? `detuning ${number(bestNicks.detuning_fraction, 2)}, orthogonality error ${number(bestNicks.wavevectors?.orthogonality_error_degrees, 1)} deg`
+                ? `detuning ${number(bestNicks.detuning_fraction, 2)}, target angle ${number(bestNicks.source_target?.target_response_angle_degrees, 1)} deg, angle error ${number(bestNicks.source_target?.angle_error_degrees, 1)} deg`
                 : "orthogonal-response rows unavailable",
         );
         setText(
@@ -202,7 +206,7 @@
                 loadJson(sourceFor(root, "nicks")),
             ]);
             updateReportSummary(root, { registry, mackay, bolelli, nicks });
-            setText(fields, "source", "Generated report JSON loaded from public Mesmer Prism assets.");
+            setText(fields, "source", "Generated public report JSON loaded; PDFs and source figures remain private.");
         } catch (error) {
             setText(fields, "source", "Driven report JSON was not available.");
             root.dataset.loadError = String(error.message || error);
