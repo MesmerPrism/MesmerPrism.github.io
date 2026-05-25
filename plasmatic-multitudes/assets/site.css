@@ -8,6 +8,7 @@
   --ink-faint: rgba(18, 16, 15, 0.18);
   --max-width: 86rem;
   --measure: 74ch;
+  --page-gutter: 0.875rem;
 }
 
 *,
@@ -67,7 +68,7 @@ img {
 }
 
 .shell {
-  width: min(calc(100% - 1.75rem), var(--max-width));
+  width: min(calc(100% - var(--page-gutter) - var(--page-gutter)), var(--max-width));
   margin: 0 auto;
 }
 
@@ -559,6 +560,10 @@ main.shell {
 }
 
 @media (max-width: 640px) {
+  :root {
+    --page-gutter: clamp(1.25rem, 5vw, 2rem);
+  }
+
   html {
     scroll-padding-top: 1rem;
   }
@@ -570,10 +575,8 @@ main.shell {
   }
 
   .shell {
-    width: 100%;
-    max-width: 100%;
-    padding-right: 1rem;
-    padding-left: 1rem;
+    width: calc(100% - var(--page-gutter) - var(--page-gutter));
+    max-width: calc(100% - var(--page-gutter) - var(--page-gutter));
   }
 
   .site-header__inner {
@@ -609,8 +612,6 @@ main.shell {
   }
 
   main.shell {
-    width: 100%;
-    max-width: 100%;
     padding-bottom: 4rem;
   }
 
@@ -631,12 +632,13 @@ main.shell {
   .page-project .hero h1,
   .page-pain .hero h1,
   .page-background .hero h1 {
+    width: 100%;
     max-width: 100%;
     overflow-wrap: normal;
   }
 
   .deck {
-    max-width: min(100%, 22rem);
+    max-width: 100%;
     font-size: 1.06rem;
     overflow-wrap: break-word;
   }
@@ -654,7 +656,7 @@ main.shell {
   .references p,
   .references-list {
     width: 100%;
-    max-width: min(100%, 20rem);
+    max-width: 100%;
     min-width: 0;
   }
 
@@ -667,7 +669,7 @@ main.shell {
   .panel h3,
   .article h2,
   .references h2 {
-    max-width: min(100%, 20rem);
+    max-width: 100%;
     margin-right: 0;
     margin-left: 0;
     text-align: left;

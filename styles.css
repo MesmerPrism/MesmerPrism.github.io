@@ -13,6 +13,7 @@
     --font-mono: Consolas, "Cascadia Mono", "SFMono-Regular", monospace;
     --measure: 46rem;
     --shell: 72rem;
+    --page-gutter: 1rem;
     --sticky-scroll-offset: 5.75rem;
 }
 
@@ -49,7 +50,7 @@ a:hover {
 }
 
 .shell {
-    width: min(calc(100% - 2rem), var(--shell));
+    width: min(calc(100% - var(--page-gutter) - var(--page-gutter)), var(--shell));
     margin: 0 auto;
 }
 
@@ -1848,12 +1849,13 @@ li {
 
 @media (max-width: 720px) {
     :root {
+        --page-gutter: clamp(1.25rem, 5vw, 2rem);
         --sticky-scroll-offset: 1rem;
     }
 
     .shell {
-        width: calc(100vw - 2rem);
-        max-width: calc(100vw - 2rem);
+        width: calc(100% - var(--page-gutter) - var(--page-gutter));
+        max-width: calc(100% - var(--page-gutter) - var(--page-gutter));
     }
 
     .site-header {
