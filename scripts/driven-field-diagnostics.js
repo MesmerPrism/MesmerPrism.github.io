@@ -145,6 +145,7 @@
             ? reports.nicks.figure8_residual_field.rows
             : [];
         const nicksRobustResidualRows = nicksResidualRows.filter((row) => row.robust_region_side);
+        const nicksAcceptance = reports.nicks.figure8_acceptance_policy || {};
         const bestNicks = nicksOrthogonalRows.reduce((best, row) => {
             const error = row.wavevectors?.orthogonality_error_degrees;
             if (!Number.isFinite(error)) {
@@ -183,15 +184,17 @@
         setText(
             fields,
             "nicksSummary",
-            nicksResidualRows.length
-                ? `${nicksRobustResidualRows.length}/${nicksResidualRows.length} source-grid residual cells robust`
+            Number.isFinite(nicksAcceptance.source_grid_rows)
+                ? `${nicksAcceptance.robust_region_rows}/${nicksAcceptance.source_grid_rows} source-grid cells robust; threshold gamma ${number(nicksAcceptance.region_margin_threshold_gamma, 3)}`
+                : nicksResidualRows.length
+                  ? `${nicksRobustResidualRows.length}/${nicksResidualRows.length} source-grid residual cells robust`
                 : `${nicksBoundaryRows.length}/${nicksRows.length} source-equation boundary residual rows`,
         );
         setText(
             fields,
             "nicksDetail",
             bestNicks
-                ? `detuning ${number(bestNicks.detuning_fraction, 2)}, angle error ${number(bestNicks.source_target?.angle_error_degrees, 1)} deg, ${bestNicksRegion.region_margin_status || bestNicksRegion.boundary_side || "region boundary diagnostic"}`
+                ? `detuning ${number(bestNicks.detuning_fraction, 2)}, angle error ${number(bestNicks.source_target?.angle_error_degrees, 1)} deg, ${bestNicksRegion.region_margin_status || bestNicksRegion.boundary_side || "region boundary diagnostic"}; ${nicksAcceptance.boundary_adjacent_rows ?? 0} boundary-adjacent diagnostics`
                 : "orthogonal-response rows unavailable",
         );
         setText(

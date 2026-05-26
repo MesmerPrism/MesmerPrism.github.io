@@ -733,10 +733,13 @@ The implemented continuation is source-target diagnostic, not calibrated
  families. The MacKay report covers localized stationary input. The
  Bolelli report covers localized time-periodic input, period-lock
  diagnostics, and an accepted source-side principal-pole width
- convention.
- The Nicks report covers 2:1 orthogonal-response amplitude
+ convention with generated decay-width fit diagnostics and
+ Figure 5 source-equation curve samples. This is not
+ source-panel calibration. The Nicks report
+ covers 2:1 orthogonal-response amplitude
  diagnostics, Appendix-B kernel-derived coefficient tables,
- and source-equation Figure 8 boundary residual checks. None
+ source-equation Figure 8 boundary residual checks, and a
+ source-derived acceptance policy. None
  of these are paper-figure reproductions or calibration
  claims.
 
@@ -794,7 +797,7 @@ What the original papers say about software
 
  Bolelli-Prandi periodic input
  Mathematica for principal-pole calculations and Julia for nonlinear mean-field simulations.
- Pole-width formulas are source-target diagnostics; generated stripe widths stay separate until conventions match.
+ Pole-width formulas are source-target diagnostics; Figure 5 source-equation curves are generated from equations, and generated decay-width fits share the convention only when the fit gate passes. True source-panel digitization is reserved for later plot-image comparison.
 
  Veltz pinwheel architecture
  Trilinos, FFTW, PETSc, petsc4py , Newton-Krylov/GMRES, Arnoldi eigensolvers, BDF integration, and large meshes.
@@ -825,10 +828,10 @@ Current claim level
 
 Implementation consequence
 
- Near-term work should keep improving Bolelli pole-width conventions and
- Nicks region-boundary residuals. Veltz/Faugeras continuation, GPU, color,
- and pinwheel stacks should wait until the report layer can support that
- complexity.
+ Near-term work should keep tightening Bolelli source-equation
+ diagnostics and Nicks region-boundary residual policies. Veltz/Faugeras
+ continuation, GPU, color, and pinwheel stacks should wait until
+ the report layer can support that complexity.
 
  Claim ledger
 

@@ -1189,10 +1189,12 @@
                     Bolelli report covers localized time-periodic input, period-lock
                     diagnostics, and an accepted source-side principal-pole width
                     convention with generated decay-width fit diagnostics and
-                    Figure 5 source-equation curve samples. The Nicks report
+                    Figure 5 source-equation curve samples. This is not
+                    source-panel calibration. The Nicks report
                     covers 2:1 orthogonal-response amplitude
                     diagnostics, Appendix-B kernel-derived coefficient tables,
-                    and source-equation Figure 8 boundary residual checks. None
+                    source-equation Figure 8 boundary residual checks, and a
+                    source-derived acceptance policy. None
                     of these are paper-figure reproductions or calibration
                     claims.
                 </p>
@@ -1312,7 +1314,7 @@
                         <tr>
                             <td>Bolelli-Prandi periodic input</td>
                             <td>Mathematica for principal-pole calculations and Julia for nonlinear mean-field simulations.</td>
-                            <td>Pole-width formulas are source-target diagnostics; Figure 5 source-equation curves are generated from equations, and generated decay-width fits share the convention only when the fit gate passes.</td>
+                            <td>Pole-width formulas are source-target diagnostics; Figure 5 source-equation curves are generated from equations, and generated decay-width fits share the convention only when the fit gate passes. True source-panel digitization is reserved for later plot-image comparison.</td>
                         </tr>
                         <tr>
                             <td>Veltz pinwheel architecture</td>
@@ -1356,8 +1358,8 @@
                 <section class="detail-block">
                     <h3>Implementation consequence</h3>
                     <p>
-                        Near-term work should keep tightening Bolelli source-panel
-                        thresholds and Nicks region-boundary residuals. Veltz/Faugeras
+                        Near-term work should keep tightening Bolelli source-equation
+                        diagnostics and Nicks region-boundary residual policies. Veltz/Faugeras
                         continuation, GPU, color, and pinwheel stacks should wait until
                         the report layer can support that complexity.
                     </p>
