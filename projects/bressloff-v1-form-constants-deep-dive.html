@@ -58,6 +58,7 @@
                     <a class="action-link" href="#rule-explorer">Rule explorer</a>
                     <a class="action-link" href="#after-rule">After Rule</a>
                     <a class="action-link" href="#driven-reports">Driven reports</a>
+                    <a class="action-link" href="#source-methods">Source methods</a>
                     <a class="action-link" href="/projects/bressloff-v1-form-constants.html">Bressloff overview</a>
                     <a class="action-link" href="#references">References</a>
                 </div>
@@ -76,6 +77,7 @@
             <a href="#rule-explorer">Rule explorer</a>
             <a href="#after-rule">After Rule</a>
             <a href="#driven-reports">Driven reports</a>
+            <a href="#source-methods">Source methods</a>
             <a href="#ledger">Claim ledger</a>
             <a href="#rights-ledger">Rights ledger</a>
             <a href="#references">References</a>
@@ -1170,6 +1172,106 @@
             </div>
         </section>
 
+        <section class="section" id="source-methods">
+            <div class="section-heading">
+                <p class="section-kicker">Computational provenance</p>
+                <h2>What the original papers say about software</h2>
+                <p>
+                    The source record is mixed. Some papers name concrete software stacks;
+                    others mainly expose equations, symmetry arguments, numerical methods, or
+                    figure descriptions. Mesmer Prism uses that provenance to decide what kind
+                    of implementation is credible here, while keeping the public outputs as
+                    generated diagnostics and source-target comparisons rather than
+                    original-code reproductions.
+                </p>
+            </div>
+
+            <div class="status-table-wrap">
+                <table class="status-table">
+                    <thead>
+                        <tr>
+                            <th>Source track</th>
+                            <th>Original-author workflow named in the paper record</th>
+                            <th>How Mesmer Prism treats it</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Bressloff form constants</td>
+                            <td>Analytic retinocortical map, Euclidean symmetry, orientation-hypercolumn planforms, and bifurcation analysis; no named figure-code stack identified.</td>
+                            <td>Independent Rust implementation with generated planforms and explicit comparison reports, not original-code reuse.</td>
+                        </tr>
+                        <tr>
+                            <td>Rule flicker E/I field</td>
+                            <td>AUTO through XPPAUT, Floquet/monodromy stability calculations, and custom two-dimensional periodic-grid simulations.</td>
+                            <td>Rust sweep and Floquet diagnostics stay first-pass until report-backed source-axis fits support stronger language.</td>
+                        </tr>
+                        <tr>
+                            <td>Nicks spatial forcing</td>
+                            <td>MATLAB simulations, FFT-based pseudo-spectral convolution, <code>ode45</code>, and XPPAUT checks for reduced amplitude-equation stability.</td>
+                            <td>Current reports implement reduced amplitude-equation and boundary diagnostics; full half-space field simulations remain deferred.</td>
+                        </tr>
+                        <tr>
+                            <td>Tamekue-Prandi-Chitour MacKay model</td>
+                            <td>Julia visualization/solver workflow and fixed-point iteration for stationary Amari neural fields.</td>
+                            <td>The Rust MacKay report keeps a compact fixed-point diagnostic and records generated metrics without claiming source-panel reproduction.</td>
+                        </tr>
+                        <tr>
+                            <td>Bolelli-Prandi periodic input</td>
+                            <td>Mathematica for principal-pole calculations and Julia for nonlinear mean-field simulations.</td>
+                            <td>Pole-width formulas are source-target diagnostics; generated stripe widths stay separate until conventions match.</td>
+                        </tr>
+                        <tr>
+                            <td>Veltz pinwheel architecture</td>
+                            <td>Trilinos, FFTW, PETSc, <code>petsc4py</code>, Newton-Krylov/GMRES, Arnoldi eigensolvers, BDF integration, and large meshes.</td>
+                            <td>Pinwheel dynamics are treated as a high-cost architecture extension, not near-term Rust report work.</td>
+                        </tr>
+                        <tr>
+                            <td>Faugeras-Song-Veltz color field</td>
+                            <td>Julia, BifurcationKit.jl, KrylovKit.jl, pseudo-arclength continuation, CUDA.jl, and GPU FFTs.</td>
+                            <td>Color hallucinations and localized snaking remain deferred until the project has a continuation/color architecture layer.</td>
+                        </tr>
+                        <tr>
+                            <td>Carroll-Bressloff and Sarti-Citti</td>
+                            <td>Mathematica algebraic checks for Carroll-Bressloff; mean-field discretization, affinity matrices, eigenvectors, and MCMC-style estimation for Sarti-Citti.</td>
+                            <td>Both stay as adjacent perceptual-function tracks unless this project expands beyond driven hallucination-style diagnostics.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="reference-grid" aria-label="Original author software method implications">
+                <section class="detail-block">
+                    <h3>Why this matters</h3>
+                    <p>
+                        The original papers do not share one software lineage. Some are
+                        analytic, some are continuation-heavy, and some use MATLAB, Julia, or
+                        Mathematica for specific parts of the workflow. A single Rust simulator
+                        should therefore expose model-family reports and validation status
+                        rather than pretending all figures come from one executable model.
+                    </p>
+                </section>
+                <section class="detail-block">
+                    <h3>Current claim level</h3>
+                    <p>
+                        The generated assets here are diagnostics, calibration targets, and
+                        source-target comparisons. They are not produced by the authors'
+                        original scripts, and they are not presented as calibrated
+                        reproductions of private or permission-bound source figures.
+                    </p>
+                </section>
+                <section class="detail-block">
+                    <h3>Implementation consequence</h3>
+                    <p>
+                        Near-term work should keep improving Bolelli pole-width conventions and
+                        Nicks region-boundary residuals. Veltz/Faugeras continuation, GPU, color,
+                        and pinwheel stacks should wait until the report layer can support that
+                        complexity.
+                    </p>
+                </section>
+            </div>
+        </section>
+
         <section class="section" id="ledger">
             <div class="section-heading">
                 <p class="section-kicker">Claim ledger</p>
@@ -1209,6 +1311,11 @@
                             <td>Later work extends the lineage toward driven neural fields.</td>
                             <td>Public taxonomy separates spatial forcing, localized MacKay input, localized time-periodic input, pinwheel architecture, color extensions, contrast-gradient encoding, and perceptual grouping. MacKay, Bolelli, and Nicks now have generated first-pass diagnostic reports.</td>
                             <td>Add source-derived numeric targets before calling any driven output calibrated.</td>
+                        </tr>
+                        <tr>
+                            <td>The original papers used one shared software stack.</td>
+                            <td>Not claimed here. The source record names different workflows across papers, including XPPAUT/AUTO, MATLAB, Julia, Mathematica, PETSc/Trilinos, and BifurcationKit.</td>
+                            <td>Keep implementation provenance separate from generated-report validation.</td>
                         </tr>
                         <tr>
                             <td>Spatial forcing, localized input, and time-periodic input can explain every viewer's percept.</td>
@@ -1349,6 +1456,8 @@
                     <ul class="plain-list">
                         <li><strong>Mesmer Prism.</strong> "<a class="reference-link" href="https://github.com/MesmerPrism/bressloff-v1-form-constants" target="_blank" rel="noopener noreferrer">Bressloff V1 Form Constants Lab</a>." MIT-licensed Rust and browser implementation used for these generated assets.</li>
                         <li><strong>Mesmer Prism.</strong> "<a class="reference-link" href="https://github.com/MesmerPrism/bressloff-v1-form-constants/blob/main/docs/DRIVEN_NEURAL_FIELDS_IMPLEMENTATION_PLAN.md" target="_blank" rel="noopener noreferrer">Driven Neural Fields Implementation Plan</a>." Public-safe implementation plan for generated MacKay, Bolelli, and Nicks diagnostics.</li>
+                        <li><strong>Mesmer Prism.</strong> "<a class="reference-link" href="https://github.com/MesmerPrism/bressloff-v1-form-constants/blob/main/docs/ORIGINAL_AUTHOR_SOFTWARE_METHODS.md" target="_blank" rel="noopener noreferrer">Original Author Software Methods</a>." Public-safe provenance note for software and numerical methods named in the source papers.</li>
+                        <li><strong>BifurcationKit contributors.</strong> "<a class="reference-link" href="https://github.com/bifurcationkit/BifurcationKit.jl" target="_blank" rel="noopener noreferrer">BifurcationKit.jl</a>." Public Julia package named in the continuation lineage for the color-hallucination work.</li>
                         <li><strong>Mesmer Prism.</strong> "<a class="reference-link" href="/projects/bressloff-v1-form-constants.html">Bressloff V1 Form Constants</a>." Public overview page for the same implementation.</li>
                         <li><strong>karacsm.</strong> "<a class="reference-link" href="https://github.com/karacsm/V1-sim" target="_blank" rel="noopener noreferrer">V1-sim</a>." Public notebook lineage for V1 activity and retino-cortical visualization.</li>
                         <li><strong>CountYourCulture.</strong> "<a class="reference-link" href="https://isomerdesign.com/countyourculture/2011/03/13/form-constants-visual-cortex/" target="_blank" rel="noopener noreferrer">Form Constants and the Visual Cortex</a>." Public visual explainer for the form-constant comparison lineage.</li>
