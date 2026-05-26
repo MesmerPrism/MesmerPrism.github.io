@@ -1,0 +1,405 @@
+[
+  {
+    "id": "braincandyapp-com-brain-candy",
+    "type": "webpage",
+    "title": "Brain Candy",
+    "URL": "https://braincandyapp.com/",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Flashing Light Safety | Strobotorch: https://mesmerprism.com/Strobotorch/flashing-light-safety/"
+  },
+  {
+    "id": "epilepsy-foundation-photosensitivity-and-seizures-epilepsy-foundation-photosensitivity-and-seizures",
+    "type": "webpage",
+    "title": "Epilepsy Foundation: Photosensitivity and seizures",
+    "URL": "https://www.epilepsy.com/what-is-epilepsy/seizure-triggers/photosensitivity",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Flashing Light Safety | Strobotorch: https://mesmerprism.com/Strobotorch/flashing-light-safety/",
+    "author": [
+      {
+        "literal": "Epilepsy Foundation: Photosensitivity and seizures"
+      }
+    ]
+  },
+  {
+    "id": "epilepsy-action-photosensitive-epilepsy-epilepsy-action-photosensitive-epilepsy",
+    "type": "webpage",
+    "title": "Epilepsy Action: Photosensitive epilepsy",
+    "URL": "https://www.epilepsy.org.uk/info/seizure-triggers/photosensitive-epilepsy",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Flashing Light Safety | Strobotorch: https://mesmerprism.com/Strobotorch/flashing-light-safety/",
+    "author": [
+      {
+        "literal": "Epilepsy Action: Photosensitive epilepsy"
+      }
+    ]
+  },
+  {
+    "id": "epilepsy-society-photosensitive-epilepsy-epilepsy-society-photosensitive-epilepsy-2025",
+    "type": "webpage",
+    "title": "Epilepsy Society: Photosensitive epilepsy",
+    "URL": "https://epilepsysociety.org.uk/about-epilepsy/epileptic-seizures/seizure-triggers/photosensitive-epilepsy",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Flashing Light Safety | Strobotorch: https://mesmerprism.com/Strobotorch/flashing-light-safety/",
+    "author": [
+      {
+        "literal": "Epilepsy Society: Photosensitive epilepsy"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2025
+        ]
+      ]
+    }
+  },
+  {
+    "id": "w3c-wcag-2-3-1-three-flashes-or-below-threshold-w3c-wcag-2-3-1-three-flashes-or-below-threshold-2025",
+    "type": "webpage",
+    "title": "W3C WCAG 2.3.1: Three Flashes or Below Threshold",
+    "URL": "https://w3c.github.io/wcag/understanding/three-flashes-or-below-threshold.html",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Flashing Light Safety | Strobotorch: https://mesmerprism.com/Strobotorch/flashing-light-safety/",
+    "author": [
+      {
+        "literal": "W3C WCAG 2.3.1: Three Flashes or Below Threshold"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2025
+        ]
+      ]
+    }
+  },
+  {
+    "id": "hewitt-et-al-2025-historical-phenomenological-and-neurob-hewitt-et-al-2025-historical-phenomenological-and-neurob-2025",
+    "type": "article-journal",
+    "title": "Hewitt et al. (2025), historical, phenomenological, and neurobiological review",
+    "URL": "https://doi.org/10.1093/nc/niaf020",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Flashing Light Safety | Strobotorch: https://mesmerprism.com/Strobotorch/flashing-light-safety/",
+    "author": [
+      {
+        "literal": "Hewitt et al. (2025), historical, phenomenological, and neurobiological review"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2025
+        ]
+      ]
+    },
+    "DOI": "10.1093/nc/niaf020"
+  },
+  {
+    "id": "bartossek-kemmerer-and-schmidt-2021-visual-flicker-light-bartossek-kemmerer-and-schmidt-2021-visual-flicker-light-2025",
+    "type": "article-journal",
+    "title": "Bartossek, Kemmerer, and Schmidt (2021), visual flicker light stimulation",
+    "URL": "https://doi.org/10.1371/journal.pone.0253779",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Flashing Light Safety | Strobotorch: https://mesmerprism.com/Strobotorch/flashing-light-safety/",
+    "author": [
+      {
+        "literal": "Bartossek, Kemmerer, and Schmidt (2021), visual flicker light stimulation"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2025
+        ]
+      ]
+    },
+    "DOI": "10.1371/journal.pone.0253779"
+  },
+  {
+    "id": "amaya-et-al-2023-frequency-and-rhythmicity-effects-amaya-et-al-2023-frequency-and-rhythmicity-effects-2025",
+    "type": "article-journal",
+    "title": "Amaya et al. (2023), frequency and rhythmicity effects",
+    "URL": "https://doi.org/10.1371/journal.pone.0284271",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Flashing Light Safety | Strobotorch: https://mesmerprism.com/Strobotorch/flashing-light-safety/",
+    "author": [
+      {
+        "literal": "Amaya et al. (2023), frequency and rhythmicity effects"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2025
+        ]
+      ]
+    },
+    "DOI": "10.1371/journal.pone.0284271"
+  },
+  {
+    "id": "shenyan-et-al-2024-ganzflicker-and-ganzfeld-comparison-shenyan-et-al-2024-ganzflicker-and-ganzfeld-comparison-2025",
+    "type": "article-journal",
+    "title": "Shenyan et al. (2024), Ganzflicker and Ganzfeld comparison",
+    "URL": "https://doi.org/10.1038/s41598-024-52372-1",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Flashing Light Safety | Strobotorch: https://mesmerprism.com/Strobotorch/flashing-light-safety/",
+    "author": [
+      {
+        "literal": "Shenyan et al. (2024), Ganzflicker and Ganzfeld comparison"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2025
+        ]
+      ]
+    },
+    "DOI": "10.1038/s41598-024-52372-1"
+  },
+  {
+    "id": "iaccarino-et-al-2016-40-hz-gamma-frequency-entrainment-i-iaccarino-et-al-2016-40-hz-gamma-frequency-entrainment-i-2021",
+    "type": "article-journal",
+    "title": "Iaccarino et al. (2016), 40 Hz gamma frequency entrainment in mouse models",
+    "URL": "https://doi.org/10.1038/nature20587",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Flashing Light Safety | Strobotorch: https://mesmerprism.com/Strobotorch/flashing-light-safety/",
+    "author": [
+      {
+        "literal": "Iaccarino et al. (2016), 40 Hz gamma frequency entrainment in mouse models"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2021
+        ]
+      ]
+    },
+    "DOI": "10.1038/nature20587"
+  },
+  {
+    "id": "chan-et-al-2022-40-hz-sensory-stimulation-feasibility-pi-chan-et-al-2022-40-hz-sensory-stimulation-feasibility-pi-2023",
+    "type": "article-journal",
+    "title": "Chan et al. (2022), 40 Hz sensory stimulation feasibility/pilot studies",
+    "URL": "https://doi.org/10.1371/journal.pone.0278412",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Flashing Light Safety | Strobotorch: https://mesmerprism.com/Strobotorch/flashing-light-safety/",
+    "author": [
+      {
+        "literal": "Chan et al. (2022), 40 Hz sensory stimulation feasibility/pilot studies"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2023
+        ]
+      ]
+    },
+    "DOI": "10.1371/journal.pone.0278412"
+  },
+  {
+    "id": "alamalhoda-et-al-2025-repeated-60-hz-flickering-white-li-alamalhoda-et-al-2025-repeated-60-hz-flickering-white-li-2024",
+    "type": "article-journal",
+    "title": "Alamalhoda et al. (2025), repeated 60 Hz flickering white light in healthy volunteers",
+    "URL": "https://doi.org/10.1371/journal.pone.0332310",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Flashing Light Safety | Strobotorch: https://mesmerprism.com/Strobotorch/flashing-light-safety/",
+    "author": [
+      {
+        "literal": "Alamalhoda et al. (2025), repeated 60 Hz flickering white light in healthy volunteers"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2024
+        ]
+      ]
+    },
+    "DOI": "10.1371/journal.pone.0332310"
+  },
+  {
+    "id": "clinicaltrials-gov-nct06922812-60-hz-intermittent-white--clinicaltrials-gov-nct06922812-60-hz-intermittent-white--2016",
+    "type": "webpage",
+    "title": "ClinicalTrials.gov NCT06922812, 60 Hz intermittent white light in MDD",
+    "URL": "https://clinicaltrials.gov/study/NCT06922812",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Flashing Light Safety | Strobotorch: https://mesmerprism.com/Strobotorch/flashing-light-safety/",
+    "author": [
+      {
+        "literal": "ClinicalTrials.gov NCT06922812, 60 Hz intermittent white light in MDD"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2016
+        ]
+      ]
+    }
+  },
+  {
+    "id": "vis-et-al-2021-hppd-systematic-review-vis-et-al-2021-hppd-systematic-review-2025",
+    "type": "article-journal",
+    "title": "Vis et al. (2021), HPPD systematic review",
+    "URL": "https://doi.org/10.3389/fnins.2021.675768",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Flashing Light Safety | Strobotorch: https://mesmerprism.com/Strobotorch/flashing-light-safety/",
+    "author": [
+      {
+        "literal": "Vis et al. (2021), HPPD systematic review"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2025
+        ]
+      ]
+    },
+    "DOI": "10.3389/fnins.2021.675768"
+  },
+  {
+    "id": "sampatakakis-et-al-2022-visual-snow-review-and-case-seri-sampatakakis-et-al-2022-visual-snow-review-and-case-seri-2025",
+    "type": "article-journal",
+    "title": "Sampatakakis et al. (2022), visual snow review and case series",
+    "URL": "https://doi.org/10.1177/03331024221118917",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Flashing Light Safety | Strobotorch: https://mesmerprism.com/Strobotorch/flashing-light-safety/",
+    "author": [
+      {
+        "literal": "Sampatakakis et al. (2022), visual snow review and case series"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2025
+        ]
+      ]
+    },
+    "DOI": "10.1177/03331024221118917"
+  }
+]

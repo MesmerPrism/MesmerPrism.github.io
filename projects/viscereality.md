@@ -1,0 +1,130 @@
+# Viscereality
+
+Source: https://mesmerprism.com/projects/viscereality.html
+Canonical HTML: https://mesmerprism.com/projects/viscereality.html
+Generated: 2026-05-26
+Description: Viscereality is a Quest-based bioresponsive VR research system for breath interaction, cardiac coherence training, oscillator-driven visuals, and repeatable study sessions.
+Markdown: https://mesmerprism.com/projects/viscereality.md
+Plain text: https://mesmerprism.com/projects/viscereality.txt
+BibTeX references: https://mesmerprism.com/projects/viscereality.bib
+CSL JSON references: https://mesmerprism.com/projects/viscereality.references.csl.json
+
+---
+
+Current XR research system
+
+# Viscereality
+
+ Viscereality is a Quest-based biofeedback research system that links
+ breathing, cardiac rhythm, oscillator-driven visuals, and visual state
+ changes. It combines a participant VR runtime with an operator workflow for
+ running repeatable research sessions around regulation, coherence, and
+ embodied interaction.
+
+ [Project site](https://viscereality.org/)
+ [Companion app](https://mesmerprism.com/projects/viscereality-companion.html)
+ [Docs & downloads](https://mesmerprism.github.io/ViscerealityCompanion/)
+ [Back to work](https://mesmerprism.com/#work)
+
+ Direction
+
+## System shape
+
+ Viscereality is a research system for making breath, heart rhythm, visual
+ state, and operator workflow repeatable enough to study. It builds an
+ environment where breath pacing, interoceptive feedback, oscillator-driven
+ motion, and visual state changes can be aligned tightly enough to become
+ experimentally meaningful.
+
+ The system has two visible parts. The participant runtime on Quest couples
+ breathing sources, heart-rate signals, coherence metrics, and visual structure
+ in real time. The Windows operator workflow keeps installation, launch,
+ monitoring, telemetry, study-shell control, and session evidence outside the
+ headset so research sessions remain stable and reproducible.
+
+ The description focuses on system architecture and design aims. Claims about
+ participant outcomes belong in the cited proceedings or future participant data
+ rather than in the interface description alone.
+
+### Current focus
+
+- Breath-linked visual interaction and respiratory pacing
+
+- Cardiac biofeedback and coherence-oriented training interfaces
+
+- Oscillator-driven particle systems and structured visual symmetries
+
+- Quest study tooling, transport, monitoring, and operator-shell design
+
+### Public systems and links
+
+- [viscereality.org](https://viscereality.org/) is the main project site for the broader Viscereality system
+
+- [Quest Companion Tools](https://mesmerprism.com/projects/viscereality-companion.html) covers install, launch, monitoring, study shells, and custom adaptation work
+
+- [Plasmatic Multitudes](https://mesmerprism.com/projects/plasmatic-multitudes.html) for the semi-corporeal and embodiment-facing design layer
+
+- [Brain Candy](https://mesmerprism.com/projects/brain-candy.html) for guided state-shift design and altered-perception framing
+
+ Translation
+
+## Why it matters
+
+ Viscereality matters because biofeedback VR only becomes researchable when
+ participant experience, sensor reliability, visual behavior, and operator
+ workflow are stable enough to repeat. Breath, heartbeat, coherence metrics,
+ oscillator visuals, and study guidance have to survive headset thermals,
+ transport issues, and operator burden together.
+
+ That makes the participant runtime and the Windows companion part of the same
+ research object. One shapes the experience inside the headset; the other makes
+ installation, launch, monitoring, and session evidence repeatable outside it.
+
+### System parts
+
+- Standalone Quest runtime with oscillator-driven particle rendering
+
+- Breath, heartbeat, coherence, and runtime-config pathways
+
+- Windows operator shell for launch, monitoring, installation, study guidance, and collaborator transfer
+
+- Publications across immersive systems, breath interaction, and coherence training
+
+### Status
+
+- The current release path supports collaboration with [Hugo Critchley's lab at Sussex](https://www.sussex.ac.uk/research/centres/sussex-neuroscience/phd/4yearphd/supervisors/translational-projects/hugo-critchley-project)
+
+- The companion app handles install, launch, monitoring, and session guidance from Windows
+
+- General-purpose operator tooling follows once that workflow is stable enough to reuse cleanly
+
+ References
+
+## Current references
+
+ These are the main public papers and system links currently defining
+ Viscereality. They anchor the breath, biofeedback,
+ visualization, and study-tooling descriptions separately from broader aspirations
+ about altered experience.
+
+### Papers and public outputs
+
+- Fejer et al. "[Breathing Space: Spatial Mapping of Breath and Cardiac Biofeedback for Affective State Representation and Coherence Training in Viscereality](https://doi.org/10.1145/3780045.3780061)." AlpCHI proceedings (2026).
+
+- Fejer et al. "[Viscereality: A Bio-responsive VR System for Breath-Based Interactions and Coupled Oscillator Dynamics to Augment Altered States of Consciousness](https://doi.org/10.18420/muc2025-mci-ws11-174)." Mensch und Computer workshop proceedings (2025).
+
+- Barton et al. "[The Restorative and State Enhancing Potential of Abstract Fractal-Like Imagery and Interactive Mindfulness Interventions in Virtual Reality](https://doi.org/10.1007/s10055-023-00916-7)." Virtual Reality (2024).
+
+- Pinilla et al. "[Affective Visualization in Virtual Reality: An Integrative Review](https://doi.org/10.3389/frvir.2021.630731)." Frontiers in Virtual Reality (2021).
+
+### Public systems and research links
+
+- Viscereality project site. [viscereality.org](https://viscereality.org/) describes the system and its current experiential framing.
+
+- Alius Research project page. [aliusresearch.org/viscereality.html](https://aliusresearch.org/viscereality.html) situates the project within its broader research context.
+
+- Current Quest runtime. The participant-facing runtime is described through [viscereality.org](https://viscereality.org/), Mesmer Prism, and the cited papers; source release decisions follow the research collaboration requirements.
+
+- Viscereality Companion. [The companion page](https://mesmerprism.com/projects/viscereality-companion.html), the public [docs and downloads](https://mesmerprism.github.io/ViscerealityCompanion/), and [the source repository](https://github.com/MesmerPrism/ViscerealityCompanion) cover the Windows operator app, study-shell packaging, and public documentation.
+
+- Mesmer Prism GitHub. [github.com/MesmerPrism](https://github.com/MesmerPrism) indexes surrounding tooling and related research code that can be shared openly.

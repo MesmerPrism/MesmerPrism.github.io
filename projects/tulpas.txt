@@ -1,0 +1,451 @@
+Tulpas
+
+Source: https://mesmerprism.com/projects/tulpas.html
+Canonical HTML: https://mesmerprism.com/projects/tulpas.html
+Generated: 2026-05-26
+Description: Tulpas covers modern online tulpamancy, thoughtforms, headmates, servitors, egregores, imposition, voice-like experience, and adjacent AI companion analogies.
+Markdown: https://mesmerprism.com/projects/tulpas.md
+Plain text: https://mesmerprism.com/projects/tulpas.txt
+BibTeX references: https://mesmerprism.com/projects/tulpas.bib
+CSL JSON references: https://mesmerprism.com/projects/tulpas.references.csl.json
+
+---
+
+Made inner others and modern tulpamancy
+
+Tulpas
+
+ A tulpa, in modern online usage, is a made or cultivated inner other:
+ a companion, headmate, thoughtform, or agency-like presence that a
+ person relates to through imagination, attention, dialogue, ritual,
+ memory, and community vocabulary. The word carries older Tibetan and
+ Theosophical echoes, but modern internet tulpamancy is not an
+ unchanged Tibetan practice. It is a hybrid, recent, source-mixed
+ practice culture with its own forums, guides, ethics, and identity
+ debates
+ (Mikles and Laycock, 2015 (https://doi.org/10.1525/nr.2015.19.1.87);
+ Laursen, 2019 (https://doi.org/10.1093/oso/9780190949983.003.0010);
+ Veissiere, 2015 (https://somatosphere.com/2015/varieties-of-tulpa-experiences-sentient-imaginary-friends-embodied-joint-attention-and-hypnotic-sociality-in-a-wired-world.html/)).
+
+ Read this page if you need a careful map of modern tulpamancy language, not a
+ guide to creating a tulpa and not a clinical interpretation of inner others.
+
+ The topic is easiest to read when its lanes stay separate. Tibetan
+ and Himalayan translation history, Theosophical thought-forms,
+ chaos-magic servitors, egregores, online tulpamancy, plurality and
+ headmate discourse, imaginary companions, nonclinical voice-hearing,
+ imposition, and AI companions can all be compared. Shared words about
+ inner agency do not make them one lineage
+ (Besant and Leadbeater, 1901 (https://www.gutenberg.org/files/16269/16269-h/16269-h.htm);
+ Tulpa.info FAQ (https://www.tulpa.info/faq/);
+ Fernyhough et al., 2019 (https://doi.org/10.3389/fpsyg.2019.01665)).
+
+ Available public sources do not establish that tulpas are externally
+ real, independently sentient, clinically validated, therapeutic,
+ harmful, or safely trainable. The strongest public claims are narrower:
+ different communities report different kinds of experience, different
+ sources support different kinds of claim, and the evidence stops
+ before ontology or clinical efficacy
+ (Isler, 2017 (https://pubs.sciepub.com/rpbs/5/2/1/index.html);
+ Luhrmann et al., 2023 (https://doi.org/10.1093/schbul/sbac005)).
+
+ Start with the basics (https://mesmerprism.com/projects/tulpas.html#field-guide)
+ Lineages (https://mesmerprism.com/projects/tulpas.html#lineages)
+ Imposition (https://mesmerprism.com/projects/tulpas.html#imposition)
+ Evidence (https://mesmerprism.com/projects/tulpas.html#evidence)
+ References (https://mesmerprism.com/projects/tulpas.html#references)
+
+ Field guide
+
+What people mean by a tulpa
+
+ In current community language, tulpamancy usually means deliberately
+ developing a relationship with an imagined or inner companion. The
+ practice vocabulary includes forcing, or directed attention toward
+ the tulpa; narration and conversation; a wonderland or paracosm-like
+ inner setting; vocality, when the tulpa is experienced as responding;
+ and imposition, when the tulpa is experienced as present in ordinary
+ space. Community pages are useful for this vocabulary, but they are
+ not clinical or experimental validation
+ (Tulpa.info (https://www.tulpa.info/);
+ Tulpa.info FAQ (https://www.tulpa.info/faq/);
+ Tulpanomicon, Visualization (https://tulpanomicon.guide/visualization.html)).
+
+ The words around tulpas are uneven because the topic crosses several
+ speech communities. A thoughtform can mean an imagined or occultly
+ charged mental construct. A servitor is often described in chaos-magic
+ sources as a task-oriented construct. An egregore usually points to a
+ group-scale or collectively sustained entity in occult vocabulary. A
+ headmate is a person-like other in plural community language. A tulpa
+ can overlap with those words, but each word carries a different source
+ history
+ (Besant and Leadbeater, 1901 (https://www.gutenberg.org/files/16269/16269-h/16269-h.htm);
+ Chaos Matrix (https://web.archive.org/web/20251113041912/https://www.chaosmatrix.org/library/chaos/texts/servitors.html);
+ Laursen, 2019 (https://doi.org/10.1093/oso/9780190949983.003.0010)).
+
+ Two cautions keep the definition honest. First, tulpamancy is not
+ only visual. Some people emphasize mental dialogue, felt presence,
+ identity, writing, dreams, or inner-world interaction rather than
+ projected imagery. Second, tulpamancy should not be pathologized by
+ default. Comparison with voice-hearing, imaginary companions, and
+ felt presence can make the experiences more legible, but those
+ comparisons do not turn tulpas into symptoms
+ (Fernyhough et al., 2019 (https://doi.org/10.3389/fpsyg.2019.01665);
+ Alderson-Day et al., 2020 (https://doi.org/10.1093/schbul/sbaa095);
+ Alderson-Day et al., 2023 (https://doi.org/10.1017/S0033291722000344)).
+
+Terms to keep distinct
+- Tulpa: modern community term for a cultivated inner companion or headmate.
+- Thought-form: Theosophical and occult vocabulary for forms produced by thought or feeling.
+- Servitor: chaos-magic vocabulary for a task-oriented constructed entity.
+- Egregore: occult vocabulary for a group-scale or collectively sustained agency.
+- Imposition: community term for experiencing a tulpa as present in ordinary space.
+
+Evidence boundaries
+- External reality remains outside the evidence base.
+- Independent sentience remains unresolved.
+- Clinical benefit, safety, harm, and efficacy need separate evidence.
+- Community guide claims remain practice sources rather than research findings.
+- Inner others remain a family of comparison cases, not one phenomenon.
+
+ Lineages
+
+The word travelled through more than one history
+
+ The modern tulpa is easier to understand as a set of crossings than
+ as a single origin story.
+
+Tibetan and Himalayan terms are not the whole story
+
+ The word "tulpa" points toward Tibetan and Himalayan terms often
+ translated through ideas of emanation or manifestation, but the
+ contemporary paranormal and internet term did not arrive as a stable,
+ unbroken Buddhist practice. Mikles and Laycock trace a hybrid Western
+ reception history in which travel writing, Theosophy, paranormal
+ literature, and Tibetan vocabulary were braided together. That is why
+ both facts have to stay visible: the word carries a Tibetan-facing
+ translation history, and modern online tulpamancy is a separate
+ internet-era formation
+ (Mikles and Laycock, 2015 (https://doi.org/10.1525/nr.2015.19.1.87)).
+
+ This boundary matters because "Tibetan origins" can sound more direct
+ than the sources allow. A careful account should ask which claim is
+ being made: a claim about Tibetan vocabulary, a claim about Western
+ occult reception, a claim about online community practice, or a claim
+ about present-day identity. Those are different evidentiary lanes.
+
+Theosophical thought-forms supplied a powerful image
+
+ Annie Besant and C. W. Leadbeater's Thought-Forms gave
+ Western esotericism a vivid model of thoughts and emotions as forms
+ with color, shape, and force. That source does not validate modern
+ tulpamancy, and it should not be treated as Tibetan Buddhism. Its
+ role is historical and lexical: it helps explain why "thought-form"
+ became such a durable bridge term in later occult and paranormal
+ writing
+ (Besant and Leadbeater, 1901 (https://www.gutenberg.org/files/16269/16269-h/16269-h.htm);
+ Mikles and Laycock, 2015 (https://doi.org/10.1525/nr.2015.19.1.87)).
+
+Servitors and egregores belong in an occult practice lane
+
+ Chaos-magic servitor writing and occult egregore writing describe
+ deliberately made, named, or collectively sustained agencies. Those
+ sources are useful because they show another way people have talked
+ about constructed agency, task-specific inner figures, and group-fed
+ entities. They should be used as occult vocabulary and practice
+ history, not as proof that all such figures are the same thing
+ (Chaos Matrix (https://web.archive.org/web/20251113041912/https://www.chaosmatrix.org/library/chaos/texts/servitors.html);
+ Quest Magazine (https://www.theosophical.org/publications/quest-magazine/egregores-the-occult-entities-that-watch-over-human-destiny)).
+
+Modern online tulpamancy is its own community formation
+
+ Internet tulpamancy developed through forums, guides, Reddit
+ discussions, glossary work, ethics debates, and plurality-adjacent
+ identity language. Laursen treats it as participatory identity work
+ built through imagination, community, and plural self-understanding.
+ Veissiere reads it as a wired-world practice of embodied joint
+ attention and hypnotic sociality. Both accounts help explain why the
+ modern tulpa is neither a transplanted religious concept nor a lone
+ private fantasy
+ (Laursen, 2019 (https://doi.org/10.1093/oso/9780190949983.003.0010);
+ Veissiere, 2015 (https://somatosphere.com/2015/varieties-of-tulpa-experiences-sentient-imaginary-friends-embodied-joint-attention-and-hypnotic-sociality-in-a-wired-world.html/)).
+
+ Community guide sites are part of that formation. They show how
+ tulpamancers define terms, debate methods, route newcomers, warn
+ about practice expectations, and distinguish visualization from imposition.
+ Their evidentiary role is narrow but important: they document
+ practice vocabulary and community norms
+ (Tulpa.info (https://www.tulpa.info/);
+ Tulpa.info FAQ (https://www.tulpa.info/faq/);
+ Tulpanomicon, Imposition (https://tulpanomicon.guide/imposition.html)).
+
+ Practice ecology
+
+How a made inner other becomes socially organized
+
+ Tulpamancy is both a claim about unusual experience and a social
+ technology for noticing, naming, repeating, and discussing inner
+ events. A person may narrate to a tulpa, imagine a shared
+ setting, wait for responses, build a form or voice, keep notes,
+ compare progress with community guides, and negotiate boundaries
+ around personhood and consent. That social layer helps turn scattered
+ inner events into a recognizable practice
+ (Laursen, 2019 (https://doi.org/10.1093/oso/9780190949983.003.0010);
+ Tulpa.info FAQ (https://www.tulpa.info/faq/)).
+
+ The same point makes mental-health claims difficult. Isler's article
+ is useful because it records self-reported and perceived associations
+ around tulpas and mental health, especially in a non-traumagenic
+ plurality context. It should not be stretched into a claim that
+ tulpamancy is clinically validated, therapeutic, safe, harmful, or
+ causally beneficial. Claims should stay at the level of reports,
+ associations, and open questions
+ (Isler, 2017 (https://pubs.sciepub.com/rpbs/5/2/1/index.html)).
+
+ Plurality and headmate language also changes the ethics of the topic.
+ A tulpa is not always treated as a fictional character or a technique;
+ many community members describe relationship, respect, autonomy, and
+ shared life. Public writing can describe that identity language
+ without deciding the metaphysics for readers
+ (Laursen, 2019 (https://doi.org/10.1093/oso/9780190949983.003.0010);
+ Tulpa.info (https://www.tulpa.info/)).
+
+Community sources can support
+- Practice vocabulary: forcing, narration, form, vocality, wonderland, imposition.
+- Norms and cautions used by a community.
+- Disagreements over visualization, personhood, plurality, and progress.
+- How newcomers are taught to describe experiences.
+
+Community sources need support for
+- Clinical benefit or harm.
+- Objective sentience.
+- External reality.
+- Reliable training outcomes.
+- Population-level prevalence.
+
+ Imposition
+
+The strongest Prophantasia bridge is real but narrow
+
+ Imposition is where tulpamancy most clearly touches projected imagery.
+
+What imposition adds
+
+ In tulpamancy sources, imposition names practices and reports in
+ which a tulpa is experienced as if present in ordinary space. Some
+ guides focus on visual imposition, where the goal is to see a form in
+ the environment. Others include presence, touch, sound, or other
+ senses. That makes imposition the clearest overlap with
+ Prophantasia (https://mesmerprism.com/projects/prophantasia.html): both topics
+ care about internally generated content described as spatial,
+ world-placed, or perception-like
+ (Tulpanomicon, Imposition (https://tulpanomicon.guide/imposition.html);
+ Malfael, Visual Imposition (https://tulpanomicon.guide/mal-imposition.html)).
+
+ Hale's comparison between prayer and tulpamancy is useful here
+ because it puts mental conversation, visualization, and imposition
+ into a broader family of imaginal techniques rather than treating
+ tulpas as an isolated internet oddity. Luhrmann and colleagues add a
+ related discernment frame: people can learn to notice, interpret, and
+ sort voices or presences associated with gods, spirits, tulpas, and
+ the dead without those examples collapsing into one category
+ (Hale, 2024 (https://journals.colorado.edu/index.php/next/article/view/2685);
+ Luhrmann et al., 2023 (https://doi.org/10.1093/schbul/sbac005)).
+
+Where the bridge stops
+
+ Imposition should not make all tulpamancy visual. Tulpa.info's FAQ
+ distinguishes visualization from imposition and notes that
+ visualization is not necessary for creating a tulpa. A person can
+ experience a tulpa through dialogue, felt presence, writing,
+ nonvisual knowing, dreams, or inner-world interaction without
+ reporting projected imagery
+ (Tulpa.info FAQ (https://www.tulpa.info/faq/);
+ Tulpanomicon, Visualization (https://tulpanomicon.guide/visualization.html)).
+
+ That limit matters for research design. Prophantasia can help map
+ imposition and projected imagery. It cannot stand in for tulpamancy
+ as a whole. The better comparison is edge-specific: projected visual
+ or multisensory presence on one side, broader inner sociality and
+ headmate discourse on the other.
+
+ Voice and presence
+
+Phenomenological Control supplies variables, not a reduction
+
+ Phenomenological Control (https://mesmerprism.com/projects/phenomenological-control.html)
+ is useful here because it names variables that can shape experience:
+ absorption, expectancy, porosity, trained attention, source
+ monitoring, discernment, inner speech, voice-like events, and felt
+ presence. Those variables can make tulpamancy comparable to prayer,
+ hypnosis, imaginary companions, and nonclinical voice-hearing without
+ reducing tulpas to suggestion or hallucination
+ (Alderson-Day and Fernyhough, 2015 (https://doi.org/10.1037/bul0000021);
+ Luhrmann et al., 2023 (https://doi.org/10.1093/schbul/sbac005)).
+
+ Imaginary-companion research helps keep the comparison nonclinical.
+ Fernyhough and colleagues compare imaginary companions, inner speech,
+ and auditory verbal hallucinations to understand shared and different
+ features of person-like inner experience. Alderson-Day and colleagues
+ likewise show that voice-hearing can involve personification,
+ conversation, companionship, and presence. Those sources are not
+ tulpamancy studies, but they help explain why inner others need a
+ language richer than either "make-believe" or pathology
+ (Fernyhough et al., 2019 (https://doi.org/10.3389/fpsyg.2019.01665);
+ Alderson-Day et al., 2020 (https://doi.org/10.1093/schbul/sbaa095);
+ Alderson-Day et al., 2023 (https://doi.org/10.1017/S0033291722000344)).
+
+ The point is not to settle what a tulpa really is. The point is to
+ break a broad report into more testable pieces: what modality it has,
+ how voluntary it feels, whether it is dialogic, how stable it is,
+ whether it feels socially responsive, and how the person and
+ community interpret it.
+
+Useful variables
+- Absorption and attentional depth.
+- Expectancy and community scripts.
+- Imagery vividness and sensory modality.
+- Dialogic inner speech and personification.
+- Felt presence, discernment, and source monitoring.
+
+Source rules
+- Clinical voice-hearing literature should not imply pathology by default.
+- Prayer studies should not turn tulpas into religion by default.
+- Hypnosis and expectancy should not explain the whole practice on their own.
+- Nonvisual tulpas remain central to the topic, not weaker evidence.
+
+ Adjacent analogies
+
+Psychofauna and AI companions belong nearby, with labels attached
+
+ Modern agency-like experiences now include both inner companions and
+ external systems that answer back.
+
+SANE psychofauna is local framework language
+
+ In SANE (https://mesmerprism.com/projects/sane.html), psychofauna names a local
+ framework for the felt population of inner voices, drives, presences,
+ characters, roles, habits, and semi-autonomous tendencies. Tulpas,
+ thoughtforms, headmates, servitors, egregores, and fictional
+ characters are useful test cases for that vocabulary because each one
+ asks when a pattern of attention, memory, role, response, and
+ relationship becomes agency-like enough to need its own practice
+ language.
+
+ That frame is useful for synthesis, but it is not outside proof. A
+ public article can use psychofauna to name a local analytic lens; it
+ should not present the word as an established clinical, religious, or
+ scientific category.
+
+AI companions are an analogy, not an origin
+
+ AI companions and digital familiars add a modern comparison point:
+ people can build relationships with responsive, named, memory-like
+ conversational systems that feel socially present. That does not make
+ an AI companion a tulpa, and it does not make a tulpa an AI system.
+ The analogy is about social recognition, recursive interaction, and
+ the human tendency to organize response into agency
+ (Jacobs, 2024 (https://doi.org/10.3389/fdgth.2024.1281037)).
+
+ The comparison is strongest when it stays modest. Tulpamancy is an
+ inner-practice and community phenomenon. AI companions are technical,
+ commercial, and interface-mediated systems. Both can pressure the
+ boundary between authored response and encountered otherness, but the
+ sources for one do not automatically validate claims about the other.
+
+ Evidence state
+
+What is solid, partial, community-reported, speculative, and open
+
+ This current-state map is dated May 22, 2026. It separates source
+ types so weak claims do not carry strong conclusions.
+
+Solid enough for public prose
+- Modern tulpamancy should be separated from Tibetan and Himalayan source history, even when the word points back through that translation channel (Mikles and Laycock, 2015 (https://doi.org/10.1525/nr.2015.19.1.87)).
+- Online tulpamancy has a documented forum, guide, and plurality-adjacent practice culture (Laursen, 2019 (https://doi.org/10.1093/oso/9780190949983.003.0010); Veissiere, 2015 (https://somatosphere.com/2015/varieties-of-tulpa-experiences-sentient-imaginary-friends-embodied-joint-attention-and-hypnotic-sociality-in-a-wired-world.html/)).
+- Imposition is the strongest bridge to Prophantasia because it names world-placed or perception-like tulpa presence (Tulpanomicon, Imposition (https://tulpanomicon.guide/imposition.html)).
+- Inner speech, imaginary companions, personified voices, and felt presence offer comparison categories without forcing pathology (Fernyhough et al., 2019 (https://doi.org/10.3389/fpsyg.2019.01665); Alderson-Day et al., 2020 (https://doi.org/10.1093/schbul/sbaa095)).
+
+Partial or narrow
+- Mental-health claims are self-report or perceived-association claims unless stronger causal evidence is available (Isler, 2017 (https://pubs.sciepub.com/rpbs/5/2/1/index.html)).
+- Prayer, spirit, and tulpa comparisons are useful for discernment and imaginal technique, not for collapsing religions and tulpamancy into one practice (Hale, 2024 (https://journals.colorado.edu/index.php/next/article/view/2685); Luhrmann et al., 2023 (https://doi.org/10.1093/schbul/sbac005)).
+- Theosophical, servitor, and egregore materials support vocabulary and genealogy, not validation (Besant and Leadbeater, 1901 (https://www.gutenberg.org/files/16269/16269-h/16269-h.htm); Chaos Matrix (https://web.archive.org/web/20251113041912/https://www.chaosmatrix.org/library/chaos/texts/servitors.html)).
+
+Community-reported
+- Forcing, narration, wonderlands, vocality, form, imposition, switching, and guide sequences are community practice vocabulary (Tulpa.info FAQ (https://www.tulpa.info/faq/); Tulpanomicon, Visualization (https://tulpanomicon.guide/visualization.html)).
+- Visual imposition guides show a specific projected-imagery practice lane, not the whole of tulpamancy (Malfael, Visual Imposition (https://tulpanomicon.guide/mal-imposition.html)).
+- Community sources can define how practitioners speak about sentience or autonomy, but they cannot settle those claims for readers.
+
+Speculative or local
+- Psychofauna is SANE framework vocabulary, useful for comparison but not an established external category.
+- Digital familiars and AI companions are adjacent analogies about social recognition and responsive systems (Jacobs, 2024 (https://doi.org/10.3389/fdgth.2024.1281037)).
+- Brainhack, OSF, and public-talk artifacts show active research interest. They should not be reported as settled neuroimaging results (Brainhack, 2024 (https://2024-school-brainhack.github.io/project/tulpa/); OSF project (https://osf.io/6wkjp/); Lifshitz talk (https://av.mandala.library.virginia.edu/video/cultivating-relationships-invisible-beings-phenomenology-and-cognitive-mechanisms-tulpamancy)).
+
+ Open questions
+
+What still needs better evidence
+
+ The highest-risk claims are exactly the ones readers often want most:
+ whether tulpas are independently sentient, whether tulpamancy is good
+ or bad for mental health, whether specific methods reliably work, how
+ common the practice is, and whether imposition shares mechanisms with
+ other forms of projected imagery. The current public evidence does
+ not settle those questions.
+
+ A better evidence base would separate primary historical claims from
+ community chronology, compare visual and nonvisual tulpamancy instead
+ of centering only imposition, handle plural identity language with
+ care, and treat clinical and nonclinical voice-hearing literature as
+ comparison material rather than a diagnosis engine.
+
+Needs primary-source work
+- Exact wording around Tibetan and Himalayan terms.
+- Western reception through travel writing and Theosophy.
+- Early internet circulation across forums, /x/, Tulpa.info, Reddit, and adjacent fandoms.
+- Occult servitor and egregore genealogy.
+
+Needs stronger study designs
+- Mental-health benefit, harm, and safety claims.
+- Prevalence and demographic claims.
+- Comparisons between visual, auditory, dialogic, and felt-presence tulpas.
+- Mechanistic claims about imagery, absorption, expectancy, or source monitoring.
+
+ References
+
+Sources used here
+
+ Community sources are cited for vocabulary, norms, and guide ecology.
+ Self-report sources are cited for reported associations. Research
+ artifacts are cited as evidence of current activity, not settled
+ results.
+
+Genealogy, thought-forms, and occult vocabulary
+- Mikles and Laycock. "Tracking the Tulpa: Exploring the 'Tibetan' Origins of a Contemporary Paranormal Idea (https://doi.org/10.1525/nr.2015.19.1.87)." Nova Religio 19(1), 2015.
+- Annie Besant and C. W. Leadbeater. "Thought-Forms (https://www.gutenberg.org/files/16269/16269-h/16269-h.htm)." Theosophical Publishing House, 1901; Project Gutenberg edition.
+- Chaos Matrix. "Sigils, Servitors, and Godforms, Part II: Servitors (https://web.archive.org/web/20251113041912/https://www.chaosmatrix.org/library/chaos/texts/servitors.html)." Archived copy of the occult grey-literature source for servitor vocabulary.
+- Quest Magazine. "Egregores: The Occult Entities That Watch over Human Destiny (https://www.theosophical.org/publications/quest-magazine/egregores-the-occult-entities-that-watch-over-human-destiny)." Contextual source for egregore vocabulary.
+
+Online tulpamancy, plurality, and community practice
+- Christopher Laursen. "Plurality Through Imagination: Tulpamancy and the Internet (https://doi.org/10.1093/oso/9780190949983.003.0010)." In Believing in Bits , Oxford University Press, 2019.
+- Samuel Veissiere. "Varieties of Tulpa Experiences: Sentient Imaginary Friends, Embodied Joint Attention, and Hypnotic Sociality in a Wired World (https://somatosphere.com/2015/varieties-of-tulpa-experiences-sentient-imaginary-friends-embodied-joint-attention-and-hypnotic-sociality-in-a-wired-world.html/)." Somatosphere , 2015.
+- Jacob J. Isler. "Tulpas and Mental Health: A Study of Non-Traumagenic Plural Experiences (https://pubs.sciepub.com/rpbs/5/2/1/index.html)." Research in Psychology and Behavioral Sciences 5(2), 2017.
+- Tulpa.info. "Tulpa.info (https://www.tulpa.info/)." Community home page for modern tulpamancy.
+- Tulpa.info. "FAQ (https://www.tulpa.info/faq/)." Community FAQ for definitions, visualization, wonderlands, and imposition.
+- Tulpanomicon. "Visualization (https://tulpanomicon.guide/visualization.html)." Community guide index.
+- Tulpanomicon. "Imposition (https://tulpanomicon.guide/imposition.html)." Community guide index.
+- Malfael. "Malfael's Guide to Visual Imposition (https://tulpanomicon.guide/mal-imposition.html)." Community guide hosted by Tulpanomicon.
+
+Imagination, prayer, voices, and felt presence
+- Elizabeth Hale. "The Inner Vehicle: Prayer, Tulpamancy, and the Magic of the Mind (https://journals.colorado.edu/index.php/next/article/view/2685)." NEXT , 2024.
+- Tanya M. Luhrmann et al. "Learning to Discern the Voices of Gods, Spirits, Tulpas, and the Dead (https://doi.org/10.1093/schbul/sbac005)." Schizophrenia Bulletin , 2023.
+- Ben Alderson-Day and Charles Fernyhough. "Inner Speech: Development, Cognitive Functions, Phenomenology, and Neurobiology (https://doi.org/10.1037/bul0000021)." Psychological Bulletin , 2015.
+- Charles Fernyhough et al. "Imaginary Companions, Inner Speech, and Auditory Verbal Hallucinations (https://doi.org/10.3389/fpsyg.2019.01665)." Frontiers in Psychology , 2019.
+- Ben Alderson-Day et al. "Voice-Hearing and Personification: Characterizing Social Qualities of Auditory Verbal Hallucinations in Early Psychosis (https://doi.org/10.1093/schbul/sbaa095)." Schizophrenia Bulletin , 2020.
+- Ben Alderson-Day et al. "Varieties of Felt Presence? Three Surveys of Presence Phenomena and Their Relations to Psychopathology (https://doi.org/10.1017/S0033291722000344)." Psychological Medicine , 2023.
+
+Current research artifacts and adjacent analogies
+- Michael Lifshitz. "Cultivating Relationships with Invisible Beings: Phenomenology and Cognitive Mechanisms of Tulpamancy (https://av.mandala.library.virginia.edu/video/cultivating-relationships-invisible-beings-phenomenology-and-cognitive-mechanisms-tulpamancy)." Public talk artifact.
+- Michael Lifshitz. "Online Survey of Tulpa Experiences (https://osf.io/6wkjp/)." OSF project page.
+- Jonas Mago / Brainhack School. "Tulpas: Invisible Friends in the Brain (https://2024-school-brainhack.github.io/project/tulpa/)." Public analysis artifact, 2024.
+- Katharina A. Jacobs. "Digital Loneliness: Emerging Technologies and Their Impact on Personal Relationships (https://doi.org/10.3389/fdgth.2024.1281037)." Frontiers in Digital Health , 2024.
+- Related Mesmer Prism pages. Prophantasia (https://mesmerprism.com/projects/prophantasia.html), Phenomenological Control (https://mesmerprism.com/projects/phenomenological-control.html), SANE (https://mesmerprism.com/projects/sane.html), and Deep Dream (https://mesmerprism.com/projects/deep-dream.html).

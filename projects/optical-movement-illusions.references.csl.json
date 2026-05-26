@@ -1,0 +1,326 @@
+[
+  {
+    "id": "github-com-mesmer-prism-work-publications-background-contact",
+    "type": "webpage",
+    "title": "Mesmer Prism Work Publications Background Contact",
+    "URL": "https://github.com/MesmerPrism",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Optical Movement Illusions: https://mesmerprism.com/projects/optical-movement-illusions.html"
+  },
+  {
+    "id": "fraser-and-wilcox-perception-of-illusory-movement",
+    "type": "article-journal",
+    "title": "Perception of Illusory Movement",
+    "URL": "https://doi.org/10.1038/281565a0",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Optical Movement Illusions: https://mesmerprism.com/projects/optical-movement-illusions.html",
+    "author": [
+      {
+        "literal": "Fraser and Wilcox"
+      }
+    ],
+    "DOI": "10.1038/281565a0"
+  },
+  {
+    "id": "fraser-and-wilcox-the-peripheral-drift-illusion-a-motion-illusion-in-the-v",
+    "type": "article-journal",
+    "title": "The Peripheral Drift Illusion: A Motion Illusion in the Visual Periphery",
+    "URL": "https://doi.org/10.1068/p2825",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Optical Movement Illusions: https://mesmerprism.com/projects/optical-movement-illusions.html",
+    "author": [
+      {
+        "literal": "Fraser and Wilcox"
+      }
+    ],
+    "DOI": "10.1068/p2825"
+  },
+  {
+    "id": "fraser-and-wilcox-illusory-motion-from-change-over-time-in-the-response-to",
+    "type": "article-journal",
+    "title": "Illusory Motion from Change over Time in the Response to Contrast and Luminance",
+    "URL": "https://doi.org/10.1167/5.11.10",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Optical Movement Illusions: https://mesmerprism.com/projects/optical-movement-illusions.html",
+    "author": [
+      {
+        "literal": "Fraser and Wilcox"
+      }
+    ],
+    "DOI": "10.1167/5.11.10"
+  },
+  {
+    "id": "backus-and-oru-neural-basis-for-a-powerful-static-motion-illusion",
+    "type": "article-journal",
+    "title": "Neural Basis for a Powerful Static Motion Illusion",
+    "URL": "https://doi.org/10.1523/JNEUROSCI.1084-05.2005",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Optical Movement Illusions: https://mesmerprism.com/projects/optical-movement-illusions.html",
+    "author": [
+      {
+        "literal": "Backus and Oruç"
+      }
+    ],
+    "DOI": "10.1523/JNEUROSCI.1084-05.2005"
+  },
+  {
+    "id": "conway-illusory-motion-due-to-causal-time-filtering",
+    "type": "article-journal",
+    "title": "Illusory Motion Due to Causal Time Filtering",
+    "URL": "https://doi.org/10.1016/j.visres.2009.11.021",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Optical Movement Illusions: https://mesmerprism.com/projects/optical-movement-illusions.html",
+    "author": [
+      {
+        "literal": "Conway"
+      }
+    ],
+    "DOI": "10.1016/j.visres.2009.11.021"
+  },
+  {
+    "id": "ferm-ller-ji-and-kitaoka-microsaccades-and-blinks-trigger-illusory-rotation-in-th",
+    "type": "article-journal",
+    "title": "Microsaccades and Blinks Trigger Illusory Rotation in the 'Rotating Snakes' Illusion",
+    "URL": "https://doi.org/10.1167/12.9.1013",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Optical Movement Illusions: https://mesmerprism.com/projects/optical-movement-illusions.html",
+    "author": [
+      {
+        "literal": "Fermüller, Ji, and Kitaoka"
+      }
+    ],
+    "DOI": "10.1167/12.9.1013"
+  },
+  {
+    "id": "otero-millan-macknik-and-martinez-conde-direction-specific-fmri-adaptation-reveals-the-visual-co",
+    "type": "article-journal",
+    "title": "Direction-Specific fMRI Adaptation Reveals the Visual Cortical Network Underlying the 'Rotating Snakes' Illusion",
+    "URL": "https://doi.org/10.1016/j.neuroimage.2012.03.033",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Optical Movement Illusions: https://mesmerprism.com/projects/optical-movement-illusions.html",
+    "author": [
+      {
+        "literal": "Otero-Millan, Macknik, and Martinez-Conde"
+      }
+    ],
+    "DOI": "10.1016/j.neuroimage.2012.03.033"
+  },
+  {
+    "id": "ashida-et-al-the-rotating-snakes-illusion-is-a-straightforward-conseq",
+    "type": "article-journal",
+    "title": "The Rotating Snakes Illusion Is a Straightforward Consequence of Nonlinearity in Arrays of Standard Motion Detectors",
+    "URL": "https://doi.org/10.1177/2041669520958025",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Optical Movement Illusions: https://mesmerprism.com/projects/optical-movement-illusions.html",
+    "author": [
+      {
+        "literal": "Ashida et al"
+      }
+    ],
+    "DOI": "10.1177/2041669520958025"
+  },
+  {
+    "id": "bach-and-atala-g-rard-pupil-dilation-underlies-the-peripheral-drift-illusion",
+    "type": "article-journal",
+    "title": "Pupil Dilation Underlies the Peripheral Drift Illusion",
+    "URL": "https://doi.org/10.1167/jov.25.2.13",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Optical Movement Illusions: https://mesmerprism.com/projects/optical-movement-illusions.html",
+    "author": [
+      {
+        "literal": "Bach and Atala-Gérard"
+      }
+    ],
+    "DOI": "10.1167/jov.25.2.13"
+  },
+  {
+    "id": "mather-and-cavanagh-blue-yellow-combination-enhances-perceived-motion-in-rot",
+    "type": "article-journal",
+    "title": "Blue-Yellow Combination Enhances Perceived Motion in Rotating Snakes Illusion",
+    "URL": "https://doi.org/10.1177/20416695241242346",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Optical Movement Illusions: https://mesmerprism.com/projects/optical-movement-illusions.html",
+    "author": [
+      {
+        "literal": "Mather and Cavanagh"
+      }
+    ],
+    "DOI": "10.1177/20416695241242346"
+  },
+  {
+    "id": "uesaki-et-al-the-effects-of-color-temperature-and-illuminance-on-the-",
+    "type": "article-journal",
+    "title": "The Effects of Color Temperature and Illuminance on the Color-Dependent Fraser-Wilcox Illusion",
+    "URL": "https://doi.org/10.1177/20416695251412759",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Optical Movement Illusions: https://mesmerprism.com/projects/optical-movement-illusions.html",
+    "author": [
+      {
+        "literal": "Uesaki et al"
+      }
+    ],
+    "DOI": "10.1177/20416695251412759"
+  },
+  {
+    "id": "nishikawa-and-kitaoka-anomalous-visual-experience-is-linked-to-perceptual-unce",
+    "type": "article-journal",
+    "title": "Anomalous Visual Experience Is Linked to Perceptual Uncertainty and Visual Imagery Vividness",
+    "URL": "https://doi.org/10.1007/s00426-020-01364-7",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Optical Movement Illusions: https://mesmerprism.com/projects/optical-movement-illusions.html",
+    "author": [
+      {
+        "literal": "Nishikawa and Kitaoka"
+      }
+    ],
+    "DOI": "10.1007/s00426-020-01364-7"
+  },
+  {
+    "id": "salge-pollmann-and-reeder-deep-aphantasia-a-visual-brain-with-minimal-influence-fr",
+    "type": "article-journal",
+    "title": "Deep Aphantasia: A Visual Brain with Minimal Influence from Priors or Inhibitory Feedback?",
+    "URL": "https://doi.org/10.3389/fpsyg.2024.1374349",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Optical Movement Illusions: https://mesmerprism.com/projects/optical-movement-illusions.html",
+    "author": [
+      {
+        "literal": "Salge, Pollmann, and Reeder"
+      }
+    ],
+    "DOI": "10.3389/fpsyg.2024.1374349"
+  },
+  {
+    "id": "bouyer-and-arnold-do-you-see-what-i-see-linking-involuntary-nonretinal-pha",
+    "type": "article-journal",
+    "title": "Do You See What I See? Linking Involuntary Nonretinal (Phantom) Vision and Mental Imagery in Aphantasia",
+    "URL": "https://doi.org/10.1167/jov.25.14.10",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Optical Movement Illusions: https://mesmerprism.com/projects/optical-movement-illusions.html",
+    "author": [
+      {
+        "literal": "Bouyer and Arnold"
+      }
+    ],
+    "DOI": "10.1167/jov.25.14.10"
+  }
+]

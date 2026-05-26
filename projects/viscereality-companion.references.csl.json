@@ -1,0 +1,92 @@
+[
+  {
+    "id": "github-com-mesmer-prism-work-publications-background-contact",
+    "type": "webpage",
+    "title": "Mesmer Prism Work Publications Background Contact",
+    "URL": "https://github.com/MesmerPrism",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Quest Companion Tools: https://mesmerprism.com/projects/viscereality-companion.html"
+  },
+  {
+    "id": "github-com-current-companion-repo",
+    "type": "webpage",
+    "title": "Current companion repo",
+    "URL": "https://github.com/MesmerPrism/Rusty-XR-Companion-Apps",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Quest Companion Tools: https://mesmerprism.com/projects/viscereality-companion.html"
+  },
+  {
+    "id": "github-com-rusty-xr-source",
+    "type": "webpage",
+    "title": "Rusty XR source",
+    "URL": "https://github.com/MesmerPrism/Rusty-XR",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Quest Companion Tools: https://mesmerprism.com/projects/viscereality-companion.html"
+  },
+  {
+    "id": "viscereality-companion-docs-viscereality-companion-docs",
+    "type": "webpage",
+    "title": "Viscereality Companion docs",
+    "URL": "https://mesmerprism.github.io/ViscerealityCompanion/",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Quest Companion Tools: https://mesmerprism.com/projects/viscereality-companion.html",
+    "author": [
+      {
+        "literal": "Viscereality Companion docs"
+      }
+    ]
+  },
+  {
+    "id": "viscereality-viscereality",
+    "type": "webpage",
+    "title": "Viscereality",
+    "URL": "https://viscereality.org/",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Quest Companion Tools: https://mesmerprism.com/projects/viscereality-companion.html",
+    "author": [
+      {
+        "literal": "Viscereality"
+      }
+    ]
+  }
+]

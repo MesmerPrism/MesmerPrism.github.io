@@ -1,0 +1,124 @@
+[
+  {
+    "id": "github-com-mesmer-prism-work-publications-background-contact",
+    "type": "webpage",
+    "title": "Mesmer Prism Work Publications Background Contact",
+    "URL": "https://github.com/MesmerPrism",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Rusty XR: https://mesmerprism.com/projects/rusty-xr.html"
+  },
+  {
+    "id": "github-com-source-repo",
+    "type": "webpage",
+    "title": "Source repo",
+    "URL": "https://github.com/MesmerPrism/Rusty-XR",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Rusty XR: https://mesmerprism.com/projects/rusty-xr.html"
+  },
+  {
+    "id": "mesmerprism-github-io-project-docs",
+    "type": "webpage",
+    "title": "Project docs",
+    "URL": "https://mesmerprism.github.io/Rusty-XR/",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Rusty XR: https://mesmerprism.com/projects/rusty-xr.html"
+  },
+  {
+    "id": "mesmerprism-github-io-passthrough-guide",
+    "type": "webpage",
+    "title": "Passthrough guide",
+    "URL": "https://mesmerprism.github.io/Rusty-XR/passthrough.html",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Rusty XR: https://mesmerprism.com/projects/rusty-xr.html"
+  },
+  {
+    "id": "mesmerprism-github-io-companion-docs",
+    "type": "webpage",
+    "title": "Companion docs",
+    "URL": "https://mesmerprism.github.io/Rusty-XR-Companion-Apps/",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Rusty XR: https://mesmerprism.com/projects/rusty-xr.html"
+  },
+  {
+    "id": "rusty-xr-quest-visual-source-taxonomy",
+    "type": "webpage",
+    "title": "Quest Visual Source Taxonomy",
+    "URL": "https://github.com/MesmerPrism/Rusty-XR/blob/main/docs/QUEST_VISUAL_SOURCE_TAXONOMY.md",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Rusty XR: https://mesmerprism.com/projects/rusty-xr.html",
+    "author": [
+      {
+        "literal": "Rusty XR"
+      }
+    ]
+  },
+  {
+    "id": "mesmerprism-rusty-xr-companion-apps",
+    "type": "webpage",
+    "title": "Rusty-XR-Companion-Apps",
+    "URL": "https://github.com/MesmerPrism/Rusty-XR-Companion-Apps",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Rusty XR: https://mesmerprism.com/projects/rusty-xr.html",
+    "author": [
+      {
+        "literal": "MesmerPrism"
+      }
+    ]
+  }
+]

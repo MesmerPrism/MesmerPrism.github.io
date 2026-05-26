@@ -1,0 +1,39 @@
+[
+  {
+    "id": "github-com-github",
+    "type": "webpage",
+    "title": "GitHub",
+    "URL": "https://github.com/MesmerPrism/Strobotorch",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Strobotorch Android Signal Tooling: https://mesmerprism.com/Strobotorch/"
+  },
+  {
+    "id": "brain-candy-brain-candy",
+    "type": "webpage",
+    "title": "Brain Candy",
+    "URL": "https://braincandyapp.com/",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Strobotorch Android Signal Tooling: https://mesmerprism.com/Strobotorch/",
+    "author": [
+      {
+        "literal": "Brain Candy"
+      }
+    ]
+  }
+]

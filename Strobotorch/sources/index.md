@@ -1,0 +1,240 @@
+# Sources | Strobotorch
+
+Source: https://mesmerprism.com/Strobotorch/sources/
+Canonical HTML: https://mesmerprism.com/Strobotorch/sources/
+Generated: 2026-05-26
+Description: Academic and public sources for Strobotorch flashing-light safety, frequency context, torch/camera diagnostics, and visible-light signal tooling.
+Markdown: https://mesmerprism.com/Strobotorch/sources/index.md
+Plain text: https://mesmerprism.com/Strobotorch/sources/index.txt
+BibTeX references: https://mesmerprism.com/Strobotorch/sources/index.bib
+CSL JSON references: https://mesmerprism.com/Strobotorch/sources/index.references.csl.json
+
+---
+
+Source library
+
+# Strobotorch Sources
+
+ This source library gathers the academic papers, clinical registries, public safety
+ guidance, and adjacent context used by Strobotorch's warnings. These sources
+ explain risk and source context for flashlight signaling, diagnostics, and
+ safety documentation.
+
+ Brain Candy, Bressloff V1, Fractal Optics, and related pages provide context;
+ Strobotorch remains Android flashlight-signaling and diagnostics tooling.
+
+ [Hewitt And History](https://mesmerprism.com/Strobotorch/sources/#stroboscopic-history)
+ [Frequency Context](https://mesmerprism.com/Strobotorch/sources/#frequency-context)
+ [Related Work](https://mesmerprism.com/Strobotorch/sources/#cross-project-overlap)
+ [Safety](https://mesmerprism.com/Strobotorch/sources/#safety)
+
+## How These Sources Are Used
+
+- To explain why direct staring into bright flicker is unsafe.
+
+- To keep frequency-specific research separate from Strobotorch features.
+
+- To make the 3 Hz direct-viewing cap, point-away gates, and 40/60 Hz caution language traceable.
+
+- To warn about photosensitive seizure risk, HPPD-like vulnerability, visual snow, migraine, impairment, and accidental exposure.
+
+## Scope
+
+ Strobotorch is a flashlight signaling app. Its scope is separate from
+ clinical use, altered-state induction, and laboratory photic-stimulation
+ devices. Frequency values in the app
+ are requested Android torch-command rates unless an external optical sensor
+ report explicitly says otherwise.
+
+ Related work
+
+## Nearby Topics
+
+ Strobotorch sits near several Mesmer Prism projects. Those overlaps clarify
+ safety limits, nearby mechanisms, and what the app is built to do.
+
+### Patterned-Light Neighbors
+
+ [Brain Candy](https://braincandyapp.com/)
+ is a separate state-shift and experience-design project. It helps name
+ the scope around Strobotorch: Android signal tooling, torch
+ diagnostics, and visual signal decoding belong to Strobotorch's
+ tooling scope. [Bressloff V1 Form Constants](https://mesmerprism.com/projects/bressloff-v1-form-constants.html)
+ contributes geometric hallucination model context.
+ [Fractal Optics](https://mesmerprism.com/projects/fractal-optics.html)
+ contributes scale-free photostimulation and temporal-structure context.
+ [Optical Movement Illusions](https://mesmerprism.com/projects/optical-movement-illusions.html)
+ contributes the mechanism-first visual-perception discipline.
+
+### Individual-Difference And Practice Neighbors
+
+ [Prophantasia](https://mesmerprism.com/projects/prophantasia.html) and
+ [Phenomenological Control](https://mesmerprism.com/projects/phenomenological-control.html)
+ contribute imagery-difference, Ganzflicker susceptibility, HPPD/visual-snow
+ safety, and community-practice guardrails. They support warnings and
+ opt-out logic rather than training or treatment language.
+
+### Altered-Perception Comparators
+
+ [Deep Dream](https://mesmerprism.com/projects/deep-dream.html) and
+ [Scientific Surrealism](https://mesmerprism.com/projects/scientific-surrealism.html)
+ contribute controlled-hallucination-comparator framing and source
+ discipline around strange perception. They help keep the app's messaging
+ evidence-proportional.
+
+ Risk references
+
+## Safety And Photosensitivity
+
+### Clinical Review
+
+- Fisher, Harding, Erba, Barkley, and Wilkins. "[Photic- and Pattern-induced Seizures: A Review for the Epilepsy Foundation of America Working Group](https://doi.org/10.1111/j.1528-1167.2005.31405.x)." Epilepsia (2005).
+
+ Supports the general warning that flicker and high-contrast patterns can trigger seizures in susceptible people.
+
+### Public Safety Guidance
+
+- Epilepsy Foundation. "[Photosensitivity and Seizures](https://www.epilepsy.com/what-is-epilepsy/seizure-triggers/photosensitivity)."
+
+- Epilepsy Action. "[Photosensitive Epilepsy](https://www.epilepsy.org.uk/info/seizure-triggers/photosensitive-epilepsy)."
+
+- Epilepsy Society. "[Photosensitive Epilepsy](https://epilepsysociety.org.uk/about-epilepsy/epileptic-seizures/seizure-triggers/photosensitive-epilepsy)."
+
+- W3C WAI. "[Understanding Success Criterion 2.3.1: Three Flashes or Below Threshold](https://w3c.github.io/wcag/understanding/three-flashes-or-below-threshold.html)."
+
+ Used for public-facing safety language and the conservative direct-viewing flash cap.
+
+ Stroboscopic hallucination
+
+## History, Phenomenology, And Mechanism
+
+### History And Review
+
+- Hewitt, Amaya, Beaute, Seth, Schmidt, and Schwartzman. "[Stroboscopically Induced Visual Hallucinations: Historical, Phenomenological, and Neurobiological Perspectives](https://doi.org/10.1093/nc/niaf020)." Neuroscience of Consciousness (2025).
+
+- ter Meulen, Tavy, and Jacobs. "[From Stroboscope to Dream Machine: A History of Flicker-Induced Hallucinations](https://doi.org/10.1159/000235945)." European Neurology (2009).
+
+ Hewitt et al. is the main source for the historical through-line from early subjective-vision work and stroboscope research to the Dreamachine lineage and contemporary neurophenomenology.
+
+### Controlled Flicker Studies
+
+- Bartossek, Kemmerer, and Schmidt. "[Altered States Phenomena Induced by Visual Flicker Light Stimulation](https://doi.org/10.1371/journal.pone.0253779)." PLOS ONE (2021).
+
+- Amaya, Behrens, Schwartzman, Hewitt, and Schmidt. "[Effect of Frequency and Rhythmicity on Flicker Light-Induced Hallucinatory Phenomena](https://doi.org/10.1371/journal.pone.0284271)." PLOS ONE (2023).
+
+- Amaya, Nierhaus, and Schmidt. "[Thalamocortical Interactions Reflecting the Intensity of Flicker Light-Induced Visual Hallucinatory Phenomena](https://doi.org/10.1162/netn_a_00417)." Network Neuroscience (2025).
+
+ Supports the warning that bright rhythmic flicker can be perceptually active and should not be stared at directly.
+
+### Ganzflicker And Individual Difference
+
+- Shenyan, Lisi, Greenwood, and Skipper. "[Visual Hallucinations Induced by Ganzflicker and Ganzfeld Differ in Frequency, Complexity, and Content](https://doi.org/10.1038/s41598-024-52372-1)." Scientific Reports (2024).
+
+- Konigsmark, Bergmann, and Reeder. "[The Ganzflicker Experience: High Probability of Seeing Vivid and Complex Pseudo-Hallucinations with Imagery but Not Aphantasia](https://doi.org/10.1016/j.cortex.2021.05.007)." Cortex (2021).
+
+- Reeder. "[Ganzflicker Reveals the Complex Relationship Between Visual Mental Imagery and Pseudo-Hallucinatory Experiences](https://doi.org/10.1525/collabra.36318)." Collabra: Psychology (2022).
+
+- Wackermann, Putz, and Allefeld. "[Ganzfeld-Induced Hallucinatory Experience, Its Phenomenology and Cerebral Electrophysiology](https://doi.org/10.1016/j.cortex.2007.05.003)." Cortex (2008).
+
+ Supports caution around individual differences, imagery, and adjacent altered-vision methods.
+
+ Frequency-specific research
+
+## 40 Hz, 60 Hz, And Other Timed Stimulation Context
+
+### 40 Hz Gamma Sensory Stimulation
+
+- Iaccarino et al. "[Gamma Frequency Entrainment Attenuates Amyloid Load and Modifies Microglia](https://doi.org/10.1038/nature20587)." Nature (2016).
+
+- Chan et al. "[Gamma Frequency Sensory Stimulation in Mild Probable Alzheimer's Dementia Patients](https://doi.org/10.1371/journal.pone.0278412)." PLOS ONE (2022).
+
+- Henney et al. "[Brain Stimulation with 40 Hz Heterochromatic Flicker Extended Beyond Red, Green, and Blue](https://doi.org/10.1038/s41598-024-52679-z)." Scientific Reports (2024).
+
+- Murdock et al. "[Multisensory Gamma Stimulation Promotes Glymphatic Clearance of Amyloid](https://doi.org/10.1038/s41586-024-07132-6)." Nature (2024).
+
+ Used only to show why 40 Hz sensory stimulation needs careful context. Strobotorch treats it as safety context, not gamma treatment.
+
+### 60 Hz Visual Stimulation
+
+- Alamalhoda et al. "[Exploring Neural Entrainment and Synchrony in Response to Repeated 60 Hz Flickering White Light in Healthy Volunteers](https://doi.org/10.1371/journal.pone.0332310)." PLOS ONE (2025).
+
+- ClinicalTrials.gov. "[NCT06922812: IWLS for Major Depressive Disorder](https://clinicaltrials.gov/study/NCT06922812)."
+
+- Syntropic Medical. "[The Neuroscience Behind Haven](https://syntropicmedical.com/science/)."
+
+ Used only to explain why 60 Hz appears in the safety discussion. Company material is marked separately from peer-reviewed work.
+
+### Other Translation Context
+
+- ClinicalTrials.gov. "[NCT05637801: A Pivotal Study of Sensory Stimulation in Alzheimer's Disease](https://clinicaltrials.gov/study/NCT05637801)."
+
+- Pileckyte and Soto-Faraco. "[Sensory Stimulation Enhances Visual Working Memory Capacity](https://doi.org/10.1038/s44271-024-00158-6)." Communications Psychology (2024).
+
+ Background only. Strobotorch remains flashlight signaling and diagnostics tooling.
+
+ Temporal structure
+
+## Fractal And Patterned Light Context
+
+### Fractal Fluency And Imagery
+
+- Taylor et al. "[Fractal Fluency: Processing of Fractal Stimuli Across Sight, Sound, and Touch](https://doi.org/10.1007/978-3-031-47606-8_45)." In The Fractal Geometry of the Brain (2024).
+
+- Taylor. "[The Potential of Biophilic Fractal Designs to Promote Health and Performance](https://doi.org/10.3390/su13020823)." Sustainability (2021).
+
+- Barton et al. "[The Restorative and State Enhancing Potential of Abstract Fractal-Like Imagery and Interactive Mindfulness Interventions in Virtual Reality](https://doi.org/10.1007/s10055-023-00916-7)." Virtual Reality (2024).
+
+### Fractal Phototherapy
+
+- Zueva et al. "[Fractal Phototherapy in Maximizing Retina and Brain Plasticity](https://pubmed.ncbi.nlm.nih.gov/38468055/)." PubMed record (2024).
+
+- Neroev et al. "[Changes in Functional Activity of Rabbit's Retina During Flicker Photostimulation with Scale-free Dynamics](https://doi.org/10.35745/ijcmb2022v02.02.0001)." International Journal of Clinical Medicine and Bioengineering (2022).
+
+ Background for fractal temporal structure as a research variable. Strobotorch remains outside fractal phototherapy, and rabbit or ophthalmic studies cannot stand in for human phone-flashlight evidence.
+
+ Vulnerability warnings
+
+## HPPD, Visual Snow, And Visual Disturbance
+
+### Visual-Disturbance Literature
+
+- Vis et al. "[On Perception and Consciousness in HPPD: A Systematic Review](https://doi.org/10.3389/fnins.2021.675768)." Frontiers in Neuroscience (2021).
+
+- Sampatakakis et al. "[Visual Snow: A Systematic Review and a Case Series](https://doi.org/10.1177/03331024221118917)." Cephalalgia (2022).
+
+- Puledda, Schankin, Digre, and Goadsby. "[Visual Snow Syndrome: What We Know So Far](https://doi.org/10.1097/WCO.0000000000000523)." Current Opinion in Neurology (2018).
+
+ Supports explicit caution for people with HPPD-like symptoms, visual snow, palinopsia, migraine aura, photophobia, or drug-related visual disturbance.
+
+ Adjacent context
+
+## Cyberdelics, VR, Music, And Altered-State Framing
+
+ These sources explain the broader public context in which users may encounter
+ flashing-light material. They are not Strobotorch features.
+
+### Cyberdelic And Psychedelic-Comparator Context
+
+- Hartogsohn. "[Cyberdelics in Context](https://doi.org/10.3389/fpsyg.2022.1073235)." Frontiers in Psychology (2023).
+
+- Smith and Warner. "[Cyberdelics: Context Engineering Psychedelics for Altered Traits](https://doi.org/10.14236/ewic/EVA2022.48)." Electronic Workshops in Computing (2022).
+
+- Smith. "[Holotechnica: Exploring the Nexus of Altered States and Altered Traits](https://doi.org/10.14236/ewic/EVA2024.85)." Electronic Workshops in Computing (2024).
+
+- Aqil and Roseman. "[More Than Meets the Eye](https://doi.org/10.1016/j.neuropharm.2022.109300)." Neuropharmacology (2023).
+
+### VR, Simulation, Music, And Dreaming
+
+- Suzuki et al. "[A Deep-Dream Virtual Reality Platform for Studying Altered Perceptual Phenomenology](https://doi.org/10.1038/s41598-017-16316-2)." Scientific Reports (2017).
+
+- Sekula, Downey, and Puspanathan. "[Virtual Reality as a Moderator of Psychedelic-Assisted Psychotherapy](https://doi.org/10.3389/fpsyg.2022.813746)." Frontiers in Psychology (2022).
+
+- Kaelen et al. "[The Hidden Therapist](https://doi.org/10.1007/s00213-017-4820-5)." Psychopharmacology (2018).
+
+- Messell et al. "[Music Programming for Psilocybin-Assisted Therapy](https://doi.org/10.3389/fpsyg.2022.873455)." Frontiers in Psychology (2022).
+
+- Rastelli et al. "[Simulated Visual Hallucinations in Virtual Reality Enhance Cognitive Flexibility](https://doi.org/10.1038/s41598-022-08047-w)." Scientific Reports (2022).
+
+- Carr, Haar, Amores, and Lopes. "[Dream Engineering: Simulating Worlds Through Sensory Stimulation](https://doi.org/10.1016/j.concog.2020.102955)." Consciousness and Cognition (2020).
+
+- Woollacott et al. "[Fire Kasina Advanced Meditation Produces Experiences Comparable to Psychedelic and Near-Death Experiences: A Pilot Study](https://doi.org/10.1016/j.explore.2024.103056)." EXPLORE (2024).

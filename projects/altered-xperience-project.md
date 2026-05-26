@@ -1,0 +1,121 @@
+# Altered Xperience Project
+
+Source: https://mesmerprism.com/projects/altered-xperience-project.html
+Canonical HTML: https://mesmerprism.com/projects/altered-xperience-project.html
+Generated: 2026-05-26
+Description: The Altered Xperience Project is a CIRCE-led citizen-science survey for anonymous altered-state reports, with multilingual questionnaires, feedback, scoring, exports, and collaborator workflow.
+Markdown: https://mesmerprism.com/projects/altered-xperience-project.md
+Plain text: https://mesmerprism.com/projects/altered-xperience-project.txt
+BibTeX references: https://mesmerprism.com/projects/altered-xperience-project.bib
+CSL JSON references: https://mesmerprism.com/projects/altered-xperience-project.references.csl.json
+
+---
+
+Citizen-science altered-state survey
+
+# Altered Xperience Project
+
+ The Altered Xperience Project (AXP) is a CIRCE-led citizen-science survey for
+ anonymous reports of altered states of consciousness, including substance-based
+ and non-substance-based experiences. The public survey combines multilingual
+ questionnaires, feedback, privacy boundaries, scoring, research exports, and
+ collaborator workflow. CIRCE leads the scientific project; Mesmer Prism
+ contributes the web infrastructure and collaborator tooling.
+
+ [Live AXP survey](https://alteredxproject.com/)
+ [Access guide](https://mesmerprism.com/axp-mvp-survey-guide/)
+ [CIRCE](https://circe-science.com/)
+ [Back to work](https://mesmerprism.com/#work)
+
+ Direction
+
+## What the system adds
+
+ AXP turns altered-state research into a running citizen-science survey. Public
+ participation, questionnaire design, data hygiene, and open-science
+ distribution have to work together in the same web system.
+
+ The running app is a Shiny survey pipeline with Google Sheets questionnaire
+ definitions, language-specific survey blocks, MariaDB persistence, canonical
+ ASC scoring, peer-comparison feedback, data-quality metadata, and export
+ scripts for redacted public exports and restricted research exports. The access
+ guide explains survey links, questionnaire edits, data
+ examples, peer-plot tuning, and the contracts that keep edits safe.
+
+ AXP extends the same systems thinking behind Viscereality and Rusty XR into
+ browser-based research infrastructure: consent-facing flow, participant
+ experience, reproducible definitions, redacted exports, and collaborator
+ documentation.
+
+### Current system
+
+- Multilingual Shiny survey flow for altered-state reports
+
+- Questionnaire definitions loaded from Google Sheets or local CSV sources
+
+- ASC scoring, feedback screens, and peer-comparison plotting
+
+- MariaDB persistence and one-fact-per-key data tables
+
+- Redacted public exports, restricted full exports, and OSF-ready data packages
+
+- Collaborator-facing access guide, diagrams, data examples, and plot lab
+
+### Connected projects
+
+- [Brain Candy](https://mesmerprism.com/projects/brain-candy.html) for non-pharmacological state-shift design and measurement context
+
+- [Prophantasia](https://mesmerprism.com/projects/prophantasia.html) for citizen-science platform thinking around imagery variation
+
+- [Phenomenological Control](https://mesmerprism.com/projects/phenomenological-control.html) for suggestion, imagery, and subjective-report discipline
+
+- [Viscereality](https://mesmerprism.com/projects/viscereality.html) for live study systems and participant-facing XR research flow
+
+ Scope
+
+## Role and system scope
+
+ CIRCE leads the scientific project and remains the scientific source of
+ record. Mesmer Prism translates research requirements into working survey,
+ data, feedback, and documentation systems.
+
+ AXP collects subjective reports. That makes privacy, anonymity, stable
+ terminology, and export boundaries central design concerns. The tooling
+ therefore treats participant-facing experience, researcher-facing data shape,
+ and collaborator documentation as one system instead of separate afterthoughts.
+
+ AXP is an open-science and citizen-science
+ infrastructure project for studying altered-state reports; it is not a clinical
+ service, a harm-reduction authority, or a safety endorsement for any
+ consciousness-modifying technique.
+
+### System focus
+
+- Citizen-science participation rather than closed internal research
+
+- Web development as part of research method
+
+- Open-science export paths and collaborator documentation
+
+- Clear distinction between CIRCE's scientific leadership and Mesmer Prism's web-system contribution
+
+ References
+
+## Current references
+
+ These links ground the public description of AXP and the surrounding
+ altered-state measurement infrastructure.
+
+### Project links
+
+- CIRCE. "[Altered Xperience Project](https://alteredxproject.com/)." Live AXP survey page.
+
+- CIRCE. "[Collaboration for Interdisciplinary Research on Conscious Experience](https://circe-science.com/)." Public CIRCE site.
+
+- Mesmer Prism. "[AXP Access Guide](https://mesmerprism.com/axp-mvp-survey-guide/)." Public collaborator guide.
+
+### Measurement context
+
+- CIRCE e.V. "[Collection of Altered-State Rating Scales and Questionnaires](https://circe-e-v.github.io/CAR/index.html)." Public questionnaire collection.
+
+- Costines and Schmidt. "[Exploring Altered States of Consciousness: A Pilot Study of Phenomenomics Using Citizen Science](https://www.cbs.mpg.de/2107561/a02_costines.pdf)." Poster describing the earlier citizen-science pilot.

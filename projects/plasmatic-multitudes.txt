@@ -1,0 +1,443 @@
+Plasmatic Multitudes - Weakly Bounded Embodiment and Semi-Corporeal Avatar Design
+
+Source: https://mesmerprism.com/projects/plasmatic-multitudes.html
+Canonical HTML: https://mesmerprism.com/projects/plasmatic-multitudes.html
+Generated: 2026-05-26
+Description: A public overview of weakly bounded bodies: avatars, swarms, auras, particle forms, and luminous bodies that soften while remaining coherent enough for embodiment, relation, and cautious research translation.
+Markdown: https://mesmerprism.com/projects/plasmatic-multitudes.md
+Plain text: https://mesmerprism.com/projects/plasmatic-multitudes.txt
+BibTeX references: https://mesmerprism.com/projects/plasmatic-multitudes.bib
+CSL JSON references: https://mesmerprism.com/projects/plasmatic-multitudes.references.csl.json
+
+---
+
+Weakly bounded embodiment
+
+Plasmatic Multitudes
+
+ Plasmatic Multitudes asks how far a body can become luminous,
+ porous, collective, particulate, ghostly, or otherwise weakly
+ bounded while still being experienced as a body. The answer is
+ not to make an avatar look ethereal. A body can soften without
+ disappearing when perception can still group it, motion can
+ still bind it, and interaction can still make it feel
+ responsive
+ (Wagemans et al., 2012 (https://doi.org/10.1037/a0029333);
+ Johansson, 1973 (https://link.springer.com/article/10.3758/BF03212378);
+ Lecuyer, 2009 (https://doi.org/10.1162/pres.18.1.39)).
+ The project treats semi-corporeal bodies as perceptual,
+ social, aesthetic, and cautious pain-translation design objects:
+ bodies whose coherence, motion, multisensory coupling, body
+ ownership, and cultural legibility let them soften without
+ collapsing into formlessness. This page gives the public
+ overview. The field guide collects the long essay, method note,
+ pain-translation hypothesis, vocabulary, and annotated sources.
+
+ Start with the basics (https://mesmerprism.com/projects/plasmatic-multitudes.html#field-guide)
+ XR embodiment (https://mesmerprism.com/projects/plasmatic-multitudes.html#xr)
+ Media genealogy (https://mesmerprism.com/projects/plasmatic-multitudes.html#genealogy)
+ Design translation (https://mesmerprism.com/projects/plasmatic-multitudes.html#design-translation)
+ Deep field guide (https://mesmerprism.com/plasmatic-multitudes/)
+ References (https://mesmerprism.com/projects/plasmatic-multitudes.html#references)
+ Back to work (https://mesmerprism.com/#work)
+
+ Field guide
+
+What is a weakly bounded body?
+
+ A weakly bounded body is a body whose edge is not sealed. It
+ may appear as a cloud, swarm, point cloud, aura, shimmer,
+ field, spectral trace, protective halo, or cluster of
+ particles. It may merge with another body, expand into an
+ environment, or flicker between figure and atmosphere. It is
+ not formless. It keeps enough structure for someone to locate,
+ address, inhabit, or respond to it
+ (Reeves, 1983 (https://doi.org/10.1145/357318.357320);
+ Reynolds, 1987 (https://doi.org/10.1145/37402.37406)).
+
+ This changes the usual avatar question. Instead of asking
+ whether a virtual body looks realistic, Plasmatic Multitudes
+ asks what cues let a body remain bodily when realism is
+ reduced: common motion, stable centers, contour fragments,
+ rhythmic response, body ownership cues, pseudo-haptic
+ resistance, and social framing. Realism can help, but it is
+ only one route to embodiment
+ (dos Anjos and Pereira, 2024 (https://arxiv.org/abs/2405.02672);
+ Yee and Bailenson, 2007 (https://doi.org/10.1111/j.1468-2958.2007.00299.x)).
+
+ The lived body keeps the problem concrete. Somaesthetics is
+ useful here because it treats embodiment as the medium of
+ perception, action, and self-presentation, not as a picture
+ added after the fact. If the body's edge is changed, the
+ design question becomes what happens to agency, trust,
+ relation, and felt meaning
+ (Shusterman (https://www.interaction-design.org/literature/book/the-encyclopedia-of-human-computer-interaction-2nd-ed/somaesthetics);
+ Hook et al., 2015 (https://doi.org/10.1145/2598510.2598561)).
+
+Design rules
+- Keep at least one stable identity carrier.
+- Let the edge change state: gather, diffuse, overlap, return.
+- Make softness legible through motion, resistance, rhythm, or response.
+- Treat relation as material: touch, distance, coalescence, consent, repair.
+- Do not claim therapeutic value until boundary precision has been tested directly.
+
+Body forms in scope
+- Particle bodies, point clouds, aura avatars, swarms, and field bodies
+- Luminous bodies, spectral bodies, mist bodies, and projected apparitions
+- Collective bodies that cohere through common fate rather than a single shell
+- Protective halos or soft buffers used as cautious pain-related hypotheses
+
+Compact method
+
+ Plasmatic Multitudes treats the body's edge as a design variable. Boundary
+ precision can change, but coherence must remain strong enough for ownership,
+ agency, relation, and many-part form.
+
+Clinical boundary
+
+ Plasmatic Multitudes does not claim that soft-edged avatars treat pain. It
+ proposes boundary precision, protective fields, and avatar materiality as
+ variables worth testing where body representation already matters.
+
+What is out of scope
+- Generic mystical or occult claims
+- Loose quantum language without a real material or optical bridge
+- Claims that soft avatars are automatically better than realistic ones
+- Claims that semi-corporeal avatars are proven pain treatments
+
+ Perceptual coherence
+
+A body can loosen without becoming noise
+
+ The core design problem is not softness. It is coherence after
+ softness begins.
+
+Grouping does real work
+
+ Gestalt grouping and figure-ground organization explain why
+ fragments can gather into a single perceived form. A swarm of
+ points, a field of particles, or a luminous outline can still
+ become one body if its parts share motion, rhythm, proximity,
+ contour, or response. Johansson's point-light work adds the
+ bodily version of the same argument: sparse moving points can
+ be enough to produce a compelling sense of human motion
+ (Wagemans et al., 2012 (https://doi.org/10.1037/a0029333);
+ Johansson, 1973 (https://link.springer.com/article/10.3758/BF03212378)).
+
+ That is why a semi-corporeal body needs anchors. A density
+ core, hand position, gaze direction, gait rhythm, breathing
+ pulse, or touch response can carry identity while the
+ periphery diffuses. The design rule is simple: keep enough
+ stable structure for recognition, then let the boundary
+ become negotiable.
+
+Particles and swarms are not just decoration
+
+ Particle systems were introduced as a way to model fuzzy,
+ dynamic objects such as fire, clouds, and water. Flocking
+ models showed that coherent collective motion can emerge from
+ many locally acting agents. Together they give Plasmatic
+ Multitudes a computational vocabulary for bodies that are
+ volumetric, temporal, and many-part rather than closed mesh
+ surfaces
+ (Reeves, 1983 (https://doi.org/10.1145/357318.357320);
+ Reynolds, 1987 (https://doi.org/10.1145/37402.37406)).
+
+ A swarm body can make coordination visible. It can show how a
+ body belongs to many elements, many signals, or many people at
+ once. That social use still needs care: shared bodies have to
+ make contribution, consent, visibility, and repair legible
+ rather than simply replacing one rigid interface with a
+ prettier one
+ (Wobbrock et al., 2011 (https://kgajos.seas.harvard.edu/papers/wobbrock11abd.pdf);
+ Bennett et al., 2018 (https://doi.org/10.1145/3234695.3236348)).
+
+ XR embodiment
+
+Embodiment beyond the mesh
+
+ XR research makes weak body form testable. Early spectral-body
+ work showed that presence could be built around an
+ unrealistic virtual body, and more recent studies compare
+ abstract, mesh-based, and point-cloud avatars as distinct
+ representation conditions
+ (Richards et al., 1994 (https://www.spiedigitallibrary.org/conference-proceedings-of-spie/2177/0000/Virtual-reality-and-virtual-bodies/10.1117/12.173894.full);
+ dos Anjos and Pereira, 2024 (https://arxiv.org/abs/2405.02672)).
+ The Proteus effect adds the behavioral stakes: transformed
+ self-representation can feed back into how people act
+ (Yee and Bailenson, 2007 (https://doi.org/10.1111/j.1468-2958.2007.00299.x)).
+
+ The most useful contemporary precedents are not generic
+ "abstract avatars." They are systems in which weak
+ representation carries relation. Desnoyers-Stewart's work
+ moves through point clouds, particle bodies, body swapping,
+ constellation bodies, and aura-like social touch. Glowacki's
+ Isness line uses diffuse light-energy bodies and coalescence
+ as part of a guided design language for connectedness and
+ self-boundary softening
+ (Desnoyers-Stewart et al., 2020 (https://doi.org/10.1162/LEON_a_01925);
+ Desnoyers-Stewart et al., 2023 (https://doi.org/10.1145/3544549.3585843);
+ Glowacki et al., 2022 (https://doi.org/10.1038/s41598-022-12637-z);
+ Glowacki, 2024 (https://doi.org/10.3389/frvir.2023.1286950)).
+
+ Pseudo-haptics explains why such bodies can feel materially
+ persuasive even without dedicated force feedback. Vision and
+ cross-modal cueing can induce impressions of stiffness,
+ friction, texture, mass, and resistance, so an aura, halo,
+ or particle body can be designed to feel yielding, viscous,
+ heavy, buffered, or responsive if its behavior is coherent
+ enough
+ (Lecuyer, 2009 (https://doi.org/10.1162/pres.18.1.39);
+ Pusch and Lecuyer, 2011 (https://doi.org/10.1145/2070481.2070494);
+ Collins and Kapralos, 2019 (https://doi.org/10.1080/17458927.2019.1619318)).
+
+Design variables
+- Boundary precision: hard edge, gradient edge, field, swarm
+- Coherence: common fate, rhythm, density core, response pattern
+- Material inference: drag, viscosity, stiffness, yielding, resistance
+- Relation: coalescence, touch metaphor, interpersonal timing, return
+
+Useful caution
+
+ A body can be weakly represented without being weakly
+ designed. Softness needs timing, feedback, and a clear
+ reason to exist.
+
+ Media genealogy
+
+Plasmatic, spectral, luminous
+
+ Weak bodies have a long media history: animation, optical
+ apparatus, spirit media, projection, smoke, and digital
+ effects all learned ways to stage partial bodies.
+
+Plasmaticness is changeability, not mysticism
+
+ Sergei Eisenstein's writing on Disney gives the project its
+ word "plasmatic." The useful point is not a vague celebration
+ of fluidity. It is the refusal of once-and-for-allotted form:
+ animated figures can stretch, melt, become animal, object,
+ ghost, or force, and still retain the charge of living form.
+ Abraham Geil gives a compact contemporary bridge into that
+ argument, while Kristen Whissel shows how morphs, crowds,
+ swarms, and digital multitudes can carry narrative and
+ symbolic work rather than remaining empty spectacle
+ (Eisenstein, 2017 (https://seagullbooks.org/products/on-disney);
+ Geil, 2019 (https://www.ceeol.com/search/article-detail?id=813411);
+ Whissel, 2014 (https://www.dukeupress.edu/spectacular-digital-effects)).
+
+Spectral bodies are apparatus bodies
+
+ Ghostly bodies belong here as media history. Phantasmagoria,
+ Pepper's Ghost, spirit
+ photography, superimposition, and seance culture all staged
+ bodies through darkness, reflection, smoke, projection,
+ expectation, and hidden apparatus. They were techniques for
+ making partial bodies appear,
+ disappear, hover, enlarge, and share space with viewers
+ (Gunning, 2004 (https://mediaarthistory.org/refresh/Programmatic%20key%20texts/pdfs/Gunning.pdf);
+ Natale, 2012 (https://doi.org/10.1080/17460654.2012.664745);
+ Owens, 2017 (https://shop.tate.org.uk/the-ghost-a-cultural-history-paperback/22503.html)).
+
+ Leigh Wilson's work on modernism and magic sharpens the
+ material side of that history. Ectoplasm, subtle bodies, and
+ thought-forms offered picture languages for extrusion,
+ colored radiance, partial materialization, and invisible
+ feeling rendered as form. Plasmatic Multitudes uses that
+ history as a genealogy of body images, not as evidence for
+ the metaphysical claims those images once carried
+ (Wilson, 2013 (https://doi.org/10.3366/edinburgh/9780748627691.001.0001);
+ Bukatman, 2012 (https://books.google.com/books/about/The_Poetics_of_Slumberland.html?id=wi8NYAAACAAJ)).
+
+Craft keeps impossible bodies readable
+
+ Special-effects animation adds a practical rule that still
+ holds in XR: impossible motion becomes believable when it
+ follows observed forces, preserves an underlying energy, and
+ stays consistent with the surrounding world. Bernal and
+ Maes make the same point in a social-VR register. Their fur
+ and particle avatars are not relatable because they are
+ humanlike. They are relatable because transformation is tied
+ to expression, physiology, and mannerism
+ (Gilland, 2009 (https://archive.org/details/elemental-magic/page/n2/mode/1up);
+ Gilland, 2012 (https://archive.org/details/elemental-magic-volume-ii/mode/1up);
+ Bernal and Maes, 2017 (https://doi.org/10.1145/3027063.3053207)).
+
+ Design translation
+
+From avatar to installation to care
+
+ Weakly bounded bodies translate across media. In XR they may
+ become avatars, aura fields, particle hands, or shared light
+ bodies. In installation they may become projected bodies,
+ simulation fields, haze, scrims, tracking, or responsive
+ light. Danceroom Spectroscopy is a key bridge because it
+ makes physics simulation into an embodied public encounter:
+ people move inside a field of particles and forces rather
+ than inside a sealed character shell
+ (Mitchell et al., 2016 (https://doi.org/10.1162/LEON_a_00924)).
+
+ The same line becomes a preservation problem. O'Connor and
+ colleagues opened molecular dynamics into collaborative VR,
+ while the later esencia case study reinterprets danceroom as
+ a living technical and experiential system rather than a
+ fixed hardware stack. For Plasmatic Multitudes, this is part
+ of the design problem: if a body is partly a simulation,
+ particle field, or live apparatus, then preserving the work
+ means preserving its body logic, relation, and behavior as
+ much as its files
+ (O'Connor et al., 2018 (https://doi.org/10.1126/sciadv.aat2731);
+ Toledo Castro et al., 2025 (https://doi.org/10.1145/3749893.3749972);
+ Fiordelmondo et al., 2023 (https://doi.org/10.3389/frsip.2023.1183294)).
+
+ Pain-related translation should stay narrower. Existing
+ studies show that embodied visual form, heartbeat-synchronous
+ cues, and immersive placebo-like interventions can affect
+ pain thresholds, pain ratings, or body-perception disturbance.
+ Those studies justify boundary precision as a research
+ variable; they do not prove that semi-corporeal avatars are
+ clinical treatments. The honest claim is that soft edges,
+ protective fields, and distributed body form are plausible
+ conditions worth testing when body representation already
+ matters
+ (Ho et al., 2022 (https://doi.org/10.1016/j.jpain.2021.10.009);
+ Lewis et al., 2021 (https://doi.org/10.1002/ejp.1766);
+ Martini et al., 2013 (https://doi.org/10.3389/fnhum.2013.00438);
+ Solca et al., 2018 (https://doi.org/10.1212/WNL.0000000000005905);
+ Bullington, 2013 (https://doi.org/10.1007/978-94-007-6498-9)).
+
+Working design rules
+- Keep at least one stable identity carrier while the edge softens.
+- Make permeability stateful: gather, diffuse, overlap, merge, return.
+- Use physical scaffolds: force, drag, rhythm, density, latency, response.
+- Choose metaphors carefully: aura, ghost, swarm, mist, and shield do different work.
+
+Cautious pain framing
+
+ Boundary-softened avatars are best described as a study
+ direction: a way to test how boundary precision,
+ materiality, and protective-field imagery interact with
+ ownership, agency, pain, and body-perception measures.
+
+ Evidence audit
+
+What is solid, partial, and open
+
+ The best-supported ground is perception, XR embodiment,
+ pseudo-haptics, media genealogy, and several concrete avatar
+ or installation precedents. The less settled ground is
+ broader social translation: shared swarm bodies and
+ mixed-input body fields are
+ promising, but they need careful participant control,
+ visibility, consent, and repair practices before they can
+ support claims about collaboration or access
+ (Wobbrock et al., 2011 (https://kgajos.seas.harvard.edu/papers/wobbrock11abd.pdf);
+ Bennett et al., 2018 (https://doi.org/10.1145/3234695.3236348)).
+
+ The clinical layer is still open. Pain studies support the
+ broader relevance of body representation and multisensory
+ modulation, but boundary precision itself remains a
+ hypothesis. Here, semi-corporeal pain design remains an
+ experimental extension of existing avatar-pain work, not an
+ established treatment category.
+
+Solid
+- Grouping and motion can hold a weak body together.
+- Avatar form can shape behavior and self-representation.
+- Pseudo-haptics can make abstract forms feel materially responsive.
+- Plasmatic and spectral body histories give a careful media genealogy.
+
+Partial or open
+- Shared swarm bodies require more source work before becoming a central public essay.
+- Boundary-softened avatars are plausible pain variables, not proven clinical mechanisms.
+- Weak bodies are not universally better than realistic avatars; the right form depends on the task.
+
+ Open direction
+
+The design question that stays
+
+ The next useful comparison is not realistic versus abstract.
+ It is a matrix of boundary precision, motion coherence,
+ multisensory coupling, symbolic rigidity, social framing,
+ and task. A particle hand, a light body, an aura-touch
+ avatar, a protective halo, a projected apparition, and a
+ shared swarm field all bend the body in different ways. The
+ question is which bending preserves enough coherence for
+ ownership, agency, relation, or care to survive.
+
+ Plasmatic Multitudes gives that question a vocabulary. It is
+ about bodies coherent enough to inhabit and unstable enough
+ to change what inhabiting means.
+
+ Deep field guide
+
+Where to continue
+
+ The project page stays compact on purpose. The field guide holds the
+ longer essay, method note, pain-translation hypothesis, vocabulary, and
+ annotated references.
+
+Go deeper
+- Long essay (https://mesmerprism.com/plasmatic-multitudes/essay.html) - semi-corporeal avatar aesthetics across media history, XR, morphogenesis, and pain translation.
+- Pain translation (https://mesmerprism.com/plasmatic-multitudes/pain.html) - cautious hypotheses for boundary precision and avatar-pain research.
+- Vocabulary (https://mesmerprism.com/plasmatic-multitudes/terminology.html) - terms for weakly bounded bodies across media theory, XR, perception, and care.
+- Sources (https://mesmerprism.com/plasmatic-multitudes/references.html) - annotated references and evidence status.
+
+ References
+
+Sources and entry points
+
+ These are the main sources cited above. For deeper reading, the
+ field guide collects the long essay, vocabulary, pain-translation
+ note, and annotated references.
+
+Embodiment and perception
+- Shusterman. "Somaesthetics (https://www.interaction-design.org/literature/book/the-encyclopedia-of-human-computer-interaction-2nd-ed/somaesthetics)." The Encyclopedia of Human-Computer Interaction .
+- Hook et al. "Somaesthetic Design (https://doi.org/10.1145/2598510.2598561)." Interactions (2015).
+- Wagemans et al. "A Century of Gestalt Psychology in Visual Perception (https://doi.org/10.1037/a0029333)." Psychological Bulletin 138(6) (2012).
+- Johansson. "Visual Perception of Biological Motion and a Model for Its Analysis (https://link.springer.com/article/10.3758/BF03212378)." Perception & Psychophysics 14(2) (1973).
+- Yee and Bailenson. "The Proteus Effect (https://doi.org/10.1111/j.1468-2958.2007.00299.x)." Human Communication Research 33(3) (2007).
+
+Particles, swarms, and pseudo-haptics
+- Reeves. "Particle Systems: A Technique for Modeling a Class of Fuzzy Objects (https://doi.org/10.1145/357318.357320)." ACM Transactions on Graphics 2(2) (1983).
+- Reynolds. "Flocks, Herds, and Schools (https://doi.org/10.1145/37402.37406)." SIGGRAPH (1987).
+- Lecuyer. "Simulating Haptic Feedback Using Vision (https://doi.org/10.1162/pres.18.1.39)." Presence 18(1) (2009).
+- Pusch and Lecuyer. "Pseudo-Haptics: From the Theoretical Foundations to Practical System Design Guidelines (https://doi.org/10.1145/2070481.2070494)." ICMI (2011).
+- Collins and Kapralos. "Pseudo-Haptics: A Review of Leveraging Cross-Modal Perception in Virtual Environments (https://doi.org/10.1080/17458927.2019.1619318)." The Senses and Society 14(3) (2019).
+
+Media genealogy
+- Eisenstein. On Disney (https://seagullbooks.org/products/on-disney) . Seagull Books (2017).
+- Geil. "Plasmatic Mimesis (https://www.ceeol.com/search/article-detail?id=813411)." World Literature Studies 11(4) (2019).
+- Whissel. Spectacular Digital Effects (https://www.dukeupress.edu/spectacular-digital-effects) . Duke University Press (2014).
+- Wilson. Modernism and Magic (https://doi.org/10.3366/edinburgh/9780748627691.001.0001) . Edinburgh University Press (2013).
+- Bukatman. The Poetics of Slumberland (https://books.google.com/books/about/The_Poetics_of_Slumberland.html?id=wi8NYAAACAAJ) . University of California Press (2012).
+- Owens. The Ghost (https://shop.tate.org.uk/the-ghost-a-cultural-history-paperback/22503.html) . Tate Publishing (2017).
+- Gunning. "Illusions Past and Future (https://mediaarthistory.org/refresh/Programmatic%20key%20texts/pdfs/Gunning.pdf)." Refresh! (2004).
+- Natale. "A Short History of Superimposition (https://doi.org/10.1080/17460654.2012.664745)." Early Popular Visual Culture 10(2) (2012).
+- Gilland. Elemental Magic (https://archive.org/details/elemental-magic/page/n2/mode/1up) . Focal Press (2009).
+- Gilland. Elemental Magic, Volume II (https://archive.org/details/elemental-magic-volume-ii/mode/1up) . Focal Press (2012).
+
+XR and weak representation
+- Richards et al. "Virtual Reality and Virtual Bodies (https://www.spiedigitallibrary.org/conference-proceedings-of-spie/2177/0000/Virtual-reality-and-virtual-bodies/10.1117/12.173894.full)." SPIE 2177 (1994).
+- dos Anjos and Pereira. "Effects of Realism and Representation on Self-Embodied Avatars in Immersive Virtual Environments (https://arxiv.org/abs/2405.02672)." arXiv (2024).
+- Desnoyers-Stewart et al. "Body RemiXer (https://doi.org/10.1162/LEON_a_01925)." Leonardo 53(4) (2020).
+- Desnoyers-Stewart et al. "Embodied Telepresent Connection (ETC) (https://doi.org/10.1145/3544549.3585843)." CHI EA (2023).
+- Glowacki et al. "Group VR Experiences Can Produce Ego Attenuation and Connectedness Comparable to Psychedelics (https://doi.org/10.1038/s41598-022-12637-z)." Scientific Reports 12 (2022).
+- Glowacki. "VR Models of Death and Psychedelics (https://doi.org/10.3389/frvir.2023.1286950)." Frontiers in Virtual Reality 4 (2024).
+- Bernal and Maes. "Emotional Beasts (https://doi.org/10.1145/3027063.3053207)." CHI EA (2017).
+
+Installation and preservation
+- Mitchell et al. "danceroom Spectroscopy (https://doi.org/10.1162/LEON_a_00924)." Leonardo 49(2) (2016).
+- O'Connor et al. "Sampling Molecular Conformations and Dynamics in a Multiuser Virtual Reality Framework (https://doi.org/10.1126/sciadv.aat2731)." Science Advances 4(6) (2018).
+- Toledo Castro, Protopopov, and Glowacki. "esencia (https://doi.org/10.1145/3749893.3749972)." Expanded 2025 (2025).
+- Fiordelmondo et al. "A Multilevel Dynamic Model for Documenting, Reactivating and Preserving Interactive Multimedia Art (https://doi.org/10.3389/frsip.2023.1183294)." Frontiers in Signal Processing 3 (2023).
+- Fiordelmondo, Canazza, and Pretto. "Reactivating and Preserving Interactive Multimedia Artworks (https://doi.org/10.1145/3647995)." Journal on Computing and Cultural Heritage 17(2) (2024).
+
+Pain and social translation
+- Bullington. The Expression of the Psychosomatic Body from a Phenomenological Perspective (https://doi.org/10.1007/978-94-007-6498-9) . Springer (2013).
+- Ho et al. "Real Bodies Not Required? (https://doi.org/10.1016/j.jpain.2021.10.009)." The Journal of Pain 23(4) (2022).
+- Lewis et al. "Visual Illusions Modulate Body Perception Disturbance and Pain in Complex Regional Pain Syndrome (https://doi.org/10.1002/ejp.1766)." European Journal of Pain 25(7) (2021).
+- Martini, Perez-Marcos, and Sanchez-Vives. "What Color Is My Arm? (https://doi.org/10.3389/fnhum.2013.00438)." Frontiers in Human Neuroscience 7 (2013).
+- Solca et al. "Heartbeat-Enhanced Immersive Virtual Reality to Treat Complex Regional Pain Syndrome (https://doi.org/10.1212/WNL.0000000000005905)." Neurology 91(5) (2018).
+- Wobbrock et al. "Ability-Based Design (https://kgajos.seas.harvard.edu/papers/wobbrock11abd.pdf)." ACM Transactions on Accessible Computing 3(3) (2011).
+- Bennett, Brady, and Branham. "Interdependence as a Frame for Assistive Technology Research and Design (https://doi.org/10.1145/3234695.3236348)." ASSETS (2018).

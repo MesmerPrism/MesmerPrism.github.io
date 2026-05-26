@@ -1,0 +1,172 @@
+Optical Movement Illusions
+
+Source: https://mesmerprism.com/projects/optical-movement-illusions.html
+Canonical HTML: https://mesmerprism.com/projects/optical-movement-illusions.html
+Generated: 2026-05-26
+Description: Optical Movement Illusions maps peripheral drift, Rotating Snakes, static motion illusions, color and luminance parameters, and the mechanism-design bridge into perceptual tooling.
+Markdown: https://mesmerprism.com/projects/optical-movement-illusions.md
+Plain text: https://mesmerprism.com/projects/optical-movement-illusions.txt
+BibTeX references: https://mesmerprism.com/projects/optical-movement-illusions.bib
+CSL JSON references: https://mesmerprism.com/projects/optical-movement-illusions.references.csl.json
+
+---
+
+Static motion and perceptual mechanics
+
+Optical Movement Illusions
+
+ Static images that seem to move: peripheral drift,
+ Rotating Snakes, and related motion illusions. The work matters because these
+ figures sit exactly where psychophysics, retinal transients, cortical motion
+ processing, and design practice meet.
+
+ Back to work (https://mesmerprism.com/#work)
+ Deep Dream (https://mesmerprism.com/projects/deep-dream.html)
+ References (https://mesmerprism.com/projects/optical-movement-illusions.html#references)
+
+ Direction
+
+Mechanism
+
+ The core claim is that static optical motion
+ illusions arise when asymmetric spatial structure and small temporal transients
+ combine to drive otherwise standard motion computations. That makes them
+ unusually useful both for mechanism work
+ and for practical visual design.
+
+ The work has both an explanation side and a translation side. The explanation side
+ tracks luminance order, fixational instability, microsaccades, blinks, pupil
+ dynamics, color arrangement, illuminance, and cortical motion-network
+ responses. The newer color-parameter work matters because it keeps the design
+ bridge concrete: blue-yellow arrangements, color temperature, and illumination
+ level can be discussed as variables rather than loose visual impressions. The
+ translation side asks how those same mechanisms can inform filters, image
+ processing, and broader altered-perception design work without breaking
+ contact with the literature.
+
+Current focus
+- Peripheral drift and Rotating Snakes mechanism reviews
+- Parameter-space work around luminance order, contrast, color, color temperature, and illuminance
+- Eye-movement, blink, and pupil-linked temporal drivers
+- Implementation bridge into filters and experimental visual tooling
+
+Connected projects
+- Brain Candy (https://mesmerprism.com/projects/brain-candy.html) for induced-vision and pattern-design translation
+- Deep Dream (https://mesmerprism.com/projects/deep-dream.html) for a different class of altered-vision modeling
+- Phenomenological Control (https://mesmerprism.com/projects/phenomenological-control.html) for anomaly perception and imagery-adjacent questions
+
+ Mechanism
+
+Why this line matters
+
+ Optical movement illusions are a good test case for a broader methodological
+ issue: how to talk about strange experience without mythologizing it.
+ These images feel uncanny, but the literature also lets them be described very
+ precisely in terms of temporal filtering, luminance asymmetry, motion detectors,
+ and retinotopic processing.
+
+ That makes them ideal bridge objects. They connect hard mechanism questions to
+ design questions about how one might deliberately build or soften motion,
+ instability, or visual drift into an interface. Individual-difference and
+ imagery findings belong in the background of that map, but this line
+ keeps the stronger mechanism and parameter evidence in front.
+
+Public focus
+- Mechanism-grounded explanation over loose illusion folklore
+- Parameter-sensitive design translation
+- Individual-difference questions kept secondary to stronger mechanism evidence
+
+ Synthesis
+
+Static images with temporal consequences
+
+ The central mechanism is ordinary visual computation under unusual image
+ constraints: the motion is illusory, but the error is structured.
+
+A static image is not static to the visual system
+
+ Peripheral-drift and Rotating Snakes-style images work because the visual
+ system never receives a perfectly frozen picture. Eyes make small movements,
+ pupils change with luminance, blinks reset local contrast, and neural
+ responses unfold over time. A printed or screen-based pattern can therefore
+ become a time-varying signal at the retina and early visual cortex, even when
+ the pixels themselves are not animated.
+
+ The strongest explanations do not treat the viewer as hallucinating motion
+ from nothing. They focus on asymmetric spatial structure interacting with
+ temporal transients. Luminance steps, contrast order, local edge arrangement,
+ response latency, and phase differences can bias the same motion machinery
+ that ordinarily helps us track real change in the world.
+
+Why the pattern matters
+
+ These illusions are not produced by any strange-looking pattern. They depend on
+ parameter choices. Four-step luminance sequences, sharp local contrast,
+ repeated asymmetric units, peripheral placement, and carefully arranged
+ direction islands all affect strength and direction. The design rule is
+ therefore more like psychophysics than decoration: change the sequence and the
+ perceived motion can weaken, reverse, or disappear.
+
+ That is why optical movement illusions are useful for more than collecting. They give
+ an example of how visual form can be written with the timing of perception in
+ mind. A designer shapes the order in which the visual system samples, delays,
+ compares, and resolves local signals.
+
+Observer difference without overreading it
+
+ People differ in how strongly they experience these effects. That variability
+ is real enough to care about, but it should not be inflated into a personality
+ theory of illusion susceptibility. The best-supported mechanism line still
+ runs through luminance, contrast, temporal filtering, eye movement, and motion
+ processing. Imagery vividness, attention, fatigue, expectation, display
+ quality, and viewing behavior may modulate the result, but they are secondary
+ until the evidence says otherwise.
+
+ This distinction is important for the wider website because optical movement
+ illusions sit near questions about phenomenological control, imagery, and
+ induced vision. They keep those wider claims honest. Not every striking perceptual
+ effect needs a broad altered-state explanation. Sometimes the richest lesson
+ is that ordinary visual machinery is already stranger and more dynamic than it
+ looks.
+
+Design translation
+
+ The practical translation is to treat apparent motion as a controllable design
+ variable. Static graphics can imply drift, pulse, shimmer, or rotation without
+ animation, but that power comes with responsibilities. The designer has to
+ account for peripheral strength, fatigue, accessibility, display conditions,
+ and the possibility that a compelling surface becomes unpleasant for some
+ viewers.
+
+ This line functions as a technical counterweight to more speculative perceptual
+ work. It shows how far one can go with disciplined
+ stimulus structure before reaching for larger claims about consciousness,
+ imagination, or transformation.
+
+ References
+
+Current references
+
+ These are the main works currently defining the public Optical Movement
+ Illusions line, including the recent color-parameter and pupil-dynamics
+ updates.
+
+Classics and mechanism papers
+- Fraser and Wilcox. "Perception of Illusory Movement (https://doi.org/10.1038/281565a0)." Nature (1979).
+- Faubert and Herbert. "The Peripheral Drift Illusion: A Motion Illusion in the Visual Periphery (https://doi.org/10.1068/p2825)." Perception (1999).
+- Backus and Oruç. "Illusory Motion from Change over Time in the Response to Contrast and Luminance (https://doi.org/10.1167/5.11.10)." Journal of Vision (2005).
+- Conway. "Neural Basis for a Powerful Static Motion Illusion (https://doi.org/10.1523/JNEUROSCI.1084-05.2005)." Journal of Neuroscience (2005).
+- Fermüller, Ji, and Kitaoka. "Illusory Motion Due to Causal Time Filtering (https://doi.org/10.1016/j.visres.2009.11.021)." Vision Research (2010).
+
+Eye movements, imaging, and parameter maps
+- Otero-Millan, Macknik, and Martinez-Conde. "Microsaccades and Blinks Trigger Illusory Rotation in the 'Rotating Snakes' Illusion (https://doi.org/10.1167/12.9.1013)." Journal of Vision (2012).
+- Ashida et al. "Direction-Specific fMRI Adaptation Reveals the Visual Cortical Network Underlying the 'Rotating Snakes' Illusion (https://doi.org/10.1016/j.neuroimage.2012.03.033)." NeuroImage (2012).
+- Bach and Atala-Gérard. "The Rotating Snakes Illusion Is a Straightforward Consequence of Nonlinearity in Arrays of Standard Motion Detectors (https://doi.org/10.1177/2041669520958025)." i-Perception (2020).
+- Mather and Cavanagh. "Pupil Dilation Underlies the Peripheral Drift Illusion (https://doi.org/10.1167/jov.25.2.13)." Journal of Vision (2025).
+- Uesaki et al. "Blue-Yellow Combination Enhances Perceived Motion in Rotating Snakes Illusion (https://doi.org/10.1177/20416695241242346)." i-Perception (2024).
+- Nishikawa and Kitaoka. "The Effects of Color Temperature and Illuminance on the Color-Dependent Fraser-Wilcox Illusion (https://doi.org/10.1177/20416695251412759)." i-Perception (2026).
+- Salge, Pollmann, and Reeder. "Anomalous Visual Experience Is Linked to Perceptual Uncertainty and Visual Imagery Vividness (https://doi.org/10.1007/s00426-020-01364-7)." Psychological Research (2021).
+
+Individual-difference boundaries
+- Bouyer and Arnold. "Deep Aphantasia: A Visual Brain with Minimal Influence from Priors or Inhibitory Feedback? (https://doi.org/10.3389/fpsyg.2024.1374349)" Frontiers in Psychology (2024).
+- Keogh, Kay, Meagher, and Pearson. "Do You See What I See? Linking Involuntary Nonretinal (Phantom) Vision and Mental Imagery in Aphantasia (https://doi.org/10.1167/jov.25.14.10)." Journal of Vision (2025).

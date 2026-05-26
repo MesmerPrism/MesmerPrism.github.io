@@ -1,0 +1,551 @@
+# Deep Dream
+
+Source: https://mesmerprism.com/projects/deep-dream.html
+Canonical HTML: https://mesmerprism.com/projects/deep-dream.html
+Generated: 2026-05-26
+Description: Deep Dream explains how machine-vision hallucination, community visual taxonomies, VR research, and cyberdelic systems shaped simulated psychedelic vision.
+Markdown: https://mesmerprism.com/projects/deep-dream.md
+Plain text: https://mesmerprism.com/projects/deep-dream.txt
+BibTeX references: https://mesmerprism.com/projects/deep-dream.bib
+CSL JSON references: https://mesmerprism.com/projects/deep-dream.references.csl.json
+
+---
+
+Simulated psychedelic vision
+
+# Deep Dream
+
+ Psychedelic visual simulation is the attempt to make altered vision
+ visible from the outside: breathing surfaces, tracers, lattices,
+ tunnels, recursive textures, faces in noise, and scene-like imagery
+ translated into images, video, VR, shaders, neural networks, and
+ toolkits. DeepDream is one of the central bridges in that story. It
+ began as Google's 2015 way of looking inside a vision network, became
+ a viral image style, was stabilized by open-source video developers,
+ and then entered laboratory VR as the Hallucination Machine
+ ([Mordvintsev et al., 2015](https://research.google/blog/inceptionism-going-deeper-into-neural-networks/);
+ [Suzuki et al., 2017](https://doi.org/10.1038/s41598-017-16316-2)).
+ But the field around it is larger than DeepDream. Community taxonomies,
+ replication artists, psychonaut wikis, QRI tools, immersive designers,
+ and current cyberdelic researchers have all shaped what counts as a
+ plausible visual target
+ ([Kins, 2011](https://disregardeverythingisay.com/post/9331287956/the-visual-components-of-a-psychedelic-experience);
+ [PsychonautWiki](https://psychonautwiki.org/wiki/Replication_index);
+ [Hartogsohn, 2023](https://doi.org/10.3389/fpsyg.2022.1073235)).
+
+ [Start with the basics](https://mesmerprism.com/projects/deep-dream.html#field-guide)
+ [Community role](https://mesmerprism.com/projects/deep-dream.html#community)
+ [Evidence](https://mesmerprism.com/projects/deep-dream.html#evidence)
+ [V1 form constants](https://mesmerprism.com/projects/bressloff-v1-form-constants.html)
+ [References](https://mesmerprism.com/projects/deep-dream.html#references)
+ [Back to work](https://mesmerprism.com/#work)
+
+ Field guide
+
+## What is being simulated?
+
+ Psychedelic visuals include more than "weird images." People repeatedly
+ report families of altered visual experience: geometric form constants
+ such as lattices, cobwebs, tunnels, spirals, and honeycomb fields;
+ open-eye distortions such as breathing walls, flowing textures, and
+ intensified color; motion effects such as tracers; and, at higher
+ intensities, faces, entities, landscapes, and dream-like scenes
+ ([Bressloff et al., 2002](https://doi.org/10.1162/089976602317250861);
+ [Shanon, 2002](https://cris.huji.ac.il/en/publications/ayahuasca-visualizations-a-structural-typology);
+ [Kometer et al., 2013](https://doi.org/10.1523/JNEUROSCI.3007-12.2013)).
+
+ That repeatability is why simulation is possible at all. A visual
+ system, artist, or algorithm can be asked to target specific
+ signatures instead of producing a generic psychedelic-looking surface.
+ The target might be a wall that drifts, a texture that becomes
+ symmetrically patterned, a scene that develops pareidolic faces, or a
+ VR world whose geometry and color become unstable while the viewer
+ remains sober
+ ([Effect Index](https://www.effectindex.com/effects);
+ [PsychonautWiki](https://psychonautwiki.org/wiki/Replication_index);
+ [Kaup et al., 2023](https://doi.org/10.3389/fpsyt.2023.1088896)).
+
+ The hardest part is keeping the visual scope at the right scale. A simulation
+ can resemble one visual effect without reproducing the whole
+ psychedelic state. Pharmacological psychedelics also alter emotion,
+ time, selfhood, memory, music, social meaning, bodily sensation, and
+ interpretation. A visual simulator can isolate part of that system,
+ but it cannot inherit the whole state just because the image looks
+ convincing
+ ([Suzuki et al., 2017](https://doi.org/10.1038/s41598-017-16316-2);
+ [Suzuki, 2026](https://doi.org/10.3389/fpsyg.2026.1819038)).
+
+### Common visual targets
+
+- Form constants: lattices, tunnels, spirals, cobwebs, funnels
+
+- Surface effects: breathing, melting, drifting, flowing, texture crawl
+
+- Motion effects: tracers, after-images, smear, persistence
+
+- Pattern effects: symmetry, recursive detail, fractal-like repetition
+
+- Pareidolia: faces, animals, eyes, figures, objects emerging from the scene
+
+### Comparison levels
+
+- Visual resemblance to reports or replications
+
+- Overlap with selected questionnaire dimensions
+
+- Measured EEG, physiological, or behavioral changes
+
+- Use as a controllable stimulus in a study
+
+- Whole-state recreation remains outside visual simulation
+
+ Community lineage
+
+## The target set was named before it was stabilized in the lab
+
+ Formal papers are only one part of this history. A large part of the
+ field came from people trying to describe, draw, animate, and compare
+ subjective visual experiences with each other.
+
+### From trip reports to visual vocabulary
+
+ Josie Kins's early Disregard Every Thing I Say work matters because it
+ pushed psychedelic description away from metaphor alone. The 2011
+ visual-components taxonomy argued for simple titles, descriptions,
+ and intensity levels so that effects such as drifting, tracers,
+ geometry, and hallucination complexity could be discussed more
+ precisely. The later Effect Index and related PsychonautWiki material
+ extended that impulse into a public reference culture
+ ([Kins, 2011](https://disregardeverythingisay.com/post/9331287956/the-visual-components-of-a-psychedelic-experience);
+ [Kins, 2022](https://www.effectindex.com/articles/funding-proposal);
+ [PsychonautWiki](https://psychonautwiki.org/wiki/Replication_index)).
+
+ That vocabulary changed the design problem. Once a community has words
+ for symmetrical texture repetition, environmental patterning, drifting,
+ tracers, and visual geometry, a simulator can be judged against a
+ more specific target than "does this look trippy?" It can be asked
+ which effect family it captures, which one it misses, and which source
+ image or parameter choice made the difference
+ ([Effect Index](https://www.effectindex.com/effects);
+ [Loka](https://www.lokavision.com/psychic-rendering)).
+
+### Replications are craft evidence
+
+ Community replications need a modest role. A convincing animation on Reddit,
+ a wiki page, or a tutorial cannot prove what happens in the brain or establish
+ therapeutic value. It can make a personal perceptual report inspectable enough
+ for other people to say:
+ that is close, that is too fast, that surface should breathe before it
+ melts, that geometry needs more symmetry, or that the scene should
+ remain input-bound rather than become free-floating fantasy
+ ([r/Replications](https://www.reddit.com/r/replications/);
+ [PsychonautWiki](https://psychonautwiki.org/wiki/Replication_index)).
+
+ That feedback loop is part of the field's infrastructure. Effect
+ Index, PsychonautWiki's Replication Index, r/Replications, Loka's
+ teaching material, Symmetric Vision's public simulations, Scry's
+ generative geometry, QRI's contests and OscillEditor, and older
+ DeepDream fractal tutorials all helped circulate practical knowledge.
+ Many of these systems do not use DeepDream at all. They still belong
+ in the DeepDream story because they shaped the broader ecosystem of
+ visual targets, craft standards, and comparison methods
+ ([QRI, hyperbolic DMT](https://qri.org/blog/hyperbolic-geometry-dmt);
+ [QRI OscillEditor](https://qri.org/oscilleditor/doc/reference-manual);
+ [Symmetric Vision](https://www.symmetric-vision.xyz/);
+ [Scry](https://scry.art/blog/public/posts/atomic-discovery-collection/);
+ [PsyKick](https://psykick.de/deepdream_fractals/Tutorial_deepdream_fractals_360_VR_4K_UltraHD.html)).
+
+### Credit matters because methods move through people
+
+ A clean academic timeline can make the field look as if it moved
+ straight from Google to Sussex to later VR studies. The historical
+ record is messier and more interesting. Community artists and
+ developers built taxonomies, examples, tutorials, and video pipelines;
+ researchers then selected a tractable subset and wrapped it in
+ experimental measures ([Graphific, 2015](https://github.com/graphific/DeepDreamVideo);
+ [Winiger, 2015](https://github.com/samim23/DeepDreamAnim);
+ [Suzuki et al., 2017](https://doi.org/10.1038/s41598-017-16316-2)).
+ That messier path is how a young interdisciplinary method often forms.
+
+ A fair history should name the community contribution without overstating it.
+ Community work supplied vocabulary, craft,
+ examples, and open-source machinery. Academic work supplied controlled
+ tasks, questionnaires, EEG, behavioral measures, and peer-reviewed
+ comparison. The field needs both, and the sources need to say which
+ claim each one supports.
+
+ DeepDream lineage
+
+## How a feature-visualization trick became a moving hallucination machine
+
+ DeepDream's core move is simple to state. Start with a trained vision
+ network, choose a layer or feature objective, and adjust the input
+ image so the selected activations grow stronger. The network is not
+ asked to classify the image. The image is pushed toward whatever the
+ network is already ready to see
+ ([Mordvintsev et al., 2015](https://research.google/blog/inceptionism-going-deeper-into-neural-networks/);
+ [Olah et al., 2017](https://distill.pub/2017/feature-visualization/);
+ [TensorFlow, 2024](https://www.tensorflow.org/tutorials/generative/deepdream)).
+
+ In early ImageNet-based DeepDream, that meant dog faces, fur, eyes,
+ towers, insects, and architectural fragments appearing inside clouds,
+ leaves, buildings, and skin. The result was not a human hallucination,
+ but it externalized a recognizable perceptual operation:
+ over-interpret ambiguous input, then amplify the interpretation until
+ the world seems to answer back
+ ([Mordvintsev et al., 2015](https://research.google/blog/inceptionism-going-deeper-into-neural-networks/);
+ [Suzuki, 2026](https://doi.org/10.3389/fpsyg.2026.1819038)).
+
+ Still images were not enough for research VR. Frame-by-frame
+ DeepDream flickers. The practical breakthrough was temporal
+ continuity: frame inheritance, blending, and optical flow so that
+ hallucinated structure persists and moves with the scene. Graphific's
+ DeepDreamVideo, Samim Winiger's DeepDreamAnim, and Suzuki's
+ DeepDreamVideoOpticalFlow belong in the credit line because they mark
+ the open-code bridge from viral still images to coherent moving
+ hallucinations
+ ([Graphific, 2015](https://github.com/graphific/DeepDreamVideo);
+ [Winiger, 2015](https://github.com/samim23/DeepDreamAnim);
+ [Suzuki code](https://github.com/ksk-S/DeepDreamVideoOpticalFlow)).
+
+### Compressed timeline
+
+- 2011: Kins begins public visual-effect taxonomy work ([Kins, 2011](https://disregardeverythingisay.com/post/9331287956/the-visual-components-of-a-psychedelic-experience)).
+
+- 2015: Google publishes Inceptionism and the DeepDream notebook ([Mordvintsev et al., 2015](https://research.google/blog/inceptionism-going-deeper-into-neural-networks/)).
+
+- 2015: Graphific and Samim Winiger release public DeepDream video tools ([Graphific](https://github.com/graphific/DeepDreamVideo); [Winiger](https://github.com/samim23/DeepDreamAnim)).
+
+- 2017: Suzuki, Roseboom, Schwartzman, and Seth publish the Hallucination Machine ([Suzuki et al., 2017](https://doi.org/10.1038/s41598-017-16316-2)).
+
+- 2021-2025: EEG, cognitive-flexibility, cognition, and cognitive-affective studies extend the paradigm ([Greco et al., 2021](https://doi.org/10.3390/e23070839); [Rastelli et al., 2022](https://doi.org/10.1038/s41598-022-08047-w); [Brizzi et al., 2025](https://doi.org/10.1080/19585969.2025.2499459)).
+
+- 2023-2026: cyberdelic, generative-model, oscillator, and clinical-facing VR branches widen the field ([Hartogsohn, 2023](https://doi.org/10.3389/fpsyg.2022.1073235); [Suzuki, 2026](https://doi.org/10.3389/fpsyg.2026.1819038)).
+
+### Technical levers
+
+- Network and training set
+
+- Layer or feature target
+
+- Octaves, step size, iterations, and jitter
+
+- Source footage texture, motion, color, and semantic density
+
+- Frame blending, optical flow, and adaptive carryover
+
+ Synthesis
+
+## DeepDream is useful because it is partial
+
+ DeepDream isolates a tractable slice of altered visual interpretation.
+ That is the strongest claim.
+
+### Simulation has levels
+
+ A system can resemble a report, match a community category, overlap
+ with selected questionnaire dimensions, alter a neural or behavioral
+ measure, or help researchers build a controlled stimulus. Those are
+ different claims. DeepDream is strongest when the claim stays on the
+ right rung of that ladder
+ ([Suzuki et al., 2017](https://doi.org/10.1038/s41598-017-16316-2);
+ [Suzuki, 2026](https://doi.org/10.3389/fpsyg.2026.1819038)).
+
+ The Hallucination Machine showed that DeepDream-transformed VR could
+ raise selected altered-perception ratings relative to unaltered
+ video. It also showed a boundary: visual stimulation did not reproduce
+ the temporal-production effects associated with fuller psychedelic
+ states. That dissociation gives the paradigm its use: it lets
+ researchers ask what altered vision alone can do
+ ([Suzuki et al., 2017](https://doi.org/10.1038/s41598-017-16316-2)).
+
+### The studies show selected effects
+
+ Later papers extended the platform into EEG, cognition, and
+ cognitive-affective work. Greco and colleagues reported changes in
+ particular entropy, complexity, and functional-connectivity measures
+ during DeepDream exposure. Rastelli and colleagues reported more
+ flexible semantic-network structure and altered decision dynamics
+ after DeepDream VR. A later cognition study found reduced switch
+ costs and visually grounded effects, but not a broad shift in
+ language-based automatic associations. Brizzi and colleagues reported
+ cognitive-affective and autonomic changes under hallucinatory visual
+ virtual experiences
+ ([Greco et al., 2021](https://doi.org/10.3390/e23070839);
+ [Rastelli et al., 2022](https://doi.org/10.1038/s41598-022-08047-w);
+ [Greco et al., 2025](https://doi.org/10.1016/j.concog.2025.103808);
+ [Brizzi et al., 2025](https://doi.org/10.1080/19585969.2025.2499459)).
+
+ Those findings matter, but they should not be compressed into
+ "DeepDream produces psychedelic cognition." They are measure-specific
+ results from particular stimuli, tasks, samples, and parameter
+ choices. The field gets stronger when the wording stays that exact.
+
+### What DeepDream captures and what it misses
+
+ DeepDream is naturally good at input-bound transformation:
+ pareidolia, recursive texture, saturated patterning, object-rich
+ intrusion, and the sense that visible surfaces are actively morphing.
+ Its weakness follows from the same mechanism. It tends to inherit the
+ priors of the trained network and the source footage. Early
+ ImageNet-based results overproduce dogs, eyes, fur, and object
+ fragments because those are strong handles for that model
+ ([Mordvintsev et al., 2015](https://research.google/blog/inceptionism-going-deeper-into-neural-networks/);
+ [Olah et al., 2017](https://distill.pub/2017/feature-visualization/)).
+
+ Human psychedelic vision includes more than feature amplification.
+ It can involve clean geometric form constants, closed-eye imagery,
+ multisensory coupling, autobiographical content, emotional weight,
+ symbolic interpretation, social setting, and changes in self and
+ time. DeepDream can touch part of the visual field. It cannot carry
+ the full pharmacological and personal context by itself
+ ([Roseman et al., 2016](https://doi.org/10.1002/hbm.23224);
+ [Suzuki, 2026](https://doi.org/10.3389/fpsyg.2026.1819038)).
+
+### The 2026 update clarifies the next experiment
+
+ Suzuki's 2026 theory paper gives the field a useful vocabulary for
+ separating three roles: classifier feature exposure, generator or
+ image-prior constraint, and discriminator-like source monitoring. In
+ plainer terms: what features are made visible, what kind of image
+ world constrains them, and when a viewer treats the generated content
+ as perceptually compelling
+ ([Suzuki, 2026](https://doi.org/10.3389/fpsyg.2026.1819038)).
+
+ That framework does not validate DeepDream as a full psychedelic
+ simulator. It does something better for future work: it makes the
+ experimental question sharper. A study can specify whether it is
+ manipulating feature exposure, image priors, source-scene continuity,
+ intensity, or the viewer's judgment of what feels real.
+
+ Current state
+
+## The field after DeepDream
+
+ As of May 22, 2026, DeepDream is no longer the frontier of generative
+ image culture. Its importance is more historical and methodological:
+ it made machine pareidolia vivid, gave researchers a controllable
+ altered-vision stimulus, and forced the field to ask what kind of
+ similarity a simulation claim actually names
+ ([Mordvintsev et al., 2015](https://research.google/blog/inceptionism-going-deeper-into-neural-networks/);
+ [Suzuki et al., 2017](https://doi.org/10.1038/s41598-017-16316-2);
+ [Suzuki, 2026](https://doi.org/10.3389/fpsyg.2026.1819038)).
+
+ The broader field now includes style-transfer and intensity-varied
+ Hallucination Machine variants, shader-based VR systems, generative
+ hallucination models, stroboscopic and oscillator tools, QRI's
+ OscillEditor, Psyrreal, Ayahuasca Kosmik Journey, Si-PHI, and other
+ cyberdelic or psychedelic-adjacent immersive systems. Some are
+ research instruments, some are artworks, some are public education
+ tools, and some are early clinical-facing platforms. They should be
+ compared, not collapsed
+ ([Suzuki et al., 2024](https://doi.org/10.3389/fnhum.2023.1159821);
+ [Hewitt et al., 2025](https://doi.org/10.1093/nc/niaf020);
+ [QRI OscillEditor](https://qri.org/oscilleditor/doc/reference-manual);
+ [Kaup et al., 2023](https://doi.org/10.3389/fpsyt.2023.1088896);
+ [Hartogsohn, 2023](https://doi.org/10.3389/fpsyg.2022.1073235)).
+
+ Current public records also need careful separation. ClinicalTrials.gov
+ lists Yale's NCT06581263 "Psychedelic Virtual Reality" record as
+ completed, with primary completion and completion dates of March 22,
+ 2026, and an update posted on March 25, 2026. The University of
+ Tartu's NCT06174285 Psyrreal record is listed as recruiting, with
+ primary completion and completion dates planned for June 30, 2026.
+ Those are registry-status claims, not outcome claims
+ ([ClinicalTrials.gov, NCT06581263](https://clinicaltrials.gov/study/NCT06581263);
+ [ClinicalTrials.gov, NCT06174285](https://clinicaltrials.gov/study/NCT06174285)).
+
+### Keep distinct
+
+- DeepDream: feature amplification in a trained vision network
+
+- Hallucination Machine: DeepDream transformed into panoramic VR research
+
+- Community replication: taxonomies, examples, tutorials, and feedback loops
+
+- Cyberdelics: broader digital altered-state design and research frame
+
+- Clinical records: trial status, not efficacy unless results are published
+
+### What to watch
+
+- Comparisons between DeepDream, style transfer, shaders, and oscillator tools
+
+- Better reporting of source footage and stimulus statistics
+
+- Fractal dimension, symmetry strength, texture class, and motion-field measures
+
+- Participant history, expectation, absorption, and source-monitoring thresholds
+
+- Credit and provenance as community techniques move into institutional settings
+
+ Evidence audit
+
+## What is solid, partial, and open
+
+ The field becomes easier to read when each source is kept in its
+ lane. Repositories support technical lineage. Community pages support
+ vocabulary, practice, and public craft. Papers support controlled
+ claims about subjective reports, EEG, cognition, or affect. Trial
+ registries support current status. None of these source types should
+ be asked to do all the work
+ ([Graphific, 2015](https://github.com/graphific/DeepDreamVideo);
+ [Effect Index](https://www.effectindex.com/effects);
+ [Greco et al., 2021](https://doi.org/10.3390/e23070839);
+ [ClinicalTrials.gov](https://clinicaltrials.gov/study/NCT06581263)).
+
+### Solid
+
+- DeepDream began as feature visualization and model inspection ([Mordvintsev et al., 2015](https://research.google/blog/inceptionism-going-deeper-into-neural-networks/); [Olah et al., 2017](https://distill.pub/2017/feature-visualization/)).
+
+- Open repositories helped make moving DeepDream coherent enough for video and VR ([Graphific](https://github.com/graphific/DeepDreamVideo); [Winiger](https://github.com/samim23/DeepDreamAnim); [Suzuki code](https://github.com/ksk-S/DeepDreamVideoOpticalFlow)).
+
+- Community taxonomies made psychedelic visual effects more nameable and buildable ([Kins, 2011](https://disregardeverythingisay.com/post/9331287956/the-visual-components-of-a-psychedelic-experience); [Effect Index](https://www.effectindex.com/effects)).
+
+- DeepDream VR can alter selected subjective, EEG, cognitive, and affective measures ([Suzuki et al., 2017](https://doi.org/10.1038/s41598-017-16316-2); [Greco et al., 2021](https://doi.org/10.3390/e23070839); [Brizzi et al., 2025](https://doi.org/10.1080/19585969.2025.2499459)).
+
+- Suzuki 2026 gives a cleaner C x G x D vocabulary for future experiments ([Suzuki, 2026](https://doi.org/10.3389/fpsyg.2026.1819038)).
+
+### Partial or open
+
+- Community replications can guide target selection, but they are not controlled validation ([PsychonautWiki](https://psychonautwiki.org/wiki/Replication_index); [r/Replications](https://www.reddit.com/r/replications/)).
+
+- Most DeepDream VR studies still occupy a narrow parameter family ([Suzuki et al., 2017](https://doi.org/10.1038/s41598-017-16316-2); [Greco et al., 2021](https://doi.org/10.3390/e23070839)).
+
+- Fractal-like and symmetry-rich stimuli are central to the design logic but rarely quantified in DeepDream studies ([Bressloff et al., 2002](https://doi.org/10.1162/089976602317250861); [Pangburn, 2015](https://www.vice.com/en/article/deepdreaming-a-fully-explorable-fractal-planet/); [PsyKick](https://psykick.de/deepdream_fractals/Tutorial_deepdream_fractals_360_VR_4K_UltraHD.html)).
+
+- Current clinical-facing records show interest and study activity, not established therapeutic efficacy ([NCT06581263](https://clinicaltrials.gov/study/NCT06581263); [NCT06174285](https://clinicaltrials.gov/study/NCT06174285)).
+
+- The field still needs direct comparisons across DeepDream, shaders, style transfer, flicker, oscillator tools, and generative models ([Suzuki, 2026](https://doi.org/10.3389/fpsyg.2026.1819038); [Hewitt et al., 2025](https://doi.org/10.1093/nc/niaf020)).
+
+ Open direction
+
+## A better next comparison
+
+ The next useful generation of studies would stop treating each system
+ as a single condition label. It would compare induced-vision methods
+ on shared axes: feature exposure, image prior, source-scene texture,
+ motion continuity, symmetry, fractal statistics, semantic density,
+ intensity, embodiment, and source-monitoring judgment. A DeepDream
+ video, a stroboscopic field, an OscillEditor patch, a shader-based
+ Psyrreal scene, and a style-transfer hallucination may all feel
+ "psychedelic" in public language, but they reach that feeling through
+ different mechanisms
+ ([Suzuki, 2026](https://doi.org/10.3389/fpsyg.2026.1819038);
+ [Hewitt et al., 2025](https://doi.org/10.1093/nc/niaf020);
+ [QRI OscillEditor](https://qri.org/oscilleditor/doc/reference-manual);
+ [Kaup et al., 2023](https://doi.org/10.3389/fpsyt.2023.1088896)).
+
+ That comparison would let DeepDream take its proper place: the first widely
+ visible machine-vision method that made computational psychedelic simulation
+ concrete enough for artists, developers, and scientists to argue with
+ ([Mordvintsev et al., 2015](https://research.google/blog/inceptionism-going-deeper-into-neural-networks/);
+ [Suzuki et al., 2017](https://doi.org/10.1038/s41598-017-16316-2)).
+
+ References
+
+## Sources and entry points
+
+ These references are grouped by role. Living pages, repositories,
+ and trial records were checked on May 22, 2026 unless a more specific
+ update date is listed.
+
+### Visual phenomenology
+
+- Kins, Josie. "[The Visual Components of a Psychedelic Experience](https://disregardeverythingisay.com/post/9331287956/the-visual-components-of-a-psychedelic-experience)." Disregard Every Thing I Say (2011).
+
+- Effect Index. "[Subjective Effect Index](https://www.effectindex.com/effects)." Visual-effect taxonomy and effect index.
+
+- PsychonautWiki. "[Replication Index](https://psychonautwiki.org/wiki/Replication_index)." Community visual-replication archive.
+
+- Bressloff et al. "[What Geometric Visual Hallucinations Tell Us about the Visual Cortex](https://doi.org/10.1162/089976602317250861)." Neural Computation 14(3) (2002).
+
+- Shanon. "[Ayahuasca Visualizations: A Structural Typology](https://cris.huji.ac.il/en/publications/ayahuasca-visualizations-a-structural-typology)." Journal of Consciousness Studies 9(2) (2002).
+
+- Kometer et al. "[Activation of Serotonin 2A Receptors Underlies the Psilocybin-Induced Effects on Alpha Oscillations, N170 Visual-Evoked Potentials, and Visual Hallucinations](https://doi.org/10.1523/JNEUROSCI.3007-12.2013)." Journal of Neuroscience 33(25) (2013).
+
+- Roseman et al. "[LSD Alters Eyes-Closed Functional Connectivity within the Early Visual Cortex in a Retinotopic Fashion](https://doi.org/10.1002/hbm.23224)." Human Brain Mapping 37(8) (2016).
+
+### Community practice
+
+- Kins, Josie. "[JosieKins.xyz](https://josiekins.xyz/)." Public project history for Disregard Every Thing I Say, Effect Index, PsychonautWiki, and r/Replications.
+
+- Kins, Josie. "[Intercollegiate Funding Proposal](https://www.effectindex.com/articles/funding-proposal)." Effect Index (2022).
+
+- Reddit community. "[r/Replications](https://www.reddit.com/r/replications/)." Community hub for image, video, and audio replications of altered states.
+
+- Qualia Research Institute. "[The Hyperbolic Geometry of DMT Experiences](https://qri.org/blog/hyperbolic-geometry-dmt)." QRI blog.
+
+- Qualia Research Institute. "[Unveiling QRI's Consciousness Art Contests](https://qri.org/blog/contest)." QRI blog (2023).
+
+- Qualia Research Institute. "[Reference Manual for QRI's Oscilleditor](https://qri.org/oscilleditor/doc/reference-manual)." Tool documentation.
+
+- Loka. "[Psychic Rendering](https://www.lokavision.com/psychic-rendering)." Practical hallucination-replication design page.
+
+- Symmetric Vision. "[Symmetric Vision](https://www.symmetric-vision.xyz/)." Altered-state simulation portfolio.
+
+- Scry Visuals. "[Atomic Discovery Collection](https://scry.art/blog/public/posts/atomic-discovery-collection/)." Generative visual-replication project note.
+
+### Technical origin
+
+- Mordvintsev, Olah, and Tyka. "[Inceptionism: Going Deeper into Neural Networks](https://research.google/blog/inceptionism-going-deeper-into-neural-networks/)." Google Research (2015).
+
+- Google. "[google/deepdream](https://github.com/google/deepdream)." Canonical public DeepDream repository.
+
+- Olah, Mordvintsev, and Schubert. "[Feature Visualization](https://distill.pub/2017/feature-visualization/)." Distill (2017).
+
+- TensorFlow. "[DeepDream](https://www.tensorflow.org/tutorials/generative/deepdream)." Official tutorial, last updated 2024-08-16.
+
+- Graphific. "[DeepDreamVideo](https://github.com/graphific/DeepDreamVideo)." Public repository (2015).
+
+- Winiger, Samim. "[DeepDreamAnim](https://github.com/samim23/DeepDreamAnim)." Public repository (2015).
+
+- Suzuki, Keisuke. "[DeepDreamVideoOpticalFlow](https://github.com/ksk-S/DeepDreamVideoOpticalFlow)." Public repository.
+
+### DeepDream VR studies
+
+- Suzuki et al. "[A Deep-Dream Virtual Reality Platform for Studying Altered Perceptual Phenomenology](https://doi.org/10.1038/s41598-017-16316-2)." Scientific Reports 7 (2017).
+
+- Greco et al. "[Increased Entropic Brain Dynamics during DeepDream-Induced Altered Perceptual Phenomenology](https://doi.org/10.3390/e23070839)." Entropy 23(7) (2021).
+
+- Rastelli et al. "[Simulated Visual Hallucinations in Virtual Reality Enhance Cognitive Flexibility](https://doi.org/10.1038/s41598-022-08047-w)." Scientific Reports 12 (2022).
+
+- Greco et al. "[Immersive Exposure to Simulated Visual Hallucinations Modulates High-Level Human Cognition](https://doi.org/10.1016/j.concog.2025.103808)." Consciousness and Cognition 128 (2025).
+
+- Brizzi et al. "[Cyberdelics: Virtual Reality Hallucinations Modulate Cognitive-Affective Processes](https://doi.org/10.1080/19585969.2025.2499459)." Dialogues in Clinical Neuroscience 27(1) (2025).
+
+- Motyka et al. "[Phenomenologically Distinct and Intensity-Varied VR Hallucinations](https://osf.io/dj6rp/overview)." OSF project (2025).
+
+### Beyond DeepDream
+
+- Suzuki, Seth, and Schwartzman. "[Modelling Phenomenological Differences in Aetiologically Distinct Visual Hallucinations Using Deep Neural Networks](https://doi.org/10.3389/fnhum.2023.1159821)." Frontiers in Human Neuroscience (2024).
+
+- Suzuki. "[Beyond the Reducing Valve: Towards a Computational Neurophenomenology of Altered States via Deep Neural Networks](https://doi.org/10.3389/fpsyg.2026.1819038)." Frontiers in Psychology (2026).
+
+- Schartner and Timmermann. "[Neural Network Models for DMT-Induced Visual Hallucinations](https://doi.org/10.1093/nc/niaa024)." Neuroscience of Consciousness (2020).
+
+- Bredenberg et al. "[The Oneirogen Hypothesis](https://doi.org/10.7554/eLife.105968)." eLife reviewed preprint (2026).
+
+- Hewitt et al. "[Stroboscopically Induced Visual Hallucinations](https://doi.org/10.1093/nc/niaf020)." Neuroscience of Consciousness (2025).
+
+- PsyKick. "[360 Degrees 4K Virtual Reality Deep Dream Fractal Tutorial](https://psykick.de/deepdream_fractals/Tutorial_deepdream_fractals_360_VR_4K_UltraHD.html)." Practical tutorial.
+
+- Pangburn. "[Deepdreaming a Fully-Explorable Fractal Planet](https://www.vice.com/en/article/deepdreaming-a-fully-explorable-fractal-planet/)." VICE (2015).
+
+### Cyberdelic and current records
+
+- Hartogsohn. "[Cyberdelics in Context](https://doi.org/10.3389/fpsyg.2022.1073235)." Frontiers in Psychology (2023).
+
+- Smith and Warner. "[Cyberdelics: Context Engineering Psychedelics for Altered Traits](https://doi.org/10.14236/ewic/EVA2022.48)." EVA London (2022).
+
+- Kaup et al. "[Psychedelic Replications in Virtual Reality and their Potential as a Therapeutic Instrument](https://doi.org/10.3389/fpsyt.2023.1088896)." Frontiers in Psychiatry 14 (2023).
+
+- Psyrreal. "[Psyrreal VR](https://psyrreal.mozellosite.com/)." Public project page.
+
+- ClinicalTrials.gov. "[NCT06174285: Effect of Psychedelic VR-augmented Therapy on Patients With Clinical Depression](https://clinicaltrials.gov/study/NCT06174285)." University of Tartu registry record; status checked 2026-05-22.
+
+- Yale Medicine. "[Can Virtual Reality Help with Psychedelic Research?](https://www.yalemedicine.org/clinical-trials/psychedelic-virtual-reality)" DeepDream VRP study page.
+
+- ClinicalTrials.gov. "[NCT06581263: Psychedelic Virtual Reality](https://clinicaltrials.gov/study/NCT06581263)." Yale University registry record; status checked 2026-05-22.
+
+- Yale Ventures. "[Simulated Psychedelic Immersive Experience: Healthcare Intervention for Depression (Si-PHI)](https://ventures.yale.edu/yale-technologies/simulated-psychedelic-immersive-experience-healthcare-intervention-depression-si)." Technology page.

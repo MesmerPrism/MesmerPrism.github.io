@@ -1,0 +1,140 @@
+[
+  {
+    "id": "www-interaction-design-org-shusterman",
+    "type": "webpage",
+    "title": "Shusterman",
+    "URL": "https://www.interaction-design.org/literature/book/the-encyclopedia-of-human-computer-interaction-2nd-ed/somaesthetics",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Method: Boundary Precision | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/project.html"
+  },
+  {
+    "id": "doi-org-hook-et-al",
+    "type": "article-journal",
+    "title": "Hook et al.",
+    "URL": "https://doi.org/10.1145/2598510.2598561",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Method: Boundary Precision | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/project.html",
+    "DOI": "10.1145/2598510.2598561"
+  },
+  {
+    "id": "somaesthetics-wagemans-et-al",
+    "type": "article-journal",
+    "title": "Wagemans et al.",
+    "URL": "https://doi.org/10.1037/a0029333",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Method: Boundary Precision | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/project.html",
+    "author": [
+      {
+        "literal": "Somaesthetics"
+      }
+    ],
+    "DOI": "10.1037/a0029333"
+  },
+  {
+    "id": "link-springer-com-johansson",
+    "type": "article-journal",
+    "title": "Johansson",
+    "URL": "https://link.springer.com/article/10.3758/BF03212378",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Method: Boundary Precision | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/project.html",
+    "DOI": "10.3758/BF03212378"
+  },
+  {
+    "id": "doi-org-yee-and-bailenson",
+    "type": "article-journal",
+    "title": "Yee and Bailenson",
+    "URL": "https://doi.org/10.1111/j.1468-2958.2007.00299.x",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Method: Boundary Precision | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/project.html",
+    "DOI": "10.1111/j.1468-2958.2007.00299.x"
+  },
+  {
+    "id": "seagullbooks-org-eisenstein",
+    "type": "webpage",
+    "title": "Eisenstein",
+    "URL": "https://seagullbooks.org/products/on-disney",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Method: Boundary Precision | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/project.html"
+  },
+  {
+    "id": "arxiv-org-pahng-et-al",
+    "type": "webpage",
+    "title": "Pahng et al.",
+    "URL": "https://arxiv.org/abs/2512.17129",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Method: Boundary Precision | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/project.html"
+  },
+  {
+    "id": "doi-org-ho-et-al",
+    "type": "article-journal",
+    "title": "Ho et al.",
+    "URL": "https://doi.org/10.1016/j.jpain.2021.10.009",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Method: Boundary Precision | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/project.html",
+    "DOI": "10.1016/j.jpain.2021.10.009"
+  }
+]

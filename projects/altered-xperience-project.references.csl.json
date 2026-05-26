@@ -1,0 +1,108 @@
+[
+  {
+    "id": "github-com-mesmer-prism-work-publications-background-contact",
+    "type": "webpage",
+    "title": "Mesmer Prism Work Publications Background Contact",
+    "URL": "https://github.com/MesmerPrism",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Altered Xperience Project: https://mesmerprism.com/projects/altered-xperience-project.html"
+  },
+  {
+    "id": "alteredxproject-com-live-axp-survey",
+    "type": "webpage",
+    "title": "Live AXP survey",
+    "URL": "https://alteredxproject.com/",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Altered Xperience Project: https://mesmerprism.com/projects/altered-xperience-project.html"
+  },
+  {
+    "id": "mesmerprism-com-access-guide",
+    "type": "webpage",
+    "title": "Access guide",
+    "URL": "https://mesmerprism.com/axp-mvp-survey-guide/",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Altered Xperience Project: https://mesmerprism.com/projects/altered-xperience-project.html"
+  },
+  {
+    "id": "circe-science-com-circe",
+    "type": "webpage",
+    "title": "CIRCE",
+    "URL": "https://circe-science.com/",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Altered Xperience Project: https://mesmerprism.com/projects/altered-xperience-project.html"
+  },
+  {
+    "id": "mesmer-prism-collection-of-altered-state-rating-scales-and-questionna",
+    "type": "webpage",
+    "title": "Collection of Altered-State Rating Scales and Questionnaires",
+    "URL": "https://circe-e-v.github.io/CAR/index.html",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Altered Xperience Project: https://mesmerprism.com/projects/altered-xperience-project.html",
+    "author": [
+      {
+        "literal": "Mesmer Prism"
+      }
+    ]
+  },
+  {
+    "id": "circe-e-v-exploring-altered-states-of-consciousness-a-pilot-study-",
+    "type": "webpage",
+    "title": "Exploring Altered States of Consciousness: A Pilot Study of Phenomenomics Using Citizen Science",
+    "URL": "https://www.cbs.mpg.de/2107561/a02_costines.pdf",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Altered Xperience Project: https://mesmerprism.com/projects/altered-xperience-project.html",
+    "author": [
+      {
+        "literal": "CIRCE e.V"
+      }
+    ]
+  }
+]

@@ -1,0 +1,52 @@
+# Mesmer Prism
+
+> Public website for Mesmer Prism: research notes, writing projects, XR and perception tools, source maps, and portfolio context.
+
+Use the Markdown alternates for compact reading. Use the BibTeX or CSL JSON alternates when importing references into tools such as Zotero. The canonical human pages remain the HTML URLs.
+
+## Machine-readable indexes
+- [Agent index](https://mesmerprism.com/agent-index.json): JSON list of public pages, summaries, machine-readable alternates, and reference-export paths.
+- [All references BibTeX](https://mesmerprism.com/references/all.bib): Combined references detected from public pages.
+- [All references CSL JSON](https://mesmerprism.com/references/all.csl.json): Combined references in CSL JSON.
+- [Sitemap](https://mesmerprism.com/sitemap.xml): XML sitemap for canonical HTML pages.
+
+## Core
+- [Mesmer Prism | Till Holzapfel](https://mesmerprism.com/index.md): XR systems, citizen-science tools, visual instruments, and essays for altered-perception design. Mesmer Prism makes strange experience vivid, inspectable, and evidence-bounded.
+
+## Optional
+- [Calligraphy Reference Pack](https://mesmerprism.com/plasmatic-multitudes/assets/calligraphy-reference-pack/board.md)
+
+## Plasmatic Multitudes
+- [Somaesthetics Appendix | Plasmatic Multitudes](https://mesmerprism.com/plasmatic-multitudes/background/somaesthetics.md): A short public note on somaesthetics as the method anchor for Plasmatic Multitudes.
+- [Long Essay: Semi-Corporeal Avatar Aesthetics | Plasmatic Multitudes](https://mesmerprism.com/plasmatic-multitudes/essay.md): A long-form essay on weakly bounded bodies, XR embodiment, media genealogy, computational morphogenesis, and cautious pain translation.
+- [Plasmatic Multitudes Field Guide](https://mesmerprism.com/plasmatic-multitudes/index.md): Long essay, method notes, vocabulary, pain-translation hypotheses, and annotated references for weakly bounded bodies and semi-corporeal avatar aesthetics.
+- [Plasmatic Avatars and Chronic Pain VR | Plasmatic Multitudes](https://mesmerprism.com/plasmatic-multitudes/pain.md): A cautious research note on boundary precision, avatar materiality, protective fields, ownership, agency, and pain-related body-representation hypotheses. Not a treatment claim.
+- [Method: Boundary Precision | Plasmatic Multitudes](https://mesmerprism.com/plasmatic-multitudes/project.md): A compact method note on boundary precision, somaesthetics, coherence, morphogenesis, and weakly bounded body design.
+- [Annotated Sources for Plasmatic Multitudes](https://mesmerprism.com/plasmatic-multitudes/references.md): Annotated references across somaesthetics, perception, pseudo-haptics, morphogenesis, XR embodiment, media genealogy, and pain/body-representation research.
+- [Vocabulary for Weakly Bounded Bodies | Plasmatic Multitudes](https://mesmerprism.com/plasmatic-multitudes/terminology.md): Terms for semi-corporeal avatars, plasmatic bodies, particle bodies, swarm bodies, aura avatars, boundary precision, pseudo-haptics, and related design concepts.
+
+## Project pages
+- [Altered Xperience Project](https://mesmerprism.com/projects/altered-xperience-project.md): The Altered Xperience Project is a CIRCE-led citizen-science survey for anonymous altered-state reports, with multilingual questionnaires, feedback, scoring, exports, and collaborator workflow.
+- [Brain Candy](https://mesmerprism.com/projects/brain-candy.md): Brain Candy studies rhythmic light, recursive visual structure, sound, breath, expectation, and interaction as tunable non-drug state-shift design.
+- [Bressloff and Rule Modeling Deep Dive](https://mesmerprism.com/projects/bressloff-v1-form-constants-deep-dive.md): A notebook-style deep dive into Bressloff form constants, Rule flicker modeling, and generated driven neural-field diagnostics after Rule.
+- [Bressloff V1 Form Constants](https://mesmerprism.com/projects/bressloff-v1-form-constants.md): Animated notes on Bressloff visual-cortex form constants, Rule flicker modeling, and generated MacKay, Bolelli, and Nicks driven-field diagnostics.
+- [Deep Dream](https://mesmerprism.com/projects/deep-dream.md): Deep Dream explains how machine-vision hallucination, community visual taxonomies, VR research, and cyberdelic systems shaped simulated psychedelic vision.
+- [Fractal Optics](https://mesmerprism.com/projects/fractal-optics.md): Fractal Optics maps fractal phototherapy, retinal and ophthalmic stimulation, VR delivery, and patterned-light comparator literatures.
+- [Hollow Face Lab](https://mesmerprism.com/projects/hollow-face-lab.md): Hollow Face Lab maps WebGL, WebXR, and Rusty XR implementation choices against hollow-face and depth-inversion research.
+- [Optical Movement Illusions](https://mesmerprism.com/projects/optical-movement-illusions.md): Optical Movement Illusions maps peripheral drift, Rotating Snakes, static motion illusions, color and luminance parameters, and the mechanism-design bridge into perceptual tooling.
+- [Phenomenological Control](https://mesmerprism.com/projects/phenomenological-control.md): A public guide to phenomenological control, imagery variation, expectation-shaped experience, source monitoring, absorption, porosity, hypnosis, induced vision, and meaning-making.
+- [Plasmatic Multitudes - Weakly Bounded Embodiment and Semi-Corporeal Avatar Design](https://mesmerprism.com/projects/plasmatic-multitudes.md): A public overview of weakly bounded bodies: avatars, swarms, auras, particle forms, and luminous bodies that soften while remaining coherent enough for embodiment, relation, and cautious research translation.
+- [Polar H10 Work](https://mesmerprism.com/projects/polar-h10.md): Public overview of Mesmer Prism's Polar H10 work across minimal signal packages, Rusty XR, Quest broker streams, Windows capture, Android diagnostics, Unity Quest integration, and Viscereality research tooling.
+- [Prophantasia](https://mesmerprism.com/projects/prophantasia.md): Prophantasia covers projected imagery, aphantasia, source judgment, practice ecology, and neighboring phenomena such as imposition, flicker, DeepDream, visual snow, and HPPD.
+- [Rusty XR](https://mesmerprism.com/projects/rusty-xr.md): Rusty XR is a public Rust workspace for reusable XR contracts, Quest diagnostics, camera/depth labels, broker models, public examples, and companion-tool workflows.
+- [SANE](https://mesmerprism.com/projects/sane.md): SANE is a proposed framework for reading coupled changes across somaesthetic practice, anthropotechnical mediation, noetic meaning, and emergent systems.
+- [Scientific Surrealism](https://mesmerprism.com/projects/scientific-surrealism.md): Scientific surrealism studies dream bureaus, scientific-looking journals, diagrams, and experimental machines that change what counts as an observation.
+- [Tulpas](https://mesmerprism.com/projects/tulpas.md): Tulpas covers modern online tulpamancy, thoughtforms, headmates, servitors, egregores, imposition, voice-like experience, and adjacent AI companion analogies.
+- [Quest Companion Tools](https://mesmerprism.com/projects/viscereality-companion.md): Quest Companion Tools provides Windows and Android utilities for Meta Quest install, launch, casting, diagnostics, and evidence capture.
+- [Viscereality](https://mesmerprism.com/projects/viscereality.md): Viscereality is a Quest-based bioresponsive VR research system for breath interaction, cardiac coherence training, oscillator-driven visuals, and repeatable study sessions.
+
+## Strobotorch
+- [Flashing Light Safety | Strobotorch](https://mesmerprism.com/Strobotorch/flashing-light-safety/index.md): Safety warnings, frequency background, and source references for Strobotorch flashlight signaling.
+- [Strobotorch Android Signal Tooling](https://mesmerprism.com/Strobotorch/index.md): Strobotorch is an Android flashlight-signaling and diagnostics tool for torch and camera APIs, visible-light signal tests, device logging, and flashing-light safety.
+- [Project Scope | Strobotorch](https://mesmerprism.com/Strobotorch/project-boundary/index.md): The scope of Strobotorch Android flashlight signaling and diagnostics tooling.
+- [Sources | Strobotorch](https://mesmerprism.com/Strobotorch/sources/index.md): Academic and public sources for Strobotorch flashing-light safety, frequency context, torch/camera diagnostics, and visible-light signal tooling.

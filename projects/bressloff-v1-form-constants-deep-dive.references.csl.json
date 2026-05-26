@@ -1,0 +1,604 @@
+[
+  {
+    "id": "github-com-mesmer-prism-work-publications-background-contact",
+    "type": "webpage",
+    "title": "Mesmer Prism Work Publications Background Contact",
+    "URL": "https://github.com/MesmerPrism",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Bressloff and Rule Modeling Deep Dive: https://mesmerprism.com/projects/bressloff-v1-form-constants-deep-dive.html"
+  },
+  {
+    "id": "doi-org-bressloff-et-al-2001",
+    "type": "article-journal",
+    "title": "Bressloff et al., 2001",
+    "URL": "https://doi.org/10.1098/rstb.2000.0769",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Bressloff and Rule Modeling Deep Dive: https://mesmerprism.com/projects/bressloff-v1-form-constants-deep-dive.html",
+    "DOI": "10.1098/rstb.2000.0769"
+  },
+  {
+    "id": "doi-org-rule-et-al-2011-2001",
+    "type": "article-journal",
+    "title": "Rule et al., 2011",
+    "URL": "https://doi.org/10.1371/journal.pcbi.1002158",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Bressloff and Rule Modeling Deep Dive: https://mesmerprism.com/projects/bressloff-v1-form-constants-deep-dive.html",
+    "issued": {
+      "date-parts": [
+        [
+          2001
+        ]
+      ]
+    },
+    "DOI": "10.1371/journal.pcbi.1002158"
+  },
+  {
+    "id": "doi-org-ermentrout-and-cowan-1979-2001",
+    "type": "article-journal",
+    "title": "Ermentrout and Cowan, 1979",
+    "URL": "https://doi.org/10.1007/BF00336965",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Bressloff and Rule Modeling Deep Dive: https://mesmerprism.com/projects/bressloff-v1-form-constants-deep-dive.html",
+    "issued": {
+      "date-parts": [
+        [
+          2001
+        ]
+      ]
+    },
+    "DOI": "10.1007/BF00336965"
+  },
+  {
+    "id": "doi-org-bressloff-et-al-2002-2001",
+    "type": "article-journal",
+    "title": "Bressloff et al., 2002",
+    "URL": "https://doi.org/10.1162/089976602317250861",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Bressloff and Rule Modeling Deep Dive: https://mesmerprism.com/projects/bressloff-v1-form-constants-deep-dive.html",
+    "issued": {
+      "date-parts": [
+        [
+          2001
+        ]
+      ]
+    },
+    "DOI": "10.1162/089976602317250861"
+  },
+  {
+    "id": "doi-org-nicks-et-al-2021",
+    "type": "article-journal",
+    "title": "Nicks et al., 2021",
+    "URL": "https://doi.org/10.1137/20M1366885",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Bressloff and Rule Modeling Deep Dive: https://mesmerprism.com/projects/bressloff-v1-form-constants-deep-dive.html",
+    "DOI": "10.1137/20M1366885"
+  },
+  {
+    "id": "doi-org-tamekue-et-al-2024-2021",
+    "type": "article-journal",
+    "title": "Tamekue et al., 2024",
+    "URL": "https://doi.org/10.1137/23M1616686",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Bressloff and Rule Modeling Deep Dive: https://mesmerprism.com/projects/bressloff-v1-form-constants-deep-dive.html",
+    "issued": {
+      "date-parts": [
+        [
+          2021
+        ]
+      ]
+    },
+    "DOI": "10.1137/23M1616686"
+  },
+  {
+    "id": "doi-org-bolelli-and-prandi-2025-2021",
+    "type": "article-journal",
+    "title": "Bolelli and Prandi, 2025",
+    "URL": "https://doi.org/10.1007/s10851-025-01257-7",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Bressloff and Rule Modeling Deep Dive: https://mesmerprism.com/projects/bressloff-v1-form-constants-deep-dive.html",
+    "issued": {
+      "date-parts": [
+        [
+          2021
+        ]
+      ]
+    },
+    "DOI": "10.1007/s10851-025-01257-7"
+  },
+  {
+    "id": "link-springer-com-veltz-et-al-2015-2021",
+    "type": "article-journal",
+    "title": "Veltz et al., 2015",
+    "URL": "https://link.springer.com/article/10.1186/s13408-015-0023-8",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Bressloff and Rule Modeling Deep Dive: https://mesmerprism.com/projects/bressloff-v1-form-constants-deep-dive.html",
+    "issued": {
+      "date-parts": [
+        [
+          2021
+        ]
+      ]
+    },
+    "DOI": "10.1186/s13408-015-0023-8"
+  },
+  {
+    "id": "doi-org-faugeras-et-al-2022-2021",
+    "type": "article-journal",
+    "title": "Faugeras et al., 2022",
+    "URL": "https://doi.org/10.5802/crmath.289",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Bressloff and Rule Modeling Deep Dive: https://mesmerprism.com/projects/bressloff-v1-form-constants-deep-dive.html",
+    "issued": {
+      "date-parts": [
+        [
+          2021
+        ]
+      ]
+    },
+    "DOI": "10.5802/crmath.289"
+  },
+  {
+    "id": "doi-org-carroll-and-bressloff-2018-2021",
+    "type": "article-journal",
+    "title": "Carroll and Bressloff, 2018",
+    "URL": "https://doi.org/10.1137/16M1076125",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Bressloff and Rule Modeling Deep Dive: https://mesmerprism.com/projects/bressloff-v1-form-constants-deep-dive.html",
+    "issued": {
+      "date-parts": [
+        [
+          2021
+        ]
+      ]
+    },
+    "DOI": "10.1137/16M1076125"
+  },
+  {
+    "id": "doi-org-sarti-and-citti-2015-2021",
+    "type": "article-journal",
+    "title": "Sarti and Citti, 2015",
+    "URL": "https://doi.org/10.1007/s10827-014-0540-6",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Bressloff and Rule Modeling Deep Dive: https://mesmerprism.com/projects/bressloff-v1-form-constants-deep-dive.html",
+    "issued": {
+      "date-parts": [
+        [
+          2021
+        ]
+      ]
+    },
+    "DOI": "10.1007/s10827-014-0540-6"
+  },
+  {
+    "id": "bressloff-p-c-j-d-cowan-m-golubitsky-p-j-thomas-and-m-c--spatiotemporal-dynamics-of-continuum-neural-fields",
+    "type": "article-journal",
+    "title": "Spatiotemporal Dynamics of Continuum Neural Fields",
+    "URL": "https://doi.org/10.1088/1751-8113/45/3/033001",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Bressloff and Rule Modeling Deep Dive: https://mesmerprism.com/projects/bressloff-v1-form-constants-deep-dive.html",
+    "author": [
+      {
+        "literal": "Bressloff, P. C., J. D. Cowan, M. Golubitsky, P. J. Thomas, and M. C. Wiener"
+      }
+    ],
+    "DOI": "10.1088/1751-8113/45/3/033001"
+  },
+  {
+    "id": "billock-v-a-and-b-h-tsou-neural-interactions-between-flicker-induced-self-organiz",
+    "type": "article-journal",
+    "title": "Neural Interactions Between Flicker-Induced Self-Organized Visual Hallucinations and Physical Stimuli",
+    "URL": "https://doi.org/10.1073/pnas.0610813104",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Bressloff and Rule Modeling Deep Dive: https://mesmerprism.com/projects/bressloff-v1-form-constants-deep-dive.html",
+    "author": [
+      {
+        "literal": "Billock, V. A., and B. H. Tsou"
+      }
+    ],
+    "DOI": "10.1073/pnas.0610813104"
+  },
+  {
+    "id": "sarti-a-and-g-citti-arxiv-record-2015",
+    "type": "webpage",
+    "title": "arXiv record",
+    "URL": "https://arxiv.org/abs/1406.0289",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Bressloff and Rule Modeling Deep Dive: https://mesmerprism.com/projects/bressloff-v1-form-constants-deep-dive.html",
+    "author": [
+      {
+        "literal": "Sarti, A., and G. Citti"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2015
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mesmer-prism-bressloff-v1-form-constants-lab",
+    "type": "webpage",
+    "title": "Bressloff V1 Form Constants Lab",
+    "URL": "https://github.com/MesmerPrism/bressloff-v1-form-constants",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Bressloff and Rule Modeling Deep Dive: https://mesmerprism.com/projects/bressloff-v1-form-constants-deep-dive.html",
+    "author": [
+      {
+        "literal": "Mesmer Prism"
+      }
+    ]
+  },
+  {
+    "id": "mesmer-prism-driven-neural-fields-implementation-plan",
+    "type": "webpage",
+    "title": "Driven Neural Fields Implementation Plan",
+    "URL": "https://github.com/MesmerPrism/bressloff-v1-form-constants/blob/main/docs/DRIVEN_NEURAL_FIELDS_IMPLEMENTATION_PLAN.md",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Bressloff and Rule Modeling Deep Dive: https://mesmerprism.com/projects/bressloff-v1-form-constants-deep-dive.html",
+    "author": [
+      {
+        "literal": "Mesmer Prism"
+      }
+    ]
+  },
+  {
+    "id": "mesmer-prism-original-author-software-methods",
+    "type": "webpage",
+    "title": "Original Author Software Methods",
+    "URL": "https://github.com/MesmerPrism/bressloff-v1-form-constants/blob/main/docs/ORIGINAL_AUTHOR_SOFTWARE_METHODS.md",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Bressloff and Rule Modeling Deep Dive: https://mesmerprism.com/projects/bressloff-v1-form-constants-deep-dive.html",
+    "author": [
+      {
+        "literal": "Mesmer Prism"
+      }
+    ]
+  },
+  {
+    "id": "mesmer-prism-bifurcationkit-jl",
+    "type": "webpage",
+    "title": "BifurcationKit.jl",
+    "URL": "https://github.com/bifurcationkit/BifurcationKit.jl",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Bressloff and Rule Modeling Deep Dive: https://mesmerprism.com/projects/bressloff-v1-form-constants-deep-dive.html",
+    "author": [
+      {
+        "literal": "Mesmer Prism"
+      }
+    ]
+  },
+  {
+    "id": "bifurcationkit-contributors-v1-sim",
+    "type": "webpage",
+    "title": "V1-sim",
+    "URL": "https://github.com/karacsm/V1-sim",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Bressloff and Rule Modeling Deep Dive: https://mesmerprism.com/projects/bressloff-v1-form-constants-deep-dive.html",
+    "author": [
+      {
+        "literal": "BifurcationKit contributors"
+      }
+    ]
+  },
+  {
+    "id": "mesmer-prism-form-constants-and-the-visual-cortex",
+    "type": "webpage",
+    "title": "Form Constants and the Visual Cortex",
+    "URL": "https://isomerdesign.com/countyourculture/2011/03/13/form-constants-visual-cortex/",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Bressloff and Rule Modeling Deep Dive: https://mesmerprism.com/projects/bressloff-v1-form-constants-deep-dive.html",
+    "author": [
+      {
+        "literal": "Mesmer Prism"
+      }
+    ]
+  },
+  {
+    "id": "countyourculture-stroboscopically-induced-visual-hallucinations-historica",
+    "type": "article-journal",
+    "title": "Stroboscopically Induced Visual Hallucinations: Historical, Phenomenological, and Neurobiological Perspectives",
+    "URL": "https://doi.org/10.1093/nc/niaf020",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Bressloff and Rule Modeling Deep Dive: https://mesmerprism.com/projects/bressloff-v1-form-constants-deep-dive.html",
+    "author": [
+      {
+        "literal": "CountYourCulture"
+      }
+    ],
+    "DOI": "10.1093/nc/niaf020"
+  },
+  {
+    "id": "hewitt-et-al-plos-licenses-and-copyright",
+    "type": "webpage",
+    "title": "PLOS licenses and copyright",
+    "URL": "https://journals.plos.org/ploscompbiol/s/licenses-and-copyright",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Bressloff and Rule Modeling Deep Dive: https://mesmerprism.com/projects/bressloff-v1-form-constants-deep-dive.html",
+    "author": [
+      {
+        "literal": "Hewitt et al"
+      }
+    ]
+  },
+  {
+    "id": "hewitt-et-al-creative-commons-attribution-4-0",
+    "type": "webpage",
+    "title": "Creative Commons Attribution 4.0",
+    "URL": "https://creativecommons.org/licenses/by/4.0/",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Bressloff and Rule Modeling Deep Dive: https://mesmerprism.com/projects/bressloff-v1-form-constants-deep-dive.html",
+    "author": [
+      {
+        "literal": "Hewitt et al"
+      }
+    ]
+  },
+  {
+    "id": "figure-rights-sources-royal-society-permissions",
+    "type": "webpage",
+    "title": "Royal Society permissions",
+    "URL": "https://royalsociety.org/journals/permissions/",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Bressloff and Rule Modeling Deep Dive: https://mesmerprism.com/projects/bressloff-v1-form-constants-deep-dive.html",
+    "author": [
+      {
+        "literal": "Figure-rights sources"
+      }
+    ]
+  },
+  {
+    "id": "figure-rights-sources-mit-press-rights-and-permissions",
+    "type": "webpage",
+    "title": "MIT Press rights and permissions",
+    "URL": "https://mitpress.mit.edu/rights-permissions/",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Bressloff and Rule Modeling Deep Dive: https://mesmerprism.com/projects/bressloff-v1-form-constants-deep-dive.html",
+    "author": [
+      {
+        "literal": "Figure-rights sources"
+      }
+    ]
+  },
+  {
+    "id": "www-springernature-com-springer-nature-rights-and-permissions",
+    "type": "webpage",
+    "title": "Springer Nature rights and permissions",
+    "URL": "https://www.springernature.com/gp/partners/rights-permissions-third-party-distribution",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Bressloff and Rule Modeling Deep Dive: https://mesmerprism.com/projects/bressloff-v1-form-constants-deep-dive.html"
+  },
+  {
+    "id": "publishingsupport-iopscience-iop-org-iop-permissions-faq",
+    "type": "webpage",
+    "title": "IOP permissions FAQ",
+    "URL": "https://publishingsupport.iopscience.iop.org/permissionsfaq/",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Bressloff and Rule Modeling Deep Dive: https://mesmerprism.com/projects/bressloff-v1-form-constants-deep-dive.html"
+  }
+]

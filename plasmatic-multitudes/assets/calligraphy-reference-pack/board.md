@@ -1,0 +1,147 @@
+# Calligraphy Reference Pack
+
+Source: https://mesmerprism.com/plasmatic-multitudes/assets/calligraphy-reference-pack/board.html
+Canonical HTML: https://mesmerprism.com/plasmatic-multitudes/assets/calligraphy-reference-pack/board.html
+Generated: 2026-05-26
+Markdown: https://mesmerprism.com/plasmatic-multitudes/assets/calligraphy-reference-pack/board.md
+Plain text: https://mesmerprism.com/plasmatic-multitudes/assets/calligraphy-reference-pack/board.txt
+BibTeX references: https://mesmerprism.com/plasmatic-multitudes/assets/calligraphy-reference-pack/board.bib
+CSL JSON references: https://mesmerprism.com/plasmatic-multitudes/assets/calligraphy-reference-pack/board.references.csl.json
+
+---
+
+Museum-backed pack
+
+# Calligraphy Reference Pack
+
+ A small styling set built from the official museum sources already discussed for the site
+ redesign: Cleveland Museum of Art, The Met, and the National Museum of Asian Art.
+
+ Metadata and rights proof live in [manifest.json](https://mesmerprism.com/plasmatic-multitudes/assets/calligraphy-reference-pack/manifest.json). Sampled
+ tokens live in [palette.json](https://mesmerprism.com/plasmatic-multitudes/assets/calligraphy-reference-pack/palette.json).
+
+## Palette Direction
+
+ Warm paper base surfaces and article backgrounds
+
+ Sage mount secondary surfaces and soft field blocks
+
+ Dense ink headlines, dividers, marks
+
+ Soft ink secondary text and quieter brush marks
+
+ Seal red accent only; keep sparse
+
+ Mount brown supporting borders and ornament
+
+## Original References
+
+ Cleveland Museum of Art
+
+### Calligraphy in Semi-Cursive Style
+
+ Bold black gesture, warm paper, and visible seals.
+
+ Use for: hero marks, accent rhythm, seal placement.
+
+[Official object page](https://clevelandart.org/art/2003.353)
+
+ Cleveland Museum of Art
+
+### Poem on Imperial Gift
+
+ A disciplined vertical scroll with narrow column pacing.
+
+ Use for: side ornaments, section rails, narrow dividers.
+
+[Official object page](https://clevelandart.org/art/1998.169)
+
+ Cleveland Museum of Art
+
+### Calligraphy Couplet
+
+ Twin-scroll composition and clear negative space between columns.
+
+ Use for: paired panels, mirrored blocks, vertical framing.
+
+[Official object page](https://clevelandart.org/art/2023.162)
+
+ The Met
+
+### Abiding Nowhere
+
+ High-contrast vertical drama with decisive brush pressure.
+
+ Use for: headline weight checks and hero-side imagery.
+
+[Official object page](https://www.metmuseum.org/art/collection/search/816189)
+
+ The Met
+
+### Letter of Invitation
+
+ Subtle paper band and mount details with quiet script.
+
+ Use for: panel backgrounds and ornamental strips.
+
+[Official object page](https://www.metmuseum.org/art/collection/search/913850)
+
+ The Met
+
+### After Yan Zhenqing
+
+ Thin linework, airy spacing, and restrained seals.
+
+ Use for: fine dividers and calmer banner references.
+
+[Official object page](https://www.metmuseum.org/art/collection/search/36145)
+
+ National Museum of Asian Art
+
+### Manuscript Letter
+
+ Best paper-field source in the pack, with quiet sage mount color.
+
+ Use for: calm section backgrounds and surface textures.
+
+[Official object page](https://asia.si.edu/explore-art-culture/collections/search/edanmdm:fsg_F1907.149/)
+
+ National Museum of Asian Art
+
+### Two Poems and Postscript
+
+ Arc composition, warm fan paper, and concentrated vermilion stamp detail.
+
+ Use for: curved ornaments and accent studies.
+
+[Official object page](https://asia.si.edu/explore-art-culture/collections/search/edanmdm:fsg_F1909.398b/)
+
+## Direct-Use Derived Elements
+
+### Hero Gesture
+
+ Low-opacity hero ornament or masthead-side mark.
+
+### Seal Column
+
+ Reference for sparse vermilion accents and margin details.
+
+### Vertical Run
+
+ Side divider, rail study, or narrow decorative insert.
+
+### Letter Band
+
+ Panel stripe, footer band, or card ornament.
+
+### Paper Field
+
+ Calm surface texture for low-contrast content areas.
+
+### Fan Arc
+
+ Section-end flourish or decorative framing device.
+
+### Seal Detail
+
+ Micro-accent reference for buttons, markers, or inline labels.

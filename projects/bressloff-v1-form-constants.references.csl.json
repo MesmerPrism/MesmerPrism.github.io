@@ -1,0 +1,595 @@
+[
+  {
+    "id": "github-com-mesmer-prism-work-publications-background-contact",
+    "type": "webpage",
+    "title": "Mesmer Prism Work Publications Background Contact",
+    "URL": "https://github.com/MesmerPrism",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Bressloff V1 Form Constants: https://mesmerprism.com/projects/bressloff-v1-form-constants.html"
+  },
+  {
+    "id": "doi-org-bressloff-et-al-2002",
+    "type": "article-journal",
+    "title": "Bressloff et al., 2002",
+    "URL": "https://doi.org/10.1162/089976602317250861",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Bressloff V1 Form Constants: https://mesmerprism.com/projects/bressloff-v1-form-constants.html",
+    "DOI": "10.1162/089976602317250861"
+  },
+  {
+    "id": "github-com-source-code-2002",
+    "type": "webpage",
+    "title": "Source code",
+    "URL": "https://github.com/MesmerPrism/bressloff-v1-form-constants",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Bressloff V1 Form Constants: https://mesmerprism.com/projects/bressloff-v1-form-constants.html",
+    "issued": {
+      "date-parts": [
+        [
+          2002
+        ]
+      ]
+    }
+  },
+  {
+    "id": "github-com-original-notebook-2002",
+    "type": "webpage",
+    "title": "Original notebook",
+    "URL": "https://github.com/karacsm/V1-sim",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Bressloff V1 Form Constants: https://mesmerprism.com/projects/bressloff-v1-form-constants.html",
+    "issued": {
+      "date-parts": [
+        [
+          2002
+        ]
+      ]
+    }
+  },
+  {
+    "id": "journals-plos-org-plos-license-policy-2002",
+    "type": "webpage",
+    "title": "PLOS license policy",
+    "URL": "https://journals.plos.org/ploscompbiol/s/licenses-and-copyright",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Bressloff V1 Form Constants: https://mesmerprism.com/projects/bressloff-v1-form-constants.html",
+    "issued": {
+      "date-parts": [
+        [
+          2002
+        ]
+      ]
+    }
+  },
+  {
+    "id": "royalsociety-org-royal-society-permissions-2002",
+    "type": "webpage",
+    "title": "Royal Society permissions",
+    "URL": "https://royalsociety.org/journals/permissions/",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Bressloff V1 Form Constants: https://mesmerprism.com/projects/bressloff-v1-form-constants.html",
+    "issued": {
+      "date-parts": [
+        [
+          2002
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mitpress-mit-edu-mit-press-permissions-2002",
+    "type": "webpage",
+    "title": "MIT Press permissions",
+    "URL": "https://mitpress.mit.edu/rights-permissions/",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Bressloff V1 Form Constants: https://mesmerprism.com/projects/bressloff-v1-form-constants.html",
+    "issued": {
+      "date-parts": [
+        [
+          2002
+        ]
+      ]
+    }
+  },
+  {
+    "id": "www-springernature-com-springer-nature-permissions-2002",
+    "type": "webpage",
+    "title": "Springer Nature permissions",
+    "URL": "https://www.springernature.com/gp/partners/rights-permissions-third-party-distribution",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Bressloff V1 Form Constants: https://mesmerprism.com/projects/bressloff-v1-form-constants.html",
+    "issued": {
+      "date-parts": [
+        [
+          2002
+        ]
+      ]
+    }
+  },
+  {
+    "id": "publishingsupport-iopscience-iop-org-iop-permissions-faq-2002",
+    "type": "webpage",
+    "title": "IOP permissions FAQ",
+    "URL": "https://publishingsupport.iopscience.iop.org/permissionsfaq/",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Bressloff V1 Form Constants: https://mesmerprism.com/projects/bressloff-v1-form-constants.html",
+    "issued": {
+      "date-parts": [
+        [
+          2002
+        ]
+      ]
+    }
+  },
+  {
+    "id": "doi-org-ermentrout-and-cowan-1979",
+    "type": "article-journal",
+    "title": "Ermentrout and Cowan, 1979",
+    "URL": "https://doi.org/10.1007/BF00336965",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Bressloff V1 Form Constants: https://mesmerprism.com/projects/bressloff-v1-form-constants.html",
+    "DOI": "10.1007/BF00336965"
+  },
+  {
+    "id": "doi-org-rule-et-al-2011-1979",
+    "type": "article-journal",
+    "title": "Rule et al., 2011",
+    "URL": "https://doi.org/10.1371/journal.pcbi.1002158",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Bressloff V1 Form Constants: https://mesmerprism.com/projects/bressloff-v1-form-constants.html",
+    "issued": {
+      "date-parts": [
+        [
+          1979
+        ]
+      ]
+    },
+    "DOI": "10.1371/journal.pcbi.1002158"
+  },
+  {
+    "id": "doi-org-hewitt-et-al-2025-1979",
+    "type": "article-journal",
+    "title": "Hewitt et al., 2025",
+    "URL": "https://doi.org/10.1093/nc/niaf020",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Bressloff V1 Form Constants: https://mesmerprism.com/projects/bressloff-v1-form-constants.html",
+    "issued": {
+      "date-parts": [
+        [
+          1979
+        ]
+      ]
+    },
+    "DOI": "10.1093/nc/niaf020"
+  },
+  {
+    "id": "doi-org-bressloff-et-al-2001-2002",
+    "type": "article-journal",
+    "title": "Bressloff et al., 2001",
+    "URL": "https://doi.org/10.1098/rstb.2000.0769",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Bressloff V1 Form Constants: https://mesmerprism.com/projects/bressloff-v1-form-constants.html",
+    "issued": {
+      "date-parts": [
+        [
+          2002
+        ]
+      ]
+    },
+    "DOI": "10.1098/rstb.2000.0769"
+  },
+  {
+    "id": "isomerdesign-com-open-visual-comparison-2002",
+    "type": "webpage",
+    "title": "Open visual comparison",
+    "URL": "https://isomerdesign.com/countyourculture/2011/03/13/form-constants-visual-cortex/",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Bressloff V1 Form Constants: https://mesmerprism.com/projects/bressloff-v1-form-constants.html",
+    "issued": {
+      "date-parts": [
+        [
+          2002
+        ]
+      ]
+    }
+  },
+  {
+    "id": "github-com-future-implementation-plan",
+    "type": "webpage",
+    "title": "future implementation plan",
+    "URL": "https://github.com/MesmerPrism/bressloff-v1-form-constants/blob/main/docs/BRESSLOFF_FUTURE_IMPLEMENTATION_PLAN.md",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Bressloff V1 Form Constants: https://mesmerprism.com/projects/bressloff-v1-form-constants.html"
+  },
+  {
+    "id": "doi-org-nicks-et-al-2021",
+    "type": "article-journal",
+    "title": "Nicks et al., 2021",
+    "URL": "https://doi.org/10.1137/20M1366885",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Bressloff V1 Form Constants: https://mesmerprism.com/projects/bressloff-v1-form-constants.html",
+    "DOI": "10.1137/20M1366885"
+  },
+  {
+    "id": "doi-org-tamekue-et-al-2024-2021",
+    "type": "article-journal",
+    "title": "Tamekue et al., 2024",
+    "URL": "https://doi.org/10.1137/23M1616686",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Bressloff V1 Form Constants: https://mesmerprism.com/projects/bressloff-v1-form-constants.html",
+    "issued": {
+      "date-parts": [
+        [
+          2021
+        ]
+      ]
+    },
+    "DOI": "10.1137/23M1616686"
+  },
+  {
+    "id": "doi-org-bolelli-and-prandi-2025-2021",
+    "type": "article-journal",
+    "title": "Bolelli and Prandi, 2025",
+    "URL": "https://doi.org/10.1007/s10851-025-01257-7",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Bressloff V1 Form Constants: https://mesmerprism.com/projects/bressloff-v1-form-constants.html",
+    "issued": {
+      "date-parts": [
+        [
+          2021
+        ]
+      ]
+    },
+    "DOI": "10.1007/s10851-025-01257-7"
+  },
+  {
+    "id": "bressloff-p-c-j-d-cowan-m-golubitsky-p-j-thomas-and-m-c--public-pdf-mirror-2002",
+    "type": "webpage",
+    "title": "Public PDF mirror",
+    "URL": "https://gwern.net/doc/psychology/vision/2002-bressloff.pdf",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Bressloff V1 Form Constants: https://mesmerprism.com/projects/bressloff-v1-form-constants.html",
+    "author": [
+      {
+        "literal": "Bressloff, P. C., J. D. Cowan, M. Golubitsky, P. J. Thomas, and M. C. Wiener"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2002
+        ]
+      ]
+    }
+  },
+  {
+    "id": "bressloff-p-c-j-d-cowan-m-golubitsky-p-j-thomas-and-m-c--spatiotemporal-dynamics-of-continuum-neural-fields",
+    "type": "article-journal",
+    "title": "Spatiotemporal Dynamics of Continuum Neural Fields",
+    "URL": "https://doi.org/10.1088/1751-8113/45/3/033001",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Bressloff V1 Form Constants: https://mesmerprism.com/projects/bressloff-v1-form-constants.html",
+    "author": [
+      {
+        "literal": "Bressloff, P. C., J. D. Cowan, M. Golubitsky, P. J. Thomas, and M. C. Wiener"
+      }
+    ],
+    "DOI": "10.1088/1751-8113/45/3/033001"
+  },
+  {
+    "id": "countyourculture-form-constant-visualization-type-i",
+    "type": "webpage",
+    "title": "Form Constant Visualization - Type I",
+    "URL": "https://isomerdesign.com/countyourculture/2011/03/16/form-constant-visualization-type-1/",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Bressloff V1 Form Constants: https://mesmerprism.com/projects/bressloff-v1-form-constants.html",
+    "author": [
+      {
+        "literal": "CountYourCulture"
+      }
+    ]
+  },
+  {
+    "id": "countyourculture-oscilleditor-reference-manual",
+    "type": "webpage",
+    "title": "Oscilleditor Reference Manual",
+    "URL": "https://qri.org/oscilleditor/doc/reference-manual",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Bressloff V1 Form Constants: https://mesmerprism.com/projects/bressloff-v1-form-constants.html",
+    "author": [
+      {
+        "literal": "CountYourCulture"
+      }
+    ]
+  },
+  {
+    "id": "qualia-research-institute-effect-of-frequency-and-rhythmicity-on-flicker-light-ind",
+    "type": "article-journal",
+    "title": "Effect of Frequency and Rhythmicity on Flicker Light-Induced Hallucinatory Phenomena",
+    "URL": "https://doi.org/10.1371/journal.pone.0284271",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Bressloff V1 Form Constants: https://mesmerprism.com/projects/bressloff-v1-form-constants.html",
+    "author": [
+      {
+        "literal": "Qualia Research Institute"
+      }
+    ],
+    "DOI": "10.1371/journal.pone.0284271"
+  },
+  {
+    "id": "hewitt-et-al-image-recreation-methods-enable-quantitative-characteriz",
+    "type": "article-journal",
+    "title": "Image Recreation Methods Enable Quantitative Characterization of Geometric Visual Hallucinations",
+    "URL": "https://doi.org/10.31234/osf.io/2gtsy_v1",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Bressloff V1 Form Constants: https://mesmerprism.com/projects/bressloff-v1-form-constants.html",
+    "author": [
+      {
+        "literal": "Hewitt et al"
+      }
+    ],
+    "DOI": "10.31234/osf.io/2gtsy_v1"
+  },
+  {
+    "id": "hewitt-t-e-j-grove-a-seth-and-d-j-schwartzman-interactive-image-recreation-visualization-2026",
+    "type": "webpage",
+    "title": "interactive image-recreation visualization",
+    "URL": "https://imagerecreationdataviz.netlify.app/",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Bressloff V1 Form Constants: https://mesmerprism.com/projects/bressloff-v1-form-constants.html",
+    "author": [
+      {
+        "literal": "Hewitt, T., E. J. Grove, A. Seth, and D. J. Schwartzman"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mesmer-prism-driven-neural-fields-implementation-plan",
+    "type": "webpage",
+    "title": "Driven Neural Fields Implementation Plan",
+    "URL": "https://github.com/MesmerPrism/bressloff-v1-form-constants/blob/main/docs/DRIVEN_NEURAL_FIELDS_IMPLEMENTATION_PLAN.md",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Bressloff V1 Form Constants: https://mesmerprism.com/projects/bressloff-v1-form-constants.html",
+    "author": [
+      {
+        "literal": "Mesmer Prism"
+      }
+    ]
+  },
+  {
+    "id": "mesmer-prism-original-author-software-methods",
+    "type": "webpage",
+    "title": "Original Author Software Methods",
+    "URL": "https://github.com/MesmerPrism/bressloff-v1-form-constants/blob/main/docs/ORIGINAL_AUTHOR_SOFTWARE_METHODS.md",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Bressloff V1 Form Constants: https://mesmerprism.com/projects/bressloff-v1-form-constants.html",
+    "author": [
+      {
+        "literal": "Mesmer Prism"
+      }
+    ]
+  }
+]

@@ -1,0 +1,209 @@
+Plasmatic Avatars and Chronic Pain VR | Plasmatic Multitudes
+
+Source: https://mesmerprism.com/plasmatic-multitudes/pain.html
+Canonical HTML: https://mesmerprism.com/plasmatic-multitudes/pain.html
+Generated: 2026-05-26
+Description: A cautious research note on boundary precision, avatar materiality, protective fields, ownership, agency, and pain-related body-representation hypotheses. Not a treatment claim.
+Markdown: https://mesmerprism.com/plasmatic-multitudes/pain.md
+Plain text: https://mesmerprism.com/plasmatic-multitudes/pain.txt
+BibTeX references: https://mesmerprism.com/plasmatic-multitudes/pain.bib
+CSL JSON references: https://mesmerprism.com/plasmatic-multitudes/pain.references.csl.json
+
+---
+
+Pain translation | Updated May 24, 2026
+
+Plasmatic Avatars and Chronic Pain VR
+
+ This page is a research hypothesis, not a treatment claim. It asks whether boundary
+ precision, protective fields, and avatar materiality can be tested as variables in
+ contexts where body representation already matters for pain.
+
+Caution
+
+ The argument here is deliberately conservative. Plasmatic or boundary-softened
+ avatars remain plausible variables worth testing, not established clinical
+ mechanisms in pain care, because body representation already matters in pain
+ research.
+
+ The cited studies are listed on the sources page (https://mesmerprism.com/plasmatic-multitudes/references.html).
+
+Claim status
+
+ Claim status
+ Research hypothesis, not treatment claim
+
+ Clinical status
+ Not validated therapy
+
+ Proposed variable
+ Boundary precision and avatar materiality
+
+ Necessary constraints
+ Ownership, agency, and sensorimotor trust
+
+Why expand the avatar-pain toolbox
+
+ The existing avatar-pain literature already shows that visual self-representation can
+ modulate pain, pain thresholds, and body-perception disturbance. That pattern appears
+ across altered limb appearance, heartbeat-synchronous embodiment cues, and placebo-like
+ virtual interventions directed at embodied body parts
+ (Ho et al. (https://doi.org/10.1016/j.jpain.2021.10.009); Lewis et al. (https://doi.org/10.1002/ejp.1766); Martini et al. (https://doi.org/10.3389/fnhum.2013.00438); Solca et al. (https://doi.org/10.1212/WNL.0000000000005905)) .
+
+ The proposed contribution is a new representational degree of freedom. Standard
+ protocols often resize, recolor, or reskin a bounded mesh; plasmatic avatars make
+ boundary precision and materiality available as explicit variables. In somaesthetic terms, that
+ means changing how the body is felt from within rather than only how it is seen from
+ outside
+ (Shusterman (https://www.interaction-design.org/literature/book/the-encyclopedia-of-human-computer-interaction-2nd-ed/somaesthetics); Hook et al. (https://doi.org/10.1145/2598510.2598561)) .
+
+ Once embodiment is already known to matter for pain, the next question is what kinds of
+ embodiment are worth testing. This essay argues that weakly bounded form should be one
+ of those kinds.
+
+What plasmatic avatars add
+
+ A plasmatic avatar represents the body as a coherent but dynamic collective rather than
+ a rigid surface. It can appear as particles, fields, point-cloud structures, or
+ aura-like forms. "Plasmatic" names the refusal of ossified form. "Multitude" names a
+ body composed of many coordinated elements
+ (Eisenstein (https://seagullbooks.org/products/on-disney); Reeves (https://doi.org/10.1145/357318.357320); Reynolds (https://doi.org/10.1145/37402.37406)) .
+
+ Spectral bodies, abstract self-avatars, and aura-like relational avatars already have
+ precedents in XR research. The argument builds on that representational lineage rather
+ than inventing a form without context
+ (Richards et al. (https://www.spiedigitallibrary.org/conference-proceedings-of-spie/2177/0000/Virtual-reality-and-virtual-bodies/10.1117/12.173894.full); dos Anjos and Pereira (https://arxiv.org/abs/2405.02672); Desnoyers-Stewart et al. (https://doi.org/10.1145/3544549.3585843)) .
+
+ The Desnoyers-Stewart sequence is especially useful here because it shows that point-cloud
+ and particle bodies can still be identified with, exchanged, and felt socially.
+ Transcending Projection and Transcending the Virtual Mirror Stage
+ establish mirror-based ownership of abstract bodies. Body RemiXer and
+ ETC then show that those bodies can carry intercorporeal touch metaphors,
+ abstract body exchange, and aura-based relation rather than remaining merely decorative
+ (Desnoyers-Stewart (https://www.medien.ifi.lmu.de/socialHMD/SHMD_19_submissions/SHMD_19_paper_12.pdf); Desnoyers-Stewart, Smith, and Riecke (https://gala.gre.ac.uk/id/eprint/31046/7/31046%20PAPADAKI_DRHA2019_Conference_Proceedings_2020.pdf); Desnoyers-Stewart et al. 2020 (https://doi.org/10.1162/LEON_a_01925); Desnoyers-Stewart et al. 2023 (https://doi.org/10.1145/3544549.3585843)) .
+
+ To become clinically usable, though, these avatars still need to feel relatable and
+ trustworthy. Gilland's animation-craft rule is that even magical effects stay
+ believable when they follow observed forces and keep a coherent stylistic logic.
+ Bernal and Maes suggest a parallel VR rule: nonhuman fur and particle avatars become
+ more expressive and more relatable when they map felt state into legible visible change
+ (Gilland 2009 (https://archive.org/details/elemental-magic/page/n2/mode/1up); Gilland 2012 (https://archive.org/details/elemental-magic-volume-ii/mode/1up); Bernal and Maes (https://doi.org/10.1145/3027063.3053207)) .
+
+Style as a variable
+
+ The strongest reason to take this line seriously is that the pain literature and the
+ phenomenological literature already meet each other halfway. Bullington argues that
+ psychosomatic difficulty cannot be reduced to a malfunctioning body-object; it has to be
+ understood as a disturbance in lived body-world meaning. The avatar-pain studies, from a
+ very different direction, show that altering embodied virtual form can change pain
+ experience and body-perception disturbance
+ (Bullington (https://doi.org/10.1007/978-94-007-6498-9); Ho et al. (https://doi.org/10.1016/j.jpain.2021.10.009); Lewis et al. (https://doi.org/10.1002/ejp.1766); Solca et al. (https://doi.org/10.1212/WNL.0000000000005905)) .
+
+ Put together, those sources justify a narrow but real hypothesis: if some painful states
+ involve a disturbed relation between body form, safety, agency, and world, then avatar
+ design should not be limited to superficial appearance tweaks. Boundary softness,
+ protective halos, field-like extension, and diffused body edges may become ways of
+ experimentally reorganizing how the body is felt and interpreted rather than merely how
+ it is pictured.
+
+ Pseudo-haptics makes that claim more operational. Lecuyer shows that vision can induce
+ impressions of stiffness, friction, and resistance; Pusch and Lecuyer and Collins and
+ Kapralos show how careful visual and auditory cueing can stabilize those impressions; the
+ molecular-bond-stiffness study suggests that even abstract physics-based interaction can
+ support fine material judgments in VR. For pain design, that means a protective halo,
+ softened boundary, or viscous painful region does not have to remain a purely visual
+ symbol. It can be built as a felt material metaphor, provided ownership and sensorimotor
+ trust stay intact
+ (Lecuyer (https://doi.org/10.1162/pres.18.1.39); Pusch and Lecuyer (https://doi.org/10.1145/2070481.2070494); Collins and Kapralos (https://doi.org/10.1080/17458927.2019.1619318); Roebuck Williams et al. (https://doi.org/10.1007/978-3-031-71707-9_13)) .
+
+ The argument therefore insists on legible transformation. The intervention only makes
+ sense if the user can still trust the transformed body as theirs. The body has to change
+ enough to matter, but not so much that the change turns into decorative distance or
+ dissociation
+ (Gilland 2009 (https://archive.org/details/elemental-magic/page/n2/mode/1up); Desnoyers-Stewart et al. (https://doi.org/10.1145/3544549.3585843); Bernal and Maes (https://doi.org/10.1145/3027063.3053207)) .
+
+Three hypothesis families
+
+1. Boundary precision
+
+ Instead of changing only size or color, a study can vary how sharply bounded the body
+ appears. A cautious hypothesis is that diffuse or softly bounded self-representations
+ may reduce threat, foreignness, or rigid body-error signaling in some pain
+ presentations, especially where body representation is already disturbed
+ (Lewis et al. (https://doi.org/10.1002/ejp.1766); Solca et al. (https://doi.org/10.1212/WNL.0000000000005905); Bullington (https://doi.org/10.1007/978-94-007-6498-9)) .
+
+2. Protective field metaphors
+
+ Rather than representing protection only as a glove or shell texture, a system can
+ render a spatial buffer around painful regions. Thickness, porosity, responsiveness, and
+ diffusion could become tunable parameters. This remains a hypothesis, but it is
+ consistent with a broader literature showing that embodied virtual interventions can
+ influence pain perception and that resistance or yielding can be staged through visual
+ and cross-modal material cues rather than literal force devices
+ (Ho et al. (https://doi.org/10.1016/j.jpain.2021.10.009); Martini et al. (https://doi.org/10.3389/fnhum.2013.00438); Lecuyer (https://doi.org/10.1162/pres.18.1.39); Pusch and Lecuyer (https://doi.org/10.1145/2070481.2070494); Collins and Kapralos (https://doi.org/10.1080/17458927.2019.1619318)) .
+
+3. Social safety signaling
+
+ Pain is shaped by affect, context, and felt safety. Abstract aura-like avatars are
+ relevant here because they can support tactile-like interpersonal meaning without
+ requiring elaborate hardware. That makes plasmatic forms plausible candidates for later
+ self-compassion or social-touch variants, even though those extensions still require
+ direct testing
+ (Desnoyers-Stewart et al. (https://doi.org/10.1145/3544549.3585843); Glowacki et al. (https://doi.org/10.1038/s41598-022-12637-z)) .
+
+A minimal study module
+
+ One practical way to test these ideas is to add a within-subject plasmatic condition to
+ an existing avatar manipulation protocol rather than rebuilding the whole experiment from
+ scratch.
+- Baseline condition: a standard embodied limb or hand protocol using established appearance-based manipulation.
+- Plasmatic condition: the same sensorimotor mapping, but rendered as a coherent particle or aura body with low, medium, or high boundary diffusion.
+- Optional field condition: the plasmatic body plus a tunable protective buffer around the painful region.
+
+ Primary outcomes would include pain intensity, unpleasantness, body-perception
+ disturbance, ownership, agency, and task-appropriate threshold or tolerance measures.
+ Process measures could include qualitative reports about swelling, foreignness, safety,
+ and coherence.
+
+ A useful addition is tactile visualization. If participants map location, spread,
+ intensity, rhythm, or texture-like qualities of sensation before and after each
+ boundary condition, the study can capture changes in bodily meaning rather than only a
+ single pain score. That makes boundary precision easier to compare against changes in
+ how sensation itself is organized and described
+ (Volpato et al. (https://qri.org/blog/visualizing-tactile-sensations)) .
+
+ The main design constraint is to preserve sensorimotor trust while the visible body
+ changes. Diffusion, haloing, or protective-field imagery should read as meaningful
+ transformations of the same body, not as detached magical overlays
+ (Gilland 2009 (https://archive.org/details/elemental-magic/page/n2/mode/1up); Bullington (https://doi.org/10.1007/978-94-007-6498-9); Desnoyers-Stewart et al. (https://doi.org/10.1145/3544549.3585843)) .
+
+ In practice, that means the protocol should be conservative about what changes and what
+ stays stable. Motion contingencies, timing, and basic body ownership cues should remain
+ intact while the boundary logic is varied. Otherwise the study risks testing confusion
+ instead of testing boundary precision or protective metaphor.
+
+Why this matters beyond pain
+
+ Boundary-softened avatars may also matter for research that deals with rigid self-models
+ more broadly. Glowacki's work on Isness suggests that VR can induce self-boundary
+ softening, diffuse energetic embodiment, and connectedness under carefully staged
+ conditions. Boundary softness may therefore be a meaningful cross-context variable worth
+ probing experimentally
+ (Glowacki et al. (https://doi.org/10.1038/s41598-022-12637-z); Glowacki (https://doi.org/10.3389/frvir.2023.1286950); Liedgren et al. (https://doi.org/10.3389/fpsyg.2023.1043170)) .
+
+ This is where the wider field becomes testable in a different register. The overview
+ asks what weakly bounded bodies can do. The pain essay asks whether that question can be
+ translated into an intervention design problem without losing conceptual precision. A
+ successful translation would move the field from aesthetic speculation into a testable
+ research direction.
+
+ The claim remains narrow: plasmatic avatars are a coherent and testable extension of
+ the current avatar-pain toolbox, not a validated therapeutic mechanism.
+
+Sources
+
+ For shared vocabulary, see the vocabulary page (https://mesmerprism.com/plasmatic-multitudes/terminology.html). The
+ studies cited here are collected on the sources page (https://mesmerprism.com/plasmatic-multitudes/references.html),
+ especially the sections on XR relation and pain modulation.
+
+ Further reading: Somaesthetics note (https://mesmerprism.com/plasmatic-multitudes/background/somaesthetics.html).

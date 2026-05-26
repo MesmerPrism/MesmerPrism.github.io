@@ -1,0 +1,443 @@
+Vocabulary for Weakly Bounded Bodies | Plasmatic Multitudes
+
+Source: https://mesmerprism.com/plasmatic-multitudes/terminology.html
+Canonical HTML: https://mesmerprism.com/plasmatic-multitudes/terminology.html
+Generated: 2026-05-26
+Description: Terms for semi-corporeal avatars, plasmatic bodies, particle bodies, swarm bodies, aura avatars, boundary precision, pseudo-haptics, and related design concepts.
+Markdown: https://mesmerprism.com/plasmatic-multitudes/terminology.md
+Plain text: https://mesmerprism.com/plasmatic-multitudes/terminology.txt
+BibTeX references: https://mesmerprism.com/plasmatic-multitudes/terminology.bib
+CSL JSON references: https://mesmerprism.com/plasmatic-multitudes/terminology.references.csl.json
+
+---
+
+Field guide | Updated May 24, 2026
+
+Vocabulary / Field Terms
+
+ This guide maps the terms different fields use for the same design problem: how bodies
+ remain legible while their boundaries soften, become permeable, or become collective.
+
+How to use the vocabulary
+
+ These terms are not treated as perfect synonyms. Somaesthetics anchors the method,
+ while media theory, XR design, perception research, and pain translation each
+ emphasize different aspects of the same body problem.
+
+ Each entry points back to the shared sources page (https://mesmerprism.com/plasmatic-multitudes/references.html)
+ so the vocabulary stays tied to sources rather than floating as mood language.
+
+How the vocabularies relate
+
+ No single discipline owns these bodies. Somaesthetics provides the method stance:
+ embodied experience is primary, so boundary terms matter when they reorganize perception,
+ action, and felt bodily meaning. Media theory then names staged transitions and image
+ genealogies; XR work names rendering modes and interaction grammars; perception research
+ explains how coherence survives soft boundaries; computational morphogenesis names
+ many-agent body formation; and pain translation asks what boundary change does when
+ body representation already matters clinically
+ (Shusterman (https://www.interaction-design.org/literature/book/the-encyclopedia-of-human-computer-interaction-2nd-ed/somaesthetics); Hook et al. (https://doi.org/10.1145/2598510.2598561); Eisenstein (https://seagullbooks.org/products/on-disney); dos Anjos and Pereira (https://arxiv.org/abs/2405.02672); Wagemans et al. (https://doi.org/10.1037/a0029333); Pahng et al. (https://arxiv.org/abs/2512.17129); Bullington (https://doi.org/10.1007/978-94-007-6498-9)) .
+
+ The vocabulary map shows how the terms cluster, where they come from, and which one best
+ explains what the body is doing: staying coherent, changing boundary, entering relation,
+ or becoming experimentally useful.
+
+Use this term when
+
+ Use this term
+ When the emphasis is
+
+ Weakly bounded body
+ A soft or unstable bodily edge.
+
+ Semi-corporeal avatar
+ An avatar present enough for embodiment without full solidity.
+
+ Plasmatic body
+ Changeability and refusal of fixed form.
+
+ Particle body
+ Many-part rendering and dynamic density.
+
+ Swarm body
+ Coordinated collective motion.
+
+ Aura avatar
+ Relational field, proximity, or touch metaphor.
+
+ Pseudo-haptics
+ Visually or cross-modally inferred material feel.
+
+ Boundary precision
+ The sharpness, permeability, or controllability of the body's edge.
+
+Core umbrella terms
+
+ Somaesthetics
+
+ A pragmatic discipline that treats the lived body as the medium of perception,
+ action, and self-presentation. On this site it names the method anchor: boundary
+ design matters because it reshapes embodied experience rather than merely changing
+ the body's image.
+
+ Best used when the emphasis is on felt bodily experience, somatic awareness, and
+ design from within rather than appearance alone
+ (Shusterman (https://www.interaction-design.org/literature/book/the-encyclopedia-of-human-computer-interaction-2nd-ed/somaesthetics); Hook et al. (https://doi.org/10.1145/2598510.2598561)) .
+
+ Weakly bounded body
+
+ A body whose edge is soft, distributed, permeable, or unstable while remaining
+ readable as a body. This is the broadest public-facing phrase on the site because
+ it names the central problem without locking the body to one historical register.
+
+ Best used when the emphasis is on boundary condition and felt self-boundary rather
+ than rendering style
+ (Shusterman (https://www.interaction-design.org/literature/book/the-encyclopedia-of-human-computer-interaction-2nd-ed/somaesthetics); Wagemans et al. (https://doi.org/10.1037/a0029333); Johansson (https://link.springer.com/article/10.3758/BF03212378); Glowacki (https://doi.org/10.3389/frvir.2023.1286950)) .
+
+ Semi-corporeal avatar
+
+ The site's main umbrella term for avatars that are present enough for embodiment
+ and relation without being fully solid, sealed, or anatomically closed. It covers
+ spectral, aura-like, point-cloud, particle, and other partially materialized forms.
+
+ Best used for cross-disciplinary discussion when several body types need to stay in
+ scope at once
+ (Richards et al. (https://www.spiedigitallibrary.org/conference-proceedings-of-spie/2177/0000/Virtual-reality-and-virtual-bodies/10.1117/12.173894.full); dos Anjos and Pereira (https://arxiv.org/abs/2405.02672); Desnoyers-Stewart et al. (https://doi.org/10.1145/3544549.3585843); Glowacki (https://doi.org/10.3389/frvir.2023.1286950)) .
+
+ Plasmatic body / plasmatic multitude
+
+ The term plasmatic stresses anti-ossified changeability, while
+ plasmatic multitude adds multiplicity, collectivity, and many-part body
+ structure. Together they are useful when transformation and reconfiguration matter
+ more than stable contour.
+
+ Best used when the body is both mutable and compositionally multiple
+ (Eisenstein (https://seagullbooks.org/products/on-disney); Geil (https://www.ceeol.com/search/article-detail?id=813411); Whissel (https://www.dukeupress.edu/spectacular-digital-effects)) .
+
+Historical and media-theory terms
+
+ Spectral body
+
+ A body rendered as apparition-like, reduced-material, or ghost-adjacent. The term
+ is useful when the figure remains bodily but clearly departs from ordinary
+ substantial presence.
+
+ Strong when the emphasis is on apparition, projection, or immaterial body image
+ (Richards et al. (https://www.spiedigitallibrary.org/conference-proceedings-of-spie/2177/0000/Virtual-reality-and-virtual-bodies/10.1117/12.173894.full); Owens (https://shop.tate.org.uk/the-ghost-a-cultural-history-paperback/22503.html)) .
+
+ Animated spirit
+
+ Bukatman's term for a media poetics where liveliness and spirit imagery meet. It is
+ useful when animation is being discussed as vitality rather than just as a technical
+ effect.
+
+ Best for animation-theory discussions of aliveness, motion, and enchantment
+ (Bukatman (https://books.google.com/books/about/The_Poetics_of_Slumberland.html?id=wi8NYAAACAAJ)) .
+
+ Ghost / apparition
+
+ Historical terms for non-solid presence across phantasmagoria, seance, stage
+ illusion, spirit photography, and film. On this site they are kept tied to those
+ source traditions rather than used as a loose synonym for anything atmospheric.
+
+ Best when the historical apparatus or cultural register matters explicitly
+ (Owens (https://shop.tate.org.uk/the-ghost-a-cultural-history-paperback/22503.html); Gunning (https://mediaarthistory.org/refresh/Programmatic%20key%20texts/pdfs/Gunning.pdf); Natale (https://doi.org/10.1080/17460654.2012.664745)) .
+
+ Non-corporeal lifeform
+
+ A useful franchise term from Star Trek for beings that persist as energy,
+ cloud, patterned light, or host-dependent presence rather than as a stable
+ corporeal body. It matters here as a mainstream screen index for semi-corporeal
+ bodies rather than as a scientific category.
+
+ Best when pointing to popular-media precedents such as the Zetarians, Douwd,
+ Onaya, the Pahvans, Ronin, and the Companion
+ (Memory Alpha (https://memory-alpha.fandom.com/wiki/Non-corporeal_lifeform); Memory Alpha Zetarian (https://memory-alpha.fandom.com/wiki/Zetarian); Memory Alpha Douwd (https://memory-alpha.fandom.com/wiki/Douwd); Memory Alpha Onaya (https://memory-alpha.fandom.com/wiki/Onaya); Memory Alpha Ronin (https://memory-alpha.fandom.com/wiki/Ronin); Memory Alpha Pahvan (https://memory-alpha.fandom.com/wiki/Pahvan); Memory Alpha Companion (https://memory-alpha.fandom.com/wiki/Companion)) .
+
+ Ectoplasm
+
+ A historical material metaphor for extruded, mutable, partly formed animated
+ matter. It matters because it names a body that is neither pure spirit nor settled
+ substance, but something in transition.
+
+ Best when discussing protrusion, materialization, unstable substance, or occult
+ media history
+ (Wilson (https://doi.org/10.3366/edinburgh/9780748627691.001.0001)) .
+
+ Thought-form
+
+ A theosophical image term for feeling or thought rendered as visible color, shape,
+ vibration, or field. It matters here as a historical vocabulary for non-solid
+ bodies that radiate or condense without hard contour.
+
+ Best when the body is being pictured as emanation, aura, or subtle matter
+ (Wilson (https://doi.org/10.3366/edinburgh/9780748627691.001.0001); Besant and Leadbeater (https://www.gutenberg.org/files/16269/16269-h/16269-h.htm)) .
+
+ Digital multitude
+
+ Whissel's term for CG swarms, crowds, and many-part formations that carry narrative
+ and symbolic force. It is the most useful term here when multiplicity becomes the
+ body's main visual logic.
+
+ Best when number, collectivity, or swarm-scale meaning is central
+ (Whissel (https://www.dukeupress.edu/spectacular-digital-effects)) .
+
+XR and avatar-design terms
+
+ Weakly representational body
+
+ Glowacki's term for bodies that suggest a being without fixing it too tightly.
+ These forms stay bodily, but they leave room for projection, ambiguity, and altered
+ self-other relation.
+
+ Best when discussing bodies that are intentionally under-specified rather than
+ fully descriptive
+ (Glowacki (https://doi.org/10.3389/frvir.2023.1286950)) .
+
+ Numadelic body
+
+ Glowacki's category for low-rigidity, boundary-softened body forms that support
+ connectedness, imaginative projection, and altered phenomenology without requiring
+ conventional anatomical depiction.
+
+ Best when discussing the Isness line and closely related body designs
+ (Glowacki (https://doi.org/10.3389/frvir.2023.1286950); Glowacki et al. (https://doi.org/10.1038/s41598-022-12637-z)) .
+
+ Aura avatar
+
+ A field-like or envelope-like body that emphasizes proximity, touch metaphor,
+ interpersonal boundary, or shared atmosphere rather than fully modeled anatomy.
+
+ Best when the body functions as a relational field
+ (Desnoyers-Stewart et al. (https://doi.org/10.1145/3544549.3585843); Glowacki (https://doi.org/10.3389/frvir.2023.1286950)) .
+
+ Energetic essence / luminous body
+
+ Terms used for bodies rendered as light-bearing, radiant, or field-like rather than
+ as opaque skin and surface. They are most helpful when luminosity is the primary
+ carrier of presence.
+
+ Best for the Isness cluster and related light-body work
+ (Glowacki et al. (https://doi.org/10.1038/s41598-022-12637-z); Glowacki (https://doi.org/10.3389/frvir.2023.1286950)) .
+
+ Point-cloud avatar
+
+ A body rendered as sparse points rather than a continuous surface. It is useful
+ when the question is how little surface information is needed for ownership,
+ presence, or recognition to hold.
+
+ Best when abstraction is driven by sampling and sparsity
+ (dos Anjos and Pereira (https://arxiv.org/abs/2405.02672); Desnoyers-Stewart (https://www.medien.ifi.lmu.de/socialHMD/SHMD_19_submissions/SHMD_19_paper_12.pdf)) .
+
+ Particle body
+
+ A body built from particles, emission systems, or fuzzy many-part rendering rather
+ than a fixed shell. It is useful when the body needs atmosphere, softness, or
+ reactive transformation at the edge.
+
+ Best when materiality is carried by behavior and density rather than by surface
+ closure
+ (Reeves (https://doi.org/10.1145/357318.357320); Desnoyers-Stewart et al. 2020 (https://doi.org/10.1162/LEON_a_01925); Bernal and Maes (https://doi.org/10.1145/3027063.3053207)) .
+
+ Swarm body
+
+ A many-agent body whose unity comes from coordinated movement rather than one
+ envelope. It is most helpful when collectivity and motion do more work than
+ silhouette.
+
+ Best when bodily identity emerges from distributed behavior
+ (Reynolds (https://doi.org/10.1145/37402.37406); Whissel (https://www.dukeupress.edu/spectacular-digital-effects)) .
+
+Perception and interaction terms
+
+ Gestalt coherence
+
+ The grouping logic that lets fragments, sparse points, or soft boundaries still
+ resolve into one figure. It is the main perceptual explanation for why weakly
+ bounded bodies can still feel body-like.
+
+ Best when explaining readability without full closure
+ (Wagemans et al. (https://doi.org/10.1037/a0029333); Johansson (https://link.springer.com/article/10.3758/BF03212378)) .
+
+ Common fate
+
+ A motion cue in which many elements read as one entity because they move together.
+ It is especially useful for particle, swarm, and point-based bodies.
+
+ Best when bodily unity comes from coordinated motion
+ (Wagemans et al. (https://doi.org/10.1037/a0029333); Reynolds (https://doi.org/10.1145/37402.37406)) .
+
+ Legible transformation
+
+ A design rule rather than a single theory term: transformation stays believable
+ when physical, expressive, or relational cues remain readable as the body changes.
+
+ Best when stylization needs to stay trustworthy rather than arbitrary
+ (Gilland 2009 (https://archive.org/details/elemental-magic/page/n2/mode/1up); Gilland 2012 (https://archive.org/details/elemental-magic-volume-ii/mode/1up); Bernal and Maes (https://doi.org/10.1145/3027063.3053207)) .
+
+ Proteus effect
+
+ The finding that transformed self-representation can feed back into behavior and
+ self-perception. It is the basic reason avatar form matters as a condition of
+ action rather than just of appearance.
+
+ Best when asking how avatar form changes conduct, affect, or social relation
+ (Yee and Bailenson (https://doi.org/10.1111/j.1468-2958.2007.00299.x)) .
+
+ Pseudohaptics
+
+ Felt touch, stiffness, friction, or resistance induced through vision and
+ cross-modal cueing rather than dedicated haptic hardware. It matters because
+ abstract bodies can still feel materially persuasive.
+
+ Best when materiality is inferred through behavior and sensory alignment
+ (Lecuyer (https://doi.org/10.1162/pres.18.1.39); Pusch and Lecuyer (https://doi.org/10.1145/2070481.2070494); Collins and Kapralos (https://doi.org/10.1080/17458927.2019.1619318); Desnoyers-Stewart et al. (https://doi.org/10.1145/3544549.3585843)) .
+
+ Coalescence
+
+ A condition in which bodies overlap, merge, or become continuous without
+ dissolving into noise. It is especially useful for shared-body and connectedness
+ work.
+
+ Best when the body is relationally mixed rather than strictly individual
+ (Glowacki et al. (https://doi.org/10.1038/s41598-022-12637-z); Glowacki (https://doi.org/10.3389/frvir.2023.1286950); Desnoyers-Stewart et al. 2020 (https://doi.org/10.1162/LEON_a_01925)) .
+
+ Permeability
+
+ The body's capacity to be crossed, shared, buffered, or partially mixed with its
+ surroundings. It is one of the clearest working terms for soft boundaries in both
+ XR and pain-oriented design.
+
+ Best when the edge of the body is being treated as a variable rather than a given
+ (Glowacki (https://doi.org/10.3389/frvir.2023.1286950); Desnoyers-Stewart et al. (https://doi.org/10.1145/3544549.3585843)) .
+
+ Boundary precision
+
+ A parameter describing how sharply a body's edge is specified: hard contour, soft
+ gradient, or distributed field. It is useful because semi-corporeality becomes a
+ controllable variable only when the body's edge can be described and adjusted.
+
+ Best when the body is being treated as an experimental condition rather than a fixed
+ shell
+ (Shusterman (https://www.interaction-design.org/literature/book/the-encyclopedia-of-human-computer-interaction-2nd-ed/somaesthetics); Wagemans et al. (https://doi.org/10.1037/a0029333); Bullington (https://doi.org/10.1007/978-94-007-6498-9); Ho et al. (https://doi.org/10.1016/j.jpain.2021.10.009)) .
+
+Computational morphogenesis terms
+
+ Morphogenetic body
+
+ A body whose form is produced through development-like dynamics: many parts or
+ agents follow local rules, respond to signals, and settle into a coherent target
+ tendency over time. It is useful when the body is not merely rendered as particles
+ but organized as an evolving system.
+
+ Best when the emphasis is on many-agent formation, stateful reconfiguration, and
+ learned or rule-based body dynamics
+ (Reeves (https://doi.org/10.1145/357318.357320); Reynolds (https://doi.org/10.1145/37402.37406); Pahng et al. (https://arxiv.org/abs/2512.17129)) .
+
+ Target-shape coherence
+
+ The design problem of keeping a many-part body oriented toward a coherent form
+ without treating the body as a sealed mesh. In DiffeoMorph this is handled through
+ a shape-matching objective; in Plasmatic design it becomes a broader question of
+ how a soft body gathers, diffuses, and returns.
+
+ Best when comparing particle, swarm, or point-cloud bodies that need more than
+ visual fuzziness to remain legible
+ (Pahng et al. (https://arxiv.org/abs/2512.17129); hormoz-lab (https://github.com/hormoz-lab/diffeomorph)) .
+
+Translation and care terms
+
+ Structural specificity
+
+ A measure of how concretely a body is specified. Lower specificity leaves more room
+ for projection and ambiguity; higher specificity pushes the body toward fixed
+ identification.
+
+ Best when comparing tightly defined avatars to more suggestive body forms
+ (Glowacki (https://doi.org/10.3389/frvir.2023.1286950)) .
+
+ Symbolic rigidity
+
+ A measure of how tightly a form maps onto familiar bodily expectations or social
+ priors. Lower rigidity allows a body to stay legible while remaining open-ended in
+ meaning.
+
+ Best when asking how much a form dictates interpretation in advance
+ (Glowacki (https://doi.org/10.3389/frvir.2023.1286950)) .
+
+ Liminal design
+
+ A design approach centered on transitions, invitation, threshold states, and return
+ rather than static depiction alone. It matters here because semi-corporeal bodies
+ often work through staging as much as through appearance.
+
+ Best when the body is introduced as a changing mode of being there
+ (Liedgren et al. (https://doi.org/10.3389/fpsyg.2023.1043170)) .
+
+ Projection and light apparatus
+
+ The staging of bodies through projection, reflection, haze, smoke, beams, screens,
+ and hidden optical setup. This term is useful when weakly bounded bodies move from
+ avatars into installations, theater, or spatial light environments.
+
+ Best when apparatus and embodiment need to be discussed together
+ (Gunning (https://mediaarthistory.org/refresh/Programmatic%20key%20texts/pdfs/Gunning.pdf); Science Museum Group (https://collection.sciencemuseumgroup.org.uk/objects/co18245/phantasmagoria-magic-lantern-c-1820); Royal Collection Trust (https://www.rct.uk/resources/peppers-ghost); Mitchell et al. (https://doi.org/10.1162/LEON_a_00924)) .
+
+ Transporter dematerialization
+
+ A serial screen grammar in which the body phases into light, particulate shimmer,
+ or energy before being reassembled elsewhere. It is useful because it normalizes
+ body-to-field conversion as a repeatable visual event rather than a singular ghost
+ trick.
+
+ Best when discussing phased transition between corporeal and semi-corporeal states
+ in popular media
+ (ASC Staff (https://web.archive.org/web/20260309174521/https://theasc.com/articles/star-trek-50-part-i-original-series-effects)) .
+
+ Body-world meaning
+
+ Bullington's phrase is useful when bodily difficulty is treated as a disturbance in
+ relation, situation, and interpretation rather than only as a local malfunction.
+ It matters for the pain track because altered body form can then become a tool for
+ remapping agency, protection, or threat.
+
+ Best when the body is being redesigned as part of a wider meaning loop
+ (Bullington (https://doi.org/10.1007/978-94-007-6498-9); Ho et al. (https://doi.org/10.1016/j.jpain.2021.10.009)) .
+
+ Tactile visualization
+
+ Representing felt touch qualities visually so they can be communicated, compared,
+ and tracked over time. It is especially useful when a study wants to capture not
+ only pain intensity but also location, spread, frequency, and texture-like
+ qualities of sensation.
+
+ Best when boundary precision or body sensation needs a reportable measurement bridge
+ (Volpato et al. (https://qri.org/blog/visualizing-tactile-sensations)) .
+
+Terms to use carefully
+
+ Some words are historically rich but analytically slippery. On this site,
+ ghost and spirit are used when the historical source really belongs to
+ ghost culture, occult modernism, animation poetics, or apparition media. They are not
+ used as blanket substitutes for every diffuse or luminous body
+ (Owens (https://shop.tate.org.uk/the-ghost-a-cultural-history-paperback/22503.html); Wilson (https://doi.org/10.3366/edinburgh/9780748627691.001.0001); Bukatman (https://books.google.com/books/about/The_Poetics_of_Slumberland.html?id=wi8NYAAACAAJ)) .
+
+ Quantum is avoided unless a real optical, material, or physics bridge is
+ explicitly in view. Otherwise it tends to blur rather than clarify the body-form
+ question.
+
+ Diffeomorphic should be used with the same care. DiffeoMorph is the name of a
+ specific paper and implementation about differentiable agent-based morphogenesis. On
+ this site, morphogenetic is usually the better public term unless the actual
+ mathematical property of a diffeomorphism is being discussed
+ (Pahng et al. (https://arxiv.org/abs/2512.17129); hormoz-lab (https://github.com/hormoz-lab/diffeomorph)) .
+
+ The simplest rule is to choose the term that best explains what the body is doing:
+ staying legible, changing boundary, entering relation, or changing material register.
+
+Sources
+
+ The shared sources page (https://mesmerprism.com/plasmatic-multitudes/references.html) collects the works cited
+ throughout this terminology guide.
+
+ Further reading: Somaesthetics note (https://mesmerprism.com/plasmatic-multitudes/background/somaesthetics.html).

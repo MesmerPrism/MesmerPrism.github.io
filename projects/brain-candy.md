@@ -1,0 +1,545 @@
+# Brain Candy
+
+Source: https://mesmerprism.com/projects/brain-candy.html
+Canonical HTML: https://mesmerprism.com/projects/brain-candy.html
+Generated: 2026-05-26
+Description: Brain Candy studies rhythmic light, recursive visual structure, sound, breath, expectation, and interaction as tunable non-drug state-shift design.
+Markdown: https://mesmerprism.com/projects/brain-candy.md
+Plain text: https://mesmerprism.com/projects/brain-candy.txt
+BibTeX references: https://mesmerprism.com/projects/brain-candy.bib
+CSL JSON references: https://mesmerprism.com/projects/brain-candy.references.csl.json
+
+---
+
+Non-drug state-shift design
+
+# Brain Candy
+
+ Brain Candy explores how rhythmic light, recursive visual structure, sound,
+ breath, expectation, and interaction can be composed into adjustable
+ non-drug experiences. It is not a treatment claim, a psychedelic substitute,
+ or a promise that a frequency will optimize the brain. The project is about
+ tunable experience design and measurement: what changes when light rhythm,
+ visual complexity, audio pacing, context, and user agency change
+ ([Hewitt et al., 2025](https://doi.org/10.1093/nc/niaf020);
+ [Taylor et al., 2024](https://doi.org/10.1007/978-3-031-47606-8_45);
+ [Hartogsohn, 2023](https://doi.org/10.3389/fpsyg.2022.1073235)).
+
+ [Start with the basics](https://mesmerprism.com/projects/brain-candy.html#field-guide)
+ [Flicker](https://mesmerprism.com/projects/brain-candy.html#flicker)
+ [Geometry](https://mesmerprism.com/projects/brain-candy.html#geometry)
+ [Safety](https://mesmerprism.com/projects/brain-candy.html#safety)
+ [References](https://mesmerprism.com/projects/brain-candy.html#references)
+ [Project site](https://braincandyapp.com/)
+ [Back to work](https://mesmerprism.com/#work)
+
+ First principles
+
+## What is being designed?
+
+ A state shift is a temporary change in the texture of experience: attention
+ narrows or widens, visual space becomes more patterned, time feels more
+ rhythmic, the body becomes more salient, or a mood becomes easier to notice.
+ People already seek those shifts through music, breathing, dance, games,
+ meditation apps, light devices, and visualizers. Brain Candy asks how to build
+ such shifts with explicit controls, logged parameters, and safety limits.
+
+ The core idea is deliberately modular. Stroboscopic light means light that
+ changes rhythmically over time. Recursive visual structure means imagery that
+ repeats or transforms patterns across scales. Fractal fluency is the idea
+ that many visual systems process some multiscale patterns with relative ease,
+ especially at moderate complexity
+ ([Taylor and Spehar, 2011](https://doi.org/10.3389/fnhum.2011.00060);
+ [Taylor et al., 2024](https://doi.org/10.1007/978-3-031-47606-8_45)).
+ Cyberdelics is the loose public name for media systems that try to shape
+ mind-manifesting experiences through technology, context, and expectation
+ ([Hartogsohn, 2023](https://doi.org/10.3389/fpsyg.2022.1073235);
+ [Smith and Warner, 2022](https://doi.org/10.14236/ewic/EVA2022.48)).
+
+ Those layers should not be collapsed into one effect. Flicker can change
+ visual phenomenology. Multiscale structure can change how a scene is parsed.
+ Music can change pacing, emotion, and meaning. Breath can add agency and
+ bodily feedback. Expectation can shape interpretation. The research problem is
+ to keep those pieces separate enough to compare.
+
+### What gets tuned
+
+- Temporal rhythm: flicker frequency, pulse shape, phase, and duration
+
+- Visual intensity: contrast, color, brightness, density, and motion
+
+- Spatial structure: symmetry, recursion, fractal dimension, and scale
+
+- Context: instructions, expectation, setting, music, and exit cues
+
+- Agency: breath pacing, controls, comfort breaks, and stop conditions
+
+### What does not follow
+
+- A vivid session is not evidence of clinical efficacy.
+
+- A strobe effect is not the same as a psychedelic drug state.
+
+- A fractal pattern is not automatically restorative.
+
+- A binaural beat or haptic pulse does not guarantee entrainment.
+
+- A public project, tool, or company example is not validation.
+
+### Connected work
+
+- [Deep Dream](https://mesmerprism.com/projects/deep-dream.html) for hallucination simulation and cyberdelic comparison.
+
+- [V1 form constants](https://mesmerprism.com/projects/bressloff-v1-form-constants.html) for geometric hallucination models.
+
+- [Fractal Optics](https://mesmerprism.com/projects/fractal-optics.html) for patterned light and visual complexity.
+
+- [Altered Xperience Project](https://mesmerprism.com/projects/altered-xperience-project.html) for report and questionnaire infrastructure.
+
+- [Viscereality](https://mesmerprism.com/projects/viscereality.html) for breath-coupled bioresponsive VR.
+
+ Rhythmic light
+
+## Flicker is a real perceptual probe, not a magic frequency
+
+ Stroboscopic visual stimulation can produce color, motion, pattern, depth,
+ and geometric effects in some viewers. Any design claim has to begin from
+ controlled stimulus variation, subjective reports, comfort logs, and safety
+ limits, not from guaranteed outcomes.
+
+### What flicker can do
+
+ In flicker and ganzflicker experiments, people view rhythmic or rapidly
+ changing light fields and report visual effects that are not simply present in
+ the stimulus: colors, grids, ripples, drifting shapes, tunnels, radial forms,
+ and shifting textures. Recent reviews treat these stroboscopically induced
+ visual hallucinations as a useful laboratory model because the stimulus can be
+ controlled while subjective reports can be collected systematically
+ ([Hewitt et al., 2025](https://doi.org/10.1093/nc/niaf020);
+ [Bartossek et al., 2021](https://doi.org/10.1371/journal.pone.0253779);
+ [Reeder, 2022](https://doi.org/10.1525/collabra.36318)).
+
+ The important word is controlled, not guaranteed. The experience depends on
+ frequency, contrast, rhythm, intensity, color, viewing distance, eyes open or
+ closed, attention, fatigue, individual susceptibility, and the way reports are
+ elicited. Amaya and colleagues, for example, compared rhythmic flicker with an
+ arrhythmic control and linked stronger subjective motion, dynamics, and shape
+ ratings to higher-order visual and thalamocortical effects
+ ([Amaya et al., 2025](https://doi.org/10.1162/netn_a_00417)).
+
+### Measurement is catching up
+
+ A good Brain Candy session cannot be evaluated by "felt intense" alone.
+ Current work is building more specific vocabularies for visual content and
+ altered-state reports. The Six-Dimensional Visual Hallucination Questionnaire
+ targets visual qualities across psychedelics and stroboscopic light, while
+ MOSAIC uses topic modelling and language-model-assisted clustering to analyze
+ free-text reports from Dreamachine-style stroboscopic experiences
+ ([Hewitt et al., 2026](https://doi.org/10.31234/osf.io/qv5hz_v1);
+ [Beaut&eacute; et al., 2026](https://doi.org/10.1093/nc/niag008)).
+ Public efforts such as CIRCE and the Berlin Symposium on Stroboscopic Light
+ show the same shift toward shared instruments and a more explicit research
+ community
+ ([CIRCE](https://circe-e-v.github.io/CAR/index.html);
+ [BSSL 2026](https://www.ewi-psy.fu-berlin.de/en/psychologie/einrichtungen/ccnb/BSSL2026/index.html)).
+
+ Brain Candy's research model is to vary the stimulus, collect structured
+ reports, log comfort and stop events, and resist the temptation to turn a
+ striking percept into a therapeutic claim.
+
+ Visual geometry
+
+## Why spirals, tunnels, lattices, and honeycombs keep appearing
+
+ Altered visual states often contain recurring geometric motifs. Heinrich
+ Kl&uuml;ver called many of them form constants: lattices, cobwebs, tunnels,
+ spirals, and other organized forms. Modern models do not treat those shapes as
+ arbitrary decoration. They ask how the visual cortex maps the retina, how local
+ excitation and inhibition spread, and how patterned activity might become a
+ perceived geometry
+ ([Ermentrout and Cowan, 1979](https://doi.org/10.1007/BF00336965);
+ [Bressloff et al., 2002](https://doi.org/10.1098/rstb.2001.0979)).
+
+ Rule, Stoffregen, and Ermentrout make the bridge especially useful for Brain
+ Candy because they model flicker-induced geometric phosphenes directly. Their
+ account links flicker frequency and contrast with cortical resonance,
+ inhibitory stabilization, lateral inhibition, and retino-cortical mapping
+ ([Rule et al., 2011](https://doi.org/10.1371/journal.pcbi.1002158)).
+ Nearby empirical work also shows that perceived color and form vary with
+ stimulation frequency and that whole percepts and percept features have their
+ own frequency dependencies
+ ([Becker and Elliott, 2006](https://doi.org/10.1016/j.concog.2005.05.004);
+ [Allefeld et al., 2011](https://doi.org/10.1016/j.concog.2010.10.026)).
+
+ The design lesson is precise but bounded. Geometric models justify taking
+ spirals, radial fields, tunnels, grids, and symmetry seriously as visual-system
+ phenomena. They do not justify claiming that a designer can dial a single
+ frequency and reliably produce the same inner image in every viewer.
+
+### Useful variables
+
+- Frequency and phase of flicker
+
+- Contrast and brightness envelope
+
+- Spatial scale and retinal position
+
+- Symmetry, radial structure, and tiling
+
+- Eyes-open versus eyes-closed viewing
+
+### Model limits
+
+- Models simplify biology so that mechanisms can be tested.
+
+- Reports differ across people and sessions.
+
+- Frequency effects are real but not one-to-one control codes.
+
+- Geometric plausibility is not evidence of a whole altered state.
+
+ Recursive structure
+
+## Fractals are a design vocabulary, not a cure
+
+ Brain Candy uses recursive and fractal-like imagery because the visual system
+ is sensitive to scale, symmetry, and repeated structure. The claim should stay
+ that specific.
+
+### Why multiscale structure matters
+
+ A fractal-like pattern contains structure across scales: large shapes echo
+ medium shapes, which echo smaller details. Natural scenes often have this
+ multiscale organization, and several lines of perception research suggest that
+ people often prefer or process moderate-complexity fractal patterns more
+ fluently than either very sparse or highly chaotic stimuli
+ ([Taylor and Spehar, 2011](https://doi.org/10.3389/fnhum.2011.00060);
+ [Taylor et al., 2024](https://doi.org/10.1007/978-3-031-47606-8_45)).
+ Processing fluency is the broader psychological idea that easier-to-process
+ stimuli can feel more familiar, pleasant, or coherent
+ ([Reber et al., 2004](https://doi.org/10.1207/s15327957pspr0804_3)).
+
+ This makes fractal abstraction a serious design material, especially for VR.
+ Barton and colleagues found that abstract fractal-like VR could maintain
+ restoration comparable to nature VR in their study, and that interactive
+ versions improved focus and motivational value
+ ([Barton et al., 2024](https://doi.org/10.1007/s10055-023-00916-7)).
+ That is useful for Brain Candy because it separates visual structure from
+ literal nature imagery. It does not mean that fractals heal the brain.
+
+### Restorative abstraction needs comparators
+
+ Attention-restoration and biophilic-design literatures are relevant because
+ they give Brain Candy comparison conditions: nature VR, abstract fractal-like
+ VR, plain visualizers, blank rest, rhythmic-light conditions, and interactive
+ versus passive versions
+ ([Berto, 2005](https://doi.org/10.1016/j.jenvp.2005.07.001);
+ [Taylor, 2021](https://doi.org/10.3390/su13020823)).
+ The point is not to borrow the warmest wellness language from those fields.
+ The point is to ask which visual features make an experience easier to stay
+ with, easier to leave, or easier to describe afterward.
+
+ Comparison, not equivalence
+
+## Psychedelic visual science gives useful measures
+
+ Psychedelic research matters here because it studies altered visual content in
+ detail: geometry, color, depth, motion, imagery, contextual perception,
+ pattern completion, and the felt meaning of sensory change. Aqil and Roseman
+ argue that sensory dimensions help structure psychedelic experience rather
+ than merely decorating it
+ ([Aqil and Roseman, 2023](https://doi.org/10.1016/j.neuropharm.2022.109300)).
+ Newer work on psilocybin and visual contextual computation gives a stronger
+ way to discuss altered visual inference without claiming that a screen or
+ strobe reproduces the drug state
+ ([Aqil et al., 2025](https://doi.org/10.1038/s41467-025-65150-y)).
+
+ Whole-brain dynamics and connectome-harmonic work are also useful as
+ conceptual background. They show how researchers describe large-scale brain
+ activity in terms of spatial modes and altered dynamical repertoires
+ ([Atasoy et al., 2016](https://doi.org/10.1038/ncomms10340);
+ [Atasoy et al., 2017](https://doi.org/10.1038/s41598-017-17546-0);
+ [Luppi et al., 2023](https://doi.org/10.1038/s42003-023-04474-1)).
+ But those papers do not prove that flicker or VR is equivalent to
+ psychedelics. For Brain Candy, they remain vocabulary and hypothesis
+ generators.
+
+### Comparison axes
+
+- Visual geometry: form constants, symmetry, patterning
+
+- Dynamics: drift, pulsing, flow, motion, rhythm
+
+- Contextual perception: figure-ground and meaning shifts
+
+- Embodiment: breath, posture, audio, and presence
+
+- Appraisal: surprise, comfort, awe, unease, agency
+
+### Source types
+
+- Peer-reviewed papers support evidence claims.
+
+- Preprints and tools support emerging measurement context.
+
+- Companies and public programs show design activity, not proof.
+
+- Community taxonomies can name phenomena, not validate effects.
+
+ Set, setting, and media
+
+## Context is part of the mechanism
+
+ The same visual stimulus can land differently depending on framing, music,
+ mood, fatigue, instruction, and whether the user feels able to stop. Brain
+ Candy has to design that context explicitly.
+
+### Cyberdelics and context engineering
+
+ Set and setting also matter outside psychedelic clinics. Any altered-perception
+ interface shapes expectation before the first image appears. Hartogsohn's
+ account of cyberdelics, and Smith and Warner's work on context engineering,
+ are useful because they treat onboarding, media, symbolism, social setting,
+ and meaning-making as part of the experience rather than packaging around it
+ ([Hartogsohn, 2023](https://doi.org/10.3389/fpsyg.2022.1073235);
+ [Smith and Warner, 2022](https://doi.org/10.14236/ewic/EVA2022.48);
+ [Smith, 2024](https://doi.org/10.14236/ewic/EVA2024.85)).
+
+ VR work around psychedelic preparation, simulation, social connection, and
+ open-label feasibility makes the same point from the design side. It can help
+ people rehearse, reflect, compare, or communicate altered experiences, but it
+ should be described by study design and outcome rather than by broad
+ broad change language
+ ([Sekula et al., 2022](https://doi.org/10.3389/fpsyg.2022.813746);
+ [Suzuki et al., 2017](https://doi.org/10.1038/s41598-017-16316-2);
+ [Rastelli et al., 2022](https://doi.org/10.1038/s41598-022-08047-w);
+ [Kaup et al., 2023](https://doi.org/10.3389/fpsyt.2023.1088896)).
+
+### Audio, breath, haptics, and agency
+
+ Music is one of the strongest context layers because it changes time, affect,
+ anticipation, and memory. Psychedelic-therapy music research and public
+ projects such as Wavepaths are useful here, but in Brain Candy they become
+ design questions: tempo, density, tension, release, silence, and how much
+ control the listener keeps
+ ([Kaelen et al., 2018](https://doi.org/10.1007/s00213-017-4820-5);
+ [Messell et al., 2022](https://doi.org/10.3389/fpsyg.2022.873455);
+ [Wavepaths](https://wavepaths.com/musicforpsychedelictherapy)).
+
+ Breath and biofeedback add a different ingredient: agency. A breath-coupled
+ interface lets the user participate in pacing instead of receiving a fixed
+ audiovisual stream. Viscereality is one nearby example, using breath-based
+ interaction and coupled oscillator dynamics as a bioresponsive VR design
+ space
+ ([Fejer et al., 2025](https://doi.org/10.18420/muc2025-mci-ws11-174)).
+ Binaural-beat and haptic layers should stay in this restrained lane. Reviews
+ and meta-analyses show mixed, parameter-sensitive effects for binaural beats,
+ not a reliable switch for mental states
+ ([Garcia-Argibay et al., 2019](https://doi.org/10.1007/s00426-018-1066-8);
+ [Ingendoh et al., 2023](https://doi.org/10.1371/journal.pone.0286023);
+ [Mallik and Russo, 2022](https://doi.org/10.1371/journal.pone.0259312)).
+
+ Safety and boundaries
+
+## Light intensity is part of the design, not a footnote
+
+ Flashing light can be risky for people with photosensitive epilepsy or other
+ sensitivities. A responsible Brain Candy interface needs conservative defaults,
+ clear warnings, intensity control, easy stopping, and no pressure to push
+ through discomfort. Web accessibility guidance around flashing content and
+ public epilepsy guidance give practical boundary conditions for the design
+ conversation
+ ([W3C WCAG, 2024](https://www.w3.org/WAI/WCAG22/Understanding/three-flashes);
+ [Epilepsy Foundation](https://www.epilepsy.com/what-is-epilepsy/seizure-triggers/photosensitivity)).
+
+ Clinical light-stimulation work, including gamma sensory-stimulation research
+ and registered trials, is relevant background for how carefully timed light can
+ be studied. It should not be imported as a claim that Brain Candy treats a
+ condition
+ ([Iaccarino et al., 2016](https://doi.org/10.1038/nature20587);
+ [Martorell et al., 2024](https://doi.org/10.1038/s41586-024-07132-6);
+ [MIT GENUS](https://picower.mit.edu/innovations-inventions/genus);
+ [NCT05637801](https://clinicaltrials.gov/study/NCT05637801);
+ [NCT06922812](https://clinicaltrials.gov/study/NCT06922812)).
+
+ The evidence boundary is simple: Brain Candy can be designed as a careful
+ perceptual and experiential system. Clinical claims require clinical evidence.
+ Durable psychological change requires its own outcomes. Stronger experiences
+ are not automatically better experiences.
+
+### Design requirements
+
+- Visible pre-session photosensitivity warning
+
+- Conservative defaults for brightness, contrast, and pulse intensity
+
+- Immediate pause and stop controls
+
+- Short sessions before long sessions
+
+- Plain descriptions of what is known and unknown
+
+### Evidence status
+
+- Strong: flicker can induce patterned visual phenomena in some people.
+
+- Strong: flashing-light safety needs explicit controls.
+
+- Moderate: fractal-like abstraction can be a useful restoration comparator.
+
+- Emerging: psychedelic visual measures can help compare altered percepts.
+
+- Open: whether the full Brain Candy stack has durable benefits.
+
+ Synthesis
+
+## The useful claim is smaller and stronger
+
+ Brain Candy works best when it says what can be adjusted, what can be
+ measured, and what remains speculative.
+
+### For newcomers
+
+ The project is not trying to replace drugs, therapy, meditation, or sleep. It
+ is asking whether a designed audiovisual environment can help people explore
+ controllable shifts in perception and attention. The clearest path is to make
+ every design ingredient visible: light rhythm, visual structure, sound,
+ breathing, interaction, expectation, duration, and safety.
+
+### For experts
+
+ The research value is in separating variables that are often blended in
+ consumer altered-state media. A study can compare rhythmic and arrhythmic
+ light, fractal-like and non-fractal visuals, passive and breath-responsive
+ pacing, neutral and suggestive framing, or closed-eye and open-eye sessions.
+ The outcome should separate visual phenomenology, affect, attention, comfort,
+ adverse events, expectation, and repeatability.
+
+### Design tone
+
+ The right tone is neither skeptical dismissal nor techno-mystical sales copy.
+ Rhythmic light and recursive imagery can be strong. They also need careful
+ controls. Brain Candy is most credible when it treats vivid experience as a
+ design and measurement problem, not as proof.
+
+ References
+
+## Source map
+
+ These references are grouped by role. Peer-reviewed papers, preprints, public
+ programs, tools, art and design projects, company pages, community indexes, and
+ clinical-trial records do different jobs.
+
+### Stroboscopic light and measurement
+
+- Hewitt et al. "[Stroboscopically Induced Visual Hallucinations: Historical, Phenomenological, and Neurobiological Perspectives](https://doi.org/10.1093/nc/niaf020)." Neuroscience of Consciousness (2025).
+
+- Amaya, Nierhaus, and Schmidt. "[Thalamocortical Interactions Reflecting the Intensity of Flicker Light-Induced Visual Hallucinatory Phenomena](https://doi.org/10.1162/netn_a_00417)." Network Neuroscience (2025).
+
+- Hewitt et al. "[Measuring the Content of Visual Hallucinations Induced by Psychedelics and Stroboscopic Light: The Six-Dimensional Visual Hallucination Questionnaire (6D-VHQ)](https://doi.org/10.31234/osf.io/qv5hz_v1)." PsyArXiv preprint (2026).
+
+- Beaut&eacute; et al. "[Mapping of Subjective Accounts into Interpreted Clusters (MOSAIC): Topic Modelling and LLM Applied to Stroboscopic Phenomenology](https://doi.org/10.1093/nc/niag008)." Neuroscience of Consciousness (2026).
+
+- Bartossek et al. "[Altered States Phenomena Induced by Visual Flicker Light Stimulation](https://doi.org/10.1371/journal.pone.0253779)." PLOS ONE (2021).
+
+- Reeder. "[Ganzflicker Reveals the Complex Relationship Between Visual Mental Imagery and Pseudo-Hallucinatory Experience](https://doi.org/10.1525/collabra.36318)." Collabra: Psychology (2022).
+
+- Shenyan et al. "[Visual Hallucinations Induced by Ganzflicker and Ganzfeld Differ in Frequency, Complexity, and Content](https://doi.org/10.1038/s41598-024-52372-1)." Scientific Reports (2024).
+
+- CIRCE e.V. "[Collection of Altered-State Rating Scales and Questionnaires](https://circe-e-v.github.io/CAR/index.html)." Public questionnaire collection.
+
+- Freie Universit&auml;t Berlin. "[Berlin Symposium on Stroboscopic Light 2026](https://www.ewi-psy.fu-berlin.de/en/psychologie/einrichtungen/ccnb/BSSL2026/index.html)." Public symposium page.
+
+### Flicker modelling and form constants
+
+- Rule, Stoffregen, and Ermentrout. "[A Model for the Origin and Properties of Flicker-Induced Geometric Phosphenes](https://doi.org/10.1371/journal.pcbi.1002158)." PLOS Computational Biology (2011).
+
+- Ermentrout and Cowan. "[A Mathematical Theory of Visual Hallucination Patterns](https://doi.org/10.1007/BF00336965)." Biological Cybernetics (1979).
+
+- Bressloff et al. "[What Geometric Visual Hallucinations Tell Us About the Visual Cortex](https://doi.org/10.1098/rstb.2001.0979)." Philosophical Transactions of the Royal Society B (2002).
+
+- Becker and Elliott. "[Flicker-Induced Color and Form: Interdependencies and Relation to Stimulation Frequency and Phase](https://doi.org/10.1016/j.concog.2005.05.004)." Consciousness and Cognition (2006).
+
+- Allefeld et al. "[Flicker-Light Induced Visual Phenomena: Frequency Dependence and Specificity of Whole Percepts and Percept Features](https://doi.org/10.1016/j.concog.2010.10.026)." Consciousness and Cognition (2011).
+
+- Billock and Tsou. "[Neural Interactions Between Flicker-Induced Self-Organized Visual Hallucinations and Physical Stimuli](https://doi.org/10.1073/pnas.0610813104)." PNAS (2007).
+
+- Herrmann. "[Human EEG Responses to 1-100 Hz Flicker: Resonance Phenomena in Visual Cortex and Their Potential Correlation to Cognitive Phenomena](https://doi.org/10.1007/s002210100682)." Experimental Brain Research (2001).
+
+### Fractals, fluency, and restoration
+
+- Taylor and Spehar. "[Fractal Fluency: An Intimate Relationship Between the Brain and Processing of Fractal Stimuli](https://doi.org/10.3389/fnhum.2011.00060)." Frontiers in Human Neuroscience (2011).
+
+- Taylor et al. "[Fractal Fluency: Processing of Fractal Stimuli Across Sight, Sound, and Touch](https://doi.org/10.1007/978-3-031-47606-8_45)." In The Fractal Geometry of the Brain (2024).
+
+- Reber, Schwarz, and Winkielman. "[Processing Fluency and Aesthetic Pleasure: Is Beauty in the Perceiver's Processing Experience?](https://doi.org/10.1207/s15327957pspr0804_3)" Personality and Social Psychology Review (2004).
+
+- Barton et al. "[The Restorative and State Enhancing Potential of Abstract Fractal-Like Imagery and Interactive Mindfulness Interventions in Virtual Reality](https://doi.org/10.1007/s10055-023-00916-7)." Virtual Reality (2024).
+
+- Berto. "[Exposure to Restorative Environments Helps Restore Attentional Capacity](https://doi.org/10.1016/j.jenvp.2005.07.001)." Journal of Environmental Psychology (2005).
+
+- Taylor. "[The Potential of Biophilic Fractal Designs to Promote Health and Performance](https://doi.org/10.3390/su13020823)." Sustainability (2021).
+
+### Psychedelic vision and whole-brain dynamics
+
+- Aqil and Roseman. "[More Than Meets the Eye: The Role of Sensory Dimensions in Psychedelic Brain Dynamics, Experience, and Therapeutics](https://doi.org/10.1016/j.neuropharm.2022.109300)." Neuropharmacology (2023).
+
+- Aqil et al. "[Psilocybin Alters Visual Contextual Computations in Healthy Humans](https://doi.org/10.1038/s41467-025-65150-y)." Nature Communications (2025).
+
+- Atasoy et al. "[Human Brain Networks Function in Connectome-Specific Harmonic Waves](https://doi.org/10.1038/ncomms10340)." Nature Communications (2016).
+
+- Atasoy et al. "[Connectome-Harmonic Decomposition of Human Brain Activity Reveals Dynamical Repertoire Re-Organization Under LSD](https://doi.org/10.1038/s41598-017-17546-0)." Scientific Reports (2017).
+
+- Luppi et al. "[LSD and DMT Modulate Harmonic and Anharmonic Modes of Brain Activity](https://doi.org/10.1038/s42003-023-04474-1)." Communications Biology (2023).
+
+- Qualia Research Institute. "[Symmetry Theory of Valence 2020](https://qri.org/blog/symmetry-theory-of-valence-2020)." Conceptual research note.
+
+- Qualia Research Institute. "[Psychophysics Toolkit](https://qri.org/blog/psychophysics-toolkit)." Public tool reference.
+
+- Flourishing Intelligence Programme. "[FLIP](https://theflip.ai/)." Public program page.
+
+### Context, VR, audio, and breath
+
+- Hartogsohn. "[Cyberdelics in Context: On the Prospects and Challenges of Mind-Manifesting Technologies](https://doi.org/10.3389/fpsyg.2022.1073235)." Frontiers in Psychology (2023).
+
+- Smith and Warner. "[Cyberdelics: Context Engineering Psychedelics for Altered Traits](https://doi.org/10.14236/ewic/EVA2022.48)." EVA London 2022 .
+
+- Smith. "[Holotechnica and Cyberdelics: Designing the Set and Setting of Transformative Experiences](https://doi.org/10.14236/ewic/EVA2024.85)." EVA London 2024 .
+
+- Sekula et al. "[Virtual Reality as a Moderator of Psychedelic-Assisted Psychotherapy](https://doi.org/10.3389/fpsyg.2022.813746)." Frontiers in Psychology (2022).
+
+- Suzuki et al. "[A Deep-Dream Virtual Reality Platform for Studying Altered Perceptual Phenomenology](https://doi.org/10.1038/s41598-017-16316-2)." Scientific Reports (2017).
+
+- Rastelli et al. "[Simulated Visual Hallucinations in Virtual Reality Enhance Cognitive Flexibility](https://doi.org/10.1038/s41598-022-08047-w)." Scientific Reports (2022).
+
+- Kaup et al. "[Virtual Reality-Assisted Psychedelic Therapy: Psyrreal Open-Label Feasibility Study](https://doi.org/10.3389/fpsyt.2023.1088896)." Frontiers in Psychiatry (2023).
+
+- Kaelen et al. "[The Hidden Therapist: Evidence for a Central Role of Music in Psychedelic Therapy](https://doi.org/10.1007/s00213-017-4820-5)." Psychopharmacology (2018).
+
+- Messell et al. "[A Qualitative Analysis of the Acute Effects of Music on Psychedelic Experiences](https://doi.org/10.3389/fpsyg.2022.873455)." Frontiers in Psychology (2022).
+
+- Wavepaths. "[Music for Psychedelic Therapy](https://wavepaths.com/musicforpsychedelictherapy)." Public music resource.
+
+- Fejer et al. "[Viscereality: A Bio-responsive VR System for Breath-Based Interactions and Coupled Oscillator Dynamics to Augment Altered States of Consciousness](https://doi.org/10.18420/muc2025-mci-ws11-174)." Mensch und Computer 2025 Workshopband .
+
+- Garcia-Argibay, Santed, and Reales. "[Efficacy of Binaural Auditory Beats in Cognition, Anxiety, and Pain Perception: A Meta-Analysis](https://doi.org/10.1007/s00426-018-1066-8)." Psychological Research (2019).
+
+- Ingendoh et al. "[Binaural Beats to Entrain the Brain? A Systematic Review](https://doi.org/10.1371/journal.pone.0286023)." PLOS ONE (2023).
+
+- Mallik and Russo. "[The Effects of Binaural Beats on Cognition and Anxiety: A Meta-Analysis](https://doi.org/10.1371/journal.pone.0259312)." PLOS ONE (2022).
+
+### Safety and current clinical-light context
+
+- W3C. "[Understanding Success Criterion 2.3.1: Three Flashes or Below Threshold](https://www.w3.org/WAI/WCAG22/Understanding/three-flashes)." WCAG guidance.
+
+- Epilepsy Foundation. "[Photosensitivity and Seizures](https://www.epilepsy.com/what-is-epilepsy/seizure-triggers/photosensitivity)." Public safety guidance.
+
+- Iaccarino et al. "[Gamma Frequency Entrainment Attenuates Amyloid Load and Modifies Microglia](https://doi.org/10.1038/nature20587)." Nature (2016).
+
+- Martorell et al. "[Multisensory Gamma Stimulation Promotes Glymphatic Clearance of Amyloid](https://doi.org/10.1038/s41586-024-07132-6)." Nature (2024).
+
+- MIT Picower Institute. "[Gamma Entrainment Using Sensory Stimulation (GENUS)](https://picower.mit.edu/innovations-inventions/genus)." Public overview.
+
+- ClinicalTrials.gov. "[NCT05637801: Spectral Light Stimulation in Major Depressive Disorder](https://clinicaltrials.gov/study/NCT05637801)." Trial registry record.
+
+- ClinicalTrials.gov. "[NCT06922812: Spectral Light Stimulation in Major Depressive Disorder](https://clinicaltrials.gov/study/NCT06922812)." Trial registry record.

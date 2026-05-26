@@ -1,0 +1,174 @@
+Flashing Light Safety | Strobotorch
+
+Source: https://mesmerprism.com/Strobotorch/flashing-light-safety/
+Canonical HTML: https://mesmerprism.com/Strobotorch/flashing-light-safety/
+Generated: 2026-05-26
+Description: Safety warnings, frequency background, and source references for Strobotorch flashlight signaling.
+Markdown: https://mesmerprism.com/Strobotorch/flashing-light-safety/index.md
+Plain text: https://mesmerprism.com/Strobotorch/flashing-light-safety/index.txt
+BibTeX references: https://mesmerprism.com/Strobotorch/flashing-light-safety/index.bib
+CSL JSON references: https://mesmerprism.com/Strobotorch/flashing-light-safety/index.references.csl.json
+
+---
+
+Public warning and source background
+
+Flashing Light Safety
+
+ Strobotorch is a flashlight signaling tool for point-away use. Direct staring
+ is the wrong use, especially close up, in the dark, while intoxicated, or while
+ otherwise impaired.
+
+ It is independent from Till Holzapfel's scientific-advisor work for
+ Brain Candy (https://braincandyapp.com/)
+ and belongs to Strobotorch's own Android-tooling documentation.
+
+Avoid these uses
+- Staring into the flashlight.
+- Trying to induce hallucinations, visions, meditation effects, or psychedelic effects.
+- Testing whether you or someone else is photosensitive.
+- Medical treatment, therapy, relaxation, entrainment, brainwave synchronization, gamma stimulation, fractal phototherapy, or visual training.
+- Use around people who have not agreed to possible flashing-light exposure.
+
+Stop Immediately If
+
+ Stop the torch and move away from the light if anyone experiences
+ discomfort, eye strain, headache, migraine aura, dizziness, nausea,
+ anxiety, confusion, visual snow-like static, afterimages, trails,
+ disorientation, panic, or any seizure-like symptom.
+
+Seizure And Photosensitivity Risk
+
+ Photosensitive epilepsy is uncommon, but it is real. Flashing light and certain
+ visual patterns can trigger seizures in some people, and some people do not know
+ they are sensitive until an event occurs. Brightness, contrast, distance,
+ wavelength, eyes-open or eyes-closed viewing, and flash frequency all matter.
+
+ Strobotorch uses a 3 Hz direct-viewing cap for precautionary reasons. Higher-rate
+ modes are point-away only. Public epilepsy guidance also matters for the 60 Hz
+ feature: some people are sensitive across a broad band, and Epilepsy Action notes
+ that sensitivity can extend from about 3 Hz to 60 Hz.
+
+Why Direct Staring Is The Wrong Use
+
+ Stroboscopic-light research treats flicker as a perceptually active stimulus.
+ Reviews and experiments describe bright periodic light, often around 5-50 Hz and
+ often viewed through closed eyes or diffusion, as capable of inducing transient
+ visual hallucination-like phenomena: colors, geometry, motion, tunnels, grids, and
+ other simple visual content.
+
+ A phone flashlight is far from a controlled research strobe. The safe instruction
+ stays simple: do not stare into bright flicker.
+
+Historical Context
+
+ Hewitt et al. (2025) is the best single review for understanding why stroboscopic
+ light should be treated as a serious perceptual stimulus rather than a novelty
+ effect. The review connects early subjective-vision work, clinical and laboratory
+ stroboscope research, Brion Gysin and Ian Sommerville's Dreamachine lineage,
+ modern Dreamachine-style public installations, and current neurophenomenology.
+
+ The practical takeaway goes the other way: bright rhythmic flicker has a long record of producing color,
+ geometry, motion, and altered-vision reports under controlled conditions, so a
+ consumer flashlight app should avoid direct staring and keep high-rate controls
+ behind point-away warnings.
+
+Frequencies Are Not Purposes
+
+Up To 3 Hz
+
+ Conservative direct-viewing flash-rate cap used in accessibility guidance.
+
+ Strobotorch: default direct-viewing cap.
+
+Roughly 5-30 Hz
+
+ A common seizure-risk range for photosensitive people, with individual variation. Some guidance extends the sensitivity range up to about 60 Hz.
+
+ Strobotorch: avoid direct viewing; point-away only.
+
+8-12 Hz, Especially 10 Hz
+
+ Often used in flicker and Ganzflicker studies of transient visual hallucination-like phenomena.
+
+ Strobotorch: warning context only; no feature goal.
+
+40 Hz
+
+ A serious research frequency in gamma-sensory-stimulation work, especially dementia-related research.
+
+ Strobotorch: safety context for flashlight signaling and diagnostics.
+
+60 Hz
+
+ A newer translational use. A small healthy-volunteer PLOS ONE study reported EEG entrainment/synchrony from repeated 60 Hz flickering white light, and a registered open-label depression study uses an LED eye-mask/goggle-style device.
+
+ Strobotorch: safety context only; depression treatment, ADHD evidence, and controlled 60 Hz optical output remain outside scope.
+
+Fractal Timing
+
+ Some retinal and fractal-phototherapy literature treats temporal structure itself as a variable. Strobotorch reports command-trace estimates only.
+
+ Strobotorch: command-trace context only; fractal phototherapy and optical measurement remain outside scope.
+
+Substances, HPPD, And Visual Snow
+
+ Do not use the app while under the influence of psychedelics, cannabis,
+ dissociatives, stimulants, alcohol, or other impairing substances. Impairment can
+ make it harder to stop, look away, interpret distress, or keep the light pointed
+ away from other people.
+
+ People with HPPD-like symptoms, visual snow syndrome, palinopsia, photophobia,
+ light-triggered migraine, seizure history, or strong anxiety around visual
+ disturbance should avoid flashing modes unless guided by a qualified clinician in a
+ proper clinical context. A flashlight-signaling app cannot provide that context.
+
+Strobotorch's Design Response
+- The direct-viewing flash-rate path is capped at 3 Hz.
+- Point-away modes require explicit acknowledgement and may request up to 60 Hz only as command-rate signaling or diagnostic output.
+- Audio-reactive torch output is off by default and requires the point-away gate before the torch switch is enabled.
+- The app explains microphone and playback-capture requests before Android shows its own permission screens.
+- Sessions stop when the app leaves the foreground, when playback ends, or when Stop is pressed.
+- The published scope is flashlight signaling, diagnostics, and safety documentation.
+
+Sources
+
+ The full reference library includes academic citation format, DOI links,
+ trial registries, and source notes:
+ Strobotorch sources (https://mesmerprism.com/Strobotorch/sources/).
+
+Safety Guidance
+
+ Epilepsy Foundation: Photosensitivity and seizures (https://www.epilepsy.com/what-is-epilepsy/seizure-triggers/photosensitivity)
+
+ Epilepsy Action: Photosensitive epilepsy (https://www.epilepsy.org.uk/info/seizure-triggers/photosensitive-epilepsy)
+
+ Epilepsy Society: Photosensitive epilepsy (https://epilepsysociety.org.uk/about-epilepsy/epileptic-seizures/seizure-triggers/photosensitive-epilepsy)
+
+ W3C WCAG 2.3.1: Three Flashes or Below Threshold (https://w3c.github.io/wcag/understanding/three-flashes-or-below-threshold.html)
+
+Stroboscopic Phenomenology
+
+ Hewitt et al. (2025), historical, phenomenological, and neurobiological review (https://doi.org/10.1093/nc/niaf020)
+
+ Bartossek, Kemmerer, and Schmidt (2021), visual flicker light stimulation (https://doi.org/10.1371/journal.pone.0253779)
+
+ Amaya et al. (2023), frequency and rhythmicity effects (https://doi.org/10.1371/journal.pone.0284271)
+
+ Shenyan et al. (2024), Ganzflicker and Ganzfeld comparison (https://doi.org/10.1038/s41598-024-52372-1)
+
+40 Hz And 60 Hz Context
+
+ Iaccarino et al. (2016), 40 Hz gamma frequency entrainment in mouse models (https://doi.org/10.1038/nature20587)
+
+ Chan et al. (2022), 40 Hz sensory stimulation feasibility/pilot studies (https://doi.org/10.1371/journal.pone.0278412)
+
+ Alamalhoda et al. (2025), repeated 60 Hz flickering white light in healthy volunteers (https://doi.org/10.1371/journal.pone.0332310)
+
+ ClinicalTrials.gov NCT06922812, 60 Hz intermittent white light in MDD (https://clinicaltrials.gov/study/NCT06922812)
+
+HPPD And Visual Snow
+
+ Vis et al. (2021), HPPD systematic review (https://doi.org/10.3389/fnins.2021.675768)
+
+ Sampatakakis et al. (2022), visual snow review and case series (https://doi.org/10.1177/03331024221118917)

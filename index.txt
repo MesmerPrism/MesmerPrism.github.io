@@ -1,0 +1,525 @@
+Mesmer Prism | Till Holzapfel
+
+Source: https://mesmerprism.com/
+Canonical HTML: https://mesmerprism.com/
+Generated: 2026-05-26
+Description: XR systems, citizen-science tools, visual instruments, and essays for altered-perception design. Mesmer Prism makes strange experience vivid, inspectable, and evidence-bounded.
+Markdown: https://mesmerprism.com/index.md
+Plain text: https://mesmerprism.com/index.txt
+BibTeX references: https://mesmerprism.com/index.bib
+CSL JSON references: https://mesmerprism.com/index.references.csl.json
+
+---
+
+Till Holzapfel
+
+Mesmer Prism
+
+ Mesmer Prism is Till Holzapfel's public interface for
+ altered-perception design: XR systems, citizen-science tools, visual
+ instruments, and essays that make breath, light, imagery, and body
+ boundaries inspectable. The design philosophy is bounded transformation:
+ let experience change, but keep agency, apparatus, variables, sources,
+ and limits visible.
+
+ Start with live systems, perception tools, embodiment essays, research maps,
+ or publications.
+
+ Enter the work (https://mesmerprism.com/#work)
+ Publications (https://mesmerprism.com/#publications)
+ Contact (https://mesmerprism.com/#contact)
+
+ Projects
+
+Choose a route
+
+ Systems, tools, essays, and references sit together here so the reader can
+ move by use, topic, or artifact.
+
+Use or inspect a system
+
+Work with tools and instruments
+
+Read a research map
+
+Public record and contact
+
+ Across the work: tune the condition, preserve agency, record what changed, and
+ keep mechanisms and claims separate.
+
+ XR research system
+
+Viscereality (https://mesmerprism.com/projects/viscereality.html)
+
+ A Quest-based bioresponsive VR research system. The participant runtime
+ links breath, cardiac rhythm, oscillator visuals, and visual state changes;
+ the operator side handles launch, monitoring, study-shell control, and
+ session evidence.
+
+ Status
+ Active research collaboration
+ Artifact
+ Quest runtime + Windows operator workflow
+ Record
+ Public overview + proceedings papers
+
+ XR / Biofeedback / Quest / Operator tooling / Research
+
+ Research overview (https://mesmerprism.com/projects/viscereality.html)
+ Project site (https://viscereality.org/)
+ Quest companion tools (https://mesmerprism.com/projects/viscereality-companion.html)
+ Docs & downloads (https://mesmerprism.github.io/ViscerealityCompanion/)
+
+ Meta Quest operator tooling
+
+Quest Companion Tools (https://mesmerprism.com/projects/viscereality-companion.html)
+
+ Windows and Android utilities for operating Meta Quest research builds from
+ outside the headset: install, launch, cast, monitor, capture proof, and
+ export diagnostics without rebuilding the same operator workflow for every
+ project.
+
+ Status
+ Active tooling
+ Artifact
+ Windows companion app + Android experiments
+ Role
+ Developer and workflow maintainer
+
+ Quest / Windows app / Android companion / ADB / Diagnostics
+
+ Tooling overview (https://mesmerprism.com/projects/viscereality-companion.html)
+ Current repo (https://github.com/MesmerPrism/Rusty-XR-Companion-Apps)
+ Earlier docs (https://mesmerprism.github.io/ViscerealityCompanion/)
+
+ Rust for XR and Quest experiments
+
+Rusty XR (https://mesmerprism.com/projects/rusty-xr.html)
+
+ A public Rust workspace for reusable XR contracts, schemas, diagnostics,
+ Quest examples, broker models, camera and depth utilities, hand and
+ particle primitives, strobe safety descriptors, and companion-app interfaces.
+
+ Status
+ Public repo
+ Artifact
+ Rust crates, Quest examples, and docs
+ Use
+ Reproducible XR contracts across tools
+
+ Rust / OpenXR / Vulkan / Meta Quest / Tooling
+
+ Technical overview (https://mesmerprism.com/projects/rusty-xr.html)
+ Source repo (https://github.com/MesmerPrism/Rusty-XR)
+ Passthrough guide (https://mesmerprism.github.io/Rusty-XR/passthrough.html)
+
+ Biofeedback sensor integration
+
+Polar H10 Work (https://mesmerprism.com/projects/polar-h10.html)
+
+ Public Polar H10 work across minimal signal packages, Rusty XR data
+ contracts, Quest broker streams, Windows capture, Android phone
+ diagnostics, Unity Quest integration, and Viscereality research tooling.
+ The focus is clear stream ownership, inspectable routing, and reusable
+ biosignal contracts.
+
+ Status
+ Active tooling and research support
+ Artifact
+ Signal packages, decoders, broker routes, capture tools, and docs
+ Use
+ Heart, RR, ECG, and accelerometer paths for XR
+
+ Polar H10 / BLE / PMD / LSL / Quest / Windows / Android
+
+ Project overview (https://mesmerprism.com/projects/polar-h10.html)
+ Signal packages (https://github.com/MesmerPrism/polar-h10-signals)
+ Pipeline docs (https://github.com/MesmerPrism/Rusty-XR/blob/main/docs/BLE_LSL_POLAR_PIPELINE.md)
+ Windows capture (https://github.com/MesmerPrism/Rusty-XR-Companion-Apps/blob/main/docs/polar-h10-windows-capture.md)
+
+ Depth inversion research instrument
+
+Hollow Face Lab (https://mesmerprism.com/projects/hollow-face-lab.html)
+
+ Depth-inversion experiments need stimulus controls that survive renderer
+ changes. Hollow Face Lab connects hollow-face research with WebGL, WebXR,
+ Rusty XR, asset provenance, and design rationale.
+
+ Status
+ Prototype instrument
+ Artifact
+ Browser/WebXR lab design
+ Focus
+ Stimulus variables and response logging
+
+ Hollow face / WebXR / Three.js / Rusty XR / Stimulus variables
+
+ Overview (https://mesmerprism.com/projects/hollow-face-lab.html)
+ References (https://mesmerprism.com/projects/hollow-face-lab.html#references)
+ Rusty XR (https://mesmerprism.com/projects/rusty-xr.html)
+
+ Live citizen-science web collaboration
+
+Altered Xperience Project (https://mesmerprism.com/projects/altered-xperience-project.html)
+
+ A CIRCE-led citizen-science survey for anonymous altered-state reports.
+ The page explains how the public survey, multilingual questionnaires,
+ feedback, scoring, privacy boundaries, research exports, and collaborator
+ workflow fit together.
+
+ Status
+ Live survey collaboration
+ Artifact
+ Survey app + access guide
+ Role
+ Web infrastructure and collaborator tooling
+
+ Citizen science / Shiny / Survey systems / Open science / CIRCE
+
+ System overview (https://mesmerprism.com/projects/altered-xperience-project.html)
+ Live AXP survey (https://alteredxproject.com/)
+ Access guide (https://mesmerprism.com/axp-mvp-survey-guide/)
+
+ Embodiment and design research
+
+Plasmatic Multitudes (https://mesmerprism.com/projects/plasmatic-multitudes.html)
+
+ A vocabulary for bodies that soften, distribute, glow, swarm, or become
+ collective while remaining readable as bodies. The design rule is simple:
+ center stable, periphery negotiable.
+
+ Status
+ Essay and design vocabulary
+ Artifact
+ Overview + field guide
+ Use
+ XR embodiment and avatar translation
+
+ Embodiment / XR / Media theory / Interface design
+
+ Research overview (https://mesmerprism.com/projects/plasmatic-multitudes.html)
+ Deep field guide (https://mesmerprism.com/plasmatic-multitudes/)
+ Long essay (https://mesmerprism.com/plasmatic-multitudes/essay.html)
+ References (https://mesmerprism.com/plasmatic-multitudes/references.html)
+
+ Writing and conceptual synthesis
+
+SANE (https://mesmerprism.com/projects/sane.html)
+
+ A four-part framework for experiences that cannot be explained by body
+ practice, tool design, narrative, or feedback loops alone. It asks what
+ each layer contributes before joining them.
+
+ Status
+ Proposed framework
+ Artifact
+ Source-grounded public essay
+ Focus
+ Body, tools, meaning, and systems
+
+ Somaesthetic / Anthropotechnical / Noetic / Emergent
+
+ Research overview (https://mesmerprism.com/projects/sane.html)
+ References (https://mesmerprism.com/projects/sane.html#references)
+
+ Tulpas, thoughtforms, and inner agency
+
+Tulpas (https://mesmerprism.com/projects/tulpas.html)
+
+ A careful reference guide to modern tulpamancy language, cultivated inner
+ companions, thoughtforms, headmates, imposition, plurality, and related
+ agency vocabularies without turning them into one lineage.
+
+ Status
+ Research guide
+ Artifact
+ Source-rich public article
+ Focus
+ Language, sources, and lineages
+
+ Tulpamancy / Imposition / Plurality / Inner agency
+
+ Research overview (https://mesmerprism.com/projects/tulpas.html)
+ Evidence (https://mesmerprism.com/projects/tulpas.html#evidence)
+ Prophantasia (https://mesmerprism.com/projects/prophantasia.html)
+ Phenomenological Control (https://mesmerprism.com/projects/phenomenological-control.html)
+
+ Knowledge-art and research method
+
+Scientific Surrealism (https://mesmerprism.com/projects/scientific-surrealism.html)
+
+ A dream bureau, scientific-looking journal, diagram, or experimental
+ machine becomes surrealist here when it changes what counts as an
+ observation. The page keeps apparatus, art history, and pseudoscience
+ separate.
+
+ Status
+ Research map
+ Artifact
+ Public article + references
+ Focus
+ Apparatus, observation, and knowledge-art
+
+ Surrealism / Wissenskunst / Archives / Modern science
+
+ Research overview (https://mesmerprism.com/projects/scientific-surrealism.html)
+ References (https://mesmerprism.com/projects/scientific-surrealism.html#references)
+
+ Altered perception and induced vision
+
+Brain Candy (https://mesmerprism.com/projects/brain-candy.html)
+
+ A design and research project about how rhythmic light, recursive visual
+ structure, sound, breath, and expectation can shape non-drug state shifts.
+ It is about tunable experience design, not clinical treatment or
+ psychedelic substitution.
+
+ Strobotorch remains separate Android tooling for visual signal encoding,
+ visual signal decoding, and flashlight-safety boundaries.
+
+ Status
+ Hybrid design collaboration + evidence map
+ Artifact
+ Project site + evidence overview
+ Focus
+ Tunable state-shift design
+
+ Cyberdelics / Fractal fluency / Rhythm / VR design
+
+ Research overview (https://mesmerprism.com/projects/brain-candy.html)
+ V1 form constants (https://mesmerprism.com/projects/bressloff-v1-form-constants.html)
+ Project site (https://braincandyapp.com/)
+
+ Independent Android signal tooling
+
+Strobotorch (https://mesmerprism.com/Strobotorch/)
+
+ An Android flashlight signaling and diagnostics tool. It uses torch and
+ camera APIs for visible-light signal experiments, device-behavior logging,
+ and safety documentation.
+
+ Status
+ Public MIT-licensed tooling
+ Artifact
+ Android app + safety guide
+ Focus
+ Torch and camera signal diagnostics
+
+ Android / Visual signals / Camera diagnostics / Torch APIs
+
+ Project page (https://mesmerprism.com/Strobotorch/)
+ Scope (https://mesmerprism.com/Strobotorch/project-boundary/)
+ Sources (https://mesmerprism.com/Strobotorch/sources/)
+ Source repo (https://github.com/MesmerPrism/Strobotorch)
+
+ Interactive visual-cortex simulator
+
+Bressloff V1 Form Constants (https://mesmerprism.com/projects/bressloff-v1-form-constants.html)
+
+ A Rust/browser implementation and article for Bressloff-style V1 planforms,
+ retino-cortical mapping, orientation contours, branch-selection controls,
+ named paper presets, Rule flicker diagnostics, and generated MacKay,
+ Bolelli, and Nicks driven-field reports. The page keeps each model
+ family inspectable without reusing private paper figures.
+
+ Status
+ Interactive article + public repo
+ Artifact
+ Browser figures and Rust renderer
+ Focus
+ V1 planforms, flicker, and driven fields
+
+ Rust / V1 model / Retino-cortical maps / Form constants
+
+ Article (https://mesmerprism.com/projects/bressloff-v1-form-constants.html)
+ Deep dive (https://mesmerprism.com/projects/bressloff-v1-form-constants-deep-dive.html)
+ Source code (https://github.com/MesmerPrism/bressloff-v1-form-constants)
+ Original notebook (https://github.com/karacsm/V1-sim)
+
+ Simulated psychedelic vision
+
+Deep Dream (https://mesmerprism.com/projects/deep-dream.html)
+
+ An account of DeepDream, hallucination-machine methods, community
+ replication culture, and the narrow conditions under which simulated
+ DeepDream fits inside the wider history of psychedelic visual simulation.
+
+ Status
+ Long-form research article
+ Artifact
+ Evidence guide + references
+ Focus
+ Visual simulation and provenance
+
+ Machine vision / VR / Psychedelic simulation / Provenance
+
+ Research overview (https://mesmerprism.com/projects/deep-dream.html)
+ References (https://mesmerprism.com/projects/deep-dream.html#references)
+
+ Static motion and perceptual mechanics
+
+Optical Movement Illusions (https://mesmerprism.com/projects/optical-movement-illusions.html)
+
+ A mechanism-first account of peripheral drift, Rotating Snakes, and
+ adjacent static motion illusions, kept close to eye-movement,
+ luminance, and filter-design evidence.
+
+ Status
+ Mechanism guide
+ Artifact
+ Public article + references
+ Use
+ Design translation from psychophysics
+
+ Vision science / Motion illusions / Filters / Psychophysics
+
+ Research overview (https://mesmerprism.com/projects/optical-movement-illusions.html)
+ References (https://mesmerprism.com/projects/optical-movement-illusions.html#references)
+
+ Imagery, suggestion, and mechanism
+
+Phenomenological Control (https://mesmerprism.com/projects/phenomenological-control.html)
+
+ A synthesis of imagery variation, absorption, expectancy, hypnotic
+ suggestibility, and how subjective variation meets physiology, lesion
+ evidence, and newer shared-code findings.
+
+ Status
+ Research guide
+ Artifact
+ Public synthesis + references
+ Focus
+ Expectation, imagery, and source monitoring
+
+ Imagery / Absorption / Suggestion / Meaning-making
+
+ Research overview (https://mesmerprism.com/projects/phenomenological-control.html)
+ References (https://mesmerprism.com/projects/phenomenological-control.html#references)
+
+ Projected imagery and field mapping
+
+Prophantasia (https://mesmerprism.com/projects/prophantasia.html)
+
+ A guide to reports of internally generated imagery that seems external,
+ overlaid on the world, or located outside the ordinary mind's eye. It keeps
+ measurement, community practice, and safety signals separate.
+
+ Status
+ Research map
+ Artifact
+ Evidence guide + future survey framing
+ Focus
+ Projected imagery report categories
+
+ Mental imagery / Aphantasia / Imposition / Measurement
+
+ Research overview (https://mesmerprism.com/projects/prophantasia.html)
+ References (https://mesmerprism.com/projects/prophantasia.html#references)
+
+ Retinal stimulation and patterned light
+
+Fractal Optics (https://mesmerprism.com/projects/fractal-optics.html)
+
+ A bounded account of the Russian fractal-phototherapy line and its
+ retinal, ophthalmic, lighting, and comparator literatures. Fractal
+ structure is treated as stimulus, not vibe.
+
+ Status
+ Evidence map
+ Artifact
+ Public article + reference audit
+ Focus
+ Fractal structure as stimulus
+
+ Retina / Fractals / VR delivery / Comparator studies
+
+ Research overview (https://mesmerprism.com/projects/fractal-optics.html)
+ References (https://mesmerprism.com/projects/fractal-optics.html#references)
+
+ Code and prototypes
+
+GitHub and research tooling
+
+ Public repositories include Rusty XR, Rusty XR Companion Apps,
+ Polar H10 routing and capture work, Strobotorch, browser prototypes,
+ simulation tools, and shareable research infrastructure. Study-bound
+ runtimes are summarized through documented interfaces, papers, and public
+ references.
+
+ Status
+ Public repositories
+ Artifact
+ Code, docs, prototypes, and diagnostics
+ Access
+ GitHub and project documentation
+
+ Repositories / Simulations / Tooling / Infrastructure
+
+ GitHub profile (https://github.com/MesmerPrism)
+ Rusty-XR (https://github.com/MesmerPrism/Rusty-XR)
+ Polar H10 work (https://mesmerprism.com/projects/polar-h10.html)
+ Rusty-XR Companion Apps (https://github.com/MesmerPrism/Rusty-XR-Companion-Apps)
+ Strobotorch (https://github.com/MesmerPrism/Strobotorch)
+ Bressloff V1 code (https://github.com/MesmerPrism/bressloff-v1-form-constants)
+ AXP access guide (https://mesmerprism.com/axp-mvp-survey-guide/)
+
+Publications and presentations
+
+ Selected outputs across immersive systems, psychophysics, breath interaction,
+ and XR communication.
+- 2026 Fejer et al. Breathing Space: Spatial Mapping of Breath and Cardiac Biofeedback for Affective State Representation and Coherence Training in Viscereality. (https://doi.org/10.1145/3780045.3780061) AlpCHI 2026 proceedings.
+- 2025 Fejer et al. Viscereality: A Bio-responsive VR System for Breath-Based Interactions and Coupled Oscillator Dynamics to Augment Altered States of Consciousness. (https://doi.org/10.18420/muc2025-mci-ws11-174) Mensch und Computer 2025 workshop.
+- 2025 Lobser and Holzapfel. Brain Candy (https://braincandyapp.com/): Flicker Light Stimulation in Virtual Reality. Poster presented at AWE 2025, IVRHA 2025, and MindXR 2025.
+- 2024 Roebuck Williams et al. Measuring the Limit of Perception of Bond Stiffness of Interactive Molecules in VR via a Gamified Psychophysics Experiment. (https://doi.org/10.1007/978-3-031-71707-9_13) XR SALENTO 2024 proceedings.
+
+Background
+
+ My background moves between cognitive science, HCI, psychophysics, media
+ theory, and research writing. The essays name concepts, lineages, and
+ source limits before carrying those questions into XR systems, browser
+ simulations, physiological sensing, and embodied prototypes.
+
+ Across Plasmatic Multitudes (https://mesmerprism.com/projects/plasmatic-multitudes.html),
+ SANE (https://mesmerprism.com/projects/sane.html),
+ Tulpas (https://mesmerprism.com/projects/tulpas.html),
+ Scientific Surrealism (https://mesmerprism.com/projects/scientific-surrealism.html),
+ Rusty XR (https://mesmerprism.com/projects/rusty-xr.html),
+ Polar H10 Work (https://mesmerprism.com/projects/polar-h10.html),
+ Quest Companion Tools (https://mesmerprism.com/projects/viscereality-companion.html),
+ Hollow Face Lab (https://mesmerprism.com/projects/hollow-face-lab.html),
+ Altered Xperience Project (https://mesmerprism.com/projects/altered-xperience-project.html),
+ Brain Candy (https://mesmerprism.com/projects/brain-candy.html),
+ Strobotorch (https://mesmerprism.com/Strobotorch/),
+ Bressloff V1 Form Constants (https://mesmerprism.com/projects/bressloff-v1-form-constants.html),
+ Deep Dream (https://mesmerprism.com/projects/deep-dream.html),
+ Optical Movement Illusions (https://mesmerprism.com/projects/optical-movement-illusions.html),
+ Phenomenological Control (https://mesmerprism.com/projects/phenomenological-control.html),
+ Prophantasia (https://mesmerprism.com/projects/prophantasia.html),
+ and Fractal Optics (https://mesmerprism.com/projects/fractal-optics.html), the recurring terrain is
+ altered perception, weakly bounded bodies, phenomenological variation, and
+ the practical conditions that make strange experience legible without flattening
+ it.
+
+Core strengths
+- Unity and C# for XR and interactive systems
+- Biofeedback, breath interaction, and interoception-oriented design
+- Perception research, psychophysics, and embodied HCI
+- Citizen-science survey systems, research tooling, and public guides
+- Long-form research writing, source discipline, and conceptual synthesis
+- Weakly bounded embodiment, avatar design, and plasmatic interaction
+
+Current and recent roles
+- VR Developer & Researcher, Viscereality Project
+- Citizen-science survey infrastructure, Altered Xperience Project / CIRCE collaboration
+- Scientific Advisor, Light Clinic (https://light.clinic/)
+- Visual Artist / Developer / Researcher, Tactile Visualizer Project
+- Public Outreach & Citizen Science, Intangible Realities Lab
+
+Contact
+
+ If you are building something across XR, altered perception, embodiment,
+ research tooling, or interdisciplinary writing and design, contact me here.
+- Email mesmerprism@gmail.com (mailto:mesmerprism@gmail.com)
+- GitHub github.com/MesmerPrism (https://github.com/MesmerPrism)
+- LinkedIn linkedin.com/in/till-holzapfel-intangiblerealitieslab (https://www.linkedin.com/in/till-holzapfel-intangiblerealitieslab/)
+- Current project viscereality.org (https://viscereality.org/)

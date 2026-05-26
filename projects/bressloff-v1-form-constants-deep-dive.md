@@ -1,0 +1,991 @@
+# Bressloff and Rule Modeling Deep Dive
+
+Source: https://mesmerprism.com/projects/bressloff-v1-form-constants-deep-dive.html
+Canonical HTML: https://mesmerprism.com/projects/bressloff-v1-form-constants-deep-dive.html
+Generated: 2026-05-26
+Description: A notebook-style deep dive into Bressloff form constants, Rule flicker modeling, and generated driven neural-field diagnostics after Rule.
+Markdown: https://mesmerprism.com/projects/bressloff-v1-form-constants-deep-dive.md
+Plain text: https://mesmerprism.com/projects/bressloff-v1-form-constants-deep-dive.txt
+BibTeX references: https://mesmerprism.com/projects/bressloff-v1-form-constants-deep-dive.bib
+CSL JSON references: https://mesmerprism.com/projects/bressloff-v1-form-constants-deep-dive.references.csl.json
+
+---
+
+Modeling deep dive
+
+# Bressloff and Rule Modeling Deep Dive
+
+ Geometric hallucination models become useful when their equations stay close
+ to the image. Bressloff's orientation-hypercolumn account asks how cortical
+ symmetry and retino-cortical mapping can generate tunnels, cobwebs, lattices,
+ and honeycombs. Rule, Stoffregen, and Ermentrout ask a different question:
+ how periodic flicker can destabilize a scalar excitatory/inhibitory field into
+ high-frequency period-doubled stripes or lower-frequency hexagonal patterns
+ ([Bressloff et al., 2001](https://doi.org/10.1098/rstb.2000.0769);
+ [Rule et al., 2011](https://doi.org/10.1371/journal.pcbi.1002158)).
+
+ [Sequential examples](https://mesmerprism.com/projects/bressloff-v1-form-constants-deep-dive.html#examples)
+ [Model split](https://mesmerprism.com/projects/bressloff-v1-form-constants-deep-dive.html#model-split)
+ [Rule flicker model](https://mesmerprism.com/projects/bressloff-v1-form-constants-deep-dive.html#rule)
+ [Rule explorer](https://mesmerprism.com/projects/bressloff-v1-form-constants-deep-dive.html#rule-explorer)
+ [After Rule](https://mesmerprism.com/projects/bressloff-v1-form-constants-deep-dive.html#after-rule)
+ [Driven reports](https://mesmerprism.com/projects/bressloff-v1-form-constants-deep-dive.html#driven-reports)
+ [Source methods](https://mesmerprism.com/projects/bressloff-v1-form-constants-deep-dive.html#source-methods)
+ [Bressloff overview](https://mesmerprism.com/projects/bressloff-v1-form-constants.html)
+ [References](https://mesmerprism.com/projects/bressloff-v1-form-constants-deep-dive.html#references)
+
+ What this page adds
+
+## Two model families, one calibration record
+
+ The shorter Bressloff page shows generated visual forms. This deep dive
+ separates the model families behind them: Bressloff's orientation-hypercolumn
+ planforms and retino-cortical mapping, and Rule's periodically forced
+ excitatory/inhibitory field for flicker-induced phosphenes. The two tracks
+ share visual-field questions but not claims.
+
+ The status tables record which generated targets currently pass, which remain
+ approximate, and which published figures are not reproduced here for rights
+ reasons.
+
+### Figure-use policy
+
+ Mesmer Prism uses generated model outputs unless an original article
+ figure is clearly open-licensed or reproduced with permission. Generated
+ images cite the source model but are not scans, crops, or reproductions
+ of the paper figures.
+
+### Safety boundary
+
+ The visuals here are explanatory model outputs, not a photic-stimulation
+ protocol. Frequency parameters are model parameters, not safety-cleared
+ exposure recommendations.
+
+ Historical problem
+
+## Why these shapes invite a cortical model
+
+ Reports of geometric visual hallucinations recur around a small vocabulary:
+ tunnels, spirals, rays, cobwebs, lattices, checkerboards, funnels, and
+ honeycombs. The modeling question is not whether those pictures can be
+ drawn. It is whether a plausible cortical system has natural pattern-forming
+ modes that resemble them after the map from visual space to V1 is taken
+ seriously ([Ermentrout and Cowan, 1979](https://doi.org/10.1007/BF00336965);
+ [Bressloff et al., 2002](https://doi.org/10.1162/089976602317250861)).
+
+ The older scalar cortical-sheet story already explains why stripes, squares,
+ and hexagons matter. Bressloff, Cowan, Golubitsky, Thomas, and Wiener add
+ the retino-cortical transform and V1 orientation preference structure, so
+ some hallucinations become locally oriented contour fields rather than only
+ bright and dark scalar activity.
+
+### Scalar cortical sheet
+
+ Useful for rings, rays, spirals, and some light-dark lattices because
+ cortical stripes map cleanly through the complex-log retino-cortical
+ transform.
+
+### Orientation hypercolumns
+
+ Needed for cobwebs, honeycombs, and lattice tunnels that are better
+ described as locally oriented contours than as only bright and dark
+ regions.
+
+### Flicker E/I field
+
+ Rule's model belongs beside Bressloff's track, not inside it: the core
+ object is a periodically forced excitatory/inhibitory field with scalar
+ spatial kernels.
+
+ Bressloff model family
+
+## Orientation-hypercolumn planforms
+
+ The implementation keeps Bressloff's family as
+ model_family = bressloff_orientation_hypercolumn . It reuses
+ retino-cortical rendering where the mathematics calls for it, but does not
+ treat later flicker models as Bressloff paper presets.
+
+### Position map
+
+ \[
+ \begin{aligned}
+ x &\simeq \log r_R \\
+ y &\simeq \theta_R
+ \end{aligned}
+ \]
+
+ Circles, rays, and logarithmic spirals in visual space become vertical,
+ horizontal, and oblique stripes in cortical coordinates.
+
+### Orientation map
+
+ \[
+ \phi = \phi_R - \theta_R,
+ \qquad
+ \phi_R = \phi + \theta_R
+ \]
+
+ Local retinal contour orientation is measured relative to angular
+ visual-field position. The renderer uses the equivalent drawing
+ convention when it places contour glyphs.
+
+### Hypercolumn field
+
+ \[
+ \frac{\partial a(\mathbf r,\phi,t)}{\partial t}
+ =
+ -a(\mathbf r,\phi,t)
+ + \mu \int
+ w(\mathbf r,\phi;\mathbf r',\phi')\,
+ \sigma(a(\mathbf r',\phi',t))\,
+ d\mathbf r'\,d\phi'
+ \]
+
+ The weight separates local isotropic coupling inside a hypercolumn from
+ anisotropic long-range coupling between similarly tuned orientation
+ patches.
+
+### Planform modes
+
+ \[
+ a(\mathbf r,\phi)
+ \sim
+ \sum_j c_j\,u(\phi-\phi_j)\,
+ \exp(i\,\mathbf k_j\cdot\mathbf r)
+ \]
+
+ Rolls, squares, rhombs, and hexagonal branches are selected from finite
+ wavevector sets and then mapped into retinal space.
+
+ Sequential examples
+
+## Generated cells from the current implementation
+
+ These loops are static exports from the Rust/browser implementation. They
+ are generated images, not scans of the source papers, and they should be read
+ as qualitative model illustrations unless a row explicitly says it has passed
+ a calibration check.
+
+ Cell 01
+
+### 2002 roll mode: cortical stripes before remapping
+
+ The simplest Bressloff example is a cortical roll: a striped activity
+ pattern in cortical coordinates. In the visual field, the same family can
+ become rings, rays, or spirals depending on stripe orientation.
+
+ Preset fig5_roll_cortical
+
+ Source Bressloff et al. 2002 Figure 5
+
+ Model family Bressloff orientation hypercolumn
+
+ Cell 02
+
+### Lattice tunnel through the retino-cortical map
+
+ The lattice tunnel shows why the mapping step matters. A structured V1
+ planform becomes a tunnel-like field when projected into visual-field
+ coordinates, making the radial expansion of the retino-cortical map
+ visible.
+
+ Preset fig7_lattice_tunnel
+
+ Source Bressloff et al. 2002 Figure 7
+
+ Status qualitative rendered target pass
+
+ Cell 03
+
+### Single inverse map: non-contoured square cells
+
+ Figures 29 and 30 in the 2001 paper show scalar activity before local
+ contour orientation is drawn. The implementation thresholds bright and
+ dark regions, maps them back to visual-field coordinates, and leaves the
+ orientation-glyph layer out.
+
+ Preset fig29_square_noncontoured
+
+ Source Bressloff et al. 2001 Figure 29, Table 2
+
+ Status rendered target pass; threshold geometry approximate
+
+ Cell 04
+
+### Double map: square even contours
+
+ The square even case adds the local orientation field, so the output is
+ closer to a cobweb of contour fragments than to a scalar checkerboard.
+ The current renderer draws the target family, while the local branch
+ selector still prefers a roll branch under the same diagnostics.
+
+ Preset fig31_square_even
+
+ Source Bressloff et al. 2001 Figure 31
+
+ Status rendered target review; branch diagnostic mismatch
+
+ Cell 05
+
+### Rhombic even branch as a cleaner calibration case
+
+ The rhombic example is currently the cleanest agreement case: the
+ rendered family and branch selector both identify the rhombic target.
+ That makes it a useful baseline for later figure-level image metrics.
+
+ Preset fig33_rhombic_even
+
+ Source Bressloff et al. 2001 Figure 33
+
+ Status rendered target pass; branch diagnostic pass
+
+ Cell 06
+
+### Zero-phase hexagonal even branch
+
+ The zero-phase hexagonal even example gives a honeycomb-like retinal
+ image. It tests whether the preset registry can distinguish hexagonal
+ phase partners instead of treating every three-wave branch as the same
+ picture.
+
+ Preset fig35_hex_zero_even
+
+ Source Bressloff et al. 2001 Figure 35
+
+ Status rendered target pass
+
+ Cell 07
+
+### Triangular odd branch and the current fidelity limit
+
+ The triangular odd target is useful because it exposes a limit of the
+ first-pass implementation. The renderer can draw the requested triangular
+ family, but the present stability and branch diagnostics do not yet
+ reproduce the full higher-order odd-hexagonal selection described in the
+ paper.
+
+ Preset fig36_triangle_odd
+
+ Source Bressloff et al. 2001 Figure 36
+
+ Status rendered target review; higher-order branch work deferred
+
+ Calibration reports
+
+## What the current registry can say
+
+ The implementation currently separates source-figure identity, rendered
+ target, contour mode, and branch-selection diagnostics. That is deliberately
+ conservative: the page can say that a generated figure resembles a source
+ target without pretending that all stability curves, phase conventions, or
+ higher-order amplitude terms have already been recovered.
+
+ 24 Bressloff paper and convenience presets
+
+ 17 rendered target passes
+
+ 7 review targets for branch or stability fidelity
+
+ Bressloff geometry calibration
+
+## Generated stills against private numeric targets
+
+ This surface shows generated implementation stills and public-safe metric
+ summaries. Original paper scans and crops are not displayed here; when a
+ private source-derived profile exists, only derived numeric comparison
+ fields are loaded.
+
+ Format available after report load
+
+ Generated stills available after report load
+
+ Source comparisons available after report load
+
+ Mean edge density available after report load
+
+ Generated-still metric summary appears here when the report asset is available.
+
+ Rule flicker model family
+
+## A separate scalar E/I simulation track
+
+ Rule, Stoffregen, and Ermentrout model flicker-induced phosphenes using a
+ forced excitatory/inhibitory neural field and then study spatial instabilities
+ over flicker frequency and stimulus parameters. The public implementation
+ names this as model_family = rule_flicker_ei and keeps it
+ separate from Bressloff's orientation-hypercolumn registry.
+
+### E/I field
+
+ \[
+ \begin{aligned}
+ \tau_e \frac{\partial U_e}{\partial t}
+ &=
+ -U_e + F(a_{ee}K_e * U_e - a_{ei}K_i * U_i - \theta_e + g_e S(t)) \\
+ \tau_i \frac{\partial U_i}{\partial t}
+ &=
+ -U_i + F(a_{ie}K_e * U_e - a_{ii}K_i * U_i - \theta_i + g_i S(t))
+ \end{aligned}
+ \]
+
+ The implementation uses two scalar fields over a periodic two-dimensional
+ domain with normalized Gaussian kernels.
+
+### Flicker stimulus
+
+ \[
+ S(t) = A\,H\!\left(\sin\!\left(\frac{2\pi t}{T}\right)-\vartheta\right)
+ \]
+
+ Period \(T\), amplitude \(A\), threshold, smoothing,
+ and inhibitory feed-forward fraction are exposed as explicit parameters.
+
+### Temporal check
+
+ \[
+ C(T)\approx -1,\quad C(2T)\approx 1
+ \qquad\text{versus}\qquad
+ C(T)>0
+ \]
+
+ The qualitative report compares frames one and two forcing periods apart,
+ which is enough for a first period-doubling sanity check.
+
+### Floquet boundary check
+
+ \[
+ \dot v = D_u f(u_0(t),t;k)\,v,
+ \qquad
+ v(T)=M(k)v(0),
+ \qquad
+ \lambda\in\sigma(M(k))
+ \]
+
+ The current report computes first-pass monodromy boundary markers and
+ Figure 8 curve comparisons. Published-axis reproduction remains
+ calibration work, not a settled claim.
+
+### Rule model status
+
+- Implemented: qualitative high-frequency and low-frequency presets, one-period/two-period correlation checks, and Fourier-family readouts.
+
+- Partial: sweep maps, monodromy hints, and domain-normalized Figure 8 beta-axis comparison.
+
+- Deferred: exact digitized reproduction of published phase-boundary figures.
+
+- Not claimed: prediction of a viewer's hallucinations from stimulus frequency.
+
+### Explorer status
+
+ The public explorer loads static JSON reports when they are present.
+ If a report asset is absent, the qualitative Rule presets and claim
+ ledger remain the public surface rather than showing repeated empty
+ map states.
+
+ Rule Dynamics Explorer v1
+
+### Synchronized flicker, E/I response, and spatial modes
+
+ This explorer shows the two qualitative Rule regimes as linked
+ views: stimulus pulse, reduced excitatory/inhibitory response,
+ scalar cortical field, dominant Fourier family, the one-period
+ versus two-period temporal check, and a simulator-backed sweep
+ report where available. It is an explanatory model view, not a
+ stimulus protocol.
+
+ Model family
+ rule_flicker_ei
+
+ Active preset
+ High-frequency stripes
+
+ Response
+ period doubled
+
+ Pattern depth
+ 0.82
+
+ High-frequency stripes
+
+ Low-frequency hexagons
+
+ Pause
+
+ View
+
+ Cortical field
+ Retinal projection
+
+ Time
+
+ Amplitude
+
+ 0.80
+
+ I drive
+
+ 0.00
+
+#### Stimulus and E/I traces
+
+ stimulus
+ excitatory
+ inhibitory
+
+#### Fourier mode readout
+
+ Stripe axis
+
+ 0.92
+
+ Hexagonal triplet
+
+ 0.18
+
+#### Period check
+
+ C(T) -0.99
+
+ C(2T) 0.98
+
+ Stimulus period 55 ms
+
+#### Frequency sweep strip
+
+ Sweep report summary appears here when the JSON asset is available.
+
+ 140 ms
+
+ Regime low frequency
+
+ Modes hexagonal
+
+ Peak 0.00
+
+ 120 ms
+
+ Regime one to one
+
+ Modes hexagonal
+
+ Peak 0.00
+
+ 85 ms
+
+ Regime transition
+
+ Modes mixed
+
+ Peak 0.00
+
+ 65 ms
+
+ Regime stripe onset
+
+ Modes stripe
+
+ Peak 0.00
+
+ 55 ms
+
+ Regime period doubled
+
+ Modes stripe
+
+ Peak 0.00
+
+ Low-frequency mode
+ available after report load
+
+ Transition mode
+ available after report load
+
+ High-frequency mode
+ available after report load
+
+#### Frequency-amplitude map
+
+ Dense sweep-map summary appears here when the JSON asset is available.
+
+ Floquet boundary summary appears here when the JSON asset is available.
+
+ Point available after report load
+
+ Regime available after report load
+
+ Spatial score available after report load
+
+ Temporal score available after report load
+
+ Floquet available after report load
+
+ Note available after report load
+
+#### Rule Figure 8 refined boundary curves
+
+ Figure 8 curve comparison appears here when the report assets are available.
+
+ Parameter set available after report load
+
+ Branches available after report load
+
+ Points available after report load
+
+ Beta RMS available after report load
+
+ Continuity available after report load
+
+ Beta map available after report load
+
+#### A. Flicker input
+
+ The forcing term \(S(t)\) supplies periodic drive with exposed
+ amplitude and period. It is a temporal input before any spatial
+ pattern is visible.
+
+#### B. Homogeneous E/I response
+
+ The reduced traces show the driven excitatory and inhibitory
+ populations. Their relative timing sets the gain available to
+ spatial modes.
+
+#### C. Spatial perturbation growth
+
+ The scalar field view shows pattern amplitude riding on the E/I
+ response. The amplitude and I-drive sliders expose weak,
+ patterned, and suppressed cases.
+
+#### D. Low-frequency branch
+
+ Longer forcing periods are represented as one-to-one hexagonal
+ responses, matching the qualitative low-frequency island.
+
+#### E. High-frequency branch
+
+ Shorter periods favor stripe-like modes with a two-cycle temporal
+ signature: \(C(T)\) is negative while \(C(2T)\) returns positive.
+
+#### F. Floquet boundary map
+
+ The sweep strip and frequency-amplitude map now read simulator
+ reports. Sign-change markers show where the monodromy threshold
+ conditions cross on the current grid, and the report now refines
+ beta-axis crossings into first-pass boundary curve points. Exact
+ published-axis calibration remains the next rigorous layer.
+
+ The live field and trace controls are an explanatory browser projection of
+ the current qualitative presets. The sweep strip, map, and monodromy hints
+ read Rust simulator reports when the JSON assets are available.
+
+ Cell 08
+
+### High-frequency flicker: period-doubled stripes
+
+ The high-frequency qualitative preset represents the stripe island in
+ Rule's Figure 4. The period-doubling signature is temporal: after one
+ forcing cycle, foreground and background approximately exchange; after
+ two cycles, the pattern matches again.
+
+ Preset rule_fig4_high_freq_stripes
+
+ Stimulus 55 ms representative period
+
+ Check rT = -0.99 , r2T = 0.98
+
+ Cell 09
+
+### Lower-frequency flicker: one-to-one hexagons
+
+ The lower-frequency qualitative preset represents the hexagonal island.
+ The current version uses a 120 ms representative rather than claiming
+ exact reproduction of the 110 ms panel in the paper.
+
+ Preset rule_fig4_low_freq_hexagons
+
+ Stimulus 120 ms qualitative representative
+
+ Check rT = 0.30 , r2T = 0.90
+
+ After Rule
+
+## Driven neural fields, not one straight line
+
+ The lineage after Rule splits into driven-input problems and architecture
+ extensions. Rule models diffuse periodic flicker. Nicks, Cocks,
+ Avitabile, Johnston, and Coombes model spatial forcing and orthogonal
+ response in Billock-Tsou-style effects. Tamekue, Prandi, and Chitour
+ treat MacKay stimuli as localized inputs that break symmetry and act as
+ controls in an Amari neural field. Bolelli and Prandi then combine
+ localization with time-periodic input, giving a current framework for
+ flickering visual stimuli whose model contours depend on frequency and
+ inhibition
+ ([Nicks et al., 2021](https://doi.org/10.1137/20M1366885);
+ [Tamekue et al., 2024](https://doi.org/10.1137/23M1616686);
+ [Bolelli and Prandi, 2025](https://doi.org/10.1007/s10851-025-01257-7)).
+
+ A second branch complicates the cortical architecture itself: pinwheel
+ lattices, long-range connections, color dimensions, contrast polarity, and
+ perceptual grouping. These do not replace the Bressloff simulator; they
+ show what it abstracts away
+ ([Veltz et al., 2015](https://link.springer.com/article/10.1186/s13408-015-0023-8);
+ [Faugeras et al., 2022](https://doi.org/10.5802/crmath.289);
+ [Carroll and Bressloff, 2018](https://doi.org/10.1137/16M1076125);
+ [Sarti and Citti, 2015](https://doi.org/10.1007/s10827-014-0540-6)).
+
+ Branch
+ Source
+ Input type
+ Model output
+ Use in Mesmer Prism
+
+ Spontaneous form constants
+ Ermentrout-Cowan; Bressloff et al.
+ No visual input or parameter shift
+ Planforms mapped to tunnels, spirals, lattices, and cobwebs
+ Current simulator core
+
+ Diffuse flicker
+ Rule et al. 2011
+ Spatially homogeneous time-periodic forcing
+ Frequency-dependent phosphene regimes
+ Rule panel and explorer
+
+ Spatial forcing
+ Nicks et al. 2021
+ Periodic spatial input
+ Orthogonal response and 2:1 resonance
+ Nicks generated diagnostic report
+
+ Localized static input
+ Tamekue et al. 2024
+ MacKay rays or target plus localized control
+ Input-biased orthogonal contours
+ MacKay generated diagnostic report
+
+ Localized time-periodic input
+ Bolelli and Prandi 2025
+ Flickering localized input
+ Periodic state and contour width versus frequency/inhibition
+ Bolelli generated diagnostic report
+
+ Pinwheel architecture
+ Veltz et al. 2015
+ More realistic V1 lattice and long-range connections
+ Symmetry-restricted planforms and hexagonal robustness
+ Architecture caveat
+
+ Color V1
+ Faugeras et al. 2022
+ Hue and saturation dimensions
+ Spatio-chromatic planforms and localized snaking states
+ Extension layer
+
+ Contrast gradients
+ Carroll and Bressloff 2018
+ Contrast-polarity/orientation field
+ Gradient-direction encoding
+ "Not hallucination only" sidebar
+
+ Perceptual units
+ Sarti and Citti 2015
+ Visual input plus neurogeometry
+ Eigenmodes as perceptual units
+ Grouping note
+
+### Spatial forcing and orthogonal response
+
+ Nicks et al. provide the bridge from diffuse flicker toward
+ Billock-Tsou-style sensory-induced hallucinations. Under the
+ retino-cortical map, rings and arms become orthogonal cortical stripe
+ families, and a spatially forced neural field can support an
+ orthogonal response when the resonance conditions are right.
+
+### Localized MacKay input
+
+ Tamekue, Prandi, and Chitour recast the MacKay branch as an
+ input-output problem. The stimulus is represented as a cortical input
+ through the retino-cortical map, and localized information breaks the
+ global symmetry of a regular funnel or tunnel pattern.
+
+### Time-periodic localized input
+
+ Bolelli and Prandi are the current endpoint for this page: localized
+ geometric input and periodic forcing are studied in one neural-field
+ framework. Frequency remains a model parameter, not a safe exposure
+ recommendation.
+
+### Architecture and extensions
+
+ Pinwheel lattices, color dimensions, contrast-polarity fields, and
+ perceptual-unit models show that V1 neural-field mathematics is broader
+ than hallucination geometry. The page should use them to clarify the
+ simulator's abstractions, not to broaden its claims.
+
+### Generated visual policy
+
+ No full PDFs, paper figure scans, page renders, or source-figure crops
+ are hosted for this branch. New visuals should be generated in Mesmer
+ Prism style unless a paper figure is clearly reusable and captioned with
+ its license, source, and change notes.
+
+ Driven report surface
+
+## The implemented continuation is source-target diagnostic, not calibrated
+
+ The current public assets expose three generated driven-field report
+ families. The MacKay report covers localized stationary input. The
+ Bolelli report covers localized time-periodic input, period-lock
+ diagnostics, and an accepted source-side principal-pole width
+ convention.
+ The Nicks report covers 2:1 orthogonal-response amplitude
+ diagnostics, Appendix-B kernel-derived coefficient tables,
+ and source-equation Figure 8 boundary residual checks. None
+ of these are paper-figure reproductions or calibration
+ claims.
+
+ ...
+ registered driven examples in the public-safe model registry.
+
+ ...
+ implemented entries with generated report targets.
+
+ ...
+ partial entries awaiting stronger source-target metrics.
+
+ ...
+ JSON report families mirrored into the website assets.
+
+ Claim level
+ diagnostic/source-target; not calibrated
+
+ Formats
+ loading report formats...
+
+ Source
+ loading generated report JSON...
+
+ Computational provenance
+
+## What the original papers say about software
+
+ The source record is mixed. Some papers name concrete software stacks;
+ others mainly expose equations, symmetry arguments, numerical methods, or
+ figure descriptions. Mesmer Prism uses that provenance to decide what kind
+ of implementation is credible here, while keeping the public outputs as
+ generated diagnostics and source-target comparisons rather than
+ original-code reproductions.
+
+ Source track
+ Original-author workflow named in the paper record
+ How Mesmer Prism treats it
+
+ Bressloff form constants
+ Analytic retinocortical map, Euclidean symmetry, orientation-hypercolumn planforms, and bifurcation analysis; no named figure-code stack identified.
+ Independent Rust implementation with generated planforms and explicit comparison reports, not original-code reuse.
+
+ Rule flicker E/I field
+ AUTO through XPPAUT, Floquet/monodromy stability calculations, and custom two-dimensional periodic-grid simulations.
+ Rust sweep and Floquet diagnostics stay first-pass until report-backed source-axis fits support stronger language.
+
+ Nicks spatial forcing
+ MATLAB simulations, FFT-based pseudo-spectral convolution, ode45 , and XPPAUT checks for reduced amplitude-equation stability.
+ Current reports implement reduced amplitude-equation and boundary diagnostics; full half-space field simulations remain deferred.
+
+ Tamekue-Prandi-Chitour MacKay model
+ Julia visualization/solver workflow and fixed-point iteration for stationary Amari neural fields.
+ The Rust MacKay report keeps a compact fixed-point diagnostic and records generated metrics without claiming source-panel reproduction.
+
+ Bolelli-Prandi periodic input
+ Mathematica for principal-pole calculations and Julia for nonlinear mean-field simulations.
+ Pole-width formulas are source-target diagnostics; generated stripe widths stay separate until conventions match.
+
+ Veltz pinwheel architecture
+ Trilinos, FFTW, PETSc, petsc4py , Newton-Krylov/GMRES, Arnoldi eigensolvers, BDF integration, and large meshes.
+ Pinwheel dynamics are treated as a high-cost architecture extension, not near-term Rust report work.
+
+ Faugeras-Song-Veltz color field
+ Julia, BifurcationKit.jl, KrylovKit.jl, pseudo-arclength continuation, CUDA.jl, and GPU FFTs.
+ Color hallucinations and localized snaking remain deferred until the project has a continuation/color architecture layer.
+
+ Carroll-Bressloff and Sarti-Citti
+ Mathematica algebraic checks for Carroll-Bressloff; mean-field discretization, affinity matrices, eigenvectors, and MCMC-style estimation for Sarti-Citti.
+ Both stay as adjacent perceptual-function tracks unless this project expands beyond driven hallucination-style diagnostics.
+
+### Why this matters
+
+ The original papers do not share one software lineage. Some are
+ analytic, some are continuation-heavy, and some use MATLAB, Julia, or
+ Mathematica for specific parts of the workflow. A single Rust simulator
+ should therefore expose model-family reports and validation status
+ rather than pretending all figures come from one executable model.
+
+### Current claim level
+
+ The generated assets here are diagnostics, calibration targets, and
+ source-target comparisons. They are not produced by the authors'
+ original scripts, and they are not presented as calibrated
+ reproductions of private or permission-bound source figures.
+
+### Implementation consequence
+
+ Near-term work should keep improving Bolelli pole-width conventions and
+ Nicks region-boundary residuals. Veltz/Faugeras continuation, GPU, color,
+ and pinwheel stacks should wait until the report layer can support that
+ complexity.
+
+ Claim ledger
+
+## What is solid, partial, or deferred
+
+ Claim
+ Current level
+ Next work
+
+ Bressloff and Rule are separate model families.
+ Implemented in public metadata and page structure.
+ Design a cross-model registry only when more families need shared indexing.
+
+ Bressloff examples reproduce named visual families.
+ Qualitative generated target checks for the current preset catalog.
+ Digitize source figures and add image metrics.
+
+ Rule high-frequency and low-frequency examples show different regimes.
+ Qualitative seeded E/I simulations with temporal-correlation checks, Fourier-family scores, and first sweep-map diagnostics.
+ Calibrate exact Rule Figure 5 and Figure 6 parameter locations.
+
+ The public article explains Rule's temporal mechanism visually.
+ Client-side explorer links flicker, E/I traces, mode family, period checks, sweep strip, dense map, and monodromy hints.
+ Calibrate dense Rule Figure 6 and Figure 8 phase boundaries.
+
+ Later work extends the lineage toward driven neural fields.
+ Public taxonomy separates spatial forcing, localized MacKay input, localized time-periodic input, pinwheel architecture, color extensions, contrast-gradient encoding, and perceptual grouping. MacKay, Bolelli, and Nicks now have generated first-pass diagnostic reports.
+ Add source-derived numeric targets before calling any driven output calibrated.
+
+ The original papers used one shared software stack.
+ Not claimed here. The source record names different workflows across papers, including XPPAUT/AUTO, MATLAB, Julia, Mathematica, PETSc/Trilinos, and BifurcationKit.
+ Keep implementation provenance separate from generated-report validation.
+
+ Spatial forcing, localized input, and time-periodic input can explain every viewer's percept.
+ Not claimed here.
+ Requires participant-level data, stimulus calibration, and safety review outside this public model note.
+
+ Flicker frequency predicts individual visual experience.
+ Not claimed here.
+ Requires participant data, safety constraints, and calibrated stimulus hardware.
+
+ Figure rights ledger
+
+## Which figures can be hosted here
+
+ Figure source
+ Public-page treatment
+ Rights basis
+
+ Generated Mesmer Prism images
+ Hosted here.
+ Created by the Mesmer Prism renderer from the described model families.
+
+ Rule et al. 2011 PLOS figures
+ Can be reproduced or adapted with attribution and change notes.
+ PLOS Computational Biology articles are covered by Creative Commons Attribution reuse terms.
+
+ Bressloff et al. 2001 Royal Society figures
+ Reference only unless permission or a specific open license is verified.
+ Royal Society journal reuse is routed through its permissions process unless the article license already permits the use.
+
+ Bressloff et al. 2002 Neural Computation figures
+ Reference only unless MIT Press permission or a specific open license is verified.
+ MIT Press provides a rights and permissions process for journal reuse.
+
+ Ermentrout and Cowan 1979 Springer figures
+ Reference only unless Springer permission or a specific open license is verified.
+ Springer Nature distinguishes openly licensed material from content requiring reuse permission.
+
+ Bressloff 2012 IOP figures
+ Check the article first page; treat as permission-required unless clearly open.
+ IOP permissions guidance treats adaptations as permission-bound unless the source license allows reuse.
+
+ Nicks et al. 2021 SIAM figures
+ Reference only; redraw concepts for public diagrams.
+ Version of record is SIAM-published and the user-provided PDF was a review-purpose manuscript.
+
+ Tamekue et al. 2024 SIAM figures
+ Reference only; redraw MacKay examples unless permission is obtained.
+ Version of record is SIAM-published; the arXiv manuscript is not treated as figure-reuse permission.
+
+ Bolelli and Prandi 2025 figures
+ Reusable only with CC BY attribution and caption-level third-party checks.
+ The Springer article is open access under CC BY 4.0 with a third-party material caveat.
+
+ Veltz et al. 2015 figures
+ Reusable only with CC BY attribution and caption-level third-party checks.
+ The Journal of Mathematical Neuroscience article is distributed under CC BY 4.0.
+
+ Faugeras et al. 2022 figures
+ Reusable only with CC BY attribution and caption-level third-party checks.
+ The Comptes Rendus Mathematique article page states CC BY 4.0.
+
+ Carroll and Bressloff 2018 SIAM figures
+ Reference only unless permission is obtained.
+ SIAM copyright applies to the version of record.
+
+ Sarti and Citti 2015 figures
+ Reference only; redraw concepts.
+ No clear reusable figure license was identified in the local copy; treat Springer version as permission-required unless verified otherwise.
+
+ References
+
+## Sources and implementation lineage
+
+### Model papers
+
+- Ermentrout, G. B., and J. D. Cowan. "[A Mathematical Theory of Visual Hallucination Patterns](https://doi.org/10.1007/BF00336965)." Biological Cybernetics 34 (1979).
+
+- Bressloff, P. C., J. D. Cowan, M. Golubitsky, P. J. Thomas, and M. C. Wiener. "[Geometric Visual Hallucinations, Euclidean Symmetry and the Functional Architecture of Striate Cortex](https://doi.org/10.1098/rstb.2000.0769)." Philosophical Transactions of the Royal Society B 356 (2001).
+
+- Bressloff, P. C., J. D. Cowan, M. Golubitsky, P. J. Thomas, and M. C. Wiener. "[What Geometric Visual Hallucinations Tell Us About the Visual Cortex](https://doi.org/10.1162/089976602317250861)." Neural Computation 14, no. 3 (2002).
+
+- Bressloff, P. C. "[Spatiotemporal Dynamics of Continuum Neural Fields](https://doi.org/10.1088/1751-8113/45/3/033001)." Journal of Physics A: Mathematical and Theoretical 45, no. 3 (2012).
+
+- Rule, M., M. Stoffregen, and B. Ermentrout. "[A Model for the Origin and Properties of Flicker-Induced Geometric Phosphenes](https://doi.org/10.1371/journal.pcbi.1002158)." PLOS Computational Biology 7, no. 9 (2011).
+
+### Driven-field continuation
+
+- Billock, V. A., and B. H. Tsou. "[Neural Interactions Between Flicker-Induced Self-Organized Visual Hallucinations and Physical Stimuli](https://doi.org/10.1073/pnas.0610813104)." PNAS 104, no. 20 (2007).
+
+- Nicks, R., A. Cocks, D. Avitabile, A. Johnston, and S. Coombes. "[Understanding Sensory Induced Hallucinations: From Neural Fields to Amplitude Equations](https://doi.org/10.1137/20M1366885)." SIAM Journal on Applied Dynamical Systems 20, no. 4 (2021).
+
+- Tamekue, C., D. Prandi, and Y. Chitour. "[A Mathematical Model of the Visual MacKay Effect](https://doi.org/10.1137/23M1616686)." SIAM Journal on Applied Dynamical Systems 23, no. 3 (2024).
+
+- Bolelli, M. V., and D. Prandi. "[Neural Field Equations with Time-Periodic External Inputs and Some Applications to Visual Processing](https://doi.org/10.1007/s10851-025-01257-7)." Journal of Mathematical Imaging and Vision 67 (2025).
+
+### Architecture and perception extensions
+
+- Veltz, R., P. Chossat, and O. Faugeras. "[On the Effects on Cortical Spontaneous Activity of the Symmetries of the Network of Pinwheels in Visual Area V1](https://link.springer.com/article/10.1186/s13408-015-0023-8)." Journal of Mathematical Neuroscience 5 (2015).
+
+- Faugeras, O. D., A. Song, and R. Veltz. "[Spatial and Color Hallucinations in a Mathematical Model of Primary Visual Cortex](https://doi.org/10.5802/crmath.289)." Comptes Rendus Mathematique 360 (2022).
+
+- Carroll, S. R., and P. C. Bressloff. "[Symmetric Bifurcations in a Neural Field Model for Encoding the Direction of Spatial Contrast Gradients](https://doi.org/10.1137/16M1076125)." SIAM Journal on Applied Dynamical Systems 17, no. 1 (2018).
+
+- Sarti, A., and G. Citti. "[The Constitution of Visual Perceptual Units in the Functional Architecture of V1](https://doi.org/10.1007/s10827-014-0540-6)." Journal of Computational Neuroscience 38, no. 2 (2015). See also the [arXiv record](https://arxiv.org/abs/1406.0289).
+
+### Public implementation and context
+
+- Mesmer Prism. "[Bressloff V1 Form Constants Lab](https://github.com/MesmerPrism/bressloff-v1-form-constants)." MIT-licensed Rust and browser implementation used for these generated assets.
+
+- Mesmer Prism. "[Driven Neural Fields Implementation Plan](https://github.com/MesmerPrism/bressloff-v1-form-constants/blob/main/docs/DRIVEN_NEURAL_FIELDS_IMPLEMENTATION_PLAN.md)." Public-safe implementation plan for generated MacKay, Bolelli, and Nicks diagnostics.
+
+- Mesmer Prism. "[Original Author Software Methods](https://github.com/MesmerPrism/bressloff-v1-form-constants/blob/main/docs/ORIGINAL_AUTHOR_SOFTWARE_METHODS.md)." Public-safe provenance note for software and numerical methods named in the source papers.
+
+- BifurcationKit contributors. "[BifurcationKit.jl](https://github.com/bifurcationkit/BifurcationKit.jl)." Public Julia package named in the continuation lineage for the color-hallucination work.
+
+- Mesmer Prism. "[Bressloff V1 Form Constants](https://mesmerprism.com/projects/bressloff-v1-form-constants.html)." Public overview page for the same implementation.
+
+- karacsm. "[V1-sim](https://github.com/karacsm/V1-sim)." Public notebook lineage for V1 activity and retino-cortical visualization.
+
+- CountYourCulture. "[Form Constants and the Visual Cortex](https://isomerdesign.com/countyourculture/2011/03/13/form-constants-visual-cortex/)." Public visual explainer for the form-constant comparison lineage.
+
+- Hewitt et al. "[Stroboscopically Induced Visual Hallucinations: Historical, Phenomenological, and Neurobiological Perspectives](https://doi.org/10.1093/nc/niaf020)." Neuroscience of Consciousness (2025).
+
+- Figure-rights sources. [PLOS licenses and copyright](https://journals.plos.org/ploscompbiol/s/licenses-and-copyright); [Creative Commons Attribution 4.0](https://creativecommons.org/licenses/by/4.0/); [Royal Society permissions](https://royalsociety.org/journals/permissions/); [MIT Press rights and permissions](https://mitpress.mit.edu/rights-permissions/); [Springer Nature rights and permissions](https://www.springernature.com/gp/partners/rights-permissions-third-party-distribution); [IOP permissions FAQ](https://publishingsupport.iopscience.iop.org/permissionsfaq/).

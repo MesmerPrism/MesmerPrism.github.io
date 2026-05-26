@@ -1,0 +1,38 @@
+Project Scope | Strobotorch
+
+Source: https://mesmerprism.com/Strobotorch/project-boundary/
+Canonical HTML: https://mesmerprism.com/Strobotorch/project-boundary/
+Generated: 2026-05-26
+Description: The scope of Strobotorch Android flashlight signaling and diagnostics tooling.
+Markdown: https://mesmerprism.com/Strobotorch/project-boundary/index.md
+Plain text: https://mesmerprism.com/Strobotorch/project-boundary/index.txt
+BibTeX references: https://mesmerprism.com/Strobotorch/project-boundary/index.bib
+CSL JSON references: https://mesmerprism.com/Strobotorch/project-boundary/index.references.csl.json
+
+---
+
+Project scope
+
+Strobotorch Is Android Signal Tooling
+
+ Strobotorch is an Android flashlight signaling and diagnostics tool for torch
+ and camera APIs, visual signal encoding, visual signal decoding, diagnostic
+ capture, and safety documentation around bright flashing light.
+
+Scope
+
+ Strobotorch is independent from
+ Brain Candy (https://braincandyapp.com/).
+ It is not a hallucination tool, wellness device, medical device,
+ meditation product, brainwave-entrainment system, or state-shift platform.
+
+Tooling scope
+
+ Strobotorch is an open-source Android tooling project for public torch
+ APIs, camera/luma diagnostics, torch event recording, visual signal
+ encoding, visual signal decoding, and device-limit documentation.
+
+Use exclusions
+
+ Strobotorch excludes state-shift induction, hallucination induction,
+ wellness, medical, meditation, brainwave-entrainment, and clinical use.

@@ -1,0 +1,177 @@
+[
+  {
+    "id": "shusterman-shusterman",
+    "type": "webpage",
+    "title": "Shusterman",
+    "URL": "https://www.interaction-design.org/literature/book/the-encyclopedia-of-human-computer-interaction-2nd-ed/somaesthetics",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Somaesthetics Appendix | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/background/somaesthetics.html",
+    "author": [
+      {
+        "literal": "Shusterman"
+      }
+    ]
+  },
+  {
+    "id": "hook-et-al-hook-et-al",
+    "type": "article-journal",
+    "title": "Hook et al.",
+    "URL": "https://doi.org/10.1145/2598510.2598561",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Somaesthetics Appendix | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/background/somaesthetics.html",
+    "author": [
+      {
+        "literal": "Hook et al."
+      }
+    ],
+    "DOI": "10.1145/2598510.2598561"
+  },
+  {
+    "id": "wagemans-et-al-wagemans-et-al",
+    "type": "article-journal",
+    "title": "Wagemans et al.",
+    "URL": "https://doi.org/10.1037/a0029333",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Somaesthetics Appendix | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/background/somaesthetics.html",
+    "author": [
+      {
+        "literal": "Wagemans et al."
+      }
+    ],
+    "DOI": "10.1037/a0029333"
+  },
+  {
+    "id": "johansson-johansson",
+    "type": "article-journal",
+    "title": "Johansson",
+    "URL": "https://link.springer.com/article/10.3758/BF03212378",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Somaesthetics Appendix | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/background/somaesthetics.html",
+    "author": [
+      {
+        "literal": "Johansson"
+      }
+    ],
+    "DOI": "10.3758/BF03212378"
+  },
+  {
+    "id": "glowacki-glowacki",
+    "type": "article-journal",
+    "title": "Glowacki",
+    "URL": "https://doi.org/10.3389/frvir.2023.1286950",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Somaesthetics Appendix | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/background/somaesthetics.html",
+    "author": [
+      {
+        "literal": "Glowacki"
+      }
+    ],
+    "DOI": "10.3389/frvir.2023.1286950"
+  },
+  {
+    "id": "yee-and-bailenson-yee-and-bailenson",
+    "type": "article-journal",
+    "title": "Yee and Bailenson",
+    "URL": "https://doi.org/10.1111/j.1468-2958.2007.00299.x",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Somaesthetics Appendix | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/background/somaesthetics.html",
+    "author": [
+      {
+        "literal": "Yee and Bailenson"
+      }
+    ],
+    "DOI": "10.1111/j.1468-2958.2007.00299.x"
+  },
+  {
+    "id": "lecuyer-lecuyer",
+    "type": "article-journal",
+    "title": "Lecuyer",
+    "URL": "https://doi.org/10.1162/pres.18.1.39",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Somaesthetics Appendix | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/background/somaesthetics.html",
+    "author": [
+      {
+        "literal": "Lecuyer"
+      }
+    ],
+    "DOI": "10.1162/pres.18.1.39"
+  },
+  {
+    "id": "ho-et-al-ho-et-al",
+    "type": "article-journal",
+    "title": "Ho et al.",
+    "URL": "https://doi.org/10.1016/j.jpain.2021.10.009",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          26
+        ]
+      ]
+    },
+    "note": "Referenced by Somaesthetics Appendix | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/background/somaesthetics.html",
+    "author": [
+      {
+        "literal": "Ho et al."
+      }
+    ],
+    "DOI": "10.1016/j.jpain.2021.10.009"
+  }
+]
