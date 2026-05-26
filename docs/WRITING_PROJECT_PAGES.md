@@ -164,3 +164,19 @@ Minimum validation for a citation-heavy page:
 - local HTTP check returns 200 for the page;
 - desktop and mobile viewport checks show no horizontal overflow;
 - `git diff --check` has no whitespace errors beyond normal line-ending notices.
+
+## Agent artifacts
+
+When a change affects only one public page, refresh only that page's managed
+agent block and sidecar files:
+
+```powershell
+node scripts\generate-agent-artifacts.js --page projects\example.html
+```
+
+Use `--global` only when the edit should also refresh site-wide indexes such as
+`agent-index.json`, `llms.txt`, references exports, or the sitemap:
+
+```powershell
+node scripts\generate-agent-artifacts.js --page projects\example.html --global
+```

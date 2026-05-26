@@ -12,6 +12,79 @@ const OPTIONAL_HTML = new Set([
 ]);
 const SIDECAR_EXTENSIONS = [".md", ".txt", ".bib", ".references.csl.json"];
 
+function usage() {
+  return [
+    "Usage:",
+    "  node scripts/generate-agent-artifacts.js",
+    "  node scripts/generate-agent-artifacts.js --page projects/example.html",
+    "  node scripts/generate-agent-artifacts.js --page projects/example.html --global",
+    "",
+    "Without --page, the script refreshes every public page and global indexes.",
+    "With --page, it refreshes only that page's managed HTML block and sidecars.",
+    "Add --global to also rebuild agent-index, llms, references, and sitemap files.",
+  ].join("\n");
+}
+
+function normalizeTarget(value) {
+  let target = String(value || "").trim();
+  if (!target) return "";
+  if (/^https?:\/\//i.test(target)) {
+    target = new URL(target).pathname;
+  }
+  target = toPosix(target).replace(/^\/+/, "");
+  if (!target) return "index.html";
+  const rootPrefix = `${toPosix(ROOT)}/`;
+  if (target.startsWith(rootPrefix)) {
+    target = target.slice(rootPrefix.length);
+  }
+  target = target.replace(/^\.\//, "");
+  if (target.endsWith("/")) {
+    target += "index.html";
+  }
+  target = target
+    .replace(/\.references\.csl\.json$/i, ".html")
+    .replace(/\.(md|txt|bib)$/i, ".html");
+  if (!target.endsWith(".html")) {
+    target += ".html";
+  }
+  return target;
+}
+
+function parseArgs(argv) {
+  const targets = [];
+  let updateGlobal = false;
+  for (let index = 0; index < argv.length; index += 1) {
+    const arg = argv[index];
+    if (arg === "--help" || arg === "-h") {
+      console.log(usage());
+      process.exit(0);
+    }
+    if (arg === "--page" || arg === "--only" || arg === "--target") {
+      const value = argv[index + 1];
+      if (!value) {
+        throw new Error(`${arg} requires an HTML page path`);
+      }
+      targets.push(normalizeTarget(value));
+      index += 1;
+      continue;
+    }
+    if (arg === "--global" || arg === "--update-global") {
+      updateGlobal = true;
+      continue;
+    }
+    if (arg.startsWith("--")) {
+      throw new Error(`Unknown option: ${arg}\n${usage()}`);
+    }
+    targets.push(normalizeTarget(arg));
+  }
+  const targetRels = new Set(targets.filter(Boolean));
+  return {
+    targetRels,
+    targeted: targetRels.size > 0,
+    updateGlobal: targetRels.size === 0 || updateGlobal,
+  };
+}
+
 function toPosix(filePath) {
   return filePath.replace(/\\/g, "/");
 }
@@ -415,10 +488,10 @@ function updateHtml(page) {
   let html = stripManagedBlocks(page.originalHtml);
 
   const metadata = buildMetadataBlock(page);
-  html = html.replace(/(\s*<\/head>)/i, `\n${metadata}\n$1`);
+  html = html.replace(/[ \t\r\n]*<\/head>/i, `\n${metadata}\n</head>`);
 
   if (!page.optional && /<\/main>/i.test(html)) {
-    html = html.replace(/(\s*<\/main>)/i, `\n${buildExportBlock(page)}\n$1`);
+    html = html.replace(/[ \t\r\n]*<\/main>/i, `\n${buildExportBlock(page)}\n</main>`);
   }
   return html;
 }
@@ -504,18 +577,27 @@ function buildLlmsFull(pages) {
 }
 
 function main() {
+  const options = parseArgs(process.argv.slice(2));
   const discovered = walk(ROOT)
     .map((file) => ({ file, rel: toPosix(path.relative(ROOT, file)) }))
     .sort((a, b) => a.rel.localeCompare(b.rel));
 
   const files = [];
+  const discoveredRels = new Set(discovered.map((item) => item.rel));
   for (const item of discovered) {
     const originalHtml = read(item.file);
     if (EXCLUDED_HTML.has(item.rel) || isNoindexOrRedirect(originalHtml)) {
-      cleanupExcludedPage(item.file, item.rel, originalHtml);
+      if (!options.targeted || options.targetRels.has(item.rel)) {
+        cleanupExcludedPage(item.file, item.rel, originalHtml);
+      }
       continue;
     }
     files.push({ ...item, originalHtml: stripManagedBlocks(originalHtml) });
+  }
+
+  const missingTargets = [...options.targetRels].filter((rel) => !discoveredRels.has(rel));
+  if (missingTargets.length) {
+    throw new Error(`No matching HTML page found for: ${missingTargets.join(", ")}`);
   }
 
   const pages = files.map(({ file, rel, originalHtml }) => {
@@ -542,7 +624,11 @@ function main() {
     return page;
   });
 
-  for (const page of pages) {
+  const pagesToWrite = options.targeted
+    ? pages.filter((page) => options.targetRels.has(page.rel))
+    : pages;
+
+  for (const page of pagesToWrite) {
     write(path.join(ROOT, artifactRel(page.rel, ".md")), pageMarkdown(page));
     write(path.join(ROOT, artifactRel(page.rel, ".txt")), markdownToText(pageMarkdown(page)) + "\n");
     if (page.references.length) {
@@ -553,6 +639,17 @@ function main() {
       removeArtifact(page.rel, ".references.csl.json");
     }
     write(page.file, updateHtml(page));
+  }
+
+  if (!options.updateGlobal) {
+    console.log(JSON.stringify({
+      generated: GENERATED_DATE,
+      mode: "targeted",
+      pages: pagesToWrite.length,
+      globalIndexes: false,
+      targets: [...options.targetRels],
+    }, null, 2));
+    return;
   }
 
   const allRefs = [];
@@ -592,8 +689,11 @@ function main() {
 
   console.log(JSON.stringify({
     generated: GENERATED_DATE,
+    mode: options.targeted ? "targeted-with-global" : "full",
+    updatedPages: pagesToWrite.length,
     pages: pages.length,
     references: allRefs.length,
+    globalIndexes: true,
     sitemapUrls: pages.filter((page) => !page.rel.endsWith("/board.html")).length,
   }, null, 2));
 }

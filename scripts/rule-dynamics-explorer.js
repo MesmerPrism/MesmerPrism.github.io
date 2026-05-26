@@ -532,19 +532,21 @@
         );
         const points = sourcePoints.length ? sourcePoints.concat(generatedPoints) : generatedPoints;
         const ctx = resizeCanvas(canvas, 760, 340);
-        const w = canvas.width;
-        const h = canvas.height;
+        const dpr = Math.min(window.devicePixelRatio || 1, 1.75);
+        const w = canvas.width / dpr;
+        const h = canvas.height / dpr;
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
         ctx.clearRect(0, 0, w, h);
         ctx.fillStyle = `rgb(${colors.paper.join(",")})`;
         ctx.fillRect(0, 0, w, h);
         if (!points.length) {
             ctx.fillStyle = `rgb(${colors.muted.join(",")})`;
-            ctx.font = `${Math.round(13 * (window.devicePixelRatio || 1))}px Georgia`;
+            ctx.font = "13px Georgia";
             ctx.fillText("No Figure 8 curve points available.", 24, 42);
             return;
         }
 
-        const compact = w < 460;
+        const compact = w < 520;
         const left = compact ? 62 : 66;
         const right = compact ? 18 : 24;
         const top = compact ? 46 : 18;
@@ -561,7 +563,7 @@
         const xFor = (period) => left + ((period - xMin) / Math.max(1e-9, xMax - xMin)) * plotW;
         const yFor = (wave) => top + (1 - (wave - yMin) / Math.max(1e-9, yMax - yMin)) * plotH;
 
-        ctx.font = `${Math.round(11 * (window.devicePixelRatio || 1))}px Georgia`;
+        ctx.font = "11px Georgia";
         ctx.fillStyle = `rgb(${colors.muted.join(",")})`;
         const xTickCount = compact ? 3 : 4;
         for (let i = 0; i <= xTickCount; i += 1) {
@@ -681,10 +683,10 @@
         });
 
         ctx.fillStyle = `rgb(${colors.text.join(",")})`;
-        ctx.font = `${Math.round((compact ? 16 : 19) * (window.devicePixelRatio || 1))}px Georgia`;
+        ctx.font = `${compact ? 16 : 19}px Georgia`;
         ctx.fillText("-1", xFor(71), yFor(0.83));
         ctx.fillText("+1", xFor(118), yFor(0.37));
-        ctx.font = `${Math.round((compact ? 14 : 17) * (window.devicePixelRatio || 1))}px Georgia`;
+        ctx.font = `${compact ? 14 : 17}px Georgia`;
         ctx.fillText("\u03b2*", xFor(82), yFor(0.56));
         drawArrow(ctx, xFor(87), yFor(0.56), xFor(103), yFor(0.47), `rgb(${colors.deep.join(",")})`);
 
@@ -693,7 +695,7 @@
             [ruleCurveLabel("plus_one_to_one"), "70,88,56", []],
             [`generated samples (${mapping.model})`, "99,88,80", "marker"],
         ];
-        ctx.font = `${Math.round(10.5 * (window.devicePixelRatio || 1))}px Georgia`;
+        ctx.font = "10.5px Georgia";
         legend.forEach(([label, color, style], index) => {
             const x = compact ? left + 8 : left + index * 168;
             const y = compact ? 15 + index * 12 : top + 14;
