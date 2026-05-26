@@ -125,6 +125,10 @@
         const nicksBoundaryRows = nicksRows.filter(
             (row) => row.source_target?.figure8_region?.curve_residual_pass,
         );
+        const nicksResidualRows = Array.isArray(reports.nicks.figure8_residual_field?.rows)
+            ? reports.nicks.figure8_residual_field.rows
+            : [];
+        const nicksRobustResidualRows = nicksResidualRows.filter((row) => row.robust_region_side);
         const bestNicks = nicksOrthogonalRows.reduce((best, row) => {
             const error = row.wavevectors?.orthogonality_error_degrees;
             if (!Number.isFinite(error)) {
@@ -163,7 +167,9 @@
         setText(
             fields,
             "nicksSummary",
-            `${nicksBoundaryRows.length}/${nicksRows.length} source-equation boundary residual rows`,
+            nicksResidualRows.length
+                ? `${nicksRobustResidualRows.length}/${nicksResidualRows.length} source-grid residual cells robust`
+                : `${nicksBoundaryRows.length}/${nicksRows.length} source-equation boundary residual rows`,
         );
         setText(
             fields,
