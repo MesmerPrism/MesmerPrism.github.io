@@ -122,6 +122,14 @@
         const bolelliDecayComparableRows = bolelliRows.filter(
             (row) => row.source_target?.generated_width_comparable,
         );
+        const bolelliFigure5 = reports.bolelli.figure5_source_curves || {};
+        const bolelliFigure5Curves = Array.isArray(bolelliFigure5.parameter_curves)
+            ? bolelliFigure5.parameter_curves
+            : [];
+        const bolelliFigure5Points = bolelliFigure5Curves.reduce(
+            (sum, curve) => sum + (Number(curve.point_count) || 0),
+            0,
+        );
         const bolelliDecayFitLabel = bolelliTarget.generated_width_comparable
             ? `decay width ${number(bolelliTarget.generated_width_pole_convention, 2)}`
             : Number.isFinite(bolelliTarget.generated_width_fit_r_squared)
@@ -165,12 +173,12 @@
         setText(
             fields,
             "bolelliSummary",
-            `${bolelliRows.filter((row) => row.metrics?.locked).length}/${bolelliRows.length} period-locked rows; ${bolelliDecayComparableRows.length}/${bolelliRows.length} decay-width comparable`,
+            `${bolelliRows.filter((row) => row.metrics?.locked).length}/${bolelliRows.length} period-locked; ${bolelliDecayComparableRows.length}/${bolelliRows.length} decay-width comparable; ${bolelliFigure5Curves.length} Figure 5 curves`,
         );
         setText(
             fields,
             "bolelliDetail",
-            `lambda ${number(bolelliRepresentative.frequency_lambda, 0)}, residual ${scientific(bolelliRepresentative.metrics?.periodic_residual_linf)}, pole target ${number(bolelliTarget.target_width_principal_pole, 2)}, ${bolelliDecayFitLabel}, half-max aux ${number(bolelliRepresentative.metrics?.stripe_width_half_max, 2)}`,
+            `lambda ${number(bolelliRepresentative.frequency_lambda, 0)}, pole target ${number(bolelliTarget.target_width_principal_pole, 2)}, ${bolelliDecayFitLabel}, ${bolelliFigure5Points} source-equation samples, Fig. 5 pole residual ${scientific(bolelliFigure5.max_pole_residual)}, half-max aux ${number(bolelliRepresentative.metrics?.stripe_width_half_max, 2)}`,
         );
         setText(
             fields,
