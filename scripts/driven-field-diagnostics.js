@@ -122,14 +122,9 @@
         const nicksOrthogonalRows = nicksRows.filter((row) =>
             String(row.metrics?.classification || "").includes("orthogonal"),
         );
-        const nicksFigure8Rows = nicksRows.filter((row) => {
-            const region = row.source_target?.figure8_region;
-            return Boolean(
-                region?.source_parameter_match &&
-                    region?.gamma_on_source_grid &&
-                    region?.detuning_on_source_grid,
-            );
-        });
+        const nicksBoundaryRows = nicksRows.filter(
+            (row) => row.source_target?.figure8_region?.curve_residual_pass,
+        );
         const bestNicks = nicksOrthogonalRows.reduce((best, row) => {
             const error = row.wavevectors?.orthogonality_error_degrees;
             if (!Number.isFinite(error)) {
@@ -163,18 +158,18 @@
         setText(
             fields,
             "bolelliDetail",
-            `lambda ${number(bolelliRepresentative.frequency_lambda, 0)}, residual ${scientific(bolelliRepresentative.metrics?.periodic_residual_linf)}, generated width ${number(bolelliRepresentative.metrics?.stripe_width_half_max, 2)}, pole target ${number(bolelliTarget.target_width_principal_pole, 2)}`,
+            `lambda ${number(bolelliRepresentative.frequency_lambda, 0)}, residual ${scientific(bolelliRepresentative.metrics?.periodic_residual_linf)}, generated width ${number(bolelliRepresentative.metrics?.stripe_width_half_max, 2)}, pole target ${number(bolelliTarget.target_width_principal_pole, 2)}, source convention ${bolelliTarget.source_width_convention_accepted ? "accepted" : "review"}`,
         );
         setText(
             fields,
             "nicksSummary",
-            `${nicksFigure8Rows.length}/${nicksRows.length} Figure 8-style source-grid rows`,
+            `${nicksBoundaryRows.length}/${nicksRows.length} source-equation boundary residual rows`,
         );
         setText(
             fields,
             "nicksDetail",
             bestNicks
-                ? `detuning ${number(bestNicks.detuning_fraction, 2)}, angle error ${number(bestNicks.source_target?.angle_error_degrees, 1)} deg, ${bestNicksRegion.boundary_side || "region boundary diagnostic"}`
+                ? `detuning ${number(bestNicks.detuning_fraction, 2)}, angle error ${number(bestNicks.source_target?.angle_error_degrees, 1)} deg, ${bestNicksRegion.region_margin_status || bestNicksRegion.boundary_side || "region boundary diagnostic"}`
                 : "orthogonal-response rows unavailable",
         );
         setText(
