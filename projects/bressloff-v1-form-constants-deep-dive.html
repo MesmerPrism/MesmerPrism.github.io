@@ -1188,8 +1188,8 @@
                     families. The MacKay report covers localized stationary input. The
                     Bolelli report covers localized time-periodic input, period-lock
                     diagnostics, and an accepted source-side principal-pole width
-                    convention.
-                    The Nicks report covers 2:1 orthogonal-response amplitude
+                    convention with generated decay-width fit diagnostics. The
+                    Nicks report covers 2:1 orthogonal-response amplitude
                     diagnostics, Appendix-B kernel-derived coefficient tables,
                     and source-equation Figure 8 boundary residual checks. None
                     of these are paper-figure reproductions or calibration
@@ -1311,7 +1311,7 @@
                         <tr>
                             <td>Bolelli-Prandi periodic input</td>
                             <td>Mathematica for principal-pole calculations and Julia for nonlinear mean-field simulations.</td>
-                            <td>Pole-width formulas are source-target diagnostics; generated stripe widths stay separate until conventions match.</td>
+                            <td>Pole-width formulas are source-target diagnostics; generated decay-width fits now share the convention only when the fit gate passes.</td>
                         </tr>
                         <tr>
                             <td>Veltz pinwheel architecture</td>
@@ -1355,10 +1355,10 @@
                 <section class="detail-block">
                     <h3>Implementation consequence</h3>
                     <p>
-                        Near-term work should keep improving Bolelli pole-width conventions and
-                        Nicks region-boundary residuals. Veltz/Faugeras continuation, GPU, color,
-                        and pinwheel stacks should wait until the report layer can support that
-                        complexity.
+                        Near-term work should keep tightening Bolelli source-panel
+                        thresholds and Nicks region-boundary residuals. Veltz/Faugeras
+                        continuation, GPU, color, and pinwheel stacks should wait until
+                        the report layer can support that complexity.
                     </p>
                 </section>
             </div>
