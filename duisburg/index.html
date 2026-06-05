@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shared Bodies for Mixed-Ability Collaboration | Mesmer Prism</title>
+    <link rel="canonical" href="https://mesmerprism.com/duisburg/">
+    <meta
+        name="description"
+        content="Till Holzapfel's Duisburg research route from cognitive science, embodied XR, bioresponsive systems, and open tooling into shared bodies for mixed-ability collaboration."
+    >
+    <meta name="robots" content="noindex,follow">
+    <meta property="og:title" content="Shared Bodies for Mixed-Ability Collaboration | Mesmer Prism">
+    <meta
+        property="og:description"
+        content="A personal and technical research route into shared swarm bodies, mixed-ability collaboration, low-demand participation, and inspectable XR systems."
+    >
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://mesmerprism.com/duisburg/">
+    <meta property="og:image" content="https://mesmerprism.com/duisburg/till-holzapfel.png">
+    <meta name="theme-color" content="#f4efe7">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/assets/fonts.css">
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- BEGIN agent-readable metadata -->
+    <link rel="alternate" type="text/markdown" href="/duisburg/index.md" title="Markdown version">
+    <link rel="alternate" type="text/plain" href="/duisburg/index.txt" title="Plain text version">
+    <link rel="alternate" type="application/x-bibtex" href="/duisburg/references.bib" title="BibTeX references">
+    <link rel="alternate" type="application/vnd.citationstyles.csl+json" href="/duisburg/references.references.csl.json" title="CSL JSON references">
+    <meta name="citation_title" content="Shared Bodies for Mixed-Ability Collaboration">
+    <meta name="citation_author" content="Till Holzapfel">
+    <meta name="citation_publication_date" content="2026-06-05">
+    <meta name="citation_online_date" content="2026-06-05">
+    <meta name="citation_public_url" content="https://mesmerprism.com/duisburg/">
+    <meta name="citation_language" content="en">
+    <script type="application/ld+json" data-agent-metadata>
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Shared Bodies for Mixed-Ability Collaboration",
+        "name": "Shared Bodies for Mixed-Ability Collaboration",
+        "description": "Till Holzapfel's Duisburg research route from cognitive science, embodied XR, bioresponsive systems, and open tooling into shared bodies for mixed-ability collaboration.",
+        "author": {
+            "@type": "Person",
+            "name": "Till Holzapfel"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Mesmer Prism",
+            "url": "https://mesmerprism.com"
+        },
+        "isPartOf": {
+            "@type": "WebSite",
+            "name": "Mesmer Prism",
+            "url": "https://mesmerprism.com"
+        },
+        "url": "https://mesmerprism.com/duisburg/",
+        "dateModified": "2026-06-05",
+        "inLanguage": "en",
+        "encoding": [
+            {
+                "@type": "MediaObject",
+                "encodingFormat": "text/markdown",
+                "contentUrl": "https://mesmerprism.com/duisburg/index.md"
+            },
+            {
+                "@type": "MediaObject",
+                "encodingFormat": "text/plain",
+                "contentUrl": "https://mesmerprism.com/duisburg/index.txt"
+            },
+            {
+                "@type": "MediaObject",
+                "encodingFormat": "application/x-bibtex",
+                "contentUrl": "https://mesmerprism.com/duisburg/references.bib"
+            },
+            {
+                "@type": "MediaObject",
+                "encodingFormat": "application/vnd.citationstyles.csl+json",
+                "contentUrl": "https://mesmerprism.com/duisburg/references.references.csl.json"
+            }
+        ],
+        "citation": [
+            "https://www.uni-due.de/karriere/stelle-rar.php?kennziffer=171-26",
+            "https://rc-trust.ai/groups/inclusive-technology-and-collective-engagement",
+            "https://rc-trust.ai/",
+            "https://rc-trust.ai/news/news-detail/research-that-transforms-the-lived-experiences-of-people-with-disabilities-and-other-marginalised-groups-into-inclusive-technologies",
+            "https://www.cdl-inclusion.com/",
+            "https://www.nature.com/articles/s41598-022-12637-z",
+            "https://doi.org/10.3389/frvir.2023.1286950",
+            "https://doi.org/10.1145/3613904.3642870",
+            "https://doi.org/10.1145/1952383.1952384",
+            "https://doi.org/10.1145/3234695.3236348",
+            "https://arxiv.org/abs/2303.13831",
+            "https://doi.org/10.1145/3663548.3675621",
+            "https://arxiv.org/abs/2505.05832",
+            "https://www.ri.cmu.edu/publications/human-interaction-with-robot-swarms-a-survey/",
+            "https://users.cs.utah.edu/~dsbrown/pubs/Brown_HRI2014.pdf",
+            "https://pubmed.ncbi.nlm.nih.gov/31922682/",
+            "https://www.cdc.gov/me-cfs/hcp/clinical-care/me-cfs-clinical-care-for-severely-affected-patients.html",
+            "https://www.nice.org.uk/guidance/ng206/chapter/Recommendations",
+            "https://arxiv.org/abs/2102.11207",
+            "https://mesmerprism.com/projects/viscereality.html",
+            "https://mesmerprism.com/projects/rusty-xr.html",
+            "https://github.com/MesmerPrism/Rusty-XR"
+        ]
+    }
+    </script>
+    <!-- END agent-readable metadata -->
+</head>
+<body>
+    <header class="site-header">
+        <div class="shell header-row">
+            <a class="site-name" href="/">Mesmer Prism</a>
+            <nav class="site-nav" aria-label="Page sections">
+                <a href="#profile">Profile</a>
+                <a href="#thesis">Thesis</a>
+                <a href="#fit">Fit</a>
+                <a href="#route">Route</a>
+                <a href="#access">Access</a>
+                <a href="#instrument">Instrument</a>
+                <a href="#references">References</a>
+                <a href="https://github.com/MesmerPrism" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="shell">
+        <section class="hero" id="top">
+            <div class="hero-shell hero-shell--duisburg">
+                <div class="hero-copy">
+                    <p class="eyebrow">Mixed-ability XR research</p>
+                    <h1><span>Shared bodies,</span><span>inspectable</span><span>systems</span></h1>
+                    <p class="project-lede">
+                        I come to this from cognitive science and from building XR systems where
+                        perception, agency, biosignals, and social presence have to work in real
+                        prototypes. In Technology for Mixed Ability Interaction, that becomes a
+                        group question: how can disabled and non-disabled collaborators co-create
+                        shared agency through mutable XR bodies while privacy, pacing, authorship,
+                        and repair remain negotiable?
+                    </p>
+                    <div class="hero-actions">
+                        <a class="action-link action-link--strong" href="#route">Research route</a>
+                        <a class="action-link" href="#references">Sources</a>
+                    </div>
+                </div>
+                <figure class="portrait-card">
+                    <img src="till-holzapfel.png" alt="Portrait of Till Holzapfel">
+                    <figcaption>
+                        Till Holzapfel. XR / VR developer and researcher working across
+                        embodied interaction, biosignals, and open research tooling.
+                    </figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section class="section section--tight" id="profile">
+            <div class="section-heading">
+                <p class="section-kicker">Profile</p>
+                <h2>Why this project follows from my path.</h2>
+                <p>
+                    I am an XR developer and researcher with an M.Sc. in Cognitive Science from
+                    the University of Osnabrueck. My work has moved from semi-corporeal avatar
+                    systems and immersive cyberdelics into bioresponsive VR, shared group
+                    experiences, and open XR tooling. The consistent question is how unusual
+                    forms of embodiment can remain inhabitable, expressive, and socially legible.
+                </p>
+                <p>
+                    That is also a personal and collaborative question for me. Close creative work
+                    across different sensory loads, working tempos, and access needs has made
+                    pacing, trust, communication, and repair feel like design conditions, not
+                    afterthoughts.
+                </p>
+            </div>
+            <div class="guardrail-grid">
+                <article>
+                    <h3>Cognitive science into embodied XR</h3>
+                    <p>
+                        My Master's thesis, supervised by David R. Glowacki, developed mobile VR
+                        semi-corporeal avatar systems around agency, social presence, weakly
+                        bounded bodies, gesture, and performance constraints.
+                    </p>
+                </article>
+                <article>
+                    <h3>Research systems that run</h3>
+                    <p>
+                        <a href="/projects/viscereality.html">Viscereality</a> turns breath,
+                        cardiac rhythm, coupled oscillators, and Quest workflows into a working
+                        bioresponsive VR system for shared immersive environments.
+                    </p>
+                </article>
+                <article>
+                    <h3>Open instruments</h3>
+                    <p>
+                        <a href="/projects/rusty-xr.html">Rusty XR</a>,
+                        <a href="/projects/viscereality-companion.html">companion apps</a>, and
+                        <a href="/projects/polar-h10.html">Polar H10 tooling</a> give the project
+                        a base for input routing, diagnostics, workshop operation, and inspectable
+                        mappings across Quest, Windows, Android, OSC, LSL, and biosignals.
+                    </p>
+                </article>
+                <article>
+                    <h3>Mixed-ability direction</h3>
+                    <p>
+                        The PhD lets this line meet participatory HCI with disabled collaborators:
+                        shared bodies become a way to study negotiated access, chosen legibility,
+                        and mutual engagement rather than only a new XR effect.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section section--tight" id="thesis">
+            <div class="section-heading section-heading--center">
+                <p class="section-kicker">Thesis</p>
+                <h2>Access is a relation inside the group.</h2>
+                <p>
+                    Ability-based design argues that interfaces should adapt to what people can
+                    and want to do; interdependence work adds that access is often negotiated
+                    between people, tools, environments, and care relations
+                    (<a class="inline-citation" href="https://doi.org/10.1145/1952383.1952384" target="_blank" rel="noopener noreferrer">Wobbrock et al., 2011</a>;
+                    <a class="inline-citation" href="https://doi.org/10.1145/3234695.3236348" target="_blank" rel="noopener noreferrer">Bennett et al., 2018</a>).
+                </p>
+            </div>
+            <div class="thesis-card">
+                <p>
+                    How can mixed-ability collaborators co-create a shared body that is legible
+                    enough to coordinate, expressive enough to support mutual engagement, and
+                    inspectable enough to trust?
+                </p>
+            </div>
+        </section>
+
+        <section class="section" id="fit">
+            <div class="section-heading">
+                <p class="section-kicker">Inclusive technology and collective engagement</p>
+                <h2>Mutable embodiment as mutual engagement.</h2>
+                <p>
+                    The advertised research direction asks for technologies that support mutual
+                    engagement between people with and without disabilities across play, creative
+                    expression, work, XR, robotics, IoT, and AI-supported interaction
+                    (<a class="inline-citation" href="https://www.uni-due.de/karriere/stelle-rar.php?kennziffer=171-26" target="_blank" rel="noopener noreferrer">UDE, 2026</a>). The group frames that work through Accessibility, HCI, Social Development, direct collaboration with marginalized people, and co-design
+                    (<a class="inline-citation" href="https://rc-trust.ai/groups/inclusive-technology-and-collective-engagement" target="_blank" rel="noopener noreferrer">Inclusive Technology and Collective Engagement</a>).
+                </p>
+            </div>
+            <div class="guardrail-grid">
+                <article>
+                    <h3>Distributed embodiment</h3>
+                    <p>
+                        Barbareschi's multiple-avatar work shows distributed embodiment as
+                        practical agency in public work. This project asks how mixed-ability
+                        groups learn the agency, visibility, and repair grammar before that
+                        grammar moves into robotic or telepresence contexts
+                        (<a class="inline-citation" href="https://arxiv.org/abs/2303.13831" target="_blank" rel="noopener noreferrer">Barbareschi et al., 2023</a>).
+                    </p>
+                </article>
+                <article>
+                    <h3>Creative access</h3>
+                    <p>
+                        The group's work treats creative expression as access research, not as
+                        outreach decoration. Creative workshops give participants room to define
+                        expression, authorship, and social meaning before task pressure is added
+                        (<a class="inline-citation" href="https://doi.org/10.1145/3663548.3675621" target="_blank" rel="noopener noreferrer">Barbareschi et al., 2024</a>;
+                        <a class="inline-citation" href="https://rc-trust.ai/news/news-detail/designing-technology-around-human-connection-and-inclusion" target="_blank" rel="noopener noreferrer">RC Trust, 2026</a>).
+                    </p>
+                </article>
+                <article>
+                    <h3>Communication repair</h3>
+                    <p>
+                        CDLI gives a model for community-led communication equity. If speech,
+                        silence, gesture, or non-standard speech becomes relevant, it belongs in
+                        turn-taking and participant-defined expression, not as a detached ASR
+                        benchmark
+                        (<a class="inline-citation" href="https://www.cdl-inclusion.com/" target="_blank" rel="noopener noreferrer">CDLI, 2026</a>).
+                    </p>
+                </article>
+                <article>
+                    <h3>Contestable mediation</h3>
+                    <p>
+                        RC Trust makes trust a human-centered question. Here, trust means people
+                        can understand what the system does with their input, choose what becomes
+                        visible, revise mappings, and refuse automatic adaptation
+                        (<a class="inline-citation" href="https://rc-trust.ai/" target="_blank" rel="noopener noreferrer">RC Trust</a>).
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section" id="route">
+            <div class="section-heading">
+                <p class="section-kicker">Research arc</p>
+                <h2>From embodied systems to mixed-ability mutual engagement.</h2>
+                <p>
+                    The arc starts with the path that brought me here, then turns that path into
+                    a concrete mixed-ability project. The Duisburg contribution is a shared-body
+                    research program for collective engagement in mixed-ability groups.
+                </p>
+            </div>
+
+            <ol class="arc-track">
+                <li>
+                    <time>0:00-0:55</time>
+                    <h3>Person to question</h3>
+                    <p>
+                        Cognitive science gave me the language of perception and agency;
+                        collaborative XR work made pacing, trust, and access practical design
+                        problems.
+                    </p>
+                </li>
+                <li>
+                    <time>0:55-1:55</time>
+                    <h3>Embodiment as interface</h3>
+                    <p>
+                        Altered perception, body boundaries, biosignals, and social presence
+                        become design variables when they are built into real XR systems.
+                    </p>
+                </li>
+                <li>
+                    <time>1:55-3:20</time>
+                    <h3>Systems already built</h3>
+                    <p>
+                        Viscereality, Quest companion tools, Rusty XR, Polar routing, and public
+                        research pages share one pattern: experience plus instrument.
+                    </p>
+                </li>
+                <li>
+                    <time>3:20-5:00</time>
+                    <h3>Group bridge</h3>
+                    <p>
+                        The project extends the group's line of avatar-mediated agency,
+                        creative access, communication equity, and trustworthy mediation into
+                        shared XR bodies.
+                    </p>
+                </li>
+                <li>
+                    <time>5:00-6:15</time>
+                    <h3>Shared swarm bodies</h3>
+                    <p>
+                        Distributed, weakly bounded bodies let different people shape motion,
+                        rhythm, density, coupling, boundary softness, repair, or visibility
+                        without requiring identical control.
+                    </p>
+                </li>
+                <li>
+                    <time>6:15-7:20</time>
+                    <h3>Staged method</h3>
+                    <p>
+                        Start with creative exploration, add structured play, then test which
+                        design principles survive in tangible, robotic, communication-aware, or
+                        teleoperated settings.
+                    </p>
+                </li>
+                <li>
+                    <time>7:20-8:20</time>
+                    <h3>One starting context</h3>
+                    <p>
+                        Homebound and energy-limited participation makes pacing, sensory load,
+                        asynchronous contribution, and visibility choices concrete design
+                        constraints.
+                    </p>
+                </li>
+                <li>
+                    <time>8:20-9:20</time>
+                    <h3>Inspectable instrument</h3>
+                    <p>
+                        Rusty matters as an open research instrument: mappings, logs, inputs,
+                        and consent settings should be visible enough to question and revise.
+                    </p>
+                </li>
+                <li>
+                    <time>9:20-10:00</time>
+                    <h3>Contribution</h3>
+                    <p>
+                        The outcome is a prototype family, a participatory method, and design
+                        knowledge for mutual engagement through expressive, negotiable shared
+                        bodies.
+                    </p>
+                </li>
+            </ol>
+        </section>
+
+        <section class="section two-column" id="project">
+            <div>
+                <div class="section-heading">
+                    <p class="section-kicker">Research route</p>
+                    <h2>Exploration before task pressure.</h2>
+                </div>
+                <p>
+                    Luminous and weakly bounded VR bodies can support self-other boundary
+                    softening and connectedness, while swarm-body work shows that size, density,
+                    distribution, and correspondence change embodiment and agency
+                    (<a class="inline-citation" href="https://www.nature.com/articles/s41598-022-12637-z" target="_blank" rel="noopener noreferrer">Glowacki et al., 2022</a>;
+                    <a class="inline-citation" href="https://doi.org/10.3389/frvir.2023.1286950" target="_blank" rel="noopener noreferrer">Glowacki, 2024</a>;
+                    <a class="inline-citation" href="https://doi.org/10.1145/3613904.3642870" target="_blank" rel="noopener noreferrer">Ichihashi et al., 2024</a>).
+                </p>
+                <p>
+                    Creative work is the first research environment because participants need
+                    room to try mappings, name them, reject them, repair them, and discover what
+                    carries meaning before efficiency pressure is added. That matches a group
+                    agenda where emerging technology is evaluated through expression,
+                    communication, participation, and real social context
+                    (<a class="inline-citation" href="https://rc-trust.ai/news/news-detail/research-that-transforms-the-lived-experiences-of-people-with-disabilities-and-other-marginalised-groups-into-inclusive-technologies" target="_blank" rel="noopener noreferrer">RC Trust, 2025</a>).
+                </p>
+            </div>
+            <div class="phase-list" aria-label="Project phases">
+                <article>
+                    <p class="phase-number">1</p>
+                    <h3>Creative exploration</h3>
+                    <p>Participatory workshops discover input channels, comfort boundaries, visibility preferences, and expressive mappings.</p>
+                </article>
+                <article>
+                    <p class="phase-number">2</p>
+                    <h3>Structured play</h3>
+                    <p>Goals, roles, timing, and constraints test coordination, recovery, trust, and shared authorship.</p>
+                </article>
+                <article>
+                    <p class="phase-number">3</p>
+                    <h3>Translation horizon</h3>
+                    <p>Robotic avatars, tangible systems, CDLI-style communication repair, and teleoperation become later tests of the shared-control vocabulary.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section" id="access">
+            <div class="section-heading">
+                <p class="section-kicker">One possible participant context</p>
+                <h2>Low-demand swarm worlds for home-mediated participation.</h2>
+                <p>
+                    ME/CFS, Long COVID, severe fatigue, and prolonged social withdrawal are not
+                    the same thing. They do, however, make ordinary co-present participation
+                    difficult in ways that matter for interaction design: pacing, exertion risk,
+                    travel, sensory load, identity exposure, and the need for asynchronous
+                    contribution
+                    (<a class="inline-citation" href="https://www.cdc.gov/me-cfs/hcp/clinical-care/me-cfs-clinical-care-for-severely-affected-patients.html" target="_blank" rel="noopener noreferrer">CDC, 2024</a>;
+                    <a class="inline-citation" href="https://www.nice.org.uk/guidance/ng206/chapter/Recommendations" target="_blank" rel="noopener noreferrer">NICE, 2021</a>;
+                    <a class="inline-citation" href="https://pubmed.ncbi.nlm.nih.gov/31922682/" target="_blank" rel="noopener noreferrer">Kato et al., 2020</a>).
+                </p>
+            </div>
+            <div class="surface-groups">
+                <div class="surface-group">
+                    <h3>Constraints</h3>
+                    <div class="surface-map">
+                        <span class="surface-link">Low energy and pacing</span>
+                        <span class="surface-link">Travel barriers</span>
+                        <span class="surface-link">Sensory load</span>
+                        <span class="surface-link">Visibility choice</span>
+                    </div>
+                </div>
+                <div class="surface-group">
+                    <h3>Design responses</h3>
+                    <div class="surface-map">
+                        <span class="surface-link">Desktop first</span>
+                        <span class="surface-link">Saved states</span>
+                        <span class="surface-link">Short visits</span>
+                        <span class="surface-link">Optional VR</span>
+                    </div>
+                </div>
+            </div>
+            <p class="surface-rule">
+                The environment would not treat loneliness or social withdrawal. It would study
+                how shared presence, pacing, privacy, and authorship can be designed with people
+                whose access to social worlds is already mediated by home and network. Remote VR
+                methods and social VR disability work provide useful precedents, but also show
+                why recruitment, disclosure, sensory load, and participation modes need careful
+                handling
+                (<a class="inline-citation" href="https://arxiv.org/abs/2102.11207" target="_blank" rel="noopener noreferrer">Mottelson et al., 2021</a>;
+                <a class="inline-citation" href="https://arxiv.org/abs/2208.11170" target="_blank" rel="noopener noreferrer">Zhang et al., 2022</a>;
+                <a class="inline-citation" href="https://arxiv.org/abs/2408.08193" target="_blank" rel="noopener noreferrer">Gualano et al., 2024</a>).
+            </p>
+        </section>
+
+        <section class="section two-column" id="instrument">
+            <div>
+                <div class="section-heading">
+                    <p class="section-kicker">Research instrument</p>
+                    <h2>Open tooling makes the mediation contestable.</h2>
+                </div>
+                <p>
+                    Rusty is not the research question. It is the instrument that can make the
+                    mappings inspectable: what input enters the system, what it controls, who can
+                    see that contribution, which logs are kept, and how the shared body changes.
+                    In RC Trust terms, the mediation should be understandable and contestable,
+                    not merely adaptive
+                    (<a class="inline-citation" href="https://rc-trust.ai/" target="_blank" rel="noopener noreferrer">RC Trust</a>).
+                </p>
+                <p>
+                    That matters in mixed-ability work because transparency does not solve access
+                    by itself, but it gives participants and collaborators something concrete to
+                    question, tune, and trust.
+                </p>
+            </div>
+            <div class="mapping-card">
+                <div>
+                    <h3>Inputs</h3>
+                    <p>breath, motion, switches, voice, controllers, biosignals, rule edits</p>
+                </div>
+                <div>
+                    <h3>Instrument</h3>
+                    <p>schemas, diagnostics, operator controls, mapping logic, consent settings, logs</p>
+                </div>
+                <div>
+                    <h3>Shared body</h3>
+                    <p>density, rhythm, coupling, boundary softness, luminosity, repair</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="guardrails">
+            <div class="section-heading">
+                <p class="section-kicker">Boundaries</p>
+                <h2>What the system can test.</h2>
+            </div>
+            <div class="guardrail-grid">
+                <article>
+                    <h3>Swarm control</h3>
+                    <p>Human-swarm interaction is a model for influencing collective tendencies, not micromanaging every unit (<a class="inline-citation" href="https://www.ri.cmu.edu/publications/human-interaction-with-robot-swarms-a-survey/" target="_blank" rel="noopener noreferrer">Kolling et al., 2016</a>; <a class="inline-citation" href="https://users.cs.utah.edu/~dsbrown/pubs/Brown_HRI2014.pdf" target="_blank" rel="noopener noreferrer">Brown et al., 2014</a>).</p>
+                </article>
+                <article>
+                    <h3>Robotics</h3>
+                    <p>XR is the first design laboratory. Physical robot swarms add safety, localization, latency, and deployment constraints (<a class="inline-citation" href="https://www.frontiersin.org/journals/robotics-and-ai/articles/10.3389/frobt.2025.1607978/full" target="_blank" rel="noopener noreferrer">Kegeleirs and Birattari, 2025</a>).</p>
+                </article>
+                <article>
+                    <h3>AI</h3>
+                    <p>AI can suggest mappings, support turn-taking, or summarize interaction histories. It should remain transparent, reversible, and subordinate to participant-defined expression (<a class="inline-citation" href="https://arxiv.org/abs/2505.05832" target="_blank" rel="noopener noreferrer">Zhou et al., 2025</a>).</p>
+                </article>
+                <article>
+                    <h3>Bioelectricity</h3>
+                    <p>Bioelectric-inspired graph fields are optional interaction models for coupling, repair, and local-to-global patterning, not biological prediction (<a class="inline-citation" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4933718/" target="_blank" rel="noopener noreferrer">Pietak and Levin, 2016</a>; <a class="inline-citation" href="https://pubmed.ncbi.nlm.nih.gov/33826908/" target="_blank" rel="noopener noreferrer">Levin, 2021</a>).</p>
+                </article>
+                <article>
+                    <h3>Connectedness</h3>
+                    <p>The study can examine co-presence, authorship, and shared agency. It should not promise treatment for loneliness, fatigue, or social withdrawal.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section" id="follow-up">
+            <div class="section-heading">
+                <p class="section-kicker">Public work</p>
+                <h2>Systems and sources.</h2>
+                <p>
+                    These public pages and repositories show the technical and conceptual
+                    background for the shared-body work.
+                </p>
+            </div>
+            <div class="project-grid">
+                <article class="project-card">
+                    <p class="project-kicker">Current XR research system</p>
+                    <h3><a href="/projects/viscereality.html">Viscereality</a></h3>
+                    <p>Quest-based bioresponsive VR linking breath, cardiac rhythm, oscillator visuals, and operator workflow.</p>
+                    <div class="project-links">
+                        <a href="/projects/viscereality.html">Overview</a>
+                        <a href="https://viscereality.org/" target="_blank" rel="noopener noreferrer">Project site</a>
+                        <a href="https://doi.org/10.1145/3780045.3780061" target="_blank" rel="noopener noreferrer">Breathing Space paper</a>
+                    </div>
+                </article>
+                <article class="project-card">
+                    <p class="project-kicker">Open XR tooling</p>
+                    <h3><a href="/projects/rusty-xr.html">Rusty XR</a></h3>
+                    <p>Public Rust workspace for reusable XR contracts, Quest diagnostics, camera/depth labels, and companion-tool workflows.</p>
+                    <div class="project-links">
+                        <a href="/projects/rusty-xr.html">Overview</a>
+                        <a href="https://github.com/MesmerPrism/Rusty-XR" target="_blank" rel="noopener noreferrer">Source repo</a>
+                        <a href="https://mesmerprism.github.io/Rusty-XR/" target="_blank" rel="noopener noreferrer">Docs</a>
+                    </div>
+                </article>
+                <article class="project-card">
+                    <p class="project-kicker">Operator workflow</p>
+                    <h3><a href="/projects/viscereality-companion.html">Quest Companion Tools</a></h3>
+                    <p>Windows and Android utilities for installing, launching, casting, monitoring, and capturing evidence for Quest research builds.</p>
+                    <div class="project-links">
+                        <a href="/projects/viscereality-companion.html">Overview</a>
+                        <a href="https://github.com/MesmerPrism/Rusty-XR-Companion-Apps" target="_blank" rel="noopener noreferrer">Current repo</a>
+                        <a href="https://mesmerprism.github.io/Rusty-XR-Companion-Apps/" target="_blank" rel="noopener noreferrer">Docs</a>
+                    </div>
+                </article>
+                <article class="project-card">
+                    <p class="project-kicker">Embodiment vocabulary</p>
+                    <h3><a href="/projects/plasmatic-multitudes.html">Plasmatic Multitudes</a></h3>
+                    <p>A vocabulary for weakly bounded bodies: avatars, swarms, auras, luminous bodies, and shared embodiment.</p>
+                    <div class="project-links">
+                        <a href="/projects/plasmatic-multitudes.html">Overview</a>
+                        <a href="/plasmatic-multitudes/">Field guide</a>
+                        <a href="/plasmatic-multitudes/references.html">References</a>
+                    </div>
+                </article>
+                <article class="project-card">
+                    <p class="project-kicker">Biosignal routing</p>
+                    <h3><a href="/projects/polar-h10.html">Polar H10 Work</a></h3>
+                    <p>Public work on heart, RR, ECG, accelerometer, broker, LSL, Quest, Windows, and Android signal paths for XR research.</p>
+                    <div class="project-links">
+                        <a href="/projects/polar-h10.html">Overview</a>
+                        <a href="https://github.com/MesmerPrism/polar-h10-signals" target="_blank" rel="noopener noreferrer">Signal packages</a>
+                        <a href="https://github.com/MesmerPrism/Rusty-XR/blob/main/docs/BLE_LSL_POLAR_PIPELINE.md" target="_blank" rel="noopener noreferrer">Pipeline docs</a>
+                    </div>
+                </article>
+                <article class="project-card">
+                    <p class="project-kicker">Citizen-science infrastructure</p>
+                    <h3><a href="/projects/altered-xperience-project.html">Altered Xperience Project</a></h3>
+                    <p>Survey infrastructure and open-science tooling for anonymous altered-state reports and collaborator workflows.</p>
+                    <div class="project-links">
+                        <a href="/projects/altered-xperience-project.html">Overview</a>
+                        <a href="https://circe-science.com/" target="_blank" rel="noopener noreferrer">CIRCE context</a>
+                        <a href="https://mesmerprism.com/axp-mvp-survey-guide/" target="_blank" rel="noopener noreferrer">Access guide</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="section" id="references">
+            <div class="section-heading">
+                <p class="section-kicker">References</p>
+                <h2>Source anchors.</h2>
+                <p>
+                    These sources separate group context, mixed-ability access theory,
+                    plasmatic and swarm embodiment, low-demand participation, and translation
+                    horizons. The same source set is available as Markdown, text, BibTeX, and
+                    CSL JSON.
+                </p>
+            </div>
+            <div class="reference-grid">
+                <section class="detail-block">
+                    <h3>Group, job, and communication context</h3>
+                    <ul class="plain-list">
+                        <li><strong>University of Duisburg-Essen.</strong> "<a class="reference-link" href="https://www.uni-due.de/karriere/stelle-rar.php?kennziffer=171-26" target="_blank" rel="noopener noreferrer">PhD position in Technology for Mixed Ability Interaction</a>." Job advertisement 171-26 (2026).</li>
+                        <li><strong>RC Trust.</strong> "<a class="reference-link" href="https://rc-trust.ai/groups/inclusive-technology-and-collective-engagement" target="_blank" rel="noopener noreferrer">Inclusive Technology and Collective Engagement</a>." Group page led by Prof. Dr. Giulia Barbareschi.</li>
+                        <li><strong>RC Trust.</strong> "<a class="reference-link" href="https://rc-trust.ai/" target="_blank" rel="noopener noreferrer">Research Center Trustworthy Data Science and Security</a>." Center overview.</li>
+                        <li><strong>RC Trust.</strong> "<a class="reference-link" href="https://rc-trust.ai/news/news-detail/research-that-transforms-the-lived-experiences-of-people-with-disabilities-and-other-marginalised-groups-into-inclusive-technologies" target="_blank" rel="noopener noreferrer">Research that transforms the lived experiences of people with disabilities and other marginalised groups into inclusive technologies</a>." News profile (2025).</li>
+                        <li><strong>RC Trust.</strong> "<a class="reference-link" href="https://rc-trust.ai/news/news-detail/designing-technology-around-human-connection-and-inclusion" target="_blank" rel="noopener noreferrer">Designing technology around human connection and inclusion</a>." News item on DIS 2026 work involving Giulia Barbareschi.</li>
+                        <li><strong>Centre for Digital Language Inclusion.</strong> "<a class="reference-link" href="https://www.cdl-inclusion.com/" target="_blank" rel="noopener noreferrer">Speech Recognition, for everyone</a>." Public CDLI site (2026).</li>
+                    </ul>
+                </section>
+                <section class="detail-block">
+                    <h3>Mixed-ability access and distributed embodiment</h3>
+                    <ul class="plain-list">
+                        <li><strong>Wobbrock et al.</strong> "<a class="reference-link" href="https://doi.org/10.1145/1952383.1952384" target="_blank" rel="noopener noreferrer">Ability-Based Design: Concept, Principles and Examples</a>." <em>ACM Transactions on Accessible Computing</em> 3(3) (2011).</li>
+                        <li><strong>Bennett, Brady, and Branham.</strong> "<a class="reference-link" href="https://doi.org/10.1145/3234695.3236348" target="_blank" rel="noopener noreferrer">Interdependence as a Frame for Assistive Technology Research and Design</a>." <em>ASSETS</em> (2018).</li>
+                        <li><strong>Barbareschi et al.</strong> "<a class="reference-link" href="https://arxiv.org/abs/2303.13831" target="_blank" rel="noopener noreferrer">I am both here and there: Parallel Control of Multiple Robotic Avatars by Disabled Workers in a Cafe</a>." arXiv:2303.13831 (2023).</li>
+                        <li><strong>Barbareschi et al.</strong> "<a class="reference-link" href="https://doi.org/10.1145/3663548.3675621" target="_blank" rel="noopener noreferrer">Brain Body Jockey Project: Transcending Bodily Limitations in Live Performance via Human Augmentation</a>." <em>ASSETS</em> (2024).</li>
+                        <li><strong>Zhou et al.</strong> "<a class="reference-link" href="https://arxiv.org/abs/2505.05832" target="_blank" rel="noopener noreferrer">Augmented Body Communicator: Enhancing Daily Body Expression for People with Upper Limb Limitations through LLM and a Robotic Arm</a>." arXiv:2505.05832 (2025).</li>
+                    </ul>
+                </section>
+                <section class="detail-block">
+                    <h3>Plasmatic, swarm, and expressive bodies</h3>
+                    <ul class="plain-list">
+                        <li><strong>Glowacki et al.</strong> "<a class="reference-link" href="https://www.nature.com/articles/s41598-022-12637-z" target="_blank" rel="noopener noreferrer">Group VR Experiences Can Produce Ego Attenuation and Connectedness Comparable to Psychedelics</a>." <em>Scientific Reports</em> 12 (2022).</li>
+                        <li><strong>Glowacki.</strong> "<a class="reference-link" href="https://doi.org/10.3389/frvir.2023.1286950" target="_blank" rel="noopener noreferrer">VR Models of Death and Psychedelics: An Aesthetic Paradigm for Design Beyond Day-to-Day Phenomenology</a>." <em>Frontiers in Virtual Reality</em> (2024).</li>
+                        <li><strong>Ichihashi et al.</strong> "<a class="reference-link" href="https://doi.org/10.1145/3613904.3642870" target="_blank" rel="noopener noreferrer">Swarm Body: Embodied Swarm Robots</a>." <em>CHI</em> (2024).</li>
+                        <li><strong>Le Goc et al.</strong> "<a class="reference-link" href="https://doi.org/10.1145/2984511.2984547" target="_blank" rel="noopener noreferrer">Zooids: Building Blocks for Swarm User Interfaces</a>." <em>UIST</em> (2016).</li>
+                        <li><strong>Suzuki et al.</strong> "<a class="reference-link" href="https://doi.org/10.1145/3332165.3347911" target="_blank" rel="noopener noreferrer">ShapeBots: Shape-Changing Swarm Robots</a>." <em>UIST</em> (2019).</li>
+                        <li><strong>Santos and Egerstedt.</strong> "<a class="reference-link" href="https://doi.org/10.1007/s12369-020-00665-6" target="_blank" rel="noopener noreferrer">From Motions to Emotions: Can the Fundamental Emotions be Expressed in a Robot Swarm?</a>" <em>International Journal of Social Robotics</em> 13 (2021).</li>
+                        <li><strong>Kaduk et al.</strong> "<a class="reference-link" href="https://doi.org/10.1109/RO-MAN60168.2024.10731232" target="_blank" rel="noopener noreferrer">From One to Many: How Active Robot Swarm Sizes Influence Human Cognitive Processes</a>." <em>RO-MAN</em> (2024).</li>
+                    </ul>
+                </section>
+                <section class="detail-block">
+                    <h3>Human-swarm control and robotics horizon</h3>
+                    <ul class="plain-list">
+                        <li><strong>Kolling et al.</strong> "<a class="reference-link" href="https://www.ri.cmu.edu/publications/human-interaction-with-robot-swarms-a-survey/" target="_blank" rel="noopener noreferrer">Human Interaction with Robot Swarms: A Survey</a>." <em>IEEE Transactions on Human-Machine Systems</em> 46(1) (2016).</li>
+                        <li><strong>Brown, Kerman, and Goodrich.</strong> "<a class="reference-link" href="https://users.cs.utah.edu/~dsbrown/pubs/Brown_HRI2014.pdf" target="_blank" rel="noopener noreferrer">Human-Swarm Interactions Based on Managing Attractors</a>." <em>HRI</em> (2014).</li>
+                        <li><strong>Kegeleirs and Birattari.</strong> "<a class="reference-link" href="https://www.frontiersin.org/journals/robotics-and-ai/articles/10.3389/frobt.2025.1607978/full" target="_blank" rel="noopener noreferrer">Towards Applied Swarm Robotics: Current Limitations and Enablers</a>." <em>Frontiers in Robotics and AI</em> (2025).</li>
+                    </ul>
+                </section>
+                <section class="detail-block">
+                    <h3>Home-mediated participation and disclosure</h3>
+                    <ul class="plain-list">
+                        <li><strong>Kato, Kanba, and Teo.</strong> "<a class="reference-link" href="https://pubmed.ncbi.nlm.nih.gov/31922682/" target="_blank" rel="noopener noreferrer">Defining Pathological Social Withdrawal: Proposed Diagnostic Criteria for Hikikomori</a>." <em>World Psychiatry</em> 19(1) (2020).</li>
+                        <li><strong>CDC.</strong> "<a class="reference-link" href="https://www.cdc.gov/me-cfs/hcp/clinical-care/me-cfs-clinical-care-for-severely-affected-patients.html" target="_blank" rel="noopener noreferrer">ME/CFS: Clinical Care for Severely Affected Patients</a>." Accessed 2026-06-05.</li>
+                        <li><strong>NICE.</strong> "<a class="reference-link" href="https://www.nice.org.uk/guidance/ng206/chapter/Recommendations" target="_blank" rel="noopener noreferrer">Myalgic Encephalomyelitis (or Encephalopathy)/Chronic Fatigue Syndrome: Diagnosis and Management</a>." NICE guideline NG206 (2021).</li>
+                        <li><strong>Fazil et al.</strong> "<a class="reference-link" href="https://www.tandfonline.com/doi/full/10.1080/21641846.2024.2303887" target="_blank" rel="noopener noreferrer">A Systematic Scoping Review of How People with ME/CFS Use the Internet</a>." <em>Fatigue</em> (2024).</li>
+                        <li><strong>Kingod et al.</strong> "<a class="reference-link" href="https://researchprofiles.ku.dk/en/publications/online-peer-to-peer-communities-in-the-daily-lives-of-people-with" target="_blank" rel="noopener noreferrer">Online Peer-to-Peer Communities in the Daily Lives of People with Chronic Illness</a>." <em>Qualitative Health Research</em> (2017).</li>
+                        <li><strong>Mottelson et al.</strong> "<a class="reference-link" href="https://arxiv.org/abs/2102.11207" target="_blank" rel="noopener noreferrer">Remote VR Studies: A Framework for Running Virtual Reality Studies Remotely Via Participant-Owned HMDs</a>." arXiv:2102.11207 (2021).</li>
+                        <li><strong>Zhang et al.</strong> "<a class="reference-link" href="https://arxiv.org/abs/2208.11170" target="_blank" rel="noopener noreferrer">It's Just Part of Me: Understanding Avatar Diversity and Self-Presentation of People with Disabilities in Social Virtual Reality</a>." arXiv:2208.11170 (2022).</li>
+                        <li><strong>Gualano et al.</strong> "<a class="reference-link" href="https://arxiv.org/abs/2408.08193" target="_blank" rel="noopener noreferrer">I Try to Represent Myself as I Am: Self-Presentation Preferences of People with Invisible Disabilities through Embodied Social VR Avatars</a>." arXiv:2408.08193 (2024).</li>
+                    </ul>
+                </section>
+                <section class="detail-block">
+                    <h3>Bioelectric-inspired model family</h3>
+                    <ul class="plain-list">
+                        <li><strong>Pietak and Levin.</strong> "<a class="reference-link" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4933718/" target="_blank" rel="noopener noreferrer">Exploring Instructive Physiological Signaling with the Bioelectric Tissue Simulation Engine</a>." <em>Frontiers in Bioengineering and Biotechnology</em> (2016).</li>
+                        <li><strong>Levin.</strong> "<a class="reference-link" href="https://pubmed.ncbi.nlm.nih.gov/33826908/" target="_blank" rel="noopener noreferrer">Bioelectric Signaling: Reprogrammable Circuits Underlying Embryogenesis, Regeneration, and Cancer</a>." <em>Cell</em> 184(8) (2021).</li>
+                    </ul>
+                </section>
+                <section class="detail-block">
+                    <h3>Public project context</h3>
+                    <ul class="plain-list">
+                        <li><strong>Mesmer Prism.</strong> <a class="reference-link" href="/projects/viscereality.html">Viscereality</a>, <a class="reference-link" href="/projects/rusty-xr.html">Rusty XR</a>, <a class="reference-link" href="/projects/viscereality-companion.html">Quest Companion Tools</a>, <a class="reference-link" href="/projects/plasmatic-multitudes.html">Plasmatic Multitudes</a>, and <a class="reference-link" href="/projects/polar-h10.html">Polar H10 Work</a>.</li>
+                        <li><strong>GitHub.</strong> <a class="reference-link" href="https://github.com/MesmerPrism" target="_blank" rel="noopener noreferrer">MesmerPrism repositories</a>, including <a class="reference-link" href="https://github.com/MesmerPrism/Rusty-XR" target="_blank" rel="noopener noreferrer">Rusty XR</a> and <a class="reference-link" href="https://github.com/MesmerPrism/Rusty-XR-Companion-Apps" target="_blank" rel="noopener noreferrer">Rusty XR Companion Apps</a>.</li>
+                        <li><strong>CIRCE.</strong> <a class="reference-link" href="https://circe-science.com/" target="_blank" rel="noopener noreferrer">Collaboration for Interdisciplinary Research on Conscious Experience</a> and the <a class="reference-link" href="https://mesmerprism.com/axp-mvp-survey-guide/" target="_blank" rel="noopener noreferrer">AXP access guide</a>.</li>
+                    </ul>
+                </section>
+            </div>
+        </section>
+
+        <!-- BEGIN page-export-links -->
+        <section class="agent-downloads" aria-labelledby="page-downloads">
+            <h2 id="page-downloads">Downloads</h2>
+            <div class="agent-downloads__links">
+                <a href="/duisburg/index.md" download>Markdown</a>
+                <a href="/duisburg/index.txt" download>Text</a>
+                <a href="/duisburg/references.bib" download>BibTeX</a>
+                <a href="/duisburg/references.references.csl.json" download>CSL JSON</a>
+            </div>
+        </section>
+        <!-- END page-export-links -->
+    </main>
+
+    <footer class="site-footer">
+        <div class="shell footer-row">
+            <p>Shared bodies and inspectable XR systems by Till Holzapfel.</p>
+            <div class="footer-links">
+                <a href="/">Mesmer Prism</a>
+                <a href="https://github.com/MesmerPrism" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="mailto:mesmerprism@gmail.com">mesmerprism@gmail.com</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

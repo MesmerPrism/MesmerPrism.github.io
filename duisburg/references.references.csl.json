@@ -1,0 +1,966 @@
+[
+  {
+    "id": "ude2026mixedabilityjob",
+    "type": "webpage",
+    "title": "PhD Position in Technology for Mixed Ability Interaction",
+    "author": [
+      {
+        "literal": "University of Duisburg-Essen"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    },
+    "URL": "https://www.uni-due.de/karriere/stelle-rar.php?kennziffer=171-26",
+    "note": "Job advertisement 171-26. Referenced by Shared Bodies for Mixed-Ability Collaboration: https://mesmerprism.com/duisburg/"
+  },
+  {
+    "id": "rctrust2026inclusivegroup",
+    "type": "webpage",
+    "title": "Inclusive Technology and Collective Engagement",
+    "author": [
+      {
+        "literal": "RC Trust"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    },
+    "URL": "https://rc-trust.ai/groups/inclusive-technology-and-collective-engagement",
+    "note": "Group page led by Prof. Dr. Giulia Barbareschi. Referenced by Shared Bodies for Mixed-Ability Collaboration: https://mesmerprism.com/duisburg/"
+  },
+  {
+    "id": "rctrust2026center",
+    "type": "webpage",
+    "title": "Research Center Trustworthy Data Science and Security",
+    "author": [
+      {
+        "literal": "RC Trust"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    },
+    "URL": "https://rc-trust.ai/",
+    "note": "Referenced by Shared Bodies for Mixed-Ability Collaboration: https://mesmerprism.com/duisburg/"
+  },
+  {
+    "id": "rctrust2025barbareschi",
+    "type": "webpage",
+    "title": "Research that Transforms the Lived Experiences of People with Disabilities and Other Marginalised Groups into Inclusive Technologies",
+    "author": [
+      {
+        "literal": "RC Trust"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2025
+        ]
+      ]
+    },
+    "URL": "https://rc-trust.ai/news/news-detail/research-that-transforms-the-lived-experiences-of-people-with-disabilities-and-other-marginalised-groups-into-inclusive-technologies",
+    "note": "Referenced by Shared Bodies for Mixed-Ability Collaboration: https://mesmerprism.com/duisburg/"
+  },
+  {
+    "id": "rctrust2026connection",
+    "type": "webpage",
+    "title": "Designing Technology Around Human Connection and Inclusion",
+    "author": [
+      {
+        "literal": "RC Trust"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    },
+    "URL": "https://rc-trust.ai/news/news-detail/designing-technology-around-human-connection-and-inclusion",
+    "note": "Referenced by Shared Bodies for Mixed-Ability Collaboration: https://mesmerprism.com/duisburg/"
+  },
+  {
+    "id": "cdli2026home",
+    "type": "webpage",
+    "title": "Speech Recognition, for Everyone",
+    "author": [
+      {
+        "literal": "Centre for Digital Language Inclusion"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    },
+    "URL": "https://www.cdl-inclusion.com/",
+    "note": "Referenced by Shared Bodies for Mixed-Ability Collaboration: https://mesmerprism.com/duisburg/"
+  },
+  {
+    "id": "glowacki2022groupvr",
+    "type": "article-journal",
+    "title": "Group VR Experiences Can Produce Ego Attenuation and Connectedness Comparable to Psychedelics",
+    "author": [
+      {
+        "family": "Glowacki",
+        "given": "David R."
+      }
+    ],
+    "container-title": "Scientific Reports",
+    "volume": "12",
+    "issued": {
+      "date-parts": [
+        [
+          2022
+        ]
+      ]
+    },
+    "URL": "https://www.nature.com/articles/s41598-022-12637-z",
+    "note": "Referenced by Shared Bodies for Mixed-Ability Collaboration: https://mesmerprism.com/duisburg/"
+  },
+  {
+    "id": "glowacki2024vrmodels",
+    "type": "article-journal",
+    "title": "VR Models of Death and Psychedelics: An Aesthetic Paradigm for Design Beyond Day-to-Day Phenomenology",
+    "author": [
+      {
+        "family": "Glowacki",
+        "given": "David R."
+      }
+    ],
+    "container-title": "Frontiers in Virtual Reality",
+    "issued": {
+      "date-parts": [
+        [
+          2024
+        ]
+      ]
+    },
+    "DOI": "10.3389/frvir.2023.1286950",
+    "URL": "https://doi.org/10.3389/frvir.2023.1286950",
+    "note": "Referenced by Shared Bodies for Mixed-Ability Collaboration: https://mesmerprism.com/duisburg/"
+  },
+  {
+    "id": "ichihashi2024swarmbody",
+    "type": "paper-conference",
+    "title": "Swarm Body: Embodied Swarm Robots",
+    "author": [
+      {
+        "family": "Ichihashi",
+        "given": "Sosuke"
+      },
+      {
+        "family": "Kuroki",
+        "given": "So"
+      },
+      {
+        "family": "Nishimura",
+        "given": "Mai"
+      },
+      {
+        "family": "Kasaura",
+        "given": "Kazumi"
+      },
+      {
+        "family": "Hiraki",
+        "given": "Takefumi"
+      },
+      {
+        "family": "Tanaka",
+        "given": "Kazutoshi"
+      },
+      {
+        "family": "Yoshida",
+        "given": "Shigeo"
+      }
+    ],
+    "container-title": "CHI Conference on Human Factors in Computing Systems",
+    "issued": {
+      "date-parts": [
+        [
+          2024
+        ]
+      ]
+    },
+    "DOI": "10.1145/3613904.3642870",
+    "URL": "https://doi.org/10.1145/3613904.3642870",
+    "note": "Referenced by Shared Bodies for Mixed-Ability Collaboration: https://mesmerprism.com/duisburg/"
+  },
+  {
+    "id": "legoc2016zooids",
+    "type": "paper-conference",
+    "title": "Zooids: Building Blocks for Swarm User Interfaces",
+    "author": [
+      {
+        "family": "Le Goc",
+        "given": "Mathieu"
+      },
+      {
+        "family": "Kim",
+        "given": "Lawrence H."
+      },
+      {
+        "family": "Parsaei",
+        "given": "Ali"
+      },
+      {
+        "family": "Fekete",
+        "given": "Jean-Daniel"
+      },
+      {
+        "family": "Dragicevic",
+        "given": "Pierre"
+      },
+      {
+        "family": "Follmer",
+        "given": "Sean"
+      }
+    ],
+    "container-title": "UIST",
+    "issued": {
+      "date-parts": [
+        [
+          2016
+        ]
+      ]
+    },
+    "DOI": "10.1145/2984511.2984547",
+    "URL": "https://doi.org/10.1145/2984511.2984547",
+    "note": "Referenced by Shared Bodies for Mixed-Ability Collaboration: https://mesmerprism.com/duisburg/"
+  },
+  {
+    "id": "suzuki2019shapebots",
+    "type": "paper-conference",
+    "title": "ShapeBots: Shape-Changing Swarm Robots",
+    "author": [
+      {
+        "family": "Suzuki",
+        "given": "Ryo"
+      },
+      {
+        "family": "Zheng",
+        "given": "Clement"
+      },
+      {
+        "family": "Kakehi",
+        "given": "Yasuaki"
+      },
+      {
+        "family": "Yeh",
+        "given": "Tom"
+      },
+      {
+        "family": "Do",
+        "given": "Ellen Yi-Luen"
+      },
+      {
+        "family": "Gross",
+        "given": "Mark D."
+      },
+      {
+        "family": "Leithinger",
+        "given": "Daniel"
+      }
+    ],
+    "container-title": "UIST",
+    "issued": {
+      "date-parts": [
+        [
+          2019
+        ]
+      ]
+    },
+    "DOI": "10.1145/3332165.3347911",
+    "URL": "https://doi.org/10.1145/3332165.3347911",
+    "note": "Referenced by Shared Bodies for Mixed-Ability Collaboration: https://mesmerprism.com/duisburg/"
+  },
+  {
+    "id": "santos2021motions",
+    "type": "article-journal",
+    "title": "From Motions to Emotions: Can the Fundamental Emotions be Expressed in a Robot Swarm?",
+    "author": [
+      {
+        "family": "Santos",
+        "given": "Maria"
+      },
+      {
+        "family": "Egerstedt",
+        "given": "Magnus"
+      }
+    ],
+    "container-title": "International Journal of Social Robotics",
+    "volume": "13",
+    "page": "751-764",
+    "issued": {
+      "date-parts": [
+        [
+          2021
+        ]
+      ]
+    },
+    "DOI": "10.1007/s12369-020-00665-6",
+    "URL": "https://doi.org/10.1007/s12369-020-00665-6",
+    "note": "Referenced by Shared Bodies for Mixed-Ability Collaboration: https://mesmerprism.com/duisburg/"
+  },
+  {
+    "id": "kaduk2024fromone",
+    "type": "paper-conference",
+    "title": "From One to Many: How Active Robot Swarm Sizes Influence Human Cognitive Processes",
+    "author": [
+      {
+        "family": "Kaduk",
+        "given": "Julian"
+      },
+      {
+        "family": "Cavdan",
+        "given": "Muge"
+      },
+      {
+        "family": "Drewing",
+        "given": "Knut"
+      },
+      {
+        "family": "Hamann",
+        "given": "Heiko"
+      }
+    ],
+    "container-title": "RO-MAN",
+    "issued": {
+      "date-parts": [
+        [
+          2024
+        ]
+      ]
+    },
+    "DOI": "10.1109/RO-MAN60168.2024.10731232",
+    "URL": "https://doi.org/10.1109/RO-MAN60168.2024.10731232",
+    "note": "Referenced by Shared Bodies for Mixed-Ability Collaboration: https://mesmerprism.com/duisburg/"
+  },
+  {
+    "id": "wobbrock2011ability",
+    "type": "article-journal",
+    "title": "Ability-Based Design: Concept, Principles and Examples",
+    "author": [
+      {
+        "family": "Wobbrock",
+        "given": "Jacob O."
+      },
+      {
+        "family": "Kane",
+        "given": "Shaun K."
+      },
+      {
+        "family": "Gajos",
+        "given": "Krzysztof Z."
+      },
+      {
+        "family": "Harada",
+        "given": "Susumu"
+      },
+      {
+        "family": "Froehlich",
+        "given": "Jon"
+      }
+    ],
+    "container-title": "ACM Transactions on Accessible Computing",
+    "volume": "3",
+    "issue": "3",
+    "issued": {
+      "date-parts": [
+        [
+          2011
+        ]
+      ]
+    },
+    "DOI": "10.1145/1952383.1952384",
+    "URL": "https://doi.org/10.1145/1952383.1952384",
+    "note": "Referenced by Shared Bodies for Mixed-Ability Collaboration: https://mesmerprism.com/duisburg/"
+  },
+  {
+    "id": "bennett2018interdependence",
+    "type": "paper-conference",
+    "title": "Interdependence as a Frame for Assistive Technology Research and Design",
+    "author": [
+      {
+        "family": "Bennett",
+        "given": "Cynthia L."
+      },
+      {
+        "family": "Brady",
+        "given": "Erin"
+      },
+      {
+        "family": "Branham",
+        "given": "Stacy M."
+      }
+    ],
+    "container-title": "ASSETS",
+    "issued": {
+      "date-parts": [
+        [
+          2018
+        ]
+      ]
+    },
+    "DOI": "10.1145/3234695.3236348",
+    "URL": "https://doi.org/10.1145/3234695.3236348",
+    "note": "Referenced by Shared Bodies for Mixed-Ability Collaboration: https://mesmerprism.com/duisburg/"
+  },
+  {
+    "id": "barbareschi2023parallel",
+    "type": "article",
+    "title": "I Am Both Here and There: Parallel Control of Multiple Robotic Avatars by Disabled Workers in a Cafe",
+    "author": [
+      {
+        "family": "Barbareschi",
+        "given": "Giulia"
+      },
+      {
+        "family": "Kawaguchi",
+        "given": "Midori"
+      },
+      {
+        "family": "Kato",
+        "given": "Hiroki"
+      },
+      {
+        "family": "Nagahiro",
+        "given": "Masato"
+      },
+      {
+        "family": "Takehuchi",
+        "given": "Kazuaki"
+      },
+      {
+        "family": "Shiiba",
+        "given": "Yoshifumi"
+      },
+      {
+        "family": "Kasahara",
+        "given": "Shunichi"
+      },
+      {
+        "family": "Kunze",
+        "given": "Kai"
+      },
+      {
+        "family": "Minamizawa",
+        "given": "Kouta"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2023
+        ]
+      ]
+    },
+    "URL": "https://arxiv.org/abs/2303.13831",
+    "note": "arXiv:2303.13831. Referenced by Shared Bodies for Mixed-Ability Collaboration: https://mesmerprism.com/duisburg/"
+  },
+  {
+    "id": "barbareschi2024brainbodyjockey",
+    "type": "paper-conference",
+    "title": "Brain Body Jockey Project: Transcending Bodily Limitations in Live Performance via Human Augmentation",
+    "author": [
+      {
+        "family": "Barbareschi",
+        "given": "Giulia"
+      },
+      {
+        "family": "Zhou",
+        "given": "Songchen"
+      },
+      {
+        "family": "Ando",
+        "given": "Ryoichi"
+      },
+      {
+        "family": "Kawaguchi",
+        "given": "Midori"
+      },
+      {
+        "family": "Armstrong",
+        "given": "Mark"
+      },
+      {
+        "family": "Ogino",
+        "given": "Mikito"
+      },
+      {
+        "family": "Aoiki",
+        "given": "Shunsuke"
+      },
+      {
+        "family": "Ohta",
+        "given": "Eisaku"
+      },
+      {
+        "family": "Taguchi",
+        "given": "Harunobu"
+      },
+      {
+        "family": "Kamiyama",
+        "given": "Youichi"
+      },
+      {
+        "family": "Muto",
+        "given": "Masatane"
+      },
+      {
+        "family": "Yoshifuji",
+        "given": "Kentaro"
+      },
+      {
+        "family": "Minamizawa",
+        "given": "Kouta"
+      }
+    ],
+    "container-title": "ASSETS 2024 - Proceedings of the 26th International ACM SIGACCESS Conference on Computers and Accessibility",
+    "issued": {
+      "date-parts": [
+        [
+          2024
+        ]
+      ]
+    },
+    "DOI": "10.1145/3663548.3675621",
+    "URL": "https://doi.org/10.1145/3663548.3675621",
+    "note": "Referenced by Shared Bodies for Mixed-Ability Collaboration: https://mesmerprism.com/duisburg/"
+  },
+  {
+    "id": "zhou2025augmentedbodycommunicator",
+    "type": "article",
+    "title": "Augmented Body Communicator: Enhancing Daily Body Expression for People with Upper Limb Limitations through LLM and a Robotic Arm",
+    "author": [
+      {
+        "family": "Zhou",
+        "given": "Songchen"
+      },
+      {
+        "family": "Armstrong",
+        "given": "Mark"
+      },
+      {
+        "family": "Barbareschi",
+        "given": "Giulia"
+      },
+      {
+        "family": "Ajioka",
+        "given": "Toshihiro"
+      },
+      {
+        "family": "Hu",
+        "given": "Zheng"
+      },
+      {
+        "family": "Ando",
+        "given": "Ryoichi"
+      },
+      {
+        "family": "Yoshifuji",
+        "given": "Kentaro"
+      },
+      {
+        "family": "Muto",
+        "given": "Masatane"
+      },
+      {
+        "family": "Minamizawa",
+        "given": "Kouta"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2025
+        ]
+      ]
+    },
+    "DOI": "10.48550/arXiv.2505.05832",
+    "URL": "https://arxiv.org/abs/2505.05832",
+    "note": "arXiv:2505.05832. Referenced by Shared Bodies for Mixed-Ability Collaboration: https://mesmerprism.com/duisburg/"
+  },
+  {
+    "id": "kolling2016human",
+    "type": "article-journal",
+    "title": "Human Interaction with Robot Swarms: A Survey",
+    "author": [
+      {
+        "family": "Kolling",
+        "given": "Andreas"
+      },
+      {
+        "family": "Walker",
+        "given": "Phillip"
+      },
+      {
+        "family": "Chakraborty",
+        "given": "Nilanjan"
+      },
+      {
+        "family": "Sycara",
+        "given": "Katia"
+      },
+      {
+        "family": "Lewis",
+        "given": "Michael"
+      }
+    ],
+    "container-title": "IEEE Transactions on Human-Machine Systems",
+    "volume": "46",
+    "issue": "1",
+    "issued": {
+      "date-parts": [
+        [
+          2016
+        ]
+      ]
+    },
+    "URL": "https://www.ri.cmu.edu/publications/human-interaction-with-robot-swarms-a-survey/",
+    "note": "Referenced by Shared Bodies for Mixed-Ability Collaboration: https://mesmerprism.com/duisburg/"
+  },
+  {
+    "id": "brown2014attractors",
+    "type": "paper-conference",
+    "title": "Human-Swarm Interactions Based on Managing Attractors",
+    "author": [
+      {
+        "family": "Brown",
+        "given": "Daniel S."
+      },
+      {
+        "family": "Kerman",
+        "given": "Sarah C."
+      },
+      {
+        "family": "Goodrich",
+        "given": "Michael A."
+      }
+    ],
+    "container-title": "HRI",
+    "issued": {
+      "date-parts": [
+        [
+          2014
+        ]
+      ]
+    },
+    "URL": "https://users.cs.utah.edu/~dsbrown/pubs/Brown_HRI2014.pdf",
+    "note": "Referenced by Shared Bodies for Mixed-Ability Collaboration: https://mesmerprism.com/duisburg/"
+  },
+  {
+    "id": "kegeleirs2025applied",
+    "type": "article-journal",
+    "title": "Towards Applied Swarm Robotics: Current Limitations and Enablers",
+    "author": [
+      {
+        "family": "Kegeleirs",
+        "given": "Mathias"
+      },
+      {
+        "family": "Birattari",
+        "given": "Mauro"
+      }
+    ],
+    "container-title": "Frontiers in Robotics and AI",
+    "issued": {
+      "date-parts": [
+        [
+          2025
+        ]
+      ]
+    },
+    "URL": "https://www.frontiersin.org/journals/robotics-and-ai/articles/10.3389/frobt.2025.1607978/full",
+    "note": "Referenced by Shared Bodies for Mixed-Ability Collaboration: https://mesmerprism.com/duisburg/"
+  },
+  {
+    "id": "kato2020hikikomori",
+    "type": "article-journal",
+    "title": "Defining Pathological Social Withdrawal: Proposed Diagnostic Criteria for Hikikomori",
+    "author": [
+      {
+        "family": "Kato",
+        "given": "Takahiro A."
+      },
+      {
+        "family": "Kanba",
+        "given": "Shigenobu"
+      },
+      {
+        "family": "Teo",
+        "given": "Alan R."
+      }
+    ],
+    "container-title": "World Psychiatry",
+    "volume": "19",
+    "issue": "1",
+    "issued": {
+      "date-parts": [
+        [
+          2020
+        ]
+      ]
+    },
+    "URL": "https://pubmed.ncbi.nlm.nih.gov/31922682/",
+    "note": "Referenced by Shared Bodies for Mixed-Ability Collaboration: https://mesmerprism.com/duisburg/"
+  },
+  {
+    "id": "cdc2024mecfs",
+    "type": "webpage",
+    "title": "ME/CFS: Clinical Care for Severely Affected Patients",
+    "author": [
+      {
+        "literal": "Centers for Disease Control and Prevention"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2024
+        ]
+      ]
+    },
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          5
+        ]
+      ]
+    },
+    "URL": "https://www.cdc.gov/me-cfs/hcp/clinical-care/me-cfs-clinical-care-for-severely-affected-patients.html",
+    "note": "Referenced by Shared Bodies for Mixed-Ability Collaboration: https://mesmerprism.com/duisburg/"
+  },
+  {
+    "id": "nice2021mecfs",
+    "type": "report",
+    "title": "Myalgic Encephalomyelitis (or Encephalopathy)/Chronic Fatigue Syndrome: Diagnosis and Management",
+    "author": [
+      {
+        "literal": "National Institute for Health and Care Excellence"
+      }
+    ],
+    "number": "NG206",
+    "issued": {
+      "date-parts": [
+        [
+          2021
+        ]
+      ]
+    },
+    "URL": "https://www.nice.org.uk/guidance/ng206/chapter/Recommendations",
+    "note": "Referenced by Shared Bodies for Mixed-Ability Collaboration: https://mesmerprism.com/duisburg/"
+  },
+  {
+    "id": "fazil2024mecfsinternet",
+    "type": "article-journal",
+    "title": "A Systematic Scoping Review of How People with ME/CFS Use the Internet",
+    "author": [
+      {
+        "family": "Fazil",
+        "given": "Qulsom"
+      }
+    ],
+    "container-title": "Fatigue",
+    "issued": {
+      "date-parts": [
+        [
+          2024
+        ]
+      ]
+    },
+    "URL": "https://www.tandfonline.com/doi/full/10.1080/21641846.2024.2303887",
+    "note": "Referenced by Shared Bodies for Mixed-Ability Collaboration: https://mesmerprism.com/duisburg/"
+  },
+  {
+    "id": "kingod2017online",
+    "type": "article-journal",
+    "title": "Online Peer-to-Peer Communities in the Daily Lives of People with Chronic Illness",
+    "author": [
+      {
+        "family": "Kingod",
+        "given": "Natasja"
+      },
+      {
+        "family": "Cleal",
+        "given": "Bryan"
+      },
+      {
+        "family": "Wahlberg",
+        "given": "Ayo"
+      },
+      {
+        "family": "Husted",
+        "given": "Gry"
+      }
+    ],
+    "container-title": "Qualitative Health Research",
+    "issued": {
+      "date-parts": [
+        [
+          2017
+        ]
+      ]
+    },
+    "URL": "https://researchprofiles.ku.dk/en/publications/online-peer-to-peer-communities-in-the-daily-lives-of-people-with",
+    "note": "Referenced by Shared Bodies for Mixed-Ability Collaboration: https://mesmerprism.com/duisburg/"
+  },
+  {
+    "id": "mottelson2021remotevr",
+    "type": "article",
+    "title": "Remote VR Studies: A Framework for Running Virtual Reality Studies Remotely Via Participant-Owned HMDs",
+    "author": [
+      {
+        "family": "Mottelson",
+        "given": "Aske"
+      },
+      {
+        "family": "Petersen",
+        "given": "Gustav B."
+      },
+      {
+        "family": "Lilija",
+        "given": "Kristian"
+      },
+      {
+        "family": "Makransky",
+        "given": "Guido"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2021
+        ]
+      ]
+    },
+    "URL": "https://arxiv.org/abs/2102.11207",
+    "note": "arXiv:2102.11207. Referenced by Shared Bodies for Mixed-Ability Collaboration: https://mesmerprism.com/duisburg/"
+  },
+  {
+    "id": "zhang2022avatar",
+    "type": "article",
+    "title": "It's Just Part of Me: Understanding Avatar Diversity and Self-Presentation of People with Disabilities in Social Virtual Reality",
+    "author": [
+      {
+        "family": "Zhang",
+        "given": "Lei"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2022
+        ]
+      ]
+    },
+    "URL": "https://arxiv.org/abs/2208.11170",
+    "note": "arXiv:2208.11170. Referenced by Shared Bodies for Mixed-Ability Collaboration: https://mesmerprism.com/duisburg/"
+  },
+  {
+    "id": "gualano2024invisible",
+    "type": "article",
+    "title": "I Try to Represent Myself as I Am: Self-Presentation Preferences of People with Invisible Disabilities through Embodied Social VR Avatars",
+    "author": [
+      {
+        "family": "Gualano",
+        "given": "Gloria"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2024
+        ]
+      ]
+    },
+    "URL": "https://arxiv.org/abs/2408.08193",
+    "note": "arXiv:2408.08193. Referenced by Shared Bodies for Mixed-Ability Collaboration: https://mesmerprism.com/duisburg/"
+  },
+  {
+    "id": "pietak2016betse",
+    "type": "article-journal",
+    "title": "Exploring Instructive Physiological Signaling with the Bioelectric Tissue Simulation Engine",
+    "author": [
+      {
+        "family": "Pietak",
+        "given": "Alexis"
+      },
+      {
+        "family": "Levin",
+        "given": "Michael"
+      }
+    ],
+    "container-title": "Frontiers in Bioengineering and Biotechnology",
+    "issued": {
+      "date-parts": [
+        [
+          2016
+        ]
+      ]
+    },
+    "URL": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4933718/",
+    "note": "Referenced by Shared Bodies for Mixed-Ability Collaboration: https://mesmerprism.com/duisburg/"
+  },
+  {
+    "id": "levin2021bioelectric",
+    "type": "article-journal",
+    "title": "Bioelectric Signaling: Reprogrammable Circuits Underlying Embryogenesis, Regeneration, and Cancer",
+    "author": [
+      {
+        "family": "Levin",
+        "given": "Michael"
+      }
+    ],
+    "container-title": "Cell",
+    "volume": "184",
+    "issue": "8",
+    "issued": {
+      "date-parts": [
+        [
+          2021
+        ]
+      ]
+    },
+    "URL": "https://pubmed.ncbi.nlm.nih.gov/33826908/",
+    "note": "Referenced by Shared Bodies for Mixed-Ability Collaboration: https://mesmerprism.com/duisburg/"
+  },
+  {
+    "id": "mesmerprism2026duisburgcontext",
+    "type": "webpage",
+    "title": "Public Project Context for Shared Bodies and Inspectable XR Systems",
+    "author": [
+      {
+        "literal": "Mesmer Prism"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    },
+    "URL": "https://mesmerprism.com/",
+    "note": "Includes public pages for Viscereality, Rusty XR, Quest Companion Tools, Plasmatic Multitudes, Polar H10 Work, and Altered Xperience Project. Referenced by Shared Bodies for Mixed-Ability Collaboration: https://mesmerprism.com/duisburg/"
+  }
+]

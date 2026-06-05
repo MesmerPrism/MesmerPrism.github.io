@@ -1,0 +1,107 @@
+Shared Bodies for Mixed-Ability Collaboration
+
+Source: https://mesmerprism.com/duisburg/
+Canonical HTML: https://mesmerprism.com/duisburg/
+Markdown: https://mesmerprism.com/duisburg/index.md
+Plain text: https://mesmerprism.com/duisburg/index.txt
+BibTeX references: https://mesmerprism.com/duisburg/references.bib
+CSL JSON references: https://mesmerprism.com/duisburg/references.references.csl.json
+
+Shared bodies, inspectable systems
+
+I come to this from cognitive science and from building XR systems where
+perception, agency, biosignals, and social presence have to work in real
+prototypes. In Technology for Mixed Ability Interaction, that becomes a group
+question: how can disabled and non-disabled collaborators co-create shared
+agency through mutable XR bodies while privacy, pacing, authorship, and repair
+remain negotiable?
+
+Profile
+
+I am an XR developer and researcher with an M.Sc. in Cognitive Science from the
+University of Osnabrueck. My work has moved from semi-corporeal avatar systems
+and immersive cyberdelics into bioresponsive VR, shared group experiences, and
+open XR tooling. Close creative work across different sensory loads, working
+tempos, and access needs has made pacing, trust, communication, and repair feel
+like design conditions, not afterthoughts.
+
+The fit is concrete:
+- Cognitive science into embodied XR: my Master's thesis developed mobile VR
+  semi-corporeal avatars around agency, social presence, weakly bounded bodies,
+  gesture, and performance constraints.
+- Research systems that run: Viscereality turns breath, cardiac rhythm, coupled
+  oscillators, and Quest workflows into a working bioresponsive VR system.
+- Open instruments: Rusty XR, companion apps, and Polar H10 tooling give the
+  project a base for input routing, diagnostics, workshop operation, and
+  inspectable mappings.
+- Mixed-ability direction: shared bodies become a way to study negotiated
+  access, chosen legibility, and mutual engagement.
+
+Thesis
+
+Access is a relation inside the group. Ability-based design argues that
+interfaces should adapt to what people can and want to do; interdependence work
+adds that access is often negotiated between people, tools, environments, and
+care relations (Wobbrock et al. 2011; Bennett et al. 2018).
+
+Core question: How can mixed-ability collaborators co-create a shared body that
+is legible enough to coordinate, expressive enough to support mutual engagement,
+and inspectable enough to trust?
+
+Inclusive technology and collective engagement:
+The advertised research direction asks for technologies that support mutual
+engagement between people with and without disabilities across play, creative
+expression, work, XR, robotics, IoT, and AI-supported interaction. The group
+frames that work through Accessibility, HCI, Social Development, direct
+collaboration with marginalized people, and co-design.
+
+Research arc:
+
+The arc starts with the path that brought me here, then turns that path into a
+concrete mixed-ability project. The Duisburg contribution is a shared-body
+research program for collective engagement in mixed-ability groups.
+- 0:00-0:55: Person to question.
+- 0:55-1:55: Embodiment as interface.
+- 1:55-3:20: Systems already built.
+- 3:20-5:00: Group bridge.
+- 5:00-6:15: Shared swarm bodies.
+- 6:15-7:20: Staged method.
+- 7:20-8:20: One starting context.
+- 8:20-9:20: Inspectable instrument.
+- 9:20-10:00: Contribution.
+
+Research route:
+Start with creative exploration before task pressure. Luminous and weakly
+bounded VR bodies can support self-other boundary softening and connectedness,
+while swarm-body work shows that size, density, distribution, and correspondence
+change embodiment and agency.
+
+Home-mediated participation:
+ME/CFS, Long COVID, severe fatigue, and prolonged social withdrawal are not the
+same thing. They do, however, make ordinary co-present participation difficult
+in ways that matter for interaction design: pacing, exertion risk, travel,
+sensory load, identity exposure, and the need for asynchronous contribution.
+
+Research instrument:
+Rusty is not the research question. It is the instrument that can make the
+mappings inspectable: what input enters the system, what it controls, who can see
+that contribution, which logs are kept, and how the shared body changes.
+
+Public work:
+- Viscereality: https://mesmerprism.com/projects/viscereality.html
+- Rusty XR: https://mesmerprism.com/projects/rusty-xr.html
+- Rusty XR source: https://github.com/MesmerPrism/Rusty-XR
+- Quest Companion Tools: https://mesmerprism.com/projects/viscereality-companion.html
+- Rusty XR Companion Apps: https://github.com/MesmerPrism/Rusty-XR-Companion-Apps
+- Plasmatic Multitudes: https://mesmerprism.com/projects/plasmatic-multitudes.html
+- Polar H10 Work: https://mesmerprism.com/projects/polar-h10.html
+- Altered Xperience Project: https://mesmerprism.com/projects/altered-xperience-project.html
+- CIRCE context: https://circe-science.com/
+- AXP access guide: https://mesmerprism.com/axp-mvp-survey-guide/
+- Mesmer Prism GitHub: https://github.com/MesmerPrism
+
+References:
+The same source set is available as BibTeX and CSL JSON citation data. Key group
+context sources include the UDE job advert, the Inclusive Technology and
+Collective Engagement group page, RC Trust, CDLI, Barbareschi et al.'s robotic
+avatar work, Brain Body Jockey, and Augmented Body Communicator.
