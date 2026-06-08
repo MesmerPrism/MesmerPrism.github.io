@@ -1,5 +1,5 @@
 {
-  "generated": "2026-05-26",
+  "generated": "2026-06-08",
   "site": "https://mesmerprism.com",
   "pages": [
     {
@@ -255,6 +255,18 @@
       "references": 62
     },
     {
+      "title": "Rusty Morphospace",
+      "description": "Rusty Morphospace is a modular Rust platform frame for computational matter, spatial relations, runtime authority, and inspectable rendering surfaces.",
+      "path": "projects/rusty-morphospace.html",
+      "url": "https://mesmerprism.com/projects/rusty-morphospace.html",
+      "group": "Project pages",
+      "markdown": "https://mesmerprism.com/projects/rusty-morphospace.md",
+      "text": "https://mesmerprism.com/projects/rusty-morphospace.txt",
+      "bibtex": "https://mesmerprism.com/projects/rusty-morphospace.bib",
+      "cslJson": "https://mesmerprism.com/projects/rusty-morphospace.references.csl.json",
+      "references": 1
+    },
+    {
       "title": "Rusty XR",
       "description": "Rusty XR is a public Rust workspace for reusable XR contracts, Quest diagnostics, camera/depth labels, broker models, public examples, and companion-tool workflows.",
       "path": "projects/rusty-xr.html",
@@ -373,6 +385,18 @@
       "bibtex": "https://mesmerprism.com/Strobotorch/sources/index.bib",
       "cslJson": "https://mesmerprism.com/Strobotorch/sources/index.references.csl.json",
       "references": 44
+    },
+    {
+      "title": "Video carousel demo",
+      "description": "",
+      "path": "tmp/video-carousel-demo.html",
+      "url": "https://mesmerprism.com/tmp/video-carousel-demo.html",
+      "group": "Site pages",
+      "markdown": "https://mesmerprism.com/tmp/video-carousel-demo.md",
+      "text": "https://mesmerprism.com/tmp/video-carousel-demo.txt",
+      "bibtex": null,
+      "cslJson": null,
+      "references": 0
     }
   ]
 }

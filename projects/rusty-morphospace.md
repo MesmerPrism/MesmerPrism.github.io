@@ -1,0 +1,168 @@
+# Rusty Morphospace
+
+Source: https://mesmerprism.com/projects/rusty-morphospace.html
+Canonical HTML: https://mesmerprism.com/projects/rusty-morphospace.html
+Generated: 2026-06-08
+Description: Rusty Morphospace is a modular Rust platform frame for computational matter, spatial relations, runtime authority, and inspectable rendering surfaces.
+Markdown: https://mesmerprism.com/projects/rusty-morphospace.md
+Plain text: https://mesmerprism.com/projects/rusty-morphospace.txt
+BibTeX references: https://mesmerprism.com/projects/rusty-morphospace.bib
+CSL JSON references: https://mesmerprism.com/projects/rusty-morphospace.references.csl.json
+
+---
+
+Computational morphology platform
+
+# Rusty Morphospace
+
+ Rusty Morphospace is the umbrella frame for a modular Rust platform that
+ treats form as more than geometry. A form can be simulated matter, a spatial
+ relation, a feedback circuit, a renderer-neutral view, an operator workflow,
+ or a headset-hosted environment. The project names the space where those
+ pieces can be built without collapsing them into one XR app.
+
+ [Module map](https://mesmerprism.com/projects/rusty-morphospace.html#module-map)
+ [Why Morphospace](https://mesmerprism.com/projects/rusty-morphospace.html#why)
+ [Rusty XR boundary](https://mesmerprism.com/projects/rusty-morphospace.html#boundary)
+ [Rusty XR](https://mesmerprism.com/projects/rusty-xr.html)
+
+ Purpose
+
+## Computational form as a working medium
+
+ The platform is being organized so responsibilities stay separate while still
+ composing into one toolchain. Computational substance, reference spaces,
+ command flow, inspection, authoring, and headset behavior need different
+ ownership boundaries. When those boundaries are blurred, every prototype
+ starts carrying platform policy, rendering assumptions, runtime authority, and
+ study-specific names in the same layer.
+
+ Morphospace is meant to make that separation visible. It provides a way to
+ define computational material, place it in a relation field, route state and
+ feedback through explicit authority surfaces, inspect it through
+ renderer-neutral optics, and host it in desktop, browser, or headset contexts.
+
+ The point is not to rename every existing Rusty XR surface. Rusty XR remains
+ useful history, compatibility, and public Quest evidence. Rusty Morphospace is
+ the cleaner umbrella for new computational-form work.
+
+### Current frame
+
+- Umbrella: Rusty Morphospace
+
+- Core relation layer: Rusty Lattice
+
+- Runtime authority: Rusty Manifold
+
+- Visual inspection: Rusty Optics
+
+- Computational substance: Rusty Matter
+
+### Useful for
+
+- Keeping simulation truth separate from renderer and platform adapters
+
+- Designing environments where tracked relations are first-class data
+
+- Routing commands, streams, leases, clocks, and diagnostics explicitly
+
+- Making visual state inspectable without tying it to one render backend
+
+### Connected work
+
+- [Rusty XR](https://mesmerprism.com/projects/rusty-xr.html) remains the public compatibility and Quest reference surface
+
+- [Quest Companion Tools](https://mesmerprism.com/projects/viscereality-companion.html) show why operator-side contracts matter
+
+- [Polar H10 Work](https://mesmerprism.com/projects/polar-h10.html) shows the same boundary discipline applied to biosignal streams
+
+ Module map
+
+## Ownership boundaries
+
+ Each name marks a responsibility boundary. The names are useful only when
+ they keep implementation layers from inheriting each other's authority.
+
+ Computational substance
+
+### Rusty Matter
+
+ Geometry, fields, particles, dynamics, SDF/TSDF data, sampling,
+ deterministic fixtures, and simulation state.
+
+ Situated relation
+
+### Rusty Lattice
+
+ Reference spaces, transforms, tracked poses, view sets, spatial roles,
+ calibration, confidence, validity, and frame-time binding.
+
+ Runtime authority
+
+### Rusty Manifold
+
+ Commands, sessions, streams, ports, valves, leases, gauges, clocks,
+ transports, audit, and control surfaces.
+
+ Appearance and inspection
+
+### Rusty Optics
+
+ Renderer-neutral views, cameras, projections, lenses, material
+ descriptors, visual payloads, and debug visualization contracts.
+
+ Authoring and operation
+
+### Studio, GUI, Quest, Hostess
+
+ Authoring, graphical operation, headset platform behavior, installation,
+ diagnostics, deployment, and operator workflows around the core layers.
+
+ Why the name
+
+## A space of possible forms
+
+ A morphospace is a space of possible forms. In Rusty Morphospace, those forms
+ are digital, dynamic, and situated: not only meshes or surfaces, but relations,
+ regulatory circuits, views, workflows, and platform constraints that change
+ what a system can become.
+
+ That makes the name practical rather than only conceptual. It describes the
+ engineering surface where material state, relation state, authority state, and
+ visual state can vary independently while remaining connected enough to build
+ tools and environments.
+
+### Architecture sentence
+
+ Matter is the morphology of substance, Lattice is the morphology of relation,
+ Manifold is the morphology of regulation, and Optics is the morphology of
+ appearance.
+
+ The overlap is intentional. Data and its environment relationships are the
+ engineering substrate, not incidental metadata around an app.
+
+ Boundary
+
+## Rusty XR stays useful, but narrower
+
+ Rusty XR remains compatibility history and public Quest evidence. It is not
+ the authority model for every new Morphospace layer.
+
+### Rusty XR remains stable
+
+ Existing public Rusty XR repositories can continue to document Quest
+ experiments, public examples, passthrough notes, companion tooling, and
+ historical evidence without becoming the umbrella for new architecture.
+
+### Generic XR-shaped work moves to Lattice
+
+ When the work is really about reference spaces, poses, eye views, tracked
+ input roles, calibration, or frame-state validity, the new name is Rusty
+ Lattice. OpenXR, Makepad, and Quest remain adapter or platform names at
+ the edge.
+
+### Licensing follows the boundary
+
+ Morphospace-owned source code is AGPL-first. Legacy Rusty XR compatibility
+ repositories and the Makepad-derived fork stay on their existing MIT lane
+ unless a separate migration is approved.

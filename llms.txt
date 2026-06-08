@@ -38,6 +38,7 @@ Use the Markdown alternates for compact reading. Use the BibTeX or CSL JSON alte
 - [Plasmatic Multitudes - Weakly Bounded Embodiment and Semi-Corporeal Avatar Design](https://mesmerprism.com/projects/plasmatic-multitudes.md): A public overview of weakly bounded bodies: avatars, swarms, auras, particle forms, and luminous bodies that soften while remaining coherent enough for embodiment, relation, and cautious research translation.
 - [Polar H10 Work](https://mesmerprism.com/projects/polar-h10.md): Public overview of Mesmer Prism's Polar H10 work across minimal signal packages, Rusty XR, Quest broker streams, Windows capture, Android diagnostics, Unity Quest integration, and Viscereality research tooling.
 - [Prophantasia](https://mesmerprism.com/projects/prophantasia.md): Prophantasia covers projected imagery, aphantasia, source judgment, practice ecology, and neighboring phenomena such as imposition, flicker, DeepDream, visual snow, and HPPD.
+- [Rusty Morphospace](https://mesmerprism.com/projects/rusty-morphospace.md): Rusty Morphospace is a modular Rust platform frame for computational matter, spatial relations, runtime authority, and inspectable rendering surfaces.
 - [Rusty XR](https://mesmerprism.com/projects/rusty-xr.md): Rusty XR is a public Rust workspace for reusable XR contracts, Quest diagnostics, camera/depth labels, broker models, public examples, and companion-tool workflows.
 - [SANE](https://mesmerprism.com/projects/sane.md): SANE is a proposed framework for reading coupled changes across somaesthetic practice, anthropotechnical mediation, noetic meaning, and emergent systems.
 - [Scientific Surrealism](https://mesmerprism.com/projects/scientific-surrealism.md): Scientific surrealism studies dream bureaus, scientific-looking journals, diagrams, and experimental machines that change what counts as an observation.
@@ -50,3 +51,6 @@ Use the Markdown alternates for compact reading. Use the BibTeX or CSL JSON alte
 - [Strobotorch Android Signal Tooling](https://mesmerprism.com/Strobotorch/index.md): Strobotorch is an Android flashlight-signaling and diagnostics tool for torch and camera APIs, visible-light signal tests, device logging, and flashing-light safety.
 - [Project Scope | Strobotorch](https://mesmerprism.com/Strobotorch/project-boundary/index.md): The scope of Strobotorch Android flashlight signaling and diagnostics tooling.
 - [Sources | Strobotorch](https://mesmerprism.com/Strobotorch/sources/index.md): Academic and public sources for Strobotorch flashing-light safety, frequency context, torch/camera diagnostics, and visible-light signal tooling.
+
+## Site pages
+- [Video carousel demo](https://mesmerprism.com/tmp/video-carousel-demo.md)

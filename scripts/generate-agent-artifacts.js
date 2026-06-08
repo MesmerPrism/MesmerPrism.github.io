@@ -176,6 +176,17 @@ function stripTags(html) {
   );
 }
 
+function normalizeGeneratedText(value) {
+  return String(value || "")
+    .replace(/\r\n/g, "\n")
+    .replace(/\r/g, "\n")
+    .split("\n")
+    .map((line) => line.trimEnd())
+    .join("\n")
+    .replace(/\n{3,}/g, "\n\n")
+    .trim();
+}
+
 function attr(tag, name) {
   const pattern = new RegExp(`${name}\\s*=\\s*("([^"]*)"|'([^']*)'|([^\\s"'>]+))`, "i");
   const match = tag.match(pattern);
@@ -257,20 +268,20 @@ function htmlToMarkdown(html, pageRel) {
     .replace(/<\/(?:section|article|div|ul|ol)>/gi, "\n")
     .replace(/<[^>]+>/g, " ");
 
-  return decodeEntities(content)
-    .replace(/[ \t]+\n/g, "\n")
-    .replace(/\n{3,}/g, "\n\n")
-    .replace(/[ \t]{2,}/g, " ")
-    .trim();
+  return normalizeGeneratedText(
+    decodeEntities(content)
+      .replace(/[ \t]+\r?\n/g, "\n")
+      .replace(/[ \t]{2,}/g, " "),
+  );
 }
 
 function markdownToText(markdown) {
-  return markdown
-    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, "$1 ($2)")
-    .replace(/^#{1,6}\s+/gm, "")
-    .replace(/^\s*[-*]\s+/gm, "- ")
-    .replace(/\n{3,}/g, "\n\n")
-    .trim();
+  return normalizeGeneratedText(
+    markdown
+      .replace(/\[([^\]]+)\]\(([^)]+)\)/g, "$1 ($2)")
+      .replace(/^#{1,6}\s+/gm, "")
+      .replace(/^\s*[-*]\s+/gm, "- "),
+  );
 }
 
 function slug(value) {
@@ -410,7 +421,7 @@ function pageMarkdown(page) {
     lines.push(`CSL JSON references: ${SITE_URL}${page.cslHref}`);
   }
   lines.push("", "---", "", page.markdownBody, "");
-  return lines.join("\n");
+  return normalizeGeneratedText(lines.join("\n")) + "\n";
 }
 
 function buildMetadataBlock(page) {
