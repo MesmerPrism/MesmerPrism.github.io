@@ -19,9 +19,12 @@
     <meta property="og:url" content="https://mesmerprism.com/duisburg/">
     <meta property="og:image" content="https://mesmerprism.com/duisburg/till-holzapfel.png">
     <meta name="theme-color" content="#f4efe7">
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" href="/favicon-32x32.png" type="image/png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
     <link rel="stylesheet" href="/assets/fonts.css">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/styles.css?v=20260609-logo">
 
     <!-- BEGIN agent-readable metadata -->
     <link rel="alternate" type="text/markdown" href="/duisburg/index.md" title="Markdown version">
@@ -111,7 +114,10 @@
 <body>
     <header class="site-header">
         <div class="shell header-row">
-            <a class="site-name" href="/">Mesmer Prism</a>
+            <a class="site-name" href="/" aria-label="Mesmer Prism home">
+                <img class="site-mark" src="/assets/brand/mesmer-prism-logo.png" alt="" width="1200" height="508" decoding="async">
+                <span>Mesmer Prism</span>
+            </a>
             <nav class="site-nav" aria-label="Page sections">
                 <a href="#profile">Profile</a>
                 <a href="#thesis">Thesis</a>

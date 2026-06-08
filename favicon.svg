@@ -1,5 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
-  <title>MesmerPrism favicon</title>
-  <rect width="64" height="64" fill="#1e1713"/>
-  <path d="M12 49V15h10l10 20 10-20h10v34h-8V28L43 49h-3L20 28v21Z" fill="#f4efe7"/>
+  <title>Mesmer Prism logo</title>
+  <rect width="64" height="64" fill="#f4efe7"/>
+  <g fill="none" stroke="#1e1713" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M5 32c10.5-.2 16-4.7 23-13.8 6.7-8.8 22.5-8.8 30.8 13.8"/>
+    <path d="M5 32c10.5.2 16 4.7 23 13.8 6.7 8.8 22.5 8.8 30.8-13.8"/>
+    <path d="M59 32c-10.5-.2-16-4.7-23-13.8C29.3 9.4 13.5 9.4 5.2 32"/>
+    <path d="M59 32c-10.5.2-16 4.7-23 13.8-6.7 8.8-22.5 8.8-30.8-13.8"/>
+    <path d="M16 32h32"/>
+  </g>
+  <circle cx="24.5" cy="32" r="4.9" fill="#1e1713"/>
+  <circle cx="39.5" cy="32" r="4.9" fill="#1e1713"/>
 </svg>

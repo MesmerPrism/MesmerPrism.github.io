@@ -73,6 +73,9 @@ a:hover {
 
 .site-name,
 .site-name:visited {
+    display: inline-flex;
+    gap: 0.62rem;
+    align-items: center;
     color: var(--text);
     font-family: var(--font-display);
     font-size: 1.62rem;
@@ -80,6 +83,13 @@ a:hover {
     font-weight: 600;
     letter-spacing: 0.01em;
     text-decoration: none;
+}
+
+.site-mark {
+    display: block;
+    width: clamp(2.6rem, 4.8vw, 3.55rem);
+    height: auto;
+    flex: 0 0 auto;
 }
 
 .site-nav {
@@ -118,6 +128,18 @@ a:hover {
 .hero-shell--page {
     justify-items: start;
     text-align: left;
+}
+
+.hero-mark {
+    width: min(32rem, 82vw);
+    margin: 0 auto clamp(1.15rem, 2vw, 1.6rem);
+    color: var(--text);
+}
+
+.hero-mark img {
+    display: block;
+    width: 100%;
+    height: auto;
 }
 
 .eyebrow {
