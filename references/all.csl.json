@@ -7773,6 +7773,27 @@
     "DOI": "10.1093/oso/9780190949983.003.0010"
   },
   {
+    "id": "quest-termux-lab-quest-termux-lab",
+    "type": "webpage",
+    "title": "Quest Termux Lab",
+    "URL": "https://github.com/MesmerPrism/quest-termux-lab",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          9
+        ]
+      ]
+    },
+    "note": "Referenced by Rusty Morphospace: https://mesmerprism.com/projects/rusty-morphospace.html",
+    "author": [
+      {
+        "literal": "Quest Termux Lab"
+      }
+    ]
+  },
+  {
     "id": "rusty-manifold-packages-rusty-manifold-packages",
     "type": "webpage",
     "title": "rusty-manifold-packages",

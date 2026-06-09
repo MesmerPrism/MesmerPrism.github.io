@@ -7365,6 +7365,8 @@ Computational morphology platform
 
 - [Rusty XR](https://mesmerprism.com/projects/rusty-xr.html) remains the public compatibility and Quest reference surface
 
+- [Quest Termux Lab](https://github.com/MesmerPrism/quest-termux-lab) is a public MIT lab source that feeds the Rusty Quest sidecar bridge
+
 - [Quest Companion Tools](https://mesmerprism.com/projects/viscereality-companion.html) show why operator-side contracts matter
 
 - [Polar H10 Work](https://mesmerprism.com/projects/polar-h10.html) shows the same boundary discipline applied to biosignal streams
@@ -7417,7 +7419,9 @@ Computational morphology platform
 
  The first Morphospace repos are public now. They are meant to be read as a
  small stack: core contracts first, then packages, authoring, host validation,
- and Quest-side integration around those contracts.
+ and Quest-side integration around those contracts. Adjacent lab/reference
+ repos are listed only where they feed a Morphospace boundary without owning
+ that boundary.
 
  Core / Matter
 
@@ -7537,6 +7541,24 @@ Computational morphology platform
  Quest integration planning without live device authority
 
  [Repository](https://github.com/MesmerPrism/rusty-quest-sidecar-mesh)
+
+ Related lab / Termux
+
+### [quest-termux-lab](https://github.com/MesmerPrism/quest-termux-lab)
+
+ Public MIT lab material for Termux, Termux:X11, Proot, VNC,
+ outbound-agent, and peer-mesh experiments on Quest. It remains an
+ upstream lab/reference source; Morphospace integration happens through
+ the Rusty Quest sidecar bridge.
+
+ Status
+ Public lab/reference main
+ License
+ MIT
+ Use
+ Sanitized sidecar evidence source, not runtime authority
+
+ [Repository](https://github.com/MesmerPrism/quest-termux-lab)
 
  Compatibility / History
 
