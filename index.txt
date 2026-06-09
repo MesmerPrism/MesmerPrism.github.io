@@ -2,7 +2,7 @@ Mesmer Prism | Till Holzapfel
 
 Source: https://mesmerprism.com/
 Canonical HTML: https://mesmerprism.com/
-Generated: 2026-06-08
+Generated: 2026-06-09
 Description: XR systems, citizen-science tools, visual instruments, and essays for altered-perception design. Mesmer Prism makes strange experience vivid, inspectable, and evidence-bounded.
 Markdown: https://mesmerprism.com/index.md
 Plain text: https://mesmerprism.com/index.txt
@@ -117,20 +117,24 @@ Rusty XR (https://mesmerprism.com/projects/rusty-xr.html)
 
 Rusty Morphospace (https://mesmerprism.com/projects/rusty-morphospace.html)
 
- A modular Rust platform frame for computational matter, situated
- relations, runtime authority, renderer-neutral inspection, and the
- authoring surfaces around them.
+ A public AGPL-first Rust repo family for computational matter,
+ situated relations, runtime authority, renderer-neutral inspection,
+ package evidence, authoring, host validation, and Quest-side
+ integration.
 
  Status
- Architecture frame
+ Public repo family
  Artifact
- Project overview and module boundary map
+ Rust crates, fixtures, schemas, browser previews, and docs
  Use
  Separating computational form, relation, regulation, and appearance
 
  Rust / Computational morphology / Toolchain architecture / XR boundaries
 
  Project overview (https://mesmerprism.com/projects/rusty-morphospace.html)
+ Matter (https://github.com/MesmerPrism/rusty-matter)
+ Manifold (https://github.com/MesmerPrism/rusty-manifold)
+ Optics (https://github.com/MesmerPrism/rusty-optics)
  Rusty XR boundary (https://mesmerprism.com/projects/rusty-xr.html)
 
  Biofeedback sensor integration

@@ -1,13 +1,13 @@
 # Mesmer Prism Full Agent Context
 
-Generated: 2026-06-08
+Generated: 2026-06-09
 
 <page url="https://mesmerprism.com/" path="index.html">
 # Mesmer Prism | Till Holzapfel
 
 Source: https://mesmerprism.com/
 Canonical HTML: https://mesmerprism.com/
-Generated: 2026-06-08
+Generated: 2026-06-09
 Description: XR systems, citizen-science tools, visual instruments, and essays for altered-perception design. Mesmer Prism makes strange experience vivid, inspectable, and evidence-bounded.
 Markdown: https://mesmerprism.com/index.md
 Plain text: https://mesmerprism.com/index.txt
@@ -122,20 +122,24 @@ Till Holzapfel
 
 ### [Rusty Morphospace](https://mesmerprism.com/projects/rusty-morphospace.html)
 
- A modular Rust platform frame for computational matter, situated
- relations, runtime authority, renderer-neutral inspection, and the
- authoring surfaces around them.
+ A public AGPL-first Rust repo family for computational matter,
+ situated relations, runtime authority, renderer-neutral inspection,
+ package evidence, authoring, host validation, and Quest-side
+ integration.
 
  Status
- Architecture frame
+ Public repo family
  Artifact
- Project overview and module boundary map
+ Rust crates, fixtures, schemas, browser previews, and docs
  Use
  Separating computational form, relation, regulation, and appearance
 
  Rust / Computational morphology / Toolchain architecture / XR boundaries
 
  [Project overview](https://mesmerprism.com/projects/rusty-morphospace.html)
+ [Matter](https://github.com/MesmerPrism/rusty-matter)
+ [Manifold](https://github.com/MesmerPrism/rusty-manifold)
+ [Optics](https://github.com/MesmerPrism/rusty-optics)
  [Rusty XR boundary](https://mesmerprism.com/projects/rusty-xr.html)
 
  Biofeedback sensor integration
@@ -574,7 +578,7 @@ Till Holzapfel
 
 Source: https://mesmerprism.com/plasmatic-multitudes/assets/calligraphy-reference-pack/board.html
 Canonical HTML: https://mesmerprism.com/plasmatic-multitudes/assets/calligraphy-reference-pack/board.html
-Generated: 2026-06-08
+Generated: 2026-06-09
 Markdown: https://mesmerprism.com/plasmatic-multitudes/assets/calligraphy-reference-pack/board.md
 Plain text: https://mesmerprism.com/plasmatic-multitudes/assets/calligraphy-reference-pack/board.txt
 BibTeX references: https://mesmerprism.com/plasmatic-multitudes/assets/calligraphy-reference-pack/board.bib
@@ -724,7 +728,7 @@ Museum-backed pack
 
 Source: https://mesmerprism.com/plasmatic-multitudes/background/somaesthetics.html
 Canonical HTML: https://mesmerprism.com/plasmatic-multitudes/background/somaesthetics.html
-Generated: 2026-06-08
+Generated: 2026-06-09
 Description: A short public note on somaesthetics as the method anchor for Plasmatic Multitudes.
 Markdown: https://mesmerprism.com/plasmatic-multitudes/background/somaesthetics.md
 Plain text: https://mesmerprism.com/plasmatic-multitudes/background/somaesthetics.txt
@@ -795,7 +799,7 @@ Background appendix | Updated May 24, 2026
 
 Source: https://mesmerprism.com/plasmatic-multitudes/essay.html
 Canonical HTML: https://mesmerprism.com/plasmatic-multitudes/essay.html
-Generated: 2026-06-08
+Generated: 2026-06-09
 Description: A long-form essay on weakly bounded bodies, XR embodiment, media genealogy, computational morphogenesis, and cautious pain translation.
 Markdown: https://mesmerprism.com/plasmatic-multitudes/essay.md
 Plain text: https://mesmerprism.com/plasmatic-multitudes/essay.txt
@@ -1131,7 +1135,7 @@ Long essay | Updated May 24, 2026
 
 Source: https://mesmerprism.com/plasmatic-multitudes/
 Canonical HTML: https://mesmerprism.com/plasmatic-multitudes/
-Generated: 2026-06-08
+Generated: 2026-06-09
 Description: Long essay, method notes, vocabulary, pain-translation hypotheses, and annotated references for weakly bounded bodies and semi-corporeal avatar aesthetics.
 Markdown: https://mesmerprism.com/plasmatic-multitudes/index.md
 Plain text: https://mesmerprism.com/plasmatic-multitudes/index.txt
@@ -1192,7 +1196,7 @@ Field guide | Updated May 24, 2026
 
 Source: https://mesmerprism.com/plasmatic-multitudes/pain.html
 Canonical HTML: https://mesmerprism.com/plasmatic-multitudes/pain.html
-Generated: 2026-06-08
+Generated: 2026-06-09
 Description: A cautious research note on boundary precision, avatar materiality, protective fields, ownership, agency, and pain-related body-representation hypotheses. Not a treatment claim.
 Markdown: https://mesmerprism.com/plasmatic-multitudes/pain.md
 Plain text: https://mesmerprism.com/plasmatic-multitudes/pain.txt
@@ -1407,7 +1411,7 @@ Pain translation | Updated May 24, 2026
 
 Source: https://mesmerprism.com/plasmatic-multitudes/project.html
 Canonical HTML: https://mesmerprism.com/plasmatic-multitudes/project.html
-Generated: 2026-06-08
+Generated: 2026-06-09
 Description: A compact method note on boundary precision, somaesthetics, coherence, morphogenesis, and weakly bounded body design.
 Markdown: https://mesmerprism.com/plasmatic-multitudes/project.md
 Plain text: https://mesmerprism.com/plasmatic-multitudes/project.txt
@@ -1482,7 +1486,7 @@ Method | Updated May 24, 2026
 
 Source: https://mesmerprism.com/plasmatic-multitudes/references.html
 Canonical HTML: https://mesmerprism.com/plasmatic-multitudes/references.html
-Generated: 2026-06-08
+Generated: 2026-06-09
 Description: Annotated references across somaesthetics, perception, pseudo-haptics, morphogenesis, XR embodiment, media genealogy, and pain/body-representation research.
 Markdown: https://mesmerprism.com/plasmatic-multitudes/references.md
 Plain text: https://mesmerprism.com/plasmatic-multitudes/references.txt
@@ -1657,7 +1661,7 @@ Annotated sources | Updated May 24, 2026
 
 Source: https://mesmerprism.com/plasmatic-multitudes/terminology.html
 Canonical HTML: https://mesmerprism.com/plasmatic-multitudes/terminology.html
-Generated: 2026-06-08
+Generated: 2026-06-09
 Description: Terms for semi-corporeal avatars, plasmatic bodies, particle bodies, swarm bodies, aura avatars, boundary precision, pseudo-haptics, and related design concepts.
 Markdown: https://mesmerprism.com/plasmatic-multitudes/terminology.md
 Plain text: https://mesmerprism.com/plasmatic-multitudes/terminology.txt
@@ -2103,7 +2107,7 @@ Field guide | Updated May 24, 2026
 
 Source: https://mesmerprism.com/projects/altered-xperience-project.html
 Canonical HTML: https://mesmerprism.com/projects/altered-xperience-project.html
-Generated: 2026-06-08
+Generated: 2026-06-09
 Description: The Altered Xperience Project is a CIRCE-led citizen-science survey for anonymous altered-state reports, with multilingual questionnaires, feedback, scoring, exports, and collaborator workflow.
 Markdown: https://mesmerprism.com/projects/altered-xperience-project.md
 Plain text: https://mesmerprism.com/projects/altered-xperience-project.txt
@@ -2227,7 +2231,7 @@ Citizen-science altered-state survey
 
 Source: https://mesmerprism.com/projects/brain-candy.html
 Canonical HTML: https://mesmerprism.com/projects/brain-candy.html
-Generated: 2026-06-08
+Generated: 2026-06-09
 Description: Brain Candy studies rhythmic light, recursive visual structure, sound, breath, expectation, and interaction as tunable non-drug state-shift design.
 Markdown: https://mesmerprism.com/projects/brain-candy.md
 Plain text: https://mesmerprism.com/projects/brain-candy.txt
@@ -2775,7 +2779,7 @@ Non-drug state-shift design
 
 Source: https://mesmerprism.com/projects/bressloff-v1-form-constants-deep-dive.html
 Canonical HTML: https://mesmerprism.com/projects/bressloff-v1-form-constants-deep-dive.html
-Generated: 2026-06-08
+Generated: 2026-06-09
 Description: A notebook-style deep dive into Bressloff form constants, Rule flicker modeling, and generated driven neural-field diagnostics after Rule.
 Markdown: https://mesmerprism.com/projects/bressloff-v1-form-constants-deep-dive.md
 Plain text: https://mesmerprism.com/projects/bressloff-v1-form-constants-deep-dive.txt
@@ -3772,7 +3776,7 @@ Modeling deep dive
 
 Source: https://mesmerprism.com/projects/bressloff-v1-form-constants.html
 Canonical HTML: https://mesmerprism.com/projects/bressloff-v1-form-constants.html
-Generated: 2026-06-08
+Generated: 2026-06-09
 Description: Animated notes on Bressloff visual-cortex form constants, Rule flicker modeling, and generated MacKay, Bolelli, and Nicks driven-field diagnostics.
 Markdown: https://mesmerprism.com/projects/bressloff-v1-form-constants.md
 Plain text: https://mesmerprism.com/projects/bressloff-v1-form-constants.txt
@@ -4230,7 +4234,7 @@ Visual cortex and form constants
 
 Source: https://mesmerprism.com/projects/deep-dream.html
 Canonical HTML: https://mesmerprism.com/projects/deep-dream.html
-Generated: 2026-06-08
+Generated: 2026-06-09
 Description: Deep Dream explains how machine-vision hallucination, community visual taxonomies, VR research, and cyberdelic systems shaped simulated psychedelic vision.
 Markdown: https://mesmerprism.com/projects/deep-dream.md
 Plain text: https://mesmerprism.com/projects/deep-dream.txt
@@ -4784,7 +4788,7 @@ Simulated psychedelic vision
 
 Source: https://mesmerprism.com/projects/fractal-optics.html
 Canonical HTML: https://mesmerprism.com/projects/fractal-optics.html
-Generated: 2026-06-08
+Generated: 2026-06-09
 Description: Fractal Optics maps fractal phototherapy, retinal and ophthalmic stimulation, VR delivery, and patterned-light comparator literatures.
 Markdown: https://mesmerprism.com/projects/fractal-optics.md
 Plain text: https://mesmerprism.com/projects/fractal-optics.txt
@@ -5032,7 +5036,7 @@ Retinal stimulation and patterned light
 
 Source: https://mesmerprism.com/projects/hollow-face-lab.html
 Canonical HTML: https://mesmerprism.com/projects/hollow-face-lab.html
-Generated: 2026-06-08
+Generated: 2026-06-09
 Description: Hollow Face Lab maps WebGL, WebXR, and Rusty XR implementation choices against hollow-face and depth-inversion research.
 Markdown: https://mesmerprism.com/projects/hollow-face-lab.md
 Plain text: https://mesmerprism.com/projects/hollow-face-lab.txt
@@ -5174,7 +5178,7 @@ Depth inversion and research tooling
 
 Source: https://mesmerprism.com/projects/optical-movement-illusions.html
 Canonical HTML: https://mesmerprism.com/projects/optical-movement-illusions.html
-Generated: 2026-06-08
+Generated: 2026-06-09
 Description: Optical Movement Illusions maps peripheral drift, Rotating Snakes, static motion illusions, color and luminance parameters, and the mechanism-design bridge into perceptual tooling.
 Markdown: https://mesmerprism.com/projects/optical-movement-illusions.md
 Plain text: https://mesmerprism.com/projects/optical-movement-illusions.txt
@@ -5373,7 +5377,7 @@ Static motion and perceptual mechanics
 
 Source: https://mesmerprism.com/projects/phenomenological-control.html
 Canonical HTML: https://mesmerprism.com/projects/phenomenological-control.html
-Generated: 2026-06-08
+Generated: 2026-06-09
 Description: A public guide to phenomenological control, imagery variation, expectation-shaped experience, source monitoring, absorption, porosity, hypnosis, induced vision, and meaning-making.
 Markdown: https://mesmerprism.com/projects/phenomenological-control.md
 Plain text: https://mesmerprism.com/projects/phenomenological-control.txt
@@ -5918,7 +5922,7 @@ Imagery, suggestion, and source monitoring
 
 Source: https://mesmerprism.com/projects/plasmatic-multitudes.html
 Canonical HTML: https://mesmerprism.com/projects/plasmatic-multitudes.html
-Generated: 2026-06-08
+Generated: 2026-06-09
 Description: A public overview of weakly bounded bodies: avatars, swarms, auras, particle forms, and luminous bodies that soften while remaining coherent enough for embodiment, relation, and cautious research translation.
 Markdown: https://mesmerprism.com/projects/plasmatic-multitudes.md
 Plain text: https://mesmerprism.com/projects/plasmatic-multitudes.txt
@@ -6435,7 +6439,7 @@ Weakly bounded embodiment
 
 Source: https://mesmerprism.com/projects/polar-h10.html
 Canonical HTML: https://mesmerprism.com/projects/polar-h10.html
-Generated: 2026-06-08
+Generated: 2026-06-09
 Description: Public overview of Mesmer Prism's Polar H10 work across minimal signal packages, Rusty XR, Quest broker streams, Windows capture, Android diagnostics, Unity Quest integration, and Viscereality research tooling.
 Markdown: https://mesmerprism.com/projects/polar-h10.md
 Plain text: https://mesmerprism.com/projects/polar-h10.txt
@@ -6672,7 +6676,7 @@ Biofeedback sensor integration
 
 Source: https://mesmerprism.com/projects/prophantasia.html
 Canonical HTML: https://mesmerprism.com/projects/prophantasia.html
-Generated: 2026-06-08
+Generated: 2026-06-09
 Description: Prophantasia covers projected imagery, aphantasia, source judgment, practice ecology, and neighboring phenomena such as imposition, flicker, DeepDream, visual snow, and HPPD.
 Markdown: https://mesmerprism.com/projects/prophantasia.md
 Plain text: https://mesmerprism.com/projects/prophantasia.txt
@@ -7278,7 +7282,7 @@ Projected imagery and source judgment
 
 Source: https://mesmerprism.com/projects/rusty-morphospace.html
 Canonical HTML: https://mesmerprism.com/projects/rusty-morphospace.html
-Generated: 2026-06-08
+Generated: 2026-06-09
 Description: Rusty Morphospace is a modular Rust platform frame for computational matter, spatial relations, runtime authority, and inspectable rendering surfaces.
 Markdown: https://mesmerprism.com/projects/rusty-morphospace.md
 Plain text: https://mesmerprism.com/projects/rusty-morphospace.txt
@@ -7297,6 +7301,7 @@ Computational morphology platform
  or a headset-hosted environment. The project names the space where those
  pieces can be built without collapsing them into one XR app.
 
+ [Repositories](https://mesmerprism.com/projects/rusty-morphospace.html#repositories)
  [Module map](https://mesmerprism.com/projects/rusty-morphospace.html#module-map)
  [Why Morphospace](https://mesmerprism.com/projects/rusty-morphospace.html#why)
  [Rusty XR boundary](https://mesmerprism.com/projects/rusty-morphospace.html#boundary)
@@ -7326,13 +7331,25 @@ Computational morphology platform
 
 - Umbrella: Rusty Morphospace
 
-- Core relation layer: Rusty Lattice
+- Public core repos: Matter, Manifold, Optics
+
+- Package and host repos: Manifold Packages, Studio, Hostess, Quest Sidecar Mesh
+
+- Planned relation lane: Rusty Lattice
+
+- Licensing: AGPL-3.0-or-later for Morphospace-owned source
+
+### Layer names
 
 - Runtime authority: Rusty Manifold
 
+- Computational substance: Rusty Matter
+
 - Visual inspection: Rusty Optics
 
-- Computational substance: Rusty Matter
+- Situated relations: Rusty Lattice
+
+- Platform edge: Rusty Quest and adapters
 
 ### Useful for
 
@@ -7361,7 +7378,7 @@ Computational morphology platform
 
  Computational substance
 
-### Rusty Matter
+### [Rusty Matter](https://github.com/MesmerPrism/rusty-matter)
 
  Geometry, fields, particles, dynamics, SDF/TSDF data, sampling,
  deterministic fixtures, and simulation state.
@@ -7375,14 +7392,14 @@ Computational morphology platform
 
  Runtime authority
 
-### Rusty Manifold
+### [Rusty Manifold](https://github.com/MesmerPrism/rusty-manifold)
 
  Commands, sessions, streams, ports, valves, leases, gauges, clocks,
  transports, audit, and control surfaces.
 
  Appearance and inspection
 
-### Rusty Optics
+### [Rusty Optics](https://github.com/MesmerPrism/rusty-optics)
 
  Renderer-neutral views, cameras, projections, lenses, material
  descriptors, visual payloads, and debug visualization contracts.
@@ -7393,6 +7410,151 @@ Computational morphology platform
 
  Authoring, graphical operation, headset platform behavior, installation,
  diagnostics, deployment, and operator workflows around the core layers.
+
+ Public repository family
+
+## Where the pieces live
+
+ The first Morphospace repos are public now. They are meant to be read as a
+ small stack: core contracts first, then packages, authoring, host validation,
+ and Quest-side integration around those contracts.
+
+ Core / Matter
+
+### [rusty-matter](https://github.com/MesmerPrism/rusty-matter)
+
+ Computational matter: geometry, mesh surfaces, fields, SDF grids,
+ particles, deterministic fixtures, schema catalogs, and Rust/Wasm
+ reference runtimes.
+
+ Status
+ Public main
+ License
+ AGPL-3.0-or-later
+ Use
+ Simulation truth and render-neutral payloads
+
+ [Repository](https://github.com/MesmerPrism/rusty-matter)
+
+ Core / Optics
+
+### [rusty-optics](https://github.com/MesmerPrism/rusty-optics)
+
+ Renderer-neutral visual contracts over Matter payloads: views,
+ projections, appearance policy, debug visualization, browser previews,
+ and visual fixture validation.
+
+ Status
+ Public main
+ License
+ AGPL-3.0-or-later
+ Use
+ Inspection without owning simulation or renderer backends
+
+ [Repository](https://github.com/MesmerPrism/rusty-optics)
+
+ Core / Manifold
+
+### [rusty-manifold](https://github.com/MesmerPrism/rusty-manifold)
+
+ Typed contracts for command, stream, module, host, lease, clock,
+ session, audit, and package authority. It is the default lane for
+ runtime regulation.
+
+ Status
+ Public main
+ License
+ AGPL-3.0-or-later
+ Use
+ Control-plane authority and validation fixtures
+
+ [Repository](https://github.com/MesmerPrism/rusty-manifold)
+
+ Packages / Manifold
+
+### [rusty-manifold-packages](https://github.com/MesmerPrism/rusty-manifold-packages)
+
+ First-party package manifests, fixtures, and deterministic processor
+ cores for synthetic, biosignal, projected-motion, Polar H10, and
+ hand-animation package lanes.
+
+ Status
+ Public main
+ License
+ AGPL-3.0-or-later
+ Use
+ Package evidence without runtime host authority
+
+ [Repository](https://github.com/MesmerPrism/rusty-manifold-packages)
+
+ Authoring / Studio
+
+### [rusty-studio](https://github.com/MesmerPrism/rusty-studio)
+
+ Schema-first authoring, graph validation, export planning, host-profile
+ selection, and Makepad-backed review surfaces over the package and
+ shell handoff model.
+
+ Status
+ Public main
+ License
+ AGPL-3.0-or-later
+ Use
+ Design and review workflows without device execution authority
+
+ [Repository](https://github.com/MesmerPrism/rusty-studio)
+
+ Host validation / Hostess
+
+### [rusty-hostess](https://github.com/MesmerPrism/rusty-hostess)
+
+ Default install, replay, capture, telemetry, and host-validation shell
+ for proving Manifold packages across desktop, mobile, and headset
+ profiles.
+
+ Status
+ Public main
+ License
+ AGPL-3.0-or-later
+ Use
+ Evidence capture and host-side validation
+
+ [Repository](https://github.com/MesmerPrism/rusty-hostess)
+
+ Quest sidecar / Integration
+
+### [rusty-quest-sidecar-mesh](https://github.com/MesmerPrism/rusty-quest-sidecar-mesh)
+
+ Public-safe Quest sidecar mesh contracts and synthetic fixtures for
+ Termux-style Linux sidecar observation, handoff preparation, and
+ Manifold/Hostess boundary review.
+
+ Status
+ Public main
+ License
+ AGPL-3.0-or-later
+ Use
+ Quest integration planning without live device authority
+
+ [Repository](https://github.com/MesmerPrism/rusty-quest-sidecar-mesh)
+
+ Compatibility / History
+
+### [Rusty-XR](https://github.com/MesmerPrism/Rusty-XR)
+
+ Existing MIT-licensed Rusty XR reference work remains the compatibility
+ and Quest evidence surface. New Morphospace layers should not use it as
+ the default authority model.
+
+ Status
+ Public legacy/reference lane
+ License
+ MIT
+ Use
+ Quest examples, compatibility notes, and historical evidence
+
+ [Repository](https://github.com/MesmerPrism/Rusty-XR)
+ [Overview](https://mesmerprism.com/projects/rusty-xr.html)
 
  Why the name
 
@@ -7449,7 +7611,7 @@ Computational morphology platform
 
 Source: https://mesmerprism.com/projects/rusty-xr.html
 Canonical HTML: https://mesmerprism.com/projects/rusty-xr.html
-Generated: 2026-06-08
+Generated: 2026-06-09
 Description: Rusty XR is a public Rust workspace for reusable XR contracts, Quest diagnostics, camera/depth labels, broker models, public examples, and companion-tool workflows.
 Markdown: https://mesmerprism.com/projects/rusty-xr.md
 Plain text: https://mesmerprism.com/projects/rusty-xr.txt
@@ -7596,7 +7758,7 @@ Rust for XR and Meta Quest experiments
 
 Source: https://mesmerprism.com/projects/sane.html
 Canonical HTML: https://mesmerprism.com/projects/sane.html
-Generated: 2026-06-08
+Generated: 2026-06-09
 Description: SANE is a proposed framework for reading coupled changes across somaesthetic practice, anthropotechnical mediation, noetic meaning, and emergent systems.
 Markdown: https://mesmerprism.com/projects/sane.md
 Plain text: https://mesmerprism.com/projects/sane.txt
@@ -8107,7 +8269,7 @@ Body, tools, meaning, systems
 
 Source: https://mesmerprism.com/projects/scientific-surrealism.html
 Canonical HTML: https://mesmerprism.com/projects/scientific-surrealism.html
-Generated: 2026-06-08
+Generated: 2026-06-09
 Description: Scientific surrealism studies dream bureaus, scientific-looking journals, diagrams, and experimental machines that change what counts as an observation.
 Markdown: https://mesmerprism.com/projects/scientific-surrealism.md
 Plain text: https://mesmerprism.com/projects/scientific-surrealism.txt
@@ -8521,7 +8683,7 @@ Research apparatus and knowledge-art
 
 Source: https://mesmerprism.com/projects/tulpas.html
 Canonical HTML: https://mesmerprism.com/projects/tulpas.html
-Generated: 2026-06-08
+Generated: 2026-06-09
 Description: Tulpas covers modern online tulpamancy, thoughtforms, headmates, servitors, egregores, imposition, voice-like experience, and adjacent AI companion analogies.
 Markdown: https://mesmerprism.com/projects/tulpas.md
 Plain text: https://mesmerprism.com/projects/tulpas.txt
@@ -9047,7 +9209,7 @@ Made inner others and modern tulpamancy
 
 Source: https://mesmerprism.com/projects/viscereality-companion.html
 Canonical HTML: https://mesmerprism.com/projects/viscereality-companion.html
-Generated: 2026-06-08
+Generated: 2026-06-09
 Description: Quest Companion Tools provides Windows and Android utilities for Meta Quest install, launch, casting, diagnostics, and evidence capture.
 Markdown: https://mesmerprism.com/projects/viscereality-companion.md
 Plain text: https://mesmerprism.com/projects/viscereality-companion.txt
@@ -9176,7 +9338,7 @@ Meta Quest operator tooling
 
 Source: https://mesmerprism.com/projects/viscereality.html
 Canonical HTML: https://mesmerprism.com/projects/viscereality.html
-Generated: 2026-06-08
+Generated: 2026-06-09
 Description: Viscereality is a Quest-based bioresponsive VR research system for breath interaction, cardiac coherence training, oscillator-driven visuals, and repeatable study sessions.
 Markdown: https://mesmerprism.com/projects/viscereality.md
 Plain text: https://mesmerprism.com/projects/viscereality.txt
@@ -9309,7 +9471,7 @@ Current XR research system
 
 Source: https://mesmerprism.com/Strobotorch/flashing-light-safety/
 Canonical HTML: https://mesmerprism.com/Strobotorch/flashing-light-safety/
-Generated: 2026-06-08
+Generated: 2026-06-09
 Description: Safety warnings, frequency background, and source references for Strobotorch flashlight signaling.
 Markdown: https://mesmerprism.com/Strobotorch/flashing-light-safety/index.md
 Plain text: https://mesmerprism.com/Strobotorch/flashing-light-safety/index.txt
@@ -9497,7 +9659,7 @@ Public warning and source background
 
 Source: https://mesmerprism.com/Strobotorch/
 Canonical HTML: https://mesmerprism.com/Strobotorch/
-Generated: 2026-06-08
+Generated: 2026-06-09
 Description: Strobotorch is an Android flashlight-signaling and diagnostics tool for torch and camera APIs, visible-light signal tests, device logging, and flashing-light safety.
 Markdown: https://mesmerprism.com/Strobotorch/index.md
 Plain text: https://mesmerprism.com/Strobotorch/index.txt
@@ -9597,7 +9759,7 @@ Flashlight signaling safety
 
 Source: https://mesmerprism.com/Strobotorch/project-boundary/
 Canonical HTML: https://mesmerprism.com/Strobotorch/project-boundary/
-Generated: 2026-06-08
+Generated: 2026-06-09
 Description: The scope of Strobotorch Android flashlight signaling and diagnostics tooling.
 Markdown: https://mesmerprism.com/Strobotorch/project-boundary/index.md
 Plain text: https://mesmerprism.com/Strobotorch/project-boundary/index.txt
@@ -9638,7 +9800,7 @@ Project scope
 
 Source: https://mesmerprism.com/Strobotorch/sources/
 Canonical HTML: https://mesmerprism.com/Strobotorch/sources/
-Generated: 2026-06-08
+Generated: 2026-06-09
 Description: Academic and public sources for Strobotorch flashing-light safety, frequency context, torch/camera diagnostics, and visible-light signal tooling.
 Markdown: https://mesmerprism.com/Strobotorch/sources/index.md
 Plain text: https://mesmerprism.com/Strobotorch/sources/index.txt
@@ -9881,7 +10043,7 @@ Source library
 
 Source: https://mesmerprism.com/tmp/video-carousel-demo.html
 Canonical HTML: https://mesmerprism.com/tmp/video-carousel-demo.html
-Generated: 2026-06-08
+Generated: 2026-06-09
 Markdown: https://mesmerprism.com/tmp/video-carousel-demo.md
 Plain text: https://mesmerprism.com/tmp/video-carousel-demo.txt
 

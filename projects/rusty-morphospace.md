@@ -2,7 +2,7 @@
 
 Source: https://mesmerprism.com/projects/rusty-morphospace.html
 Canonical HTML: https://mesmerprism.com/projects/rusty-morphospace.html
-Generated: 2026-06-08
+Generated: 2026-06-09
 Description: Rusty Morphospace is a modular Rust platform frame for computational matter, spatial relations, runtime authority, and inspectable rendering surfaces.
 Markdown: https://mesmerprism.com/projects/rusty-morphospace.md
 Plain text: https://mesmerprism.com/projects/rusty-morphospace.txt
@@ -21,6 +21,7 @@ Computational morphology platform
  or a headset-hosted environment. The project names the space where those
  pieces can be built without collapsing them into one XR app.
 
+ [Repositories](https://mesmerprism.com/projects/rusty-morphospace.html#repositories)
  [Module map](https://mesmerprism.com/projects/rusty-morphospace.html#module-map)
  [Why Morphospace](https://mesmerprism.com/projects/rusty-morphospace.html#why)
  [Rusty XR boundary](https://mesmerprism.com/projects/rusty-morphospace.html#boundary)
@@ -50,13 +51,25 @@ Computational morphology platform
 
 - Umbrella: Rusty Morphospace
 
-- Core relation layer: Rusty Lattice
+- Public core repos: Matter, Manifold, Optics
+
+- Package and host repos: Manifold Packages, Studio, Hostess, Quest Sidecar Mesh
+
+- Planned relation lane: Rusty Lattice
+
+- Licensing: AGPL-3.0-or-later for Morphospace-owned source
+
+### Layer names
 
 - Runtime authority: Rusty Manifold
 
+- Computational substance: Rusty Matter
+
 - Visual inspection: Rusty Optics
 
-- Computational substance: Rusty Matter
+- Situated relations: Rusty Lattice
+
+- Platform edge: Rusty Quest and adapters
 
 ### Useful for
 
@@ -85,7 +98,7 @@ Computational morphology platform
 
  Computational substance
 
-### Rusty Matter
+### [Rusty Matter](https://github.com/MesmerPrism/rusty-matter)
 
  Geometry, fields, particles, dynamics, SDF/TSDF data, sampling,
  deterministic fixtures, and simulation state.
@@ -99,14 +112,14 @@ Computational morphology platform
 
  Runtime authority
 
-### Rusty Manifold
+### [Rusty Manifold](https://github.com/MesmerPrism/rusty-manifold)
 
  Commands, sessions, streams, ports, valves, leases, gauges, clocks,
  transports, audit, and control surfaces.
 
  Appearance and inspection
 
-### Rusty Optics
+### [Rusty Optics](https://github.com/MesmerPrism/rusty-optics)
 
  Renderer-neutral views, cameras, projections, lenses, material
  descriptors, visual payloads, and debug visualization contracts.
@@ -117,6 +130,151 @@ Computational morphology platform
 
  Authoring, graphical operation, headset platform behavior, installation,
  diagnostics, deployment, and operator workflows around the core layers.
+
+ Public repository family
+
+## Where the pieces live
+
+ The first Morphospace repos are public now. They are meant to be read as a
+ small stack: core contracts first, then packages, authoring, host validation,
+ and Quest-side integration around those contracts.
+
+ Core / Matter
+
+### [rusty-matter](https://github.com/MesmerPrism/rusty-matter)
+
+ Computational matter: geometry, mesh surfaces, fields, SDF grids,
+ particles, deterministic fixtures, schema catalogs, and Rust/Wasm
+ reference runtimes.
+
+ Status
+ Public main
+ License
+ AGPL-3.0-or-later
+ Use
+ Simulation truth and render-neutral payloads
+
+ [Repository](https://github.com/MesmerPrism/rusty-matter)
+
+ Core / Optics
+
+### [rusty-optics](https://github.com/MesmerPrism/rusty-optics)
+
+ Renderer-neutral visual contracts over Matter payloads: views,
+ projections, appearance policy, debug visualization, browser previews,
+ and visual fixture validation.
+
+ Status
+ Public main
+ License
+ AGPL-3.0-or-later
+ Use
+ Inspection without owning simulation or renderer backends
+
+ [Repository](https://github.com/MesmerPrism/rusty-optics)
+
+ Core / Manifold
+
+### [rusty-manifold](https://github.com/MesmerPrism/rusty-manifold)
+
+ Typed contracts for command, stream, module, host, lease, clock,
+ session, audit, and package authority. It is the default lane for
+ runtime regulation.
+
+ Status
+ Public main
+ License
+ AGPL-3.0-or-later
+ Use
+ Control-plane authority and validation fixtures
+
+ [Repository](https://github.com/MesmerPrism/rusty-manifold)
+
+ Packages / Manifold
+
+### [rusty-manifold-packages](https://github.com/MesmerPrism/rusty-manifold-packages)
+
+ First-party package manifests, fixtures, and deterministic processor
+ cores for synthetic, biosignal, projected-motion, Polar H10, and
+ hand-animation package lanes.
+
+ Status
+ Public main
+ License
+ AGPL-3.0-or-later
+ Use
+ Package evidence without runtime host authority
+
+ [Repository](https://github.com/MesmerPrism/rusty-manifold-packages)
+
+ Authoring / Studio
+
+### [rusty-studio](https://github.com/MesmerPrism/rusty-studio)
+
+ Schema-first authoring, graph validation, export planning, host-profile
+ selection, and Makepad-backed review surfaces over the package and
+ shell handoff model.
+
+ Status
+ Public main
+ License
+ AGPL-3.0-or-later
+ Use
+ Design and review workflows without device execution authority
+
+ [Repository](https://github.com/MesmerPrism/rusty-studio)
+
+ Host validation / Hostess
+
+### [rusty-hostess](https://github.com/MesmerPrism/rusty-hostess)
+
+ Default install, replay, capture, telemetry, and host-validation shell
+ for proving Manifold packages across desktop, mobile, and headset
+ profiles.
+
+ Status
+ Public main
+ License
+ AGPL-3.0-or-later
+ Use
+ Evidence capture and host-side validation
+
+ [Repository](https://github.com/MesmerPrism/rusty-hostess)
+
+ Quest sidecar / Integration
+
+### [rusty-quest-sidecar-mesh](https://github.com/MesmerPrism/rusty-quest-sidecar-mesh)
+
+ Public-safe Quest sidecar mesh contracts and synthetic fixtures for
+ Termux-style Linux sidecar observation, handoff preparation, and
+ Manifold/Hostess boundary review.
+
+ Status
+ Public main
+ License
+ AGPL-3.0-or-later
+ Use
+ Quest integration planning without live device authority
+
+ [Repository](https://github.com/MesmerPrism/rusty-quest-sidecar-mesh)
+
+ Compatibility / History
+
+### [Rusty-XR](https://github.com/MesmerPrism/Rusty-XR)
+
+ Existing MIT-licensed Rusty XR reference work remains the compatibility
+ and Quest evidence surface. New Morphospace layers should not use it as
+ the default authority model.
+
+ Status
+ Public legacy/reference lane
+ License
+ MIT
+ Use
+ Quest examples, compatibility notes, and historical evidence
+
+ [Repository](https://github.com/MesmerPrism/Rusty-XR)
+ [Overview](https://mesmerprism.com/projects/rusty-xr.html)
 
  Why the name
 

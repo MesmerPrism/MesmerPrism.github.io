@@ -1,5 +1,5 @@
 {
-  "generated": "2026-06-08",
+  "generated": "2026-06-09",
   "site": "https://mesmerprism.com",
   "pages": [
     {
@@ -12,7 +12,7 @@
       "text": "https://mesmerprism.com/index.txt",
       "bibtex": "https://mesmerprism.com/index.bib",
       "cslJson": "https://mesmerprism.com/index.references.csl.json",
-      "references": 20
+      "references": 23
     },
     {
       "title": "Calligraphy Reference Pack",
@@ -264,7 +264,7 @@
       "text": "https://mesmerprism.com/projects/rusty-morphospace.txt",
       "bibtex": "https://mesmerprism.com/projects/rusty-morphospace.bib",
       "cslJson": "https://mesmerprism.com/projects/rusty-morphospace.references.csl.json",
-      "references": 1
+      "references": 9
     },
     {
       "title": "Rusty XR",

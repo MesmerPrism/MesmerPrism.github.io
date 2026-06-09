@@ -9,7 +9,7 @@
         [
           2026,
           6,
-          8
+          9
         ]
       ]
     },
@@ -25,7 +25,7 @@
         [
           2026,
           6,
-          8
+          9
         ]
       ]
     },
@@ -41,7 +41,7 @@
         [
           2026,
           6,
-          8
+          9
         ]
       ]
     },
@@ -57,7 +57,7 @@
         [
           2026,
           6,
-          8
+          9
         ]
       ]
     },
@@ -73,7 +73,7 @@
         [
           2026,
           6,
-          8
+          9
         ]
       ]
     },
@@ -89,7 +89,55 @@
         [
           2026,
           6,
-          8
+          9
+        ]
+      ]
+    },
+    "note": "Referenced by Mesmer Prism | Till Holzapfel: https://mesmerprism.com/"
+  },
+  {
+    "id": "github-com-matter",
+    "type": "webpage",
+    "title": "Matter",
+    "URL": "https://github.com/MesmerPrism/rusty-matter",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          9
+        ]
+      ]
+    },
+    "note": "Referenced by Mesmer Prism | Till Holzapfel: https://mesmerprism.com/"
+  },
+  {
+    "id": "github-com-manifold",
+    "type": "webpage",
+    "title": "Manifold",
+    "URL": "https://github.com/MesmerPrism/rusty-manifold",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          9
+        ]
+      ]
+    },
+    "note": "Referenced by Mesmer Prism | Till Holzapfel: https://mesmerprism.com/"
+  },
+  {
+    "id": "github-com-optics",
+    "type": "webpage",
+    "title": "Optics",
+    "URL": "https://github.com/MesmerPrism/rusty-optics",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          9
         ]
       ]
     },
@@ -105,7 +153,7 @@
         [
           2026,
           6,
-          8
+          9
         ]
       ]
     },
@@ -121,7 +169,7 @@
         [
           2026,
           6,
-          8
+          9
         ]
       ]
     },
@@ -137,7 +185,7 @@
         [
           2026,
           6,
-          8
+          9
         ]
       ]
     },
@@ -153,7 +201,7 @@
         [
           2026,
           6,
-          8
+          9
         ]
       ]
     },
@@ -169,7 +217,7 @@
         [
           2026,
           6,
-          8
+          9
         ]
       ]
     },
@@ -185,7 +233,7 @@
         [
           2026,
           6,
-          8
+          9
         ]
       ]
     },
@@ -201,7 +249,7 @@
         [
           2026,
           6,
-          8
+          9
         ]
       ]
     },
@@ -217,7 +265,7 @@
         [
           2026,
           6,
-          8
+          9
         ]
       ]
     },
@@ -233,7 +281,7 @@
         [
           2026,
           6,
-          8
+          9
         ]
       ]
     },
@@ -249,7 +297,7 @@
         [
           2026,
           6,
-          8
+          9
         ]
       ]
     },
@@ -278,7 +326,7 @@
         [
           2026,
           6,
-          8
+          9
         ]
       ]
     },
@@ -307,7 +355,7 @@
         [
           2026,
           6,
-          8
+          9
         ]
       ]
     },
@@ -336,7 +384,7 @@
         [
           2026,
           6,
-          8
+          9
         ]
       ]
     },
@@ -352,7 +400,7 @@
         [
           2026,
           6,
-          8
+          9
         ]
       ]
     },
