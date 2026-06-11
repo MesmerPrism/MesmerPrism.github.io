@@ -1159,7 +1159,7 @@ Long essay | Updated May 24, 2026
 Source: https://mesmerprism.com/plasmatic-multitudes/
 Canonical HTML: https://mesmerprism.com/plasmatic-multitudes/
 Generated: 2026-06-11
-Description: Long essay, method notes, vocabulary, pain-translation hypotheses, mixed-ability human-swarm interaction, and annotated references for weakly bounded bodies and semi-corporeal avatar aesthetics.
+Description: Long essay, method notes, vocabulary, pain-translation hypotheses, and annotated references for weakly bounded bodies and semi-corporeal avatar aesthetics.
 Markdown: https://mesmerprism.com/plasmatic-multitudes/index.md
 Plain text: https://mesmerprism.com/plasmatic-multitudes/index.txt
 
@@ -1171,8 +1171,7 @@ Field guide | Updated May 24, 2026
 
  This field guide extends the public project page into a deeper research library. It
  follows weakly bounded bodies across somaesthetics, media genealogy, XR embodiment,
- computational morphogenesis, pain translation, mixed-ability human-swarm interaction,
- vocabulary, and annotated sources.
+ computational morphogenesis, pain translation, vocabulary, and annotated sources.
 
 ## Reader path
 
@@ -1189,7 +1188,6 @@ Field guide | Updated May 24, 2026
  [Long essay Semi-corporeal avatar aesthetics across media history, XR, morphogenesis, and pain translation.](https://mesmerprism.com/essay.html)
  [Method Boundary precision as a somaesthetic design variable, with a compact conceptual map.](https://mesmerprism.com/project.html)
  [Pain translation Cautious avatar-pain hypotheses for boundary precision, protective fields, ownership, and agency.](https://mesmerprism.com/pain.html)
- [Mixed-ability HSI Shared swarm bodies for connectedness-first exploration, cooperative games, and the bridge to physical swarms.](https://mesmerprism.com/mixed-ability-hsi.html)
  [Vocabulary / field terms Terms for weakly bounded bodies across media theory, XR, perception, and care.](https://mesmerprism.com/terminology.html)
  [Annotated sources Reference notes across somaesthetics, perception, pseudo-haptics, morphogenesis, XR, media genealogy, and pain.](https://mesmerprism.com/references.html)
  [Somaesthetics note A short background appendix on lived bodily experience as the method anchor.](https://mesmerprism.com/background/somaesthetics.html)
@@ -1208,249 +1206,12 @@ Field guide | Updated May 24, 2026
 
  The field guide is not a second project overview. It is the place for material that
  would make the public page too large: the long-form essay, a compact method page,
- clinical-adjacent caution, mixed-ability HSI, vocabulary control, source status, and
- background notes.
+ clinical-adjacent caution, vocabulary control, source status, and background notes.
 
  The pages keep their own jobs. The long essay develops the media and XR argument. The
  pain page protects the clinical boundary. The vocabulary page keeps terms from becoming
  interchangeable mood language. The references page keeps the source architecture
  visible.
-</page>
-
-<page url="https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html" path="plasmatic-multitudes/mixed-ability-hsi.html">
-# Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes
-
-Source: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html
-Canonical HTML: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html
-Generated: 2026-06-11
-Description: A Plasmatic Multitudes research track on shared swarm bodies, mixed-ability collaboration, connectedness-first exploration, game-oriented coordination, and the bridge from aesthetic swarm design to physical swarm robotics.
-Markdown: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.md
-Plain text: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.txt
-BibTeX references: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.bib
-CSL JSON references: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.references.csl.json
-
----
-
-Mixed-ability HSI | Updated June 11, 2026
-
-# Mixed-Ability Human-Swarm Interaction
-
- This track asks how shared swarm bodies can support collaboration between people with
- different abilities, access needs, energy budgets, communication styles, and preferences
- for visibility. It begins with connectedness and exploration, then moves toward
- goal-directed games, and only then tests what survives when the swarm becomes robotic.
-
-## Core distinction
-
- Human-swarm interaction usually studies how people influence many individual agents.
- Plasmatic swarm design starts from a different but related question: how can many
- visible parts read as one shared body, field, or presence?
-
- The two questions meet, but they should not be collapsed. Aesthetic swarm bodies use
- perceptual coherence, motion, density, rhythm, and material feel. Physical robot
- swarms also have to obey hardware, localization, safety, latency, power, and collision
- constraints.
-
-## Claim status
-
- Field
- Human-swarm interaction for mixed-ability collaboration
-
- Project status
- Research program and design hypothesis
-
- Primary medium
- Shared plasmatic swarm bodies before physical swarms
-
- Core constraint
- Access, authorship, pacing, consent, and repair remain negotiable
-
-## Two swarm concepts
-
- HSI here means human-swarm interaction. In robotics, a swarm is usually a distributed
- collective: many agents follow local rules, sense their surroundings, affect one
- another, and produce group-level behavior that a person can influence but not fully
- micromanage
- ([Kolling et al.](https://www.ri.cmu.edu/publications/human-interaction-with-robot-swarms-a-survey/); [Brown et al.](https://users.cs.utah.edu/~dsbrown/pubs/Brown_HRI2014.pdf)) .
-
- Aesthetic swarm bodies are different. They may be implemented with particles, boids,
- point clouds, animated fields, or actual robots, but their first problem is perceptual:
- how do many parts become legible as one body, one relation, or one shared atmosphere?
- The Plasmatic Multitudes vocabulary treats this as Gestalt coherence, common fate,
- permeability, coalescence, and legible transformation rather than as mere visual
- decoration
- ([Plasmatic terminology](https://mesmerprism.com/plasmatic-multitudes/terminology.html#swarm-body); [Plasmatic essay](https://mesmerprism.com/plasmatic-multitudes/essay.html#method)) .
-
- The two swarm concepts interact. A visually coherent particle body can prepare
- collaborators to think in terms of tendencies, fields, and partial control. A physical
- robot swarm can test whether those shared-control ideas survive contact with material
- agents. But a beautiful particle swarm is not automatically a robot swarm, and a
- technically correct robot swarm is not automatically an inhabitable shared body.
-
- Physics changes role across that boundary. In the aesthetic track, physical behavior is
- an enabling scaffold: gravity, drag, elasticity, turbulence, viscosity, resistance, and
- collision cues make transformation readable and can support felt materiality. In the
- robotics track, physics becomes stricter: bodies have mass, batteries, motors,
- localization error, latency, surfaces, impact forces, and failure modes. The bridge is
- therefore not a straight export from visual design into robots. It is a constraint test
- of which aesthetic principles remain usable when the swarm becomes materially
- accountable
- ([Gilland](https://archive.org/details/elemental-magic/page/n2/mode/1up); [Kegeleirs and Birattari](https://www.frontiersin.org/journals/robotics-and-ai/articles/10.3389/frobt.2025.1607978/full)) .
-
-## Access is negotiated inside the group
-
- Mixed-ability collaboration cannot be reduced to one accessible controller or one
- adaptive interface. Ability-based design argues that systems should adapt to what people
- can and want to do, while interdependence work emphasizes that access is often produced
- between people, technologies, environments, and care relations
- ([Wobbrock et al.](https://doi.org/10.1145/1952383.1952384); [Bennett et al.](https://doi.org/10.1145/3234695.3236348)) .
-
- A shared swarm body makes that negotiation visible. One person might shape density,
- another rhythm, another boundary softness, another repair logic, another visibility, and
- another the timing of when the body acts at all. The design question is not whether each
- person has the same control channel. It is whether the group can understand, contest,
- rebalance, and trust the way agency is distributed.
-
- Disability and remote-VR research also warn against treating presence as a single
- default mode. Disclosure, sensory load, avatar presentation, recruitment, travel,
- fatigue, pacing, and asynchronous contribution can all change whether participation is
- actually available
- ([Mottelson et al.](https://arxiv.org/abs/2102.11207); [Zhang et al.](https://arxiv.org/abs/2208.11170); [Gualano et al.](https://arxiv.org/abs/2408.08193)) .
-
-## Three-step research arc
-
-### 1. Exploration and connectedness first
-
- The first phase should be creative and low-demand. Participants explore how a swarm body
- can glow, gather, split, soften, pulse, protect, reveal, or hide without immediate task
- pressure. The point is to find mappings that feel meaningful, comfortable, and socially
- negotiable before performance metrics dominate the design.
-
- This phase belongs inside Plasmatic Multitudes because weakly bounded bodies are already
- treated here as instruments for connectedness, coalescence, permeability, and altered
- self-other relation, not just as rendering styles
- ([Glowacki et al.](https://doi.org/10.1038/s41598-022-12637-z); [Glowacki](https://doi.org/10.3389/frvir.2023.1286950)) .
-
-### 2. Game-oriented collaboration
-
- The second phase turns promising mappings into structured play. Games can introduce
- goals, roles, timing, resource limits, asymmetric information, repair moments, and
- shared consequences without pretending that the first useful metric is workplace
- productivity. This is where the group can tune goal-directed dynamics: who can steer,
- who can veto, who can slow the swarm, who can make a contribution visible, and how the
- body recovers after conflict or overload.
-
- Game-oriented collaboration is also where access becomes measurable without becoming
- reductive. Measures can include shared agency, authorship, role comfort, recovery after
- errors, sensory load, visibility choice, coordination, and whether participants can
- explain and revise the mapping that shaped the group body.
-
-### 3. Bridge to swarm robotics
-
- The third phase tests translation. A virtual or screen-based swarm can exaggerate
- softness, speed, luminosity, density, and reversibility. Physical swarm interfaces and
- embodied swarm robots ask a harder question: which of those design principles still
- work when the swarm consists of tangible units with safety constraints, sensing limits,
- spatial error, and material inertia?
- ([Ichihashi et al.](https://doi.org/10.1145/3613904.3642870); [Le Goc et al.](https://doi.org/10.1145/2984511.2984547); [Suzuki et al.](https://doi.org/10.1145/3332165.3347911)) .
-
- The robotics bridge should therefore be staged as a later proof of survivability, not
- as the starting promise. Mixed-ability participants first need a vocabulary for shared
- control, access, and repair. Robotics then tests which parts of that vocabulary remain
- robust when the swarm has to move through the world.
-
-## What the instrument needs to expose
-
- The research instrument should make mediation inspectable. Participants and facilitators
- need to see what inputs are entering the system, what they affect, which logs are kept,
- who can see which contribution, and how a shared body changes when mappings are revised.
- Transparency does not solve access by itself, but it gives collaborators something
- concrete to question and repair.
-
- Inputs
- gesture, switches, controllers, voice, breath, biosignals, gaze, timing, rule edits
-
- Swarm variables
- density, rhythm, coupling, boundary softness, luminosity, speed, local attraction
-
- Access variables
- visibility, disclosure, pacing, rest, turn-taking, veto, asynchronous contribution
-
- Repair variables
- undo, pause, rebalance, remap, explain, replay, consent change, authorship note
-
-## A minimal study module
-
- A practical study can begin without robots. The first module can compare how small
- mixed-ability groups experience different shared-body mappings in a virtual swarm world.
-
-- Exploration condition: participants freely test control channels and decide which swarm properties feel expressive, comfortable, visible, or private.
-
-- Connectedness condition: the system emphasizes co-presence, coalescence, pacing, mutual visibility, and low-demand contribution.
-
-- Game condition: the same mappings are placed inside a cooperative goal with roles, time pressure, recovery, and negotiated control.
-
-- Robotics horizon: a small tangible or robotic prototype tests one successful mapping under physical constraints rather than trying to reproduce the whole virtual world.
-
- Outcomes should not stop at task score. The important measures include shared agency,
- legibility, fatigue, trust, role satisfaction, repair success, disclosure comfort,
- authorship, and whether participants can describe how the swarm body represented their
- contribution.
-
-## Boundaries
-
- This is not a claim that swarm bodies treat disability, loneliness, fatigue, pain, or
- social withdrawal. It is a design program for asking how collaboration can be staged
- when access is variable, distributed, and negotiated. The system should not force
- disclosure, make participation depend on VR tolerance, or treat equal input as the same
- thing as fair authorship.
-
- The strongest contribution would be a prototype family and method vocabulary: how to
- move from connectedness-first swarm exploration, through cooperative games, into
- robotics-facing constraints while preserving consent, pacing, visibility choice,
- inspectability, and repair.
-
- The page keeps the claim narrow: mixed-ability HSI is a plausible Plasmatic Multitudes
- research track when aesthetic swarm bodies and technical swarm robotics are related
- carefully instead of treated as the same thing.
-
-## Sources
-
- These sources ground the distinction between access theory, shared embodiment,
- connectedness-first XR, aesthetic swarm bodies, human-swarm interaction, and physical
- swarm robotics.
-
-- Wobbrock et al. "[Ability-Based Design: Concept, Principles and Examples](https://doi.org/10.1145/1952383.1952384)." ACM Transactions on Accessible Computing 3(3) (2011).
-
-- Bennett, Brady, and Branham. "[Interdependence as a Frame for Assistive Technology Research and Design](https://doi.org/10.1145/3234695.3236348)." ASSETS (2018).
-
-- Glowacki et al. "[Group VR Experiences Can Produce Ego Attenuation and Connectedness Comparable to Psychedelics](https://doi.org/10.1038/s41598-022-12637-z)." Scientific Reports 12 (2022).
-
-- Glowacki. "[VR Models of Death and Psychedelics: An Aesthetic Paradigm for Design Beyond Day-to-Day Phenomenology](https://doi.org/10.3389/frvir.2023.1286950)." Frontiers in Virtual Reality (2024).
-
-- Gilland. "[Elemental Magic: The Art of Special Effects Animation](https://archive.org/details/elemental-magic/page/n2/mode/1up)." Focal Press (2009).
-
-- Mottelson et al. "[Remote VR Studies: A Framework for Running Virtual Reality Studies Remotely Via Participant-Owned HMDs](https://arxiv.org/abs/2102.11207)." arXiv:2102.11207 (2021).
-
-- Zhang et al. "[It's Just Part of Me: Understanding Avatar Diversity and Self-Presentation of People with Disabilities in Social Virtual Reality](https://arxiv.org/abs/2208.11170)." arXiv:2208.11170 (2022).
-
-- Gualano et al. "[I Try to Represent Myself as I Am: Self-Presentation Preferences of People with Invisible Disabilities through Embodied Social VR Avatars](https://arxiv.org/abs/2408.08193)." arXiv:2408.08193 (2024).
-
-- Ichihashi et al. "[Swarm Body: Embodied Swarm Robots](https://doi.org/10.1145/3613904.3642870)." CHI (2024).
-
-- Le Goc et al. "[Zooids: Building Blocks for Swarm User Interfaces](https://doi.org/10.1145/2984511.2984547)." UIST (2016).
-
-- Suzuki et al. "[ShapeBots: Shape-Changing Swarm Robots](https://doi.org/10.1145/3332165.3347911)." UIST (2019).
-
-- Santos and Egerstedt. "[From Motions to Emotions: Can the Fundamental Emotions be Expressed in a Robot Swarm?](https://doi.org/10.1007/s12369-020-00665-6)" International Journal of Social Robotics 13 (2021).
-
-- Kaduk et al. "[From One to Many: How Active Robot Swarm Sizes Influence Human Cognitive Processes](https://doi.org/10.1109/RO-MAN60168.2024.10731232)." RO-MAN (2024).
-
-- Kolling et al. "[Human Interaction with Robot Swarms: A Survey](https://www.ri.cmu.edu/publications/human-interaction-with-robot-swarms-a-survey/)." IEEE Transactions on Human-Machine Systems 46(1) (2016).
-
-- Brown, Kerman, and Goodrich. "[Human-Swarm Interactions Based on Managing Attractors](https://users.cs.utah.edu/~dsbrown/pubs/Brown_HRI2014.pdf)." HRI (2014).
-
-- Kegeleirs and Birattari. "[Towards Applied Swarm Robotics: Current Limitations and Enablers](https://www.frontiersin.org/journals/robotics-and-ai/articles/10.3389/frobt.2025.1607978/full)." Frontiers in Robotics and AI (2025).
 </page>
 
 <page url="https://mesmerprism.com/plasmatic-multitudes/pain.html" path="plasmatic-multitudes/pain.html">
@@ -10581,16 +10342,4 @@ Source library
 - Carr, Haar, Amores, and Lopes. "[Dream Engineering: Simulating Worlds Through Sensory Stimulation](https://doi.org/10.1016/j.concog.2020.102955)." Consciousness and Cognition (2020).
 
 - Woollacott et al. "[Fire Kasina Advanced Meditation Produces Experiences Comparable to Psychedelic and Near-Death Experiences: A Pilot Study](https://doi.org/10.1016/j.explore.2024.103056)." EXPLORE (2024).
-</page>
-
-<page url="https://mesmerprism.com/tmp/video-carousel-demo.html" path="tmp/video-carousel-demo.html">
-# Video carousel demo
-
-Source: https://mesmerprism.com/tmp/video-carousel-demo.html
-Canonical HTML: https://mesmerprism.com/tmp/video-carousel-demo.html
-Generated: 2026-06-11
-Markdown: https://mesmerprism.com/tmp/video-carousel-demo.md
-Plain text: https://mesmerprism.com/tmp/video-carousel-demo.txt
-
----
 </page>

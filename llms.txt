@@ -19,8 +19,7 @@ Use the Markdown alternates for compact reading. Use the BibTeX or CSL JSON alte
 ## Plasmatic Multitudes
 - [Somaesthetics Appendix | Plasmatic Multitudes](https://mesmerprism.com/plasmatic-multitudes/background/somaesthetics.md): A short public note on somaesthetics as the method anchor for Plasmatic Multitudes.
 - [Long Essay: Semi-Corporeal Avatar Aesthetics | Plasmatic Multitudes](https://mesmerprism.com/plasmatic-multitudes/essay.md): A long-form essay on weakly bounded bodies, XR embodiment, media genealogy, computational morphogenesis, and cautious pain translation.
-- [Plasmatic Multitudes Field Guide](https://mesmerprism.com/plasmatic-multitudes/index.md): Long essay, method notes, vocabulary, pain-translation hypotheses, mixed-ability human-swarm interaction, and annotated references for weakly bounded bodies and semi-corporeal avatar aesthetics.
-- [Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes](https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.md): A Plasmatic Multitudes research track on shared swarm bodies, mixed-ability collaboration, connectedness-first exploration, game-oriented coordination, and the bridge from aesthetic swarm design to physical swarm robotics.
+- [Plasmatic Multitudes Field Guide](https://mesmerprism.com/plasmatic-multitudes/index.md): Long essay, method notes, vocabulary, pain-translation hypotheses, and annotated references for weakly bounded bodies and semi-corporeal avatar aesthetics.
 - [Plasmatic Avatars and Chronic Pain VR | Plasmatic Multitudes](https://mesmerprism.com/plasmatic-multitudes/pain.md): A cautious research note on boundary precision, avatar materiality, protective fields, ownership, agency, and pain-related body-representation hypotheses. Not a treatment claim.
 - [Method: Boundary Precision | Plasmatic Multitudes](https://mesmerprism.com/plasmatic-multitudes/project.md): A compact method note on boundary precision, somaesthetics, coherence, morphogenesis, and weakly bounded body design.
 - [Annotated Sources for Plasmatic Multitudes](https://mesmerprism.com/plasmatic-multitudes/references.md): Annotated references across somaesthetics, perception, pseudo-haptics, morphogenesis, XR embodiment, media genealogy, and pain/body-representation research.
@@ -53,6 +52,3 @@ Use the Markdown alternates for compact reading. Use the BibTeX or CSL JSON alte
 - [Strobotorch Android Signal Tooling](https://mesmerprism.com/Strobotorch/index.md): Strobotorch is an Android flashlight-signaling and diagnostics tool for torch and camera APIs, visible-light signal tests, device logging, and flashing-light safety.
 - [Project Scope | Strobotorch](https://mesmerprism.com/Strobotorch/project-boundary/index.md): The scope of Strobotorch Android flashlight signaling and diagnostics tooling.
 - [Sources | Strobotorch](https://mesmerprism.com/Strobotorch/sources/index.md): Academic and public sources for Strobotorch flashing-light safety, frequency context, torch/camera diagnostics, and visible-light signal tooling.
-
-## Site pages
-- [Video carousel demo](https://mesmerprism.com/tmp/video-carousel-demo.md)

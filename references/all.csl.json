@@ -1719,232 +1719,6 @@
     ]
   },
   {
-    "id": "www-ri-cmu-edu-kolling-et-al",
-    "type": "webpage",
-    "title": "Kolling et al.",
-    "URL": "https://www.ri.cmu.edu/publications/human-interaction-with-robot-swarms-a-survey/",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          11
-        ]
-      ]
-    },
-    "note": "Referenced by Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html"
-  },
-  {
-    "id": "users-cs-utah-edu-brown-et-al",
-    "type": "webpage",
-    "title": "Brown et al.",
-    "URL": "https://users.cs.utah.edu/~dsbrown/pubs/Brown_HRI2014.pdf",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          11
-        ]
-      ]
-    },
-    "note": "Referenced by Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html"
-  },
-  {
-    "id": "www-frontiersin-org-kegeleirs-and-birattari",
-    "type": "article-journal",
-    "title": "Kegeleirs and Birattari",
-    "URL": "https://www.frontiersin.org/journals/robotics-and-ai/articles/10.3389/frobt.2025.1607978/full",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          11
-        ]
-      ]
-    },
-    "note": "Referenced by Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html",
-    "DOI": "10.3389/frobt.2025.1607978/full"
-  },
-  {
-    "id": "doi-org-wobbrock-et-al",
-    "type": "article-journal",
-    "title": "Wobbrock et al.",
-    "URL": "https://doi.org/10.1145/1952383.1952384",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          11
-        ]
-      ]
-    },
-    "note": "Referenced by Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html",
-    "DOI": "10.1145/1952383.1952384"
-  },
-  {
-    "id": "doi-org-bennett-et-al",
-    "type": "article-journal",
-    "title": "Bennett et al.",
-    "URL": "https://doi.org/10.1145/3234695.3236348",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          11
-        ]
-      ]
-    },
-    "note": "Referenced by Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html",
-    "DOI": "10.1145/3234695.3236348"
-  },
-  {
-    "id": "arxiv-org-mottelson-et-al",
-    "type": "webpage",
-    "title": "Mottelson et al.",
-    "URL": "https://arxiv.org/abs/2102.11207",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          11
-        ]
-      ]
-    },
-    "note": "Referenced by Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html"
-  },
-  {
-    "id": "arxiv-org-zhang-et-al",
-    "type": "webpage",
-    "title": "Zhang et al.",
-    "URL": "https://arxiv.org/abs/2208.11170",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          11
-        ]
-      ]
-    },
-    "note": "Referenced by Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html"
-  },
-  {
-    "id": "arxiv-org-gualano-et-al",
-    "type": "webpage",
-    "title": "Gualano et al.",
-    "URL": "https://arxiv.org/abs/2408.08193",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          11
-        ]
-      ]
-    },
-    "note": "Referenced by Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html"
-  },
-  {
-    "id": "doi-org-ichihashi-et-al",
-    "type": "article-journal",
-    "title": "Ichihashi et al.",
-    "URL": "https://doi.org/10.1145/3613904.3642870",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          11
-        ]
-      ]
-    },
-    "note": "Referenced by Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html",
-    "DOI": "10.1145/3613904.3642870"
-  },
-  {
-    "id": "doi-org-le-goc-et-al",
-    "type": "article-journal",
-    "title": "Le Goc et al.",
-    "URL": "https://doi.org/10.1145/2984511.2984547",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          11
-        ]
-      ]
-    },
-    "note": "Referenced by Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html",
-    "DOI": "10.1145/2984511.2984547"
-  },
-  {
-    "id": "doi-org-suzuki-et-al",
-    "type": "article-journal",
-    "title": "Suzuki et al.",
-    "URL": "https://doi.org/10.1145/3332165.3347911",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          11
-        ]
-      ]
-    },
-    "note": "Referenced by Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html",
-    "DOI": "10.1145/3332165.3347911"
-  },
-  {
-    "id": "le-goc-et-al-from-motions-to-emotions-can-the-fundamental-emotions-be",
-    "type": "article-journal",
-    "title": "From Motions to Emotions: Can the Fundamental Emotions be Expressed in a Robot Swarm?",
-    "URL": "https://doi.org/10.1007/s12369-020-00665-6",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          11
-        ]
-      ]
-    },
-    "note": "Referenced by Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html",
-    "author": [
-      {
-        "literal": "Le Goc et al"
-      }
-    ],
-    "DOI": "10.1007/s12369-020-00665-6"
-  },
-  {
-    "id": "suzuki-et-al-from-one-to-many-how-active-robot-swarm-sizes-influence-",
-    "type": "article-journal",
-    "title": "From One to Many: How Active Robot Swarm Sizes Influence Human Cognitive Processes",
-    "URL": "https://doi.org/10.1109/RO-MAN60168.2024.10731232",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          11
-        ]
-      ]
-    },
-    "note": "Referenced by Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html",
-    "author": [
-      {
-        "literal": "Suzuki et al"
-      }
-    ],
-    "DOI": "10.1109/RO-MAN60168.2024.10731232"
-  },
-  {
     "id": "memory-alpha-fandom-com-species-index",
     "type": "webpage",
     "title": "Species index",
@@ -6805,6 +6579,30 @@
         ]
       ]
     }
+  },
+  {
+    "id": "doi-org-bennett-et-al-2018-2012",
+    "type": "article-journal",
+    "title": "Bennett et al., 2018",
+    "URL": "https://doi.org/10.1145/3234695.3236348",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          11
+        ]
+      ]
+    },
+    "note": "Referenced by Plasmatic Multitudes - Weakly Bounded Embodiment and Semi-Corporeal Avatar Design: https://mesmerprism.com/projects/plasmatic-multitudes.html",
+    "issued": {
+      "date-parts": [
+        [
+          2012
+        ]
+      ]
+    },
+    "DOI": "10.1145/3234695.3236348"
   },
   {
     "id": "mesmerprism-github-io-earlier-protocol-reference",
