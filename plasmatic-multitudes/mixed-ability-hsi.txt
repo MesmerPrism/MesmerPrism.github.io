@@ -544,6 +544,17 @@ Optional dynamics analogy: bioelectric fields
  and ethics path
  (Bioelectricity and Morphogenesis (https://mesmerprism.com/projects/bioelectricity.html); Levin, agential materials (https://doi.org/10.1007/s00018-023-04790-z); Levin, bioelectric signaling (https://doi.org/10.1016/j.cell.2021.02.034)) .
 
+ DiffeoMorph adds a more distant computational-morphogenesis reference for the same
+ far-future lane. It learns decentralized update rules that guide many agents toward
+ target 3D forms and evaluates those forms with a shape-matching loss rather than by
+ asking one operator to place every part. For mixed-ability HSI, this is not a current
+ access method and not evidence for bioelectric physiology. It is a possible future
+ dynamics family: agentic swarm components might eventually learn repairable
+ target-forming behaviors, while Rusty Morphospace would still need to expose goals,
+ metrics, training data, failure cases, and override rights before such dynamics
+ could become usable in a shared interface
+ (Pahng et al., DiffeoMorph (https://arxiv.org/abs/2512.17129); hormoz-lab/diffeomorph (https://github.com/hormoz-lab/diffeomorph)) .
+
  The same signal can then be routed into several paradigms without pretending they are
  the same. A breath estimate might soften boundary opacity in Optics, bias local
  attraction in Matter, trigger a Manifold pause command, or become only a private
@@ -746,7 +757,7 @@ Sources by role
  Applied swarm robotics limits, assembly, adaptive furniture, tangible swarms, embodied swarm robots, and deployment gaps.
 
  Implementation and caution
- Rusty Morphospace as an explicit stack, bioelectricity as an optional dynamics analogy, and biosignal transparency/privacy guidance.
+ Rusty Morphospace as an explicit stack, bioelectricity as an optional dynamics analogy, DiffeoMorph as a far-future many-agent dynamics reference, and biosignal transparency/privacy guidance.
 
 Sources
 
@@ -804,6 +815,8 @@ Sources
 - Kegeleirs and Birattari. "Towards Applied Swarm Robotics: Current Limitations and Enablers (https://www.frontiersin.org/journals/robotics-and-ai/articles/10.3389/frobt.2025.1607978/full)." Frontiers in Robotics and AI (2025).
 - Levin. "Bioelectric Signaling: Reprogrammable Circuits Underlying Embryogenesis, Regeneration, and Cancer (https://doi.org/10.1016/j.cell.2021.02.034)." Cell 184(8) (2021).
 - Levin. "Darwin's Agential Materials: Evolutionary Implications of Multiscale Competency in Developmental Biology (https://doi.org/10.1007/s00018-023-04790-z)." Cellular and Molecular Life Sciences 80 (2023).
+- Pahng, Guan, Fefferman, and Hormoz. "DiffeoMorph: Learning to Morph 3D Shapes Using Differentiable Agent-Based Simulations (https://arxiv.org/abs/2512.17129)." arXiv:2512.17129 (2025; revised 2026).
+- hormoz-lab. "diffeomorph (https://github.com/hormoz-lab/diffeomorph)." Official implementation repository for the DiffeoMorph paper.
 - Chiossi et al. "PhysioCHI: Towards Best Practices for Integrating Physiological Signals in HCI (https://doi.org/10.1145/3613905.3636286)." CHI EA (2024).
 - Mesmer Prism. Rusty Morphospace (https://mesmerprism.com/projects/rusty-morphospace.html), Rusty XR (https://mesmerprism.com/projects/rusty-xr.html), and Polar H10 Work (https://mesmerprism.com/projects/polar-h10.html).
 - Mesmer Prism. "Bioelectricity and Morphogenesis (https://mesmerprism.com/projects/bioelectricity.html)." Public project page.

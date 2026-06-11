@@ -997,6 +997,52 @@
     "DOI": "10.1016/j.cell.2021.02.034"
   },
   {
+    "id": "arxiv-org-pahng-et-al-diffeomorph-2026",
+    "type": "webpage",
+    "title": "Pahng et al., DiffeoMorph",
+    "URL": "https://arxiv.org/abs/2512.17129",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          11
+        ]
+      ]
+    },
+    "note": "Referenced by Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html",
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    }
+  },
+  {
+    "id": "github-com-hormoz-lab-diffeomorph-2026",
+    "type": "webpage",
+    "title": "hormoz-lab/diffeomorph",
+    "URL": "https://github.com/hormoz-lab/diffeomorph",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          11
+        ]
+      ]
+    },
+    "note": "Referenced by Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html",
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    }
+  },
+  {
     "id": "doi-org-li-et-al-swarm-manipulation-2026",
     "type": "article-journal",
     "title": "Li et al., Swarm Manipulation",
