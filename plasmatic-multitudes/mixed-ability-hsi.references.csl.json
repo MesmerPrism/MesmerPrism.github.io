@@ -1,5 +1,52 @@
 [
   {
+    "id": "jainpuneet798-github-io-jain-crip-sensorama-gesture-process-2026",
+    "type": "webpage",
+    "title": "Jain, Crip Sensorama gesture process",
+    "URL": "https://jainpuneet798.github.io/portfolio/cripgestures/",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          11
+        ]
+      ]
+    },
+    "note": "Referenced by Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html",
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    }
+  },
+  {
+    "id": "doi-org-jain-and-bayerlein-hand-to-mouth-2026-2026",
+    "type": "article-journal",
+    "title": "Jain and Bayerlein, Hand to Mouth, 2026",
+    "URL": "https://doi.org/10.1007/s11569-025-00494-9",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          11
+        ]
+      ]
+    },
+    "note": "Referenced by Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html",
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    },
+    "DOI": "10.1007/s11569-025-00494-9"
+  },
+  {
     "id": "doi-org-wobbrock-et-al-2026",
     "type": "article-journal",
     "title": "Wobbrock et al.",
@@ -46,6 +93,29 @@
       ]
     },
     "DOI": "10.1145/3234695.3236348"
+  },
+  {
+    "id": "jainpuneet798-github-io-jain-umwelten-2026",
+    "type": "webpage",
+    "title": "Jain, Umwelten",
+    "URL": "https://jainpuneet798.github.io/portfolio/umwelten/",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          11
+        ]
+      ]
+    },
+    "note": "Referenced by Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html",
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    }
   },
   {
     "id": "arxiv-org-mottelson-et-al-2026",
@@ -424,29 +494,6 @@
     }
   },
   {
-    "id": "jainpuneet798-github-io-jain-crip-sensorama-gesture-process-2026",
-    "type": "webpage",
-    "title": "Jain, Crip Sensorama gesture process",
-    "URL": "https://jainpuneet798.github.io/portfolio/cripgestures/",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          11
-        ]
-      ]
-    },
-    "note": "Referenced by Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html",
-    "issued": {
-      "date-parts": [
-        [
-          2026
-        ]
-      ]
-    }
-  },
-  {
     "id": "jainpuneet798-github-io-jain-crip-sensorama-christian-s-coffee-2026",
     "type": "webpage",
     "title": "Jain, Crip Sensorama: Christian's Coffee",
@@ -470,10 +517,10 @@
     }
   },
   {
-    "id": "doi-org-jain-and-bayerlein-hand-to-mouth-2026-2026",
-    "type": "article-journal",
-    "title": "Jain and Bayerlein, Hand to Mouth, 2026",
-    "URL": "https://doi.org/10.1007/s11569-025-00494-9",
+    "id": "jainpuneet798-github-io-jain-vr-navigation-study-2026",
+    "type": "webpage",
+    "title": "Jain, VR navigation study",
+    "URL": "https://jainpuneet798.github.io/portfolio/vrst/",
     "accessed": {
       "date-parts": [
         [
@@ -490,8 +537,30 @@
           2026
         ]
       ]
+    }
+  },
+  {
+    "id": "jainpuneet798-github-io-jain-autonomx-2026",
+    "type": "webpage",
+    "title": "Jain, AutonomX",
+    "URL": "https://jainpuneet798.github.io/portfolio/autonomx/",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          11
+        ]
+      ]
     },
-    "DOI": "10.1007/s11569-025-00494-9"
+    "note": "Referenced by Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html",
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    }
   },
   {
     "id": "archive-org-gilland-2026",
@@ -832,6 +901,53 @@
     }
   },
   {
+    "id": "jainpuneet798-github-io-jain-adaptive-virtual-keyboard-2026",
+    "type": "webpage",
+    "title": "Jain, adaptive virtual keyboard",
+    "URL": "https://jainpuneet798.github.io/portfolio/adaptivevirtualkeyboard/",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          11
+        ]
+      ]
+    },
+    "note": "Referenced by Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html",
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    }
+  },
+  {
+    "id": "doi-org-jeevithashree-et-al-adaptive-virtual-keyboard-2026",
+    "type": "article-journal",
+    "title": "Jeevithashree et al., adaptive virtual keyboard",
+    "URL": "https://doi.org/10.3233/TAD-200292",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          11
+        ]
+      ]
+    },
+    "note": "Referenced by Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html",
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    },
+    "DOI": "10.3233/TAD-200292"
+  },
+  {
     "id": "www-red3d-com-reynolds-steering-behaviors-2026",
     "type": "webpage",
     "title": "Reynolds, steering behaviors",
@@ -930,6 +1046,29 @@
     "type": "webpage",
     "title": "SideFX crowd docs",
     "URL": "https://www.sidefx.com/docs/houdini/crowds/basics.html",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          11
+        ]
+      ]
+    },
+    "note": "Referenced by Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html",
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    }
+  },
+  {
+    "id": "www-isea-symposium-archives-org-isea-autonomx-archive-2026",
+    "type": "webpage",
+    "title": "ISEA AutonomX archive",
+    "URL": "https://www.isea-symposium-archives.org/presentation/autonomx-real-time-creation-composition-with-complex-systems-presented-by-saunier-salter-vermette-quessy-demeule-et-al/",
     "accessed": {
       "date-parts": [
         [
@@ -1233,6 +1372,22 @@
       ]
     },
     "DOI": "10.1038/s41467-025-63706-6"
+  },
+  {
+    "id": "jainpuneet798-github-io-jain-epistemological-intervention",
+    "type": "webpage",
+    "title": "Jain, Epistemological Intervention",
+    "URL": "https://jainpuneet798.github.io/portfolio/epistemologicalintervention/",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          11
+        ]
+      ]
+    },
+    "note": "Referenced by Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html"
   },
   {
     "id": "le-goc-et-al-from-motions-to-emotions-can-the-fundamental-emotions-be",

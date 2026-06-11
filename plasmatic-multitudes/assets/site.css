@@ -546,6 +546,23 @@ main.shell {
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
+.stack-flow--expanded .stack-flow__grid {
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 0.65rem;
+}
+
+.stack-flow--expanded .stack-flow__node {
+  padding: 0.85rem 0.8rem;
+}
+
+.stack-flow--expanded .stack-flow__node strong {
+  font-size: 1.15rem;
+}
+
+.stack-flow--expanded .stack-flow__node span {
+  font-size: 0.88rem;
+}
+
 .stack-flow__node {
   position: relative;
 }
@@ -1155,6 +1172,10 @@ main.shell {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .stack-flow--expanded .stack-flow__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .comparison-grid,
   .protocol-card,
   .boundary-box {
@@ -1300,6 +1321,10 @@ main.shell {
   .module-list,
   .protocol-card,
   .boundary-box {
+    grid-template-columns: 1fr;
+  }
+
+  .stack-flow--expanded .stack-flow__grid {
     grid-template-columns: 1fr;
   }
 

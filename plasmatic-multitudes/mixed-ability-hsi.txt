@@ -39,6 +39,9 @@ Plain terms
  Mapping
  The link between a participant's action and what changes in the swarm.
 
+ Sensor envelope
+ The range of signals a person, device, or swarm agent can perceive and act through.
+
  Agency
  Who can affect what, and whether others can understand that influence.
 
@@ -83,6 +86,13 @@ The access problem
  can use. That question matters, but it is too small for mixed-ability HSI. A shared
  swarm body can be shaped by several people at once, so access becomes a group condition.
 
+ Access is also the right to reshape what the interface thinks a body is. Crip Sensorama
+ makes that especially clear for XR: default headset, controller, hand-gesture, vision,
+ and dexterity assumptions quietly define an imagined user before accessibility is added.
+ Mixed-ability HSI has to make that imagined user visible before it can design a fair
+ swarm body
+ (Jain, Crip Sensorama gesture process (https://jainpuneet798.github.io/portfolio/cripgestures/); Jain and Bayerlein, Hand to Mouth, 2026 (https://doi.org/10.1007/s11569-025-00494-9)) .
+
  Mixed-ability collaboration cannot be reduced to one accessible controller or one
  adaptive interface. Ability-based design argues that systems should adapt to what people
  can and want to do, while interdependence work emphasizes that access is often produced
@@ -94,6 +104,14 @@ The access problem
  preference, temporary impairment, and different willingness to disclose. The design
  question is not whether each person has the same channel. It is whether the group can
  understand, contest, rebalance, and trust how agency is distributed.
+
+ A mixed-ability group does not share one sensor envelope. Some participants may rely on
+ audio, text, haptics, peripheral vision, facilitator description, memory, breath,
+ assistive devices, or asynchronous annotation. The swarm body should make these
+ differences negotiable without making them compulsory disclosures. Jain's umwelt work
+ is useful here because it frames collaboration as overlapping sensory worlds and
+ temporalities rather than as one average user model
+ (Jain, Umwelten (https://jainpuneet798.github.io/portfolio/umwelten/)) .
 
  A shared swarm body makes that negotiation visible. One person might shape density,
  another rhythm, another boundary softness, another repair logic, another visibility,
@@ -242,9 +260,10 @@ Why input diversity is not enough
 
  A long list of inputs does not make a system accessible. Breath, gaze, EMG, mouth
  gestures, switches, controllers, text, and voice can all be useful, but none of them is
- automatically fair, private, comfortable, or meaningful. The decisive question is what
- each channel controls, who can see it, how tiring it is, and whether the participant can
- change or withdraw it.
+ automatically fair, private, comfortable, expressive, or sustainable. Even a category
+ such as "mouth gesture" is not generic: it may mean mouth-joystick expertise, a
+ painting practice, a wheelchair-control method, a public gesture, a tiring calibration
+ routine, or a private access habit.
 
  The Galea development account makes that access lineage more concrete: Bernal
  describes working with Christian Bayerlein to connect EMG to muscles across Christian's
@@ -252,12 +271,37 @@ Why input diversity is not enough
  devices. Christian's later XR/HCI work with Puneet Jain, including the Crip Sensorama
  gesture process, the Christian's Coffee installation, and the Hand to Mouth paper,
  reframes access around mouth gestures, crip-hacking, preference-tuned mappings, and
- disability-led interaction rather than around
- retrofitting hand-centric interfaces. For mixed-ability HSI, the lesson is not that
- more sensors are automatically better. It is that optional physiological, muscular,
- ocular, mouth-based, and affective channels can become expressive inputs when
- participants choose them and can inspect how they are mapped
+ disability-led interaction rather than around retrofitting hand-centric interfaces. For
+ mixed-ability HSI, the lesson is not that more sensors are automatically better. It is
+ that every mapping has provenance: who proposed it, whose practice it comes from, how
+ it was tuned, what it costs, what it is allowed to show, and how it can be changed or
+ withdrawn
  (Bernal, Developing Galea, 2021 (https://www.media.mit.edu/posts/galea/); Jain, Crip Sensorama gesture process (https://jainpuneet798.github.io/portfolio/cripgestures/); Jain, Crip Sensorama: Christian's Coffee (https://jainpuneet798.github.io/portfolio/cripsensorama_christians-coffee/); Jain and Bayerlein, Hand to Mouth, 2026 (https://doi.org/10.1007/s11569-025-00494-9)) .
+
+ "Embodied" or "controllerless" interaction is not automatically accessible. Mid-air
+ gestures, breath control, gaze dwell, and mouth gestures can all create fatigue,
+ exposure, social awkwardness, or calibration burden. Access depends on whether the
+ channel is voluntary, sustainable, replaceable, private when needed, and allowed to
+ fail safely
+ (Jain, VR navigation study (https://jainpuneet798.github.io/portfolio/vrst/)) .
+
+ Method precedent
+
+Jain's access-as-instrument practice
+
+ Puneet Jain's work is useful here because it joins disability-led XR, programming,
+ complex systems, and research-creation. Crip Sensorama does not treat mouth gestures
+ as a universal alternative to hand controllers. It begins from disabled artists'
+ existing techniques, adapts XR hardware around those techniques, treats failures and
+ workarounds as design knowledge, and turns the resulting interaction into a
+ storytelling environment.
+
+ For mixed-ability HSI, this means a mapping is not just an input binding. It is an
+ authored access practice with calibration burden, aesthetic meaning, failure history,
+ reuse permissions, and social consequences. A swarm-body instrument should therefore
+ expose not only what signal controls what dynamic, but also who proposed the mapping,
+ how it was tuned, what it costs, who sees it, and how it can be retired
+ (Jain, Crip Sensorama gesture process (https://jainpuneet798.github.io/portfolio/cripgestures/); Jain, Crip Sensorama: Christian's Coffee (https://jainpuneet798.github.io/portfolio/cripsensorama_christians-coffee/); Jain, AutonomX (https://jainpuneet798.github.io/portfolio/autonomx/); Jain and Bayerlein, Hand to Mouth, 2026 (https://doi.org/10.1007/s11569-025-00494-9)) .
 
 Physics as legibility, then physics as constraint
 
@@ -394,6 +438,15 @@ Three-step research arc
  and coalescence: concepts that participants can accept, reject, or rename before the
  system asks them to optimize a goal.
 
+ Exploration should also include encounter and storytelling, not only calibration or
+ low-demand play. In encounter mode, participants meet an authored access practice
+ through the swarm body without being asked to master it, simulate it, or optimize it.
+ A workshop might translate an everyday access practice into a boundary that softens, a
+ field that waits, a rhythm that insists on rest, a cluster that refuses speed, or a
+ repair gesture that makes hidden support visible. The point is relation and attention,
+ not an empathy simulation
+ (Jain, Crip Sensorama: Christian's Coffee (https://jainpuneet798.github.io/portfolio/cripsensorama_christians-coffee/); Jain and Bayerlein, Hand to Mouth, 2026 (https://doi.org/10.1007/s11569-025-00494-9)) .
+
 2. Game-oriented collaboration
 
  The second phase turns promising mappings into structured play. Games can introduce
@@ -440,6 +493,16 @@ What the instrument needs to expose
  act through which channel, at what scale, with what visibility, under what consent, and
  with what repair option?
 
+ It should also expose failed mappings, not only successful ones. Calibration drift,
+ occlusion, camera angle, headset weight, distance sensitivity, false positives,
+ rejected gestures, device availability, environmental constraints, and fatigue costs
+ are part of the access record. A failed mapping can still teach the group what the
+ interface assumed about posture, visibility, strength, endurance, privacy, or bodily
+ symmetry.
+
+ Access practices
+ existing devices, gestures, rhythms, rest strategies, communication habits, assisted routines, and off-limits signals
+
  Inputs
  gesture, touch, switches, controllers, voice, text, breath, biosignals, EMG, gaze, pose, timing, rule edits, and environmental markers
 
@@ -452,10 +515,16 @@ What the instrument needs to expose
  Repair variables
  undo, pause, rebalance, remap, explain, replay, consent change, authorship note
 
+ Calibration burden
+ setup time, posture, camera angle, occlusion, false positives, rejected gestures, assistance, and recalibration
+
  Mapping questions
 
  Mapping layer
  Example question
+
+ Access practice
+ Whose lived technique produced this mapping, and is it personal, shareable, audience-facing, or off-limits?
 
  Human channel
  Is this input voluntary, tiring, private, expressive, replaceable, involuntary, or only safe in short bursts?
@@ -472,22 +541,28 @@ What the instrument needs to expose
  Repair
  Can the group pause, undo, remap, replay, rebalance, change consent, or explain what happened?
 
+ Provenance
+ Who named the mapping, who approved reuse, what variations were rejected, and how can it be withdrawn?
+
 The input stack has to stay explicit
 
- An input is only the first layer. The same signal can support several different social
- designs.
+ A signal is not the beginning of the design. The stack starts with access practice and
+ ends with provenance, reuse, and retirement.
 
  The same breath estimate could soften the body's edge, slow the whole swarm, privately
  warn the participant about overload, or trigger a group pause. Those are different
  mappings, even though the input is identical. That is why the page uses a stack:
- human channel, binding, dynamic target, and social contract.
+ access practice, human channel, binding, dynamic target, feedback, social contract,
+ and provenance.
 
- The human channel is the signal: breath, text, switch, EMG, gaze, gesture, controller,
- or annotation. The binding says what scale the signal controls: one particle, a
- sub-swarm, the whole body, a field, a rule, a role, or a veto. The dynamic target says
- what changes: color, density, rhythm, attraction, boundary, safety, or repair. The
- social contract says how the mapping is seen, consented to, credited, paused,
- replayed, or remapped.
+ Access practice names the lived technique behind a signal: mouth joystick use, gaze
+ typing, switch timing, breath pacing, assisted communication, pain management, rest
+ strategy, wheelchair control, or another situated practice. The human channel is the
+ measurable signal. The binding says what scale the signal controls. The dynamic target
+ says what changes. Feedback says how the participant and group know what happened. The
+ social contract says how the mapping is seen, consented to, credited, paused, replayed,
+ or remapped. Provenance and retirement say who proposed the mapping, who may reuse it,
+ whether it can be public, and how it can be withdrawn from later versions.
 
  The most useful explicit source here is Kim, Drew, Domova, and Follmer's
  user-defined swarm robot control study. It shows that people do not simply choose
@@ -507,13 +582,21 @@ The input stack has to stay explicit
 
  Mixed-ability HSI therefore needs a stack, not an input menu. A mouth gesture,
  EMG switch, breath signal, hand pose, touchscreen text entry, voice command, or
- environment marker can all be valid, but they become different social proposals when
- they bind to a whole swarm, a sub-swarm, one particle, a field, a rule, a color state,
- a safety veto, or a shared goal. MOSAIX is important because it moves this question
+ environment marker can all be valid, but none is generic. The same family of signals can
+ differ by anatomy, fatigue, equipment, history, comfort, cultural meaning, and
+ preference. Each becomes a different social proposal when it binds to a whole swarm, a
+ sub-swarm, one particle, a field, a rule, a color state, a safety veto, or a shared
+ goal. MOSAIX is important because it moves this question
  into public multi-human-swarm interaction: people contribute ideas through robot tiles,
  the swarm clusters them semantically, and the installation becomes a social sorting
  medium rather than a single-operator controller
  (Alhafnawi et al., MOSAIX (https://arxiv.org/abs/2411.09975)) .
+
+ Some mappings are only for the participant who created them. Some can be shared inside
+ a group. Some can become audience-facing in an artwork, public installation, or teaching
+ setting. Some should be retired after a session. These categories should not be
+ collapsed. A private access practice should not become a public interaction technique
+ without explicit consent, framing, and a way to withdraw it.
 
  Existing HSI asks how a human can influence a swarm. Multi-human HSI asks how several
  people can influence a swarm. Mixed-ability HSI asks how several differently situated
@@ -527,6 +610,15 @@ The input stack has to stay explicit
  and semantic contribution. None of those families determines the design by itself. The
  decisive question is whether the channel changes appearance, selection, a rule, an
  attractor, a form seed, a game role, or a safety and repair affordance.
+
+ Some mappings also need to adapt over time. Dwell thresholds, gesture confidence,
+ pause duration, sensitivity, and repair prompts may need to change across repeated use.
+ Jain's adaptive gaze keyboard work is useful here because it treats timing as
+ user-specific and dynamically adjustable rather than as one fixed setting. In a
+ mixed-ability swarm body, adaptive rules should remain inspectable, reversible, and
+ overridable, with a clear distinction between participant-controlled adaptation and
+ system-controlled adaptation
+ (Jain, adaptive virtual keyboard (https://jainpuneet798.github.io/portfolio/adaptivevirtualkeyboard/); Jeevithashree et al., adaptive virtual keyboard (https://doi.org/10.3233/TAD-200292)) .
 
  A useful adjacent vocabulary comes from crowd animation and VFX. Those systems often
  separate the behavior layer from the art-direction layer and the rig or production
@@ -545,7 +637,11 @@ The input stack has to stay explicit
  What must be mapped
  Why it matters socially
 
- Human expression channel
+ Access practice
+ Mouth joystick use, gaze typing, switch timing, breath pacing, rest strategy, assisted communication, wheelchair control, or another situated technique.
+ The mapping begins with skill, fatigue, privacy, support, refusal, and authorship, not with a neutral sensor list.
+
+ Human channel
  Gesture, touch, voice, text, gaze, controller pose, switches, EMG, EOG, EEG, EDA, PPG, ECG, breath, accelerometer, mouth gesture, or asynchronous annotation.
  Access is not equal input hardware. The group needs to know which channels are optional, private, tiring, expressive, or replaceable.
 
@@ -557,9 +653,17 @@ The input stack has to stay explicit
  Color, glow, opacity, density, speed, rhythm, attraction, repulsion, alignment, cohesion, leader following, field impulse, SDF seed form, goal, trajectory, or beacon.
  Changing color is different from changing attraction. Appearance, motion, form, and environment influence carry different power and visibility.
 
+ Feedback
+ Private haptic cue, public visual trace, sound, caption, avatar change, facilitator cue, delayed replay, or log entry.
+ Feedback decides who can perceive influence, whether contribution becomes exposure, and whether repair can start early.
+
  Social contract
  Consent, disclosure, turn-taking, veto, rest, replay, attribution, explanation, failure recovery, and conflict resolution.
  A mixed-ability swarm body only works if collaborators can challenge and rebalance how agency is distributed.
+
+ Provenance / retirement
+ Origin, naming, tuning history, rejected variants, reuse permission, audience status, attribution, licensing, withdrawal, and deletion.
+ Participant-created mappings are authored practices. They need reuse rules before they travel into demos, games, logs, or later prototypes.
 
  The next part is implementation-facing. Readers who only want the research argument can
  skip to "Robotics horizon." Its purpose is to show how the mapping stack could be made
@@ -576,6 +680,15 @@ Rusty Morphospace
  confusion came from the input channel, the binding, the dynamic rule, the renderer,
  latency, calibration drift, or another collaborator's hidden control
  (Rusty Morphospace (https://mesmerprism.com/projects/rusty-morphospace.html); Rusty XR (https://mesmerprism.com/projects/rusty-xr.html); Polar H10 work (https://mesmerprism.com/projects/polar-h10.html)) .
+
+ Jain's AutonomX work suggests the standard for this implementation layer: the system
+ should behave like an authoring instrument, not only a hidden runtime. AutonomX
+ separates generators, signals, and drawing so artists can compose with complex
+ systems through a graphical interface and route outputs through OSC/MIDI. Rusty
+ Morphospace can make the parallel move for mixed-ability HSI: channels, bindings,
+ swarm dynamics, visibility rules, logs, and adapters should be visible enough to
+ compose, inspect, retune, fork, and retire
+ (Jain, AutonomX (https://jainpuneet798.github.io/portfolio/autonomx/); ISEA AutonomX archive (https://www.isea-symposium-archives.org/presentation/autonomx-real-time-creation-composition-with-complex-systems-presented-by-saunier-salter-vermette-quessy-demeule-et-al/)) .
 
  Rusty Lattice
  Sensing, effectors, reference spaces, calibration, validity, and confidence.
@@ -726,6 +839,12 @@ A minimal study module
  mixed-ability groups experience different shared-body mappings in a virtual swarm world,
  with non-HMD participation available from the start.
 
+ Before participants test swarm mappings, the study should elicit existing access
+ practices: preferred devices, gestures, rhythms, rest strategies, environmental hacks,
+ communication habits, and practices they do not want captured or made public. The goal
+ is not to extract every possible signal, but to learn which practices are meaningful,
+ shareable, private, tiring, skilled, or off-limits.
+
  Beginning without robots is not a retreat from HSI. If a group cannot understand,
  rebalance, or repair a mapping in a reversible virtual body, a physical swarm will not
  make that mapping more accessible.
@@ -739,8 +858,9 @@ Participants
  Small groups with access planning, disclosure controls, fallback inputs, and non-HMD options.
 
 Conditions
-- Exploration: test channels and decide what feels expressive, comfortable, visible, or private.
-- Connectedness: emphasize co-presence, coalescence, pacing, mutual visibility, and low-demand contribution.
+- Access-practice elicitation: name existing techniques, devices, rhythms, supports, and off-limits signals.
+- Exploration / connectedness: test low-demand mappings for comfort, expression, visibility, privacy, and co-presence.
+- Encounter: translate an authored access practice into a visible swarm dynamic without turning it into disability simulation.
 - Game: place the same mappings inside a cooperative goal with roles, time pressure, recovery, and negotiated control.
 - Robotics horizon: test one successful mapping under physical constraints without reproducing the whole virtual world.
 
@@ -765,10 +885,41 @@ Safeguards
  System logs
  Channel changes, binding changes, dynamic targets, visibility settings, consent changes, and replay markers.
 
+ Access-practice provenance
+ Who proposed the mapping, whose practice it came from, and whether it was participant-originated, facilitator-suggested, borrowed, rejected, or co-authored.
+
+ Calibration burden
+ Setup time, posture, camera angle, false positives, rejected gestures, fatigue cost, recalibration needs, device availability, and whether assistance was required.
+
+ Adaptation over time
+ Whether thresholds, dwell times, sensitivity, pacing, or repair prompts changed across sessions, and who controlled those changes.
+
+ Feedback split
+ What feedback was private to the participant, public to the group, logged for later, delayed, or hidden entirely.
+
+ Reuse and retirement
+ Whether the mapping may be reused, demonstrated, anonymized, attributed, licensed, forked, or withdrawn.
+
+ Log contestation
+ Whether participants agreed with system records or annotated, corrected, deleted, or challenged them.
+
  Outcomes should not stop at task score. The important measures include shared agency,
  legibility, fatigue, trust, role satisfaction, repair success, disclosure comfort,
  authorship, and whether participants can describe how the swarm body represented their
  contribution.
+
+ Logs should be treated as situated records, not as neutral truth. A system may overcount
+ fast signals, undercount quiet forms of participation, repeat uncertain classifications,
+ or miss invisible labor such as waiting, masking fatigue, or deciding not to act. The
+ study should pair system logs with participant interpretation and allow participants to
+ annotate, contest, or delete records
+ (Jain, Epistemological Intervention (https://jainpuneet798.github.io/portfolio/epistemologicalintervention/)) .
+
+ Authorship should be planned before data collection. If participants invent mappings,
+ name swarm states, define repair gestures, reject sensor categories, or contribute
+ access vocabulary, the study should specify how those contributions are credited,
+ anonymized, withheld, licensed, or carried into later prototypes. Authorship is part of
+ the mapping contract, not only a post-study acknowledgement.
 
 Boundaries
 
@@ -780,6 +931,7 @@ This work does not claim to:
 - infer emotion, pain, intention, fatigue, or consent from biosignals;
 - make VR tolerance a condition of participation;
 - equate equal input with fair authorship;
+- simulate disability or let non-disabled participants "feel what disability is like";
 - prove robot-swarm safety from particle-body success.
 
 It does claim to study:
@@ -790,6 +942,12 @@ It does claim to study:
  Mixed-ability HSI does not begin by asking every participant to control the same swarm
  in the same way. It begins by asking whether a group can see, question, rebalance, and
  repair how influence is distributed.
+
+ When a mapping comes from a disabled participant's access practice, it must be treated
+ as authored technique, not as an empathy machine, costume, spectacle, or novelty
+ controller. Audience-facing mappings can be valid, but only when their origin,
+ permission, framing, and withdrawal rules are explicit
+ (Jain and Bayerlein, Hand to Mouth, 2026 (https://doi.org/10.1007/s11569-025-00494-9)) .
 
  A reversible swarm body is the first testbed because it makes those negotiations visible
  without immediately adding physical risk. Cooperative games add goals and pressure.
@@ -812,6 +970,9 @@ Sources by role
 
  Access foundation
  Ability-based design, interdependence, disability-led XR/HCI, and XR accessibility requirements.
+
+ Crip-hacking, access instruments, and authored mappings
+ Jain's Crip Sensorama, Hand to Mouth, adaptive gaze keyboard, AutonomX, and related portfolio work support access as a creative, technical, political, and programmable practice with provenance, calibration burden, authorship, failure histories, and reuse permissions.
 
  Embodiment precedent
  Isness, Body RemiXer, ETC, Emotional Beasts, aura avatars, pseudohaptics, and abstract social bodies.
@@ -849,6 +1010,13 @@ Sources
 - OpenBCI. "OpenBCI Unveils Galea, a New Platform that Brings Next Generation Biometrics to Mixed Reality (https://www.prnewswire.com/news-releases/openbci-unveils-galea-a-new-platform-that-brings-next-generation-biometrics-to-mixed-reality-301177149.html)." Press release (2020).
 - Jain. "Re-imagining XR with People with Sensorimotor Disabilities Through Criptastic Hacking (https://jainpuneet798.github.io/portfolio/cripgestures/)." Project page (accessed 2026-06-11).
 - Jain. "Crip Sensorama: Christian's Coffee (https://jainpuneet798.github.io/portfolio/cripsensorama_christians-coffee/)." Project page (accessed 2026-06-11).
+- Jain. "Umwelten (https://jainpuneet798.github.io/portfolio/umwelten/)." Project page (accessed 2026-06-11).
+- Jain. "Navigating in VR Using Free-Hand Gestures and Embodied Controllers (https://jainpuneet798.github.io/portfolio/vrst/)." Project page (accessed 2026-06-11).
+- Jain. "Adaptive Virtual Keyboard (https://jainpuneet798.github.io/portfolio/adaptivevirtualkeyboard/)." Project page (accessed 2026-06-11).
+- Jeevithashree et al. "Eye Gaze Controlled Adaptive Virtual Keyboard for Users with SSMI (https://doi.org/10.3233/TAD-200292)." Technology and Disability 33(1) (2021).
+- Jain. "AutonomX (https://jainpuneet798.github.io/portfolio/autonomx/)." Project page (accessed 2026-06-11).
+- Saunier et al. "AutonomX: Real Time Creation/Composition with Complex Systems (https://www.isea-symposium-archives.org/presentation/autonomx-real-time-creation-composition-with-complex-systems-presented-by-saunier-salter-vermette-quessy-demeule-et-al/)." ISEA archive (2022).
+- Jain. "Epistemological Intervention (https://jainpuneet798.github.io/portfolio/epistemologicalintervention/)." Project page (accessed 2026-06-11).
 - Jain and Bayerlein. "Hand to Mouth: Shifting the Bare-Minimum Accessibility Paradigm in XR Through Crip-Hacking and Crip-Aesthetics (https://doi.org/10.1007/s11569-025-00494-9)." Ethics and Society 20 (2026).
 - Gilland. "Elemental Magic: The Art of Special Effects Animation (https://archive.org/details/elemental-magic/page/n2/mode/1up)." Focal Press (2009).
 - Suzuki et al. "RoomShift: Room-Scale Dynamic Haptics for VR with Furniture-Moving Swarm Robots (https://doi.org/10.1145/3313831.3376523)." CHI (2020).
