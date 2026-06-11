@@ -17,82 +17,71 @@ Mixed-ability HSI | Updated June 11, 2026
 
  Shared agency through many-part bodies
 
- Mixed-ability HSI begins from a practical conflict: a swarm is easiest to operate when
- one person gives a clean high-level command, but access in real groups is often produced
- by several people negotiating what they can do, what they want visible, when they need
- rest, and how decisions can be repaired.
+ Imagine four people sharing a swarm body. It is not a humanoid avatar and not a single
+ cursor. It is a moving cloud of many visible parts: particles, points, fields, light,
+ aura, or small agents that gather, stretch, pulse, split, hide, reveal, and recover.
 
- This track therefore begins with a shared plasmatic swarm body before it begins with
- robots. Many visible parts can gather, soften, split, pulse, hide, reveal, protect, and
- recover. In that reversible medium, participants can discover how shared agency feels
- before the same mappings are tested against mass, latency, localization, safety, and
- failure.
+ Each person can affect the body differently. One participant might use breath to soften
+ the edge. One might use text to name a goal. One might use a controller to seed a
+ movement field. One might use a switch to pause or veto a high-intensity state.
+
+## Plain terms
+
+ Swarm
+ Many small parts whose local behavior creates a larger pattern.
+
+ HSI
+ Human-swarm interaction: how people influence many coordinated parts at once.
+
+ Plasmatic swarm body
+ A reversible visual body made from particles, fields, aura, light, or animated matter.
+
+ Mapping
+ The link between a participant's action and what changes in the swarm.
+
+ Agency
+ Who can affect what, and whether others can understand that influence.
+
+ Mixed-ability
+ Different bodies, devices, energy levels, sensory tolerances, communication styles, privacy needs, and willingness to disclose.
 
 ## Core question
 
  Can a mixed-ability group understand, rebalance, and repair how agency is distributed
  through a many-part body?
 
- This page treats mixed-ability HSI as negotiated shared agency. The first design task is
- to make contribution, privacy, fatigue, authorship, veto power, and repair legible to
- the group.
+ This is a design and research-program page, not a therapeutic claim. It asks how
+ contribution, privacy, fatigue, authorship, veto power, and repair can become legible
+ to a group before physical robots add mass, collision, localization, battery limits,
+ and safety risk.
 
 ## Thesis
 
- The swarm is not only something to control. It is a shared object through which
+ Most swarm interfaces ask how a person controls many parts. This page asks what
+ happens when several differently situated people share influence over those parts.
+ The swarm is not only something to control; it is a shared object through which
  pacing, visibility, authorship, and repair become negotiable.
 
 ## Design stance
 
- Begin with a reversible plasmatic swarm body. Use games to test coordination under
- pressure. Treat robotics as the later survivability test, not the starting promise.
+ Begin with a reversible visual swarm body, where mappings can be seen, changed,
+ hidden, paused, or repaired. Use games to test those mappings under goals, roles,
+ pressure, and conflict. Treat robots as the later survivability test.
 
-## Claim ladder
-
- Evidence status changes as the work moves from concept, to design, to study, to
- physical deployment. These levels should not be read as one claim.
-
- The page makes a design argument, not a therapeutic or deployment claim. The strongest
- current claim is conceptual: mixed-ability HSI needs negotiated shared agency rather
- than one universal controller. The evidence status becomes stricter as the work moves
- from virtual bodies toward physical robots.
-
- Conceptual
-
-### Negotiated shared agency
-
- Mixed-ability HSI needs negotiated shared agency, not one universal controller.
-
- Still to show: whether participants experience this as useful, fair, and understandable.
-
- Design
-
-### Visible mappings
-
- Plasmatic swarm bodies can expose agency, visibility, pacing, and repair.
-
- Still to show: which mappings work for which groups, settings, and access needs.
-
- Research
-
-### Virtual-first study
-
- A virtual-first study can test connectedness, legibility, fatigue, authorship, and repair.
-
- Still to show: how those measures relate to long-term collaboration and group trust.
-
- Robotics
-
-### Material survivability
-
- Physical swarms can later test material survivability.
-
- Still to show: safety, load, localization, maintenance, emergency stop, and failure recovery.
+ The page moves in four steps. First, it explains why mixed-ability HSI is an access
+ problem, not just a control problem. Second, it separates visual swarm bodies from
+ physical robot swarms. Third, it proposes exploration, cooperative play, and robotics
+ constraints as a staged research path. Fourth, it names safeguards for consent, privacy,
+ fatigue, authorship, and repair.
 
 ## The access problem
 
- This section turns access from a value into interface requirements: input, perception,
- pacing, privacy, repair, and exit.
+ Access becomes concrete when the group has to decide who can act, who can perceive the
+ result, who can rest, who can stay private, and who can repair what happened.
+
+ In many accessibility projects, the first question is whether a person has an input they
+ can use. That question matters, but it is too small for mixed-ability HSI. A shared
+ swarm body can be shaped by several people at once, so access becomes a group condition.
 
  Mixed-ability collaboration cannot be reduced to one accessible controller or one
  adaptive interface. Ability-based design argues that systems should adapt to what people
@@ -131,17 +120,6 @@ Mixed-ability HSI | Updated June 11, 2026
 
  Can the group pause, undo, remap, replay, rebalance, or change consent after a mapping fails?
 
- Scenario
-
-### Four collaborators, one swarm body
-
- One participant uses breath to soften the boundary. One uses text to name goals. One
- uses a controller to seed movement fields. One uses a switch to pause or veto
- high-intensity states.
-
- The group can inspect, rename, rebalance, hide, or retire each mapping. That is the
- object of study.
-
  Disability and remote-VR research also warn against treating presence as a single
  default mode. Disclosure, sensory load, avatar presentation, recruitment, travel,
  fatigue, pacing, and asynchronous contribution can all change whether participation is
@@ -155,8 +133,8 @@ Mixed-ability HSI | Updated June 11, 2026
 
 ## Two swarm concepts
 
- This section prevents a category error: aesthetic swarm bodies and robot swarms overlap,
- but they solve different problems.
+ The word "swarm" does two different jobs on this page, and the project only works if
+ those jobs stay separate.
 
  Aesthetic swarm body
 
@@ -200,6 +178,13 @@ Mixed-ability HSI | Updated June 11, 2026
  sequence: first legible shared agency, then physical survivability.
 
 ### Why abstract bodies matter
+
+ These projects matter because they show that a body does not have to look like a normal
+ human body to carry social meaning. A luminous aura, particle cloud, constellation, or
+ abstract creature can still support ownership, touch metaphor, co-presence, emotion,
+ and relation. This page borrows that lesson, then asks a different question: can those
+ abstract-body qualities become negotiable access infrastructure for a mixed-ability
+ group?
 
  Particle-body work
 
@@ -255,7 +240,13 @@ Mixed-ability HSI | Updated June 11, 2026
 
 ### Why input diversity is not enough
 
- The Galea development account also makes the access lineage more concrete: Bernal
+ A long list of inputs does not make a system accessible. Breath, gaze, EMG, mouth
+ gestures, switches, controllers, text, and voice can all be useful, but none of them is
+ automatically fair, private, comfortable, or meaningful. The decisive question is what
+ each channel controls, who can see it, how tiring it is, and whether the participant can
+ change or withdraw it.
+
+ The Galea development account makes that access lineage more concrete: Bernal
  describes working with Christian Bayerlein to connect EMG to muscles across Christian's
  body and use those signals as additional switches or actuators for controlling other
  devices. Christian's later XR/HCI work with Puneet Jain, including the Crip Sensorama
@@ -269,6 +260,10 @@ Mixed-ability HSI | Updated June 11, 2026
  ([Bernal, Developing Galea, 2021](https://www.media.mit.edu/posts/galea/); [Jain, Crip Sensorama gesture process](https://jainpuneet798.github.io/portfolio/cripgestures/); [Jain, Crip Sensorama: Christian's Coffee](https://jainpuneet798.github.io/portfolio/cripsensorama_christians-coffee/); [Jain and Bayerlein, Hand to Mouth, 2026](https://doi.org/10.1007/s11569-025-00494-9)) .
 
 ### Physics as legibility, then physics as constraint
+
+ At this point, "physics" does not mean engineering accuracy. It means readability. A
+ swarm body made of light or particles still needs timing, resistance, delay, recoil,
+ flow, and recovery so participants can understand what is happening to it.
 
  Physics changes role across the aesthetic-robotic boundary. In the aesthetic track,
  physical behavior is a grammar of legibility rather than a demand for literal
@@ -331,13 +326,55 @@ Mixed-ability HSI | Updated June 11, 2026
  work when the swarm must move mass through a room, stay safe around people, tolerate
  sensor uncertainty, and remain useful after errors.
 
+## Claim ladder
+
+ With those distinctions in place, the page makes four different kinds of claims. They
+ should not be read as one large claim.
+
+ The page makes a design argument, not a therapeutic or deployment claim. The strongest
+ current claim is conceptual: mixed-ability HSI needs negotiated shared agency rather
+ than one universal controller. The evidence status becomes stricter as the work moves
+ from virtual bodies toward physical robots.
+
+ Conceptual
+
+### Negotiated shared agency
+
+ Mixed-ability HSI needs negotiated shared agency, not one universal controller.
+
+ Still to show: whether participants experience this as useful, fair, and understandable.
+
+ Design
+
+### Visible mappings
+
+ Plasmatic swarm bodies can expose agency, visibility, pacing, and repair.
+
+ Still to show: which mappings work for which groups, settings, and access needs.
+
+ Research
+
+### Virtual-first study
+
+ A virtual-first study can test connectedness, legibility, fatigue, authorship, and repair.
+
+ Still to show: how those measures relate to long-term collaboration and group trust.
+
+ Robotics
+
+### Material survivability
+
+ Physical swarms can later test material survivability.
+
+ Still to show: safety, load, localization, maintenance, emergency stop, and failure recovery.
+
 ## Three-step research arc
 
- The sequence is causal. Exploration asks what feels meaningful and sustainable.
- Connectedness asks whether shared presence is possible without performance pressure.
- Games ask whether those mappings survive roles, goals, time pressure, conflict, and
- repair. Robotics asks whether the surviving mappings remain usable when safety,
- latency, localization, and failure become material constraints.
+ The staged method exists because each phase adds one kind of difficulty. Exploration
+ removes pressure so the group can discover meaningful mappings. Games add goals,
+ roles, conflict, and recovery. Robotics adds physical risk and failure. Skipping ahead
+ to robots would make it harder to tell whether a problem came from access,
+ coordination, hardware, or safety constraints.
 
 ### 1. Exploration and connectedness first
 
@@ -387,8 +424,11 @@ Mixed-ability HSI | Updated June 11, 2026
 
 ## What the instrument needs to expose
 
- This section turns the concept into a research surface: mappings must be visible,
- inspectable, and repairable.
+ To study shared agency, the prototype has to show its own mediation.
+
+ Here, "instrument" means the prototype plus the study interface: the software, sensors,
+ visual swarm body, logs, controls, and facilitator tools that make the shared body
+ possible.
 
  The research instrument should make mediation inspectable. Participants and facilitators
  need to see what inputs are entering the system, what they affect, which logs are kept,
@@ -434,8 +474,20 @@ Mixed-ability HSI | Updated June 11, 2026
 
 ## The input stack has to stay explicit
 
- This section separates inputs from bindings. A channel is not meaningful until the
- group can see what it changes and how it can be repaired.
+ An input is only the first layer. The same signal can support several different social
+ designs.
+
+ The same breath estimate could soften the body's edge, slow the whole swarm, privately
+ warn the participant about overload, or trigger a group pause. Those are different
+ mappings, even though the input is identical. That is why the page uses a stack:
+ human channel, binding, dynamic target, and social contract.
+
+ The human channel is the signal: breath, text, switch, EMG, gaze, gesture, controller,
+ or annotation. The binding says what scale the signal controls: one particle, a
+ sub-swarm, the whole body, a field, a rule, a role, or a veto. The dynamic target says
+ what changes: color, density, rhythm, attraction, boundary, safety, or repair. The
+ social contract says how the mapping is seen, consented to, credited, paused,
+ replayed, or remapped.
 
  The most useful explicit source here is Kim, Drew, Domova, and Follmer's
  user-defined swarm robot control study. It shows that people do not simply choose
@@ -509,14 +561,20 @@ Mixed-ability HSI | Updated June 11, 2026
  Consent, disclosure, turn-taking, veto, rest, replay, attribution, explanation, failure recovery, and conflict resolution.
  A mixed-ability swarm body only works if collaborators can challenge and rebalance how agency is distributed.
 
+ The next part is implementation-facing. Readers who only want the research argument can
+ skip to "Robotics horizon." Its purpose is to show how the mapping stack could be made
+ inspectable in software.
+
  Implementation bridge
 
 ### Rusty Morphospace
 
- Rusty Morphospace keeps channels, bindings, dynamics, appearance, logs, and adapters
- inspectable. That separation lets a participant or facilitator ask whether fatigue,
- unfairness, or confusion came from the input channel, the binding, the dynamic rule,
- the renderer, latency, calibration drift, or another collaborator's hidden control
+ Rusty Morphospace is the proposed implementation layer for the ideas above. Its job
+ is not to add another theory; its job is to keep channels, bindings, dynamics,
+ appearance, logs, and adapters separate enough that participants and facilitators can
+ inspect them. That separation lets someone ask whether fatigue, unfairness, or
+ confusion came from the input channel, the binding, the dynamic rule, the renderer,
+ latency, calibration drift, or another collaborator's hidden control
  ([Rusty Morphospace](https://mesmerprism.com/projects/rusty-morphospace.html); [Rusty XR](https://mesmerprism.com/projects/rusty-xr.html); [Polar H10 work](https://mesmerprism.com/projects/polar-h10.html)) .
 
  Rusty Lattice
@@ -531,17 +589,17 @@ Mixed-ability HSI | Updated June 11, 2026
  Rusty Optics
  Color, glow, material descriptors, visibility, debug views, and renderer-neutral appearance.
 
-### Optional dynamics analogy: bioelectric fields
+### Speculative dynamics: bioelectricity and DiffeoMorph
 
- The bioelectricity work adds one optional dynamics family inside that stack. Its
- current Rusty Morphospace role is not to make biological or prosthetic claims; it is
- a qualitative teaching model for voltage-like fields, conductance-like coupling,
- perturbation, memory, readout, and repair. Those ideas can become swarm variables:
- a participant might bias a field, change coupling between regions, trigger a repair
- process, or inspect whether a perturbation was transient or persistent. Levin's
- broader work is useful here because it treats living form as multi-level problem
- solving, but any future prosthetic or biotech application would need its own evidence
- and ethics path
+ This is not needed to understand the mixed-ability HSI argument. It is a speculative
+ dynamics vocabulary for later work. Bioelectricity is useful here only as an analogy
+ for many-part systems that can form, perturb, remember, and repair patterns. It is
+ not an access method, not a medical claim, and not evidence that physiological
+ signals reveal intention or emotion. In Rusty Morphospace, it can remain a
+ qualitative teaching model for voltage-like fields, conductance-like coupling,
+ perturbation, memory, readout, and repair. Levin's broader work is useful because it
+ treats living form as multi-level problem solving, but any future prosthetic or
+ biotech application would need its own evidence and ethics path
  ([Bioelectricity and Morphogenesis](https://mesmerprism.com/projects/bioelectricity.html); [Levin, agential materials](https://doi.org/10.1007/s00018-023-04790-z); [Levin, bioelectric signaling](https://doi.org/10.1016/j.cell.2021.02.034)) .
 
  DiffeoMorph adds a more distant computational-morphogenesis reference for the same
@@ -585,12 +643,15 @@ Mixed-ability HSI | Updated June 11, 2026
 
 ## Robotics horizon: current state of swarm robotics and assembly
 
- This section explains when the project leaves expressive swarm bodies and enters
- safety-critical physical constraints.
+ A robot swarm changes the stakes because the swarm can now collide, block, tip, lift,
+ fail, or endanger someone.
 
- Before asking what robot swarms can physically do, the page has to ask what kind of
- shared agency a mixed-ability group would want to entrust to them. The robotics section
- is therefore a constraint horizon, not the starting promise.
+ After the visual and software layers, the page returns to the physical question: what
+ changes when the swarm is no longer made of pixels, but of things that can collide,
+ tip, fail, or support weight? Before asking what robot swarms can physically do, the
+ page has to ask what kind of shared agency a mixed-ability group would want to entrust
+ to them. The robotics section is therefore a constraint horizon, not the starting
+ promise.
 
  Swarm robotics is no longer only a metaphor or an animation vocabulary, but its
  real-world use is still limited. The current field has strong laboratory
@@ -665,11 +726,16 @@ Mixed-ability HSI | Updated June 11, 2026
 
 ## A minimal study module
 
- This section turns the design stance into a reusable first study module.
+ A first study can isolate the social and access questions before hardware adds
+ confounds.
 
  A practical study can begin without robots. The first module can compare how small
  mixed-ability groups experience different shared-body mappings in a virtual swarm world,
  with non-HMD participation available from the start.
+
+ Beginning without robots is not a retreat from HSI. If a group cannot understand,
+ rebalance, or repair a mapping in a reversible virtual body, a physical swarm will not
+ make that mapping more accessible.
 
 ### Purpose
 
@@ -717,8 +783,8 @@ Mixed-ability HSI | Updated June 11, 2026
 
 ## Boundaries
 
- This section marks the difference between a research program, a design hypothesis, and
- claims the page does not make.
+ The narrow claim is the important one: mixed-ability HSI studies visible,
+ negotiable, repairable agency, not cure, diagnosis, or guaranteed robot safety.
 
 ### This work does not claim to:
 
@@ -740,14 +806,17 @@ Mixed-ability HSI | Updated June 11, 2026
 
 - what survives across exploration, games, and robotics constraints.
 
- The strongest contribution would be a prototype family and method vocabulary: how to
- move from connectedness-first swarm exploration, through cooperative games, into
- robotics-facing constraints while preserving consent, pacing, visibility choice,
- inspectability, and repair.
+ Mixed-ability HSI does not begin by asking every participant to control the same swarm
+ in the same way. It begins by asking whether a group can see, question, rebalance, and
+ repair how influence is distributed.
 
- The page keeps the claim narrow: mixed-ability HSI is a plausible Plasmatic Multitudes
- research track when aesthetic swarm bodies and technical swarm robotics are related
- carefully instead of treated as the same thing.
+ A reversible swarm body is the first testbed because it makes those negotiations visible
+ without immediately adding physical risk. Cooperative games add goals and pressure.
+ Robot swarms add the final constraint: mass, safety, localization, maintenance, and
+ failure.
+
+ The contribution of this track is a method for carrying access concerns across those
+ stages without reducing access to input hardware, productivity, or therapeutic promise.
 
 ## Sources by role
 

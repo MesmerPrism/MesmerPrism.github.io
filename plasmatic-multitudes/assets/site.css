@@ -479,6 +479,45 @@ main.shell {
   font-size: 1.42rem;
 }
 
+.plain-terms-card h2 {
+  margin: 0 0 0.85rem;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.5rem;
+  font-style: italic;
+  font-weight: 600;
+  line-height: 1.02;
+}
+
+.plain-terms-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem 1rem;
+  margin: 0;
+}
+
+.plain-terms-list div {
+  padding-top: 0.65rem;
+  border-top: 1px solid var(--ink-faint);
+}
+
+.plain-terms-list dt {
+  margin: 0 0 0.25rem;
+  color: var(--ink);
+  font-family: Inter, Arial, sans-serif;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  line-height: 1.25;
+  text-transform: uppercase;
+}
+
+.plain-terms-list dd {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
 .evidence-note,
 .example-callout {
   display: grid;
@@ -917,6 +956,7 @@ main.shell {
 }
 
 .page-hsi .hero > .thesis-card,
+.page-hsi .hero > .plain-terms-card,
 .page-hsi .article > section > .scenario-card,
 .page-hsi .article > section > .evidence-note,
 .page-hsi .article > section > .example-callout,
@@ -1251,6 +1291,7 @@ main.shell {
   }
 
   .thesis-card,
+  .plain-terms-list,
   .route-strip__steps,
   .reading-map__grid,
   .claim-grid,
