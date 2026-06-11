@@ -16,6 +16,69 @@
     "note": "Referenced by Rusty Morphospace: https://mesmerprism.com/projects/rusty-morphospace.html"
   },
   {
+    "id": "pahng-2025-diffeomorph",
+    "type": "article",
+    "title": "DiffeoMorph: Learning to Morph 3D Shapes Using Differentiable Agent-Based Simulations",
+    "URL": "https://arxiv.org/abs/2512.17129",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          11
+        ]
+      ]
+    },
+    "note": "arXiv:2512.17129. Referenced by Rusty Morphospace: https://mesmerprism.com/projects/rusty-morphospace.html",
+    "author": [
+      {
+        "family": "Pahng",
+        "given": "Seong Ho"
+      },
+      {
+        "family": "Guan",
+        "given": "Guoye"
+      },
+      {
+        "family": "Fefferman",
+        "given": "Benjamin"
+      },
+      {
+        "family": "Hormoz",
+        "given": "Sahand"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2025
+        ]
+      ]
+    },
+    "DOI": "10.48550/arXiv.2512.17129"
+  },
+  {
+    "id": "hormoz-lab-diffeomorph",
+    "type": "webpage",
+    "title": "diffeomorph",
+    "URL": "https://github.com/hormoz-lab/diffeomorph",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          11
+        ]
+      ]
+    },
+    "note": "Official implementation for the DiffeoMorph paper. Referenced by Rusty Morphospace: https://mesmerprism.com/projects/rusty-morphospace.html",
+    "author": [
+      {
+        "literal": "hormoz-lab"
+      }
+    ]
+  },
+  {
     "id": "quest-termux-lab-quest-termux-lab",
     "type": "webpage",
     "title": "Quest Termux Lab",
@@ -37,7 +100,7 @@
     ]
   },
   {
-    "id": "rusty-matter-rusty-matter",
+    "id": "github-com-rusty-matter",
     "type": "webpage",
     "title": "Rusty Matter",
     "URL": "https://github.com/MesmerPrism/rusty-matter",
@@ -50,15 +113,10 @@
         ]
       ]
     },
-    "note": "Referenced by Rusty Morphospace: https://mesmerprism.com/projects/rusty-morphospace.html",
-    "author": [
-      {
-        "literal": "Rusty Matter"
-      }
-    ]
+    "note": "Referenced by Rusty Morphospace: https://mesmerprism.com/projects/rusty-morphospace.html"
   },
   {
-    "id": "rusty-manifold-rusty-manifold",
+    "id": "github-com-rusty-manifold",
     "type": "webpage",
     "title": "Rusty Manifold",
     "URL": "https://github.com/MesmerPrism/rusty-manifold",
@@ -71,15 +129,10 @@
         ]
       ]
     },
-    "note": "Referenced by Rusty Morphospace: https://mesmerprism.com/projects/rusty-morphospace.html",
-    "author": [
-      {
-        "literal": "Rusty Manifold"
-      }
-    ]
+    "note": "Referenced by Rusty Morphospace: https://mesmerprism.com/projects/rusty-morphospace.html"
   },
   {
-    "id": "rusty-optics-rusty-optics",
+    "id": "github-com-rusty-optics",
     "type": "webpage",
     "title": "Rusty Optics",
     "URL": "https://github.com/MesmerPrism/rusty-optics",
@@ -92,15 +145,10 @@
         ]
       ]
     },
-    "note": "Referenced by Rusty Morphospace: https://mesmerprism.com/projects/rusty-morphospace.html",
-    "author": [
-      {
-        "literal": "Rusty Optics"
-      }
-    ]
+    "note": "Referenced by Rusty Morphospace: https://mesmerprism.com/projects/rusty-morphospace.html"
   },
   {
-    "id": "rusty-manifold-packages-rusty-manifold-packages",
+    "id": "github-com-rusty-manifold-packages",
     "type": "webpage",
     "title": "rusty-manifold-packages",
     "URL": "https://github.com/MesmerPrism/rusty-manifold-packages",
@@ -113,15 +161,10 @@
         ]
       ]
     },
-    "note": "Referenced by Rusty Morphospace: https://mesmerprism.com/projects/rusty-morphospace.html",
-    "author": [
-      {
-        "literal": "rusty-manifold-packages"
-      }
-    ]
+    "note": "Referenced by Rusty Morphospace: https://mesmerprism.com/projects/rusty-morphospace.html"
   },
   {
-    "id": "rusty-studio-rusty-studio",
+    "id": "github-com-rusty-studio",
     "type": "webpage",
     "title": "rusty-studio",
     "URL": "https://github.com/MesmerPrism/rusty-studio",
@@ -134,15 +177,10 @@
         ]
       ]
     },
-    "note": "Referenced by Rusty Morphospace: https://mesmerprism.com/projects/rusty-morphospace.html",
-    "author": [
-      {
-        "literal": "rusty-studio"
-      }
-    ]
+    "note": "Referenced by Rusty Morphospace: https://mesmerprism.com/projects/rusty-morphospace.html"
   },
   {
-    "id": "rusty-hostess-rusty-hostess",
+    "id": "github-com-rusty-hostess",
     "type": "webpage",
     "title": "rusty-hostess",
     "URL": "https://github.com/MesmerPrism/rusty-hostess",
@@ -155,15 +193,10 @@
         ]
       ]
     },
-    "note": "Referenced by Rusty Morphospace: https://mesmerprism.com/projects/rusty-morphospace.html",
-    "author": [
-      {
-        "literal": "rusty-hostess"
-      }
-    ]
+    "note": "Referenced by Rusty Morphospace: https://mesmerprism.com/projects/rusty-morphospace.html"
   },
   {
-    "id": "rusty-quest-sidecar-mesh-rusty-quest-sidecar-mesh",
+    "id": "github-com-rusty-quest-sidecar-mesh",
     "type": "webpage",
     "title": "rusty-quest-sidecar-mesh",
     "URL": "https://github.com/MesmerPrism/rusty-quest-sidecar-mesh",
@@ -176,15 +209,10 @@
         ]
       ]
     },
-    "note": "Referenced by Rusty Morphospace: https://mesmerprism.com/projects/rusty-morphospace.html",
-    "author": [
-      {
-        "literal": "rusty-quest-sidecar-mesh"
-      }
-    ]
+    "note": "Referenced by Rusty Morphospace: https://mesmerprism.com/projects/rusty-morphospace.html"
   },
   {
-    "id": "rusty-xr-rusty-xr",
+    "id": "github-com-rusty-xr",
     "type": "webpage",
     "title": "Rusty-XR",
     "URL": "https://github.com/MesmerPrism/Rusty-XR",
@@ -197,11 +225,6 @@
         ]
       ]
     },
-    "note": "Referenced by Rusty Morphospace: https://mesmerprism.com/projects/rusty-morphospace.html",
-    "author": [
-      {
-        "literal": "Rusty-XR"
-      }
-    ]
+    "note": "Referenced by Rusty Morphospace: https://mesmerprism.com/projects/rusty-morphospace.html"
   }
 ]

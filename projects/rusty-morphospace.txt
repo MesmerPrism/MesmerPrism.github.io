@@ -26,6 +26,7 @@ Rusty Morphospace
  Why Morphospace (https://mesmerprism.com/projects/rusty-morphospace.html#why)
  Rusty XR boundary (https://mesmerprism.com/projects/rusty-morphospace.html#boundary)
  Rusty XR (https://mesmerprism.com/projects/rusty-xr.html)
+ References (https://mesmerprism.com/projects/rusty-morphospace.html#references)
 
  Purpose
 
@@ -49,6 +50,15 @@ Computational form as a working medium
  qualitative fixtures; Optics owns browser inspection over those payloads; and
  Manifold remains deferred until commands, sessions, and audit packages become
  the right public surface.
+
+ A separate DiffeoMorph reference lane now covers learned many-agent
+ morphogenesis: the paper
+ DiffeoMorph: Learning to Morph 3D Shapes Using Differentiable Agent-Based Simulations (https://arxiv.org/abs/2512.17129)
+ and the
+ hormoz-lab/diffeomorph implementation (https://github.com/hormoz-lab/diffeomorph)
+ are useful public sources for target-shape scoring, many-agent update rules,
+ replay/checkpoint vocabulary, and robustness gates. They do not become the
+ runtime authority for the current bioelectric Matter/Optics teaching model.
 
  The point is not to rename every existing Rusty XR surface. Rusty XR remains
  useful history, compatibility, and public Quest evidence. Rusty Morphospace is
@@ -76,6 +86,7 @@ Useful for
 
 Connected work
 - Bioelectricity and Morphogenesis (https://mesmerprism.com/projects/bioelectricity.html) shows the Matter/Optics boundary applied to planarian surface-field dynamics
+- DiffeoMorph (https://arxiv.org/abs/2512.17129) provides a public computational-morphogenesis reference for many-agent target-forming bodies, separate from Morphospace runtime authority
 - Rusty XR (https://mesmerprism.com/projects/rusty-xr.html) remains the public compatibility and Quest reference surface
 - Quest Termux Lab (https://github.com/MesmerPrism/quest-termux-lab) is a public MIT lab source that feeds the Rusty Quest sidecar bridge
 - Quest Companion Tools (https://mesmerprism.com/projects/viscereality-companion.html) show why operator-side contracts matter
@@ -290,6 +301,25 @@ Rusty-XR (https://github.com/MesmerPrism/Rusty-XR)
  Repository (https://github.com/MesmerPrism/Rusty-XR)
  Overview (https://mesmerprism.com/projects/rusty-xr.html)
 
+ Reference / Morphogenesis
+
+DiffeoMorph (https://arxiv.org/abs/2512.17129)
+
+ Public paper and official code for differentiable agent-based
+ morphogenesis. The work is useful to Rusty Morphospace as a reference for
+ target-shape metrics, learned many-agent controllers, replay/checkpoint
+ boundaries, and robustness evaluation.
+
+ Status
+ Public paper and official implementation reference
+ Use
+ Morphology-control vocabulary and future validation targets
+ Boundary
+ Reference lane, not simulation authority
+
+ Paper (https://arxiv.org/abs/2512.17129)
+ Official code (https://github.com/hormoz-lab/diffeomorph)
+
  Why the name
 
 A space of possible forms
@@ -338,3 +368,9 @@ Licensing follows the boundary
  Morphospace-owned source code is AGPL-first. Legacy Rusty XR compatibility
  repositories and the Makepad-derived fork stay on their existing MIT lane
  unless a separate migration is approved.
+
+ References
+
+External sources for this page
+- Pahng et al. "DiffeoMorph: Learning to Morph 3D Shapes Using Differentiable Agent-Based Simulations (https://arxiv.org/abs/2512.17129)." arXiv 2512.17129 (submitted 2025; revised 2026).
+- hormoz-lab. "diffeomorph (https://github.com/hormoz-lab/diffeomorph)." Official implementation repository for the DiffeoMorph paper.

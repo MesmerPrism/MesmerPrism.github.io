@@ -140,6 +140,13 @@ Rusty Morphospace and tissue-scale patterning
  ([Levin, 2021](https://doi.org/10.1016/j.cell.2021.02.034);
  [Levin, 2022](https://doi.org/10.3389/fnsys.2022.768201)).
 
+ DiffeoMorph belongs on this adjacent side too: the paper
+ [DiffeoMorph: Learning to Morph 3D Shapes Using Differentiable Agent-Based Simulations](https://arxiv.org/abs/2512.17129)
+ and the
+ [hormoz-lab/diffeomorph implementation](https://github.com/hormoz-lab/diffeomorph)
+ are useful for target-shape metrics and learned many-agent controllers, but
+ they are not bioelectric or planarian physiology sources.
+
 ### Useful transfer
 
 - Fields and coupling as dynamic material rules.
@@ -280,6 +287,23 @@ Rusty Morphospace and tissue-scale patterning
  Not used as
  First runtime or wet-lab simulator
 
+ Computational morphogenesis reference
+
+### [DiffeoMorph](https://arxiv.org/abs/2512.17129)
+
+ DiffeoMorph supplies public reference material for many-agent target-shape
+ learning, shape-matching metrics, and robustness vocabulary. It can inform
+ future Rusty Morphospace validation language without becoming a source for
+ the planarian bioelectric model.
+
+ Use later
+ Target-shape metrics and many-agent control vocabulary
+ Not used as
+ Bioelectric physiology evidence or planarian runtime authority
+
+ [Paper](https://arxiv.org/abs/2512.17129)
+ [Official code](https://github.com/hormoz-lab/diffeomorph)
+
  Data source candidate
 
 ### [Planform / PlanformDB](https://lobolab.umbc.edu/planform/)
@@ -376,6 +400,10 @@ Rusty Morphospace and tissue-scale patterning
 - BETSE. "[Bioelectric Tissue Simulation Engine](https://github.com/betsee/betse)." Open-source software repository.
 
 - PlanMine. "[PlanMine planarian database](https://planmine.mpibpc.mpg.de/)." Public resource lead.
+
+- Pahng et al. "[DiffeoMorph: Learning to Morph 3D Shapes Using Differentiable Agent-Based Simulations](https://arxiv.org/abs/2512.17129)." arXiv 2512.17129 (submitted 2025; revised 2026).
+
+- hormoz-lab. "[diffeomorph](https://github.com/hormoz-lab/diffeomorph)." Official implementation repository for the DiffeoMorph paper.
 
 - Mesmer Prism. "[Rusty Morphospace](https://mesmerprism.com/projects/rusty-morphospace.html)." Public project page.
 

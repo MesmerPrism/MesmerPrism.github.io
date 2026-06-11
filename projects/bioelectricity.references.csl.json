@@ -222,6 +222,69 @@
     "DOI": "10.3389/fnsys.2022.768201"
   },
   {
+    "id": "pahng-2025-diffeomorph",
+    "type": "article",
+    "title": "DiffeoMorph: Learning to Morph 3D Shapes Using Differentiable Agent-Based Simulations",
+    "URL": "https://arxiv.org/abs/2512.17129",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          11
+        ]
+      ]
+    },
+    "note": "arXiv:2512.17129. Referenced by Bioelectricity and Morphogenesis: https://mesmerprism.com/projects/bioelectricity.html",
+    "author": [
+      {
+        "family": "Pahng",
+        "given": "Seong Ho"
+      },
+      {
+        "family": "Guan",
+        "given": "Guoye"
+      },
+      {
+        "family": "Fefferman",
+        "given": "Benjamin"
+      },
+      {
+        "family": "Hormoz",
+        "given": "Sahand"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2025
+        ]
+      ]
+    },
+    "DOI": "10.48550/arXiv.2512.17129"
+  },
+  {
+    "id": "hormoz-lab-diffeomorph",
+    "type": "webpage",
+    "title": "diffeomorph",
+    "URL": "https://github.com/hormoz-lab/diffeomorph",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          11
+        ]
+      ]
+    },
+    "note": "Official implementation for the DiffeoMorph paper. Referenced by Bioelectricity and Morphogenesis: https://mesmerprism.com/projects/bioelectricity.html",
+    "author": [
+      {
+        "literal": "hormoz-lab"
+      }
+    ]
+  },
+  {
     "id": "doi-org-oviedo-et-al-2010-2019",
     "type": "article-journal",
     "title": "Oviedo et al., 2010",
