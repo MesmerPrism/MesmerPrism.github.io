@@ -1,5 +1,103 @@
 [
   {
+    "id": "doi-org-wobbrock-et-al",
+    "type": "article-journal",
+    "title": "Wobbrock et al.",
+    "URL": "https://doi.org/10.1145/1952383.1952384",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          11
+        ]
+      ]
+    },
+    "note": "Referenced by Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html",
+    "DOI": "10.1145/1952383.1952384"
+  },
+  {
+    "id": "doi-org-bennett-et-al",
+    "type": "article-journal",
+    "title": "Bennett et al.",
+    "URL": "https://doi.org/10.1145/3234695.3236348",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          11
+        ]
+      ]
+    },
+    "note": "Referenced by Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html",
+    "DOI": "10.1145/3234695.3236348"
+  },
+  {
+    "id": "arxiv-org-mottelson-et-al",
+    "type": "webpage",
+    "title": "Mottelson et al.",
+    "URL": "https://arxiv.org/abs/2102.11207",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          11
+        ]
+      ]
+    },
+    "note": "Referenced by Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html"
+  },
+  {
+    "id": "arxiv-org-zhang-et-al",
+    "type": "webpage",
+    "title": "Zhang et al.",
+    "URL": "https://arxiv.org/abs/2208.11170",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          11
+        ]
+      ]
+    },
+    "note": "Referenced by Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html"
+  },
+  {
+    "id": "arxiv-org-gualano-et-al",
+    "type": "webpage",
+    "title": "Gualano et al.",
+    "URL": "https://arxiv.org/abs/2408.08193",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          11
+        ]
+      ]
+    },
+    "note": "Referenced by Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html"
+  },
+  {
+    "id": "www-w3-org-w3c-xr-accessibility-user-requirements",
+    "type": "webpage",
+    "title": "W3C XR Accessibility User Requirements",
+    "URL": "https://www.w3.org/TR/xaur/",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          11
+        ]
+      ]
+    },
+    "note": "Referenced by Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html"
+  },
+  {
     "id": "www-ri-cmu-edu-kolling-et-al",
     "type": "webpage",
     "title": "Kolling et al.",
@@ -433,243 +531,6 @@
     "DOI": "10.3389/frobt.2025.1607978/full"
   },
   {
-    "id": "doi-org-zheng-jarecki-and-lee-2020",
-    "type": "article-journal",
-    "title": "Zheng, Jarecki, and Lee",
-    "URL": "https://doi.org/10.1038/s41598-023-40623-6",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          11
-        ]
-      ]
-    },
-    "note": "Referenced by Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html",
-    "issued": {
-      "date-parts": [
-        [
-          2020
-        ]
-      ]
-    },
-    "DOI": "10.1038/s41598-023-40623-6"
-  },
-  {
-    "id": "doi-org-petersen-et-al-collective-robotic-construction-review-2020",
-    "type": "article-journal",
-    "title": "Petersen et al., collective robotic construction review",
-    "URL": "https://doi.org/10.1126/scirobotics.aau8479",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          11
-        ]
-      ]
-    },
-    "note": "Referenced by Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html",
-    "issued": {
-      "date-parts": [
-        [
-          2020
-        ]
-      ]
-    },
-    "DOI": "10.1126/scirobotics.aau8479"
-  },
-  {
-    "id": "doi-org-werfel-petersen-and-nagpal-termes-2020",
-    "type": "article-journal",
-    "title": "Werfel, Petersen, and Nagpal, TERMES",
-    "URL": "https://doi.org/10.1126/science.1245842",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          11
-        ]
-      ]
-    },
-    "note": "Referenced by Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html",
-    "issued": {
-      "date-parts": [
-        [
-          2020
-        ]
-      ]
-    },
-    "DOI": "10.1126/science.1245842"
-  },
-  {
-    "id": "doi-org-rubenstein-cornejo-and-nagpal-kilobot-self-assembly-2020",
-    "type": "article-journal",
-    "title": "Rubenstein, Cornejo, and Nagpal, Kilobot self-assembly",
-    "URL": "https://doi.org/10.1126/science.1254295",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          11
-        ]
-      ]
-    },
-    "note": "Referenced by Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html",
-    "issued": {
-      "date-parts": [
-        [
-          2020
-        ]
-      ]
-    },
-    "DOI": "10.1126/science.1254295"
-  },
-  {
-    "id": "doi-org-bolotnikova-et-al-user-guided-modular-robots-2020",
-    "type": "article-journal",
-    "title": "Bolotnikova et al., user-guided modular robots",
-    "URL": "https://doi.org/10.1038/s41467-025-63706-6",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          11
-        ]
-      ]
-    },
-    "note": "Referenced by Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html",
-    "issued": {
-      "date-parts": [
-        [
-          2020
-        ]
-      ]
-    },
-    "DOI": "10.1038/s41467-025-63706-6"
-  },
-  {
-    "id": "doi-org-wobbrock-et-al-2020",
-    "type": "article-journal",
-    "title": "Wobbrock et al.",
-    "URL": "https://doi.org/10.1145/1952383.1952384",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          11
-        ]
-      ]
-    },
-    "note": "Referenced by Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html",
-    "issued": {
-      "date-parts": [
-        [
-          2020
-        ]
-      ]
-    },
-    "DOI": "10.1145/1952383.1952384"
-  },
-  {
-    "id": "doi-org-bennett-et-al-2020",
-    "type": "article-journal",
-    "title": "Bennett et al.",
-    "URL": "https://doi.org/10.1145/3234695.3236348",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          11
-        ]
-      ]
-    },
-    "note": "Referenced by Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html",
-    "issued": {
-      "date-parts": [
-        [
-          2020
-        ]
-      ]
-    },
-    "DOI": "10.1145/3234695.3236348"
-  },
-  {
-    "id": "arxiv-org-mottelson-et-al-2020",
-    "type": "webpage",
-    "title": "Mottelson et al.",
-    "URL": "https://arxiv.org/abs/2102.11207",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          11
-        ]
-      ]
-    },
-    "note": "Referenced by Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html",
-    "issued": {
-      "date-parts": [
-        [
-          2020
-        ]
-      ]
-    }
-  },
-  {
-    "id": "arxiv-org-zhang-et-al-2020",
-    "type": "webpage",
-    "title": "Zhang et al.",
-    "URL": "https://arxiv.org/abs/2208.11170",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          11
-        ]
-      ]
-    },
-    "note": "Referenced by Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html",
-    "issued": {
-      "date-parts": [
-        [
-          2020
-        ]
-      ]
-    }
-  },
-  {
-    "id": "arxiv-org-gualano-et-al-2020",
-    "type": "webpage",
-    "title": "Gualano et al.",
-    "URL": "https://arxiv.org/abs/2408.08193",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          11
-        ]
-      ]
-    },
-    "note": "Referenced by Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html",
-    "issued": {
-      "date-parts": [
-        [
-          2020
-        ]
-      ]
-    }
-  },
-  {
     "id": "doi-org-glowacki-2020",
     "type": "article-journal",
     "title": "Glowacki",
@@ -1095,6 +956,150 @@
       ]
     },
     "DOI": "10.1007/s12555-019-0497-3"
+  },
+  {
+    "id": "doi-org-chiossi-et-al-physiochi-towards-best-practices-for-integ-2020",
+    "type": "article-journal",
+    "title": "Chiossi et al., PhysioCHI: Towards Best Practices for Integrating Physiological Signals in HCI",
+    "URL": "https://doi.org/10.1145/3613905.3636286",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          11
+        ]
+      ]
+    },
+    "note": "Referenced by Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html",
+    "issued": {
+      "date-parts": [
+        [
+          2020
+        ]
+      ]
+    },
+    "DOI": "10.1145/3613905.3636286"
+  },
+  {
+    "id": "doi-org-zheng-jarecki-and-lee-2020",
+    "type": "article-journal",
+    "title": "Zheng, Jarecki, and Lee",
+    "URL": "https://doi.org/10.1038/s41598-023-40623-6",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          11
+        ]
+      ]
+    },
+    "note": "Referenced by Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html",
+    "issued": {
+      "date-parts": [
+        [
+          2020
+        ]
+      ]
+    },
+    "DOI": "10.1038/s41598-023-40623-6"
+  },
+  {
+    "id": "doi-org-petersen-et-al-collective-robotic-construction-review-2020",
+    "type": "article-journal",
+    "title": "Petersen et al., collective robotic construction review",
+    "URL": "https://doi.org/10.1126/scirobotics.aau8479",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          11
+        ]
+      ]
+    },
+    "note": "Referenced by Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html",
+    "issued": {
+      "date-parts": [
+        [
+          2020
+        ]
+      ]
+    },
+    "DOI": "10.1126/scirobotics.aau8479"
+  },
+  {
+    "id": "doi-org-werfel-petersen-and-nagpal-termes-2020",
+    "type": "article-journal",
+    "title": "Werfel, Petersen, and Nagpal, TERMES",
+    "URL": "https://doi.org/10.1126/science.1245842",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          11
+        ]
+      ]
+    },
+    "note": "Referenced by Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html",
+    "issued": {
+      "date-parts": [
+        [
+          2020
+        ]
+      ]
+    },
+    "DOI": "10.1126/science.1245842"
+  },
+  {
+    "id": "doi-org-rubenstein-cornejo-and-nagpal-kilobot-self-assembly-2020",
+    "type": "article-journal",
+    "title": "Rubenstein, Cornejo, and Nagpal, Kilobot self-assembly",
+    "URL": "https://doi.org/10.1126/science.1254295",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          11
+        ]
+      ]
+    },
+    "note": "Referenced by Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html",
+    "issued": {
+      "date-parts": [
+        [
+          2020
+        ]
+      ]
+    },
+    "DOI": "10.1126/science.1254295"
+  },
+  {
+    "id": "doi-org-bolotnikova-et-al-user-guided-modular-robots-2020",
+    "type": "article-journal",
+    "title": "Bolotnikova et al., user-guided modular robots",
+    "URL": "https://doi.org/10.1038/s41467-025-63706-6",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          11
+        ]
+      ]
+    },
+    "note": "Referenced by Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html",
+    "issued": {
+      "date-parts": [
+        [
+          2020
+        ]
+      ]
+    },
+    "DOI": "10.1038/s41467-025-63706-6"
   },
   {
     "id": "le-goc-et-al-from-motions-to-emotions-can-the-fundamental-emotions-be",
