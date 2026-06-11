@@ -2,7 +2,7 @@
 
 Source: https://mesmerprism.com/plasmatic-multitudes/references.html
 Canonical HTML: https://mesmerprism.com/plasmatic-multitudes/references.html
-Generated: 2026-05-26
+Generated: 2026-06-11
 Description: Annotated references across somaesthetics, perception, pseudo-haptics, morphogenesis, XR embodiment, media genealogy, and pain/body-representation research.
 Markdown: https://mesmerprism.com/plasmatic-multitudes/references.md
 Plain text: https://mesmerprism.com/plasmatic-multitudes/references.txt
@@ -11,7 +11,7 @@ CSL JSON references: https://mesmerprism.com/plasmatic-multitudes/references.ref
 
 ---
 
-Annotated sources | Updated May 24, 2026
+Annotated sources | Updated June 11, 2026
 
 # Annotated Sources
 
@@ -93,6 +93,16 @@ Annotated sources | Updated May 24, 2026
 
 - Reynolds, Craig W. "Flocks, Herds, and Schools: A Distributed Behavioral Model." Proceedings of SIGGRAPH '87 (1987): 25-34. [DOI](https://doi.org/10.1145/37402.37406) Foundational source for emergent collective motion and coordinated many-part behavior.
 
+- Reynolds, Craig W. "Steering Behaviors for Autonomous Characters." Game Developers Conference , 1999. [Author page](https://www.red3d.com/cwr/steer/) Practical bridge from boids to tunable autonomous-character behaviors such as seeking, fleeing, wandering, path following, flow-field following, leader following, and flocking.
+
+- Patil, Sachin, Jur van den Berg, Sean Curtis, Ming C. Lin, and Dinesh Manocha. "Directing Crowd Simulations Using Navigation Fields." IEEE Transactions on Visualization and Computer Graphics 17, no. 2 (2011): 244-254. [DOI](https://doi.org/10.1109/TVCG.2010.33) [PDF](https://gamma.cs.unc.edu/DCrowd/paper.pdf) Directable-crowd source for blending user-specified guidance fields into goal-directed navigation while leaving local collision avoidance to the agent model.
+
+- Colas, Adele, Wouter van Toll, Katja Zibrek, Ludovic Hoyet, Anne-Helene Olivier, and Julien Pettre. "Interaction Fields: Intuitive Sketch-Based Steering Behaviors for Crowd Simulation." Computer Graphics Forum 41, no. 2 (2022): 521-534. [DOI](https://doi.org/10.1111/cgf.14491) Sketch-based authoring source for velocity and orientation fields around source agents or obstacles, useful for treating crowd behavior as an editable interaction field rather than a fixed rule set.
+
+- Prazak, Martin, Damien Maupu, Mungo Pay, Muhittin Bilginer, Aleksandar Atanasov, and Cristobal Infante Esquivel. "Taming the Swarm: Rippers on Pacific Rim Uprising." SIGGRAPH '18 Talks , 2018. [DOI](https://doi.org/10.1145/3214745.3214809) [Author PDF](https://mprazak.info/assets/pacific_rim-small.pdf) Production VFX case where boid simulation alone was insufficient for a highly articulated swarm performing an intentional assembly task; useful for agent rigs, guide curves, task points, animation blending, and artist direction.
+
+- SideFX. "Crowd Basics." Houdini Documentation , accessed 2026-06-11. [Documentation](https://www.sidefx.com/docs/houdini/crowds/basics.html) Tool-reference source for practical crowd stacks: agents, states, triggers, clips, behavior weights, dynamics interaction, foot planting, terrain, obstacles, motion paths, and caches.
+
 - Richards, Catherine, Larry Korba, Chris Shaw, and Mark Green. "Virtual Reality and Virtual Bodies." Proceedings of SPIE 2177 (1994). [Publisher](https://www.spiedigitallibrary.org/conference-proceedings-of-spie/2177/0000/Virtual-reality-and-virtual-bodies/10.1117/12.173894.full) Early precedent for presence and transformation in spectral bodies.
 
 - dos Anjos, R. K., and J. M. Pereira. "Effects of Realism and Representation on Self-Embodied Avatars in Immersive Virtual Environments." arXiv, 2024. [arXiv](https://arxiv.org/abs/2405.02672) Compares abstract, mesh-based, and point-cloud avatars as explicit representation variables.
@@ -110,6 +120,18 @@ Annotated sources | Updated May 24, 2026
 - Pahng, Seong Ho, Guoye Guan, Benjamin Fefferman, and Sahand Hormoz. "DiffeoMorph: Learning to Morph 3D Shapes Using Differentiable Agent-Based Simulations." arXiv:2512.17129, submitted 2025-12-18, v2 revised 2026-05-07. [arXiv](https://arxiv.org/abs/2512.17129) [DOI](https://doi.org/10.48550/arXiv.2512.17129) Current computational morphogenesis source for many-agent bodies, shared update rules, SE(3)-equivariant force modeling, and Zernike-spectrum shape coherence.
 
 - hormoz-lab. "diffeomorph." GitHub repository, accessed 2026-05-24. [Repository](https://github.com/hormoz-lab/diffeomorph) Official implementation reference for the DiffeoMorph force model and spectral shape-matching loss. Useful as code provenance, not as an embodiment or clinical source.
+
+- Levin, Michael. "Bioelectric Signaling: Reprogrammable Circuits Underlying Embryogenesis, Regeneration, and Cancer." Cell 184, no. 8 (2021): 1971-1989. [DOI](https://doi.org/10.1016/j.cell.2021.02.034) Broad review grounding bioelectricity as a programmable physiological signaling layer across embryogenesis, regeneration, and disease. Useful as context, not as a claim that current Morphospace work is biomedical.
+
+- Levin, Michael. "Technological Approach to Mind Everywhere: An Experimentally-Grounded Framework for Understanding Diverse Bodies and Minds." Frontiers in Systems Neuroscience 16 (2022): 768201. [DOI](https://doi.org/10.3389/fnsys.2022.768201) Framework source for thinking about diverse embodiments and unconventional agency as a continuum of manipulability and persuasion.
+
+- Levin, Michael. "Darwin's Agential Materials: Evolutionary Implications of Multiscale Competency in Developmental Biology." Cellular and Molecular Life Sciences 80 (2023): 142. [DOI](https://doi.org/10.1007/s00018-023-04790-z) Key source for multi-level agential materials, regulative plasticity, and cells/tissues/organs as problem-solving substrates in developmental morphogenesis.
+
+- Levin, Michael. "Bioelectric Networks: The Cognitive Glue Enabling Evolutionary Scaling from Physiology to Mind." Animal Cognition 26 (2023): 1865-1891. [DOI](https://doi.org/10.1007/s10071-023-01780-3) Source for bioelectric networks as a bridge between cell-level physiological competencies, anatomical morphospace, and broader collective-intelligence framing.
+
+- Durant, Fallon, Jordan Bischof, Christopher Fields, Stephanie Morokuma, James M. LaPalme, and Michael Levin. "The Role of Early Bioelectric Signals in the Regeneration of Planarian Anterior/Posterior Polarity." Biophysical Journal 116, no. 5 (2019): 948-961. [DOI](https://doi.org/10.1016/j.bpj.2019.01.029) Planarian source for early bioelectric anterior/posterior polarity, useful as a biological reference for field perturbation and memory-like target dynamics.
+
+- Beane, Wendy S., Junji Morokuma, Dany S. Adams, and Michael Levin. "A Chemical Genetics Approach Reveals H,K-ATPase-Mediated Membrane Voltage Is Required for Planarian Head Regeneration." Chemistry & Biology 18, no. 1 (2011): 77-89. [DOI](https://doi.org/10.1016/j.chembiol.2010.11.012) Planarian source connecting membrane-voltage control to head-versus-tail regeneration context. Useful for biological analogy and source-linked teaching targets, not direct avatar evidence.
 
 ## XR relation and altered-state design
 

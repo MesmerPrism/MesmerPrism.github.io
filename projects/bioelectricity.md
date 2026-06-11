@@ -3,7 +3,7 @@
 Source: https://mesmerprism.com/projects/bioelectricity.html
 Canonical HTML: https://mesmerprism.com/projects/bioelectricity.html
 Generated: 2026-06-11
-Description: Bioelectricity and morphogenesis in Rusty Morphospace: an educational planarian surface-field model built with Rusty Matter and visualized through Rusty Optics.
+Description: Bioelectricity and morphogenesis in Rusty Morphospace: a source-linked educational planarian surface-field model built with Rusty Matter and visualized through Rusty Optics.
 Markdown: https://mesmerprism.com/projects/bioelectricity.md
 Plain text: https://mesmerprism.com/projects/bioelectricity.txt
 BibTeX references: https://mesmerprism.com/projects/bioelectricity.bib
@@ -18,10 +18,13 @@ Rusty Morphospace and tissue-scale patterning
  Bioelectric morphogenesis asks how voltage-like state, tissue coupling,
  perturbations, and memory can help shape living form. The Rusty
  Morphospace version is deliberately modest: it builds inspectable
- educational models over mesh-surface samples, then keeps the simulation,
- visualization, and public claims in separate layers.
+ educational models over mesh-surface samples, links each scenario to
+ publication targets, then keeps the simulation, visualization, and public
+ claims in separate layers.
 
  [Current slice](https://mesmerprism.com/projects/bioelectricity.html#current-slice)
+ [Source status](https://mesmerprism.com/projects/bioelectricity.html#source-target-status)
+ [Adjacent dynamics](https://mesmerprism.com/projects/bioelectricity.html#cross-project-bridge)
  [Why planarians](https://mesmerprism.com/projects/bioelectricity.html#planarian)
  [Reference lanes](https://mesmerprism.com/projects/bioelectricity.html#reference-lanes)
  [Claim boundary](https://mesmerprism.com/projects/bioelectricity.html#boundary)
@@ -53,10 +56,15 @@ Rusty Morphospace and tissue-scale patterning
 
 ## Rusty Matter owns dynamics; Rusty Optics owns inspection
 
- The current work lives inside the Rusty Morphospace repo family. The useful
- boundary is simple: Matter computes the state; Optics prepares views and
- browser inspection; Manifold is deferred until commands, sessions, packages,
- and audit surfaces need to become first-class.
+ Within Rusty Morphospace, the useful boundary is simple: Matter computes the
+ state; Optics prepares views and browser inspection; Manifold is deferred
+ until commands, sessions, packages, and audit surfaces need to become
+ first-class.
+
+ Matter now carries compact source/target anchor IDs inside the planarian
+ scenario metadata. Those anchors identify which publication target shaped a
+ scenario; they do not turn the current fixtures into source-fitted
+ physiological predictions.
 
  Simulation truth
 
@@ -108,6 +116,90 @@ Rusty Morphospace and tissue-scale patterning
  Control plane, not simulation state
 
  [Repository](https://github.com/MesmerPrism/rusty-manifold)
+
+ Adjacent dynamics
+
+## A side source for dynamics, not the center of the work
+
+ Bioelectricity matters to Mesmer Prism because it gives another concrete
+ vocabulary for multi-level patterning: voltage-like fields, conductance,
+ gap-junction-like coupling, perturbation, memory, readout, repair, and
+ target-state change. In Michael Levin's broader framing, cells, tissues, and
+ organs are not passive materials. They are nested problem-solving systems whose
+ physiological networks help navigate anatomical morphospace
+ ([Levin, 2023a](https://doi.org/10.1007/s00018-023-04790-z);
+ [Levin, 2023b](https://doi.org/10.1007/s10071-023-01780-3)).
+
+ That does not make Plasmatic Multitudes, Mixed-Ability HSI, or Rusty
+ Morphospace biological projects. The useful transfer is more constrained:
+ bioelectric morphogenesis suggests synthetic dynamics for fields, coupling,
+ memory, regeneration-like repair, and multi-scale agency. Those dynamics can
+ inspire virtual swarm bodies or educational prosthetic/biotech questions later,
+ while the current implementation remains a source-linked teaching model rather
+ than a medical, prosthetic, or wet-lab system
+ ([Levin, 2021](https://doi.org/10.1016/j.cell.2021.02.034);
+ [Levin, 2022](https://doi.org/10.3389/fnsys.2022.768201)).
+
+### Useful transfer
+
+- Fields and coupling as dynamic material rules.
+
+- Memory and readout as state, not only appearance.
+
+- Repair as a system-level process, not only undo.
+
+- Target states as navigable morphospace regions.
+
+### Boundary
+
+ Current public work uses bioelectricity as a qualitative dynamics source
+ and implementation test case for Rusty Matter and Rusty Optics. Any future
+ prosthetic, regenerative, or biotech claim would need a separate evidence,
+ ethics, and validation path.
+
+ Source status
+
+## Matched to original sources, but not calibrated yet
+
+ The current implementation is source-linked at the target level. Two source
+ families already have qualitative Matter fixtures. The remaining targets are
+ intentionally planned or open until source figures, tables, categories, or
+ datasets have been extracted into derived, rights-safe artifacts.
+
+ Target
+ Original sources
+ Current implementation
+ Status
+
+ ap_transient_memory
+ [Durant et al., 2019](https://doi.org/10.1016/j.bpj.2019.01.029)
+ Matter transient-depolarization memory scenario plus no-memory control; Optics can display the resulting sequence.
+ Qualitative fixture exists; numeric timing/value targets still need source extraction.
+
+ gap_block_conductance
+ [Oviedo et al., 2010](https://doi.org/10.1016/j.ydbio.2009.12.012); [Emmons-Bell et al., 2015](https://doi.org/10.3390/ijms161126065)
+ Matter gap-block scenario reduces cross-band conductance and records outcome traces.
+ Qualitative fixture exists; figure/table targets still need extraction before thresholds.
+
+ head_vs_tail_voltage
+ [Beane et al., 2011](https://doi.org/10.1016/j.chembiol.2010.11.012)
+ Represented only as normalized AP voltage and head/tail readout context.
+ Planned annotation layer; no named ion-channel or millivolt claim yet.
+
+ head_size_scaling
+ [Beane et al., 2013](https://doi.org/10.1242/dev.086900)
+ No calibrated head/organ-size metric is implemented.
+ Open; needs region labels and source-derived morphometric targets.
+
+ species_like_head_labels
+ [Emmons-Bell et al., 2015](https://doi.org/10.3390/ijms161126065)
+ No categorical head-shape taxonomy is implemented.
+ Open; generated silhouettes/labels are preferred over paper figure reuse.
+
+ planformdb_curated_subset
+ [PlanformDB](https://lobolab.umbc.edu/planform/download/); [Lobo et al., 2013](https://doi.org/10.1093/bioinformatics/btt088)
+ No PlanformDB-derived Matter fixture is committed.
+ Future data fixture; requires schema, license, source-ID, and transformation review.
 
  Why planarians
 
@@ -204,24 +296,44 @@ Rusty Morphospace and tissue-scale patterning
 
  [Planform page](https://lobolab.umbc.edu/planform/)
 
+ Discovery map
+
+### [Bioelectricity Nexus](https://bioelectricitynexus.com/)
+
+ Bioelectricity Nexus is useful for field navigation: papers, tools,
+ researchers, and resource leads such as BETSE and PlanMine. It is a
+ discovery source, not primary evidence for the biological claims on this
+ page.
+
+ Use now
+ Find source and tool leads
+ Gate needed
+ Primary-source and license review
+
+ [Nexus](https://bioelectricitynexus.com/)
+ [BETSE](https://github.com/betsee/betse)
+ [PlanMine](https://planmine.mpibpc.mpg.de/)
+
  Claim boundary
 
 ## What this model does not claim
 
- The current implementation is not BETSE, a named-ion-channel simulator, a
- wet-lab planning system, a calibrated PlanformDB predictor, or a full
- xenobot/anthrobot world model. It uses normalized state and synthetic
- scenarios to make tissue-scale relationships visible before the project takes
- on heavier physiology or real-data claims.
+ The current implementation is not [BETSE](https://github.com/betsee/betse),
+ a named-ion-channel simulator, a wet-lab planning system, a calibrated
+ PlanformDB predictor, or a full xenobot/anthrobot world model. It uses
+ normalized state and synthetic scenarios to make tissue-scale relationships
+ visible before the project takes on heavier physiology or real-data claims.
 
  That boundary is an engineering choice. It keeps the page readable, keeps
  code ownership clear, and avoids presenting educational dynamics as empirical
  prediction. More detailed source-derived work can be added later when source
- IDs, license notices, transformations, and validation targets are explicit.
+ IDs, license notices, transformations, and validation targets are explicit;
+ source-paper figures and raw datasets should remain outside the public page
+ unless rights and provenance have been reviewed.
 
 ### Next public-safe steps
 
-- Add scenario annotations tied to the literature above.
+- Expose scenario source/target anchors in the browser-facing teaching UI.
 
 - Add a teaching panel for AP separation, wound localization, gap block, and memory controls.
 
@@ -235,6 +347,14 @@ Rusty Morphospace and tissue-scale patterning
 
 ## Sources and public project surfaces
 
+- Levin. "[Bioelectric Signaling: Reprogrammable Circuits Underlying Embryogenesis, Regeneration, and Cancer](https://doi.org/10.1016/j.cell.2021.02.034)." Cell 184(8) (2021).
+
+- Levin. "[Technological Approach to Mind Everywhere: An Experimentally-Grounded Framework for Understanding Diverse Bodies and Minds](https://doi.org/10.3389/fnsys.2022.768201)." Frontiers in Systems Neuroscience 16 (2022).
+
+- Levin. "[Darwin's Agential Materials: Evolutionary Implications of Multiscale Competency in Developmental Biology](https://doi.org/10.1007/s00018-023-04790-z)." Cellular and Molecular Life Sciences 80 (2023).
+
+- Levin. "[Bioelectric Networks: The Cognitive Glue Enabling Evolutionary Scaling from Physiology to Mind](https://doi.org/10.1007/s10071-023-01780-3)." Animal Cognition 26 (2023).
+
 - Durant et al. "[The role of early bioelectric signals in the regeneration of planarian anterior/posterior polarity](https://doi.org/10.1016/j.bpj.2019.01.029)." Biophysical Journal 116 (2019).
 
 - Beane et al. "[A chemical genetics approach reveals H,K-ATPase-mediated membrane voltage is required for planarian head regeneration](https://doi.org/10.1016/j.chembiol.2010.11.012)." Chemistry & Biology 18 (2011).
@@ -245,7 +365,17 @@ Rusty Morphospace and tissue-scale patterning
 
 - Emmons-Bell et al. "[Gap junctional blockade stochastically induces different species-specific head anatomies in genetically wild-type Girardia dorotocephala flatworms](https://doi.org/10.3390/ijms161126065)." International Journal of Molecular Sciences 16 (2015).
 
-- Lobo Lab. "[Planform and PlanformDB](https://lobolab.umbc.edu/planform/)." University of Maryland, Baltimore County.
+- Grodstein and Levin. "[A Computational Approach to Explaining Bioelectrically-induced Persistent, Stochastic Changes of Axial Polarity in Planarian Regeneration](https://doi.org/10.1089/bioe.2021.0036)." Bioelectricity 4 (2022).
+
+- Lobo, Malone, and Levin. "[Planform: an application and database of graph-encoded planarian regenerative experiments](https://doi.org/10.1093/bioinformatics/btt088)." Bioinformatics 29 (2013).
+
+- Lobo Lab. "[PlanformDB download page](https://lobolab.umbc.edu/planform/download/)." University of Maryland, Baltimore County.
+
+- Bioelectricity Nexus. "[Bioelectricity Nexus](https://bioelectricitynexus.com/)." Field resource index.
+
+- BETSE. "[Bioelectric Tissue Simulation Engine](https://github.com/betsee/betse)." Open-source software repository.
+
+- PlanMine. "[PlanMine planarian database](https://planmine.mpibpc.mpg.de/)." Public resource lead.
 
 - Mesmer Prism. "[Rusty Morphospace](https://mesmerprism.com/projects/rusty-morphospace.html)." Public project page.
 

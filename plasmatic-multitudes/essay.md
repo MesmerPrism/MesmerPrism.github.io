@@ -2,7 +2,7 @@
 
 Source: https://mesmerprism.com/plasmatic-multitudes/essay.html
 Canonical HTML: https://mesmerprism.com/plasmatic-multitudes/essay.html
-Generated: 2026-05-26
+Generated: 2026-06-11
 Description: A long-form essay on weakly bounded bodies, XR embodiment, media genealogy, computational morphogenesis, and cautious pain translation.
 Markdown: https://mesmerprism.com/plasmatic-multitudes/essay.md
 Plain text: https://mesmerprism.com/plasmatic-multitudes/essay.txt
@@ -219,12 +219,34 @@ Long essay | Updated May 24, 2026
  toward target 3D shapes through differentiable simulation
  ([Reeves](https://doi.org/10.1145/357318.357320); [Reynolds](https://doi.org/10.1145/37402.37406); [Pahng et al.](https://arxiv.org/abs/2512.17129)) .
 
+ Animation and VFX describe a parallel problem with different names: boids, steering
+ behaviors, directable crowds, crowd solvers, agent rigs, artist-driven crowd authoring.
+ That vocabulary is useful because it shows that many-part form is rarely just
+ emergence. Production systems add fields, sketches, guide curves, zones, triggers,
+ animation clips, skeletons, inverse-kinematic repairs, levels of detail, and caches so
+ local behavior can become readable and directable without becoming a single puppeted
+ object. For Plasmatic Multitudes, that is the important bridge: the same core problem
+ appears as animation craft, game AI, VFX tool design, XR embodiment, and HSI, even when
+ each field uses different terms and different tools
+ ([Reynolds, steering behaviors](https://www.red3d.com/cwr/steer/); [Patil et al.](https://gamma.cs.unc.edu/DCrowd/paper.pdf); [Colas et al.](https://doi.org/10.1111/cgf.14491); [Prazak et al.](https://doi.org/10.1145/3214745.3214809); [SideFX crowd docs](https://www.sidefx.com/docs/houdini/crowds/basics.html)) .
+
  The technical detail matters because it changes what "multitude" can mean. In the
  DiffeoMorph paper, shape is not treated as a finished mesh with particles attached to
  it. Form emerges from many agents, an SE(3)-equivariant force model, and a
  Zernike-spectrum loss that compares predicted and target shapes as continuous spatial
  distributions rather than as fixed point lists
  ([Pahng et al.](https://arxiv.org/abs/2512.17129); [hormoz-lab](https://github.com/hormoz-lab/diffeomorph)) .
+
+ Bioelectric morphogenesis is a useful adjacent boundary case. Levin's work frames
+ developmental tissues as multi-level agential materials: cellular collectives use
+ physiological networks, gap-junction coupling, voltage-like states, memory, and
+ target-state regulation to navigate anatomical morphospace. Planarian work makes this
+ concrete through early bioelectric anterior/posterior polarity and membrane-voltage
+ effects on head regeneration. For Plasmatic Multitudes, the transfer is deliberately
+ modest: bioelectricity is not the core subject, but it offers a disciplined vocabulary
+ for fields, coupling, repair, memory, and multi-scale agency that can inspire synthetic
+ dynamics in Rusty Matter without becoming a biological claim
+ ([Levin, agential materials](https://doi.org/10.1007/s00018-023-04790-z); [Durant et al.](https://doi.org/10.1016/j.bpj.2019.01.029); [Beane et al.](https://doi.org/10.1016/j.chembiol.2010.11.012); [Bioelectricity and Morphogenesis](https://mesmerprism.com/projects/bioelectricity.html)) .
 
  For Plasmatic Multitudes, this is a design translation, not an embodiment result.
  DiffeoMorph does not show that a person will own, trust, or feel such a form as a body.

@@ -126,6 +126,102 @@
     }
   },
   {
+    "id": "doi-org-levin-2023a-2019",
+    "type": "article-journal",
+    "title": "Levin, 2023a",
+    "URL": "https://doi.org/10.1007/s00018-023-04790-z",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          11
+        ]
+      ]
+    },
+    "note": "Referenced by Bioelectricity and Morphogenesis: https://mesmerprism.com/projects/bioelectricity.html",
+    "issued": {
+      "date-parts": [
+        [
+          2019
+        ]
+      ]
+    },
+    "DOI": "10.1007/s00018-023-04790-z"
+  },
+  {
+    "id": "doi-org-levin-2023b-2019",
+    "type": "article-journal",
+    "title": "Levin, 2023b",
+    "URL": "https://doi.org/10.1007/s10071-023-01780-3",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          11
+        ]
+      ]
+    },
+    "note": "Referenced by Bioelectricity and Morphogenesis: https://mesmerprism.com/projects/bioelectricity.html",
+    "issued": {
+      "date-parts": [
+        [
+          2019
+        ]
+      ]
+    },
+    "DOI": "10.1007/s10071-023-01780-3"
+  },
+  {
+    "id": "doi-org-levin-2021-2019",
+    "type": "article-journal",
+    "title": "Levin, 2021",
+    "URL": "https://doi.org/10.1016/j.cell.2021.02.034",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          11
+        ]
+      ]
+    },
+    "note": "Referenced by Bioelectricity and Morphogenesis: https://mesmerprism.com/projects/bioelectricity.html",
+    "issued": {
+      "date-parts": [
+        [
+          2019
+        ]
+      ]
+    },
+    "DOI": "10.1016/j.cell.2021.02.034"
+  },
+  {
+    "id": "doi-org-levin-2022-2019",
+    "type": "article-journal",
+    "title": "Levin, 2022",
+    "URL": "https://doi.org/10.3389/fnsys.2022.768201",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          11
+        ]
+      ]
+    },
+    "note": "Referenced by Bioelectricity and Morphogenesis: https://mesmerprism.com/projects/bioelectricity.html",
+    "issued": {
+      "date-parts": [
+        [
+          2019
+        ]
+      ]
+    },
+    "DOI": "10.3389/fnsys.2022.768201"
+  },
+  {
     "id": "doi-org-oviedo-et-al-2010-2019",
     "type": "article-journal",
     "title": "Oviedo et al., 2010",
@@ -198,6 +294,53 @@
     "DOI": "10.1242/dev.086900"
   },
   {
+    "id": "lobolab-umbc-edu-planformdb-2019",
+    "type": "webpage",
+    "title": "PlanformDB",
+    "URL": "https://lobolab.umbc.edu/planform/download/",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          11
+        ]
+      ]
+    },
+    "note": "Referenced by Bioelectricity and Morphogenesis: https://mesmerprism.com/projects/bioelectricity.html",
+    "issued": {
+      "date-parts": [
+        [
+          2019
+        ]
+      ]
+    }
+  },
+  {
+    "id": "doi-org-lobo-et-al-2013-2019",
+    "type": "article-journal",
+    "title": "Lobo et al., 2013",
+    "URL": "https://doi.org/10.1093/bioinformatics/btt088",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          11
+        ]
+      ]
+    },
+    "note": "Referenced by Bioelectricity and Morphogenesis: https://mesmerprism.com/projects/bioelectricity.html",
+    "issued": {
+      "date-parts": [
+        [
+          2019
+        ]
+      ]
+    },
+    "DOI": "10.1093/bioinformatics/btt088"
+  },
+  {
     "id": "lobolab-umbc-edu-planform-planformdb",
     "type": "webpage",
     "title": "Planform / PlanformDB",
@@ -212,5 +355,75 @@
       ]
     },
     "note": "Referenced by Bioelectricity and Morphogenesis: https://mesmerprism.com/projects/bioelectricity.html"
+  },
+  {
+    "id": "bioelectricitynexus-com-bioelectricity-nexus",
+    "type": "webpage",
+    "title": "Bioelectricity Nexus",
+    "URL": "https://bioelectricitynexus.com/",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          11
+        ]
+      ]
+    },
+    "note": "Referenced by Bioelectricity and Morphogenesis: https://mesmerprism.com/projects/bioelectricity.html"
+  },
+  {
+    "id": "github-com-betse",
+    "type": "webpage",
+    "title": "BETSE",
+    "URL": "https://github.com/betsee/betse",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          11
+        ]
+      ]
+    },
+    "note": "Referenced by Bioelectricity and Morphogenesis: https://mesmerprism.com/projects/bioelectricity.html"
+  },
+  {
+    "id": "planmine-mpibpc-mpg-de-planmine",
+    "type": "webpage",
+    "title": "PlanMine",
+    "URL": "https://planmine.mpibpc.mpg.de/",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          11
+        ]
+      ]
+    },
+    "note": "Referenced by Bioelectricity and Morphogenesis: https://mesmerprism.com/projects/bioelectricity.html"
+  },
+  {
+    "id": "emmons-bell-et-al-a-computational-approach-to-explaining-bioelectrically-i",
+    "type": "article-journal",
+    "title": "A Computational Approach to Explaining Bioelectrically-induced Persistent, Stochastic Changes of Axial Polarity in Planarian Regeneration",
+    "URL": "https://doi.org/10.1089/bioe.2021.0036",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          11
+        ]
+      ]
+    },
+    "note": "Referenced by Bioelectricity and Morphogenesis: https://mesmerprism.com/projects/bioelectricity.html",
+    "author": [
+      {
+        "literal": "Emmons-Bell et al"
+      }
+    ],
+    "DOI": "10.1089/bioe.2021.0036"
   }
 ]

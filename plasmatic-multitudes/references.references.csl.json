@@ -8,8 +8,8 @@
       "date-parts": [
         [
           2026,
-          5,
-          26
+          6,
+          11
         ]
       ]
     },
@@ -36,8 +36,8 @@
       "date-parts": [
         [
           2026,
-          5,
-          26
+          6,
+          11
         ]
       ]
     },
@@ -64,8 +64,8 @@
       "date-parts": [
         [
           2026,
-          5,
-          26
+          6,
+          11
         ]
       ]
     },
@@ -92,8 +92,8 @@
       "date-parts": [
         [
           2026,
-          5,
-          26
+          6,
+          11
         ]
       ]
     },
@@ -121,8 +121,8 @@
       "date-parts": [
         [
           2026,
-          5,
-          26
+          6,
+          11
         ]
       ]
     },
@@ -149,8 +149,8 @@
       "date-parts": [
         [
           2026,
-          5,
-          26
+          6,
+          11
         ]
       ]
     },
@@ -177,8 +177,8 @@
       "date-parts": [
         [
           2026,
-          5,
-          26
+          6,
+          11
         ]
       ]
     },
@@ -205,8 +205,8 @@
       "date-parts": [
         [
           2026,
-          5,
-          26
+          6,
+          11
         ]
       ]
     },
@@ -234,8 +234,8 @@
       "date-parts": [
         [
           2026,
-          5,
-          26
+          6,
+          11
         ]
       ]
     },
@@ -257,8 +257,8 @@
       "date-parts": [
         [
           2026,
-          5,
-          26
+          6,
+          11
         ]
       ]
     },
@@ -273,8 +273,8 @@
       "date-parts": [
         [
           2026,
-          5,
-          26
+          6,
+          11
         ]
       ]
     },
@@ -301,8 +301,8 @@
       "date-parts": [
         [
           2026,
-          5,
-          26
+          6,
+          11
         ]
       ]
     },
@@ -329,8 +329,8 @@
       "date-parts": [
         [
           2026,
-          5,
-          26
+          6,
+          11
         ]
       ]
     },
@@ -357,8 +357,8 @@
       "date-parts": [
         [
           2026,
-          5,
-          26
+          6,
+          11
         ]
       ]
     },
@@ -380,8 +380,8 @@
       "date-parts": [
         [
           2026,
-          5,
-          26
+          6,
+          11
         ]
       ]
     },
@@ -396,8 +396,8 @@
       "date-parts": [
         [
           2026,
-          5,
-          26
+          6,
+          11
         ]
       ]
     },
@@ -412,8 +412,8 @@
       "date-parts": [
         [
           2026,
-          5,
-          26
+          6,
+          11
         ]
       ]
     },
@@ -428,8 +428,8 @@
       "date-parts": [
         [
           2026,
-          5,
-          26
+          6,
+          11
         ]
       ]
     },
@@ -444,8 +444,8 @@
       "date-parts": [
         [
           2026,
-          5,
-          26
+          6,
+          11
         ]
       ]
     },
@@ -460,8 +460,8 @@
       "date-parts": [
         [
           2026,
-          5,
-          26
+          6,
+          11
         ]
       ]
     },
@@ -476,8 +476,8 @@
       "date-parts": [
         [
           2026,
-          5,
-          26
+          6,
+          11
         ]
       ]
     },
@@ -492,8 +492,8 @@
       "date-parts": [
         [
           2026,
-          5,
-          26
+          6,
+          11
         ]
       ]
     },
@@ -508,8 +508,8 @@
       "date-parts": [
         [
           2026,
-          5,
-          26
+          6,
+          11
         ]
       ]
     },
@@ -529,8 +529,8 @@
       "date-parts": [
         [
           2026,
-          5,
-          26
+          6,
+          11
         ]
       ]
     },
@@ -553,8 +553,8 @@
       "date-parts": [
         [
           2026,
-          5,
-          26
+          6,
+          11
         ]
       ]
     },
@@ -581,8 +581,8 @@
       "date-parts": [
         [
           2026,
-          5,
-          26
+          6,
+          11
         ]
       ]
     },
@@ -610,8 +610,8 @@
       "date-parts": [
         [
           2026,
-          5,
-          26
+          6,
+          11
         ]
       ]
     },
@@ -639,8 +639,8 @@
       "date-parts": [
         [
           2026,
-          5,
-          26
+          6,
+          11
         ]
       ]
     },
@@ -668,8 +668,8 @@
       "date-parts": [
         [
           2026,
-          5,
-          26
+          6,
+          11
         ]
       ]
     },
@@ -689,6 +689,185 @@
     "DOI": "10.1145/37402.37406"
   },
   {
+    "id": "reynolds-craig-w-author-page-1999",
+    "type": "webpage",
+    "title": "Author page",
+    "URL": "https://www.red3d.com/cwr/steer/",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          11
+        ]
+      ]
+    },
+    "note": "Referenced by Annotated Sources for Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/references.html",
+    "author": [
+      {
+        "literal": "Reynolds, Craig W"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          1999
+        ]
+      ]
+    }
+  },
+  {
+    "id": "patil-sachin-jur-van-den-berg-sean-curtis-ming-c-patil-sachin-jur-van-den-berg-sean-curtis-ming-c-lin-and-2011",
+    "type": "article-journal",
+    "title": "Patil, Sachin, Jur van den Berg, Sean Curtis, Ming C. Lin, and Dinesh Manocha. \"Directing Crowd Simulations Using Navigation Fields.\" IEEE Transactions on Visualization and Computer Graphics 17, no. 2 (2011): 244-254.",
+    "URL": "https://doi.org/10.1109/TVCG.2010.33",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          11
+        ]
+      ]
+    },
+    "note": "Referenced by Annotated Sources for Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/references.html",
+    "author": [
+      {
+        "literal": "Patil, Sachin, Jur van den Berg, Sean Curtis, Ming C"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2011
+        ]
+      ]
+    },
+    "DOI": "10.1109/TVCG.2010.33"
+  },
+  {
+    "id": "patil-sachin-jur-van-den-berg-sean-curtis-ming-c-patil-sachin-jur-van-den-berg-sean-curtis-ming-c-lin-and-2011",
+    "type": "webpage",
+    "title": "Patil, Sachin, Jur van den Berg, Sean Curtis, Ming C. Lin, and Dinesh Manocha. \"Directing Crowd Simulations Using Navigation Fields.\" IEEE Transactions on Visualization and Computer Graphics 17, no. 2 (2011): 244-254. DOI",
+    "URL": "https://gamma.cs.unc.edu/DCrowd/paper.pdf",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          11
+        ]
+      ]
+    },
+    "note": "Referenced by Annotated Sources for Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/references.html",
+    "author": [
+      {
+        "literal": "Patil, Sachin, Jur van den Berg, Sean Curtis, Ming C"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2011
+        ]
+      ]
+    }
+  },
+  {
+    "id": "doi-org-colas-adele-wouter-van-toll-katja-zibrek-ludovic-hoyet-a-2022",
+    "type": "article-journal",
+    "title": "Colas, Adele, Wouter van Toll, Katja Zibrek, Ludovic Hoyet, Anne-Helene Olivier, and Julien Pettre. \"Interaction Fields: Intuitive Sketch-Based Steering Behaviors for Crowd Simulation.\" Computer Graphics Forum 41, no. 2 (2022): 521-534.",
+    "URL": "https://doi.org/10.1111/cgf.14491",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          11
+        ]
+      ]
+    },
+    "note": "Referenced by Annotated Sources for Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/references.html",
+    "issued": {
+      "date-parts": [
+        [
+          2022
+        ]
+      ]
+    },
+    "DOI": "10.1111/cgf.14491"
+  },
+  {
+    "id": "doi-org-prazak-martin-damien-maupu-mungo-pay-muhittin-bilginer-a-2018",
+    "type": "article-journal",
+    "title": "Prazak, Martin, Damien Maupu, Mungo Pay, Muhittin Bilginer, Aleksandar Atanasov, and Cristobal Infante Esquivel. \"Taming the Swarm: Rippers on Pacific Rim Uprising.\" SIGGRAPH '18 Talks , 2018.",
+    "URL": "https://doi.org/10.1145/3214745.3214809",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          11
+        ]
+      ]
+    },
+    "note": "Referenced by Annotated Sources for Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/references.html",
+    "issued": {
+      "date-parts": [
+        [
+          2018
+        ]
+      ]
+    },
+    "DOI": "10.1145/3214745.3214809"
+  },
+  {
+    "id": "mprazak-info-author-pdf-2018",
+    "type": "webpage",
+    "title": "Author PDF",
+    "URL": "https://mprazak.info/assets/pacific_rim-small.pdf",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          11
+        ]
+      ]
+    },
+    "note": "Referenced by Annotated Sources for Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/references.html",
+    "issued": {
+      "date-parts": [
+        [
+          2018
+        ]
+      ]
+    }
+  },
+  {
+    "id": "www-sidefx-com-sidefx-crowd-basics-houdini-documentation-accessed-2026--2026",
+    "type": "webpage",
+    "title": "SideFX. \"Crowd Basics.\" Houdini Documentation , accessed 2026-06-11.",
+    "URL": "https://www.sidefx.com/docs/houdini/crowds/basics.html",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          11
+        ]
+      ]
+    },
+    "note": "Referenced by Annotated Sources for Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/references.html",
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    }
+  },
+  {
     "id": "richards-catherine-larry-korba-chris-shaw-and-mark-green-richards-catherine-larry-korba-chris-shaw-and-mark-green-1994",
     "type": "article-journal",
     "title": "Richards, Catherine, Larry Korba, Chris Shaw, and Mark Green. \"Virtual Reality and Virtual Bodies.\" Proceedings of SPIE 2177 (1994).",
@@ -697,8 +876,8 @@
       "date-parts": [
         [
           2026,
-          5,
-          26
+          6,
+          11
         ]
       ]
     },
@@ -726,8 +905,8 @@
       "date-parts": [
         [
           2026,
-          5,
-          26
+          6,
+          11
         ]
       ]
     },
@@ -749,8 +928,8 @@
       "date-parts": [
         [
           2026,
-          5,
-          26
+          6,
+          11
         ]
       ]
     },
@@ -778,8 +957,8 @@
       "date-parts": [
         [
           2026,
-          5,
-          26
+          6,
+          11
         ]
       ]
     },
@@ -807,8 +986,8 @@
       "date-parts": [
         [
           2026,
-          5,
-          26
+          6,
+          11
         ]
       ]
     },
@@ -836,8 +1015,8 @@
       "date-parts": [
         [
           2026,
-          5,
-          26
+          6,
+          11
         ]
       ]
     },
@@ -865,8 +1044,8 @@
       "date-parts": [
         [
           2026,
-          5,
-          26
+          6,
+          11
         ]
       ]
     },
@@ -889,8 +1068,8 @@
       "date-parts": [
         [
           2026,
-          5,
-          26
+          6,
+          11
         ]
       ]
     },
@@ -917,8 +1096,8 @@
       "date-parts": [
         [
           2026,
-          5,
-          26
+          6,
+          11
         ]
       ]
     },
@@ -946,8 +1125,8 @@
       "date-parts": [
         [
           2026,
-          5,
-          26
+          6,
+          11
         ]
       ]
     },
@@ -961,6 +1140,180 @@
     }
   },
   {
+    "id": "levin-michael-levin-michael-bioelectric-signaling-reprogrammable-circu-2021",
+    "type": "article-journal",
+    "title": "Levin, Michael. \"Bioelectric Signaling: Reprogrammable Circuits Underlying Embryogenesis, Regeneration, and Cancer.\" Cell 184, no. 8 (2021): 1971-1989.",
+    "URL": "https://doi.org/10.1016/j.cell.2021.02.034",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          11
+        ]
+      ]
+    },
+    "note": "Referenced by Annotated Sources for Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/references.html",
+    "author": [
+      {
+        "literal": "Levin, Michael"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2021
+        ]
+      ]
+    },
+    "DOI": "10.1016/j.cell.2021.02.034"
+  },
+  {
+    "id": "levin-michael-levin-michael-technological-approach-to-mind-everywhere--2022",
+    "type": "article-journal",
+    "title": "Levin, Michael. \"Technological Approach to Mind Everywhere: An Experimentally-Grounded Framework for Understanding Diverse Bodies and Minds.\" Frontiers in Systems Neuroscience 16 (2022): 768201.",
+    "URL": "https://doi.org/10.3389/fnsys.2022.768201",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          11
+        ]
+      ]
+    },
+    "note": "Referenced by Annotated Sources for Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/references.html",
+    "author": [
+      {
+        "literal": "Levin, Michael"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2022
+        ]
+      ]
+    },
+    "DOI": "10.3389/fnsys.2022.768201"
+  },
+  {
+    "id": "levin-michael-levin-michael-darwin-s-agential-materials-evolutionary-i-2023",
+    "type": "article-journal",
+    "title": "Levin, Michael. \"Darwin's Agential Materials: Evolutionary Implications of Multiscale Competency in Developmental Biology.\" Cellular and Molecular Life Sciences 80 (2023): 142.",
+    "URL": "https://doi.org/10.1007/s00018-023-04790-z",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          11
+        ]
+      ]
+    },
+    "note": "Referenced by Annotated Sources for Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/references.html",
+    "author": [
+      {
+        "literal": "Levin, Michael"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2023
+        ]
+      ]
+    },
+    "DOI": "10.1007/s00018-023-04790-z"
+  },
+  {
+    "id": "levin-michael-levin-michael-bioelectric-networks-the-cognitive-glue-en-2023",
+    "type": "article-journal",
+    "title": "Levin, Michael. \"Bioelectric Networks: The Cognitive Glue Enabling Evolutionary Scaling from Physiology to Mind.\" Animal Cognition 26 (2023): 1865-1891.",
+    "URL": "https://doi.org/10.1007/s10071-023-01780-3",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          11
+        ]
+      ]
+    },
+    "note": "Referenced by Annotated Sources for Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/references.html",
+    "author": [
+      {
+        "literal": "Levin, Michael"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2023
+        ]
+      ]
+    },
+    "DOI": "10.1007/s10071-023-01780-3"
+  },
+  {
+    "id": "durant-fallon-jordan-bischof-christopher-fields-stephani-durant-fallon-jordan-bischof-christopher-fields-stephani-2019",
+    "type": "article-journal",
+    "title": "Durant, Fallon, Jordan Bischof, Christopher Fields, Stephanie Morokuma, James M. LaPalme, and Michael Levin. \"The Role of Early Bioelectric Signals in the Regeneration of Planarian Anterior/Posterior Polarity.\" Biophysical Journal 116, no. 5 (2019): 948-961.",
+    "URL": "https://doi.org/10.1016/j.bpj.2019.01.029",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          11
+        ]
+      ]
+    },
+    "note": "Referenced by Annotated Sources for Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/references.html",
+    "author": [
+      {
+        "literal": "Durant, Fallon, Jordan Bischof, Christopher Fields, Stephanie Morokuma, James M"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2019
+        ]
+      ]
+    },
+    "DOI": "10.1016/j.bpj.2019.01.029"
+  },
+  {
+    "id": "beane-wendy-s-beane-wendy-s-junji-morokuma-dany-s-adams-and-michael-le-2011",
+    "type": "article-journal",
+    "title": "Beane, Wendy S., Junji Morokuma, Dany S. Adams, and Michael Levin. \"A Chemical Genetics Approach Reveals H,K-ATPase-Mediated Membrane Voltage Is Required for Planarian Head Regeneration.\" Chemistry & Biology 18, no. 1 (2011): 77-89.",
+    "URL": "https://doi.org/10.1016/j.chembiol.2010.11.012",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          11
+        ]
+      ]
+    },
+    "note": "Referenced by Annotated Sources for Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/references.html",
+    "author": [
+      {
+        "literal": "Beane, Wendy S"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2011
+        ]
+      ]
+    },
+    "DOI": "10.1016/j.chembiol.2010.11.012"
+  },
+  {
     "id": "mitchell-a-mitchell-a-j-b-chastel-j-s-perez-j-holton-p-chilver-j-ro-2016",
     "type": "article-journal",
     "title": "Mitchell, A., J. B. Chastel, J. S. Perez, J. Holton, P. Chilver, J. Roustan, et al. \"danceroom Spectroscopy: at the Frontiers of Physics, Performance, Interactive Art and Technology.\" Leonardo 49, no. 2 (2016): 138-147.",
@@ -969,8 +1322,8 @@
       "date-parts": [
         [
           2026,
-          5,
-          26
+          6,
+          11
         ]
       ]
     },
@@ -998,8 +1351,8 @@
       "date-parts": [
         [
           2026,
-          5,
-          26
+          6,
+          11
         ]
       ]
     },
@@ -1027,8 +1380,8 @@
       "date-parts": [
         [
           2026,
-          5,
-          26
+          6,
+          11
         ]
       ]
     },
@@ -1051,8 +1404,8 @@
       "date-parts": [
         [
           2026,
-          5,
-          26
+          6,
+          11
         ]
       ]
     },
@@ -1074,8 +1427,8 @@
       "date-parts": [
         [
           2026,
-          5,
-          26
+          6,
+          11
         ]
       ]
     },
@@ -1103,8 +1456,8 @@
       "date-parts": [
         [
           2026,
-          5,
-          26
+          6,
+          11
         ]
       ]
     },
@@ -1127,8 +1480,8 @@
       "date-parts": [
         [
           2026,
-          5,
-          26
+          6,
+          11
         ]
       ]
     },
@@ -1155,8 +1508,8 @@
       "date-parts": [
         [
           2026,
-          5,
-          26
+          6,
+          11
         ]
       ]
     },
@@ -1183,8 +1536,8 @@
       "date-parts": [
         [
           2026,
-          5,
-          26
+          6,
+          11
         ]
       ]
     },
@@ -1212,8 +1565,8 @@
       "date-parts": [
         [
           2026,
-          5,
-          26
+          6,
+          11
         ]
       ]
     },
@@ -1241,8 +1594,8 @@
       "date-parts": [
         [
           2026,
-          5,
-          26
+          6,
+          11
         ]
       ]
     },
@@ -1270,8 +1623,8 @@
       "date-parts": [
         [
           2026,
-          5,
-          26
+          6,
+          11
         ]
       ]
     },
@@ -1299,8 +1652,8 @@
       "date-parts": [
         [
           2026,
-          5,
-          26
+          6,
+          11
         ]
       ]
     },
@@ -1328,8 +1681,8 @@
       "date-parts": [
         [
           2026,
-          5,
-          26
+          6,
+          11
         ]
       ]
     },
@@ -1356,8 +1709,8 @@
       "date-parts": [
         [
           2026,
-          5,
-          26
+          6,
+          11
         ]
       ]
     },
@@ -1384,8 +1737,8 @@
       "date-parts": [
         [
           2026,
-          5,
-          26
+          6,
+          11
         ]
       ]
     },
@@ -1413,8 +1766,8 @@
       "date-parts": [
         [
           2026,
-          5,
-          26
+          6,
+          11
         ]
       ]
     },
@@ -1441,8 +1794,8 @@
       "date-parts": [
         [
           2026,
-          5,
-          26
+          6,
+          11
         ]
       ]
     },
@@ -1470,8 +1823,8 @@
       "date-parts": [
         [
           2026,
-          5,
-          26
+          6,
+          11
         ]
       ]
     },
@@ -1499,8 +1852,8 @@
       "date-parts": [
         [
           2026,
-          5,
-          26
+          6,
+          11
         ]
       ]
     },
@@ -1523,8 +1876,8 @@
       "date-parts": [
         [
           2026,
-          5,
-          26
+          6,
+          11
         ]
       ]
     },
@@ -1552,8 +1905,8 @@
       "date-parts": [
         [
           2026,
-          5,
-          26
+          6,
+          11
         ]
       ]
     },
@@ -1581,8 +1934,8 @@
       "date-parts": [
         [
           2026,
-          5,
-          26
+          6,
+          11
         ]
       ]
     },
@@ -1610,8 +1963,8 @@
       "date-parts": [
         [
           2026,
-          5,
-          26
+          6,
+          11
         ]
       ]
     },
@@ -1639,8 +1992,8 @@
       "date-parts": [
         [
           2026,
-          5,
-          26
+          6,
+          11
         ]
       ]
     },
@@ -1668,8 +2021,8 @@
       "date-parts": [
         [
           2026,
-          5,
-          26
+          6,
+          11
         ]
       ]
     },
@@ -1697,8 +2050,8 @@
       "date-parts": [
         [
           2026,
-          5,
-          26
+          6,
+          11
         ]
       ]
     },

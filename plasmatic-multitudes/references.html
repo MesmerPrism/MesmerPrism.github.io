@@ -17,8 +17,8 @@
     <link rel="alternate" type="application/vnd.citationstyles.csl+json" href="/plasmatic-multitudes/references.references.csl.json" title="CSL JSON references">
     <meta name="citation_title" content="Annotated Sources for Plasmatic Multitudes">
     <meta name="citation_author" content="Till Holzapfel">
-    <meta name="citation_publication_date" content="2026-05-26">
-    <meta name="citation_online_date" content="2026-05-26">
+    <meta name="citation_publication_date" content="2026-06-11">
+    <meta name="citation_online_date" content="2026-06-11">
     <meta name="citation_public_url" content="https://mesmerprism.com/plasmatic-multitudes/references.html">
     <meta name="citation_language" content="en">
     <script type="application/ld+json" data-agent-metadata>
@@ -43,7 +43,7 @@
                 "url": "https://mesmerprism.com"
           },
           "url": "https://mesmerprism.com/plasmatic-multitudes/references.html",
-          "dateModified": "2026-05-26",
+          "dateModified": "2026-06-11",
           "inLanguage": "en",
           "encoding": [
                 {
@@ -97,6 +97,13 @@
                 "https://link.springer.com/article/10.3758/BF03212378",
                 "https://doi.org/10.1145/357318.357320",
                 "https://doi.org/10.1145/37402.37406",
+                "https://www.red3d.com/cwr/steer/",
+                "https://doi.org/10.1109/TVCG.2010.33",
+                "https://gamma.cs.unc.edu/DCrowd/paper.pdf",
+                "https://doi.org/10.1111/cgf.14491",
+                "https://doi.org/10.1145/3214745.3214809",
+                "https://mprazak.info/assets/pacific_rim-small.pdf",
+                "https://www.sidefx.com/docs/houdini/crowds/basics.html",
                 "https://www.spiedigitallibrary.org/conference-proceedings-of-spie/2177/0000/Virtual-reality-and-virtual-bodies/10.1117/12.173894.full",
                 "https://arxiv.org/abs/2405.02672",
                 "https://doi.org/10.1111/j.1468-2958.2007.00299.x",
@@ -107,6 +114,12 @@
                 "https://arxiv.org/abs/2512.17129",
                 "https://doi.org/10.48550/arXiv.2512.17129",
                 "https://github.com/hormoz-lab/diffeomorph",
+                "https://doi.org/10.1016/j.cell.2021.02.034",
+                "https://doi.org/10.3389/fnsys.2022.768201",
+                "https://doi.org/10.1007/s00018-023-04790-z",
+                "https://doi.org/10.1007/s10071-023-01780-3",
+                "https://doi.org/10.1016/j.bpj.2019.01.029",
+                "https://doi.org/10.1016/j.chembiol.2010.11.012",
                 "https://doi.org/10.1162/LEON_a_00924",
                 "https://doi.org/10.1126/sciadv.aat2731",
                 "https://doi.org/10.1145/3749893.3749972",
@@ -138,8 +151,6 @@
     }
     </script>
     <!-- END agent-readable metadata -->
-
-
 </head>
   <body class="page page-references">
     <header class="site-header">
@@ -153,6 +164,7 @@
           <a href="essay.html">Long Essay</a>
           <a href="project.html">Method</a>
           <a href="pain.html">Pain Translation</a>
+          <a href="mixed-ability-hsi.html">Mixed-Ability HSI</a>
           <a href="terminology.html">Field Terms</a>
           <a href="references.html" aria-current="page">Sources</a>
         </nav>
@@ -161,7 +173,7 @@
 
     <main class="shell">
       <section class="hero">
-        <p class="eyebrow">Annotated sources | Updated May 24, 2026</p>
+        <p class="eyebrow">Annotated sources | Updated June 11, 2026</p>
         <h1>Annotated Sources</h1>
         <p class="deck">
           This reference library gathers the sources cited across the essays and organizes them by
@@ -349,6 +361,33 @@
               <a class="source-link" target="_blank" rel="noopener noreferrer" href="https://doi.org/10.1145/37402.37406">DOI</a>
               <p class="ref-note">Foundational source for emergent collective motion and coordinated many-part behavior.</p>
             </li>
+            <li id="ref-reynolds-steering">
+              Reynolds, Craig W. "Steering Behaviors for Autonomous Characters." <em>Game Developers Conference</em>, 1999.
+              <a class="source-link" target="_blank" rel="noopener noreferrer" href="https://www.red3d.com/cwr/steer/">Author page</a>
+              <p class="ref-note">Practical bridge from boids to tunable autonomous-character behaviors such as seeking, fleeing, wandering, path following, flow-field following, leader following, and flocking.</p>
+            </li>
+            <li id="ref-patil-navigation-fields">
+              Patil, Sachin, Jur van den Berg, Sean Curtis, Ming C. Lin, and Dinesh Manocha. "Directing Crowd Simulations Using Navigation Fields." <em>IEEE Transactions on Visualization and Computer Graphics</em> 17, no. 2 (2011): 244-254.
+              <a class="source-link" target="_blank" rel="noopener noreferrer" href="https://doi.org/10.1109/TVCG.2010.33">DOI</a>
+              <a class="source-link" target="_blank" rel="noopener noreferrer" href="https://gamma.cs.unc.edu/DCrowd/paper.pdf">PDF</a>
+              <p class="ref-note">Directable-crowd source for blending user-specified guidance fields into goal-directed navigation while leaving local collision avoidance to the agent model.</p>
+            </li>
+            <li id="ref-colas-interaction-fields">
+              Colas, Adele, Wouter van Toll, Katja Zibrek, Ludovic Hoyet, Anne-Helene Olivier, and Julien Pettre. "Interaction Fields: Intuitive Sketch-Based Steering Behaviors for Crowd Simulation." <em>Computer Graphics Forum</em> 41, no. 2 (2022): 521-534.
+              <a class="source-link" target="_blank" rel="noopener noreferrer" href="https://doi.org/10.1111/cgf.14491">DOI</a>
+              <p class="ref-note">Sketch-based authoring source for velocity and orientation fields around source agents or obstacles, useful for treating crowd behavior as an editable interaction field rather than a fixed rule set.</p>
+            </li>
+            <li id="ref-prazak-taming-swarm">
+              Prazak, Martin, Damien Maupu, Mungo Pay, Muhittin Bilginer, Aleksandar Atanasov, and Cristobal Infante Esquivel. "Taming the Swarm: Rippers on Pacific Rim Uprising." <em>SIGGRAPH '18 Talks</em>, 2018.
+              <a class="source-link" target="_blank" rel="noopener noreferrer" href="https://doi.org/10.1145/3214745.3214809">DOI</a>
+              <a class="source-link" target="_blank" rel="noopener noreferrer" href="https://mprazak.info/assets/pacific_rim-small.pdf">Author PDF</a>
+              <p class="ref-note">Production VFX case where boid simulation alone was insufficient for a highly articulated swarm performing an intentional assembly task; useful for agent rigs, guide curves, task points, animation blending, and artist direction.</p>
+            </li>
+            <li id="ref-sidefx-crowds">
+              SideFX. "Crowd Basics." <em>Houdini Documentation</em>, accessed 2026-06-11.
+              <a class="source-link" target="_blank" rel="noopener noreferrer" href="https://www.sidefx.com/docs/houdini/crowds/basics.html">Documentation</a>
+              <p class="ref-note">Tool-reference source for practical crowd stacks: agents, states, triggers, clips, behavior weights, dynamics interaction, foot planting, terrain, obstacles, motion paths, and caches.</p>
+            </li>
             <li id="ref-richards">
               Richards, Catherine, Larry Korba, Chris Shaw, and Mark Green. "Virtual Reality and Virtual Bodies." <em>Proceedings of SPIE</em> 2177 (1994).
               <a class="source-link" target="_blank" rel="noopener noreferrer" href="https://www.spiedigitallibrary.org/conference-proceedings-of-spie/2177/0000/Virtual-reality-and-virtual-bodies/10.1117/12.173894.full">Publisher</a>
@@ -394,6 +433,36 @@
               hormoz-lab. "diffeomorph." GitHub repository, accessed 2026-05-24.
               <a class="source-link" target="_blank" rel="noopener noreferrer" href="https://github.com/hormoz-lab/diffeomorph">Repository</a>
               <p class="ref-note">Official implementation reference for the DiffeoMorph force model and spectral shape-matching loss. Useful as code provenance, not as an embodiment or clinical source.</p>
+            </li>
+            <li id="ref-levin-bioelectric-signaling">
+              Levin, Michael. "Bioelectric Signaling: Reprogrammable Circuits Underlying Embryogenesis, Regeneration, and Cancer." <em>Cell</em> 184, no. 8 (2021): 1971-1989.
+              <a class="source-link" target="_blank" rel="noopener noreferrer" href="https://doi.org/10.1016/j.cell.2021.02.034">DOI</a>
+              <p class="ref-note">Broad review grounding bioelectricity as a programmable physiological signaling layer across embryogenesis, regeneration, and disease. Useful as context, not as a claim that current Morphospace work is biomedical.</p>
+            </li>
+            <li id="ref-levin-tame">
+              Levin, Michael. "Technological Approach to Mind Everywhere: An Experimentally-Grounded Framework for Understanding Diverse Bodies and Minds." <em>Frontiers in Systems Neuroscience</em> 16 (2022): 768201.
+              <a class="source-link" target="_blank" rel="noopener noreferrer" href="https://doi.org/10.3389/fnsys.2022.768201">DOI</a>
+              <p class="ref-note">Framework source for thinking about diverse embodiments and unconventional agency as a continuum of manipulability and persuasion.</p>
+            </li>
+            <li id="ref-levin-agential-materials">
+              Levin, Michael. "Darwin's Agential Materials: Evolutionary Implications of Multiscale Competency in Developmental Biology." <em>Cellular and Molecular Life Sciences</em> 80 (2023): 142.
+              <a class="source-link" target="_blank" rel="noopener noreferrer" href="https://doi.org/10.1007/s00018-023-04790-z">DOI</a>
+              <p class="ref-note">Key source for multi-level agential materials, regulative plasticity, and cells/tissues/organs as problem-solving substrates in developmental morphogenesis.</p>
+            </li>
+            <li id="ref-levin-bioelectric-networks">
+              Levin, Michael. "Bioelectric Networks: The Cognitive Glue Enabling Evolutionary Scaling from Physiology to Mind." <em>Animal Cognition</em> 26 (2023): 1865-1891.
+              <a class="source-link" target="_blank" rel="noopener noreferrer" href="https://doi.org/10.1007/s10071-023-01780-3">DOI</a>
+              <p class="ref-note">Source for bioelectric networks as a bridge between cell-level physiological competencies, anatomical morphospace, and broader collective-intelligence framing.</p>
+            </li>
+            <li id="ref-durant-2019">
+              Durant, Fallon, Jordan Bischof, Christopher Fields, Stephanie Morokuma, James M. LaPalme, and Michael Levin. "The Role of Early Bioelectric Signals in the Regeneration of Planarian Anterior/Posterior Polarity." <em>Biophysical Journal</em> 116, no. 5 (2019): 948-961.
+              <a class="source-link" target="_blank" rel="noopener noreferrer" href="https://doi.org/10.1016/j.bpj.2019.01.029">DOI</a>
+              <p class="ref-note">Planarian source for early bioelectric anterior/posterior polarity, useful as a biological reference for field perturbation and memory-like target dynamics.</p>
+            </li>
+            <li id="ref-beane-2011">
+              Beane, Wendy S., Junji Morokuma, Dany S. Adams, and Michael Levin. "A Chemical Genetics Approach Reveals H,K-ATPase-Mediated Membrane Voltage Is Required for Planarian Head Regeneration." <em>Chemistry &amp; Biology</em> 18, no. 1 (2011): 77-89.
+              <a class="source-link" target="_blank" rel="noopener noreferrer" href="https://doi.org/10.1016/j.chembiol.2010.11.012">DOI</a>
+              <p class="ref-note">Planarian source connecting membrane-voltage control to head-versus-tail regeneration context. Useful for biological analogy and source-linked teaching targets, not direct avatar evidence.</p>
             </li>
           </ol>
         </section>
@@ -555,8 +624,6 @@
             </div>
         </section>
         <!-- END page-export-links -->
-
-
 </main>
 
     <footer class="footer">

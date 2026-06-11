@@ -43,6 +43,13 @@ Computational form as a working medium
  feedback through explicit authority surfaces, inspect it through
  renderer-neutral optics, and host it in desktop, browser, or headset contexts.
 
+ The Bioelectricity and Morphogenesis (https://mesmerprism.com/projects/bioelectricity.html)
+ slice is the clearest current example: Matter owns the planarian surface graph,
+ voltage-like fields, conductance-like coupling, memory, readouts, and
+ qualitative fixtures; Optics owns browser inspection over those payloads; and
+ Manifold remains deferred until commands, sessions, and audit packages become
+ the right public surface.
+
  The point is not to rename every existing Rusty XR surface. Rusty XR remains
  useful history, compatibility, and public Quest evidence. Rusty Morphospace is
  the cleaner umbrella for new computational-form work.
