@@ -2,7 +2,7 @@
 
 Source: https://mesmerprism.com/projects/rusty-morphospace.html
 Canonical HTML: https://mesmerprism.com/projects/rusty-morphospace.html
-Generated: 2026-06-09
+Generated: 2026-06-11
 Description: Rusty Morphospace is a modular Rust platform frame for computational matter, spatial relations, runtime authority, and inspectable rendering surfaces.
 Markdown: https://mesmerprism.com/projects/rusty-morphospace.md
 Plain text: https://mesmerprism.com/projects/rusty-morphospace.txt
@@ -83,6 +83,8 @@ Computational morphology platform
 
 ### Connected work
 
+- [Bioelectricity and Morphogenesis](https://mesmerprism.com/projects/bioelectricity.html) shows the Matter/Optics boundary applied to planarian surface-field dynamics
+
 - [Rusty XR](https://mesmerprism.com/projects/rusty-xr.html) remains the public compatibility and Quest reference surface
 
 - [Quest Termux Lab](https://github.com/MesmerPrism/quest-termux-lab) is a public MIT lab source that feeds the Rusty Quest sidecar bridge
@@ -103,7 +105,9 @@ Computational morphology platform
 ### [Rusty Matter](https://github.com/MesmerPrism/rusty-matter)
 
  Geometry, fields, particles, dynamics, SDF/TSDF data, sampling,
- deterministic fixtures, and simulation state.
+ deterministic fixtures, simulation state, and the current
+ [bioelectric morphogenesis](https://mesmerprism.com/projects/bioelectricity.html)
+ teaching runtime.
 
  Situated relation
 

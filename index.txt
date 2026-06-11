@@ -2,7 +2,7 @@ Mesmer Prism | Till Holzapfel
 
 Source: https://mesmerprism.com/
 Canonical HTML: https://mesmerprism.com/
-Generated: 2026-06-09
+Generated: 2026-06-11
 Description: XR systems, citizen-science tools, visual instruments, and essays for altered-perception design. Mesmer Prism makes strange experience vivid, inspectable, and evidence-bounded.
 Markdown: https://mesmerprism.com/index.md
 Plain text: https://mesmerprism.com/index.txt
@@ -136,6 +136,29 @@ Rusty Morphospace (https://mesmerprism.com/projects/rusty-morphospace.html)
  Manifold (https://github.com/MesmerPrism/rusty-manifold)
  Optics (https://github.com/MesmerPrism/rusty-optics)
  Rusty XR boundary (https://mesmerprism.com/projects/rusty-xr.html)
+
+ Bioelectric morphogenesis model
+
+Bioelectricity and Morphogenesis (https://mesmerprism.com/projects/bioelectricity.html)
+
+ A Rusty Morphospace line for educational planarian bioelectric
+ patterning: Matter-owned mesh-surface fields and circuit dynamics,
+ Optics-owned browser inspection, and legacy planarian/xenobot sources
+ used as references for future expansion.
+
+ Status
+ Active Matter/Optics slice
+ Artifact
+ Rust crates, Wasm runtime, browser Planarian 3D preview, and public explanation
+ Boundary
+ Qualitative teaching model, not calibrated physiology
+
+ Rust / Bioelectricity / Morphogenesis / Planarian regeneration / Visualization
+
+ Project page (https://mesmerprism.com/projects/bioelectricity.html)
+ Rusty Morphospace (https://mesmerprism.com/projects/rusty-morphospace.html)
+ Matter (https://github.com/MesmerPrism/rusty-matter)
+ Optics (https://github.com/MesmerPrism/rusty-optics)
 
  Biofeedback sensor integration
 

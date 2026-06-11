@@ -1,5 +1,5 @@
 {
-  "generated": "2026-06-09",
+  "generated": "2026-06-11",
   "site": "https://mesmerprism.com",
   "pages": [
     {
@@ -52,7 +52,7 @@
     },
     {
       "title": "Plasmatic Multitudes Field Guide",
-      "description": "Long essay, method notes, vocabulary, pain-translation hypotheses, and annotated references for weakly bounded bodies and semi-corporeal avatar aesthetics.",
+      "description": "Long essay, method notes, vocabulary, pain-translation hypotheses, mixed-ability human-swarm interaction, and annotated references for weakly bounded bodies and semi-corporeal avatar aesthetics.",
       "path": "plasmatic-multitudes/index.html",
       "url": "https://mesmerprism.com/plasmatic-multitudes/",
       "group": "Plasmatic Multitudes",
@@ -61,6 +61,18 @@
       "bibtex": null,
       "cslJson": null,
       "references": 0
+    },
+    {
+      "title": "Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes",
+      "description": "A Plasmatic Multitudes research track on shared swarm bodies, mixed-ability collaboration, connectedness-first exploration, game-oriented coordination, and the bridge from aesthetic swarm design to physical swarm robotics.",
+      "path": "plasmatic-multitudes/mixed-ability-hsi.html",
+      "url": "https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html",
+      "group": "Plasmatic Multitudes",
+      "markdown": "https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.md",
+      "text": "https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.txt",
+      "bibtex": "https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.bib",
+      "cslJson": "https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.references.csl.json",
+      "references": 16
     },
     {
       "title": "Plasmatic Avatars and Chronic Pain VR | Plasmatic Multitudes",
@@ -121,6 +133,18 @@
       "bibtex": "https://mesmerprism.com/projects/altered-xperience-project.bib",
       "cslJson": "https://mesmerprism.com/projects/altered-xperience-project.references.csl.json",
       "references": 6
+    },
+    {
+      "title": "Bioelectricity and Morphogenesis",
+      "description": "Bioelectricity and morphogenesis in Rusty Morphospace: an educational planarian surface-field model built with Rusty Matter and visualized through Rusty Optics.",
+      "path": "projects/bioelectricity.html",
+      "url": "https://mesmerprism.com/projects/bioelectricity.html",
+      "group": "Project pages",
+      "markdown": "https://mesmerprism.com/projects/bioelectricity.md",
+      "text": "https://mesmerprism.com/projects/bioelectricity.txt",
+      "bibtex": "https://mesmerprism.com/projects/bioelectricity.bib",
+      "cslJson": "https://mesmerprism.com/projects/bioelectricity.references.csl.json",
+      "references": 10
     },
     {
       "title": "Brain Candy",

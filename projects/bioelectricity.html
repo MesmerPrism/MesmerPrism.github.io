@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bioelectricity and Morphogenesis | Mesmer Prism</title>
+    <link rel="canonical" href="https://mesmerprism.com/projects/bioelectricity.html">
+    <meta
+        name="description"
+        content="Bioelectricity and morphogenesis in Rusty Morphospace: an educational planarian surface-field model built with Rusty Matter and visualized through Rusty Optics."
+    >
+    <meta property="og:title" content="Bioelectricity and Morphogenesis | Mesmer Prism">
+    <meta
+        property="og:description"
+        content="An educational Rusty Morphospace line for planarian bioelectric patterning, mesh-surface fields, conductance edges, and renderer-neutral inspection."
+    >
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mesmerprism.com/projects/bioelectricity.html">
+    <meta property="og:image" content="https://mesmerprism.com/assets/bioelectricity/bioelectric-planarian-field.png">
+    <meta name="theme-color" content="#f4efe7">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" href="/favicon-32x32.png" type="image/png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="stylesheet" href="/assets/fonts.css">
+    <link rel="stylesheet" href="/styles.css?v=20260609-logo">
+    <!-- BEGIN agent-readable metadata -->
+    <link rel="alternate" type="text/markdown" href="/projects/bioelectricity.md" title="Markdown version">
+    <link rel="alternate" type="text/plain" href="/projects/bioelectricity.txt" title="Plain text version">
+    <link rel="alternate" type="application/x-bibtex" href="/projects/bioelectricity.bib" title="BibTeX references">
+    <link rel="alternate" type="application/vnd.citationstyles.csl+json" href="/projects/bioelectricity.references.csl.json" title="CSL JSON references">
+    <meta name="citation_title" content="Bioelectricity and Morphogenesis">
+    <meta name="citation_author" content="Till Holzapfel">
+    <meta name="citation_publication_date" content="2026-06-11">
+    <meta name="citation_online_date" content="2026-06-11">
+    <meta name="citation_public_url" content="https://mesmerprism.com/projects/bioelectricity.html">
+    <meta name="citation_language" content="en">
+    <script type="application/ld+json" data-agent-metadata>
+    {
+          "@context": "https://schema.org",
+          "@type": "Article",
+          "headline": "Bioelectricity and Morphogenesis",
+          "name": "Bioelectricity and Morphogenesis",
+          "description": "Bioelectricity and morphogenesis in Rusty Morphospace: an educational planarian surface-field model built with Rusty Matter and visualized through Rusty Optics.",
+          "author": {
+                "@type": "Person",
+                "name": "Till Holzapfel"
+          },
+          "publisher": {
+                "@type": "Organization",
+                "name": "Mesmer Prism",
+                "url": "https://mesmerprism.com"
+          },
+          "isPartOf": {
+                "@type": "WebSite",
+                "name": "Mesmer Prism",
+                "url": "https://mesmerprism.com"
+          },
+          "url": "https://mesmerprism.com/projects/bioelectricity.html",
+          "dateModified": "2026-06-11",
+          "inLanguage": "en",
+          "encoding": [
+                {
+                      "@type": "MediaObject",
+                      "encodingFormat": "text/markdown",
+                      "contentUrl": "https://mesmerprism.com/projects/bioelectricity.md"
+                },
+                {
+                      "@type": "MediaObject",
+                      "encodingFormat": "text/plain",
+                      "contentUrl": "https://mesmerprism.com/projects/bioelectricity.txt"
+                },
+                {
+                      "@type": "MediaObject",
+                      "encodingFormat": "application/x-bibtex",
+                      "contentUrl": "https://mesmerprism.com/projects/bioelectricity.bib"
+                },
+                {
+                      "@type": "MediaObject",
+                      "encodingFormat": "application/vnd.citationstyles.csl+json",
+                      "contentUrl": "https://mesmerprism.com/projects/bioelectricity.references.csl.json"
+                }
+          ],
+          "citation": [
+                "https://github.com/MesmerPrism",
+                "https://doi.org/10.1016/j.bpj.2019.01.029",
+                "https://doi.org/10.1016/j.chembiol.2010.11.012",
+                "https://github.com/MesmerPrism/rusty-matter",
+                "https://github.com/MesmerPrism/rusty-optics",
+                "https://github.com/MesmerPrism/rusty-manifold",
+                "https://doi.org/10.1016/j.ydbio.2009.12.012",
+                "https://doi.org/10.3390/ijms161126065",
+                "https://doi.org/10.1242/dev.086900",
+                "https://lobolab.umbc.edu/planform/"
+          ]
+    }
+    </script>
+    <!-- END agent-readable metadata -->
+</head>
+<body class="project-page">
+    <header class="site-header">
+        <div class="shell header-row">
+            <a class="site-name" href="/" aria-label="Mesmer Prism home">
+                <img class="site-mark" src="/assets/brand/mesmer-prism-logo.png" alt="" width="1200" height="508" decoding="async">
+                <span>Mesmer Prism</span>
+            </a>
+            <nav class="site-nav" aria-label="Primary">
+                <a href="/#work">Work</a>
+                <a href="/#publications">Publications</a>
+                <a href="/#background">Background</a>
+                <a href="/#contact">Contact</a>
+                <a href="https://github.com/MesmerPrism" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="shell">
+        <section class="hero">
+            <div class="hero-shell hero-shell--page">
+                <p class="eyebrow">Rusty Morphospace and tissue-scale patterning</p>
+                <h1>Bioelectricity and Morphogenesis</h1>
+                <p class="project-lede">
+                    Bioelectric morphogenesis asks how voltage-like state, tissue coupling,
+                    perturbations, and memory can help shape living form. The Rusty
+                    Morphospace version is deliberately modest: it builds inspectable
+                    educational models over mesh-surface samples, then keeps the simulation,
+                    visualization, and public claims in separate layers.
+                </p>
+                <div class="hero-actions">
+                    <a class="action-link action-link--strong" href="#current-slice">Current slice</a>
+                    <a class="action-link" href="#planarian">Why planarians</a>
+                    <a class="action-link" href="#reference-lanes">Reference lanes</a>
+                    <a class="action-link" href="#boundary">Claim boundary</a>
+                    <a class="action-link" href="/projects/rusty-morphospace.html">Rusty Morphospace</a>
+                    <a class="action-link" href="#references">References</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section two-column" aria-labelledby="bioelectricity-medium">
+            <div>
+                <div class="section-heading">
+                    <p class="section-kicker">Computational medium</p>
+                    <h2 id="bioelectricity-medium">Fields, circuits, and form without overclaiming</h2>
+                </div>
+                <p>
+                    A planarian fragment does not only carry genes and geometry. It also carries
+                    physiological state across tissue: membrane potentials, gap-junction-like
+                    communication, wound signals, and downstream patterning responses. The
+                    experimental literature around planarian regeneration makes that a useful
+                    teaching case, because early bioelectric state can affect anterior/posterior
+                    polarity and regenerated head/tail outcomes
+                    (<a class="inline-citation" href="https://doi.org/10.1016/j.bpj.2019.01.029" target="_blank" rel="noopener noreferrer">Durant et al., 2019</a>;
+                    <a class="inline-citation" href="https://doi.org/10.1016/j.chembiol.2010.11.012" target="_blank" rel="noopener noreferrer">Beane et al., 2011</a>).
+                </p>
+                <p>
+                    The Rusty Morphospace model does not try to become a full physiology
+                    simulator. It treats bioelectricity as an inspectable layer over a stable
+                    surface graph: sample nodes on a body mesh, conductance edges between
+                    neighboring samples, normalized voltage state, perturbation bands, memory
+                    state, and readout fields. This is enough to teach the architecture of a
+                    tissue-scale model while leaving calibrated wet-lab prediction outside the
+                    current claim.
+                </p>
+            </div>
+            <figure class="deep-dive-figure">
+                <picture>
+                    <source srcset="/assets/bioelectricity/bioelectric-planarian-field.webp" type="image/webp">
+                    <img src="/assets/bioelectricity/bioelectric-planarian-field.png" alt="Diagram of a planarian-shaped mesh with a blue-to-red bioelectric field, conductance edges, a cut band, and a selected edit neighborhood." width="1200" height="1200" loading="eager" decoding="async">
+                </picture>
+                <figcaption>
+                    Synthetic educational diagram of the current model shape: a planarian-like
+                    body surface, Matter-owned graph nodes, conductance edges, a wound band, and
+                    a tiered local edit neighborhood.
+                </figcaption>
+            </figure>
+        </section>
+
+        <section class="section" id="current-slice">
+            <div class="section-heading">
+                <p class="section-kicker">Current slice</p>
+                <h2>Rusty Matter owns dynamics; Rusty Optics owns inspection</h2>
+                <p>
+                    The current work lives inside the Rusty Morphospace repo family. The useful
+                    boundary is simple: Matter computes the state; Optics prepares views and
+                    browser inspection; Manifold is deferred until commands, sessions, packages,
+                    and audit surfaces need to become first-class.
+                </p>
+            </div>
+            <div class="project-grid">
+                <article class="project-card">
+                    <p class="project-kicker">Simulation truth</p>
+                    <h3><a href="https://github.com/MesmerPrism/rusty-matter" target="_blank" rel="noopener noreferrer">Rusty Matter</a></h3>
+                    <p>
+                        Matter owns mesh-surface samples, scalar and vector fields,
+                        bioelectric circuit state, deterministic stepping, edit results, schema
+                        fixtures, validation, and Wasm runtime exports.
+                    </p>
+                    <dl class="project-facts">
+                        <dt>Current model</dt>
+                        <dd>Planarian AP bioelectric surface field</dd>
+                        <dt>State</dt>
+                        <dd>Normalized voltage, conductance, memory, readouts</dd>
+                        <dt>Claim</dt>
+                        <dd>Qualitative educational dynamics</dd>
+                    </dl>
+                    <p class="project-links">
+                        <a href="https://github.com/MesmerPrism/rusty-matter" target="_blank" rel="noopener noreferrer">Repository</a>
+                    </p>
+                </article>
+                <article class="project-card">
+                    <p class="project-kicker">Visual contracts</p>
+                    <h3><a href="https://github.com/MesmerPrism/rusty-optics" target="_blank" rel="noopener noreferrer">Rusty Optics</a></h3>
+                    <p>
+                        Optics owns renderer-neutral frames, color policy, pick/edit-intent
+                        contracts, readout panels, activity layers, conductance-edge picking,
+                        and browser presentation over Matter-owned payloads.
+                    </p>
+                    <dl class="project-facts">
+                        <dt>Current view</dt>
+                        <dd>Browser Planarian 3D preview</dd>
+                        <dt>Interaction</dt>
+                        <dd>Node edits, edge gates, neighborhood brush</dd>
+                        <dt>Telemetry</dt>
+                        <dd>Split sim, view, render, and UI timing</dd>
+                    </dl>
+                    <p class="project-links">
+                        <a href="https://github.com/MesmerPrism/rusty-optics" target="_blank" rel="noopener noreferrer">Repository</a>
+                    </p>
+                </article>
+                <article class="project-card">
+                    <p class="project-kicker">Deferred authority</p>
+                    <h3><a href="https://github.com/MesmerPrism/rusty-manifold" target="_blank" rel="noopener noreferrer">Rusty Manifold</a></h3>
+                    <p>
+                        Manifold is the later lane for commands, sessions, packages, reproducible
+                        edit traces, and audit. It should request Matter work; it should not own
+                        field arrays or circuit dynamics.
+                    </p>
+                    <dl class="project-facts">
+                        <dt>Status</dt>
+                        <dd>Deferred for this slice</dd>
+                        <dt>Future use</dt>
+                        <dd>Commands, package descriptors, session audit</dd>
+                        <dt>Boundary</dt>
+                        <dd>Control plane, not simulation state</dd>
+                    </dl>
+                    <p class="project-links">
+                        <a href="https://github.com/MesmerPrism/rusty-manifold" target="_blank" rel="noopener noreferrer">Repository</a>
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section two-column" id="planarian">
+            <div>
+                <div class="section-heading">
+                    <p class="section-kicker">Why planarians</p>
+                    <h2>A compact biological teaching case</h2>
+                </div>
+                <p>
+                    Planarians are useful here because regeneration is spatially legible. A
+                    transverse cut gives a wound band, an anterior/posterior axis, and a clear
+                    readout problem: head-like and tail-like identity must resolve in the right
+                    places. Experimental work gives qualitative constraints for an educational
+                    model, including gap-junction-mediated polarity effects and persistent
+                    altered morphology after transient perturbations
+                    (<a class="inline-citation" href="https://doi.org/10.1016/j.ydbio.2009.12.012" target="_blank" rel="noopener noreferrer">Oviedo et al., 2010</a>;
+                    <a class="inline-citation" href="https://doi.org/10.3390/ijms161126065" target="_blank" rel="noopener noreferrer">Emmons-Bell et al., 2015</a>).
+                </p>
+                <p>
+                    The first scenarios therefore stay simple: baseline anterior/posterior
+                    separation, transverse-cut wound response, conductance-block perturbation,
+                    transient depolarization with memory, and a no-memory control. Those
+                    scenarios are not meant to predict a real animal. They are checks that the
+                    model can express the right kind of tissue-scale relationship before any
+                    calibrated source data is introduced.
+                </p>
+                <p>
+                    Head size and organ scaling studies add another useful lesson: voltage-like
+                    state can be read as an instructive patterning variable, not just a passive
+                    byproduct of cell state
+                    (<a class="inline-citation" href="https://doi.org/10.1242/dev.086900" target="_blank" rel="noopener noreferrer">Beane et al., 2013</a>).
+                    In the current model, that idea appears as readout fields driven by normalized
+                    voltage and memory state.
+                </p>
+            </div>
+            <div class="detail-stack">
+                <section class="detail-block">
+                    <h3>Qualitative checks</h3>
+                    <ul class="plain-list">
+                        <li>Anterior and posterior readouts separate in the baseline state.</li>
+                        <li>Wound response stays localized to the cut band.</li>
+                        <li>Gap-block scenarios change cross-band conductance and field spread.</li>
+                        <li>Transient perturbation persists when memory is enabled.</li>
+                        <li>No-memory controls relax toward baseline.</li>
+                    </ul>
+                </section>
+                <section class="detail-block">
+                    <h3>Current unit policy</h3>
+                    <p>
+                        Voltage is normalized in the current educational layer. Calibrated
+                        millivolt claims require a separate source, unit, and validation gate.
+                    </p>
+                </section>
+            </div>
+        </section>
+
+        <section class="section" id="reference-lanes">
+            <div class="section-heading">
+                <p class="section-kicker">Reference lanes</p>
+                <h2>Legacy projects feed the Morphospace line</h2>
+                <p>
+                    The older planarian and xenobot work is useful, but it should not become the
+                    runtime authority for the Rusty Morphospace implementation.
+                </p>
+            </div>
+            <div class="project-grid">
+                <article class="project-card">
+                    <p class="project-kicker">Planarian reference</p>
+                    <h3>Planarian graph and WebXR work</h3>
+                    <p>
+                        The planarian graph project contributes educational region labels, body
+                        geometry lessons, outcome labels, and source/provenance habits. Its app
+                        code and demo records remain reference material; Matter builds its own
+                        computational surface graph and validation fixtures.
+                    </p>
+                    <dl class="project-facts">
+                        <dt>Use now</dt>
+                        <dd>Region semantics, geometry review, outcome labels</dd>
+                        <dt>Not used as</dt>
+                        <dd>Simulation topology or runtime dynamics</dd>
+                    </dl>
+                </article>
+                <article class="project-card">
+                    <p class="project-kicker">Xenobot reference</p>
+                    <h3>Xenobot simulator planning</h3>
+                    <p>
+                        The xenobot planning material frames later body-surface and behavior
+                        questions. It is not the first implementation target. The current path
+                        builds a generic surface-field substrate first, then leaves locomotion,
+                        cilia, hydrodynamics, fabrication, and full xenobot simulation for later.
+                    </p>
+                    <dl class="project-facts">
+                        <dt>Use now</dt>
+                        <dd>Planning vocabulary and future expansion pressure</dd>
+                        <dt>Not used as</dt>
+                        <dd>First runtime or wet-lab simulator</dd>
+                    </dl>
+                </article>
+                <article class="project-card">
+                    <p class="project-kicker">Data source candidate</p>
+                    <h3><a href="https://lobolab.umbc.edu/planform/" target="_blank" rel="noopener noreferrer">Planform / PlanformDB</a></h3>
+                    <p>
+                        PlanformDB is the right kind of source for future experiment metadata,
+                        phenotype records, condition labels, and target graph ideas. It should
+                        enter through a source-intake gate, not as raw runtime authority or a
+                        shortcut to calibrated physiology.
+                    </p>
+                    <dl class="project-facts">
+                        <dt>Use later</dt>
+                        <dd>Traceable metadata and validation targets</dd>
+                        <dt>Gate needed</dt>
+                        <dd>License, source IDs, transformations, labels</dd>
+                    </dl>
+                    <p class="project-links">
+                        <a href="https://lobolab.umbc.edu/planform/" target="_blank" rel="noopener noreferrer">Planform page</a>
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section two-column" id="boundary">
+            <div>
+                <div class="section-heading">
+                    <p class="section-kicker">Claim boundary</p>
+                    <h2>What this model does not claim</h2>
+                </div>
+                <p>
+                    The current implementation is not BETSE, a named-ion-channel simulator, a
+                    wet-lab planning system, a calibrated PlanformDB predictor, or a full
+                    xenobot/anthrobot world model. It uses normalized state and synthetic
+                    scenarios to make tissue-scale relationships visible before the project takes
+                    on heavier physiology or real-data claims.
+                </p>
+                <p>
+                    That boundary is an engineering choice. It keeps the page readable, keeps
+                    code ownership clear, and avoids presenting educational dynamics as empirical
+                    prediction. More detailed source-derived work can be added later when source
+                    IDs, license notices, transformations, and validation targets are explicit.
+                </p>
+            </div>
+            <div class="detail-block">
+                <h3>Next public-safe steps</h3>
+                <ul class="plain-list">
+                    <li>Add scenario annotations tied to the literature above.</li>
+                    <li>Add a teaching panel for AP separation, wound localization, gap block, and memory controls.</li>
+                    <li>Make voltage-unit policy explicit per preset.</li>
+                    <li>Review PlanformDB as metadata and validation context, not runtime authority.</li>
+                    <li>Promote Manifold command/session surfaces only after Matter and Optics contracts settle.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section" id="references">
+            <div class="section-heading">
+                <p class="section-kicker">References</p>
+                <h2>Sources and public project surfaces</h2>
+            </div>
+            <ol class="reference-list">
+                <li><strong>Durant et al.</strong> "<a class="reference-link" href="https://doi.org/10.1016/j.bpj.2019.01.029" target="_blank" rel="noopener noreferrer">The role of early bioelectric signals in the regeneration of planarian anterior/posterior polarity</a>." <em>Biophysical Journal</em> 116 (2019).</li>
+                <li><strong>Beane et al.</strong> "<a class="reference-link" href="https://doi.org/10.1016/j.chembiol.2010.11.012" target="_blank" rel="noopener noreferrer">A chemical genetics approach reveals H,K-ATPase-mediated membrane voltage is required for planarian head regeneration</a>." <em>Chemistry &amp; Biology</em> 18 (2011).</li>
+                <li><strong>Oviedo et al.</strong> "<a class="reference-link" href="https://doi.org/10.1016/j.ydbio.2009.12.012" target="_blank" rel="noopener noreferrer">Long-range neural and gap junction protein-mediated cues control polarity during planarian regeneration</a>." <em>Developmental Biology</em> 339 (2010).</li>
+                <li><strong>Beane et al.</strong> "<a class="reference-link" href="https://doi.org/10.1242/dev.086900" target="_blank" rel="noopener noreferrer">Bioelectric signaling regulates head and organ size during planarian regeneration</a>." <em>Development</em> 140 (2013).</li>
+                <li><strong>Emmons-Bell et al.</strong> "<a class="reference-link" href="https://doi.org/10.3390/ijms161126065" target="_blank" rel="noopener noreferrer">Gap junctional blockade stochastically induces different species-specific head anatomies in genetically wild-type Girardia dorotocephala flatworms</a>." <em>International Journal of Molecular Sciences</em> 16 (2015).</li>
+                <li><strong>Lobo Lab.</strong> "<a class="reference-link" href="https://lobolab.umbc.edu/planform/" target="_blank" rel="noopener noreferrer">Planform and PlanformDB</a>." University of Maryland, Baltimore County.</li>
+                <li><strong>Mesmer Prism.</strong> "<a class="reference-link" href="/projects/rusty-morphospace.html">Rusty Morphospace</a>." Public project page.</li>
+                <li><strong>MesmerPrism.</strong> "<a class="reference-link" href="https://github.com/MesmerPrism/rusty-matter" target="_blank" rel="noopener noreferrer">Rusty Matter</a>." GitHub repository.</li>
+                <li><strong>MesmerPrism.</strong> "<a class="reference-link" href="https://github.com/MesmerPrism/rusty-optics" target="_blank" rel="noopener noreferrer">Rusty Optics</a>." GitHub repository.</li>
+            </ol>
+        </section>
+        <!-- BEGIN page-export-links -->
+        <section class="agent-downloads" aria-labelledby="page-downloads">
+            <h2 id="page-downloads">Page exports</h2>
+            <div class="agent-downloads__links">
+                <a href="/projects/bioelectricity.md" download>Markdown</a>
+                <a href="/projects/bioelectricity.txt" download>Text</a>
+                <a href="/projects/bioelectricity.bib" download>BibTeX</a>
+                <a href="/projects/bioelectricity.references.csl.json" download>CSL JSON</a>
+            </div>
+        </section>
+        <!-- END page-export-links -->
+</main>
+
+    <footer class="site-footer">
+        <div class="shell footer-row">
+            <p>Mesmer Prism is the public home for selected work by Till Holzapfel.</p>
+            <nav class="footer-links" aria-label="Legal">
+                <a href="/impressum.html">Impressum</a>
+                <a href="/datenschutz.html">Datenschutz</a>
+            </nav>
+        </div>
+    </footer>
+</body>
+</html>

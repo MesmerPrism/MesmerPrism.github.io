@@ -1,0 +1,216 @@
+[
+  {
+    "id": "github-com-mesmer-prism-work-publications-background-contact",
+    "type": "webpage",
+    "title": "Mesmer Prism Work Publications Background Contact",
+    "URL": "https://github.com/MesmerPrism",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          11
+        ]
+      ]
+    },
+    "note": "Referenced by Bioelectricity and Morphogenesis: https://mesmerprism.com/projects/bioelectricity.html"
+  },
+  {
+    "id": "doi-org-durant-et-al-2019",
+    "type": "article-journal",
+    "title": "Durant et al., 2019",
+    "URL": "https://doi.org/10.1016/j.bpj.2019.01.029",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          11
+        ]
+      ]
+    },
+    "note": "Referenced by Bioelectricity and Morphogenesis: https://mesmerprism.com/projects/bioelectricity.html",
+    "DOI": "10.1016/j.bpj.2019.01.029"
+  },
+  {
+    "id": "doi-org-beane-et-al-2011-2019",
+    "type": "article-journal",
+    "title": "Beane et al., 2011",
+    "URL": "https://doi.org/10.1016/j.chembiol.2010.11.012",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          11
+        ]
+      ]
+    },
+    "note": "Referenced by Bioelectricity and Morphogenesis: https://mesmerprism.com/projects/bioelectricity.html",
+    "issued": {
+      "date-parts": [
+        [
+          2019
+        ]
+      ]
+    },
+    "DOI": "10.1016/j.chembiol.2010.11.012"
+  },
+  {
+    "id": "github-com-rusty-matter-2019",
+    "type": "webpage",
+    "title": "Rusty Matter",
+    "URL": "https://github.com/MesmerPrism/rusty-matter",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          11
+        ]
+      ]
+    },
+    "note": "Referenced by Bioelectricity and Morphogenesis: https://mesmerprism.com/projects/bioelectricity.html",
+    "issued": {
+      "date-parts": [
+        [
+          2019
+        ]
+      ]
+    }
+  },
+  {
+    "id": "github-com-rusty-optics-2019",
+    "type": "webpage",
+    "title": "Rusty Optics",
+    "URL": "https://github.com/MesmerPrism/rusty-optics",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          11
+        ]
+      ]
+    },
+    "note": "Referenced by Bioelectricity and Morphogenesis: https://mesmerprism.com/projects/bioelectricity.html",
+    "issued": {
+      "date-parts": [
+        [
+          2019
+        ]
+      ]
+    }
+  },
+  {
+    "id": "github-com-rusty-manifold-2019",
+    "type": "webpage",
+    "title": "Rusty Manifold",
+    "URL": "https://github.com/MesmerPrism/rusty-manifold",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          11
+        ]
+      ]
+    },
+    "note": "Referenced by Bioelectricity and Morphogenesis: https://mesmerprism.com/projects/bioelectricity.html",
+    "issued": {
+      "date-parts": [
+        [
+          2019
+        ]
+      ]
+    }
+  },
+  {
+    "id": "doi-org-oviedo-et-al-2010-2019",
+    "type": "article-journal",
+    "title": "Oviedo et al., 2010",
+    "URL": "https://doi.org/10.1016/j.ydbio.2009.12.012",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          11
+        ]
+      ]
+    },
+    "note": "Referenced by Bioelectricity and Morphogenesis: https://mesmerprism.com/projects/bioelectricity.html",
+    "issued": {
+      "date-parts": [
+        [
+          2019
+        ]
+      ]
+    },
+    "DOI": "10.1016/j.ydbio.2009.12.012"
+  },
+  {
+    "id": "doi-org-emmons-bell-et-al-2015-2019",
+    "type": "article-journal",
+    "title": "Emmons-Bell et al., 2015",
+    "URL": "https://doi.org/10.3390/ijms161126065",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          11
+        ]
+      ]
+    },
+    "note": "Referenced by Bioelectricity and Morphogenesis: https://mesmerprism.com/projects/bioelectricity.html",
+    "issued": {
+      "date-parts": [
+        [
+          2019
+        ]
+      ]
+    },
+    "DOI": "10.3390/ijms161126065"
+  },
+  {
+    "id": "doi-org-beane-et-al-2013-2019",
+    "type": "article-journal",
+    "title": "Beane et al., 2013",
+    "URL": "https://doi.org/10.1242/dev.086900",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          11
+        ]
+      ]
+    },
+    "note": "Referenced by Bioelectricity and Morphogenesis: https://mesmerprism.com/projects/bioelectricity.html",
+    "issued": {
+      "date-parts": [
+        [
+          2019
+        ]
+      ]
+    },
+    "DOI": "10.1242/dev.086900"
+  },
+  {
+    "id": "lobolab-umbc-edu-planform-planformdb",
+    "type": "webpage",
+    "title": "Planform / PlanformDB",
+    "URL": "https://lobolab.umbc.edu/planform/",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          11
+        ]
+      ]
+    },
+    "note": "Referenced by Bioelectricity and Morphogenesis: https://mesmerprism.com/projects/bioelectricity.html"
+  }
+]

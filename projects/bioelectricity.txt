@@ -1,0 +1,235 @@
+Bioelectricity and Morphogenesis
+
+Source: https://mesmerprism.com/projects/bioelectricity.html
+Canonical HTML: https://mesmerprism.com/projects/bioelectricity.html
+Generated: 2026-06-11
+Description: Bioelectricity and morphogenesis in Rusty Morphospace: an educational planarian surface-field model built with Rusty Matter and visualized through Rusty Optics.
+Markdown: https://mesmerprism.com/projects/bioelectricity.md
+Plain text: https://mesmerprism.com/projects/bioelectricity.txt
+BibTeX references: https://mesmerprism.com/projects/bioelectricity.bib
+CSL JSON references: https://mesmerprism.com/projects/bioelectricity.references.csl.json
+
+---
+
+Rusty Morphospace and tissue-scale patterning
+
+Bioelectricity and Morphogenesis
+
+ Bioelectric morphogenesis asks how voltage-like state, tissue coupling,
+ perturbations, and memory can help shape living form. The Rusty
+ Morphospace version is deliberately modest: it builds inspectable
+ educational models over mesh-surface samples, then keeps the simulation,
+ visualization, and public claims in separate layers.
+
+ Current slice (https://mesmerprism.com/projects/bioelectricity.html#current-slice)
+ Why planarians (https://mesmerprism.com/projects/bioelectricity.html#planarian)
+ Reference lanes (https://mesmerprism.com/projects/bioelectricity.html#reference-lanes)
+ Claim boundary (https://mesmerprism.com/projects/bioelectricity.html#boundary)
+ Rusty Morphospace (https://mesmerprism.com/projects/rusty-morphospace.html)
+ References (https://mesmerprism.com/projects/bioelectricity.html#references)
+
+ Computational medium
+
+Fields, circuits, and form without overclaiming
+
+ A planarian fragment does not only carry genes and geometry. It also carries
+ physiological state across tissue: membrane potentials, gap-junction-like
+ communication, wound signals, and downstream patterning responses. The
+ experimental literature around planarian regeneration makes that a useful
+ teaching case, because early bioelectric state can affect anterior/posterior
+ polarity and regenerated head/tail outcomes
+ (Durant et al., 2019 (https://doi.org/10.1016/j.bpj.2019.01.029);
+ Beane et al., 2011 (https://doi.org/10.1016/j.chembiol.2010.11.012)).
+
+ The Rusty Morphospace model does not try to become a full physiology
+ simulator. It treats bioelectricity as an inspectable layer over a stable
+ surface graph: sample nodes on a body mesh, conductance edges between
+ neighboring samples, normalized voltage state, perturbation bands, memory
+ state, and readout fields. This is enough to teach the architecture of a
+ tissue-scale model while leaving calibrated wet-lab prediction outside the
+ current claim.
+
+ Current slice
+
+Rusty Matter owns dynamics; Rusty Optics owns inspection
+
+ The current work lives inside the Rusty Morphospace repo family. The useful
+ boundary is simple: Matter computes the state; Optics prepares views and
+ browser inspection; Manifold is deferred until commands, sessions, packages,
+ and audit surfaces need to become first-class.
+
+ Simulation truth
+
+Rusty Matter (https://github.com/MesmerPrism/rusty-matter)
+
+ Matter owns mesh-surface samples, scalar and vector fields,
+ bioelectric circuit state, deterministic stepping, edit results, schema
+ fixtures, validation, and Wasm runtime exports.
+
+ Current model
+ Planarian AP bioelectric surface field
+ State
+ Normalized voltage, conductance, memory, readouts
+ Claim
+ Qualitative educational dynamics
+
+ Repository (https://github.com/MesmerPrism/rusty-matter)
+
+ Visual contracts
+
+Rusty Optics (https://github.com/MesmerPrism/rusty-optics)
+
+ Optics owns renderer-neutral frames, color policy, pick/edit-intent
+ contracts, readout panels, activity layers, conductance-edge picking,
+ and browser presentation over Matter-owned payloads.
+
+ Current view
+ Browser Planarian 3D preview
+ Interaction
+ Node edits, edge gates, neighborhood brush
+ Telemetry
+ Split sim, view, render, and UI timing
+
+ Repository (https://github.com/MesmerPrism/rusty-optics)
+
+ Deferred authority
+
+Rusty Manifold (https://github.com/MesmerPrism/rusty-manifold)
+
+ Manifold is the later lane for commands, sessions, packages, reproducible
+ edit traces, and audit. It should request Matter work; it should not own
+ field arrays or circuit dynamics.
+
+ Status
+ Deferred for this slice
+ Future use
+ Commands, package descriptors, session audit
+ Boundary
+ Control plane, not simulation state
+
+ Repository (https://github.com/MesmerPrism/rusty-manifold)
+
+ Why planarians
+
+A compact biological teaching case
+
+ Planarians are useful here because regeneration is spatially legible. A
+ transverse cut gives a wound band, an anterior/posterior axis, and a clear
+ readout problem: head-like and tail-like identity must resolve in the right
+ places. Experimental work gives qualitative constraints for an educational
+ model, including gap-junction-mediated polarity effects and persistent
+ altered morphology after transient perturbations
+ (Oviedo et al., 2010 (https://doi.org/10.1016/j.ydbio.2009.12.012);
+ Emmons-Bell et al., 2015 (https://doi.org/10.3390/ijms161126065)).
+
+ The first scenarios therefore stay simple: baseline anterior/posterior
+ separation, transverse-cut wound response, conductance-block perturbation,
+ transient depolarization with memory, and a no-memory control. Those
+ scenarios are not meant to predict a real animal. They are checks that the
+ model can express the right kind of tissue-scale relationship before any
+ calibrated source data is introduced.
+
+ Head size and organ scaling studies add another useful lesson: voltage-like
+ state can be read as an instructive patterning variable, not just a passive
+ byproduct of cell state
+ (Beane et al., 2013 (https://doi.org/10.1242/dev.086900)).
+ In the current model, that idea appears as readout fields driven by normalized
+ voltage and memory state.
+
+Qualitative checks
+- Anterior and posterior readouts separate in the baseline state.
+- Wound response stays localized to the cut band.
+- Gap-block scenarios change cross-band conductance and field spread.
+- Transient perturbation persists when memory is enabled.
+- No-memory controls relax toward baseline.
+
+Current unit policy
+
+ Voltage is normalized in the current educational layer. Calibrated
+ millivolt claims require a separate source, unit, and validation gate.
+
+ Reference lanes
+
+Legacy projects feed the Morphospace line
+
+ The older planarian and xenobot work is useful, but it should not become the
+ runtime authority for the Rusty Morphospace implementation.
+
+ Planarian reference
+
+Planarian graph and WebXR work
+
+ The planarian graph project contributes educational region labels, body
+ geometry lessons, outcome labels, and source/provenance habits. Its app
+ code and demo records remain reference material; Matter builds its own
+ computational surface graph and validation fixtures.
+
+ Use now
+ Region semantics, geometry review, outcome labels
+ Not used as
+ Simulation topology or runtime dynamics
+
+ Xenobot reference
+
+Xenobot simulator planning
+
+ The xenobot planning material frames later body-surface and behavior
+ questions. It is not the first implementation target. The current path
+ builds a generic surface-field substrate first, then leaves locomotion,
+ cilia, hydrodynamics, fabrication, and full xenobot simulation for later.
+
+ Use now
+ Planning vocabulary and future expansion pressure
+ Not used as
+ First runtime or wet-lab simulator
+
+ Data source candidate
+
+Planform / PlanformDB (https://lobolab.umbc.edu/planform/)
+
+ PlanformDB is the right kind of source for future experiment metadata,
+ phenotype records, condition labels, and target graph ideas. It should
+ enter through a source-intake gate, not as raw runtime authority or a
+ shortcut to calibrated physiology.
+
+ Use later
+ Traceable metadata and validation targets
+ Gate needed
+ License, source IDs, transformations, labels
+
+ Planform page (https://lobolab.umbc.edu/planform/)
+
+ Claim boundary
+
+What this model does not claim
+
+ The current implementation is not BETSE, a named-ion-channel simulator, a
+ wet-lab planning system, a calibrated PlanformDB predictor, or a full
+ xenobot/anthrobot world model. It uses normalized state and synthetic
+ scenarios to make tissue-scale relationships visible before the project takes
+ on heavier physiology or real-data claims.
+
+ That boundary is an engineering choice. It keeps the page readable, keeps
+ code ownership clear, and avoids presenting educational dynamics as empirical
+ prediction. More detailed source-derived work can be added later when source
+ IDs, license notices, transformations, and validation targets are explicit.
+
+Next public-safe steps
+- Add scenario annotations tied to the literature above.
+- Add a teaching panel for AP separation, wound localization, gap block, and memory controls.
+- Make voltage-unit policy explicit per preset.
+- Review PlanformDB as metadata and validation context, not runtime authority.
+- Promote Manifold command/session surfaces only after Matter and Optics contracts settle.
+
+ References
+
+Sources and public project surfaces
+- Durant et al. "The role of early bioelectric signals in the regeneration of planarian anterior/posterior polarity (https://doi.org/10.1016/j.bpj.2019.01.029)." Biophysical Journal 116 (2019).
+- Beane et al. "A chemical genetics approach reveals H,K-ATPase-mediated membrane voltage is required for planarian head regeneration (https://doi.org/10.1016/j.chembiol.2010.11.012)." Chemistry & Biology 18 (2011).
+- Oviedo et al. "Long-range neural and gap junction protein-mediated cues control polarity during planarian regeneration (https://doi.org/10.1016/j.ydbio.2009.12.012)." Developmental Biology 339 (2010).
+- Beane et al. "Bioelectric signaling regulates head and organ size during planarian regeneration (https://doi.org/10.1242/dev.086900)." Development 140 (2013).
+- Emmons-Bell et al. "Gap junctional blockade stochastically induces different species-specific head anatomies in genetically wild-type Girardia dorotocephala flatworms (https://doi.org/10.3390/ijms161126065)." International Journal of Molecular Sciences 16 (2015).
+- Lobo Lab. "Planform and PlanformDB (https://lobolab.umbc.edu/planform/)." University of Maryland, Baltimore County.
+- Mesmer Prism. "Rusty Morphospace (https://mesmerprism.com/projects/rusty-morphospace.html)." Public project page.
+- MesmerPrism. "Rusty Matter (https://github.com/MesmerPrism/rusty-matter)." GitHub repository.
+- MesmerPrism. "Rusty Optics (https://github.com/MesmerPrism/rusty-optics)." GitHub repository.
