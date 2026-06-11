@@ -8,6 +8,8 @@
   --ink-faint: rgba(18, 16, 15, 0.18);
   --max-width: 86rem;
   --measure: 74ch;
+  --wide: 70rem;
+  --inset: 53.75rem;
   --page-gutter: clamp(1.25rem, 4vw, 3.5rem);
 }
 
@@ -88,6 +90,14 @@ img {
 .shell {
   width: min(calc(100% - var(--page-gutter) - var(--page-gutter)), var(--max-width));
   margin: 0 auto;
+}
+
+.page-hsi {
+  --measure: 68ch;
+}
+
+.page-hsi .shell {
+  width: min(calc(100% - var(--page-gutter) - var(--page-gutter)), var(--wide));
 }
 
 .site-header {
@@ -860,6 +870,86 @@ main.shell {
   font-weight: 600;
   letter-spacing: 0;
   text-transform: none;
+}
+
+/* Mixed-ability HSI uses one grid: prose, inset modules, and wide comparison surfaces. */
+.page-hsi .hero,
+.page-hsi .article > section,
+.page-hsi .references {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, var(--measure)) minmax(0, 1fr);
+  align-items: start;
+}
+
+.page-hsi .hero > *,
+.page-hsi .article > section > *,
+.page-hsi .references > * {
+  grid-column: 2;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  justify-self: stretch;
+}
+
+.page-hsi .hero h1,
+.page-hsi .hero-subtitle,
+.page-hsi .deck,
+.page-hsi .article > section > h2,
+.page-hsi .article > section > h3,
+.page-hsi .article > section > p,
+.page-hsi .article > section > ul,
+.page-hsi .article > section > ol,
+.page-hsi .section-deck,
+.page-hsi .references h2,
+.page-hsi .references p,
+.page-hsi .source-status {
+  margin-left: 0;
+  margin-right: 0;
+  text-align: left;
+}
+
+.page-hsi .hero h1,
+.page-hsi .hero-subtitle,
+.page-hsi .deck,
+.page-hsi .article > section > h2,
+.page-hsi .references h2 {
+  max-width: 100%;
+}
+
+.page-hsi .hero > .thesis-card,
+.page-hsi .article > section > .scenario-card,
+.page-hsi .article > section > .evidence-note,
+.page-hsi .article > section > .example-callout,
+.page-hsi .article > section > .technical-note,
+.page-hsi .article > section > .translation-gate,
+.page-hsi .article > section > .protocol-card,
+.page-hsi .article > section > .boundary-box {
+  grid-column: 1 / -1;
+  justify-self: center;
+  width: min(100%, var(--inset));
+}
+
+.page-hsi .hero > .route-strip,
+.page-hsi .hero > .reading-map,
+.page-hsi .hero > .intro-grid,
+.page-hsi .article > section > .card-grid,
+.page-hsi .article > section > .claim-grid,
+.page-hsi .article > section > .comparison-grid,
+.page-hsi .article > section > .precedent-grid,
+.page-hsi .article > section > .concept-diagram,
+.page-hsi .article > section > .route-grid,
+.page-hsi .article > section > .status-grid,
+.page-hsi .article > section > .stack-flow,
+.page-hsi .article > section > .summary-table {
+  grid-column: 1 / -1;
+  justify-self: center;
+  width: min(100%, var(--wide));
+}
+
+.page-hsi .references > .references-list {
+  grid-column: 1 / -1;
+  justify-self: center;
+  width: min(100%, 86ch);
 }
 
 .source-status {
