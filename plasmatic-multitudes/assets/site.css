@@ -546,6 +546,35 @@ main.shell {
   line-height: 1.55;
 }
 
+.deep-dive {
+  margin-top: 1.05rem;
+  padding: 0.95rem 1rem;
+  border: 1px solid var(--ink-faint);
+  background: rgba(255, 255, 255, 0.18);
+  color: var(--ink-soft);
+}
+
+.deep-dive summary {
+  cursor: pointer;
+  color: var(--ink-muted);
+  font-family: Inter, Arial, sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  line-height: 1.35;
+  text-transform: uppercase;
+}
+
+.deep-dive summary::marker {
+  color: var(--ink-muted);
+}
+
+.deep-dive p {
+  margin-top: 0.75rem;
+  font-size: 1rem;
+  line-height: 1.58;
+}
+
 .stack-flow__grid {
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
@@ -981,6 +1010,7 @@ main.shell {
 .page-hsi .article > section > .scenario-card,
 .page-hsi .article > section > .evidence-note,
 .page-hsi .article > section > .example-callout,
+.page-hsi .article > section > .deep-dive,
 .page-hsi .article > section > .technical-note,
 .page-hsi .article > section > .translation-gate,
 .page-hsi .article > section > .protocol-card,
@@ -1290,6 +1320,7 @@ main.shell {
   .scenario-card,
   .evidence-note,
   .example-callout,
+  .deep-dive,
   .stack-flow,
   .technical-note,
   .translation-gate,

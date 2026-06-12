@@ -1,5 +1,126 @@
 [
   {
+    "id": "legibility-grammar-gilland-2026",
+    "type": "webpage",
+    "title": "Gilland",
+    "URL": "https://archive.org/details/elemental-magic/page/n2/mode/1up",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          12
+        ]
+      ]
+    },
+    "note": "Referenced by Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html",
+    "author": [
+      {
+        "literal": "Legibility grammar"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    }
+  },
+  {
+    "id": "vhil-stanford-edu-yee-bailenson-and-ducheneaut-proteus-effect-2026",
+    "type": "webpage",
+    "title": "Yee, Bailenson, and Ducheneaut, Proteus effect",
+    "URL": "https://vhil.stanford.edu/publications/avatars-and-agents/proteus-effect-implications-transformed-digital-self-representation",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          12
+        ]
+      ]
+    },
+    "note": "Referenced by Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html",
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    }
+  },
+  {
+    "id": "doi-org-jeong-et-al-protean-kinematics-2026",
+    "type": "article-journal",
+    "title": "Jeong et al., Protean Kinematics",
+    "URL": "https://doi.org/10.3389/fpsyg.2021.705170",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          12
+        ]
+      ]
+    },
+    "note": "Referenced by Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html",
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    },
+    "DOI": "10.3389/fpsyg.2021.705170"
+  },
+  {
+    "id": "www-red3d-com-reynolds-2026",
+    "type": "webpage",
+    "title": "Reynolds",
+    "URL": "https://www.red3d.com/cwr/steer/",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          12
+        ]
+      ]
+    },
+    "note": "Referenced by Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html",
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    }
+  },
+  {
+    "id": "www-sidefx-com-sidefx-crowd-docs-2026",
+    "type": "webpage",
+    "title": "SideFX crowd docs",
+    "URL": "https://www.sidefx.com/docs/houdini/crowds/basics.html",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          12
+        ]
+      ]
+    },
+    "note": "Referenced by Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html",
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    }
+  },
+  {
     "id": "jainpuneet798-github-io-jain-crip-sensorama-gesture-process-2026",
     "type": "webpage",
     "title": "Jain, Crip Sensorama gesture process",
@@ -9,7 +130,7 @@
         [
           2026,
           6,
-          11
+          12
         ]
       ]
     },
@@ -32,7 +153,7 @@
         [
           2026,
           6,
-          11
+          12
         ]
       ]
     },
@@ -56,7 +177,7 @@
         [
           2026,
           6,
-          11
+          12
         ]
       ]
     },
@@ -80,7 +201,7 @@
         [
           2026,
           6,
-          11
+          12
         ]
       ]
     },
@@ -104,7 +225,7 @@
         [
           2026,
           6,
-          11
+          12
         ]
       ]
     },
@@ -127,7 +248,7 @@
         [
           2026,
           6,
-          11
+          12
         ]
       ]
     },
@@ -150,7 +271,7 @@
         [
           2026,
           6,
-          11
+          12
         ]
       ]
     },
@@ -173,7 +294,7 @@
         [
           2026,
           6,
-          11
+          12
         ]
       ]
     },
@@ -196,7 +317,7 @@
         [
           2026,
           6,
-          11
+          12
         ]
       ]
     },
@@ -219,7 +340,7 @@
         [
           2026,
           6,
-          11
+          12
         ]
       ]
     },
@@ -242,7 +363,7 @@
         [
           2026,
           6,
-          11
+          12
         ]
       ]
     },
@@ -265,7 +386,7 @@
         [
           2026,
           6,
-          11
+          12
         ]
       ]
     },
@@ -289,7 +410,7 @@
         [
           2026,
           6,
-          11
+          12
         ]
       ]
     },
@@ -312,7 +433,7 @@
         [
           2026,
           6,
-          11
+          12
         ]
       ]
     },
@@ -336,7 +457,7 @@
         [
           2026,
           6,
-          11
+          12
         ]
       ]
     },
@@ -360,7 +481,7 @@
         [
           2026,
           6,
-          11
+          12
         ]
       ]
     },
@@ -383,7 +504,7 @@
         [
           2026,
           6,
-          11
+          12
         ]
       ]
     },
@@ -406,7 +527,7 @@
         [
           2026,
           6,
-          11
+          12
         ]
       ]
     },
@@ -429,7 +550,7 @@
         [
           2026,
           6,
-          11
+          12
         ]
       ]
     },
@@ -457,7 +578,7 @@
         [
           2026,
           6,
-          11
+          12
         ]
       ]
     },
@@ -480,7 +601,7 @@
         [
           2026,
           6,
-          11
+          12
         ]
       ]
     },
@@ -503,7 +624,7 @@
         [
           2026,
           6,
-          11
+          12
         ]
       ]
     },
@@ -515,82 +636,6 @@
         ]
       ]
     }
-  },
-  {
-    "id": "archive-org-gilland-2026",
-    "type": "webpage",
-    "title": "Gilland",
-    "URL": "https://archive.org/details/elemental-magic/page/n2/mode/1up",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          11
-        ]
-      ]
-    },
-    "note": "Referenced by Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html",
-    "issued": {
-      "date-parts": [
-        [
-          2026
-        ]
-      ]
-    }
-  },
-  {
-    "id": "legibility-grammar-glowacki-et-al-2026",
-    "type": "article-journal",
-    "title": "Glowacki et al.",
-    "URL": "https://doi.org/10.1038/s41598-022-12637-z",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          11
-        ]
-      ]
-    },
-    "note": "Referenced by Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html",
-    "author": [
-      {
-        "literal": "Legibility grammar"
-      }
-    ],
-    "issued": {
-      "date-parts": [
-        [
-          2026
-        ]
-      ]
-    },
-    "DOI": "10.1038/s41598-022-12637-z"
-  },
-  {
-    "id": "doi-org-glowacki-2026",
-    "type": "article-journal",
-    "title": "Glowacki",
-    "URL": "https://doi.org/10.3389/frvir.2023.1286950",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          11
-        ]
-      ]
-    },
-    "note": "Referenced by Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html",
-    "issued": {
-      "date-parts": [
-        [
-          2026
-        ]
-      ]
-    },
-    "DOI": "10.3389/frvir.2023.1286950"
   },
   {
     "id": "doi-org-kim-et-al-2026",
@@ -602,7 +647,7 @@
         [
           2026,
           6,
-          11
+          12
         ]
       ]
     },
@@ -626,7 +671,7 @@
         [
           2026,
           6,
-          11
+          12
         ]
       ]
     },
@@ -649,7 +694,7 @@
         [
           2026,
           6,
-          11
+          12
         ]
       ]
     },
@@ -672,7 +717,7 @@
         [
           2026,
           6,
-          11
+          12
         ]
       ]
     },
@@ -696,7 +741,7 @@
         [
           2026,
           6,
-          11
+          12
         ]
       ]
     },
@@ -720,7 +765,7 @@
         [
           2026,
           6,
-          11
+          12
         ]
       ]
     },
@@ -743,7 +788,7 @@
         [
           2026,
           6,
-          11
+          12
         ]
       ]
     },
@@ -766,7 +811,7 @@
         [
           2026,
           6,
-          11
+          12
         ]
       ]
     },
@@ -781,29 +826,6 @@
     "DOI": "10.3233/TAD-200292"
   },
   {
-    "id": "www-red3d-com-reynolds-steering-behaviors-2026",
-    "type": "webpage",
-    "title": "Reynolds, steering behaviors",
-    "URL": "https://www.red3d.com/cwr/steer/",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          11
-        ]
-      ]
-    },
-    "note": "Referenced by Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html",
-    "issued": {
-      "date-parts": [
-        [
-          2026
-        ]
-      ]
-    }
-  },
-  {
     "id": "gamma-cs-unc-edu-patil-et-al-2026",
     "type": "webpage",
     "title": "Patil et al.",
@@ -813,7 +835,7 @@
         [
           2026,
           6,
-          11
+          12
         ]
       ]
     },
@@ -836,7 +858,7 @@
         [
           2026,
           6,
-          11
+          12
         ]
       ]
     },
@@ -860,7 +882,7 @@
         [
           2026,
           6,
-          11
+          12
         ]
       ]
     },
@@ -875,29 +897,6 @@
     "DOI": "10.1145/3214745.3214809"
   },
   {
-    "id": "www-sidefx-com-sidefx-crowd-docs-2026",
-    "type": "webpage",
-    "title": "SideFX crowd docs",
-    "URL": "https://www.sidefx.com/docs/houdini/crowds/basics.html",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          11
-        ]
-      ]
-    },
-    "note": "Referenced by Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html",
-    "issued": {
-      "date-parts": [
-        [
-          2026
-        ]
-      ]
-    }
-  },
-  {
     "id": "www-isea-symposium-archives-org-isea-autonomx-archive-2026",
     "type": "webpage",
     "title": "ISEA AutonomX archive",
@@ -907,7 +906,7 @@
         [
           2026,
           6,
-          11
+          12
         ]
       ]
     },
@@ -930,7 +929,7 @@
         [
           2026,
           6,
-          11
+          12
         ]
       ]
     },
@@ -954,7 +953,7 @@
         [
           2026,
           6,
-          11
+          12
         ]
       ]
     },
@@ -978,7 +977,7 @@
         [
           2026,
           6,
-          11
+          12
         ]
       ]
     },
@@ -1001,7 +1000,7 @@
         [
           2026,
           6,
-          11
+          12
         ]
       ]
     },
@@ -1024,7 +1023,7 @@
         [
           2026,
           6,
-          11
+          12
         ]
       ]
     },
@@ -1048,7 +1047,7 @@
         [
           2026,
           6,
-          11
+          12
         ]
       ]
     },
@@ -1072,7 +1071,7 @@
         [
           2026,
           6,
-          11
+          12
         ]
       ]
     },
@@ -1087,6 +1086,54 @@
     "DOI": "10.1145/3613905.3636286"
   },
   {
+    "id": "doi-org-glowacki-et-al-2026",
+    "type": "article-journal",
+    "title": "Glowacki et al.",
+    "URL": "https://doi.org/10.1038/s41598-022-12637-z",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          12
+        ]
+      ]
+    },
+    "note": "Referenced by Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html",
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    },
+    "DOI": "10.1038/s41598-022-12637-z"
+  },
+  {
+    "id": "doi-org-glowacki-2026",
+    "type": "article-journal",
+    "title": "Glowacki",
+    "URL": "https://doi.org/10.3389/frvir.2023.1286950",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          12
+        ]
+      ]
+    },
+    "note": "Referenced by Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html",
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    },
+    "DOI": "10.3389/frvir.2023.1286950"
+  },
+  {
     "id": "jainpuneet798-github-io-jain-epistemological-intervention",
     "type": "webpage",
     "title": "Jain, Epistemological Intervention",
@@ -1096,14 +1143,14 @@
         [
           2026,
           6,
-          11
+          12
         ]
       ]
     },
     "note": "Referenced by Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html"
   },
   {
-    "id": "doi-org-suzuki-et-al-roomshift",
+    "id": "doi-org-suzuki-et-al-roomshift-2026",
     "type": "article-journal",
     "title": "Suzuki et al., RoomShift",
     "URL": "https://doi.org/10.1145/3313831.3376523",
@@ -1112,15 +1159,22 @@
         [
           2026,
           6,
-          11
+          12
         ]
       ]
     },
     "note": "Referenced by Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html",
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    },
     "DOI": "10.1145/3313831.3376523"
   },
   {
-    "id": "doi-org-sprowitz-et-al-roombots",
+    "id": "doi-org-sprowitz-et-al-roombots-2026",
     "type": "article-journal",
     "title": "Sprowitz et al., Roombots",
     "URL": "https://doi.org/10.1109/ROBOT.2009.5152613",
@@ -1129,15 +1183,22 @@
         [
           2026,
           6,
-          11
+          12
         ]
       ]
     },
     "note": "Referenced by Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html",
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    },
     "DOI": "10.1109/ROBOT.2009.5152613"
   },
   {
-    "id": "www-frontiersin-org-kegeleirs-and-birattari",
+    "id": "www-frontiersin-org-kegeleirs-and-birattari-2026",
     "type": "article-journal",
     "title": "Kegeleirs and Birattari",
     "URL": "https://www.frontiersin.org/journals/robotics-and-ai/articles/10.3389/frobt.2025.1607978/full",
@@ -1146,15 +1207,22 @@
         [
           2026,
           6,
-          11
+          12
         ]
       ]
     },
     "note": "Referenced by Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html",
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    },
     "DOI": "10.3389/frobt.2025.1607978/full"
   },
   {
-    "id": "doi-org-zheng-jarecki-and-lee",
+    "id": "doi-org-zheng-jarecki-and-lee-2026",
     "type": "article-journal",
     "title": "Zheng, Jarecki, and Lee",
     "URL": "https://doi.org/10.1038/s41598-023-40623-6",
@@ -1163,15 +1231,22 @@
         [
           2026,
           6,
-          11
+          12
         ]
       ]
     },
     "note": "Referenced by Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html",
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    },
     "DOI": "10.1038/s41598-023-40623-6"
   },
   {
-    "id": "doi-org-petersen-et-al-collective-robotic-construction-review",
+    "id": "doi-org-petersen-et-al-collective-robotic-construction-review-2026",
     "type": "article-journal",
     "title": "Petersen et al., collective robotic construction review",
     "URL": "https://doi.org/10.1126/scirobotics.aau8479",
@@ -1180,15 +1255,22 @@
         [
           2026,
           6,
-          11
+          12
         ]
       ]
     },
     "note": "Referenced by Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html",
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    },
     "DOI": "10.1126/scirobotics.aau8479"
   },
   {
-    "id": "doi-org-werfel-petersen-and-nagpal-termes",
+    "id": "doi-org-werfel-petersen-and-nagpal-termes-2026",
     "type": "article-journal",
     "title": "Werfel, Petersen, and Nagpal, TERMES",
     "URL": "https://doi.org/10.1126/science.1245842",
@@ -1197,15 +1279,22 @@
         [
           2026,
           6,
-          11
+          12
         ]
       ]
     },
     "note": "Referenced by Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html",
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    },
     "DOI": "10.1126/science.1245842"
   },
   {
-    "id": "doi-org-rubenstein-cornejo-and-nagpal-kilobot-self-assembly",
+    "id": "doi-org-rubenstein-cornejo-and-nagpal-kilobot-self-assembly-2026",
     "type": "article-journal",
     "title": "Rubenstein, Cornejo, and Nagpal, Kilobot self-assembly",
     "URL": "https://doi.org/10.1126/science.1254295",
@@ -1214,15 +1303,22 @@
         [
           2026,
           6,
-          11
+          12
         ]
       ]
     },
     "note": "Referenced by Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html",
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    },
     "DOI": "10.1126/science.1254295"
   },
   {
-    "id": "doi-org-bolotnikova-et-al-user-guided-modular-robots",
+    "id": "doi-org-bolotnikova-et-al-user-guided-modular-robots-2026",
     "type": "article-journal",
     "title": "Bolotnikova et al., user-guided modular robots",
     "URL": "https://doi.org/10.1038/s41467-025-63706-6",
@@ -1231,11 +1327,18 @@
         [
           2026,
           6,
-          11
+          12
         ]
       ]
     },
     "note": "Referenced by Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html",
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    },
     "DOI": "10.1038/s41467-025-63706-6"
   },
   {
@@ -1248,7 +1351,7 @@
         [
           2026,
           6,
-          11
+          12
         ]
       ]
     },
@@ -1270,7 +1373,7 @@
         [
           2026,
           6,
-          11
+          12
         ]
       ]
     },
@@ -1292,7 +1395,7 @@
         [
           2026,
           6,
-          11
+          12
         ]
       ]
     },
@@ -1314,7 +1417,7 @@
         [
           2026,
           6,
-          11
+          12
         ]
       ]
     },
@@ -1336,7 +1439,7 @@
         [
           2026,
           6,
-          11
+          12
         ]
       ]
     },
@@ -1358,7 +1461,7 @@
         [
           2026,
           6,
-          11
+          12
         ]
       ]
     },
@@ -1380,7 +1483,7 @@
         [
           2026,
           6,
-          11
+          12
         ]
       ]
     },

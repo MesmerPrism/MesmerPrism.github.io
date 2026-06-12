@@ -2,7 +2,7 @@ Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes
 
 Source: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html
 Canonical HTML: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html
-Generated: 2026-06-11
+Generated: 2026-06-12
 Description: A Plasmatic Multitudes research track on shared visual swarm bodies, mixed-ability collaboration, access-practice mapping, connectedness-first exploration, encounter, cooperative play, and later physical translation.
 Markdown: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.md
 Plain text: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.txt
@@ -11,7 +11,7 @@ CSL JSON references: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-
 
 ---
 
-Mixed-ability HSI | Updated June 11, 2026
+Mixed-ability HSI | Updated June 12, 2026
 
 Mixed-Ability Human-Swarm Interaction
 
@@ -75,21 +75,124 @@ Design stance
  mappings under relation, goals, roles, pressure, and conflict. Treat physical
  deployment as a later translation problem, not the starting premise.
 
- The page moves in four steps. First, it explains why mixed-ability swarm-body interaction
- is an access problem, not just a control problem. Second, it defines the swarm body as a
- visual and social medium for shared agency. Third, it proposes a staged path through
- access-practice elicitation, exploration, encounter, and cooperative play. Fourth, it
- names the safeguards needed for consent, privacy, fatigue, authorship, repair, reuse, and
- later translation.
+ The page moves in four steps. First, it explains why a swarm can read as a body at all:
+ a many-part presence held together by coherent dynamics, not sealed skin. Second, it asks
+ what mixed-ability access changes when several people shape those dynamics. Third, it maps
+ access practice into channels, bindings, dynamic targets, feedback, social contracts, and
+ provenance. Fourth, it proposes a staged study path and keeps physical translation as a
+ later constraint test.
+
+How a swarm becomes a body
+
+ Before asking how a mixed-ability group shares a swarm body, the page has to explain
+ why a swarm can read as a body at all.
+
+ The body in this page is not a humanoid avatar with a particle effect attached. It is
+ closer to a murmuration, aura, constellation, cloud, flock, crowd, or field that can
+ still be read as one presence. Its bodyhood comes from dynamics: common motion,
+ density, rhythm, response, resistance, return, and repeated transformation.
+
+ A swarm body does not need a sealed surface to be embodied. It needs coherence. If
+ motion, rhythm, density, and response bind the parts together, the body can remain
+ legible while its edges soften, leak, split, or merge. This is the Plasmatic
+ Multitudes argument applied to mixed-ability interaction: weakly bounded bodies can
+ become embodied when their dynamics are legible enough to support agency, trust, and
+ relation
+ (Plasmatic essay (https://mesmerprism.com/plasmatic-multitudes/essay.html#orientation); Plasmatic design rules (https://mesmerprism.com/plasmatic-multitudes/essay.html#design)) .
+
+ Coherence
+
+Something remains recognizable
+
+ A rhythm, density core, motion signature, contour, or response pattern lets the body return after change.
+
+ Permeability
+
+The edge changes state
+
+ The body can gather, loosen, merge, split, hide, shield, saturate, rest, repair, or re-form.
+
+ Relation
+
+Dynamics carry agency
+
+ The body matters when it mediates attention, pacing, distance, touch metaphor, co-presence, or group control.
+
+How swarm bodies stay legible
+
+ Do not ask softness to carry identity by itself. A swarm body needs at least one stable
+ carrier: a rhythm that persists, a density core that reforms, a motion signature that
+ remains recognizable, a color-temperature relation, a recurrent response pattern, or a
+ return path after disturbance.
+
+ Permeability should be stateful, not decorative. A swarm body should not merely look
+ fuzzy. It should move between meaningful states: gathered, porous, merged, dispersed,
+ shielded, hidden, saturated, resting, repairing, or re-forming. The same soft boundary
+ might read as rest, vulnerability, privacy, overload, aura, intimacy, refusal, or
+ repair depending on pacing, invitation, symbolic frame, and who controls it.
+
+ This is why physics-like behavior matters even before any physical deployment is
+ considered. The swarm can be impossible, but it should not be arbitrary. It can glow,
+ stretch, split, or pour through itself, but the transformation needs timing, force,
+ inertia, delay, rebound, resistance, or recovery. These cues make the body feel like a
+ world with rules rather than a screensaver
+ (Gilland (https://archive.org/details/elemental-magic/page/n2/mode/1up); Plasmatic design rules (https://mesmerprism.com/plasmatic-multitudes/essay.html#design)) .
+
+ Legibility grammar
+ In the first study, "soften the boundary" can mean a visible delay: particles lag, stretch, and recover so the group can read effort, pacing, and relation.
+
+ Deep dive: how transformation stays legible
+
+ Weakly bounded bodies do not become embodied by becoming vague. They need grouping
+ cues, common motion, response, and recurrent structure. A body can lose surface
+ closure if it keeps a stable carrier such as a density core, rhythm, motion
+ signature, or contingent response pattern.
+
+ This is why plasmatic design treats permeability as a state machine rather than a
+ shader. The body gathers, disperses, merges, splits, protects, reveals, hides, and
+ repairs as meaningful state changes.
+
+Protean dynamics: appearance is not enough
+
+ Avatar research often explains embodiment through transformed self-representation. The
+ Proteus effect is useful here because virtual bodies can influence conduct and
+ self-perception: Stanford's VHIL summary describes studies where avatar height and
+ attractiveness affected behavior in online and later face-to-face contexts
+ (Yee, Bailenson, and Ducheneaut, Proteus effect (https://vhil.stanford.edu/publications/avatars-and-agents/proteus-effect-implications-transformed-digital-self-representation)) .
+
+ Swarm bodies need a movement-based extension of that idea. Jeong, Kim, Xu, and Miller
+ call this Protean kinematics: an expansion from avatar appearance toward movement-based
+ effects and the blend of physical inputs with virtual outputs. That is exactly the
+ design space of a plasmatic swarm body. A small physical action can become a large
+ virtual transformation. A limited movement can become a field effect. A pause can
+ become a visible state. A breath can become boundary softness. A switch can become
+ collective repair
+ (Jeong et al., Protean Kinematics (https://doi.org/10.3389/fpsyg.2021.705170)) .
+
+ In this page, the avatar is not a fixed body with a different appearance. It is a
+ dynamic body whose movement grammar carries agency. The participant's relation to the
+ body comes from how it moves, responds, waits, resists, and returns.
+
+ Implementation note: authored emergence
+
+ A swarm body is not just "emergence." It is authored emergence. Flocking, particles,
+ crowd solvers, and morphogenetic systems become usable when they are shaped by
+ fields, guide curves, zones, triggers, rhythms, constraints, repair rules, and levels
+ of detail. Mixed-ability HSI needs the same middle layer: enough local autonomy to
+ feel alive, enough authoring structure to stay legible and negotiable
+ (Computational morphogenesis (https://mesmerprism.com/plasmatic-multitudes/essay.html#morphogenesis); Reynolds (https://www.red3d.com/cwr/steer/); SideFX crowd docs (https://www.sidefx.com/docs/houdini/crowds/basics.html)) .
 
 The access problem
 
- Access becomes concrete when the group has to decide who can act, who can perceive the
- result, who can rest, who can stay private, and who can repair what happened.
+ Once the swarm body is understood as a dynamic shared body, mixed-ability access
+ becomes a question of who gets to shape which dynamics.
 
- In many accessibility projects, the first question is whether a person has an input they
- can use. That question matters, but it is too small for mixed-ability HSI. A shared
- swarm body can be shaped by several people at once, so access becomes a group condition.
+ The issue is not whether every participant can use the same controller. It is whether
+ each participant can shape the body in a way that is voluntary, sustainable,
+ meaningful, visible when desired, private when needed, and repairable when it fails.
+ Access becomes concrete when the group decides who can affect density, rhythm,
+ boundary, visibility, pacing, repair, and veto. Those are not cosmetic parameters.
+ They are the social structure of the shared body.
 
  Access is also the right to reshape what the interface thinks a body is. Crip Sensorama
  makes that especially clear for XR: default headset, controller, hand-gesture, vision,
@@ -154,48 +257,11 @@ The access problem
  annotation, and facilitator-mediated input
  (Mottelson et al. (https://arxiv.org/abs/2102.11207); Zhang et al. (https://arxiv.org/abs/2208.11170); Gualano et al. (https://arxiv.org/abs/2408.08193); W3C XR Accessibility User Requirements (https://www.w3.org/TR/xaur/)) .
 
-What "swarm body" means here
-
- The word "swarm" can point in many directions, so this page narrows it at the
- beginning.
-
- For now, a swarm is a many-part visual body: particles, points, fields, light, aura, or
- animated matter that can gather, split, soften, pulse, reveal, hide, and recover. This
- matters because the first research problem is not material action. It is legible shared
- agency.
-
- Swarm as visual body
-
-Many parts, one readable relation
-
- The starting object is a body, field, atmosphere, or relation made from many
- visible parts.
-
- Swarm as interaction grammar
-
-Partial control without micromanagement
-
- The group can think in tendencies, fields, density, rhythm, attraction, repair,
- and roles without any participant controlling every part.
-
- Later translation
-
-Another medium, not the premise
-
- Some vocabulary may later be tested in tangible or deployed systems. That matters,
- but it is not the first object of study.
-
- The Plasmatic Multitudes vocabulary treats this as Gestalt coherence, common fate,
- permeability, coalescence, and legible transformation rather than as mere visual
- decoration. Can a group understand who is shaping density, rhythm, boundary,
- visibility, repair, or pace? Can they change those mappings when they become unfair,
- tiring, private, or confusing?
- (Plasmatic terminology (https://mesmerprism.com/plasmatic-multitudes/terminology.html#xr); Plasmatic essay (https://mesmerprism.com/plasmatic-multitudes/essay.html#design)) .
-
- Later, some of this vocabulary may be tested outside the first visual setting. That
- later translation matters, but it should not define the first reading of the page.
-
 Why abstract bodies matter
+
+ The dynamics claim is not speculative from scratch. Several XR and media-art
+ precedents already show that abstract bodies can support ownership, touch metaphor,
+ co-presence, emotion, and relation without returning to humanoid realism.
 
  These projects matter because they show that a body does not have to look like a normal
  human body to carry social meaning. A luminous aura, particle cloud, constellation, or
@@ -302,221 +368,6 @@ Jain's access-as-instrument practice
  expose not only what signal controls what dynamic, but also who proposed the mapping,
  how it was tuned, what it costs, who sees it, and how it can be retired
  (Jain, Crip Sensorama gesture process (https://jainpuneet798.github.io/portfolio/cripgestures/); Jain, Crip Sensorama: Christian's Coffee (https://jainpuneet798.github.io/portfolio/cripsensorama_christians-coffee/); Jain, AutonomX (https://jainpuneet798.github.io/portfolio/autonomx/); Jain and Bayerlein, Hand to Mouth, 2026 (https://doi.org/10.1007/s11569-025-00494-9)) .
-
-Physics as legibility
-
- At this point, "physics" does not mean engineering accuracy. It means readability. A
- swarm body made of light or particles still needs timing, resistance, delay, recoil,
- flow, and recovery so participants can understand what is happening to it.
-
- Physical behavior is a grammar of legibility rather than a demand for literal
- simulation. Gilland's special-effects craft argument is useful here because it treats
- fire, water, smoke, dust, impact, and magical transformation as stylized motion that
- still has to respect recognizable force, timing, direction, overlap, and energy. A
- particle body can be impossible, but it should not feel arbitrary. Gravity, drag,
- elasticity, turbulence, viscosity, resistance, squash, rebound, and contact cues help
- the viewer read what is gathering, dispersing, pressing, leaking, striking, yielding,
- or recovering
- (Gilland (https://archive.org/details/elemental-magic/page/n2/mode/1up)) .
-
- That is why physics matters for immersion and embodiment even when the body is made of
- light, particles, aura, or a simulated field. The cues do not have to reproduce nature;
- they have to make transformation inhabitable. If a weakly bounded body stretches with
- resistance, diffuses with delay, recoils after contact, or carries common motion across
- many particles, it gives participants something like material continuity. That continuity
- can support ownership, co-presence, pseudo-haptic inference, and shared-body reading
- before any physical deployment is considered
- (Desnoyers-Stewart et al. 2020 (https://doi.org/10.1162/LEON_a_01925); Desnoyers-Stewart et al. 2023 (https://doi.org/10.1145/3544549.3585843); Glowacki et al. (https://doi.org/10.1038/s41598-022-12637-z)) .
-
- Resistance is a useful example. In a virtual swarm body, resistance might be a visual
- delay that makes a boundary feel soft but coherent: particles lag, stretch, and recover
- so collaborators can read effort and relation. The same principle can support a body
- that waits, yields, holds, refuses speed, or recovers after overload without requiring
- the system to simulate literal matter.
-
- Legibility grammar
- In the first study, "soften the boundary" can mean a visible delay: particles lag, stretch, and recover so the group can read effort, pacing, and relation.
-
- In this first phase, physics is not a safety model. It is a language for relation. It
- helps participants understand what is gathering, dispersing, pressing, leaking,
- recovering, waiting, resisting, or yielding.
-
-Claim ladder
-
- With those distinctions in place, the page makes four different kinds of claims. They
- should not be read as one large claim.
-
- The page makes a design argument, not a therapeutic or deployment claim. The strongest
- current claim is conceptual: mixed-ability HSI needs negotiated shared agency rather
- than one universal controller. The evidence status becomes stricter as the work moves
- from visual bodies toward later media, settings, and deployments.
-
- Conceptual
-
-Negotiated shared agency
-
- Mixed-ability HSI needs negotiated shared agency, not one universal controller.
-
- Still to show: whether participants experience this as useful, fair, and understandable.
-
- Design
-
-Visible mappings
-
- Plasmatic swarm bodies can expose agency, visibility, pacing, and repair.
-
- Still to show: which mappings work for which groups, settings, and access needs.
-
- Research
-
-Virtual-first study
-
- A virtual-first study can test connectedness, legibility, fatigue, authorship, and repair.
-
- Still to show: how those measures relate to long-term collaboration and group trust.
-
- Later translation
-
-Survivability beyond the first medium
-
- Some mappings may later be tested under physical, spatial, or deployment constraints.
-
- Still to show: what survives outside the first visual swarm-body setting.
-
-Staged research arc
-
- The staged method exists because each phase adds one kind of difficulty. Exploration
- removes pressure so the group can discover meaningful mappings. Encounter adds
- authored access practices and storytelling. Games add goals, roles, conflict, and
- recovery. Later translation asks whether any of those mappings can leave the first
- visual setting without losing access, authorship, or repair.
-
-1. Access-practice elicitation
-
- The sequence starts before anyone tests a sensor. Participants first name existing
- access techniques, devices, rhythms, supports, environmental hacks, communication
- habits, and signals they do not want captured or made public. This protects the study
- from treating input as the beginning of access.
-
-2. Exploration and connectedness first
-
- The first phase should be creative and low-demand. Participants explore how a swarm body
- can glow, gather, split, soften, pulse, protect, reveal, or hide without immediate task
- pressure. The point is to find mappings that feel meaningful, comfortable, and socially
- negotiable before performance metrics dominate the design.
-
- This phase belongs inside Plasmatic Multitudes because weakly bounded bodies are already
- treated here as instruments for connectedness, coalescence, permeability, and altered
- self-other relation, not just as rendering styles
- (Glowacki et al. (https://doi.org/10.1038/s41598-022-12637-z); Glowacki (https://doi.org/10.3389/frvir.2023.1286950); Desnoyers-Stewart et al. 2020 (https://doi.org/10.1162/LEON_a_01925); Desnoyers-Stewart et al. 2023 (https://doi.org/10.1145/3544549.3585843)) .
-
- Desnoyers-Stewart's work is especially useful for mixed-ability HSI because it shows
- abstract bodies acting as social interfaces before they become task tools. That suggests
- a first workshop vocabulary of constellation, aura, field, exchange, gravity, touch,
- and coalescence: concepts that participants can accept, reject, or rename before the
- system asks them to optimize a goal.
-
-3. Encounter as access storytelling
-
- Exploration should also include encounter and storytelling, not only calibration or
- low-demand play. In encounter mode, participants meet an authored access practice
- through the swarm body without being asked to master it, simulate it, or optimize it.
- A workshop might translate an everyday access practice into a boundary that softens, a
- field that waits, a rhythm that insists on rest, a cluster that refuses speed, or a
- repair gesture that makes hidden support visible. The point is relation and attention,
- not an empathy simulation
- (Jain, Crip Sensorama: Christian's Coffee (https://jainpuneet798.github.io/portfolio/cripsensorama_christians-coffee/); Jain and Bayerlein, Hand to Mouth, 2026 (https://doi.org/10.1007/s11569-025-00494-9)) .
-
-4. Game-oriented collaboration
-
- This phase turns promising mappings into structured play. Games can introduce
- goals, roles, timing, resource limits, asymmetric information, repair moments, and
- shared consequences without pretending that the first useful metric is workplace
- productivity. This is where the group can tune goal-directed dynamics: who can steer,
- who can veto, who can slow the swarm, who can make a contribution visible, and how the
- body recovers after conflict or overload.
-
- Game-oriented collaboration is also where access becomes measurable without becoming
- reductive. Measures can include shared agency, authorship, role comfort, recovery after
- errors, sensory load, visibility choice, coordination, and whether participants can
- explain and revise the mapping that shaped the group body.
-
-5. Translation reflection
-
- The final step in the first study is not a deployment trial. It is a reflection gate:
- which mappings might survive another medium, which are valuable only inside the first
- visual setting, and what would break first if the mapping had to leave the screen,
- headset, projection, or workshop room? This keeps translation from becoming an
- assumed destination.
-
-What the instrument needs to expose
-
- To study shared agency, the prototype has to show its own mediation.
-
- Here, "instrument" means the prototype plus the study interface: the software, sensors,
- visual swarm body, logs, controls, and facilitator tools that make the shared body
- possible.
-
- The research instrument should make mediation inspectable. Participants and facilitators
- need to see what inputs are entering the system, what they affect, which logs are kept,
- who can see which contribution, and how a shared body changes when mappings are revised.
- Transparency does not solve access by itself, but it gives collaborators something
- concrete to question and repair.
-
- The instrument should answer a simple operational question for every mapping: who can
- act through which channel, at what scale, with what visibility, under what consent, and
- with what repair option?
-
- It should also expose failed mappings, not only successful ones. Calibration drift,
- occlusion, camera angle, headset weight, distance sensitivity, false positives,
- rejected gestures, device availability, environmental constraints, and fatigue costs
- are part of the access record. A failed mapping can still teach the group what the
- interface assumed about posture, visibility, strength, endurance, privacy, or bodily
- symmetry.
-
- Access practices
- existing devices, gestures, rhythms, rest strategies, communication habits, assisted routines, and off-limits signals
-
- Inputs
- gesture, touch, switches, controllers, voice, text, breath, biosignals, EMG, gaze, pose, timing, rule edits, and environmental markers
-
- Swarm variables
- density, rhythm, coupling, boundary softness, luminosity, color, speed, local attraction, SDF seed shape, and environment response
-
- Access variables
- visibility, disclosure, pacing, rest, turn-taking, veto, asynchronous contribution
-
- Repair variables
- undo, pause, rebalance, remap, explain, replay, consent change, authorship note
-
- Calibration burden
- setup time, posture, camera angle, occlusion, false positives, rejected gestures, assistance, and recalibration
-
- Mapping questions
-
- Mapping layer
- Example question
-
- Access practice
- Whose lived technique produced this mapping, and is it personal, shareable, audience-facing, or off-limits?
-
- Human channel
- Is this input voluntary, tiring, private, expressive, replaceable, involuntary, or only safe in short bursts?
-
- Binding
- Does it affect one particle, a sub-swarm, the whole body, a region, a field, a rule, a role, or a veto?
-
- Dynamic target
- Does it change color, density, rhythm, attraction, boundary softness, speed, repair, safety, or a form seed?
-
- Visibility
- Who sees the contribution, and is it anonymous, attributed, private, delayed, summarized, or public?
-
- Repair
- Can the group pause, undo, remap, replay, rebalance, change consent, or explain what happened?
-
- Provenance
- Who named the mapping, who approved reuse, what variations were rejected, and how can it be withdrawn?
 
 The input stack has to stay explicit
 
@@ -727,6 +578,141 @@ Speculative dynamics: bioelectricity and DiffeoMorph
  privacy, and retention choices as part of the mapping
  (Chiossi et al., PhysioCHI: Towards Best Practices for Integrating Physiological Signals in HCI (https://doi.org/10.1145/3613905.3636286)) .
 
+What the instrument needs to expose
+
+ To study shared agency, the prototype has to show its own mediation.
+
+ Here, "instrument" means the prototype plus the study interface: the software, sensors,
+ visual swarm body, logs, controls, and facilitator tools that make the shared body
+ possible.
+
+ The research instrument should make mediation inspectable. Participants and facilitators
+ need to see what inputs are entering the system, what they affect, which logs are kept,
+ who can see which contribution, and how a shared body changes when mappings are revised.
+ Transparency does not solve access by itself, but it gives collaborators something
+ concrete to question and repair.
+
+ The instrument should answer a simple operational question for every mapping: who can
+ act through which channel, at what scale, with what visibility, under what consent, and
+ with what repair option?
+
+ It should also expose failed mappings, not only successful ones. Calibration drift,
+ occlusion, camera angle, headset weight, distance sensitivity, false positives,
+ rejected gestures, device availability, environmental constraints, and fatigue costs
+ are part of the access record. A failed mapping can still teach the group what the
+ interface assumed about posture, visibility, strength, endurance, privacy, or bodily
+ symmetry.
+
+ Access practices
+ existing devices, gestures, rhythms, rest strategies, communication habits, assisted routines, and off-limits signals
+
+ Inputs
+ gesture, touch, switches, controllers, voice, text, breath, biosignals, EMG, gaze, pose, timing, rule edits, and environmental markers
+
+ Swarm variables
+ density, rhythm, coupling, boundary softness, luminosity, color, speed, local attraction, SDF seed shape, and environment response
+
+ Access variables
+ visibility, disclosure, pacing, rest, turn-taking, veto, asynchronous contribution
+
+ Repair variables
+ undo, pause, rebalance, remap, explain, replay, consent change, authorship note
+
+ Calibration burden
+ setup time, posture, camera angle, occlusion, false positives, rejected gestures, assistance, and recalibration
+
+ Mapping questions
+
+ Mapping layer
+ Example question
+
+ Access practice
+ Whose lived technique produced this mapping, and is it personal, shareable, audience-facing, or off-limits?
+
+ Human channel
+ Is this input voluntary, tiring, private, expressive, replaceable, involuntary, or only safe in short bursts?
+
+ Binding
+ Does it affect one particle, a sub-swarm, the whole body, a region, a field, a rule, a role, or a veto?
+
+ Dynamic target
+ Does it change color, density, rhythm, attraction, boundary softness, speed, repair, safety, or a form seed?
+
+ Visibility
+ Who sees the contribution, and is it anonymous, attributed, private, delayed, summarized, or public?
+
+ Repair
+ Can the group pause, undo, remap, replay, rebalance, change consent, or explain what happened?
+
+ Provenance
+ Who named the mapping, who approved reuse, what variations were rejected, and how can it be withdrawn?
+
+Staged research arc
+
+ The staged method exists because each phase adds one kind of difficulty. Exploration
+ removes pressure so the group can discover meaningful mappings. Encounter adds
+ authored access practices and storytelling. Games add goals, roles, conflict, and
+ recovery. Later translation asks whether any of those mappings can leave the first
+ visual setting without losing access, authorship, or repair.
+
+1. Access-practice elicitation
+
+ The sequence starts before anyone tests a sensor. Participants first name existing
+ access techniques, devices, rhythms, supports, environmental hacks, communication
+ habits, and signals they do not want captured or made public. This protects the study
+ from treating input as the beginning of access.
+
+2. Exploration and connectedness first
+
+ The first phase should be creative and low-demand. Participants explore how a swarm body
+ can glow, gather, split, soften, pulse, protect, reveal, or hide without immediate task
+ pressure. The point is to find mappings that feel meaningful, comfortable, and socially
+ negotiable before performance metrics dominate the design.
+
+ This phase belongs inside Plasmatic Multitudes because weakly bounded bodies are already
+ treated here as instruments for connectedness, coalescence, permeability, and altered
+ self-other relation, not just as rendering styles
+ (Glowacki et al. (https://doi.org/10.1038/s41598-022-12637-z); Glowacki (https://doi.org/10.3389/frvir.2023.1286950); Desnoyers-Stewart et al. 2020 (https://doi.org/10.1162/LEON_a_01925); Desnoyers-Stewart et al. 2023 (https://doi.org/10.1145/3544549.3585843)) .
+
+ Desnoyers-Stewart's work is especially useful for mixed-ability HSI because it shows
+ abstract bodies acting as social interfaces before they become task tools. That suggests
+ a first workshop vocabulary of constellation, aura, field, exchange, gravity, touch,
+ and coalescence: concepts that participants can accept, reject, or rename before the
+ system asks them to optimize a goal.
+
+3. Encounter as access storytelling
+
+ Exploration should also include encounter and storytelling, not only calibration or
+ low-demand play. In encounter mode, participants meet an authored access practice
+ through the swarm body without being asked to master it, simulate it, or optimize it.
+ A workshop might translate an everyday access practice into a boundary that softens, a
+ field that waits, a rhythm that insists on rest, a cluster that refuses speed, or a
+ repair gesture that makes hidden support visible. The point is relation and attention,
+ not an empathy simulation
+ (Jain, Crip Sensorama: Christian's Coffee (https://jainpuneet798.github.io/portfolio/cripsensorama_christians-coffee/); Jain and Bayerlein, Hand to Mouth, 2026 (https://doi.org/10.1007/s11569-025-00494-9)) .
+
+4. Game-oriented collaboration
+
+ This phase turns promising mappings into structured play. Games can introduce
+ goals, roles, timing, resource limits, asymmetric information, repair moments, and
+ shared consequences without pretending that the first useful metric is workplace
+ productivity. This is where the group can tune goal-directed dynamics: who can steer,
+ who can veto, who can slow the swarm, who can make a contribution visible, and how the
+ body recovers after conflict or overload.
+
+ Game-oriented collaboration is also where access becomes measurable without becoming
+ reductive. Measures can include shared agency, authorship, role comfort, recovery after
+ errors, sensory load, visibility choice, coordination, and whether participants can
+ explain and revise the mapping that shaped the group body.
+
+5. Translation reflection
+
+ The final step in the first study is not a deployment trial. It is a reflection gate:
+ which mappings might survive another medium, which are valuable only inside the first
+ visual setting, and what would break first if the mapping had to leave the screen,
+ headset, projection, or workshop room? This keeps translation from becoming an
+ assumed destination.
+
 A minimal study module
 
  A first study can isolate the social and access questions before later media add
@@ -817,6 +803,84 @@ Safeguards
  access vocabulary, the study should specify how those contributions are credited,
  anonymized, withheld, licensed, or carried into later prototypes. Authorship is part of
  the mapping contract, not only a post-study acknowledgement.
+
+Claim ladder
+
+ With those distinctions in place, the page makes four different kinds of claims. They
+ should not be read as one large claim.
+
+ The page makes a design argument, not a therapeutic or deployment claim. The strongest
+ current claim is conceptual: mixed-ability HSI needs negotiated shared agency rather
+ than one universal controller. The evidence status becomes stricter as the work moves
+ from visual bodies toward later media, settings, and deployments.
+
+ Conceptual
+
+Negotiated shared agency
+
+ Mixed-ability HSI needs negotiated shared agency, not one universal controller.
+
+ Still to show: whether participants experience this as useful, fair, and understandable.
+
+ Design
+
+Visible mappings
+
+ Plasmatic swarm bodies can expose agency, visibility, pacing, and repair.
+
+ Still to show: which mappings work for which groups, settings, and access needs.
+
+ Research
+
+Virtual-first study
+
+ A virtual-first study can test connectedness, legibility, fatigue, authorship, and repair.
+
+ Still to show: how those measures relate to long-term collaboration and group trust.
+
+ Later translation
+
+Survivability beyond the first medium
+
+ Some mappings may later be tested under physical, spatial, or deployment constraints.
+
+ Still to show: what survives outside the first visual swarm-body setting.
+
+Boundaries
+
+ The narrow claim is the important one: mixed-ability HSI studies visible,
+ negotiable, repairable agency, not cure, diagnosis, or guaranteed deployment safety.
+
+This work does not claim to:
+- treat disability, loneliness, fatigue, pain, or social withdrawal;
+- infer emotion, pain, intention, fatigue, or consent from biosignals;
+- make VR tolerance a condition of participation;
+- equate equal input with fair authorship;
+- simulate disability or let non-disabled participants "feel what disability is like";
+- prove physical-system safety from particle-body success.
+
+It does claim to study:
+- negotiable shared agency;
+- consent, pacing, visibility choice, inspectability, and repair;
+- what survives across exploration, games, and later translation constraints.
+
+ Mixed-ability HSI does not begin by asking every participant to control the same swarm
+ in the same way. It begins by asking whether a group can see, question, rebalance, and
+ repair how influence is distributed.
+
+ When a mapping comes from a disabled participant's access practice, it must be treated
+ as authored technique, not as an empathy machine, costume, spectacle, or novelty
+ controller. Audience-facing mappings can be valid, but only when their origin,
+ permission, framing, and withdrawal rules are explicit
+ (Jain and Bayerlein, Hand to Mouth, 2026 (https://doi.org/10.1007/s11569-025-00494-9)) .
+
+ A reversible swarm body is the first testbed because it makes those negotiations visible
+ without immediately adding physical risk. Cooperative games add goals and pressure.
+ Physical systems add the final constraint: mass, safety, localization, maintenance, and
+ failure.
+
+ The contribution of this track is a method for carrying access concerns across those
+ stages without reducing access to input hardware, productivity, or therapeutic promise.
 
 Later horizon: physical and robotic translation
 
@@ -919,42 +983,6 @@ A mapping is not ready for physical swarm testing until it survives:
  Access continuity
  Fatigue, consent change mid-action, fallback input, and the ability to explain or repair a mapping.
 
-Boundaries
-
- The narrow claim is the important one: mixed-ability HSI studies visible,
- negotiable, repairable agency, not cure, diagnosis, or guaranteed deployment safety.
-
-This work does not claim to:
-- treat disability, loneliness, fatigue, pain, or social withdrawal;
-- infer emotion, pain, intention, fatigue, or consent from biosignals;
-- make VR tolerance a condition of participation;
-- equate equal input with fair authorship;
-- simulate disability or let non-disabled participants "feel what disability is like";
-- prove physical-system safety from particle-body success.
-
-It does claim to study:
-- negotiable shared agency;
-- consent, pacing, visibility choice, inspectability, and repair;
-- what survives across exploration, games, and later translation constraints.
-
- Mixed-ability HSI does not begin by asking every participant to control the same swarm
- in the same way. It begins by asking whether a group can see, question, rebalance, and
- repair how influence is distributed.
-
- When a mapping comes from a disabled participant's access practice, it must be treated
- as authored technique, not as an empathy machine, costume, spectacle, or novelty
- controller. Audience-facing mappings can be valid, but only when their origin,
- permission, framing, and withdrawal rules are explicit
- (Jain and Bayerlein, Hand to Mouth, 2026 (https://doi.org/10.1007/s11569-025-00494-9)) .
-
- A reversible swarm body is the first testbed because it makes those negotiations visible
- without immediately adding physical risk. Cooperative games add goals and pressure.
- Physical systems add the final constraint: mass, safety, localization, maintenance, and
- failure.
-
- The contribution of this track is a method for carrying access concerns across those
- stages without reducing access to input hardware, productivity, or therapeutic promise.
-
 Sources by role
 
  The sources are doing different jobs. Reading them by role keeps the page from treating
@@ -971,6 +999,9 @@ Sources by role
 
  Crip-hacking, access instruments, and authored mappings
  Jain's Crip Sensorama, Hand to Mouth, adaptive gaze keyboard, AutonomX, and related portfolio work support access as a creative, technical, political, and programmable practice with provenance, calibration burden, authorship, failure histories, and reuse permissions.
+
+ Protean embodiment bridge
+ Proteus effect and Protean kinematics support the move from avatar appearance to movement grammar, dynamic affordance, and self-representation through transformed action.
 
  Embodiment precedent
  Isness, Body RemiXer, ETC, Emotional Beasts, aura avatars, pseudohaptics, and abstract social bodies.
@@ -989,13 +1020,15 @@ Sources by role
 
 Sources
 
- These sources ground the distinction between access theory, shared embodiment,
+ These sources ground the distinction between access theory, protean embodiment,
  connectedness-first XR, aesthetic swarm bodies, human-swarm interaction, and physical
  swarm robotics.
 - Wobbrock et al. "Ability-Based Design: Concept, Principles and Examples (https://doi.org/10.1145/1952383.1952384)." ACM Transactions on Accessible Computing 3(3) (2011).
 - Bennett, Brady, and Branham. "Interdependence as a Frame for Assistive Technology Research and Design (https://doi.org/10.1145/3234695.3236348)." ASSETS (2018).
 - Glowacki et al. "Group VR Experiences Can Produce Ego Attenuation and Connectedness Comparable to Psychedelics (https://doi.org/10.1038/s41598-022-12637-z)." Scientific Reports 12 (2022).
 - Glowacki. "VR Models of Death and Psychedelics: An Aesthetic Paradigm for Design Beyond Day-to-Day Phenomenology (https://doi.org/10.3389/frvir.2023.1286950)." Frontiers in Virtual Reality (2024).
+- Yee, Bailenson, and Ducheneaut. "The Proteus Effect: Implications of Transformed Digital Self-Representation on Online and Offline Behavior (https://vhil.stanford.edu/publications/avatars-and-agents/proteus-effect-implications-transformed-digital-self-representation)." Stanford Virtual Human Interaction Lab summary of Communication Research 36(2) (2009).
+- Jeong et al. "Protean Kinematics: A Blended Model of VR Physics (https://doi.org/10.3389/fpsyg.2021.705170)." Frontiers in Psychology 12 (2021).
 - Desnoyers-Stewart. "Transcending Projection: Progressive Engagement with Virtual Reality in Public Spaces (https://www.medien.ifi.lmu.de/socialHMD/SHMD_19_submissions/SHMD_19_paper_12.pdf)." CHI workshop paper (2019).
 - Desnoyers-Stewart, Smith, and Riecke. "Transcending the Virtual Mirror Stage: Embodying the Virtual Self Through the Digital Mirror (https://gala.gre.ac.uk/id/eprint/31046/7/31046%20PAPADAKI_DRHA2019_Conference_Proceedings_2020.pdf)." DRHA (2019).
 - Desnoyers-Stewart et al. "Body RemiXer: Extending Bodies to Stimulate Social Connection in an Immersive Installation (https://doi.org/10.1162/LEON_a_01925)." Leonardo 53(4) (2020).
