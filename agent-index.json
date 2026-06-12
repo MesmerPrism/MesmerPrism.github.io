@@ -1,5 +1,5 @@
 {
-  "generated": "2026-06-11",
+  "generated": "2026-06-12",
   "site": "https://mesmerprism.com",
   "pages": [
     {
@@ -48,11 +48,11 @@
       "text": "https://mesmerprism.com/plasmatic-multitudes/essay.txt",
       "bibtex": "https://mesmerprism.com/plasmatic-multitudes/essay.bib",
       "cslJson": "https://mesmerprism.com/plasmatic-multitudes/essay.references.csl.json",
-      "references": 52
+      "references": 60
     },
     {
       "title": "Plasmatic Multitudes Field Guide",
-      "description": "Long essay, method notes, vocabulary, pain-translation hypotheses, and annotated references for weakly bounded bodies and semi-corporeal avatar aesthetics.",
+      "description": "Long essay, method notes, vocabulary, pain-translation hypotheses, mixed-ability human-swarm interaction, and annotated references for weakly bounded bodies and semi-corporeal avatar aesthetics.",
       "path": "plasmatic-multitudes/index.html",
       "url": "https://mesmerprism.com/plasmatic-multitudes/",
       "group": "Plasmatic Multitudes",
@@ -61,6 +61,18 @@
       "bibtex": null,
       "cslJson": null,
       "references": 0
+    },
+    {
+      "title": "Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes",
+      "description": "A Plasmatic Multitudes research track on shared visual swarm bodies, mixed-ability collaboration, access-practice mapping, connectedness-first exploration, encounter, cooperative play, and later physical translation.",
+      "path": "plasmatic-multitudes/mixed-ability-hsi.html",
+      "url": "https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html",
+      "group": "Plasmatic Multitudes",
+      "markdown": "https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.md",
+      "text": "https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.txt",
+      "bibtex": "https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.bib",
+      "cslJson": "https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.references.csl.json",
+      "references": 64
     },
     {
       "title": "Plasmatic Avatars and Chronic Pain VR | Plasmatic Multitudes",
@@ -96,7 +108,7 @@
       "text": "https://mesmerprism.com/plasmatic-multitudes/references.txt",
       "bibtex": "https://mesmerprism.com/plasmatic-multitudes/references.bib",
       "cslJson": "https://mesmerprism.com/plasmatic-multitudes/references.references.csl.json",
-      "references": 66
+      "references": 79
     },
     {
       "title": "Vocabulary for Weakly Bounded Bodies | Plasmatic Multitudes",
@@ -124,7 +136,7 @@
     },
     {
       "title": "Bioelectricity and Morphogenesis",
-      "description": "Bioelectricity and morphogenesis in Rusty Morphospace: an educational planarian surface-field model built with Rusty Matter and visualized through Rusty Optics.",
+      "description": "Bioelectricity and morphogenesis in Rusty Morphospace: a source-linked educational planarian surface-field model built with Rusty Matter and visualized through Rusty Optics.",
       "path": "projects/bioelectricity.html",
       "url": "https://mesmerprism.com/projects/bioelectricity.html",
       "group": "Project pages",
@@ -132,7 +144,7 @@
       "text": "https://mesmerprism.com/projects/bioelectricity.txt",
       "bibtex": "https://mesmerprism.com/projects/bioelectricity.bib",
       "cslJson": "https://mesmerprism.com/projects/bioelectricity.references.csl.json",
-      "references": 10
+      "references": 22
     },
     {
       "title": "Brain Candy",
@@ -268,7 +280,7 @@
     },
     {
       "title": "Rusty Morphospace",
-      "description": "Rusty Morphospace is a modular Rust platform frame for computational matter, spatial relations, runtime authority, and inspectable rendering surfaces.",
+      "description": "Rusty Morphospace is a modular Rust platform for computational matter, situated relations, runtime authority, renderer-neutral inspection, and Quest validation.",
       "path": "projects/rusty-morphospace.html",
       "url": "https://mesmerprism.com/projects/rusty-morphospace.html",
       "group": "Project pages",
@@ -276,7 +288,7 @@
       "text": "https://mesmerprism.com/projects/rusty-morphospace.txt",
       "bibtex": "https://mesmerprism.com/projects/rusty-morphospace.bib",
       "cslJson": "https://mesmerprism.com/projects/rusty-morphospace.references.csl.json",
-      "references": 10
+      "references": 17
     },
     {
       "title": "Rusty XR",

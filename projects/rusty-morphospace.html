@@ -7,12 +7,12 @@
     <link rel="canonical" href="https://mesmerprism.com/projects/rusty-morphospace.html">
     <meta
         name="description"
-        content="Rusty Morphospace is a modular Rust platform frame for computational matter, spatial relations, runtime authority, and inspectable rendering surfaces."
+        content="Rusty Morphospace is a modular Rust platform for computational matter, situated relations, runtime authority, renderer-neutral inspection, and Quest validation."
     >
     <meta property="og:title" content="Rusty Morphospace | Mesmer Prism">
     <meta
         property="og:description"
-        content="A modular Rust platform frame for computational forms, situated environments, feedback systems, and renderer-neutral inspection."
+        content="A modular Rust platform for computational forms, situated environments, feedback systems, renderer-neutral inspection, and Quest validation."
     >
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://mesmerprism.com/projects/rusty-morphospace.html">
@@ -29,7 +29,7 @@
           "@type": "Article",
           "headline": "Rusty Morphospace",
           "name": "Rusty Morphospace",
-          "description": "Rusty Morphospace is a modular Rust platform frame for computational matter, spatial relations, runtime authority, and inspectable rendering surfaces.",
+          "description": "Rusty Morphospace is a modular Rust platform for computational matter, situated relations, runtime authority, renderer-neutral inspection, and Quest validation.",
           "author": {
                 "@type": "Person",
                 "name": "Till Holzapfel"
@@ -52,6 +52,11 @@
                 "https://github.com/MesmerPrism/rusty-matter",
                 "https://github.com/MesmerPrism/rusty-optics",
                 "https://github.com/MesmerPrism/rusty-manifold",
+                "https://github.com/MesmerPrism/rusty-lattice",
+                "https://github.com/MesmerPrism/rusty-gui",
+                "https://github.com/MesmerPrism/rusty-makepad",
+                "https://github.com/MesmerPrism/rusty-quest",
+                "https://github.com/MesmerPrism/rusty-quest-makepad",
                 "https://github.com/MesmerPrism/rusty-manifold-packages",
                 "https://github.com/MesmerPrism/rusty-studio",
                 "https://github.com/MesmerPrism/rusty-hostess",
@@ -68,8 +73,8 @@
     <link rel="alternate" type="application/vnd.citationstyles.csl+json" href="/projects/rusty-morphospace.references.csl.json" title="CSL JSON references">
     <meta name="citation_title" content="Rusty Morphospace">
     <meta name="citation_author" content="Till Holzapfel">
-    <meta name="citation_publication_date" content="2026-06-11">
-    <meta name="citation_online_date" content="2026-06-11">
+    <meta name="citation_publication_date" content="2026-06-12">
+    <meta name="citation_online_date" content="2026-06-12">
     <meta name="citation_public_url" content="https://mesmerprism.com/projects/rusty-morphospace.html">
     <meta name="citation_language" content="en">
     <script type="application/ld+json" data-agent-metadata>
@@ -78,7 +83,7 @@
           "@type": "Article",
           "headline": "Rusty Morphospace",
           "name": "Rusty Morphospace",
-          "description": "Rusty Morphospace is a modular Rust platform frame for computational matter, spatial relations, runtime authority, and inspectable rendering surfaces.",
+          "description": "Rusty Morphospace is a modular Rust platform for computational matter, situated relations, runtime authority, renderer-neutral inspection, and Quest validation.",
           "author": {
                 "@type": "Person",
                 "name": "Till Holzapfel"
@@ -94,7 +99,7 @@
                 "url": "https://mesmerprism.com"
           },
           "url": "https://mesmerprism.com/projects/rusty-morphospace.html",
-          "dateModified": "2026-06-11",
+          "dateModified": "2026-06-12",
           "inLanguage": "en",
           "encoding": [
                 {
@@ -122,13 +127,18 @@
                 "https://github.com/MesmerPrism",
                 "https://arxiv.org/abs/2512.17129",
                 "https://github.com/hormoz-lab/diffeomorph",
+                "https://github.com/MesmerPrism/rusty-quest-makepad",
+                "https://github.com/MesmerPrism/rusty-hostess",
                 "https://github.com/MesmerPrism/quest-termux-lab",
                 "https://github.com/MesmerPrism/rusty-matter",
+                "https://github.com/MesmerPrism/rusty-lattice",
                 "https://github.com/MesmerPrism/rusty-manifold",
                 "https://github.com/MesmerPrism/rusty-optics",
+                "https://github.com/MesmerPrism/rusty-gui",
+                "https://github.com/MesmerPrism/rusty-makepad",
+                "https://github.com/MesmerPrism/rusty-quest",
                 "https://github.com/MesmerPrism/rusty-manifold-packages",
                 "https://github.com/MesmerPrism/rusty-studio",
-                "https://github.com/MesmerPrism/rusty-hostess",
                 "https://github.com/MesmerPrism/rusty-quest-sidecar-mesh",
                 "https://github.com/MesmerPrism/Rusty-XR"
           ]
@@ -168,6 +178,7 @@
                 <div class="hero-actions">
                     <a class="action-link action-link--strong" href="#repositories">Repositories</a>
                     <a class="action-link" href="#module-map">Module map</a>
+                    <a class="action-link" href="#current-work">Current work</a>
                     <a class="action-link" href="#why">Why Morphospace</a>
                     <a class="action-link" href="#boundary">Rusty XR boundary</a>
                     <a class="action-link" href="/projects/rusty-xr.html">Rusty XR</a>
@@ -197,12 +208,20 @@
                     renderer-neutral optics, and host it in desktop, browser, or headset contexts.
                 </p>
                 <p>
+                    The current source family has moved beyond naming notes. Matter, Manifold,
+                    Optics, Lattice, GUI, Makepad, Quest, and Quest-Makepad now have clean public
+                    repos with explicit ownership boundaries, AGPL-first licensing for
+                    Morphospace-owned source, and local validation gates. Studio, Hostess,
+                    Manifold Packages, and the Quest sidecar lane sit around those contracts as
+                    authoring, package, evidence, and integration surfaces.
+                </p>
+                <p>
                     The <a href="/projects/bioelectricity.html">Bioelectricity and Morphogenesis</a>
-                    slice is the clearest current example: Matter owns the planarian surface graph,
-                    voltage-like fields, conductance-like coupling, memory, readouts, and
-                    qualitative fixtures; Optics owns browser inspection over those payloads; and
-                    Manifold remains deferred until commands, sessions, and audit packages become
-                    the right public surface.
+                    slice shows the Matter/Optics boundary in a public teaching model: Matter owns
+                    the planarian surface graph, voltage-like fields, conductance-like coupling,
+                    memory, readouts, and qualitative fixtures; Optics owns browser inspection
+                    over those payloads; and Manifold remains the lane for future command,
+                    session, and audit surfaces.
                 </p>
                 <p>
                     A separate DiffeoMorph reference lane now covers learned many-agent
@@ -225,9 +244,9 @@
                     <h3>Current frame</h3>
                     <ul class="plain-list">
                         <li>Umbrella: Rusty Morphospace</li>
-                        <li>Public core repos: Matter, Manifold, Optics</li>
+                        <li>Clean source repos: Matter, Manifold, Optics, Lattice, GUI, Makepad, Quest, Quest-Makepad</li>
                         <li>Package and host repos: Manifold Packages, Studio, Hostess, Quest Sidecar Mesh</li>
-                        <li>Planned relation lane: Rusty Lattice</li>
+                        <li>Current surface proof: recorded hand mesh to Matter CPU oracle to Quest Makepad GPU evidence</li>
                         <li>Licensing: AGPL-3.0-or-later for Morphospace-owned source</li>
                     </ul>
                 </section>
@@ -238,7 +257,9 @@
                         <li>Computational substance: Rusty Matter</li>
                         <li>Visual inspection: Rusty Optics</li>
                         <li>Situated relations: Rusty Lattice</li>
-                        <li>Platform edge: Rusty Quest and adapters</li>
+                        <li>Graphical descriptors: Rusty GUI</li>
+                        <li>Makepad adaptation: Rusty Makepad and Rusty Quest Makepad</li>
+                        <li>Platform edge: Rusty Quest</li>
                     </ul>
                 </section>
                 <section class="detail-block">
@@ -248,6 +269,7 @@
                         <li>Designing environments where tracked relations are first-class data</li>
                         <li>Routing commands, streams, leases, clocks, and diagnostics explicitly</li>
                         <li>Making visual state inspectable without tying it to one render backend</li>
+                        <li>Proving headset paths with bounded evidence before claiming runtime backends</li>
                     </ul>
                 </section>
                 <section class="detail-block">
@@ -255,6 +277,8 @@
                     <ul class="plain-list">
                         <li><a href="/projects/bioelectricity.html">Bioelectricity and Morphogenesis</a> shows the Matter/Optics boundary applied to planarian surface-field dynamics</li>
                         <li><a href="https://arxiv.org/abs/2512.17129" target="_blank" rel="noopener noreferrer">DiffeoMorph</a> provides a public computational-morphogenesis reference for many-agent target-forming bodies, separate from Morphospace runtime authority</li>
+                        <li><a href="https://github.com/MesmerPrism/rusty-quest-makepad" target="_blank" rel="noopener noreferrer">Rusty Quest Makepad</a> carries the current recorded-hand, SDF/ADF, particle, and GPU-proof adapter work</li>
+                        <li><a href="https://github.com/MesmerPrism/rusty-hostess" target="_blank" rel="noopener noreferrer">Rusty Hostess</a> provides the install, staging, launch, and evidence shell used to validate those headset paths</li>
                         <li><a href="/projects/rusty-xr.html">Rusty XR</a> remains the public compatibility and Quest reference surface</li>
                         <li><a href="https://github.com/MesmerPrism/quest-termux-lab" target="_blank" rel="noopener noreferrer">Quest Termux Lab</a> is a public MIT lab source that feeds the Rusty Quest sidecar bridge</li>
                         <li><a href="/projects/viscereality-companion.html">Quest Companion Tools</a> show why operator-side contracts matter</li>
@@ -286,10 +310,11 @@
                 </article>
                 <article class="project-card">
                     <p class="project-kicker">Situated relation</p>
-                    <h3>Rusty Lattice</h3>
+                    <h3><a href="https://github.com/MesmerPrism/rusty-lattice" target="_blank" rel="noopener noreferrer">Rusty Lattice</a></h3>
                     <p>
                         Reference spaces, transforms, tracked poses, view sets, spatial roles,
-                        calibration, confidence, validity, and frame-time binding.
+                        calibration, confidence, validity, frame-time binding, and runtime
+                        capability snapshots.
                     </p>
                 </article>
                 <article class="project-card">
@@ -309,11 +334,45 @@
                     </p>
                 </article>
                 <article class="project-card">
-                    <p class="project-kicker">Authoring and operation</p>
-                    <h3>Studio, GUI, Quest, Hostess</h3>
+                    <p class="project-kicker">Graphical descriptors</p>
+                    <h3><a href="https://github.com/MesmerPrism/rusty-gui" target="_blank" rel="noopener noreferrer">Rusty GUI</a></h3>
                     <p>
-                        Authoring, graphical operation, headset platform behavior, installation,
-                        diagnostics, deployment, and operator workflows around the core layers.
+                        Portable panels, widgets, inspectors, graph canvases, layout hints,
+                        themes, and command binding descriptors without owning command authority.
+                    </p>
+                </article>
+                <article class="project-card">
+                    <p class="project-kicker">Makepad adaptation</p>
+                    <h3><a href="https://github.com/MesmerPrism/rusty-makepad" target="_blank" rel="noopener noreferrer">Rusty Makepad</a></h3>
+                    <p>
+                        Generic Makepad adapters and canonical app settings surfaces, kept
+                        separate from Quest platform writes and app-specific headset behavior.
+                    </p>
+                </article>
+                <article class="project-card">
+                    <p class="project-kicker">Quest platform</p>
+                    <h3><a href="https://github.com/MesmerPrism/rusty-quest" target="_blank" rel="noopener noreferrer">Rusty Quest</a></h3>
+                    <p>
+                        Quest runtime profiles, permissions, launch planning, Android property
+                        hygiene, validation receipts, and platform write/readback evidence.
+                    </p>
+                </article>
+                <article class="project-card">
+                    <p class="project-kicker">Quest Makepad apps</p>
+                    <h3><a href="https://github.com/MesmerPrism/rusty-quest-makepad" target="_blank" rel="noopener noreferrer">Rusty Quest Makepad</a></h3>
+                    <p>
+                        Quest-specific Makepad app adapters for camera-shell profiles, recorded
+                        hand replay, Matter surface runtime handoff, SDF/ADF debug visuals,
+                        particles, and bounded GPU evidence.
+                    </p>
+                </article>
+                <article class="project-card">
+                    <p class="project-kicker">Authoring and validation</p>
+                    <h3>Studio and Hostess</h3>
+                    <p>
+                        Authoring, package review, installation, diagnostics, deployment, and
+                        operator workflows around the core layers without becoming Manifold
+                        authority.
                     </p>
                 </article>
             </div>
@@ -324,11 +383,11 @@
                 <p class="section-kicker">Public repository family</p>
                 <h2>Where the pieces live</h2>
                 <p>
-                    The first Morphospace repos are public now. They are meant to be read as a
-                    small stack: core contracts first, then packages, authoring, host validation,
-                    and Quest-side integration around those contracts. Adjacent lab/reference
-                    repos are listed only where they feed a Morphospace boundary without owning
-                    that boundary.
+                    The clean Morphospace repos are public now. They are meant to be read as a
+                    small stack: core contracts first, then graphical and platform adapters,
+                    packages, authoring, host validation, and Quest-side integration around those
+                    contracts. Adjacent lab/reference repos are listed only where they feed a
+                    Morphospace boundary without owning that boundary.
                 </p>
             </div>
             <div class="project-grid">
@@ -392,6 +451,109 @@
                     </dl>
                     <p class="project-links">
                         <a href="https://github.com/MesmerPrism/rusty-manifold" target="_blank" rel="noopener noreferrer">Repository</a>
+                    </p>
+                </article>
+
+                <article class="project-card">
+                    <p class="project-kicker">Core / Lattice</p>
+                    <h3><a href="https://github.com/MesmerPrism/rusty-lattice" target="_blank" rel="noopener noreferrer">rusty-lattice</a></h3>
+                    <p>
+                        Situated relation contracts for display view sets, reference spaces,
+                        tracked poses, frame-state binding, validity, confidence, staleness,
+                        and capability evidence.
+                    </p>
+                    <dl class="project-facts">
+                        <dt>Status</dt>
+                        <dd>Public main</dd>
+                        <dt>License</dt>
+                        <dd>AGPL-3.0-or-later</dd>
+                        <dt>Use</dt>
+                        <dd>Relation snapshots without OpenXR, Quest, or renderer imports</dd>
+                    </dl>
+                    <p class="project-links">
+                        <a href="https://github.com/MesmerPrism/rusty-lattice" target="_blank" rel="noopener noreferrer">Repository</a>
+                    </p>
+                </article>
+
+                <article class="project-card">
+                    <p class="project-kicker">Core / GUI</p>
+                    <h3><a href="https://github.com/MesmerPrism/rusty-gui" target="_blank" rel="noopener noreferrer">rusty-gui</a></h3>
+                    <p>
+                        Framework-neutral graphical descriptors for panels, widgets, inspectors,
+                        graph canvases, controls, command bindings, layout hints, and themes.
+                    </p>
+                    <dl class="project-facts">
+                        <dt>Status</dt>
+                        <dd>Public main</dd>
+                        <dt>License</dt>
+                        <dd>AGPL-3.0-or-later</dd>
+                        <dt>Use</dt>
+                        <dd>Graphical operation descriptors without runtime authority</dd>
+                    </dl>
+                    <p class="project-links">
+                        <a href="https://github.com/MesmerPrism/rusty-gui" target="_blank" rel="noopener noreferrer">Repository</a>
+                    </p>
+                </article>
+
+                <article class="project-card">
+                    <p class="project-kicker">Adapter / Makepad</p>
+                    <h3><a href="https://github.com/MesmerPrism/rusty-makepad" target="_blank" rel="noopener noreferrer">rusty-makepad</a></h3>
+                    <p>
+                        Generic Makepad app settings contracts, deterministic effective-settings
+                        resolution, hotload proposals and decisions, and toolkit adapter
+                        boundaries for Morphospace GUI surfaces.
+                    </p>
+                    <dl class="project-facts">
+                        <dt>Status</dt>
+                        <dd>Public main</dd>
+                        <dt>License</dt>
+                        <dd>AGPL-3.0-or-later</dd>
+                        <dt>Use</dt>
+                        <dd>Makepad settings and adapter contracts, not Quest platform writes</dd>
+                    </dl>
+                    <p class="project-links">
+                        <a href="https://github.com/MesmerPrism/rusty-makepad" target="_blank" rel="noopener noreferrer">Repository</a>
+                    </p>
+                </article>
+
+                <article class="project-card">
+                    <p class="project-kicker">Platform / Quest</p>
+                    <h3><a href="https://github.com/MesmerPrism/rusty-quest" target="_blank" rel="noopener noreferrer">rusty-quest</a></h3>
+                    <p>
+                        Quest platform runtime profiles, Android property hygiene, permissions,
+                        launch planning, validation receipts, and platform tooling wrappers.
+                    </p>
+                    <dl class="project-facts">
+                        <dt>Status</dt>
+                        <dd>Public main</dd>
+                        <dt>License</dt>
+                        <dd>AGPL-3.0-or-later</dd>
+                        <dt>Use</dt>
+                        <dd>Platform write/readback evidence without owning app simulation</dd>
+                    </dl>
+                    <p class="project-links">
+                        <a href="https://github.com/MesmerPrism/rusty-quest" target="_blank" rel="noopener noreferrer">Repository</a>
+                    </p>
+                </article>
+
+                <article class="project-card">
+                    <p class="project-kicker">Adapter / Quest Makepad</p>
+                    <h3><a href="https://github.com/MesmerPrism/rusty-quest-makepad" target="_blank" rel="noopener noreferrer">rusty-quest-makepad</a></h3>
+                    <p>
+                        Quest-specific Makepad camera-shell profile bundles, recorded mesh and
+                        hand-source replay, Matter surface runtime adapters, ADF/SDF debug
+                        boundaries, particle payloads, and GPU proof markers.
+                    </p>
+                    <dl class="project-facts">
+                        <dt>Status</dt>
+                        <dd>Public main</dd>
+                        <dt>License</dt>
+                        <dd>AGPL-3.0-or-later</dd>
+                        <dt>Use</dt>
+                        <dd>Headset Makepad adapters over Matter, Optics, Quest, and Lattice contracts</dd>
+                    </dl>
+                    <p class="project-links">
+                        <a href="https://github.com/MesmerPrism/rusty-quest-makepad" target="_blank" rel="noopener noreferrer">Repository</a>
                     </p>
                 </article>
 
@@ -548,6 +710,68 @@
             </div>
         </section>
 
+        <section class="section two-column" id="current-work">
+            <div>
+                <div class="section-heading">
+                    <p class="section-kicker">Current work</p>
+                    <h2>What is current as of June 12, 2026</h2>
+                </div>
+                <p>
+                    The active implementation line is the Quest Makepad Matter surface runtime:
+                    recorded hand data becomes Matter-owned mesh and joint-frame truth, Optics
+                    prepares renderer-neutral debug payloads, Quest-Makepad adapts those payloads
+                    to headset Makepad shells, and Hostess installs, stages, launches, and records
+                    evidence. That path is now a real cross-repo validation route rather than a
+                    naming exercise.
+                </p>
+                <p>
+                    The latest Quest evidence proves bounded GPU correctness checkpoints over the
+                    recorded-hand surface. Full skinned vertex/index buffer residency and a tiny
+                    mesh-to-dense-SDF construction probe both match Matter CPU oracle samples. The
+                    mesh-SDF proof has moved from same-call wait-idle readback to a submit ticket
+                    and later fence-poll completion, with the marker emitted only after completion.
+                </p>
+                <p>
+                    That result is deliberately narrow. It proves storage-buffer residency,
+                    bounded compute/readback, and CPU-oracle comparison for a small field. It is
+                    not yet a scaled frame-critical GPU backend. The remaining proof readbacks
+                    still need the same ticket/poll treatment before dense SDF dimensions or
+                    indexed ADF construction should be scaled.
+                </p>
+            </div>
+            <div class="detail-stack">
+                <section class="detail-block">
+                    <h3>Validated shape</h3>
+                    <ul class="plain-list">
+                        <li>Camera-free Hostess Quest Makepad APK route with generated Quest manifest</li>
+                        <li>App-private settings and data-plane staging through Hostess tooling</li>
+                        <li>Recorded hand provider shaped as bind mesh plus compact joint frames</li>
+                        <li>Matter CPU oracle comparison for hand skinning and tiny mesh-SDF samples</li>
+                        <li>Quest Makepad marker path for mesh-SDF submit, poll, and readback completion</li>
+                    </ul>
+                </section>
+                <section class="detail-block">
+                    <h3>Architecture guards</h3>
+                    <ul class="plain-list">
+                        <li>Matter remains simulation and SDF/ADF/particle truth</li>
+                        <li>Makepad owns generic XR/Vulkan dispatch plumbing, not Matter semantics</li>
+                        <li>Quest-Makepad owns adapter markers and headset app profile bundles</li>
+                        <li>Hostess owns install, staging, launch, and evidence capture</li>
+                        <li>High-rate mesh, field, particle, and GPU buffers stay out of settings/control JSON</li>
+                    </ul>
+                </section>
+                <section class="detail-block">
+                    <h3>Next engineering pressure</h3>
+                    <ul class="plain-list">
+                        <li>Move remaining GPU proof readbacks to ticket/poll completion</li>
+                        <li>Keep Vulkan probe implementations split into sibling modules</li>
+                        <li>Scale dense SDF or indexed ADF only after bounded oracle checks stay clean</li>
+                        <li>Keep particle force authority singular in normal profiles</li>
+                    </ul>
+                </section>
+            </div>
+        </section>
+
         <section class="section two-column" id="why">
             <div>
                 <div class="section-heading">
@@ -603,9 +827,9 @@
                     <h3>Generic XR-shaped work moves to Lattice</h3>
                     <p>
                         When the work is really about reference spaces, poses, eye views, tracked
-                        input roles, calibration, or frame-state validity, the new name is Rusty
-                        Lattice. OpenXR, Makepad, and Quest remain adapter or platform names at
-                        the edge.
+                        input roles, calibration, or frame-state validity, the clean lane is
+                        Rusty Lattice and the schema direction is <code>rusty.lattice.*</code>.
+                        OpenXR, Makepad, and Quest remain adapter or platform names at the edge.
                     </p>
                 </section>
                 <section class="detail-block">
