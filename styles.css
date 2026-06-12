@@ -1820,6 +1820,162 @@ li {
     line-height: 1.68;
 }
 
+.hero-shell--duisburg {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(16rem, 0.42fr);
+    gap: clamp(2rem, 5vw, 4.25rem);
+    align-items: center;
+    max-width: var(--shell);
+    text-align: left;
+}
+
+.hero-shell--duisburg h1 {
+    max-width: 44rem;
+    font-size: clamp(3.7rem, 8.4vw, 6.4rem);
+    line-height: 0.9;
+    letter-spacing: 0;
+    white-space: normal;
+}
+
+.hero-shell--duisburg h1 span {
+    display: inline;
+}
+
+.hero-shell--duisburg h1 span + span::before {
+    content: " ";
+}
+
+.hero-copy {
+    min-width: 0;
+}
+
+.portrait-card {
+    display: grid;
+    gap: 0.8rem;
+    margin: 0;
+    padding: 0.9rem;
+    border: 1px solid var(--line);
+    background: rgba(251, 248, 242, 0.66);
+}
+
+.portrait-card img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    border: 1px solid rgba(30, 23, 19, 0.18);
+}
+
+.portrait-card figcaption {
+    color: var(--muted);
+    font-family: var(--font-ui);
+    font-size: 0.86rem;
+    line-height: 1.5;
+}
+
+.thesis-card {
+    max-width: 54rem;
+    margin: 0 auto;
+    padding: clamp(1.3rem, 4vw, 2.1rem);
+    border: 1px solid var(--line);
+    background: var(--panel);
+    text-align: center;
+}
+
+.thesis-card p {
+    max-width: none;
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: clamp(1.65rem, 3.8vw, 2.35rem);
+    font-style: italic;
+    line-height: 1.15;
+}
+
+.guardrail-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.guardrail-grid article,
+.arc-track li,
+.phase-list article,
+.mapping-card {
+    min-width: 0;
+    border: 1px solid var(--line);
+    background: rgba(251, 248, 242, 0.72);
+}
+
+.guardrail-grid article,
+.arc-track li,
+.phase-list article {
+    padding: 1rem;
+}
+
+.guardrail-grid p,
+.arc-track p,
+.phase-list p,
+.mapping-card p {
+    color: var(--muted);
+    font-size: 0.98rem;
+    line-height: 1.55;
+}
+
+.arc-track {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.arc-track time {
+    display: block;
+    margin-bottom: 0.8rem;
+    color: var(--accent);
+    font-family: var(--font-ui);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.phase-list {
+    display: grid;
+    gap: 1rem;
+}
+
+.phase-number {
+    display: inline-grid;
+    width: 2.2rem;
+    height: 2.2rem;
+    margin-bottom: 0.55rem;
+    place-items: center;
+    border: 1px solid var(--line);
+    border-radius: 50%;
+    color: var(--accent);
+    font-family: var(--font-ui);
+    font-size: 0.78rem;
+    font-weight: 700;
+}
+
+.mapping-card {
+    display: grid;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.mapping-card div {
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--line);
+}
+
+.mapping-card div:last-child {
+    padding-bottom: 0;
+    border-bottom: 0;
+}
+
 .agent-downloads {
     margin: 2.1rem 0 0;
     padding: 1.35rem 0 0;
@@ -1985,6 +2141,10 @@ li {
 
     .surface-map,
     .surface-map--general,
+    .hero-shell--duisburg,
+    .arc-track,
+    .guardrail-grid,
+    .phase-list,
     .project-grid,
     .bressloff-figure-grid,
     .bressloff-calibration-row,
@@ -2129,6 +2289,41 @@ li {
         white-space: normal;
         text-align: center;
         overflow-wrap: anywhere;
+    }
+
+    .hero-shell--duisburg {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .hero-shell--duisburg h1 {
+        width: 100%;
+        max-width: 100%;
+        font-size: clamp(2.85rem, 14vw, 3.8rem);
+        overflow-wrap: break-word;
+    }
+
+    .hero-shell--duisburg h1 span {
+        display: block;
+    }
+
+    .hero-shell--duisburg h1 span + span::before {
+        content: "";
+    }
+
+    .hero-shell--duisburg .hero-actions {
+        align-items: stretch;
+        flex-direction: column;
+        justify-content: flex-start;
+        width: 100%;
+    }
+
+    .hero-shell--duisburg .action-link {
+        width: 100%;
+    }
+
+    .portrait-card {
+        max-width: 24rem;
     }
 
     .section-heading--center {

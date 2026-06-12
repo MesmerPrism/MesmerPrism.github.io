@@ -1,8 +1,8 @@
 [
   {
-    "id": "github-com-mesmer-prism-work-publications-background-contact",
+    "id": "github-com-mesmer-prism-thesis-orientation-swarms-route-stack-deep-",
     "type": "webpage",
-    "title": "Mesmer Prism Work Publications Background Contact",
+    "title": "Mesmer Prism Thesis Orientation Swarms Route Stack Deep dives Sources",
     "URL": "https://github.com/MesmerPrism",
     "accessed": {
       "date-parts": [
@@ -13,7 +13,1129 @@
         ]
       ]
     },
-    "note": "Referenced by Mesmer Prism | Till Holzapfel: https://mesmerprism.com/"
+    "note": "Referenced by Shared Bodies for Mixed-Ability Collaboration: https://mesmerprism.com/duisburg/"
+  },
+  {
+    "id": "doi-org-wobbrock-et-al-2011",
+    "type": "article-journal",
+    "title": "Wobbrock et al., 2011",
+    "URL": "https://doi.org/10.1145/1952383.1952384",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          12
+        ]
+      ]
+    },
+    "note": "Referenced by Shared Bodies for Mixed-Ability Collaboration: https://mesmerprism.com/duisburg/",
+    "DOI": "10.1145/1952383.1952384"
+  },
+  {
+    "id": "doi-org-bennett-et-al-2018-2011",
+    "type": "article-journal",
+    "title": "Bennett et al., 2018",
+    "URL": "https://doi.org/10.1145/3234695.3236348",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          12
+        ]
+      ]
+    },
+    "note": "Referenced by Shared Bodies for Mixed-Ability Collaboration: https://mesmerprism.com/duisburg/",
+    "issued": {
+      "date-parts": [
+        [
+          2011
+        ]
+      ]
+    },
+    "DOI": "10.1145/3234695.3236348"
+  },
+  {
+    "id": "archive-org-gilland-2009-2011",
+    "type": "webpage",
+    "title": "Gilland, 2009",
+    "URL": "https://archive.org/details/elemental-magic/page/n2/mode/1up",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          12
+        ]
+      ]
+    },
+    "note": "Referenced by Shared Bodies for Mixed-Ability Collaboration: https://mesmerprism.com/duisburg/",
+    "issued": {
+      "date-parts": [
+        [
+          2011
+        ]
+      ]
+    }
+  },
+  {
+    "id": "doi-org-glowacki-2024-2011",
+    "type": "article-journal",
+    "title": "Glowacki, 2024",
+    "URL": "https://doi.org/10.3389/frvir.2023.1286950",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          12
+        ]
+      ]
+    },
+    "note": "Referenced by Shared Bodies for Mixed-Ability Collaboration: https://mesmerprism.com/duisburg/",
+    "issued": {
+      "date-parts": [
+        [
+          2011
+        ]
+      ]
+    },
+    "DOI": "10.3389/frvir.2023.1286950"
+  },
+  {
+    "id": "www-ri-cmu-edu-kolling-et-al-2016-2011",
+    "type": "webpage",
+    "title": "Kolling et al., 2016",
+    "URL": "https://www.ri.cmu.edu/publications/human-interaction-with-robot-swarms-a-survey/",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          12
+        ]
+      ]
+    },
+    "note": "Referenced by Shared Bodies for Mixed-Ability Collaboration: https://mesmerprism.com/duisburg/",
+    "issued": {
+      "date-parts": [
+        [
+          2011
+        ]
+      ]
+    }
+  },
+  {
+    "id": "www-frontiersin-org-kegeleirs-and-birattari-2025-2011",
+    "type": "article-journal",
+    "title": "Kegeleirs and Birattari, 2025",
+    "URL": "https://www.frontiersin.org/journals/robotics-and-ai/articles/10.3389/frobt.2025.1607978/full",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          12
+        ]
+      ]
+    },
+    "note": "Referenced by Shared Bodies for Mixed-Ability Collaboration: https://mesmerprism.com/duisburg/",
+    "issued": {
+      "date-parts": [
+        [
+          2011
+        ]
+      ]
+    },
+    "DOI": "10.3389/frobt.2025.1607978/full"
+  },
+  {
+    "id": "www-nature-com-glowacki-et-al-2022",
+    "type": "webpage",
+    "title": "Glowacki et al., 2022",
+    "URL": "https://www.nature.com/articles/s41598-022-12637-z",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          12
+        ]
+      ]
+    },
+    "note": "Referenced by Shared Bodies for Mixed-Ability Collaboration: https://mesmerprism.com/duisburg/"
+  },
+  {
+    "id": "doi-org-ichihashi-et-al-2024-2022",
+    "type": "article-journal",
+    "title": "Ichihashi et al., 2024",
+    "URL": "https://doi.org/10.1145/3613904.3642870",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          12
+        ]
+      ]
+    },
+    "note": "Referenced by Shared Bodies for Mixed-Ability Collaboration: https://mesmerprism.com/duisburg/",
+    "issued": {
+      "date-parts": [
+        [
+          2022
+        ]
+      ]
+    },
+    "DOI": "10.1145/3613904.3642870"
+  },
+  {
+    "id": "rc-trust-ai-rc-trust-2025-2022",
+    "type": "webpage",
+    "title": "RC Trust, 2025",
+    "URL": "https://rc-trust.ai/news/news-detail/research-that-transforms-the-lived-experiences-of-people-with-disabilities-and-other-marginalised-groups-into-inclusive-technologies",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          12
+        ]
+      ]
+    },
+    "note": "Referenced by Shared Bodies for Mixed-Ability Collaboration: https://mesmerprism.com/duisburg/",
+    "issued": {
+      "date-parts": [
+        [
+          2022
+        ]
+      ]
+    }
+  },
+  {
+    "id": "www-cdc-gov-cdc-2024-2022",
+    "type": "webpage",
+    "title": "CDC, 2024",
+    "URL": "https://www.cdc.gov/me-cfs/hcp/clinical-care/me-cfs-clinical-care-for-severely-affected-patients.html",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          12
+        ]
+      ]
+    },
+    "note": "Referenced by Shared Bodies for Mixed-Ability Collaboration: https://mesmerprism.com/duisburg/",
+    "issued": {
+      "date-parts": [
+        [
+          2022
+        ]
+      ]
+    }
+  },
+  {
+    "id": "www-nice-org-uk-nice-2021-2022",
+    "type": "webpage",
+    "title": "NICE, 2021",
+    "URL": "https://www.nice.org.uk/guidance/ng206/chapter/Recommendations",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          12
+        ]
+      ]
+    },
+    "note": "Referenced by Shared Bodies for Mixed-Ability Collaboration: https://mesmerprism.com/duisburg/",
+    "issued": {
+      "date-parts": [
+        [
+          2022
+        ]
+      ]
+    }
+  },
+  {
+    "id": "pubmed-ncbi-nlm-nih-gov-kato-et-al-2020-2022",
+    "type": "webpage",
+    "title": "Kato et al., 2020",
+    "URL": "https://pubmed.ncbi.nlm.nih.gov/31922682/",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          12
+        ]
+      ]
+    },
+    "note": "Referenced by Shared Bodies for Mixed-Ability Collaboration: https://mesmerprism.com/duisburg/",
+    "issued": {
+      "date-parts": [
+        [
+          2022
+        ]
+      ]
+    }
+  },
+  {
+    "id": "arxiv-org-mottelson-et-al-2021-2022",
+    "type": "webpage",
+    "title": "Mottelson et al., 2021",
+    "URL": "https://arxiv.org/abs/2102.11207",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          12
+        ]
+      ]
+    },
+    "note": "Referenced by Shared Bodies for Mixed-Ability Collaboration: https://mesmerprism.com/duisburg/",
+    "issued": {
+      "date-parts": [
+        [
+          2022
+        ]
+      ]
+    }
+  },
+  {
+    "id": "arxiv-org-zhang-et-al-2022-2022",
+    "type": "webpage",
+    "title": "Zhang et al., 2022",
+    "URL": "https://arxiv.org/abs/2208.11170",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          12
+        ]
+      ]
+    },
+    "note": "Referenced by Shared Bodies for Mixed-Ability Collaboration: https://mesmerprism.com/duisburg/",
+    "issued": {
+      "date-parts": [
+        [
+          2022
+        ]
+      ]
+    }
+  },
+  {
+    "id": "arxiv-org-gualano-et-al-2024-2022",
+    "type": "webpage",
+    "title": "Gualano et al., 2024",
+    "URL": "https://arxiv.org/abs/2408.08193",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          12
+        ]
+      ]
+    },
+    "note": "Referenced by Shared Bodies for Mixed-Ability Collaboration: https://mesmerprism.com/duisburg/",
+    "issued": {
+      "date-parts": [
+        [
+          2022
+        ]
+      ]
+    }
+  },
+  {
+    "id": "rc-trust-ai-rc-trust-2022",
+    "type": "webpage",
+    "title": "RC Trust",
+    "URL": "https://rc-trust.ai/",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          12
+        ]
+      ]
+    },
+    "note": "Referenced by Shared Bodies for Mixed-Ability Collaboration: https://mesmerprism.com/duisburg/",
+    "issued": {
+      "date-parts": [
+        [
+          2022
+        ]
+      ]
+    }
+  },
+  {
+    "id": "users-cs-utah-edu-brown-et-al-2014-2022",
+    "type": "webpage",
+    "title": "Brown et al., 2014",
+    "URL": "https://users.cs.utah.edu/~dsbrown/pubs/Brown_HRI2014.pdf",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          12
+        ]
+      ]
+    },
+    "note": "Referenced by Shared Bodies for Mixed-Ability Collaboration: https://mesmerprism.com/duisburg/",
+    "issued": {
+      "date-parts": [
+        [
+          2022
+        ]
+      ]
+    }
+  },
+  {
+    "id": "doi-org-petersen-et-al-2019-2022",
+    "type": "article-journal",
+    "title": "Petersen et al., 2019",
+    "URL": "https://doi.org/10.1126/scirobotics.aau8479",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          12
+        ]
+      ]
+    },
+    "note": "Referenced by Shared Bodies for Mixed-Ability Collaboration: https://mesmerprism.com/duisburg/",
+    "issued": {
+      "date-parts": [
+        [
+          2022
+        ]
+      ]
+    },
+    "DOI": "10.1126/scirobotics.aau8479"
+  },
+  {
+    "id": "arxiv-org-zhou-et-al-2025-2022",
+    "type": "webpage",
+    "title": "Zhou et al., 2025",
+    "URL": "https://arxiv.org/abs/2505.05832",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          12
+        ]
+      ]
+    },
+    "note": "Referenced by Shared Bodies for Mixed-Ability Collaboration: https://mesmerprism.com/duisburg/",
+    "issued": {
+      "date-parts": [
+        [
+          2022
+        ]
+      ]
+    }
+  },
+  {
+    "id": "doi-org-levin-2021-2022",
+    "type": "article-journal",
+    "title": "Levin, 2021",
+    "URL": "https://doi.org/10.1016/j.cell.2021.02.034",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          12
+        ]
+      ]
+    },
+    "note": "Referenced by Shared Bodies for Mixed-Ability Collaboration: https://mesmerprism.com/duisburg/",
+    "issued": {
+      "date-parts": [
+        [
+          2022
+        ]
+      ]
+    },
+    "DOI": "10.1016/j.cell.2021.02.034"
+  },
+  {
+    "id": "arxiv-org-pahng-et-al-2025-2026-2022",
+    "type": "webpage",
+    "title": "Pahng et al., 2025/2026",
+    "URL": "https://arxiv.org/abs/2512.17129",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          12
+        ]
+      ]
+    },
+    "note": "Referenced by Shared Bodies for Mixed-Ability Collaboration: https://mesmerprism.com/duisburg/",
+    "issued": {
+      "date-parts": [
+        [
+          2022
+        ]
+      ]
+    }
+  },
+  {
+    "id": "github-com-source-repo-2022",
+    "type": "webpage",
+    "title": "Source repo",
+    "URL": "https://github.com/MesmerPrism/Rusty-XR",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          12
+        ]
+      ]
+    },
+    "note": "Referenced by Shared Bodies for Mixed-Ability Collaboration: https://mesmerprism.com/duisburg/",
+    "issued": {
+      "date-parts": [
+        [
+          2022
+        ]
+      ]
+    }
+  },
+  {
+    "id": "university-of-duisburg-essen-phd-position-in-technology-for-mixed-ability-interaction",
+    "type": "webpage",
+    "title": "PhD position in Technology for Mixed Ability Interaction",
+    "URL": "https://www.uni-due.de/karriere/stelle-rar.php?kennziffer=171-26",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          12
+        ]
+      ]
+    },
+    "note": "Referenced by Shared Bodies for Mixed-Ability Collaboration: https://mesmerprism.com/duisburg/",
+    "author": [
+      {
+        "literal": "University of Duisburg-Essen"
+      }
+    ]
+  },
+  {
+    "id": "university-of-duisburg-essen-inclusive-technology-and-collective-engagement",
+    "type": "webpage",
+    "title": "Inclusive Technology and Collective Engagement",
+    "URL": "https://rc-trust.ai/groups/inclusive-technology-and-collective-engagement",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          12
+        ]
+      ]
+    },
+    "note": "Referenced by Shared Bodies for Mixed-Ability Collaboration: https://mesmerprism.com/duisburg/",
+    "author": [
+      {
+        "literal": "University of Duisburg-Essen"
+      }
+    ]
+  },
+  {
+    "id": "rc-trust-designing-technology-around-human-connection-and-inclusi",
+    "type": "webpage",
+    "title": "Designing technology around human connection and inclusion",
+    "URL": "https://rc-trust.ai/news/news-detail/designing-technology-around-human-connection-and-inclusion",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          12
+        ]
+      ]
+    },
+    "note": "Referenced by Shared Bodies for Mixed-Ability Collaboration: https://mesmerprism.com/duisburg/",
+    "author": [
+      {
+        "literal": "RC Trust"
+      }
+    ]
+  },
+  {
+    "id": "rc-trust-speech-recognition-for-everyone",
+    "type": "webpage",
+    "title": "Speech Recognition, for everyone",
+    "URL": "https://www.cdl-inclusion.com/",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          12
+        ]
+      ]
+    },
+    "note": "Referenced by Shared Bodies for Mixed-Ability Collaboration: https://mesmerprism.com/duisburg/",
+    "author": [
+      {
+        "literal": "RC Trust"
+      }
+    ]
+  },
+  {
+    "id": "bennett-brady-and-branham-i-am-both-here-and-there-parallel-control-of-multiple-ro",
+    "type": "webpage",
+    "title": "I am both here and there: Parallel Control of Multiple Robotic Avatars by Disabled Workers in a Cafe",
+    "URL": "https://arxiv.org/abs/2303.13831",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          12
+        ]
+      ]
+    },
+    "note": "Referenced by Shared Bodies for Mixed-Ability Collaboration: https://mesmerprism.com/duisburg/",
+    "author": [
+      {
+        "literal": "Bennett, Brady, and Branham"
+      }
+    ]
+  },
+  {
+    "id": "barbareschi-et-al-brain-body-jockey-project-transcending-bodily-limitation",
+    "type": "article-journal",
+    "title": "Brain Body Jockey Project: Transcending Bodily Limitations in Live Performance via Human Augmentation",
+    "URL": "https://doi.org/10.1145/3663548.3675621",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          12
+        ]
+      ]
+    },
+    "note": "Referenced by Shared Bodies for Mixed-Ability Collaboration: https://mesmerprism.com/duisburg/",
+    "author": [
+      {
+        "literal": "Barbareschi et al"
+      }
+    ],
+    "DOI": "10.1145/3663548.3675621"
+  },
+  {
+    "id": "glowacki-danceroom-spectroscopy-at-the-frontiers-of-physics-perfo",
+    "type": "article-journal",
+    "title": "danceroom Spectroscopy: At the Frontiers of Physics, Performance, Interactive Art and Technology",
+    "URL": "https://doi.org/10.1162/LEON_a_00924",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          12
+        ]
+      ]
+    },
+    "note": "Referenced by Shared Bodies for Mixed-Ability Collaboration: https://mesmerprism.com/duisburg/",
+    "author": [
+      {
+        "literal": "Glowacki"
+      }
+    ],
+    "DOI": "10.1162/LEON_a_00924"
+  },
+  {
+    "id": "mitchell-hyde-tew-and-glowacki-hidden-fields",
+    "type": "webpage",
+    "title": "Hidden Fields",
+    "URL": "https://www.intangiblerealitieslab.org/projects/hidden-fields",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          12
+        ]
+      ]
+    },
+    "note": "Referenced by Shared Bodies for Mixed-Ability Collaboration: https://mesmerprism.com/duisburg/",
+    "author": [
+      {
+        "literal": "Mitchell, Hyde, Tew, and Glowacki"
+      }
+    ]
+  },
+  {
+    "id": "intangible-realities-laboratory-esencia-a-case-study-on-reinterpreting-an-interactive-ar",
+    "type": "article-journal",
+    "title": "esencia: A Case Study on Reinterpreting an Interactive Art and Science Installation Based on a Real-Time Atomic Physics Engine",
+    "URL": "https://doi.org/10.1145/3749893.3749972",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          12
+        ]
+      ]
+    },
+    "note": "Referenced by Shared Bodies for Mixed-Ability Collaboration: https://mesmerprism.com/duisburg/",
+    "author": [
+      {
+        "literal": "Intangible Realities Laboratory"
+      }
+    ],
+    "DOI": "10.1145/3749893.3749972"
+  },
+  {
+    "id": "toledo-castro-protopopov-and-glowacki-body-remixer-extending-bodies-to-stimulate-social-connec",
+    "type": "article-journal",
+    "title": "Body RemiXer: Extending Bodies to Stimulate Social Connection in an Immersive Installation",
+    "URL": "https://doi.org/10.1162/LEON_a_01925",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          12
+        ]
+      ]
+    },
+    "note": "Referenced by Shared Bodies for Mixed-Ability Collaboration: https://mesmerprism.com/duisburg/",
+    "author": [
+      {
+        "literal": "Toledo Castro, Protopopov, and Glowacki"
+      }
+    ],
+    "DOI": "10.1162/LEON_a_01925"
+  },
+  {
+    "id": "desnoyers-stewart-et-al-embodied-telepresent-connection-etc-exploring-virtual-so",
+    "type": "article-journal",
+    "title": "Embodied Telepresent Connection (ETC): Exploring Virtual Social Touch Through Pseudohaptics",
+    "URL": "https://doi.org/10.1145/3544549.3585843",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          12
+        ]
+      ]
+    },
+    "note": "Referenced by Shared Bodies for Mixed-Ability Collaboration: https://mesmerprism.com/duisburg/",
+    "author": [
+      {
+        "literal": "Desnoyers-Stewart et al"
+      }
+    ],
+    "DOI": "10.1145/3544549.3585843"
+  },
+  {
+    "id": "desnoyers-stewart-et-al-emotional-beasts-visually-expressing-emotions-through-av",
+    "type": "article-journal",
+    "title": "Emotional Beasts: Visually Expressing Emotions Through Avatars in VR",
+    "URL": "https://doi.org/10.1145/3027063.3053207",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          12
+        ]
+      ]
+    },
+    "note": "Referenced by Shared Bodies for Mixed-Ability Collaboration: https://mesmerprism.com/duisburg/",
+    "author": [
+      {
+        "literal": "Desnoyers-Stewart et al"
+      }
+    ],
+    "DOI": "10.1145/3027063.3053207"
+  },
+  {
+    "id": "bernal-and-maes-developing-galea-an-open-source-tool-at-the-intersection",
+    "type": "webpage",
+    "title": "Developing Galea: An Open Source Tool at the Intersection of VR and Neuroscience",
+    "URL": "https://www.media.mit.edu/posts/galea/",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          12
+        ]
+      ]
+    },
+    "note": "Referenced by Shared Bodies for Mixed-Ability Collaboration: https://mesmerprism.com/duisburg/",
+    "author": [
+      {
+        "literal": "Bernal and Maes"
+      }
+    ]
+  },
+  {
+    "id": "bernal-zooids-building-blocks-for-swarm-user-interfaces",
+    "type": "article-journal",
+    "title": "Zooids: Building Blocks for Swarm User Interfaces",
+    "URL": "https://doi.org/10.1145/2984511.2984547",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          12
+        ]
+      ]
+    },
+    "note": "Referenced by Shared Bodies for Mixed-Ability Collaboration: https://mesmerprism.com/duisburg/",
+    "author": [
+      {
+        "literal": "Bernal"
+      }
+    ],
+    "DOI": "10.1145/2984511.2984547"
+  },
+  {
+    "id": "ichihashi-et-al-shapebots-shape-changing-swarm-robots",
+    "type": "article-journal",
+    "title": "ShapeBots: Shape-Changing Swarm Robots",
+    "URL": "https://doi.org/10.1145/3332165.3347911",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          12
+        ]
+      ]
+    },
+    "note": "Referenced by Shared Bodies for Mixed-Ability Collaboration: https://mesmerprism.com/duisburg/",
+    "author": [
+      {
+        "literal": "Ichihashi et al"
+      }
+    ],
+    "DOI": "10.1145/3332165.3347911"
+  },
+  {
+    "id": "le-goc-et-al-from-motions-to-emotions-can-the-fundamental-emotions-be",
+    "type": "article-journal",
+    "title": "From Motions to Emotions: Can the Fundamental Emotions be Expressed in a Robot Swarm?",
+    "URL": "https://doi.org/10.1007/s12369-020-00665-6",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          12
+        ]
+      ]
+    },
+    "note": "Referenced by Shared Bodies for Mixed-Ability Collaboration: https://mesmerprism.com/duisburg/",
+    "author": [
+      {
+        "literal": "Le Goc et al"
+      }
+    ],
+    "DOI": "10.1007/s12369-020-00665-6"
+  },
+  {
+    "id": "santos-and-egerstedt-from-one-to-many-how-active-robot-swarm-sizes-influence-",
+    "type": "article-journal",
+    "title": "From One to Many: How Active Robot Swarm Sizes Influence Human Cognitive Processes",
+    "URL": "https://doi.org/10.1109/RO-MAN60168.2024.10731232",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          12
+        ]
+      ]
+    },
+    "note": "Referenced by Shared Bodies for Mixed-Ability Collaboration: https://mesmerprism.com/duisburg/",
+    "author": [
+      {
+        "literal": "Santos and Egerstedt"
+      }
+    ],
+    "DOI": "10.1109/RO-MAN60168.2024.10731232"
+  },
+  {
+    "id": "kaduk-et-al-re-imagining-xr-with-people-with-sensorimotor-disabiliti",
+    "type": "webpage",
+    "title": "Re-imagining XR with People with Sensorimotor Disabilities Through Criptastic Hacking",
+    "URL": "https://jainpuneet798.github.io/portfolio/cripgestures/",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          12
+        ]
+      ]
+    },
+    "note": "Referenced by Shared Bodies for Mixed-Ability Collaboration: https://mesmerprism.com/duisburg/",
+    "author": [
+      {
+        "literal": "Kaduk et al"
+      }
+    ]
+  },
+  {
+    "id": "jain-crip-sensorama-christian-s-coffee",
+    "type": "webpage",
+    "title": "Crip Sensorama: Christian's Coffee",
+    "URL": "https://jainpuneet798.github.io/portfolio/cripsensorama_christians-coffee/",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          12
+        ]
+      ]
+    },
+    "note": "Referenced by Shared Bodies for Mixed-Ability Collaboration: https://mesmerprism.com/duisburg/",
+    "author": [
+      {
+        "literal": "Jain"
+      }
+    ]
+  },
+  {
+    "id": "jain-user-defined-swarm-robot-control",
+    "type": "article-journal",
+    "title": "User-Defined Swarm Robot Control",
+    "URL": "https://doi.org/10.1145/3313831.3376814",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          12
+        ]
+      ]
+    },
+    "note": "Referenced by Shared Bodies for Mixed-Ability Collaboration: https://mesmerprism.com/duisburg/",
+    "author": [
+      {
+        "literal": "Jain"
+      }
+    ],
+    "DOI": "10.1145/3313831.3376814"
+  },
+  {
+    "id": "jain-physiochi-towards-best-practices-for-integrating-physiol",
+    "type": "article-journal",
+    "title": "PhysioCHI: Towards Best Practices for Integrating Physiological Signals in HCI",
+    "URL": "https://doi.org/10.1145/3613905.3636286",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          12
+        ]
+      ]
+    },
+    "note": "Referenced by Shared Bodies for Mixed-Ability Collaboration: https://mesmerprism.com/duisburg/",
+    "author": [
+      {
+        "literal": "Jain"
+      }
+    ],
+    "DOI": "10.1145/3613905.3636286"
+  },
+  {
+    "id": "nice-a-systematic-scoping-review-of-how-people-with-me-cfs-us",
+    "type": "article-journal",
+    "title": "A Systematic Scoping Review of How People with ME/CFS Use the Internet",
+    "URL": "https://www.tandfonline.com/doi/full/10.1080/21641846.2024.2303887",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          12
+        ]
+      ]
+    },
+    "note": "Referenced by Shared Bodies for Mixed-Ability Collaboration: https://mesmerprism.com/duisburg/",
+    "author": [
+      {
+        "literal": "NICE"
+      }
+    ],
+    "DOI": "10.1080/21641846.2024.2303887"
+  },
+  {
+    "id": "fazil-et-al-online-peer-to-peer-communities-in-the-daily-lives-of-pe",
+    "type": "webpage",
+    "title": "Online Peer-to-Peer Communities in the Daily Lives of People with Chronic Illness",
+    "URL": "https://researchprofiles.ku.dk/en/publications/online-peer-to-peer-communities-in-the-daily-lives-of-people-with",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          12
+        ]
+      ]
+    },
+    "note": "Referenced by Shared Bodies for Mixed-Ability Collaboration: https://mesmerprism.com/duisburg/",
+    "author": [
+      {
+        "literal": "Fazil et al"
+      }
+    ]
+  },
+  {
+    "id": "gualano-et-al-exploring-instructive-physiological-signaling-with-the-b",
+    "type": "webpage",
+    "title": "Exploring Instructive Physiological Signaling with the Bioelectric Tissue Simulation Engine",
+    "URL": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4933718/",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          12
+        ]
+      ]
+    },
+    "note": "Referenced by Shared Bodies for Mixed-Ability Collaboration: https://mesmerprism.com/duisburg/",
+    "author": [
+      {
+        "literal": "Gualano et al"
+      }
+    ]
+  },
+  {
+    "id": "levin-darwin-s-agential-materials-evolutionary-implications-of",
+    "type": "article-journal",
+    "title": "Darwin's Agential Materials: Evolutionary Implications of Multiscale Competency in Developmental Biology",
+    "URL": "https://doi.org/10.1007/s00018-023-04790-z",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          12
+        ]
+      ]
+    },
+    "note": "Referenced by Shared Bodies for Mixed-Ability Collaboration: https://mesmerprism.com/duisburg/",
+    "author": [
+      {
+        "literal": "Levin"
+      }
+    ],
+    "DOI": "10.1007/s00018-023-04790-z"
+  },
+  {
+    "id": "pahng-guan-fefferman-and-hormoz-diffeomorph",
+    "type": "webpage",
+    "title": "diffeomorph",
+    "URL": "https://github.com/hormoz-lab/diffeomorph",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          12
+        ]
+      ]
+    },
+    "note": "Referenced by Shared Bodies for Mixed-Ability Collaboration: https://mesmerprism.com/duisburg/",
+    "author": [
+      {
+        "literal": "Pahng, Guan, Fefferman, and Hormoz"
+      }
+    ]
+  },
+  {
+    "id": "github-rusty-xr-companion-apps",
+    "type": "webpage",
+    "title": "Rusty XR Companion Apps",
+    "URL": "https://github.com/MesmerPrism/Rusty-XR-Companion-Apps",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          12
+        ]
+      ]
+    },
+    "note": "Referenced by Shared Bodies for Mixed-Ability Collaboration: https://mesmerprism.com/duisburg/",
+    "author": [
+      {
+        "literal": "GitHub"
+      }
+    ]
+  },
+  {
+    "id": "github-collaboration-for-interdisciplinary-research-on-consciou",
+    "type": "webpage",
+    "title": "Collaboration for Interdisciplinary Research on Conscious Experience",
+    "URL": "https://circe-science.com/",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          12
+        ]
+      ]
+    },
+    "note": "Referenced by Shared Bodies for Mixed-Ability Collaboration: https://mesmerprism.com/duisburg/",
+    "author": [
+      {
+        "literal": "GitHub"
+      }
+    ]
+  },
+  {
+    "id": "circe-axp-access-guide",
+    "type": "webpage",
+    "title": "AXP access guide",
+    "URL": "https://mesmerprism.com/axp-mvp-survey-guide/",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          12
+        ]
+      ]
+    },
+    "note": "Referenced by Shared Bodies for Mixed-Ability Collaboration: https://mesmerprism.com/duisburg/",
+    "author": [
+      {
+        "literal": "CIRCE"
+      }
+    ]
   },
   {
     "id": "viscereality-org-project-site",
@@ -36,38 +1158,6 @@
     "type": "webpage",
     "title": "Docs & downloads",
     "URL": "https://mesmerprism.github.io/ViscerealityCompanion/",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          12
-        ]
-      ]
-    },
-    "note": "Referenced by Mesmer Prism | Till Holzapfel: https://mesmerprism.com/"
-  },
-  {
-    "id": "github-com-current-repo",
-    "type": "webpage",
-    "title": "Current repo",
-    "URL": "https://github.com/MesmerPrism/Rusty-XR-Companion-Apps",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          12
-        ]
-      ]
-    },
-    "note": "Referenced by Mesmer Prism | Till Holzapfel: https://mesmerprism.com/"
-  },
-  {
-    "id": "github-com-source-repo",
-    "type": "webpage",
-    "title": "Source repo",
-    "URL": "https://github.com/MesmerPrism/Rusty-XR",
     "accessed": {
       "date-parts": [
         [
@@ -196,22 +1286,6 @@
     "type": "webpage",
     "title": "Live AXP survey",
     "URL": "https://alteredxproject.com/",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          12
-        ]
-      ]
-    },
-    "note": "Referenced by Mesmer Prism | Till Holzapfel: https://mesmerprism.com/"
-  },
-  {
-    "id": "mesmerprism-com-access-guide",
-    "type": "webpage",
-    "title": "Access guide",
-    "URL": "https://mesmerprism.com/axp-mvp-survey-guide/",
     "accessed": {
       "date-parts": [
         [
@@ -662,28 +1736,6 @@
     "DOI": "10.3758/BF03212378"
   },
   {
-    "id": "glowacki-glowacki",
-    "type": "article-journal",
-    "title": "Glowacki",
-    "URL": "https://doi.org/10.3389/frvir.2023.1286950",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          12
-        ]
-      ]
-    },
-    "note": "Referenced by Somaesthetics Appendix | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/background/somaesthetics.html",
-    "author": [
-      {
-        "literal": "Glowacki"
-      }
-    ],
-    "DOI": "10.3389/frvir.2023.1286950"
-  },
-  {
     "id": "yee-and-bailenson-yee-and-bailenson",
     "type": "article-journal",
     "title": "Yee and Bailenson",
@@ -769,28 +1821,6 @@
         "literal": "dos Anjos and Pereira"
       }
     ]
-  },
-  {
-    "id": "desnoyers-stewart-et-al-desnoyers-stewart-et-al",
-    "type": "article-journal",
-    "title": "Desnoyers-Stewart et al.",
-    "URL": "https://doi.org/10.1145/3544549.3585843",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          12
-        ]
-      ]
-    },
-    "note": "Referenced by Long Essay: Semi-Corporeal Avatar Aesthetics | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/essay.html",
-    "author": [
-      {
-        "literal": "Desnoyers-Stewart et al."
-      }
-    ],
-    "DOI": "10.1145/3544549.3585843"
   },
   {
     "id": "glowacki-et-al-glowacki-et-al",
@@ -881,34 +1911,6 @@
     "DOI": "10.1145/37402.37406"
   },
   {
-    "id": "gilland-2009-gilland-2009-2009",
-    "type": "webpage",
-    "title": "Gilland 2009",
-    "URL": "https://archive.org/details/elemental-magic/page/n2/mode/1up",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          12
-        ]
-      ]
-    },
-    "note": "Referenced by Long Essay: Semi-Corporeal Avatar Aesthetics | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/essay.html",
-    "author": [
-      {
-        "literal": "Gilland 2009"
-      }
-    ],
-    "issued": {
-      "date-parts": [
-        [
-          2009
-        ]
-      ]
-    }
-  },
-  {
     "id": "gilland-2012-gilland-2012-2009",
     "type": "webpage",
     "title": "Gilland 2012",
@@ -935,35 +1937,6 @@
         ]
       ]
     }
-  },
-  {
-    "id": "bernal-and-maes-bernal-and-maes-2009",
-    "type": "article-journal",
-    "title": "Bernal and Maes",
-    "URL": "https://doi.org/10.1145/3027063.3053207",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          12
-        ]
-      ]
-    },
-    "note": "Referenced by Long Essay: Semi-Corporeal Avatar Aesthetics | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/essay.html",
-    "author": [
-      {
-        "literal": "Bernal and Maes"
-      }
-    ],
-    "issued": {
-      "date-parts": [
-        [
-          2009
-        ]
-      ]
-    },
-    "DOI": "10.1145/3027063.3053207"
   },
   {
     "id": "eisenstein-eisenstein",
@@ -1389,28 +2362,6 @@
     "DOI": "10.3389/fpsyg.2023.1043170"
   },
   {
-    "id": "mitchell-et-al-mitchell-et-al",
-    "type": "article-journal",
-    "title": "Mitchell et al.",
-    "URL": "https://doi.org/10.1162/LEON_a_00924",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          12
-        ]
-      ]
-    },
-    "note": "Referenced by Long Essay: Semi-Corporeal Avatar Aesthetics | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/essay.html",
-    "author": [
-      {
-        "literal": "Mitchell et al."
-      }
-    ],
-    "DOI": "10.1162/LEON_a_00924"
-  },
-  {
     "id": "desnoyers-stewart-desnoyers-stewart-2020",
     "type": "webpage",
     "title": "Desnoyers-Stewart",
@@ -1465,35 +2416,6 @@
         ]
       ]
     }
-  },
-  {
-    "id": "desnoyers-stewart-et-al-2020-desnoyers-stewart-et-al-2020-2020",
-    "type": "article-journal",
-    "title": "Desnoyers-Stewart et al. 2020",
-    "URL": "https://doi.org/10.1162/LEON_a_01925",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          12
-        ]
-      ]
-    },
-    "note": "Referenced by Long Essay: Semi-Corporeal Avatar Aesthetics | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/essay.html",
-    "author": [
-      {
-        "literal": "Desnoyers-Stewart et al. 2020"
-      }
-    ],
-    "issued": {
-      "date-parts": [
-        [
-          2020
-        ]
-      ]
-    },
-    "DOI": "10.1162/LEON_a_01925"
   },
   {
     "id": "desnoyers-stewart-2022-desnoyers-stewart-2022-2020",
@@ -1566,27 +2488,6 @@
       }
     ],
     "DOI": "10.1080/17458927.2019.1619318"
-  },
-  {
-    "id": "pahng-et-al-pahng-et-al",
-    "type": "webpage",
-    "title": "Pahng et al.",
-    "URL": "https://arxiv.org/abs/2512.17129",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          12
-        ]
-      ]
-    },
-    "note": "Referenced by Long Essay: Semi-Corporeal Avatar Aesthetics | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/essay.html",
-    "author": [
-      {
-        "literal": "Pahng et al."
-      }
-    ]
   },
   {
     "id": "reynolds-steering-behaviors-reynolds-steering-behaviors",
@@ -1694,49 +2595,6 @@
         "literal": "SideFX crowd docs"
       }
     ]
-  },
-  {
-    "id": "hormoz-lab-hormoz-lab",
-    "type": "webpage",
-    "title": "hormoz-lab",
-    "URL": "https://github.com/hormoz-lab/diffeomorph",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          12
-        ]
-      ]
-    },
-    "note": "Referenced by Long Essay: Semi-Corporeal Avatar Aesthetics | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/essay.html",
-    "author": [
-      {
-        "literal": "hormoz-lab"
-      }
-    ]
-  },
-  {
-    "id": "levin-agential-materials-levin-agential-materials",
-    "type": "article-journal",
-    "title": "Levin, agential materials",
-    "URL": "https://doi.org/10.1007/s00018-023-04790-z",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          12
-        ]
-      ]
-    },
-    "note": "Referenced by Long Essay: Semi-Corporeal Avatar Aesthetics | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/essay.html",
-    "author": [
-      {
-        "literal": "Levin, agential materials"
-      }
-    ],
-    "DOI": "10.1007/s00018-023-04790-z"
   },
   {
     "id": "durant-et-al-durant-et-al",
@@ -1939,29 +2797,6 @@
     "DOI": "10.3389/fpsyg.2021.705170"
   },
   {
-    "id": "jainpuneet798-github-io-jain-crip-sensorama-gesture-process-2026",
-    "type": "webpage",
-    "title": "Jain, Crip Sensorama gesture process",
-    "URL": "https://jainpuneet798.github.io/portfolio/cripgestures/",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          12
-        ]
-      ]
-    },
-    "note": "Referenced by Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html",
-    "issued": {
-      "date-parts": [
-        [
-          2026
-        ]
-      ]
-    }
-  },
-  {
     "id": "doi-org-jain-and-bayerlein-hand-to-mouth-2026-2026",
     "type": "article-journal",
     "title": "Jain and Bayerlein, Hand to Mouth, 2026",
@@ -1986,10 +2821,10 @@
     "DOI": "10.1007/s11569-025-00494-9"
   },
   {
-    "id": "doi-org-wobbrock-et-al-2026",
-    "type": "article-journal",
-    "title": "Wobbrock et al.",
-    "URL": "https://doi.org/10.1145/1952383.1952384",
+    "id": "www-w3-org-w3c-xr-accessibility-user-requirements-2026",
+    "type": "webpage",
+    "title": "W3C XR Accessibility User Requirements",
+    "URL": "https://www.w3.org/TR/xaur/",
     "accessed": {
       "date-parts": [
         [
@@ -2006,32 +2841,7 @@
           2026
         ]
       ]
-    },
-    "DOI": "10.1145/1952383.1952384"
-  },
-  {
-    "id": "doi-org-bennett-et-al-2026",
-    "type": "article-journal",
-    "title": "Bennett et al.",
-    "URL": "https://doi.org/10.1145/3234695.3236348",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          12
-        ]
-      ]
-    },
-    "note": "Referenced by Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html",
-    "issued": {
-      "date-parts": [
-        [
-          2026
-        ]
-      ]
-    },
-    "DOI": "10.1145/3234695.3236348"
+    }
   },
   {
     "id": "jainpuneet798-github-io-jain-umwelten-2026",
@@ -2057,10 +2867,10 @@
     }
   },
   {
-    "id": "arxiv-org-mottelson-et-al-2026",
+    "id": "www-youtube-com-essentia-foundation-interview-2026",
     "type": "webpage",
-    "title": "Mottelson et al.",
-    "URL": "https://arxiv.org/abs/2102.11207",
+    "title": "Essentia Foundation interview",
+    "URL": "https://www.youtube.com/watch?v=r6_VOOe8SMg",
     "accessed": {
       "date-parts": [
         [
@@ -2080,10 +2890,34 @@
     }
   },
   {
-    "id": "arxiv-org-zhang-et-al-2026",
+    "id": "doi-org-kettner-et-al-2026",
+    "type": "article-journal",
+    "title": "Kettner et al.",
+    "URL": "https://doi.org/10.3389/frvir.2024.1466362",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          12
+        ]
+      ]
+    },
+    "note": "Referenced by Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html",
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    },
+    "DOI": "10.3389/frvir.2024.1466362"
+  },
+  {
+    "id": "osf-io-osf-rct-registration-2026",
     "type": "webpage",
-    "title": "Zhang et al.",
-    "URL": "https://arxiv.org/abs/2208.11170",
+    "title": "OSF RCT registration",
+    "URL": "https://osf.io/72uwz/",
     "accessed": {
       "date-parts": [
         [
@@ -2103,10 +2937,10 @@
     }
   },
   {
-    "id": "arxiv-org-gualano-et-al-2026",
+    "id": "citius-gal-citius-numadelic-project-2026",
     "type": "webpage",
-    "title": "Gualano et al.",
-    "URL": "https://arxiv.org/abs/2408.08193",
+    "title": "CiTIUS NUMADELIC project",
+    "URL": "https://citius.gal/research/projects/experiencias-de-realidade-virtual-numadelicas-para-mellorar-a-saude-mental-e-o-benestar/",
     "accessed": {
       "date-parts": [
         [
@@ -2126,10 +2960,56 @@
     }
   },
   {
-    "id": "www-w3-org-w3c-xr-accessibility-user-requirements-2026",
+    "id": "anuma-com-anuma-clear-light-2026",
     "type": "webpage",
-    "title": "W3C XR Accessibility User Requirements",
-    "URL": "https://www.w3.org/TR/xaur/",
+    "title": "aNUma Clear Light",
+    "URL": "https://anuma.com/clearlight",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          12
+        ]
+      ]
+    },
+    "note": "Referenced by Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html",
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    }
+  },
+  {
+    "id": "www-numadeliclabs-org-numadelic-labs-2026",
+    "type": "webpage",
+    "title": "Numadelic Labs",
+    "URL": "https://www.numadeliclabs.org/",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          12
+        ]
+      ]
+    },
+    "note": "Referenced by Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html",
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    }
+  },
+  {
+    "id": "www-numadeliclabs-org-numadelic-labs-science-page-2026",
+    "type": "webpage",
+    "title": "Numadelic Labs science page",
+    "URL": "https://www.numadeliclabs.org/the-science",
     "accessed": {
       "date-parts": [
         [
@@ -2172,29 +3052,6 @@
     }
   },
   {
-    "id": "www-media-mit-edu-bernal-developing-galea-2021-2026",
-    "type": "webpage",
-    "title": "Bernal, Developing Galea, 2021",
-    "URL": "https://www.media.mit.edu/posts/galea/",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          12
-        ]
-      ]
-    },
-    "note": "Referenced by Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html",
-    "issued": {
-      "date-parts": [
-        [
-          2026
-        ]
-      ]
-    }
-  },
-  {
     "id": "www-media-mit-edu-mit-physiohmd-2026",
     "type": "webpage",
     "title": "MIT PhysioHMD",
@@ -2218,38 +3075,10 @@
     }
   },
   {
-    "id": "evidence-note-openbci-galea-release-2020-2026",
+    "id": "www-prnewswire-com-openbci-galea-release-2020-2026",
     "type": "webpage",
     "title": "OpenBCI Galea release, 2020",
     "URL": "https://www.prnewswire.com/news-releases/openbci-unveils-galea-a-new-platform-that-brings-next-generation-biometrics-to-mixed-reality-301177149.html",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          12
-        ]
-      ]
-    },
-    "note": "Referenced by Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html",
-    "author": [
-      {
-        "literal": "Evidence note"
-      }
-    ],
-    "issued": {
-      "date-parts": [
-        [
-          2026
-        ]
-      ]
-    }
-  },
-  {
-    "id": "jainpuneet798-github-io-jain-crip-sensorama-christian-s-coffee-2026",
-    "type": "webpage",
-    "title": "Jain, Crip Sensorama: Christian's Coffee",
-    "URL": "https://jainpuneet798.github.io/portfolio/cripsensorama_christians-coffee/",
     "accessed": {
       "date-parts": [
         [
@@ -2296,53 +3125,6 @@
     "type": "webpage",
     "title": "Jain, AutonomX",
     "URL": "https://jainpuneet798.github.io/portfolio/autonomx/",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          12
-        ]
-      ]
-    },
-    "note": "Referenced by Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html",
-    "issued": {
-      "date-parts": [
-        [
-          2026
-        ]
-      ]
-    }
-  },
-  {
-    "id": "doi-org-kim-et-al-2026",
-    "type": "article-journal",
-    "title": "Kim et al.",
-    "URL": "https://doi.org/10.1145/3313831.3376814",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          12
-        ]
-      ]
-    },
-    "note": "Referenced by Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html",
-    "issued": {
-      "date-parts": [
-        [
-          2026
-        ]
-      ]
-    },
-    "DOI": "10.1145/3313831.3376814"
-  },
-  {
-    "id": "www-ri-cmu-edu-kolling-et-al-hsi-survey-2026",
-    "type": "webpage",
-    "title": "Kolling et al., HSI survey",
-    "URL": "https://www.ri.cmu.edu/publications/human-interaction-with-robot-swarms-a-survey/",
     "accessed": {
       "date-parts": [
         [
@@ -2526,30 +3308,6 @@
     }
   },
   {
-    "id": "doi-org-levin-bioelectric-signaling-2026",
-    "type": "article-journal",
-    "title": "Levin, bioelectric signaling",
-    "URL": "https://doi.org/10.1016/j.cell.2021.02.034",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          12
-        ]
-      ]
-    },
-    "note": "Referenced by Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html",
-    "issued": {
-      "date-parts": [
-        [
-          2026
-        ]
-      ]
-    },
-    "DOI": "10.1016/j.cell.2021.02.034"
-  },
-  {
     "id": "doi-org-li-et-al-swarm-manipulation-2026",
     "type": "article-journal",
     "title": "Li et al., Swarm Manipulation",
@@ -2598,30 +3356,6 @@
     "DOI": "10.1007/s12555-019-0497-3"
   },
   {
-    "id": "doi-org-chiossi-et-al-physiochi-towards-best-practices-for-integ-2026",
-    "type": "article-journal",
-    "title": "Chiossi et al., PhysioCHI: Towards Best Practices for Integrating Physiological Signals in HCI",
-    "URL": "https://doi.org/10.1145/3613905.3636286",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          12
-        ]
-      ]
-    },
-    "note": "Referenced by Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html",
-    "issued": {
-      "date-parts": [
-        [
-          2026
-        ]
-      ]
-    },
-    "DOI": "10.1145/3613905.3636286"
-  },
-  {
     "id": "jainpuneet798-github-io-jain-epistemological-intervention",
     "type": "webpage",
     "title": "Jain, Epistemological Intervention",
@@ -2636,30 +3370,6 @@
       ]
     },
     "note": "Referenced by Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html"
-  },
-  {
-    "id": "www-frontiersin-org-kegeleirs-and-birattari-2026",
-    "type": "article-journal",
-    "title": "Kegeleirs and Birattari",
-    "URL": "https://www.frontiersin.org/journals/robotics-and-ai/articles/10.3389/frobt.2025.1607978/full",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          12
-        ]
-      ]
-    },
-    "note": "Referenced by Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html",
-    "issued": {
-      "date-parts": [
-        [
-          2026
-        ]
-      ]
-    },
-    "DOI": "10.3389/frobt.2025.1607978/full"
   },
   {
     "id": "doi-org-suzuki-et-al-roomshift-2026",
@@ -2734,30 +3444,6 @@
     "DOI": "10.1038/s41598-023-40623-6"
   },
   {
-    "id": "doi-org-petersen-et-al-collective-robotic-construction-review-2026",
-    "type": "article-journal",
-    "title": "Petersen et al., collective robotic construction review",
-    "URL": "https://doi.org/10.1126/scirobotics.aau8479",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          12
-        ]
-      ]
-    },
-    "note": "Referenced by Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html",
-    "issued": {
-      "date-parts": [
-        [
-          2026
-        ]
-      ]
-    },
-    "DOI": "10.1126/scirobotics.aau8479"
-  },
-  {
     "id": "doi-org-werfel-petersen-and-nagpal-termes-2026",
     "type": "article-journal",
     "title": "Werfel, Petersen, and Nagpal, TERMES",
@@ -2830,116 +3516,6 @@
     "DOI": "10.1038/s41467-025-63706-6"
   },
   {
-    "id": "w3c-accessible-platform-architectures-working-group-swarm-body-embodied-swarm-robots",
-    "type": "article-journal",
-    "title": "Swarm Body: Embodied Swarm Robots",
-    "URL": "https://doi.org/10.1145/3613904.3642870",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          12
-        ]
-      ]
-    },
-    "note": "Referenced by Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html",
-    "author": [
-      {
-        "literal": "W3C Accessible Platform Architectures Working Group"
-      }
-    ],
-    "DOI": "10.1145/3613904.3642870"
-  },
-  {
-    "id": "w3c-accessible-platform-architectures-working-group-zooids-building-blocks-for-swarm-user-interfaces",
-    "type": "article-journal",
-    "title": "Zooids: Building Blocks for Swarm User Interfaces",
-    "URL": "https://doi.org/10.1145/2984511.2984547",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          12
-        ]
-      ]
-    },
-    "note": "Referenced by Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html",
-    "author": [
-      {
-        "literal": "W3C Accessible Platform Architectures Working Group"
-      }
-    ],
-    "DOI": "10.1145/2984511.2984547"
-  },
-  {
-    "id": "ichihashi-et-al-shapebots-shape-changing-swarm-robots",
-    "type": "article-journal",
-    "title": "ShapeBots: Shape-Changing Swarm Robots",
-    "URL": "https://doi.org/10.1145/3332165.3347911",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          12
-        ]
-      ]
-    },
-    "note": "Referenced by Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html",
-    "author": [
-      {
-        "literal": "Ichihashi et al"
-      }
-    ],
-    "DOI": "10.1145/3332165.3347911"
-  },
-  {
-    "id": "le-goc-et-al-from-motions-to-emotions-can-the-fundamental-emotions-be",
-    "type": "article-journal",
-    "title": "From Motions to Emotions: Can the Fundamental Emotions be Expressed in a Robot Swarm?",
-    "URL": "https://doi.org/10.1007/s12369-020-00665-6",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          12
-        ]
-      ]
-    },
-    "note": "Referenced by Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html",
-    "author": [
-      {
-        "literal": "Le Goc et al"
-      }
-    ],
-    "DOI": "10.1007/s12369-020-00665-6"
-  },
-  {
-    "id": "suzuki-et-al-from-one-to-many-how-active-robot-swarm-sizes-influence-",
-    "type": "article-journal",
-    "title": "From One to Many: How Active Robot Swarm Sizes Influence Human Cognitive Processes",
-    "URL": "https://doi.org/10.1109/RO-MAN60168.2024.10731232",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          12
-        ]
-      ]
-    },
-    "note": "Referenced by Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html",
-    "author": [
-      {
-        "literal": "Suzuki et al"
-      }
-    ],
-    "DOI": "10.1109/RO-MAN60168.2024.10731232"
-  },
-  {
     "id": "reynolds-directing-crowd-simulations-using-navigation-fields",
     "type": "article-journal",
     "title": "Directing Crowd Simulations Using Navigation Fields",
@@ -2960,27 +3536,6 @@
       }
     ],
     "DOI": "10.1109/TVCG.2010.33"
-  },
-  {
-    "id": "bolotnikova-et-al-human-swarm-interactions-based-on-managing-attractors",
-    "type": "webpage",
-    "title": "Human-Swarm Interactions Based on Managing Attractors",
-    "URL": "https://users.cs.utah.edu/~dsbrown/pubs/Brown_HRI2014.pdf",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          12
-        ]
-      ]
-    },
-    "note": "Referenced by Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html",
-    "author": [
-      {
-        "literal": "Bolotnikova et al"
-      }
-    ]
   },
   {
     "id": "memory-alpha-fandom-com-species-index",
@@ -3136,30 +3691,6 @@
       ]
     },
     "DOI": "10.1126/sciadv.aat2731"
-  },
-  {
-    "id": "doi-org-toledo-castro-luis-ernesto-denis-protopopov-and-david-r--2025",
-    "type": "article-journal",
-    "title": "Toledo Castro, Luis Ernesto, Denis Protopopov, and David R. Glowacki. \"esencia: A Case Study on Reinterpreting an Interactive Art and Science Installation Based on a Real-Time Atomic Physics Engine.\" Proceedings of the Conference on Animation and Interactive Art (2025): 178-187.",
-    "URL": "https://doi.org/10.1145/3749893.3749972",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          12
-        ]
-      ]
-    },
-    "note": "Referenced by Annotated Sources for Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/references.html",
-    "issued": {
-      "date-parts": [
-        [
-          2025
-        ]
-      ]
-    },
-    "DOI": "10.1145/3749893.3749972"
   },
   {
     "id": "citius-gal-publication-page-2025",
@@ -3432,22 +3963,6 @@
       ]
     },
     "DOI": "10.14236/ewic/EVA2025.17"
-  },
-  {
-    "id": "circe-science-com-circe",
-    "type": "webpage",
-    "title": "CIRCE",
-    "URL": "https://circe-science.com/",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          12
-        ]
-      ]
-    },
-    "note": "Referenced by Altered Xperience Project: https://mesmerprism.com/projects/altered-xperience-project.html"
   },
   {
     "id": "mesmer-prism-collection-of-altered-state-rating-scales-and-questionna",

@@ -3,6 +3,18 @@
   "site": "https://mesmerprism.com",
   "pages": [
     {
+      "title": "Shared Bodies for Mixed-Ability Collaboration",
+      "description": "A Duisburg-facing research pitch for Mixed-Ability Human-Swarm Interaction: shared swarm bodies, inspectable input mappings, and a route from connectedness to robotics translation.",
+      "path": "duisburg/index.html",
+      "url": "https://mesmerprism.com/duisburg/",
+      "group": "Site pages",
+      "markdown": "https://mesmerprism.com/duisburg/index.md",
+      "text": "https://mesmerprism.com/duisburg/index.txt",
+      "bibtex": "https://mesmerprism.com/duisburg/index.bib",
+      "cslJson": "https://mesmerprism.com/duisburg/index.references.csl.json",
+      "references": 52
+    },
+    {
       "title": "Mesmer Prism | Till Holzapfel",
       "description": "XR systems, citizen-science tools, visual instruments, and essays for altered-perception design. Mesmer Prism makes strange experience vivid, inspectable, and evidence-bounded.",
       "path": "index.html",
@@ -72,7 +84,7 @@
       "text": "https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.txt",
       "bibtex": "https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.bib",
       "cslJson": "https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.references.csl.json",
-      "references": 64
+      "references": 74
     },
     {
       "title": "Plasmatic Avatars and Chronic Pain VR | Plasmatic Multitudes",
@@ -409,6 +421,18 @@
       "bibtex": "https://mesmerprism.com/Strobotorch/sources/index.bib",
       "cslJson": "https://mesmerprism.com/Strobotorch/sources/index.references.csl.json",
       "references": 44
+    },
+    {
+      "title": "Video carousel demo",
+      "description": "",
+      "path": "tmp/video-carousel-demo.html",
+      "url": "https://mesmerprism.com/tmp/video-carousel-demo.html",
+      "group": "Site pages",
+      "markdown": "https://mesmerprism.com/tmp/video-carousel-demo.md",
+      "text": "https://mesmerprism.com/tmp/video-carousel-demo.txt",
+      "bibtex": null,
+      "cslJson": null,
+      "references": 0
     }
   ]
 }

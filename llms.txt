@@ -10,6 +10,10 @@ Use the Markdown alternates for compact reading. Use the BibTeX or CSL JSON alte
 - [All references CSL JSON](https://mesmerprism.com/references/all.csl.json): Combined references in CSL JSON.
 - [Sitemap](https://mesmerprism.com/sitemap.xml): XML sitemap for canonical HTML pages.
 
+## Site pages
+- [Shared Bodies for Mixed-Ability Collaboration](https://mesmerprism.com/duisburg/index.md): A Duisburg-facing research pitch for Mixed-Ability Human-Swarm Interaction: shared swarm bodies, inspectable input mappings, and a route from connectedness to robotics translation.
+- [Video carousel demo](https://mesmerprism.com/tmp/video-carousel-demo.md)
+
 ## Core
 - [Mesmer Prism | Till Holzapfel](https://mesmerprism.com/index.md): XR systems, citizen-science tools, visual instruments, and essays for altered-perception design. Mesmer Prism makes strange experience vivid, inspectable, and evidence-bounded.
 

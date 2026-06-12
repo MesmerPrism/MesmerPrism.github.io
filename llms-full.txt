@@ -2,6 +2,480 @@
 
 Generated: 2026-06-12
 
+<page url="https://mesmerprism.com/duisburg/" path="duisburg/index.html">
+# Shared Bodies for Mixed-Ability Collaboration
+
+Source: https://mesmerprism.com/duisburg/
+Canonical HTML: https://mesmerprism.com/duisburg/
+Generated: 2026-06-12
+Description: A Duisburg-facing research pitch for Mixed-Ability Human-Swarm Interaction: shared swarm bodies, inspectable input mappings, and a route from connectedness to robotics translation.
+Markdown: https://mesmerprism.com/duisburg/index.md
+Plain text: https://mesmerprism.com/duisburg/index.txt
+BibTeX references: https://mesmerprism.com/duisburg/index.bib
+CSL JSON references: https://mesmerprism.com/duisburg/index.references.csl.json
+
+---
+
+Mixed-ability XR research
+
+# Shared bodies, inspectable systems
+
+ This Duisburg-facing pitch proposes Mixed-Ability Human-Swarm Interaction:
+ disabled and non-disabled collaborators co-create a shared, weakly bounded
+ swarm body whose inputs, dynamics, privacy choices, pacing, authorship,
+ and repair remain visible enough to negotiate.
+
+ [Three-step method](https://mesmerprism.com/duisburg/#project)
+ [Full HSI article](https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html)
+
+ Orientation
+
+## The project before the biography.
+
+ The central proposal is not a new avatar effect. It is a method for studying
+ how mixed-ability groups negotiate shared agency through a mutable swarm body:
+ a body made from particles, fields, auras, roles, and rules rather than a
+ single humanoid shell.
+
+ My route matters because I can build the instrument: XR systems, biosignal
+ routing, Quest tooling, open Rust prototypes, and weakly bounded embodiment
+ vocabularies that can be inspected instead of treated as sealed effects.
+
+### Mixed-ability HSI
+
+ Human-swarm interaction becomes an access question when several people
+ with different energy budgets, devices, communication modes, and
+ visibility preferences share one many-part body.
+
+### Abstract bodies are usable bodies
+
+ The project builds on work showing that luminous bodies, particle auras,
+ abstract creatures, and telepresent touch metaphors can support ownership,
+ co-presence, emotion, relation, and social meaning without humanoid
+ realism.
+
+### Open instruments
+
+ [Rusty Morphospace](https://mesmerprism.com/projects/rusty-morphospace.html),
+ [Rusty XR](https://mesmerprism.com/projects/rusty-xr.html), and
+ [Polar H10 tooling](https://mesmerprism.com/projects/polar-h10.html) give the project
+ a base for routing sensors, roles, mappings, diagnostics, and consent
+ settings across XR prototypes.
+
+### Duisburg fit
+
+ The Inclusive Technology and Collective Engagement group frames emerging
+ technologies through accessibility, co-design, marginalized experience,
+ and mutual engagement. This proposal turns that agenda toward shared
+ swarm bodies and inspectable mediation.
+
+ Thesis
+
+## Access is a relation inside the group.
+
+ Ability-based design argues that interfaces should adapt to what people can
+ and want to do; interdependence work adds that access is often negotiated
+ between people, tools, environments, and care relations
+ ([Wobbrock et al., 2011](https://doi.org/10.1145/1952383.1952384);
+ [Bennett et al., 2018](https://doi.org/10.1145/3234695.3236348)).
+
+ How can mixed-ability collaborators co-create a swarm body that is legible
+ enough to coordinate, expressive enough to support connectedness, and
+ inspectable enough to repair?
+
+ Swarm concepts
+
+## Aesthetic swarms and technical swarms are related, not identical.
+
+ A swarm can mean two different things. In robotics, swarm behavior usually
+ comes from many individual units interacting through local rules, sensing, and
+ physical constraints. In aesthetics, multiplicity can become a readable body
+ through Gestalt grouping, common fate, rhythm, density, texture, light, and
+ shared motion. Mixed-Ability HSI needs both vocabularies, but it should not
+ collapse them.
+
+### Aesthetic swarm body
+
+ The first studies can use particles, light, fields, boids, soft
+ boundaries, and physics-like animation to make co-presence, privacy,
+ authorship, refusal, and repair visible. The swarm does not need to be
+ physically possible to be socially legible
+ ([Gilland, 2009](https://archive.org/details/elemental-magic/page/n2/mode/1up);
+ [Glowacki, 2024](https://doi.org/10.3389/frvir.2023.1286950)).
+
+### Technical swarm body
+
+ When the work moves toward robots, furniture, tangible swarms, or modular
+ assembly, the same design words become harder constraints: mass, motors,
+ batteries, localization error, latency, collision, surfaces, safety, and
+ failure recovery
+ ([Kolling et al., 2016](https://www.ri.cmu.edu/publications/human-interaction-with-robot-swarms-a-survey/);
+ [Kegeleirs and Birattari, 2025](https://www.frontiersin.org/journals/robotics-and-ai/articles/10.3389/frobt.2025.1607978/full)).
+
+### Physics changes role
+
+ In the aesthetic track, gravity, drag, turbulence, elasticity, viscosity,
+ resistance, and collision cues make transformation readable. In robotics,
+ those same forces become load cases, platform limits, and safety
+ obligations.
+
+### What should transfer
+
+ The bridge is a constraint test: which mappings remain useful when
+ agency, safety, visibility, pacing, and repair must survive a change of
+ medium from visual body to tangible or robotic system?
+
+ Research arc
+
+## From connectedness to goal-directed dynamics.
+
+ The public-facing route is deliberately staged. It starts with low-pressure
+ exploration and connectedness, adds game-oriented collaboration only after
+ the group understands its own mappings, and treats robotics as a later
+ translation gate rather than an early promise.
+
+- 01 ### Access practices first Participants name existing devices, rhythms, supports, fatigue patterns, communication habits, and off-limits signals before sensors or mappings are proposed.
+
+- 02 ### Exploration and connectedness A low-demand swarm body lets the group test glow, density, rhythm, gathering, hiding, shielding, coalescence, rest, and repair before task pressure.
+
+- 03 ### Abstract-body precedents Glowacki's light-body work, Desnoyers-Stewart's particle-body lineage, Emotional Beasts, Galea, and Crip Sensorama show different routes into non-humanoid but socially meaningful bodies.
+
+- 04 ### Game-oriented collaboration Structured play introduces roles, goals, asymmetric contribution, conflict, resource limits, recovery, and shared consequences without reducing access to productivity.
+
+- 05 ### Inspectable stack Rusty Morphospace should expose channels, bindings, dynamic targets, feedback, consent, logs, provenance, and retirement so participants can question the mediation.
+
+- 06 ### Translation gate The later question is which aesthetic, social, and control principles survive physical consequence in robotics, assembly, adaptive furniture, or teleoperated contexts.
+
+- 07 ### One starting context Homebound and energy-limited participation makes pacing, sensory load, asynchronous contribution, and visibility choices concrete design constraints.
+
+- 08 ### Contribution The outcome is a prototype family, a participatory method, and design knowledge for mutual engagement through expressive, negotiable shared bodies.
+
+ Research route
+
+## Three steps, with elicitation before step one.
+
+ Before anyone tries to optimize control, the project has to ask what the group
+ is controlling and why. A mouth gesture, breath estimate, switch, gaze event,
+ controller pose, or biosignal can change color, density, attraction, boundary
+ softness, a goal, a field, a safety veto, or only a private cue. Those are not
+ equivalent mappings.
+
+ The first study should therefore begin with access-practice elicitation, then
+ move through three research steps. Luminous and weakly bounded VR bodies can
+ support connectedness and coalescence, while swarm-body work shows that size,
+ density, distribution, and correspondence change embodiment and agency
+ ([Glowacki et al., 2022](https://www.nature.com/articles/s41598-022-12637-z);
+ [Glowacki, 2024](https://doi.org/10.3389/frvir.2023.1286950);
+ [Ichihashi et al., 2024](https://doi.org/10.1145/3613904.3642870)).
+
+ This matches a group agenda where emerging technology is evaluated through
+ expression, communication, participation, trust, and real social context
+ ([RC Trust, 2025](https://rc-trust.ai/news/news-detail/research-that-transforms-the-lived-experiences-of-people-with-disabilities-and-other-marginalised-groups-into-inclusive-technologies)).
+
+ 1
+
+### Exploration and connectedness
+
+ Participatory workshops discover input channels, comfort boundaries, privacy choices, visibility preferences, expressive mappings, and shared-body states.
+
+ 2
+
+### Game-oriented collaboration
+
+ Goals, roles, timing, resource limits, and constraints tune coordination, asymmetric contribution, recovery, trust, and shared authorship.
+
+ 3
+
+### Robotics translation gate
+
+ Tangible swarms, adaptive furniture, robotic avatars, assembly systems, and teleoperation become later tests of which mappings survive physical constraint.
+
+ One possible participant context
+
+## Low-demand swarm worlds for home-mediated participation.
+
+ ME/CFS, Long COVID, severe fatigue, and prolonged social withdrawal are not
+ the same thing. They do, however, make ordinary co-present participation
+ difficult in ways that matter for interaction design: pacing, exertion risk,
+ travel, sensory load, identity exposure, and the need for asynchronous
+ contribution
+ ([CDC, 2024](https://www.cdc.gov/me-cfs/hcp/clinical-care/me-cfs-clinical-care-for-severely-affected-patients.html);
+ [NICE, 2021](https://www.nice.org.uk/guidance/ng206/chapter/Recommendations);
+ [Kato et al., 2020](https://pubmed.ncbi.nlm.nih.gov/31922682/)).
+
+### Constraints
+
+ Low energy and pacing
+ Travel barriers
+ Sensory load
+ Visibility choice
+
+### Design responses
+
+ Desktop first
+ Saved states
+ Short visits
+ Optional VR
+
+ The environment would not treat loneliness or social withdrawal. It would study
+ how shared presence, pacing, privacy, and authorship can be designed with people
+ whose access to social worlds is already mediated by home and network. Remote VR
+ methods and social VR disability work provide useful precedents, but also show
+ why recruitment, disclosure, sensory load, and participation modes need careful
+ handling
+ ([Mottelson et al., 2021](https://arxiv.org/abs/2102.11207);
+ [Zhang et al., 2022](https://arxiv.org/abs/2208.11170);
+ [Gualano et al., 2024](https://arxiv.org/abs/2408.08193)).
+
+ Research instrument
+
+## Open tooling makes the mapping stack contestable.
+
+ Rusty Morphospace is not the research question. It is the instrument that can
+ make the mediation inspectable: what input enters the system, what scale it
+ controls, what dynamic changes, who can see that contribution, which logs are
+ kept, how consent is represented, and when a mapping can be retired. In RC
+ Trust terms, the mediation should be understandable and contestable, not
+ merely adaptive
+ ([RC Trust](https://rc-trust.ai/)).
+
+ That matters because input diversity is not enough. Mixed-ability HSI needs a
+ full mapping from social dynamics to technological affordances: access
+ practice, human channel, binding granularity, dynamic target, feedback,
+ social contract, provenance, and retirement.
+
+### Access practice and channel
+
+ gesture, text, switch timing, breath, gaze, EMG, EOG, ECG, controller pose, assisted communication, rest strategy
+
+### Binding and dynamic target
+
+ particle, sub-swarm, whole body, field, SDF seed, color, density, attraction, boundary, goal, role, veto
+
+### Feedback and social contract
+
+ private cue, public trace, sound, caption, haptic, log, visibility, consent, authorship, rest, replay, remap
+
+### Implementation split
+
+ Rusty Lattice for sensing, Manifold for routing, Matter for particles and fields, Optics for appearance and debug views
+
+ Boundaries
+
+## What the system can test, and what it cannot claim.
+
+### Swarm control
+
+ Human-swarm interaction is a model for influencing collective tendencies, not micromanaging every unit. Relevant controls include behavior selection, parameter setting, environmental influence, leaders, sub-swarms, attractors, and mixed-granularity commands ([Kolling et al., 2016](https://www.ri.cmu.edu/publications/human-interaction-with-robot-swarms-a-survey/); [Brown et al., 2014](https://users.cs.utah.edu/~dsbrown/pubs/Brown_HRI2014.pdf)).
+
+### Robotics
+
+ XR is the first design laboratory. Physical robot swarms, adaptive furniture, and assembly systems add safety, localization, latency, object weight, actuation, maintenance, and sim-to-real constraints ([Kegeleirs and Birattari, 2025](https://www.frontiersin.org/journals/robotics-and-ai/articles/10.3389/frobt.2025.1607978/full); [Petersen et al., 2019](https://doi.org/10.1126/scirobotics.aau8479)).
+
+### Physics
+
+ In the visual phase, physics can be an enabling scaffold for felt materiality. In the robotics phase, physics becomes a stricter accountability regime: mass, friction, impact, torque, clearance, power, tracking error, and failure recovery.
+
+### AI
+
+ AI can suggest mappings, support turn-taking, or summarize interaction histories. It should remain transparent, reversible, and subordinate to participant-defined expression ([Zhou et al., 2025](https://arxiv.org/abs/2505.05832)).
+
+### Bioelectricity
+
+ Bioelectric-inspired graph fields are optional model vocabulary for coupling, repair, and local-to-global patterning, not biological prediction. DiffeoMorph belongs even farther out: a possible agentic dynamics family for learned target-forming swarms, not a current access method ([Levin, 2021](https://doi.org/10.1016/j.cell.2021.02.034); [Pahng et al., 2025/2026](https://arxiv.org/abs/2512.17129)).
+
+### Connectedness
+
+ The study can examine co-presence, authorship, and shared agency. It should not promise treatment for loneliness, fatigue, or social withdrawal.
+
+ Deep dives
+
+## Where the longer arguments live.
+
+ The Duisburg page carries the compact pitch. These pages hold the deeper
+ source work, implementation context, and translation lanes that should not
+ crowd the custom page.
+
+ Full pitch
+
+### [Mixed-Ability Human-Swarm Interaction](https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html)
+
+ The expanded source-linked argument: swarm bodies, abstract-body precedents, input-stack mapping, Rusty Morphospace, robotics, bioelectric horizons, and caveats.
+
+ [Article](https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html)
+ [Markdown](https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.md)
+ [BibTeX](https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.bib)
+
+ Implementation layer
+
+### [Rusty Morphospace](https://mesmerprism.com/projects/rusty-morphospace.html)
+
+ Modular Rust frame for computational matter, situated relations, routing, runtime authority, renderer-neutral inspection, and Quest validation.
+
+ [Overview](https://mesmerprism.com/projects/rusty-morphospace.html)
+ [Rusty XR](https://mesmerprism.com/projects/rusty-xr.html)
+ [Source repo](https://github.com/MesmerPrism/Rusty-XR)
+
+ Embodiment vocabulary
+
+### [Plasmatic Multitudes](https://mesmerprism.com/plasmatic-multitudes/essay.html)
+
+ Long essay on weakly bounded bodies, semi-corporeal avatar aesthetics, media genealogy, physics-like legibility, and cautious translation.
+
+ [Overview](https://mesmerprism.com/projects/plasmatic-multitudes.html)
+ [Long essay](https://mesmerprism.com/plasmatic-multitudes/essay.html)
+ [Vocabulary](https://mesmerprism.com/plasmatic-multitudes/terminology.html)
+
+ Pain and body representation
+
+### [Pain Translation](https://mesmerprism.com/plasmatic-multitudes/pain.html)
+
+ A narrower companion lane on boundary precision, avatar materiality, protective fields, ownership, agency, and pain-related hypotheses without treatment claims.
+
+ [Essay](https://mesmerprism.com/plasmatic-multitudes/pain.html)
+ [Pain sources](https://mesmerprism.com/plasmatic-multitudes/references.html#pain)
+
+ Bioresponsive XR system
+
+### [Viscereality](https://mesmerprism.com/projects/viscereality.html)
+
+ Quest-based bioresponsive VR linking breath, cardiac rhythm, oscillator visuals, companion tools, and operator workflow.
+
+ [Overview](https://mesmerprism.com/projects/viscereality.html)
+ [Polar H10](https://mesmerprism.com/projects/polar-h10.html)
+ [Companion tools](https://mesmerprism.com/projects/viscereality-companion.html)
+
+ Far-future dynamics vocabulary
+
+### [Bioelectricity and Morphogenesis](https://mesmerprism.com/projects/bioelectricity.html)
+
+ Educational Rusty Morphospace line for surface fields, conductance-like coupling, pattern repair, and careful limits around biotech or prosthetic speculation.
+
+ [Overview](https://mesmerprism.com/projects/bioelectricity.html)
+ [Morphospace](https://mesmerprism.com/projects/rusty-morphospace.html)
+
+ References
+
+## Source anchors.
+
+ These sources separate group context, mixed-ability access theory,
+ plasmatic and swarm embodiment, open input mapping, low-demand participation,
+ physics aesthetics, and robotics translation. The same source set is
+ available as Markdown, text, BibTeX, and CSL JSON.
+
+### Group, job, and communication context
+
+- University of Duisburg-Essen. "[PhD position in Technology for Mixed Ability Interaction](https://www.uni-due.de/karriere/stelle-rar.php?kennziffer=171-26)." Job advertisement 171-26 (2026).
+
+- RC Trust. "[Inclusive Technology and Collective Engagement](https://rc-trust.ai/groups/inclusive-technology-and-collective-engagement)." Group page led by Prof. Dr. Giulia Barbareschi.
+
+- RC Trust. "[Research Center Trustworthy Data Science and Security](https://rc-trust.ai/)." Center overview.
+
+- RC Trust. "[Research that transforms the lived experiences of people with disabilities and other marginalised groups into inclusive technologies](https://rc-trust.ai/news/news-detail/research-that-transforms-the-lived-experiences-of-people-with-disabilities-and-other-marginalised-groups-into-inclusive-technologies)." News profile (2025).
+
+- RC Trust. "[Designing technology around human connection and inclusion](https://rc-trust.ai/news/news-detail/designing-technology-around-human-connection-and-inclusion)." News item on DIS 2026 work involving Giulia Barbareschi.
+
+- Centre for Digital Language Inclusion. "[Speech Recognition, for everyone](https://www.cdl-inclusion.com/)." Public CDLI site (2026).
+
+### Mixed-ability access and distributed embodiment
+
+- Wobbrock et al. "[Ability-Based Design: Concept, Principles and Examples](https://doi.org/10.1145/1952383.1952384)." ACM Transactions on Accessible Computing 3(3) (2011).
+
+- Bennett, Brady, and Branham. "[Interdependence as a Frame for Assistive Technology Research and Design](https://doi.org/10.1145/3234695.3236348)." ASSETS (2018).
+
+- Barbareschi et al. "[I am both here and there: Parallel Control of Multiple Robotic Avatars by Disabled Workers in a Cafe](https://arxiv.org/abs/2303.13831)." arXiv:2303.13831 (2023).
+
+- Barbareschi et al. "[Brain Body Jockey Project: Transcending Bodily Limitations in Live Performance via Human Augmentation](https://doi.org/10.1145/3663548.3675621)." ASSETS (2024).
+
+- Zhou et al. "[Augmented Body Communicator: Enhancing Daily Body Expression for People with Upper Limb Limitations through LLM and a Robotic Arm](https://arxiv.org/abs/2505.05832)." arXiv:2505.05832 (2025).
+
+### Plasmatic, abstract, and expressive bodies
+
+- Glowacki et al. "[Group VR Experiences Can Produce Ego Attenuation and Connectedness Comparable to Psychedelics](https://www.nature.com/articles/s41598-022-12637-z)." Scientific Reports 12 (2022).
+
+- Glowacki. "[VR Models of Death and Psychedelics: An Aesthetic Paradigm for Design Beyond Day-to-Day Phenomenology](https://doi.org/10.3389/frvir.2023.1286950)." Frontiers in Virtual Reality (2024).
+
+- Mitchell, Hyde, Tew, and Glowacki. "[danceroom Spectroscopy: At the Frontiers of Physics, Performance, Interactive Art and Technology](https://doi.org/10.1162/LEON_a_00924)." Leonardo 49(2) (2016).
+
+- Intangible Realities Laboratory. "[Hidden Fields](https://www.intangiblerealitieslab.org/projects/hidden-fields)." Project page on energy avatars and real-time atomic physics simulation.
+
+- Toledo Castro, Protopopov, and Glowacki. "[esencia: A Case Study on Reinterpreting an Interactive Art and Science Installation Based on a Real-Time Atomic Physics Engine](https://doi.org/10.1145/3749893.3749972)." Expanded '25 (2025).
+
+- Desnoyers-Stewart et al. "[Body RemiXer: Extending Bodies to Stimulate Social Connection in an Immersive Installation](https://doi.org/10.1162/LEON_a_01925)." Leonardo 53(4) (2020).
+
+- Desnoyers-Stewart et al. "[Embodied Telepresent Connection (ETC): Exploring Virtual Social Touch Through Pseudohaptics](https://doi.org/10.1145/3544549.3585843)." CHI EA (2023).
+
+- Bernal and Maes. "[Emotional Beasts: Visually Expressing Emotions Through Avatars in VR](https://doi.org/10.1145/3027063.3053207)." CHI EA (2017).
+
+- Bernal. "[Developing Galea: An Open Source Tool at the Intersection of VR and Neuroscience](https://www.media.mit.edu/posts/galea/)." MIT Media Lab (2021).
+
+- Ichihashi et al. "[Swarm Body: Embodied Swarm Robots](https://doi.org/10.1145/3613904.3642870)." CHI (2024).
+
+- Le Goc et al. "[Zooids: Building Blocks for Swarm User Interfaces](https://doi.org/10.1145/2984511.2984547)." UIST (2016).
+
+- Suzuki et al. "[ShapeBots: Shape-Changing Swarm Robots](https://doi.org/10.1145/3332165.3347911)." UIST (2019).
+
+- Santos and Egerstedt. "[From Motions to Emotions: Can the Fundamental Emotions be Expressed in a Robot Swarm?](https://doi.org/10.1007/s12369-020-00665-6)" International Journal of Social Robotics 13 (2021).
+
+- Kaduk et al. "[From One to Many: How Active Robot Swarm Sizes Influence Human Cognitive Processes](https://doi.org/10.1109/RO-MAN60168.2024.10731232)." RO-MAN (2024).
+
+### Input mapping, HSI control, and robotics horizon
+
+- Jain. "[Re-imagining XR with People with Sensorimotor Disabilities Through Criptastic Hacking](https://jainpuneet798.github.io/portfolio/cripgestures/)." Project page.
+
+- Jain. "[Crip Sensorama: Christian's Coffee](https://jainpuneet798.github.io/portfolio/cripsensorama_christians-coffee/)." Project page.
+
+- Kim, Drew, Domova, and Follmer. "[User-Defined Swarm Robot Control](https://doi.org/10.1145/3313831.3376814)." CHI (2020).
+
+- Chiossi et al. "[PhysioCHI: Towards Best Practices for Integrating Physiological Signals in HCI](https://doi.org/10.1145/3613905.3636286)." CHI EA (2024).
+
+- Kolling et al. "[Human Interaction with Robot Swarms: A Survey](https://www.ri.cmu.edu/publications/human-interaction-with-robot-swarms-a-survey/)." IEEE Transactions on Human-Machine Systems 46(1) (2016).
+
+- Brown, Kerman, and Goodrich. "[Human-Swarm Interactions Based on Managing Attractors](https://users.cs.utah.edu/~dsbrown/pubs/Brown_HRI2014.pdf)." HRI (2014).
+
+- Petersen et al. "[A Review of Collective Robotic Construction](https://doi.org/10.1126/scirobotics.aau8479)." Science Robotics 4(28) (2019).
+
+- Kegeleirs and Birattari. "[Towards Applied Swarm Robotics: Current Limitations and Enablers](https://www.frontiersin.org/journals/robotics-and-ai/articles/10.3389/frobt.2025.1607978/full)." Frontiers in Robotics and AI (2025).
+
+### Home-mediated participation and disclosure
+
+- Kato, Kanba, and Teo. "[Defining Pathological Social Withdrawal: Proposed Diagnostic Criteria for Hikikomori](https://pubmed.ncbi.nlm.nih.gov/31922682/)." World Psychiatry 19(1) (2020).
+
+- CDC. "[ME/CFS: Clinical Care for Severely Affected Patients](https://www.cdc.gov/me-cfs/hcp/clinical-care/me-cfs-clinical-care-for-severely-affected-patients.html)." Accessed 2026-06-05.
+
+- NICE. "[Myalgic Encephalomyelitis (or Encephalopathy)/Chronic Fatigue Syndrome: Diagnosis and Management](https://www.nice.org.uk/guidance/ng206/chapter/Recommendations)." NICE guideline NG206 (2021).
+
+- Fazil et al. "[A Systematic Scoping Review of How People with ME/CFS Use the Internet](https://www.tandfonline.com/doi/full/10.1080/21641846.2024.2303887)." Fatigue (2024).
+
+- Kingod et al. "[Online Peer-to-Peer Communities in the Daily Lives of People with Chronic Illness](https://researchprofiles.ku.dk/en/publications/online-peer-to-peer-communities-in-the-daily-lives-of-people-with)." Qualitative Health Research (2017).
+
+- Mottelson et al. "[Remote VR Studies: A Framework for Running Virtual Reality Studies Remotely Via Participant-Owned HMDs](https://arxiv.org/abs/2102.11207)." arXiv:2102.11207 (2021).
+
+- Zhang et al. "[It's Just Part of Me: Understanding Avatar Diversity and Self-Presentation of People with Disabilities in Social Virtual Reality](https://arxiv.org/abs/2208.11170)." arXiv:2208.11170 (2022).
+
+- Gualano et al. "[I Try to Represent Myself as I Am: Self-Presentation Preferences of People with Invisible Disabilities through Embodied Social VR Avatars](https://arxiv.org/abs/2408.08193)." arXiv:2408.08193 (2024).
+
+### Bioelectric-inspired model family
+
+- Pietak and Levin. "[Exploring Instructive Physiological Signaling with the Bioelectric Tissue Simulation Engine](https://pmc.ncbi.nlm.nih.gov/articles/PMC4933718/)." Frontiers in Bioengineering and Biotechnology (2016).
+
+- Levin. "[Bioelectric Signaling: Reprogrammable Circuits Underlying Embryogenesis, Regeneration, and Cancer](https://doi.org/10.1016/j.cell.2021.02.034)." Cell 184(8) (2021).
+
+- Levin. "[Darwin's Agential Materials: Evolutionary Implications of Multiscale Competency in Developmental Biology](https://doi.org/10.1007/s00018-023-04790-z)." Cellular and Molecular Life Sciences 80 (2023).
+
+- Pahng, Guan, Fefferman, and Hormoz. "[DiffeoMorph: Learning to Morph 3D Shapes Using Differentiable Agent-Based Simulations](https://arxiv.org/abs/2512.17129)." arXiv:2512.17129 (2025; revised 2026).
+
+- hormoz-lab. "[diffeomorph](https://github.com/hormoz-lab/diffeomorph)." Official implementation repository for DiffeoMorph.
+
+### Public project context
+
+- Mesmer Prism. [Mixed-Ability Human-Swarm Interaction](https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html), [Rusty Morphospace](https://mesmerprism.com/projects/rusty-morphospace.html), [Viscereality](https://mesmerprism.com/projects/viscereality.html), [Rusty XR](https://mesmerprism.com/projects/rusty-xr.html), [Quest Companion Tools](https://mesmerprism.com/projects/viscereality-companion.html), [Plasmatic Multitudes](https://mesmerprism.com/projects/plasmatic-multitudes.html), [Pain Translation](https://mesmerprism.com/plasmatic-multitudes/pain.html), [Bioelectricity and Morphogenesis](https://mesmerprism.com/projects/bioelectricity.html), and [Polar H10 Work](https://mesmerprism.com/projects/polar-h10.html).
+
+- GitHub. [MesmerPrism repositories](https://github.com/MesmerPrism), including [Rusty XR](https://github.com/MesmerPrism/Rusty-XR) and [Rusty XR Companion Apps](https://github.com/MesmerPrism/Rusty-XR-Companion-Apps).
+
+- CIRCE. [Collaboration for Interdisciplinary Research on Conscious Experience](https://circe-science.com/) and the [AXP access guide](https://mesmerprism.com/axp-mvp-survey-guide/).
+</page>
+
 <page url="https://mesmerprism.com/" path="index.html">
 # Mesmer Prism | Till Holzapfel
 
@@ -1380,10 +1854,19 @@ Mixed-ability HSI | Updated June 12, 2026
  world with rules rather than a screensaver
  ([Gilland](https://archive.org/details/elemental-magic/page/n2/mode/1up); [Plasmatic design rules](https://mesmerprism.com/plasmatic-multitudes/essay.html#design)) .
 
+ Glowacki's work makes this more than an animation analogy. His molecular-physics and
+ art-science lineage runs from danceroom Spectroscopy and Hidden
+ Fields , where people act as energy fields inside real-time atomic dynamics, into
+ Isness and Clear Light , where light-body abstraction becomes a social
+ and phenomenological medium. His 2024 aesthetics paper explicitly frames physics as a
+ resource for weakly representational bodies: energy is diffuse, luminous, unbounded,
+ and open to coalescence in ways that ordinary material bodies are not
+ ([Glowacki](https://doi.org/10.3389/frvir.2023.1286950); [Mitchell et al.](https://doi.org/10.1162/LEON_a_00924); [Hidden Fields](https://www.intangiblerealitieslab.org/projects/hidden-fields)) .
+
  Legibility grammar
  In the first study, "soften the boundary" can mean a visible delay: particles lag, stretch, and recover so the group can read effort, pacing, and relation.
 
- Deep dive: how transformation stays legible
+ Deep dive: how weakly bounded bodies stay legible
 
  Weakly bounded bodies do not become embodied by becoming vague. They need grouping
  cues, common motion, response, and recurrent structure. A body can lose surface
@@ -1396,19 +1879,23 @@ Mixed-ability HSI | Updated June 12, 2026
 
 ### Protean dynamics: appearance is not enough
 
- Avatar research often explains embodiment through transformed self-representation. The
- Proteus effect is useful here because virtual bodies can influence conduct and
+ Avatar embodiment is not only about appearance. It is also about what a virtual body
+ lets someone do. A small physical action can become a large virtual transformation; a
+ pause can become a visible state; a breath can become boundary softness; a switch can
+ become collective repair. In a swarm body, movement grammar carries agency.
+
+ Deep dive: Proteus effect and protean kinematics
+
+ Avatar research often explains embodiment through transformed self-representation.
+ The Proteus effect is useful here because virtual bodies can influence conduct and
  self-perception: Stanford's VHIL summary describes studies where avatar height and
  attractiveness affected behavior in online and later face-to-face contexts
  ([Yee, Bailenson, and Ducheneaut, Proteus effect](https://vhil.stanford.edu/publications/avatars-and-agents/proteus-effect-implications-transformed-digital-self-representation)) .
 
- Swarm bodies need a movement-based extension of that idea. Jeong, Kim, Xu, and Miller
- call this Protean kinematics: an expansion from avatar appearance toward movement-based
- effects and the blend of physical inputs with virtual outputs. That is exactly the
- design space of a plasmatic swarm body. A small physical action can become a large
- virtual transformation. A limited movement can become a field effect. A pause can
- become a visible state. A breath can become boundary softness. A switch can become
- collective repair
+ Swarm bodies need a movement-based extension of that idea. Jeong, Kim, Xu, and
+ Miller call this Protean kinematics: an expansion from avatar appearance toward
+ movement-based effects and the blend of physical inputs with virtual outputs. That is
+ exactly the design space of a plasmatic swarm body
  ([Jeong et al., Protean Kinematics](https://doi.org/10.3389/fpsyg.2021.705170)) .
 
  In this page, the avatar is not a fixed body with a different appearance. It is a
@@ -1436,17 +1923,24 @@ Mixed-ability HSI | Updated June 12, 2026
  boundary, visibility, pacing, repair, and veto. Those are not cosmetic parameters.
  They are the social structure of the shared body.
 
- Access is also the right to reshape what the interface thinks a body is. Crip Sensorama
- makes that especially clear for XR: default headset, controller, hand-gesture, vision,
- and dexterity assumptions quietly define an imagined user before accessibility is added.
- Mixed-ability HSI has to make that imagined user visible before it can design a fair
- swarm body
+ A shared swarm body makes that negotiation visible. One person might shape density,
+ another rhythm, another boundary softness, another repair logic, another visibility,
+ and another the timing of when the body acts at all. The swarm is not only something to
+ control; it is a shared object through which access politics become inspectable.
+
+ Evidence: access theory and XR accessibility
+
+ Access is also the right to reshape what the interface thinks a body is. Crip
+ Sensorama makes that especially clear for XR: default headset, controller,
+ hand-gesture, vision, and dexterity assumptions quietly define an imagined user
+ before accessibility is added. Mixed-ability HSI has to make that imagined user
+ visible before it can design a fair swarm body
  ([Jain, Crip Sensorama gesture process](https://jainpuneet798.github.io/portfolio/cripgestures/); [Jain and Bayerlein, Hand to Mouth, 2026](https://doi.org/10.1007/s11569-025-00494-9)) .
 
  Mixed-ability collaboration cannot be reduced to one accessible controller or one
- adaptive interface. Ability-based design argues that systems should adapt to what people
- can and want to do, while interdependence work emphasizes that access is often produced
- between people, technologies, environments, and care relations
+ adaptive interface. Ability-based design argues that systems should adapt to what
+ people can and want to do, while interdependence work emphasizes that access is often
+ produced between people, technologies, environments, and care relations
  ([Wobbrock et al.](https://doi.org/10.1145/1952383.1952384); [Bennett et al.](https://doi.org/10.1145/3234695.3236348)) .
 
  Mixed-ability therefore includes disability, chronic illness, pain and fatigue
@@ -1455,18 +1949,26 @@ Mixed-ability HSI | Updated June 12, 2026
  question is not whether each person has the same channel. It is whether the group can
  understand, contest, rebalance, and trust how agency is distributed.
 
- A mixed-ability group does not share one sensor envelope. Some participants may rely on
- audio, text, haptics, peripheral vision, facilitator description, memory, breath,
+ Disability and remote-VR research also warn against treating presence as a single
+ default mode. Disclosure, sensory load, avatar presentation, recruitment, travel,
+ fatigue, pacing, and asynchronous contribution can all change whether participation
+ is actually available. W3C's XR Accessibility User Requirements similarly emphasize
+ multimodal support, input/output synchronization, customization, motion-agnostic
+ interaction, captions, alternatives, and time limits. A virtual-first HSI study
+ should therefore support non-HMD modes from the beginning: desktop, browser,
+ projection, tablet, captions, audio description, reduced motion, seated use,
+ asynchronous annotation, and facilitator-mediated input
+ ([Mottelson et al.](https://arxiv.org/abs/2102.11207); [Zhang et al.](https://arxiv.org/abs/2208.11170); [Gualano et al.](https://arxiv.org/abs/2408.08193); [W3C XR Accessibility User Requirements](https://www.w3.org/TR/xaur/)) .
+
+ Deep dive: sensor envelopes and overlapping umwelten
+
+ A mixed-ability group does not share one sensor envelope. Some participants may rely
+ on audio, text, haptics, peripheral vision, facilitator description, memory, breath,
  assistive devices, or asynchronous annotation. The swarm body should make these
  differences negotiable without making them compulsory disclosures. Jain's umwelt work
  is useful here because it frames collaboration as overlapping sensory worlds and
  temporalities rather than as one average user model
  ([Jain, Umwelten](https://jainpuneet798.github.io/portfolio/umwelten/)) .
-
- A shared swarm body makes that negotiation visible. One person might shape density,
- another rhythm, another boundary softness, another repair logic, another visibility,
- and another the timing of when the body acts at all. The swarm is not only something to
- control; it is a shared object through which access politics become inspectable.
 
  Input access
 
@@ -1488,17 +1990,6 @@ Mixed-ability HSI | Updated June 12, 2026
 
  Can the group pause, undo, remap, replay, rebalance, or change consent after a mapping fails?
 
- Disability and remote-VR research also warn against treating presence as a single
- default mode. Disclosure, sensory load, avatar presentation, recruitment, travel,
- fatigue, pacing, and asynchronous contribution can all change whether participation is
- actually available. W3C's XR Accessibility User Requirements similarly emphasize
- multimodal support, input/output synchronization, customization, motion-agnostic
- interaction, captions, alternatives, and time limits. A virtual-first HSI study should
- therefore support non-HMD modes from the beginning: desktop, browser, projection,
- tablet, captions, audio description, reduced motion, seated use, asynchronous
- annotation, and facilitator-mediated input
- ([Mottelson et al.](https://arxiv.org/abs/2102.11207); [Zhang et al.](https://arxiv.org/abs/2208.11170); [Gualano et al.](https://arxiv.org/abs/2408.08193); [W3C XR Accessibility User Requirements](https://www.w3.org/TR/xaur/)) .
-
 ## Why abstract bodies matter
 
  The dynamics claim is not speculative from scratch. Several XR and media-art
@@ -1511,6 +2002,18 @@ Mixed-ability HSI | Updated June 12, 2026
  and relation. This page borrows that lesson, then asks a different question: can those
  abstract-body qualities become negotiable access infrastructure for a mixed-ability
  group?
+
+ David Glowacki's Isness line is especially important here because it treats abstraction
+ as a designed social and phenomenological variable. Its light-body aesthetic lowers
+ structural specificity and symbolic rigidity: the body is specific enough to be
+ inhabited and encountered, but open enough to support projection, coalescence,
+ connectedness, and physics-inspired meaning without hardening into a fixed humanoid
+ symbol
+ ([Glowacki et al.](https://doi.org/10.1038/s41598-022-12637-z); [Glowacki](https://doi.org/10.3389/frvir.2023.1286950)) .
+
+ Isness / Clear Light
+
+ Diffuse light bodies, energetic coalescence, and numadelic VR research with people facing life-threatening illness.
 
  Particle-body work
 
@@ -1536,33 +2039,70 @@ Mixed-ability HSI | Updated June 12, 2026
 
  Disability-led mapping, mouth gestures, crip-hacking, and preference-tuned interaction.
 
- John Desnoyers-Stewart's particle-body line is the clearest existing precedent for this
- middle layer. Transcending Projection and Transcending the Virtual Mirror
- Stage show how point-cloud and particle bodies can become ownable through mirrors
- and shared public space. Body RemiXer then moves from ownership into
+ Evidence: abstract-body precedents
+
+ Glowacki's Isness work gives this section its clearest bridge between abstract body
+ form, social connectedness, and physics-inspired aesthetics. Isness-D represents
+ participants as luminous energetic essences with diffuse boundaries that can
+ coalesce, and the 2022 study reports strong self-report outcomes around
+ ego attenuation, communitas, and connectedness. The 2024 aesthetic paper then makes
+ the design vocabulary more explicit: low structural specificity and low symbolic
+ rigidity allow a representation to remain bodily and meaningful without being
+ locked into ordinary object, body, or identity categories
+ ([Glowacki et al.](https://doi.org/10.1038/s41598-022-12637-z); [Glowacki](https://doi.org/10.3389/frvir.2023.1286950)) .
+
+ This matters for the physics argument because the abstract body is not only a soft
+ avatar. It inherits a molecular-simulation sensibility from Glowacki's earlier
+ installation work: bodies can be modeled as fields, forces, densities, flows,
+ coalescences, and perturbations. In public HSI language, that separates two claims
+ that often get blurred. Physics can be a generative aesthetic substrate for shared
+ embodiment, but it can also become a concrete implementation burden when sensors,
+ simulations, particles, and hardware must keep the experience stable across time.
+ The 2025 esencia paper is especially useful because it treats that lineage
+ as an active reinterpretation problem across depth sensing, particle simulation,
+ GPU execution, and changing software stacks
+ ([Mitchell et al.](https://doi.org/10.1162/LEON_a_00924); [Toledo Castro, Protopopov, and Glowacki](https://doi.org/10.1145/3749893.3749972); [Essentia Foundation interview](https://www.youtube.com/watch?v=r6_VOOe8SMg)) .
+
+ That same lineage is now being translated into clinical-adjacent work through
+ aNUma's Clear Light program and the Tiny Blue Dot-funded NUMADELIC project.
+ The current public evidence should be read carefully: a published observational
+ cohort of 15 people facing life-threatening illness reports feasibility and
+ improvements on self-report measures, while also stressing the limits of having no
+ randomization or control group. The stronger efficacy question is routed through a
+ public OSF registration for a randomized controlled trial, and IRL/CiTIUS describe
+ the wider 2024-2028 project as combining lab studies, design iteration,
+ physiological measurement, and an RCT. Numadelic Labs Collective adds a current
+ nonprofit translation surface for the same lineage: its public materials describe
+ AI-augmented group therapy in VR, with group, embodied, and immersive elements,
+ energetic essences, arm-guided energy between bodies, and a science page that lists
+ the peer-reviewed numadelic research base. That site is useful as organizational
+ and design-context evidence, not as independent efficacy proof
+ ([Kettner et al.](https://doi.org/10.3389/frvir.2024.1466362); [OSF RCT registration](https://osf.io/72uwz/); [CiTIUS NUMADELIC project](https://citius.gal/research/projects/experiencias-de-realidade-virtual-numadelicas-para-mellorar-a-saude-mental-e-o-benestar/); [aNUma Clear Light](https://anuma.com/clearlight); [Numadelic Labs](https://www.numadeliclabs.org/); [Numadelic Labs science page](https://www.numadeliclabs.org/the-science)) .
+
+ John Desnoyers-Stewart's particle-body line is the clearest existing precedent for
+ this middle layer. Transcending Projection and Transcending the Virtual
+ Mirror Stage show how point-cloud and particle bodies can become ownable through
+ mirrors and shared public space. Body RemiXer then moves from ownership into
  intercorporeality through particle auras, touch exchange, and abstract body swapping.
  Star-Stuff frames participants as constellation bodies in a shared cosmic
- encounter, while ETC turns aura avatars into a telepresent social-touch system
- using pseudohaptics and cross-modal cues
+ encounter, while ETC turns aura avatars into a telepresent social-touch
+ system using pseudohaptics and cross-modal cues
  ([Desnoyers-Stewart](https://www.medien.ifi.lmu.de/socialHMD/SHMD_19_submissions/SHMD_19_paper_12.pdf); [Desnoyers-Stewart, Smith, and Riecke](https://gala.gre.ac.uk/id/eprint/31046/7/31046%20PAPADAKI_DRHA2019_Conference_Proceedings_2020.pdf); [Desnoyers-Stewart et al. 2020](https://doi.org/10.1162/LEON_a_01925); [Desnoyers-Stewart 2022](https://www.isea-symposium-archives.org/presentation/star-stuff-a-shared-immersive-experience-in-space-presented-by-desnoyers-stewart/); [Desnoyers-Stewart et al. 2023](https://doi.org/10.1145/3544549.3585843)) .
 
  Bernal and Maes add a second useful precedent with Emotional Beasts . Their
  abstract avatars used color, glow, aura-like changes, fur, and particle expression to
  make internal state visible without returning to a realistic body. The later
  Bernal/OpenBCI line matters because it connects emotionally expressive avatars to
- sensor-rich HMD work: OpenBCI describes Emotional Beasts and PhysioHMD as part
- of Bernal's effort to integrate biosensors into head-mounted displays, while Galea
- carried that direction into a mixed-reality platform with EEG, EOG, EMG, EDA, and PPG
- sensing
+ sensor-rich HMD work: OpenBCI describes Emotional Beasts and PhysioHMD as
+ part of Bernal's effort to integrate biosensors into head-mounted displays, while
+ Galea carried that direction into a mixed-reality platform with EEG, EOG, EMG, EDA,
+ and PPG sensing
  ([Bernal and Maes, Emotional Beasts](https://doi.org/10.1145/3027063.3053207); [OpenBCI Bernal interview, 2020](https://openbci.com/community/affective-computing-and-mixed-reality-guillermo-bernal/); [Bernal, Developing Galea, 2021](https://www.media.mit.edu/posts/galea/); [MIT PhysioHMD](https://www.media.mit.edu/projects/physiohmd/overview/); [OpenBCI Galea release, 2020](https://www.prnewswire.com/news-releases/openbci-unveils-galea-a-new-platform-that-brings-next-generation-biometrics-to-mixed-reality-301177149.html)) .
 
  These precedents do not prove mixed-ability HSI. They show that abstract, weakly
  bounded, luminous, particle-like, or aura-like bodies can still carry relation, touch
  metaphor, co-presence, and social meaning. Mixed-ability HSI asks whether those
  qualities can become negotiable group infrastructure.
-
- Evidence note
- Desnoyers-Stewart's particle-body installations, Body RemiXer , Star-Stuff , ETC, and Emotional Beasts support abstract bodies as social and embodied interfaces. They do not by themselves prove mixed-ability HSI.
 
 ### Why input diversity is not enough
 
@@ -1573,6 +2113,12 @@ Mixed-ability HSI | Updated June 12, 2026
  painting practice, a wheelchair-control method, a public gesture, a tiring calibration
  routine, or a private access habit.
 
+ For mixed-ability HSI, every mapping has provenance: who proposed it, whose practice it
+ comes from, how it was tuned, what it costs, what it is allowed to show, and how it can
+ be changed or withdrawn.
+
+ Evidence: biosignals, EMG, mouth gestures, and crip-hacking
+
  The Galea development account makes that access lineage more concrete: Bernal
  describes working with Christian Bayerlein to connect EMG to muscles across Christian's
  body and use those signals as additional switches or actuators for controlling other
@@ -1580,10 +2126,7 @@ Mixed-ability HSI | Updated June 12, 2026
  gesture process, the Christian's Coffee installation, and the Hand to Mouth paper,
  reframes access around mouth gestures, crip-hacking, preference-tuned mappings, and
  disability-led interaction rather than around retrofitting hand-centric interfaces. For
- mixed-ability HSI, the lesson is not that more sensors are automatically better. It is
- that every mapping has provenance: who proposed it, whose practice it comes from, how
- it was tuned, what it costs, what it is allowed to show, and how it can be changed or
- withdrawn
+ mixed-ability HSI, the lesson is not that more sensors are automatically better
  ([Bernal, Developing Galea, 2021](https://www.media.mit.edu/posts/galea/); [Jain, Crip Sensorama gesture process](https://jainpuneet798.github.io/portfolio/cripgestures/); [Jain, Crip Sensorama: Christian's Coffee](https://jainpuneet798.github.io/portfolio/cripsensorama_christians-coffee/); [Jain and Bayerlein, Hand to Mouth, 2026](https://doi.org/10.1007/s11569-025-00494-9)) .
 
  "Embodied" or "controllerless" interaction is not automatically accessible. Mid-air
@@ -1631,6 +2174,8 @@ Mixed-ability HSI | Updated June 12, 2026
  or remapped. Provenance and retirement say who proposed the mapping, who may reuse it,
  whether it can be public, and how it can be withdrawn from later versions.
 
+ Evidence: HSI literature behind the stack
+
  The most useful explicit source here is Kim, Drew, Domova, and Follmer's
  user-defined swarm-control study. It shows that people do not simply choose "gesture"
  as a generic input. Their interaction vocabulary changes with swarm size, unit
@@ -1665,6 +2210,8 @@ Mixed-ability HSI | Updated June 12, 2026
  collapsed. A private access practice should not become a public interaction technique
  without explicit consent, framing, and a way to withdraw it.
 
+ Deep dive: adaptive timing and authored fields
+
  Existing HSI asks how a human can influence a swarm. Multi-human HSI asks how several
  people can influence a swarm. Mixed-ability HSI asks how several differently situated
  people can share, inspect, contest, and repair influence through a swarm body. MOSAIX
@@ -1697,6 +2244,12 @@ Mixed-ability HSI | Updated June 12, 2026
  the stack has to name what a signal controls: behavior, field, rig state, appearance,
  goal, role, or safety state
  ([Reynolds, steering behaviors](https://www.red3d.com/cwr/steer/); [Patil et al.](https://gamma.cs.unc.edu/DCrowd/paper.pdf); [Colas et al.](https://doi.org/10.1111/cgf.14491); [Prazak et al.](https://doi.org/10.1145/3214745.3214809); [SideFX crowd docs](https://www.sidefx.com/docs/houdini/crowds/basics.html)) .
+
+ Every mapping should specify whose access practice it comes from, what signal enters
+ the system, what scale it controls, what dynamic changes, what feedback appears, who
+ can see it, and how it can be repaired, reused, or retired.
+
+ Method note: full mapping-stack checklist
 
  Mapping stack
 
@@ -1732,9 +2285,10 @@ Mixed-ability HSI | Updated June 12, 2026
  Origin, naming, tuning history, rejected variants, reuse permission, audience status, attribution, licensing, withdrawal, and deletion.
  Participant-created mappings are authored practices. They need reuse rules before they travel into demos, games, logs, or later prototypes.
 
- The next part is implementation-facing. Readers who only want the research argument can
- skip to "Later horizon." Its purpose is to show how the mapping stack could be made
- inspectable in software.
+ Implementation note: Rusty Morphospace and open routing
+
+ This part is implementation-facing. Its purpose is to show how the mapping stack
+ could be made inspectable in software.
 
  Implementation bridge
 
@@ -1846,6 +2400,8 @@ Mixed-ability HSI | Updated June 12, 2026
  are part of the access record. A failed mapping can still teach the group what the
  interface assumed about posture, visibility, strength, endurance, privacy, or bodily
  symmetry.
+
+ Method note: instrument checklist and calibration burden
 
  Access practices
  existing devices, gestures, rhythms, rest strategies, communication habits, assisted routines, and off-limits signals
@@ -2000,6 +2556,8 @@ Mixed-ability HSI | Updated June 12, 2026
 
  Rest, fallback input, consent change, withdrawal, reduced motion, sensory checks, disclosure control, and explicit non-goals.
 
+ Method note: study measures, logs, and authorship
+
  Study measures
 
  Study surface
@@ -2062,6 +2620,11 @@ Mixed-ability HSI | Updated June 12, 2026
  current claim is conceptual: mixed-ability HSI needs negotiated shared agency rather
  than one universal controller. The evidence status becomes stricter as the work moves
  from visual bodies toward later media, settings, and deployments.
+
+ Claim status is layered: conceptual now, design next, virtual-first study later, and
+ physical or material translation later still.
+
+ Method note: full claim ladder
 
  Conceptual
 
@@ -2236,6 +2799,19 @@ Mixed-ability HSI | Updated June 12, 2026
  furniture-moving system, resistance becomes motor torque, friction, clearance, tipping
  risk, and user safety.
 
+ Glowacki's physics/aesthetics work is a useful bridge precisely because it sits before
+ that robotic boundary. Hidden Fields and danceroom Spectroscopy use
+ rigorous molecular-dynamics models to let bodies sculpt simulated atomic motion; they
+ make force, field, and energy relations visible and participatory. That supports the
+ aesthetic track of mixed-ability HSI: physics can organize legibility, embodiment, and
+ shared transformation. It does not remove the later robotics constraint. The moment a
+ swarm body becomes furniture, mobility support, or adaptive material, the same word
+ "physics" shifts from expressive simulation to mass, safety, localization, actuation,
+ and failure recovery
+ ([Hidden Fields](https://www.intangiblerealitieslab.org/projects/hidden-fields); [Mitchell et al.](https://doi.org/10.1162/LEON_a_00924); [Toledo Castro, Protopopov, and Glowacki](https://doi.org/10.1145/3749893.3749972)) .
+
+ Later horizon: physical swarm and robotics evidence
+
  RoomShift makes this shift concrete because it uses robot assistants to move real
  furniture for room-scale haptics, turning the design into questions of lift height,
  object weight, under-table clearance, optical tracking, path planning, collision
@@ -2332,6 +2908,8 @@ Mixed-ability HSI | Updated June 12, 2026
  accessibility, XR embodiment, animation, HSI, and robotics as one interchangeable
  literature.
 
+ Source roles: evidence map
+
  Source roles
 
  Source role
@@ -2347,7 +2925,13 @@ Mixed-ability HSI | Updated June 12, 2026
  Proteus effect and Protean kinematics support the move from avatar appearance to movement grammar, dynamic affordance, and self-representation through transformed action.
 
  Embodiment precedent
- Isness, Body RemiXer, ETC, Emotional Beasts, aura avatars, pseudohaptics, and abstract social bodies.
+ Isness, NUMADELIC / Clear Light, Body RemiXer, ETC, Emotional Beasts, aura avatars, pseudohaptics, and abstract social bodies.
+
+ Physics-aesthetics bridge
+ Glowacki's molecular-physics installations, from danceroom Spectroscopy and Hidden Fields to the 2025 esencia reinterpretation, support physics as a generative aesthetic substrate and as a technical stack that must be maintained across sensors, simulation, and hardware.
+
+ Clinical-adjacent translation boundary
+ Clear Light, aNUma, and Numadelic Labs show numadelic light-body work moving toward life-threatening-illness, death-anxiety, and AI-augmented group-therapy research; the current public record supports feasibility, published observational results, organizational/current-program context, and a registered RCT plan, not established clinical efficacy.
 
  HSI foundation
  Behavior selection, parameter setting, attractors, leader influence, environmental influence, and sub-swarm selection.
@@ -2377,6 +2961,24 @@ Mixed-ability HSI | Updated June 12, 2026
 - Glowacki et al. "[Group VR Experiences Can Produce Ego Attenuation and Connectedness Comparable to Psychedelics](https://doi.org/10.1038/s41598-022-12637-z)." Scientific Reports 12 (2022).
 
 - Glowacki. "[VR Models of Death and Psychedelics: An Aesthetic Paradigm for Design Beyond Day-to-Day Phenomenology](https://doi.org/10.3389/frvir.2023.1286950)." Frontiers in Virtual Reality (2024).
+
+- Mitchell, Hyde, Tew, and Glowacki. "[danceroom Spectroscopy: At the Frontiers of Physics, Performance, Interactive Art and Technology](https://doi.org/10.1162/LEON_a_00924)." Leonardo 49(2), 138-147 (2016).
+
+- Intangible Realities Laboratory. "[Hidden Fields](https://www.intangiblerealitieslab.org/projects/hidden-fields)." Project page on energy avatars and real-time atomic physics simulation (accessed 2026-06-12).
+
+- Toledo Castro, Protopopov, and Glowacki. "[esencia: A Case Study on Reinterpreting an Interactive Art and Science Installation Based on a Real-Time Atomic Physics Engine](https://doi.org/10.1145/3749893.3749972)." Expanded '25: Proceedings of the Conference on Animation and Interactive Art , 178-187 (2025).
+
+- Essentia Foundation. "[Molecular Physicist Visualised The Process of Dying | David Glowacki](https://www.youtube.com/watch?v=r6_VOOe8SMg)." Video interview (accessed 2026-06-12).
+
+- Kettner et al. "[Observational Cohort Study of a Group-Based VR Program to Improve Mental Health and Wellbeing in People with Life-Threatening Illnesses](https://doi.org/10.3389/frvir.2024.1466362)." Frontiers in Virtual Reality 5 (2025).
+
+- Andreu, Hardy, Bonnelle, and Glowacki. "[Numadelic VR Experiences for Improving Mental Health Outcomes in Patients Facing Life-Threatening Illness: Randomized Controlled Trial](https://osf.io/72uwz/)." OSF registration, registered May 10, 2024 (accessed 2026-06-12).
+
+- CiTIUS. "[Numadelic: Numadelic VR Experiences for Improving Mental Health Outcomes in Patients Facing Life-Threatening Illness](https://citius.gal/research/projects/experiencias-de-realidade-virtual-numadelicas-para-mellorar-a-saude-mental-e-o-benestar/)." Project page, execution timing 2024-10-01 / 2028-09-30, funded by Tiny Blue Dot Foundation (accessed 2026-06-12).
+
+- aNUma. "[Clear Light](https://anuma.com/clearlight)." Program page for people facing life-threatening illness and their families (accessed 2026-06-12).
+
+- Numadelic Labs Collective. "[Numadelic Labs](https://www.numadeliclabs.org/)." Public page for a 501(c)(3) research organization developing AI-augmented group therapy in VR; see also "[The Science](https://www.numadeliclabs.org/the-science)" bibliography page (accessed 2026-06-12).
 
 - Yee, Bailenson, and Ducheneaut. "[The Proteus Effect: Implications of Transformed Digital Self-Representation on Online and Offline Behavior](https://vhil.stanford.edu/publications/avatars-and-agents/proteus-effect-implications-transformed-digital-self-representation)." Stanford Virtual Human Interaction Lab summary of Communication Research 36(2) (2009).
 
@@ -12044,4 +12646,16 @@ Source library
 - Carr, Haar, Amores, and Lopes. "[Dream Engineering: Simulating Worlds Through Sensory Stimulation](https://doi.org/10.1016/j.concog.2020.102955)." Consciousness and Cognition (2020).
 
 - Woollacott et al. "[Fire Kasina Advanced Meditation Produces Experiences Comparable to Psychedelic and Near-Death Experiences: A Pilot Study](https://doi.org/10.1016/j.explore.2024.103056)." EXPLORE (2024).
+</page>
+
+<page url="https://mesmerprism.com/tmp/video-carousel-demo.html" path="tmp/video-carousel-demo.html">
+# Video carousel demo
+
+Source: https://mesmerprism.com/tmp/video-carousel-demo.html
+Canonical HTML: https://mesmerprism.com/tmp/video-carousel-demo.html
+Generated: 2026-06-12
+Markdown: https://mesmerprism.com/tmp/video-carousel-demo.md
+Plain text: https://mesmerprism.com/tmp/video-carousel-demo.txt
+
+---
 </page>
