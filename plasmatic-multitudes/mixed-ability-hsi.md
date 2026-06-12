@@ -355,8 +355,13 @@ Mixed-ability HSI | Updated June 12, 2026
  randomization or control group. The stronger efficacy question is routed through a
  public OSF registration for a randomized controlled trial, and IRL/CiTIUS describe
  the wider 2024-2028 project as combining lab studies, design iteration,
- physiological measurement, and an RCT
- ([Kettner et al.](https://doi.org/10.3389/frvir.2024.1466362); [OSF RCT registration](https://osf.io/72uwz/); [CiTIUS NUMADELIC project](https://citius.gal/research/projects/experiencias-de-realidade-virtual-numadelicas-para-mellorar-a-saude-mental-e-o-benestar/); [aNUma Clear Light](https://anuma.com/clearlight)) .
+ physiological measurement, and an RCT. Numadelic Labs Collective adds a current
+ nonprofit translation surface for the same lineage: its public materials describe
+ AI-augmented group therapy in VR, with group, embodied, and immersive elements,
+ energetic essences, arm-guided energy between bodies, and a science page that lists
+ the peer-reviewed numadelic research base. That site is useful as organizational
+ and design-context evidence, not as independent efficacy proof
+ ([Kettner et al.](https://doi.org/10.3389/frvir.2024.1466362); [OSF RCT registration](https://osf.io/72uwz/); [CiTIUS NUMADELIC project](https://citius.gal/research/projects/experiencias-de-realidade-virtual-numadelicas-para-mellorar-a-saude-mental-e-o-benestar/); [aNUma Clear Light](https://anuma.com/clearlight); [Numadelic Labs](https://www.numadeliclabs.org/); [Numadelic Labs science page](https://www.numadeliclabs.org/the-science)) .
 
  John Desnoyers-Stewart's particle-body line is the clearest existing precedent for
  this middle layer. Transcending Projection and Transcending the Virtual
@@ -1210,7 +1215,7 @@ Mixed-ability HSI | Updated June 12, 2026
  Glowacki's molecular-physics installations, from danceroom Spectroscopy and Hidden Fields to the 2025 esencia reinterpretation, support physics as a generative aesthetic substrate and as a technical stack that must be maintained across sensors, simulation, and hardware.
 
  Clinical-adjacent translation boundary
- Clear Light and aNUma show numadelic light-body work moving toward life-threatening-illness and death-anxiety research; the current public record supports feasibility, published observational results, and a registered RCT plan, not established clinical efficacy.
+ Clear Light, aNUma, and Numadelic Labs show numadelic light-body work moving toward life-threatening-illness, death-anxiety, and AI-augmented group-therapy research; the current public record supports feasibility, published observational results, organizational/current-program context, and a registered RCT plan, not established clinical efficacy.
 
  HSI foundation
  Behavior selection, parameter setting, attractors, leader influence, environmental influence, and sub-swarm selection.
@@ -1256,6 +1261,8 @@ Mixed-ability HSI | Updated June 12, 2026
 - CiTIUS. "[Numadelic: Numadelic VR Experiences for Improving Mental Health Outcomes in Patients Facing Life-Threatening Illness](https://citius.gal/research/projects/experiencias-de-realidade-virtual-numadelicas-para-mellorar-a-saude-mental-e-o-benestar/)." Project page, execution timing 2024-10-01 / 2028-09-30, funded by Tiny Blue Dot Foundation (accessed 2026-06-12).
 
 - aNUma. "[Clear Light](https://anuma.com/clearlight)." Program page for people facing life-threatening illness and their families (accessed 2026-06-12).
+
+- Numadelic Labs Collective. "[Numadelic Labs](https://www.numadeliclabs.org/)." Public page for a 501(c)(3) research organization developing AI-augmented group therapy in VR; see also "[The Science](https://www.numadeliclabs.org/the-science)" bibliography page (accessed 2026-06-12).
 
 - Yee, Bailenson, and Ducheneaut. "[The Proteus Effect: Implications of Transformed Digital Self-Representation on Online and Offline Behavior](https://vhil.stanford.edu/publications/avatars-and-agents/proteus-effect-implications-transformed-digital-self-representation)." Stanford Virtual Human Interaction Lab summary of Communication Research 36(2) (2009).
 

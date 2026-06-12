@@ -576,6 +576,52 @@
     }
   },
   {
+    "id": "www-numadeliclabs-org-numadelic-labs-2026",
+    "type": "webpage",
+    "title": "Numadelic Labs",
+    "URL": "https://www.numadeliclabs.org/",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          12
+        ]
+      ]
+    },
+    "note": "Referenced by Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html",
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    }
+  },
+  {
+    "id": "www-numadeliclabs-org-numadelic-labs-science-page-2026",
+    "type": "webpage",
+    "title": "Numadelic Labs science page",
+    "URL": "https://www.numadeliclabs.org/the-science",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          12
+        ]
+      ]
+    },
+    "note": "Referenced by Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html",
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    }
+  },
+  {
     "id": "www-medien-ifi-lmu-de-desnoyers-stewart-2026",
     "type": "webpage",
     "title": "Desnoyers-Stewart",
