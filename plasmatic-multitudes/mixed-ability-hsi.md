@@ -141,7 +141,7 @@ Mixed-ability HSI | Updated June 12, 2026
  Legibility grammar
  In the first study, "soften the boundary" can mean a visible delay: particles lag, stretch, and recover so the group can read effort, pacing, and relation.
 
- Deep dive: how transformation stays legible
+ Deep dive: how weakly bounded bodies stay legible
 
  Weakly bounded bodies do not become embodied by becoming vague. They need grouping
  cues, common motion, response, and recurrent structure. A body can lose surface
@@ -154,19 +154,23 @@ Mixed-ability HSI | Updated June 12, 2026
 
 ### Protean dynamics: appearance is not enough
 
- Avatar research often explains embodiment through transformed self-representation. The
- Proteus effect is useful here because virtual bodies can influence conduct and
+ Avatar embodiment is not only about appearance. It is also about what a virtual body
+ lets someone do. A small physical action can become a large virtual transformation; a
+ pause can become a visible state; a breath can become boundary softness; a switch can
+ become collective repair. In a swarm body, movement grammar carries agency.
+
+ Deep dive: Proteus effect and protean kinematics
+
+ Avatar research often explains embodiment through transformed self-representation.
+ The Proteus effect is useful here because virtual bodies can influence conduct and
  self-perception: Stanford's VHIL summary describes studies where avatar height and
  attractiveness affected behavior in online and later face-to-face contexts
  ([Yee, Bailenson, and Ducheneaut, Proteus effect](https://vhil.stanford.edu/publications/avatars-and-agents/proteus-effect-implications-transformed-digital-self-representation)) .
 
- Swarm bodies need a movement-based extension of that idea. Jeong, Kim, Xu, and Miller
- call this Protean kinematics: an expansion from avatar appearance toward movement-based
- effects and the blend of physical inputs with virtual outputs. That is exactly the
- design space of a plasmatic swarm body. A small physical action can become a large
- virtual transformation. A limited movement can become a field effect. A pause can
- become a visible state. A breath can become boundary softness. A switch can become
- collective repair
+ Swarm bodies need a movement-based extension of that idea. Jeong, Kim, Xu, and
+ Miller call this Protean kinematics: an expansion from avatar appearance toward
+ movement-based effects and the blend of physical inputs with virtual outputs. That is
+ exactly the design space of a plasmatic swarm body
  ([Jeong et al., Protean Kinematics](https://doi.org/10.3389/fpsyg.2021.705170)) .
 
  In this page, the avatar is not a fixed body with a different appearance. It is a
@@ -194,17 +198,24 @@ Mixed-ability HSI | Updated June 12, 2026
  boundary, visibility, pacing, repair, and veto. Those are not cosmetic parameters.
  They are the social structure of the shared body.
 
- Access is also the right to reshape what the interface thinks a body is. Crip Sensorama
- makes that especially clear for XR: default headset, controller, hand-gesture, vision,
- and dexterity assumptions quietly define an imagined user before accessibility is added.
- Mixed-ability HSI has to make that imagined user visible before it can design a fair
- swarm body
+ A shared swarm body makes that negotiation visible. One person might shape density,
+ another rhythm, another boundary softness, another repair logic, another visibility,
+ and another the timing of when the body acts at all. The swarm is not only something to
+ control; it is a shared object through which access politics become inspectable.
+
+ Evidence: access theory and XR accessibility
+
+ Access is also the right to reshape what the interface thinks a body is. Crip
+ Sensorama makes that especially clear for XR: default headset, controller,
+ hand-gesture, vision, and dexterity assumptions quietly define an imagined user
+ before accessibility is added. Mixed-ability HSI has to make that imagined user
+ visible before it can design a fair swarm body
  ([Jain, Crip Sensorama gesture process](https://jainpuneet798.github.io/portfolio/cripgestures/); [Jain and Bayerlein, Hand to Mouth, 2026](https://doi.org/10.1007/s11569-025-00494-9)) .
 
  Mixed-ability collaboration cannot be reduced to one accessible controller or one
- adaptive interface. Ability-based design argues that systems should adapt to what people
- can and want to do, while interdependence work emphasizes that access is often produced
- between people, technologies, environments, and care relations
+ adaptive interface. Ability-based design argues that systems should adapt to what
+ people can and want to do, while interdependence work emphasizes that access is often
+ produced between people, technologies, environments, and care relations
  ([Wobbrock et al.](https://doi.org/10.1145/1952383.1952384); [Bennett et al.](https://doi.org/10.1145/3234695.3236348)) .
 
  Mixed-ability therefore includes disability, chronic illness, pain and fatigue
@@ -213,18 +224,26 @@ Mixed-ability HSI | Updated June 12, 2026
  question is not whether each person has the same channel. It is whether the group can
  understand, contest, rebalance, and trust how agency is distributed.
 
- A mixed-ability group does not share one sensor envelope. Some participants may rely on
- audio, text, haptics, peripheral vision, facilitator description, memory, breath,
+ Disability and remote-VR research also warn against treating presence as a single
+ default mode. Disclosure, sensory load, avatar presentation, recruitment, travel,
+ fatigue, pacing, and asynchronous contribution can all change whether participation
+ is actually available. W3C's XR Accessibility User Requirements similarly emphasize
+ multimodal support, input/output synchronization, customization, motion-agnostic
+ interaction, captions, alternatives, and time limits. A virtual-first HSI study
+ should therefore support non-HMD modes from the beginning: desktop, browser,
+ projection, tablet, captions, audio description, reduced motion, seated use,
+ asynchronous annotation, and facilitator-mediated input
+ ([Mottelson et al.](https://arxiv.org/abs/2102.11207); [Zhang et al.](https://arxiv.org/abs/2208.11170); [Gualano et al.](https://arxiv.org/abs/2408.08193); [W3C XR Accessibility User Requirements](https://www.w3.org/TR/xaur/)) .
+
+ Deep dive: sensor envelopes and overlapping umwelten
+
+ A mixed-ability group does not share one sensor envelope. Some participants may rely
+ on audio, text, haptics, peripheral vision, facilitator description, memory, breath,
  assistive devices, or asynchronous annotation. The swarm body should make these
  differences negotiable without making them compulsory disclosures. Jain's umwelt work
  is useful here because it frames collaboration as overlapping sensory worlds and
  temporalities rather than as one average user model
  ([Jain, Umwelten](https://jainpuneet798.github.io/portfolio/umwelten/)) .
-
- A shared swarm body makes that negotiation visible. One person might shape density,
- another rhythm, another boundary softness, another repair logic, another visibility,
- and another the timing of when the body acts at all. The swarm is not only something to
- control; it is a shared object through which access politics become inspectable.
 
  Input access
 
@@ -245,17 +264,6 @@ Mixed-ability HSI | Updated June 12, 2026
  Repair access
 
  Can the group pause, undo, remap, replay, rebalance, or change consent after a mapping fails?
-
- Disability and remote-VR research also warn against treating presence as a single
- default mode. Disclosure, sensory load, avatar presentation, recruitment, travel,
- fatigue, pacing, and asynchronous contribution can all change whether participation is
- actually available. W3C's XR Accessibility User Requirements similarly emphasize
- multimodal support, input/output synchronization, customization, motion-agnostic
- interaction, captions, alternatives, and time limits. A virtual-first HSI study should
- therefore support non-HMD modes from the beginning: desktop, browser, projection,
- tablet, captions, audio description, reduced motion, seated use, asynchronous
- annotation, and facilitator-mediated input
- ([Mottelson et al.](https://arxiv.org/abs/2102.11207); [Zhang et al.](https://arxiv.org/abs/2208.11170); [Gualano et al.](https://arxiv.org/abs/2408.08193); [W3C XR Accessibility User Requirements](https://www.w3.org/TR/xaur/)) .
 
 ## Why abstract bodies matter
 
@@ -294,33 +302,32 @@ Mixed-ability HSI | Updated June 12, 2026
 
  Disability-led mapping, mouth gestures, crip-hacking, and preference-tuned interaction.
 
- John Desnoyers-Stewart's particle-body line is the clearest existing precedent for this
- middle layer. Transcending Projection and Transcending the Virtual Mirror
- Stage show how point-cloud and particle bodies can become ownable through mirrors
- and shared public space. Body RemiXer then moves from ownership into
+ Evidence: abstract-body precedents
+
+ John Desnoyers-Stewart's particle-body line is the clearest existing precedent for
+ this middle layer. Transcending Projection and Transcending the Virtual
+ Mirror Stage show how point-cloud and particle bodies can become ownable through
+ mirrors and shared public space. Body RemiXer then moves from ownership into
  intercorporeality through particle auras, touch exchange, and abstract body swapping.
  Star-Stuff frames participants as constellation bodies in a shared cosmic
- encounter, while ETC turns aura avatars into a telepresent social-touch system
- using pseudohaptics and cross-modal cues
+ encounter, while ETC turns aura avatars into a telepresent social-touch
+ system using pseudohaptics and cross-modal cues
  ([Desnoyers-Stewart](https://www.medien.ifi.lmu.de/socialHMD/SHMD_19_submissions/SHMD_19_paper_12.pdf); [Desnoyers-Stewart, Smith, and Riecke](https://gala.gre.ac.uk/id/eprint/31046/7/31046%20PAPADAKI_DRHA2019_Conference_Proceedings_2020.pdf); [Desnoyers-Stewart et al. 2020](https://doi.org/10.1162/LEON_a_01925); [Desnoyers-Stewart 2022](https://www.isea-symposium-archives.org/presentation/star-stuff-a-shared-immersive-experience-in-space-presented-by-desnoyers-stewart/); [Desnoyers-Stewart et al. 2023](https://doi.org/10.1145/3544549.3585843)) .
 
  Bernal and Maes add a second useful precedent with Emotional Beasts . Their
  abstract avatars used color, glow, aura-like changes, fur, and particle expression to
  make internal state visible without returning to a realistic body. The later
  Bernal/OpenBCI line matters because it connects emotionally expressive avatars to
- sensor-rich HMD work: OpenBCI describes Emotional Beasts and PhysioHMD as part
- of Bernal's effort to integrate biosensors into head-mounted displays, while Galea
- carried that direction into a mixed-reality platform with EEG, EOG, EMG, EDA, and PPG
- sensing
+ sensor-rich HMD work: OpenBCI describes Emotional Beasts and PhysioHMD as
+ part of Bernal's effort to integrate biosensors into head-mounted displays, while
+ Galea carried that direction into a mixed-reality platform with EEG, EOG, EMG, EDA,
+ and PPG sensing
  ([Bernal and Maes, Emotional Beasts](https://doi.org/10.1145/3027063.3053207); [OpenBCI Bernal interview, 2020](https://openbci.com/community/affective-computing-and-mixed-reality-guillermo-bernal/); [Bernal, Developing Galea, 2021](https://www.media.mit.edu/posts/galea/); [MIT PhysioHMD](https://www.media.mit.edu/projects/physiohmd/overview/); [OpenBCI Galea release, 2020](https://www.prnewswire.com/news-releases/openbci-unveils-galea-a-new-platform-that-brings-next-generation-biometrics-to-mixed-reality-301177149.html)) .
 
  These precedents do not prove mixed-ability HSI. They show that abstract, weakly
  bounded, luminous, particle-like, or aura-like bodies can still carry relation, touch
  metaphor, co-presence, and social meaning. Mixed-ability HSI asks whether those
  qualities can become negotiable group infrastructure.
-
- Evidence note
- Desnoyers-Stewart's particle-body installations, Body RemiXer , Star-Stuff , ETC, and Emotional Beasts support abstract bodies as social and embodied interfaces. They do not by themselves prove mixed-ability HSI.
 
 ### Why input diversity is not enough
 
@@ -331,6 +338,12 @@ Mixed-ability HSI | Updated June 12, 2026
  painting practice, a wheelchair-control method, a public gesture, a tiring calibration
  routine, or a private access habit.
 
+ For mixed-ability HSI, every mapping has provenance: who proposed it, whose practice it
+ comes from, how it was tuned, what it costs, what it is allowed to show, and how it can
+ be changed or withdrawn.
+
+ Evidence: biosignals, EMG, mouth gestures, and crip-hacking
+
  The Galea development account makes that access lineage more concrete: Bernal
  describes working with Christian Bayerlein to connect EMG to muscles across Christian's
  body and use those signals as additional switches or actuators for controlling other
@@ -338,10 +351,7 @@ Mixed-ability HSI | Updated June 12, 2026
  gesture process, the Christian's Coffee installation, and the Hand to Mouth paper,
  reframes access around mouth gestures, crip-hacking, preference-tuned mappings, and
  disability-led interaction rather than around retrofitting hand-centric interfaces. For
- mixed-ability HSI, the lesson is not that more sensors are automatically better. It is
- that every mapping has provenance: who proposed it, whose practice it comes from, how
- it was tuned, what it costs, what it is allowed to show, and how it can be changed or
- withdrawn
+ mixed-ability HSI, the lesson is not that more sensors are automatically better
  ([Bernal, Developing Galea, 2021](https://www.media.mit.edu/posts/galea/); [Jain, Crip Sensorama gesture process](https://jainpuneet798.github.io/portfolio/cripgestures/); [Jain, Crip Sensorama: Christian's Coffee](https://jainpuneet798.github.io/portfolio/cripsensorama_christians-coffee/); [Jain and Bayerlein, Hand to Mouth, 2026](https://doi.org/10.1007/s11569-025-00494-9)) .
 
  "Embodied" or "controllerless" interaction is not automatically accessible. Mid-air
@@ -389,6 +399,8 @@ Mixed-ability HSI | Updated June 12, 2026
  or remapped. Provenance and retirement say who proposed the mapping, who may reuse it,
  whether it can be public, and how it can be withdrawn from later versions.
 
+ Evidence: HSI literature behind the stack
+
  The most useful explicit source here is Kim, Drew, Domova, and Follmer's
  user-defined swarm-control study. It shows that people do not simply choose "gesture"
  as a generic input. Their interaction vocabulary changes with swarm size, unit
@@ -423,6 +435,8 @@ Mixed-ability HSI | Updated June 12, 2026
  collapsed. A private access practice should not become a public interaction technique
  without explicit consent, framing, and a way to withdraw it.
 
+ Deep dive: adaptive timing and authored fields
+
  Existing HSI asks how a human can influence a swarm. Multi-human HSI asks how several
  people can influence a swarm. Mixed-ability HSI asks how several differently situated
  people can share, inspect, contest, and repair influence through a swarm body. MOSAIX
@@ -455,6 +469,12 @@ Mixed-ability HSI | Updated June 12, 2026
  the stack has to name what a signal controls: behavior, field, rig state, appearance,
  goal, role, or safety state
  ([Reynolds, steering behaviors](https://www.red3d.com/cwr/steer/); [Patil et al.](https://gamma.cs.unc.edu/DCrowd/paper.pdf); [Colas et al.](https://doi.org/10.1111/cgf.14491); [Prazak et al.](https://doi.org/10.1145/3214745.3214809); [SideFX crowd docs](https://www.sidefx.com/docs/houdini/crowds/basics.html)) .
+
+ Every mapping should specify whose access practice it comes from, what signal enters
+ the system, what scale it controls, what dynamic changes, what feedback appears, who
+ can see it, and how it can be repaired, reused, or retired.
+
+ Method note: full mapping-stack checklist
 
  Mapping stack
 
@@ -490,9 +510,10 @@ Mixed-ability HSI | Updated June 12, 2026
  Origin, naming, tuning history, rejected variants, reuse permission, audience status, attribution, licensing, withdrawal, and deletion.
  Participant-created mappings are authored practices. They need reuse rules before they travel into demos, games, logs, or later prototypes.
 
- The next part is implementation-facing. Readers who only want the research argument can
- skip to "Later horizon." Its purpose is to show how the mapping stack could be made
- inspectable in software.
+ Implementation note: Rusty Morphospace and open routing
+
+ This part is implementation-facing. Its purpose is to show how the mapping stack
+ could be made inspectable in software.
 
  Implementation bridge
 
@@ -604,6 +625,8 @@ Mixed-ability HSI | Updated June 12, 2026
  are part of the access record. A failed mapping can still teach the group what the
  interface assumed about posture, visibility, strength, endurance, privacy, or bodily
  symmetry.
+
+ Method note: instrument checklist and calibration burden
 
  Access practices
  existing devices, gestures, rhythms, rest strategies, communication habits, assisted routines, and off-limits signals
@@ -758,6 +781,8 @@ Mixed-ability HSI | Updated June 12, 2026
 
  Rest, fallback input, consent change, withdrawal, reduced motion, sensory checks, disclosure control, and explicit non-goals.
 
+ Method note: study measures, logs, and authorship
+
  Study measures
 
  Study surface
@@ -820,6 +845,11 @@ Mixed-ability HSI | Updated June 12, 2026
  current claim is conceptual: mixed-ability HSI needs negotiated shared agency rather
  than one universal controller. The evidence status becomes stricter as the work moves
  from visual bodies toward later media, settings, and deployments.
+
+ Claim status is layered: conceptual now, design next, virtual-first study later, and
+ physical or material translation later still.
+
+ Method note: full claim ladder
 
  Conceptual
 
@@ -994,6 +1024,8 @@ Mixed-ability HSI | Updated June 12, 2026
  furniture-moving system, resistance becomes motor torque, friction, clearance, tipping
  risk, and user safety.
 
+ Later horizon: physical swarm and robotics evidence
+
  RoomShift makes this shift concrete because it uses robot assistants to move real
  furniture for room-scale haptics, turning the design into questions of lift height,
  object weight, under-table clearance, optical tracking, path planning, collision
@@ -1089,6 +1121,8 @@ Mixed-ability HSI | Updated June 12, 2026
  The sources are doing different jobs. Reading them by role keeps the page from treating
  accessibility, XR embodiment, animation, HSI, and robotics as one interchangeable
  literature.
+
+ Source roles: evidence map
 
  Source roles
 

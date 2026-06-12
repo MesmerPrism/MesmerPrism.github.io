@@ -216,29 +216,6 @@
     "DOI": "10.1145/3234695.3236348"
   },
   {
-    "id": "jainpuneet798-github-io-jain-umwelten-2026",
-    "type": "webpage",
-    "title": "Jain, Umwelten",
-    "URL": "https://jainpuneet798.github.io/portfolio/umwelten/",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          12
-        ]
-      ]
-    },
-    "note": "Referenced by Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html",
-    "issued": {
-      "date-parts": [
-        [
-          2026
-        ]
-      ]
-    }
-  },
-  {
     "id": "arxiv-org-mottelson-et-al-2026",
     "type": "webpage",
     "title": "Mottelson et al.",
@@ -312,6 +289,29 @@
     "type": "webpage",
     "title": "W3C XR Accessibility User Requirements",
     "URL": "https://www.w3.org/TR/xaur/",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          12
+        ]
+      ]
+    },
+    "note": "Referenced by Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html",
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    }
+  },
+  {
+    "id": "jainpuneet798-github-io-jain-umwelten-2026",
+    "type": "webpage",
+    "title": "Jain, Umwelten",
+    "URL": "https://jainpuneet798.github.io/portfolio/umwelten/",
     "accessed": {
       "date-parts": [
         [
@@ -541,7 +541,7 @@
     }
   },
   {
-    "id": "evidence-note-openbci-galea-release-2020-2026",
+    "id": "www-prnewswire-com-openbci-galea-release-2020-2026",
     "type": "webpage",
     "title": "OpenBCI Galea release, 2020",
     "URL": "https://www.prnewswire.com/news-releases/openbci-unveils-galea-a-new-platform-that-brings-next-generation-biometrics-to-mixed-reality-301177149.html",
@@ -555,11 +555,6 @@
       ]
     },
     "note": "Referenced by Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html",
-    "author": [
-      {
-        "literal": "Evidence note"
-      }
-    ],
     "issued": {
       "date-parts": [
         [
