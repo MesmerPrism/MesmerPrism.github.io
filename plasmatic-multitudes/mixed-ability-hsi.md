@@ -278,6 +278,18 @@ Mixed-ability HSI | Updated June 12, 2026
  abstract-body qualities become negotiable access infrastructure for a mixed-ability
  group?
 
+ David Glowacki's Isness line is especially important here because it treats abstraction
+ as a designed social and phenomenological variable. Its light-body aesthetic lowers
+ structural specificity and symbolic rigidity: the body is specific enough to be
+ inhabited and encountered, but open enough to support projection, coalescence,
+ connectedness, and physics-inspired meaning without hardening into a fixed humanoid
+ symbol
+ ([Glowacki et al.](https://doi.org/10.1038/s41598-022-12637-z); [Glowacki](https://doi.org/10.3389/frvir.2023.1286950)) .
+
+ Isness / Clear Light
+
+ Diffuse light bodies, energetic coalescence, and numadelic VR research with people facing life-threatening illness.
+
  Particle-body work
 
  Ownable abstract bodies through mirrors, point clouds, and shared public space.
@@ -303,6 +315,27 @@ Mixed-ability HSI | Updated June 12, 2026
  Disability-led mapping, mouth gestures, crip-hacking, and preference-tuned interaction.
 
  Evidence: abstract-body precedents
+
+ Glowacki's Isness work gives this section its clearest bridge between abstract body
+ form, social connectedness, and physics-inspired aesthetics. Isness-D represents
+ participants as luminous energetic essences with diffuse boundaries that can
+ coalesce, and the 2022 study reports strong self-report outcomes around
+ ego attenuation, communitas, and connectedness. The 2024 aesthetic paper then makes
+ the design vocabulary more explicit: low structural specificity and low symbolic
+ rigidity allow a representation to remain bodily and meaningful without being
+ locked into ordinary object, body, or identity categories
+ ([Glowacki et al.](https://doi.org/10.1038/s41598-022-12637-z); [Glowacki](https://doi.org/10.3389/frvir.2023.1286950)) .
+
+ That same lineage is now being translated into clinical-adjacent work through
+ aNUma's Clear Light program and the Tiny Blue Dot-funded NUMADELIC project.
+ The current public evidence should be read carefully: a published observational
+ cohort of 15 people facing life-threatening illness reports feasibility and
+ improvements on self-report measures, while also stressing the limits of having no
+ randomization or control group. The stronger efficacy question is routed through a
+ public OSF registration for a randomized controlled trial, and IRL/CiTIUS describe
+ the wider 2024-2028 project as combining lab studies, design iteration,
+ physiological measurement, and an RCT
+ ([Kettner et al.](https://doi.org/10.3389/frvir.2024.1466362); [OSF RCT registration](https://osf.io/72uwz/); [CiTIUS NUMADELIC project](https://citius.gal/research/projects/experiencias-de-realidade-virtual-numadelicas-para-mellorar-a-saude-mental-e-o-benestar/); [aNUma Clear Light](https://anuma.com/clearlight)) .
 
  John Desnoyers-Stewart's particle-body line is the clearest existing precedent for
  this middle layer. Transcending Projection and Transcending the Virtual
@@ -1139,7 +1172,10 @@ Mixed-ability HSI | Updated June 12, 2026
  Proteus effect and Protean kinematics support the move from avatar appearance to movement grammar, dynamic affordance, and self-representation through transformed action.
 
  Embodiment precedent
- Isness, Body RemiXer, ETC, Emotional Beasts, aura avatars, pseudohaptics, and abstract social bodies.
+ Isness, NUMADELIC / Clear Light, Body RemiXer, ETC, Emotional Beasts, aura avatars, pseudohaptics, and abstract social bodies.
+
+ Clinical-adjacent translation boundary
+ Clear Light and aNUma show numadelic light-body work moving toward life-threatening-illness and death-anxiety research; the current public record supports feasibility, published observational results, and a registered RCT plan, not established clinical efficacy.
 
  HSI foundation
  Behavior selection, parameter setting, attractors, leader influence, environmental influence, and sub-swarm selection.
@@ -1169,6 +1205,14 @@ Mixed-ability HSI | Updated June 12, 2026
 - Glowacki et al. "[Group VR Experiences Can Produce Ego Attenuation and Connectedness Comparable to Psychedelics](https://doi.org/10.1038/s41598-022-12637-z)." Scientific Reports 12 (2022).
 
 - Glowacki. "[VR Models of Death and Psychedelics: An Aesthetic Paradigm for Design Beyond Day-to-Day Phenomenology](https://doi.org/10.3389/frvir.2023.1286950)." Frontiers in Virtual Reality (2024).
+
+- Kettner et al. "[Observational Cohort Study of a Group-Based VR Program to Improve Mental Health and Wellbeing in People with Life-Threatening Illnesses](https://doi.org/10.3389/frvir.2024.1466362)." Frontiers in Virtual Reality 5 (2025).
+
+- Andreu, Hardy, Bonnelle, and Glowacki. "[Numadelic VR Experiences for Improving Mental Health Outcomes in Patients Facing Life-Threatening Illness: Randomized Controlled Trial](https://osf.io/72uwz/)." OSF registration, registered May 10, 2024 (accessed 2026-06-12).
+
+- CiTIUS. "[Numadelic: Numadelic VR Experiences for Improving Mental Health Outcomes in Patients Facing Life-Threatening Illness](https://citius.gal/research/projects/experiencias-de-realidade-virtual-numadelicas-para-mellorar-a-saude-mental-e-o-benestar/)." Project page, execution timing 2024-10-01 / 2028-09-30, funded by Tiny Blue Dot Foundation (accessed 2026-06-12).
+
+- aNUma. "[Clear Light](https://anuma.com/clearlight)." Program page for people facing life-threatening illness and their families (accessed 2026-06-12).
 
 - Yee, Bailenson, and Ducheneaut. "[The Proteus Effect: Implications of Transformed Digital Self-Representation on Online and Offline Behavior](https://vhil.stanford.edu/publications/avatars-and-agents/proteus-effect-implications-transformed-digital-self-representation)." Stanford Virtual Human Interaction Lab summary of Communication Research 36(2) (2009).
 

@@ -331,6 +331,147 @@
     }
   },
   {
+    "id": "doi-org-glowacki-et-al-2026",
+    "type": "article-journal",
+    "title": "Glowacki et al.",
+    "URL": "https://doi.org/10.1038/s41598-022-12637-z",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          12
+        ]
+      ]
+    },
+    "note": "Referenced by Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html",
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    },
+    "DOI": "10.1038/s41598-022-12637-z"
+  },
+  {
+    "id": "doi-org-glowacki-2026",
+    "type": "article-journal",
+    "title": "Glowacki",
+    "URL": "https://doi.org/10.3389/frvir.2023.1286950",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          12
+        ]
+      ]
+    },
+    "note": "Referenced by Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html",
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    },
+    "DOI": "10.3389/frvir.2023.1286950"
+  },
+  {
+    "id": "doi-org-kettner-et-al-2026",
+    "type": "article-journal",
+    "title": "Kettner et al.",
+    "URL": "https://doi.org/10.3389/frvir.2024.1466362",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          12
+        ]
+      ]
+    },
+    "note": "Referenced by Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html",
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    },
+    "DOI": "10.3389/frvir.2024.1466362"
+  },
+  {
+    "id": "osf-io-osf-rct-registration-2026",
+    "type": "webpage",
+    "title": "OSF RCT registration",
+    "URL": "https://osf.io/72uwz/",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          12
+        ]
+      ]
+    },
+    "note": "Referenced by Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html",
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    }
+  },
+  {
+    "id": "citius-gal-citius-numadelic-project-2026",
+    "type": "webpage",
+    "title": "CiTIUS NUMADELIC project",
+    "URL": "https://citius.gal/research/projects/experiencias-de-realidade-virtual-numadelicas-para-mellorar-a-saude-mental-e-o-benestar/",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          12
+        ]
+      ]
+    },
+    "note": "Referenced by Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html",
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    }
+  },
+  {
+    "id": "anuma-com-anuma-clear-light-2026",
+    "type": "webpage",
+    "title": "aNUma Clear Light",
+    "URL": "https://anuma.com/clearlight",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          12
+        ]
+      ]
+    },
+    "note": "Referenced by Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html",
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    }
+  },
+  {
     "id": "www-medien-ifi-lmu-de-desnoyers-stewart-2026",
     "type": "webpage",
     "title": "Desnoyers-Stewart",
@@ -1079,54 +1220,6 @@
       ]
     },
     "DOI": "10.1145/3613905.3636286"
-  },
-  {
-    "id": "doi-org-glowacki-et-al-2026",
-    "type": "article-journal",
-    "title": "Glowacki et al.",
-    "URL": "https://doi.org/10.1038/s41598-022-12637-z",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          12
-        ]
-      ]
-    },
-    "note": "Referenced by Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html",
-    "issued": {
-      "date-parts": [
-        [
-          2026
-        ]
-      ]
-    },
-    "DOI": "10.1038/s41598-022-12637-z"
-  },
-  {
-    "id": "doi-org-glowacki-2026",
-    "type": "article-journal",
-    "title": "Glowacki",
-    "URL": "https://doi.org/10.3389/frvir.2023.1286950",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          12
-        ]
-      ]
-    },
-    "note": "Referenced by Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html",
-    "issued": {
-      "date-parts": [
-        [
-          2026
-        ]
-      ]
-    },
-    "DOI": "10.3389/frvir.2023.1286950"
   },
   {
     "id": "jainpuneet798-github-io-jain-epistemological-intervention",
