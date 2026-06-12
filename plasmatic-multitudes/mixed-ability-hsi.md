@@ -138,6 +138,15 @@ Mixed-ability HSI | Updated June 12, 2026
  world with rules rather than a screensaver
  ([Gilland](https://archive.org/details/elemental-magic/page/n2/mode/1up); [Plasmatic design rules](https://mesmerprism.com/plasmatic-multitudes/essay.html#design)) .
 
+ Glowacki's work makes this more than an animation analogy. His molecular-physics and
+ art-science lineage runs from danceroom Spectroscopy and Hidden
+ Fields , where people act as energy fields inside real-time atomic dynamics, into
+ Isness and Clear Light , where light-body abstraction becomes a social
+ and phenomenological medium. His 2024 aesthetics paper explicitly frames physics as a
+ resource for weakly representational bodies: energy is diffuse, luminous, unbounded,
+ and open to coalescence in ways that ordinary material bodies are not
+ ([Glowacki](https://doi.org/10.3389/frvir.2023.1286950); [Mitchell et al.](https://doi.org/10.1162/LEON_a_00924); [Hidden Fields](https://www.intangiblerealitieslab.org/projects/hidden-fields)) .
+
  Legibility grammar
  In the first study, "soften the boundary" can mean a visible delay: particles lag, stretch, and recover so the group can read effort, pacing, and relation.
 
@@ -325,6 +334,18 @@ Mixed-ability HSI | Updated June 12, 2026
  rigidity allow a representation to remain bodily and meaningful without being
  locked into ordinary object, body, or identity categories
  ([Glowacki et al.](https://doi.org/10.1038/s41598-022-12637-z); [Glowacki](https://doi.org/10.3389/frvir.2023.1286950)) .
+
+ This matters for the physics argument because the abstract body is not only a soft
+ avatar. It inherits a molecular-simulation sensibility from Glowacki's earlier
+ installation work: bodies can be modeled as fields, forces, densities, flows,
+ coalescences, and perturbations. In public HSI language, that separates two claims
+ that often get blurred. Physics can be a generative aesthetic substrate for shared
+ embodiment, but it can also become a concrete implementation burden when sensors,
+ simulations, particles, and hardware must keep the experience stable across time.
+ The 2025 esencia paper is especially useful because it treats that lineage
+ as an active reinterpretation problem across depth sensing, particle simulation,
+ GPU execution, and changing software stacks
+ ([Mitchell et al.](https://doi.org/10.1162/LEON_a_00924); [Toledo Castro, Protopopov, and Glowacki](https://doi.org/10.1145/3749893.3749972); [Essentia Foundation interview](https://www.youtube.com/watch?v=r6_VOOe8SMg)) .
 
  That same lineage is now being translated into clinical-adjacent work through
  aNUma's Clear Light program and the Tiny Blue Dot-funded NUMADELIC project.
@@ -1057,6 +1078,17 @@ Mixed-ability HSI | Updated June 12, 2026
  furniture-moving system, resistance becomes motor torque, friction, clearance, tipping
  risk, and user safety.
 
+ Glowacki's physics/aesthetics work is a useful bridge precisely because it sits before
+ that robotic boundary. Hidden Fields and danceroom Spectroscopy use
+ rigorous molecular-dynamics models to let bodies sculpt simulated atomic motion; they
+ make force, field, and energy relations visible and participatory. That supports the
+ aesthetic track of mixed-ability HSI: physics can organize legibility, embodiment, and
+ shared transformation. It does not remove the later robotics constraint. The moment a
+ swarm body becomes furniture, mobility support, or adaptive material, the same word
+ "physics" shifts from expressive simulation to mass, safety, localization, actuation,
+ and failure recovery
+ ([Hidden Fields](https://www.intangiblerealitieslab.org/projects/hidden-fields); [Mitchell et al.](https://doi.org/10.1162/LEON_a_00924); [Toledo Castro, Protopopov, and Glowacki](https://doi.org/10.1145/3749893.3749972)) .
+
  Later horizon: physical swarm and robotics evidence
 
  RoomShift makes this shift concrete because it uses robot assistants to move real
@@ -1174,6 +1206,9 @@ Mixed-ability HSI | Updated June 12, 2026
  Embodiment precedent
  Isness, NUMADELIC / Clear Light, Body RemiXer, ETC, Emotional Beasts, aura avatars, pseudohaptics, and abstract social bodies.
 
+ Physics-aesthetics bridge
+ Glowacki's molecular-physics installations, from danceroom Spectroscopy and Hidden Fields to the 2025 esencia reinterpretation, support physics as a generative aesthetic substrate and as a technical stack that must be maintained across sensors, simulation, and hardware.
+
  Clinical-adjacent translation boundary
  Clear Light and aNUma show numadelic light-body work moving toward life-threatening-illness and death-anxiety research; the current public record supports feasibility, published observational results, and a registered RCT plan, not established clinical efficacy.
 
@@ -1205,6 +1240,14 @@ Mixed-ability HSI | Updated June 12, 2026
 - Glowacki et al. "[Group VR Experiences Can Produce Ego Attenuation and Connectedness Comparable to Psychedelics](https://doi.org/10.1038/s41598-022-12637-z)." Scientific Reports 12 (2022).
 
 - Glowacki. "[VR Models of Death and Psychedelics: An Aesthetic Paradigm for Design Beyond Day-to-Day Phenomenology](https://doi.org/10.3389/frvir.2023.1286950)." Frontiers in Virtual Reality (2024).
+
+- Mitchell, Hyde, Tew, and Glowacki. "[danceroom Spectroscopy: At the Frontiers of Physics, Performance, Interactive Art and Technology](https://doi.org/10.1162/LEON_a_00924)." Leonardo 49(2), 138-147 (2016).
+
+- Intangible Realities Laboratory. "[Hidden Fields](https://www.intangiblerealitieslab.org/projects/hidden-fields)." Project page on energy avatars and real-time atomic physics simulation (accessed 2026-06-12).
+
+- Toledo Castro, Protopopov, and Glowacki. "[esencia: A Case Study on Reinterpreting an Interactive Art and Science Installation Based on a Real-Time Atomic Physics Engine](https://doi.org/10.1145/3749893.3749972)." Expanded '25: Proceedings of the Conference on Animation and Interactive Art , 178-187 (2025).
+
+- Essentia Foundation. "[Molecular Physicist Visualised The Process of Dying | David Glowacki](https://www.youtube.com/watch?v=r6_VOOe8SMg)." Video interview (accessed 2026-06-12).
 
 - Kettner et al. "[Observational Cohort Study of a Group-Based VR Program to Improve Mental Health and Wellbeing in People with Life-Threatening Illnesses](https://doi.org/10.3389/frvir.2024.1466362)." Frontiers in Virtual Reality 5 (2025).
 

@@ -1,9 +1,90 @@
 [
   {
-    "id": "legibility-grammar-gilland-2026",
+    "id": "archive-org-gilland-2026",
     "type": "webpage",
     "title": "Gilland",
     "URL": "https://archive.org/details/elemental-magic/page/n2/mode/1up",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          12
+        ]
+      ]
+    },
+    "note": "Referenced by Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html",
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    }
+  },
+  {
+    "id": "legibility-grammar-glowacki-2026",
+    "type": "article-journal",
+    "title": "Glowacki",
+    "URL": "https://doi.org/10.3389/frvir.2023.1286950",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          12
+        ]
+      ]
+    },
+    "note": "Referenced by Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html",
+    "author": [
+      {
+        "literal": "Legibility grammar"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    },
+    "DOI": "10.3389/frvir.2023.1286950"
+  },
+  {
+    "id": "legibility-grammar-mitchell-et-al-2026",
+    "type": "article-journal",
+    "title": "Mitchell et al.",
+    "URL": "https://doi.org/10.1162/LEON_a_00924",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          12
+        ]
+      ]
+    },
+    "note": "Referenced by Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html",
+    "author": [
+      {
+        "literal": "Legibility grammar"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    },
+    "DOI": "10.1162/LEON_a_00924"
+  },
+  {
+    "id": "legibility-grammar-hidden-fields-2026",
+    "type": "webpage",
+    "title": "Hidden Fields",
+    "URL": "https://www.intangiblerealitieslab.org/projects/hidden-fields",
     "accessed": {
       "date-parts": [
         [
@@ -355,10 +436,10 @@
     "DOI": "10.1038/s41598-022-12637-z"
   },
   {
-    "id": "doi-org-glowacki-2026",
+    "id": "doi-org-toledo-castro-protopopov-and-glowacki-2026",
     "type": "article-journal",
-    "title": "Glowacki",
-    "URL": "https://doi.org/10.3389/frvir.2023.1286950",
+    "title": "Toledo Castro, Protopopov, and Glowacki",
+    "URL": "https://doi.org/10.1145/3749893.3749972",
     "accessed": {
       "date-parts": [
         [
@@ -376,7 +457,30 @@
         ]
       ]
     },
-    "DOI": "10.3389/frvir.2023.1286950"
+    "DOI": "10.1145/3749893.3749972"
+  },
+  {
+    "id": "www-youtube-com-essentia-foundation-interview-2026",
+    "type": "webpage",
+    "title": "Essentia Foundation interview",
+    "URL": "https://www.youtube.com/watch?v=r6_VOOe8SMg",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          12
+        ]
+      ]
+    },
+    "note": "Referenced by Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html",
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    }
   },
   {
     "id": "doi-org-kettner-et-al-2026",
