@@ -1150,6 +1150,30 @@
     "note": "Referenced by Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html"
   },
   {
+    "id": "www-frontiersin-org-kegeleirs-and-birattari-2026",
+    "type": "article-journal",
+    "title": "Kegeleirs and Birattari",
+    "URL": "https://www.frontiersin.org/journals/robotics-and-ai/articles/10.3389/frobt.2025.1607978/full",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          12
+        ]
+      ]
+    },
+    "note": "Referenced by Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html",
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    },
+    "DOI": "10.3389/frobt.2025.1607978/full"
+  },
+  {
     "id": "doi-org-suzuki-et-al-roomshift-2026",
     "type": "article-journal",
     "title": "Suzuki et al., RoomShift",
@@ -1196,30 +1220,6 @@
       ]
     },
     "DOI": "10.1109/ROBOT.2009.5152613"
-  },
-  {
-    "id": "www-frontiersin-org-kegeleirs-and-birattari-2026",
-    "type": "article-journal",
-    "title": "Kegeleirs and Birattari",
-    "URL": "https://www.frontiersin.org/journals/robotics-and-ai/articles/10.3389/frobt.2025.1607978/full",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          12
-        ]
-      ]
-    },
-    "note": "Referenced by Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html",
-    "issued": {
-      "date-parts": [
-        [
-          2026
-        ]
-      ]
-    },
-    "DOI": "10.3389/frobt.2025.1607978/full"
   },
   {
     "id": "doi-org-zheng-jarecki-and-lee-2026",
