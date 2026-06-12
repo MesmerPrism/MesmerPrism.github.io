@@ -104,7 +104,6 @@
                 "https://arxiv.org/abs/2505.05832",
                 "https://doi.org/10.1016/j.cell.2021.02.034",
                 "https://arxiv.org/abs/2512.17129",
-                "https://github.com/MesmerPrism/Rusty-XR",
                 "https://www.uni-due.de/karriere/stelle-rar.php?kennziffer=171-26",
                 "https://rc-trust.ai/groups/inclusive-technology-and-collective-engagement",
                 "https://rc-trust.ai/news/news-detail/designing-technology-around-human-connection-and-inclusion",
@@ -131,6 +130,7 @@
                 "https://pmc.ncbi.nlm.nih.gov/articles/PMC4933718/",
                 "https://doi.org/10.1007/s00018-023-04790-z",
                 "https://github.com/hormoz-lab/diffeomorph",
+                "https://github.com/MesmerPrism/Rusty-XR",
                 "https://github.com/MesmerPrism/Rusty-XR-Companion-Apps",
                 "https://circe-science.com/",
                 "https://mesmerprism.com/axp-mvp-survey-guide/"
@@ -227,8 +227,10 @@
                         <a href="/projects/rusty-morphospace.html">Rusty Morphospace</a>,
                         <a href="/projects/rusty-xr.html">Rusty XR</a>, and
                         <a href="/projects/polar-h10.html">Polar H10 tooling</a> give the project
-                        a base for routing sensors, roles, mappings, diagnostics, and consent
-                        settings across XR prototypes.
+                        a current public base for sensor and package lanes, Quest validation,
+                        and separated contracts. The planned HSI layer uses that base for
+                        routing roles, mappings, diagnostics, consent settings, and participant
+                        inspection across XR prototypes.
                     </p>
                 </article>
                 <article>
@@ -373,9 +375,9 @@
                     <time>05</time>
                     <h3>Inspectable stack</h3>
                     <p>
-                        Rusty Morphospace should expose channels, bindings, dynamic targets,
-                        feedback, consent, logs, provenance, and retirement so participants can
-                        question the mediation.
+                        Rusty Morphospace connects the current public contracts and validation
+                        lanes to a planned HSI-facing stack for channels, bindings, dynamic
+                        targets, feedback, consent, logs, provenance, and retirement.
                     </p>
                 </li>
                 <li>
@@ -510,13 +512,20 @@
                     <h2>Open tooling makes the mapping stack contestable.</h2>
                 </div>
                 <p>
-                    Rusty Morphospace is not the research question. It is the instrument that can
-                    make the mediation inspectable: what input enters the system, what scale it
-                    controls, what dynamic changes, who can see that contribution, which logs are
-                    kept, how consent is represented, and when a mapping can be retired. In RC
-                    Trust terms, the mediation should be understandable and contestable, not
-                    merely adaptive
+                    Rusty Morphospace is not the research question. It is the implementation
+                    layer that can make the mediation inspectable: what input enters the system,
+                    what scale it controls, what dynamic changes, who can see that contribution,
+                    which logs are kept, how consent is represented, and when a mapping can be
+                    retired. In RC Trust terms, the mediation should be understandable and
+                    contestable, not merely adaptive
                     (<a class="inline-citation" href="https://rc-trust.ai/" target="_blank" rel="noopener noreferrer">RC Trust</a>).
+                </p>
+                <p>
+                    The distinction matters. The current Morphospace base is public module
+                    boundaries, package lanes, a bioelectric Matter/Optics teaching model, and a
+                    bounded Quest Makepad/Hostess validation route. The HSI layer planned on top
+                    is participant-facing: mapping authoring, consent, provenance, replay,
+                    version comparison, accessible facilitator views, and adapter swaps.
                 </p>
                 <p>
                     That matters because input diversity is not enough. Mixed-ability HSI needs a
@@ -540,7 +549,7 @@
                 </div>
                 <div>
                     <h3>Implementation split</h3>
-                    <p>Rusty Lattice for sensing, Manifold for routing, Matter for particles and fields, Optics for appearance and debug views</p>
+                    <p>current contracts in Lattice, Manifold, Matter, and Optics; planned GUI, Studio, Hostess, Quest, and Makepad surfaces for authoring, consent, validation, and deployment</p>
                 </div>
             </div>
         </section>
@@ -602,11 +611,12 @@
                 <article class="project-card">
                     <p class="project-kicker">Implementation layer</p>
                     <h3><a href="/projects/rusty-morphospace.html">Rusty Morphospace</a></h3>
-                    <p>Modular Rust frame for computational matter, situated relations, routing, runtime authority, renderer-neutral inspection, and Quest validation.</p>
+                    <p>Current public contracts and validation lanes for computational matter, situated relations, routing, inspection, and Quest evidence; planned HSI layer for explicit access mappings.</p>
                     <div class="project-links">
                         <a href="/projects/rusty-morphospace.html">Overview</a>
+                        <a href="/projects/rusty-morphospace.html#hsi-implementation-layer">HSI layer</a>
                         <a href="/projects/rusty-xr.html">Rusty XR</a>
-                        <a href="https://github.com/MesmerPrism/Rusty-XR" target="_blank" rel="noopener noreferrer">Source repo</a>
+                        <a href="https://github.com/MesmerPrism" target="_blank" rel="noopener noreferrer">Repository family</a>
                     </div>
                 </article>
                 <article class="project-card">
@@ -742,7 +752,7 @@
                     <h3>Public project context</h3>
                     <ul class="plain-list">
                         <li><strong>Mesmer Prism.</strong> <a class="reference-link" href="/plasmatic-multitudes/mixed-ability-hsi.html">Mixed-Ability Human-Swarm Interaction</a>, <a class="reference-link" href="/projects/rusty-morphospace.html">Rusty Morphospace</a>, <a class="reference-link" href="/projects/viscereality.html">Viscereality</a>, <a class="reference-link" href="/projects/rusty-xr.html">Rusty XR</a>, <a class="reference-link" href="/projects/viscereality-companion.html">Quest Companion Tools</a>, <a class="reference-link" href="/projects/plasmatic-multitudes.html">Plasmatic Multitudes</a>, <a class="reference-link" href="/plasmatic-multitudes/pain.html">Pain Translation</a>, <a class="reference-link" href="/projects/bioelectricity.html">Bioelectricity and Morphogenesis</a>, and <a class="reference-link" href="/projects/polar-h10.html">Polar H10 Work</a>.</li>
-                        <li><strong>GitHub.</strong> <a class="reference-link" href="https://github.com/MesmerPrism" target="_blank" rel="noopener noreferrer">MesmerPrism repositories</a>, including <a class="reference-link" href="https://github.com/MesmerPrism/Rusty-XR" target="_blank" rel="noopener noreferrer">Rusty XR</a> and <a class="reference-link" href="https://github.com/MesmerPrism/Rusty-XR-Companion-Apps" target="_blank" rel="noopener noreferrer">Rusty XR Companion Apps</a>.</li>
+                        <li><strong>GitHub.</strong> <a class="reference-link" href="https://github.com/MesmerPrism" target="_blank" rel="noopener noreferrer">MesmerPrism repositories</a>, including the Rusty Morphospace repository family, <a class="reference-link" href="https://github.com/MesmerPrism/Rusty-XR" target="_blank" rel="noopener noreferrer">Rusty XR</a>, and <a class="reference-link" href="https://github.com/MesmerPrism/Rusty-XR-Companion-Apps" target="_blank" rel="noopener noreferrer">Rusty XR Companion Apps</a>.</li>
                         <li><strong>CIRCE.</strong> <a class="reference-link" href="https://circe-science.com/" target="_blank" rel="noopener noreferrer">Collaboration for Interdisciplinary Research on Conscious Experience</a> and the <a class="reference-link" href="https://mesmerprism.com/axp-mvp-survey-guide/" target="_blank" rel="noopener noreferrer">AXP access guide</a>.</li>
                     </ul>
                 </section>

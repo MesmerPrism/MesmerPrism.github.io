@@ -492,29 +492,6 @@
     }
   },
   {
-    "id": "github-com-source-repo-2022",
-    "type": "webpage",
-    "title": "Source repo",
-    "URL": "https://github.com/MesmerPrism/Rusty-XR",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          12
-        ]
-      ]
-    },
-    "note": "Referenced by Shared Bodies for Mixed-Ability Collaboration: https://mesmerprism.com/duisburg/",
-    "issued": {
-      "date-parts": [
-        [
-          2022
-        ]
-      ]
-    }
-  },
-  {
     "id": "university-of-duisburg-essen-phd-position-in-technology-for-mixed-ability-interaction",
     "type": "webpage",
     "title": "PhD position in Technology for Mixed Ability Interaction",
@@ -1071,6 +1048,27 @@
     "author": [
       {
         "literal": "Pahng, Guan, Fefferman, and Hormoz"
+      }
+    ]
+  },
+  {
+    "id": "github-rusty-xr",
+    "type": "webpage",
+    "title": "Rusty XR",
+    "URL": "https://github.com/MesmerPrism/Rusty-XR",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          12
+        ]
+      ]
+    },
+    "note": "Referenced by Shared Bodies for Mixed-Ability Collaboration: https://mesmerprism.com/duisburg/",
+    "author": [
+      {
+        "literal": "GitHub"
       }
     ]
   },

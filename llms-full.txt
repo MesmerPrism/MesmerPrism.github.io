@@ -59,8 +59,10 @@ Mixed-ability XR research
  [Rusty Morphospace](https://mesmerprism.com/projects/rusty-morphospace.html),
  [Rusty XR](https://mesmerprism.com/projects/rusty-xr.html), and
  [Polar H10 tooling](https://mesmerprism.com/projects/polar-h10.html) give the project
- a base for routing sensors, roles, mappings, diagnostics, and consent
- settings across XR prototypes.
+ a current public base for sensor and package lanes, Quest validation,
+ and separated contracts. The planned HSI layer uses that base for
+ routing roles, mappings, diagnostics, consent settings, and participant
+ inspection across XR prototypes.
 
 ### Duisburg fit
 
@@ -142,7 +144,7 @@ Mixed-ability XR research
 
 - 04 ### Game-oriented collaboration Structured play introduces roles, goals, asymmetric contribution, conflict, resource limits, recovery, and shared consequences without reducing access to productivity.
 
-- 05 ### Inspectable stack Rusty Morphospace should expose channels, bindings, dynamic targets, feedback, consent, logs, provenance, and retirement so participants can question the mediation.
+- 05 ### Inspectable stack Rusty Morphospace connects the current public contracts and validation lanes to a planned HSI-facing stack for channels, bindings, dynamic targets, feedback, consent, logs, provenance, and retirement.
 
 - 06 ### Translation gate The later question is which aesthetic, social, and control principles survive physical consequence in robotics, assembly, adaptive furniture, or teleoperated contexts.
 
@@ -231,13 +233,19 @@ Mixed-ability XR research
 
 ## Open tooling makes the mapping stack contestable.
 
- Rusty Morphospace is not the research question. It is the instrument that can
- make the mediation inspectable: what input enters the system, what scale it
- controls, what dynamic changes, who can see that contribution, which logs are
- kept, how consent is represented, and when a mapping can be retired. In RC
- Trust terms, the mediation should be understandable and contestable, not
- merely adaptive
+ Rusty Morphospace is not the research question. It is the implementation
+ layer that can make the mediation inspectable: what input enters the system,
+ what scale it controls, what dynamic changes, who can see that contribution,
+ which logs are kept, how consent is represented, and when a mapping can be
+ retired. In RC Trust terms, the mediation should be understandable and
+ contestable, not merely adaptive
  ([RC Trust](https://rc-trust.ai/)).
+
+ The distinction matters. The current Morphospace base is public module
+ boundaries, package lanes, a bioelectric Matter/Optics teaching model, and a
+ bounded Quest Makepad/Hostess validation route. The HSI layer planned on top
+ is participant-facing: mapping authoring, consent, provenance, replay,
+ version comparison, accessible facilitator views, and adapter swaps.
 
  That matters because input diversity is not enough. Mixed-ability HSI needs a
  full mapping from social dynamics to technological affordances: access
@@ -258,7 +266,7 @@ Mixed-ability XR research
 
 ### Implementation split
 
- Rusty Lattice for sensing, Manifold for routing, Matter for particles and fields, Optics for appearance and debug views
+ current contracts in Lattice, Manifold, Matter, and Optics; planned GUI, Studio, Hostess, Quest, and Makepad surfaces for authoring, consent, validation, and deployment
 
  Boundaries
 
@@ -310,11 +318,12 @@ Mixed-ability XR research
 
 ### [Rusty Morphospace](https://mesmerprism.com/projects/rusty-morphospace.html)
 
- Modular Rust frame for computational matter, situated relations, routing, runtime authority, renderer-neutral inspection, and Quest validation.
+ Current public contracts and validation lanes for computational matter, situated relations, routing, inspection, and Quest evidence; planned HSI layer for explicit access mappings.
 
  [Overview](https://mesmerprism.com/projects/rusty-morphospace.html)
+ [HSI layer](https://mesmerprism.com/projects/rusty-morphospace.html#hsi-implementation-layer)
  [Rusty XR](https://mesmerprism.com/projects/rusty-xr.html)
- [Source repo](https://github.com/MesmerPrism/Rusty-XR)
+ [Repository family](https://github.com/MesmerPrism)
 
  Embodiment vocabulary
 
@@ -471,7 +480,7 @@ Mixed-ability XR research
 
 - Mesmer Prism. [Mixed-Ability Human-Swarm Interaction](https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html), [Rusty Morphospace](https://mesmerprism.com/projects/rusty-morphospace.html), [Viscereality](https://mesmerprism.com/projects/viscereality.html), [Rusty XR](https://mesmerprism.com/projects/rusty-xr.html), [Quest Companion Tools](https://mesmerprism.com/projects/viscereality-companion.html), [Plasmatic Multitudes](https://mesmerprism.com/projects/plasmatic-multitudes.html), [Pain Translation](https://mesmerprism.com/plasmatic-multitudes/pain.html), [Bioelectricity and Morphogenesis](https://mesmerprism.com/projects/bioelectricity.html), and [Polar H10 Work](https://mesmerprism.com/projects/polar-h10.html).
 
-- GitHub. [MesmerPrism repositories](https://github.com/MesmerPrism), including [Rusty XR](https://github.com/MesmerPrism/Rusty-XR) and [Rusty XR Companion Apps](https://github.com/MesmerPrism/Rusty-XR-Companion-Apps).
+- GitHub. [MesmerPrism repositories](https://github.com/MesmerPrism), including the Rusty Morphospace repository family, [Rusty XR](https://github.com/MesmerPrism/Rusty-XR), and [Rusty XR Companion Apps](https://github.com/MesmerPrism/Rusty-XR-Companion-Apps).
 
 - CIRCE. [Collaboration for Interdisciplinary Research on Conscious Experience](https://circe-science.com/) and the [AXP access guide](https://mesmerprism.com/axp-mvp-survey-guide/).
 </page>
@@ -1814,7 +1823,7 @@ Mixed-ability HSI | Updated June 12, 2026
  Multitudes argument applied to mixed-ability interaction: weakly bounded bodies can
  become embodied when their dynamics are legible enough to support agency, trust, and
  relation
- ([Plasmatic essay](https://mesmerprism.com/plasmatic-multitudes/essay.html#orientation); [Plasmatic design rules](https://mesmerprism.com/plasmatic-multitudes/essay.html#design)) .
+ ([Plasmatic essay](https://mesmerprism.com/plasmatic-multitudes/essay.html#opening); [Plasmatic design rules](https://mesmerprism.com/plasmatic-multitudes/essay.html#design)) .
 
  Coherence
 
@@ -2294,13 +2303,23 @@ Mixed-ability HSI | Updated June 12, 2026
 
 ### Rusty Morphospace
 
- Rusty Morphospace is the proposed implementation layer for the ideas above. Its job
- is not to add another theory; its job is to keep channels, bindings, dynamics,
- appearance, logs, and adapters separate enough that participants and facilitators can
- inspect them. That separation lets someone ask whether fatigue, unfairness, or
+ Rusty Morphospace is the implementation layer for the ideas above. Its job is not
+ to add another theory; its job is to keep channels, bindings, dynamics, appearance,
+ logs, consent state, and adapters separate enough that participants and facilitators
+ can inspect them. That separation lets someone ask whether fatigue, unfairness, or
  confusion came from the input channel, the binding, the dynamic rule, the renderer,
  latency, calibration drift, or another collaborator's hidden control
- ([Rusty Morphospace](https://mesmerprism.com/projects/rusty-morphospace.html); [Rusty XR](https://mesmerprism.com/projects/rusty-xr.html); [Polar H10 work](https://mesmerprism.com/projects/polar-h10.html)) .
+ ([Rusty Morphospace HSI layer](https://mesmerprism.com/projects/rusty-morphospace.html#hsi-implementation-layer); [Rusty XR](https://mesmerprism.com/projects/rusty-xr.html); [Polar H10 work](https://mesmerprism.com/projects/polar-h10.html)) .
+
+ The current public base is a scaffold, not a finished mixed-ability study platform:
+ separated Morphospace repositories, package lanes for synthetic/biosignal/Polar and
+ hand-animation data, a Matter/Optics teaching model for bioelectric-inspired fields,
+ and a bounded Hostess/Quest Makepad validation route for recorded hand meshes,
+ Matter CPU-oracle comparison, SDF/ADF debug payloads, particles, and GPU evidence.
+ The planned HSI layer has to add participant-facing mapping authoring, accessible
+ facilitator views, consent/provenance/retirement controls, replay, version
+ comparison, and adapter swaps across desktop, browser, headset, biosignal, and later
+ physical platforms.
 
  Jain's AutonomX work suggests the standard for this implementation layer: the system
  should behave like an authoring instrument, not only a hidden runtime. AutonomX
@@ -2312,16 +2331,22 @@ Mixed-ability HSI | Updated June 12, 2026
  ([Jain, AutonomX](https://jainpuneet798.github.io/portfolio/autonomx/); [ISEA AutonomX archive](https://www.isea-symposium-archives.org/presentation/autonomx-real-time-creation-composition-with-complex-systems-presented-by-saunier-salter-vermette-quessy-demeule-et-al/)) .
 
  Rusty Lattice
- Sensing, effectors, reference spaces, calibration, validity, and confidence.
+ Sensing, effectors, reference spaces, calibration, validity, confidence, and capability snapshots.
 
  Rusty Manifold
- Routing, streams, commands, clocks, acknowledgements, and audit surfaces.
+ Routing, streams, commands, clocks, acknowledgements, consent state, and audit surfaces.
 
  Rusty Matter
  Particles, boids-like coupling, fields, SDF/TSDF geometry, constraints, and simulation state.
 
  Rusty Optics
  Color, glow, material descriptors, visibility, debug views, and renderer-neutral appearance.
+
+ Rusty GUI / Studio
+ Planned mapping editors, facilitator views, comparison tools, provenance, and retirement controls.
+
+ Hostess / platform adapters
+ Current validation shells and planned deployment routes without owning the social meaning of a mapping.
 
 ### Morphogenetic dynamics vocabulary
 
@@ -2366,7 +2391,10 @@ Mixed-ability HSI | Updated June 12, 2026
  binding, the dynamic rule, the renderer, latency, calibration drift, or another
  collaborator's hidden control. An explicit open stack makes it possible to swap sensors
  and platforms, compare versions across media, log what happened, preserve consent and
- authorship, and carry only the surviving dynamics into later translation.
+ authorship, and carry only the surviving dynamics into later translation. The public
+ Morphospace page therefore serves as a status boundary: current contracts and validation
+ proofs are separated from planned HSI authoring, future robotics translation, and
+ farther biotech speculation.
 
  Physiological channels need an extra guardrail. EEG, EMG, EOG, EDA, PPG, ECG, breath,
  and related signals must be opt-in, inspectable, replaceable, and non-diagnostic. They
@@ -2946,7 +2974,7 @@ Mixed-ability HSI | Updated June 12, 2026
  Bioelectricity, Levin's agential-materials work, and DiffeoMorph support cautious language about coherence, field, threshold, perturbation, state memory, repair, and return.
 
  Implementation and caution
- Rusty Morphospace as an explicit stack, biosignal transparency/privacy guidance, and guardrails against treating biology, robotics, or physiology as therapeutic proof.
+ Rusty Morphospace as the implementation layer with current public contracts and planned HSI-facing authoring/inspection, biosignal transparency/privacy guidance, and guardrails against treating biology, robotics, or physiology as therapeutic proof.
 
 ## Sources
 
@@ -9653,6 +9681,7 @@ Computational morphology platform
  [Repositories](https://mesmerprism.com/projects/rusty-morphospace.html#repositories)
  [Module map](https://mesmerprism.com/projects/rusty-morphospace.html#module-map)
  [Current work](https://mesmerprism.com/projects/rusty-morphospace.html#current-work)
+ [HSI layer](https://mesmerprism.com/projects/rusty-morphospace.html#hsi-implementation-layer)
  [Why Morphospace](https://mesmerprism.com/projects/rusty-morphospace.html#why)
  [Rusty XR boundary](https://mesmerprism.com/projects/rusty-morphospace.html#boundary)
  [Rusty XR](https://mesmerprism.com/projects/rusty-xr.html)
@@ -9743,6 +9772,8 @@ Computational morphology platform
 
 ### Connected work
 
+- [Mixed-Ability HSI](https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html) uses Morphospace as the planned implementation layer for explicit access mappings, not as proof that the social method is already solved
+
 - [Bioelectricity and Morphogenesis](https://mesmerprism.com/projects/bioelectricity.html) shows the Matter/Optics boundary applied to planarian surface-field dynamics
 
 - [DiffeoMorph](https://arxiv.org/abs/2512.17129) provides a public computational-morphogenesis reference for many-agent target-forming bodies, separate from Morphospace runtime authority
@@ -9758,6 +9789,61 @@ Computational morphology platform
 - [Quest Companion Tools](https://mesmerprism.com/projects/viscereality-companion.html) show why operator-side contracts matter
 
 - [Polar H10 Work](https://mesmerprism.com/projects/polar-h10.html) shows the same boundary discipline applied to biosignal streams
+
+ Implementation layer
+
+## How Morphospace fits mixed-ability HSI
+
+ For [Mixed-Ability Human-Swarm Interaction](https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html),
+ Rusty Morphospace is the implementation layer, not the research claim. Its
+ role is to keep the mapping stack explicit: which human channels enter the
+ system, what capability evidence and calibration state they carry, what they
+ bind to, which swarm dynamics they affect, who can see the effect, what is
+ logged, and when a mapping can be revised or retired.
+
+ The current public base is a capability scaffold. It includes separated
+ Morphospace repositories, public contracts, package lanes, the
+ Matter/Optics teaching model used by the bioelectricity page, and a bounded
+ Quest Makepad/Hostess validation path for recorded hand data, Matter CPU
+ oracle comparison, SDF/ADF debug payloads, particles, and GPU evidence.
+
+ The planned HSI layer should be read more narrowly: it is an integration
+ target for participant-facing mapping authoring, consent and provenance
+ controls, facilitator inspection, replay, version comparison, and adapter
+ swaps across desktop, browser, headset, biosignal, and later physical
+ platforms. It is not yet a finished mixed-ability study app, clinical system,
+ or scaled robotic backend.
+
+### Current public base
+
+- Public module family with explicit Matter, Lattice, Manifold, Optics, GUI, Makepad, Quest, and Quest-Makepad boundaries
+
+- Package lanes for synthetic, biosignal, projected-motion, Polar H10, and hand-animation data
+
+- Matter/Optics teaching model for surface fields, conductance-like coupling, readouts, and browser inspection
+
+- Hostess and Quest Makepad evidence route for recorded hand meshes, SDF/ADF debug views, particles, and bounded GPU readbacks
+
+- Rusty XR retained as compatibility history and public Quest evidence rather than the new authority model
+
+### Planned HSI integration
+
+- Lattice records device roles, spatial relations, validity, confidence, calibration, and capability snapshots
+
+- Manifold routes streams, commands, clocks, acknowledgements, logs, consent state, and audit surfaces
+
+- Matter owns particles, fields, boids-like coupling, SDF/TSDF forms, constraints, goals, and simulation truth
+
+- Optics, GUI, and Studio expose appearance, debug views, mapping editors, provenance, comparison, and retirement
+
+- Quest, Makepad, Hostess, and later platform adapters validate deployments without owning the social meaning of a mapping
+
+### Why this boundary matters
+
+ A mixed-ability swarm body needs more than sensor variety. It needs a
+ visible connection between social contract, input channel, dynamic target,
+ feedback, privacy, and repair. Morphospace is the place where that
+ connection can become inspectable software instead of a hidden effect.
 
  Module map
 

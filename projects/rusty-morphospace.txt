@@ -24,6 +24,7 @@ Rusty Morphospace
  Repositories (https://mesmerprism.com/projects/rusty-morphospace.html#repositories)
  Module map (https://mesmerprism.com/projects/rusty-morphospace.html#module-map)
  Current work (https://mesmerprism.com/projects/rusty-morphospace.html#current-work)
+ HSI layer (https://mesmerprism.com/projects/rusty-morphospace.html#hsi-implementation-layer)
  Why Morphospace (https://mesmerprism.com/projects/rusty-morphospace.html#why)
  Rusty XR boundary (https://mesmerprism.com/projects/rusty-morphospace.html#boundary)
  Rusty XR (https://mesmerprism.com/projects/rusty-xr.html)
@@ -96,6 +97,7 @@ Useful for
 - Proving headset paths with bounded evidence before claiming runtime backends
 
 Connected work
+- Mixed-Ability HSI (https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html) uses Morphospace as the planned implementation layer for explicit access mappings, not as proof that the social method is already solved
 - Bioelectricity and Morphogenesis (https://mesmerprism.com/projects/bioelectricity.html) shows the Matter/Optics boundary applied to planarian surface-field dynamics
 - DiffeoMorph (https://arxiv.org/abs/2512.17129) provides a public computational-morphogenesis reference for many-agent target-forming bodies, separate from Morphospace runtime authority
 - Rusty Quest Makepad (https://github.com/MesmerPrism/rusty-quest-makepad) carries the current recorded-hand, SDF/ADF, particle, and GPU-proof adapter work
@@ -104,6 +106,51 @@ Connected work
 - Quest Termux Lab (https://github.com/MesmerPrism/quest-termux-lab) is a public MIT lab source that feeds the Rusty Quest sidecar bridge
 - Quest Companion Tools (https://mesmerprism.com/projects/viscereality-companion.html) show why operator-side contracts matter
 - Polar H10 Work (https://mesmerprism.com/projects/polar-h10.html) shows the same boundary discipline applied to biosignal streams
+
+ Implementation layer
+
+How Morphospace fits mixed-ability HSI
+
+ For Mixed-Ability Human-Swarm Interaction (https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html),
+ Rusty Morphospace is the implementation layer, not the research claim. Its
+ role is to keep the mapping stack explicit: which human channels enter the
+ system, what capability evidence and calibration state they carry, what they
+ bind to, which swarm dynamics they affect, who can see the effect, what is
+ logged, and when a mapping can be revised or retired.
+
+ The current public base is a capability scaffold. It includes separated
+ Morphospace repositories, public contracts, package lanes, the
+ Matter/Optics teaching model used by the bioelectricity page, and a bounded
+ Quest Makepad/Hostess validation path for recorded hand data, Matter CPU
+ oracle comparison, SDF/ADF debug payloads, particles, and GPU evidence.
+
+ The planned HSI layer should be read more narrowly: it is an integration
+ target for participant-facing mapping authoring, consent and provenance
+ controls, facilitator inspection, replay, version comparison, and adapter
+ swaps across desktop, browser, headset, biosignal, and later physical
+ platforms. It is not yet a finished mixed-ability study app, clinical system,
+ or scaled robotic backend.
+
+Current public base
+- Public module family with explicit Matter, Lattice, Manifold, Optics, GUI, Makepad, Quest, and Quest-Makepad boundaries
+- Package lanes for synthetic, biosignal, projected-motion, Polar H10, and hand-animation data
+- Matter/Optics teaching model for surface fields, conductance-like coupling, readouts, and browser inspection
+- Hostess and Quest Makepad evidence route for recorded hand meshes, SDF/ADF debug views, particles, and bounded GPU readbacks
+- Rusty XR retained as compatibility history and public Quest evidence rather than the new authority model
+
+Planned HSI integration
+- Lattice records device roles, spatial relations, validity, confidence, calibration, and capability snapshots
+- Manifold routes streams, commands, clocks, acknowledgements, logs, consent state, and audit surfaces
+- Matter owns particles, fields, boids-like coupling, SDF/TSDF forms, constraints, goals, and simulation truth
+- Optics, GUI, and Studio expose appearance, debug views, mapping editors, provenance, comparison, and retirement
+- Quest, Makepad, Hostess, and later platform adapters validate deployments without owning the social meaning of a mapping
+
+Why this boundary matters
+
+ A mixed-ability swarm body needs more than sensor variety. It needs a
+ visible connection between social contract, input channel, dynamic target,
+ feedback, privacy, and repair. Morphospace is the place where that
+ connection can become inspectable software instead of a hidden effect.
 
  Module map
 
