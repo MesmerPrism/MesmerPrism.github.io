@@ -738,6 +738,47 @@ li {
     line-height: 1.4;
 }
 
+.bioelectric-showcase-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.bioelectric-showcase-figure {
+    display: grid;
+    gap: 0.75rem;
+    margin: 0;
+    padding: 1rem;
+    border: 1px solid var(--line);
+    background: var(--panel);
+}
+
+.bioelectric-showcase-figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 720 / 860;
+    border: 1px solid rgba(30, 23, 19, 0.22);
+    background: #171413;
+    object-fit: contain;
+}
+
+.bioelectric-showcase-figure figcaption {
+    display: grid;
+    gap: 0.25rem;
+}
+
+.bioelectric-showcase-figure figcaption strong {
+    font-family: var(--font-ui);
+    font-size: 0.94rem;
+}
+
+.bioelectric-showcase-figure figcaption span {
+    color: var(--muted);
+    font-size: 0.98rem;
+    line-height: 1.45;
+}
+
 .rule-explorer {
     display: grid;
     gap: 1rem;
@@ -2146,6 +2187,7 @@ li {
     .guardrail-grid,
     .phase-list,
     .project-grid,
+    .bioelectric-showcase-grid,
     .bressloff-figure-grid,
     .bressloff-calibration-row,
     .bressloff-calibration-grid[data-bressloff-calibration-grid],

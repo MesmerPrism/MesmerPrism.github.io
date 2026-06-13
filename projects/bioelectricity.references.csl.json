@@ -9,7 +9,7 @@
         [
           2026,
           6,
-          11
+          13
         ]
       ]
     },
@@ -25,7 +25,7 @@
         [
           2026,
           6,
-          11
+          13
         ]
       ]
     },
@@ -42,7 +42,7 @@
         [
           2026,
           6,
-          11
+          13
         ]
       ]
     },
@@ -66,7 +66,7 @@
         [
           2026,
           6,
-          11
+          13
         ]
       ]
     },
@@ -89,7 +89,7 @@
         [
           2026,
           6,
-          11
+          13
         ]
       ]
     },
@@ -112,7 +112,7 @@
         [
           2026,
           6,
-          11
+          13
         ]
       ]
     },
@@ -135,7 +135,7 @@
         [
           2026,
           6,
-          11
+          13
         ]
       ]
     },
@@ -159,7 +159,7 @@
         [
           2026,
           6,
-          11
+          13
         ]
       ]
     },
@@ -183,7 +183,7 @@
         [
           2026,
           6,
-          11
+          13
         ]
       ]
     },
@@ -207,7 +207,7 @@
         [
           2026,
           6,
-          11
+          13
         ]
       ]
     },
@@ -222,8 +222,8 @@
     "DOI": "10.3389/fnsys.2022.768201"
   },
   {
-    "id": "pahng-2025-diffeomorph",
-    "type": "article",
+    "id": "arxiv-org-diffeomorph-learning-to-morph-3d-shapes-using-differenti-2019",
+    "type": "webpage",
     "title": "DiffeoMorph: Learning to Morph 3D Shapes Using Differentiable Agent-Based Simulations",
     "URL": "https://arxiv.org/abs/2512.17129",
     "accessed": {
@@ -231,58 +231,41 @@
         [
           2026,
           6,
-          11
+          13
         ]
       ]
     },
-    "note": "arXiv:2512.17129. Referenced by Bioelectricity and Morphogenesis: https://mesmerprism.com/projects/bioelectricity.html",
-    "author": [
-      {
-        "family": "Pahng",
-        "given": "Seong Ho"
-      },
-      {
-        "family": "Guan",
-        "given": "Guoye"
-      },
-      {
-        "family": "Fefferman",
-        "given": "Benjamin"
-      },
-      {
-        "family": "Hormoz",
-        "given": "Sahand"
-      }
-    ],
+    "note": "Referenced by Bioelectricity and Morphogenesis: https://mesmerprism.com/projects/bioelectricity.html",
     "issued": {
       "date-parts": [
         [
-          2025
+          2019
         ]
       ]
-    },
-    "DOI": "10.48550/arXiv.2512.17129"
+    }
   },
   {
-    "id": "hormoz-lab-diffeomorph",
+    "id": "github-com-hormoz-lab-diffeomorph-implementation-2019",
     "type": "webpage",
-    "title": "diffeomorph",
+    "title": "hormoz-lab/diffeomorph implementation",
     "URL": "https://github.com/hormoz-lab/diffeomorph",
     "accessed": {
       "date-parts": [
         [
           2026,
           6,
-          11
+          13
         ]
       ]
     },
-    "note": "Official implementation for the DiffeoMorph paper. Referenced by Bioelectricity and Morphogenesis: https://mesmerprism.com/projects/bioelectricity.html",
-    "author": [
-      {
-        "literal": "hormoz-lab"
-      }
-    ]
+    "note": "Referenced by Bioelectricity and Morphogenesis: https://mesmerprism.com/projects/bioelectricity.html",
+    "issued": {
+      "date-parts": [
+        [
+          2019
+        ]
+      ]
+    }
   },
   {
     "id": "doi-org-oviedo-et-al-2010-2019",
@@ -294,7 +277,7 @@
         [
           2026,
           6,
-          11
+          13
         ]
       ]
     },
@@ -318,7 +301,7 @@
         [
           2026,
           6,
-          11
+          13
         ]
       ]
     },
@@ -342,7 +325,7 @@
         [
           2026,
           6,
-          11
+          13
         ]
       ]
     },
@@ -366,7 +349,7 @@
         [
           2026,
           6,
-          11
+          13
         ]
       ]
     },
@@ -389,7 +372,7 @@
         [
           2026,
           6,
-          11
+          13
         ]
       ]
     },
@@ -413,7 +396,7 @@
         [
           2026,
           6,
-          11
+          13
         ]
       ]
     },
@@ -429,7 +412,7 @@
         [
           2026,
           6,
-          11
+          13
         ]
       ]
     },
@@ -445,7 +428,7 @@
         [
           2026,
           6,
-          11
+          13
         ]
       ]
     },
@@ -461,7 +444,7 @@
         [
           2026,
           6,
-          11
+          13
         ]
       ]
     },
@@ -477,7 +460,7 @@
         [
           2026,
           6,
-          11
+          13
         ]
       ]
     },

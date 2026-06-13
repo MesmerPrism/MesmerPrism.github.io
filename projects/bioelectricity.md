@@ -2,7 +2,7 @@
 
 Source: https://mesmerprism.com/projects/bioelectricity.html
 Canonical HTML: https://mesmerprism.com/projects/bioelectricity.html
-Generated: 2026-06-11
+Generated: 2026-06-13
 Description: Bioelectricity and morphogenesis in Rusty Morphospace: a source-linked educational planarian surface-field model built with Rusty Matter and visualized through Rusty Optics.
 Markdown: https://mesmerprism.com/projects/bioelectricity.md
 Plain text: https://mesmerprism.com/projects/bioelectricity.txt
@@ -23,6 +23,7 @@ Rusty Morphospace and tissue-scale patterning
  claims in separate layers.
 
  [Current slice](https://mesmerprism.com/projects/bioelectricity.html#current-slice)
+ [Showcase export](https://mesmerprism.com/projects/bioelectricity.html#showcase-export)
  [Source status](https://mesmerprism.com/projects/bioelectricity.html#source-target-status)
  [Adjacent dynamics](https://mesmerprism.com/projects/bioelectricity.html#cross-project-bridge)
  [Why planarians](https://mesmerprism.com/projects/bioelectricity.html#planarian)
@@ -117,6 +118,22 @@ Rusty Morphospace and tissue-scale patterning
 
  [Repository](https://github.com/MesmerPrism/rusty-manifold)
 
+ Showcase export
+
+## Validated Planarian 3D surface and graph loops
+
+ These exports show the current Optics-owned preview/export path over
+ Matter-owned synthetic educational state: a 720-node planarian graph, opaque
+ body material, neon RGB activity/readout color, stable portrait framing, and a
+ seamless reset-activity showcase loop. The animation is a visual teaching
+ mode for surface-field inspection, not a calibrated planarian physiology
+ trace.
+
+ Both GIFs were generated at the exact export size and decoded after export as
+ 96-frame, 720 x 860 animations at 12 fps. The surface view emphasizes the
+ body field; the graph view exposes the same activity through node and edge
+ structure.
+
  Adjacent dynamics
 
 ## A side source for dynamics, not the center of the work
@@ -169,9 +186,11 @@ Rusty Morphospace and tissue-scale patterning
 ## Matched to original sources, but not calibrated yet
 
  The current implementation is source-linked at the target level. Two source
- families already have qualitative Matter fixtures. The remaining targets are
- intentionally planned or open until source figures, tables, categories, or
- datasets have been extracted into derived, rights-safe artifacts.
+ families already have qualitative Matter fixtures, and the derived
+ PlanformDB/metric/taxonomy layer now has explicit provenance fixtures. The
+ remaining targets are intentionally planned or open until source figures,
+ tables, categories, or datasets have been extracted into derived, rights-safe
+ artifacts.
 
  Target
  Original sources
@@ -195,18 +214,18 @@ Rusty Morphospace and tissue-scale patterning
 
  head_size_scaling
  [Beane et al., 2013](https://doi.org/10.1242/dev.086900)
- No calibrated head/organ-size metric is implemented.
- Open; needs region labels and source-derived morphometric targets.
+ Normalized region-extent metrics exist for annotation and validation fixtures.
+ No calibrated organ-size or physical morphometry claim yet.
 
  species_like_head_labels
  [Emmons-Bell et al., 2015](https://doi.org/10.3390/ijms161126065)
- No categorical head-shape taxonomy is implemented.
- Open; generated silhouettes/labels are preferred over paper figure reuse.
+ Synthetic species-like head-shape taxonomy fixture exists for educational labeling.
+ Non-calibrated; generated labels avoid paper figure reuse.
 
  planformdb_curated_subset
  [PlanformDB](https://lobolab.umbc.edu/planform/download/); [Lobo et al., 2013](https://doi.org/10.1093/bioinformatics/btt088)
- No PlanformDB-derived Matter fixture is committed.
- Future data fixture; requires schema, license, source-ID, and transformation review.
+ Rights-safe derived fixture records source IDs, labels, transforms, notice text, and use limits.
+ Provenance/annotation fixture only; not runtime dynamics authority.
 
  Why planarians
 
