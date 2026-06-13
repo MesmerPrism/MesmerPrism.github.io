@@ -2,7 +2,7 @@
 
 Source: https://mesmerprism.com/projects/fractal-optics.html
 Canonical HTML: https://mesmerprism.com/projects/fractal-optics.html
-Generated: 2026-05-26
+Generated: 2026-06-13
 Description: Fractal Optics maps fractal phototherapy, retinal and ophthalmic stimulation, VR delivery, and patterned-light comparator literatures.
 Markdown: https://mesmerprism.com/projects/fractal-optics.md
 Plain text: https://mesmerprism.com/projects/fractal-optics.txt

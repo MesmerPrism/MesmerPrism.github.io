@@ -2,7 +2,7 @@ Project Scope | Strobotorch
 
 Source: https://mesmerprism.com/Strobotorch/project-boundary/
 Canonical HTML: https://mesmerprism.com/Strobotorch/project-boundary/
-Generated: 2026-05-26
+Generated: 2026-06-13
 Description: The scope of Strobotorch Android flashlight signaling and diagnostics tooling.
 Markdown: https://mesmerprism.com/Strobotorch/project-boundary/index.md
 Plain text: https://mesmerprism.com/Strobotorch/project-boundary/index.txt

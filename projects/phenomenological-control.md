@@ -2,7 +2,7 @@
 
 Source: https://mesmerprism.com/projects/phenomenological-control.html
 Canonical HTML: https://mesmerprism.com/projects/phenomenological-control.html
-Generated: 2026-05-26
+Generated: 2026-06-13
 Description: A public guide to phenomenological control, imagery variation, expectation-shaped experience, source monitoring, absorption, porosity, hypnosis, induced vision, and meaning-making.
 Markdown: https://mesmerprism.com/projects/phenomenological-control.md
 Plain text: https://mesmerprism.com/projects/phenomenological-control.txt

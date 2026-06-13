@@ -2,7 +2,7 @@
 
 Source: https://mesmerprism.com/projects/hollow-face-lab.html
 Canonical HTML: https://mesmerprism.com/projects/hollow-face-lab.html
-Generated: 2026-05-26
+Generated: 2026-06-13
 Description: Hollow Face Lab maps WebGL, WebXR, and Rusty XR implementation choices against hollow-face and depth-inversion research.
 Markdown: https://mesmerprism.com/projects/hollow-face-lab.md
 Plain text: https://mesmerprism.com/projects/hollow-face-lab.txt
@@ -29,7 +29,7 @@ Depth inversion and research tooling
  [Evidence map](https://mesmerprism.com/projects/hollow-face-lab.html#source-map)
  [Implementation](https://mesmerprism.com/projects/hollow-face-lab.html#implementation)
  [References](https://mesmerprism.com/projects/hollow-face-lab.html#references)
- [Rusty XR](https://mesmerprism.com/projects/rusty-xr.html)
+ [Rusty XR](https://mesmerprism.com/projects/rusty-morphospace/rusty-xr.html)
 
  Instrument problem
 

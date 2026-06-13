@@ -2,7 +2,7 @@ Viscereality
 
 Source: https://mesmerprism.com/projects/viscereality.html
 Canonical HTML: https://mesmerprism.com/projects/viscereality.html
-Generated: 2026-05-26
+Generated: 2026-06-13
 Description: Viscereality is a Quest-based bioresponsive VR research system for breath interaction, cardiac coherence training, oscillator-driven visuals, and repeatable study sessions.
 Markdown: https://mesmerprism.com/projects/viscereality.md
 Plain text: https://mesmerprism.com/projects/viscereality.txt

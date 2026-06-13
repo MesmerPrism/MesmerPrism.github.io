@@ -2,7 +2,7 @@
 
 Source: https://mesmerprism.com/projects/sane.html
 Canonical HTML: https://mesmerprism.com/projects/sane.html
-Generated: 2026-05-26
+Generated: 2026-06-13
 Description: SANE is a proposed framework for reading coupled changes across somaesthetic practice, anthropotechnical mediation, noetic meaning, and emergent systems.
 Markdown: https://mesmerprism.com/projects/sane.md
 Plain text: https://mesmerprism.com/projects/sane.txt

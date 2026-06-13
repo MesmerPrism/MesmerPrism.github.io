@@ -2,7 +2,7 @@
 
 Source: https://mesmerprism.com/projects/altered-xperience-project.html
 Canonical HTML: https://mesmerprism.com/projects/altered-xperience-project.html
-Generated: 2026-05-26
+Generated: 2026-06-13
 Description: The Altered Xperience Project is a CIRCE-led citizen-science survey for anonymous altered-state reports, with multilingual questionnaires, feedback, scoring, exports, and collaborator workflow.
 Markdown: https://mesmerprism.com/projects/altered-xperience-project.md
 Plain text: https://mesmerprism.com/projects/altered-xperience-project.txt

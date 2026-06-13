@@ -1,29 +1,29 @@
-Rusty XR
+Rusty XR Legacy Reference | Rusty Morphospace
 
-Source: https://mesmerprism.com/projects/rusty-xr.html
-Canonical HTML: https://mesmerprism.com/projects/rusty-xr.html
-Generated: 2026-05-26
-Description: Rusty XR is a public Rust workspace for reusable XR contracts, Quest diagnostics, camera/depth labels, broker models, public examples, and companion-tool workflows.
-Markdown: https://mesmerprism.com/projects/rusty-xr.md
-Plain text: https://mesmerprism.com/projects/rusty-xr.txt
-BibTeX references: https://mesmerprism.com/projects/rusty-xr.bib
-CSL JSON references: https://mesmerprism.com/projects/rusty-xr.references.csl.json
+Source: https://mesmerprism.com/projects/rusty-morphospace/rusty-xr.html
+Canonical HTML: https://mesmerprism.com/projects/rusty-morphospace/rusty-xr.html
+Generated: 2026-06-13
+Description: Rusty XR is the legacy/reference Quest and XR compatibility surface under Rusty Morphospace, preserving public examples, passthrough notes, diagnostics, and companion-tool history.
+Markdown: https://mesmerprism.com/projects/rusty-morphospace/rusty-xr.md
+Plain text: https://mesmerprism.com/projects/rusty-morphospace/rusty-xr.txt
+BibTeX references: https://mesmerprism.com/projects/rusty-morphospace/rusty-xr.bib
+CSL JSON references: https://mesmerprism.com/projects/rusty-morphospace/rusty-xr.references.csl.json
 
 ---
 
-Rust for XR and Meta Quest experiments
+Legacy Quest and XR reference
 
 Rusty XR
 
- Rusty XR is a public Rust workspace for making Quest and XR experiments
- easier to repeat, inspect, and connect to outside tooling. It is not a
- single headset app. It holds shared contracts, schemas, diagnostics,
- camera and depth models, broker shapes, and public examples that app
- shells and companion tools can reuse without inheriting study-specific package
- names, study logic, or visual-effect code.
- Use Rusty XR when Quest experiments need to stay reproducible across machines,
- collaborators, and companion tools.
+ Rusty XR is now the legacy/reference lane inside Rusty Morphospace.
+ It preserves the public Quest examples, passthrough vocabulary,
+ camera/depth diagnostics, broker models, and companion-tool history
+ that informed the current Morphospace split. New generic relation,
+ command, Matter, Optics, GUI, Makepad, and Quest work belongs in the
+ newer Morphospace repos; Rusty XR remains useful when old examples or
+ compatibility evidence need to be inspected.
 
+ Rusty Morphospace (https://mesmerprism.com/projects/rusty-morphospace.html)
  Source repo (https://github.com/MesmerPrism/Rusty-XR)
  Project docs (https://mesmerprism.github.io/Rusty-XR/)
  Passthrough guide (https://mesmerprism.github.io/Rusty-XR/passthrough.html)
@@ -33,22 +33,21 @@ Rusty XR
 
  Purpose
 
-What it is good for
+What remains useful
 
- Rusty XR is good for the parts of XR work that need to survive beyond a single
- prototype: typed schemas, repeatable diagnostics, camera and depth reasoning,
- runtime profiles, broker messages, sensor payloads, and small examples that
- companion tools can install or verify. It makes the technical layer portable
- enough to support Viscereality, Meta Quest signal-source vocabulary, public
- examples, and future Rust-native XR experiments without collapsing them into
- one app.
+ Rusty XR remains valuable as a public record of Quest and XR mechanics that
+ needed to survive beyond a single prototype: typed schemas, repeatable
+ diagnostics, camera and depth reasoning, runtime profiles, broker messages,
+ sensor payloads, and small examples that companion tools could install or
+ verify. Those lessons now feed the cleaner Morphospace lanes instead of
+ defining a single umbrella architecture.
 
- The current emphasis is Meta Quest because it is where the practical need is
- sharpest. Quest experiments involve headset builds, operator tools, raw camera
- questions, environment-depth data, display casting, MediaProjection
- inspection, and diagnostics. Rusty XR gives those pieces a common language so
- the work can move between research prototypes, documentation examples, and
- field tools without losing the source labels.
+ The reference emphasis is still Meta Quest because that is where the
+ practical pressure first became visible: headset builds, operator tools, raw
+ camera questions, environment-depth data, display casting, MediaProjection
+ inspection, and diagnostics. Rusty XR keeps those source labels available for
+ compatibility and explanation while Rusty Quest, Rusty Lattice, Rusty
+ Manifold, Rusty Matter, and Rusty Optics carry new active architecture work.
 
  Here, "source" means where a visual or sensor signal actually comes from:
  compositor passthrough, app-visible camera input, environment depth, casting,
@@ -60,10 +59,10 @@ Start here
 - Use the companion tools to install, launch, cast, and verify a build
 
 Useful for
-- Keeping Quest experiments reproducible across machines and collaborators
-- Sharing runtime profiles, diagnostics, catalog metadata, and schema contracts with companion tools
-- Testing camera, depth, passthrough, final-display, broker, and strobe workflows with clear source labels
-- Connecting sensor streams, visual primitives, hand/particle data, and operator-side evidence capture
+- Looking up legacy Quest examples and public compatibility contracts
+- Tracing passthrough, camera, depth, final-display, broker, and strobe vocabulary
+- Understanding why the Morphospace split separates Lattice, Manifold, Matter, Optics, Quest, and adapters
+- Connecting older companion-tool workflows to their current Morphospace boundaries
 
 Connected work
 - Quest passthrough guide (https://mesmerprism.github.io/Rusty-XR/passthrough.html) supplies the API and signal-source discipline
@@ -72,26 +71,26 @@ Connected work
 
  Quest examples
 
-Reproducible XR Experiments
+Reference experiments
 
- A lot of Quest work becomes confusing when every visual output gets called
+ A lot of Quest work became confusing when every visual output got called
  passthrough. Rusty XR helps keep the experimental vocabulary clean: compositor
  passthrough, app-visible camera input, environment depth, casting, and
  MediaProjection each describe a different kind of evidence. That distinction
  matters during tool building, capture debugging, and explanations of what a
  prototype can actually access.
 
- That structure also supports the companion apps. A Windows or
- Android operator tool can install a build, launch a profile, cast the final
+ That structure still helps when reading the companion app history. A Windows
+ or Android operator tool can install a build, launch a profile, cast the final
  display, capture a screenshot, run a broker or media probe, and export
- diagnostics while Rusty XR supplies the shared contracts and reference behavior
- behind the run.
+ diagnostics; the active Morphospace lanes now decide which pieces are
+ platform behavior, command authority, relation state, or data-plane payloads.
 
 Current themes
-- Rust-native Quest examples that can be launched and verified from companion tools
+- Rust-native Quest examples that can be compared against newer Morphospace adapters
 - Camera, depth, passthrough, and MediaProjection experiments with separate evidence labels
-- Broker, OSC, LSL, Polar H10, and stream-manifest contracts for research-facing data paths
-- Hand mesh, particles, SDF, room mesh, and visual-strobe descriptors kept as reusable public contracts
+- Broker, OSC, LSL, Polar H10, and stream-manifest contracts that informed Manifold package and stream work
+- Hand mesh, particles, SDF, room mesh, and visual-strobe descriptors preserved as public reference material
 - Diagnostics and visual proof that make headset behavior easier to discuss remotely
 
 Connected projects

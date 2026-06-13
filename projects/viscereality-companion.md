@@ -2,7 +2,7 @@
 
 Source: https://mesmerprism.com/projects/viscereality-companion.html
 Canonical HTML: https://mesmerprism.com/projects/viscereality-companion.html
-Generated: 2026-05-26
+Generated: 2026-06-13
 Description: Quest Companion Tools provides Windows and Android utilities for Meta Quest install, launch, casting, diagnostics, and evidence capture.
 Markdown: https://mesmerprism.com/projects/viscereality-companion.md
 Plain text: https://mesmerprism.com/projects/viscereality-companion.txt
@@ -21,7 +21,7 @@ Meta Quest operator tooling
  diagnostics without asking every project to rebuild the same operator tools.
 
  [Current companion repo](https://github.com/MesmerPrism/Rusty-XR-Companion-Apps)
- [Rusty XR](https://mesmerprism.com/projects/rusty-xr.html)
+ [Rusty XR](https://mesmerprism.com/projects/rusty-morphospace/rusty-xr.html)
  [Rusty XR source](https://github.com/MesmerPrism/Rusty-XR)
  [Contact](https://mesmerprism.com/#contact)
 
@@ -72,7 +72,7 @@ Meta Quest operator tooling
  [Rusty-XR-Companion-Apps](https://github.com/MesmerPrism/Rusty-XR-Companion-Apps).
  It is a Windows-first workspace with a WPF app, CLI, MCP endpoint, core library,
  diagnostics library, and release tooling. It is designed to sit next to
- [Rusty XR](https://mesmerprism.com/projects/rusty-xr.html), which owns the reusable Rust
+ [Rusty XR](https://mesmerprism.com/projects/rusty-morphospace/rusty-xr.html), which owns the reusable Rust
  contracts, schemas, examples, and Quest-side source code.
 
  Earlier Viscereality tools, Android transfer experiments, and multi-device

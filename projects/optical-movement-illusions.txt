@@ -2,7 +2,7 @@ Optical Movement Illusions
 
 Source: https://mesmerprism.com/projects/optical-movement-illusions.html
 Canonical HTML: https://mesmerprism.com/projects/optical-movement-illusions.html
-Generated: 2026-05-26
+Generated: 2026-06-13
 Description: Optical Movement Illusions maps peripheral drift, Rotating Snakes, static motion illusions, color and luminance parameters, and the mechanism-design bridge into perceptual tooling.
 Markdown: https://mesmerprism.com/projects/optical-movement-illusions.md
 Plain text: https://mesmerprism.com/projects/optical-movement-illusions.txt

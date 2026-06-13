@@ -2,7 +2,7 @@
 
 Source: https://mesmerprism.com/projects/polar-h10.html
 Canonical HTML: https://mesmerprism.com/projects/polar-h10.html
-Generated: 2026-05-26
+Generated: 2026-06-13
 Description: Public overview of Mesmer Prism's Polar H10 work across minimal signal packages, Rusty XR, Quest broker streams, Windows capture, Android diagnostics, Unity Quest integration, and Viscereality research tooling.
 Markdown: https://mesmerprism.com/projects/polar-h10.md
 Plain text: https://mesmerprism.com/projects/polar-h10.txt
@@ -25,7 +25,7 @@ Biofeedback sensor integration
  [Signal packages](https://github.com/MesmerPrism/polar-h10-signals)
  [Rusty XR pipeline](https://github.com/MesmerPrism/Rusty-XR/blob/main/docs/BLE_LSL_POLAR_PIPELINE.md)
  [Windows capture docs](https://github.com/MesmerPrism/Rusty-XR-Companion-Apps/blob/main/docs/polar-h10-windows-capture.md)
- [Rusty XR](https://mesmerprism.com/projects/rusty-xr.html)
+ [Rusty XR](https://mesmerprism.com/projects/rusty-morphospace/rusty-xr.html)
  [Quest companion tools](https://mesmerprism.com/projects/viscereality-companion.html)
  [Earlier protocol reference](https://mesmerprism.github.io/PolarH10/)
 

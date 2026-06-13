@@ -2,7 +2,7 @@ Bressloff and Rule Modeling Deep Dive
 
 Source: https://mesmerprism.com/projects/bressloff-v1-form-constants-deep-dive.html
 Canonical HTML: https://mesmerprism.com/projects/bressloff-v1-form-constants-deep-dive.html
-Generated: 2026-05-26
+Generated: 2026-06-13
 Description: A notebook-style deep dive into Bressloff form constants, Rule flicker modeling, and generated driven neural-field diagnostics after Rule.
 Markdown: https://mesmerprism.com/projects/bressloff-v1-form-constants-deep-dive.md
 Plain text: https://mesmerprism.com/projects/bressloff-v1-form-constants-deep-dive.txt

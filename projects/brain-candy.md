@@ -2,7 +2,7 @@
 
 Source: https://mesmerprism.com/projects/brain-candy.html
 Canonical HTML: https://mesmerprism.com/projects/brain-candy.html
-Generated: 2026-05-26
+Generated: 2026-06-13
 Description: Brain Candy studies rhythmic light, recursive visual structure, sound, breath, expectation, and interaction as tunable non-drug state-shift design.
 Markdown: https://mesmerprism.com/projects/brain-candy.md
 Plain text: https://mesmerprism.com/projects/brain-candy.txt

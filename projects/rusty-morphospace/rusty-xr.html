@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rusty XR Legacy Reference | Rusty Morphospace | Mesmer Prism</title>
+    <link rel="canonical" href="https://mesmerprism.com/projects/rusty-morphospace/rusty-xr.html">
+    <meta
+        name="description"
+        content="Rusty XR is the legacy/reference Quest and XR compatibility surface under Rusty Morphospace, preserving public examples, passthrough notes, diagnostics, and companion-tool history."
+    >
+    <meta property="og:title" content="Rusty XR Legacy Reference | Rusty Morphospace | Mesmer Prism">
+    <meta
+        property="og:description"
+        content="A legacy/reference Quest and XR compatibility surface under Rusty Morphospace: public examples, diagnostics, passthrough notes, broker models, and companion-tool history."
+    >
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mesmerprism.com/projects/rusty-morphospace/rusty-xr.html">
+    <meta name="theme-color" content="#f4efe7">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" href="/favicon-32x32.png" type="image/png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="stylesheet" href="/assets/fonts.css">
+    <link rel="stylesheet" href="/styles.css?v=20260609-logo">
+    <!-- BEGIN agent-readable metadata -->
+    <link rel="alternate" type="text/markdown" href="/projects/rusty-morphospace/rusty-xr.md" title="Markdown version">
+    <link rel="alternate" type="text/plain" href="/projects/rusty-morphospace/rusty-xr.txt" title="Plain text version">
+    <link rel="alternate" type="application/x-bibtex" href="/projects/rusty-morphospace/rusty-xr.bib" title="BibTeX references">
+    <link rel="alternate" type="application/vnd.citationstyles.csl+json" href="/projects/rusty-morphospace/rusty-xr.references.csl.json" title="CSL JSON references">
+    <meta name="citation_title" content="Rusty XR Legacy Reference | Rusty Morphospace">
+    <meta name="citation_author" content="Till Holzapfel">
+    <meta name="citation_publication_date" content="2026-06-13">
+    <meta name="citation_online_date" content="2026-06-13">
+    <meta name="citation_public_url" content="https://mesmerprism.com/projects/rusty-morphospace/rusty-xr.html">
+    <meta name="citation_language" content="en">
+    <script type="application/ld+json" data-agent-metadata>
+    {
+          "@context": "https://schema.org",
+          "@type": "Article",
+          "headline": "Rusty XR Legacy Reference | Rusty Morphospace",
+          "name": "Rusty XR Legacy Reference | Rusty Morphospace",
+          "description": "Rusty XR is the legacy/reference Quest and XR compatibility surface under Rusty Morphospace, preserving public examples, passthrough notes, diagnostics, and companion-tool history.",
+          "author": {
+                "@type": "Person",
+                "name": "Till Holzapfel"
+          },
+          "publisher": {
+                "@type": "Organization",
+                "name": "Mesmer Prism",
+                "url": "https://mesmerprism.com"
+          },
+          "isPartOf": {
+                "@type": "WebSite",
+                "name": "Mesmer Prism",
+                "url": "https://mesmerprism.com"
+          },
+          "url": "https://mesmerprism.com/projects/rusty-morphospace/rusty-xr.html",
+          "dateModified": "2026-06-13",
+          "inLanguage": "en",
+          "encoding": [
+                {
+                      "@type": "MediaObject",
+                      "encodingFormat": "text/markdown",
+                      "contentUrl": "https://mesmerprism.com/projects/rusty-morphospace/rusty-xr.md"
+                },
+                {
+                      "@type": "MediaObject",
+                      "encodingFormat": "text/plain",
+                      "contentUrl": "https://mesmerprism.com/projects/rusty-morphospace/rusty-xr.txt"
+                },
+                {
+                      "@type": "MediaObject",
+                      "encodingFormat": "application/x-bibtex",
+                      "contentUrl": "https://mesmerprism.com/projects/rusty-morphospace/rusty-xr.bib"
+                },
+                {
+                      "@type": "MediaObject",
+                      "encodingFormat": "application/vnd.citationstyles.csl+json",
+                      "contentUrl": "https://mesmerprism.com/projects/rusty-morphospace/rusty-xr.references.csl.json"
+                }
+          ],
+          "citation": [
+                "https://github.com/MesmerPrism",
+                "https://github.com/MesmerPrism/Rusty-XR",
+                "https://mesmerprism.github.io/Rusty-XR/",
+                "https://mesmerprism.github.io/Rusty-XR/passthrough.html",
+                "https://mesmerprism.github.io/Rusty-XR-Companion-Apps/",
+                "https://github.com/MesmerPrism/Rusty-XR/blob/main/docs/QUEST_VISUAL_SOURCE_TAXONOMY.md",
+                "https://github.com/MesmerPrism/Rusty-XR-Companion-Apps"
+          ]
+    }
+    </script>
+    <!-- END agent-readable metadata -->
+</head>
+<body class="project-page">
+    <header class="site-header">
+        <div class="shell header-row">
+            <a class="site-name" href="/" aria-label="Mesmer Prism home">
+                <img class="site-mark" src="/assets/brand/mesmer-prism-logo.png" alt="" width="1200" height="508" decoding="async">
+                <span>Mesmer Prism</span>
+            </a>
+            <nav class="site-nav" aria-label="Primary">
+                <a href="/#work">Work</a>
+                <a href="/#publications">Publications</a>
+                <a href="/#background">Background</a>
+                <a href="/#contact">Contact</a>
+                <a href="https://github.com/MesmerPrism" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="shell">
+        <section class="hero">
+            <div class="hero-shell hero-shell--page">
+                <p class="eyebrow">Legacy Quest and XR reference</p>
+                <h1>Rusty XR</h1>
+                <p class="project-lede">
+                    Rusty XR is now the legacy/reference lane inside Rusty Morphospace.
+                    It preserves the public Quest examples, passthrough vocabulary,
+                    camera/depth diagnostics, broker models, and companion-tool history
+                    that informed the current Morphospace split. New generic relation,
+                    command, Matter, Optics, GUI, Makepad, and Quest work belongs in the
+                    newer Morphospace repos; Rusty XR remains useful when old examples or
+                    compatibility evidence need to be inspected.
+                </p>
+                <div class="hero-actions">
+                    <a class="action-link action-link--strong" href="/projects/rusty-morphospace.html">Rusty Morphospace</a>
+                    <a class="action-link" href="https://github.com/MesmerPrism/Rusty-XR" target="_blank" rel="noopener noreferrer">Source repo</a>
+                    <a class="action-link" href="https://mesmerprism.github.io/Rusty-XR/" target="_blank" rel="noopener noreferrer">Project docs</a>
+                    <a class="action-link" href="https://mesmerprism.github.io/Rusty-XR/passthrough.html" target="_blank" rel="noopener noreferrer">Passthrough guide</a>
+                    <a class="action-link" href="https://mesmerprism.github.io/Rusty-XR-Companion-Apps/" target="_blank" rel="noopener noreferrer">Companion docs</a>
+                    <a class="action-link" href="/projects/polar-h10.html">Polar H10 work</a>
+                    <a class="action-link" href="/projects/viscereality-companion.html">Quest companion tools</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section two-column">
+            <div>
+                <div class="section-heading">
+                    <p class="section-kicker">Purpose</p>
+                    <h2>What remains useful</h2>
+                </div>
+                <p>
+                    Rusty XR remains valuable as a public record of Quest and XR mechanics that
+                    needed to survive beyond a single prototype: typed schemas, repeatable
+                    diagnostics, camera and depth reasoning, runtime profiles, broker messages,
+                    sensor payloads, and small examples that companion tools could install or
+                    verify. Those lessons now feed the cleaner Morphospace lanes instead of
+                    defining a single umbrella architecture.
+                </p>
+                <p>
+                    The reference emphasis is still Meta Quest because that is where the
+                    practical pressure first became visible: headset builds, operator tools, raw
+                    camera questions, environment-depth data, display casting, MediaProjection
+                    inspection, and diagnostics. Rusty XR keeps those source labels available for
+                    compatibility and explanation while Rusty Quest, Rusty Lattice, Rusty
+                    Manifold, Rusty Matter, and Rusty Optics carry new active architecture work.
+                </p>
+                <p>
+                    Here, "source" means where a visual or sensor signal actually comes from:
+                    compositor passthrough, app-visible camera input, environment depth, casting,
+                    MediaProjection, or a generated app render.
+                </p>
+            </div>
+            <div class="detail-stack">
+                <section class="detail-block">
+                    <h3>Start here</h3>
+                    <ul class="plain-list">
+                        <li>Read the <a href="https://mesmerprism.github.io/Rusty-XR/passthrough.html" target="_blank" rel="noopener noreferrer">Quest passthrough guide</a></li>
+                        <li>Inspect the public Quest examples in the <a href="https://github.com/MesmerPrism/Rusty-XR" target="_blank" rel="noopener noreferrer">source repository</a></li>
+                        <li>Use the companion tools to install, launch, cast, and verify a build</li>
+                    </ul>
+                </section>
+                <section class="detail-block">
+                    <h3>Useful for</h3>
+                    <ul class="plain-list">
+                        <li>Looking up legacy Quest examples and public compatibility contracts</li>
+                        <li>Tracing passthrough, camera, depth, final-display, broker, and strobe vocabulary</li>
+                        <li>Understanding why the Morphospace split separates Lattice, Manifold, Matter, Optics, Quest, and adapters</li>
+                        <li>Connecting older companion-tool workflows to their current Morphospace boundaries</li>
+                    </ul>
+                </section>
+                <section class="detail-block">
+                    <h3>Connected work</h3>
+                    <ul class="plain-list">
+                        <li><a href="https://mesmerprism.github.io/Rusty-XR/passthrough.html" target="_blank" rel="noopener noreferrer">Quest passthrough guide</a> supplies the API and signal-source discipline</li>
+                        <li><a href="/projects/viscereality-companion.html">Quest Companion Tools</a> turn the same contracts into install, launch, cast, and diagnostics workflows</li>
+                        <li><a href="/projects/viscereality.html">Viscereality</a> provides the research-system context where this kind of tooling becomes necessary</li>
+                    </ul>
+                </section>
+            </div>
+        </section>
+
+        <section class="section two-column">
+            <div>
+                <div class="section-heading">
+                    <p class="section-kicker">Quest examples</p>
+                    <h2>Reference experiments</h2>
+                </div>
+                <p>
+                    A lot of Quest work became confusing when every visual output got called
+                    passthrough. Rusty XR helps keep the experimental vocabulary clean: compositor
+                    passthrough, app-visible camera input, environment depth, casting, and
+                    MediaProjection each describe a different kind of evidence. That distinction
+                    matters during tool building, capture debugging, and explanations of what a
+                    prototype can actually access.
+                </p>
+                <p>
+                    That structure still helps when reading the companion app history. A Windows
+                    or Android operator tool can install a build, launch a profile, cast the final
+                    display, capture a screenshot, run a broker or media probe, and export
+                    diagnostics; the active Morphospace lanes now decide which pieces are
+                    platform behavior, command authority, relation state, or data-plane payloads.
+                </p>
+            </div>
+            <div class="detail-stack">
+                <section class="detail-block">
+                    <h3>Current themes</h3>
+                    <ul class="plain-list">
+                        <li>Rust-native Quest examples that can be compared against newer Morphospace adapters</li>
+                        <li>Camera, depth, passthrough, and MediaProjection experiments with separate evidence labels</li>
+                        <li>Broker, OSC, LSL, Polar H10, and stream-manifest contracts that informed Manifold package and stream work</li>
+                        <li>Hand mesh, particles, SDF, room mesh, and visual-strobe descriptors preserved as public reference material</li>
+                        <li>Diagnostics and visual proof that make headset behavior easier to discuss remotely</li>
+                    </ul>
+                </section>
+                <section class="detail-block">
+                    <h3>Connected projects</h3>
+                    <ul class="plain-list">
+                        <li><a href="/projects/viscereality-companion.html">Quest Companion Tools</a> for Windows and Android operator workflows</li>
+                        <li><a href="/projects/polar-h10.html">Polar H10 Work</a> for BLE, PMD, LSL, and Quest broker sensor paths</li>
+                        <li><a href="https://mesmerprism.github.io/Rusty-XR/passthrough.html" target="_blank" rel="noopener noreferrer">Quest passthrough guide</a> for API and source-vocabulary discipline</li>
+                        <li><a href="/projects/viscereality.html">Viscereality</a> for the broader Quest-based research-system context</li>
+                    </ul>
+                </section>
+            </div>
+        </section>
+
+        <section class="section" id="references">
+            <div class="section-heading">
+                <p class="section-kicker">References</p>
+                <h2>Project docs</h2>
+                <p>
+                    Mesmer Prism keeps the conceptual overview here. Implementation details,
+                    onboarding, release notes, Quest source documentation, and command-level
+                    workflows belong in the dedicated project documentation.
+                </p>
+            </div>
+            <div class="reference-grid">
+                <section class="detail-block">
+                    <h3>Rusty XR</h3>
+                    <ul class="plain-list">
+                        <li><strong>MesmerPrism.</strong> "<a class="reference-link" href="https://github.com/MesmerPrism/Rusty-XR" target="_blank" rel="noopener noreferrer">Rusty-XR</a>." Public GitHub repository.</li>
+                        <li><strong>Rusty XR.</strong> "<a class="reference-link" href="https://mesmerprism.github.io/Rusty-XR/" target="_blank" rel="noopener noreferrer">Project Documentation</a>." Technical docs, architecture notes, and workflow guidance.</li>
+                        <li><strong>Rusty XR.</strong> "<a class="reference-link" href="https://mesmerprism.github.io/Rusty-XR/passthrough.html" target="_blank" rel="noopener noreferrer">Quest Passthrough Documentation</a>." Source map for compositor passthrough, raw camera, depth, and final-display inspection.</li>
+                        <li><strong>Rusty XR.</strong> "<a class="reference-link" href="https://github.com/MesmerPrism/Rusty-XR/blob/main/docs/QUEST_VISUAL_SOURCE_TAXONOMY.md" target="_blank" rel="noopener noreferrer">Quest Visual Source Taxonomy</a>." The detailed source-map document for camera, depth, passthrough, and display evidence.</li>
+                    </ul>
+                </section>
+                <section class="detail-block">
+                    <h3>Companion tooling</h3>
+                    <ul class="plain-list">
+                        <li><strong>MesmerPrism.</strong> "<a class="reference-link" href="https://mesmerprism.github.io/Rusty-XR-Companion-Apps/" target="_blank" rel="noopener noreferrer">Rusty XR Companion Docs</a>." User-facing docs for install, launch, casting, diagnostics, and releases.</li>
+                        <li><strong>MesmerPrism.</strong> "<a class="reference-link" href="https://github.com/MesmerPrism/Rusty-XR-Companion-Apps" target="_blank" rel="noopener noreferrer">Rusty-XR-Companion-Apps</a>." Source repository for the Windows companion and related tooling.</li>
+                    </ul>
+                </section>
+            </div>
+        </section>
+        <!-- BEGIN page-export-links -->
+        <section class="agent-downloads" aria-labelledby="page-downloads">
+            <h2 id="page-downloads">Page exports</h2>
+            <div class="agent-downloads__links">
+                <a href="/projects/rusty-morphospace/rusty-xr.md" download>Markdown</a>
+                <a href="/projects/rusty-morphospace/rusty-xr.txt" download>Text</a>
+                <a href="/projects/rusty-morphospace/rusty-xr.bib" download>BibTeX</a>
+                <a href="/projects/rusty-morphospace/rusty-xr.references.csl.json" download>CSL JSON</a>
+            </div>
+        </section>
+        <!-- END page-export-links -->
+</main>
+
+    <footer class="site-footer">
+        <div class="shell footer-row">
+            <p>XR systems, perception research, and essays by Till Holzapfel.</p>
+            <nav class="footer-links" aria-label="Legal">
+                <a href="/impressum.html">Impressum</a>
+                <a href="/datenschutz.html">Datenschutz</a>
+            </nav>
+        </div>
+    </footer>
+</body>
+</html>

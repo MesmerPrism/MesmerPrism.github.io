@@ -2,7 +2,7 @@
 
 Source: https://mesmerprism.com/projects/tulpas.html
 Canonical HTML: https://mesmerprism.com/projects/tulpas.html
-Generated: 2026-05-26
+Generated: 2026-06-13
 Description: Tulpas covers modern online tulpamancy, thoughtforms, headmates, servitors, egregores, imposition, voice-like experience, and adjacent AI companion analogies.
 Markdown: https://mesmerprism.com/projects/tulpas.md
 Plain text: https://mesmerprism.com/projects/tulpas.txt

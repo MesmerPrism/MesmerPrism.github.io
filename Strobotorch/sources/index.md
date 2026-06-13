@@ -2,7 +2,7 @@
 
 Source: https://mesmerprism.com/Strobotorch/sources/
 Canonical HTML: https://mesmerprism.com/Strobotorch/sources/
-Generated: 2026-05-26
+Generated: 2026-06-13
 Description: Academic and public sources for Strobotorch flashing-light safety, frequency context, torch/camera diagnostics, and visible-light signal tooling.
 Markdown: https://mesmerprism.com/Strobotorch/sources/index.md
 Plain text: https://mesmerprism.com/Strobotorch/sources/index.txt

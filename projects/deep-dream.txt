@@ -2,7 +2,7 @@ Deep Dream
 
 Source: https://mesmerprism.com/projects/deep-dream.html
 Canonical HTML: https://mesmerprism.com/projects/deep-dream.html
-Generated: 2026-05-26
+Generated: 2026-06-13
 Description: Deep Dream explains how machine-vision hallucination, community visual taxonomies, VR research, and cyberdelic systems shaped simulated psychedelic vision.
 Markdown: https://mesmerprism.com/projects/deep-dream.md
 Plain text: https://mesmerprism.com/projects/deep-dream.txt

@@ -2,7 +2,7 @@
 
 Source: https://mesmerprism.com/plasmatic-multitudes/terminology.html
 Canonical HTML: https://mesmerprism.com/plasmatic-multitudes/terminology.html
-Generated: 2026-05-26
+Generated: 2026-06-13
 Description: Terms for semi-corporeal avatars, plasmatic bodies, particle bodies, swarm bodies, aura avatars, boundary precision, pseudo-haptics, and related design concepts.
 Markdown: https://mesmerprism.com/plasmatic-multitudes/terminology.md
 Plain text: https://mesmerprism.com/plasmatic-multitudes/terminology.txt

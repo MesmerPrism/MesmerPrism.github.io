@@ -2,7 +2,7 @@
 
 Source: https://mesmerprism.com/projects/rusty-morphospace.html
 Canonical HTML: https://mesmerprism.com/projects/rusty-morphospace.html
-Generated: 2026-06-12
+Generated: 2026-06-13
 Description: Rusty Morphospace is a modular Rust platform for computational matter, situated relations, runtime authority, renderer-neutral inspection, and Quest validation.
 Markdown: https://mesmerprism.com/projects/rusty-morphospace.md
 Plain text: https://mesmerprism.com/projects/rusty-morphospace.txt
@@ -27,7 +27,7 @@ Computational morphology platform
  [HSI layer](https://mesmerprism.com/projects/rusty-morphospace.html#hsi-implementation-layer)
  [Why Morphospace](https://mesmerprism.com/projects/rusty-morphospace.html#why)
  [Rusty XR boundary](https://mesmerprism.com/projects/rusty-morphospace.html#boundary)
- [Rusty XR](https://mesmerprism.com/projects/rusty-xr.html)
+ [Rusty XR](https://mesmerprism.com/projects/rusty-morphospace/rusty-xr.html)
  [References](https://mesmerprism.com/projects/rusty-morphospace.html#references)
 
  Purpose
@@ -81,7 +81,7 @@ Computational morphology platform
 
 - Package and host repos: Manifold Packages, Studio, Hostess, Quest Sidecar Mesh
 
-- Current surface proof: recorded hand mesh to Matter CPU oracle to Quest Makepad GPU evidence
+- Current proofs: remote camera framing, live/recorded hand surfaces, SDF/ADF debug paths, particles, and bounded GPU readbacks
 
 - Licensing: AGPL-3.0-or-later for Morphospace-owned source
 
@@ -125,7 +125,7 @@ Computational morphology platform
 
 - [Rusty Hostess](https://github.com/MesmerPrism/rusty-hostess) provides the install, staging, launch, and evidence shell used to validate those headset paths
 
-- [Rusty XR](https://mesmerprism.com/projects/rusty-xr.html) remains the public compatibility and Quest reference surface
+- [Rusty XR](https://mesmerprism.com/projects/rusty-morphospace/rusty-xr.html) remains the public compatibility and Quest reference surface
 
 - [Quest Termux Lab](https://github.com/MesmerPrism/quest-termux-lab) is a public MIT lab source that feeds the Rusty Quest sidecar bridge
 
@@ -165,7 +165,7 @@ Computational morphology platform
 
 - Matter/Optics teaching model for surface fields, conductance-like coupling, readouts, and browser inspection
 
-- Hostess and Quest Makepad evidence route for recorded hand meshes, SDF/ADF debug views, particles, and bounded GPU readbacks
+- Hostess and Quest Makepad evidence route for recorded and live hand surfaces, SDF/ADF debug views, particles, and bounded GPU readbacks
 
 - Rusty XR retained as compatibility history and public Quest evidence rather than the new authority model
 
@@ -509,7 +509,7 @@ Computational morphology platform
  Quest examples, compatibility notes, and historical evidence
 
  [Repository](https://github.com/MesmerPrism/Rusty-XR)
- [Overview](https://mesmerprism.com/projects/rusty-xr.html)
+ [Overview](https://mesmerprism.com/projects/rusty-morphospace/rusty-xr.html)
 
  Reference / Morphogenesis
 
@@ -532,42 +532,49 @@ Computational morphology platform
 
  Current work
 
-## What is current as of June 12, 2026
+## What is current as of June 13, 2026
 
- The active implementation line is the Quest Makepad Matter surface runtime:
- recorded hand data becomes Matter-owned mesh and joint-frame truth, Optics
+ The active implementation line now has several connected fronts. Quest
+ Makepad consumes Matter-owned live or recorded hand-surface truth, Optics
  prepares renderer-neutral debug payloads, Quest-Makepad adapts those payloads
  to headset Makepad shells, and Hostess installs, stages, launches, and records
- evidence. That path is now a real cross-repo validation route rather than a
- naming exercise.
+ evidence. In parallel, Manifold and Quest have a remote-camera command and
+ stream framing lane, while the Matter/Optics bioelectricity model remains the
+ public teaching slice for computational morphogenesis.
 
- The latest Quest evidence proves bounded GPU correctness checkpoints over the
- recorded-hand surface. Full skinned vertex/index buffer residency and a tiny
- mesh-to-dense-SDF construction probe both match Matter CPU oracle samples. The
- mesh-SDF proof has moved from same-call wait-idle readback to a submit ticket
- and later fence-poll completion, with the marker emitted only after completion.
+ The Quest Makepad path has moved past first smoke tests. It now separates
+ settings control from data-plane assets, keeps hand meshes and compact joint
+ frames out of settings JSON, selects recorded or live hand providers through
+ the same Matter worker boundary, and validates bounded GPU proof markers for
+ skinning, full mesh residency, mesh-to-dense-SDF construction, ADF debug
+ payloads, particles, and field-construction readiness against Matter CPU
+ oracle samples.
 
- That result is deliberately narrow. It proves storage-buffer residency,
- bounded compute/readback, and CPU-oracle comparison for a small field. It is
- not yet a scaled frame-critical GPU backend. The remaining proof readbacks
- still need the same ticket/poll treatment before dense SDF dimensions or
- indexed ADF construction should be scaled.
+ The remote-camera lane is also deliberately bounded. The current source uses
+ Manifold-aligned `RMANVID1` H.264 stream framing and receiver-first command
+ planning, with source checks and single-device direct TCP evidence. Physical
+ two-peer Quest or Quest-to-phone validation remains a future evidence gate.
+ The GPU work is likewise proof-scale: it demonstrates storage-buffer
+ residency, asynchronous submit/poll readback, and CPU-oracle comparison, not
+ a final frame-critical field or force backend.
 
 ### Validated shape
 
 - Camera-free Hostess Quest Makepad APK route with generated Quest manifest
 
-- App-private settings and data-plane staging through Hostess tooling
+- App-private settings plus sibling data-plane staging through Hostess tooling
 
-- Recorded hand provider shaped as bind mesh plus compact joint frames
+- Recorded and live hand providers shaped as bind mesh plus compact joint frames
 
-- Matter CPU oracle comparison for hand skinning and tiny mesh-SDF samples
+- Matter CPU oracle comparison for skinning, full mesh residency, mesh-SDF, ADF debug, and particle paths
 
-- Quest Makepad marker path for mesh-SDF submit, poll, and readback completion
+- Manifold-aligned remote-camera framing with high-rate video kept out of command JSON
 
 ### Architecture guards
 
-- Matter remains simulation and SDF/ADF/particle truth
+- Matter remains simulation, field, SDF/ADF, particle, and bioelectric truth
+
+- Manifold owns command/session authority, stream metadata, and audit
 
 - Makepad owns generic XR/Vulkan dispatch plumbing, not Matter semantics
 
@@ -579,11 +586,13 @@ Computational morphology platform
 
 ### Next engineering pressure
 
-- Move remaining GPU proof readbacks to ticket/poll completion
+- Keep all GPU proof readbacks on ticket/poll or explicit evidence-command paths
 
 - Keep Vulkan probe implementations split into sibling modules
 
-- Scale dense SDF or indexed ADF only after bounded oracle checks stay clean
+- Scale dense SDF or indexed ADF only after bounded oracle checks and cadence evidence stay clean
+
+- Run physical two-peer camera validation before claiming peer streaming readiness
 
 - Keep particle force authority singular in normal profiles
 

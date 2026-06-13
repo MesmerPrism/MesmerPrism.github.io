@@ -2,7 +2,7 @@
 
 Source: https://mesmerprism.com/Strobotorch/flashing-light-safety/
 Canonical HTML: https://mesmerprism.com/Strobotorch/flashing-light-safety/
-Generated: 2026-05-26
+Generated: 2026-06-13
 Description: Safety warnings, frequency background, and source references for Strobotorch flashlight signaling.
 Markdown: https://mesmerprism.com/Strobotorch/flashing-light-safety/index.md
 Plain text: https://mesmerprism.com/Strobotorch/flashing-light-safety/index.txt

@@ -1,5 +1,5 @@
 {
-  "generated": "2026-06-12",
+  "generated": "2026-06-13",
   "site": "https://mesmerprism.com",
   "pages": [
     {
@@ -303,15 +303,15 @@
       "references": 17
     },
     {
-      "title": "Rusty XR",
-      "description": "Rusty XR is a public Rust workspace for reusable XR contracts, Quest diagnostics, camera/depth labels, broker models, public examples, and companion-tool workflows.",
-      "path": "projects/rusty-xr.html",
-      "url": "https://mesmerprism.com/projects/rusty-xr.html",
+      "title": "Rusty XR Legacy Reference | Rusty Morphospace",
+      "description": "Rusty XR is the legacy/reference Quest and XR compatibility surface under Rusty Morphospace, preserving public examples, passthrough notes, diagnostics, and companion-tool history.",
+      "path": "projects/rusty-morphospace/rusty-xr.html",
+      "url": "https://mesmerprism.com/projects/rusty-morphospace/rusty-xr.html",
       "group": "Project pages",
-      "markdown": "https://mesmerprism.com/projects/rusty-xr.md",
-      "text": "https://mesmerprism.com/projects/rusty-xr.txt",
-      "bibtex": "https://mesmerprism.com/projects/rusty-xr.bib",
-      "cslJson": "https://mesmerprism.com/projects/rusty-xr.references.csl.json",
+      "markdown": "https://mesmerprism.com/projects/rusty-morphospace/rusty-xr.md",
+      "text": "https://mesmerprism.com/projects/rusty-morphospace/rusty-xr.txt",
+      "bibtex": "https://mesmerprism.com/projects/rusty-morphospace/rusty-xr.bib",
+      "cslJson": "https://mesmerprism.com/projects/rusty-morphospace/rusty-xr.references.csl.json",
       "references": 7
     },
     {

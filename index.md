@@ -2,7 +2,7 @@
 
 Source: https://mesmerprism.com/
 Canonical HTML: https://mesmerprism.com/
-Generated: 2026-06-11
+Generated: 2026-06-13
 Description: XR systems, citizen-science tools, visual instruments, and essays for altered-perception design. Mesmer Prism makes strange experience vivid, inspectable, and evidence-bounded.
 Markdown: https://mesmerprism.com/index.md
 Plain text: https://mesmerprism.com/index.txt
@@ -92,24 +92,25 @@ Till Holzapfel
  [Current repo](https://github.com/MesmerPrism/Rusty-XR-Companion-Apps)
  [Earlier docs](https://mesmerprism.github.io/ViscerealityCompanion/)
 
- Rust for XR and Quest experiments
+ Legacy reference under Rusty Morphospace
 
-### [Rusty XR](https://mesmerprism.com/projects/rusty-xr.html)
+### [Rusty XR reference](https://mesmerprism.com/projects/rusty-morphospace/rusty-xr.html)
 
- A public Rust workspace for reusable XR contracts, schemas, diagnostics,
- Quest examples, broker models, camera and depth utilities, hand and
- particle primitives, strobe safety descriptors, and companion-app interfaces.
+ The public compatibility and history surface for earlier Quest and XR
+ work: reusable contracts, diagnostics, Quest examples, broker models,
+ camera/depth vocabulary, hand and particle primitives, and companion-app
+ interfaces that informed the current Morphospace split.
 
  Status
- Public repo
+ Legacy/reference lane
  Artifact
- Rust crates, Quest examples, and docs
+ MIT Rust repo, Quest examples, and docs
  Use
- Reproducible XR contracts across tools
+ Compatibility evidence and source-label vocabulary
 
- Rust / OpenXR / Vulkan / Meta Quest / Tooling
+ Rust / OpenXR / Vulkan / Meta Quest / Legacy reference
 
- [Technical overview](https://mesmerprism.com/projects/rusty-xr.html)
+ [Legacy reference](https://mesmerprism.com/projects/rusty-morphospace/rusty-xr.html)
  [Source repo](https://github.com/MesmerPrism/Rusty-XR)
  [Passthrough guide](https://mesmerprism.github.io/Rusty-XR/passthrough.html)
 
@@ -135,7 +136,7 @@ Till Holzapfel
  [Matter](https://github.com/MesmerPrism/rusty-matter)
  [Manifold](https://github.com/MesmerPrism/rusty-manifold)
  [Optics](https://github.com/MesmerPrism/rusty-optics)
- [Rusty XR boundary](https://mesmerprism.com/projects/rusty-xr.html)
+ [Rusty XR boundary](https://mesmerprism.com/projects/rusty-morphospace/rusty-xr.html)
 
  Bioelectric morphogenesis model
 
@@ -203,7 +204,7 @@ Till Holzapfel
 
  [Overview](https://mesmerprism.com/projects/hollow-face-lab.html)
  [References](https://mesmerprism.com/projects/hollow-face-lab.html#references)
- [Rusty XR](https://mesmerprism.com/projects/rusty-xr.html)
+ [Rusty XR](https://mesmerprism.com/projects/rusty-morphospace/rusty-xr.html)
 
  Live citizen-science web collaboration
 
@@ -534,7 +535,7 @@ Till Holzapfel
  [SANE](https://mesmerprism.com/projects/sane.html),
  [Tulpas](https://mesmerprism.com/projects/tulpas.html),
  [Scientific Surrealism](https://mesmerprism.com/projects/scientific-surrealism.html),
- [Rusty XR](https://mesmerprism.com/projects/rusty-xr.html),
+ [Rusty XR](https://mesmerprism.com/projects/rusty-morphospace/rusty-xr.html),
  [Polar H10 Work](https://mesmerprism.com/projects/polar-h10.html),
  [Quest Companion Tools](https://mesmerprism.com/projects/viscereality-companion.html),
  [Hollow Face Lab](https://mesmerprism.com/projects/hollow-face-lab.html),

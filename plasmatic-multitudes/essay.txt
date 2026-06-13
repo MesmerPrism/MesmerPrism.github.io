@@ -2,7 +2,7 @@ Long Essay: Semi-Corporeal Avatar Aesthetics | Plasmatic Multitudes
 
 Source: https://mesmerprism.com/plasmatic-multitudes/essay.html
 Canonical HTML: https://mesmerprism.com/plasmatic-multitudes/essay.html
-Generated: 2026-06-11
+Generated: 2026-06-13
 Description: A long-form essay on weakly bounded bodies, XR embodiment, media genealogy, computational morphogenesis, and cautious pain translation.
 Markdown: https://mesmerprism.com/plasmatic-multitudes/essay.md
 Plain text: https://mesmerprism.com/plasmatic-multitudes/essay.txt

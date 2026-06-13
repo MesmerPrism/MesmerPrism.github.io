@@ -2,7 +2,7 @@
 
 Source: https://mesmerprism.com/projects/plasmatic-multitudes.html
 Canonical HTML: https://mesmerprism.com/projects/plasmatic-multitudes.html
-Generated: 2026-05-26
+Generated: 2026-06-13
 Description: A public overview of weakly bounded bodies: avatars, swarms, auras, particle forms, and luminous bodies that soften while remaining coherent enough for embodiment, relation, and cautious research translation.
 Markdown: https://mesmerprism.com/projects/plasmatic-multitudes.md
 Plain text: https://mesmerprism.com/projects/plasmatic-multitudes.txt

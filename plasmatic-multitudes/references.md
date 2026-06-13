@@ -2,7 +2,7 @@
 
 Source: https://mesmerprism.com/plasmatic-multitudes/references.html
 Canonical HTML: https://mesmerprism.com/plasmatic-multitudes/references.html
-Generated: 2026-06-11
+Generated: 2026-06-13
 Description: Annotated references across somaesthetics, perception, pseudo-haptics, morphogenesis, XR embodiment, media genealogy, and pain/body-representation research.
 Markdown: https://mesmerprism.com/plasmatic-multitudes/references.md
 Plain text: https://mesmerprism.com/plasmatic-multitudes/references.txt

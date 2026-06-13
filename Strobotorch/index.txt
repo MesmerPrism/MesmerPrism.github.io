@@ -2,7 +2,7 @@ Strobotorch Android Signal Tooling
 
 Source: https://mesmerprism.com/Strobotorch/
 Canonical HTML: https://mesmerprism.com/Strobotorch/
-Generated: 2026-05-26
+Generated: 2026-06-13
 Description: Strobotorch is an Android flashlight-signaling and diagnostics tool for torch and camera APIs, visible-light signal tests, device logging, and flashing-light safety.
 Markdown: https://mesmerprism.com/Strobotorch/index.md
 Plain text: https://mesmerprism.com/Strobotorch/index.txt

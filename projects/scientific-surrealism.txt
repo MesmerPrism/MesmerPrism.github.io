@@ -2,7 +2,7 @@ Scientific Surrealism
 
 Source: https://mesmerprism.com/projects/scientific-surrealism.html
 Canonical HTML: https://mesmerprism.com/projects/scientific-surrealism.html
-Generated: 2026-05-26
+Generated: 2026-06-13
 Description: Scientific surrealism studies dream bureaus, scientific-looking journals, diagrams, and experimental machines that change what counts as an observation.
 Markdown: https://mesmerprism.com/projects/scientific-surrealism.md
 Plain text: https://mesmerprism.com/projects/scientific-surrealism.txt

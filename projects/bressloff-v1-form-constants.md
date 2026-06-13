@@ -2,7 +2,7 @@
 
 Source: https://mesmerprism.com/projects/bressloff-v1-form-constants.html
 Canonical HTML: https://mesmerprism.com/projects/bressloff-v1-form-constants.html
-Generated: 2026-05-26
+Generated: 2026-06-13
 Description: Animated notes on Bressloff visual-cortex form constants, Rule flicker modeling, and generated MacKay, Bolelli, and Nicks driven-field diagnostics.
 Markdown: https://mesmerprism.com/projects/bressloff-v1-form-constants.md
 Plain text: https://mesmerprism.com/projects/bressloff-v1-form-constants.txt

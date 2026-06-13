@@ -2,7 +2,7 @@
 
 Source: https://mesmerprism.com/plasmatic-multitudes/
 Canonical HTML: https://mesmerprism.com/plasmatic-multitudes/
-Generated: 2026-06-11
+Generated: 2026-06-13
 Description: Long essay, method notes, vocabulary, pain-translation hypotheses, mixed-ability human-swarm interaction, and annotated references for weakly bounded bodies and semi-corporeal avatar aesthetics.
 Markdown: https://mesmerprism.com/plasmatic-multitudes/index.md
 Plain text: https://mesmerprism.com/plasmatic-multitudes/index.txt

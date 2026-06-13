@@ -2,7 +2,7 @@ Shared Bodies for Mixed-Ability Collaboration
 
 Source: https://mesmerprism.com/duisburg/
 Canonical HTML: https://mesmerprism.com/duisburg/
-Generated: 2026-06-12
+Generated: 2026-06-13
 Description: A Duisburg-facing research pitch for Mixed-Ability Human-Swarm Interaction: shared swarm bodies, inspectable input mappings, and a route from connectedness to robotics translation.
 Markdown: https://mesmerprism.com/duisburg/index.md
 Plain text: https://mesmerprism.com/duisburg/index.txt
@@ -52,7 +52,7 @@ Abstract bodies are usable bodies
 Open instruments
 
  Rusty Morphospace (https://mesmerprism.com/projects/rusty-morphospace.html),
- Rusty XR (https://mesmerprism.com/projects/rusty-xr.html), and
+ Rusty XR (https://mesmerprism.com/projects/rusty-morphospace/rusty-xr.html), and
  Polar H10 tooling (https://mesmerprism.com/projects/polar-h10.html) give the project
  a current public base for sensor and package lanes, Quest validation,
  and separated contracts. The planned HSI layer uses that base for
@@ -309,7 +309,7 @@ Rusty Morphospace (https://mesmerprism.com/projects/rusty-morphospace.html)
 
  Overview (https://mesmerprism.com/projects/rusty-morphospace.html)
  HSI layer (https://mesmerprism.com/projects/rusty-morphospace.html#hsi-implementation-layer)
- Rusty XR (https://mesmerprism.com/projects/rusty-xr.html)
+ Rusty XR (https://mesmerprism.com/projects/rusty-morphospace/rusty-xr.html)
  Repository family (https://github.com/MesmerPrism)
 
  Embodiment vocabulary
@@ -418,6 +418,6 @@ Bioelectric-inspired model family
 - hormoz-lab. "diffeomorph (https://github.com/hormoz-lab/diffeomorph)." Official implementation repository for DiffeoMorph.
 
 Public project context
-- Mesmer Prism. Mixed-Ability Human-Swarm Interaction (https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html), Rusty Morphospace (https://mesmerprism.com/projects/rusty-morphospace.html), Viscereality (https://mesmerprism.com/projects/viscereality.html), Rusty XR (https://mesmerprism.com/projects/rusty-xr.html), Quest Companion Tools (https://mesmerprism.com/projects/viscereality-companion.html), Plasmatic Multitudes (https://mesmerprism.com/projects/plasmatic-multitudes.html), Pain Translation (https://mesmerprism.com/plasmatic-multitudes/pain.html), Bioelectricity and Morphogenesis (https://mesmerprism.com/projects/bioelectricity.html), and Polar H10 Work (https://mesmerprism.com/projects/polar-h10.html).
+- Mesmer Prism. Mixed-Ability Human-Swarm Interaction (https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html), Rusty Morphospace (https://mesmerprism.com/projects/rusty-morphospace.html), Viscereality (https://mesmerprism.com/projects/viscereality.html), Rusty XR (https://mesmerprism.com/projects/rusty-morphospace/rusty-xr.html), Quest Companion Tools (https://mesmerprism.com/projects/viscereality-companion.html), Plasmatic Multitudes (https://mesmerprism.com/projects/plasmatic-multitudes.html), Pain Translation (https://mesmerprism.com/plasmatic-multitudes/pain.html), Bioelectricity and Morphogenesis (https://mesmerprism.com/projects/bioelectricity.html), and Polar H10 Work (https://mesmerprism.com/projects/polar-h10.html).
 - GitHub. MesmerPrism repositories (https://github.com/MesmerPrism), including the Rusty Morphospace repository family, Rusty XR (https://github.com/MesmerPrism/Rusty-XR), and Rusty XR Companion Apps (https://github.com/MesmerPrism/Rusty-XR-Companion-Apps).
 - CIRCE. Collaboration for Interdisciplinary Research on Conscious Experience (https://circe-science.com/) and the AXP access guide (https://mesmerprism.com/axp-mvp-survey-guide/).

@@ -2,7 +2,7 @@
 
 Source: https://mesmerprism.com/projects/prophantasia.html
 Canonical HTML: https://mesmerprism.com/projects/prophantasia.html
-Generated: 2026-05-26
+Generated: 2026-06-13
 Description: Prophantasia covers projected imagery, aphantasia, source judgment, practice ecology, and neighboring phenomena such as imposition, flicker, DeepDream, visual snow, and HPPD.
 Markdown: https://mesmerprism.com/projects/prophantasia.md
 Plain text: https://mesmerprism.com/projects/prophantasia.txt

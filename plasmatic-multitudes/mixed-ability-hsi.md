@@ -2,7 +2,7 @@
 
 Source: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html
 Canonical HTML: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html
-Generated: 2026-06-12
+Generated: 2026-06-13
 Description: A Plasmatic Multitudes research track on shared visual swarm bodies, mixed-ability collaboration, access-practice mapping, connectedness-first exploration, encounter, cooperative play, and later physical translation.
 Markdown: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.md
 Plain text: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.txt
@@ -584,7 +584,7 @@ Mixed-ability HSI | Updated June 12, 2026
  can inspect them. That separation lets someone ask whether fatigue, unfairness, or
  confusion came from the input channel, the binding, the dynamic rule, the renderer,
  latency, calibration drift, or another collaborator's hidden control
- ([Rusty Morphospace HSI layer](https://mesmerprism.com/projects/rusty-morphospace.html#hsi-implementation-layer); [Rusty XR](https://mesmerprism.com/projects/rusty-xr.html); [Polar H10 work](https://mesmerprism.com/projects/polar-h10.html)) .
+ ([Rusty Morphospace HSI layer](https://mesmerprism.com/projects/rusty-morphospace.html#hsi-implementation-layer); [Rusty XR](https://mesmerprism.com/projects/rusty-morphospace/rusty-xr.html); [Polar H10 work](https://mesmerprism.com/projects/polar-h10.html)) .
 
  The current public base is a scaffold, not a finished mixed-ability study platform:
  separated Morphospace repositories, package lanes for synthetic/biosignal/Polar and
@@ -1401,6 +1401,6 @@ Mixed-ability HSI | Updated June 12, 2026
 
 - Chiossi et al. "[PhysioCHI: Towards Best Practices for Integrating Physiological Signals in HCI](https://doi.org/10.1145/3613905.3636286)." CHI EA (2024).
 
-- Mesmer Prism. [Rusty Morphospace](https://mesmerprism.com/projects/rusty-morphospace.html), [Rusty XR](https://mesmerprism.com/projects/rusty-xr.html), and [Polar H10 Work](https://mesmerprism.com/projects/polar-h10.html).
+- Mesmer Prism. [Rusty Morphospace](https://mesmerprism.com/projects/rusty-morphospace.html), [Rusty XR](https://mesmerprism.com/projects/rusty-morphospace/rusty-xr.html), and [Polar H10 Work](https://mesmerprism.com/projects/polar-h10.html).
 
 - Mesmer Prism. "[Bioelectricity and Morphogenesis](https://mesmerprism.com/projects/bioelectricity.html)." Public project page.
