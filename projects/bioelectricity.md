@@ -132,7 +132,7 @@ Rusty Morphospace and tissue-scale patterning
  Both GIFs were generated at the exact export size and decoded after export as
  96-frame, 720 x 860 animations at 12 fps. The surface view emphasizes the
  body field; the graph view exposes the same activity through node and edge
- structure.
+ structure. The public assets match the latest Optics export smoke outputs.
 
  Adjacent dynamics
 
@@ -187,7 +187,8 @@ Rusty Morphospace and tissue-scale patterning
 
  The current implementation is source-linked at the target level. Two source
  families already have qualitative Matter fixtures, and the derived
- PlanformDB/metric/taxonomy layer now has explicit provenance fixtures. The
+ PlanformDB/metric/taxonomy layer now has a 14-record curated provenance
+ fixture mirrored into Matter. The
  remaining targets are intentionally planned or open until source figures,
  tables, categories, or datasets have been extracted into derived, rights-safe
  artifacts.
@@ -224,8 +225,8 @@ Rusty Morphospace and tissue-scale patterning
 
  planformdb_curated_subset
  [PlanformDB](https://lobolab.umbc.edu/planform/download/); [Lobo et al., 2013](https://doi.org/10.1093/bioinformatics/btt088)
- Rights-safe derived fixture records source IDs, labels, transforms, notice text, and use limits.
- Provenance/annotation fixture only; not runtime dynamics authority.
+ Rights-safe derived fixture records 14 selected Oviedo 2010 source IDs covering octanol crop-position, ventral nerve cord timing, and innexin RNAi crop-position labels, with transform notes, notice text, and use limits.
+ Expanded review fixture exists in Hub and Matter; metadata/annotation only, not runtime dynamics authority or a predictor.
 
  Why planarians
 
@@ -323,19 +324,20 @@ Rusty Morphospace and tissue-scale patterning
  [Paper](https://arxiv.org/abs/2512.17129)
  [Official code](https://github.com/hormoz-lab/diffeomorph)
 
- Data source candidate
+ Curated metadata source
 
 ### [Planform / PlanformDB](https://lobolab.umbc.edu/planform/)
 
- PlanformDB is the right kind of source for future experiment metadata,
- phenotype records, condition labels, and target graph ideas. It should
- enter through a source-intake gate, not as raw runtime authority or a
- shortcut to calibrated physiology.
+ PlanformDB is now entering through the source-intake gate as a small,
+ rights-safe metadata fixture: selected experiment/result IDs, normalized
+ labels, source notices, and transform notes. It remains annotation and
+ validation context, not raw runtime authority or a shortcut to calibrated
+ physiology.
 
+ Use now
+ Traceable source IDs, labels, and review metadata
  Use later
- Traceable metadata and validation targets
- Gate needed
- License, source IDs, transformations, labels
+ Broader phenotype targets after curated provenance review
 
  [Planform page](https://lobolab.umbc.edu/planform/)
 
@@ -369,10 +371,11 @@ Rusty Morphospace and tissue-scale patterning
 
  That boundary is an engineering choice. It keeps the page readable, keeps
  code ownership clear, and avoids presenting educational dynamics as empirical
- prediction. More detailed source-derived work can be added later when source
- IDs, license notices, transformations, and validation targets are explicit;
- source-paper figures and raw datasets should remain outside the public page
- unless rights and provenance have been reviewed.
+ prediction. The current PlanformDB slice is deliberately metadata-only. More
+ detailed source-derived work can be added later when source IDs, license
+ notices, transformations, and validation targets are explicit; source-paper
+ figures and raw datasets should remain outside the public page unless rights
+ and provenance have been reviewed.
 
 ### Next public-safe steps
 
@@ -382,7 +385,7 @@ Rusty Morphospace and tissue-scale patterning
 
 - Make voltage-unit policy explicit per preset.
 
-- Review PlanformDB as metadata and validation context, not runtime authority.
+- Expand PlanformDB only through small, traceable, rights-safe derived fixtures.
 
 - Promote Manifold command/session surfaces only after Matter and Optics contracts settle.
 
