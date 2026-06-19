@@ -114,6 +114,7 @@ Lighting
 Runtime
 
  Enter VR
+
  Reset View
 
 Response
@@ -131,4 +132,5 @@ Response
  3
 
  Record Trial
+
  Download Session
