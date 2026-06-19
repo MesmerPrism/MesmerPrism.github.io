@@ -129,7 +129,9 @@ Observed, curated, and educational layers stay separated
  record to regeneration outcome. The app now carries a reviewed PlanformDB
  subset for three source records, bundled observed posterior and anterior
  muscle SpatialGraph GLB line overlays derived from the Zenodo ETLSM dataset,
- and a validation chain that keeps source files, raw downloads, decoder
+ and one registered model-inspired schematic replay manifest for the
+ Sketchfab educational mesh. The observed Zenodo GLBs are not simulation
+ substrates. A validation chain keeps source files, raw downloads, decoder
  tooling, and conversion intermediates outside the public bundle
  (PlanformDB (https://lobolab.umbc.edu/planform/download/);
  Lu, 2024 (https://zenodo.org/records/11724834)).
@@ -154,6 +156,8 @@ Source-bounded atlas records
  PlanformDB Experiment records 120, 121, and 122
  Educational
  Procedural body, field overlays, lessons, and schematic transitions
+ Replay
+ One model-inspired adapter manifest bound only to the Sketchfab educational mesh
 
  Interaction
 
@@ -303,6 +307,11 @@ Matched to original sources, but not calibrated yet
  Lu, 2024 dataset2 (https://zenodo.org/records/12533272); CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/)
  Intake evidence only. This Zenodo TLSM volume record has no reviewed browser-safe GLB derivative bundled in Planarian Regeneration XR.
  Deferred; no source volume, source export, intermediate, decoder output, or GLB derivative from this record is published in the current public bundle.
+
+ planarian_xr_schematic_replay_manifest
+ Planarian XR schematic transition adapter; Sketchfab educational mesh substrate
+ The app registers sim_schematic_regeneration_replay_v0 , a model-inspired adapter descriptor for src/worm/RegenerationAnimator with a SHA-256 replay-descriptor hash.
+ Display replay only. It is not calibrated, mechanistic, predictive, or bound to the observed Zenodo GLB overlays.
 
  Why planarians
 
