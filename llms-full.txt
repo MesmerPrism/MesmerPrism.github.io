@@ -4320,9 +4320,9 @@ Rusty Morphospace and tissue-scale patterning
  Planarian Regeneration XR is the WebXR-first atlas surface for this
  biological teaching case. Its central loop is body to graph to experiment
  record to regeneration outcome. The app now carries a reviewed PlanformDB
- subset for three source records, bundled observed posterior and anterior
- muscle SpatialGraph GLB line overlays derived from the Zenodo ETLSM dataset,
- and one registered model-inspired schematic replay manifest for the
+ subset with 20 selected source records and 54 outcome details, bundled
+ observed posterior and anterior muscle SpatialGraph GLB line overlays derived
+ from the Zenodo ETLSM dataset, and one registered model-inspired schematic replay manifest for the
  Sketchfab educational mesh. The observed Zenodo GLBs are not simulation
  substrates. A validation chain keeps source files, raw downloads, decoder
  tooling, and conversion intermediates outside the public bundle
@@ -4337,8 +4337,8 @@ Rusty Morphospace and tissue-scale patterning
 
  The current app opens in a Source Atlas mode with the reviewed Zenodo GLBs
  hotlisted by default, then separates Records, Layers, Model Replay, and
- Teaching as secondary evidence modes. Pending lanes for PlanformDB
- expansion, Zenodo 12533272 , observed-geometry dynamics, and
+ Teaching as secondary evidence modes. Pending lanes for PlanformDB record
+ browsing/filters, Zenodo 12533272 , observed-geometry dynamics, and
  Quest Browser validation remain statused rather than central.
 
  Data layers
@@ -4352,7 +4352,7 @@ Rusty Morphospace and tissue-scale patterning
  Observed
  Zenodo posterior and anterior muscle SpatialGraph GLB line overlays
  Curated
- PlanformDB Experiment records 120, 121, and 122
+ 20 reviewed PlanformDB Experiment records with 54 outcome details
  Educational
  Procedural body, field overlays, lessons, and schematic transitions
  Replay
@@ -4623,9 +4623,10 @@ Rusty Morphospace and tissue-scale patterning
 ### [Planform / PlanformDB](https://lobolab.umbc.edu/planform/)
 
  PlanformDB now enters through a reviewed, rights-safe metadata subset:
- selected experiment/result IDs, normalized labels, source notices, and
- transform notes. It remains annotation and validation context, not raw
- runtime authority or a shortcut to calibrated physiology.
+ selected experiment/result IDs, 54 outcome details, normalized labels, source
+ notices, and transform notes across 12 source publication IDs. It remains
+ annotation and validation context, not raw runtime authority or a shortcut to
+ calibrated physiology.
 
  Use now
  Traceable source IDs, labels, and review metadata
