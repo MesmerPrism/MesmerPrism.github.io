@@ -9,7 +9,11 @@ Plain text: https://mesmerprism.com/projects/hollow-face-lab/app/index.txt
 
 ---
 
-Concave
+Fullscreen
+
+ Stereo Pair
+
+ Concave
  Matte
  1x
  Mesh

@@ -18,8 +18,8 @@
     <meta property="og:url" content="https://mesmerprism.com/projects/hollow-face-lab/app/" />
     <meta name="theme-color" content="#f4efe7" />
     <link rel="stylesheet" href="/assets/fonts.css" />
-    <script type="module" crossorigin src="/projects/hollow-face-lab/app/assets/index-zUc4fNV1.js"></script>
-    <link rel="stylesheet" crossorigin href="/projects/hollow-face-lab/app/assets/index-DVWXP2JM.css">
+    <script type="module" crossorigin src="/projects/hollow-face-lab/app/assets/index-DPfmMsZ5.js"></script>
+    <link rel="stylesheet" crossorigin href="/projects/hollow-face-lab/app/assets/index-BO7oBT0z.css">
     <!-- BEGIN agent-readable metadata -->
     <link rel="alternate" type="text/markdown" href="/projects/hollow-face-lab/app/index.md" title="Markdown version">
     <link rel="alternate" type="text/plain" href="/projects/hollow-face-lab/app/index.txt" title="Plain text version">
@@ -94,8 +94,17 @@
       </header>
       <header class="app-header">
         <h1>Hollow Face Lab</h1>
-        <div class="app-header-tools">
-          <div class="view-toolbar" aria-label="Stimulus view controls">
+        <div class="runtime-strip" aria-live="polite">
+          <span id="runtime-mode">Flat Web</span>
+          <span id="xr-status">Checking WebXR</span>
+          <span id="frame-status">0 fps</span>
+        </div>
+      </header>
+
+      <main class="workspace">
+        <section class="stage-panel" aria-label="Hollow face render stage">
+          <canvas id="scene-canvas"></canvas>
+          <div class="stage-toolbar" aria-label="Stimulus view controls">
             <button
               id="fullscreen-stimulus"
               type="button"
@@ -112,17 +121,6 @@
               Stereo Pair
             </button>
           </div>
-          <div class="runtime-strip" aria-live="polite">
-            <span id="runtime-mode">Flat Web</span>
-            <span id="xr-status">Checking WebXR</span>
-            <span id="frame-status">0 fps</span>
-          </div>
-        </div>
-      </header>
-
-      <main class="workspace">
-        <section class="stage-panel" aria-label="Hollow face render stage">
-          <canvas id="scene-canvas"></canvas>
           <div class="stage-overlay" aria-live="polite">
             <span id="geometry-readout">Concave</span>
             <span id="texture-readout">Matte</span>
