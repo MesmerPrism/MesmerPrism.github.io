@@ -96,6 +96,7 @@
                 "https://doi.org/10.1007/s00018-023-04790-z",
                 "https://doi.org/10.1007/s10071-023-01780-3",
                 "https://doi.org/10.1089/bioe.2021.0036",
+                "https://zenodo.org/records/12533272",
                 "https://bioelectricitynexus.com/",
                 "https://github.com/betsee/betse",
                 "https://planmine.mpibpc.mpg.de/",
@@ -282,10 +283,10 @@
                     Planarian Regeneration XR is the WebXR-first atlas surface for this
                     biological teaching case. Its central loop is body to graph to experiment
                     record to regeneration outcome. The app now carries a reviewed PlanformDB
-                    subset for three source records, a bundled observed posterior-muscle
-                    SpatialGraph overlay derived from the Zenodo ETLSM dataset, and a validation
-                    chain that keeps source files, raw downloads, and conversion intermediates
-                    outside the public bundle
+                    subset for three source records, bundled observed posterior and anterior
+                    muscle SpatialGraph GLB line overlays derived from the Zenodo ETLSM dataset,
+                    and a validation chain that keeps source files, raw downloads, decoder
+                    tooling, and conversion intermediates outside the public bundle
                     (<a class="inline-citation" href="https://lobolab.umbc.edu/planform/download/" target="_blank" rel="noopener noreferrer">PlanformDB</a>;
                     <a class="inline-citation" href="https://zenodo.org/records/11724834" target="_blank" rel="noopener noreferrer">Lu, 2024</a>).
                 </p>
@@ -308,7 +309,7 @@
                     </p>
                     <dl class="project-facts">
                         <dt>Observed</dt>
-                        <dd>Zenodo posterior muscle SpatialGraph line overlay</dd>
+                        <dd>Zenodo posterior and anterior muscle SpatialGraph GLB line overlays</dd>
                         <dt>Curated</dt>
                         <dd>PlanformDB Experiment records 120, 121, and 122</dd>
                         <dt>Educational</dt>
@@ -455,10 +456,13 @@
                     The current implementation is source-linked at the target level. Two source
                     families already have qualitative Matter fixtures, and the derived
                     PlanformDB/metric/taxonomy layer now has a curated provenance fixture mirrored
-                    into Matter. Planarian Regeneration XR also has a reviewed observed geometry
-                    overlay for the posterior muscle SpatialGraph. Remaining targets are
-                    intentionally planned or open until source figures, tables, categories, or
-                    datasets have been extracted into derived, rights-safe artifacts.
+                    into Matter. Planarian Regeneration XR carries a reviewed PlanformDB subset,
+                    reviewed observed GLB overlays for posterior and anterior muscle SpatialGraph
+                    objects, and a Quest Browser validation lane that needs a refreshed headset
+                    pass whenever the production build changes.
+                    Remaining targets are intentionally planned until source figures, tables,
+                    categories, or datasets have been extracted into derived, rights-safe
+                    artifacts.
                 </p>
             </div>
             <div class="status-table-wrap">
@@ -509,10 +513,16 @@
                             <td>Expanded review fixture exists in Hub and Matter; metadata/annotation only, not runtime dynamics authority or a predictor.</td>
                         </tr>
                         <tr>
-                            <td><code>zenodo_posterior_muscle_overlay</code></td>
+                            <td><code>zenodo_muscle_spatialgraph_overlays</code></td>
                             <td><a class="reference-link" href="https://zenodo.org/records/11724834" target="_blank" rel="noopener noreferrer">Lu, 2024</a>; <a class="reference-link" href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a></td>
-                            <td>Planarian Regeneration XR bundles a reviewed GLB line overlay derived from the <code>posterior.Smt.SptGraph</code> object: 61,744 vertices, 30,872 line segments, DOI, checksum, attribution, and geometry notice.</td>
-                            <td>Observed source-derived atlas geometry only; raw Zenodo files and conversion intermediates remain outside the public bundle, and the overlay is not a regeneration simulation.</td>
+                            <td>Planarian Regeneration XR bundles reviewed GLB line overlays derived from <code>posterior.Smt.SptGraph</code> and <code>anterior-filtered(2).CorrelationLines</code>: 61,744 / 17,880 vertices, 30,872 / 8,940 line segments, SHA-256 <code>daab05fbf234bb6db8b6618520982c1d159ca553a067825eba42929449478a2f</code> and <code>aa462e4141be28a5f7bb5d187a7b074a945815f19d3397110e90a8e102428ac7</code>, source DOI/object IDs, attribution, and geometry notice.</td>
+                            <td>Observed source-derived atlas geometry only; raw Zenodo files, source exports, decoder tooling, and conversion intermediates remain outside the public bundle, and the overlays are not a regeneration simulation.</td>
+                        </tr>
+                        <tr>
+                            <td><code>zenodo_12533272_volume_record</code></td>
+                            <td><a class="inline-citation" href="https://zenodo.org/records/12533272" target="_blank" rel="noopener noreferrer">Lu, 2024 dataset2</a>; <a class="reference-link" href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a></td>
+                            <td>Intake evidence only. This Zenodo TLSM volume record has no reviewed browser-safe GLB derivative bundled in Planarian Regeneration XR.</td>
+                            <td>Deferred; no source volume, source export, intermediate, decoder output, or GLB derivative from this record is published in the current public bundle.</td>
                         </tr>
                     </tbody>
                 </table>
@@ -591,7 +601,8 @@
                     <p>
                         The planarian atlas contributes educational region labels, body geometry
                         lessons, outcome labels, source/provenance habits, reviewed PlanformDB
-                        records, and the first observed source-derived posterior muscle overlay.
+                        records, and observed source-derived posterior and anterior muscle
+                        overlays.
                         Matter still builds its own computational surface graph and validation
                         fixtures.
                     </p>
@@ -642,11 +653,10 @@
                     <p class="project-kicker">Curated metadata source</p>
                     <h3><a href="https://lobolab.umbc.edu/planform/" target="_blank" rel="noopener noreferrer">Planform / PlanformDB</a></h3>
                     <p>
-                        PlanformDB is now entering through the source-intake gate as a small,
-                        rights-safe metadata fixture: selected experiment/result IDs, normalized
-                        labels, source notices, and transform notes. It remains annotation and
-                        validation context, not raw runtime authority or a shortcut to calibrated
-                        physiology.
+                        PlanformDB now enters through a reviewed, rights-safe metadata subset:
+                        selected experiment/result IDs, normalized labels, source notices, and
+                        transform notes. It remains annotation and validation context, not raw
+                        runtime authority or a shortcut to calibrated physiology.
                     </p>
                     <dl class="project-facts">
                         <dt>Use now</dt>
@@ -701,10 +711,10 @@
                     prediction. The current PlanformDB slice is deliberately metadata-only. More
                     detailed source-derived work can be added later when source IDs, license
                     notices, transformations, and validation targets are explicit. The observed
-                    Zenodo posterior-muscle overlay is an atlas geometry layer, not an anatomical
-                    model of regeneration; source-paper figures, raw datasets, and conversion
-                    intermediates should remain outside the public page unless rights and
-                    provenance have been reviewed.
+                    Zenodo muscle overlays are atlas geometry layers, not anatomical models of
+                    regeneration; source-paper figures, raw datasets, decoder tooling, source
+                    exports, and conversion intermediates should remain outside the public page
+                    unless rights and provenance have been reviewed.
                 </p>
             </div>
             <div class="detail-block">
@@ -714,7 +724,7 @@
                     <li>Add a teaching panel for AP separation, wound localization, gap block, and memory controls.</li>
                     <li>Make voltage-unit policy explicit per preset.</li>
                     <li>Keep expanding PlanformDB only through small, traceable, rights-safe derived fixtures.</li>
-                    <li>Complete the formal Quest Browser evidence report before treating immersive validation as a public claim.</li>
+                    <li>Keep Quest Browser evidence current before making broader immersive validation claims.</li>
                     <li>Design the immersive 3D environment after the atlas/data boundaries remain stable.</li>
                 </ul>
             </div>
@@ -739,6 +749,7 @@
                 <li><strong>Lobo, Malone, and Levin.</strong> "<a class="reference-link" href="https://doi.org/10.1093/bioinformatics/btt088" target="_blank" rel="noopener noreferrer">Planform: an application and database of graph-encoded planarian regenerative experiments</a>." <em>Bioinformatics</em> 29 (2013).</li>
                 <li><strong>Lobo Lab.</strong> "<a class="reference-link" href="https://lobolab.umbc.edu/planform/download/" target="_blank" rel="noopener noreferrer">PlanformDB download page</a>." University of Maryland, Baltimore County.</li>
                 <li><strong>Lu, Jing.</strong> "<a class="reference-link" href="https://zenodo.org/records/11724834" target="_blank" rel="noopener noreferrer">3D Reconstruction of Neuronal Allometry and Neuromuscular Projections in Asexual Planarians Using Expansion Tiling Light Sheet Microscopy dataset1</a>." <em>Zenodo</em> dataset, version v1 (2024). DOI: 10.5281/zenodo.11724834.</li>
+                <li><strong>Lu, Jing.</strong> "<a class="reference-link" href="https://zenodo.org/records/12533272" target="_blank" rel="noopener noreferrer">3D Reconstruction of Neuronal Allometry and Neuromuscular Projections in Asexual Planarians Using Expansion Tiling Light Sheet Microscopy dataset2</a>." <em>Zenodo</em> dataset, version v1 (2024). DOI: 10.5281/zenodo.12533272.</li>
                 <li><strong>Creative Commons.</strong> "<a class="reference-link" href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">Attribution 4.0 International (CC BY 4.0)</a>." License text.</li>
                 <li><strong>Bioelectricity Nexus.</strong> "<a class="reference-link" href="https://bioelectricitynexus.com/" target="_blank" rel="noopener noreferrer">Bioelectricity Nexus</a>." Field resource index.</li>
                 <li><strong>BETSE.</strong> "<a class="reference-link" href="https://github.com/betsee/betse" target="_blank" rel="noopener noreferrer">Bioelectric Tissue Simulation Engine</a>." Open-source software repository.</li>

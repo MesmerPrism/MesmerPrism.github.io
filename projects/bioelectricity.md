@@ -127,10 +127,10 @@ Rusty Morphospace and tissue-scale patterning
  Planarian Regeneration XR is the WebXR-first atlas surface for this
  biological teaching case. Its central loop is body to graph to experiment
  record to regeneration outcome. The app now carries a reviewed PlanformDB
- subset for three source records, a bundled observed posterior-muscle
- SpatialGraph overlay derived from the Zenodo ETLSM dataset, and a validation
- chain that keeps source files, raw downloads, and conversion intermediates
- outside the public bundle
+ subset for three source records, bundled observed posterior and anterior
+ muscle SpatialGraph GLB line overlays derived from the Zenodo ETLSM dataset,
+ and a validation chain that keeps source files, raw downloads, decoder
+ tooling, and conversion intermediates outside the public bundle
  ([PlanformDB](https://lobolab.umbc.edu/planform/download/);
  [Lu, 2024](https://zenodo.org/records/11724834)).
 
@@ -149,7 +149,7 @@ Rusty Morphospace and tissue-scale patterning
  schema level.
 
  Observed
- Zenodo posterior muscle SpatialGraph line overlay
+ Zenodo posterior and anterior muscle SpatialGraph GLB line overlays
  Curated
  PlanformDB Experiment records 120, 121, and 122
  Educational
@@ -255,10 +255,13 @@ Rusty Morphospace and tissue-scale patterning
  The current implementation is source-linked at the target level. Two source
  families already have qualitative Matter fixtures, and the derived
  PlanformDB/metric/taxonomy layer now has a curated provenance fixture mirrored
- into Matter. Planarian Regeneration XR also has a reviewed observed geometry
- overlay for the posterior muscle SpatialGraph. Remaining targets are
- intentionally planned or open until source figures, tables, categories, or
- datasets have been extracted into derived, rights-safe artifacts.
+ into Matter. Planarian Regeneration XR carries a reviewed PlanformDB subset,
+ reviewed observed GLB overlays for posterior and anterior muscle SpatialGraph
+ objects, and a Quest Browser validation lane that needs a refreshed headset
+ pass whenever the production build changes.
+ Remaining targets are intentionally planned until source figures, tables,
+ categories, or datasets have been extracted into derived, rights-safe
+ artifacts.
 
  Target
  Original sources
@@ -295,10 +298,15 @@ Rusty Morphospace and tissue-scale patterning
  Rights-safe derived fixture records 14 selected Oviedo 2010 source IDs covering octanol crop-position, ventral nerve cord timing, and innexin RNAi crop-position labels, with transform notes, notice text, and use limits.
  Expanded review fixture exists in Hub and Matter; metadata/annotation only, not runtime dynamics authority or a predictor.
 
- zenodo_posterior_muscle_overlay
+ zenodo_muscle_spatialgraph_overlays
  [Lu, 2024](https://zenodo.org/records/11724834); [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
- Planarian Regeneration XR bundles a reviewed GLB line overlay derived from the posterior.Smt.SptGraph object: 61,744 vertices, 30,872 line segments, DOI, checksum, attribution, and geometry notice.
- Observed source-derived atlas geometry only; raw Zenodo files and conversion intermediates remain outside the public bundle, and the overlay is not a regeneration simulation.
+ Planarian Regeneration XR bundles reviewed GLB line overlays derived from posterior.Smt.SptGraph and anterior-filtered(2).CorrelationLines : 61,744 / 17,880 vertices, 30,872 / 8,940 line segments, SHA-256 daab05fbf234bb6db8b6618520982c1d159ca553a067825eba42929449478a2f and aa462e4141be28a5f7bb5d187a7b074a945815f19d3397110e90a8e102428ac7 , source DOI/object IDs, attribution, and geometry notice.
+ Observed source-derived atlas geometry only; raw Zenodo files, source exports, decoder tooling, and conversion intermediates remain outside the public bundle, and the overlays are not a regeneration simulation.
+
+ zenodo_12533272_volume_record
+ [Lu, 2024 dataset2](https://zenodo.org/records/12533272); [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
+ Intake evidence only. This Zenodo TLSM volume record has no reviewed browser-safe GLB derivative bundled in Planarian Regeneration XR.
+ Deferred; no source volume, source export, intermediate, decoder output, or GLB derivative from this record is published in the current public bundle.
 
  Why planarians
 
@@ -359,7 +367,8 @@ Rusty Morphospace and tissue-scale patterning
 
  The planarian atlas contributes educational region labels, body geometry
  lessons, outcome labels, source/provenance habits, reviewed PlanformDB
- records, and the first observed source-derived posterior muscle overlay.
+ records, and observed source-derived posterior and anterior muscle
+ overlays.
  Matter still builds its own computational surface graph and validation
  fixtures.
 
@@ -403,11 +412,10 @@ Rusty Morphospace and tissue-scale patterning
 
 ### [Planform / PlanformDB](https://lobolab.umbc.edu/planform/)
 
- PlanformDB is now entering through the source-intake gate as a small,
- rights-safe metadata fixture: selected experiment/result IDs, normalized
- labels, source notices, and transform notes. It remains annotation and
- validation context, not raw runtime authority or a shortcut to calibrated
- physiology.
+ PlanformDB now enters through a reviewed, rights-safe metadata subset:
+ selected experiment/result IDs, normalized labels, source notices, and
+ transform notes. It remains annotation and validation context, not raw
+ runtime authority or a shortcut to calibrated physiology.
 
  Use now
  Traceable source IDs, labels, and review metadata
@@ -449,10 +457,10 @@ Rusty Morphospace and tissue-scale patterning
  prediction. The current PlanformDB slice is deliberately metadata-only. More
  detailed source-derived work can be added later when source IDs, license
  notices, transformations, and validation targets are explicit. The observed
- Zenodo posterior-muscle overlay is an atlas geometry layer, not an anatomical
- model of regeneration; source-paper figures, raw datasets, and conversion
- intermediates should remain outside the public page unless rights and
- provenance have been reviewed.
+ Zenodo muscle overlays are atlas geometry layers, not anatomical models of
+ regeneration; source-paper figures, raw datasets, decoder tooling, source
+ exports, and conversion intermediates should remain outside the public page
+ unless rights and provenance have been reviewed.
 
 ### Next public-safe steps
 
@@ -464,7 +472,7 @@ Rusty Morphospace and tissue-scale patterning
 
 - Keep expanding PlanformDB only through small, traceable, rights-safe derived fixtures.
 
-- Complete the formal Quest Browser evidence report before treating immersive validation as a public claim.
+- Keep Quest Browser evidence current before making broader immersive validation claims.
 
 - Design the immersive 3D environment after the atlas/data boundaries remain stable.
 
@@ -497,6 +505,8 @@ Rusty Morphospace and tissue-scale patterning
 - Lobo Lab. "[PlanformDB download page](https://lobolab.umbc.edu/planform/download/)." University of Maryland, Baltimore County.
 
 - Lu, Jing. "[3D Reconstruction of Neuronal Allometry and Neuromuscular Projections in Asexual Planarians Using Expansion Tiling Light Sheet Microscopy dataset1](https://zenodo.org/records/11724834)." Zenodo dataset, version v1 (2024). DOI: 10.5281/zenodo.11724834.
+
+- Lu, Jing. "[3D Reconstruction of Neuronal Allometry and Neuromuscular Projections in Asexual Planarians Using Expansion Tiling Light Sheet Microscopy dataset2](https://zenodo.org/records/12533272)." Zenodo dataset, version v1 (2024). DOI: 10.5281/zenodo.12533272.
 
 - Creative Commons. "[Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/)." License text.
 
