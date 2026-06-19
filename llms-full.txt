@@ -4320,7 +4320,8 @@ Rusty Morphospace and tissue-scale patterning
  Planarian Regeneration XR is the WebXR-first atlas surface for this
  biological teaching case. Its central loop is body to graph to experiment
  record to regeneration outcome. The app now carries a reviewed PlanformDB
- subset with 20 selected source records and 54 outcome details, bundled
+ subset with 20 selected source records and 54 outcome details, including
+ browser-facing frequency and sample-size values where reviewed, bundled
  observed posterior and anterior muscle SpatialGraph GLB line overlays derived
  from the Zenodo ETLSM dataset, and one registered model-inspired schematic replay manifest for the
  Sketchfab educational mesh. The observed Zenodo GLBs are not simulation
@@ -4330,16 +4331,18 @@ Rusty Morphospace and tissue-scale patterning
  [Lu, 2024](https://zenodo.org/records/11724834)).
 
  The atlas can enter WebXR and the non-XR browser flow remains complete:
- anatomy selection, graph synchronization, cut controls, lazy source-record
- loading, provenance panels, graph export, screenshots, and explicit
+ anatomy selection, graph synchronization, cut controls, Records-mode
+ PlanformDB filters, provenance panels, graph export, screenshots, and explicit
  educational/source-backed labels. That does not make the atlas a live
  regeneration simulator.
 
  The current app opens in a Source Atlas mode with the reviewed Zenodo GLBs
  hotlisted by default, then separates Records, Layers, Model Replay, and
- Teaching as secondary evidence modes. Pending lanes for PlanformDB record
- browsing/filters, Zenodo 12533272 , observed-geometry dynamics, and
- Quest Browser validation remain statused rather than central.
+ Teaching as secondary evidence modes. The Records mode now filters the
+ reviewed PlanformDB subset by publication, outcome class, manipulation type,
+ timepoint, and measurement availability. Pending lanes for further
+ PlanformDB expansion, Zenodo 12533272 , observed-geometry dynamics,
+ and Quest Browser validation remain statused rather than central.
 
  Data layers
 
@@ -4352,7 +4355,7 @@ Rusty Morphospace and tissue-scale patterning
  Observed
  Zenodo posterior and anterior muscle SpatialGraph GLB line overlays
  Curated
- 20 reviewed PlanformDB Experiment records with 54 outcome details
+ 20 reviewed PlanformDB Experiment records with 54 outcome details and reviewed frequency/sample-size values
  Educational
  Procedural body, field overlays, lessons, and schematic transitions
  Replay
@@ -4363,13 +4366,13 @@ Rusty Morphospace and tissue-scale patterning
 ### Body, graph, cut, and outcome loop
 
  Anatomy nodes, graph nodes, cut states, perturbations, records, outcomes,
- field overlays, and lessons are all inspectable without hiding their
+ field overlays, record filters, and lessons are all inspectable without hiding their
  evidence type or visualization status.
 
  Desktop/mobile
  Full atlas controls and source-aware panels
  Modes
- Source Atlas, Records, Layers, Model Replay, and Teaching
+ Source Atlas, filtered Records, Layers, Model Replay, and Teaching
  Immersive
  WebXR entry with controller selection seams
  Export
@@ -4576,14 +4579,14 @@ Rusty Morphospace and tissue-scale patterning
 ### Planarian Regeneration XR atlas
 
  The planarian atlas contributes educational region labels, body geometry
- lessons, outcome labels, source/provenance habits, reviewed PlanformDB
- records, and observed source-derived posterior and anterior muscle
- overlays.
+ lessons, outcome labels, source/provenance habits, reviewed and filterable
+ PlanformDB records, and observed source-derived posterior and anterior
+ muscle overlays.
  Matter still builds its own computational surface graph and validation
  fixtures.
 
  Use now
- Region semantics, reviewed records, geometry review, outcome labels
+ Region semantics, filtered reviewed records, geometry review, outcome labels
  Not used as
  Mechanistic predictor or runtime physiology authority
 
