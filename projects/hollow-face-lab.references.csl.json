@@ -1,22 +1,34 @@
 [
   {
-    "id": "github-com-mesmer-prism-work-publications-background-contact",
+    "id": "gregory-knowledge-in-perception-and-illusion-1997",
     "type": "webpage",
-    "title": "Mesmer Prism Work Publications Background Contact",
-    "URL": "https://github.com/MesmerPrism",
+    "title": "Knowledge in perception and illusion.",
+    "URL": "https://www.richardgregory.org/papers/knowl_illusion/knowledge-in-perception.htm",
     "accessed": {
       "date-parts": [
         [
           2026,
           6,
-          13
+          19
         ]
       ]
     },
-    "note": "Referenced by Hollow Face Lab: https://mesmerprism.com/projects/hollow-face-lab.html"
+    "note": "Referenced by Hollow Face Lab: https://mesmerprism.com/projects/hollow-face-lab.html",
+    "author": [
+      {
+        "literal": "Gregory"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          1997
+        ]
+      ]
+    }
   },
   {
-    "id": "hill-and-johnston-the-hollow-face-illusion-object-specific-knowledge-gener",
+    "id": "hill-and-johnston-the-hollow-face-illusion-object-specific-knowledge-gener-2007",
     "type": "webpage",
     "title": "The hollow-face illusion: Object-specific knowledge, general assumptions or properties of the stimulus?",
     "URL": "https://ro.uow.edu.au/ndownloader/files/50499303",
@@ -25,7 +37,7 @@
         [
           2026,
           6,
-          13
+          19
         ]
       ]
     },
@@ -34,10 +46,17 @@
       {
         "literal": "Hill and Johnston"
       }
-    ]
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2007
+        ]
+      ]
+    }
   },
   {
-    "id": "hill-and-johnston-dissociation-of-perception-and-action-unmasked-by-the-ho",
+    "id": "kroliczak-heard-goodale-and-gregory-dissociation-of-perception-and-action-unmasked-by-the-ho-2006",
     "type": "webpage",
     "title": "Dissociation of perception and action unmasked by the hollow-face illusion.",
     "URL": "https://www.uwo.ca/bmi/goodalelab/pdf/hollow_face.pdf",
@@ -46,19 +65,26 @@
         [
           2026,
           6,
-          13
+          19
         ]
       ]
     },
     "note": "Referenced by Hollow Face Lab: https://mesmerprism.com/projects/hollow-face-lab.html",
     "author": [
       {
-        "literal": "Hill and Johnston"
+        "literal": "Kroliczak, Heard, Goodale, and Gregory"
       }
-    ]
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2006
+        ]
+      ]
+    }
   },
   {
-    "id": "krolikzak-heard-goodale-and-gregory-where-do-the-eyes-really-go-in-the-hollow-face-illusion",
+    "id": "grosjean-rinkenauer-and-jainta-where-do-the-eyes-really-go-in-the-hollow-face-illusion-2012",
     "type": "article-journal",
     "title": "Where Do the Eyes Really Go in the Hollow-Face Illusion?",
     "URL": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0044706",
@@ -67,29 +93,7 @@
         [
           2026,
           6,
-          13
-        ]
-      ]
-    },
-    "note": "Referenced by Hollow Face Lab: https://mesmerprism.com/projects/hollow-face-lab.html",
-    "author": [
-      {
-        "literal": "Krolikzak, Heard, Goodale, and Gregory"
-      }
-    ],
-    "DOI": "10.1371/journal.pone.0044706"
-  },
-  {
-    "id": "grosjean-rinkenauer-and-jainta-reduced-depth-inversion-illusions-in-schizophrenia-are-s",
-    "type": "webpage",
-    "title": "Reduced Depth Inversion Illusions in Schizophrenia Are State-Specific and Occur for Multiple Object Types and Viewing Conditions.",
-    "URL": "https://ruccs.rutgers.edu/faculty/pylyshyn/Proseminar13/Keane-Papathomas_Depth-Schizophrenia_JournAbn.pdf",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          13
+          19
         ]
       ]
     },
@@ -98,19 +102,27 @@
       {
         "literal": "Grosjean, Rinkenauer, and Jainta"
       }
-    ]
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2012
+        ]
+      ]
+    },
+    "DOI": "10.1371/journal.pone.0044706"
   },
   {
-    "id": "keane-silverstein-wang-and-papathomas-dynamic-3-d-computer-graphics-for-designing-a-diagnostic",
+    "id": "keane-silverstein-wang-and-papathomas-reduced-depth-inversion-illusions-in-schizophrenia-are-s-2013",
     "type": "webpage",
-    "title": "Dynamic 3-D computer graphics for designing a diagnostic tool for patients with schizophrenia.",
-    "URL": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5156401/",
+    "title": "Reduced Depth Inversion Illusions in Schizophrenia Are State-Specific and Occur for Multiple Object Types and Viewing Conditions.",
+    "URL": "https://ruccs.rutgers.edu/faculty/pylyshyn/Proseminar13/Keane-Papathomas_Depth-Schizophrenia_JournAbn.pdf",
     "accessed": {
       "date-parts": [
         [
           2026,
           6,
-          13
+          19
         ]
       ]
     },
@@ -119,7 +131,42 @@
       {
         "literal": "Keane, Silverstein, Wang, and Papathomas"
       }
-    ]
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2013
+        ]
+      ]
+    }
+  },
+  {
+    "id": "farkas-papathomas-silverstein-kourtev-and-papayanopoulos-dynamic-3-d-computer-graphics-for-designing-a-diagnostic-2016",
+    "type": "webpage",
+    "title": "Dynamic 3-D computer graphics for designing a diagnostic tool for patients with schizophrenia.",
+    "URL": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5156401/",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          19
+        ]
+      ]
+    },
+    "note": "Referenced by Hollow Face Lab: https://mesmerprism.com/projects/hollow-face-lab.html",
+    "author": [
+      {
+        "literal": "Farkas, Papathomas, Silverstein, Kourtev, and Papayanopoulos"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2016
+        ]
+      ]
+    }
   },
   {
     "id": "google-ai-edge-mediapipe-canonical-face-model-obj",
@@ -131,7 +178,7 @@
         [
           2026,
           6,
-          13
+          19
         ]
       ]
     },
@@ -152,28 +199,7 @@
         [
           2026,
           6,
-          13
-        ]
-      ]
-    },
-    "note": "Referenced by Hollow Face Lab: https://mesmerprism.com/projects/hollow-face-lab.html",
-    "author": [
-      {
-        "literal": "Google AI Edge / MediaPipe"
-      }
-    ]
-  },
-  {
-    "id": "google-ai-edge-mediapipe-webxr-device-api",
-    "type": "webpage",
-    "title": "WebXR Device API.",
-    "URL": "https://www.w3.org/TR/webxr/",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          13
+          19
         ]
       ]
     },
@@ -188,55 +214,34 @@
     "id": "w3c-immersive-web-working-group-webxr-device-api",
     "type": "webpage",
     "title": "WebXR Device API.",
+    "URL": "https://www.w3.org/TR/webxr/",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          19
+        ]
+      ]
+    },
+    "note": "Referenced by Hollow Face Lab: https://mesmerprism.com/projects/hollow-face-lab.html",
+    "author": [
+      {
+        "literal": "W3C Immersive Web Working Group"
+      }
+    ]
+  },
+  {
+    "id": "mdn-web-docs-webxr-device-api",
+    "type": "webpage",
+    "title": "WebXR Device API.",
     "URL": "https://developer.mozilla.org/en-US/docs/Web/API/WebXR_Device_API",
     "accessed": {
       "date-parts": [
         [
           2026,
           6,
-          13
-        ]
-      ]
-    },
-    "note": "Referenced by Hollow Face Lab: https://mesmerprism.com/projects/hollow-face-lab.html",
-    "author": [
-      {
-        "literal": "W3C Immersive Web Working Group"
-      }
-    ]
-  },
-  {
-    "id": "w3c-immersive-web-working-group-gltf-2-0-specification",
-    "type": "webpage",
-    "title": "glTF 2.0 Specification.",
-    "URL": "https://registry.khronos.org/glTF/specs/2.0/glTF-2.0.html",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          13
-        ]
-      ]
-    },
-    "note": "Referenced by Hollow Face Lab: https://mesmerprism.com/projects/hollow-face-lab.html",
-    "author": [
-      {
-        "literal": "W3C Immersive Web Working Group"
-      }
-    ]
-  },
-  {
-    "id": "mdn-web-docs-openxr-registry",
-    "type": "webpage",
-    "title": "OpenXR Registry.",
-    "URL": "https://registry.khronos.org/OpenXR/",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          13
+          19
         ]
       ]
     },
@@ -248,7 +253,49 @@
     ]
   },
   {
-    "id": "khronos-group-rotating-face-mask",
+    "id": "khronos-group-gltf-2-0-specification",
+    "type": "webpage",
+    "title": "glTF 2.0 Specification.",
+    "URL": "https://registry.khronos.org/glTF/specs/2.0/glTF-2.0.html",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          19
+        ]
+      ]
+    },
+    "note": "Referenced by Hollow Face Lab: https://mesmerprism.com/projects/hollow-face-lab.html",
+    "author": [
+      {
+        "literal": "Khronos Group"
+      }
+    ]
+  },
+  {
+    "id": "khronos-group-openxr-registry",
+    "type": "webpage",
+    "title": "OpenXR Registry.",
+    "URL": "https://registry.khronos.org/OpenXR/",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          19
+        ]
+      ]
+    },
+    "note": "Referenced by Hollow Face Lab: https://mesmerprism.com/projects/hollow-face-lab.html",
+    "author": [
+      {
+        "literal": "Khronos Group"
+      }
+    ]
+  },
+  {
+    "id": "michael-bach-rotating-face-mask",
     "type": "webpage",
     "title": "Rotating face mask.",
     "URL": "https://michaelbach.de/ot/fcs-hollowFace/",
@@ -257,14 +304,35 @@
         [
           2026,
           6,
-          13
+          19
         ]
       ]
     },
     "note": "Referenced by Hollow Face Lab: https://mesmerprism.com/projects/hollow-face-lab.html",
     "author": [
       {
-        "literal": "Khronos Group"
+        "literal": "Michael Bach"
+      }
+    ]
+  },
+  {
+    "id": "five-illusions-five-illusions-public-project-page",
+    "type": "webpage",
+    "title": "Five Illusions public project page.",
+    "URL": "https://fiveillusions.github.io/",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          19
+        ]
+      ]
+    },
+    "note": "Referenced by Hollow Face Lab: https://mesmerprism.com/projects/hollow-face-lab.html",
+    "author": [
+      {
+        "literal": "Five Illusions"
       }
     ]
   }

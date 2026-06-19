@@ -2,7 +2,7 @@
 
 Source: https://mesmerprism.com/projects/hollow-face-lab.html
 Canonical HTML: https://mesmerprism.com/projects/hollow-face-lab.html
-Generated: 2026-06-13
+Generated: 2026-06-19
 Description: Hollow Face Lab maps WebGL, WebXR, and Rusty XR implementation choices against hollow-face and depth-inversion research.
 Markdown: https://mesmerprism.com/projects/hollow-face-lab.md
 Plain text: https://mesmerprism.com/projects/hollow-face-lab.txt
@@ -23,8 +23,12 @@ Depth inversion and research tooling
  while preserving source-traceable variables.
  The goal is to make the hollow-face illusion testable in browser and XR
  settings, not merely to show a convincing illusion.
- Public use starts with comparing how concavity, texture, lighting,
- stereo/XR status, and response timing change the illusion.
+ The current V0 starts with concavity, lighting, local probes,
+ stereo/XR status, and response timing; texture/noise is a
+ source-backed next control rather than a live public control yet
+ ([Gregory, 1997](https://www.richardgregory.org/papers/knowl_illusion/knowledge-in-perception.htm);
+ [Hill and Johnston, 2007](https://ro.uow.edu.au/ndownloader/files/50499303);
+ [W3C WebXR](https://www.w3.org/TR/webxr/)).
 
  [Evidence map](https://mesmerprism.com/projects/hollow-face-lab.html#source-map)
  [Implementation](https://mesmerprism.com/projects/hollow-face-lab.html#implementation)
@@ -39,21 +43,26 @@ Depth inversion and research tooling
  as convex even when some depth cues point the other way. The app is therefore
  being built around logged variables rather than a single polished visual trick:
  mesh identity, concavity, texture/noise, lighting, material, stereo/XR status,
- local probes, response timing, and runtime quality all need to survive export.
+ local probes, response timing, and runtime quality all need to survive export
+ ([Gregory, 1997](https://www.richardgregory.org/papers/knowl_illusion/knowledge-in-perception.htm);
+ [Grosjean et al., 2012](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0044706);
+ [Five Illusions](https://fiveillusions.github.io/)).
 
  Published sources and implementation choices have to stay separate:
  evidence can support variables and caveats without turning every
- design idea into an established finding.
+ design idea into an established finding
+ ([MediaPipe canonical face model](https://github.com/google-ai-edge/mediapipe/blob/master/mediapipe/modules/face_geometry/data/canonical_face_model.obj);
+ [OpenXR Registry](https://registry.khronos.org/OpenXR/)).
 
 ### Source-backed variables
 
-- Orientation, face familiarity, pigmentation, and shading.
+- Orientation, face familiarity, pigmentation, and shading ([Hill and Johnston, 2007](https://ro.uow.edu.au/ndownloader/files/50499303)).
 
-- Realistic face texture versus random-dot or noise texture.
+- Realistic face texture versus random-dot or noise texture, still planned for the public V0 control surface ([Farkas et al., 2016](https://pmc.ncbi.nlm.nih.gov/articles/PMC5156401/)).
 
-- Stereo, motion parallax, depth scaling, and local probe targets.
+- Stereo, motion parallax, depth scaling, and local probe targets ([Grosjean et al., 2012](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0044706); [Five Illusions](https://fiveillusions.github.io/)).
 
-- Perceptual report, slow action, rapid action, and vergence as separable channels.
+- Perceptual report, slow action, rapid action, and vergence as separable channels ([Kroliczak et al., 2006](https://www.uwo.ca/bmi/goodalelab/pdf/hollow_face.pdf); [Grosjean et al., 2012](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0044706)).
 
 ### Open design variables
 
@@ -73,12 +82,16 @@ Depth inversion and research tooling
  fallback. It currently uses the Apache-2.0 MediaPipe canonical face OBJ as a
  neutral runtime baseline. That asset is useful for topology, UVs, and
  coordinate mapping, but it is not being presented as an accepted hollow-face
- research mesh.
+ research mesh
+ ([MediaPipe canonical face model](https://github.com/google-ai-edge/mediapipe/blob/master/mediapipe/modules/face_geometry/data/canonical_face_model.obj);
+ [MDN WebXR](https://developer.mozilla.org/en-US/docs/Web/API/WebXR_Device_API)).
 
  The longer-term stack keeps three evidence tiers separate: flat browser use for
  public/low-control tasks, WebXR for browser-based immersive sessions where
  supported, and a later lab-native Rusty XR / OpenXR lane for controlled HMD
- studies, action endpoints, eye tracking, and timing-sensitive instrumentation.
+ studies, action endpoints, eye tracking, and timing-sensitive instrumentation
+ ([W3C WebXR](https://www.w3.org/TR/webxr/);
+ [OpenXR Registry](https://registry.khronos.org/OpenXR/)).
 
 ### Current V0 controls
 
@@ -114,9 +127,11 @@ Depth inversion and research tooling
 
 ### Hollow-face research
 
+- Gregory. "[Knowledge in perception and illusion.](https://www.richardgregory.org/papers/knowl_illusion/knowledge-in-perception.htm)" Philosophical Transactions of the Royal Society B , 1997.
+
 - Hill and Johnston. "[The hollow-face illusion: Object-specific knowledge, general assumptions or properties of the stimulus?](https://ro.uow.edu.au/ndownloader/files/50499303)" Perception , 2007.
 
-- Krolikzak, Heard, Goodale, and Gregory. "[Dissociation of perception and action unmasked by the hollow-face illusion.](https://www.uwo.ca/bmi/goodalelab/pdf/hollow_face.pdf)" Brain Research , 2006.
+- Kroliczak, Heard, Goodale, and Gregory. "[Dissociation of perception and action unmasked by the hollow-face illusion.](https://www.uwo.ca/bmi/goodalelab/pdf/hollow_face.pdf)" Brain Research , 2006.
 
 - Grosjean, Rinkenauer, and Jainta. "[Where Do the Eyes Really Go in the Hollow-Face Illusion?](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0044706)" PLOS ONE , 2012.
 
@@ -137,3 +152,5 @@ Depth inversion and research tooling
 - Khronos Group. "[OpenXR Registry.](https://registry.khronos.org/OpenXR/)" Native XR runtime route for later lab builds.
 
 - Michael Bach. "[Rotating face mask.](https://michaelbach.de/ot/fcs-hollowFace/)" Teaching/demo reference, not an implementation source to copy.
+
+- Five Illusions. "[Five Illusions public project page.](https://fiveillusions.github.io/)" Current stereo-probe challenge route, not an implementation source to copy.

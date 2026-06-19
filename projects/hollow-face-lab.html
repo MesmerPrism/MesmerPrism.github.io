@@ -30,8 +30,8 @@
     <link rel="alternate" type="application/vnd.citationstyles.csl+json" href="/projects/hollow-face-lab.references.csl.json" title="CSL JSON references">
     <meta name="citation_title" content="Hollow Face Lab">
     <meta name="citation_author" content="Till Holzapfel">
-    <meta name="citation_publication_date" content="2026-06-13">
-    <meta name="citation_online_date" content="2026-06-13">
+    <meta name="citation_publication_date" content="2026-06-19">
+    <meta name="citation_online_date" content="2026-06-19">
     <meta name="citation_public_url" content="https://mesmerprism.com/projects/hollow-face-lab.html">
     <meta name="citation_language" content="en">
     <script type="application/ld+json" data-agent-metadata>
@@ -56,7 +56,7 @@
                 "url": "https://mesmerprism.com"
           },
           "url": "https://mesmerprism.com/projects/hollow-face-lab.html",
-          "dateModified": "2026-06-13",
+          "dateModified": "2026-06-19",
           "inLanguage": "en",
           "encoding": [
                 {
@@ -81,7 +81,7 @@
                 }
           ],
           "citation": [
-                "https://github.com/MesmerPrism",
+                "https://www.richardgregory.org/papers/knowl_illusion/knowledge-in-perception.htm",
                 "https://ro.uow.edu.au/ndownloader/files/50499303",
                 "https://www.uwo.ca/bmi/goodalelab/pdf/hollow_face.pdf",
                 "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0044706",
@@ -93,7 +93,8 @@
                 "https://developer.mozilla.org/en-US/docs/Web/API/WebXR_Device_API",
                 "https://registry.khronos.org/glTF/specs/2.0/glTF-2.0.html",
                 "https://registry.khronos.org/OpenXR/",
-                "https://michaelbach.de/ot/fcs-hollowFace/"
+                "https://michaelbach.de/ot/fcs-hollowFace/",
+                "https://fiveillusions.github.io/"
           ]
     }
     </script>
@@ -130,8 +131,12 @@
                     while preserving source-traceable variables.
                     The goal is to make the hollow-face illusion testable in browser and XR
                     settings, not merely to show a convincing illusion.
-                    Public use starts with comparing how concavity, texture, lighting,
-                    stereo/XR status, and response timing change the illusion.
+                    The current V0 starts with concavity, lighting, local probes,
+                    stereo/XR status, and response timing; texture/noise is a
+                    source-backed next control rather than a live public control yet
+                    (<a class="inline-citation" href="https://www.richardgregory.org/papers/knowl_illusion/knowledge-in-perception.htm" target="_blank" rel="noopener noreferrer">Gregory, 1997</a>;
+                    <a class="inline-citation" href="https://ro.uow.edu.au/ndownloader/files/50499303" target="_blank" rel="noopener noreferrer">Hill and Johnston, 2007</a>;
+                    <a class="inline-citation" href="https://www.w3.org/TR/webxr/" target="_blank" rel="noopener noreferrer">W3C WebXR</a>).
                 </p>
                 <div class="hero-actions">
                     <a class="action-link action-link--strong" href="#source-map">Evidence map</a>
@@ -153,22 +158,34 @@
                     as convex even when some depth cues point the other way. The app is therefore
                     being built around logged variables rather than a single polished visual trick:
                     mesh identity, concavity, texture/noise, lighting, material, stereo/XR status,
-                    local probes, response timing, and runtime quality all need to survive export.
+                    local probes, response timing, and runtime quality all need to survive export
+                    (<a class="inline-citation" href="https://www.richardgregory.org/papers/knowl_illusion/knowledge-in-perception.htm" target="_blank" rel="noopener noreferrer">Gregory, 1997</a>;
+                    <a class="inline-citation" href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0044706" target="_blank" rel="noopener noreferrer">Grosjean et al., 2012</a>;
+                    <a class="inline-citation" href="https://fiveillusions.github.io/" target="_blank" rel="noopener noreferrer">Five Illusions</a>).
                 </p>
                 <p>
                     Published sources and implementation choices have to stay separate:
                     evidence can support variables and caveats without turning every
-                    design idea into an established finding.
+                    design idea into an established finding
+                    (<a class="inline-citation" href="https://github.com/google-ai-edge/mediapipe/blob/master/mediapipe/modules/face_geometry/data/canonical_face_model.obj" target="_blank" rel="noopener noreferrer">MediaPipe canonical face model</a>;
+                    <a class="inline-citation" href="https://registry.khronos.org/OpenXR/" target="_blank" rel="noopener noreferrer">OpenXR Registry</a>).
                 </p>
             </div>
             <div class="detail-stack">
                 <section class="detail-block">
                     <h3>Source-backed variables</h3>
                     <ul class="plain-list">
-                        <li>Orientation, face familiarity, pigmentation, and shading.</li>
-                        <li>Realistic face texture versus random-dot or noise texture.</li>
-                        <li>Stereo, motion parallax, depth scaling, and local probe targets.</li>
-                        <li>Perceptual report, slow action, rapid action, and vergence as separable channels.</li>
+                        <li>Orientation, face familiarity, pigmentation, and shading
+                            (<a class="inline-citation" href="https://ro.uow.edu.au/ndownloader/files/50499303" target="_blank" rel="noopener noreferrer">Hill and Johnston, 2007</a>).</li>
+                        <li>Realistic face texture versus random-dot or noise texture,
+                            still planned for the public V0 control surface
+                            (<a class="inline-citation" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5156401/" target="_blank" rel="noopener noreferrer">Farkas et al., 2016</a>).</li>
+                        <li>Stereo, motion parallax, depth scaling, and local probe targets
+                            (<a class="inline-citation" href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0044706" target="_blank" rel="noopener noreferrer">Grosjean et al., 2012</a>;
+                            <a class="inline-citation" href="https://fiveillusions.github.io/" target="_blank" rel="noopener noreferrer">Five Illusions</a>).</li>
+                        <li>Perceptual report, slow action, rapid action, and vergence as separable channels
+                            (<a class="inline-citation" href="https://www.uwo.ca/bmi/goodalelab/pdf/hollow_face.pdf" target="_blank" rel="noopener noreferrer">Kroliczak et al., 2006</a>;
+                            <a class="inline-citation" href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0044706" target="_blank" rel="noopener noreferrer">Grosjean et al., 2012</a>).</li>
                     </ul>
                 </section>
                 <section class="detail-block">
@@ -194,13 +211,17 @@
                     fallback. It currently uses the Apache-2.0 MediaPipe canonical face OBJ as a
                     neutral runtime baseline. That asset is useful for topology, UVs, and
                     coordinate mapping, but it is not being presented as an accepted hollow-face
-                    research mesh.
+                    research mesh
+                    (<a class="inline-citation" href="https://github.com/google-ai-edge/mediapipe/blob/master/mediapipe/modules/face_geometry/data/canonical_face_model.obj" target="_blank" rel="noopener noreferrer">MediaPipe canonical face model</a>;
+                    <a class="inline-citation" href="https://developer.mozilla.org/en-US/docs/Web/API/WebXR_Device_API" target="_blank" rel="noopener noreferrer">MDN WebXR</a>).
                 </p>
                 <p>
                     The longer-term stack keeps three evidence tiers separate: flat browser use for
                     public/low-control tasks, WebXR for browser-based immersive sessions where
                     supported, and a later lab-native Rusty XR / OpenXR lane for controlled HMD
-                    studies, action endpoints, eye tracking, and timing-sensitive instrumentation.
+                    studies, action endpoints, eye tracking, and timing-sensitive instrumentation
+                    (<a class="inline-citation" href="https://www.w3.org/TR/webxr/" target="_blank" rel="noopener noreferrer">W3C WebXR</a>;
+                    <a class="inline-citation" href="https://registry.khronos.org/OpenXR/" target="_blank" rel="noopener noreferrer">OpenXR Registry</a>).
                 </p>
             </div>
             <div class="detail-stack">
@@ -241,8 +262,9 @@
                 <section class="detail-block">
                     <h3>Hollow-face research</h3>
                     <ul class="plain-list">
+                        <li><strong>Gregory.</strong> "<a class="reference-link" href="https://www.richardgregory.org/papers/knowl_illusion/knowledge-in-perception.htm" target="_blank" rel="noopener noreferrer">Knowledge in perception and illusion.</a>" <em>Philosophical Transactions of the Royal Society B</em>, 1997.</li>
                         <li><strong>Hill and Johnston.</strong> "<a class="reference-link" href="https://ro.uow.edu.au/ndownloader/files/50499303" target="_blank" rel="noopener noreferrer">The hollow-face illusion: Object-specific knowledge, general assumptions or properties of the stimulus?</a>" <em>Perception</em>, 2007.</li>
-                        <li><strong>Krolikzak, Heard, Goodale, and Gregory.</strong> "<a class="reference-link" href="https://www.uwo.ca/bmi/goodalelab/pdf/hollow_face.pdf" target="_blank" rel="noopener noreferrer">Dissociation of perception and action unmasked by the hollow-face illusion.</a>" <em>Brain Research</em>, 2006.</li>
+                        <li><strong>Kroliczak, Heard, Goodale, and Gregory.</strong> "<a class="reference-link" href="https://www.uwo.ca/bmi/goodalelab/pdf/hollow_face.pdf" target="_blank" rel="noopener noreferrer">Dissociation of perception and action unmasked by the hollow-face illusion.</a>" <em>Brain Research</em>, 2006.</li>
                         <li><strong>Grosjean, Rinkenauer, and Jainta.</strong> "<a class="reference-link" href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0044706" target="_blank" rel="noopener noreferrer">Where Do the Eyes Really Go in the Hollow-Face Illusion?</a>" <em>PLOS ONE</em>, 2012.</li>
                         <li><strong>Keane, Silverstein, Wang, and Papathomas.</strong> "<a class="reference-link" href="https://ruccs.rutgers.edu/faculty/pylyshyn/Proseminar13/Keane-Papathomas_Depth-Schizophrenia_JournAbn.pdf" target="_blank" rel="noopener noreferrer">Reduced Depth Inversion Illusions in Schizophrenia Are State-Specific and Occur for Multiple Object Types and Viewing Conditions.</a>" <em>Journal of Abnormal Psychology</em>, 2013.</li>
                         <li><strong>Farkas, Papathomas, Silverstein, Kourtev, and Papayanopoulos.</strong> "<a class="reference-link" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5156401/" target="_blank" rel="noopener noreferrer">Dynamic 3-D computer graphics for designing a diagnostic tool for patients with schizophrenia.</a>" <em>The Visual Computer</em>, 2016.</li>
@@ -257,6 +279,7 @@
                         <li><strong>Khronos Group.</strong> "<a class="reference-link" href="https://registry.khronos.org/glTF/specs/2.0/glTF-2.0.html" target="_blank" rel="noopener noreferrer">glTF 2.0 Specification.</a>" Runtime-neutral 3D asset format.</li>
                         <li><strong>Khronos Group.</strong> "<a class="reference-link" href="https://registry.khronos.org/OpenXR/" target="_blank" rel="noopener noreferrer">OpenXR Registry.</a>" Native XR runtime route for later lab builds.</li>
                         <li><strong>Michael Bach.</strong> "<a class="reference-link" href="https://michaelbach.de/ot/fcs-hollowFace/" target="_blank" rel="noopener noreferrer">Rotating face mask.</a>" Teaching/demo reference, not an implementation source to copy.</li>
+                        <li><strong>Five Illusions.</strong> "<a class="reference-link" href="https://fiveillusions.github.io/" target="_blank" rel="noopener noreferrer">Five Illusions public project page.</a>" Current stereo-probe challenge route, not an implementation source to copy.</li>
                     </ul>
                 </section>
             </div>

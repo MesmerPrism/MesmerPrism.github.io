@@ -330,25 +330,33 @@ function referenceEntries(html, page) {
   const entries = [];
   const seen = new Set();
   const anchorPattern = /<a\b([^>]*)\bhref=["']([^"']+)["']([^>]*)>([\s\S]*?)<\/a>/gi;
+  const preferReferenceLinks = /<a\b[^>]*\bclass=["'][^"']*\breference-link\b/i.test(html);
   let match;
   while ((match = anchorPattern.exec(html))) {
+    if (preferReferenceLinks && !/\bclass=["'][^"']*\breference-link\b/i.test(match[0])) continue;
     const href = decodeEntities(match[2]);
     if (!/^https?:\/\//i.test(href) || seen.has(href)) continue;
     seen.add(href);
     const anchorText = stripTags(match[4]);
+    const listStart = html.lastIndexOf("<li", match.index);
+    const listEnd = html.indexOf("</li>", match.index);
+    const listHtml = listStart >= 0 && listEnd >= match.index
+      ? html.slice(listStart, listEnd + "</li>".length)
+      : "";
     const start = Math.max(0, match.index - 600);
     const end = Math.min(html.length, match.index + match[0].length + 700);
     const context = html.slice(start, end);
-    const strong = context.match(/<strong\b[^>]*>([\s\S]*?)<\/strong>/i);
+    const strong = (listHtml.match(/<strong\b[^>]*>([\s\S]*?)<\/strong>/i)
+      || context.match(/<strong\b[^>]*>([\s\S]*?)<\/strong>/i));
     const listLead = enclosingListLead(html, match.index);
-    const contextLabel = listLead || stripTags(context);
+    const contextLabel = stripTags(listHtml) || listLead || stripTags(context);
     const title = (!anchorText || genericAnchorText(anchorText))
       ? (listLead || anchorText || href)
       : anchorText;
     const author = strong
       ? stripTags(strong[1]).replace(/[.:]+$/, "")
       : (listLead ? inferAuthor(listLead) : (genericAnchorText(anchorText) ? "" : anchorText));
-    const year = firstYear(listLead || contextLabel);
+    const year = firstYear(contextLabel);
     const doi = doiFromUrl(href);
     const id = `${slug(author || new URL(href).hostname)}-${slug(title)}${year ? `-${year}` : ""}`;
     entries.push({
