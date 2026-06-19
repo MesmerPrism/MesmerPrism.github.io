@@ -130,12 +130,16 @@ Rusty Morphospace and tissue-scale patterning
  subset with 20 selected source records and 54 outcome details, including
  browser-facing frequency and sample-size values where reviewed, bundled
  observed posterior and anterior muscle SpatialGraph GLB line overlays derived
- from the Zenodo ETLSM dataset, and one registered model-inspired schematic replay manifest for the
- Sketchfab educational mesh. The observed Zenodo GLBs are not simulation
- substrates. A validation chain keeps source files, raw downloads, decoder
- tooling, and conversion intermediates outside the public bundle
+ from the Zenodo ETLSM dataset, a parsed-but-deferred sidecar summary for
+ Zenodo 12533272 , and one registered model-inspired schematic
+ replay manifest for the Sketchfab educational mesh. The observed Zenodo GLBs
+ are not simulation substrates. The 12533272 sidecar records a
+ large tiled volume layout, not a browser mesh. A validation chain keeps
+ source files, raw downloads, decoder tooling, and conversion intermediates
+ outside the public bundle
  ([PlanformDB](https://lobolab.umbc.edu/planform/download/);
- [Lu, 2024](https://zenodo.org/records/11724834)).
+ [Lu, 2024 dataset1](https://zenodo.org/records/11724834);
+ [Lu, 2024 dataset2](https://zenodo.org/records/12533272)).
 
  The atlas can enter WebXR and the non-XR browser flow remains complete:
  anatomy selection, graph synchronization, cut controls, Records-mode
@@ -148,8 +152,9 @@ Rusty Morphospace and tissue-scale patterning
  Teaching as secondary evidence modes. The Records mode now filters the
  reviewed PlanformDB subset by publication, outcome class, manipulation type,
  timepoint, and measurement availability. Pending lanes for further
- PlanformDB expansion, Zenodo 12533272 , observed-geometry dynamics,
- and Quest Browser validation remain statused rather than central.
+ PlanformDB expansion, 12533272 volume-derived GLB work,
+ observed-geometry dynamics, and Quest Browser validation remain statused
+ rather than central.
 
  Data layers
 
@@ -320,8 +325,8 @@ Rusty Morphospace and tissue-scale patterning
 
  zenodo_12533272_volume_record
  [Lu, 2024 dataset2](https://zenodo.org/records/12533272); [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
- Intake evidence only. This Zenodo TLSM volume record has no reviewed browser-safe GLB derivative bundled in Planarian Regeneration XR.
- Deferred; no source volume, source export, intermediate, decoder output, or GLB derivative from this record is published in the current public bundle.
+ Public-safe sidecar facts are recorded: mergeall.am.lda verifies a 4469 x 7887 x 3520 16-bit tiled volume, 124,069,450,560 voxels, Gzip tile compression, intensity bounds from 0 to 44182 , and a linked mergeall.am.dat volume of about 34.5 GB. No reviewed browser-safe GLB derivative from this record is bundled.
+ Deferred; raw sidecar XML, raw histogram payload, TileMinMax payload, contributor-local source path, source volume, source export, intermediate, decoder output, and GLB derivative from this record are not published in the current public bundle.
 
  planarian_xr_schematic_replay_manifest
  Planarian XR schematic transition adapter; Sketchfab educational mesh substrate
