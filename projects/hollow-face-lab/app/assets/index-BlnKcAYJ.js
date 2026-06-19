@@ -4114,8 +4114,8 @@ float featureEllipse(vec2 point, vec2 center, vec2 radius) {
 
 bool insideFeatureHole(vec3 point) {
   vec2 p = point.xy;
-  bool leftEye = featureEllipse(p, vec2(-0.032, 0.031), vec2(0.017, 0.008)) < 1.0;
-  bool rightEye = featureEllipse(p, vec2(0.032, 0.031), vec2(0.017, 0.008)) < 1.0;
+  bool leftEye = featureEllipse(p, vec2(-0.036, 0.035), vec2(0.017, 0.0055)) < 1.0;
+  bool rightEye = featureEllipse(p, vec2(0.036, 0.035), vec2(0.017, 0.0055)) < 1.0;
   bool mouth = featureEllipse(p, vec2(0.000, -0.050), vec2(0.034, 0.008)) < 1.0;
   bool leftNostril = featureEllipse(p, vec2(-0.010, -0.010), vec2(0.006, 0.004)) < 1.0;
   bool rightNostril = featureEllipse(p, vec2(0.010, -0.010), vec2(0.006, 0.004)) < 1.0;
