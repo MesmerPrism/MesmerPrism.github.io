@@ -113,10 +113,6 @@ Concave
 
 ## Runtime
 
- Full Screen Stimulus
-
- Stereoscope Pair
-
  Enter VR
 
  Reset View

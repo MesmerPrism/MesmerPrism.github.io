@@ -18,8 +18,8 @@
     <meta property="og:url" content="https://mesmerprism.com/projects/hollow-face-lab/app/" />
     <meta name="theme-color" content="#f4efe7" />
     <link rel="stylesheet" href="/assets/fonts.css" />
-    <script type="module" crossorigin src="/projects/hollow-face-lab/app/assets/index-CNWqloWf.js"></script>
-    <link rel="stylesheet" crossorigin href="/projects/hollow-face-lab/app/assets/index-DN_AYSk7.css">
+    <script type="module" crossorigin src="/projects/hollow-face-lab/app/assets/index-AP42UD-T.js"></script>
+    <link rel="stylesheet" crossorigin href="/projects/hollow-face-lab/app/assets/index-DVWXP2JM.css">
     <!-- BEGIN agent-readable metadata -->
     <link rel="alternate" type="text/markdown" href="/projects/hollow-face-lab/app/index.md" title="Markdown version">
     <link rel="alternate" type="text/plain" href="/projects/hollow-face-lab/app/index.txt" title="Plain text version">
@@ -94,10 +94,29 @@
       </header>
       <header class="app-header">
         <h1>Hollow Face Lab</h1>
-        <div class="runtime-strip" aria-live="polite">
-          <span id="runtime-mode">Flat Web</span>
-          <span id="xr-status">Checking WebXR</span>
-          <span id="frame-status">0 fps</span>
+        <div class="app-header-tools">
+          <div class="view-toolbar" aria-label="Stimulus view controls">
+            <button
+              id="fullscreen-stimulus"
+              type="button"
+              data-tooltip="Shows only the stimulus canvas in browser fullscreen. When stereoscope mode is on, each fullscreen half shows the same render."
+            >
+              Fullscreen
+            </button>
+            <button
+              id="stereoscope-mode"
+              type="button"
+              aria-pressed="false"
+              data-tooltip="Duplicates the same stimulus side by side in the canvas for magic-eye-style free viewing. This is a duplicated view, not a calibrated stereo-depth disparity."
+            >
+              Stereo Pair
+            </button>
+          </div>
+          <div class="runtime-strip" aria-live="polite">
+            <span id="runtime-mode">Flat Web</span>
+            <span id="xr-status">Checking WebXR</span>
+            <span id="frame-status">0 fps</span>
+          </div>
         </div>
       </header>
 
@@ -262,21 +281,6 @@
 
           <section>
             <h2>Runtime</h2>
-            <button
-              id="fullscreen-stimulus"
-              type="button"
-              data-tooltip="Shows only the stimulus canvas in browser fullscreen. When stereoscope mode is on, each fullscreen half shows the same render."
-            >
-              Full Screen Stimulus
-            </button>
-            <button
-              id="stereoscope-mode"
-              type="button"
-              aria-pressed="false"
-              data-tooltip="Duplicates the same stimulus side by side in the canvas for magic-eye-style free viewing. This is a duplicated view, not a calibrated stereo-depth disparity."
-            >
-              Stereoscope Pair
-            </button>
             <button id="enter-xr" type="button" disabled data-tooltip="Requests an immersive WebXR session only when the browser reports support.">
               Enter VR
             </button>
