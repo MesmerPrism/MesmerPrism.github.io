@@ -2,8 +2,8 @@
 
 Source: https://mesmerprism.com/projects/bioelectricity.html
 Canonical HTML: https://mesmerprism.com/projects/bioelectricity.html
-Generated: 2026-06-13
-Description: Bioelectricity and morphogenesis in Rusty Morphospace: a source-linked educational planarian surface-field model built with Rusty Matter and visualized through Rusty Optics.
+Generated: 2026-06-19
+Description: Bioelectricity and morphogenesis across Rusty Morphospace and Planarian Regeneration XR: source-bounded planarian teaching models, WebXR atlas controls, curated records, and observed geometry overlays.
 Markdown: https://mesmerprism.com/projects/bioelectricity.md
 Plain text: https://mesmerprism.com/projects/bioelectricity.txt
 BibTeX references: https://mesmerprism.com/projects/bioelectricity.bib
@@ -16,13 +16,15 @@ Rusty Morphospace and tissue-scale patterning
 # Bioelectricity and Morphogenesis
 
  Bioelectric morphogenesis asks how voltage-like state, tissue coupling,
- perturbations, and memory can help shape living form. The Rusty
- Morphospace version is deliberately modest: it builds inspectable
- educational models over mesh-surface samples, links each scenario to
- publication targets, then keeps the simulation, visualization, and public
- claims in separate layers.
+ perturbations, and memory can help shape living form. The current Mesmer
+ Prism line stays deliberately modest: Rusty Morphospace keeps inspectable
+ educational surface-field models, while Planarian Regeneration XR turns the
+ same source-boundary discipline into a WebXR-first atlas of body, graph,
+ experiment record, and outcome. Observed records, educational abstractions,
+ and model-inspired overlays remain separate layers.
 
  [Current slice](https://mesmerprism.com/projects/bioelectricity.html#current-slice)
+ [Planarian XR atlas](https://mesmerprism.com/projects/bioelectricity.html#planarian-xr)
  [Showcase export](https://mesmerprism.com/projects/bioelectricity.html#showcase-export)
  [Source status](https://mesmerprism.com/projects/bioelectricity.html#source-target-status)
  [Adjacent dynamics](https://mesmerprism.com/projects/bioelectricity.html#cross-project-bridge)
@@ -118,6 +120,71 @@ Rusty Morphospace and tissue-scale patterning
 
  [Repository](https://github.com/MesmerPrism/rusty-manifold)
 
+ Planarian XR atlas
+
+## Observed, curated, and educational layers stay separated
+
+ Planarian Regeneration XR is the WebXR-first atlas surface for this
+ biological teaching case. Its central loop is body to graph to experiment
+ record to regeneration outcome. The app now carries a reviewed PlanformDB
+ subset for three source records, a bundled observed posterior-muscle
+ SpatialGraph overlay derived from the Zenodo ETLSM dataset, and a validation
+ chain that keeps source files, raw downloads, and conversion intermediates
+ outside the public bundle
+ ([PlanformDB](https://lobolab.umbc.edu/planform/download/);
+ [Lu, 2024](https://zenodo.org/records/11724834)).
+
+ The atlas can enter WebXR and the non-XR browser flow remains complete:
+ anatomy selection, graph synchronization, cut controls, lazy source-record
+ loading, provenance panels, graph export, screenshots, and explicit
+ educational/source-backed labels. That does not make the atlas a live
+ regeneration simulator.
+
+ Data layers
+
+### Source-bounded atlas records
+
+ The app separates observed geometry, curated literature/database records,
+ model-inspired overlays, and educational abstractions at the dataset
+ schema level.
+
+ Observed
+ Zenodo posterior muscle SpatialGraph line overlay
+ Curated
+ PlanformDB Experiment records 120, 121, and 122
+ Educational
+ Procedural body, field overlays, lessons, and schematic transitions
+
+ Interaction
+
+### Body, graph, cut, and outcome loop
+
+ Anatomy nodes, graph nodes, cut states, perturbations, records, outcomes,
+ field overlays, and lessons are all inspectable without hiding their
+ evidence type or visualization status.
+
+ Desktop/mobile
+ Full atlas controls and source-aware panels
+ Immersive
+ WebXR entry with controller selection seams
+ Export
+ Graph JSON and screenshot evidence paths
+
+ Validation
+
+### Public bundle checks before claims
+
+ The local readiness chain validates data references, geometry notices,
+ source labels, build output, public asset boundaries, and the documented
+ implementation-plan gates before a build is treated as coherent.
+
+ Passed
+ Data validation, geometry QA, production build, and public metadata scan
+ Formal gate
+ Headset evidence remains a separate Quest Browser report step
+ Limit
+ No raw microscopy, PlanformDB database, or source conversion artifacts are bundled
+
  Showcase export
 
 ## Validated Planarian 3D surface and graph loops
@@ -187,11 +254,11 @@ Rusty Morphospace and tissue-scale patterning
 
  The current implementation is source-linked at the target level. Two source
  families already have qualitative Matter fixtures, and the derived
- PlanformDB/metric/taxonomy layer now has a 14-record curated provenance
- fixture mirrored into Matter. The
- remaining targets are intentionally planned or open until source figures,
- tables, categories, or datasets have been extracted into derived, rights-safe
- artifacts.
+ PlanformDB/metric/taxonomy layer now has a curated provenance fixture mirrored
+ into Matter. Planarian Regeneration XR also has a reviewed observed geometry
+ overlay for the posterior muscle SpatialGraph. Remaining targets are
+ intentionally planned or open until source figures, tables, categories, or
+ datasets have been extracted into derived, rights-safe artifacts.
 
  Target
  Original sources
@@ -227,6 +294,11 @@ Rusty Morphospace and tissue-scale patterning
  [PlanformDB](https://lobolab.umbc.edu/planform/download/); [Lobo et al., 2013](https://doi.org/10.1093/bioinformatics/btt088)
  Rights-safe derived fixture records 14 selected Oviedo 2010 source IDs covering octanol crop-position, ventral nerve cord timing, and innexin RNAi crop-position labels, with transform notes, notice text, and use limits.
  Expanded review fixture exists in Hub and Matter; metadata/annotation only, not runtime dynamics authority or a predictor.
+
+ zenodo_posterior_muscle_overlay
+ [Lu, 2024](https://zenodo.org/records/11724834); [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
+ Planarian Regeneration XR bundles a reviewed GLB line overlay derived from the posterior.Smt.SptGraph object: 61,744 vertices, 30,872 line segments, DOI, checksum, attribution, and geometry notice.
+ Observed source-derived atlas geometry only; raw Zenodo files and conversion intermediates remain outside the public bundle, and the overlay is not a regeneration simulation.
 
  Why planarians
 
@@ -276,22 +348,25 @@ Rusty Morphospace and tissue-scale patterning
 
 ## Legacy projects feed the Morphospace line
 
- The older planarian and xenobot work is useful, but it should not become the
- runtime authority for the Rusty Morphospace implementation.
+ The older planarian and xenobot work is useful, but it should not become an
+ uncontrolled runtime authority for the Rusty Morphospace implementation.
+ Planarian Regeneration XR is the current atlas surface for the planarian side
+ of that boundary.
 
  Planarian reference
 
-### Planarian graph and WebXR work
+### Planarian Regeneration XR atlas
 
- The planarian graph project contributes educational region labels, body
- geometry lessons, outcome labels, and source/provenance habits. Its app
- code and demo records remain reference material; Matter builds its own
- computational surface graph and validation fixtures.
+ The planarian atlas contributes educational region labels, body geometry
+ lessons, outcome labels, source/provenance habits, reviewed PlanformDB
+ records, and the first observed source-derived posterior muscle overlay.
+ Matter still builds its own computational surface graph and validation
+ fixtures.
 
  Use now
- Region semantics, geometry review, outcome labels
+ Region semantics, reviewed records, geometry review, outcome labels
  Not used as
- Simulation topology or runtime dynamics
+ Mechanistic predictor or runtime physiology authority
 
  Xenobot reference
 
@@ -373,9 +448,11 @@ Rusty Morphospace and tissue-scale patterning
  code ownership clear, and avoids presenting educational dynamics as empirical
  prediction. The current PlanformDB slice is deliberately metadata-only. More
  detailed source-derived work can be added later when source IDs, license
- notices, transformations, and validation targets are explicit; source-paper
- figures and raw datasets should remain outside the public page unless rights
- and provenance have been reviewed.
+ notices, transformations, and validation targets are explicit. The observed
+ Zenodo posterior-muscle overlay is an atlas geometry layer, not an anatomical
+ model of regeneration; source-paper figures, raw datasets, and conversion
+ intermediates should remain outside the public page unless rights and
+ provenance have been reviewed.
 
 ### Next public-safe steps
 
@@ -385,9 +462,11 @@ Rusty Morphospace and tissue-scale patterning
 
 - Make voltage-unit policy explicit per preset.
 
-- Expand PlanformDB only through small, traceable, rights-safe derived fixtures.
+- Keep expanding PlanformDB only through small, traceable, rights-safe derived fixtures.
 
-- Promote Manifold command/session surfaces only after Matter and Optics contracts settle.
+- Complete the formal Quest Browser evidence report before treating immersive validation as a public claim.
+
+- Design the immersive 3D environment after the atlas/data boundaries remain stable.
 
  References
 
@@ -416,6 +495,10 @@ Rusty Morphospace and tissue-scale patterning
 - Lobo, Malone, and Levin. "[Planform: an application and database of graph-encoded planarian regenerative experiments](https://doi.org/10.1093/bioinformatics/btt088)." Bioinformatics 29 (2013).
 
 - Lobo Lab. "[PlanformDB download page](https://lobolab.umbc.edu/planform/download/)." University of Maryland, Baltimore County.
+
+- Lu, Jing. "[3D Reconstruction of Neuronal Allometry and Neuromuscular Projections in Asexual Planarians Using Expansion Tiling Light Sheet Microscopy dataset1](https://zenodo.org/records/11724834)." Zenodo dataset, version v1 (2024). DOI: 10.5281/zenodo.11724834.
+
+- Creative Commons. "[Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/)." License text.
 
 - Bioelectricity Nexus. "[Bioelectricity Nexus](https://bioelectricitynexus.com/)." Field resource index.
 

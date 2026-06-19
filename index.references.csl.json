@@ -1,6 +1,6 @@
 [
   {
-    "id": "github-com-mesmer-prism-work-publications-background-contact",
+    "id": "fejer-et-al-mesmer-prism-work-publications-background-contact-2026",
     "type": "webpage",
     "title": "Mesmer Prism Work Publications Background Contact",
     "URL": "https://github.com/MesmerPrism",
@@ -9,14 +9,26 @@
         [
           2026,
           6,
-          13
+          19
         ]
       ]
     },
-    "note": "Referenced by Mesmer Prism | Till Holzapfel: https://mesmerprism.com/"
+    "note": "Referenced by Mesmer Prism | Till Holzapfel: https://mesmerprism.com/",
+    "author": [
+      {
+        "literal": "Fejer et al"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    }
   },
   {
-    "id": "viscereality-org-project-site",
+    "id": "fejer-et-al-project-site-2026",
     "type": "webpage",
     "title": "Project site",
     "URL": "https://viscereality.org/",
@@ -25,14 +37,26 @@
         [
           2026,
           6,
-          13
+          19
         ]
       ]
     },
-    "note": "Referenced by Mesmer Prism | Till Holzapfel: https://mesmerprism.com/"
+    "note": "Referenced by Mesmer Prism | Till Holzapfel: https://mesmerprism.com/",
+    "author": [
+      {
+        "literal": "Fejer et al"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    }
   },
   {
-    "id": "mesmerprism-github-io-docs-downloads",
+    "id": "fejer-et-al-docs-downloads-2026",
     "type": "webpage",
     "title": "Docs & downloads",
     "URL": "https://mesmerprism.github.io/ViscerealityCompanion/",
@@ -41,14 +65,26 @@
         [
           2026,
           6,
-          13
+          19
         ]
       ]
     },
-    "note": "Referenced by Mesmer Prism | Till Holzapfel: https://mesmerprism.com/"
+    "note": "Referenced by Mesmer Prism | Till Holzapfel: https://mesmerprism.com/",
+    "author": [
+      {
+        "literal": "Fejer et al"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    }
   },
   {
-    "id": "github-com-current-repo",
+    "id": "fejer-et-al-current-repo-2026",
     "type": "webpage",
     "title": "Current repo",
     "URL": "https://github.com/MesmerPrism/Rusty-XR-Companion-Apps",
@@ -57,14 +93,26 @@
         [
           2026,
           6,
-          13
+          19
         ]
       ]
     },
-    "note": "Referenced by Mesmer Prism | Till Holzapfel: https://mesmerprism.com/"
+    "note": "Referenced by Mesmer Prism | Till Holzapfel: https://mesmerprism.com/",
+    "author": [
+      {
+        "literal": "Fejer et al"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    }
   },
   {
-    "id": "github-com-source-repo",
+    "id": "fejer-et-al-source-repo-2026",
     "type": "webpage",
     "title": "Source repo",
     "URL": "https://github.com/MesmerPrism/Rusty-XR",
@@ -73,14 +121,26 @@
         [
           2026,
           6,
-          13
+          19
         ]
       ]
     },
-    "note": "Referenced by Mesmer Prism | Till Holzapfel: https://mesmerprism.com/"
+    "note": "Referenced by Mesmer Prism | Till Holzapfel: https://mesmerprism.com/",
+    "author": [
+      {
+        "literal": "Fejer et al"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    }
   },
   {
-    "id": "mesmerprism-github-io-passthrough-guide",
+    "id": "fejer-et-al-passthrough-guide-2026",
     "type": "webpage",
     "title": "Passthrough guide",
     "URL": "https://mesmerprism.github.io/Rusty-XR/passthrough.html",
@@ -89,14 +149,26 @@
         [
           2026,
           6,
-          13
+          19
         ]
       ]
     },
-    "note": "Referenced by Mesmer Prism | Till Holzapfel: https://mesmerprism.com/"
+    "note": "Referenced by Mesmer Prism | Till Holzapfel: https://mesmerprism.com/",
+    "author": [
+      {
+        "literal": "Fejer et al"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    }
   },
   {
-    "id": "github-com-matter",
+    "id": "fejer-et-al-matter-2026",
     "type": "webpage",
     "title": "Matter",
     "URL": "https://github.com/MesmerPrism/rusty-matter",
@@ -105,14 +177,26 @@
         [
           2026,
           6,
-          13
+          19
         ]
       ]
     },
-    "note": "Referenced by Mesmer Prism | Till Holzapfel: https://mesmerprism.com/"
+    "note": "Referenced by Mesmer Prism | Till Holzapfel: https://mesmerprism.com/",
+    "author": [
+      {
+        "literal": "Fejer et al"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    }
   },
   {
-    "id": "github-com-manifold",
+    "id": "fejer-et-al-manifold-2026",
     "type": "webpage",
     "title": "Manifold",
     "URL": "https://github.com/MesmerPrism/rusty-manifold",
@@ -121,14 +205,26 @@
         [
           2026,
           6,
-          13
+          19
         ]
       ]
     },
-    "note": "Referenced by Mesmer Prism | Till Holzapfel: https://mesmerprism.com/"
+    "note": "Referenced by Mesmer Prism | Till Holzapfel: https://mesmerprism.com/",
+    "author": [
+      {
+        "literal": "Fejer et al"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    }
   },
   {
-    "id": "github-com-optics",
+    "id": "fejer-et-al-optics-2026",
     "type": "webpage",
     "title": "Optics",
     "URL": "https://github.com/MesmerPrism/rusty-optics",
@@ -137,14 +233,26 @@
         [
           2026,
           6,
-          13
+          19
         ]
       ]
     },
-    "note": "Referenced by Mesmer Prism | Till Holzapfel: https://mesmerprism.com/"
+    "note": "Referenced by Mesmer Prism | Till Holzapfel: https://mesmerprism.com/",
+    "author": [
+      {
+        "literal": "Fejer et al"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    }
   },
   {
-    "id": "github-com-signal-packages",
+    "id": "fejer-et-al-signal-packages-2026",
     "type": "webpage",
     "title": "Signal packages",
     "URL": "https://github.com/MesmerPrism/polar-h10-signals",
@@ -153,14 +261,26 @@
         [
           2026,
           6,
-          13
+          19
         ]
       ]
     },
-    "note": "Referenced by Mesmer Prism | Till Holzapfel: https://mesmerprism.com/"
+    "note": "Referenced by Mesmer Prism | Till Holzapfel: https://mesmerprism.com/",
+    "author": [
+      {
+        "literal": "Fejer et al"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    }
   },
   {
-    "id": "github-com-pipeline-docs",
+    "id": "fejer-et-al-pipeline-docs-2026",
     "type": "webpage",
     "title": "Pipeline docs",
     "URL": "https://github.com/MesmerPrism/Rusty-XR/blob/main/docs/BLE_LSL_POLAR_PIPELINE.md",
@@ -169,14 +289,26 @@
         [
           2026,
           6,
-          13
+          19
         ]
       ]
     },
-    "note": "Referenced by Mesmer Prism | Till Holzapfel: https://mesmerprism.com/"
+    "note": "Referenced by Mesmer Prism | Till Holzapfel: https://mesmerprism.com/",
+    "author": [
+      {
+        "literal": "Fejer et al"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    }
   },
   {
-    "id": "github-com-windows-capture",
+    "id": "fejer-et-al-windows-capture-2026",
     "type": "webpage",
     "title": "Windows capture",
     "URL": "https://github.com/MesmerPrism/Rusty-XR-Companion-Apps/blob/main/docs/polar-h10-windows-capture.md",
@@ -185,14 +317,26 @@
         [
           2026,
           6,
-          13
+          19
         ]
       ]
     },
-    "note": "Referenced by Mesmer Prism | Till Holzapfel: https://mesmerprism.com/"
+    "note": "Referenced by Mesmer Prism | Till Holzapfel: https://mesmerprism.com/",
+    "author": [
+      {
+        "literal": "Fejer et al"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    }
   },
   {
-    "id": "alteredxproject-com-live-axp-survey",
+    "id": "fejer-et-al-live-axp-survey-2026",
     "type": "webpage",
     "title": "Live AXP survey",
     "URL": "https://alteredxproject.com/",
@@ -201,14 +345,26 @@
         [
           2026,
           6,
-          13
+          19
         ]
       ]
     },
-    "note": "Referenced by Mesmer Prism | Till Holzapfel: https://mesmerprism.com/"
+    "note": "Referenced by Mesmer Prism | Till Holzapfel: https://mesmerprism.com/",
+    "author": [
+      {
+        "literal": "Fejer et al"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    }
   },
   {
-    "id": "mesmerprism-com-access-guide",
+    "id": "fejer-et-al-access-guide-2026",
     "type": "webpage",
     "title": "Access guide",
     "URL": "https://mesmerprism.com/axp-mvp-survey-guide/",
@@ -217,14 +373,26 @@
         [
           2026,
           6,
-          13
+          19
         ]
       ]
     },
-    "note": "Referenced by Mesmer Prism | Till Holzapfel: https://mesmerprism.com/"
+    "note": "Referenced by Mesmer Prism | Till Holzapfel: https://mesmerprism.com/",
+    "author": [
+      {
+        "literal": "Fejer et al"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    }
   },
   {
-    "id": "braincandyapp-com-project-site",
+    "id": "fejer-et-al-project-site-2026",
     "type": "webpage",
     "title": "Project site",
     "URL": "https://braincandyapp.com/",
@@ -233,14 +401,26 @@
         [
           2026,
           6,
-          13
+          19
         ]
       ]
     },
-    "note": "Referenced by Mesmer Prism | Till Holzapfel: https://mesmerprism.com/"
+    "note": "Referenced by Mesmer Prism | Till Holzapfel: https://mesmerprism.com/",
+    "author": [
+      {
+        "literal": "Fejer et al"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    }
   },
   {
-    "id": "github-com-source-repo",
+    "id": "fejer-et-al-source-repo-2026",
     "type": "webpage",
     "title": "Source repo",
     "URL": "https://github.com/MesmerPrism/Strobotorch",
@@ -249,14 +429,26 @@
         [
           2026,
           6,
-          13
+          19
         ]
       ]
     },
-    "note": "Referenced by Mesmer Prism | Till Holzapfel: https://mesmerprism.com/"
+    "note": "Referenced by Mesmer Prism | Till Holzapfel: https://mesmerprism.com/",
+    "author": [
+      {
+        "literal": "Fejer et al"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    }
   },
   {
-    "id": "github-com-source-code",
+    "id": "fejer-et-al-source-code-2026",
     "type": "webpage",
     "title": "Source code",
     "URL": "https://github.com/MesmerPrism/bressloff-v1-form-constants",
@@ -265,14 +457,26 @@
         [
           2026,
           6,
-          13
+          19
         ]
       ]
     },
-    "note": "Referenced by Mesmer Prism | Till Holzapfel: https://mesmerprism.com/"
+    "note": "Referenced by Mesmer Prism | Till Holzapfel: https://mesmerprism.com/",
+    "author": [
+      {
+        "literal": "Fejer et al"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    }
   },
   {
-    "id": "github-com-original-notebook",
+    "id": "fejer-et-al-original-notebook-2026",
     "type": "webpage",
     "title": "Original notebook",
     "URL": "https://github.com/karacsm/V1-sim",
@@ -281,11 +485,23 @@
         [
           2026,
           6,
-          13
+          19
         ]
       ]
     },
-    "note": "Referenced by Mesmer Prism | Till Holzapfel: https://mesmerprism.com/"
+    "note": "Referenced by Mesmer Prism | Till Holzapfel: https://mesmerprism.com/",
+    "author": [
+      {
+        "literal": "Fejer et al"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    }
   },
   {
     "id": "fejer-et-al-breathing-space-spatial-mapping-of-breath-and-cardiac-bi-2026",
@@ -297,7 +513,7 @@
         [
           2026,
           6,
-          13
+          19
         ]
       ]
     },
@@ -326,7 +542,7 @@
         [
           2026,
           6,
-          13
+          19
         ]
       ]
     },
@@ -346,7 +562,7 @@
     "DOI": "10.18420/muc2025-mci-ws11-174"
   },
   {
-    "id": "lobser-and-holzapfel-measuring-the-limit-of-perception-of-bond-stiffness-of-i-2024",
+    "id": "roebuck-williams-et-al-measuring-the-limit-of-perception-of-bond-stiffness-of-i-2024",
     "type": "article-journal",
     "title": "Measuring the Limit of Perception of Bond Stiffness of Interactive Molecules in VR via a Gamified Psychophysics Experiment.",
     "URL": "https://doi.org/10.1007/978-3-031-71707-9_13",
@@ -355,14 +571,14 @@
         [
           2026,
           6,
-          13
+          19
         ]
       ]
     },
     "note": "Referenced by Mesmer Prism | Till Holzapfel: https://mesmerprism.com/",
     "author": [
       {
-        "literal": "Lobser and Holzapfel"
+        "literal": "Roebuck Williams et al"
       }
     ],
     "issued": {
@@ -384,7 +600,7 @@
         [
           2026,
           6,
-          13
+          19
         ]
       ]
     },
@@ -400,7 +616,7 @@
         [
           2026,
           6,
-          13
+          19
         ]
       ]
     },

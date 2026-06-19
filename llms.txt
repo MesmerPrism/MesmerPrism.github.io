@@ -33,7 +33,7 @@ Use the Markdown alternates for compact reading. Use the BibTeX or CSL JSON alte
 
 ## Project pages
 - [Altered Xperience Project](https://mesmerprism.com/projects/altered-xperience-project.md): The Altered Xperience Project is a CIRCE-led citizen-science survey for anonymous altered-state reports, with multilingual questionnaires, feedback, scoring, exports, and collaborator workflow.
-- [Bioelectricity and Morphogenesis](https://mesmerprism.com/projects/bioelectricity.md): Bioelectricity and morphogenesis in Rusty Morphospace: a source-linked educational planarian surface-field model built with Rusty Matter and visualized through Rusty Optics.
+- [Bioelectricity and Morphogenesis](https://mesmerprism.com/projects/bioelectricity.md): Bioelectricity and morphogenesis across Rusty Morphospace and Planarian Regeneration XR: source-bounded planarian teaching models, WebXR atlas controls, curated records, and observed geometry overlays.
 - [Brain Candy](https://mesmerprism.com/projects/brain-candy.md): Brain Candy studies rhythmic light, recursive visual structure, sound, breath, expectation, and interaction as tunable non-drug state-shift design.
 - [Bressloff and Rule Modeling Deep Dive](https://mesmerprism.com/projects/bressloff-v1-form-constants-deep-dive.md): A notebook-style deep dive into Bressloff form constants, Rule flicker modeling, and generated driven neural-field diagnostics after Rule.
 - [Bressloff V1 Form Constants](https://mesmerprism.com/projects/bressloff-v1-form-constants.md): Animated notes on Bressloff visual-cortex form constants, Rule flicker modeling, and generated MacKay, Bolelli, and Nicks driven-field diagnostics.

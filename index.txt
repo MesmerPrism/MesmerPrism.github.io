@@ -138,23 +138,23 @@ Rusty Morphospace (https://mesmerprism.com/projects/rusty-morphospace.html)
  Optics (https://github.com/MesmerPrism/rusty-optics)
  Rusty XR boundary (https://mesmerprism.com/projects/rusty-morphospace/rusty-xr.html)
 
- Bioelectric morphogenesis model
+ Bioelectric atlas and morphogenesis model
 
 Bioelectricity and Morphogenesis (https://mesmerprism.com/projects/bioelectricity.html)
 
- A Rusty Morphospace line for educational planarian bioelectric
- patterning: Matter-owned mesh-surface fields and circuit dynamics,
- Optics-owned browser inspection, and legacy planarian/xenobot sources
- used as references for future expansion.
+ A source-bounded planarian line across Rusty Morphospace and Planarian
+ Regeneration XR: educational surface-field models, a WebXR atlas,
+ PlanformDB-derived review records, and an observed posterior-muscle
+ geometry overlay kept separate from simulation claims.
 
  Status
- Active Matter/Optics slice
+ Active atlas and Matter/Optics slice
  Artifact
- Rust crates, Wasm runtime, browser Planarian 3D preview, and public explanation
+ TypeScript/Three/WebXR atlas, observed geometry overlay, and public explanation
  Boundary
  Qualitative teaching model, not calibrated physiology
 
- Rust / Bioelectricity / Morphogenesis / Planarian regeneration / Visualization
+ WebXR / Bioelectricity / Morphogenesis / Planarian regeneration / Visualization
 
  Project page (https://mesmerprism.com/projects/bioelectricity.html)
  Rusty Morphospace (https://mesmerprism.com/projects/rusty-morphospace.html)

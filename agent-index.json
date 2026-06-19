@@ -148,7 +148,7 @@
     },
     {
       "title": "Bioelectricity and Morphogenesis",
-      "description": "Bioelectricity and morphogenesis in Rusty Morphospace: a source-linked educational planarian surface-field model built with Rusty Matter and visualized through Rusty Optics.",
+      "description": "Bioelectricity and morphogenesis across Rusty Morphospace and Planarian Regeneration XR: source-bounded planarian teaching models, WebXR atlas controls, curated records, and observed geometry overlays.",
       "path": "projects/bioelectricity.html",
       "url": "https://mesmerprism.com/projects/bioelectricity.html",
       "group": "Project pages",
@@ -156,7 +156,7 @@
       "text": "https://mesmerprism.com/projects/bioelectricity.txt",
       "bibtex": "https://mesmerprism.com/projects/bioelectricity.bib",
       "cslJson": "https://mesmerprism.com/projects/bioelectricity.references.csl.json",
-      "references": 19
+      "references": 21
     },
     {
       "title": "Brain Candy",
