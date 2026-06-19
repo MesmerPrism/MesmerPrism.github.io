@@ -1,13 +1,13 @@
 # Mesmer Prism Full Agent Context
 
-Generated: 2026-06-13
+Generated: 2026-06-19
 
 <page url="https://mesmerprism.com/duisburg/" path="duisburg/index.html">
 # Shared Bodies for Mixed-Ability Collaboration
 
 Source: https://mesmerprism.com/duisburg/
 Canonical HTML: https://mesmerprism.com/duisburg/
-Generated: 2026-06-13
+Generated: 2026-06-19
 Description: A Duisburg-facing research pitch for Mixed-Ability Human-Swarm Interaction: shared swarm bodies, inspectable input mappings, and a route from connectedness to robotics translation.
 Markdown: https://mesmerprism.com/duisburg/index.md
 Plain text: https://mesmerprism.com/duisburg/index.txt
@@ -490,7 +490,7 @@ Mixed-ability XR research
 
 Source: https://mesmerprism.com/
 Canonical HTML: https://mesmerprism.com/
-Generated: 2026-06-13
+Generated: 2026-06-19
 Description: XR systems, citizen-science tools, visual instruments, and essays for altered-perception design. Mesmer Prism makes strange experience vivid, inspectable, and evidence-bounded.
 Markdown: https://mesmerprism.com/index.md
 Plain text: https://mesmerprism.com/index.txt
@@ -679,7 +679,7 @@ Till Holzapfel
 
  Depth-inversion experiments need stimulus controls that survive renderer
  changes. Hollow Face Lab connects hollow-face research with WebGL, WebXR,
- Rusty XR, asset provenance, and design rationale.
+ texture upload, Rusty XR, asset provenance, and design rationale.
 
  Status
  Prototype instrument
@@ -690,6 +690,7 @@ Till Holzapfel
 
  Hollow face / WebXR / Three.js / Rusty XR / Stimulus variables
 
+ [Launch app](https://mesmerprism.com/projects/hollow-face-lab/app/)
  [Overview](https://mesmerprism.com/projects/hollow-face-lab.html)
  [References](https://mesmerprism.com/projects/hollow-face-lab.html#references)
  [Rusty XR](https://mesmerprism.com/projects/rusty-morphospace/rusty-xr.html)
@@ -1085,7 +1086,7 @@ Till Holzapfel
 
 Source: https://mesmerprism.com/plasmatic-multitudes/assets/calligraphy-reference-pack/board.html
 Canonical HTML: https://mesmerprism.com/plasmatic-multitudes/assets/calligraphy-reference-pack/board.html
-Generated: 2026-06-13
+Generated: 2026-06-19
 Markdown: https://mesmerprism.com/plasmatic-multitudes/assets/calligraphy-reference-pack/board.md
 Plain text: https://mesmerprism.com/plasmatic-multitudes/assets/calligraphy-reference-pack/board.txt
 BibTeX references: https://mesmerprism.com/plasmatic-multitudes/assets/calligraphy-reference-pack/board.bib
@@ -1235,7 +1236,7 @@ Museum-backed pack
 
 Source: https://mesmerprism.com/plasmatic-multitudes/background/somaesthetics.html
 Canonical HTML: https://mesmerprism.com/plasmatic-multitudes/background/somaesthetics.html
-Generated: 2026-06-13
+Generated: 2026-06-19
 Description: A short public note on somaesthetics as the method anchor for Plasmatic Multitudes.
 Markdown: https://mesmerprism.com/plasmatic-multitudes/background/somaesthetics.md
 Plain text: https://mesmerprism.com/plasmatic-multitudes/background/somaesthetics.txt
@@ -1306,7 +1307,7 @@ Background appendix | Updated May 24, 2026
 
 Source: https://mesmerprism.com/plasmatic-multitudes/essay.html
 Canonical HTML: https://mesmerprism.com/plasmatic-multitudes/essay.html
-Generated: 2026-06-13
+Generated: 2026-06-19
 Description: A long-form essay on weakly bounded bodies, XR embodiment, media genealogy, computational morphogenesis, and cautious pain translation.
 Markdown: https://mesmerprism.com/plasmatic-multitudes/essay.md
 Plain text: https://mesmerprism.com/plasmatic-multitudes/essay.txt
@@ -1664,7 +1665,7 @@ Long essay | Updated May 24, 2026
 
 Source: https://mesmerprism.com/plasmatic-multitudes/
 Canonical HTML: https://mesmerprism.com/plasmatic-multitudes/
-Generated: 2026-06-13
+Generated: 2026-06-19
 Description: Long essay, method notes, vocabulary, pain-translation hypotheses, mixed-ability human-swarm interaction, and annotated references for weakly bounded bodies and semi-corporeal avatar aesthetics.
 Markdown: https://mesmerprism.com/plasmatic-multitudes/index.md
 Plain text: https://mesmerprism.com/plasmatic-multitudes/index.txt
@@ -1728,7 +1729,7 @@ Field guide | Updated May 24, 2026
 
 Source: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html
 Canonical HTML: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html
-Generated: 2026-06-13
+Generated: 2026-06-19
 Description: A Plasmatic Multitudes research track on shared visual swarm bodies, mixed-ability collaboration, access-practice mapping, connectedness-first exploration, encounter, cooperative play, and later physical translation.
 Markdown: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.md
 Plain text: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.txt
@@ -3137,7 +3138,7 @@ Mixed-ability HSI | Updated June 12, 2026
 
 Source: https://mesmerprism.com/plasmatic-multitudes/pain.html
 Canonical HTML: https://mesmerprism.com/plasmatic-multitudes/pain.html
-Generated: 2026-06-13
+Generated: 2026-06-19
 Description: A cautious research note on boundary precision, avatar materiality, protective fields, ownership, agency, and pain-related body-representation hypotheses. Not a treatment claim.
 Markdown: https://mesmerprism.com/plasmatic-multitudes/pain.md
 Plain text: https://mesmerprism.com/plasmatic-multitudes/pain.txt
@@ -3352,7 +3353,7 @@ Pain translation | Updated May 24, 2026
 
 Source: https://mesmerprism.com/plasmatic-multitudes/project.html
 Canonical HTML: https://mesmerprism.com/plasmatic-multitudes/project.html
-Generated: 2026-06-13
+Generated: 2026-06-19
 Description: A compact method note on boundary precision, somaesthetics, coherence, morphogenesis, and weakly bounded body design.
 Markdown: https://mesmerprism.com/plasmatic-multitudes/project.md
 Plain text: https://mesmerprism.com/plasmatic-multitudes/project.txt
@@ -3427,7 +3428,7 @@ Method | Updated May 24, 2026
 
 Source: https://mesmerprism.com/plasmatic-multitudes/references.html
 Canonical HTML: https://mesmerprism.com/plasmatic-multitudes/references.html
-Generated: 2026-06-13
+Generated: 2026-06-19
 Description: Annotated references across somaesthetics, perception, pseudo-haptics, morphogenesis, XR embodiment, media genealogy, and pain/body-representation research.
 Markdown: https://mesmerprism.com/plasmatic-multitudes/references.md
 Plain text: https://mesmerprism.com/plasmatic-multitudes/references.txt
@@ -3624,7 +3625,7 @@ Annotated sources | Updated June 11, 2026
 
 Source: https://mesmerprism.com/plasmatic-multitudes/terminology.html
 Canonical HTML: https://mesmerprism.com/plasmatic-multitudes/terminology.html
-Generated: 2026-06-13
+Generated: 2026-06-19
 Description: Terms for semi-corporeal avatars, plasmatic bodies, particle bodies, swarm bodies, aura avatars, boundary precision, pseudo-haptics, and related design concepts.
 Markdown: https://mesmerprism.com/plasmatic-multitudes/terminology.md
 Plain text: https://mesmerprism.com/plasmatic-multitudes/terminology.txt
@@ -4070,7 +4071,7 @@ Field guide | Updated May 24, 2026
 
 Source: https://mesmerprism.com/projects/altered-xperience-project.html
 Canonical HTML: https://mesmerprism.com/projects/altered-xperience-project.html
-Generated: 2026-06-13
+Generated: 2026-06-19
 Description: The Altered Xperience Project is a CIRCE-led citizen-science survey for anonymous altered-state reports, with multilingual questionnaires, feedback, scoring, exports, and collaborator workflow.
 Markdown: https://mesmerprism.com/projects/altered-xperience-project.md
 Plain text: https://mesmerprism.com/projects/altered-xperience-project.txt
@@ -4194,7 +4195,7 @@ Citizen-science altered-state survey
 
 Source: https://mesmerprism.com/projects/bioelectricity.html
 Canonical HTML: https://mesmerprism.com/projects/bioelectricity.html
-Generated: 2026-06-13
+Generated: 2026-06-19
 Description: Bioelectricity and morphogenesis in Rusty Morphospace: a source-linked educational planarian surface-field model built with Rusty Matter and visualized through Rusty Optics.
 Markdown: https://mesmerprism.com/projects/bioelectricity.md
 Plain text: https://mesmerprism.com/projects/bioelectricity.txt
@@ -4631,7 +4632,7 @@ Rusty Morphospace and tissue-scale patterning
 
 Source: https://mesmerprism.com/projects/brain-candy.html
 Canonical HTML: https://mesmerprism.com/projects/brain-candy.html
-Generated: 2026-06-13
+Generated: 2026-06-19
 Description: Brain Candy studies rhythmic light, recursive visual structure, sound, breath, expectation, and interaction as tunable non-drug state-shift design.
 Markdown: https://mesmerprism.com/projects/brain-candy.md
 Plain text: https://mesmerprism.com/projects/brain-candy.txt
@@ -5179,7 +5180,7 @@ Non-drug state-shift design
 
 Source: https://mesmerprism.com/projects/bressloff-v1-form-constants-deep-dive.html
 Canonical HTML: https://mesmerprism.com/projects/bressloff-v1-form-constants-deep-dive.html
-Generated: 2026-06-13
+Generated: 2026-06-19
 Description: A notebook-style deep dive into Bressloff form constants, Rule flicker modeling, and generated driven neural-field diagnostics after Rule.
 Markdown: https://mesmerprism.com/projects/bressloff-v1-form-constants-deep-dive.md
 Plain text: https://mesmerprism.com/projects/bressloff-v1-form-constants-deep-dive.txt
@@ -6176,7 +6177,7 @@ Modeling deep dive
 
 Source: https://mesmerprism.com/projects/bressloff-v1-form-constants.html
 Canonical HTML: https://mesmerprism.com/projects/bressloff-v1-form-constants.html
-Generated: 2026-06-13
+Generated: 2026-06-19
 Description: Animated notes on Bressloff visual-cortex form constants, Rule flicker modeling, and generated MacKay, Bolelli, and Nicks driven-field diagnostics.
 Markdown: https://mesmerprism.com/projects/bressloff-v1-form-constants.md
 Plain text: https://mesmerprism.com/projects/bressloff-v1-form-constants.txt
@@ -6634,7 +6635,7 @@ Visual cortex and form constants
 
 Source: https://mesmerprism.com/projects/deep-dream.html
 Canonical HTML: https://mesmerprism.com/projects/deep-dream.html
-Generated: 2026-06-13
+Generated: 2026-06-19
 Description: Deep Dream explains how machine-vision hallucination, community visual taxonomies, VR research, and cyberdelic systems shaped simulated psychedelic vision.
 Markdown: https://mesmerprism.com/projects/deep-dream.md
 Plain text: https://mesmerprism.com/projects/deep-dream.txt
@@ -7188,7 +7189,7 @@ Simulated psychedelic vision
 
 Source: https://mesmerprism.com/projects/fractal-optics.html
 Canonical HTML: https://mesmerprism.com/projects/fractal-optics.html
-Generated: 2026-06-13
+Generated: 2026-06-19
 Description: Fractal Optics maps fractal phototherapy, retinal and ophthalmic stimulation, VR delivery, and patterned-light comparator literatures.
 Markdown: https://mesmerprism.com/projects/fractal-optics.md
 Plain text: https://mesmerprism.com/projects/fractal-optics.txt
@@ -7436,8 +7437,8 @@ Retinal stimulation and patterned light
 
 Source: https://mesmerprism.com/projects/hollow-face-lab.html
 Canonical HTML: https://mesmerprism.com/projects/hollow-face-lab.html
-Generated: 2026-06-13
-Description: Hollow Face Lab maps WebGL, WebXR, and Rusty XR implementation choices against hollow-face and depth-inversion research.
+Generated: 2026-06-19
+Description: Hollow Face Lab maps WebGL, WebXR, texture controls, and Rusty XR implementation choices against hollow-face and depth-inversion research.
 Markdown: https://mesmerprism.com/projects/hollow-face-lab.md
 Plain text: https://mesmerprism.com/projects/hollow-face-lab.txt
 BibTeX references: https://mesmerprism.com/projects/hollow-face-lab.bib
@@ -7457,9 +7458,14 @@ Depth inversion and research tooling
  while preserving source-traceable variables.
  The goal is to make the hollow-face illusion testable in browser and XR
  settings, not merely to show a convincing illusion.
- Public use starts with comparing how concavity, texture, lighting,
- stereo/XR status, and response timing change the illusion.
+ The hosted V0 starts with concavity, lighting, local probes,
+ stereo/XR status, response timing, procedural texture/noise
+ controls, and local user-supplied texture upload
+ ([Gregory, 1997](https://www.richardgregory.org/papers/knowl_illusion/knowledge-in-perception.htm);
+ [Hill and Johnston, 2007](https://ro.uow.edu.au/ndownloader/files/50499303);
+ [W3C WebXR](https://www.w3.org/TR/webxr/)).
 
+ [Launch browser app](https://mesmerprism.com/projects/hollow-face-lab/app/)
  [Evidence map](https://mesmerprism.com/projects/hollow-face-lab.html#source-map)
  [Implementation](https://mesmerprism.com/projects/hollow-face-lab.html#implementation)
  [References](https://mesmerprism.com/projects/hollow-face-lab.html#references)
@@ -7473,21 +7479,26 @@ Depth inversion and research tooling
  as convex even when some depth cues point the other way. The app is therefore
  being built around logged variables rather than a single polished visual trick:
  mesh identity, concavity, texture/noise, lighting, material, stereo/XR status,
- local probes, response timing, and runtime quality all need to survive export.
+ local probes, response timing, and runtime quality all need to survive export
+ ([Gregory, 1997](https://www.richardgregory.org/papers/knowl_illusion/knowledge-in-perception.htm);
+ [Grosjean et al., 2012](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0044706);
+ [Five Illusions](https://fiveillusions.github.io/)).
 
  Published sources and implementation choices have to stay separate:
  evidence can support variables and caveats without turning every
- design idea into an established finding.
+ design idea into an established finding
+ ([MediaPipe canonical face model](https://github.com/google-ai-edge/mediapipe/blob/master/mediapipe/modules/face_geometry/data/canonical_face_model.obj);
+ [OpenXR Registry](https://registry.khronos.org/OpenXR/)).
 
 ### Source-backed variables
 
-- Orientation, face familiarity, pigmentation, and shading.
+- Orientation, face familiarity, pigmentation, and shading ([Hill and Johnston, 2007](https://ro.uow.edu.au/ndownloader/files/50499303)).
 
-- Realistic face texture versus random-dot or noise texture.
+- Realistic face texture versus random-dot or noise texture, now exposed as procedural texture modes and a local upload path ([Farkas et al., 2016](https://pmc.ncbi.nlm.nih.gov/articles/PMC5156401/)).
 
-- Stereo, motion parallax, depth scaling, and local probe targets.
+- Stereo, motion parallax, depth scaling, and local probe targets ([Grosjean et al., 2012](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0044706); [Five Illusions](https://fiveillusions.github.io/)).
 
-- Perceptual report, slow action, rapid action, and vergence as separable channels.
+- Perceptual report, slow action, rapid action, and vergence as separable channels ([Kroliczak et al., 2006](https://www.uwo.ca/bmi/goodalelab/pdf/hollow_face.pdf); [Grosjean et al., 2012](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0044706)).
 
 ### Open design variables
 
@@ -7504,19 +7515,27 @@ Depth inversion and research tooling
 ## Flat web, WebXR, and Rusty XR
 
  V0 is a Three.js/WebGL browser app with WebXR session detection and flat-web
- fallback. It currently uses the Apache-2.0 MediaPipe canonical face OBJ as a
+ fallback, hosted as a Mesmer Prism microsite at
+ [/projects/hollow-face-lab/app/](https://mesmerprism.com/projects/hollow-face-lab/app/).
+ It currently uses the Apache-2.0 MediaPipe canonical face OBJ as a
  neutral runtime baseline. That asset is useful for topology, UVs, and
  coordinate mapping, but it is not being presented as an accepted hollow-face
- research mesh.
+ research mesh
+ ([MediaPipe canonical face model](https://github.com/google-ai-edge/mediapipe/blob/master/mediapipe/modules/face_geometry/data/canonical_face_model.obj);
+ [MDN WebXR](https://developer.mozilla.org/en-US/docs/Web/API/WebXR_Device_API)).
 
  The longer-term stack keeps three evidence tiers separate: flat browser use for
  public/low-control tasks, WebXR for browser-based immersive sessions where
  supported, and a later lab-native Rusty XR / OpenXR lane for controlled HMD
- studies, action endpoints, eye tracking, and timing-sensitive instrumentation.
+ studies, action endpoints, eye tracking, and timing-sensitive instrumentation
+ ([W3C WebXR](https://www.w3.org/TR/webxr/);
+ [OpenXR Registry](https://registry.khronos.org/OpenXR/)).
 
 ### Current V0 controls
 
 - Concave/convex face mode and concavity depth scale.
+
+- Matte, procedural face, procedural noise, blend-F, and local uploaded texture modes.
 
 - Lighting presets with explicit key, fill, ambient, and reflectance values.
 
@@ -7548,9 +7567,11 @@ Depth inversion and research tooling
 
 ### Hollow-face research
 
+- Gregory. "[Knowledge in perception and illusion.](https://www.richardgregory.org/papers/knowl_illusion/knowledge-in-perception.htm)" Philosophical Transactions of the Royal Society B , 1997.
+
 - Hill and Johnston. "[The hollow-face illusion: Object-specific knowledge, general assumptions or properties of the stimulus?](https://ro.uow.edu.au/ndownloader/files/50499303)" Perception , 2007.
 
-- Krolikzak, Heard, Goodale, and Gregory. "[Dissociation of perception and action unmasked by the hollow-face illusion.](https://www.uwo.ca/bmi/goodalelab/pdf/hollow_face.pdf)" Brain Research , 2006.
+- Kroliczak, Heard, Goodale, and Gregory. "[Dissociation of perception and action unmasked by the hollow-face illusion.](https://www.uwo.ca/bmi/goodalelab/pdf/hollow_face.pdf)" Brain Research , 2006.
 
 - Grosjean, Rinkenauer, and Jainta. "[Where Do the Eyes Really Go in the Hollow-Face Illusion?](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0044706)" PLOS ONE , 2012.
 
@@ -7571,6 +7592,145 @@ Depth inversion and research tooling
 - Khronos Group. "[OpenXR Registry.](https://registry.khronos.org/OpenXR/)" Native XR runtime route for later lab builds.
 
 - Michael Bach. "[Rotating face mask.](https://michaelbach.de/ot/fcs-hollowFace/)" Teaching/demo reference, not an implementation source to copy.
+
+- Five Illusions. "[Five Illusions public project page.](https://fiveillusions.github.io/)" Current stereo-probe challenge route, not an implementation source to copy.
+</page>
+
+<page url="https://mesmerprism.com/projects/hollow-face-lab/app/" path="projects/hollow-face-lab/app/index.html">
+# Hollow Face Lab Browser App
+
+Source: https://mesmerprism.com/projects/hollow-face-lab/app/
+Canonical HTML: https://mesmerprism.com/projects/hollow-face-lab/app/
+Generated: 2026-06-19
+Description: Browser-hosted Hollow Face Lab renderer with concavity, lighting, mesh, probe, texture, and response controls.
+Markdown: https://mesmerprism.com/projects/hollow-face-lab/app/index.md
+Plain text: https://mesmerprism.com/projects/hollow-face-lab/app/index.txt
+
+---
+
+Concave
+ Matte
+ 1x
+ Mesh
+ Trials 0
+
+## Stimulus
+
+ Geometry
+
+ Concave face
+ Convex face
+
+ Concavity
+
+ 0.72
+
+ Texture
+
+ Matte
+ Procedural face
+ Procedural noise
+ Blend F
+ Uploaded texture
+
+ Texture F
+
+ 0.00
+
+ Texture upload
+ Drop image or choose file
+
+ No uploaded texture
+
+ Feature apertures
+
+ None
+ Eyes
+ Eyes + mouth
+ Eyes + mouth + nostrils
+
+ Mesh resolution
+
+ Native
+ 2x oversampled
+ 4x oversampled
+ 8x oversampled
+
+ Surface mode
+
+ Continuous mesh
+ Triangle particles
+
+ Triangle separation
+
+ 0.00
+
+ Rotation
+
+ 0.00
+
+ Probe marker
+
+ Probe depth
+
+ -0.012 m
+
+## Lighting
+
+ Preset
+
+ Custom
+ Baseline virtual
+ High ambiguity
+ Concavity revealing
+ Realistic rough material
+ Low-cue matte
+
+ Key intensity
+
+ 1.80
+
+ Key azimuth
+
+ -20°
+
+ Key elevation
+
+ 26°
+
+ Fill ratio
+
+ 0.32
+
+ Ambient
+
+ 2.40
+
+ Reflectance
+
+ 0.00
+
+## Runtime
+
+ Enter VR
+ Reset View
+
+## Response
+
+ Convex
+ Concave
+ Uncertain
+
+ Near
+ Far
+ Same
+
+ Confidence
+
+ 3
+
+ Record Trial
+ Download Session
 </page>
 
 <page url="https://mesmerprism.com/projects/optical-movement-illusions.html" path="projects/optical-movement-illusions.html">
@@ -7578,7 +7738,7 @@ Depth inversion and research tooling
 
 Source: https://mesmerprism.com/projects/optical-movement-illusions.html
 Canonical HTML: https://mesmerprism.com/projects/optical-movement-illusions.html
-Generated: 2026-06-13
+Generated: 2026-06-19
 Description: Optical Movement Illusions maps peripheral drift, Rotating Snakes, static motion illusions, color and luminance parameters, and the mechanism-design bridge into perceptual tooling.
 Markdown: https://mesmerprism.com/projects/optical-movement-illusions.md
 Plain text: https://mesmerprism.com/projects/optical-movement-illusions.txt
@@ -7777,7 +7937,7 @@ Static motion and perceptual mechanics
 
 Source: https://mesmerprism.com/projects/phenomenological-control.html
 Canonical HTML: https://mesmerprism.com/projects/phenomenological-control.html
-Generated: 2026-06-13
+Generated: 2026-06-19
 Description: A public guide to phenomenological control, imagery variation, expectation-shaped experience, source monitoring, absorption, porosity, hypnosis, induced vision, and meaning-making.
 Markdown: https://mesmerprism.com/projects/phenomenological-control.md
 Plain text: https://mesmerprism.com/projects/phenomenological-control.txt
@@ -8322,7 +8482,7 @@ Imagery, suggestion, and source monitoring
 
 Source: https://mesmerprism.com/projects/plasmatic-multitudes.html
 Canonical HTML: https://mesmerprism.com/projects/plasmatic-multitudes.html
-Generated: 2026-06-13
+Generated: 2026-06-19
 Description: A public overview of weakly bounded bodies: avatars, swarms, auras, particle forms, and luminous bodies that soften while remaining coherent enough for embodiment, relation, and cautious research translation.
 Markdown: https://mesmerprism.com/projects/plasmatic-multitudes.md
 Plain text: https://mesmerprism.com/projects/plasmatic-multitudes.txt
@@ -8839,7 +8999,7 @@ Weakly bounded embodiment
 
 Source: https://mesmerprism.com/projects/polar-h10.html
 Canonical HTML: https://mesmerprism.com/projects/polar-h10.html
-Generated: 2026-06-13
+Generated: 2026-06-19
 Description: Public overview of Mesmer Prism's Polar H10 work across minimal signal packages, Rusty XR, Quest broker streams, Windows capture, Android diagnostics, Unity Quest integration, and Viscereality research tooling.
 Markdown: https://mesmerprism.com/projects/polar-h10.md
 Plain text: https://mesmerprism.com/projects/polar-h10.txt
@@ -9076,7 +9236,7 @@ Biofeedback sensor integration
 
 Source: https://mesmerprism.com/projects/prophantasia.html
 Canonical HTML: https://mesmerprism.com/projects/prophantasia.html
-Generated: 2026-06-13
+Generated: 2026-06-19
 Description: Prophantasia covers projected imagery, aphantasia, source judgment, practice ecology, and neighboring phenomena such as imposition, flicker, DeepDream, visual snow, and HPPD.
 Markdown: https://mesmerprism.com/projects/prophantasia.md
 Plain text: https://mesmerprism.com/projects/prophantasia.txt
@@ -9682,7 +9842,7 @@ Projected imagery and source judgment
 
 Source: https://mesmerprism.com/projects/rusty-morphospace.html
 Canonical HTML: https://mesmerprism.com/projects/rusty-morphospace.html
-Generated: 2026-06-13
+Generated: 2026-06-19
 Description: Rusty Morphospace is a modular Rust platform for computational matter, situated relations, runtime authority, renderer-neutral inspection, and Quest validation.
 Markdown: https://mesmerprism.com/projects/rusty-morphospace.md
 Plain text: https://mesmerprism.com/projects/rusty-morphospace.txt
@@ -10339,7 +10499,7 @@ Computational morphology platform
 
 Source: https://mesmerprism.com/projects/rusty-morphospace/rusty-xr.html
 Canonical HTML: https://mesmerprism.com/projects/rusty-morphospace/rusty-xr.html
-Generated: 2026-06-13
+Generated: 2026-06-19
 Description: Rusty XR is the legacy/reference Quest and XR compatibility surface under Rusty Morphospace, preserving public examples, passthrough notes, diagnostics, and companion-tool history.
 Markdown: https://mesmerprism.com/projects/rusty-morphospace/rusty-xr.md
 Plain text: https://mesmerprism.com/projects/rusty-morphospace/rusty-xr.txt
@@ -10485,7 +10645,7 @@ Legacy Quest and XR reference
 
 Source: https://mesmerprism.com/projects/sane.html
 Canonical HTML: https://mesmerprism.com/projects/sane.html
-Generated: 2026-06-13
+Generated: 2026-06-19
 Description: SANE is a proposed framework for reading coupled changes across somaesthetic practice, anthropotechnical mediation, noetic meaning, and emergent systems.
 Markdown: https://mesmerprism.com/projects/sane.md
 Plain text: https://mesmerprism.com/projects/sane.txt
@@ -10996,7 +11156,7 @@ Body, tools, meaning, systems
 
 Source: https://mesmerprism.com/projects/scientific-surrealism.html
 Canonical HTML: https://mesmerprism.com/projects/scientific-surrealism.html
-Generated: 2026-06-13
+Generated: 2026-06-19
 Description: Scientific surrealism studies dream bureaus, scientific-looking journals, diagrams, and experimental machines that change what counts as an observation.
 Markdown: https://mesmerprism.com/projects/scientific-surrealism.md
 Plain text: https://mesmerprism.com/projects/scientific-surrealism.txt
@@ -11410,7 +11570,7 @@ Research apparatus and knowledge-art
 
 Source: https://mesmerprism.com/projects/tulpas.html
 Canonical HTML: https://mesmerprism.com/projects/tulpas.html
-Generated: 2026-06-13
+Generated: 2026-06-19
 Description: Tulpas covers modern online tulpamancy, thoughtforms, headmates, servitors, egregores, imposition, voice-like experience, and adjacent AI companion analogies.
 Markdown: https://mesmerprism.com/projects/tulpas.md
 Plain text: https://mesmerprism.com/projects/tulpas.txt
@@ -11936,7 +12096,7 @@ Made inner others and modern tulpamancy
 
 Source: https://mesmerprism.com/projects/viscereality-companion.html
 Canonical HTML: https://mesmerprism.com/projects/viscereality-companion.html
-Generated: 2026-06-13
+Generated: 2026-06-19
 Description: Quest Companion Tools provides Windows and Android utilities for Meta Quest install, launch, casting, diagnostics, and evidence capture.
 Markdown: https://mesmerprism.com/projects/viscereality-companion.md
 Plain text: https://mesmerprism.com/projects/viscereality-companion.txt
@@ -12065,7 +12225,7 @@ Meta Quest operator tooling
 
 Source: https://mesmerprism.com/projects/viscereality.html
 Canonical HTML: https://mesmerprism.com/projects/viscereality.html
-Generated: 2026-06-13
+Generated: 2026-06-19
 Description: Viscereality is a Quest-based bioresponsive VR research system for breath interaction, cardiac coherence training, oscillator-driven visuals, and repeatable study sessions.
 Markdown: https://mesmerprism.com/projects/viscereality.md
 Plain text: https://mesmerprism.com/projects/viscereality.txt
@@ -12198,7 +12358,7 @@ Current XR research system
 
 Source: https://mesmerprism.com/Strobotorch/flashing-light-safety/
 Canonical HTML: https://mesmerprism.com/Strobotorch/flashing-light-safety/
-Generated: 2026-06-13
+Generated: 2026-06-19
 Description: Safety warnings, frequency background, and source references for Strobotorch flashlight signaling.
 Markdown: https://mesmerprism.com/Strobotorch/flashing-light-safety/index.md
 Plain text: https://mesmerprism.com/Strobotorch/flashing-light-safety/index.txt
@@ -12386,7 +12546,7 @@ Public warning and source background
 
 Source: https://mesmerprism.com/Strobotorch/
 Canonical HTML: https://mesmerprism.com/Strobotorch/
-Generated: 2026-06-13
+Generated: 2026-06-19
 Description: Strobotorch is an Android flashlight-signaling and diagnostics tool for torch and camera APIs, visible-light signal tests, device logging, and flashing-light safety.
 Markdown: https://mesmerprism.com/Strobotorch/index.md
 Plain text: https://mesmerprism.com/Strobotorch/index.txt
@@ -12486,7 +12646,7 @@ Flashlight signaling safety
 
 Source: https://mesmerprism.com/Strobotorch/project-boundary/
 Canonical HTML: https://mesmerprism.com/Strobotorch/project-boundary/
-Generated: 2026-06-13
+Generated: 2026-06-19
 Description: The scope of Strobotorch Android flashlight signaling and diagnostics tooling.
 Markdown: https://mesmerprism.com/Strobotorch/project-boundary/index.md
 Plain text: https://mesmerprism.com/Strobotorch/project-boundary/index.txt
@@ -12527,7 +12687,7 @@ Project scope
 
 Source: https://mesmerprism.com/Strobotorch/sources/
 Canonical HTML: https://mesmerprism.com/Strobotorch/sources/
-Generated: 2026-06-13
+Generated: 2026-06-19
 Description: Academic and public sources for Strobotorch flashing-light safety, frequency context, torch/camera diagnostics, and visible-light signal tooling.
 Markdown: https://mesmerprism.com/Strobotorch/sources/index.md
 Plain text: https://mesmerprism.com/Strobotorch/sources/index.txt
@@ -12770,7 +12930,7 @@ Source library
 
 Source: https://mesmerprism.com/tmp/video-carousel-demo.html
 Canonical HTML: https://mesmerprism.com/tmp/video-carousel-demo.html
-Generated: 2026-06-13
+Generated: 2026-06-19
 Markdown: https://mesmerprism.com/tmp/video-carousel-demo.md
 Plain text: https://mesmerprism.com/tmp/video-carousel-demo.txt
 

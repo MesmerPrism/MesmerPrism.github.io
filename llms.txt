@@ -19,6 +19,7 @@ Use the Markdown alternates for compact reading. Use the BibTeX or CSL JSON alte
 
 ## Optional
 - [Calligraphy Reference Pack](https://mesmerprism.com/plasmatic-multitudes/assets/calligraphy-reference-pack/board.md)
+- [Hollow Face Lab Browser App](https://mesmerprism.com/projects/hollow-face-lab/app/index.md): Browser-hosted Hollow Face Lab renderer with concavity, lighting, mesh, probe, texture, and response controls.
 
 ## Plasmatic Multitudes
 - [Somaesthetics Appendix | Plasmatic Multitudes](https://mesmerprism.com/plasmatic-multitudes/background/somaesthetics.md): A short public note on somaesthetics as the method anchor for Plasmatic Multitudes.
@@ -38,7 +39,7 @@ Use the Markdown alternates for compact reading. Use the BibTeX or CSL JSON alte
 - [Bressloff V1 Form Constants](https://mesmerprism.com/projects/bressloff-v1-form-constants.md): Animated notes on Bressloff visual-cortex form constants, Rule flicker modeling, and generated MacKay, Bolelli, and Nicks driven-field diagnostics.
 - [Deep Dream](https://mesmerprism.com/projects/deep-dream.md): Deep Dream explains how machine-vision hallucination, community visual taxonomies, VR research, and cyberdelic systems shaped simulated psychedelic vision.
 - [Fractal Optics](https://mesmerprism.com/projects/fractal-optics.md): Fractal Optics maps fractal phototherapy, retinal and ophthalmic stimulation, VR delivery, and patterned-light comparator literatures.
-- [Hollow Face Lab](https://mesmerprism.com/projects/hollow-face-lab.md): Hollow Face Lab maps WebGL, WebXR, and Rusty XR implementation choices against hollow-face and depth-inversion research.
+- [Hollow Face Lab](https://mesmerprism.com/projects/hollow-face-lab.md): Hollow Face Lab maps WebGL, WebXR, texture controls, and Rusty XR implementation choices against hollow-face and depth-inversion research.
 - [Optical Movement Illusions](https://mesmerprism.com/projects/optical-movement-illusions.md): Optical Movement Illusions maps peripheral drift, Rotating Snakes, static motion illusions, color and luminance parameters, and the mechanism-design bridge into perceptual tooling.
 - [Phenomenological Control](https://mesmerprism.com/projects/phenomenological-control.md): A public guide to phenomenological control, imagery variation, expectation-shaped experience, source monitoring, absorption, porosity, hypnosis, induced vision, and meaning-making.
 - [Plasmatic Multitudes - Weakly Bounded Embodiment and Semi-Corporeal Avatar Design](https://mesmerprism.com/projects/plasmatic-multitudes.md): A public overview of weakly bounded bodies: avatars, swarms, auras, particle forms, and luminous bodies that soften while remaining coherent enough for embodiment, relation, and cautious research translation.

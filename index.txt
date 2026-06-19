@@ -2,7 +2,7 @@ Mesmer Prism | Till Holzapfel
 
 Source: https://mesmerprism.com/
 Canonical HTML: https://mesmerprism.com/
-Generated: 2026-06-13
+Generated: 2026-06-19
 Description: XR systems, citizen-science tools, visual instruments, and essays for altered-perception design. Mesmer Prism makes strange experience vivid, inspectable, and evidence-bounded.
 Markdown: https://mesmerprism.com/index.md
 Plain text: https://mesmerprism.com/index.txt
@@ -191,7 +191,7 @@ Hollow Face Lab (https://mesmerprism.com/projects/hollow-face-lab.html)
 
  Depth-inversion experiments need stimulus controls that survive renderer
  changes. Hollow Face Lab connects hollow-face research with WebGL, WebXR,
- Rusty XR, asset provenance, and design rationale.
+ texture upload, Rusty XR, asset provenance, and design rationale.
 
  Status
  Prototype instrument
@@ -202,6 +202,7 @@ Hollow Face Lab (https://mesmerprism.com/projects/hollow-face-lab.html)
 
  Hollow face / WebXR / Three.js / Rusty XR / Stimulus variables
 
+ Launch app (https://mesmerprism.com/projects/hollow-face-lab/app/)
  Overview (https://mesmerprism.com/projects/hollow-face-lab.html)
  References (https://mesmerprism.com/projects/hollow-face-lab.html#references)
  Rusty XR (https://mesmerprism.com/projects/rusty-morphospace/rusty-xr.html)

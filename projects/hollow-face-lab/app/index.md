@@ -1,0 +1,134 @@
+# Hollow Face Lab Browser App
+
+Source: https://mesmerprism.com/projects/hollow-face-lab/app/
+Canonical HTML: https://mesmerprism.com/projects/hollow-face-lab/app/
+Generated: 2026-06-19
+Description: Browser-hosted Hollow Face Lab renderer with concavity, lighting, mesh, probe, texture, and response controls.
+Markdown: https://mesmerprism.com/projects/hollow-face-lab/app/index.md
+Plain text: https://mesmerprism.com/projects/hollow-face-lab/app/index.txt
+
+---
+
+Concave
+ Matte
+ 1x
+ Mesh
+ Trials 0
+
+## Stimulus
+
+ Geometry
+
+ Concave face
+ Convex face
+
+ Concavity
+
+ 0.72
+
+ Texture
+
+ Matte
+ Procedural face
+ Procedural noise
+ Blend F
+ Uploaded texture
+
+ Texture F
+
+ 0.00
+
+ Texture upload
+ Drop image or choose file
+
+ No uploaded texture
+
+ Feature apertures
+
+ None
+ Eyes
+ Eyes + mouth
+ Eyes + mouth + nostrils
+
+ Mesh resolution
+
+ Native
+ 2x oversampled
+ 4x oversampled
+ 8x oversampled
+
+ Surface mode
+
+ Continuous mesh
+ Triangle particles
+
+ Triangle separation
+
+ 0.00
+
+ Rotation
+
+ 0.00
+
+ Probe marker
+
+ Probe depth
+
+ -0.012 m
+
+## Lighting
+
+ Preset
+
+ Custom
+ Baseline virtual
+ High ambiguity
+ Concavity revealing
+ Realistic rough material
+ Low-cue matte
+
+ Key intensity
+
+ 1.80
+
+ Key azimuth
+
+ -20°
+
+ Key elevation
+
+ 26°
+
+ Fill ratio
+
+ 0.32
+
+ Ambient
+
+ 2.40
+
+ Reflectance
+
+ 0.00
+
+## Runtime
+
+ Enter VR
+ Reset View
+
+## Response
+
+ Convex
+ Concave
+ Uncertain
+
+ Near
+ Far
+ Same
+
+ Confidence
+
+ 3
+
+ Record Trial
+ Download Session

@@ -3,7 +3,7 @@
 Source: https://mesmerprism.com/projects/hollow-face-lab.html
 Canonical HTML: https://mesmerprism.com/projects/hollow-face-lab.html
 Generated: 2026-06-19
-Description: Hollow Face Lab maps WebGL, WebXR, and Rusty XR implementation choices against hollow-face and depth-inversion research.
+Description: Hollow Face Lab maps WebGL, WebXR, texture controls, and Rusty XR implementation choices against hollow-face and depth-inversion research.
 Markdown: https://mesmerprism.com/projects/hollow-face-lab.md
 Plain text: https://mesmerprism.com/projects/hollow-face-lab.txt
 BibTeX references: https://mesmerprism.com/projects/hollow-face-lab.bib
@@ -23,13 +23,14 @@ Depth inversion and research tooling
  while preserving source-traceable variables.
  The goal is to make the hollow-face illusion testable in browser and XR
  settings, not merely to show a convincing illusion.
- The current V0 starts with concavity, lighting, local probes,
- stereo/XR status, and response timing; texture/noise is a
- source-backed next control rather than a live public control yet
+ The hosted V0 starts with concavity, lighting, local probes,
+ stereo/XR status, response timing, procedural texture/noise
+ controls, and local user-supplied texture upload
  ([Gregory, 1997](https://www.richardgregory.org/papers/knowl_illusion/knowledge-in-perception.htm);
  [Hill and Johnston, 2007](https://ro.uow.edu.au/ndownloader/files/50499303);
  [W3C WebXR](https://www.w3.org/TR/webxr/)).
 
+ [Launch browser app](https://mesmerprism.com/projects/hollow-face-lab/app/)
  [Evidence map](https://mesmerprism.com/projects/hollow-face-lab.html#source-map)
  [Implementation](https://mesmerprism.com/projects/hollow-face-lab.html#implementation)
  [References](https://mesmerprism.com/projects/hollow-face-lab.html#references)
@@ -58,7 +59,7 @@ Depth inversion and research tooling
 
 - Orientation, face familiarity, pigmentation, and shading ([Hill and Johnston, 2007](https://ro.uow.edu.au/ndownloader/files/50499303)).
 
-- Realistic face texture versus random-dot or noise texture, still planned for the public V0 control surface ([Farkas et al., 2016](https://pmc.ncbi.nlm.nih.gov/articles/PMC5156401/)).
+- Realistic face texture versus random-dot or noise texture, now exposed as procedural texture modes and a local upload path ([Farkas et al., 2016](https://pmc.ncbi.nlm.nih.gov/articles/PMC5156401/)).
 
 - Stereo, motion parallax, depth scaling, and local probe targets ([Grosjean et al., 2012](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0044706); [Five Illusions](https://fiveillusions.github.io/)).
 
@@ -79,7 +80,9 @@ Depth inversion and research tooling
 ## Flat web, WebXR, and Rusty XR
 
  V0 is a Three.js/WebGL browser app with WebXR session detection and flat-web
- fallback. It currently uses the Apache-2.0 MediaPipe canonical face OBJ as a
+ fallback, hosted as a Mesmer Prism microsite at
+ [/projects/hollow-face-lab/app/](https://mesmerprism.com/projects/hollow-face-lab/app/).
+ It currently uses the Apache-2.0 MediaPipe canonical face OBJ as a
  neutral runtime baseline. That asset is useful for topology, UVs, and
  coordinate mapping, but it is not being presented as an accepted hollow-face
  research mesh
@@ -96,6 +99,8 @@ Depth inversion and research tooling
 ### Current V0 controls
 
 - Concave/convex face mode and concavity depth scale.
+
+- Matte, procedural face, procedural noise, blend-F, and local uploaded texture modes.
 
 - Lighting presets with explicit key, fill, ambient, and reflectance values.
 

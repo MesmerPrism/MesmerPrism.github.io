@@ -9,6 +9,7 @@ const SITE_NAME = "Mesmer Prism";
 const EXCLUDED_HTML = new Set(["404.html"]);
 const OPTIONAL_HTML = new Set([
   "plasmatic-multitudes/assets/calligraphy-reference-pack/board.html",
+  "projects/hollow-face-lab/app/index.html",
 ]);
 const SIDECAR_EXTENSIONS = [".md", ".txt", ".bib", ".references.csl.json"];
 

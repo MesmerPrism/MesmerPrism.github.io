@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hollow Face Lab Browser App | Mesmer Prism</title>
+    <link rel="canonical" href="https://mesmerprism.com/projects/hollow-face-lab/app/" />
+    <meta
+      name="description"
+      content="Browser-hosted Hollow Face Lab renderer with concavity, lighting, mesh, probe, texture, and response controls."
+    />
+    <meta property="og:title" content="Hollow Face Lab Browser App | Mesmer Prism" />
+    <meta
+      property="og:description"
+      content="A flat-web and WebXR-ready hollow-face renderer tied to the Mesmer Prism Hollow Face Lab project page."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://mesmerprism.com/projects/hollow-face-lab/app/" />
+    <meta name="theme-color" content="#f4efe7" />
+    <script type="module" crossorigin src="/projects/hollow-face-lab/app/assets/index-DdsBCUeD.js"></script>
+    <link rel="stylesheet" crossorigin href="/projects/hollow-face-lab/app/assets/index-LqvmFHTA.css">
+    <!-- BEGIN agent-readable metadata -->
+    <link rel="alternate" type="text/markdown" href="/projects/hollow-face-lab/app/index.md" title="Markdown version">
+    <link rel="alternate" type="text/plain" href="/projects/hollow-face-lab/app/index.txt" title="Plain text version">
+    <meta name="citation_title" content="Hollow Face Lab Browser App">
+    <meta name="citation_author" content="Till Holzapfel">
+    <meta name="citation_publication_date" content="2026-06-19">
+    <meta name="citation_online_date" content="2026-06-19">
+    <meta name="citation_public_url" content="https://mesmerprism.com/projects/hollow-face-lab/app/">
+    <meta name="citation_language" content="en">
+    <script type="application/ld+json" data-agent-metadata>
+    {
+          "@context": "https://schema.org",
+          "@type": "Article",
+          "headline": "Hollow Face Lab Browser App",
+          "name": "Hollow Face Lab Browser App",
+          "description": "Browser-hosted Hollow Face Lab renderer with concavity, lighting, mesh, probe, texture, and response controls.",
+          "author": {
+                "@type": "Person",
+                "name": "Till Holzapfel"
+          },
+          "publisher": {
+                "@type": "Organization",
+                "name": "Mesmer Prism",
+                "url": "https://mesmerprism.com"
+          },
+          "isPartOf": {
+                "@type": "WebSite",
+                "name": "Mesmer Prism",
+                "url": "https://mesmerprism.com"
+          },
+          "url": "https://mesmerprism.com/projects/hollow-face-lab/app/",
+          "dateModified": "2026-06-19",
+          "inLanguage": "en",
+          "encoding": [
+                {
+                      "@type": "MediaObject",
+                      "encodingFormat": "text/markdown",
+                      "contentUrl": "https://mesmerprism.com/projects/hollow-face-lab/app/index.md"
+                },
+                {
+                      "@type": "MediaObject",
+                      "encodingFormat": "text/plain",
+                      "contentUrl": "https://mesmerprism.com/projects/hollow-face-lab/app/index.txt"
+                }
+          ],
+          "citation": []
+    }
+    </script>
+    <!-- END agent-readable metadata -->
+</head>
+  <body>
+    <div class="app-shell">
+      <header class="site-header">
+        <div class="site-shell site-header-row">
+          <a class="site-name" href="/" aria-label="Mesmer Prism home">
+            <img
+              class="site-mark"
+              src="/assets/brand/mesmer-prism-logo.png"
+              alt=""
+              width="1200"
+              height="508"
+              decoding="async"
+            />
+            <span>Mesmer Prism</span>
+          </a>
+          <nav class="site-nav" aria-label="Hollow Face Lab links">
+            <a href="/projects/hollow-face-lab.html">Project page</a>
+            <a href="/projects/hollow-face-lab.html#implementation">Implementation</a>
+            <a href="/projects/hollow-face-lab.html#references">References</a>
+          </nav>
+        </div>
+      </header>
+      <header class="app-header">
+        <h1>Hollow Face Lab</h1>
+        <div class="runtime-strip" aria-live="polite">
+          <span id="runtime-mode">Flat Web</span>
+          <span id="xr-status">Checking WebXR</span>
+          <span id="frame-status">0 fps</span>
+        </div>
+      </header>
+
+      <main class="workspace">
+        <section class="stage-panel" aria-label="Hollow face render stage">
+          <canvas id="scene-canvas"></canvas>
+          <div class="stage-overlay" aria-live="polite">
+            <span id="geometry-readout">Concave</span>
+            <span id="texture-readout">Matte</span>
+            <span id="resolution-readout">1x</span>
+            <span id="surface-readout">Mesh</span>
+            <span id="trial-readout">Trials 0</span>
+          </div>
+        </section>
+
+        <aside class="control-panel" aria-label="Stimulus and trial controls">
+          <section>
+            <h2>Stimulus</h2>
+            <label>
+              Geometry
+              <select id="geometry-condition">
+                <option value="concave_face" selected>Concave face</option>
+                <option value="convex_face">Convex face</option>
+              </select>
+            </label>
+            <label>
+              Concavity
+              <input id="concavity-scale" type="range" min="0.2" max="1.2" value="0.72" step="0.01" />
+              <output id="concavity-output">0.72</output>
+            </label>
+            <label>
+              Texture
+              <select id="texture-mode">
+                <option value="matte" selected>Matte</option>
+                <option value="procedural_face">Procedural face</option>
+                <option value="procedural_noise">Procedural noise</option>
+                <option value="blend_f">Blend F</option>
+                <option value="uploaded">Uploaded texture</option>
+              </select>
+            </label>
+            <label>
+              Texture F
+              <input id="texture-weight-f" type="range" min="0" max="1" value="0" step="0.01" />
+              <output id="texture-weight-output">0.00</output>
+            </label>
+            <label id="texture-drop-zone" class="file-drop">
+              <span>Texture upload</span>
+              <span class="file-drop-action">Drop image or choose file</span>
+              <input id="texture-upload" type="file" accept="image/*" />
+            </label>
+            <p id="texture-upload-status" class="field-note" aria-live="polite">No uploaded texture</p>
+            <label>
+              Feature apertures
+              <select id="feature-hole-mode">
+                <option value="none" selected>None</option>
+                <option value="eyes">Eyes</option>
+                <option value="eyes_mouth">Eyes + mouth</option>
+                <option value="eyes_mouth_nose">Eyes + mouth + nostrils</option>
+              </select>
+            </label>
+            <label>
+              Mesh resolution
+              <select id="mesh-resolution">
+                <option value="native" selected>Native</option>
+                <option value="subdivide_2">2x oversampled</option>
+                <option value="subdivide_4">4x oversampled</option>
+                <option value="subdivide_8">8x oversampled</option>
+              </select>
+            </label>
+            <label>
+              Surface mode
+              <select id="surface-render-mode">
+                <option value="continuous_mesh" selected>Continuous mesh</option>
+                <option value="triangle_particles">Triangle particles</option>
+              </select>
+            </label>
+            <label>
+              Triangle separation
+              <input id="triangle-separation" type="range" min="0" max="0.65" value="0" step="0.01" />
+              <output id="triangle-separation-output">0.00</output>
+            </label>
+            <label>
+              Rotation
+              <input id="rotation-speed" type="range" min="0" max="0.7" value="0" step="0.01" />
+              <output id="rotation-output">0.00</output>
+            </label>
+            <label class="check-row">
+              <input id="show-probe" type="checkbox" />
+              Probe marker
+            </label>
+            <label>
+              Probe depth
+              <input id="probe-depth" type="range" min="-0.04" max="0.04" value="-0.012" step="0.001" />
+              <output id="probe-depth-output">-0.012 m</output>
+            </label>
+          </section>
+
+          <section>
+            <h2>Lighting</h2>
+            <label>
+              Preset
+              <select id="lighting-preset">
+                <option value="custom" selected>Custom</option>
+                <option value="baseline_virtual">Baseline virtual</option>
+                <option value="high_ambiguity">High ambiguity</option>
+                <option value="concavity_revealing">Concavity revealing</option>
+                <option value="realistic_material">Realistic rough material</option>
+                <option value="low_cue_matte">Low-cue matte</option>
+              </select>
+            </label>
+            <label>
+              Key intensity
+              <input id="key-light-intensity" type="range" min="0" max="3.2" value="1.8" step="0.05" />
+              <output id="key-light-intensity-output">1.80</output>
+            </label>
+            <label>
+              Key azimuth
+              <input id="key-light-azimuth" type="range" min="-90" max="90" value="-20" step="1" />
+              <output id="key-light-azimuth-output">-20°</output>
+            </label>
+            <label>
+              Key elevation
+              <input id="key-light-elevation" type="range" min="-35" max="65" value="26" step="1" />
+              <output id="key-light-elevation-output">26°</output>
+            </label>
+            <label>
+              Fill ratio
+              <input id="fill-light-ratio" type="range" min="0" max="1" value="0.32" step="0.01" />
+              <output id="fill-light-ratio-output">0.32</output>
+            </label>
+            <label>
+              Ambient
+              <input id="ambient-light-intensity" type="range" min="0" max="3.4" value="2.4" step="0.05" />
+              <output id="ambient-light-intensity-output">2.40</output>
+            </label>
+            <label>
+              Reflectance
+              <input id="mask-reflectance" type="range" min="0" max="1" value="0" step="0.01" />
+              <output id="mask-reflectance-output">0.00</output>
+            </label>
+          </section>
+
+          <section>
+            <h2>Runtime</h2>
+            <button id="enter-xr" type="button" disabled>Enter VR</button>
+            <button id="reset-view" type="button">Reset View</button>
+          </section>
+
+          <section>
+            <h2>Response</h2>
+            <div class="button-row" role="group" aria-label="Global shape response">
+              <button type="button" data-global-response="convex">Convex</button>
+              <button type="button" data-global-response="concave">Concave</button>
+              <button type="button" data-global-response="uncertain">Uncertain</button>
+            </div>
+            <div class="button-row" role="group" aria-label="Local probe response">
+              <button type="button" data-local-response="near">Near</button>
+              <button type="button" data-local-response="far">Far</button>
+              <button type="button" data-local-response="same_depth">Same</button>
+            </div>
+            <label>
+              Confidence
+              <input id="confidence" type="range" min="1" max="5" value="3" step="1" />
+              <output id="confidence-output">3</output>
+            </label>
+            <button id="record-trial" type="button">Record Trial</button>
+            <button id="download-session" type="button">Download Session</button>
+          </section>
+        </aside>
+      </main>
+    </div>
+  </body>
+</html>

@@ -7,7 +7,7 @@
     <link rel="canonical" href="https://mesmerprism.com/projects/hollow-face-lab.html">
     <meta
         name="description"
-        content="Hollow Face Lab maps WebGL, WebXR, and Rusty XR implementation choices against hollow-face and depth-inversion research."
+        content="Hollow Face Lab maps WebGL, WebXR, texture controls, and Rusty XR implementation choices against hollow-face and depth-inversion research."
     >
     <meta property="og:title" content="Hollow Face Lab | Mesmer Prism">
     <meta
@@ -40,7 +40,7 @@
           "@type": "Article",
           "headline": "Hollow Face Lab",
           "name": "Hollow Face Lab",
-          "description": "Hollow Face Lab maps WebGL, WebXR, and Rusty XR implementation choices against hollow-face and depth-inversion research.",
+          "description": "Hollow Face Lab maps WebGL, WebXR, texture controls, and Rusty XR implementation choices against hollow-face and depth-inversion research.",
           "author": {
                 "@type": "Person",
                 "name": "Till Holzapfel"
@@ -131,15 +131,16 @@
                     while preserving source-traceable variables.
                     The goal is to make the hollow-face illusion testable in browser and XR
                     settings, not merely to show a convincing illusion.
-                    The current V0 starts with concavity, lighting, local probes,
-                    stereo/XR status, and response timing; texture/noise is a
-                    source-backed next control rather than a live public control yet
+                    The hosted V0 starts with concavity, lighting, local probes,
+                    stereo/XR status, response timing, procedural texture/noise
+                    controls, and local user-supplied texture upload
                     (<a class="inline-citation" href="https://www.richardgregory.org/papers/knowl_illusion/knowledge-in-perception.htm" target="_blank" rel="noopener noreferrer">Gregory, 1997</a>;
                     <a class="inline-citation" href="https://ro.uow.edu.au/ndownloader/files/50499303" target="_blank" rel="noopener noreferrer">Hill and Johnston, 2007</a>;
                     <a class="inline-citation" href="https://www.w3.org/TR/webxr/" target="_blank" rel="noopener noreferrer">W3C WebXR</a>).
                 </p>
                 <div class="hero-actions">
-                    <a class="action-link action-link--strong" href="#source-map">Evidence map</a>
+                    <a class="action-link action-link--strong" href="/projects/hollow-face-lab/app/">Launch browser app</a>
+                    <a class="action-link" href="#source-map">Evidence map</a>
                     <a class="action-link" href="#implementation">Implementation</a>
                     <a class="action-link" href="#references">References</a>
                     <a class="action-link" href="/projects/rusty-morphospace/rusty-xr.html">Rusty XR</a>
@@ -178,7 +179,7 @@
                         <li>Orientation, face familiarity, pigmentation, and shading
                             (<a class="inline-citation" href="https://ro.uow.edu.au/ndownloader/files/50499303" target="_blank" rel="noopener noreferrer">Hill and Johnston, 2007</a>).</li>
                         <li>Realistic face texture versus random-dot or noise texture,
-                            still planned for the public V0 control surface
+                            now exposed as procedural texture modes and a local upload path
                             (<a class="inline-citation" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5156401/" target="_blank" rel="noopener noreferrer">Farkas et al., 2016</a>).</li>
                         <li>Stereo, motion parallax, depth scaling, and local probe targets
                             (<a class="inline-citation" href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0044706" target="_blank" rel="noopener noreferrer">Grosjean et al., 2012</a>;
@@ -208,7 +209,9 @@
                 </div>
                 <p>
                     V0 is a Three.js/WebGL browser app with WebXR session detection and flat-web
-                    fallback. It currently uses the Apache-2.0 MediaPipe canonical face OBJ as a
+                    fallback, hosted as a Mesmer Prism microsite at
+                    <a href="/projects/hollow-face-lab/app/">/projects/hollow-face-lab/app/</a>.
+                    It currently uses the Apache-2.0 MediaPipe canonical face OBJ as a
                     neutral runtime baseline. That asset is useful for topology, UVs, and
                     coordinate mapping, but it is not being presented as an accepted hollow-face
                     research mesh
@@ -229,6 +232,7 @@
                     <h3>Current V0 controls</h3>
                     <ul class="plain-list">
                         <li>Concave/convex face mode and concavity depth scale.</li>
+                        <li>Matte, procedural face, procedural noise, blend-F, and local uploaded texture modes.</li>
                         <li>Lighting presets with explicit key, fill, ambient, and reflectance values.</li>
                         <li>Feature aperture modes for eyes, mouth, and nostrils.</li>
                         <li>Native and oversampled mesh resolutions.</li>
