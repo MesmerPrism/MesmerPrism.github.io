@@ -24,7 +24,7 @@ Concave
 
  Concavity
 
- 0.72
+ 1.20
 
  Texture
 
@@ -68,7 +68,7 @@ Concave
 
  Rotation
 
- 0.00
+ 0.18
 
  Probe marker
 
@@ -112,6 +112,10 @@ Concave
  0.00
 
 ## Runtime
+
+ Full Screen Stimulus
+
+ Stereoscope Pair
 
  Enter VR
 

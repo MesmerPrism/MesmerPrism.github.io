@@ -18,8 +18,8 @@
     <meta property="og:url" content="https://mesmerprism.com/projects/hollow-face-lab/app/" />
     <meta name="theme-color" content="#f4efe7" />
     <link rel="stylesheet" href="/assets/fonts.css" />
-    <script type="module" crossorigin src="/projects/hollow-face-lab/app/assets/index-BHjGxuOy.js"></script>
-    <link rel="stylesheet" crossorigin href="/projects/hollow-face-lab/app/assets/index-C8h6fmVX.css">
+    <script type="module" crossorigin src="/projects/hollow-face-lab/app/assets/index-CNWqloWf.js"></script>
+    <link rel="stylesheet" crossorigin href="/projects/hollow-face-lab/app/assets/index-DN_AYSk7.css">
     <!-- BEGIN agent-readable metadata -->
     <link rel="alternate" type="text/markdown" href="/projects/hollow-face-lab/app/index.md" title="Markdown version">
     <link rel="alternate" type="text/plain" href="/projects/hollow-face-lab/app/index.txt" title="Plain text version">
@@ -125,8 +125,8 @@
             </label>
             <label data-tooltip="Scales the depth inversion along the face depth axis. This is logged as the per-trial concavity scale.">
               Concavity
-              <input id="concavity-scale" type="range" min="0.2" max="1.2" value="0.72" step="0.01" />
-              <output id="concavity-output">0.72</output>
+              <input id="concavity-scale" type="range" min="0.2" max="1.2" value="1.2" step="0.01" />
+              <output id="concavity-output">1.20</output>
             </label>
             <label data-tooltip="Chooses the face surface texture path: matte, procedural face cues, procedural noise, an F blend, or a local uploaded image.">
               Texture
@@ -138,7 +138,11 @@
                 <option value="uploaded">Uploaded texture</option>
               </select>
             </label>
-            <label data-tooltip="Controls the blend weight for the procedural texture continuum. F=0 favors noise; F=1 favors face-like texture cues.">
+            <label
+              id="texture-weight-control"
+              data-tooltip="Controls the blend weight for the procedural texture continuum. F=0 favors noise; F=1 favors face-like texture cues."
+              hidden
+            >
               Texture F
               <input id="texture-weight-f" type="range" min="0" max="1" value="0" step="0.01" />
               <output id="texture-weight-output">0.00</output>
@@ -147,19 +151,20 @@
               id="texture-drop-zone"
               class="file-drop"
               data-tooltip="Applies a local image to the face texture map. The image stays in the browser; exports store metadata, not image bytes."
+              hidden
             >
               <span>Texture upload</span>
               <span class="file-drop-action">Drop image or choose file</span>
               <input id="texture-upload" type="file" accept="image/*" />
             </label>
-            <p id="texture-upload-status" class="field-note" aria-live="polite">No uploaded texture</p>
+            <p id="texture-upload-status" class="field-note" aria-live="polite" hidden>No uploaded texture</p>
             <label data-tooltip="Cuts feature-region apertures in the fragment shader without changing the mesh topology. Logged as feature_hole_mode.">
               Feature apertures
               <select id="feature-hole-mode">
-                <option value="none" selected>None</option>
+                <option value="none">None</option>
                 <option value="eyes">Eyes</option>
                 <option value="eyes_mouth">Eyes + mouth</option>
-                <option value="eyes_mouth_nose">Eyes + mouth + nostrils</option>
+                <option value="eyes_mouth_nose" selected>Eyes + mouth + nostrils</option>
               </select>
             </label>
             <label data-tooltip="Sets runtime mesh oversampling. Higher values preserve the same asset identity but increase render subdivision.">
@@ -178,15 +183,19 @@
                 <option value="triangle_particles">Triangle particles</option>
               </select>
             </label>
-            <label data-tooltip="Shrinks each triangle around its centroid in triangle-particle mode, opening gaps while preserving the triangle positions.">
+            <label
+              id="triangle-separation-control"
+              data-tooltip="Shrinks each triangle around its centroid in triangle-particle mode, opening gaps while preserving the triangle positions."
+              hidden
+            >
               Triangle separation
               <input id="triangle-separation" type="range" min="0" max="0.65" value="0" step="0.01" />
               <output id="triangle-separation-output">0.00</output>
             </label>
             <label data-tooltip="Adds flat-web rotation for inspection. Rotation is not required for trial recording and remains logged as a display parameter.">
               Rotation
-              <input id="rotation-speed" type="range" min="0" max="0.7" value="0" step="0.01" />
-              <output id="rotation-output">0.00</output>
+              <input id="rotation-speed" type="range" min="0" max="0.7" value="0.18" step="0.01" />
+              <output id="rotation-output">0.18</output>
             </label>
             <label
               class="check-row"
@@ -195,7 +204,11 @@
               <input id="show-probe" type="checkbox" />
               Probe marker
             </label>
-            <label data-tooltip="Offsets the probe along the face depth axis so it can sit in front of, on, or behind the sampled face surface.">
+            <label
+              id="probe-depth-control"
+              data-tooltip="Offsets the probe along the face depth axis so it can sit in front of, on, or behind the sampled face surface."
+              hidden
+            >
               Probe depth
               <input id="probe-depth" type="range" min="-0.04" max="0.04" value="-0.012" step="0.001" />
               <output id="probe-depth-output">-0.012 m</output>
@@ -249,6 +262,21 @@
 
           <section>
             <h2>Runtime</h2>
+            <button
+              id="fullscreen-stimulus"
+              type="button"
+              data-tooltip="Shows only the stimulus canvas in browser fullscreen. When stereoscope mode is on, each fullscreen half shows the same render."
+            >
+              Full Screen Stimulus
+            </button>
+            <button
+              id="stereoscope-mode"
+              type="button"
+              aria-pressed="false"
+              data-tooltip="Duplicates the same stimulus side by side in the canvas for magic-eye-style free viewing. This is a duplicated view, not a calibrated stereo-depth disparity."
+            >
+              Stereoscope Pair
+            </button>
             <button id="enter-xr" type="button" disabled data-tooltip="Requests an immersive WebXR session only when the browser reports support.">
               Enter VR
             </button>
@@ -292,5 +320,6 @@
         </aside>
       </main>
     </div>
+    <div id="tooltip-layer" class="tooltip-layer" role="tooltip" hidden></div>
   </body>
 </html>

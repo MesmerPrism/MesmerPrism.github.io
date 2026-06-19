@@ -24,7 +24,7 @@ Stimulus
 
  Concavity
 
- 0.72
+ 1.20
 
  Texture
 
@@ -68,7 +68,7 @@ Stimulus
 
  Rotation
 
- 0.00
+ 0.18
 
  Probe marker
 
@@ -112,6 +112,10 @@ Lighting
  0.00
 
 Runtime
+
+ Full Screen Stimulus
+
+ Stereoscope Pair
 
  Enter VR
 
