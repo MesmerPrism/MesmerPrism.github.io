@@ -4335,6 +4335,12 @@ Rusty Morphospace and tissue-scale patterning
  educational/source-backed labels. That does not make the atlas a live
  regeneration simulator.
 
+ The current app opens in a Source Atlas mode with the reviewed Zenodo GLBs
+ hotlisted by default, then separates Records, Layers, Model Replay, and
+ Teaching as secondary evidence modes. Pending lanes for PlanformDB
+ expansion, Zenodo 12533272 , observed-geometry dynamics, and
+ Quest Browser validation remain statused rather than central.
+
  Data layers
 
 ### Source-bounded atlas records
@@ -4362,6 +4368,8 @@ Rusty Morphospace and tissue-scale patterning
 
  Desktop/mobile
  Full atlas controls and source-aware panels
+ Modes
+ Source Atlas, Records, Layers, Model Replay, and Teaching
  Immersive
  WebXR entry with controller selection seams
  Export
