@@ -3,7 +3,7 @@ Bioelectricity and Morphogenesis
 Source: https://mesmerprism.com/projects/bioelectricity.html
 Canonical HTML: https://mesmerprism.com/projects/bioelectricity.html
 Generated: 2026-06-20
-Description: Bioelectricity and morphogenesis across Rusty Morphospace and Planarian Regeneration XR: source-bounded planarian teaching models, WebXR atlas controls, curated records, and observed geometry overlays.
+Description: Bioelectricity and morphogenesis across Rusty Morphospace and Planarian Regeneration XR: source-bounded teaching models, curated records, observed Zenodo geometry, and marker replays.
 Markdown: https://mesmerprism.com/projects/bioelectricity.md
 Plain text: https://mesmerprism.com/projects/bioelectricity.txt
 BibTeX references: https://mesmerprism.com/projects/bioelectricity.bib
@@ -130,14 +130,16 @@ Observed, curated, and educational layers stay separated
  subset with 20 selected source records and 54 outcome details, including
  browser-facing frequency and sample-size values where reviewed, bundled
  observed posterior and anterior muscle SpatialGraph GLB line overlays,
- a neuron cell-cloud marker GLB, a nuclei centroid marker GLB, and an
- allometry FirstPoint marker GLB derived from the Zenodo ETLSM dataset,
- a parsed-but-deferred sidecar summary for
- Zenodo 12533272 , and two registered model-inspired replay
- manifests: the original Sketchfab schematic replay and a Zenodo
- neuron-cloud GIF replay. The observed Zenodo GLBs are not scientific
- simulation outputs. The 12533272 sidecar records a large tiled
- volume layout, not a browser mesh. A validation chain keeps
+ a neuron cell-cloud marker GLB, a nuclei centroid marker GLB, an
+ allometry FirstPoint marker GLB, and a Zenodo 12533272
+ mergeall.am high-intensity volume-marker GLB derived from
+ the ETLSM datasets. The app also registers three model-inspired replay
+ manifests: the original Sketchfab schematic replay, a Zenodo
+ neuron-cloud GIF replay, and a Zenodo 12533272 volume-marker
+ GIF replay. The observed Zenodo GLBs are not scientific simulation
+ outputs. The 12533272 derivative is a browser-safe marker
+ subset with projection PNGs, not a full-resolution volume or segmented
+ surface. A validation chain keeps
  source files, raw downloads, decoder tooling, and conversion intermediates
  outside the public bundle
  (PlanformDB (https://lobolab.umbc.edu/planform/download/);
@@ -153,12 +155,13 @@ Observed, curated, and educational layers stay separated
  The current app opens in a Source Atlas mode with the reviewed Zenodo GLBs
  hotlisted by default, including the allometry marker layer with an explicit
  caveat that FirstPoint anchors are not centroids. Model Replay now includes
- a GIF generated from the reviewed neuron-cloud GLB positions, with the
- dynamics labeled as model-inspired rather than observed. It then separates
+ GIFs generated from reviewed neuron-cloud and 12533272
+ volume-marker GLB positions, with the dynamics labeled as model-inspired
+ rather than observed. It then separates
  Records, Layers, Model Replay, and Teaching as secondary evidence modes. The Records mode now filters the
  reviewed PlanformDB subset by publication, outcome class, manipulation type,
  timepoint, and measurement availability. Pending lanes for further
- PlanformDB expansion, 12533272 volume-derived GLB work,
+ PlanformDB expansion, source maps for object-level picking,
  observed-geometry dynamics, and Quest Browser validation remain statused
  rather than central.
 
@@ -171,13 +174,13 @@ Source-bounded atlas records
  schema level.
 
  Observed
- Zenodo posterior/anterior muscle SpatialGraph GLB line overlays, a neuron cell-cloud marker GLB, a nuclei centroid marker GLB, and an allometry FirstPoint marker GLB
+ Zenodo posterior/anterior muscle SpatialGraph GLB line overlays, neuron cell-cloud, nuclei centroid, allometry FirstPoint, and 12533272 volume-marker GLBs
  Curated
  20 reviewed PlanformDB Experiment records with 54 outcome details and reviewed frequency/sample-size values
  Educational
  Procedural body, field overlays, lessons, and schematic transitions
  Replay
- Two model-inspired replays: one Sketchfab schematic adapter and one Zenodo neuron-cloud GIF manifest
+ Three model-inspired replays: one Sketchfab schematic adapter, one Zenodo neuron-cloud GIF manifest, and one Zenodo 12533272 volume-marker GIF manifest
 
  Interaction
 
@@ -213,7 +216,7 @@ Public bundle checks before claims
 
  Showcase export
 
-Validated Planarian 3D loops and Zenodo point-cloud replay
+Validated Planarian 3D loops and Zenodo marker replays
 
  The first two exports show the current Optics-owned preview/export path over
  Matter-owned synthetic educational state: a 720-node planarian graph, opaque
@@ -228,6 +231,12 @@ Validated Planarian 3D loops and Zenodo point-cloud replay
  12 fps. It is a qualitative voltage/conductance visualization over observed
  point positions, not a measured bioelectric trace or predictive regeneration
  model.
+
+ A second Zenodo replay now uses the reviewed 12533272
+ volume-marker GLB: 5,089 selected high-intensity source points are sampled
+ into a 640-node nearest-neighbor graph with 2,430 conductance edges and
+ exported as a 96-frame GIF. The source geometry is a derived marker subset,
+ not a full volume, and the dynamics remain model-inspired display output.
 
  Adjacent dynamics
 
@@ -283,9 +292,10 @@ Matched to original sources, but not calibrated yet
  reviewed observed GLB overlays for posterior and anterior muscle SpatialGraph
  objects, the planarianneuronpool.Cloud HxCluster marker
  cloud, the Result nuclei centroid marker cloud, and the
- Result(2).Label-Analysis(2) FirstPoint anchor marker cloud. The
- same reviewed neuron-cloud GLB now has a public model-inspired dynamics GIF
- replay. It also has a Quest Browser validation lane that needs a refreshed headset
+ Result(2).Label-Analysis(2) FirstPoint anchor marker cloud,
+ plus a reviewed 12533272 high-intensity volume-marker GLB.
+ The reviewed neuron-cloud and volume-marker GLBs now have public
+ model-inspired dynamics GIF replays. It also has a Quest Browser validation lane that needs a refreshed headset
  pass whenever the production build changes.
  Remaining targets are intentionally planned until source figures, tables,
  categories, or datasets have been extracted into derived, rights-safe
@@ -336,10 +346,15 @@ Matched to original sources, but not calibrated yet
  The reviewed planarianneuronpool.Cloud GLB supplies display positions for zenodo-neuron-cloud-bioelectric-replay.gif : 480 sampled nodes, 1,767 nearest-neighbor conductance edges, 96 frames at 720 x 860 pixels, GIF SHA-256 de307a94e2d67ae378816362c33cd43dbf49f6f288a5bbf796e057f09ab78ee2 .
  Model-inspired display replay only. It is not a measured bioelectric trace, calibrated physiology, mechanistic model output, or predictive regeneration simulation.
 
- zenodo_12533272_volume_record
+ zenodo_12533272_volume_marker_glb
  Lu, 2024 dataset2 (https://zenodo.org/records/12533272); CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/)
- Public-safe sidecar facts are recorded: mergeall.am.lda verifies a 4469 x 7887 x 3520 16-bit tiled volume, 124,069,450,560 voxels, Gzip tile compression, intensity bounds from 0 to 44182 , and a linked mergeall.am.dat volume of about 34.5 GB. A partial ignored raw intake of the linked volume is present; no reviewed browser-safe GLB derivative from this record is bundled.
- Deferred; raw sidecar XML, raw histogram payload, TileMinMax payload, contributor-local source path, source volume, source export, intermediate, decoder output, and GLB derivative from this record are not published in the current public bundle.
+ Public-safe sidecar and derivative facts are recorded: mergeall.am.lda verifies a 4469 x 7887 x 3520 16-bit tiled volume, 124,069,450,560 voxels, Gzip tile compression, intensity bounds from 0 to 44182 , and a linked mergeall.am.dat volume of about 34.5 GB. The linked volume was downloaded under ignored raw storage and checksum-verified against MD5 a596aab89a5d793cfc71329e809b81ca . The public derivative mergeall-volume-lod3-high-intensity.glb contains 5,089 selected high-intensity marker points, 30,534 vertices, 15,267 marker line segments, and SHA-256 8fead939a8aabba7ee9c433fe0d6e158f490c924097b5c7fa35919072e39ff22 ; public UV/UW/VW maximum-intensity projection PNGs accompany the GLB.
+ Observed source-derived atlas geometry only. It is not a full-resolution volume, not a segmented surface, not a measured bioelectric trace, and not a predictive regeneration simulation. Raw sidecar XML, raw histogram payload, TileMinMax payload, contributor-local source path, source volume, source export, intermediate, decoder output, and review packets remain outside the public bundle.
+
+ zenodo_12533272_volume_bioelectric_replay
+ Lu, 2024 dataset2 (https://zenodo.org/records/12533272); Planarian XR public GLB replay generator
+ The reviewed mergeall-volume-lod3-high-intensity.glb supplies display positions for zenodo-12533272-volume-bioelectric-replay.gif : 5,089 source points sampled into 640 nodes, 2,430 nearest-neighbor conductance edges, 96 frames at 720 x 860 pixels, GIF SHA-256 6571a79455c0d84bd9981ce3c3151de9a15f089719ae8b43fb5961251aeade53 .
+ Model-inspired display replay only. It is not a measured bioelectric trace, calibrated physiology, mechanistic model output, or predictive regeneration simulation.
 
  planarian_xr_schematic_replay_manifest
  Planarian XR schematic transition adapter; Sketchfab educational mesh substrate

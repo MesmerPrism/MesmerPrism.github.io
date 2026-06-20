@@ -213,6 +213,29 @@
     }
   },
   {
+    "id": "zenodo-org-lu-2024-dataset2-2019",
+    "type": "webpage",
+    "title": "Lu, 2024 dataset2",
+    "URL": "https://zenodo.org/records/12533272",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          20
+        ]
+      ]
+    },
+    "note": "Referenced by Bioelectricity and Morphogenesis: https://mesmerprism.com/projects/bioelectricity.html",
+    "issued": {
+      "date-parts": [
+        [
+          2019
+        ]
+      ]
+    }
+  },
+  {
     "id": "levin-bioelectric-signaling-reprogrammable-circuits-underlying-2021",
     "type": "article-journal",
     "title": "Bioelectric Signaling: Reprogrammable Circuits Underlying Embryogenesis, Regeneration, and Cancer",
@@ -356,34 +379,6 @@
       ]
     },
     "DOI": "10.1089/bioe.2021.0036"
-  },
-  {
-    "id": "lu-jing-3d-reconstruction-of-neuronal-allometry-and-neuromuscula-2024",
-    "type": "webpage",
-    "title": "3D Reconstruction of Neuronal Allometry and Neuromuscular Projections in Asexual Planarians Using Expansion Tiling Light Sheet Microscopy dataset2",
-    "URL": "https://zenodo.org/records/12533272",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          20
-        ]
-      ]
-    },
-    "note": "Referenced by Bioelectricity and Morphogenesis: https://mesmerprism.com/projects/bioelectricity.html",
-    "author": [
-      {
-        "literal": "Lu, Jing"
-      }
-    ],
-    "issued": {
-      "date-parts": [
-        [
-          2024
-        ]
-      ]
-    }
   },
   {
     "id": "bioelectricity-nexus-bioelectricity-nexus",
