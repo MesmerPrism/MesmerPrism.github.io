@@ -286,13 +286,14 @@
                     subset with 20 selected source records and 54 outcome details, including
                     browser-facing frequency and sample-size values where reviewed, bundled
                     observed posterior and anterior muscle SpatialGraph GLB line overlays,
-                    a neuron cell-cloud marker GLB, and an allometry FirstPoint marker GLB
-                    derived from the Zenodo ETLSM dataset,
+                    a neuron cell-cloud marker GLB, a nuclei centroid marker GLB, and an
+                    allometry FirstPoint marker GLB derived from the Zenodo ETLSM dataset,
                     a parsed-but-deferred sidecar summary for
-                    Zenodo <code>12533272</code>, and one registered model-inspired schematic
-                    replay manifest for the Sketchfab educational mesh. The observed Zenodo GLBs
-                    are not simulation substrates. The <code>12533272</code> sidecar records a
-                    large tiled volume layout, not a browser mesh. A validation chain keeps
+                    Zenodo <code>12533272</code>, and two registered model-inspired replay
+                    manifests: the original Sketchfab schematic replay and a Zenodo
+                    neuron-cloud GIF replay. The observed Zenodo GLBs are not scientific
+                    simulation outputs. The <code>12533272</code> sidecar records a large tiled
+                    volume layout, not a browser mesh. A validation chain keeps
                     source files, raw downloads, decoder tooling, and conversion intermediates
                     outside the public bundle
                     (<a class="inline-citation" href="https://lobolab.umbc.edu/planform/download/" target="_blank" rel="noopener noreferrer">PlanformDB</a>;
@@ -309,8 +310,10 @@
                 <p>
                     The current app opens in a Source Atlas mode with the reviewed Zenodo GLBs
                     hotlisted by default, including the allometry marker layer with an explicit
-                    caveat that FirstPoint anchors are not centroids. It then separates Records, Layers, Model Replay, and
-                    Teaching as secondary evidence modes. The Records mode now filters the
+                    caveat that FirstPoint anchors are not centroids. Model Replay now includes
+                    a GIF generated from the reviewed neuron-cloud GLB positions, with the
+                    dynamics labeled as model-inspired rather than observed. It then separates
+                    Records, Layers, Model Replay, and Teaching as secondary evidence modes. The Records mode now filters the
                     reviewed PlanformDB subset by publication, outcome class, manipulation type,
                     timepoint, and measurement availability. Pending lanes for further
                     PlanformDB expansion, <code>12533272</code> volume-derived GLB work,
@@ -329,13 +332,13 @@
                     </p>
                     <dl class="project-facts">
                         <dt>Observed</dt>
-                        <dd>Zenodo posterior/anterior muscle SpatialGraph GLB line overlays, a neuron cell-cloud marker GLB, and an allometry FirstPoint marker GLB</dd>
+                        <dd>Zenodo posterior/anterior muscle SpatialGraph GLB line overlays, a neuron cell-cloud marker GLB, a nuclei centroid marker GLB, and an allometry FirstPoint marker GLB</dd>
                         <dt>Curated</dt>
                         <dd>20 reviewed PlanformDB Experiment records with 54 outcome details and reviewed frequency/sample-size values</dd>
                         <dt>Educational</dt>
                         <dd>Procedural body, field overlays, lessons, and schematic transitions</dd>
                         <dt>Replay</dt>
-                        <dd>One model-inspired adapter manifest bound only to the Sketchfab educational mesh</dd>
+                        <dd>Two model-inspired replays: one Sketchfab schematic adapter and one Zenodo neuron-cloud GIF manifest</dd>
                     </dl>
                 </article>
                 <article class="project-card">
@@ -352,7 +355,7 @@
                         <dt>Modes</dt>
                         <dd>Source Atlas, filtered Records, Layers, Model Replay, and Teaching</dd>
                         <dt>Immersive</dt>
-                        <dd>WebXR entry with controller selection seams</dd>
+                        <dd>WebXR entry with controller selection paths</dd>
                         <dt>Export</dt>
                         <dd>Graph JSON and screenshot evidence paths</dd>
                     </dl>
@@ -380,20 +383,22 @@
         <section class="section" id="showcase-export">
             <div class="section-heading">
                 <p class="section-kicker">Showcase export</p>
-                <h2>Validated Planarian 3D surface and graph loops</h2>
+                <h2>Validated Planarian 3D loops and Zenodo point-cloud replay</h2>
                 <p>
-                    These exports show the current Optics-owned preview/export path over
-                    Matter-owned synthetic educational state: a 720-node planarian graph, opaque
-                    body material, neon RGB activity/readout color, stable portrait framing, and a
-                    seamless reset-activity showcase loop. The animation is a visual teaching
-                    mode for surface-field inspection, not a calibrated planarian physiology
-                    trace.
+                     The first two exports show the current Optics-owned preview/export path over
+                     Matter-owned synthetic educational state: a 720-node planarian graph, opaque
+                     body material, neon RGB activity/readout color, stable portrait framing, and a
+                     reset-activity showcase loop. The animation is a visual teaching
+                     mode for surface-field inspection, not a calibrated planarian physiology
+                     trace.
                 </p>
                 <p>
-                    Both GIFs were generated at the exact export size and decoded after export as
-                    96-frame, 720 x 860 animations at 12 fps. The surface view emphasizes the
-                    body field; the graph view exposes the same activity through node and edge
-                    structure. The public assets match the latest Optics export smoke outputs.
+                    The new Zenodo replay uses the reviewed <code>planarianneuronpool.Cloud</code>
+                    GLB as the display-node source: 3,467 source points are sampled into a
+                    480-node nearest-neighbor graph and exported as a 96-frame, 720 x 860 GIF at
+                    12 fps. It is a qualitative voltage/conductance visualization over observed
+                    point positions, not a measured bioelectric trace or predictive regeneration
+                    model.
                 </p>
             </div>
             <div class="bioelectric-showcase-grid">
@@ -409,6 +414,13 @@
                     <figcaption>
                         <strong>Graph view.</strong>
                         <span>The same export path with nodes and conductance edges visible for structural inspection.</span>
+                    </figcaption>
+                </figure>
+                <figure class="bioelectric-showcase-figure">
+                    <img src="/assets/bioelectricity/zenodo-neuron-cloud-bioelectric-replay.gif" alt="Animated Zenodo-derived planarian neuron point cloud with model-inspired bioelectric voltage colors and conductance edges." width="720" height="860" loading="lazy" decoding="async">
+                    <figcaption>
+                        <strong>Zenodo neuron cloud replay.</strong>
+                        <span>Reviewed GLB point positions from Zenodo dataset1 drive the display graph; the voltage and conductance dynamics are qualitative model-inspired output.</span>
                     </figcaption>
                 </figure>
             </div>
@@ -483,8 +495,10 @@
                     into Matter. Planarian Regeneration XR carries a reviewed PlanformDB subset,
                     reviewed observed GLB overlays for posterior and anterior muscle SpatialGraph
                     objects, the <code>planarianneuronpool.Cloud</code> HxCluster marker
-                    cloud, and the <code>Result(2).Label-Analysis(2)</code> FirstPoint anchor
-                    marker cloud. It also has a Quest Browser validation lane that needs a refreshed headset
+                    cloud, the <code>Result</code> nuclei centroid marker cloud, and the
+                    <code>Result(2).Label-Analysis(2)</code> FirstPoint anchor marker cloud. The
+                    same reviewed neuron-cloud GLB now has a public model-inspired dynamics GIF
+                    replay. It also has a Quest Browser validation lane that needs a refreshed headset
                     pass whenever the production build changes.
                     Remaining targets are intentionally planned until source figures, tables,
                     categories, or datasets have been extracted into derived, rights-safe
@@ -541,8 +555,14 @@
                         <tr>
                             <td><code>zenodo_11724834_observed_glb_overlays</code></td>
                             <td><a class="reference-link" href="https://zenodo.org/records/11724834" target="_blank" rel="noopener noreferrer">Lu, 2024</a>; <a class="reference-link" href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a></td>
-                            <td>Planarian Regeneration XR bundles reviewed GLB line overlays derived from <code>posterior.Smt.SptGraph</code> and <code>anterior-filtered(2).CorrelationLines</code>: 61,744 / 17,880 vertices, 30,872 / 8,940 line segments, SHA-256 <code>daab05fbf234bb6db8b6618520982c1d159ca553a067825eba42929449478a2f</code> and <code>aa462e4141be28a5f7bb5d187a7b074a945815f19d3397110e90a8e102428ac7</code>. It also bundles the <code>planarianneuronpool.Cloud</code> HxCluster marker GLB with 3,467 source points, 20,802 vertices, 10,401 marker line segments, and SHA-256 <code>97a18266dfa0cfa0f1fac739cf01c64c5a02ea0413d5a0b7aa81e3eb24e45787</code>, plus a <code>Result(2).Label-Analysis(2)</code> FirstPoint anchor marker GLB with 3,567 anchors, 21,402 vertices, 10,701 marker line segments, and SHA-256 <code>7e26fc68b5f1297f33b9efc1375b0162646bd030f35e4a3c179e979679de1fcc</code>. Source DOI/object IDs, attribution, and geometry notice are recorded.</td>
-                            <td>Observed source-derived atlas geometry only; raw Zenodo files, source exports, decoder tooling, and conversion intermediates remain outside the public bundle. FirstPoint anchors are not centroids, and the overlays are not a regeneration simulation.</td>
+                            <td>Planarian Regeneration XR bundles reviewed GLB line overlays derived from <code>posterior.Smt.SptGraph</code> and <code>anterior-filtered(2).CorrelationLines</code>: 61,744 / 17,880 vertices, 30,872 / 8,940 line segments, SHA-256 <code>daab05fbf234bb6db8b6618520982c1d159ca553a067825eba42929449478a2f</code> and <code>aa462e4141be28a5f7bb5d187a7b074a945815f19d3397110e90a8e102428ac7</code>. It also bundles the <code>planarianneuronpool.Cloud</code> HxCluster marker GLB with 3,467 source points, 20,802 vertices, 10,401 marker line segments, and SHA-256 <code>97a18266dfa0cfa0f1fac739cf01c64c5a02ea0413d5a0b7aa81e3eb24e45787</code>; the <code>Result</code> nuclei centroid marker GLB with 4,304 centroids, 25,824 vertices, 12,912 marker line segments, and SHA-256 <code>7a191333ff455427f63a0ff65d112d2073473e0d22966cfa5c506e2204ad1af2</code>; and a <code>Result(2).Label-Analysis(2)</code> FirstPoint anchor marker GLB with 3,567 anchors, 21,402 vertices, 10,701 marker line segments, and SHA-256 <code>7e26fc68b5f1297f33b9efc1375b0162646bd030f35e4a3c179e979679de1fcc</code>. Source DOI/object IDs, attribution, and geometry notice are recorded.</td>
+                            <td>Observed source-derived atlas geometry only; raw Zenodo files, source exports, decoder tooling, and conversion intermediates remain outside the public bundle. Nuclei markers are centroids, FirstPoint anchors are not centroids, and the overlays are not a regeneration simulation.</td>
+                        </tr>
+                        <tr>
+                            <td><code>zenodo_neuron_cloud_bioelectric_replay</code></td>
+                            <td><a class="reference-link" href="https://zenodo.org/records/11724834" target="_blank" rel="noopener noreferrer">Lu, 2024</a>; Planarian XR public GLB replay generator</td>
+                            <td>The reviewed <code>planarianneuronpool.Cloud</code> GLB supplies display positions for <code>zenodo-neuron-cloud-bioelectric-replay.gif</code>: 480 sampled nodes, 1,767 nearest-neighbor conductance edges, 96 frames at 720 x 860 pixels, GIF SHA-256 <code>de307a94e2d67ae378816362c33cd43dbf49f6f288a5bbf796e057f09ab78ee2</code>.</td>
+                            <td>Model-inspired display replay only. It is not a measured bioelectric trace, calibrated physiology, mechanistic model output, or predictive regeneration simulation.</td>
                         </tr>
                         <tr>
                             <td><code>zenodo_12533272_volume_record</code></td>
