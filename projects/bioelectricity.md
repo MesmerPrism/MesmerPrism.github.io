@@ -2,7 +2,7 @@
 
 Source: https://mesmerprism.com/projects/bioelectricity.html
 Canonical HTML: https://mesmerprism.com/projects/bioelectricity.html
-Generated: 2026-06-19
+Generated: 2026-06-20
 Description: Bioelectricity and morphogenesis across Rusty Morphospace and Planarian Regeneration XR: source-bounded planarian teaching models, WebXR atlas controls, curated records, and observed geometry overlays.
 Markdown: https://mesmerprism.com/projects/bioelectricity.md
 Plain text: https://mesmerprism.com/projects/bioelectricity.txt
@@ -129,8 +129,9 @@ Rusty Morphospace and tissue-scale patterning
  record to regeneration outcome. The app now carries a reviewed PlanformDB
  subset with 20 selected source records and 54 outcome details, including
  browser-facing frequency and sample-size values where reviewed, bundled
- observed posterior and anterior muscle SpatialGraph GLB line overlays plus
- a neuron cell-cloud marker GLB derived from the Zenodo ETLSM dataset,
+ observed posterior and anterior muscle SpatialGraph GLB line overlays,
+ a neuron cell-cloud marker GLB, and an allometry FirstPoint marker GLB
+ derived from the Zenodo ETLSM dataset,
  a parsed-but-deferred sidecar summary for
  Zenodo 12533272 , and one registered model-inspired schematic
  replay manifest for the Sketchfab educational mesh. The observed Zenodo GLBs
@@ -149,7 +150,8 @@ Rusty Morphospace and tissue-scale patterning
  regeneration simulator.
 
  The current app opens in a Source Atlas mode with the reviewed Zenodo GLBs
- hotlisted by default, then separates Records, Layers, Model Replay, and
+ hotlisted by default, including the allometry marker layer with an explicit
+ caveat that FirstPoint anchors are not centroids. It then separates Records, Layers, Model Replay, and
  Teaching as secondary evidence modes. The Records mode now filters the
  reviewed PlanformDB subset by publication, outcome class, manipulation type,
  timepoint, and measurement availability. Pending lanes for further
@@ -166,7 +168,7 @@ Rusty Morphospace and tissue-scale patterning
  schema level.
 
  Observed
- Zenodo posterior/anterior muscle SpatialGraph GLB line overlays and a neuron cell-cloud marker GLB
+ Zenodo posterior/anterior muscle SpatialGraph GLB line overlays, a neuron cell-cloud marker GLB, and an allometry FirstPoint marker GLB
  Curated
  20 reviewed PlanformDB Experiment records with 54 outcome details and reviewed frequency/sample-size values
  Educational
@@ -278,8 +280,9 @@ Rusty Morphospace and tissue-scale patterning
  PlanformDB/metric/taxonomy layer now has a curated provenance fixture mirrored
  into Matter. Planarian Regeneration XR carries a reviewed PlanformDB subset,
  reviewed observed GLB overlays for posterior and anterior muscle SpatialGraph
- objects plus the planarianneuronpool.Cloud HxCluster marker
- cloud, and a Quest Browser validation lane that needs a refreshed headset
+ objects, the planarianneuronpool.Cloud HxCluster marker
+ cloud, and the Result(2).Label-Analysis(2) FirstPoint anchor
+ marker cloud. It also has a Quest Browser validation lane that needs a refreshed headset
  pass whenever the production build changes.
  Remaining targets are intentionally planned until source figures, tables,
  categories, or datasets have been extracted into derived, rights-safe
@@ -322,12 +325,12 @@ Rusty Morphospace and tissue-scale patterning
 
  zenodo_11724834_observed_glb_overlays
  [Lu, 2024](https://zenodo.org/records/11724834); [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
- Planarian Regeneration XR bundles reviewed GLB line overlays derived from posterior.Smt.SptGraph and anterior-filtered(2).CorrelationLines : 61,744 / 17,880 vertices, 30,872 / 8,940 line segments, SHA-256 daab05fbf234bb6db8b6618520982c1d159ca553a067825eba42929449478a2f and aa462e4141be28a5f7bb5d187a7b074a945815f19d3397110e90a8e102428ac7 . It also bundles the planarianneuronpool.Cloud HxCluster marker GLB with 3,467 source points, 20,802 vertices, 10,401 marker line segments, and SHA-256 97a18266dfa0cfa0f1fac739cf01c64c5a02ea0413d5a0b7aa81e3eb24e45787 . Source DOI/object IDs, attribution, and geometry notice are recorded.
- Observed source-derived atlas geometry only; raw Zenodo files, source exports, decoder tooling, and conversion intermediates remain outside the public bundle, and the overlays are not a regeneration simulation.
+ Planarian Regeneration XR bundles reviewed GLB line overlays derived from posterior.Smt.SptGraph and anterior-filtered(2).CorrelationLines : 61,744 / 17,880 vertices, 30,872 / 8,940 line segments, SHA-256 daab05fbf234bb6db8b6618520982c1d159ca553a067825eba42929449478a2f and aa462e4141be28a5f7bb5d187a7b074a945815f19d3397110e90a8e102428ac7 . It also bundles the planarianneuronpool.Cloud HxCluster marker GLB with 3,467 source points, 20,802 vertices, 10,401 marker line segments, and SHA-256 97a18266dfa0cfa0f1fac739cf01c64c5a02ea0413d5a0b7aa81e3eb24e45787 , plus a Result(2).Label-Analysis(2) FirstPoint anchor marker GLB with 3,567 anchors, 21,402 vertices, 10,701 marker line segments, and SHA-256 7e26fc68b5f1297f33b9efc1375b0162646bd030f35e4a3c179e979679de1fcc . Source DOI/object IDs, attribution, and geometry notice are recorded.
+ Observed source-derived atlas geometry only; raw Zenodo files, source exports, decoder tooling, and conversion intermediates remain outside the public bundle. FirstPoint anchors are not centroids, and the overlays are not a regeneration simulation.
 
  zenodo_12533272_volume_record
  [Lu, 2024 dataset2](https://zenodo.org/records/12533272); [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
- Public-safe sidecar facts are recorded: mergeall.am.lda verifies a 4469 x 7887 x 3520 16-bit tiled volume, 124,069,450,560 voxels, Gzip tile compression, intensity bounds from 0 to 44182 , and a linked mergeall.am.dat volume of about 34.5 GB. No reviewed browser-safe GLB derivative from this record is bundled.
+ Public-safe sidecar facts are recorded: mergeall.am.lda verifies a 4469 x 7887 x 3520 16-bit tiled volume, 124,069,450,560 voxels, Gzip tile compression, intensity bounds from 0 to 44182 , and a linked mergeall.am.dat volume of about 34.5 GB. A partial ignored raw intake of the linked volume is present; no reviewed browser-safe GLB derivative from this record is bundled.
  Deferred; raw sidecar XML, raw histogram payload, TileMinMax payload, contributor-local source path, source volume, source export, intermediate, decoder output, and GLB derivative from this record are not published in the current public bundle.
 
  planarian_xr_schematic_replay_manifest
@@ -395,7 +398,7 @@ Rusty Morphospace and tissue-scale patterning
  The planarian atlas contributes educational region labels, body geometry
  lessons, outcome labels, source/provenance habits, reviewed and filterable
  PlanformDB records, and observed source-derived posterior/anterior
- muscle overlays plus a neuron cell-cloud marker overlay.
+ muscle overlays plus neuron and allometry marker overlays.
  Matter still builds its own computational surface graph and validation
  fixtures.
 

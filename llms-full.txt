@@ -1,13 +1,13 @@
 # Mesmer Prism Full Agent Context
 
-Generated: 2026-06-19
+Generated: 2026-06-20
 
 <page url="https://mesmerprism.com/duisburg/" path="duisburg/index.html">
 # Shared Bodies for Mixed-Ability Collaboration
 
 Source: https://mesmerprism.com/duisburg/
 Canonical HTML: https://mesmerprism.com/duisburg/
-Generated: 2026-06-19
+Generated: 2026-06-20
 Description: A Duisburg-facing research pitch for Mixed-Ability Human-Swarm Interaction: shared swarm bodies, inspectable input mappings, and a route from connectedness to robotics translation.
 Markdown: https://mesmerprism.com/duisburg/index.md
 Plain text: https://mesmerprism.com/duisburg/index.txt
@@ -490,7 +490,7 @@ Mixed-ability XR research
 
 Source: https://mesmerprism.com/
 Canonical HTML: https://mesmerprism.com/
-Generated: 2026-06-19
+Generated: 2026-06-20
 Description: XR systems, citizen-science tools, visual instruments, and essays for altered-perception design. Mesmer Prism makes strange experience vivid, inspectable, and evidence-bounded.
 Markdown: https://mesmerprism.com/index.md
 Plain text: https://mesmerprism.com/index.txt
@@ -1086,7 +1086,7 @@ Till Holzapfel
 
 Source: https://mesmerprism.com/plasmatic-multitudes/assets/calligraphy-reference-pack/board.html
 Canonical HTML: https://mesmerprism.com/plasmatic-multitudes/assets/calligraphy-reference-pack/board.html
-Generated: 2026-06-19
+Generated: 2026-06-20
 Markdown: https://mesmerprism.com/plasmatic-multitudes/assets/calligraphy-reference-pack/board.md
 Plain text: https://mesmerprism.com/plasmatic-multitudes/assets/calligraphy-reference-pack/board.txt
 BibTeX references: https://mesmerprism.com/plasmatic-multitudes/assets/calligraphy-reference-pack/board.bib
@@ -1236,7 +1236,7 @@ Museum-backed pack
 
 Source: https://mesmerprism.com/plasmatic-multitudes/background/somaesthetics.html
 Canonical HTML: https://mesmerprism.com/plasmatic-multitudes/background/somaesthetics.html
-Generated: 2026-06-19
+Generated: 2026-06-20
 Description: A short public note on somaesthetics as the method anchor for Plasmatic Multitudes.
 Markdown: https://mesmerprism.com/plasmatic-multitudes/background/somaesthetics.md
 Plain text: https://mesmerprism.com/plasmatic-multitudes/background/somaesthetics.txt
@@ -1307,7 +1307,7 @@ Background appendix | Updated May 24, 2026
 
 Source: https://mesmerprism.com/plasmatic-multitudes/essay.html
 Canonical HTML: https://mesmerprism.com/plasmatic-multitudes/essay.html
-Generated: 2026-06-19
+Generated: 2026-06-20
 Description: A long-form essay on weakly bounded bodies, XR embodiment, media genealogy, computational morphogenesis, and cautious pain translation.
 Markdown: https://mesmerprism.com/plasmatic-multitudes/essay.md
 Plain text: https://mesmerprism.com/plasmatic-multitudes/essay.txt
@@ -1665,7 +1665,7 @@ Long essay | Updated May 24, 2026
 
 Source: https://mesmerprism.com/plasmatic-multitudes/
 Canonical HTML: https://mesmerprism.com/plasmatic-multitudes/
-Generated: 2026-06-19
+Generated: 2026-06-20
 Description: Long essay, method notes, vocabulary, pain-translation hypotheses, mixed-ability human-swarm interaction, and annotated references for weakly bounded bodies and semi-corporeal avatar aesthetics.
 Markdown: https://mesmerprism.com/plasmatic-multitudes/index.md
 Plain text: https://mesmerprism.com/plasmatic-multitudes/index.txt
@@ -1729,7 +1729,7 @@ Field guide | Updated May 24, 2026
 
 Source: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html
 Canonical HTML: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html
-Generated: 2026-06-19
+Generated: 2026-06-20
 Description: A Plasmatic Multitudes research track on shared visual swarm bodies, mixed-ability collaboration, access-practice mapping, connectedness-first exploration, encounter, cooperative play, and later physical translation.
 Markdown: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.md
 Plain text: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.txt
@@ -3138,7 +3138,7 @@ Mixed-ability HSI | Updated June 12, 2026
 
 Source: https://mesmerprism.com/plasmatic-multitudes/pain.html
 Canonical HTML: https://mesmerprism.com/plasmatic-multitudes/pain.html
-Generated: 2026-06-19
+Generated: 2026-06-20
 Description: A cautious research note on boundary precision, avatar materiality, protective fields, ownership, agency, and pain-related body-representation hypotheses. Not a treatment claim.
 Markdown: https://mesmerprism.com/plasmatic-multitudes/pain.md
 Plain text: https://mesmerprism.com/plasmatic-multitudes/pain.txt
@@ -3353,7 +3353,7 @@ Pain translation | Updated May 24, 2026
 
 Source: https://mesmerprism.com/plasmatic-multitudes/project.html
 Canonical HTML: https://mesmerprism.com/plasmatic-multitudes/project.html
-Generated: 2026-06-19
+Generated: 2026-06-20
 Description: A compact method note on boundary precision, somaesthetics, coherence, morphogenesis, and weakly bounded body design.
 Markdown: https://mesmerprism.com/plasmatic-multitudes/project.md
 Plain text: https://mesmerprism.com/plasmatic-multitudes/project.txt
@@ -3428,7 +3428,7 @@ Method | Updated May 24, 2026
 
 Source: https://mesmerprism.com/plasmatic-multitudes/references.html
 Canonical HTML: https://mesmerprism.com/plasmatic-multitudes/references.html
-Generated: 2026-06-19
+Generated: 2026-06-20
 Description: Annotated references across somaesthetics, perception, pseudo-haptics, morphogenesis, XR embodiment, media genealogy, and pain/body-representation research.
 Markdown: https://mesmerprism.com/plasmatic-multitudes/references.md
 Plain text: https://mesmerprism.com/plasmatic-multitudes/references.txt
@@ -3625,7 +3625,7 @@ Annotated sources | Updated June 11, 2026
 
 Source: https://mesmerprism.com/plasmatic-multitudes/terminology.html
 Canonical HTML: https://mesmerprism.com/plasmatic-multitudes/terminology.html
-Generated: 2026-06-19
+Generated: 2026-06-20
 Description: Terms for semi-corporeal avatars, plasmatic bodies, particle bodies, swarm bodies, aura avatars, boundary precision, pseudo-haptics, and related design concepts.
 Markdown: https://mesmerprism.com/plasmatic-multitudes/terminology.md
 Plain text: https://mesmerprism.com/plasmatic-multitudes/terminology.txt
@@ -4071,7 +4071,7 @@ Field guide | Updated May 24, 2026
 
 Source: https://mesmerprism.com/projects/altered-xperience-project.html
 Canonical HTML: https://mesmerprism.com/projects/altered-xperience-project.html
-Generated: 2026-06-19
+Generated: 2026-06-20
 Description: The Altered Xperience Project is a CIRCE-led citizen-science survey for anonymous altered-state reports, with multilingual questionnaires, feedback, scoring, exports, and collaborator workflow.
 Markdown: https://mesmerprism.com/projects/altered-xperience-project.md
 Plain text: https://mesmerprism.com/projects/altered-xperience-project.txt
@@ -4195,7 +4195,7 @@ Citizen-science altered-state survey
 
 Source: https://mesmerprism.com/projects/bioelectricity.html
 Canonical HTML: https://mesmerprism.com/projects/bioelectricity.html
-Generated: 2026-06-19
+Generated: 2026-06-20
 Description: Bioelectricity and morphogenesis across Rusty Morphospace and Planarian Regeneration XR: source-bounded planarian teaching models, WebXR atlas controls, curated records, and observed geometry overlays.
 Markdown: https://mesmerprism.com/projects/bioelectricity.md
 Plain text: https://mesmerprism.com/projects/bioelectricity.txt
@@ -4322,8 +4322,9 @@ Rusty Morphospace and tissue-scale patterning
  record to regeneration outcome. The app now carries a reviewed PlanformDB
  subset with 20 selected source records and 54 outcome details, including
  browser-facing frequency and sample-size values where reviewed, bundled
- observed posterior and anterior muscle SpatialGraph GLB line overlays plus
- a neuron cell-cloud marker GLB derived from the Zenodo ETLSM dataset,
+ observed posterior and anterior muscle SpatialGraph GLB line overlays,
+ a neuron cell-cloud marker GLB, and an allometry FirstPoint marker GLB
+ derived from the Zenodo ETLSM dataset,
  a parsed-but-deferred sidecar summary for
  Zenodo 12533272 , and one registered model-inspired schematic
  replay manifest for the Sketchfab educational mesh. The observed Zenodo GLBs
@@ -4342,7 +4343,8 @@ Rusty Morphospace and tissue-scale patterning
  regeneration simulator.
 
  The current app opens in a Source Atlas mode with the reviewed Zenodo GLBs
- hotlisted by default, then separates Records, Layers, Model Replay, and
+ hotlisted by default, including the allometry marker layer with an explicit
+ caveat that FirstPoint anchors are not centroids. It then separates Records, Layers, Model Replay, and
  Teaching as secondary evidence modes. The Records mode now filters the
  reviewed PlanformDB subset by publication, outcome class, manipulation type,
  timepoint, and measurement availability. Pending lanes for further
@@ -4359,7 +4361,7 @@ Rusty Morphospace and tissue-scale patterning
  schema level.
 
  Observed
- Zenodo posterior/anterior muscle SpatialGraph GLB line overlays and a neuron cell-cloud marker GLB
+ Zenodo posterior/anterior muscle SpatialGraph GLB line overlays, a neuron cell-cloud marker GLB, and an allometry FirstPoint marker GLB
  Curated
  20 reviewed PlanformDB Experiment records with 54 outcome details and reviewed frequency/sample-size values
  Educational
@@ -4471,8 +4473,9 @@ Rusty Morphospace and tissue-scale patterning
  PlanformDB/metric/taxonomy layer now has a curated provenance fixture mirrored
  into Matter. Planarian Regeneration XR carries a reviewed PlanformDB subset,
  reviewed observed GLB overlays for posterior and anterior muscle SpatialGraph
- objects plus the planarianneuronpool.Cloud HxCluster marker
- cloud, and a Quest Browser validation lane that needs a refreshed headset
+ objects, the planarianneuronpool.Cloud HxCluster marker
+ cloud, and the Result(2).Label-Analysis(2) FirstPoint anchor
+ marker cloud. It also has a Quest Browser validation lane that needs a refreshed headset
  pass whenever the production build changes.
  Remaining targets are intentionally planned until source figures, tables,
  categories, or datasets have been extracted into derived, rights-safe
@@ -4515,12 +4518,12 @@ Rusty Morphospace and tissue-scale patterning
 
  zenodo_11724834_observed_glb_overlays
  [Lu, 2024](https://zenodo.org/records/11724834); [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
- Planarian Regeneration XR bundles reviewed GLB line overlays derived from posterior.Smt.SptGraph and anterior-filtered(2).CorrelationLines : 61,744 / 17,880 vertices, 30,872 / 8,940 line segments, SHA-256 daab05fbf234bb6db8b6618520982c1d159ca553a067825eba42929449478a2f and aa462e4141be28a5f7bb5d187a7b074a945815f19d3397110e90a8e102428ac7 . It also bundles the planarianneuronpool.Cloud HxCluster marker GLB with 3,467 source points, 20,802 vertices, 10,401 marker line segments, and SHA-256 97a18266dfa0cfa0f1fac739cf01c64c5a02ea0413d5a0b7aa81e3eb24e45787 . Source DOI/object IDs, attribution, and geometry notice are recorded.
- Observed source-derived atlas geometry only; raw Zenodo files, source exports, decoder tooling, and conversion intermediates remain outside the public bundle, and the overlays are not a regeneration simulation.
+ Planarian Regeneration XR bundles reviewed GLB line overlays derived from posterior.Smt.SptGraph and anterior-filtered(2).CorrelationLines : 61,744 / 17,880 vertices, 30,872 / 8,940 line segments, SHA-256 daab05fbf234bb6db8b6618520982c1d159ca553a067825eba42929449478a2f and aa462e4141be28a5f7bb5d187a7b074a945815f19d3397110e90a8e102428ac7 . It also bundles the planarianneuronpool.Cloud HxCluster marker GLB with 3,467 source points, 20,802 vertices, 10,401 marker line segments, and SHA-256 97a18266dfa0cfa0f1fac739cf01c64c5a02ea0413d5a0b7aa81e3eb24e45787 , plus a Result(2).Label-Analysis(2) FirstPoint anchor marker GLB with 3,567 anchors, 21,402 vertices, 10,701 marker line segments, and SHA-256 7e26fc68b5f1297f33b9efc1375b0162646bd030f35e4a3c179e979679de1fcc . Source DOI/object IDs, attribution, and geometry notice are recorded.
+ Observed source-derived atlas geometry only; raw Zenodo files, source exports, decoder tooling, and conversion intermediates remain outside the public bundle. FirstPoint anchors are not centroids, and the overlays are not a regeneration simulation.
 
  zenodo_12533272_volume_record
  [Lu, 2024 dataset2](https://zenodo.org/records/12533272); [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
- Public-safe sidecar facts are recorded: mergeall.am.lda verifies a 4469 x 7887 x 3520 16-bit tiled volume, 124,069,450,560 voxels, Gzip tile compression, intensity bounds from 0 to 44182 , and a linked mergeall.am.dat volume of about 34.5 GB. No reviewed browser-safe GLB derivative from this record is bundled.
+ Public-safe sidecar facts are recorded: mergeall.am.lda verifies a 4469 x 7887 x 3520 16-bit tiled volume, 124,069,450,560 voxels, Gzip tile compression, intensity bounds from 0 to 44182 , and a linked mergeall.am.dat volume of about 34.5 GB. A partial ignored raw intake of the linked volume is present; no reviewed browser-safe GLB derivative from this record is bundled.
  Deferred; raw sidecar XML, raw histogram payload, TileMinMax payload, contributor-local source path, source volume, source export, intermediate, decoder output, and GLB derivative from this record are not published in the current public bundle.
 
  planarian_xr_schematic_replay_manifest
@@ -4588,7 +4591,7 @@ Rusty Morphospace and tissue-scale patterning
  The planarian atlas contributes educational region labels, body geometry
  lessons, outcome labels, source/provenance habits, reviewed and filterable
  PlanformDB records, and observed source-derived posterior/anterior
- muscle overlays plus a neuron cell-cloud marker overlay.
+ muscle overlays plus neuron and allometry marker overlays.
  Matter still builds its own computational surface graph and validation
  fixtures.
 
@@ -4753,7 +4756,7 @@ Rusty Morphospace and tissue-scale patterning
 
 Source: https://mesmerprism.com/projects/brain-candy.html
 Canonical HTML: https://mesmerprism.com/projects/brain-candy.html
-Generated: 2026-06-19
+Generated: 2026-06-20
 Description: Brain Candy studies rhythmic light, recursive visual structure, sound, breath, expectation, and interaction as tunable non-drug state-shift design.
 Markdown: https://mesmerprism.com/projects/brain-candy.md
 Plain text: https://mesmerprism.com/projects/brain-candy.txt
@@ -5301,7 +5304,7 @@ Non-drug state-shift design
 
 Source: https://mesmerprism.com/projects/bressloff-v1-form-constants-deep-dive.html
 Canonical HTML: https://mesmerprism.com/projects/bressloff-v1-form-constants-deep-dive.html
-Generated: 2026-06-19
+Generated: 2026-06-20
 Description: A notebook-style deep dive into Bressloff form constants, Rule flicker modeling, and generated driven neural-field diagnostics after Rule.
 Markdown: https://mesmerprism.com/projects/bressloff-v1-form-constants-deep-dive.md
 Plain text: https://mesmerprism.com/projects/bressloff-v1-form-constants-deep-dive.txt
@@ -6298,7 +6301,7 @@ Modeling deep dive
 
 Source: https://mesmerprism.com/projects/bressloff-v1-form-constants.html
 Canonical HTML: https://mesmerprism.com/projects/bressloff-v1-form-constants.html
-Generated: 2026-06-19
+Generated: 2026-06-20
 Description: Animated notes on Bressloff visual-cortex form constants, Rule flicker modeling, and generated MacKay, Bolelli, and Nicks driven-field diagnostics.
 Markdown: https://mesmerprism.com/projects/bressloff-v1-form-constants.md
 Plain text: https://mesmerprism.com/projects/bressloff-v1-form-constants.txt
@@ -6756,7 +6759,7 @@ Visual cortex and form constants
 
 Source: https://mesmerprism.com/projects/deep-dream.html
 Canonical HTML: https://mesmerprism.com/projects/deep-dream.html
-Generated: 2026-06-19
+Generated: 2026-06-20
 Description: Deep Dream explains how machine-vision hallucination, community visual taxonomies, VR research, and cyberdelic systems shaped simulated psychedelic vision.
 Markdown: https://mesmerprism.com/projects/deep-dream.md
 Plain text: https://mesmerprism.com/projects/deep-dream.txt
@@ -7310,7 +7313,7 @@ Simulated psychedelic vision
 
 Source: https://mesmerprism.com/projects/fractal-optics.html
 Canonical HTML: https://mesmerprism.com/projects/fractal-optics.html
-Generated: 2026-06-19
+Generated: 2026-06-20
 Description: Fractal Optics maps fractal phototherapy, retinal and ophthalmic stimulation, VR delivery, and patterned-light comparator literatures.
 Markdown: https://mesmerprism.com/projects/fractal-optics.md
 Plain text: https://mesmerprism.com/projects/fractal-optics.txt
@@ -7558,7 +7561,7 @@ Retinal stimulation and patterned light
 
 Source: https://mesmerprism.com/projects/hollow-face-lab.html
 Canonical HTML: https://mesmerprism.com/projects/hollow-face-lab.html
-Generated: 2026-06-19
+Generated: 2026-06-20
 Description: Hollow Face Lab maps WebGL, WebXR, texture controls, and Rusty XR implementation choices against hollow-face and depth-inversion research.
 Markdown: https://mesmerprism.com/projects/hollow-face-lab.md
 Plain text: https://mesmerprism.com/projects/hollow-face-lab.txt
@@ -7722,7 +7725,7 @@ Depth inversion and research tooling
 
 Source: https://mesmerprism.com/projects/hollow-face-lab/app/
 Canonical HTML: https://mesmerprism.com/projects/hollow-face-lab/app/
-Generated: 2026-06-19
+Generated: 2026-06-20
 Description: Browser-hosted Hollow Face Lab renderer with concavity, lighting, mesh, probe, texture, and response controls.
 Markdown: https://mesmerprism.com/projects/hollow-face-lab/app/index.md
 Plain text: https://mesmerprism.com/projects/hollow-face-lab/app/index.txt
@@ -7865,7 +7868,7 @@ Fullscreen
 
 Source: https://mesmerprism.com/projects/optical-movement-illusions.html
 Canonical HTML: https://mesmerprism.com/projects/optical-movement-illusions.html
-Generated: 2026-06-19
+Generated: 2026-06-20
 Description: Optical Movement Illusions maps peripheral drift, Rotating Snakes, static motion illusions, color and luminance parameters, and the mechanism-design bridge into perceptual tooling.
 Markdown: https://mesmerprism.com/projects/optical-movement-illusions.md
 Plain text: https://mesmerprism.com/projects/optical-movement-illusions.txt
@@ -8064,7 +8067,7 @@ Static motion and perceptual mechanics
 
 Source: https://mesmerprism.com/projects/phenomenological-control.html
 Canonical HTML: https://mesmerprism.com/projects/phenomenological-control.html
-Generated: 2026-06-19
+Generated: 2026-06-20
 Description: A public guide to phenomenological control, imagery variation, expectation-shaped experience, source monitoring, absorption, porosity, hypnosis, induced vision, and meaning-making.
 Markdown: https://mesmerprism.com/projects/phenomenological-control.md
 Plain text: https://mesmerprism.com/projects/phenomenological-control.txt
@@ -8609,7 +8612,7 @@ Imagery, suggestion, and source monitoring
 
 Source: https://mesmerprism.com/projects/plasmatic-multitudes.html
 Canonical HTML: https://mesmerprism.com/projects/plasmatic-multitudes.html
-Generated: 2026-06-19
+Generated: 2026-06-20
 Description: A public overview of weakly bounded bodies: avatars, swarms, auras, particle forms, and luminous bodies that soften while remaining coherent enough for embodiment, relation, and cautious research translation.
 Markdown: https://mesmerprism.com/projects/plasmatic-multitudes.md
 Plain text: https://mesmerprism.com/projects/plasmatic-multitudes.txt
@@ -9126,7 +9129,7 @@ Weakly bounded embodiment
 
 Source: https://mesmerprism.com/projects/polar-h10.html
 Canonical HTML: https://mesmerprism.com/projects/polar-h10.html
-Generated: 2026-06-19
+Generated: 2026-06-20
 Description: Public overview of Mesmer Prism's Polar H10 work across minimal signal packages, Rusty XR, Quest broker streams, Windows capture, Android diagnostics, Unity Quest integration, and Viscereality research tooling.
 Markdown: https://mesmerprism.com/projects/polar-h10.md
 Plain text: https://mesmerprism.com/projects/polar-h10.txt
@@ -9363,7 +9366,7 @@ Biofeedback sensor integration
 
 Source: https://mesmerprism.com/projects/prophantasia.html
 Canonical HTML: https://mesmerprism.com/projects/prophantasia.html
-Generated: 2026-06-19
+Generated: 2026-06-20
 Description: Prophantasia covers projected imagery, aphantasia, source judgment, practice ecology, and neighboring phenomena such as imposition, flicker, DeepDream, visual snow, and HPPD.
 Markdown: https://mesmerprism.com/projects/prophantasia.md
 Plain text: https://mesmerprism.com/projects/prophantasia.txt
@@ -9969,7 +9972,7 @@ Projected imagery and source judgment
 
 Source: https://mesmerprism.com/projects/rusty-morphospace.html
 Canonical HTML: https://mesmerprism.com/projects/rusty-morphospace.html
-Generated: 2026-06-19
+Generated: 2026-06-20
 Description: Rusty Morphospace is a modular Rust platform for computational matter, situated relations, runtime authority, renderer-neutral inspection, and Quest validation.
 Markdown: https://mesmerprism.com/projects/rusty-morphospace.md
 Plain text: https://mesmerprism.com/projects/rusty-morphospace.txt
@@ -10626,7 +10629,7 @@ Computational morphology platform
 
 Source: https://mesmerprism.com/projects/rusty-morphospace/rusty-xr.html
 Canonical HTML: https://mesmerprism.com/projects/rusty-morphospace/rusty-xr.html
-Generated: 2026-06-19
+Generated: 2026-06-20
 Description: Rusty XR is the legacy/reference Quest and XR compatibility surface under Rusty Morphospace, preserving public examples, passthrough notes, diagnostics, and companion-tool history.
 Markdown: https://mesmerprism.com/projects/rusty-morphospace/rusty-xr.md
 Plain text: https://mesmerprism.com/projects/rusty-morphospace/rusty-xr.txt
@@ -10772,7 +10775,7 @@ Legacy Quest and XR reference
 
 Source: https://mesmerprism.com/projects/sane.html
 Canonical HTML: https://mesmerprism.com/projects/sane.html
-Generated: 2026-06-19
+Generated: 2026-06-20
 Description: SANE is a proposed framework for reading coupled changes across somaesthetic practice, anthropotechnical mediation, noetic meaning, and emergent systems.
 Markdown: https://mesmerprism.com/projects/sane.md
 Plain text: https://mesmerprism.com/projects/sane.txt
@@ -11283,7 +11286,7 @@ Body, tools, meaning, systems
 
 Source: https://mesmerprism.com/projects/scientific-surrealism.html
 Canonical HTML: https://mesmerprism.com/projects/scientific-surrealism.html
-Generated: 2026-06-19
+Generated: 2026-06-20
 Description: Scientific surrealism studies dream bureaus, scientific-looking journals, diagrams, and experimental machines that change what counts as an observation.
 Markdown: https://mesmerprism.com/projects/scientific-surrealism.md
 Plain text: https://mesmerprism.com/projects/scientific-surrealism.txt
@@ -11697,7 +11700,7 @@ Research apparatus and knowledge-art
 
 Source: https://mesmerprism.com/projects/tulpas.html
 Canonical HTML: https://mesmerprism.com/projects/tulpas.html
-Generated: 2026-06-19
+Generated: 2026-06-20
 Description: Tulpas covers modern online tulpamancy, thoughtforms, headmates, servitors, egregores, imposition, voice-like experience, and adjacent AI companion analogies.
 Markdown: https://mesmerprism.com/projects/tulpas.md
 Plain text: https://mesmerprism.com/projects/tulpas.txt
@@ -12223,7 +12226,7 @@ Made inner others and modern tulpamancy
 
 Source: https://mesmerprism.com/projects/viscereality-companion.html
 Canonical HTML: https://mesmerprism.com/projects/viscereality-companion.html
-Generated: 2026-06-19
+Generated: 2026-06-20
 Description: Quest Companion Tools provides Windows and Android utilities for Meta Quest install, launch, casting, diagnostics, and evidence capture.
 Markdown: https://mesmerprism.com/projects/viscereality-companion.md
 Plain text: https://mesmerprism.com/projects/viscereality-companion.txt
@@ -12352,7 +12355,7 @@ Meta Quest operator tooling
 
 Source: https://mesmerprism.com/projects/viscereality.html
 Canonical HTML: https://mesmerprism.com/projects/viscereality.html
-Generated: 2026-06-19
+Generated: 2026-06-20
 Description: Viscereality is a Quest-based bioresponsive VR research system for breath interaction, cardiac coherence training, oscillator-driven visuals, and repeatable study sessions.
 Markdown: https://mesmerprism.com/projects/viscereality.md
 Plain text: https://mesmerprism.com/projects/viscereality.txt
@@ -12485,7 +12488,7 @@ Current XR research system
 
 Source: https://mesmerprism.com/Strobotorch/flashing-light-safety/
 Canonical HTML: https://mesmerprism.com/Strobotorch/flashing-light-safety/
-Generated: 2026-06-19
+Generated: 2026-06-20
 Description: Safety warnings, frequency background, and source references for Strobotorch flashlight signaling.
 Markdown: https://mesmerprism.com/Strobotorch/flashing-light-safety/index.md
 Plain text: https://mesmerprism.com/Strobotorch/flashing-light-safety/index.txt
@@ -12673,7 +12676,7 @@ Public warning and source background
 
 Source: https://mesmerprism.com/Strobotorch/
 Canonical HTML: https://mesmerprism.com/Strobotorch/
-Generated: 2026-06-19
+Generated: 2026-06-20
 Description: Strobotorch is an Android flashlight-signaling and diagnostics tool for torch and camera APIs, visible-light signal tests, device logging, and flashing-light safety.
 Markdown: https://mesmerprism.com/Strobotorch/index.md
 Plain text: https://mesmerprism.com/Strobotorch/index.txt
@@ -12773,7 +12776,7 @@ Flashlight signaling safety
 
 Source: https://mesmerprism.com/Strobotorch/project-boundary/
 Canonical HTML: https://mesmerprism.com/Strobotorch/project-boundary/
-Generated: 2026-06-19
+Generated: 2026-06-20
 Description: The scope of Strobotorch Android flashlight signaling and diagnostics tooling.
 Markdown: https://mesmerprism.com/Strobotorch/project-boundary/index.md
 Plain text: https://mesmerprism.com/Strobotorch/project-boundary/index.txt
@@ -12814,7 +12817,7 @@ Project scope
 
 Source: https://mesmerprism.com/Strobotorch/sources/
 Canonical HTML: https://mesmerprism.com/Strobotorch/sources/
-Generated: 2026-06-19
+Generated: 2026-06-20
 Description: Academic and public sources for Strobotorch flashing-light safety, frequency context, torch/camera diagnostics, and visible-light signal tooling.
 Markdown: https://mesmerprism.com/Strobotorch/sources/index.md
 Plain text: https://mesmerprism.com/Strobotorch/sources/index.txt
@@ -13057,7 +13060,7 @@ Source library
 
 Source: https://mesmerprism.com/tmp/video-carousel-demo.html
 Canonical HTML: https://mesmerprism.com/tmp/video-carousel-demo.html
-Generated: 2026-06-19
+Generated: 2026-06-20
 Markdown: https://mesmerprism.com/tmp/video-carousel-demo.md
 Plain text: https://mesmerprism.com/tmp/video-carousel-demo.txt
 
