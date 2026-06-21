@@ -2,7 +2,7 @@
 
 Source: https://mesmerprism.com/projects/polar-h10.html
 Canonical HTML: https://mesmerprism.com/projects/polar-h10.html
-Generated: 2026-06-13
+Generated: 2026-06-21
 Description: Public overview of Mesmer Prism's Polar H10 work across minimal signal packages, Rusty XR, Quest broker streams, Windows capture, Android diagnostics, Unity Quest integration, and Viscereality research tooling.
 Markdown: https://mesmerprism.com/projects/polar-h10.md
 Plain text: https://mesmerprism.com/projects/polar-h10.txt
@@ -22,6 +22,9 @@ Biofeedback sensor integration
  Android checks, Unity integration work, and research-calibration tools
  for keeping biosignal routes visible enough to debug.
 
+ Reviewed June 21, 2026.
+
+ [Choose a route](https://mesmerprism.com/projects/polar-h10.html#route-selector)
  [Signal packages](https://github.com/MesmerPrism/polar-h10-signals)
  [Rusty XR pipeline](https://github.com/MesmerPrism/Rusty-XR/blob/main/docs/BLE_LSL_POLAR_PIPELINE.md)
  [Windows capture docs](https://github.com/MesmerPrism/Rusty-XR-Companion-Apps/blob/main/docs/polar-h10-windows-capture.md)
@@ -29,18 +32,50 @@ Biofeedback sensor integration
  [Quest companion tools](https://mesmerprism.com/projects/viscereality-companion.html)
  [Earlier protocol reference](https://mesmerprism.github.io/PolarH10/)
 
+ Route selector
+
+## Choose the smallest route that fits the job
+
+ The same chest strap can support several workflows. Pick the route by
+ ownership, not by copying the largest integration path.
+
+ Polar H10 route selector
+
+ Minimal reusable protocol package
+ Polar H10 Signals
+
+ Rust/XR stream schemas and decoders
+ Rusty XR data contracts
+
+ Headset-side publication
+ Quest broker path
+
+ Local operator capture
+ Windows capture service
+
+ Phone-side BLE sanity check
+ Android diagnostics
+
+ Compare direct versus broker ownership
+ Unity Quest integration
+
+ Protocol packages
+ Diagnostics
+ Not medical software
+
  Purpose
 
 ## A signal route, not a gadget demo
 
  A biosignal is only useful in an XR system when the route is explicit. The
  important questions are practical: which device owns the Bluetooth connection,
- whether the stream is standard heart-rate data or raw Polar PMD data, how the
- samples are timestamped, whether the headset or Windows machine is observing,
- and which schema a downstream consumer can trust.
+ whether the stream is standard heart-rate data or raw Polar Measurement Data
+ (PMD), how the samples are timestamped, whether the
+ headset or Windows machine is observing, and which schema a downstream
+ consumer can trust.
 
  The public work keeps those questions separate. Polar H10 Signals owns
- minimal source packages for HR/RR, PMD ECG, and PMD accelerometer payloads.
+ minimal source packages for heart rate/RR intervals, PMD ECG, and PMD accelerometer payloads.
  Rusty XR owns broader reusable data models and decoders. The Quest broker
  owns headset-side stream publication. The Windows companion owns
  operator-side capture and planning. Android tools own phone-side Bluetooth
@@ -96,7 +131,7 @@ Biofeedback sensor integration
 
 ### Rusty XR data contracts
 
- Rusty XR carries framework-neutral BLE, LSL, and Polar models. The
+ Rusty XR carries framework-neutral BLE, Lab Streaming Layer (LSL), and Polar models. The
  public rusty-xr-polar surface includes Polar H10 GATT UUIDs, PMD
  command builders, Heart Rate Measurement decoding, ECG frame decoding,
  uncompressed ACC frame decoding, and LSL stream schemas.

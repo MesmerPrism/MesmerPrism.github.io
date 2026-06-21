@@ -123,9 +123,11 @@
                     newer Morphospace repos; Rusty XR remains useful when old examples or
                     compatibility evidence need to be inspected.
                 </p>
+                <p class="reviewed-date">Reviewed June 21, 2026.</p>
                 <div class="hero-actions">
                     <a class="action-link action-link--strong" href="#start-here">Start here</a>
                     <a class="action-link" href="/projects/rusty-morphospace.html">Rusty Morphospace</a>
+                    <a class="action-link" href="#migration-map">Migration map</a>
                     <a class="action-link" href="https://github.com/MesmerPrism/Rusty-XR" target="_blank" rel="noopener noreferrer">Source repo</a>
                     <a class="action-link" href="https://mesmerprism.github.io/Rusty-XR/" target="_blank" rel="noopener noreferrer">Project docs</a>
                     <a class="action-link" href="https://mesmerprism.github.io/Rusty-XR/passthrough.html" target="_blank" rel="noopener noreferrer">Passthrough guide</a>
@@ -146,10 +148,15 @@
                     </p>
                     <p>
                         For new work, start from the Morphospace layer that owns the behavior.
-                        Use this page when you need history, compatibility evidence, or the old
-                        public vocabulary around camera, depth, passthrough, and final-display
-                        evidence.
+                        Use this page for older Quest examples, compatibility evidence, and
+                        source-vocabulary checks around camera, depth, passthrough, and
+                        final-display capture.
                     </p>
+                    <div class="status-labels" aria-label="Status labels">
+                        <span class="status-label status-label--reference">Reference only</span>
+                        <span class="status-label">Legacy</span>
+                        <span class="status-label">Not current architecture</span>
+                    </div>
                 </div>
             </article>
 
@@ -189,6 +196,7 @@
                     <section>
                         <h3>Start here</h3>
                         <a href="/projects/rusty-morphospace.html">Current Morphospace overview</a>
+                        <a href="#migration-map">Migration map</a>
                         <a href="#references">Reference docs</a>
                     </section>
                     <section>
@@ -208,6 +216,52 @@
                     </section>
                 </div>
             </nav>
+        </section>
+
+        <section class="section" id="migration-map">
+            <div class="section-heading">
+                <p class="section-kicker">Migration map</p>
+                <h2>Where older Rusty XR concerns go now</h2>
+                <p>
+                    Rusty XR remains the reference collection. New work should start in the lane
+                    that owns the behavior.
+                </p>
+            </div>
+            <div class="table-wrap">
+                <table class="summary-table">
+                    <caption>Legacy concern to current lane</caption>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Reference spaces, poses, tracked input roles</th>
+                            <td>Rusty Lattice</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Command, session, and stream authority</th>
+                            <td>Rusty Manifold</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Simulation fields, particles, SDF/ADF</th>
+                            <td>Rusty Matter</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Renderer-neutral debug views</th>
+                            <td>Rusty Optics</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Quest profiles, permissions, native renderer evidence</th>
+                            <td>Rusty Quest</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Install, launch, cast, diagnostics</th>
+                            <td>Hostess and companion tooling</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Old examples and source vocabulary</th>
+                            <td>Rusty XR legacy collection</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </section>
 
         <section class="section two-column">

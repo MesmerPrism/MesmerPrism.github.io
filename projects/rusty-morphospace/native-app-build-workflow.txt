@@ -22,6 +22,8 @@ Build only the app you meant
  manifests, property write plans, and build inputs are generated adapters
  around that master settings surface.
 
+ Reviewed June 21, 2026.
+
  Start here (https://mesmerprism.com/projects/rusty-morphospace/native-app-build-workflow.html#start-here)
  Workflow (https://mesmerprism.com/projects/rusty-morphospace/native-app-build-workflow.html#workflow)
  Feature library (https://mesmerprism.com/projects/rusty-morphospace/native-app-build-workflow.html#feature-library)
@@ -32,14 +34,67 @@ Build only the app you meant
 
 A native APK starts as a feature decision.
 
- The workflow exists so an app-building agent can explain why every module
- is present before a package is built. The source app spec requests feature
- IDs, denies nearby families that must stay absent, and resolves into a
- lock that the build consumes.
+ Before an APK is built, the app spec must explain every module that will
+ be included and every nearby module family that must stay absent. The
+ source app spec requests feature IDs, denies adjacent families, and
+ resolves into a lock that the build consumes.
 
  The generated settings file is the app behavior surface. Runtime profiles,
  Android manifests, property plans, and build inputs adapt those settings
  to platform tools; they do not become extra places to hide behavior.
+
+Minimal native APK path
+
+ 1. Create
+ fixtures/native-app-builds/my-app.app.json
+
+ 2. Request
+ core/openxr-vulkan plus background/solid-black .
+
+ 3. Deny
+ camera/* , display/* , video/* , and environment/* when they are not needed.
+
+ 4. Resolve
+ Run Resolve-NativeAppBuild.ps1 -DryRun .
+
+ 5. Review
+ Inspect feature-lock.json and native-app-settings.json .
+
+ 6. Accept
+ Trust only required effective markers and the absence of forbidden markers.
+
+ Source app spec
+ Feature lock
+ Master settings
+ Effective markers
+
+Resolver pipeline
+
+ app spec requested and denied feature IDs
+
+ resolver dependency closure and compatibility checks
+
+ feature lock reviewed transitive feature set
+
+ settings native-app-settings.json
+
+ adapters profile, manifest, properties, build env
+
+ APK built from the reviewed lock
+
+ markers runtime acceptance evidence
+
+ Concrete canary example
+
+ Example app
+ Requested
+ Explicitly absent
+ Proof
+
+ Solid-black particle canary
+ OpenXR/Vulkan substrate, solid-black background, private particle placeholder.
+ Camera, display composite, video, environment depth, SDF, Makepad, and unrelated private-layer routes.
+ Effective markers are present and forbidden markers stay absent.
 
 Plain terms
 
@@ -132,7 +187,7 @@ Resolve the closure
  Run tools/Resolve-NativeAppBuild.ps1 -DryRun . The resolver validates
  schemas, follows dependencies, rejects incompatible or denied features,
  blocks high-rate JSON/property misuse, and writes generated artifacts
- under local-artifacts/native-app-builds/ .
+ into an ignored generated-artifact directory for review.
 
  Step 4
 

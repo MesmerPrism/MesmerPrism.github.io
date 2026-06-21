@@ -22,7 +22,7 @@
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <link rel="manifest" href="/site.webmanifest">
     <link rel="stylesheet" href="/assets/fonts.css">
-    <link rel="stylesheet" href="/styles.css?v=20260609-logo">
+    <link rel="stylesheet" href="/styles.css?v=20260621-onboarding">
     <!-- BEGIN agent-readable metadata -->
     <link rel="alternate" type="text/markdown" href="/projects/polar-h10.md" title="Markdown version">
     <link rel="alternate" type="text/plain" href="/projects/polar-h10.txt" title="Plain text version">
@@ -30,8 +30,8 @@
     <link rel="alternate" type="application/vnd.citationstyles.csl+json" href="/projects/polar-h10.references.csl.json" title="CSL JSON references">
     <meta name="citation_title" content="Polar H10 Work">
     <meta name="citation_author" content="Till Holzapfel">
-    <meta name="citation_publication_date" content="2026-06-13">
-    <meta name="citation_online_date" content="2026-06-13">
+    <meta name="citation_publication_date" content="2026-06-21">
+    <meta name="citation_online_date" content="2026-06-21">
     <meta name="citation_public_url" content="https://mesmerprism.com/projects/polar-h10.html">
     <meta name="citation_language" content="en">
     <script type="application/ld+json" data-agent-metadata>
@@ -56,7 +56,7 @@
                 "url": "https://mesmerprism.com"
           },
           "url": "https://mesmerprism.com/projects/polar-h10.html",
-          "dateModified": "2026-06-13",
+          "dateModified": "2026-06-21",
           "inLanguage": "en",
           "encoding": [
                 {
@@ -81,19 +81,12 @@
                 }
           ],
           "citation": [
-                "https://github.com/MesmerPrism",
                 "https://github.com/MesmerPrism/polar-h10-signals",
+                "https://github.com/MesmerPrism/Rusty-XR",
                 "https://github.com/MesmerPrism/Rusty-XR/blob/main/docs/BLE_LSL_POLAR_PIPELINE.md",
+                "https://github.com/MesmerPrism/Rusty-XR-Companion-Apps",
                 "https://github.com/MesmerPrism/Rusty-XR-Companion-Apps/blob/main/docs/polar-h10-windows-capture.md",
                 "https://mesmerprism.github.io/PolarH10/",
-                "https://github.com/MesmerPrism/polar-h10-signals/blob/main/docs/protocol-sources.md",
-                "https://github.com/MesmerPrism/Rusty-XR/tree/main/crates/rusty-xr-polar",
-                "https://github.com/MesmerPrism/Rusty-XR/tree/main/examples/quest-broker-apk",
-                "https://github.com/MesmerPrism/Rusty-XR-Companion-Apps",
-                "https://github.com/MesmerPrism/Rusty-XR-Android-Companion/blob/main/docs/streaming-protocols.md",
-                "https://github.com/MesmerPrism/Rusty-XR-Android-Companion",
-                "https://mesmerprism.github.io/PolarH10/reference/protocol/overview.html",
-                "https://github.com/MesmerPrism/Rusty-XR",
                 "https://github.com/polarofficial/polar-ble-sdk",
                 "https://developer.android.com/guide/topics/connectivity/bluetooth/permissions"
           ]
@@ -131,14 +124,63 @@
                     Android checks, Unity integration work, and research-calibration tools
                     for keeping biosignal routes visible enough to debug.
                 </p>
+                <p class="reviewed-date">Reviewed June 21, 2026.</p>
                 <div class="hero-actions">
-                    <a class="action-link action-link--strong" href="https://github.com/MesmerPrism/polar-h10-signals" target="_blank" rel="noopener noreferrer">Signal packages</a>
+                    <a class="action-link action-link--strong" href="#route-selector">Choose a route</a>
+                    <a class="action-link" href="https://github.com/MesmerPrism/polar-h10-signals" target="_blank" rel="noopener noreferrer">Signal packages</a>
                     <a class="action-link" href="https://github.com/MesmerPrism/Rusty-XR/blob/main/docs/BLE_LSL_POLAR_PIPELINE.md" target="_blank" rel="noopener noreferrer">Rusty XR pipeline</a>
                     <a class="action-link" href="https://github.com/MesmerPrism/Rusty-XR-Companion-Apps/blob/main/docs/polar-h10-windows-capture.md" target="_blank" rel="noopener noreferrer">Windows capture docs</a>
                     <a class="action-link" href="/projects/rusty-morphospace/rusty-xr.html">Rusty XR</a>
                     <a class="action-link" href="/projects/viscereality-companion.html">Quest companion tools</a>
                     <a class="action-link" href="https://mesmerprism.github.io/PolarH10/" target="_blank" rel="noopener noreferrer">Earlier protocol reference</a>
                 </div>
+            </div>
+        </section>
+
+        <section class="section" id="route-selector">
+            <div class="section-heading">
+                <p class="section-kicker">Route selector</p>
+                <h2>Choose the smallest route that fits the job</h2>
+                <p>
+                    The same chest strap can support several workflows. Pick the route by
+                    ownership, not by copying the largest integration path.
+                </p>
+            </div>
+            <div class="table-wrap">
+                <table class="summary-table">
+                    <caption>Polar H10 route selector</caption>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Minimal reusable protocol package</th>
+                            <td>Polar H10 Signals</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Rust/XR stream schemas and decoders</th>
+                            <td>Rusty XR data contracts</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Headset-side publication</th>
+                            <td>Quest broker path</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Local operator capture</th>
+                            <td>Windows capture service</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Phone-side BLE sanity check</th>
+                            <td>Android diagnostics</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Compare direct versus broker ownership</th>
+                            <td>Unity Quest integration</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="status-labels" aria-label="Status labels">
+                <span class="status-label status-label--current">Protocol packages</span>
+                <span class="status-label status-label--diagnostic">Diagnostics</span>
+                <span class="status-label">Not medical software</span>
             </div>
         </section>
 
@@ -151,13 +193,14 @@
                 <p>
                     A biosignal is only useful in an XR system when the route is explicit. The
                     important questions are practical: which device owns the Bluetooth connection,
-                    whether the stream is standard heart-rate data or raw Polar PMD data, how the
-                    samples are timestamped, whether the headset or Windows machine is observing,
-                    and which schema a downstream consumer can trust.
+                    whether the stream is standard heart-rate data or raw Polar Measurement Data
+                    (PMD), how the samples are timestamped, whether the
+                    headset or Windows machine is observing, and which schema a downstream
+                    consumer can trust.
                 </p>
                 <p>
                     The public work keeps those questions separate. Polar H10 Signals owns
-                    minimal source packages for HR/RR, PMD ECG, and PMD accelerometer payloads.
+                    minimal source packages for heart rate/RR intervals, PMD ECG, and PMD accelerometer payloads.
                     Rusty XR owns broader reusable data models and decoders. The Quest broker
                     owns headset-side stream publication. The Windows companion owns
                     operator-side capture and planning. Android tools own phone-side Bluetooth
@@ -222,7 +265,7 @@
                 <section class="detail-block">
                     <h3>Rusty XR data contracts</h3>
                     <p>
-                        Rusty XR carries framework-neutral BLE, LSL, and Polar models. The
+                        Rusty XR carries framework-neutral BLE, Lab Streaming Layer (LSL), and Polar models. The
                         public <code>rusty-xr-polar</code> surface includes Polar H10 GATT UUIDs, PMD
                         command builders, Heart Rate Measurement decoding, ECG frame decoding,
                         uncompressed ACC frame decoding, and LSL stream schemas.

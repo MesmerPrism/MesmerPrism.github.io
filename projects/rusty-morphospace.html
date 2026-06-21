@@ -168,21 +168,69 @@
                 <p class="eyebrow">Computational morphology platform</p>
                 <h1>Rusty Morphospace</h1>
                 <p class="project-lede">
-                    Rusty Morphospace is the umbrella frame for a modular Rust platform that
-                    treats form as more than geometry. A form can be simulated matter, a spatial
-                    relation, a feedback circuit, a renderer-neutral view, an operator workflow,
-                    or a headset-hosted environment. The project names the space where those
-                    pieces can be built without collapsing them into one XR app.
+                    Rusty Morphospace is an AGPL-first Rust architecture for computational form.
+                    It separates simulation truth, spatial relation, runtime authority,
+                    renderer-neutral inspection, authoring, and Quest/headset validation so
+                    prototypes do not collapse into one monolithic XR app.
                 </p>
+                <p class="reviewed-date">Reviewed June 21, 2026.</p>
                 <div class="hero-actions">
-                    <a class="action-link action-link--strong" href="#start-here">Start here</a>
-                    <a class="action-link" href="/projects/rusty-morphospace/native-app-build-workflow.html">Build a native APK</a>
-                    <a class="action-link" href="#current-work">Current Quest features</a>
-                    <a class="action-link" href="#repositories">Repository map</a>
-                    <a class="action-link" href="#hsi-implementation-layer">HSI bridge</a>
-                    <a class="action-link" href="/projects/rusty-morphospace/rusty-xr.html">Legacy Rusty XR</a>
-                    <a class="action-link" href="#why">Why Morphospace</a>
+                    <a class="action-link action-link--strong" href="#start-here">Understand the architecture</a>
+                    <a class="action-link" href="/projects/rusty-morphospace/native-app-build-workflow.html">Build a Quest APK</a>
+                    <a class="action-link" href="#current-work">Inspect current evidence</a>
+                    <a class="action-link" href="#hsi-implementation-layer">Map this to HSI</a>
+                    <a class="action-link" href="#repositories">Find repositories</a>
+                    <a class="action-link" href="/projects/rusty-morphospace/rusty-xr.html">Read legacy Rusty XR</a>
                 </div>
+            </div>
+
+            <section class="at-glance" aria-labelledby="morphospace-glance">
+                <h2 id="morphospace-glance">Rusty Morphospace at a glance</h2>
+                <div class="at-glance__grid">
+                    <div class="at-glance__item">
+                        <strong>What it is</strong>
+                        <p>An AGPL-first Rust repo family for computational-form systems.</p>
+                    </div>
+                    <div class="at-glance__item">
+                        <strong>What exists now</strong>
+                        <p>Public core repos, native Quest/OpenXR/Vulkan routes, Makepad/Hostess validation paths, app-build feature locks, Matter/Optics teaching models, and legacy Rusty XR material.</p>
+                    </div>
+                    <div class="at-glance__item">
+                        <strong>What it is for</strong>
+                        <p>Keeping simulation, relation state, command authority, visual inspection, and platform evidence separate.</p>
+                    </div>
+                    <div class="at-glance__item">
+                        <strong>Not yet</strong>
+                        <p>A finished mixed-ability HSI study app, clinical system, scaled robotic backend, or single XR product.</p>
+                    </div>
+                </div>
+                <div class="status-labels" aria-label="Status labels">
+                    <span class="status-label status-label--current">Public source</span>
+                    <span class="status-label status-label--current">Device evidence</span>
+                    <span class="status-label status-label--planned">Planned HSI authoring</span>
+                    <span class="status-label status-label--reference">Legacy reference</span>
+                    <span class="status-label">Not a clinical claim</span>
+                </div>
+            </section>
+
+            <div class="table-wrap">
+                <table class="summary-table">
+                    <caption>Current, planned, and not claimed</caption>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Current</th>
+                            <td>Public Rust repos, contracts, feature-lock APK workflow, Quest native renderer evidence, Matter/Optics teaching models, and Rusty XR legacy reference material.</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Planned</th>
+                            <td>HSI-facing authoring, consent/provenance controls, participant mapping editors, replay, and version comparison.</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Not claimed</th>
+                            <td>Clinical effect, finished study app, scaled robotic backend, raw passthrough access from MediaProjection, or calibrated physiology.</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
 
             <article class="thesis-card thesis-card--split" id="start-here">
@@ -230,7 +278,62 @@
                         <dt>App build</dt>
                         <dd>A feature-lock workflow that assembles native APKs from explicit modules instead of copied profiles.</dd>
                     </div>
+                    <div>
+                        <dt>SDF / ADF</dt>
+                        <dd>Signed-distance and adaptive-distance field diagnostics for inspecting form, collision, and target-space behavior.</dd>
+                    </div>
+                    <div>
+                        <dt>AHardwareBuffer</dt>
+                        <dd>Android hardware buffer transport, abbreviated as HWB in route names and validation notes.</dd>
+                    </div>
                 </dl>
+            </section>
+
+            <section class="architecture-map" aria-labelledby="morphospace-architecture-map">
+                <div class="section-heading">
+                    <h2 id="morphospace-architecture-map">Architecture map</h2>
+                    <p>
+                        The layers compose, but each layer keeps a different decision local.
+                    </p>
+                </div>
+                <div class="architecture-map__grid">
+                    <div class="architecture-node">
+                        <strong>Matter</strong>
+                        <span>Computes fields, particles, surfaces, SDF/ADF forms, and simulation state.</span>
+                    </div>
+                    <div class="architecture-node">
+                        <strong>Optics</strong>
+                        <span>Describes what can be inspected before a renderer draws it.</span>
+                    </div>
+                    <div class="architecture-node">
+                        <strong>Makepad / Browser / Quest</strong>
+                        <span>Adapt views into concrete app surfaces without owning simulation truth.</span>
+                    </div>
+                    <div class="architecture-node">
+                        <strong>Lattice</strong>
+                        <span>Records spaces, poses, calibration, confidence, and device capability snapshots.</span>
+                    </div>
+                    <div class="architecture-node">
+                        <strong>Manifold</strong>
+                        <span>Decides which commands, sessions, streams, clocks, and audit records count.</span>
+                    </div>
+                    <div class="architecture-node">
+                        <strong>Hostess</strong>
+                        <span>Installs, launches, stages, replays, and packages evidence around the runtime.</span>
+                    </div>
+                    <div class="architecture-node">
+                        <strong>GUI / Studio</strong>
+                        <span>Provides authoring and review surfaces over contracts rather than hidden behavior.</span>
+                    </div>
+                    <div class="architecture-node">
+                        <strong>Rusty Quest</strong>
+                        <span>Proves what the headset package, permissions, profile, and renderer actually did.</span>
+                    </div>
+                    <div class="architecture-node">
+                        <strong>Rusty XR</strong>
+                        <span>Preserves older examples and source vocabulary as a legacy/reference collection.</span>
+                    </div>
+                </div>
             </section>
 
             <figure class="route-strip" aria-labelledby="morphospace-route">
@@ -923,6 +1026,50 @@
                     headset experiments
                     (<a class="inline-citation" href="https://github.com/MesmerPrism/rusty-quest" target="_blank" rel="noopener noreferrer">rusty-quest</a>).
                 </p>
+                <div class="table-wrap">
+                    <table class="summary-table">
+                        <caption>Current proof surfaces</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">Surface</th>
+                                <th scope="col">Current claim</th>
+                                <th scope="col">Caveat</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">Native Quest renderer</th>
+                                <td>OpenXR/Vulkan session, stereo swapchain, profiles, and runtime markers.</td>
+                                <td>Diagnostic/proof route, not a finished participant UI.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Camera2/HWB</th>
+                                <td>Direct app-visible camera import path through AHardwareBuffer sampling.</td>
+                                <td>Camera route only; it is not compositor passthrough access.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">MediaProjection</th>
+                                <td>Display-composite feedback witness.</td>
+                                <td>Not raw passthrough, camera, environment-depth, or scene geometry evidence.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Environment depth</th>
+                                <td>Diagnostic validation surface for depth and scene-map routes.</td>
+                                <td>Not a finished participant tool.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Quest Makepad / Hostess</th>
+                                <td>Recorded/live hand surfaces, SDF/ADF, particles, and bounded GPU readback.</td>
+                                <td>Validation route, not the authority model.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Remote camera</th>
+                                <td><code>RMANVID1</code> framing and single-device evidence.</td>
+                                <td>No two-peer readiness claim yet.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
                 <p>
                     The native path is not only a launch wrapper. It has public profiles for direct
                     Quest Camera2/AHardwareBuffer import into Vulkan external images, metadata-owned

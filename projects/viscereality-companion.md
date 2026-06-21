@@ -2,7 +2,7 @@
 
 Source: https://mesmerprism.com/projects/viscereality-companion.html
 Canonical HTML: https://mesmerprism.com/projects/viscereality-companion.html
-Generated: 2026-06-13
+Generated: 2026-06-21
 Description: Quest Companion Tools provides Windows and Android utilities for Meta Quest install, launch, casting, diagnostics, and evidence capture.
 Markdown: https://mesmerprism.com/projects/viscereality-companion.md
 Plain text: https://mesmerprism.com/projects/viscereality-companion.txt
@@ -20,10 +20,30 @@ Meta Quest operator tooling
  build, launch it, cast the display, capture proof, monitor state, and export
  diagnostics without asking every project to rebuild the same operator tools.
 
+ Reviewed June 21, 2026.
+
  [Current companion repo](https://github.com/MesmerPrism/Rusty-XR-Companion-Apps)
  [Rusty XR](https://mesmerprism.com/projects/rusty-morphospace/rusty-xr.html)
  [Rusty XR source](https://github.com/MesmerPrism/Rusty-XR)
  [Contact](https://mesmerprism.com/#contact)
+
+## Where this fits in Morphospace
+
+ Companion / Hostess-like role
+ Install, launch, cast, capture, diagnose, and package evidence.
+
+ Does not own
+ Simulation truth, runtime authority, participant mappings, or headset rendering semantics.
+
+ Evidence type
+ Operator-side proof that the intended build or profile launched and produced inspectable output.
+
+ Source caveat
+ Casting and MediaProjection inspect the final display; they are not raw camera or passthrough sources.
+
+ Operator tooling
+ Evidence capture
+ Not the runtime
 
  Purpose
 

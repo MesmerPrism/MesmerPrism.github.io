@@ -23,8 +23,11 @@ Legacy Quest and XR reference
  newer Morphospace repos; Rusty XR remains useful when old examples or
  compatibility evidence need to be inspected.
 
+ Reviewed June 21, 2026.
+
  [Start here](https://mesmerprism.com/projects/rusty-morphospace/rusty-xr.html#start-here)
  [Rusty Morphospace](https://mesmerprism.com/projects/rusty-morphospace.html)
+ [Migration map](https://mesmerprism.com/projects/rusty-morphospace/rusty-xr.html#migration-map)
  [Source repo](https://github.com/MesmerPrism/Rusty-XR)
  [Project docs](https://mesmerprism.github.io/Rusty-XR/)
  [Passthrough guide](https://mesmerprism.github.io/Rusty-XR/passthrough.html)
@@ -40,9 +43,13 @@ Legacy Quest and XR reference
  Morphospace architecture.
 
  For new work, start from the Morphospace layer that owns the behavior.
- Use this page when you need history, compatibility evidence, or the old
- public vocabulary around camera, depth, passthrough, and final-display
- evidence.
+ Use this page for older Quest examples, compatibility evidence, and
+ source-vocabulary checks around camera, depth, passthrough, and
+ final-display capture.
+
+ Reference only
+ Legacy
+ Not current architecture
 
 ## Plain terms
 
@@ -63,6 +70,36 @@ Legacy Quest and XR reference
 
  Current path
  New architecture work belongs in Rusty Morphospace and the newer lane-specific repos.
+
+ Migration map
+
+## Where older Rusty XR concerns go now
+
+ Rusty XR remains the reference collection. New work should start in the lane
+ that owns the behavior.
+
+ Legacy concern to current lane
+
+ Reference spaces, poses, tracked input roles
+ Rusty Lattice
+
+ Command, session, and stream authority
+ Rusty Manifold
+
+ Simulation fields, particles, SDF/ADF
+ Rusty Matter
+
+ Renderer-neutral debug views
+ Rusty Optics
+
+ Quest profiles, permissions, native renderer evidence
+ Rusty Quest
+
+ Install, launch, cast, diagnostics
+ Hostess and companion tooling
+
+ Old examples and source vocabulary
+ Rusty XR legacy collection
 
  Purpose
 

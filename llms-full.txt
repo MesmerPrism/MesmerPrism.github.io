@@ -1780,6 +1780,38 @@ Mixed-ability HSI | Updated June 21, 2026
  mappings under relation, goals, roles, pressure, and conflict. Treat physical
  deployment as a later translation problem, not the starting premise.
 
+ First study in one screen
+
+### A reversible visual swarm body, not a deployment claim
+
+ Participants
+ Small mixed-ability groups with access planning, fallback inputs, non-HMD options, and disclosure controls.
+
+ Medium
+ A reversible visual swarm body whose mappings can be seen, paused, changed, hidden, and repaired.
+
+ Question
+ Can the group understand, rebalance, and repair distributed agency?
+
+ Conditions
+ Access-practice elicitation, low-demand exploration, encounter/storytelling, cooperative play, and translation reflection.
+
+ Measures
+ Shared agency, fatigue, sensory load, authorship, privacy comfort, repair success, and mapping legibility.
+
+ The swarm is not only something to control; it is a shared object through which pacing,
+ visibility, authorship, and repair become negotiable. The full protocol card remains
+ below in the [minimal study module](https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html#study-module).
+
+ Claim status
+
+### Conceptual now; study and translation claims later
+
+ This page claims a design problem and a study direction. It does not claim therapeutic
+ effect, diagnostic power, deployment safety, or a finished physical swarm system. The
+ detailed [claim ladder](https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html#status) separates conceptual, design, research, and
+ later-translation claims.
+
  The page moves in four steps. First, it explains why a swarm can read as a body at all:
  a many-part presence held together by coherent dynamics, not sealed skin. Second, it asks
  what mixed-ability access changes when several people shape those dynamics. Third, it maps
@@ -4224,7 +4256,10 @@ Rusty Morphospace and tissue-scale patterning
  educational abstractions, source-derived GLBs, and model-inspired overlays
  remain separate layers.
 
+ Reviewed June 21, 2026.
+
  [Current slice](https://mesmerprism.com/projects/bioelectricity.html#current-slice)
+ [Source boundary](https://mesmerprism.com/projects/bioelectricity.html#source-boundary-matrix)
  [Planarian XR atlas](https://mesmerprism.com/projects/bioelectricity.html#planarian-xr)
  [Showcase export](https://mesmerprism.com/projects/bioelectricity.html#showcase-export)
  [Source status](https://mesmerprism.com/projects/bioelectricity.html#source-target-status)
@@ -4234,6 +4269,54 @@ Rusty Morphospace and tissue-scale patterning
  [Claim boundary](https://mesmerprism.com/projects/bioelectricity.html#boundary)
  [Rusty Morphospace](https://mesmerprism.com/projects/rusty-morphospace.html)
  [References](https://mesmerprism.com/projects/bioelectricity.html#references)
+
+## At a glance
+
+ Central rule
+ Observed records, source-derived geometry, educational dynamics, and model-inspired replays stay separate.
+
+ Current claim
+ Qualitative teaching models and source-backed atlas layers, not calibrated wet-lab prediction.
+
+ What exists now
+ Rusty Matter/Optics fixtures, browser inspection, reviewed PlanformDB records, GLB overlays, and replay manifests.
+
+ Not claimed
+ A full physiology simulator, clinical tool, or proof that model-inspired overlays are observed dynamics.
+
+ Educational model
+ Source-backed atlas
+ Not a clinical claim
+ Deferred source-map sidecars
+
+ Source boundary
+
+## Observed records and educational models stay separate
+
+ A visual overlay may teach a patterning idea, but it is not a calibrated
+ physiology trace unless a separate validation path supports that claim.
+
+ Source-boundary matrix
+
+ Observed
+ Reviewed GLB derivatives and PlanformDB records.
+ Source-backed visualization and data layers.
+
+ Curated
+ Selected experiment records and outcome details.
+ Literature/database-derived teaching context.
+
+ Educational
+ Procedural body, fields, conductance, and readouts.
+ Qualitative model, not a full physiology simulator.
+
+ Replay
+ GIFs over reviewed point positions.
+ Model-inspired visualization, not observed dynamics.
+
+ Deferred
+ Object-level picking and observed-geometry dynamics.
+ Planned pending public-safe source-map sidecars.
 
  Computational medium
 
@@ -9222,6 +9305,9 @@ Biofeedback sensor integration
  Android checks, Unity integration work, and research-calibration tools
  for keeping biosignal routes visible enough to debug.
 
+ Reviewed June 21, 2026.
+
+ [Choose a route](https://mesmerprism.com/projects/polar-h10.html#route-selector)
  [Signal packages](https://github.com/MesmerPrism/polar-h10-signals)
  [Rusty XR pipeline](https://github.com/MesmerPrism/Rusty-XR/blob/main/docs/BLE_LSL_POLAR_PIPELINE.md)
  [Windows capture docs](https://github.com/MesmerPrism/Rusty-XR-Companion-Apps/blob/main/docs/polar-h10-windows-capture.md)
@@ -9229,18 +9315,50 @@ Biofeedback sensor integration
  [Quest companion tools](https://mesmerprism.com/projects/viscereality-companion.html)
  [Earlier protocol reference](https://mesmerprism.github.io/PolarH10/)
 
+ Route selector
+
+## Choose the smallest route that fits the job
+
+ The same chest strap can support several workflows. Pick the route by
+ ownership, not by copying the largest integration path.
+
+ Polar H10 route selector
+
+ Minimal reusable protocol package
+ Polar H10 Signals
+
+ Rust/XR stream schemas and decoders
+ Rusty XR data contracts
+
+ Headset-side publication
+ Quest broker path
+
+ Local operator capture
+ Windows capture service
+
+ Phone-side BLE sanity check
+ Android diagnostics
+
+ Compare direct versus broker ownership
+ Unity Quest integration
+
+ Protocol packages
+ Diagnostics
+ Not medical software
+
  Purpose
 
 ## A signal route, not a gadget demo
 
  A biosignal is only useful in an XR system when the route is explicit. The
  important questions are practical: which device owns the Bluetooth connection,
- whether the stream is standard heart-rate data or raw Polar PMD data, how the
- samples are timestamped, whether the headset or Windows machine is observing,
- and which schema a downstream consumer can trust.
+ whether the stream is standard heart-rate data or raw Polar Measurement Data
+ (PMD), how the samples are timestamped, whether the
+ headset or Windows machine is observing, and which schema a downstream
+ consumer can trust.
 
  The public work keeps those questions separate. Polar H10 Signals owns
- minimal source packages for HR/RR, PMD ECG, and PMD accelerometer payloads.
+ minimal source packages for heart rate/RR intervals, PMD ECG, and PMD accelerometer payloads.
  Rusty XR owns broader reusable data models and decoders. The Quest broker
  owns headset-side stream publication. The Windows companion owns
  operator-side capture and planning. Android tools own phone-side Bluetooth
@@ -9296,7 +9414,7 @@ Biofeedback sensor integration
 
 ### Rusty XR data contracts
 
- Rusty XR carries framework-neutral BLE, LSL, and Polar models. The
+ Rusty XR carries framework-neutral BLE, Lab Streaming Layer (LSL), and Polar models. The
  public rusty-xr-polar surface includes Polar H10 GATT UUIDs, PMD
  command builders, Heart Rate Measurement decoding, ECG frame decoding,
  uncompressed ACC frame decoding, and LSL stream schemas.
@@ -10058,19 +10176,50 @@ Computational morphology platform
 
 # Rusty Morphospace
 
- Rusty Morphospace is the umbrella frame for a modular Rust platform that
- treats form as more than geometry. A form can be simulated matter, a spatial
- relation, a feedback circuit, a renderer-neutral view, an operator workflow,
- or a headset-hosted environment. The project names the space where those
- pieces can be built without collapsing them into one XR app.
+ Rusty Morphospace is an AGPL-first Rust architecture for computational form.
+ It separates simulation truth, spatial relation, runtime authority,
+ renderer-neutral inspection, authoring, and Quest/headset validation so
+ prototypes do not collapse into one monolithic XR app.
 
- [Start here](https://mesmerprism.com/projects/rusty-morphospace.html#start-here)
- [Build a native APK](https://mesmerprism.com/projects/rusty-morphospace/native-app-build-workflow.html)
- [Current Quest features](https://mesmerprism.com/projects/rusty-morphospace.html#current-work)
- [Repository map](https://mesmerprism.com/projects/rusty-morphospace.html#repositories)
- [HSI bridge](https://mesmerprism.com/projects/rusty-morphospace.html#hsi-implementation-layer)
- [Legacy Rusty XR](https://mesmerprism.com/projects/rusty-morphospace/rusty-xr.html)
- [Why Morphospace](https://mesmerprism.com/projects/rusty-morphospace.html#why)
+ Reviewed June 21, 2026.
+
+ [Understand the architecture](https://mesmerprism.com/projects/rusty-morphospace.html#start-here)
+ [Build a Quest APK](https://mesmerprism.com/projects/rusty-morphospace/native-app-build-workflow.html)
+ [Inspect current evidence](https://mesmerprism.com/projects/rusty-morphospace.html#current-work)
+ [Map this to HSI](https://mesmerprism.com/projects/rusty-morphospace.html#hsi-implementation-layer)
+ [Find repositories](https://mesmerprism.com/projects/rusty-morphospace.html#repositories)
+ [Read legacy Rusty XR](https://mesmerprism.com/projects/rusty-morphospace/rusty-xr.html)
+
+## Rusty Morphospace at a glance
+
+ What it is
+ An AGPL-first Rust repo family for computational-form systems.
+
+ What exists now
+ Public core repos, native Quest/OpenXR/Vulkan routes, Makepad/Hostess validation paths, app-build feature locks, Matter/Optics teaching models, and legacy Rusty XR material.
+
+ What it is for
+ Keeping simulation, relation state, command authority, visual inspection, and platform evidence separate.
+
+ Not yet
+ A finished mixed-ability HSI study app, clinical system, scaled robotic backend, or single XR product.
+
+ Public source
+ Device evidence
+ Planned HSI authoring
+ Legacy reference
+ Not a clinical claim
+
+ Current, planned, and not claimed
+
+ Current
+ Public Rust repos, contracts, feature-lock APK workflow, Quest native renderer evidence, Matter/Optics teaching models, and Rusty XR legacy reference material.
+
+ Planned
+ HSI-facing authoring, consent/provenance controls, participant mapping editors, replay, and version comparison.
+
+ Not claimed
+ Clinical effect, finished study app, scaled robotic backend, raw passthrough access from MediaProjection, or calibrated physiology.
 
 ## Start with the responsibility, not the demo.
 
@@ -10103,6 +10252,43 @@ Computational morphology platform
 
  App build
  A feature-lock workflow that assembles native APKs from explicit modules instead of copied profiles.
+
+ SDF / ADF
+ Signed-distance and adaptive-distance field diagnostics for inspecting form, collision, and target-space behavior.
+
+ AHardwareBuffer
+ Android hardware buffer transport, abbreviated as HWB in route names and validation notes.
+
+## Architecture map
+
+ The layers compose, but each layer keeps a different decision local.
+
+ Matter
+ Computes fields, particles, surfaces, SDF/ADF forms, and simulation state.
+
+ Optics
+ Describes what can be inspected before a renderer draws it.
+
+ Makepad / Browser / Quest
+ Adapt views into concrete app surfaces without owning simulation truth.
+
+ Lattice
+ Records spaces, poses, calibration, confidence, and device capability snapshots.
+
+ Manifold
+ Decides which commands, sessions, streams, clocks, and audit records count.
+
+ Hostess
+ Installs, launches, stages, replays, and packages evidence around the runtime.
+
+ GUI / Studio
+ Provides authoring and review surfaces over contracts rather than hidden behavior.
+
+ Rusty Quest
+ Proves what the headset package, permissions, profile, and renderer actually did.
+
+ Rusty XR
+ Preserves older examples and source vocabulary as a legacy/reference collection.
 
  Purpose
 
@@ -10647,6 +10833,36 @@ Computational morphology platform
  headset experiments
  ([rusty-quest](https://github.com/MesmerPrism/rusty-quest)).
 
+ Current proof surfaces
+
+ Surface
+ Current claim
+ Caveat
+
+ Native Quest renderer
+ OpenXR/Vulkan session, stereo swapchain, profiles, and runtime markers.
+ Diagnostic/proof route, not a finished participant UI.
+
+ Camera2/HWB
+ Direct app-visible camera import path through AHardwareBuffer sampling.
+ Camera route only; it is not compositor passthrough access.
+
+ MediaProjection
+ Display-composite feedback witness.
+ Not raw passthrough, camera, environment-depth, or scene geometry evidence.
+
+ Environment depth
+ Diagnostic validation surface for depth and scene-map routes.
+ Not a finished participant tool.
+
+ Quest Makepad / Hostess
+ Recorded/live hand surfaces, SDF/ADF, particles, and bounded GPU readback.
+ Validation route, not the authority model.
+
+ Remote camera
+ RMANVID1 framing and single-device evidence.
+ No two-peer readiness claim yet.
+
  The native path is not only a launch wrapper. It has public profiles for direct
  Quest Camera2/AHardwareBuffer import into Vulkan external images, metadata-owned
  camera target rectangles and orientation, native Meta passthrough profiles,
@@ -10836,6 +11052,8 @@ Native app-build workflow
  manifests, property write plans, and build inputs are generated adapters
  around that master settings surface.
 
+ Reviewed June 21, 2026.
+
  [Start here](https://mesmerprism.com/projects/rusty-morphospace/native-app-build-workflow.html#start-here)
  [Workflow](https://mesmerprism.com/projects/rusty-morphospace/native-app-build-workflow.html#workflow)
  [Feature library](https://mesmerprism.com/projects/rusty-morphospace/native-app-build-workflow.html#feature-library)
@@ -10846,14 +11064,67 @@ Native app-build workflow
 
 ## A native APK starts as a feature decision.
 
- The workflow exists so an app-building agent can explain why every module
- is present before a package is built. The source app spec requests feature
- IDs, denies nearby families that must stay absent, and resolves into a
- lock that the build consumes.
+ Before an APK is built, the app spec must explain every module that will
+ be included and every nearby module family that must stay absent. The
+ source app spec requests feature IDs, denies adjacent families, and
+ resolves into a lock that the build consumes.
 
  The generated settings file is the app behavior surface. Runtime profiles,
  Android manifests, property plans, and build inputs adapt those settings
  to platform tools; they do not become extra places to hide behavior.
+
+## Minimal native APK path
+
+ 1. Create
+ fixtures/native-app-builds/my-app.app.json
+
+ 2. Request
+ core/openxr-vulkan plus background/solid-black .
+
+ 3. Deny
+ camera/* , display/* , video/* , and environment/* when they are not needed.
+
+ 4. Resolve
+ Run Resolve-NativeAppBuild.ps1 -DryRun .
+
+ 5. Review
+ Inspect feature-lock.json and native-app-settings.json .
+
+ 6. Accept
+ Trust only required effective markers and the absence of forbidden markers.
+
+ Source app spec
+ Feature lock
+ Master settings
+ Effective markers
+
+## Resolver pipeline
+
+ app spec requested and denied feature IDs
+
+ resolver dependency closure and compatibility checks
+
+ feature lock reviewed transitive feature set
+
+ settings native-app-settings.json
+
+ adapters profile, manifest, properties, build env
+
+ APK built from the reviewed lock
+
+ markers runtime acceptance evidence
+
+ Concrete canary example
+
+ Example app
+ Requested
+ Explicitly absent
+ Proof
+
+ Solid-black particle canary
+ OpenXR/Vulkan substrate, solid-black background, private particle placeholder.
+ Camera, display composite, video, environment depth, SDF, Makepad, and unrelated private-layer routes.
+ Effective markers are present and forbidden markers stay absent.
 
 ## Plain terms
 
@@ -10946,7 +11217,7 @@ Native app-build workflow
  Run tools/Resolve-NativeAppBuild.ps1 -DryRun . The resolver validates
  schemas, follows dependencies, rejects incompatible or denied features,
  blocks high-rate JSON/property misuse, and writes generated artifacts
- under local-artifacts/native-app-builds/ .
+ into an ignored generated-artifact directory for review.
 
  Step 4
 
@@ -11254,8 +11525,11 @@ Legacy Quest and XR reference
  newer Morphospace repos; Rusty XR remains useful when old examples or
  compatibility evidence need to be inspected.
 
+ Reviewed June 21, 2026.
+
  [Start here](https://mesmerprism.com/projects/rusty-morphospace/rusty-xr.html#start-here)
  [Rusty Morphospace](https://mesmerprism.com/projects/rusty-morphospace.html)
+ [Migration map](https://mesmerprism.com/projects/rusty-morphospace/rusty-xr.html#migration-map)
  [Source repo](https://github.com/MesmerPrism/Rusty-XR)
  [Project docs](https://mesmerprism.github.io/Rusty-XR/)
  [Passthrough guide](https://mesmerprism.github.io/Rusty-XR/passthrough.html)
@@ -11271,9 +11545,13 @@ Legacy Quest and XR reference
  Morphospace architecture.
 
  For new work, start from the Morphospace layer that owns the behavior.
- Use this page when you need history, compatibility evidence, or the old
- public vocabulary around camera, depth, passthrough, and final-display
- evidence.
+ Use this page for older Quest examples, compatibility evidence, and
+ source-vocabulary checks around camera, depth, passthrough, and
+ final-display capture.
+
+ Reference only
+ Legacy
+ Not current architecture
 
 ## Plain terms
 
@@ -11294,6 +11572,36 @@ Legacy Quest and XR reference
 
  Current path
  New architecture work belongs in Rusty Morphospace and the newer lane-specific repos.
+
+ Migration map
+
+## Where older Rusty XR concerns go now
+
+ Rusty XR remains the reference collection. New work should start in the lane
+ that owns the behavior.
+
+ Legacy concern to current lane
+
+ Reference spaces, poses, tracked input roles
+ Rusty Lattice
+
+ Command, session, and stream authority
+ Rusty Manifold
+
+ Simulation fields, particles, SDF/ADF
+ Rusty Matter
+
+ Renderer-neutral debug views
+ Rusty Optics
+
+ Quest profiles, permissions, native renderer evidence
+ Rusty Quest
+
+ Install, launch, cast, diagnostics
+ Hostess and companion tooling
+
+ Old examples and source vocabulary
+ Rusty XR legacy collection
 
  Purpose
 
@@ -12881,10 +13189,30 @@ Meta Quest operator tooling
  build, launch it, cast the display, capture proof, monitor state, and export
  diagnostics without asking every project to rebuild the same operator tools.
 
+ Reviewed June 21, 2026.
+
  [Current companion repo](https://github.com/MesmerPrism/Rusty-XR-Companion-Apps)
  [Rusty XR](https://mesmerprism.com/projects/rusty-morphospace/rusty-xr.html)
  [Rusty XR source](https://github.com/MesmerPrism/Rusty-XR)
  [Contact](https://mesmerprism.com/#contact)
+
+## Where this fits in Morphospace
+
+ Companion / Hostess-like role
+ Install, launch, cast, capture, diagnose, and package evidence.
+
+ Does not own
+ Simulation truth, runtime authority, participant mappings, or headset rendering semantics.
+
+ Evidence type
+ Operator-side proof that the intended build or profile launched and produced inspectable output.
+
+ Source caveat
+ Casting and MediaProjection inspect the final display; they are not raw camera or passthrough sources.
+
+ Operator tooling
+ Evidence capture
+ Not the runtime
 
  Purpose
 

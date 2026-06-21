@@ -1,6 +1,6 @@
 [
   {
-    "id": "github-com-mesmer-prism-work-publications-background-contact",
+    "id": "companion-hostess-like-role-mesmer-prism-work-publications-background-contact-2026",
     "type": "webpage",
     "title": "Mesmer Prism Work Publications Background Contact",
     "URL": "https://github.com/MesmerPrism",
@@ -9,14 +9,26 @@
         [
           2026,
           6,
-          13
+          21
         ]
       ]
     },
-    "note": "Referenced by Quest Companion Tools: https://mesmerprism.com/projects/viscereality-companion.html"
+    "note": "Referenced by Quest Companion Tools: https://mesmerprism.com/projects/viscereality-companion.html",
+    "author": [
+      {
+        "literal": "Companion / Hostess-like role"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    }
   },
   {
-    "id": "github-com-current-companion-repo",
+    "id": "companion-hostess-like-role-current-companion-repo-2026",
     "type": "webpage",
     "title": "Current companion repo",
     "URL": "https://github.com/MesmerPrism/Rusty-XR-Companion-Apps",
@@ -25,14 +37,26 @@
         [
           2026,
           6,
-          13
+          21
         ]
       ]
     },
-    "note": "Referenced by Quest Companion Tools: https://mesmerprism.com/projects/viscereality-companion.html"
+    "note": "Referenced by Quest Companion Tools: https://mesmerprism.com/projects/viscereality-companion.html",
+    "author": [
+      {
+        "literal": "Companion / Hostess-like role"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    }
   },
   {
-    "id": "github-com-rusty-xr-source",
+    "id": "companion-hostess-like-role-rusty-xr-source-2026",
     "type": "webpage",
     "title": "Rusty XR source",
     "URL": "https://github.com/MesmerPrism/Rusty-XR",
@@ -41,11 +65,23 @@
         [
           2026,
           6,
-          13
+          21
         ]
       ]
     },
-    "note": "Referenced by Quest Companion Tools: https://mesmerprism.com/projects/viscereality-companion.html"
+    "note": "Referenced by Quest Companion Tools: https://mesmerprism.com/projects/viscereality-companion.html",
+    "author": [
+      {
+        "literal": "Companion / Hostess-like role"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    }
   },
   {
     "id": "viscereality-companion-docs-viscereality-companion-docs",
@@ -57,7 +93,7 @@
         [
           2026,
           6,
-          13
+          21
         ]
       ]
     },
@@ -78,7 +114,7 @@
         [
           2026,
           6,
-          13
+          21
         ]
       ]
     },

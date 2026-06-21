@@ -120,6 +120,7 @@
                     manifests, property write plans, and build inputs are generated adapters
                     around that master settings surface.
                 </p>
+                <p class="reviewed-date">Reviewed June 21, 2026.</p>
                 <div class="hero-actions">
                     <a class="action-link action-link--strong" href="#start-here">Start here</a>
                     <a class="action-link" href="#workflow">Workflow</a>
@@ -135,10 +136,10 @@
                 <h2>A native APK starts as a feature decision.</h2>
                 <div>
                     <p>
-                        The workflow exists so an app-building agent can explain why every module
-                        is present before a package is built. The source app spec requests feature
-                        IDs, denies nearby families that must stay absent, and resolves into a
-                        lock that the build consumes.
+                        Before an APK is built, the app spec must explain every module that will
+                        be included and every nearby module family that must stay absent. The
+                        source app spec requests feature IDs, denies adjacent families, and
+                        resolves into a lock that the build consumes.
                     </p>
                     <p>
                         The generated settings file is the app behavior surface. Runtime profiles,
@@ -147,6 +148,79 @@
                     </p>
                 </div>
             </article>
+
+            <section class="at-glance" aria-labelledby="native-minimal-path">
+                <h2 id="native-minimal-path">Minimal native APK path</h2>
+                <div class="at-glance__grid">
+                    <div class="at-glance__item">
+                        <strong>1. Create</strong>
+                        <p><code>fixtures/native-app-builds/my-app.app.json</code></p>
+                    </div>
+                    <div class="at-glance__item">
+                        <strong>2. Request</strong>
+                        <p><code>core/openxr-vulkan</code> plus <code>background/solid-black</code>.</p>
+                    </div>
+                    <div class="at-glance__item">
+                        <strong>3. Deny</strong>
+                        <p><code>camera/*</code>, <code>display/*</code>, <code>video/*</code>, and <code>environment/*</code> when they are not needed.</p>
+                    </div>
+                    <div class="at-glance__item">
+                        <strong>4. Resolve</strong>
+                        <p>Run <code>Resolve-NativeAppBuild.ps1 -DryRun</code>.</p>
+                    </div>
+                    <div class="at-glance__item">
+                        <strong>5. Review</strong>
+                        <p>Inspect <code>feature-lock.json</code> and <code>native-app-settings.json</code>.</p>
+                    </div>
+                    <div class="at-glance__item">
+                        <strong>6. Accept</strong>
+                        <p>Trust only required effective markers and the absence of forbidden markers.</p>
+                    </div>
+                </div>
+                <div class="status-labels" aria-label="Status labels">
+                    <span class="status-label status-label--current">Source app spec</span>
+                    <span class="status-label status-label--current">Feature lock</span>
+                    <span class="status-label">Master settings</span>
+                    <span class="status-label status-label--diagnostic">Effective markers</span>
+                </div>
+            </section>
+
+            <section class="pipeline-flow" aria-labelledby="native-pipeline">
+                <div class="section-heading">
+                    <h2 id="native-pipeline">Resolver pipeline</h2>
+                </div>
+                <div class="pipeline-flow__grid">
+                    <div class="pipeline-step"><strong>app spec</strong><span>requested and denied feature IDs</span></div>
+                    <div class="pipeline-step"><strong>resolver</strong><span>dependency closure and compatibility checks</span></div>
+                    <div class="pipeline-step"><strong>feature lock</strong><span>reviewed transitive feature set</span></div>
+                    <div class="pipeline-step"><strong>settings</strong><span><code>native-app-settings.json</code></span></div>
+                    <div class="pipeline-step"><strong>adapters</strong><span>profile, manifest, properties, build env</span></div>
+                    <div class="pipeline-step"><strong>APK</strong><span>built from the reviewed lock</span></div>
+                    <div class="pipeline-step"><strong>markers</strong><span>runtime acceptance evidence</span></div>
+                </div>
+            </section>
+
+            <div class="table-wrap">
+                <table class="summary-table">
+                    <caption>Concrete canary example</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Example app</th>
+                            <th scope="col">Requested</th>
+                            <th scope="col">Explicitly absent</th>
+                            <th scope="col">Proof</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Solid-black particle canary</th>
+                            <td>OpenXR/Vulkan substrate, solid-black background, private particle placeholder.</td>
+                            <td>Camera, display composite, video, environment depth, SDF, Makepad, and unrelated private-layer routes.</td>
+                            <td>Effective markers are present and forbidden markers stay absent.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
 
             <section class="plain-terms-card" aria-labelledby="native-app-terms">
                 <h2 id="native-app-terms">Plain terms</h2>
@@ -327,7 +401,7 @@
                         Run <code>tools/Resolve-NativeAppBuild.ps1 -DryRun</code>. The resolver validates
                         schemas, follows dependencies, rejects incompatible or denied features,
                         blocks high-rate JSON/property misuse, and writes generated artifacts
-                        under <code>local-artifacts/native-app-builds/</code>.
+                        into an ignored generated-artifact directory for review.
                     </p>
                 </article>
                 <article class="project-card">

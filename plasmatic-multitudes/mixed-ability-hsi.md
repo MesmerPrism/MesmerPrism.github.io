@@ -75,6 +75,38 @@ Mixed-ability HSI | Updated June 21, 2026
  mappings under relation, goals, roles, pressure, and conflict. Treat physical
  deployment as a later translation problem, not the starting premise.
 
+ First study in one screen
+
+### A reversible visual swarm body, not a deployment claim
+
+ Participants
+ Small mixed-ability groups with access planning, fallback inputs, non-HMD options, and disclosure controls.
+
+ Medium
+ A reversible visual swarm body whose mappings can be seen, paused, changed, hidden, and repaired.
+
+ Question
+ Can the group understand, rebalance, and repair distributed agency?
+
+ Conditions
+ Access-practice elicitation, low-demand exploration, encounter/storytelling, cooperative play, and translation reflection.
+
+ Measures
+ Shared agency, fatigue, sensory load, authorship, privacy comfort, repair success, and mapping legibility.
+
+ The swarm is not only something to control; it is a shared object through which pacing,
+ visibility, authorship, and repair become negotiable. The full protocol card remains
+ below in the [minimal study module](https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html#study-module).
+
+ Claim status
+
+### Conceptual now; study and translation claims later
+
+ This page claims a design problem and a study direction. It does not claim therapeutic
+ effect, diagnostic power, deployment safety, or a finished physical swarm system. The
+ detailed [claim ladder](https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html#status) separates conceptual, design, research, and
+ later-translation claims.
+
  The page moves in four steps. First, it explains why a swarm can read as a body at all:
  a many-part presence held together by coherent dynamics, not sealed skin. Second, it asks
  what mixed-ability access changes when several people shape those dynamics. Third, it maps

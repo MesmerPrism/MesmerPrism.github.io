@@ -24,7 +24,10 @@ Bioelectricity and Morphogenesis
  educational abstractions, source-derived GLBs, and model-inspired overlays
  remain separate layers.
 
+ Reviewed June 21, 2026.
+
  Current slice (https://mesmerprism.com/projects/bioelectricity.html#current-slice)
+ Source boundary (https://mesmerprism.com/projects/bioelectricity.html#source-boundary-matrix)
  Planarian XR atlas (https://mesmerprism.com/projects/bioelectricity.html#planarian-xr)
  Showcase export (https://mesmerprism.com/projects/bioelectricity.html#showcase-export)
  Source status (https://mesmerprism.com/projects/bioelectricity.html#source-target-status)
@@ -34,6 +37,54 @@ Bioelectricity and Morphogenesis
  Claim boundary (https://mesmerprism.com/projects/bioelectricity.html#boundary)
  Rusty Morphospace (https://mesmerprism.com/projects/rusty-morphospace.html)
  References (https://mesmerprism.com/projects/bioelectricity.html#references)
+
+At a glance
+
+ Central rule
+ Observed records, source-derived geometry, educational dynamics, and model-inspired replays stay separate.
+
+ Current claim
+ Qualitative teaching models and source-backed atlas layers, not calibrated wet-lab prediction.
+
+ What exists now
+ Rusty Matter/Optics fixtures, browser inspection, reviewed PlanformDB records, GLB overlays, and replay manifests.
+
+ Not claimed
+ A full physiology simulator, clinical tool, or proof that model-inspired overlays are observed dynamics.
+
+ Educational model
+ Source-backed atlas
+ Not a clinical claim
+ Deferred source-map sidecars
+
+ Source boundary
+
+Observed records and educational models stay separate
+
+ A visual overlay may teach a patterning idea, but it is not a calibrated
+ physiology trace unless a separate validation path supports that claim.
+
+ Source-boundary matrix
+
+ Observed
+ Reviewed GLB derivatives and PlanformDB records.
+ Source-backed visualization and data layers.
+
+ Curated
+ Selected experiment records and outcome details.
+ Literature/database-derived teaching context.
+
+ Educational
+ Procedural body, fields, conductance, and readouts.
+ Qualitative model, not a full physiology simulator.
+
+ Replay
+ GIFs over reviewed point positions.
+ Model-inspired visualization, not observed dynamics.
+
+ Deferred
+ Object-level picking and observed-geometry dynamics.
+ Planned pending public-safe source-map sidecars.
 
  Computational medium
 

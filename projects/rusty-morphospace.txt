@@ -15,19 +15,50 @@ Computational morphology platform
 
 Rusty Morphospace
 
- Rusty Morphospace is the umbrella frame for a modular Rust platform that
- treats form as more than geometry. A form can be simulated matter, a spatial
- relation, a feedback circuit, a renderer-neutral view, an operator workflow,
- or a headset-hosted environment. The project names the space where those
- pieces can be built without collapsing them into one XR app.
+ Rusty Morphospace is an AGPL-first Rust architecture for computational form.
+ It separates simulation truth, spatial relation, runtime authority,
+ renderer-neutral inspection, authoring, and Quest/headset validation so
+ prototypes do not collapse into one monolithic XR app.
 
- Start here (https://mesmerprism.com/projects/rusty-morphospace.html#start-here)
- Build a native APK (https://mesmerprism.com/projects/rusty-morphospace/native-app-build-workflow.html)
- Current Quest features (https://mesmerprism.com/projects/rusty-morphospace.html#current-work)
- Repository map (https://mesmerprism.com/projects/rusty-morphospace.html#repositories)
- HSI bridge (https://mesmerprism.com/projects/rusty-morphospace.html#hsi-implementation-layer)
- Legacy Rusty XR (https://mesmerprism.com/projects/rusty-morphospace/rusty-xr.html)
- Why Morphospace (https://mesmerprism.com/projects/rusty-morphospace.html#why)
+ Reviewed June 21, 2026.
+
+ Understand the architecture (https://mesmerprism.com/projects/rusty-morphospace.html#start-here)
+ Build a Quest APK (https://mesmerprism.com/projects/rusty-morphospace/native-app-build-workflow.html)
+ Inspect current evidence (https://mesmerprism.com/projects/rusty-morphospace.html#current-work)
+ Map this to HSI (https://mesmerprism.com/projects/rusty-morphospace.html#hsi-implementation-layer)
+ Find repositories (https://mesmerprism.com/projects/rusty-morphospace.html#repositories)
+ Read legacy Rusty XR (https://mesmerprism.com/projects/rusty-morphospace/rusty-xr.html)
+
+Rusty Morphospace at a glance
+
+ What it is
+ An AGPL-first Rust repo family for computational-form systems.
+
+ What exists now
+ Public core repos, native Quest/OpenXR/Vulkan routes, Makepad/Hostess validation paths, app-build feature locks, Matter/Optics teaching models, and legacy Rusty XR material.
+
+ What it is for
+ Keeping simulation, relation state, command authority, visual inspection, and platform evidence separate.
+
+ Not yet
+ A finished mixed-ability HSI study app, clinical system, scaled robotic backend, or single XR product.
+
+ Public source
+ Device evidence
+ Planned HSI authoring
+ Legacy reference
+ Not a clinical claim
+
+ Current, planned, and not claimed
+
+ Current
+ Public Rust repos, contracts, feature-lock APK workflow, Quest native renderer evidence, Matter/Optics teaching models, and Rusty XR legacy reference material.
+
+ Planned
+ HSI-facing authoring, consent/provenance controls, participant mapping editors, replay, and version comparison.
+
+ Not claimed
+ Clinical effect, finished study app, scaled robotic backend, raw passthrough access from MediaProjection, or calibrated physiology.
 
 Start with the responsibility, not the demo.
 
@@ -60,6 +91,43 @@ Plain terms
 
  App build
  A feature-lock workflow that assembles native APKs from explicit modules instead of copied profiles.
+
+ SDF / ADF
+ Signed-distance and adaptive-distance field diagnostics for inspecting form, collision, and target-space behavior.
+
+ AHardwareBuffer
+ Android hardware buffer transport, abbreviated as HWB in route names and validation notes.
+
+Architecture map
+
+ The layers compose, but each layer keeps a different decision local.
+
+ Matter
+ Computes fields, particles, surfaces, SDF/ADF forms, and simulation state.
+
+ Optics
+ Describes what can be inspected before a renderer draws it.
+
+ Makepad / Browser / Quest
+ Adapt views into concrete app surfaces without owning simulation truth.
+
+ Lattice
+ Records spaces, poses, calibration, confidence, and device capability snapshots.
+
+ Manifold
+ Decides which commands, sessions, streams, clocks, and audit records count.
+
+ Hostess
+ Installs, launches, stages, replays, and packages evidence around the runtime.
+
+ GUI / Studio
+ Provides authoring and review surfaces over contracts rather than hidden behavior.
+
+ Rusty Quest
+ Proves what the headset package, permissions, profile, and renderer actually did.
+
+ Rusty XR
+ Preserves older examples and source vocabulary as a legacy/reference collection.
 
  Purpose
 
@@ -560,6 +628,36 @@ What is current as of June 21, 2026
  separate Rust-first NativeActivity/OpenXR/Vulkan stack for low-level native
  headset experiments
  (rusty-quest (https://github.com/MesmerPrism/rusty-quest)).
+
+ Current proof surfaces
+
+ Surface
+ Current claim
+ Caveat
+
+ Native Quest renderer
+ OpenXR/Vulkan session, stereo swapchain, profiles, and runtime markers.
+ Diagnostic/proof route, not a finished participant UI.
+
+ Camera2/HWB
+ Direct app-visible camera import path through AHardwareBuffer sampling.
+ Camera route only; it is not compositor passthrough access.
+
+ MediaProjection
+ Display-composite feedback witness.
+ Not raw passthrough, camera, environment-depth, or scene geometry evidence.
+
+ Environment depth
+ Diagnostic validation surface for depth and scene-map routes.
+ Not a finished participant tool.
+
+ Quest Makepad / Hostess
+ Recorded/live hand surfaces, SDF/ADF, particles, and bounded GPU readback.
+ Validation route, not the authority model.
+
+ Remote camera
+ RMANVID1 framing and single-device evidence.
+ No two-peer readiness claim yet.
 
  The native path is not only a launch wrapper. It has public profiles for direct
  Quest Camera2/AHardwareBuffer import into Vulkan external images, metadata-owned
