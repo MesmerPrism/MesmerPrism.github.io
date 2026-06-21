@@ -577,44 +577,24 @@ Till Holzapfel
  Quest / Windows app / Android companion / ADB / Diagnostics
 
  [Tooling overview](https://mesmerprism.com/projects/viscereality-companion.html)
- [Current repo](https://github.com/MesmerPrism/Rusty-XR-Companion-Apps)
  [Earlier docs](https://mesmerprism.github.io/ViscerealityCompanion/)
-
- Legacy reference under Rusty Morphospace
-
-### [Rusty XR reference](https://mesmerprism.com/projects/rusty-morphospace/rusty-xr.html)
-
- The public compatibility and history surface for earlier Quest and XR
- work: reusable contracts, diagnostics, Quest examples, broker models,
- camera/depth vocabulary, hand and particle primitives, and companion-app
- interfaces that informed the current Morphospace split.
-
- Status
- Legacy/reference lane
- Artifact
- MIT Rust repo, Quest examples, and docs
- Use
- Compatibility evidence and source-label vocabulary
-
- Rust / OpenXR / Vulkan / Meta Quest / Legacy reference
-
- [Legacy reference](https://mesmerprism.com/projects/rusty-morphospace/rusty-xr.html)
- [Source repo](https://github.com/MesmerPrism/Rusty-XR)
- [Passthrough guide](https://mesmerprism.github.io/Rusty-XR/passthrough.html)
 
  Computational morphology platform
 
 ### [Rusty Morphospace](https://mesmerprism.com/projects/rusty-morphospace.html)
 
- A public AGPL-first Rust repo family for computational matter,
+ A public mixed-license Rust repo family for computational matter,
  situated relations, runtime authority, renderer-neutral inspection,
  package evidence, authoring, host validation, and Quest-side
- integration.
+ integration. The active Morphospace-owned repos are AGPL-first; legacy
+ compatibility and lab/reference repos keep their existing MIT lanes.
 
  Status
  Public repo family
  Artifact
  Rust crates, fixtures, schemas, browser previews, and docs
+ Licenses
+ AGPL-3.0-or-later for Morphospace-owned repos; MIT for legacy/reference repos noted on the project page
  Use
  Separating computational form, relation, regulation, and appearance
 
@@ -624,7 +604,6 @@ Till Holzapfel
  [Matter](https://github.com/MesmerPrism/rusty-matter)
  [Manifold](https://github.com/MesmerPrism/rusty-manifold)
  [Optics](https://github.com/MesmerPrism/rusty-optics)
- [Rusty XR boundary](https://mesmerprism.com/projects/rusty-morphospace/rusty-xr.html)
 
  Bioelectric atlas and morphogenesis model
 
@@ -653,8 +632,8 @@ Till Holzapfel
 
 ### [Polar H10 Work](https://mesmerprism.com/projects/polar-h10.html)
 
- Public Polar H10 work across minimal signal packages, Rusty XR data
- contracts, Quest broker streams, Windows capture, Android phone
+ Public Polar H10 work across minimal signal packages, Quest data
+ contracts, broker streams, Windows capture, Android phone
  diagnostics, Unity Quest integration, and Viscereality research tooling.
  The focus is clear stream ownership, inspectable routing, and reusable
  biosignal contracts.
@@ -670,8 +649,7 @@ Till Holzapfel
 
  [Project overview](https://mesmerprism.com/projects/polar-h10.html)
  [Signal packages](https://github.com/MesmerPrism/polar-h10-signals)
- [Pipeline docs](https://github.com/MesmerPrism/Rusty-XR/blob/main/docs/BLE_LSL_POLAR_PIPELINE.md)
- [Windows capture](https://github.com/MesmerPrism/Rusty-XR-Companion-Apps/blob/main/docs/polar-h10-windows-capture.md)
+ [References](https://mesmerprism.com/projects/polar-h10.html#references)
 
  Depth inversion research instrument
 
@@ -679,7 +657,8 @@ Till Holzapfel
 
  Depth-inversion experiments need stimulus controls that survive renderer
  changes. Hollow Face Lab connects hollow-face research with WebGL, WebXR,
- texture upload, Rusty XR, asset provenance, and design rationale.
+ texture upload, XR implementation choices, asset provenance, and design
+ rationale.
 
  Status
  Prototype instrument
@@ -688,12 +667,11 @@ Till Holzapfel
  Focus
  Stimulus variables and response logging
 
- Hollow face / WebXR / Three.js / Rusty XR / Stimulus variables
+ Hollow face / WebXR / Three.js / Stimulus variables
 
  [Launch app](https://mesmerprism.com/projects/hollow-face-lab/app/)
  [Overview](https://mesmerprism.com/projects/hollow-face-lab.html)
  [References](https://mesmerprism.com/projects/hollow-face-lab.html#references)
- [Rusty XR](https://mesmerprism.com/projects/rusty-morphospace/rusty-xr.html)
 
  Live citizen-science web collaboration
 
@@ -977,11 +955,11 @@ Till Holzapfel
 
 ### GitHub and research tooling
 
- Public repositories include Rusty XR, Rusty XR Companion Apps,
+ Public repositories include Rusty Morphospace, Quest companion tooling,
  Polar H10 routing and capture work, Strobotorch, browser prototypes,
- simulation tools, and shareable research infrastructure. Study-bound
- runtimes are summarized through documented interfaces, papers, and public
- references.
+ simulation tools, and shareable research infrastructure. Licenses vary by
+ repo: Morphospace-owned source is AGPL-first, while some compatibility,
+ lab, and tool repositories remain MIT.
 
  Status
  Public repositories
@@ -993,9 +971,9 @@ Till Holzapfel
  Repositories / Simulations / Tooling / Infrastructure
 
  [GitHub profile](https://github.com/MesmerPrism)
- [Rusty-XR](https://github.com/MesmerPrism/Rusty-XR)
+ [Rusty Morphospace](https://mesmerprism.com/projects/rusty-morphospace.html)
  [Polar H10 work](https://mesmerprism.com/projects/polar-h10.html)
- [Rusty-XR Companion Apps](https://github.com/MesmerPrism/Rusty-XR-Companion-Apps)
+ [Quest companion tools](https://mesmerprism.com/projects/viscereality-companion.html)
  [Strobotorch](https://github.com/MesmerPrism/Strobotorch)
  [Bressloff V1 code](https://github.com/MesmerPrism/bressloff-v1-form-constants)
  [AXP access guide](https://mesmerprism.com/axp-mvp-survey-guide/)
@@ -1024,7 +1002,7 @@ Till Holzapfel
  [SANE](https://mesmerprism.com/projects/sane.html),
  [Tulpas](https://mesmerprism.com/projects/tulpas.html),
  [Scientific Surrealism](https://mesmerprism.com/projects/scientific-surrealism.html),
- [Rusty XR](https://mesmerprism.com/projects/rusty-morphospace/rusty-xr.html),
+ [Rusty Morphospace](https://mesmerprism.com/projects/rusty-morphospace.html),
  [Polar H10 Work](https://mesmerprism.com/projects/polar-h10.html),
  [Quest Companion Tools](https://mesmerprism.com/projects/viscereality-companion.html),
  [Hollow Face Lab](https://mesmerprism.com/projects/hollow-face-lab.html),
@@ -10122,7 +10100,15 @@ Computational morphology platform
 
 - Current proofs: remote camera framing, native Quest rendering, direct Camera2/HWB import, MediaProjection display-composite feedback, live/recorded hand surfaces, SDF/ADF debug paths, particles, and bounded GPU readbacks
 
-- Licensing: AGPL-3.0-or-later for Morphospace-owned source
+- Licensing: AGPL-3.0-or-later for active Morphospace-owned source; MIT retained for legacy/reference and lab lanes where noted
+
+### License quick map
+
+- AGPL-3.0-or-later: Matter, Optics, Manifold, Lattice, GUI, Makepad, Quest, Quest-Makepad, Manifold Packages, Studio, Hostess, and Quest Sidecar Mesh
+
+- MIT: Rusty XR compatibility/history collection and Quest Termux Lab
+
+- External references, such as DiffeoMorph, keep their upstream paper and code licenses
 
 ### Layer names
 

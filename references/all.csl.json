@@ -1428,34 +1428,6 @@
     }
   },
   {
-    "id": "fejer-et-al-passthrough-guide-2026",
-    "type": "webpage",
-    "title": "Passthrough guide",
-    "URL": "https://mesmerprism.github.io/Rusty-XR/passthrough.html",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          21
-        ]
-      ]
-    },
-    "note": "Referenced by Mesmer Prism | Till Holzapfel: https://mesmerprism.com/",
-    "author": [
-      {
-        "literal": "Fejer et al"
-      }
-    ],
-    "issued": {
-      "date-parts": [
-        [
-          2026
-        ]
-      ]
-    }
-  },
-  {
     "id": "fejer-et-al-matter-2026",
     "type": "webpage",
     "title": "Matter",
@@ -1544,62 +1516,6 @@
     "type": "webpage",
     "title": "Signal packages",
     "URL": "https://github.com/MesmerPrism/polar-h10-signals",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          21
-        ]
-      ]
-    },
-    "note": "Referenced by Mesmer Prism | Till Holzapfel: https://mesmerprism.com/",
-    "author": [
-      {
-        "literal": "Fejer et al"
-      }
-    ],
-    "issued": {
-      "date-parts": [
-        [
-          2026
-        ]
-      ]
-    }
-  },
-  {
-    "id": "fejer-et-al-pipeline-docs-2026",
-    "type": "webpage",
-    "title": "Pipeline docs",
-    "URL": "https://github.com/MesmerPrism/Rusty-XR/blob/main/docs/BLE_LSL_POLAR_PIPELINE.md",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          21
-        ]
-      ]
-    },
-    "note": "Referenced by Mesmer Prism | Till Holzapfel: https://mesmerprism.com/",
-    "author": [
-      {
-        "literal": "Fejer et al"
-      }
-    ],
-    "issued": {
-      "date-parts": [
-        [
-          2026
-        ]
-      ]
-    }
-  },
-  {
-    "id": "fejer-et-al-windows-capture-2026",
-    "type": "webpage",
-    "title": "Windows capture",
-    "URL": "https://github.com/MesmerPrism/Rusty-XR-Companion-Apps/blob/main/docs/polar-h10-windows-capture.md",
     "accessed": {
       "date-parts": [
         [
@@ -10034,6 +9950,48 @@
     }
   },
   {
+    "id": "rusty-xr-ble-lsl-and-polar-h10-pipeline",
+    "type": "webpage",
+    "title": "BLE, LSL, and Polar H10 Pipeline",
+    "URL": "https://github.com/MesmerPrism/Rusty-XR/blob/main/docs/BLE_LSL_POLAR_PIPELINE.md",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          21
+        ]
+      ]
+    },
+    "note": "Referenced by Polar H10 Work: https://mesmerprism.com/projects/polar-h10.html",
+    "author": [
+      {
+        "literal": "Rusty XR"
+      }
+    ]
+  },
+  {
+    "id": "rusty-xr-companion-polar-h10-windows-capture",
+    "type": "webpage",
+    "title": "Polar H10 Windows Capture",
+    "URL": "https://github.com/MesmerPrism/Rusty-XR-Companion-Apps/blob/main/docs/polar-h10-windows-capture.md",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          21
+        ]
+      ]
+    },
+    "note": "Referenced by Polar H10 Work: https://mesmerprism.com/projects/polar-h10.html",
+    "author": [
+      {
+        "literal": "Rusty XR Companion"
+      }
+    ]
+  },
+  {
     "id": "mesmerprism-polarh10",
     "type": "webpage",
     "title": "PolarH10",
@@ -11526,6 +11484,27 @@
     "type": "webpage",
     "title": "Project Documentation",
     "URL": "https://mesmerprism.github.io/Rusty-XR/",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          21
+        ]
+      ]
+    },
+    "note": "Referenced by Rusty XR Legacy Reference | Rusty Morphospace: https://mesmerprism.com/projects/rusty-morphospace/rusty-xr.html",
+    "author": [
+      {
+        "literal": "Rusty XR"
+      }
+    ]
+  },
+  {
+    "id": "rusty-xr-quest-passthrough-documentation",
+    "type": "webpage",
+    "title": "Quest Passthrough Documentation",
+    "URL": "https://mesmerprism.github.io/Rusty-XR/passthrough.html",
     "accessed": {
       "date-parts": [
         [

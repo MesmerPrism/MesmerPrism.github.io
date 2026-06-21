@@ -9,7 +9,7 @@
         [
           2026,
           6,
-          19
+          21
         ]
       ]
     },
@@ -37,7 +37,7 @@
         [
           2026,
           6,
-          19
+          21
         ]
       ]
     },
@@ -65,91 +65,7 @@
         [
           2026,
           6,
-          19
-        ]
-      ]
-    },
-    "note": "Referenced by Mesmer Prism | Till Holzapfel: https://mesmerprism.com/",
-    "author": [
-      {
-        "literal": "Fejer et al"
-      }
-    ],
-    "issued": {
-      "date-parts": [
-        [
-          2026
-        ]
-      ]
-    }
-  },
-  {
-    "id": "fejer-et-al-current-repo-2026",
-    "type": "webpage",
-    "title": "Current repo",
-    "URL": "https://github.com/MesmerPrism/Rusty-XR-Companion-Apps",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          19
-        ]
-      ]
-    },
-    "note": "Referenced by Mesmer Prism | Till Holzapfel: https://mesmerprism.com/",
-    "author": [
-      {
-        "literal": "Fejer et al"
-      }
-    ],
-    "issued": {
-      "date-parts": [
-        [
-          2026
-        ]
-      ]
-    }
-  },
-  {
-    "id": "fejer-et-al-source-repo-2026",
-    "type": "webpage",
-    "title": "Source repo",
-    "URL": "https://github.com/MesmerPrism/Rusty-XR",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          19
-        ]
-      ]
-    },
-    "note": "Referenced by Mesmer Prism | Till Holzapfel: https://mesmerprism.com/",
-    "author": [
-      {
-        "literal": "Fejer et al"
-      }
-    ],
-    "issued": {
-      "date-parts": [
-        [
-          2026
-        ]
-      ]
-    }
-  },
-  {
-    "id": "fejer-et-al-passthrough-guide-2026",
-    "type": "webpage",
-    "title": "Passthrough guide",
-    "URL": "https://mesmerprism.github.io/Rusty-XR/passthrough.html",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          19
+          21
         ]
       ]
     },
@@ -177,7 +93,7 @@
         [
           2026,
           6,
-          19
+          21
         ]
       ]
     },
@@ -205,7 +121,7 @@
         [
           2026,
           6,
-          19
+          21
         ]
       ]
     },
@@ -233,7 +149,7 @@
         [
           2026,
           6,
-          19
+          21
         ]
       ]
     },
@@ -261,63 +177,7 @@
         [
           2026,
           6,
-          19
-        ]
-      ]
-    },
-    "note": "Referenced by Mesmer Prism | Till Holzapfel: https://mesmerprism.com/",
-    "author": [
-      {
-        "literal": "Fejer et al"
-      }
-    ],
-    "issued": {
-      "date-parts": [
-        [
-          2026
-        ]
-      ]
-    }
-  },
-  {
-    "id": "fejer-et-al-pipeline-docs-2026",
-    "type": "webpage",
-    "title": "Pipeline docs",
-    "URL": "https://github.com/MesmerPrism/Rusty-XR/blob/main/docs/BLE_LSL_POLAR_PIPELINE.md",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          19
-        ]
-      ]
-    },
-    "note": "Referenced by Mesmer Prism | Till Holzapfel: https://mesmerprism.com/",
-    "author": [
-      {
-        "literal": "Fejer et al"
-      }
-    ],
-    "issued": {
-      "date-parts": [
-        [
-          2026
-        ]
-      ]
-    }
-  },
-  {
-    "id": "fejer-et-al-windows-capture-2026",
-    "type": "webpage",
-    "title": "Windows capture",
-    "URL": "https://github.com/MesmerPrism/Rusty-XR-Companion-Apps/blob/main/docs/polar-h10-windows-capture.md",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          19
+          21
         ]
       ]
     },
@@ -345,7 +205,7 @@
         [
           2026,
           6,
-          19
+          21
         ]
       ]
     },
@@ -373,7 +233,7 @@
         [
           2026,
           6,
-          19
+          21
         ]
       ]
     },
@@ -401,7 +261,7 @@
         [
           2026,
           6,
-          19
+          21
         ]
       ]
     },
@@ -429,7 +289,7 @@
         [
           2026,
           6,
-          19
+          21
         ]
       ]
     },
@@ -457,7 +317,7 @@
         [
           2026,
           6,
-          19
+          21
         ]
       ]
     },
@@ -485,7 +345,7 @@
         [
           2026,
           6,
-          19
+          21
         ]
       ]
     },
@@ -513,7 +373,7 @@
         [
           2026,
           6,
-          19
+          21
         ]
       ]
     },
@@ -542,7 +402,7 @@
         [
           2026,
           6,
-          19
+          21
         ]
       ]
     },
@@ -571,7 +431,7 @@
         [
           2026,
           6,
-          19
+          21
         ]
       ]
     },
@@ -600,7 +460,7 @@
         [
           2026,
           6,
-          19
+          21
         ]
       ]
     },
@@ -616,7 +476,7 @@
         [
           2026,
           6,
-          19
+          21
         ]
       ]
     },

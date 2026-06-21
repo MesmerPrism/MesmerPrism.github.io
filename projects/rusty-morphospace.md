@@ -86,7 +86,15 @@ Computational morphology platform
 
 - Current proofs: remote camera framing, native Quest rendering, direct Camera2/HWB import, MediaProjection display-composite feedback, live/recorded hand surfaces, SDF/ADF debug paths, particles, and bounded GPU readbacks
 
-- Licensing: AGPL-3.0-or-later for Morphospace-owned source
+- Licensing: AGPL-3.0-or-later for active Morphospace-owned source; MIT retained for legacy/reference and lab lanes where noted
+
+### License quick map
+
+- AGPL-3.0-or-later: Matter, Optics, Manifold, Lattice, GUI, Makepad, Quest, Quest-Makepad, Manifold Packages, Studio, Hostess, and Quest Sidecar Mesh
+
+- MIT: Rusty XR compatibility/history collection and Quest Termux Lab
+
+- External references, such as DiffeoMorph, keep their upstream paper and code licenses
 
 ### Layer names
 
