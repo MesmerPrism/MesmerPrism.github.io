@@ -304,7 +304,7 @@
     },
     {
       "title": "Rusty Morphospace",
-      "description": "Rusty Morphospace is a modular Rust platform for computational matter, situated relations, runtime authority, renderer-neutral inspection, and Quest-native validation.",
+      "description": "Rusty Morphospace is a modular Rust platform for computational-form systems with separate model, relation, command, inspection, packaging, and evidence layers.",
       "path": "projects/rusty-morphospace.html",
       "url": "https://mesmerprism.com/projects/rusty-morphospace.html",
       "group": "Project pages",

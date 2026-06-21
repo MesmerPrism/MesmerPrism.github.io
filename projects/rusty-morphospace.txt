@@ -3,7 +3,7 @@ Rusty Morphospace
 Source: https://mesmerprism.com/projects/rusty-morphospace.html
 Canonical HTML: https://mesmerprism.com/projects/rusty-morphospace.html
 Generated: 2026-06-21
-Description: Rusty Morphospace is a modular Rust platform for computational matter, situated relations, runtime authority, renderer-neutral inspection, and Quest-native validation.
+Description: Rusty Morphospace is a modular Rust platform for computational-form systems with separate model, relation, command, inspection, packaging, and evidence layers.
 Markdown: https://mesmerprism.com/projects/rusty-morphospace.md
 Plain text: https://mesmerprism.com/projects/rusty-morphospace.txt
 BibTeX references: https://mesmerprism.com/projects/rusty-morphospace.bib
@@ -11,21 +11,22 @@ CSL JSON references: https://mesmerprism.com/projects/rusty-morphospace.referenc
 
 ---
 
-Computational morphology platform
+Modular Rust platform for computational-form systems
 
 Rusty Morphospace
 
- Rusty Morphospace is an AGPL-first Rust architecture for computational form.
- It separates simulation truth, spatial relation, runtime authority,
- renderer-neutral inspection, authoring, and Quest/headset validation so
- prototypes do not collapse into one monolithic XR app.
+ Rusty Morphospace is a modular Rust platform for building systems where
+ computational state, spatial relation, commands, visual inspection, app
+ packaging, and runtime evidence need to stay separate but connected.
+ It is a repo family and architecture, not one XR app.
 
  Reviewed June 21, 2026.
 
- Understand the architecture (https://mesmerprism.com/projects/rusty-morphospace.html#start-here)
+ What it is for (https://mesmerprism.com/projects/rusty-morphospace.html#what-for)
+ Core model (https://mesmerprism.com/projects/rusty-morphospace.html#start-here)
  Build a Quest APK (https://mesmerprism.com/projects/rusty-morphospace/native-app-build-workflow.html)
  Inspect current evidence (https://mesmerprism.com/projects/rusty-morphospace.html#current-work)
- Map this to HSI (https://mesmerprism.com/projects/rusty-morphospace.html#hsi-implementation-layer)
+ Examples (https://mesmerprism.com/projects/rusty-morphospace.html#example-domains)
  Find repositories (https://mesmerprism.com/projects/rusty-morphospace.html#repositories)
  Read legacy Rusty XR (https://mesmerprism.com/projects/rusty-morphospace/rusty-xr.html)
 
@@ -35,68 +36,109 @@ Rusty Morphospace at a glance
  An AGPL-first Rust repo family for computational-form systems.
 
  What exists now
- Public core repos, native Quest/OpenXR/Vulkan routes, Makepad/Hostess validation paths, app-build feature locks, Matter/Optics teaching models, and legacy Rusty XR material.
+ Public core repos, app-build feature locks, native Quest/OpenXR/Vulkan routes, Makepad/Hostess validation paths, Matter/Optics teaching models, and legacy Rusty XR material.
 
  What it is for
- Keeping simulation, relation state, command authority, visual inspection, and platform evidence separate.
+ Keeping model state, spatial relation, command flow, visual inspection, and platform evidence separate.
 
- Not yet
- A finished mixed-ability HSI study app, clinical system, scaled robotic backend, or single XR product.
+ What it is not
+ Not a single XR application, renderer, HSI framework, clinical system, robotics backend, or raw camera/passthrough claim.
 
  Public source
  Device evidence
- Planned HSI authoring
+ Application-domain examples
  Legacy reference
  Not a clinical claim
 
- Current, planned, and not claimed
+ Use
 
- Current
- Public Rust repos, contracts, feature-lock APK workflow, Quest native renderer evidence, Matter/Optics teaching models, and Rusty XR legacy reference material.
+What can you use it for?
 
- Planned
- HSI-facing authoring, consent/provenance controls, participant mapping editors, replay, and version comparison.
+ Use Rusty Morphospace when a project needs clear boundaries between the
+ state being modeled, the device or space around it, the commands that can
+ change it, the views used to inspect it, and the evidence proving what ran.
 
- Not claimed
- Clinical effect, finished study app, scaled robotic backend, raw passthrough access from MediaProjection, or calibrated physiology.
+ Practical uses
 
-Start with the responsibility, not the demo.
+ Build computational-form simulations
+ Matter owns particles, fields, surfaces, SDF/ADF structures, and simulation state.
 
- Rusty Morphospace is easiest to read as a set of ownership boundaries.
- Matter owns computational substance, Lattice owns situated relation,
- Manifold owns runtime authority, Optics owns renderer-neutral appearance,
- and Quest/Makepad/Hostess carry platform and validation routes around
- those contracts.
+ Keep spatial/device context separate
+ Lattice owns spaces, poses, calibration, validity, confidence, and device capability snapshots.
 
- That separation is the onboarding rule: choose the layer that owns the
- behavior, then add only the adapters and native app features needed for
- the target experience.
+ Route commands and streams explicitly
+ Manifold owns sessions, streams, commands, clocks, leases, audit, and runtime regulation.
 
-Plain terms
+ Inspect state without hard-coding a renderer
+ Optics owns renderer-neutral cameras, views, materials, projections, and debug payloads.
 
- Matter
- Fields, particles, surfaces, SDF/ADF forms, dynamics, and simulation truth.
+ Build GUI and editor surfaces
+ GUI and Studio describe controls, panels, graph canvases, package review, and authoring.
 
- Lattice
- Spaces, poses, calibration, validity, confidence, and device capability snapshots.
+ Target platforms without making them the core model
+ Quest, Makepad, Quest-Makepad, Hostess, and sidecar routes validate deployment and evidence.
 
- Manifold
- Commands, sessions, streams, clocks, consent state, audit, and runtime regulation.
+ Keep application domains modular
+ HSI, bioelectricity, biosignals, morphogenesis references, and XR examples use the core but do not define it.
 
- Optics
- Renderer-neutral views, cameras, materials, debug payloads, and inspection contracts.
+ What it is and is not
 
- Quest
- Headset platform profiles, permission surfaces, native OpenXR/Vulkan examples, and evidence markers.
+ Rusty Morphospace is...
+ Rusty Morphospace is not...
 
- App build
- A feature-lock workflow that assembles native APKs from explicit modules instead of copied profiles.
+ A modular Rust architecture and repo family.
+ One finished XR app.
 
- SDF / ADF
- Signed-distance and adaptive-distance field diagnostics for inspecting form, collision, and target-space behavior.
+ A way to keep simulation, relation, control, inspection, and runtime evidence separate.
+ A renderer by itself.
 
- AHardwareBuffer
- Android hardware buffer transport, abbreviated as HWB in route names and validation notes.
+ A domain-neutral base for computational-form experiments.
+ An HSI framework by itself.
+
+ A platform-neutral set of contracts with browser, desktop, headset, and host-validation routes.
+ Quest-only software.
+
+ A way to build inspectable experiments and validation paths.
+ A clinical, therapeutic, or social-science claim.
+
+The problem it solves
+
+ Experimental systems often tangle too many responsibilities in one app:
+ simulation state, input devices, spatial transforms, renderer assumptions,
+ command policy, platform permissions, and validation evidence.
+
+ Rusty Morphospace separates those responsibilities so a project can
+ change one part without silently changing the others. A particle surface
+ should be able to keep the same Matter state while being inspected through
+ a browser view, adapted into a Makepad shell, or validated on Quest. The
+ particle state should not become Quest logic, and the Quest adapter should
+ not become simulation truth.
+
+Core verbs
+
+ Model
+ What exists and changes. Lane: Matter.
+
+ Situate
+ Where it is relative to spaces, devices, cameras, and views. Lane: Lattice.
+
+ Regulate
+ What can change it, when, and under which policy. Lane: Manifold.
+
+ Inspect
+ How state can be seen or debugged before choosing one renderer. Lane: Optics.
+
+ Author
+ Which controls, panels, graph surfaces, and package-review tools expose it. Lanes: GUI and Studio.
+
+ Adapt
+ Which toolkit or platform hosts it. Lanes: browser, Makepad, Quest, native routes.
+
+ Validate
+ What evidence proves the route behaved as claimed. Lanes: Hostess, app build, platform receipts.
+
+ Names
+ The repo names are stable homes for those responsibilities, not a vocabulary test.
 
 Architecture map
 
@@ -208,68 +250,52 @@ Useful for
 - Proving headset paths with bounded evidence before claiming runtime backends
 - Building Quest-native OpenXR/Vulkan diagnostics without making platform adapters simulation authority
 
-Connected work
-- Mixed-Ability HSI (https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html) uses Morphospace as the planned implementation layer for explicit access mappings, not as proof that the social method is already solved
-- Bioelectricity and Morphogenesis (https://mesmerprism.com/projects/bioelectricity.html) shows the Matter/Optics boundary applied to planarian surface-field dynamics
-- DiffeoMorph (https://arxiv.org/abs/2512.17129) provides a public computational-morphogenesis reference for many-agent target-forming bodies, separate from Morphospace runtime authority
+Core routes
+- Native App Build Workflow (https://mesmerprism.com/projects/rusty-morphospace/native-app-build-workflow.html) explains how APK profiles select only the required Rusty Quest feature modules
 - Rusty Quest (https://github.com/MesmerPrism/rusty-quest) carries runtime profiles, Quest permission/tooling surfaces, and the native Rust/OpenXR/Vulkan renderer route
-- Native App Build Workflow (https://mesmerprism.com/projects/rusty-morphospace/native-app-build-workflow.html) explains how new APK profiles select only the required Rusty Quest feature modules
-- Rusty Quest Makepad (https://github.com/MesmerPrism/rusty-quest-makepad) carries the recorded-hand, SDF/ADF, particle, and GPU-proof Makepad adapter work
-- Rusty Hostess (https://github.com/MesmerPrism/rusty-hostess) provides the install, staging, launch, and evidence shell used to validate those headset paths
+- Rusty Quest Makepad (https://github.com/MesmerPrism/rusty-quest-makepad) carries Quest-specific Makepad adapter work
+- Rusty Hostess (https://github.com/MesmerPrism/rusty-hostess) provides install, staging, launch, replay, and evidence capture
+
+Example domains
+- Bioelectricity and Morphogenesis (https://mesmerprism.com/projects/bioelectricity.html) shows the Matter/Optics boundary in a teaching model
+- Mixed-Ability HSI (https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html) is a planned application domain for explicit mappings, not the core architecture
+- Polar H10 Work (https://mesmerprism.com/projects/polar-h10.html) shows the same boundary discipline applied to biosignal routes
+
+Reference and legacy
 - Rusty XR (https://mesmerprism.com/projects/rusty-morphospace/rusty-xr.html) remains the public compatibility and Quest reference surface
-- Quest Termux Lab (https://github.com/MesmerPrism/quest-termux-lab) is a public MIT lab source that feeds the Rusty Quest sidecar bridge
-- Quest Companion Tools (https://mesmerprism.com/projects/viscereality-companion.html) show why operator-side contracts matter
-- Polar H10 Work (https://mesmerprism.com/projects/polar-h10.html) shows the same boundary discipline applied to biosignal streams
+- Quest Termux Lab (https://github.com/MesmerPrism/quest-termux-lab) is a public MIT lab/reference source
+- DiffeoMorph (https://arxiv.org/abs/2512.17129) is an external morphogenesis reference, not Morphospace runtime authority
+- Quest Companion Tools (https://mesmerprism.com/projects/viscereality-companion.html) document operator-side install, launch, cast, and evidence workflows
 
- Implementation layer
+ Small example
 
-How Morphospace fits mixed-ability HSI
+A dynamic particle surface
 
- For Mixed-Ability Human-Swarm Interaction (https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html),
- Rusty Morphospace is the implementation layer, not the research claim. Its
- role is to keep the mapping stack explicit: which human channels enter the
- system, what capability evidence and calibration state they carry, what they
- bind to, which swarm dynamics they affect, who can see the effect, what is
- logged, and when a mapping can be revised or retired.
+ Suppose you want to build a particle surface that can be inspected in a
+ browser, controlled from a panel, and later tested on a headset. The surface
+ can use the same core contracts in each route.
 
- The current public base is a capability scaffold. It includes separated
- Morphospace repositories, public contracts, package lanes, the
- Matter/Optics teaching model used by the bioelectricity page, and a bounded
- Quest Makepad/Hostess validation path for recorded hand data, Matter CPU
- oracle comparison, SDF/ADF debug payloads, particles, and GPU evidence.
- It also includes a native Rusty Quest renderer path for direct
- Camera2/AHardwareBuffer import, native passthrough profiles,
- MediaProjection display-composite diagnostics, and OpenXR/Vulkan timing
- evidence.
+ Matter owns the particles, fields, surface, and simulation step. Optics
+ describes debug views of that state without choosing the final renderer.
+ Lattice records where the surface, camera, device, or tracked input sits.
+ Manifold decides which commands and streams can change the state. GUI and
+ Studio expose controls and package-review surfaces. Browser, Makepad, and
+ Quest routes adapt the same contracts to concrete runtimes. Hostess and
+ app-build evidence prove which package, settings, and runtime markers were
+ actually used.
 
- The planned HSI layer should be read more narrowly: it is an integration
- target for participant-facing mapping authoring, consent and provenance
- controls, facilitator inspection, replay, version comparison, and adapter
- swaps across desktop, browser, headset, biosignal, and later physical
- platforms. It is not yet a finished mixed-ability study app, clinical system,
- or scaled robotic backend.
+ Larger domains such as mixed-ability HSI, bioelectricity, biosignals, and XR
+ diagnostics can use this same separation. They are not required to understand
+ the core system.
 
-Current public base
-- Public module family with explicit Matter, Lattice, Manifold, Optics, GUI, Makepad, Quest, and Quest-Makepad boundaries
-- Package lanes for synthetic, biosignal, projected-motion, Polar H10, and hand-animation data
-- Matter/Optics teaching model for surface fields, conductance-like coupling, readouts, and browser inspection
-- Hostess and Quest Makepad evidence route for recorded and live hand surfaces, SDF/ADF debug views, particles, and bounded GPU readbacks
-- Rusty Quest native renderer route for direct HWB camera sampling, native passthrough, display-composite feedback, live hand/graft diagnostics, stimulus volumes, and environment-depth GPU diagnostics
-- Rusty XR retained as compatibility history and public Quest evidence rather than the new authority model
-
-Planned HSI integration
-- Lattice records device roles, spatial relations, validity, confidence, calibration, and capability snapshots
-- Manifold routes streams, commands, clocks, acknowledgements, logs, consent state, and audit surfaces
-- Matter owns particles, fields, boids-like coupling, SDF/TSDF forms, constraints, goals, and simulation truth
-- Optics, GUI, and Studio expose appearance, debug views, mapping editors, provenance, comparison, and retirement
-- Quest, Makepad, Hostess, and later platform adapters validate deployments without owning the social meaning of a mapping
-
-Why this boundary matters
-
- A mixed-ability swarm body needs more than sensor variety. It needs a
- visible connection between social contract, input channel, dynamic target,
- feedback, privacy, and repair. Morphospace is the place where that
- connection can become inspectable software instead of a hidden effect.
+Layer sequence
+- Model: Matter owns the surface state.
+- Inspect: Optics describes views and debug payloads.
+- Situate: Lattice records spaces, poses, and device context.
+- Regulate: Manifold owns commands, streams, clocks, and policy state.
+- Operate: GUI and Studio expose controls and review surfaces.
+- Adapt: browser, Makepad, Quest, and native routes host the contracts.
+- Validate: Hostess and app-build receipts prove what ran.
 
  Module map
 
@@ -356,6 +382,20 @@ Where the pieces live
  packages, authoring, host validation, and Quest-side integration around those
  contracts. Adjacent lab/reference repos are listed only where they feed a
  Morphospace boundary without owning that boundary.
+
+ Repository groups
+
+ Core contracts
+ rusty-matter, rusty-lattice, rusty-manifold, rusty-optics, rusty-gui
+
+ Build, package, and authoring
+ rusty-manifold-packages, rusty-studio, rusty-hostess
+
+ Platform and adapter routes
+ rusty-makepad, rusty-quest, rusty-quest-makepad, rusty-quest-sidecar-mesh
+
+ Reference and legacy
+ Rusty-XR, quest-termux-lab, DiffeoMorph
 
  Core / Matter
 
@@ -711,28 +751,70 @@ Next engineering pressure
 - Run physical two-peer camera validation before claiming peer streaming readiness
 - Keep GPU proof readbacks on ticket/poll or explicit evidence-command paths and keep particle force authority singular in normal profiles
 
- Why the name
+ Examples
 
-A space of possible forms
+Application domains using Morphospace
 
- A morphospace is a space of possible forms. In Rusty Morphospace, those forms
- are digital, dynamic, and situated: not only meshes or surfaces, but relations,
- regulatory circuits, views, workflows, and platform constraints that change
- what a system can become.
+ Rusty Morphospace is domain-neutral. These projects use or inform the
+ architecture, but they do not define the core system.
 
- That makes the name practical rather than only conceptual. It describes the
- engineering surface where material state, relation state, authority state, and
- visual state can vary independently while remaining connected enough to build
- tools and environments.
+ Educational model
 
-Architecture sentence
+Bioelectricity and Morphogenesis (https://mesmerprism.com/projects/bioelectricity.html)
 
- Matter is the morphology of substance, Lattice is the morphology of relation,
- Manifold is the morphology of regulation, and Optics is the morphology of
- appearance.
+ Demonstrates Matter/Optics separation through educational surface-field
+ models and source-bounded planarian atlas layers.
 
- The overlap is intentional. Data and its environment relationships are the
- engineering substrate, not incidental metadata around an app.
+ Planned application domain
+
+Mixed-Ability HSI (https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html)
+
+ Uses Morphospace as a possible scaffold for input mappings, provenance,
+ authoring, replay, and adapter swaps. HSI does not define the core
+ architecture; it is one downstream use of the same boundaries.
+
+ Biosignal packages
+
+Polar H10 / biosignals (https://mesmerprism.com/projects/polar-h10.html)
+
+ Shows stream and package boundary discipline for physiological data routes
+ without turning sensor transport into application logic.
+
+ Platform evidence
+
+Quest diagnostics (https://mesmerprism.com/projects/rusty-morphospace.html#current-work)
+
+ Validates platform routes, permissions, rendering paths, app-build locks,
+ and evidence capture without making Quest the core model.
+
+ External reference
+
+DiffeoMorph (https://arxiv.org/abs/2512.17129)
+
+ Provides public vocabulary for many-agent morphology control and possible
+ future validation targets. It is a reference lane, not runtime authority.
+
+ Name
+
+Why "Morphospace"?
+
+ A morphospace is a space of possible forms. Here, that means more than
+ meshes or surfaces. It includes the state being modeled, the relations around
+ that state, the commands allowed to change it, the views used to inspect it,
+ and the platform constraints that shape what can run.
+
+ The practical point is separation. Material state, relation state, command
+ authority, and visual state can vary independently while still connecting
+ through explicit contracts.
+
+ Optional detail: compact architecture sentence
+
+ One shorthand is: Matter describes substance, Lattice describes relation,
+ Manifold describes regulation, and Optics describes appearance.
+
+ That sentence is only a mnemonic. In day-to-day work, the safer rule is to
+ ask which layer owns the decision, then keep adapters and examples from
+ becoming hidden authority.
 
  Boundary
 
