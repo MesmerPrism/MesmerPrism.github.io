@@ -22,7 +22,7 @@
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <link rel="manifest" href="/site.webmanifest">
     <link rel="stylesheet" href="/assets/fonts.css">
-    <link rel="stylesheet" href="/styles.css?v=20260609-logo">
+    <link rel="stylesheet" href="/styles.css?v=20260621-onboarding">
     <!-- BEGIN agent-readable metadata -->
     <link rel="alternate" type="text/markdown" href="/projects/rusty-morphospace/rusty-xr.md" title="Markdown version">
     <link rel="alternate" type="text/plain" href="/projects/rusty-morphospace/rusty-xr.txt" title="Plain text version">
@@ -30,8 +30,8 @@
     <link rel="alternate" type="application/vnd.citationstyles.csl+json" href="/projects/rusty-morphospace/rusty-xr.references.csl.json" title="CSL JSON references">
     <meta name="citation_title" content="Rusty XR Legacy Reference | Rusty Morphospace">
     <meta name="citation_author" content="Till Holzapfel">
-    <meta name="citation_publication_date" content="2026-06-13">
-    <meta name="citation_online_date" content="2026-06-13">
+    <meta name="citation_publication_date" content="2026-06-21">
+    <meta name="citation_online_date" content="2026-06-21">
     <meta name="citation_public_url" content="https://mesmerprism.com/projects/rusty-morphospace/rusty-xr.html">
     <meta name="citation_language" content="en">
     <script type="application/ld+json" data-agent-metadata>
@@ -56,7 +56,7 @@
                 "url": "https://mesmerprism.com"
           },
           "url": "https://mesmerprism.com/projects/rusty-morphospace/rusty-xr.html",
-          "dateModified": "2026-06-13",
+          "dateModified": "2026-06-21",
           "inLanguage": "en",
           "encoding": [
                 {
@@ -81,12 +81,11 @@
                 }
           ],
           "citation": [
-                "https://github.com/MesmerPrism",
                 "https://github.com/MesmerPrism/Rusty-XR",
                 "https://mesmerprism.github.io/Rusty-XR/",
                 "https://mesmerprism.github.io/Rusty-XR/passthrough.html",
-                "https://mesmerprism.github.io/Rusty-XR-Companion-Apps/",
                 "https://github.com/MesmerPrism/Rusty-XR/blob/main/docs/QUEST_VISUAL_SOURCE_TAXONOMY.md",
+                "https://mesmerprism.github.io/Rusty-XR-Companion-Apps/",
                 "https://github.com/MesmerPrism/Rusty-XR-Companion-Apps"
           ]
     }
@@ -125,7 +124,8 @@
                     compatibility evidence need to be inspected.
                 </p>
                 <div class="hero-actions">
-                    <a class="action-link action-link--strong" href="/projects/rusty-morphospace.html">Rusty Morphospace</a>
+                    <a class="action-link action-link--strong" href="#start-here">Start here</a>
+                    <a class="action-link" href="/projects/rusty-morphospace.html">Rusty Morphospace</a>
                     <a class="action-link" href="https://github.com/MesmerPrism/Rusty-XR" target="_blank" rel="noopener noreferrer">Source repo</a>
                     <a class="action-link" href="https://mesmerprism.github.io/Rusty-XR/" target="_blank" rel="noopener noreferrer">Project docs</a>
                     <a class="action-link" href="https://mesmerprism.github.io/Rusty-XR/passthrough.html" target="_blank" rel="noopener noreferrer">Passthrough guide</a>
@@ -134,6 +134,80 @@
                     <a class="action-link" href="/projects/viscereality-companion.html">Quest companion tools</a>
                 </div>
             </div>
+
+            <article class="thesis-card thesis-card--split" id="start-here">
+                <h2>Use Rusty XR as the legacy collection.</h2>
+                <div>
+                    <p>
+                        Rusty XR is still useful when older Quest examples, passthrough notes,
+                        companion-tool contracts, and source-taxonomy vocabulary need to be
+                        inspected. It should not be treated as the current umbrella for new
+                        Morphospace architecture.
+                    </p>
+                    <p>
+                        For new work, start from the Morphospace layer that owns the behavior.
+                        Use this page when you need history, compatibility evidence, or the old
+                        public vocabulary around camera, depth, passthrough, and final-display
+                        evidence.
+                    </p>
+                </div>
+            </article>
+
+            <section class="plain-terms-card" aria-labelledby="rusty-xr-terms">
+                <h2 id="rusty-xr-terms">Plain terms</h2>
+                <dl class="plain-terms-list">
+                    <div>
+                        <dt>Legacy collection</dt>
+                        <dd>Public historical Quest/XR material retained for reference and compatibility.</dd>
+                    </div>
+                    <div>
+                        <dt>Passthrough</dt>
+                        <dd>A compositor-managed background route, not a raw camera texture the app can freely sample.</dd>
+                    </div>
+                    <div>
+                        <dt>Camera input</dt>
+                        <dd>App-visible camera frames when a route explicitly owns acquisition and evidence.</dd>
+                    </div>
+                    <div>
+                        <dt>MediaProjection</dt>
+                        <dd>Final-display capture evidence, separate from raw camera, passthrough, depth, or geometry truth.</dd>
+                    </div>
+                    <div>
+                        <dt>Companion tools</dt>
+                        <dd>Operator workflows for install, launch, casting, diagnostics, and evidence packaging.</dd>
+                    </div>
+                    <div>
+                        <dt>Current path</dt>
+                        <dd>New architecture work belongs in Rusty Morphospace and the newer lane-specific repos.</dd>
+                    </div>
+                </dl>
+            </section>
+
+            <nav class="reading-map" aria-labelledby="rusty-xr-reading-map">
+                <h2 id="rusty-xr-reading-map">How to read the legacy material</h2>
+                <div class="reading-map__grid">
+                    <section>
+                        <h3>Start here</h3>
+                        <a href="/projects/rusty-morphospace.html">Current Morphospace overview</a>
+                        <a href="#references">Reference docs</a>
+                    </section>
+                    <section>
+                        <h3>Quest source taxonomy</h3>
+                        <a href="https://mesmerprism.github.io/Rusty-XR/passthrough.html" target="_blank" rel="noopener noreferrer">Passthrough guide</a>
+                        <a href="https://github.com/MesmerPrism/Rusty-XR/blob/main/docs/QUEST_VISUAL_SOURCE_TAXONOMY.md" target="_blank" rel="noopener noreferrer">Visual source taxonomy</a>
+                    </section>
+                    <section>
+                        <h3>Operator tools</h3>
+                        <a href="/projects/viscereality-companion.html">Quest companion tools</a>
+                        <a href="https://mesmerprism.github.io/Rusty-XR-Companion-Apps/" target="_blank" rel="noopener noreferrer">Companion docs</a>
+                    </section>
+                    <section>
+                        <h3>Current replacements</h3>
+                        <a href="/projects/rusty-morphospace/native-app-build-workflow.html">Native app-build workflow</a>
+                        <a href="https://github.com/MesmerPrism/rusty-quest" target="_blank" rel="noopener noreferrer">Rusty Quest source</a>
+                    </section>
+                </div>
+            </nav>
         </section>
 
         <section class="section two-column">

@@ -1,83 +1,66 @@
 [
   {
-    "id": "github-com-mesmer-prism-work-publications-background-contact",
+    "id": "mesmerprism-rusty-xr",
     "type": "webpage",
-    "title": "Mesmer Prism Work Publications Background Contact",
-    "URL": "https://github.com/MesmerPrism",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          13
-        ]
-      ]
-    },
-    "note": "Referenced by Rusty XR Legacy Reference | Rusty Morphospace: https://mesmerprism.com/projects/rusty-morphospace/rusty-xr.html"
-  },
-  {
-    "id": "github-com-source-repo",
-    "type": "webpage",
-    "title": "Source repo",
+    "title": "Rusty-XR",
     "URL": "https://github.com/MesmerPrism/Rusty-XR",
     "accessed": {
       "date-parts": [
         [
           2026,
           6,
-          13
+          21
         ]
       ]
     },
-    "note": "Referenced by Rusty XR Legacy Reference | Rusty Morphospace: https://mesmerprism.com/projects/rusty-morphospace/rusty-xr.html"
+    "note": "Referenced by Rusty XR Legacy Reference | Rusty Morphospace: https://mesmerprism.com/projects/rusty-morphospace/rusty-xr.html",
+    "author": [
+      {
+        "literal": "MesmerPrism"
+      }
+    ]
   },
   {
-    "id": "mesmerprism-github-io-project-docs",
+    "id": "rusty-xr-project-documentation",
     "type": "webpage",
-    "title": "Project docs",
+    "title": "Project Documentation",
     "URL": "https://mesmerprism.github.io/Rusty-XR/",
     "accessed": {
       "date-parts": [
         [
           2026,
           6,
-          13
+          21
         ]
       ]
     },
-    "note": "Referenced by Rusty XR Legacy Reference | Rusty Morphospace: https://mesmerprism.com/projects/rusty-morphospace/rusty-xr.html"
+    "note": "Referenced by Rusty XR Legacy Reference | Rusty Morphospace: https://mesmerprism.com/projects/rusty-morphospace/rusty-xr.html",
+    "author": [
+      {
+        "literal": "Rusty XR"
+      }
+    ]
   },
   {
-    "id": "mesmerprism-github-io-passthrough-guide",
+    "id": "rusty-xr-quest-passthrough-documentation",
     "type": "webpage",
-    "title": "Passthrough guide",
+    "title": "Quest Passthrough Documentation",
     "URL": "https://mesmerprism.github.io/Rusty-XR/passthrough.html",
     "accessed": {
       "date-parts": [
         [
           2026,
           6,
-          13
+          21
         ]
       ]
     },
-    "note": "Referenced by Rusty XR Legacy Reference | Rusty Morphospace: https://mesmerprism.com/projects/rusty-morphospace/rusty-xr.html"
-  },
-  {
-    "id": "mesmerprism-github-io-companion-docs",
-    "type": "webpage",
-    "title": "Companion docs",
-    "URL": "https://mesmerprism.github.io/Rusty-XR-Companion-Apps/",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          13
-        ]
-      ]
-    },
-    "note": "Referenced by Rusty XR Legacy Reference | Rusty Morphospace: https://mesmerprism.com/projects/rusty-morphospace/rusty-xr.html"
+    "note": "Referenced by Rusty XR Legacy Reference | Rusty Morphospace: https://mesmerprism.com/projects/rusty-morphospace/rusty-xr.html",
+    "author": [
+      {
+        "literal": "Rusty XR"
+      }
+    ]
   },
   {
     "id": "rusty-xr-quest-visual-source-taxonomy",
@@ -89,7 +72,7 @@
         [
           2026,
           6,
-          13
+          21
         ]
       ]
     },
@@ -97,6 +80,27 @@
     "author": [
       {
         "literal": "Rusty XR"
+      }
+    ]
+  },
+  {
+    "id": "mesmerprism-rusty-xr-companion-docs",
+    "type": "webpage",
+    "title": "Rusty XR Companion Docs",
+    "URL": "https://mesmerprism.github.io/Rusty-XR-Companion-Apps/",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          21
+        ]
+      ]
+    },
+    "note": "Referenced by Rusty XR Legacy Reference | Rusty Morphospace: https://mesmerprism.com/projects/rusty-morphospace/rusty-xr.html",
+    "author": [
+      {
+        "literal": "MesmerPrism"
       }
     ]
   },
@@ -110,7 +114,7 @@
         [
           2026,
           6,
-          13
+          21
         ]
       ]
     },

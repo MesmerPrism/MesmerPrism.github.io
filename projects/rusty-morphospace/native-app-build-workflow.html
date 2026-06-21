@@ -22,7 +22,7 @@
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <link rel="manifest" href="/site.webmanifest">
     <link rel="stylesheet" href="/assets/fonts.css">
-    <link rel="stylesheet" href="/styles.css?v=20260609-logo">
+    <link rel="stylesheet" href="/styles.css?v=20260621-onboarding">
     <!-- BEGIN agent-readable metadata -->
     <link rel="alternate" type="text/markdown" href="/projects/rusty-morphospace/native-app-build-workflow.md" title="Markdown version">
     <link rel="alternate" type="text/plain" href="/projects/rusty-morphospace/native-app-build-workflow.txt" title="Plain text version">
@@ -121,7 +121,8 @@
                     around that master settings surface.
                 </p>
                 <div class="hero-actions">
-                    <a class="action-link action-link--strong" href="#workflow">Workflow</a>
+                    <a class="action-link action-link--strong" href="#start-here">Start here</a>
+                    <a class="action-link" href="#workflow">Workflow</a>
                     <a class="action-link" href="#feature-library">Feature library</a>
                     <a class="action-link" href="#settings-authority">Settings authority</a>
                     <a class="action-link" href="#validation">Validation</a>
@@ -129,6 +130,109 @@
                     <a class="action-link" href="https://github.com/MesmerPrism/rusty-quest" target="_blank" rel="noopener noreferrer">Rusty Quest</a>
                 </div>
             </div>
+
+            <article class="thesis-card thesis-card--split" id="start-here">
+                <h2>A native APK starts as a feature decision.</h2>
+                <div>
+                    <p>
+                        The workflow exists so an app-building agent can explain why every module
+                        is present before a package is built. The source app spec requests feature
+                        IDs, denies nearby families that must stay absent, and resolves into a
+                        lock that the build consumes.
+                    </p>
+                    <p>
+                        The generated settings file is the app behavior surface. Runtime profiles,
+                        Android manifests, property plans, and build inputs adapt those settings
+                        to platform tools; they do not become extra places to hide behavior.
+                    </p>
+                </div>
+            </article>
+
+            <section class="plain-terms-card" aria-labelledby="native-app-terms">
+                <h2 id="native-app-terms">Plain terms</h2>
+                <dl class="plain-terms-list">
+                    <div>
+                        <dt>Feature ID</dt>
+                        <dd>A named capability such as a background route, hand visual, SDF diagnostic, or particle submodule.</dd>
+                    </div>
+                    <div>
+                        <dt>App spec</dt>
+                        <dd>The source file that requests features, denies accidental modules, and declares evidence expectations.</dd>
+                    </div>
+                    <div>
+                        <dt>Feature lock</dt>
+                        <dd>The resolved closure: selected modules, dependencies, generated adapters, and validation assertions.</dd>
+                    </div>
+                    <div>
+                        <dt>Master settings</dt>
+                        <dd><code>native-app-settings.json</code>, the generated surface that owns app behavior.</dd>
+                    </div>
+                    <div>
+                        <dt>Adapter</dt>
+                        <dd>A runtime profile, manifest, property plan, or build input generated from the master settings.</dd>
+                    </div>
+                    <div>
+                        <dt>Effective marker</dt>
+                        <dd>A runtime marker emitted by the app proving the selected behavior was actually consumed.</dd>
+                    </div>
+                </dl>
+            </section>
+
+            <figure class="route-strip" aria-labelledby="native-app-route">
+                <figcaption id="native-app-route">Build route</figcaption>
+                <div class="route-strip__steps">
+                    <div class="route-step">
+                        <span>1</span>
+                        <strong>Declare</strong>
+                        <em>Write the app spec with requested, denied, required, and forbidden modules.</em>
+                    </div>
+                    <div class="route-step">
+                        <span>2</span>
+                        <strong>Resolve</strong>
+                        <em>Let the resolver calculate dependencies and reject incompatible feature sets.</em>
+                    </div>
+                    <div class="route-step">
+                        <span>3</span>
+                        <strong>Inspect</strong>
+                        <em>Review the feature lock and master settings before producing an APK.</em>
+                    </div>
+                    <div class="route-step">
+                        <span>4</span>
+                        <strong>Prove</strong>
+                        <em>Accept the profile only when the runtime emits the expected effective markers.</em>
+                    </div>
+                </div>
+            </figure>
+
+            <nav class="reading-map" aria-labelledby="native-app-reading-map">
+                <h2 id="native-app-reading-map">How to use this page</h2>
+                <div class="reading-map__grid">
+                    <section>
+                        <h3>First pass</h3>
+                        <a href="#workflow">The app-building path</a>
+                        <a href="#feature-library">Feature library shape</a>
+                        <a href="#settings-authority">Settings authority</a>
+                    </section>
+                    <section>
+                        <h3>When choosing modules</h3>
+                        <a href="#feature-library">Module families</a>
+                        <a href="#nested-particles">Nested particle example</a>
+                        <a href="#agent-checklist">Agent checklist</a>
+                    </section>
+                    <section>
+                        <h3>When validating</h3>
+                        <a href="#validation">Evidence ladder</a>
+                        <a href="https://github.com/MesmerPrism/rusty-quest" target="_blank" rel="noopener noreferrer">Rusty Quest source</a>
+                        <a href="/projects/rusty-morphospace.html#current-work">Current Quest feature routes</a>
+                    </section>
+                    <section>
+                        <h3>Context</h3>
+                        <a href="/projects/rusty-morphospace.html">Rusty Morphospace overview</a>
+                        <a href="/plasmatic-multitudes/mixed-ability-hsi.html#rusty-implementation-bridge">HSI implementation bridge</a>
+                        <a href="/projects/rusty-morphospace/rusty-xr.html">Legacy Rusty XR collection</a>
+                    </section>
+                </div>
+            </nav>
         </section>
 
         <section class="section two-column">
@@ -308,7 +412,7 @@
             </div>
         </section>
 
-        <section class="section">
+        <section class="section" id="nested-particles">
             <div class="section-heading">
                 <p class="section-kicker">Nested example</p>
                 <h2>Particles are a family, not one switch</h2>
@@ -501,7 +605,7 @@
             </div>
         </section>
 
-        <section class="section two-column">
+        <section class="section two-column" id="agent-checklist">
             <div>
                 <div class="section-heading">
                     <p class="section-kicker">Agent checklist</p>

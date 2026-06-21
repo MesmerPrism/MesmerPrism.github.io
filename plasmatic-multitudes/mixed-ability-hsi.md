@@ -2,7 +2,7 @@
 
 Source: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html
 Canonical HTML: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html
-Generated: 2026-06-13
+Generated: 2026-06-21
 Description: A Plasmatic Multitudes research track on shared visual swarm bodies, mixed-ability collaboration, access-practice mapping, connectedness-first exploration, encounter, cooperative play, and later physical translation.
 Markdown: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.md
 Plain text: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.txt
@@ -11,7 +11,7 @@ CSL JSON references: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-
 
 ---
 
-Mixed-ability HSI | Updated June 12, 2026
+Mixed-ability HSI | Updated June 21, 2026
 
 # Mixed-Ability Human-Swarm Interaction
 
@@ -584,17 +584,24 @@ Mixed-ability HSI | Updated June 12, 2026
  can inspect them. That separation lets someone ask whether fatigue, unfairness, or
  confusion came from the input channel, the binding, the dynamic rule, the renderer,
  latency, calibration drift, or another collaborator's hidden control
- ([Rusty Morphospace HSI layer](https://mesmerprism.com/projects/rusty-morphospace.html#hsi-implementation-layer); [Rusty XR](https://mesmerprism.com/projects/rusty-morphospace/rusty-xr.html); [Polar H10 work](https://mesmerprism.com/projects/polar-h10.html)) .
+ ([Rusty Morphospace HSI layer](https://mesmerprism.com/projects/rusty-morphospace.html#hsi-implementation-layer); [native app-build workflow](https://mesmerprism.com/projects/rusty-morphospace/native-app-build-workflow.html); [Rusty Quest](https://github.com/MesmerPrism/rusty-quest); [Rusty XR](https://mesmerprism.com/projects/rusty-morphospace/rusty-xr.html); [Polar H10 work](https://mesmerprism.com/projects/polar-h10.html)) .
 
  The current public base is a scaffold, not a finished mixed-ability study platform:
  separated Morphospace repositories, package lanes for synthetic/biosignal/Polar and
  hand-animation data, a Matter/Optics teaching model for bioelectric-inspired fields,
- and a bounded Hostess/Quest Makepad validation route for recorded hand meshes,
- Matter CPU-oracle comparison, SDF/ADF debug payloads, particles, and GPU evidence.
- The planned HSI layer has to add participant-facing mapping authoring, accessible
- facilitator views, consent/provenance/retirement controls, replay, version
- comparison, and adapter swaps across desktop, browser, headset, biosignal, and later
- physical platforms.
+ a bounded Hostess/Quest Makepad validation route for recorded and live hand surfaces,
+ and a newer Rusty Quest native OpenXR/Vulkan route for headset evidence. The native
+ route now separates Camera2/AHardwareBuffer acquisition, native passthrough profiles,
+ solid-black control profiles, display-composite MediaProjection feedback, live hand
+ anchor particles, target-space SDF diagnostics, stimulus volumes, environment-depth
+ diagnostics, and video projection as distinct feature families.
+
+ The newest app-building change is methodological, not only technical: a native APK
+ is assembled from explicit feature IDs, a source app spec, a generated feature lock,
+ and a generated native-app-settings.json master settings surface. That
+ matters for mixed-ability HSI because a study app should be able to say which input,
+ display, feedback, and evidence routes are present, and which nearby routes were
+ deliberately kept out.
 
  Jain's AutonomX work suggests the standard for this implementation layer: the system
  should behave like an authoring instrument, not only a hidden runtime. AutonomX
@@ -620,8 +627,30 @@ Mixed-ability HSI | Updated June 12, 2026
  Rusty GUI / Studio
  Planned mapping editors, facilitator views, comparison tools, provenance, and retirement controls.
 
+ Rusty Quest native renderer
+ NativeActivity/OpenXR/Vulkan profiles for direct camera/HWB sampling, passthrough backgrounds, display-composite feedback, live hands, particles, SDF, stimulus volumes, video, and environment-depth diagnostics.
+
+ Native app-build workflow
+ Feature descriptors, source app specs, feature locks, master settings, generated adapters, and effective runtime markers so target apps do not inherit unrelated modules.
+
  Hostess / platform adapters
  Current validation shells and planned deployment routes without owning the social meaning of a mapping.
+
+ Current Rusty Quest details now relevant to HSI
+
+ The current native Quest route is useful for HSI planning because it keeps visual
+ source categories separate. Native passthrough is a compositor background request,
+ Camera2/HWB is app-visible camera acquisition, MediaProjection is a consented
+ final-display feedback witness, environment depth is a separate diagnostic input,
+ and video projection is an app-provided media source. Those distinctions matter
+ when a participant or facilitator asks what the system can actually see, sample,
+ log, replay, or explain.
+
+ The app-build workflow gives future study apps a cleaner consent and review
+ surface. A breathing, hand, camera, display-composite, depth, stimulus, SDF,
+ particle, video, or biosignal route should be present because the app requested it,
+ not because an agent copied a broad runtime profile. Runtime acceptance should come
+ from effective app markers, not raw adapter readback alone.
 
 ### Morphogenetic dynamics vocabulary
 
@@ -1249,7 +1278,7 @@ Mixed-ability HSI | Updated June 12, 2026
  Bioelectricity, Levin's agential-materials work, and DiffeoMorph support cautious language about coherence, field, threshold, perturbation, state memory, repair, and return.
 
  Implementation and caution
- Rusty Morphospace as the implementation layer with current public contracts and planned HSI-facing authoring/inspection, biosignal transparency/privacy guidance, and guardrails against treating biology, robotics, or physiology as therapeutic proof.
+ Rusty Morphospace as the implementation layer with current public contracts, Rusty Quest native feature routes, the source-only native app-build workflow, planned HSI-facing authoring/inspection, biosignal transparency/privacy guidance, and guardrails against treating biology, robotics, or physiology as therapeutic proof.
 
 ## Sources
 
@@ -1401,6 +1430,6 @@ Mixed-ability HSI | Updated June 12, 2026
 
 - Chiossi et al. "[PhysioCHI: Towards Best Practices for Integrating Physiological Signals in HCI](https://doi.org/10.1145/3613905.3636286)." CHI EA (2024).
 
-- Mesmer Prism. [Rusty Morphospace](https://mesmerprism.com/projects/rusty-morphospace.html), [Rusty XR](https://mesmerprism.com/projects/rusty-morphospace/rusty-xr.html), and [Polar H10 Work](https://mesmerprism.com/projects/polar-h10.html).
+- Mesmer Prism. [Rusty Morphospace](https://mesmerprism.com/projects/rusty-morphospace.html), [Native App Build Workflow](https://mesmerprism.com/projects/rusty-morphospace/native-app-build-workflow.html), [Rusty Quest](https://github.com/MesmerPrism/rusty-quest), [Rusty XR](https://mesmerprism.com/projects/rusty-morphospace/rusty-xr.html), and [Polar H10 Work](https://mesmerprism.com/projects/polar-h10.html).
 
 - Mesmer Prism. "[Bioelectricity and Morphogenesis](https://mesmerprism.com/projects/bioelectricity.html)." Public project page.

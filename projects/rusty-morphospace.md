@@ -21,60 +21,95 @@ Computational morphology platform
  or a headset-hosted environment. The project names the space where those
  pieces can be built without collapsing them into one XR app.
 
- [Repositories](https://mesmerprism.com/projects/rusty-morphospace.html#repositories)
- [Module map](https://mesmerprism.com/projects/rusty-morphospace.html#module-map)
- [App build workflow](https://mesmerprism.com/projects/rusty-morphospace/native-app-build-workflow.html)
- [Current work](https://mesmerprism.com/projects/rusty-morphospace.html#current-work)
- [HSI layer](https://mesmerprism.com/projects/rusty-morphospace.html#hsi-implementation-layer)
+ [Start here](https://mesmerprism.com/projects/rusty-morphospace.html#start-here)
+ [Build a native APK](https://mesmerprism.com/projects/rusty-morphospace/native-app-build-workflow.html)
+ [Current Quest features](https://mesmerprism.com/projects/rusty-morphospace.html#current-work)
+ [Repository map](https://mesmerprism.com/projects/rusty-morphospace.html#repositories)
+ [HSI bridge](https://mesmerprism.com/projects/rusty-morphospace.html#hsi-implementation-layer)
+ [Legacy Rusty XR](https://mesmerprism.com/projects/rusty-morphospace/rusty-xr.html)
  [Why Morphospace](https://mesmerprism.com/projects/rusty-morphospace.html#why)
- [Rusty XR boundary](https://mesmerprism.com/projects/rusty-morphospace.html#boundary)
- [Rusty XR](https://mesmerprism.com/projects/rusty-morphospace/rusty-xr.html)
- [References](https://mesmerprism.com/projects/rusty-morphospace.html#references)
+
+## Start with the responsibility, not the demo.
+
+ Rusty Morphospace is easiest to read as a set of ownership boundaries.
+ Matter owns computational substance, Lattice owns situated relation,
+ Manifold owns runtime authority, Optics owns renderer-neutral appearance,
+ and Quest/Makepad/Hostess carry platform and validation routes around
+ those contracts.
+
+ That separation is the onboarding rule: choose the layer that owns the
+ behavior, then add only the adapters and native app features needed for
+ the target experience.
+
+## Plain terms
+
+ Matter
+ Fields, particles, surfaces, SDF/ADF forms, dynamics, and simulation truth.
+
+ Lattice
+ Spaces, poses, calibration, validity, confidence, and device capability snapshots.
+
+ Manifold
+ Commands, sessions, streams, clocks, consent state, audit, and runtime regulation.
+
+ Optics
+ Renderer-neutral views, cameras, materials, debug payloads, and inspection contracts.
+
+ Quest
+ Headset platform profiles, permission surfaces, native OpenXR/Vulkan examples, and evidence markers.
+
+ App build
+ A feature-lock workflow that assembles native APKs from explicit modules instead of copied profiles.
 
  Purpose
 
 ## Computational form as a working medium
 
- The platform is being organized so responsibilities stay separate while still
- composing into one toolchain. Computational substance, reference spaces,
- command flow, inspection, authoring, and headset behavior need different
- ownership boundaries. When those boundaries are blurred, every prototype
- starts carrying platform policy, rendering assumptions, runtime authority, and
- study-specific names in the same layer.
+ Rusty Morphospace is a way to build computational form without turning every
+ proof into one large XR application. It separates the substance being modeled,
+ the spaces and devices around it, the command authority that changes it, the
+ views that inspect it, and the headset routes that validate it.
 
- Morphospace is meant to make that separation visible. It provides a way to
- define computational material, place it in a relation field, route state and
- feedback through explicit authority surfaces, inspect it through
- renderer-neutral optics, and host it in desktop, browser, or headset contexts.
+ The current public family has moved beyond naming notes. Matter, Manifold,
+ Optics, Lattice, GUI, Makepad, Quest, Quest-Makepad, Manifold Packages,
+ Studio, Hostess, and the Quest sidecar lane now form a public source stack
+ with explicit boundaries, license notes, and validation surfaces.
 
- The current source family has moved beyond naming notes. Matter, Manifold,
- Optics, Lattice, GUI, Makepad, Quest, and Quest-Makepad now have clean public
- repos with explicit ownership boundaries, AGPL-first licensing for
- Morphospace-owned source, and local validation gates. Studio, Hostess,
- Manifold Packages, and the Quest sidecar lane sit around those contracts as
- authoring, package, evidence, and integration surfaces.
- Rusty Quest now also carries a Rust-first NativeActivity/OpenXR/Vulkan app
- route for headset-side rendering experiments, separate from the Makepad shell.
+ Deep dive: why the layers are separate
+
+ Computational substance, reference spaces, command flow, inspection,
+ authoring, and headset behavior need different ownership boundaries. When
+ those boundaries blur, a prototype starts carrying platform policy,
+ rendering assumptions, runtime authority, and study-specific names in the
+ same layer.
+
+ Morphospace makes that separation visible: define computational material,
+ place it in a relation field, route state through explicit authority
+ surfaces, inspect it through renderer-neutral optics, and then host it in
+ desktop, browser, or headset contexts.
+
+ Deep dive: research references
 
  The [Bioelectricity and Morphogenesis](https://mesmerprism.com/projects/bioelectricity.html)
- slice shows the Matter/Optics boundary in a public teaching model: Matter owns
- the planarian surface graph, voltage-like fields, conductance-like coupling,
- memory, readouts, and qualitative fixtures; Optics owns browser inspection
- over those payloads; and Manifold remains the lane for future command,
- session, and audit surfaces.
+ slice shows the Matter/Optics boundary in a public teaching model:
+ Matter owns the planarian surface graph, voltage-like fields,
+ conductance-like coupling, memory, readouts, and qualitative fixtures;
+ Optics owns browser inspection over those payloads.
 
- A separate DiffeoMorph reference lane now covers learned many-agent
- morphogenesis: the paper
- [DiffeoMorph: Learning to Morph 3D Shapes Using Differentiable Agent-Based Simulations](https://arxiv.org/abs/2512.17129)
- and the
- [hormoz-lab/diffeomorph implementation](https://github.com/hormoz-lab/diffeomorph)
- are useful public sources for target-shape scoring, many-agent update rules,
- replay/checkpoint vocabulary, and robustness gates. They do not become the
- runtime authority for the current bioelectric Matter/Optics teaching model.
+ A separate DiffeoMorph reference lane covers learned many-agent
+ morphogenesis. The
+ [DiffeoMorph paper](https://arxiv.org/abs/2512.17129)
+ and
+ [official implementation](https://github.com/hormoz-lab/diffeomorph)
+ are useful sources for target-shape scoring, update rules, replay
+ vocabulary, and robustness gates. They do not become Morphospace runtime
+ authority.
 
- The point is not to rename every existing Rusty XR surface. Rusty XR remains
- useful history, compatibility, and public Quest evidence. Rusty Morphospace is
- the cleaner umbrella for new computational-form work.
+ Deep dive: legacy Rusty XR
+
+ The point is not to rename every existing Rusty XR surface. Rusty XR
+ remains useful as history, compatibility, and public Quest evidence. New
+ computational-form work belongs under the cleaner Morphospace lanes.
 
 ### Current frame
 
@@ -559,7 +594,7 @@ Computational morphology platform
 
  Current work
 
-## What is current as of June 20, 2026
+## What is current as of June 21, 2026
 
  The active implementation line now has two Quest fronts. Quest Makepad still
  consumes Matter-owned live or recorded hand-surface truth, adapts

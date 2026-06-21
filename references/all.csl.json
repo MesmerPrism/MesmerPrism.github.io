@@ -4063,6 +4063,27 @@
     "DOI": "10.1038/s41467-025-63706-6"
   },
   {
+    "id": "mesmer-prism-rusty-quest",
+    "type": "webpage",
+    "title": "Rusty Quest",
+    "URL": "https://github.com/MesmerPrism/rusty-quest",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          21
+        ]
+      ]
+    },
+    "note": "Referenced by Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html",
+    "author": [
+      {
+        "literal": "Mesmer Prism"
+      }
+    ]
+  },
+  {
     "id": "memory-alpha-fandom-com-species-index",
     "type": "webpage",
     "title": "Species index",
@@ -11274,27 +11295,6 @@
     "type": "webpage",
     "title": "rusty-makepad",
     "URL": "https://github.com/MesmerPrism/rusty-makepad",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          21
-        ]
-      ]
-    },
-    "note": "Referenced by Rusty Morphospace: https://mesmerprism.com/projects/rusty-morphospace.html",
-    "author": [
-      {
-        "literal": "MesmerPrism"
-      }
-    ]
-  },
-  {
-    "id": "mesmerprism-rusty-quest",
-    "type": "webpage",
-    "title": "rusty-quest",
-    "URL": "https://github.com/MesmerPrism/rusty-quest",
     "accessed": {
       "date-parts": [
         [

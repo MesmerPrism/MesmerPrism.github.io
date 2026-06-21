@@ -22,12 +22,44 @@ Native app-build workflow
  manifests, property write plans, and build inputs are generated adapters
  around that master settings surface.
 
+ [Start here](https://mesmerprism.com/projects/rusty-morphospace/native-app-build-workflow.html#start-here)
  [Workflow](https://mesmerprism.com/projects/rusty-morphospace/native-app-build-workflow.html#workflow)
  [Feature library](https://mesmerprism.com/projects/rusty-morphospace/native-app-build-workflow.html#feature-library)
  [Settings authority](https://mesmerprism.com/projects/rusty-morphospace/native-app-build-workflow.html#settings-authority)
  [Validation](https://mesmerprism.com/projects/rusty-morphospace/native-app-build-workflow.html#validation)
  [Rusty Morphospace](https://mesmerprism.com/projects/rusty-morphospace.html)
  [Rusty Quest](https://github.com/MesmerPrism/rusty-quest)
+
+## A native APK starts as a feature decision.
+
+ The workflow exists so an app-building agent can explain why every module
+ is present before a package is built. The source app spec requests feature
+ IDs, denies nearby families that must stay absent, and resolves into a
+ lock that the build consumes.
+
+ The generated settings file is the app behavior surface. Runtime profiles,
+ Android manifests, property plans, and build inputs adapt those settings
+ to platform tools; they do not become extra places to hide behavior.
+
+## Plain terms
+
+ Feature ID
+ A named capability such as a background route, hand visual, SDF diagnostic, or particle submodule.
+
+ App spec
+ The source file that requests features, denies accidental modules, and declares evidence expectations.
+
+ Feature lock
+ The resolved closure: selected modules, dependencies, generated adapters, and validation assertions.
+
+ Master settings
+ native-app-settings.json , the generated surface that owns app behavior.
+
+ Adapter
+ A runtime profile, manifest, property plan, or build input generated from the master settings.
+
+ Effective marker
+ A runtime marker emitted by the app proving the selected behavior was actually consumed.
 
  Purpose
 

@@ -2,7 +2,7 @@ Rusty XR Legacy Reference | Rusty Morphospace
 
 Source: https://mesmerprism.com/projects/rusty-morphospace/rusty-xr.html
 Canonical HTML: https://mesmerprism.com/projects/rusty-morphospace/rusty-xr.html
-Generated: 2026-06-13
+Generated: 2026-06-21
 Description: Rusty XR is the legacy/reference Quest and XR compatibility surface under Rusty Morphospace, preserving public examples, passthrough notes, diagnostics, and companion-tool history.
 Markdown: https://mesmerprism.com/projects/rusty-morphospace/rusty-xr.md
 Plain text: https://mesmerprism.com/projects/rusty-morphospace/rusty-xr.txt
@@ -23,6 +23,7 @@ Rusty XR
  newer Morphospace repos; Rusty XR remains useful when old examples or
  compatibility evidence need to be inspected.
 
+ Start here (https://mesmerprism.com/projects/rusty-morphospace/rusty-xr.html#start-here)
  Rusty Morphospace (https://mesmerprism.com/projects/rusty-morphospace.html)
  Source repo (https://github.com/MesmerPrism/Rusty-XR)
  Project docs (https://mesmerprism.github.io/Rusty-XR/)
@@ -30,6 +31,38 @@ Rusty XR
  Companion docs (https://mesmerprism.github.io/Rusty-XR-Companion-Apps/)
  Polar H10 work (https://mesmerprism.com/projects/polar-h10.html)
  Quest companion tools (https://mesmerprism.com/projects/viscereality-companion.html)
+
+Use Rusty XR as the legacy collection.
+
+ Rusty XR is still useful when older Quest examples, passthrough notes,
+ companion-tool contracts, and source-taxonomy vocabulary need to be
+ inspected. It should not be treated as the current umbrella for new
+ Morphospace architecture.
+
+ For new work, start from the Morphospace layer that owns the behavior.
+ Use this page when you need history, compatibility evidence, or the old
+ public vocabulary around camera, depth, passthrough, and final-display
+ evidence.
+
+Plain terms
+
+ Legacy collection
+ Public historical Quest/XR material retained for reference and compatibility.
+
+ Passthrough
+ A compositor-managed background route, not a raw camera texture the app can freely sample.
+
+ Camera input
+ App-visible camera frames when a route explicitly owns acquisition and evidence.
+
+ MediaProjection
+ Final-display capture evidence, separate from raw camera, passthrough, depth, or geometry truth.
+
+ Companion tools
+ Operator workflows for install, launch, casting, diagnostics, and evidence packaging.
+
+ Current path
+ New architecture work belongs in Rusty Morphospace and the newer lane-specific repos.
 
  Purpose
 
