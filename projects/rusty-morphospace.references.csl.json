@@ -1,229 +1,195 @@
 [
   {
-    "id": "github-com-mesmer-prism-work-publications-background-contact",
+    "id": "mesmerprism-rusty-matter",
     "type": "webpage",
-    "title": "Mesmer Prism Work Publications Background Contact",
-    "URL": "https://github.com/MesmerPrism",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          13
-        ]
-      ]
-    },
-    "note": "Referenced by Rusty Morphospace: https://mesmerprism.com/projects/rusty-morphospace.html"
-  },
-  {
-    "id": "arxiv-org-diffeomorph-learning-to-morph-3d-shapes-using-differenti",
-    "type": "webpage",
-    "title": "DiffeoMorph: Learning to Morph 3D Shapes Using Differentiable Agent-Based Simulations",
-    "URL": "https://arxiv.org/abs/2512.17129",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          13
-        ]
-      ]
-    },
-    "note": "Referenced by Rusty Morphospace: https://mesmerprism.com/projects/rusty-morphospace.html"
-  },
-  {
-    "id": "github-com-hormoz-lab-diffeomorph-implementation",
-    "type": "webpage",
-    "title": "hormoz-lab/diffeomorph implementation",
-    "URL": "https://github.com/hormoz-lab/diffeomorph",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          13
-        ]
-      ]
-    },
-    "note": "Referenced by Rusty Morphospace: https://mesmerprism.com/projects/rusty-morphospace.html"
-  },
-  {
-    "id": "rusty-quest-makepad-rusty-quest-makepad",
-    "type": "webpage",
-    "title": "Rusty Quest Makepad",
-    "URL": "https://github.com/MesmerPrism/rusty-quest-makepad",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          13
-        ]
-      ]
-    },
-    "note": "Referenced by Rusty Morphospace: https://mesmerprism.com/projects/rusty-morphospace.html",
-    "author": [
-      {
-        "literal": "Rusty Quest Makepad"
-      }
-    ]
-  },
-  {
-    "id": "rusty-hostess-rusty-hostess",
-    "type": "webpage",
-    "title": "Rusty Hostess",
-    "URL": "https://github.com/MesmerPrism/rusty-hostess",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          13
-        ]
-      ]
-    },
-    "note": "Referenced by Rusty Morphospace: https://mesmerprism.com/projects/rusty-morphospace.html",
-    "author": [
-      {
-        "literal": "Rusty Hostess"
-      }
-    ]
-  },
-  {
-    "id": "quest-termux-lab-quest-termux-lab",
-    "type": "webpage",
-    "title": "Quest Termux Lab",
-    "URL": "https://github.com/MesmerPrism/quest-termux-lab",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          13
-        ]
-      ]
-    },
-    "note": "Referenced by Rusty Morphospace: https://mesmerprism.com/projects/rusty-morphospace.html",
-    "author": [
-      {
-        "literal": "Quest Termux Lab"
-      }
-    ]
-  },
-  {
-    "id": "github-com-rusty-matter",
-    "type": "webpage",
-    "title": "Rusty Matter",
+    "title": "rusty-matter",
     "URL": "https://github.com/MesmerPrism/rusty-matter",
     "accessed": {
       "date-parts": [
         [
           2026,
           6,
-          13
+          21
         ]
       ]
     },
-    "note": "Referenced by Rusty Morphospace: https://mesmerprism.com/projects/rusty-morphospace.html"
+    "note": "Referenced by Rusty Morphospace: https://mesmerprism.com/projects/rusty-morphospace.html",
+    "author": [
+      {
+        "literal": "MesmerPrism"
+      }
+    ]
   },
   {
-    "id": "github-com-rusty-lattice",
+    "id": "mesmerprism-rusty-optics",
     "type": "webpage",
-    "title": "Rusty Lattice",
-    "URL": "https://github.com/MesmerPrism/rusty-lattice",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          13
-        ]
-      ]
-    },
-    "note": "Referenced by Rusty Morphospace: https://mesmerprism.com/projects/rusty-morphospace.html"
-  },
-  {
-    "id": "github-com-rusty-manifold",
-    "type": "webpage",
-    "title": "Rusty Manifold",
-    "URL": "https://github.com/MesmerPrism/rusty-manifold",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          13
-        ]
-      ]
-    },
-    "note": "Referenced by Rusty Morphospace: https://mesmerprism.com/projects/rusty-morphospace.html"
-  },
-  {
-    "id": "github-com-rusty-optics",
-    "type": "webpage",
-    "title": "Rusty Optics",
+    "title": "rusty-optics",
     "URL": "https://github.com/MesmerPrism/rusty-optics",
     "accessed": {
       "date-parts": [
         [
           2026,
           6,
-          13
+          21
         ]
       ]
     },
-    "note": "Referenced by Rusty Morphospace: https://mesmerprism.com/projects/rusty-morphospace.html"
+    "note": "Referenced by Rusty Morphospace: https://mesmerprism.com/projects/rusty-morphospace.html",
+    "author": [
+      {
+        "literal": "MesmerPrism"
+      }
+    ]
   },
   {
-    "id": "github-com-rusty-gui",
+    "id": "mesmerprism-rusty-manifold",
     "type": "webpage",
-    "title": "Rusty GUI",
+    "title": "rusty-manifold",
+    "URL": "https://github.com/MesmerPrism/rusty-manifold",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          21
+        ]
+      ]
+    },
+    "note": "Referenced by Rusty Morphospace: https://mesmerprism.com/projects/rusty-morphospace.html",
+    "author": [
+      {
+        "literal": "MesmerPrism"
+      }
+    ]
+  },
+  {
+    "id": "mesmerprism-rusty-lattice",
+    "type": "webpage",
+    "title": "rusty-lattice",
+    "URL": "https://github.com/MesmerPrism/rusty-lattice",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          21
+        ]
+      ]
+    },
+    "note": "Referenced by Rusty Morphospace: https://mesmerprism.com/projects/rusty-morphospace.html",
+    "author": [
+      {
+        "literal": "MesmerPrism"
+      }
+    ]
+  },
+  {
+    "id": "mesmerprism-rusty-gui",
+    "type": "webpage",
+    "title": "rusty-gui",
     "URL": "https://github.com/MesmerPrism/rusty-gui",
     "accessed": {
       "date-parts": [
         [
           2026,
           6,
-          13
+          21
         ]
       ]
     },
-    "note": "Referenced by Rusty Morphospace: https://mesmerprism.com/projects/rusty-morphospace.html"
+    "note": "Referenced by Rusty Morphospace: https://mesmerprism.com/projects/rusty-morphospace.html",
+    "author": [
+      {
+        "literal": "MesmerPrism"
+      }
+    ]
   },
   {
-    "id": "github-com-rusty-makepad",
+    "id": "mesmerprism-rusty-makepad",
     "type": "webpage",
-    "title": "Rusty Makepad",
+    "title": "rusty-makepad",
     "URL": "https://github.com/MesmerPrism/rusty-makepad",
     "accessed": {
       "date-parts": [
         [
           2026,
           6,
-          13
+          21
         ]
       ]
     },
-    "note": "Referenced by Rusty Morphospace: https://mesmerprism.com/projects/rusty-morphospace.html"
+    "note": "Referenced by Rusty Morphospace: https://mesmerprism.com/projects/rusty-morphospace.html",
+    "author": [
+      {
+        "literal": "MesmerPrism"
+      }
+    ]
   },
   {
-    "id": "github-com-rusty-quest",
+    "id": "mesmerprism-rusty-quest",
     "type": "webpage",
-    "title": "Rusty Quest",
+    "title": "rusty-quest",
     "URL": "https://github.com/MesmerPrism/rusty-quest",
     "accessed": {
       "date-parts": [
         [
           2026,
           6,
-          13
+          21
         ]
       ]
     },
-    "note": "Referenced by Rusty Morphospace: https://mesmerprism.com/projects/rusty-morphospace.html"
+    "note": "Referenced by Rusty Morphospace: https://mesmerprism.com/projects/rusty-morphospace.html",
+    "author": [
+      {
+        "literal": "MesmerPrism"
+      }
+    ]
   },
   {
-    "id": "github-com-rusty-manifold-packages",
+    "id": "mesmerprism-rusty-quest-makepad",
+    "type": "webpage",
+    "title": "rusty-quest-makepad",
+    "URL": "https://github.com/MesmerPrism/rusty-quest-makepad",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          21
+        ]
+      ]
+    },
+    "note": "Referenced by Rusty Morphospace: https://mesmerprism.com/projects/rusty-morphospace.html",
+    "author": [
+      {
+        "literal": "MesmerPrism"
+      }
+    ]
+  },
+  {
+    "id": "mesmerprism-rusty-hostess",
+    "type": "webpage",
+    "title": "rusty-hostess",
+    "URL": "https://github.com/MesmerPrism/rusty-hostess",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          21
+        ]
+      ]
+    },
+    "note": "Referenced by Rusty Morphospace: https://mesmerprism.com/projects/rusty-morphospace.html",
+    "author": [
+      {
+        "literal": "MesmerPrism"
+      }
+    ]
+  },
+  {
+    "id": "mesmerprism-rusty-manifold-packages",
     "type": "webpage",
     "title": "rusty-manifold-packages",
     "URL": "https://github.com/MesmerPrism/rusty-manifold-packages",
@@ -232,14 +198,19 @@
         [
           2026,
           6,
-          13
+          21
         ]
       ]
     },
-    "note": "Referenced by Rusty Morphospace: https://mesmerprism.com/projects/rusty-morphospace.html"
+    "note": "Referenced by Rusty Morphospace: https://mesmerprism.com/projects/rusty-morphospace.html",
+    "author": [
+      {
+        "literal": "MesmerPrism"
+      }
+    ]
   },
   {
-    "id": "github-com-rusty-studio",
+    "id": "mesmerprism-rusty-studio",
     "type": "webpage",
     "title": "rusty-studio",
     "URL": "https://github.com/MesmerPrism/rusty-studio",
@@ -248,14 +219,19 @@
         [
           2026,
           6,
-          13
+          21
         ]
       ]
     },
-    "note": "Referenced by Rusty Morphospace: https://mesmerprism.com/projects/rusty-morphospace.html"
+    "note": "Referenced by Rusty Morphospace: https://mesmerprism.com/projects/rusty-morphospace.html",
+    "author": [
+      {
+        "literal": "MesmerPrism"
+      }
+    ]
   },
   {
-    "id": "github-com-rusty-quest-sidecar-mesh",
+    "id": "mesmerprism-rusty-quest-sidecar-mesh",
     "type": "webpage",
     "title": "rusty-quest-sidecar-mesh",
     "URL": "https://github.com/MesmerPrism/rusty-quest-sidecar-mesh",
@@ -264,14 +240,40 @@
         [
           2026,
           6,
-          13
+          21
         ]
       ]
     },
-    "note": "Referenced by Rusty Morphospace: https://mesmerprism.com/projects/rusty-morphospace.html"
+    "note": "Referenced by Rusty Morphospace: https://mesmerprism.com/projects/rusty-morphospace.html",
+    "author": [
+      {
+        "literal": "MesmerPrism"
+      }
+    ]
   },
   {
-    "id": "github-com-rusty-xr",
+    "id": "mesmerprism-quest-termux-lab",
+    "type": "webpage",
+    "title": "quest-termux-lab",
+    "URL": "https://github.com/MesmerPrism/quest-termux-lab",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          21
+        ]
+      ]
+    },
+    "note": "Referenced by Rusty Morphospace: https://mesmerprism.com/projects/rusty-morphospace.html",
+    "author": [
+      {
+        "literal": "MesmerPrism"
+      }
+    ]
+  },
+  {
+    "id": "mesmerprism-rusty-xr",
     "type": "webpage",
     "title": "Rusty-XR",
     "URL": "https://github.com/MesmerPrism/Rusty-XR",
@@ -280,10 +282,64 @@
         [
           2026,
           6,
-          13
+          21
         ]
       ]
     },
-    "note": "Referenced by Rusty Morphospace: https://mesmerprism.com/projects/rusty-morphospace.html"
+    "note": "Referenced by Rusty Morphospace: https://mesmerprism.com/projects/rusty-morphospace.html",
+    "author": [
+      {
+        "literal": "MesmerPrism"
+      }
+    ]
+  },
+  {
+    "id": "pahng-et-al-diffeomorph-learning-to-morph-3d-shapes-using-differenti-2025",
+    "type": "webpage",
+    "title": "DiffeoMorph: Learning to Morph 3D Shapes Using Differentiable Agent-Based Simulations",
+    "URL": "https://arxiv.org/abs/2512.17129",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          21
+        ]
+      ]
+    },
+    "note": "Referenced by Rusty Morphospace: https://mesmerprism.com/projects/rusty-morphospace.html",
+    "author": [
+      {
+        "literal": "Pahng et al"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2025
+        ]
+      ]
+    }
+  },
+  {
+    "id": "hormoz-lab-diffeomorph",
+    "type": "webpage",
+    "title": "diffeomorph",
+    "URL": "https://github.com/hormoz-lab/diffeomorph",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          21
+        ]
+      ]
+    },
+    "note": "Referenced by Rusty Morphospace: https://mesmerprism.com/projects/rusty-morphospace.html",
+    "author": [
+      {
+        "literal": "hormoz-lab"
+      }
+    ]
   }
 ]

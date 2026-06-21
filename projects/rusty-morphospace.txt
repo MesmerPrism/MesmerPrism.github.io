@@ -2,8 +2,8 @@ Rusty Morphospace
 
 Source: https://mesmerprism.com/projects/rusty-morphospace.html
 Canonical HTML: https://mesmerprism.com/projects/rusty-morphospace.html
-Generated: 2026-06-13
-Description: Rusty Morphospace is a modular Rust platform for computational matter, situated relations, runtime authority, renderer-neutral inspection, and Quest validation.
+Generated: 2026-06-21
+Description: Rusty Morphospace is a modular Rust platform for computational matter, situated relations, runtime authority, renderer-neutral inspection, and Quest-native validation.
 Markdown: https://mesmerprism.com/projects/rusty-morphospace.md
 Plain text: https://mesmerprism.com/projects/rusty-morphospace.txt
 BibTeX references: https://mesmerprism.com/projects/rusty-morphospace.bib
@@ -23,6 +23,7 @@ Rusty Morphospace
 
  Repositories (https://mesmerprism.com/projects/rusty-morphospace.html#repositories)
  Module map (https://mesmerprism.com/projects/rusty-morphospace.html#module-map)
+ App build workflow (https://mesmerprism.com/projects/rusty-morphospace/native-app-build-workflow.html)
  Current work (https://mesmerprism.com/projects/rusty-morphospace.html#current-work)
  HSI layer (https://mesmerprism.com/projects/rusty-morphospace.html#hsi-implementation-layer)
  Why Morphospace (https://mesmerprism.com/projects/rusty-morphospace.html#why)
@@ -52,6 +53,8 @@ Computational form as a working medium
  Morphospace-owned source, and local validation gates. Studio, Hostess,
  Manifold Packages, and the Quest sidecar lane sit around those contracts as
  authoring, package, evidence, and integration surfaces.
+ Rusty Quest now also carries a Rust-first NativeActivity/OpenXR/Vulkan app
+ route for headset-side rendering experiments, separate from the Makepad shell.
 
  The Bioelectricity and Morphogenesis (https://mesmerprism.com/projects/bioelectricity.html)
  slice shows the Matter/Optics boundary in a public teaching model: Matter owns
@@ -77,7 +80,7 @@ Current frame
 - Umbrella: Rusty Morphospace
 - Clean source repos: Matter, Manifold, Optics, Lattice, GUI, Makepad, Quest, Quest-Makepad
 - Package and host repos: Manifold Packages, Studio, Hostess, Quest Sidecar Mesh
-- Current proofs: remote camera framing, live/recorded hand surfaces, SDF/ADF debug paths, particles, and bounded GPU readbacks
+- Current proofs: remote camera framing, native Quest rendering, direct Camera2/HWB import, MediaProjection display-composite feedback, live/recorded hand surfaces, SDF/ADF debug paths, particles, and bounded GPU readbacks
 - Licensing: AGPL-3.0-or-later for Morphospace-owned source
 
 Layer names
@@ -87,7 +90,7 @@ Layer names
 - Situated relations: Rusty Lattice
 - Graphical descriptors: Rusty GUI
 - Makepad adaptation: Rusty Makepad and Rusty Quest Makepad
-- Platform edge: Rusty Quest
+- Platform edge and native headset renderer: Rusty Quest
 
 Useful for
 - Keeping simulation truth separate from renderer and platform adapters
@@ -95,12 +98,15 @@ Useful for
 - Routing commands, streams, leases, clocks, and diagnostics explicitly
 - Making visual state inspectable without tying it to one render backend
 - Proving headset paths with bounded evidence before claiming runtime backends
+- Building Quest-native OpenXR/Vulkan diagnostics without making platform adapters simulation authority
 
 Connected work
 - Mixed-Ability HSI (https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html) uses Morphospace as the planned implementation layer for explicit access mappings, not as proof that the social method is already solved
 - Bioelectricity and Morphogenesis (https://mesmerprism.com/projects/bioelectricity.html) shows the Matter/Optics boundary applied to planarian surface-field dynamics
 - DiffeoMorph (https://arxiv.org/abs/2512.17129) provides a public computational-morphogenesis reference for many-agent target-forming bodies, separate from Morphospace runtime authority
-- Rusty Quest Makepad (https://github.com/MesmerPrism/rusty-quest-makepad) carries the current recorded-hand, SDF/ADF, particle, and GPU-proof adapter work
+- Rusty Quest (https://github.com/MesmerPrism/rusty-quest) carries runtime profiles, Quest permission/tooling surfaces, and the native Rust/OpenXR/Vulkan renderer route
+- Native App Build Workflow (https://mesmerprism.com/projects/rusty-morphospace/native-app-build-workflow.html) explains how new APK profiles select only the required Rusty Quest feature modules
+- Rusty Quest Makepad (https://github.com/MesmerPrism/rusty-quest-makepad) carries the recorded-hand, SDF/ADF, particle, and GPU-proof Makepad adapter work
 - Rusty Hostess (https://github.com/MesmerPrism/rusty-hostess) provides the install, staging, launch, and evidence shell used to validate those headset paths
 - Rusty XR (https://mesmerprism.com/projects/rusty-morphospace/rusty-xr.html) remains the public compatibility and Quest reference surface
 - Quest Termux Lab (https://github.com/MesmerPrism/quest-termux-lab) is a public MIT lab source that feeds the Rusty Quest sidecar bridge
@@ -123,6 +129,10 @@ How Morphospace fits mixed-ability HSI
  Matter/Optics teaching model used by the bioelectricity page, and a bounded
  Quest Makepad/Hostess validation path for recorded hand data, Matter CPU
  oracle comparison, SDF/ADF debug payloads, particles, and GPU evidence.
+ It also includes a native Rusty Quest renderer path for direct
+ Camera2/AHardwareBuffer import, native passthrough profiles,
+ MediaProjection display-composite diagnostics, and OpenXR/Vulkan timing
+ evidence.
 
  The planned HSI layer should be read more narrowly: it is an integration
  target for participant-facing mapping authoring, consent and provenance
@@ -136,6 +146,7 @@ Current public base
 - Package lanes for synthetic, biosignal, projected-motion, Polar H10, and hand-animation data
 - Matter/Optics teaching model for surface fields, conductance-like coupling, readouts, and browser inspection
 - Hostess and Quest Makepad evidence route for recorded and live hand surfaces, SDF/ADF debug views, particles, and bounded GPU readbacks
+- Rusty Quest native renderer route for direct HWB camera sampling, native passthrough, display-composite feedback, live hand/graft diagnostics, stimulus volumes, and environment-depth GPU diagnostics
 - Rusty XR retained as compatibility history and public Quest evidence rather than the new authority model
 
 Planned HSI integration
@@ -209,7 +220,8 @@ Rusty Makepad (https://github.com/MesmerPrism/rusty-makepad)
 Rusty Quest (https://github.com/MesmerPrism/rusty-quest)
 
  Quest runtime profiles, permissions, launch planning, Android property
- hygiene, validation receipts, and platform write/readback evidence.
+ hygiene, validation receipts, native OpenXR/Vulkan rendering examples,
+ and platform write/readback evidence.
 
  Quest Makepad apps
 
@@ -343,14 +355,17 @@ rusty-makepad (https://github.com/MesmerPrism/rusty-makepad)
 rusty-quest (https://github.com/MesmerPrism/rusty-quest)
 
  Quest platform runtime profiles, Android property hygiene, permissions,
- launch planning, validation receipts, and platform tooling wrappers.
+ launch planning, validation receipts, platform tooling wrappers, and the
+ Rust-first native Quest renderer package for direct Camera2/HWB,
+ passthrough, MediaProjection, environment-depth, and stimulus-volume
+ diagnostics.
 
  Status
  Public main
  License
  AGPL-3.0-or-later
  Use
- Platform write/readback evidence without owning app simulation
+ Quest platform evidence and native renderer diagnostics without owning Matter semantics
 
  Repository (https://github.com/MesmerPrism/rusty-quest)
 
@@ -496,34 +511,44 @@ DiffeoMorph (https://arxiv.org/abs/2512.17129)
 
  Current work
 
-What is current as of June 13, 2026
+What is current as of June 20, 2026
 
- The active implementation line now has several connected fronts. Quest
- Makepad consumes Matter-owned live or recorded hand-surface truth, Optics
- prepares renderer-neutral debug payloads, Quest-Makepad adapts those payloads
- to headset Makepad shells, and Hostess installs, stages, launches, and records
- evidence. In parallel, Manifold and Quest have a remote-camera command and
- stream framing lane, while the Matter/Optics bioelectricity model remains the
- public teaching slice for computational morphogenesis.
+ The active implementation line now has two Quest fronts. Quest Makepad still
+ consumes Matter-owned live or recorded hand-surface truth, adapts
+ renderer-neutral payloads to headset Makepad shells, and uses Hostess for
+ install, staging, launch, and evidence capture. Rusty Quest now also carries a
+ separate Rust-first NativeActivity/OpenXR/Vulkan stack for low-level native
+ headset experiments
+ (rusty-quest (https://github.com/MesmerPrism/rusty-quest)).
 
- The Quest Makepad path has moved past first smoke tests. It now separates
- settings control from data-plane assets, keeps hand meshes and compact joint
- frames out of settings JSON, selects recorded or live hand providers through
- the same Matter worker boundary, and validates bounded GPU proof markers for
- skinning, full mesh residency, mesh-to-dense-SDF construction, ADF debug
- payloads, particles, and field-construction readiness against Matter CPU
- oracle samples.
+ The native path is not only a launch wrapper. It has public profiles for direct
+ Quest Camera2/AHardwareBuffer import into Vulkan external images, metadata-owned
+ camera target rectangles and orientation, native Meta passthrough profiles,
+ solid-black control profiles, resident GPU hand meshes and graft copies,
+ compact live OpenXR hand input, hand-anchor particles, target-space GPU SDF
+ diagnostics, stimulus-volume routes, and environment-depth particle/scene-map
+ diagnostics. Its MediaProjection route is a display-composite feedback witness:
+ Android grants capture tokens, Rust owns the AImage/AHardwareBuffer handoff,
+ and a shared Vulkan AHardwareBuffer import helper is used by camera and
+ display-composite sampling.
 
- The remote-camera lane is also deliberately bounded. The current source uses
- Manifold-aligned `RMANVID1` H.264 stream framing and receiver-first command
- planning, with source checks and single-device direct TCP evidence. Physical
- two-peer Quest or Quest-to-phone validation remains a future evidence gate.
- The GPU work is likewise proof-scale: it demonstrates storage-buffer
- residency, asynchronous submit/poll readback, and CPU-oracle comparison, not
- a final frame-critical field or force backend.
+ The current caveat is important. The native renderer has headset evidence and
+ profile/static validation for these routes, but MediaProjection is evidence of
+ the app-visible display composite, not raw passthrough texture, raw camera,
+ environment-depth, or scene geometry. Environment-depth and stimulus-volume
+ routes are diagnostic validation surfaces rather than finished participant
+ tools. Remote-camera work remains deliberately bounded as Manifold-aligned
+ RMANVID1 H.264 framing plus single-device evidence until physical two-peer
+ Quest or Quest-to-phone validation passes.
 
 Validated shape
 - Camera-free Hostess Quest Makepad APK route with generated Quest manifest
+- Native Rusty Quest Android package with OpenXR/Vulkan session, stereo swapchain, profile matrix, and runtime markers
+- Reusable AHardwareBuffer Vulkan import module shared by Camera2 and display-composite sampling
+- Direct HWB camera quality profiles with stream metadata for target rectangles, aspect, orientation, and sync policy
+- Native passthrough and solid-black profiles for hand meshes, graft copies, and anchor-particle diagnostics
+- MediaProjection display-composite feedback profile with gated capture, opaque shrunken projection, and GPU readback evidence
+- Environment-depth and stimulus-volume diagnostic profiles behind explicit runtime-profile validation
 - App-private settings plus sibling data-plane staging through Hostess tooling
 - Recorded and live hand providers shaped as bind mesh plus compact joint frames
 - Matter CPU oracle comparison for skinning, full mesh residency, mesh-SDF, ADF debug, and particle paths
@@ -532,17 +557,21 @@ Validated shape
 Architecture guards
 - Matter remains simulation, field, SDF/ADF, particle, and bioelectric truth
 - Manifold owns command/session authority, stream metadata, and audit
-- Makepad owns generic XR/Vulkan dispatch plumbing, not Matter semantics
-- Quest-Makepad owns adapter markers and headset app profile bundles
+- Rusty Quest owns Quest platform profiles, permission/tooling surfaces, and native renderer diagnostics, not Matter or Optics semantics
+- Makepad and the native renderer are separate app routes; neither owns simulation truth
+- Quest-Makepad owns Makepad adapter markers and headset app profile bundles
 - Hostess owns install, staging, launch, and evidence capture
+- MediaProjection evidence is display-composite evidence, not raw passthrough, camera, depth, or geometry truth
+- Camera and display-composite imports share reusable AHardwareBuffer mechanics without coupling their source policies
 - High-rate mesh, field, particle, and GPU buffers stay out of settings/control JSON
 
 Next engineering pressure
-- Keep all GPU proof readbacks on ticket/poll or explicit evidence-command paths
-- Keep Vulkan probe implementations split into sibling modules
+- Keep reusable AHardwareBuffer import/render code outside the large frame loop and outside camera-specific ownership
+- Keep display-composite projection area, aspect, orientation, opacity, and gain as stream/profile metadata rather than shader assumptions
+- Promote environment-depth only after known-distance, motion, and source-layer agreement evidence stays clean
 - Scale dense SDF or indexed ADF only after bounded oracle checks and cadence evidence stay clean
 - Run physical two-peer camera validation before claiming peer streaming readiness
-- Keep particle force authority singular in normal profiles
+- Keep GPU proof readbacks on ticket/poll or explicit evidence-command paths and keep particle force authority singular in normal profiles
 
  Why the name
 
@@ -595,6 +624,20 @@ Licensing follows the boundary
 
  References
 
-External sources for this page
+External sources and public repos for this page
+- MesmerPrism. "rusty-matter (https://github.com/MesmerPrism/rusty-matter)." Public Rusty Matter repository for computational matter, surface, field, particle, SDF, and fixture contracts.
+- MesmerPrism. "rusty-optics (https://github.com/MesmerPrism/rusty-optics)." Public Rusty Optics repository for renderer-neutral projection, appearance, and visual validation contracts.
+- MesmerPrism. "rusty-manifold (https://github.com/MesmerPrism/rusty-manifold)." Public Rusty Manifold repository for command, stream, session, module, and audit authority.
+- MesmerPrism. "rusty-lattice (https://github.com/MesmerPrism/rusty-lattice)." Public Rusty Lattice repository for reference-space, tracked-pose, view-set, and capability contracts.
+- MesmerPrism. "rusty-gui (https://github.com/MesmerPrism/rusty-gui)." Public Rusty GUI repository for framework-neutral panels, widgets, inspectors, and graphical descriptors.
+- MesmerPrism. "rusty-makepad (https://github.com/MesmerPrism/rusty-makepad)." Public Rusty Makepad repository for Makepad settings and adapter contracts.
+- MesmerPrism. "rusty-quest (https://github.com/MesmerPrism/rusty-quest)." Public Rusty Quest repository for Quest profiles, permission/tooling surfaces, remote-camera contracts, and the native Quest OpenXR/Vulkan renderer route.
+- MesmerPrism. "rusty-quest-makepad (https://github.com/MesmerPrism/rusty-quest-makepad)." Public Quest Makepad adapter repository for camera-shell, recorded hand, SDF/ADF, particle, and GPU-proof evidence routes.
+- MesmerPrism. "rusty-hostess (https://github.com/MesmerPrism/rusty-hostess)." Public Hostess repository for install, staging, launch, evidence, and operator workflows around Morphospace packages and Quest validation.
+- MesmerPrism. "rusty-manifold-packages (https://github.com/MesmerPrism/rusty-manifold-packages)." Public package repository for first-party synthetic, biosignal, projected-motion, Polar H10, and hand-animation lanes.
+- MesmerPrism. "rusty-studio (https://github.com/MesmerPrism/rusty-studio)." Public Rusty Studio repository for authoring and review surfaces around Morphospace packages.
+- MesmerPrism. "rusty-quest-sidecar-mesh (https://github.com/MesmerPrism/rusty-quest-sidecar-mesh)." Public Quest sidecar mesh repository for integration contracts and synthetic fixtures.
+- MesmerPrism. "quest-termux-lab (https://github.com/MesmerPrism/quest-termux-lab)." Public Quest Termux lab source feeding Quest sidecar bridge work.
+- MesmerPrism. "Rusty-XR (https://github.com/MesmerPrism/Rusty-XR)." Public Rusty XR compatibility and historical Quest evidence surface.
 - Pahng et al. "DiffeoMorph: Learning to Morph 3D Shapes Using Differentiable Agent-Based Simulations (https://arxiv.org/abs/2512.17129)." arXiv 2512.17129 (submitted 2025; revised 2026).
 - hormoz-lab. "diffeomorph (https://github.com/hormoz-lab/diffeomorph)." Official implementation repository for the DiffeoMorph paper.

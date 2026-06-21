@@ -2,8 +2,8 @@
 
 Source: https://mesmerprism.com/projects/bioelectricity.html
 Canonical HTML: https://mesmerprism.com/projects/bioelectricity.html
-Generated: 2026-06-20
-Description: Bioelectricity and morphogenesis across Rusty Morphospace and Planarian Regeneration XR: source-bounded teaching models, curated records, observed Zenodo geometry, and marker replays.
+Generated: 2026-06-21
+Description: Bioelectricity and morphogenesis across Rusty Morphospace and Planarian Regeneration XR: source-bounded teaching models, data-first atlas navigation, reviewed records, observed Zenodo geometry, and marker replays.
 Markdown: https://mesmerprism.com/projects/bioelectricity.md
 Plain text: https://mesmerprism.com/projects/bioelectricity.txt
 BibTeX references: https://mesmerprism.com/projects/bioelectricity.bib
@@ -19,9 +19,10 @@ Rusty Morphospace and tissue-scale patterning
  perturbations, and memory can help shape living form. The current Mesmer
  Prism line stays deliberately modest: Rusty Morphospace keeps inspectable
  educational surface-field models, while Planarian Regeneration XR turns the
- same source-boundary discipline into a WebXR-first atlas of body, graph,
- experiment record, and outcome. Observed records, educational abstractions,
- and model-inspired overlays remain separate layers.
+ same source-boundary discipline into a data-first WebXR atlas of body, graph,
+ experiment record, reviewed source geometry, and outcome. Observed records,
+ educational abstractions, source-derived GLBs, and model-inspired overlays
+ remain separate layers.
 
  [Current slice](https://mesmerprism.com/projects/bioelectricity.html#current-slice)
  [Planarian XR atlas](https://mesmerprism.com/projects/bioelectricity.html#planarian-xr)
@@ -124,7 +125,7 @@ Rusty Morphospace and tissue-scale patterning
 
 ## Observed, curated, and educational layers stay separated
 
- Planarian Regeneration XR is the WebXR-first atlas surface for this
+ Planarian Regeneration XR is the data-first WebXR atlas surface for this
  biological teaching case. Its central loop is body to graph to experiment
  record to regeneration outcome. The app now carries a reviewed PlanformDB
  subset with 20 selected source records and 54 outcome details, including
@@ -147,23 +148,35 @@ Rusty Morphospace and tissue-scale patterning
  [Lu, 2024 dataset2](https://zenodo.org/records/12533272)).
 
  The atlas can enter WebXR and the non-XR browser flow remains complete:
- anatomy selection, graph synchronization, cut controls, Records-mode
- PlanformDB filters, provenance panels, graph export, screenshots, and explicit
- educational/source-backed labels. That does not make the atlas a live
- regeneration simulator.
+ top-level Source Atlas, Records, Layers, Model Replay, and Teaching workflows;
+ an inspector guide with a visible section index; anatomy selection, graph
+ synchronization, cut controls, Records-mode PlanformDB filters, provenance
+ panels, graph export, screenshots, and explicit educational/source-backed
+ labels. Geometry source cards are filterable and their source-map, technical,
+ and caveat details now start folded closed so the atlas is navigable before it
+ becomes exhaustive. That does not make the atlas a live regeneration simulator.
 
- The current app opens in a Source Atlas mode with the reviewed Zenodo GLBs
- hotlisted by default, including the allometry marker layer with an explicit
- caveat that FirstPoint anchors are not centroids. Model Replay now includes
- GIFs generated from reviewed neuron-cloud and 12533272
- volume-marker GLB positions, with the dynamics labeled as model-inspired
- rather than observed. It then separates
- Records, Layers, Model Replay, and Teaching as secondary evidence modes. The Records mode now filters the
- reviewed PlanformDB subset by publication, outcome class, manipulation type,
- timepoint, and measurement availability. Pending lanes for further
- PlanformDB expansion, source maps for object-level picking,
- observed-geometry dynamics, and Quest Browser validation remain statused
- rather than central.
+ The current app opens in Source Atlas mode with the reviewed Zenodo source
+ layers selected but only the posterior muscle SpatialGraph overlay visible by
+ default. Other reviewed GLB derivatives, including the allometry FirstPoint
+ markers and the Zenodo 12533272 high-intensity volume-marker GLB,
+ remain available as explicit source layers rather than default clutter; the
+ ETLSM2 volume marker lane is off until selected because it is a reviewed marker
+ subset, not an organized anatomy surface. Model Replay includes GIFs generated
+ from reviewed neuron-cloud and 12533272 volume-marker GLB positions,
+ with the dynamics labeled as model-inspired rather than observed. The Records
+ mode filters the reviewed PlanformDB subset by publication, outcome class,
+ manipulation type, timepoint, and measurement availability. Pending lanes for
+ further PlanformDB expansion, public source-map sidecars, object-level picking,
+ observed-geometry dynamics, and Quest Browser validation remain statused rather
+ than central.
+
+ The latest implementation plan also defines the missing bridge before real
+ observed GLBs become interactive scientific objects: public-safe source-map
+ sidecars for segment, point, label, FirstPoint, and volume-surface mappings.
+ These sidecars may carry reviewed element IDs, transforms, hashes, counts, and
+ caveats. They must not carry raw .togo , .am ,
+ .am.dat , decoder output, local paths, logs, or review packets.
 
  Data layers
 
@@ -174,7 +187,7 @@ Rusty Morphospace and tissue-scale patterning
  schema level.
 
  Observed
- Zenodo posterior/anterior muscle SpatialGraph GLB line overlays, neuron cell-cloud, nuclei centroid, allometry FirstPoint, and 12533272 volume-marker GLBs
+ Zenodo posterior/anterior muscle SpatialGraph GLB line overlays, neuron cell-cloud, nuclei centroid, allometry FirstPoint, and 12533272 volume-marker GLBs; posterior muscle is the default visible source layer
  Curated
  20 reviewed PlanformDB Experiment records with 54 outcome details and reviewed frequency/sample-size values
  Educational
@@ -191,9 +204,11 @@ Rusty Morphospace and tissue-scale patterning
  evidence type or visualization status.
 
  Desktop/mobile
- Full atlas controls and source-aware panels
+ Top workflow selector, inspector guide, section index, filterable source cards, and source-aware panels
  Modes
  Source Atlas, filtered Records, Layers, Model Replay, and Teaching
+ Details
+ Geometry source-map, technical, and caveat foldouts start closed by default
  Immersive
  WebXR entry with controller selection paths
  Export
@@ -208,7 +223,7 @@ Rusty Morphospace and tissue-scale patterning
  implementation-plan gates before a build is treated as coherent.
 
  Passed
- Data validation, geometry QA, production build, and public metadata scan
+ Type checks, production build, app smoke tests, tile-review smoke test, geometry QA, and public metadata scan
  Formal gate
  Headset evidence remains a separate Quest Browser report step
  Limit
@@ -299,8 +314,11 @@ Rusty Morphospace and tissue-scale patterning
  Result(2).Label-Analysis(2) FirstPoint anchor marker cloud,
  plus a reviewed 12533272 high-intensity volume-marker GLB.
  The reviewed neuron-cloud and volume-marker GLBs now have public
- model-inspired dynamics GIF replays. It also has a Quest Browser validation lane that needs a refreshed headset
- pass whenever the production build changes.
+ model-inspired dynamics GIF replays. The current Source Atlas startup state
+ selects the reviewed source layers but shows the posterior muscle overlay
+ first; the 12533272 volume marker lane is intentionally available
+ rather than active by default. It also has a Quest Browser validation lane that
+ needs a refreshed headset pass whenever the production build changes.
  Remaining targets are intentionally planned until source figures, tables,
  categories, or datasets have been extracted into derived, rights-safe
  artifacts.
@@ -340,6 +358,16 @@ Rusty Morphospace and tissue-scale patterning
  Rights-safe derived fixture records 14 selected Oviedo 2010 source IDs covering octanol crop-position, ventral nerve cord timing, and innexin RNAi crop-position labels, with transform notes, notice text, and use limits.
  Expanded review fixture exists in Hub and Matter; metadata/annotation only, not runtime dynamics authority or a predictor.
 
+ planarian_xr_data_first_navigation
+ [Planarian Regeneration XR](https://github.com/MesmerPrism/Planarian-Regeneration-XR)
+ The atlas now opens with a top workflow selector, a Source Atlas guide, a visible inspector section index, filterable geometry source cards, and closed-by-default foldouts for source maps, technical details, and caveats. The default visible source layer is posterior.Smt.SptGraph ; the ETLSM2 volume marker GLB is available but not active at startup.
+ Public navigation and onboarding improvement; it changes how evidence lanes are presented, not the scientific claim boundary.
+
+ planarian_xr_source_map_sidecars
+ [Planarian Regeneration XR](https://github.com/MesmerPrism/Planarian-Regeneration-XR); Zenodo dataset1/dataset2 object IDs
+ The implementation plan defines public-safe sidecar envelopes for segment-node, point-ID, label-ID, FirstPoint-ID, and volume-surface mappings. Sidecars may include public element IDs, transforms, hashes, counts, and caveats, but not raw source payloads, private decoder details, local paths, logs, or review packets.
+ Planned bridge before object-level picking, nearest-object annotation, or observed-geometry dynamics binding can be treated as reviewed behavior.
+
  zenodo_11724834_observed_glb_overlays
  [Lu, 2024](https://zenodo.org/records/11724834); [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
  Planarian Regeneration XR bundles reviewed GLB line overlays derived from posterior.Smt.SptGraph and anterior-filtered(2).CorrelationLines : 61,744 / 17,880 vertices, 30,872 / 8,940 line segments, SHA-256 daab05fbf234bb6db8b6618520982c1d159ca553a067825eba42929449478a2f and aa462e4141be28a5f7bb5d187a7b074a945815f19d3397110e90a8e102428ac7 . It also bundles the planarianneuronpool.Cloud HxCluster marker GLB with 3,467 source points, 20,802 vertices, 10,401 marker line segments, and SHA-256 97a18266dfa0cfa0f1fac739cf01c64c5a02ea0413d5a0b7aa81e3eb24e45787 ; the Result nuclei centroid marker GLB with 4,304 centroids, 25,824 vertices, 12,912 marker line segments, and SHA-256 7a191333ff455427f63a0ff65d112d2073473e0d22966cfa5c506e2204ad1af2 ; and a Result(2).Label-Analysis(2) FirstPoint anchor marker GLB with 3,567 anchors, 21,402 vertices, 10,701 marker line segments, and SHA-256 7e26fc68b5f1297f33b9efc1375b0162646bd030f35e4a3c179e979679de1fcc . Source DOI/object IDs, attribution, and geometry notice are recorded.
@@ -353,7 +381,7 @@ Rusty Morphospace and tissue-scale patterning
  zenodo_12533272_volume_marker_glb
  [Lu, 2024 dataset2](https://zenodo.org/records/12533272); [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
  Public-safe sidecar and derivative facts are recorded: mergeall.am.lda verifies a 4469 x 7887 x 3520 16-bit tiled volume, 124,069,450,560 voxels, Gzip tile compression, intensity bounds from 0 to 44182 , and a linked mergeall.am.dat volume of about 34.5 GB. The linked volume was downloaded under ignored raw storage and checksum-verified against MD5 a596aab89a5d793cfc71329e809b81ca . The public derivative mergeall-volume-lod3-high-intensity.glb contains 5,089 selected high-intensity marker points, 30,534 vertices, 15,267 marker line segments, and SHA-256 8fead939a8aabba7ee9c433fe0d6e158f490c924097b5c7fa35919072e39ff22 ; public UV/UW/VW maximum-intensity projection PNGs accompany the GLB.
- Observed source-derived atlas geometry only. It is not a full-resolution volume, not a segmented surface, not a measured bioelectric trace, and not a predictive regeneration simulation. Raw sidecar XML, raw histogram payload, TileMinMax payload, contributor-local source path, source volume, source export, intermediate, decoder output, and review packets remain outside the public bundle.
+ Observed source-derived atlas geometry only and not active in the default viewer state. It is not a full-resolution volume, not a segmented surface, not a measured bioelectric trace, and not a predictive regeneration simulation. Raw sidecar XML, raw histogram payload, TileMinMax payload, contributor-local source path, source volume, source export, intermediate, decoder output, and review packets remain outside the public bundle.
 
  zenodo_12533272_volume_bioelectric_replay
  [Lu, 2024 dataset2](https://zenodo.org/records/12533272); Planarian XR public GLB replay generator
@@ -425,14 +453,18 @@ Rusty Morphospace and tissue-scale patterning
  The planarian atlas contributes educational region labels, body geometry
  lessons, outcome labels, source/provenance habits, reviewed and filterable
  PlanformDB records, and observed source-derived posterior/anterior
- muscle overlays plus neuron and allometry marker overlays.
- Matter still builds its own computational surface graph and validation
- fixtures.
+ muscle overlays plus neuron, nuclei, allometry, and dataset2 marker
+ overlays. Its latest work adds data-first workflow navigation,
+ closed-by-default source-card details, a posterior-muscle default source
+ layer, and a public-safe source-map sidecar plan. Matter still builds its
+ own computational surface graph and validation fixtures.
 
  Use now
- Region semantics, filtered reviewed records, geometry review, outcome labels
+ Region semantics, filtered reviewed records, geometry review, source atlas navigation, outcome labels
  Not used as
  Mechanistic predictor or runtime physiology authority
+
+ [Repository](https://github.com/MesmerPrism/Planarian-Regeneration-XR)
 
  Xenobot reference
 
@@ -514,13 +546,16 @@ Rusty Morphospace and tissue-scale patterning
  code ownership clear, and avoids presenting educational dynamics as empirical
  prediction. The current PlanformDB slice is deliberately metadata-only. More
  detailed source-derived work can be added later when source IDs, license
- notices, transformations, and validation targets are explicit. The observed
- Zenodo muscle overlays are atlas geometry layers, not anatomical models of
- regeneration; source-paper figures, raw datasets, decoder tooling, source
- exports, and conversion intermediates should remain outside the public page
- unless rights and provenance have been reviewed.
+ notices, transformations, source-map sidecars, and validation targets are
+ explicit. The observed Zenodo overlays and marker GLBs are atlas geometry
+ layers, not anatomical models of regeneration; source-paper figures, raw
+ datasets, decoder tooling, source exports, local tile-review packets, and
+ conversion intermediates should remain outside the public page unless rights
+ and provenance have been reviewed.
 
 ### Next public-safe steps
+
+- Promote reviewed source-map sidecars before object-level picking or nearest-object annotation.
 
 - Expose scenario source/target anchors in the browser-facing teaching UI.
 
@@ -529,6 +564,8 @@ Rusty Morphospace and tissue-scale patterning
 - Make voltage-unit policy explicit per preset.
 
 - Keep expanding PlanformDB only through small, traceable, rights-safe derived fixtures.
+
+- Keep local tile-review datasets ignored until individual derivatives are reviewed for public promotion.
 
 - Keep Quest Browser evidence current before making broader immersive validation claims.
 
@@ -579,6 +616,8 @@ Rusty Morphospace and tissue-scale patterning
 - hormoz-lab. "[diffeomorph](https://github.com/hormoz-lab/diffeomorph)." Official implementation repository for the DiffeoMorph paper.
 
 - Mesmer Prism. "[Rusty Morphospace](https://mesmerprism.com/projects/rusty-morphospace.html)." Public project page.
+
+- MesmerPrism. "[Planarian Regeneration XR](https://github.com/MesmerPrism/Planarian-Regeneration-XR)." GitHub repository.
 
 - MesmerPrism. "[Rusty Matter](https://github.com/MesmerPrism/rusty-matter)." GitHub repository.
 

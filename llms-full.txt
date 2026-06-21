@@ -1,13 +1,13 @@
 # Mesmer Prism Full Agent Context
 
-Generated: 2026-06-20
+Generated: 2026-06-21
 
 <page url="https://mesmerprism.com/duisburg/" path="duisburg/index.html">
 # Shared Bodies for Mixed-Ability Collaboration
 
 Source: https://mesmerprism.com/duisburg/
 Canonical HTML: https://mesmerprism.com/duisburg/
-Generated: 2026-06-20
+Generated: 2026-06-21
 Description: A Duisburg-facing research pitch for Mixed-Ability Human-Swarm Interaction: shared swarm bodies, inspectable input mappings, and a route from connectedness to robotics translation.
 Markdown: https://mesmerprism.com/duisburg/index.md
 Plain text: https://mesmerprism.com/duisburg/index.txt
@@ -490,7 +490,7 @@ Mixed-ability XR research
 
 Source: https://mesmerprism.com/
 Canonical HTML: https://mesmerprism.com/
-Generated: 2026-06-20
+Generated: 2026-06-21
 Description: XR systems, citizen-science tools, visual instruments, and essays for altered-perception design. Mesmer Prism makes strange experience vivid, inspectable, and evidence-bounded.
 Markdown: https://mesmerprism.com/index.md
 Plain text: https://mesmerprism.com/index.txt
@@ -1086,7 +1086,7 @@ Till Holzapfel
 
 Source: https://mesmerprism.com/plasmatic-multitudes/assets/calligraphy-reference-pack/board.html
 Canonical HTML: https://mesmerprism.com/plasmatic-multitudes/assets/calligraphy-reference-pack/board.html
-Generated: 2026-06-20
+Generated: 2026-06-21
 Markdown: https://mesmerprism.com/plasmatic-multitudes/assets/calligraphy-reference-pack/board.md
 Plain text: https://mesmerprism.com/plasmatic-multitudes/assets/calligraphy-reference-pack/board.txt
 BibTeX references: https://mesmerprism.com/plasmatic-multitudes/assets/calligraphy-reference-pack/board.bib
@@ -1236,7 +1236,7 @@ Museum-backed pack
 
 Source: https://mesmerprism.com/plasmatic-multitudes/background/somaesthetics.html
 Canonical HTML: https://mesmerprism.com/plasmatic-multitudes/background/somaesthetics.html
-Generated: 2026-06-20
+Generated: 2026-06-21
 Description: A short public note on somaesthetics as the method anchor for Plasmatic Multitudes.
 Markdown: https://mesmerprism.com/plasmatic-multitudes/background/somaesthetics.md
 Plain text: https://mesmerprism.com/plasmatic-multitudes/background/somaesthetics.txt
@@ -1307,7 +1307,7 @@ Background appendix | Updated May 24, 2026
 
 Source: https://mesmerprism.com/plasmatic-multitudes/essay.html
 Canonical HTML: https://mesmerprism.com/plasmatic-multitudes/essay.html
-Generated: 2026-06-20
+Generated: 2026-06-21
 Description: A long-form essay on weakly bounded bodies, XR embodiment, media genealogy, computational morphogenesis, and cautious pain translation.
 Markdown: https://mesmerprism.com/plasmatic-multitudes/essay.md
 Plain text: https://mesmerprism.com/plasmatic-multitudes/essay.txt
@@ -1665,7 +1665,7 @@ Long essay | Updated May 24, 2026
 
 Source: https://mesmerprism.com/plasmatic-multitudes/
 Canonical HTML: https://mesmerprism.com/plasmatic-multitudes/
-Generated: 2026-06-20
+Generated: 2026-06-21
 Description: Long essay, method notes, vocabulary, pain-translation hypotheses, mixed-ability human-swarm interaction, and annotated references for weakly bounded bodies and semi-corporeal avatar aesthetics.
 Markdown: https://mesmerprism.com/plasmatic-multitudes/index.md
 Plain text: https://mesmerprism.com/plasmatic-multitudes/index.txt
@@ -1729,7 +1729,7 @@ Field guide | Updated May 24, 2026
 
 Source: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html
 Canonical HTML: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html
-Generated: 2026-06-20
+Generated: 2026-06-21
 Description: A Plasmatic Multitudes research track on shared visual swarm bodies, mixed-ability collaboration, access-practice mapping, connectedness-first exploration, encounter, cooperative play, and later physical translation.
 Markdown: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.md
 Plain text: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.txt
@@ -3138,7 +3138,7 @@ Mixed-ability HSI | Updated June 12, 2026
 
 Source: https://mesmerprism.com/plasmatic-multitudes/pain.html
 Canonical HTML: https://mesmerprism.com/plasmatic-multitudes/pain.html
-Generated: 2026-06-20
+Generated: 2026-06-21
 Description: A cautious research note on boundary precision, avatar materiality, protective fields, ownership, agency, and pain-related body-representation hypotheses. Not a treatment claim.
 Markdown: https://mesmerprism.com/plasmatic-multitudes/pain.md
 Plain text: https://mesmerprism.com/plasmatic-multitudes/pain.txt
@@ -3353,7 +3353,7 @@ Pain translation | Updated May 24, 2026
 
 Source: https://mesmerprism.com/plasmatic-multitudes/project.html
 Canonical HTML: https://mesmerprism.com/plasmatic-multitudes/project.html
-Generated: 2026-06-20
+Generated: 2026-06-21
 Description: A compact method note on boundary precision, somaesthetics, coherence, morphogenesis, and weakly bounded body design.
 Markdown: https://mesmerprism.com/plasmatic-multitudes/project.md
 Plain text: https://mesmerprism.com/plasmatic-multitudes/project.txt
@@ -3428,7 +3428,7 @@ Method | Updated May 24, 2026
 
 Source: https://mesmerprism.com/plasmatic-multitudes/references.html
 Canonical HTML: https://mesmerprism.com/plasmatic-multitudes/references.html
-Generated: 2026-06-20
+Generated: 2026-06-21
 Description: Annotated references across somaesthetics, perception, pseudo-haptics, morphogenesis, XR embodiment, media genealogy, and pain/body-representation research.
 Markdown: https://mesmerprism.com/plasmatic-multitudes/references.md
 Plain text: https://mesmerprism.com/plasmatic-multitudes/references.txt
@@ -3625,7 +3625,7 @@ Annotated sources | Updated June 11, 2026
 
 Source: https://mesmerprism.com/plasmatic-multitudes/terminology.html
 Canonical HTML: https://mesmerprism.com/plasmatic-multitudes/terminology.html
-Generated: 2026-06-20
+Generated: 2026-06-21
 Description: Terms for semi-corporeal avatars, plasmatic bodies, particle bodies, swarm bodies, aura avatars, boundary precision, pseudo-haptics, and related design concepts.
 Markdown: https://mesmerprism.com/plasmatic-multitudes/terminology.md
 Plain text: https://mesmerprism.com/plasmatic-multitudes/terminology.txt
@@ -4071,7 +4071,7 @@ Field guide | Updated May 24, 2026
 
 Source: https://mesmerprism.com/projects/altered-xperience-project.html
 Canonical HTML: https://mesmerprism.com/projects/altered-xperience-project.html
-Generated: 2026-06-20
+Generated: 2026-06-21
 Description: The Altered Xperience Project is a CIRCE-led citizen-science survey for anonymous altered-state reports, with multilingual questionnaires, feedback, scoring, exports, and collaborator workflow.
 Markdown: https://mesmerprism.com/projects/altered-xperience-project.md
 Plain text: https://mesmerprism.com/projects/altered-xperience-project.txt
@@ -4195,8 +4195,8 @@ Citizen-science altered-state survey
 
 Source: https://mesmerprism.com/projects/bioelectricity.html
 Canonical HTML: https://mesmerprism.com/projects/bioelectricity.html
-Generated: 2026-06-20
-Description: Bioelectricity and morphogenesis across Rusty Morphospace and Planarian Regeneration XR: source-bounded teaching models, curated records, observed Zenodo geometry, and marker replays.
+Generated: 2026-06-21
+Description: Bioelectricity and morphogenesis across Rusty Morphospace and Planarian Regeneration XR: source-bounded teaching models, data-first atlas navigation, reviewed records, observed Zenodo geometry, and marker replays.
 Markdown: https://mesmerprism.com/projects/bioelectricity.md
 Plain text: https://mesmerprism.com/projects/bioelectricity.txt
 BibTeX references: https://mesmerprism.com/projects/bioelectricity.bib
@@ -4212,9 +4212,10 @@ Rusty Morphospace and tissue-scale patterning
  perturbations, and memory can help shape living form. The current Mesmer
  Prism line stays deliberately modest: Rusty Morphospace keeps inspectable
  educational surface-field models, while Planarian Regeneration XR turns the
- same source-boundary discipline into a WebXR-first atlas of body, graph,
- experiment record, and outcome. Observed records, educational abstractions,
- and model-inspired overlays remain separate layers.
+ same source-boundary discipline into a data-first WebXR atlas of body, graph,
+ experiment record, reviewed source geometry, and outcome. Observed records,
+ educational abstractions, source-derived GLBs, and model-inspired overlays
+ remain separate layers.
 
  [Current slice](https://mesmerprism.com/projects/bioelectricity.html#current-slice)
  [Planarian XR atlas](https://mesmerprism.com/projects/bioelectricity.html#planarian-xr)
@@ -4317,7 +4318,7 @@ Rusty Morphospace and tissue-scale patterning
 
 ## Observed, curated, and educational layers stay separated
 
- Planarian Regeneration XR is the WebXR-first atlas surface for this
+ Planarian Regeneration XR is the data-first WebXR atlas surface for this
  biological teaching case. Its central loop is body to graph to experiment
  record to regeneration outcome. The app now carries a reviewed PlanformDB
  subset with 20 selected source records and 54 outcome details, including
@@ -4340,23 +4341,35 @@ Rusty Morphospace and tissue-scale patterning
  [Lu, 2024 dataset2](https://zenodo.org/records/12533272)).
 
  The atlas can enter WebXR and the non-XR browser flow remains complete:
- anatomy selection, graph synchronization, cut controls, Records-mode
- PlanformDB filters, provenance panels, graph export, screenshots, and explicit
- educational/source-backed labels. That does not make the atlas a live
- regeneration simulator.
+ top-level Source Atlas, Records, Layers, Model Replay, and Teaching workflows;
+ an inspector guide with a visible section index; anatomy selection, graph
+ synchronization, cut controls, Records-mode PlanformDB filters, provenance
+ panels, graph export, screenshots, and explicit educational/source-backed
+ labels. Geometry source cards are filterable and their source-map, technical,
+ and caveat details now start folded closed so the atlas is navigable before it
+ becomes exhaustive. That does not make the atlas a live regeneration simulator.
 
- The current app opens in a Source Atlas mode with the reviewed Zenodo GLBs
- hotlisted by default, including the allometry marker layer with an explicit
- caveat that FirstPoint anchors are not centroids. Model Replay now includes
- GIFs generated from reviewed neuron-cloud and 12533272
- volume-marker GLB positions, with the dynamics labeled as model-inspired
- rather than observed. It then separates
- Records, Layers, Model Replay, and Teaching as secondary evidence modes. The Records mode now filters the
- reviewed PlanformDB subset by publication, outcome class, manipulation type,
- timepoint, and measurement availability. Pending lanes for further
- PlanformDB expansion, source maps for object-level picking,
- observed-geometry dynamics, and Quest Browser validation remain statused
- rather than central.
+ The current app opens in Source Atlas mode with the reviewed Zenodo source
+ layers selected but only the posterior muscle SpatialGraph overlay visible by
+ default. Other reviewed GLB derivatives, including the allometry FirstPoint
+ markers and the Zenodo 12533272 high-intensity volume-marker GLB,
+ remain available as explicit source layers rather than default clutter; the
+ ETLSM2 volume marker lane is off until selected because it is a reviewed marker
+ subset, not an organized anatomy surface. Model Replay includes GIFs generated
+ from reviewed neuron-cloud and 12533272 volume-marker GLB positions,
+ with the dynamics labeled as model-inspired rather than observed. The Records
+ mode filters the reviewed PlanformDB subset by publication, outcome class,
+ manipulation type, timepoint, and measurement availability. Pending lanes for
+ further PlanformDB expansion, public source-map sidecars, object-level picking,
+ observed-geometry dynamics, and Quest Browser validation remain statused rather
+ than central.
+
+ The latest implementation plan also defines the missing bridge before real
+ observed GLBs become interactive scientific objects: public-safe source-map
+ sidecars for segment, point, label, FirstPoint, and volume-surface mappings.
+ These sidecars may carry reviewed element IDs, transforms, hashes, counts, and
+ caveats. They must not carry raw .togo , .am ,
+ .am.dat , decoder output, local paths, logs, or review packets.
 
  Data layers
 
@@ -4367,7 +4380,7 @@ Rusty Morphospace and tissue-scale patterning
  schema level.
 
  Observed
- Zenodo posterior/anterior muscle SpatialGraph GLB line overlays, neuron cell-cloud, nuclei centroid, allometry FirstPoint, and 12533272 volume-marker GLBs
+ Zenodo posterior/anterior muscle SpatialGraph GLB line overlays, neuron cell-cloud, nuclei centroid, allometry FirstPoint, and 12533272 volume-marker GLBs; posterior muscle is the default visible source layer
  Curated
  20 reviewed PlanformDB Experiment records with 54 outcome details and reviewed frequency/sample-size values
  Educational
@@ -4384,9 +4397,11 @@ Rusty Morphospace and tissue-scale patterning
  evidence type or visualization status.
 
  Desktop/mobile
- Full atlas controls and source-aware panels
+ Top workflow selector, inspector guide, section index, filterable source cards, and source-aware panels
  Modes
  Source Atlas, filtered Records, Layers, Model Replay, and Teaching
+ Details
+ Geometry source-map, technical, and caveat foldouts start closed by default
  Immersive
  WebXR entry with controller selection paths
  Export
@@ -4401,7 +4416,7 @@ Rusty Morphospace and tissue-scale patterning
  implementation-plan gates before a build is treated as coherent.
 
  Passed
- Data validation, geometry QA, production build, and public metadata scan
+ Type checks, production build, app smoke tests, tile-review smoke test, geometry QA, and public metadata scan
  Formal gate
  Headset evidence remains a separate Quest Browser report step
  Limit
@@ -4492,8 +4507,11 @@ Rusty Morphospace and tissue-scale patterning
  Result(2).Label-Analysis(2) FirstPoint anchor marker cloud,
  plus a reviewed 12533272 high-intensity volume-marker GLB.
  The reviewed neuron-cloud and volume-marker GLBs now have public
- model-inspired dynamics GIF replays. It also has a Quest Browser validation lane that needs a refreshed headset
- pass whenever the production build changes.
+ model-inspired dynamics GIF replays. The current Source Atlas startup state
+ selects the reviewed source layers but shows the posterior muscle overlay
+ first; the 12533272 volume marker lane is intentionally available
+ rather than active by default. It also has a Quest Browser validation lane that
+ needs a refreshed headset pass whenever the production build changes.
  Remaining targets are intentionally planned until source figures, tables,
  categories, or datasets have been extracted into derived, rights-safe
  artifacts.
@@ -4533,6 +4551,16 @@ Rusty Morphospace and tissue-scale patterning
  Rights-safe derived fixture records 14 selected Oviedo 2010 source IDs covering octanol crop-position, ventral nerve cord timing, and innexin RNAi crop-position labels, with transform notes, notice text, and use limits.
  Expanded review fixture exists in Hub and Matter; metadata/annotation only, not runtime dynamics authority or a predictor.
 
+ planarian_xr_data_first_navigation
+ [Planarian Regeneration XR](https://github.com/MesmerPrism/Planarian-Regeneration-XR)
+ The atlas now opens with a top workflow selector, a Source Atlas guide, a visible inspector section index, filterable geometry source cards, and closed-by-default foldouts for source maps, technical details, and caveats. The default visible source layer is posterior.Smt.SptGraph ; the ETLSM2 volume marker GLB is available but not active at startup.
+ Public navigation and onboarding improvement; it changes how evidence lanes are presented, not the scientific claim boundary.
+
+ planarian_xr_source_map_sidecars
+ [Planarian Regeneration XR](https://github.com/MesmerPrism/Planarian-Regeneration-XR); Zenodo dataset1/dataset2 object IDs
+ The implementation plan defines public-safe sidecar envelopes for segment-node, point-ID, label-ID, FirstPoint-ID, and volume-surface mappings. Sidecars may include public element IDs, transforms, hashes, counts, and caveats, but not raw source payloads, private decoder details, local paths, logs, or review packets.
+ Planned bridge before object-level picking, nearest-object annotation, or observed-geometry dynamics binding can be treated as reviewed behavior.
+
  zenodo_11724834_observed_glb_overlays
  [Lu, 2024](https://zenodo.org/records/11724834); [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
  Planarian Regeneration XR bundles reviewed GLB line overlays derived from posterior.Smt.SptGraph and anterior-filtered(2).CorrelationLines : 61,744 / 17,880 vertices, 30,872 / 8,940 line segments, SHA-256 daab05fbf234bb6db8b6618520982c1d159ca553a067825eba42929449478a2f and aa462e4141be28a5f7bb5d187a7b074a945815f19d3397110e90a8e102428ac7 . It also bundles the planarianneuronpool.Cloud HxCluster marker GLB with 3,467 source points, 20,802 vertices, 10,401 marker line segments, and SHA-256 97a18266dfa0cfa0f1fac739cf01c64c5a02ea0413d5a0b7aa81e3eb24e45787 ; the Result nuclei centroid marker GLB with 4,304 centroids, 25,824 vertices, 12,912 marker line segments, and SHA-256 7a191333ff455427f63a0ff65d112d2073473e0d22966cfa5c506e2204ad1af2 ; and a Result(2).Label-Analysis(2) FirstPoint anchor marker GLB with 3,567 anchors, 21,402 vertices, 10,701 marker line segments, and SHA-256 7e26fc68b5f1297f33b9efc1375b0162646bd030f35e4a3c179e979679de1fcc . Source DOI/object IDs, attribution, and geometry notice are recorded.
@@ -4546,7 +4574,7 @@ Rusty Morphospace and tissue-scale patterning
  zenodo_12533272_volume_marker_glb
  [Lu, 2024 dataset2](https://zenodo.org/records/12533272); [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
  Public-safe sidecar and derivative facts are recorded: mergeall.am.lda verifies a 4469 x 7887 x 3520 16-bit tiled volume, 124,069,450,560 voxels, Gzip tile compression, intensity bounds from 0 to 44182 , and a linked mergeall.am.dat volume of about 34.5 GB. The linked volume was downloaded under ignored raw storage and checksum-verified against MD5 a596aab89a5d793cfc71329e809b81ca . The public derivative mergeall-volume-lod3-high-intensity.glb contains 5,089 selected high-intensity marker points, 30,534 vertices, 15,267 marker line segments, and SHA-256 8fead939a8aabba7ee9c433fe0d6e158f490c924097b5c7fa35919072e39ff22 ; public UV/UW/VW maximum-intensity projection PNGs accompany the GLB.
- Observed source-derived atlas geometry only. It is not a full-resolution volume, not a segmented surface, not a measured bioelectric trace, and not a predictive regeneration simulation. Raw sidecar XML, raw histogram payload, TileMinMax payload, contributor-local source path, source volume, source export, intermediate, decoder output, and review packets remain outside the public bundle.
+ Observed source-derived atlas geometry only and not active in the default viewer state. It is not a full-resolution volume, not a segmented surface, not a measured bioelectric trace, and not a predictive regeneration simulation. Raw sidecar XML, raw histogram payload, TileMinMax payload, contributor-local source path, source volume, source export, intermediate, decoder output, and review packets remain outside the public bundle.
 
  zenodo_12533272_volume_bioelectric_replay
  [Lu, 2024 dataset2](https://zenodo.org/records/12533272); Planarian XR public GLB replay generator
@@ -4618,14 +4646,18 @@ Rusty Morphospace and tissue-scale patterning
  The planarian atlas contributes educational region labels, body geometry
  lessons, outcome labels, source/provenance habits, reviewed and filterable
  PlanformDB records, and observed source-derived posterior/anterior
- muscle overlays plus neuron and allometry marker overlays.
- Matter still builds its own computational surface graph and validation
- fixtures.
+ muscle overlays plus neuron, nuclei, allometry, and dataset2 marker
+ overlays. Its latest work adds data-first workflow navigation,
+ closed-by-default source-card details, a posterior-muscle default source
+ layer, and a public-safe source-map sidecar plan. Matter still builds its
+ own computational surface graph and validation fixtures.
 
  Use now
- Region semantics, filtered reviewed records, geometry review, outcome labels
+ Region semantics, filtered reviewed records, geometry review, source atlas navigation, outcome labels
  Not used as
  Mechanistic predictor or runtime physiology authority
+
+ [Repository](https://github.com/MesmerPrism/Planarian-Regeneration-XR)
 
  Xenobot reference
 
@@ -4707,13 +4739,16 @@ Rusty Morphospace and tissue-scale patterning
  code ownership clear, and avoids presenting educational dynamics as empirical
  prediction. The current PlanformDB slice is deliberately metadata-only. More
  detailed source-derived work can be added later when source IDs, license
- notices, transformations, and validation targets are explicit. The observed
- Zenodo muscle overlays are atlas geometry layers, not anatomical models of
- regeneration; source-paper figures, raw datasets, decoder tooling, source
- exports, and conversion intermediates should remain outside the public page
- unless rights and provenance have been reviewed.
+ notices, transformations, source-map sidecars, and validation targets are
+ explicit. The observed Zenodo overlays and marker GLBs are atlas geometry
+ layers, not anatomical models of regeneration; source-paper figures, raw
+ datasets, decoder tooling, source exports, local tile-review packets, and
+ conversion intermediates should remain outside the public page unless rights
+ and provenance have been reviewed.
 
 ### Next public-safe steps
+
+- Promote reviewed source-map sidecars before object-level picking or nearest-object annotation.
 
 - Expose scenario source/target anchors in the browser-facing teaching UI.
 
@@ -4722,6 +4757,8 @@ Rusty Morphospace and tissue-scale patterning
 - Make voltage-unit policy explicit per preset.
 
 - Keep expanding PlanformDB only through small, traceable, rights-safe derived fixtures.
+
+- Keep local tile-review datasets ignored until individual derivatives are reviewed for public promotion.
 
 - Keep Quest Browser evidence current before making broader immersive validation claims.
 
@@ -4773,6 +4810,8 @@ Rusty Morphospace and tissue-scale patterning
 
 - Mesmer Prism. "[Rusty Morphospace](https://mesmerprism.com/projects/rusty-morphospace.html)." Public project page.
 
+- MesmerPrism. "[Planarian Regeneration XR](https://github.com/MesmerPrism/Planarian-Regeneration-XR)." GitHub repository.
+
 - MesmerPrism. "[Rusty Matter](https://github.com/MesmerPrism/rusty-matter)." GitHub repository.
 
 - MesmerPrism. "[Rusty Optics](https://github.com/MesmerPrism/rusty-optics)." GitHub repository.
@@ -4783,7 +4822,7 @@ Rusty Morphospace and tissue-scale patterning
 
 Source: https://mesmerprism.com/projects/brain-candy.html
 Canonical HTML: https://mesmerprism.com/projects/brain-candy.html
-Generated: 2026-06-20
+Generated: 2026-06-21
 Description: Brain Candy studies rhythmic light, recursive visual structure, sound, breath, expectation, and interaction as tunable non-drug state-shift design.
 Markdown: https://mesmerprism.com/projects/brain-candy.md
 Plain text: https://mesmerprism.com/projects/brain-candy.txt
@@ -5331,7 +5370,7 @@ Non-drug state-shift design
 
 Source: https://mesmerprism.com/projects/bressloff-v1-form-constants-deep-dive.html
 Canonical HTML: https://mesmerprism.com/projects/bressloff-v1-form-constants-deep-dive.html
-Generated: 2026-06-20
+Generated: 2026-06-21
 Description: A notebook-style deep dive into Bressloff form constants, Rule flicker modeling, and generated driven neural-field diagnostics after Rule.
 Markdown: https://mesmerprism.com/projects/bressloff-v1-form-constants-deep-dive.md
 Plain text: https://mesmerprism.com/projects/bressloff-v1-form-constants-deep-dive.txt
@@ -6328,7 +6367,7 @@ Modeling deep dive
 
 Source: https://mesmerprism.com/projects/bressloff-v1-form-constants.html
 Canonical HTML: https://mesmerprism.com/projects/bressloff-v1-form-constants.html
-Generated: 2026-06-20
+Generated: 2026-06-21
 Description: Animated notes on Bressloff visual-cortex form constants, Rule flicker modeling, and generated MacKay, Bolelli, and Nicks driven-field diagnostics.
 Markdown: https://mesmerprism.com/projects/bressloff-v1-form-constants.md
 Plain text: https://mesmerprism.com/projects/bressloff-v1-form-constants.txt
@@ -6786,7 +6825,7 @@ Visual cortex and form constants
 
 Source: https://mesmerprism.com/projects/deep-dream.html
 Canonical HTML: https://mesmerprism.com/projects/deep-dream.html
-Generated: 2026-06-20
+Generated: 2026-06-21
 Description: Deep Dream explains how machine-vision hallucination, community visual taxonomies, VR research, and cyberdelic systems shaped simulated psychedelic vision.
 Markdown: https://mesmerprism.com/projects/deep-dream.md
 Plain text: https://mesmerprism.com/projects/deep-dream.txt
@@ -7340,7 +7379,7 @@ Simulated psychedelic vision
 
 Source: https://mesmerprism.com/projects/fractal-optics.html
 Canonical HTML: https://mesmerprism.com/projects/fractal-optics.html
-Generated: 2026-06-20
+Generated: 2026-06-21
 Description: Fractal Optics maps fractal phototherapy, retinal and ophthalmic stimulation, VR delivery, and patterned-light comparator literatures.
 Markdown: https://mesmerprism.com/projects/fractal-optics.md
 Plain text: https://mesmerprism.com/projects/fractal-optics.txt
@@ -7588,7 +7627,7 @@ Retinal stimulation and patterned light
 
 Source: https://mesmerprism.com/projects/hollow-face-lab.html
 Canonical HTML: https://mesmerprism.com/projects/hollow-face-lab.html
-Generated: 2026-06-20
+Generated: 2026-06-21
 Description: Hollow Face Lab maps WebGL, WebXR, texture controls, and Rusty XR implementation choices against hollow-face and depth-inversion research.
 Markdown: https://mesmerprism.com/projects/hollow-face-lab.md
 Plain text: https://mesmerprism.com/projects/hollow-face-lab.txt
@@ -7752,7 +7791,7 @@ Depth inversion and research tooling
 
 Source: https://mesmerprism.com/projects/hollow-face-lab/app/
 Canonical HTML: https://mesmerprism.com/projects/hollow-face-lab/app/
-Generated: 2026-06-20
+Generated: 2026-06-21
 Description: Browser-hosted Hollow Face Lab renderer with concavity, lighting, mesh, probe, texture, and response controls.
 Markdown: https://mesmerprism.com/projects/hollow-face-lab/app/index.md
 Plain text: https://mesmerprism.com/projects/hollow-face-lab/app/index.txt
@@ -7895,7 +7934,7 @@ Fullscreen
 
 Source: https://mesmerprism.com/projects/optical-movement-illusions.html
 Canonical HTML: https://mesmerprism.com/projects/optical-movement-illusions.html
-Generated: 2026-06-20
+Generated: 2026-06-21
 Description: Optical Movement Illusions maps peripheral drift, Rotating Snakes, static motion illusions, color and luminance parameters, and the mechanism-design bridge into perceptual tooling.
 Markdown: https://mesmerprism.com/projects/optical-movement-illusions.md
 Plain text: https://mesmerprism.com/projects/optical-movement-illusions.txt
@@ -8094,7 +8133,7 @@ Static motion and perceptual mechanics
 
 Source: https://mesmerprism.com/projects/phenomenological-control.html
 Canonical HTML: https://mesmerprism.com/projects/phenomenological-control.html
-Generated: 2026-06-20
+Generated: 2026-06-21
 Description: A public guide to phenomenological control, imagery variation, expectation-shaped experience, source monitoring, absorption, porosity, hypnosis, induced vision, and meaning-making.
 Markdown: https://mesmerprism.com/projects/phenomenological-control.md
 Plain text: https://mesmerprism.com/projects/phenomenological-control.txt
@@ -8639,7 +8678,7 @@ Imagery, suggestion, and source monitoring
 
 Source: https://mesmerprism.com/projects/plasmatic-multitudes.html
 Canonical HTML: https://mesmerprism.com/projects/plasmatic-multitudes.html
-Generated: 2026-06-20
+Generated: 2026-06-21
 Description: A public overview of weakly bounded bodies: avatars, swarms, auras, particle forms, and luminous bodies that soften while remaining coherent enough for embodiment, relation, and cautious research translation.
 Markdown: https://mesmerprism.com/projects/plasmatic-multitudes.md
 Plain text: https://mesmerprism.com/projects/plasmatic-multitudes.txt
@@ -9156,7 +9195,7 @@ Weakly bounded embodiment
 
 Source: https://mesmerprism.com/projects/polar-h10.html
 Canonical HTML: https://mesmerprism.com/projects/polar-h10.html
-Generated: 2026-06-20
+Generated: 2026-06-21
 Description: Public overview of Mesmer Prism's Polar H10 work across minimal signal packages, Rusty XR, Quest broker streams, Windows capture, Android diagnostics, Unity Quest integration, and Viscereality research tooling.
 Markdown: https://mesmerprism.com/projects/polar-h10.md
 Plain text: https://mesmerprism.com/projects/polar-h10.txt
@@ -9393,7 +9432,7 @@ Biofeedback sensor integration
 
 Source: https://mesmerprism.com/projects/prophantasia.html
 Canonical HTML: https://mesmerprism.com/projects/prophantasia.html
-Generated: 2026-06-20
+Generated: 2026-06-21
 Description: Prophantasia covers projected imagery, aphantasia, source judgment, practice ecology, and neighboring phenomena such as imposition, flicker, DeepDream, visual snow, and HPPD.
 Markdown: https://mesmerprism.com/projects/prophantasia.md
 Plain text: https://mesmerprism.com/projects/prophantasia.txt
@@ -9999,8 +10038,8 @@ Projected imagery and source judgment
 
 Source: https://mesmerprism.com/projects/rusty-morphospace.html
 Canonical HTML: https://mesmerprism.com/projects/rusty-morphospace.html
-Generated: 2026-06-20
-Description: Rusty Morphospace is a modular Rust platform for computational matter, situated relations, runtime authority, renderer-neutral inspection, and Quest validation.
+Generated: 2026-06-21
+Description: Rusty Morphospace is a modular Rust platform for computational matter, situated relations, runtime authority, renderer-neutral inspection, and Quest-native validation.
 Markdown: https://mesmerprism.com/projects/rusty-morphospace.md
 Plain text: https://mesmerprism.com/projects/rusty-morphospace.txt
 BibTeX references: https://mesmerprism.com/projects/rusty-morphospace.bib
@@ -10020,6 +10059,7 @@ Computational morphology platform
 
  [Repositories](https://mesmerprism.com/projects/rusty-morphospace.html#repositories)
  [Module map](https://mesmerprism.com/projects/rusty-morphospace.html#module-map)
+ [App build workflow](https://mesmerprism.com/projects/rusty-morphospace/native-app-build-workflow.html)
  [Current work](https://mesmerprism.com/projects/rusty-morphospace.html#current-work)
  [HSI layer](https://mesmerprism.com/projects/rusty-morphospace.html#hsi-implementation-layer)
  [Why Morphospace](https://mesmerprism.com/projects/rusty-morphospace.html#why)
@@ -10049,6 +10089,8 @@ Computational morphology platform
  Morphospace-owned source, and local validation gates. Studio, Hostess,
  Manifold Packages, and the Quest sidecar lane sit around those contracts as
  authoring, package, evidence, and integration surfaces.
+ Rusty Quest now also carries a Rust-first NativeActivity/OpenXR/Vulkan app
+ route for headset-side rendering experiments, separate from the Makepad shell.
 
  The [Bioelectricity and Morphogenesis](https://mesmerprism.com/projects/bioelectricity.html)
  slice shows the Matter/Optics boundary in a public teaching model: Matter owns
@@ -10078,7 +10120,7 @@ Computational morphology platform
 
 - Package and host repos: Manifold Packages, Studio, Hostess, Quest Sidecar Mesh
 
-- Current proofs: remote camera framing, live/recorded hand surfaces, SDF/ADF debug paths, particles, and bounded GPU readbacks
+- Current proofs: remote camera framing, native Quest rendering, direct Camera2/HWB import, MediaProjection display-composite feedback, live/recorded hand surfaces, SDF/ADF debug paths, particles, and bounded GPU readbacks
 
 - Licensing: AGPL-3.0-or-later for Morphospace-owned source
 
@@ -10096,7 +10138,7 @@ Computational morphology platform
 
 - Makepad adaptation: Rusty Makepad and Rusty Quest Makepad
 
-- Platform edge: Rusty Quest
+- Platform edge and native headset renderer: Rusty Quest
 
 ### Useful for
 
@@ -10110,6 +10152,8 @@ Computational morphology platform
 
 - Proving headset paths with bounded evidence before claiming runtime backends
 
+- Building Quest-native OpenXR/Vulkan diagnostics without making platform adapters simulation authority
+
 ### Connected work
 
 - [Mixed-Ability HSI](https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html) uses Morphospace as the planned implementation layer for explicit access mappings, not as proof that the social method is already solved
@@ -10118,7 +10162,11 @@ Computational morphology platform
 
 - [DiffeoMorph](https://arxiv.org/abs/2512.17129) provides a public computational-morphogenesis reference for many-agent target-forming bodies, separate from Morphospace runtime authority
 
-- [Rusty Quest Makepad](https://github.com/MesmerPrism/rusty-quest-makepad) carries the current recorded-hand, SDF/ADF, particle, and GPU-proof adapter work
+- [Rusty Quest](https://github.com/MesmerPrism/rusty-quest) carries runtime profiles, Quest permission/tooling surfaces, and the native Rust/OpenXR/Vulkan renderer route
+
+- [Native App Build Workflow](https://mesmerprism.com/projects/rusty-morphospace/native-app-build-workflow.html) explains how new APK profiles select only the required Rusty Quest feature modules
+
+- [Rusty Quest Makepad](https://github.com/MesmerPrism/rusty-quest-makepad) carries the recorded-hand, SDF/ADF, particle, and GPU-proof Makepad adapter work
 
 - [Rusty Hostess](https://github.com/MesmerPrism/rusty-hostess) provides the install, staging, launch, and evidence shell used to validate those headset paths
 
@@ -10146,6 +10194,10 @@ Computational morphology platform
  Matter/Optics teaching model used by the bioelectricity page, and a bounded
  Quest Makepad/Hostess validation path for recorded hand data, Matter CPU
  oracle comparison, SDF/ADF debug payloads, particles, and GPU evidence.
+ It also includes a native Rusty Quest renderer path for direct
+ Camera2/AHardwareBuffer import, native passthrough profiles,
+ MediaProjection display-composite diagnostics, and OpenXR/Vulkan timing
+ evidence.
 
  The planned HSI layer should be read more narrowly: it is an integration
  target for participant-facing mapping authoring, consent and provenance
@@ -10163,6 +10215,8 @@ Computational morphology platform
 - Matter/Optics teaching model for surface fields, conductance-like coupling, readouts, and browser inspection
 
 - Hostess and Quest Makepad evidence route for recorded and live hand surfaces, SDF/ADF debug views, particles, and bounded GPU readbacks
+
+- Rusty Quest native renderer route for direct HWB camera sampling, native passthrough, display-composite feedback, live hand/graft diagnostics, stimulus volumes, and environment-depth GPU diagnostics
 
 - Rusty XR retained as compatibility history and public Quest evidence rather than the new authority model
 
@@ -10242,7 +10296,8 @@ Computational morphology platform
 ### [Rusty Quest](https://github.com/MesmerPrism/rusty-quest)
 
  Quest runtime profiles, permissions, launch planning, Android property
- hygiene, validation receipts, and platform write/readback evidence.
+ hygiene, validation receipts, native OpenXR/Vulkan rendering examples,
+ and platform write/readback evidence.
 
  Quest Makepad apps
 
@@ -10376,14 +10431,17 @@ Computational morphology platform
 ### [rusty-quest](https://github.com/MesmerPrism/rusty-quest)
 
  Quest platform runtime profiles, Android property hygiene, permissions,
- launch planning, validation receipts, and platform tooling wrappers.
+ launch planning, validation receipts, platform tooling wrappers, and the
+ Rust-first native Quest renderer package for direct Camera2/HWB,
+ passthrough, MediaProjection, environment-depth, and stimulus-volume
+ diagnostics.
 
  Status
  Public main
  License
  AGPL-3.0-or-later
  Use
- Platform write/readback evidence without owning app simulation
+ Quest platform evidence and native renderer diagnostics without owning Matter semantics
 
  [Repository](https://github.com/MesmerPrism/rusty-quest)
 
@@ -10529,35 +10587,51 @@ Computational morphology platform
 
  Current work
 
-## What is current as of June 13, 2026
+## What is current as of June 20, 2026
 
- The active implementation line now has several connected fronts. Quest
- Makepad consumes Matter-owned live or recorded hand-surface truth, Optics
- prepares renderer-neutral debug payloads, Quest-Makepad adapts those payloads
- to headset Makepad shells, and Hostess installs, stages, launches, and records
- evidence. In parallel, Manifold and Quest have a remote-camera command and
- stream framing lane, while the Matter/Optics bioelectricity model remains the
- public teaching slice for computational morphogenesis.
+ The active implementation line now has two Quest fronts. Quest Makepad still
+ consumes Matter-owned live or recorded hand-surface truth, adapts
+ renderer-neutral payloads to headset Makepad shells, and uses Hostess for
+ install, staging, launch, and evidence capture. Rusty Quest now also carries a
+ separate Rust-first NativeActivity/OpenXR/Vulkan stack for low-level native
+ headset experiments
+ ([rusty-quest](https://github.com/MesmerPrism/rusty-quest)).
 
- The Quest Makepad path has moved past first smoke tests. It now separates
- settings control from data-plane assets, keeps hand meshes and compact joint
- frames out of settings JSON, selects recorded or live hand providers through
- the same Matter worker boundary, and validates bounded GPU proof markers for
- skinning, full mesh residency, mesh-to-dense-SDF construction, ADF debug
- payloads, particles, and field-construction readiness against Matter CPU
- oracle samples.
+ The native path is not only a launch wrapper. It has public profiles for direct
+ Quest Camera2/AHardwareBuffer import into Vulkan external images, metadata-owned
+ camera target rectangles and orientation, native Meta passthrough profiles,
+ solid-black control profiles, resident GPU hand meshes and graft copies,
+ compact live OpenXR hand input, hand-anchor particles, target-space GPU SDF
+ diagnostics, stimulus-volume routes, and environment-depth particle/scene-map
+ diagnostics. Its MediaProjection route is a display-composite feedback witness:
+ Android grants capture tokens, Rust owns the AImage/AHardwareBuffer handoff,
+ and a shared Vulkan AHardwareBuffer import helper is used by camera and
+ display-composite sampling.
 
- The remote-camera lane is also deliberately bounded. The current source uses
- Manifold-aligned `RMANVID1` H.264 stream framing and receiver-first command
- planning, with source checks and single-device direct TCP evidence. Physical
- two-peer Quest or Quest-to-phone validation remains a future evidence gate.
- The GPU work is likewise proof-scale: it demonstrates storage-buffer
- residency, asynchronous submit/poll readback, and CPU-oracle comparison, not
- a final frame-critical field or force backend.
+ The current caveat is important. The native renderer has headset evidence and
+ profile/static validation for these routes, but MediaProjection is evidence of
+ the app-visible display composite, not raw passthrough texture, raw camera,
+ environment-depth, or scene geometry. Environment-depth and stimulus-volume
+ routes are diagnostic validation surfaces rather than finished participant
+ tools. Remote-camera work remains deliberately bounded as Manifold-aligned
+ RMANVID1 H.264 framing plus single-device evidence until physical two-peer
+ Quest or Quest-to-phone validation passes.
 
 ### Validated shape
 
 - Camera-free Hostess Quest Makepad APK route with generated Quest manifest
+
+- Native Rusty Quest Android package with OpenXR/Vulkan session, stereo swapchain, profile matrix, and runtime markers
+
+- Reusable AHardwareBuffer Vulkan import module shared by Camera2 and display-composite sampling
+
+- Direct HWB camera quality profiles with stream metadata for target rectangles, aspect, orientation, and sync policy
+
+- Native passthrough and solid-black profiles for hand meshes, graft copies, and anchor-particle diagnostics
+
+- MediaProjection display-composite feedback profile with gated capture, opaque shrunken projection, and GPU readback evidence
+
+- Environment-depth and stimulus-volume diagnostic profiles behind explicit runtime-profile validation
 
 - App-private settings plus sibling data-plane staging through Hostess tooling
 
@@ -10573,25 +10647,33 @@ Computational morphology platform
 
 - Manifold owns command/session authority, stream metadata, and audit
 
-- Makepad owns generic XR/Vulkan dispatch plumbing, not Matter semantics
+- Rusty Quest owns Quest platform profiles, permission/tooling surfaces, and native renderer diagnostics, not Matter or Optics semantics
 
-- Quest-Makepad owns adapter markers and headset app profile bundles
+- Makepad and the native renderer are separate app routes; neither owns simulation truth
+
+- Quest-Makepad owns Makepad adapter markers and headset app profile bundles
 
 - Hostess owns install, staging, launch, and evidence capture
+
+- MediaProjection evidence is display-composite evidence, not raw passthrough, camera, depth, or geometry truth
+
+- Camera and display-composite imports share reusable AHardwareBuffer mechanics without coupling their source policies
 
 - High-rate mesh, field, particle, and GPU buffers stay out of settings/control JSON
 
 ### Next engineering pressure
 
-- Keep all GPU proof readbacks on ticket/poll or explicit evidence-command paths
+- Keep reusable AHardwareBuffer import/render code outside the large frame loop and outside camera-specific ownership
 
-- Keep Vulkan probe implementations split into sibling modules
+- Keep display-composite projection area, aspect, orientation, opacity, and gain as stream/profile metadata rather than shader assumptions
+
+- Promote environment-depth only after known-distance, motion, and source-layer agreement evidence stays clean
 
 - Scale dense SDF or indexed ADF only after bounded oracle checks and cadence evidence stay clean
 
 - Run physical two-peer camera validation before claiming peer streaming readiness
 
-- Keep particle force authority singular in normal profiles
+- Keep GPU proof readbacks on ticket/poll or explicit evidence-command paths and keep particle force authority singular in normal profiles
 
  Why the name
 
@@ -10644,11 +10726,424 @@ Computational morphology platform
 
  References
 
-## External sources for this page
+## External sources and public repos for this page
+
+- MesmerPrism. "[rusty-matter](https://github.com/MesmerPrism/rusty-matter)." Public Rusty Matter repository for computational matter, surface, field, particle, SDF, and fixture contracts.
+
+- MesmerPrism. "[rusty-optics](https://github.com/MesmerPrism/rusty-optics)." Public Rusty Optics repository for renderer-neutral projection, appearance, and visual validation contracts.
+
+- MesmerPrism. "[rusty-manifold](https://github.com/MesmerPrism/rusty-manifold)." Public Rusty Manifold repository for command, stream, session, module, and audit authority.
+
+- MesmerPrism. "[rusty-lattice](https://github.com/MesmerPrism/rusty-lattice)." Public Rusty Lattice repository for reference-space, tracked-pose, view-set, and capability contracts.
+
+- MesmerPrism. "[rusty-gui](https://github.com/MesmerPrism/rusty-gui)." Public Rusty GUI repository for framework-neutral panels, widgets, inspectors, and graphical descriptors.
+
+- MesmerPrism. "[rusty-makepad](https://github.com/MesmerPrism/rusty-makepad)." Public Rusty Makepad repository for Makepad settings and adapter contracts.
+
+- MesmerPrism. "[rusty-quest](https://github.com/MesmerPrism/rusty-quest)." Public Rusty Quest repository for Quest profiles, permission/tooling surfaces, remote-camera contracts, and the native Quest OpenXR/Vulkan renderer route.
+
+- MesmerPrism. "[rusty-quest-makepad](https://github.com/MesmerPrism/rusty-quest-makepad)." Public Quest Makepad adapter repository for camera-shell, recorded hand, SDF/ADF, particle, and GPU-proof evidence routes.
+
+- MesmerPrism. "[rusty-hostess](https://github.com/MesmerPrism/rusty-hostess)." Public Hostess repository for install, staging, launch, evidence, and operator workflows around Morphospace packages and Quest validation.
+
+- MesmerPrism. "[rusty-manifold-packages](https://github.com/MesmerPrism/rusty-manifold-packages)." Public package repository for first-party synthetic, biosignal, projected-motion, Polar H10, and hand-animation lanes.
+
+- MesmerPrism. "[rusty-studio](https://github.com/MesmerPrism/rusty-studio)." Public Rusty Studio repository for authoring and review surfaces around Morphospace packages.
+
+- MesmerPrism. "[rusty-quest-sidecar-mesh](https://github.com/MesmerPrism/rusty-quest-sidecar-mesh)." Public Quest sidecar mesh repository for integration contracts and synthetic fixtures.
+
+- MesmerPrism. "[quest-termux-lab](https://github.com/MesmerPrism/quest-termux-lab)." Public Quest Termux lab source feeding Quest sidecar bridge work.
+
+- MesmerPrism. "[Rusty-XR](https://github.com/MesmerPrism/Rusty-XR)." Public Rusty XR compatibility and historical Quest evidence surface.
 
 - Pahng et al. "[DiffeoMorph: Learning to Morph 3D Shapes Using Differentiable Agent-Based Simulations](https://arxiv.org/abs/2512.17129)." arXiv 2512.17129 (submitted 2025; revised 2026).
 
 - hormoz-lab. "[diffeomorph](https://github.com/hormoz-lab/diffeomorph)." Official implementation repository for the DiffeoMorph paper.
+</page>
+
+<page url="https://mesmerprism.com/projects/rusty-morphospace/native-app-build-workflow.html" path="projects/rusty-morphospace/native-app-build-workflow.html">
+# Native App Build Workflow | Rusty Morphospace
+
+Source: https://mesmerprism.com/projects/rusty-morphospace/native-app-build-workflow.html
+Canonical HTML: https://mesmerprism.com/projects/rusty-morphospace/native-app-build-workflow.html
+Generated: 2026-06-21
+Description: A public onboarding guide to the Rusty Morphospace native app-build workflow: feature library, app-build specs, generated settings, feature locks, adapters, and validation.
+Markdown: https://mesmerprism.com/projects/rusty-morphospace/native-app-build-workflow.md
+Plain text: https://mesmerprism.com/projects/rusty-morphospace/native-app-build-workflow.txt
+BibTeX references: https://mesmerprism.com/projects/rusty-morphospace/native-app-build-workflow.bib
+CSL JSON references: https://mesmerprism.com/projects/rusty-morphospace/native-app-build-workflow.references.csl.json
+
+---
+
+Native app-build workflow
+
+# Build only the app you meant
+
+ Rusty Morphospace native apps are assembled from explicit feature IDs, not
+ copied runtime profiles. An app-building agent starts with a source-only app
+ spec, resolves the smallest feature closure, checks the generated settings
+ surface, and builds the APK from a feature lock. Runtime profiles, Android
+ manifests, property write plans, and build inputs are generated adapters
+ around that master settings surface.
+
+ [Workflow](https://mesmerprism.com/projects/rusty-morphospace/native-app-build-workflow.html#workflow)
+ [Feature library](https://mesmerprism.com/projects/rusty-morphospace/native-app-build-workflow.html#feature-library)
+ [Settings authority](https://mesmerprism.com/projects/rusty-morphospace/native-app-build-workflow.html#settings-authority)
+ [Validation](https://mesmerprism.com/projects/rusty-morphospace/native-app-build-workflow.html#validation)
+ [Rusty Morphospace](https://mesmerprism.com/projects/rusty-morphospace.html)
+ [Rusty Quest](https://github.com/MesmerPrism/rusty-quest)
+
+ Purpose
+
+## Why this page exists
+
+ The native Quest stack has grown into a real library: camera routes, display
+ composite feedback, environment depth, hand surfaces, particles, SDF visuals,
+ stimulus volumes, video projection, Makepad compatibility, and private
+ downstream extension points. That is useful only if new APKs select features
+ deliberately. A broad copied profile can silently pull in permissions,
+ properties, shaders, services, or runtime markers that the target app does
+ not need.
+
+ The app-build workflow turns that risk into a contract. The app spec says
+ which features are requested, which families must stay absent, which manifest
+ entries are expected, and which runtime markers prove the app actually used
+ the resolved settings. The resolver then produces a feature lock and generated
+ app settings before anything is built.
+
+ This is an agent-facing workflow. It is written for people and automation
+ creating new native APK profiles, especially when the safest answer is a
+ smaller app, not another module added to an existing stack.
+
+### Core rule
+
+ Start from an app-build spec and a feature ID list. Do not start from a
+ nearby runtime profile, Android manifest, or launch script.
+
+### Master artifact
+
+ native-app-settings.json is the generated master settings surface for a
+ native app profile. Other files adapt those settings to platform, build,
+ and validation surfaces.
+
+### Acceptance rule
+
+ Raw property readback is transport evidence only. Acceptance requires the
+ consuming runtime to emit the expected effective markers for the selected
+ app profile.
+
+ Workflow
+
+## The app-building path
+
+ The sequence is intentionally narrow. It makes feature selection, dependency
+ closure, settings authority, and evidence review visible before an APK is
+ installed on a headset.
+
+ Step 1
+
+### Choose feature IDs
+
+ Browse fixtures/native-app-features/ by module path and request the
+ smallest stable feature_id set that describes the app. Nested families
+ such as particles should be selected through their explicit submodules.
+
+ Step 2
+
+### Write the app spec
+
+ Create fixtures/native-app-builds/<app>.app.json . List requested
+ features, denied features, expected manifest entries, expected render
+ mode, settings assertions, required modules, forbidden modules, and
+ runtime markers.
+
+ Step 3
+
+### Resolve the closure
+
+ Run tools/Resolve-NativeAppBuild.ps1 -DryRun . The resolver validates
+ schemas, follows dependencies, rejects incompatible or denied features,
+ blocks high-rate JSON/property misuse, and writes generated artifacts
+ under local-artifacts/native-app-builds/ .
+
+ Step 4
+
+### Inspect settings and lock
+
+ Review feature-lock.json and native-app-settings.json . The settings
+ file must contain every selected module, disable every forbidden module
+ family, and make the selected render mode explicit.
+
+ Step 5
+
+### Build from the lock
+
+ Run tools/Build-NativeRendererAndroid.ps1 -AppBuildLock ... . The APK
+ build consumes the resolved lock instead of rediscovering features from
+ environment variables or hand-authored launch settings.
+
+ Step 6
+
+### Validate the runtime
+
+ Use static checks first, then APK build evidence, then device smoke when
+ the target requires it. The final proof is the runtime marker set produced
+ by the consuming app, not a property transport readback alone.
+
+ Feature library
+
+## What a feature descriptor owns
+
+ A native app feature descriptor is a small public contract, not a bundle of
+ arbitrary app code. It names a stable feature_id , a hierarchical
+ module_path , its owner lane, its public/private boundary, and the exact
+ pieces it contributes to settings, manifest, runtime profile, build inputs,
+ and validation.
+
+ Descriptors also declare dependencies, incompatibilities, exclusive groups,
+ required markers, forbidden markers, assets, shaders, clear-families, and
+ expected render modes. The resolver uses those fields to construct the
+ transitive feature closure and to reject an app spec that tries to combine
+ incompatible surfaces.
+
+ The library is recursive so large families can stay comprehensible. A
+ particle renderer does not have to imply every particle source. A camera
+ route does not have to imply display-composite feedback. A Makepad
+ compatibility surface does not have to enter a native-only APK unless the app
+ requests it.
+
+### Module families
+
+- core/ for the Quest NativeActivity/OpenXR/Vulkan substrate
+
+- background/ for mutually exclusive background render routes
+
+- particles/private/ and particles/hand-anchor/ for nested particle capabilities
+
+- camera/ , display/ , environment/ , hand/ , input/ , projection-target/ , sdf/ , stimulus/ , and video/ for explicit app features
+
+- makepad/ , manifold/ , and private-layer/ for adapter or bridge surfaces that should never arrive by accident
+
+### Descriptor fields
+
+- feature_id and module_path identify the module
+
+- depends_on , incompatible_with , and exclusive_groups shape the closure
+
+- settings_surface says which master settings schema owns the result
+
+- android_manifest , runtime_profile , and build_inputs describe generated adapters
+
+- markers and validation describe acceptance evidence
+
+ Nested example
+
+## Particles are a family, not one switch
+
+ The particle library shows why feature IDs need hierarchy. A small downstream
+ private-particle canary can request a solid-black background plus the private
+ particle renderer without accidentally selecting camera input, hand mesh,
+ environment depth, Makepad runtime, video projection, SDF visuals, or stimulus
+ volume.
+
+ Base
+
+### core/openxr-vulkan
+
+ The native Quest substrate: NativeActivity, OpenXR, Vulkan, and the
+ minimal manifest features required before renderer modules can run.
+
+ Background
+
+### background/solid-black
+
+ A deliberately small background route that keeps compositor passthrough,
+ camera projection, display composite, and video projection out of the APK.
+
+ Private particles
+
+### payload-slot
+
+ A public ABI slot for a downstream payload without publishing or baking a
+ project-specific data source into the platform layer.
+
+ Private particles
+
+### placeholder
+
+ A deterministic placeholder compute path used when the public stack needs
+ to prove the renderer route without shipping downstream content.
+
+ Private particles
+
+### ordering/gpu-index-remap
+
+ Resident GPU ordering so particle layout policy is explicit instead of
+ being smuggled through a broad renderer option.
+
+ Private particles
+
+### mask/r8-texture
+
+ A bounded texture-mask surface that can be validated independently from
+ camera, video, or environment-depth modules.
+
+ Private particles
+
+### tracers
+
+ Optional trace behavior as its own feature so diagnostics and visual
+ persistence do not become an implicit renderer default.
+
+ Private particles
+
+### renderer
+
+ The aggregate renderer feature depends on the submodules it truly needs
+ and leaves unrelated native app families disabled.
+
+ Settings authority
+
+## One master surface, many adapters
+
+ Native app behavior should not be split across launch modes, Android
+ properties, manifest edits, environment variables, and UI defaults. The app
+ spec resolves into native-app-settings.json , and that generated settings
+ file is the master surface for the selected profile.
+
+ Runtime profile files, property plans, Android manifests, build manifests,
+ and build environment values are adapters. They carry settings into the
+ platform and build tools, but they do not become separate definitions of app
+ behavior. If an adapter writes a value that the runtime ignores, validation
+ must fail.
+
+ This is the same authority rule used elsewhere in Rusty Morphospace: the
+ local owner defines the parameter, other entry points adapt into that owner,
+ and acceptance evidence comes from the consuming runtime's effective state.
+
+### Generated from settings
+
+- runtime profile and property write plan
+
+- Android manifest surface
+
+- build environment and build manifest
+
+- expected runtime marker list
+
+### Must stay explicit
+
+- render mode and background route
+
+- selected module paths and disabled module families
+
+- permissions, services, activities, assets, and shaders
+
+- high-rate payload transport boundaries
+
+ Validation
+
+## What evidence should exist before a profile is trusted
+
+ The validation ladder keeps cheap rejection close to the source and reserves
+ device work for profiles that already have coherent source contracts.
+
+ Static
+
+### Library and schema gates
+
+ The feature descriptors and app specs must parse, use unique feature IDs,
+ include required seed features, reject malformed descriptors, and avoid
+ public/private boundary leaks in committed fixtures.
+
+ Static
+
+### Damaged fixtures
+
+ Invalid app specs are first-class tests: denied feature requests,
+ permission supersets, render-mode mismatches, and high-rate JSON/property
+ misuse must be rejected before APK generation.
+
+ Generated
+
+### Feature lock review
+
+ The lock records the exact transitive closure, selected modules, adapter
+ outputs, and assertions. A build that bypasses the lock is no longer the
+ app that was reviewed.
+
+ Build
+
+### APK from resolved inputs
+
+ The Android build should consume only the resolved feature lock and its
+ generated inputs. Build provenance should make it clear which app spec and
+ feature closure produced the APK.
+
+ Runtime
+
+### Effective markers
+
+ The app must emit required markers such as render mode and selected
+ module state, and it must not emit forbidden markers from unrelated
+ modules.
+
+ Device
+
+### Headset smoke when needed
+
+ Headset validation should be serial-scoped and profile-specific. It is
+ useful after static resolution, not as a substitute for source contracts.
+
+ Agent checklist
+
+## Before making a new APK
+
+ A new app profile should be easy to review from its source artifacts. Someone
+ reading the spec should see why each feature is present, why related features
+ are absent, what settings are generated, and what runtime evidence will count
+ as success.
+
+### Do
+
+- request feature IDs by name
+
+- deny nearby feature families that must stay absent
+
+- review native-app-settings.json before building
+
+- keep high-rate payloads out of properties and JSON settings
+
+- require effective runtime markers for acceptance
+
+### Do not
+
+- copy a runtime profile as the starting point for a new app
+
+- hide app behavior in a launch mode or one-off script
+
+- add camera, display, hand, video, Makepad, or private-layer surfaces unless requested
+
+- treat Android property readback as runtime proof
+
+ References
+
+## Public source family
+
+ The overview lives here. Source contracts, schemas, fixtures, and validation
+ scripts live in the public Rusty Morphospace repositories.
+
+### Workflow sources
+
+- MesmerPrism. "[rusty-quest](https://github.com/MesmerPrism/rusty-quest)." Public repository for Quest platform contracts, native renderer profiles, app-build specs, feature descriptors, and validation tools.
+
+- MesmerPrism. "[rusty-quest-makepad](https://github.com/MesmerPrism/rusty-quest-makepad)." Public repository for Quest-specific Makepad adapter profiles, effective settings, and headset app staging routes.
+
+### Architecture context
+
+- Mesmer Prism. "[Rusty Morphospace](https://mesmerprism.com/projects/rusty-morphospace.html)." Public overview of the Morphospace source family and architecture boundaries.
+
+- Mesmer Prism. "[Rusty XR Legacy Reference](https://mesmerprism.com/projects/rusty-morphospace/rusty-xr.html)." Compatibility and Quest reference lane for older public Rusty XR work.
 </page>
 
 <page url="https://mesmerprism.com/projects/rusty-morphospace/rusty-xr.html" path="projects/rusty-morphospace/rusty-xr.html">
@@ -10656,7 +11151,7 @@ Computational morphology platform
 
 Source: https://mesmerprism.com/projects/rusty-morphospace/rusty-xr.html
 Canonical HTML: https://mesmerprism.com/projects/rusty-morphospace/rusty-xr.html
-Generated: 2026-06-20
+Generated: 2026-06-21
 Description: Rusty XR is the legacy/reference Quest and XR compatibility surface under Rusty Morphospace, preserving public examples, passthrough notes, diagnostics, and companion-tool history.
 Markdown: https://mesmerprism.com/projects/rusty-morphospace/rusty-xr.md
 Plain text: https://mesmerprism.com/projects/rusty-morphospace/rusty-xr.txt
@@ -10802,7 +11297,7 @@ Legacy Quest and XR reference
 
 Source: https://mesmerprism.com/projects/sane.html
 Canonical HTML: https://mesmerprism.com/projects/sane.html
-Generated: 2026-06-20
+Generated: 2026-06-21
 Description: SANE is a proposed framework for reading coupled changes across somaesthetic practice, anthropotechnical mediation, noetic meaning, and emergent systems.
 Markdown: https://mesmerprism.com/projects/sane.md
 Plain text: https://mesmerprism.com/projects/sane.txt
@@ -11313,7 +11808,7 @@ Body, tools, meaning, systems
 
 Source: https://mesmerprism.com/projects/scientific-surrealism.html
 Canonical HTML: https://mesmerprism.com/projects/scientific-surrealism.html
-Generated: 2026-06-20
+Generated: 2026-06-21
 Description: Scientific surrealism studies dream bureaus, scientific-looking journals, diagrams, and experimental machines that change what counts as an observation.
 Markdown: https://mesmerprism.com/projects/scientific-surrealism.md
 Plain text: https://mesmerprism.com/projects/scientific-surrealism.txt
@@ -11727,7 +12222,7 @@ Research apparatus and knowledge-art
 
 Source: https://mesmerprism.com/projects/tulpas.html
 Canonical HTML: https://mesmerprism.com/projects/tulpas.html
-Generated: 2026-06-20
+Generated: 2026-06-21
 Description: Tulpas covers modern online tulpamancy, thoughtforms, headmates, servitors, egregores, imposition, voice-like experience, and adjacent AI companion analogies.
 Markdown: https://mesmerprism.com/projects/tulpas.md
 Plain text: https://mesmerprism.com/projects/tulpas.txt
@@ -12253,7 +12748,7 @@ Made inner others and modern tulpamancy
 
 Source: https://mesmerprism.com/projects/viscereality-companion.html
 Canonical HTML: https://mesmerprism.com/projects/viscereality-companion.html
-Generated: 2026-06-20
+Generated: 2026-06-21
 Description: Quest Companion Tools provides Windows and Android utilities for Meta Quest install, launch, casting, diagnostics, and evidence capture.
 Markdown: https://mesmerprism.com/projects/viscereality-companion.md
 Plain text: https://mesmerprism.com/projects/viscereality-companion.txt
@@ -12382,7 +12877,7 @@ Meta Quest operator tooling
 
 Source: https://mesmerprism.com/projects/viscereality.html
 Canonical HTML: https://mesmerprism.com/projects/viscereality.html
-Generated: 2026-06-20
+Generated: 2026-06-21
 Description: Viscereality is a Quest-based bioresponsive VR research system for breath interaction, cardiac coherence training, oscillator-driven visuals, and repeatable study sessions.
 Markdown: https://mesmerprism.com/projects/viscereality.md
 Plain text: https://mesmerprism.com/projects/viscereality.txt
@@ -12515,7 +13010,7 @@ Current XR research system
 
 Source: https://mesmerprism.com/Strobotorch/flashing-light-safety/
 Canonical HTML: https://mesmerprism.com/Strobotorch/flashing-light-safety/
-Generated: 2026-06-20
+Generated: 2026-06-21
 Description: Safety warnings, frequency background, and source references for Strobotorch flashlight signaling.
 Markdown: https://mesmerprism.com/Strobotorch/flashing-light-safety/index.md
 Plain text: https://mesmerprism.com/Strobotorch/flashing-light-safety/index.txt
@@ -12703,7 +13198,7 @@ Public warning and source background
 
 Source: https://mesmerprism.com/Strobotorch/
 Canonical HTML: https://mesmerprism.com/Strobotorch/
-Generated: 2026-06-20
+Generated: 2026-06-21
 Description: Strobotorch is an Android flashlight-signaling and diagnostics tool for torch and camera APIs, visible-light signal tests, device logging, and flashing-light safety.
 Markdown: https://mesmerprism.com/Strobotorch/index.md
 Plain text: https://mesmerprism.com/Strobotorch/index.txt
@@ -12803,7 +13298,7 @@ Flashlight signaling safety
 
 Source: https://mesmerprism.com/Strobotorch/project-boundary/
 Canonical HTML: https://mesmerprism.com/Strobotorch/project-boundary/
-Generated: 2026-06-20
+Generated: 2026-06-21
 Description: The scope of Strobotorch Android flashlight signaling and diagnostics tooling.
 Markdown: https://mesmerprism.com/Strobotorch/project-boundary/index.md
 Plain text: https://mesmerprism.com/Strobotorch/project-boundary/index.txt
@@ -12844,7 +13339,7 @@ Project scope
 
 Source: https://mesmerprism.com/Strobotorch/sources/
 Canonical HTML: https://mesmerprism.com/Strobotorch/sources/
-Generated: 2026-06-20
+Generated: 2026-06-21
 Description: Academic and public sources for Strobotorch flashing-light safety, frequency context, torch/camera diagnostics, and visible-light signal tooling.
 Markdown: https://mesmerprism.com/Strobotorch/sources/index.md
 Plain text: https://mesmerprism.com/Strobotorch/sources/index.txt
@@ -13087,7 +13582,7 @@ Source library
 
 Source: https://mesmerprism.com/tmp/video-carousel-demo.html
 Canonical HTML: https://mesmerprism.com/tmp/video-carousel-demo.html
-Generated: 2026-06-20
+Generated: 2026-06-21
 Markdown: https://mesmerprism.com/tmp/video-carousel-demo.md
 Plain text: https://mesmerprism.com/tmp/video-carousel-demo.txt
 

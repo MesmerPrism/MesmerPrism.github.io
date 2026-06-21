@@ -1,0 +1,86 @@
+[
+  {
+    "id": "mesmerprism-rusty-quest",
+    "type": "webpage",
+    "title": "rusty-quest",
+    "URL": "https://github.com/MesmerPrism/rusty-quest",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          21
+        ]
+      ]
+    },
+    "note": "Referenced by Native App Build Workflow | Rusty Morphospace: https://mesmerprism.com/projects/rusty-morphospace/native-app-build-workflow.html",
+    "author": [
+      {
+        "literal": "MesmerPrism"
+      }
+    ]
+  },
+  {
+    "id": "mesmerprism-rusty-quest-makepad",
+    "type": "webpage",
+    "title": "rusty-quest-makepad",
+    "URL": "https://github.com/MesmerPrism/rusty-quest-makepad",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          21
+        ]
+      ]
+    },
+    "note": "Referenced by Native App Build Workflow | Rusty Morphospace: https://mesmerprism.com/projects/rusty-morphospace/native-app-build-workflow.html",
+    "author": [
+      {
+        "literal": "MesmerPrism"
+      }
+    ]
+  },
+  {
+    "id": "mesmer-prism-rusty-morphospace",
+    "type": "webpage",
+    "title": "Rusty Morphospace",
+    "URL": "https://mesmerprism.com/projects/rusty-morphospace.html",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          21
+        ]
+      ]
+    },
+    "note": "Referenced by Native App Build Workflow | Rusty Morphospace: https://mesmerprism.com/projects/rusty-morphospace/native-app-build-workflow.html",
+    "author": [
+      {
+        "literal": "Mesmer Prism"
+      }
+    ]
+  },
+  {
+    "id": "mesmer-prism-rusty-xr-legacy-reference",
+    "type": "webpage",
+    "title": "Rusty XR Legacy Reference",
+    "URL": "https://mesmerprism.com/projects/rusty-morphospace/rusty-xr.html",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          21
+        ]
+      ]
+    },
+    "note": "Referenced by Native App Build Workflow | Rusty Morphospace: https://mesmerprism.com/projects/rusty-morphospace/native-app-build-workflow.html",
+    "author": [
+      {
+        "literal": "Mesmer Prism"
+      }
+    ]
+  }
+]

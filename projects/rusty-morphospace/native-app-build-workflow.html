@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Native App Build Workflow | Rusty Morphospace | Mesmer Prism</title>
+    <link rel="canonical" href="https://mesmerprism.com/projects/rusty-morphospace/native-app-build-workflow.html">
+    <meta
+        name="description"
+        content="A public onboarding guide to the Rusty Morphospace native app-build workflow: feature library, app-build specs, generated settings, feature locks, adapters, and validation."
+    >
+    <meta property="og:title" content="Native App Build Workflow | Rusty Morphospace | Mesmer Prism">
+    <meta
+        property="og:description"
+        content="How Rusty Morphospace app-building agents choose only the required native APK features through explicit specs, feature locks, generated settings, and validation."
+    >
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mesmerprism.com/projects/rusty-morphospace/native-app-build-workflow.html">
+    <meta name="theme-color" content="#f4efe7">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" href="/favicon-32x32.png" type="image/png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="stylesheet" href="/assets/fonts.css">
+    <link rel="stylesheet" href="/styles.css?v=20260609-logo">
+    <!-- BEGIN agent-readable metadata -->
+    <link rel="alternate" type="text/markdown" href="/projects/rusty-morphospace/native-app-build-workflow.md" title="Markdown version">
+    <link rel="alternate" type="text/plain" href="/projects/rusty-morphospace/native-app-build-workflow.txt" title="Plain text version">
+    <link rel="alternate" type="application/x-bibtex" href="/projects/rusty-morphospace/native-app-build-workflow.bib" title="BibTeX references">
+    <link rel="alternate" type="application/vnd.citationstyles.csl+json" href="/projects/rusty-morphospace/native-app-build-workflow.references.csl.json" title="CSL JSON references">
+    <meta name="citation_title" content="Native App Build Workflow | Rusty Morphospace">
+    <meta name="citation_author" content="Till Holzapfel">
+    <meta name="citation_publication_date" content="2026-06-21">
+    <meta name="citation_online_date" content="2026-06-21">
+    <meta name="citation_public_url" content="https://mesmerprism.com/projects/rusty-morphospace/native-app-build-workflow.html">
+    <meta name="citation_language" content="en">
+    <script type="application/ld+json" data-agent-metadata>
+    {
+          "@context": "https://schema.org",
+          "@type": "Article",
+          "headline": "Native App Build Workflow | Rusty Morphospace",
+          "name": "Native App Build Workflow | Rusty Morphospace",
+          "description": "A public onboarding guide to the Rusty Morphospace native app-build workflow: feature library, app-build specs, generated settings, feature locks, adapters, and validation.",
+          "author": {
+                "@type": "Person",
+                "name": "Till Holzapfel"
+          },
+          "publisher": {
+                "@type": "Organization",
+                "name": "Mesmer Prism",
+                "url": "https://mesmerprism.com"
+          },
+          "isPartOf": {
+                "@type": "WebSite",
+                "name": "Mesmer Prism",
+                "url": "https://mesmerprism.com"
+          },
+          "url": "https://mesmerprism.com/projects/rusty-morphospace/native-app-build-workflow.html",
+          "dateModified": "2026-06-21",
+          "inLanguage": "en",
+          "encoding": [
+                {
+                      "@type": "MediaObject",
+                      "encodingFormat": "text/markdown",
+                      "contentUrl": "https://mesmerprism.com/projects/rusty-morphospace/native-app-build-workflow.md"
+                },
+                {
+                      "@type": "MediaObject",
+                      "encodingFormat": "text/plain",
+                      "contentUrl": "https://mesmerprism.com/projects/rusty-morphospace/native-app-build-workflow.txt"
+                },
+                {
+                      "@type": "MediaObject",
+                      "encodingFormat": "application/x-bibtex",
+                      "contentUrl": "https://mesmerprism.com/projects/rusty-morphospace/native-app-build-workflow.bib"
+                },
+                {
+                      "@type": "MediaObject",
+                      "encodingFormat": "application/vnd.citationstyles.csl+json",
+                      "contentUrl": "https://mesmerprism.com/projects/rusty-morphospace/native-app-build-workflow.references.csl.json"
+                }
+          ],
+          "citation": [
+                "https://github.com/MesmerPrism/rusty-quest",
+                "https://github.com/MesmerPrism/rusty-quest-makepad",
+                "https://mesmerprism.com/projects/rusty-morphospace.html",
+                "https://mesmerprism.com/projects/rusty-morphospace/rusty-xr.html"
+          ]
+    }
+    </script>
+    <!-- END agent-readable metadata -->
+</head>
+<body class="project-page">
+    <header class="site-header">
+        <div class="shell header-row">
+            <a class="site-name" href="/" aria-label="Mesmer Prism home">
+                <img class="site-mark" src="/assets/brand/mesmer-prism-logo.png" alt="" width="1200" height="508" decoding="async">
+                <span>Mesmer Prism</span>
+            </a>
+            <nav class="site-nav" aria-label="Primary">
+                <a href="/#work">Work</a>
+                <a href="/#publications">Publications</a>
+                <a href="/#background">Background</a>
+                <a href="/#contact">Contact</a>
+                <a href="https://github.com/MesmerPrism" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="shell">
+        <section class="hero">
+            <div class="hero-shell hero-shell--page">
+                <p class="eyebrow">Native app-build workflow</p>
+                <h1>Build only the app you meant</h1>
+                <p class="project-lede">
+                    Rusty Morphospace native apps are assembled from explicit feature IDs, not
+                    copied runtime profiles. An app-building agent starts with a source-only app
+                    spec, resolves the smallest feature closure, checks the generated settings
+                    surface, and builds the APK from a feature lock. Runtime profiles, Android
+                    manifests, property write plans, and build inputs are generated adapters
+                    around that master settings surface.
+                </p>
+                <div class="hero-actions">
+                    <a class="action-link action-link--strong" href="#workflow">Workflow</a>
+                    <a class="action-link" href="#feature-library">Feature library</a>
+                    <a class="action-link" href="#settings-authority">Settings authority</a>
+                    <a class="action-link" href="#validation">Validation</a>
+                    <a class="action-link" href="/projects/rusty-morphospace.html">Rusty Morphospace</a>
+                    <a class="action-link" href="https://github.com/MesmerPrism/rusty-quest" target="_blank" rel="noopener noreferrer">Rusty Quest</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section two-column">
+            <div>
+                <div class="section-heading">
+                    <p class="section-kicker">Purpose</p>
+                    <h2>Why this page exists</h2>
+                </div>
+                <p>
+                    The native Quest stack has grown into a real library: camera routes, display
+                    composite feedback, environment depth, hand surfaces, particles, SDF visuals,
+                    stimulus volumes, video projection, Makepad compatibility, and private
+                    downstream extension points. That is useful only if new APKs select features
+                    deliberately. A broad copied profile can silently pull in permissions,
+                    properties, shaders, services, or runtime markers that the target app does
+                    not need.
+                </p>
+                <p>
+                    The app-build workflow turns that risk into a contract. The app spec says
+                    which features are requested, which families must stay absent, which manifest
+                    entries are expected, and which runtime markers prove the app actually used
+                    the resolved settings. The resolver then produces a feature lock and generated
+                    app settings before anything is built.
+                </p>
+                <p>
+                    This is an agent-facing workflow. It is written for people and automation
+                    creating new native APK profiles, especially when the safest answer is a
+                    smaller app, not another module added to an existing stack.
+                </p>
+            </div>
+            <div class="detail-stack">
+                <section class="detail-block">
+                    <h3>Core rule</h3>
+                    <p>
+                        Start from an app-build spec and a feature ID list. Do not start from a
+                        nearby runtime profile, Android manifest, or launch script.
+                    </p>
+                </section>
+                <section class="detail-block">
+                    <h3>Master artifact</h3>
+                    <p>
+                        <code>native-app-settings.json</code> is the generated master settings surface for a
+                        native app profile. Other files adapt those settings to platform, build,
+                        and validation surfaces.
+                    </p>
+                </section>
+                <section class="detail-block">
+                    <h3>Acceptance rule</h3>
+                    <p>
+                        Raw property readback is transport evidence only. Acceptance requires the
+                        consuming runtime to emit the expected effective markers for the selected
+                        app profile.
+                    </p>
+                </section>
+            </div>
+        </section>
+
+        <section class="section" id="workflow">
+            <div class="section-heading">
+                <p class="section-kicker">Workflow</p>
+                <h2>The app-building path</h2>
+                <p>
+                    The sequence is intentionally narrow. It makes feature selection, dependency
+                    closure, settings authority, and evidence review visible before an APK is
+                    installed on a headset.
+                </p>
+            </div>
+            <div class="project-grid">
+                <article class="project-card">
+                    <p class="project-kicker">Step 1</p>
+                    <h3>Choose feature IDs</h3>
+                    <p>
+                        Browse <code>fixtures/native-app-features/</code> by module path and request the
+                        smallest stable <code>feature_id</code> set that describes the app. Nested families
+                        such as particles should be selected through their explicit submodules.
+                    </p>
+                </article>
+                <article class="project-card">
+                    <p class="project-kicker">Step 2</p>
+                    <h3>Write the app spec</h3>
+                    <p>
+                        Create <code>fixtures/native-app-builds/&lt;app&gt;.app.json</code>. List requested
+                        features, denied features, expected manifest entries, expected render
+                        mode, settings assertions, required modules, forbidden modules, and
+                        runtime markers.
+                    </p>
+                </article>
+                <article class="project-card">
+                    <p class="project-kicker">Step 3</p>
+                    <h3>Resolve the closure</h3>
+                    <p>
+                        Run <code>tools/Resolve-NativeAppBuild.ps1 -DryRun</code>. The resolver validates
+                        schemas, follows dependencies, rejects incompatible or denied features,
+                        blocks high-rate JSON/property misuse, and writes generated artifacts
+                        under <code>local-artifacts/native-app-builds/</code>.
+                    </p>
+                </article>
+                <article class="project-card">
+                    <p class="project-kicker">Step 4</p>
+                    <h3>Inspect settings and lock</h3>
+                    <p>
+                        Review <code>feature-lock.json</code> and <code>native-app-settings.json</code>. The settings
+                        file must contain every selected module, disable every forbidden module
+                        family, and make the selected render mode explicit.
+                    </p>
+                </article>
+                <article class="project-card">
+                    <p class="project-kicker">Step 5</p>
+                    <h3>Build from the lock</h3>
+                    <p>
+                        Run <code>tools/Build-NativeRendererAndroid.ps1 -AppBuildLock ...</code>. The APK
+                        build consumes the resolved lock instead of rediscovering features from
+                        environment variables or hand-authored launch settings.
+                    </p>
+                </article>
+                <article class="project-card">
+                    <p class="project-kicker">Step 6</p>
+                    <h3>Validate the runtime</h3>
+                    <p>
+                        Use static checks first, then APK build evidence, then device smoke when
+                        the target requires it. The final proof is the runtime marker set produced
+                        by the consuming app, not a property transport readback alone.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section two-column" id="feature-library">
+            <div>
+                <div class="section-heading">
+                    <p class="section-kicker">Feature library</p>
+                    <h2>What a feature descriptor owns</h2>
+                </div>
+                <p>
+                    A native app feature descriptor is a small public contract, not a bundle of
+                    arbitrary app code. It names a stable <code>feature_id</code>, a hierarchical
+                    <code>module_path</code>, its owner lane, its public/private boundary, and the exact
+                    pieces it contributes to settings, manifest, runtime profile, build inputs,
+                    and validation.
+                </p>
+                <p>
+                    Descriptors also declare dependencies, incompatibilities, exclusive groups,
+                    required markers, forbidden markers, assets, shaders, clear-families, and
+                    expected render modes. The resolver uses those fields to construct the
+                    transitive feature closure and to reject an app spec that tries to combine
+                    incompatible surfaces.
+                </p>
+                <p>
+                    The library is recursive so large families can stay comprehensible. A
+                    particle renderer does not have to imply every particle source. A camera
+                    route does not have to imply display-composite feedback. A Makepad
+                    compatibility surface does not have to enter a native-only APK unless the app
+                    requests it.
+                </p>
+            </div>
+            <div class="detail-stack">
+                <section class="detail-block">
+                    <h3>Module families</h3>
+                    <ul class="plain-list">
+                        <li><code>core/</code> for the Quest NativeActivity/OpenXR/Vulkan substrate</li>
+                        <li><code>background/</code> for mutually exclusive background render routes</li>
+                        <li><code>particles/private/</code> and <code>particles/hand-anchor/</code> for nested particle capabilities</li>
+                        <li><code>camera/</code>, <code>display/</code>, <code>environment/</code>, <code>hand/</code>, <code>input/</code>, <code>projection-target/</code>, <code>sdf/</code>, <code>stimulus/</code>, and <code>video/</code> for explicit app features</li>
+                        <li><code>makepad/</code>, <code>manifold/</code>, and <code>private-layer/</code> for adapter or bridge surfaces that should never arrive by accident</li>
+                    </ul>
+                </section>
+                <section class="detail-block">
+                    <h3>Descriptor fields</h3>
+                    <ul class="plain-list">
+                        <li><code>feature_id</code> and <code>module_path</code> identify the module</li>
+                        <li><code>depends_on</code>, <code>incompatible_with</code>, and <code>exclusive_groups</code> shape the closure</li>
+                        <li><code>settings_surface</code> says which master settings schema owns the result</li>
+                        <li><code>android_manifest</code>, <code>runtime_profile</code>, and <code>build_inputs</code> describe generated adapters</li>
+                        <li><code>markers</code> and <code>validation</code> describe acceptance evidence</li>
+                    </ul>
+                </section>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-heading">
+                <p class="section-kicker">Nested example</p>
+                <h2>Particles are a family, not one switch</h2>
+                <p>
+                    The particle library shows why feature IDs need hierarchy. A small downstream
+                    private-particle canary can request a solid-black background plus the private
+                    particle renderer without accidentally selecting camera input, hand mesh,
+                    environment depth, Makepad runtime, video projection, SDF visuals, or stimulus
+                    volume.
+                </p>
+            </div>
+            <div class="project-grid">
+                <article class="project-card">
+                    <p class="project-kicker">Base</p>
+                    <h3><code>core/openxr-vulkan</code></h3>
+                    <p>
+                        The native Quest substrate: NativeActivity, OpenXR, Vulkan, and the
+                        minimal manifest features required before renderer modules can run.
+                    </p>
+                </article>
+                <article class="project-card">
+                    <p class="project-kicker">Background</p>
+                    <h3><code>background/solid-black</code></h3>
+                    <p>
+                        A deliberately small background route that keeps compositor passthrough,
+                        camera projection, display composite, and video projection out of the APK.
+                    </p>
+                </article>
+                <article class="project-card">
+                    <p class="project-kicker">Private particles</p>
+                    <h3><code>payload-slot</code></h3>
+                    <p>
+                        A public ABI slot for a downstream payload without publishing or baking a
+                        project-specific data source into the platform layer.
+                    </p>
+                </article>
+                <article class="project-card">
+                    <p class="project-kicker">Private particles</p>
+                    <h3><code>placeholder</code></h3>
+                    <p>
+                        A deterministic placeholder compute path used when the public stack needs
+                        to prove the renderer route without shipping downstream content.
+                    </p>
+                </article>
+                <article class="project-card">
+                    <p class="project-kicker">Private particles</p>
+                    <h3><code>ordering/gpu-index-remap</code></h3>
+                    <p>
+                        Resident GPU ordering so particle layout policy is explicit instead of
+                        being smuggled through a broad renderer option.
+                    </p>
+                </article>
+                <article class="project-card">
+                    <p class="project-kicker">Private particles</p>
+                    <h3><code>mask/r8-texture</code></h3>
+                    <p>
+                        A bounded texture-mask surface that can be validated independently from
+                        camera, video, or environment-depth modules.
+                    </p>
+                </article>
+                <article class="project-card">
+                    <p class="project-kicker">Private particles</p>
+                    <h3><code>tracers</code></h3>
+                    <p>
+                        Optional trace behavior as its own feature so diagnostics and visual
+                        persistence do not become an implicit renderer default.
+                    </p>
+                </article>
+                <article class="project-card">
+                    <p class="project-kicker">Private particles</p>
+                    <h3><code>renderer</code></h3>
+                    <p>
+                        The aggregate renderer feature depends on the submodules it truly needs
+                        and leaves unrelated native app families disabled.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section two-column" id="settings-authority">
+            <div>
+                <div class="section-heading">
+                    <p class="section-kicker">Settings authority</p>
+                    <h2>One master surface, many adapters</h2>
+                </div>
+                <p>
+                    Native app behavior should not be split across launch modes, Android
+                    properties, manifest edits, environment variables, and UI defaults. The app
+                    spec resolves into <code>native-app-settings.json</code>, and that generated settings
+                    file is the master surface for the selected profile.
+                </p>
+                <p>
+                    Runtime profile files, property plans, Android manifests, build manifests,
+                    and build environment values are adapters. They carry settings into the
+                    platform and build tools, but they do not become separate definitions of app
+                    behavior. If an adapter writes a value that the runtime ignores, validation
+                    must fail.
+                </p>
+                <p>
+                    This is the same authority rule used elsewhere in Rusty Morphospace: the
+                    local owner defines the parameter, other entry points adapt into that owner,
+                    and acceptance evidence comes from the consuming runtime's effective state.
+                </p>
+            </div>
+            <div class="detail-stack">
+                <section class="detail-block">
+                    <h3>Generated from settings</h3>
+                    <ul class="plain-list">
+                        <li>runtime profile and property write plan</li>
+                        <li>Android manifest surface</li>
+                        <li>build environment and build manifest</li>
+                        <li>expected runtime marker list</li>
+                    </ul>
+                </section>
+                <section class="detail-block">
+                    <h3>Must stay explicit</h3>
+                    <ul class="plain-list">
+                        <li>render mode and background route</li>
+                        <li>selected module paths and disabled module families</li>
+                        <li>permissions, services, activities, assets, and shaders</li>
+                        <li>high-rate payload transport boundaries</li>
+                    </ul>
+                </section>
+            </div>
+        </section>
+
+        <section class="section" id="validation">
+            <div class="section-heading">
+                <p class="section-kicker">Validation</p>
+                <h2>What evidence should exist before a profile is trusted</h2>
+                <p>
+                    The validation ladder keeps cheap rejection close to the source and reserves
+                    device work for profiles that already have coherent source contracts.
+                </p>
+            </div>
+            <div class="project-grid">
+                <article class="project-card">
+                    <p class="project-kicker">Static</p>
+                    <h3>Library and schema gates</h3>
+                    <p>
+                        The feature descriptors and app specs must parse, use unique feature IDs,
+                        include required seed features, reject malformed descriptors, and avoid
+                        public/private boundary leaks in committed fixtures.
+                    </p>
+                </article>
+                <article class="project-card">
+                    <p class="project-kicker">Static</p>
+                    <h3>Damaged fixtures</h3>
+                    <p>
+                        Invalid app specs are first-class tests: denied feature requests,
+                        permission supersets, render-mode mismatches, and high-rate JSON/property
+                        misuse must be rejected before APK generation.
+                    </p>
+                </article>
+                <article class="project-card">
+                    <p class="project-kicker">Generated</p>
+                    <h3>Feature lock review</h3>
+                    <p>
+                        The lock records the exact transitive closure, selected modules, adapter
+                        outputs, and assertions. A build that bypasses the lock is no longer the
+                        app that was reviewed.
+                    </p>
+                </article>
+                <article class="project-card">
+                    <p class="project-kicker">Build</p>
+                    <h3>APK from resolved inputs</h3>
+                    <p>
+                        The Android build should consume only the resolved feature lock and its
+                        generated inputs. Build provenance should make it clear which app spec and
+                        feature closure produced the APK.
+                    </p>
+                </article>
+                <article class="project-card">
+                    <p class="project-kicker">Runtime</p>
+                    <h3>Effective markers</h3>
+                    <p>
+                        The app must emit required markers such as render mode and selected
+                        module state, and it must not emit forbidden markers from unrelated
+                        modules.
+                    </p>
+                </article>
+                <article class="project-card">
+                    <p class="project-kicker">Device</p>
+                    <h3>Headset smoke when needed</h3>
+                    <p>
+                        Headset validation should be serial-scoped and profile-specific. It is
+                        useful after static resolution, not as a substitute for source contracts.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section two-column">
+            <div>
+                <div class="section-heading">
+                    <p class="section-kicker">Agent checklist</p>
+                    <h2>Before making a new APK</h2>
+                </div>
+                <p>
+                    A new app profile should be easy to review from its source artifacts. Someone
+                    reading the spec should see why each feature is present, why related features
+                    are absent, what settings are generated, and what runtime evidence will count
+                    as success.
+                </p>
+            </div>
+            <div class="detail-stack">
+                <section class="detail-block">
+                    <h3>Do</h3>
+                    <ul class="plain-list">
+                        <li>request feature IDs by name</li>
+                        <li>deny nearby feature families that must stay absent</li>
+                        <li>review <code>native-app-settings.json</code> before building</li>
+                        <li>keep high-rate payloads out of properties and JSON settings</li>
+                        <li>require effective runtime markers for acceptance</li>
+                    </ul>
+                </section>
+                <section class="detail-block">
+                    <h3>Do not</h3>
+                    <ul class="plain-list">
+                        <li>copy a runtime profile as the starting point for a new app</li>
+                        <li>hide app behavior in a launch mode or one-off script</li>
+                        <li>add camera, display, hand, video, Makepad, or private-layer surfaces unless requested</li>
+                        <li>treat Android property readback as runtime proof</li>
+                    </ul>
+                </section>
+            </div>
+        </section>
+
+        <section class="section" id="references">
+            <div class="section-heading">
+                <p class="section-kicker">References</p>
+                <h2>Public source family</h2>
+                <p>
+                    The overview lives here. Source contracts, schemas, fixtures, and validation
+                    scripts live in the public Rusty Morphospace repositories.
+                </p>
+            </div>
+            <div class="reference-grid">
+                <section class="detail-block">
+                    <h3>Workflow sources</h3>
+                    <ul class="plain-list">
+                        <li><strong>MesmerPrism.</strong> "<a class="reference-link" href="https://github.com/MesmerPrism/rusty-quest" target="_blank" rel="noopener noreferrer">rusty-quest</a>." Public repository for Quest platform contracts, native renderer profiles, app-build specs, feature descriptors, and validation tools.</li>
+                        <li><strong>MesmerPrism.</strong> "<a class="reference-link" href="https://github.com/MesmerPrism/rusty-quest-makepad" target="_blank" rel="noopener noreferrer">rusty-quest-makepad</a>." Public repository for Quest-specific Makepad adapter profiles, effective settings, and headset app staging routes.</li>
+                    </ul>
+                </section>
+                <section class="detail-block">
+                    <h3>Architecture context</h3>
+                    <ul class="plain-list">
+                        <li><strong>Mesmer Prism.</strong> "<a class="reference-link" href="https://mesmerprism.com/projects/rusty-morphospace.html">Rusty Morphospace</a>." Public overview of the Morphospace source family and architecture boundaries.</li>
+                        <li><strong>Mesmer Prism.</strong> "<a class="reference-link" href="https://mesmerprism.com/projects/rusty-morphospace/rusty-xr.html">Rusty XR Legacy Reference</a>." Compatibility and Quest reference lane for older public Rusty XR work.</li>
+                    </ul>
+                </section>
+            </div>
+        </section>
+        <!-- BEGIN page-export-links -->
+        <section class="agent-downloads" aria-labelledby="page-downloads">
+            <h2 id="page-downloads">Page exports</h2>
+            <div class="agent-downloads__links">
+                <a href="/projects/rusty-morphospace/native-app-build-workflow.md" download>Markdown</a>
+                <a href="/projects/rusty-morphospace/native-app-build-workflow.txt" download>Text</a>
+                <a href="/projects/rusty-morphospace/native-app-build-workflow.bib" download>BibTeX</a>
+                <a href="/projects/rusty-morphospace/native-app-build-workflow.references.csl.json" download>CSL JSON</a>
+            </div>
+        </section>
+        <!-- END page-export-links -->
+</main>
+
+    <footer class="site-footer">
+        <div class="shell footer-row">
+            <p>XR systems, perception research, and essays by Till Holzapfel.</p>
+            <nav class="footer-links" aria-label="Legal">
+                <a href="/impressum.html">Impressum</a>
+                <a href="/datenschutz.html">Datenschutz</a>
+            </nav>
+        </div>
+    </footer>
+</body>
+</html>
