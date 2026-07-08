@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Asphyxeality Concept Viewer | Mesmer Prism</title>
+    <meta
+        name="description"
+        content="Private concept viewer for Asphyxeality mask airflow routing models."
+    >
+    <link rel="canonical" href="https://mesmerprism.com/asphyxeality/">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="stylesheet" href="/assets/fonts.css">
+    <style>
+        :root {
+            color-scheme: light;
+            --bg: #f4efe7;
+            --panel: #fbf8f2;
+            --line: #d5ccc0;
+            --text: #1e1713;
+            --muted: #635850;
+            --accent: #8a4638;
+            --font-body: "Newsreader", Georgia, serif;
+            --font-display: "Cormorant Garamond", Georgia, serif;
+            --font-ui: "Aptos", Candara, "Segoe UI", sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            min-height: 100%;
+            margin: 0;
+        }
+
+        body {
+            display: grid;
+            grid-template-rows: auto minmax(0, 1fr);
+            height: 100vh;
+            background: var(--bg);
+            color: var(--text);
+            font-family: var(--font-body);
+        }
+
+        .viewer-header {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.9rem clamp(1rem, 3vw, 1.75rem);
+            border-bottom: 1px solid var(--line);
+            background: rgba(244, 239, 231, 0.96);
+        }
+
+        .title-block {
+            min-width: 0;
+        }
+
+        h1 {
+            margin: 0;
+            font-family: var(--font-display);
+            font-size: clamp(1.55rem, 3vw, 2.25rem);
+            font-style: italic;
+            font-weight: 600;
+            line-height: 1.05;
+        }
+
+        .context {
+            margin: 0.25rem 0 0;
+            color: var(--muted);
+            font-family: var(--font-ui);
+            font-size: 0.88rem;
+            line-height: 1.35;
+        }
+
+        .model-control {
+            display: grid;
+            gap: 0.32rem;
+            min-width: min(24rem, 42vw);
+            font-family: var(--font-ui);
+        }
+
+        .model-control label {
+            color: var(--muted);
+            font-size: 0.78rem;
+        }
+
+        select {
+            width: 100%;
+            min-height: 2.45rem;
+            padding: 0.48rem 2.2rem 0.48rem 0.7rem;
+            border: 1px solid var(--line);
+            border-radius: 6px;
+            background: var(--panel);
+            color: var(--text);
+            font: inherit;
+        }
+
+        select:focus {
+            outline: 2px solid color-mix(in srgb, var(--accent) 50%, transparent);
+            outline-offset: 2px;
+        }
+
+        .viewer-frame {
+            display: block;
+            width: 100%;
+            height: 100%;
+            min-height: 0;
+            border: 0;
+            background: #f7f7f4;
+        }
+
+        @media (max-width: 760px) {
+            body {
+                height: 100svh;
+            }
+
+            .viewer-header {
+                align-items: stretch;
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+
+            .model-control {
+                min-width: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="viewer-header">
+        <div class="title-block">
+            <h1>Asphyxeality concept viewer</h1>
+            <p class="context">Private routing concepts for discussion; dimensions are not validated.</p>
+        </div>
+        <div class="model-control">
+            <label for="model-select">Model</label>
+            <select id="model-select">
+                <option value="viewers/center-mounted-v19.html">Option 1: centered stack</option>
+                <option value="viewers/top-mounted-v21.html">Option 2: top mounted sensor</option>
+                <option value="viewers/front-mounted-v22.html">Option 3: front mounted loop</option>
+            </select>
+        </div>
+    </header>
+    <iframe
+        id="model-frame"
+        class="viewer-frame"
+        title="Asphyxeality 3D model viewer"
+        src="viewers/center-mounted-v19.html"
+    ></iframe>
+    <script>
+        const select = document.getElementById("model-select");
+        const frame = document.getElementById("model-frame");
+        const allowed = new Set([...select.options].map((option) => option.value));
+
+        function setModel(value, updateHash = true) {
+            if (!allowed.has(value)) return;
+            select.value = value;
+            frame.src = value;
+            if (updateHash) {
+                const key = value.split("/").pop().replace(".html", "");
+                history.replaceState(null, "", `#${key}`);
+            }
+        }
+
+        select.addEventListener("change", () => setModel(select.value));
+
+        const initialKey = window.location.hash.replace("#", "");
+        if (initialKey) {
+            const match = [...allowed].find((value) => value.endsWith(`${initialKey}.html`));
+            if (match) setModel(match, false);
+        }
+    </script>
+</body>
+</html>
