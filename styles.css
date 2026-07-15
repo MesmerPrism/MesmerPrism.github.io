@@ -1776,6 +1776,10 @@ li {
     gap: 2rem;
 }
 
+.two-column > * {
+    min-width: 0;
+}
+
 .detail-stack {
     display: grid;
     gap: 1rem;

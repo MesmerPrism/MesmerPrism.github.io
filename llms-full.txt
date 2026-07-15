@@ -1,13 +1,13 @@
 # Mesmer Prism Full Agent Context
 
-Generated: 2026-06-21
+Generated: 2026-07-15
 
 <page url="https://mesmerprism.com/duisburg/" path="duisburg/index.html">
 # Shared Bodies for Mixed-Ability Collaboration
 
 Source: https://mesmerprism.com/duisburg/
 Canonical HTML: https://mesmerprism.com/duisburg/
-Generated: 2026-06-21
+Generated: 2026-07-15
 Description: A Duisburg-facing research pitch for Mixed-Ability Human-Swarm Interaction: shared swarm bodies, inspectable input mappings, and a route from connectedness to robotics translation.
 Markdown: https://mesmerprism.com/duisburg/index.md
 Plain text: https://mesmerprism.com/duisburg/index.txt
@@ -490,7 +490,7 @@ Mixed-ability XR research
 
 Source: https://mesmerprism.com/
 Canonical HTML: https://mesmerprism.com/
-Generated: 2026-06-21
+Generated: 2026-07-15
 Description: XR systems, citizen-science tools, visual instruments, and essays for altered-perception design. Mesmer Prism makes strange experience vivid, inspectable, and evidence-bounded.
 Markdown: https://mesmerprism.com/index.md
 Plain text: https://mesmerprism.com/index.txt
@@ -583,14 +583,15 @@ Till Holzapfel
 
 ### [Rusty Morphospace](https://mesmerprism.com/projects/rusty-morphospace.html)
 
- A public mixed-license Rust repo family for computational matter,
- situated relations, runtime authority, renderer-neutral inspection,
- package evidence, authoring, host validation, and Quest-side
- integration. The active Morphospace-owned repos are AGPL-first; legacy
- compatibility and lab/reference repos keep their existing MIT lanes.
+ An AGPL-first Rust platform for computational matter, situated relations,
+ command and media authority, LSL compatibility, renderer-neutral
+ inspection, operator tooling, and native Quest integration. The current
+ platform baseline is 0.1.0; the separate public contributor environment
+ is at 0.4.0. Legacy compatibility and lab/reference repos keep their
+ existing license lanes.
 
  Status
- Public repo family
+ Platform 0.1.0; contributor work environment 0.4.0; active development continues
  Artifact
  Rust crates, fixtures, schemas, browser previews, and docs
  Licenses
@@ -601,9 +602,10 @@ Till Holzapfel
  Rust / Computational morphology / Toolchain architecture / XR boundaries
 
  [Project overview](https://mesmerprism.com/projects/rusty-morphospace.html)
+ [Start here](https://mesmerprism.com/projects/rusty-morphospace/work-environment.html)
  [Matter](https://github.com/MesmerPrism/rusty-matter)
  [Manifold](https://github.com/MesmerPrism/rusty-manifold)
- [Optics](https://github.com/MesmerPrism/rusty-optics)
+ [Rusty LSL](https://github.com/MesmerPrism/rusty-lsl)
 
  Bioelectric atlas and morphogenesis model
 
@@ -1064,7 +1066,7 @@ Till Holzapfel
 
 Source: https://mesmerprism.com/plasmatic-multitudes/assets/calligraphy-reference-pack/board.html
 Canonical HTML: https://mesmerprism.com/plasmatic-multitudes/assets/calligraphy-reference-pack/board.html
-Generated: 2026-06-21
+Generated: 2026-07-15
 Markdown: https://mesmerprism.com/plasmatic-multitudes/assets/calligraphy-reference-pack/board.md
 Plain text: https://mesmerprism.com/plasmatic-multitudes/assets/calligraphy-reference-pack/board.txt
 BibTeX references: https://mesmerprism.com/plasmatic-multitudes/assets/calligraphy-reference-pack/board.bib
@@ -1214,7 +1216,7 @@ Museum-backed pack
 
 Source: https://mesmerprism.com/plasmatic-multitudes/background/somaesthetics.html
 Canonical HTML: https://mesmerprism.com/plasmatic-multitudes/background/somaesthetics.html
-Generated: 2026-06-21
+Generated: 2026-07-15
 Description: A short public note on somaesthetics as the method anchor for Plasmatic Multitudes.
 Markdown: https://mesmerprism.com/plasmatic-multitudes/background/somaesthetics.md
 Plain text: https://mesmerprism.com/plasmatic-multitudes/background/somaesthetics.txt
@@ -1285,7 +1287,7 @@ Background appendix | Updated May 24, 2026
 
 Source: https://mesmerprism.com/plasmatic-multitudes/essay.html
 Canonical HTML: https://mesmerprism.com/plasmatic-multitudes/essay.html
-Generated: 2026-06-21
+Generated: 2026-07-15
 Description: A long-form essay on weakly bounded bodies, XR embodiment, media genealogy, computational morphogenesis, and cautious pain translation.
 Markdown: https://mesmerprism.com/plasmatic-multitudes/essay.md
 Plain text: https://mesmerprism.com/plasmatic-multitudes/essay.txt
@@ -1643,7 +1645,7 @@ Long essay | Updated May 24, 2026
 
 Source: https://mesmerprism.com/plasmatic-multitudes/
 Canonical HTML: https://mesmerprism.com/plasmatic-multitudes/
-Generated: 2026-06-21
+Generated: 2026-07-15
 Description: Long essay, method notes, vocabulary, pain-translation hypotheses, mixed-ability human-swarm interaction, and annotated references for weakly bounded bodies and semi-corporeal avatar aesthetics.
 Markdown: https://mesmerprism.com/plasmatic-multitudes/index.md
 Plain text: https://mesmerprism.com/plasmatic-multitudes/index.txt
@@ -1707,7 +1709,7 @@ Field guide | Updated May 24, 2026
 
 Source: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html
 Canonical HTML: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html
-Generated: 2026-06-21
+Generated: 2026-07-15
 Description: A Plasmatic Multitudes research track on shared visual swarm bodies, mixed-ability collaboration, access-practice mapping, connectedness-first exploration, encounter, cooperative play, and later physical translation.
 Markdown: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.md
 Plain text: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.txt
@@ -3177,7 +3179,7 @@ Mixed-ability HSI | Updated June 21, 2026
 
 Source: https://mesmerprism.com/plasmatic-multitudes/pain.html
 Canonical HTML: https://mesmerprism.com/plasmatic-multitudes/pain.html
-Generated: 2026-06-21
+Generated: 2026-07-15
 Description: A cautious research note on boundary precision, avatar materiality, protective fields, ownership, agency, and pain-related body-representation hypotheses. Not a treatment claim.
 Markdown: https://mesmerprism.com/plasmatic-multitudes/pain.md
 Plain text: https://mesmerprism.com/plasmatic-multitudes/pain.txt
@@ -3392,7 +3394,7 @@ Pain translation | Updated May 24, 2026
 
 Source: https://mesmerprism.com/plasmatic-multitudes/project.html
 Canonical HTML: https://mesmerprism.com/plasmatic-multitudes/project.html
-Generated: 2026-06-21
+Generated: 2026-07-15
 Description: A compact method note on boundary precision, somaesthetics, coherence, morphogenesis, and weakly bounded body design.
 Markdown: https://mesmerprism.com/plasmatic-multitudes/project.md
 Plain text: https://mesmerprism.com/plasmatic-multitudes/project.txt
@@ -3467,7 +3469,7 @@ Method | Updated May 24, 2026
 
 Source: https://mesmerprism.com/plasmatic-multitudes/references.html
 Canonical HTML: https://mesmerprism.com/plasmatic-multitudes/references.html
-Generated: 2026-06-21
+Generated: 2026-07-15
 Description: Annotated references across somaesthetics, perception, pseudo-haptics, morphogenesis, XR embodiment, media genealogy, and pain/body-representation research.
 Markdown: https://mesmerprism.com/plasmatic-multitudes/references.md
 Plain text: https://mesmerprism.com/plasmatic-multitudes/references.txt
@@ -3664,7 +3666,7 @@ Annotated sources | Updated June 11, 2026
 
 Source: https://mesmerprism.com/plasmatic-multitudes/terminology.html
 Canonical HTML: https://mesmerprism.com/plasmatic-multitudes/terminology.html
-Generated: 2026-06-21
+Generated: 2026-07-15
 Description: Terms for semi-corporeal avatars, plasmatic bodies, particle bodies, swarm bodies, aura avatars, boundary precision, pseudo-haptics, and related design concepts.
 Markdown: https://mesmerprism.com/plasmatic-multitudes/terminology.md
 Plain text: https://mesmerprism.com/plasmatic-multitudes/terminology.txt
@@ -4110,7 +4112,7 @@ Field guide | Updated May 24, 2026
 
 Source: https://mesmerprism.com/projects/altered-xperience-project.html
 Canonical HTML: https://mesmerprism.com/projects/altered-xperience-project.html
-Generated: 2026-06-21
+Generated: 2026-07-15
 Description: The Altered Xperience Project is a CIRCE-led citizen-science survey for anonymous altered-state reports, with multilingual questionnaires, feedback, scoring, exports, and collaborator workflow.
 Markdown: https://mesmerprism.com/projects/altered-xperience-project.md
 Plain text: https://mesmerprism.com/projects/altered-xperience-project.txt
@@ -4234,7 +4236,7 @@ Citizen-science altered-state survey
 
 Source: https://mesmerprism.com/projects/bioelectricity.html
 Canonical HTML: https://mesmerprism.com/projects/bioelectricity.html
-Generated: 2026-06-21
+Generated: 2026-07-15
 Description: Bioelectricity and morphogenesis across Rusty Morphospace and Planarian Regeneration XR: source-bounded teaching models, data-first atlas navigation, reviewed records, observed Zenodo geometry, and marker replays.
 Markdown: https://mesmerprism.com/projects/bioelectricity.md
 Plain text: https://mesmerprism.com/projects/bioelectricity.txt
@@ -4912,7 +4914,7 @@ Rusty Morphospace and tissue-scale patterning
 
 Source: https://mesmerprism.com/projects/brain-candy.html
 Canonical HTML: https://mesmerprism.com/projects/brain-candy.html
-Generated: 2026-06-21
+Generated: 2026-07-15
 Description: Brain Candy studies rhythmic light, recursive visual structure, sound, breath, expectation, and interaction as tunable non-drug state-shift design.
 Markdown: https://mesmerprism.com/projects/brain-candy.md
 Plain text: https://mesmerprism.com/projects/brain-candy.txt
@@ -5460,7 +5462,7 @@ Non-drug state-shift design
 
 Source: https://mesmerprism.com/projects/bressloff-v1-form-constants-deep-dive.html
 Canonical HTML: https://mesmerprism.com/projects/bressloff-v1-form-constants-deep-dive.html
-Generated: 2026-06-21
+Generated: 2026-07-15
 Description: A notebook-style deep dive into Bressloff form constants, Rule flicker modeling, and generated driven neural-field diagnostics after Rule.
 Markdown: https://mesmerprism.com/projects/bressloff-v1-form-constants-deep-dive.md
 Plain text: https://mesmerprism.com/projects/bressloff-v1-form-constants-deep-dive.txt
@@ -6457,7 +6459,7 @@ Modeling deep dive
 
 Source: https://mesmerprism.com/projects/bressloff-v1-form-constants.html
 Canonical HTML: https://mesmerprism.com/projects/bressloff-v1-form-constants.html
-Generated: 2026-06-21
+Generated: 2026-07-15
 Description: Animated notes on Bressloff visual-cortex form constants, Rule flicker modeling, and generated MacKay, Bolelli, and Nicks driven-field diagnostics.
 Markdown: https://mesmerprism.com/projects/bressloff-v1-form-constants.md
 Plain text: https://mesmerprism.com/projects/bressloff-v1-form-constants.txt
@@ -6915,7 +6917,7 @@ Visual cortex and form constants
 
 Source: https://mesmerprism.com/projects/deep-dream.html
 Canonical HTML: https://mesmerprism.com/projects/deep-dream.html
-Generated: 2026-06-21
+Generated: 2026-07-15
 Description: Deep Dream explains how machine-vision hallucination, community visual taxonomies, VR research, and cyberdelic systems shaped simulated psychedelic vision.
 Markdown: https://mesmerprism.com/projects/deep-dream.md
 Plain text: https://mesmerprism.com/projects/deep-dream.txt
@@ -7469,7 +7471,7 @@ Simulated psychedelic vision
 
 Source: https://mesmerprism.com/projects/fractal-optics.html
 Canonical HTML: https://mesmerprism.com/projects/fractal-optics.html
-Generated: 2026-06-21
+Generated: 2026-07-15
 Description: Fractal Optics maps fractal phototherapy, retinal and ophthalmic stimulation, VR delivery, and patterned-light comparator literatures.
 Markdown: https://mesmerprism.com/projects/fractal-optics.md
 Plain text: https://mesmerprism.com/projects/fractal-optics.txt
@@ -7717,7 +7719,7 @@ Retinal stimulation and patterned light
 
 Source: https://mesmerprism.com/projects/hollow-face-lab.html
 Canonical HTML: https://mesmerprism.com/projects/hollow-face-lab.html
-Generated: 2026-06-21
+Generated: 2026-07-15
 Description: Hollow Face Lab maps WebGL, WebXR, texture controls, and Rusty XR implementation choices against hollow-face and depth-inversion research.
 Markdown: https://mesmerprism.com/projects/hollow-face-lab.md
 Plain text: https://mesmerprism.com/projects/hollow-face-lab.txt
@@ -7881,7 +7883,7 @@ Depth inversion and research tooling
 
 Source: https://mesmerprism.com/projects/hollow-face-lab/app/
 Canonical HTML: https://mesmerprism.com/projects/hollow-face-lab/app/
-Generated: 2026-06-21
+Generated: 2026-07-15
 Description: Browser-hosted Hollow Face Lab renderer with concavity, lighting, mesh, probe, texture, and response controls.
 Markdown: https://mesmerprism.com/projects/hollow-face-lab/app/index.md
 Plain text: https://mesmerprism.com/projects/hollow-face-lab/app/index.txt
@@ -8024,7 +8026,7 @@ Fullscreen
 
 Source: https://mesmerprism.com/projects/optical-movement-illusions.html
 Canonical HTML: https://mesmerprism.com/projects/optical-movement-illusions.html
-Generated: 2026-06-21
+Generated: 2026-07-15
 Description: Optical Movement Illusions maps peripheral drift, Rotating Snakes, static motion illusions, color and luminance parameters, and the mechanism-design bridge into perceptual tooling.
 Markdown: https://mesmerprism.com/projects/optical-movement-illusions.md
 Plain text: https://mesmerprism.com/projects/optical-movement-illusions.txt
@@ -8223,7 +8225,7 @@ Static motion and perceptual mechanics
 
 Source: https://mesmerprism.com/projects/phenomenological-control.html
 Canonical HTML: https://mesmerprism.com/projects/phenomenological-control.html
-Generated: 2026-06-21
+Generated: 2026-07-15
 Description: A public guide to phenomenological control, imagery variation, expectation-shaped experience, source monitoring, absorption, porosity, hypnosis, induced vision, and meaning-making.
 Markdown: https://mesmerprism.com/projects/phenomenological-control.md
 Plain text: https://mesmerprism.com/projects/phenomenological-control.txt
@@ -8768,7 +8770,7 @@ Imagery, suggestion, and source monitoring
 
 Source: https://mesmerprism.com/projects/plasmatic-multitudes.html
 Canonical HTML: https://mesmerprism.com/projects/plasmatic-multitudes.html
-Generated: 2026-06-21
+Generated: 2026-07-15
 Description: A public overview of weakly bounded bodies: avatars, swarms, auras, particle forms, and luminous bodies that soften while remaining coherent enough for embodiment, relation, and cautious research translation.
 Markdown: https://mesmerprism.com/projects/plasmatic-multitudes.md
 Plain text: https://mesmerprism.com/projects/plasmatic-multitudes.txt
@@ -9285,7 +9287,7 @@ Weakly bounded embodiment
 
 Source: https://mesmerprism.com/projects/polar-h10.html
 Canonical HTML: https://mesmerprism.com/projects/polar-h10.html
-Generated: 2026-06-21
+Generated: 2026-07-15
 Description: Public overview of Mesmer Prism's Polar H10 work across minimal signal packages, Rusty XR, Quest broker streams, Windows capture, Android diagnostics, Unity Quest integration, and Viscereality research tooling.
 Markdown: https://mesmerprism.com/projects/polar-h10.md
 Plain text: https://mesmerprism.com/projects/polar-h10.txt
@@ -9557,7 +9559,7 @@ Biofeedback sensor integration
 
 Source: https://mesmerprism.com/projects/prophantasia.html
 Canonical HTML: https://mesmerprism.com/projects/prophantasia.html
-Generated: 2026-06-21
+Generated: 2026-07-15
 Description: Prophantasia covers projected imagery, aphantasia, source judgment, practice ecology, and neighboring phenomena such as imposition, flicker, DeepDream, visual snow, and HPPD.
 Markdown: https://mesmerprism.com/projects/prophantasia.md
 Plain text: https://mesmerprism.com/projects/prophantasia.txt
@@ -10163,8 +10165,8 @@ Projected imagery and source judgment
 
 Source: https://mesmerprism.com/projects/rusty-morphospace.html
 Canonical HTML: https://mesmerprism.com/projects/rusty-morphospace.html
-Generated: 2026-06-21
-Description: Rusty Morphospace is a modular Rust platform for computational-form systems with separate model, relation, command, inspection, packaging, and evidence layers.
+Generated: 2026-07-15
+Description: Rusty Morphospace is an AGPL-first Rust platform for computational-form systems, with a 0.1.0 platform baseline and a public 0.4.0 contributor work environment.
 Markdown: https://mesmerprism.com/projects/rusty-morphospace.md
 Plain text: https://mesmerprism.com/projects/rusty-morphospace.txt
 BibTeX references: https://mesmerprism.com/projects/rusty-morphospace.bib
@@ -10181,9 +10183,10 @@ Modular Rust platform for computational-form systems
  packaging, and runtime evidence need to stay separate but connected.
  It is a repo family and architecture, not one XR app.
 
- Reviewed June 21, 2026.
+ Reviewed July 15, 2026.
 
  [What it is for](https://mesmerprism.com/projects/rusty-morphospace.html#what-for)
+ [Set up a workspace](https://mesmerprism.com/projects/rusty-morphospace/work-environment.html)
  [Core model](https://mesmerprism.com/projects/rusty-morphospace.html#start-here)
  [Build a Quest APK](https://mesmerprism.com/projects/rusty-morphospace/native-app-build-workflow.html)
  [Inspect current evidence](https://mesmerprism.com/projects/rusty-morphospace.html#current-work)
@@ -10197,7 +10200,7 @@ Modular Rust platform for computational-form systems
  An AGPL-first Rust repo family for computational-form systems.
 
  What exists now
- Public core repos, app-build feature locks, native Quest/OpenXR/Vulkan routes, Makepad/Hostess validation paths, Matter/Optics teaching models, and legacy Rusty XR material.
+ A consolidated 0.1.0 platform baseline, public core repos, protocol-v2 project workspaces, native Quest/OpenXR/Vulkan and Spatial SDK routes, and legacy compatibility material.
 
  What it is for
  Keeping model state, spatial relation, command flow, visual inspection, and platform evidence separate.
@@ -10205,11 +10208,37 @@ Modular Rust platform for computational-form systems
  What it is not
  Not a single XR application, renderer, HSI framework, clinical system, robotics backend, or raw camera/passthrough claim.
 
- Public source
- Device evidence
- Application-domain examples
- Legacy reference
- Not a clinical claim
+ Platform 0.1.0
+ Work environment 0.4.0
+ Active development continues
+ Makepad and Rusty XR: legacy/reference
+
+## Current public baseline
+
+ Two version numbers describe different things. Rusty Morphospace
+ 0.1.0 is the consolidated platform baseline across the
+ source lanes. The independently versioned
+ [work environment 0.4.0](https://github.com/MesmerPrism/rusty-morphospace-work-environment/releases/tag/v0.4.0)
+ is the public onboarding, project-workflow, validation, and release-audit
+ toolkit. Updating that toolkit does not silently change the platform.
+
+ Version and development status
+
+ Platform baseline
+ Rusty Morphospace 0.1.0: the current consolidated architecture and module-ownership baseline.
+
+ Contributor environment
+ Version 0.4.0: reproducible local setup, four installable agent skill routers, protocol-v2 project workspaces, closed feature locks, validation receipts, and release capsules.
+
+ Ongoing development
+ Repository branches continue normally. A release records exact commits and trees; it does not require active branches or local worktrees to remain frozen.
+
+ Runtime direction
+ New Quest work defaults to native OpenXR/Vulkan or Meta Spatial SDK. Makepad remains available for explicit compatibility, regression, and migration work.
+
+ [Contributor setup guide](https://mesmerprism.com/projects/rusty-morphospace/work-environment.html)
+ [Work environment repository](https://github.com/MesmerPrism/rusty-morphospace-work-environment)
+ [0.4.0 release](https://github.com/MesmerPrism/rusty-morphospace-work-environment/releases/tag/v0.4.0)
 
  Use
 
@@ -10234,10 +10263,13 @@ Modular Rust platform for computational-form systems
  Optics owns renderer-neutral cameras, views, materials, projections, and debug payloads.
 
  Build GUI and editor surfaces
- GUI and Studio describe controls, panels, graph canvases, package review, and authoring.
+ GUI describes portable controls and command bindings; Hostess projects operator workflows through WPF and CLI/API-equivalent routes.
 
  Target platforms without making them the core model
- Quest, Makepad, Quest-Makepad, Hostess, and sidecar routes validate deployment and evidence.
+ Native Quest, Meta Spatial SDK, browser, and WPF routes adapt the contracts. Makepad routes remain explicit compatibility surfaces.
+
+ Integrate LSL without merging authority models
+ Rusty LSL provides independently authored compatibility and typed observations or proposals; Manifold still owns accepted sessions, routes, revisions, and audit.
 
  Keep application domains modular
  HSI, bioelectricity, biosignals, morphogenesis references, and XR examples use the core but do not define it.
@@ -10271,7 +10303,8 @@ Modular Rust platform for computational-form systems
  Rusty Morphospace separates those responsibilities so a project can
  change one part without silently changing the others. A particle surface
  should be able to keep the same Matter state while being inspected through
- a browser view, adapted into a Makepad shell, or validated on Quest. The
+ a browser view, hosted by a native Quest or WPF surface, or replayed through
+ a legacy Makepad compatibility shell. The
  particle state should not become Quest logic, and the Quest adapter should
  not become simulation truth.
 
@@ -10293,7 +10326,7 @@ Modular Rust platform for computational-form systems
  Which controls, panels, graph surfaces, and package-review tools expose it. Lanes: GUI and Studio.
 
  Adapt
- Which toolkit or platform hosts it. Lanes: browser, Makepad, Quest, native routes.
+ Which toolkit or platform hosts it. Default routes: browser, native Quest/OpenXR, Spatial SDK, and WPF; Makepad is compatibility-only.
 
  Validate
  What evidence proves the route behaved as claimed. Lanes: Hostess, app build, platform receipts.
@@ -10311,14 +10344,17 @@ Modular Rust platform for computational-form systems
  Optics
  Describes what can be inspected before a renderer draws it.
 
- Makepad / Browser / Quest
- Adapt views into concrete app surfaces without owning simulation truth.
+ Native Quest / WPF / Browser
+ Adapt views and operator actions into concrete surfaces without owning simulation truth.
 
  Lattice
  Records spaces, poses, calibration, confidence, and device capability snapshots.
 
  Manifold
  Decides which commands, sessions, streams, clocks, and audit records count.
+
+ Rusty LSL
+ Provides independently authored LSL compatibility and typed observations or proposals without replacing Manifold authority.
 
  Hostess
  Installs, launches, stages, replays, and packages evidence around the runtime.
@@ -10332,6 +10368,9 @@ Modular Rust platform for computational-form systems
  Rusty XR
  Preserves older examples and source vocabulary as a legacy/reference collection.
 
+ Makepad compatibility
+ Preserves explicit regression and migration routes without setting the default runtime direction.
+
  Purpose
 
 ## Computational form as a working medium
@@ -10342,9 +10381,10 @@ Modular Rust platform for computational-form systems
  views that inspect it, and the headset routes that validate it.
 
  The current public family has moved beyond naming notes. Matter, Manifold,
- Optics, Lattice, GUI, Makepad, Quest, Quest-Makepad, Manifold Packages,
- Studio, Hostess, and the Quest sidecar lane now form a public source stack
- with explicit boundaries, license notes, and validation surfaces.
+ Optics, Lattice, Rusty LSL, GUI, Quest, Manifold Packages, Hostess, and the
+ project work environment form the primary source stack. Studio, sidecar,
+ Rusty XR, and Makepad repositories remain useful authoring, integration,
+ compatibility, or reference lanes with explicit boundaries.
 
  Deep dive: why the layers are separate
 
@@ -10386,17 +10426,19 @@ Modular Rust platform for computational-form systems
 
 - Umbrella: Rusty Morphospace
 
-- Clean source repos: Matter, Manifold, Optics, Lattice, GUI, Makepad, Quest, Quest-Makepad
+- Platform baseline: Rusty Morphospace 0.1.0
 
-- Package and host repos: Manifold Packages, Studio, Hostess, Quest Sidecar Mesh
+- Portable onboarding and workflow release: work environment 0.4.0
 
-- Current proofs: remote camera framing, native Quest rendering, direct Camera2/HWB import, MediaProjection display-composite feedback, live/recorded hand surfaces, SDF/ADF debug paths, particles, and bounded GPU readbacks
+- Primary source repos: Matter, Manifold, Manifold Packages, Optics, Lattice, Rusty LSL, GUI, Quest, and Hostess
+
+- Current source lines include peer/media authority, closed Android broker packaging, particle and hand conformance, native Quest/OpenXR rendering, Spatial SDK panels, and WPF/CLI operator routes
 
 - Licensing: AGPL-3.0-or-later for active Morphospace-owned source; MIT retained for legacy/reference and lab lanes where noted
 
 ### License quick map
 
-- AGPL-3.0-or-later: Matter, Optics, Manifold, Lattice, GUI, Makepad, Quest, Quest-Makepad, Manifold Packages, Studio, Hostess, and Quest Sidecar Mesh
+- AGPL-3.0-or-later: the work environment and current Morphospace-owned source repos, including Matter, Optics, Manifold, Lattice, Rusty LSL, GUI, Quest, Hostess, and maintained compatibility lanes
 
 - MIT: Rusty XR compatibility/history collection and Quest Termux Lab
 
@@ -10412,11 +10454,13 @@ Modular Rust platform for computational-form systems
 
 - Situated relations: Rusty Lattice
 
+- LSL compatibility and typed observations/proposals: Rusty LSL
+
 - Graphical descriptors: Rusty GUI
 
-- Makepad adaptation: Rusty Makepad and Rusty Quest Makepad
-
 - Platform edge and native headset renderer: Rusty Quest
+
+- Legacy Makepad adaptation: Rusty Makepad and Rusty Quest Makepad
 
 ### Useful for
 
@@ -10436,11 +10480,13 @@ Modular Rust platform for computational-form systems
 
 - [Native App Build Workflow](https://mesmerprism.com/projects/rusty-morphospace/native-app-build-workflow.html) explains how APK profiles select only the required Rusty Quest feature modules
 
+- [Contributor Work Environment](https://mesmerprism.com/projects/rusty-morphospace/work-environment.html) explains local setup, project workspaces, skill installation, validation, and release capsules
+
 - [Rusty Quest](https://github.com/MesmerPrism/rusty-quest) carries runtime profiles, Quest permission/tooling surfaces, and the native Rust/OpenXR/Vulkan renderer route
 
-- [Rusty Quest Makepad](https://github.com/MesmerPrism/rusty-quest-makepad) carries Quest-specific Makepad adapter work
+- [Rusty Hostess](https://github.com/MesmerPrism/rusty-hostess) provides WPF and CLI/API-equivalent install, staging, launch, replay, and evidence routes
 
-- [Rusty Hostess](https://github.com/MesmerPrism/rusty-hostess) provides install, staging, launch, replay, and evidence capture
+- [Rusty Quest Makepad](https://github.com/MesmerPrism/rusty-quest-makepad) remains available for explicit compatibility and migration work
 
 ### Example domains
 
@@ -10472,8 +10518,10 @@ Modular Rust platform for computational-form systems
  describes debug views of that state without choosing the final renderer.
  Lattice records where the surface, camera, device, or tracked input sits.
  Manifold decides which commands and streams can change the state. GUI and
- Studio expose controls and package-review surfaces. Browser, Makepad, and
- Quest routes adapt the same contracts to concrete runtimes. Hostess and
+ Hostess expose controls and package-review surfaces through CLI/API and WPF
+ projections. Browser and native Quest routes adapt the same contracts to
+ concrete runtimes; Makepad can replay the route when compatibility work calls
+ for it. Hostess and
  app-build evidence prove which package, settings, and runtime markers were
  actually used.
 
@@ -10491,9 +10539,9 @@ Modular Rust platform for computational-form systems
 
 - Regulate: Manifold owns commands, streams, clocks, and policy state.
 
-- Operate: GUI and Studio expose controls and review surfaces.
+- Operate: GUI and Hostess expose controls and review surfaces through CLI/API-equivalent routes.
 
-- Adapt: browser, Makepad, Quest, and native routes host the contracts.
+- Adapt: browser, native Quest/OpenXR, Spatial SDK, and WPF host the contracts; Makepad is an explicit compatibility route.
 
 - Validate: Hostess and app-build receipts prove what ran.
 
@@ -10542,12 +10590,21 @@ Modular Rust platform for computational-form systems
  Portable panels, widgets, inspectors, graph canvases, layout hints,
  themes, and command binding descriptors without owning command authority.
 
- Makepad adaptation
+ LSL compatibility
+
+### [Rusty LSL](https://github.com/MesmerPrism/rusty-lsl)
+
+ Independently authored LSL compatibility, protocol behavior, fixtures,
+ and typed observations or proposals. It does not replace Manifold's
+ session, route, subscription, lease, revision, or audit authority.
+
+ Legacy Makepad adaptation
 
 ### [Rusty Makepad](https://github.com/MesmerPrism/rusty-makepad)
 
  Generic Makepad adapters and canonical app settings surfaces, kept
  separate from Quest platform writes and app-specific headset behavior.
+ This is now a compatibility, regression, and migration lane.
 
  Quest platform
 
@@ -10557,11 +10614,11 @@ Modular Rust platform for computational-form systems
  hygiene, validation receipts, native OpenXR/Vulkan rendering examples,
  and platform write/readback evidence.
 
- Quest Makepad apps
+ Legacy Quest Makepad apps
 
 ### [Rusty Quest Makepad](https://github.com/MesmerPrism/rusty-quest-makepad)
 
- Quest-specific Makepad app adapters for camera-shell profiles, recorded
+ Explicit compatibility adapters for camera-shell profiles, recorded
  hand replay, Matter surface runtime handoff, SDF/ADF debug visuals,
  particles, and bounded GPU evidence.
 
@@ -10569,8 +10626,9 @@ Modular Rust platform for computational-form systems
 
 ### Studio and Hostess
 
- Authoring, package review, installation, diagnostics, deployment, and
- operator workflows around the core layers without becoming Manifold
+ Studio remains an authoring/review lane. Hostess is the current Windows
+ operator lane for WPF projections backed by CLI/API-equivalent install,
+ diagnostics, deployment, and evidence routes. Neither becomes Manifold
  authority.
 
  Public repository family
@@ -10586,16 +10644,37 @@ Modular Rust platform for computational-form systems
  Repository groups
 
  Core contracts
- rusty-matter, rusty-lattice, rusty-manifold, rusty-optics, rusty-gui
+ rusty-matter, rusty-lattice, rusty-manifold, rusty-optics, rusty-lsl, rusty-gui
+
+ Onboarding and project workflow
+ rusty-morphospace-work-environment
 
  Build, package, and authoring
  rusty-manifold-packages, rusty-studio, rusty-hostess
 
- Platform and adapter routes
- rusty-makepad, rusty-quest, rusty-quest-makepad, rusty-quest-sidecar-mesh
+ Platform and integration routes
+ rusty-quest, rusty-hostess, rusty-quest-sidecar-mesh
 
- Reference and legacy
- Rusty-XR, quest-termux-lab, DiffeoMorph
+ Compatibility, reference, and legacy
+ rusty-makepad, rusty-quest-makepad, makepad-morphospace, Rusty-XR, quest-termux-lab, DiffeoMorph
+
+ Onboarding / Workflow
+
+### [rusty-morphospace-work-environment](https://github.com/MesmerPrism/rusty-morphospace-work-environment)
+
+ Portable machine setup, repo-lane orientation, four installable Codex
+ skill routers, protocol-v2 project workspaces, closed feature locks,
+ bounded work units, validators, and immutable release capsules.
+
+ Status
+ Public release 0.4.0
+ License
+ AGPL-3.0-or-later
+ Use
+ Contributor onboarding and portable project workflow
+
+ [Setup guide](https://mesmerprism.com/projects/rusty-morphospace/work-environment.html)
+ [Repository](https://github.com/MesmerPrism/rusty-morphospace-work-environment)
 
  Core / Matter
 
@@ -10681,7 +10760,24 @@ Modular Rust platform for computational-form systems
 
  [Repository](https://github.com/MesmerPrism/rusty-gui)
 
- Adapter / Makepad
+ Compatibility / LSL
+
+### [rusty-lsl](https://github.com/MesmerPrism/rusty-lsl)
+
+ Independently authored LSL protocol and API compatibility, conformance
+ fixtures, and typed Morphospace observations or proposals. Accepted
+ runtime routing and audit remain Manifold responsibilities.
+
+ Status
+ Public main
+ License
+ AGPL-3.0-or-later
+ Use
+ LSL interoperability without authority substitution
+
+ [Repository](https://github.com/MesmerPrism/rusty-lsl)
+
+ Legacy adapter / Makepad
 
 ### [rusty-makepad](https://github.com/MesmerPrism/rusty-makepad)
 
@@ -10690,7 +10786,7 @@ Modular Rust platform for computational-form systems
  boundaries for Morphospace GUI surfaces.
 
  Status
- Public main
+ Public legacy/compatibility main
  License
  AGPL-3.0-or-later
  Use
@@ -10717,7 +10813,7 @@ Modular Rust platform for computational-form systems
 
  [Repository](https://github.com/MesmerPrism/rusty-quest)
 
- Adapter / Quest Makepad
+ Legacy adapter / Quest Makepad
 
 ### [rusty-quest-makepad](https://github.com/MesmerPrism/rusty-quest-makepad)
 
@@ -10726,7 +10822,7 @@ Modular Rust platform for computational-form systems
  boundaries, particle payloads, and GPU proof markers.
 
  Status
- Public main
+ Public legacy/compatibility main
  License
  AGPL-3.0-or-later
  Use
@@ -10772,9 +10868,9 @@ Modular Rust platform for computational-form systems
 
 ### [rusty-hostess](https://github.com/MesmerPrism/rusty-hostess)
 
- Default install, replay, capture, telemetry, and host-validation shell
- for proving Manifold packages across desktop, mobile, and headset
- profiles.
+ WPF and CLI/API-equivalent install, replay, capture, telemetry, and
+ host-validation routes for proving Manifold packages across desktop,
+ mobile, and headset profiles.
 
  Status
  Public main
@@ -10859,17 +10955,43 @@ Modular Rust platform for computational-form systems
 
  Current work
 
-## What is current as of June 21, 2026
+## What is current as of July 15, 2026
 
- The active implementation line now has two Quest fronts. Quest Makepad still
- consumes Matter-owned live or recorded hand-surface truth, adapts
- renderer-neutral payloads to headset Makepad shells, and uses Hostess for
- install, staging, launch, and evidence capture. Rusty Quest now also carries a
- separate Rust-first NativeActivity/OpenXR/Vulkan stack for low-level native
- headset experiments
- ([rusty-quest](https://github.com/MesmerPrism/rusty-quest)).
+ The public 0.1.0 baseline now has a clearer default direction. Native
+ OpenXR/Vulkan and Meta Spatial SDK apps in Rusty Quest are the primary Quest
+ routes; WPF backed by CLI/API-equivalent commands is the primary Windows
+ operator route. Makepad remains maintained for explicit compatibility and
+ migration work rather than defining new development
+ ([rusty-quest](https://github.com/MesmerPrism/rusty-quest);
+ [rusty-hostess](https://github.com/MesmerPrism/rusty-hostess)).
 
- Current proof surfaces
+ Recent public developments
+
+ Area
+ Published development
+ Boundary
+
+ Contributor workflow
+ Work environment 0.4.0 adds clean-machine onboarding, four installable skill routers, protocol-v2 project workspaces, fail-closed validation, and immutable release capsules.
+ It versions the workflow, not the platform runtime.
+
+ Manifold authority
+ Peer sessions, signed enrollment and leases, bounded N-peer membership, source-neutral media sessions, packaged broker authority, and client admission now have explicit contracts.
+ Rendezvous, Android networking, and transport acknowledgements remain evidence or adapters.
+
+ Particle and hand substrate
+ Matter, Lattice, and Optics now carry conformance for particle payloads, situated anchors, provider-neutral hand frames, skinning, and identity-preserving visual profiles.
+ Renderer and platform resources remain downstream.
+
+ Rusty LSL
+ The clean Rusty LSL lane now provides independently authored compatibility, protocol fixtures, and typed observations or proposals.
+ It does not replace Manifold route, subscription, lease, revision, or audit authority.
+
+ Quest platform
+ Native OpenXR/Vulkan, Spatial SDK panels, closed broker packaging, direct Wi-Fi media, and receiver-first media adoption now coexist as explicit opt-in source routes.
+ Available source and profiles do not activate a feature without the selected lock and runtime input.
+
+ 0.1.0 platform evidence surfaces
 
  Surface
  Current claim
@@ -10892,38 +11014,47 @@ Modular Rust platform for computational-form systems
  Not a finished participant tool.
 
  Quest Makepad / Hostess
- Recorded/live hand surfaces, SDF/ADF, particles, and bounded GPU readback.
- Validation route, not the authority model.
+ Historical recorded/live hand surfaces, SDF/ADF, particles, and bounded GPU readback remain available.
+ Explicit compatibility evidence, not the default runtime or authority model.
 
- Remote camera
- RMANVID1 framing and single-device evidence.
- No two-peer readiness claim yet.
+ Native direct Wi-Fi media
+ Same-group full-stereo duplex was promoted for the native OpenXR route; packed side-by-side remains an explicit profile.
+ Legacy Makepad media remains a separate compatibility lane, and Android Network availability is not fabricated when absent.
 
- The native path is not only a launch wrapper. It has public profiles for direct
+ The native path has public profiles for direct
  Quest Camera2/AHardwareBuffer import into Vulkan external images, metadata-owned
  camera target rectangles and orientation, native Meta passthrough profiles,
  solid-black control profiles, resident GPU hand meshes and graft copies,
  compact live OpenXR hand input, hand-anchor particles, target-space GPU SDF
  diagnostics, stimulus-volume routes, and environment-depth particle/scene-map
- diagnostics. Its MediaProjection route is a display-composite feedback witness:
+ diagnostics, plus a separate Spatial SDK panel lane and receiver-first media
+ adoption. Its MediaProjection route is a display-composite feedback witness:
  Android grants capture tokens, Rust owns the AImage/AHardwareBuffer handoff,
  and a shared Vulkan AHardwareBuffer import helper is used by camera and
  display-composite sampling.
 
- The current caveat is important. The native renderer has headset evidence and
+ The 0.1.0 baseline binds specific source and
+ evidence; later commits remain ongoing development until a new release
+ candidate is cut. The native renderer has headset evidence and
  profile/static validation for these routes, but MediaProjection is evidence of
  the app-visible display composite, not raw passthrough texture, raw camera,
  environment-depth, or scene geometry. Environment-depth and stimulus-volume
  routes are diagnostic validation surfaces rather than finished participant
- tools. Remote-camera work remains deliberately bounded as Manifold-aligned
- RMANVID1 H.264 framing plus single-device evidence until physical two-peer
- Quest or Quest-to-phone validation passes.
+ tools. Native same-group full-stereo media has a promoted route, while
+ compatibility remote-camera and Makepad paths retain their narrower evidence
+ and do not become parallel authority.
 
 ### Validated shape
 
 - Camera-free Hostess Quest Makepad APK route with generated Quest manifest
 
 - Native Rusty Quest Android package with OpenXR/Vulkan session, stereo swapchain, profile matrix, and runtime markers
+
+- Separate Meta Spatial SDK panel lane with behavior-neutral project-workspace adoption
+
+- Receiver-first media composition and native same-group full-stereo duplex over Rust-owned direct-P2P sockets
+
+- Manifold broker packaging from exact product and client locks rather than ambient permission unions
 
 - Reusable AHardwareBuffer Vulkan import module shared by Camera2 and display-composite sampling
 
@@ -10941,7 +11072,7 @@ Modular Rust platform for computational-form systems
 
 - Matter CPU oracle comparison for skinning, full mesh residency, mesh-SDF, ADF debug, and particle paths
 
-- Manifold-aligned remote-camera framing with high-rate video kept out of command JSON
+- Manifold-aligned media contracts with high-rate video kept out of command JSON
 
 ### Architecture guards
 
@@ -10951,11 +11082,9 @@ Modular Rust platform for computational-form systems
 
 - Rusty Quest owns Quest platform profiles, permission/tooling surfaces, and native renderer diagnostics, not Matter or Optics semantics
 
-- Makepad and the native renderer are separate app routes; neither owns simulation truth
+- Makepad and the native renderer are separate app routes; Makepad is now compatibility-only and neither owns simulation truth
 
-- Quest-Makepad owns Makepad adapter markers and headset app profile bundles
-
-- Hostess owns install, staging, launch, and evidence capture
+- Hostess owns WPF/CLI-equivalent install, staging, launch, and evidence routes
 
 - MediaProjection evidence is display-composite evidence, not raw passthrough, camera, depth, or geometry truth
 
@@ -10973,7 +11102,9 @@ Modular Rust platform for computational-form systems
 
 - Scale dense SDF or indexed ADF only after bounded oracle checks and cadence evidence stay clean
 
-- Run physical two-peer camera validation before claiming peer streaming readiness
+- Cut a new candidate before presenting post-0.1.0 source as a released platform baseline
+
+- Keep native full-stereo and packed side-by-side routes separately selectable and independently evidenced
 
 - Keep GPU proof readbacks on ticket/poll or explicit evidence-command paths and keep particle force authority singular in normal profiles
 
@@ -11072,6 +11203,8 @@ Modular Rust platform for computational-form systems
 
 ## External sources and public repos for this page
 
+- MesmerPrism. "[rusty-morphospace-work-environment](https://github.com/MesmerPrism/rusty-morphospace-work-environment)." Public contributor onboarding, project-workflow, validation, and release-capsule repository; current release 0.4.0.
+
 - MesmerPrism. "[rusty-matter](https://github.com/MesmerPrism/rusty-matter)." Public Rusty Matter repository for computational matter, surface, field, particle, SDF, and fixture contracts.
 
 - MesmerPrism. "[rusty-optics](https://github.com/MesmerPrism/rusty-optics)." Public Rusty Optics repository for renderer-neutral projection, appearance, and visual validation contracts.
@@ -11079,6 +11212,8 @@ Modular Rust platform for computational-form systems
 - MesmerPrism. "[rusty-manifold](https://github.com/MesmerPrism/rusty-manifold)." Public Rusty Manifold repository for command, stream, session, module, and audit authority.
 
 - MesmerPrism. "[rusty-lattice](https://github.com/MesmerPrism/rusty-lattice)." Public Rusty Lattice repository for reference-space, tracked-pose, view-set, and capability contracts.
+
+- MesmerPrism. "[rusty-lsl](https://github.com/MesmerPrism/rusty-lsl)." Public independently authored LSL compatibility repository for protocol behavior, conformance fixtures, and typed Morphospace observations or proposals.
 
 - MesmerPrism. "[rusty-gui](https://github.com/MesmerPrism/rusty-gui)." Public Rusty GUI repository for framework-neutral panels, widgets, inspectors, and graphical descriptors.
 
@@ -11098,6 +11233,8 @@ Modular Rust platform for computational-form systems
 
 - MesmerPrism. "[quest-termux-lab](https://github.com/MesmerPrism/quest-termux-lab)." Public Quest Termux lab source feeding Quest sidecar bridge work.
 
+- MesmerPrism. "[meta-quest-agent-workflow](https://github.com/MesmerPrism/meta-quest-agent-workflow)." Public device-operation workflow for Quest build, install, launch, and evidence collection.
+
 - MesmerPrism. "[Rusty-XR](https://github.com/MesmerPrism/Rusty-XR)." Public Rusty XR compatibility and historical Quest evidence surface.
 
 - Pahng et al. "[DiffeoMorph: Learning to Morph 3D Shapes Using Differentiable Agent-Based Simulations](https://arxiv.org/abs/2512.17129)." arXiv 2512.17129 (submitted 2025; revised 2026).
@@ -11110,8 +11247,8 @@ Modular Rust platform for computational-form systems
 
 Source: https://mesmerprism.com/projects/rusty-morphospace/native-app-build-workflow.html
 Canonical HTML: https://mesmerprism.com/projects/rusty-morphospace/native-app-build-workflow.html
-Generated: 2026-06-21
-Description: A public onboarding guide to the Rusty Morphospace native app-build workflow: feature library, app-build specs, generated settings, feature locks, adapters, and validation.
+Generated: 2026-07-15
+Description: A public guide to Rusty Morphospace native Quest app composition: project workspaces, feature descriptors, closed locks, generated settings, adapters, and validation.
 Markdown: https://mesmerprism.com/projects/rusty-morphospace/native-app-build-workflow.md
 Plain text: https://mesmerprism.com/projects/rusty-morphospace/native-app-build-workflow.txt
 BibTeX references: https://mesmerprism.com/projects/rusty-morphospace/native-app-build-workflow.bib
@@ -11130,8 +11267,9 @@ Native app-build workflow
  manifests, property write plans, and build inputs are generated adapters
  around that master settings surface.
 
- Reviewed June 21, 2026.
+ Reviewed July 15, 2026.
 
+ [Set up the work environment](https://mesmerprism.com/projects/rusty-morphospace/work-environment.html)
  [Start here](https://mesmerprism.com/projects/rusty-morphospace/native-app-build-workflow.html#start-here)
  [Workflow](https://mesmerprism.com/projects/rusty-morphospace/native-app-build-workflow.html#workflow)
  [Feature library](https://mesmerprism.com/projects/rusty-morphospace/native-app-build-workflow.html#feature-library)
@@ -11150,6 +11288,31 @@ Native app-build workflow
  The generated settings file is the app behavior surface. Runtime profiles,
  Android manifests, property plans, and build inputs adapt those settings
  to platform tools; they do not become extra places to hide behavior.
+
+## Current runtime default
+
+ New Quest apps start in rusty-quest with native
+ OpenXR/Vulkan or Meta Spatial SDK surfaces. Makepad is no longer an
+ ambient dependency or a co-default; use it only for explicit
+ compatibility, regression, historical replay, or migration work.
+
+ Before composing an APK
+
+ Contributor setup
+ Use the public work environment 0.4.0 to validate dependencies and install the Morphospace, system-engineering, work-graph, and Quest workflow routers.
+
+ Project composition
+ Declare the application in a protocol-v2 project workspace and resolve exact feature descriptors into a closed lock.
+
+ Runtime activation
+ A selected lock is necessary but not sufficient: the current run also needs an approved runtime input and a consumer-emitted effective receipt or marker.
+
+ Device operations
+ Build, install, launch, log, screenshot, and performance operations follow the public Meta Quest agent workflow with explicit device selection.
+
+ [Contributor setup guide](https://mesmerprism.com/projects/rusty-morphospace/work-environment.html)
+ [Work environment 0.4.0](https://github.com/MesmerPrism/rusty-morphospace-work-environment/releases/tag/v0.4.0)
+ [Meta Quest workflow](https://github.com/MesmerPrism/meta-quest-agent-workflow)
 
 ## Minimal native APK path
 
@@ -11566,9 +11729,13 @@ Native app-build workflow
 
 ### Workflow sources
 
+- MesmerPrism. "[rusty-morphospace-work-environment](https://github.com/MesmerPrism/rusty-morphospace-work-environment)." Public contributor setup, protocol-v2 project workspace, validation, and release-capsule tooling.
+
 - MesmerPrism. "[rusty-quest](https://github.com/MesmerPrism/rusty-quest)." Public repository for Quest platform contracts, native renderer profiles, app-build specs, feature descriptors, and validation tools.
 
-- MesmerPrism. "[rusty-quest-makepad](https://github.com/MesmerPrism/rusty-quest-makepad)." Public repository for Quest-specific Makepad adapter profiles, effective settings, and headset app staging routes.
+- MesmerPrism. "[meta-quest-agent-workflow](https://github.com/MesmerPrism/meta-quest-agent-workflow)." Public operational workflow for Quest build, install, launch, and evidence collection.
+
+- MesmerPrism. "[rusty-quest-makepad](https://github.com/MesmerPrism/rusty-quest-makepad)." Legacy compatibility repository for Quest-specific Makepad adapter profiles, effective settings, and migration evidence.
 
 ### Architecture context
 
@@ -11582,7 +11749,7 @@ Native app-build workflow
 
 Source: https://mesmerprism.com/projects/rusty-morphospace/rusty-xr.html
 Canonical HTML: https://mesmerprism.com/projects/rusty-morphospace/rusty-xr.html
-Generated: 2026-06-21
+Generated: 2026-07-15
 Description: Rusty XR is the legacy/reference Quest and XR compatibility surface under Rusty Morphospace, preserving public examples, passthrough notes, diagnostics, and companion-tool history.
 Markdown: https://mesmerprism.com/projects/rusty-morphospace/rusty-xr.md
 Plain text: https://mesmerprism.com/projects/rusty-morphospace/rusty-xr.txt
@@ -11793,12 +11960,215 @@ Legacy Quest and XR reference
 - MesmerPrism. "[Rusty-XR-Companion-Apps](https://github.com/MesmerPrism/Rusty-XR-Companion-Apps)." Source repository for the Windows companion and related tooling.
 </page>
 
+<page url="https://mesmerprism.com/projects/rusty-morphospace/work-environment.html" path="projects/rusty-morphospace/work-environment.html">
+# Contributor Work Environment | Rusty Morphospace
+
+Source: https://mesmerprism.com/projects/rusty-morphospace/work-environment.html
+Canonical HTML: https://mesmerprism.com/projects/rusty-morphospace/work-environment.html
+Generated: 2026-07-15
+Description: Set up a reproducible Rusty Morphospace development environment with portable dependency checks, four installable skill routers, protocol-v2 project workspaces, validation, and release capsules.
+Markdown: https://mesmerprism.com/projects/rusty-morphospace/work-environment.md
+Plain text: https://mesmerprism.com/projects/rusty-morphospace/work-environment.txt
+BibTeX references: https://mesmerprism.com/projects/rusty-morphospace/work-environment.bib
+CSL JSON references: https://mesmerprism.com/projects/rusty-morphospace/work-environment.references.csl.json
+
+---
+
+Contributor setup and project workflow
+
+# Start with a reproducible workspace
+
+ The Rusty Morphospace work environment is the public onboarding point for
+ contributors. It checks the local toolchain, installs four portable agent
+ skill routers, scaffolds project-local composition and iteration state, and
+ provides fail-closed validation and release tools without assuming one
+ maintainer's directory layout.
+
+ Reviewed July 15, 2026. Work environment release 0.4.0.
+
+ [Setup path](https://mesmerprism.com/projects/rusty-morphospace/work-environment.html#setup)
+ [Install skills](https://mesmerprism.com/projects/rusty-morphospace/work-environment.html#skills)
+ [Project workspace](https://mesmerprism.com/projects/rusty-morphospace/work-environment.html#project-workspace)
+ [Release model](https://mesmerprism.com/projects/rusty-morphospace/work-environment.html#release-capsules)
+ [Build a native Quest app](https://mesmerprism.com/projects/rusty-morphospace/native-app-build-workflow.html)
+ [Rusty Morphospace overview](https://mesmerprism.com/projects/rusty-morphospace.html)
+
+## What 0.4.0 provides
+
+ Portable setup
+ Local paths stay in ignored configuration; public docs use placeholders.
+
+ Four skill routers
+ Morphospace context, system engineering, Rust work graphs, and Meta Quest workflow.
+
+ Closed project composition
+ Project specs and exact feature locks keep absent capabilities inert.
+
+ Evidence-bearing iteration
+ Bounded units, validation receipts, recovery records, and release capsules preserve what was actually checked.
+
+## The environment and the platform have separate versions.
+
+ Rusty Morphospace 0.1.0 is the current consolidated platform baseline.
+ The work environment 0.4.0 is an independently versioned contributor and
+ workflow release. Updating setup scripts or validation contracts does not
+ silently change platform behavior.
+
+ A project adopts the portable protocol locally. Its composition, feature
+ lock, current work unit, evidence, and release decisions remain owned by
+ that project rather than by the onboarding repository.
+
+ Setup
+
+## From a clean checkout to a validated workspace
+
+ Clone only the repositories needed for the current task. The work environment
+ accepts an explicit local layout instead of imposing one.
+
+ Minimal commands
+
+ Clone
+ git clone https://github.com/MesmerPrism/rusty-morphospace-work-environment.git <workspace-root>/rusty-morphospace-work-environment
+
+ Core validation
+ Test-WorkEnvironment.ps1 -ConfigPath ./local/local.paths.json -Profile Core -Strict
+
+ Skill installation
+ Install-LocalSkills.ps1 -TargetRoot <codex-skills-root> -Action Plan , then repeat with -Action Install -Execute and -Action Verify .
+
+ Project scaffold
+ New-ProjectWorkspace.ps1 -ProjectRoot <project-root> -ProjectId <project-id> plans by default; add -Execute only after reviewing the target.
+
+ The Core profile checks general development dependencies. Quest-specific
+ profiles are necessary only when Android or headset work is actually in scope.
+ Environment checks and project validators never authorize a live device action.
+
+ Local skills
+
+## Install routing knowledge into your own environment
+
+ The installer targets an explicit skills root, refuses unmanaged
+ overwrites, creates backups for managed updates, and records source
+ provenance. The four skills divide orientation, architecture, graph
+ evidence, and device execution instead of combining them into one guide.
+
+### rusty-morphospace-context
+
+ Routes work to Matter, Lattice, Manifold, Optics, LSL, GUI, Quest, Hostess, compatibility lanes, and the public/private boundary.
+
+### system-engineering
+
+ Separates authority, contracts, adapters, activation, observability, evidence, recovery, and release decisions.
+
+### rust-work-graph
+
+ Builds exact repo and instruction inventories, dependency or impact maps, and release-tree reconciliation evidence.
+
+### meta-quest-workflow
+
+ Routes explicit headset, ADB, APK, screenshot, logcat, performance, and Meta tooling operations to the public device workflow.
+
+ Project protocol
+
+## Keep specification, activation, state, and evidence separate
+
+ A project-local morphospace/ directory is a small control
+ surface, not a replacement for source code or Git history.
+
+ Artifact roles
+
+ Artifact
+ Owns
+ Does not prove
+
+ project.spec.json
+ Declared repository and module composition.
+ Runtime activation or validation.
+
+ feature.lock.json
+ Exact resolved permissions, modules, routes, and effects.
+ That a consumer applied the lock.
+
+ workspace.state.json
+ Compact current unit, validation checkpoint, and recovery projection.
+ Historical audit by itself.
+
+ Events and receipts
+ Append-only transitions and addressable evidence.
+ Authority beyond their bounded scope.
+
+ New scaffolds use protocol v2. Unlisted modules and features remain inert. A
+ selected feature still requires one descriptor-approved runtime input and a
+ consumer-emitted effective receipt before its effects can be accepted.
+
+ Release integrity
+
+## A release is a sealed history point, not a frozen branch
+
+ At a candidate cut, every declared public ref must equal its pinned commit,
+ and the exact commit tree must validate cleanly. Later historical audits ask
+ whether that commit is still an ancestor of the declared refs and materialize
+ the sealed tree in isolation.
+
+ This distinction lets contributors keep committing after a release without
+ rewriting its meaning. Dirty local work is observed context, never historical
+ payload. If an accepted evidence file is lost or hash-mismatched, the damage
+ remains explicit; a reconstruction is a separately labelled artifact, not a
+ replacement pretending to be the original bytes.
+
+### Candidate cut
+
+- Exact commit and tree for every repository
+
+- Declared remote refs equal the pinned commits
+
+- Clean isolated validation
+
+- Hash-bound evidence and no-force publication receipts
+
+### Historical closure
+
+- Pinned commits remain ancestor-or-equal to current refs
+
+- Exact historical trees materialize independently
+
+- Later commits are allowed
+
+- Rewrites, missing refs, or hash damage fail closed
+
+ Public boundary
+
+## Portable instructions, private machine state
+
+### Safe public material
+
+ Placeholder-based setup, public repo names, dependency categories, schemas, synthetic fixtures, command shapes, and validation tools that do not mutate devices by default.
+
+### Keep local
+
+ Absolute paths, device identities, package and signing material, APKs, raw logs, screenshots, captures, private payload semantics, credentials, and pairing material.
+
+ Public sources
+
+## Setup and workflow repositories
+
+- MesmerPrism. "[rusty-morphospace-work-environment](https://github.com/MesmerPrism/rusty-morphospace-work-environment)." Public contributor setup, project-workspace protocol, validation, and release-capsule repository.
+
+- MesmerPrism. "[Rusty Morphospace Work Environment 0.4.0](https://github.com/MesmerPrism/rusty-morphospace-work-environment/releases/tag/v0.4.0)." Published onboarding and workflow release, July 15, 2026.
+
+- MesmerPrism. "[meta-quest-agent-workflow](https://github.com/MesmerPrism/meta-quest-agent-workflow)." Public operational workflow for explicit Quest device work.
+
+- Mesmer Prism. "[Rusty Morphospace](https://mesmerprism.com/projects/rusty-morphospace.html)." Public platform overview and repository map.
+
+- Mesmer Prism. "[Native App Build Workflow](https://mesmerprism.com/projects/rusty-morphospace/native-app-build-workflow.html)." Feature-locked native Quest application composition.
+</page>
+
 <page url="https://mesmerprism.com/projects/sane.html" path="projects/sane.html">
 # SANE
 
 Source: https://mesmerprism.com/projects/sane.html
 Canonical HTML: https://mesmerprism.com/projects/sane.html
-Generated: 2026-06-21
+Generated: 2026-07-15
 Description: SANE is a proposed framework for reading coupled changes across somaesthetic practice, anthropotechnical mediation, noetic meaning, and emergent systems.
 Markdown: https://mesmerprism.com/projects/sane.md
 Plain text: https://mesmerprism.com/projects/sane.txt
@@ -12309,7 +12679,7 @@ Body, tools, meaning, systems
 
 Source: https://mesmerprism.com/projects/scientific-surrealism.html
 Canonical HTML: https://mesmerprism.com/projects/scientific-surrealism.html
-Generated: 2026-06-21
+Generated: 2026-07-15
 Description: Scientific surrealism studies dream bureaus, scientific-looking journals, diagrams, and experimental machines that change what counts as an observation.
 Markdown: https://mesmerprism.com/projects/scientific-surrealism.md
 Plain text: https://mesmerprism.com/projects/scientific-surrealism.txt
@@ -12723,7 +13093,7 @@ Research apparatus and knowledge-art
 
 Source: https://mesmerprism.com/projects/tulpas.html
 Canonical HTML: https://mesmerprism.com/projects/tulpas.html
-Generated: 2026-06-21
+Generated: 2026-07-15
 Description: Tulpas covers modern online tulpamancy, thoughtforms, headmates, servitors, egregores, imposition, voice-like experience, and adjacent AI companion analogies.
 Markdown: https://mesmerprism.com/projects/tulpas.md
 Plain text: https://mesmerprism.com/projects/tulpas.txt
@@ -13249,7 +13619,7 @@ Made inner others and modern tulpamancy
 
 Source: https://mesmerprism.com/projects/viscereality-companion.html
 Canonical HTML: https://mesmerprism.com/projects/viscereality-companion.html
-Generated: 2026-06-21
+Generated: 2026-07-15
 Description: Quest Companion Tools provides Windows and Android utilities for Meta Quest install, launch, casting, diagnostics, and evidence capture.
 Markdown: https://mesmerprism.com/projects/viscereality-companion.md
 Plain text: https://mesmerprism.com/projects/viscereality-companion.txt
@@ -13398,7 +13768,7 @@ Meta Quest operator tooling
 
 Source: https://mesmerprism.com/projects/viscereality.html
 Canonical HTML: https://mesmerprism.com/projects/viscereality.html
-Generated: 2026-06-21
+Generated: 2026-07-15
 Description: Viscereality is a Quest-based bioresponsive VR research system for breath interaction, cardiac coherence training, oscillator-driven visuals, and repeatable study sessions.
 Markdown: https://mesmerprism.com/projects/viscereality.md
 Plain text: https://mesmerprism.com/projects/viscereality.txt
@@ -13531,7 +13901,7 @@ Current XR research system
 
 Source: https://mesmerprism.com/Strobotorch/flashing-light-safety/
 Canonical HTML: https://mesmerprism.com/Strobotorch/flashing-light-safety/
-Generated: 2026-06-21
+Generated: 2026-07-15
 Description: Safety warnings, frequency background, and source references for Strobotorch flashlight signaling.
 Markdown: https://mesmerprism.com/Strobotorch/flashing-light-safety/index.md
 Plain text: https://mesmerprism.com/Strobotorch/flashing-light-safety/index.txt
@@ -13719,7 +14089,7 @@ Public warning and source background
 
 Source: https://mesmerprism.com/Strobotorch/
 Canonical HTML: https://mesmerprism.com/Strobotorch/
-Generated: 2026-06-21
+Generated: 2026-07-15
 Description: Strobotorch is an Android flashlight-signaling and diagnostics tool for torch and camera APIs, visible-light signal tests, device logging, and flashing-light safety.
 Markdown: https://mesmerprism.com/Strobotorch/index.md
 Plain text: https://mesmerprism.com/Strobotorch/index.txt
@@ -13819,7 +14189,7 @@ Flashlight signaling safety
 
 Source: https://mesmerprism.com/Strobotorch/project-boundary/
 Canonical HTML: https://mesmerprism.com/Strobotorch/project-boundary/
-Generated: 2026-06-21
+Generated: 2026-07-15
 Description: The scope of Strobotorch Android flashlight signaling and diagnostics tooling.
 Markdown: https://mesmerprism.com/Strobotorch/project-boundary/index.md
 Plain text: https://mesmerprism.com/Strobotorch/project-boundary/index.txt
@@ -13860,7 +14230,7 @@ Project scope
 
 Source: https://mesmerprism.com/Strobotorch/sources/
 Canonical HTML: https://mesmerprism.com/Strobotorch/sources/
-Generated: 2026-06-21
+Generated: 2026-07-15
 Description: Academic and public sources for Strobotorch flashing-light safety, frequency context, torch/camera diagnostics, and visible-light signal tooling.
 Markdown: https://mesmerprism.com/Strobotorch/sources/index.md
 Plain text: https://mesmerprism.com/Strobotorch/sources/index.txt
@@ -14103,7 +14473,7 @@ Source library
 
 Source: https://mesmerprism.com/tmp/video-carousel-demo.html
 Canonical HTML: https://mesmerprism.com/tmp/video-carousel-demo.html
-Generated: 2026-06-21
+Generated: 2026-07-15
 Markdown: https://mesmerprism.com/tmp/video-carousel-demo.md
 Plain text: https://mesmerprism.com/tmp/video-carousel-demo.txt
 

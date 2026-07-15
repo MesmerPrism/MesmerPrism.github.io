@@ -2,8 +2,8 @@
 
 Source: https://mesmerprism.com/projects/rusty-morphospace/native-app-build-workflow.html
 Canonical HTML: https://mesmerprism.com/projects/rusty-morphospace/native-app-build-workflow.html
-Generated: 2026-06-21
-Description: A public onboarding guide to the Rusty Morphospace native app-build workflow: feature library, app-build specs, generated settings, feature locks, adapters, and validation.
+Generated: 2026-07-15
+Description: A public guide to Rusty Morphospace native Quest app composition: project workspaces, feature descriptors, closed locks, generated settings, adapters, and validation.
 Markdown: https://mesmerprism.com/projects/rusty-morphospace/native-app-build-workflow.md
 Plain text: https://mesmerprism.com/projects/rusty-morphospace/native-app-build-workflow.txt
 BibTeX references: https://mesmerprism.com/projects/rusty-morphospace/native-app-build-workflow.bib
@@ -22,8 +22,9 @@ Native app-build workflow
  manifests, property write plans, and build inputs are generated adapters
  around that master settings surface.
 
- Reviewed June 21, 2026.
+ Reviewed July 15, 2026.
 
+ [Set up the work environment](https://mesmerprism.com/projects/rusty-morphospace/work-environment.html)
  [Start here](https://mesmerprism.com/projects/rusty-morphospace/native-app-build-workflow.html#start-here)
  [Workflow](https://mesmerprism.com/projects/rusty-morphospace/native-app-build-workflow.html#workflow)
  [Feature library](https://mesmerprism.com/projects/rusty-morphospace/native-app-build-workflow.html#feature-library)
@@ -42,6 +43,31 @@ Native app-build workflow
  The generated settings file is the app behavior surface. Runtime profiles,
  Android manifests, property plans, and build inputs adapt those settings
  to platform tools; they do not become extra places to hide behavior.
+
+## Current runtime default
+
+ New Quest apps start in rusty-quest with native
+ OpenXR/Vulkan or Meta Spatial SDK surfaces. Makepad is no longer an
+ ambient dependency or a co-default; use it only for explicit
+ compatibility, regression, historical replay, or migration work.
+
+ Before composing an APK
+
+ Contributor setup
+ Use the public work environment 0.4.0 to validate dependencies and install the Morphospace, system-engineering, work-graph, and Quest workflow routers.
+
+ Project composition
+ Declare the application in a protocol-v2 project workspace and resolve exact feature descriptors into a closed lock.
+
+ Runtime activation
+ A selected lock is necessary but not sufficient: the current run also needs an approved runtime input and a consumer-emitted effective receipt or marker.
+
+ Device operations
+ Build, install, launch, log, screenshot, and performance operations follow the public Meta Quest agent workflow with explicit device selection.
+
+ [Contributor setup guide](https://mesmerprism.com/projects/rusty-morphospace/work-environment.html)
+ [Work environment 0.4.0](https://github.com/MesmerPrism/rusty-morphospace-work-environment/releases/tag/v0.4.0)
+ [Meta Quest workflow](https://github.com/MesmerPrism/meta-quest-agent-workflow)
 
 ## Minimal native APK path
 
@@ -458,9 +484,13 @@ Native app-build workflow
 
 ### Workflow sources
 
+- MesmerPrism. "[rusty-morphospace-work-environment](https://github.com/MesmerPrism/rusty-morphospace-work-environment)." Public contributor setup, protocol-v2 project workspace, validation, and release-capsule tooling.
+
 - MesmerPrism. "[rusty-quest](https://github.com/MesmerPrism/rusty-quest)." Public repository for Quest platform contracts, native renderer profiles, app-build specs, feature descriptors, and validation tools.
 
-- MesmerPrism. "[rusty-quest-makepad](https://github.com/MesmerPrism/rusty-quest-makepad)." Public repository for Quest-specific Makepad adapter profiles, effective settings, and headset app staging routes.
+- MesmerPrism. "[meta-quest-agent-workflow](https://github.com/MesmerPrism/meta-quest-agent-workflow)." Public operational workflow for Quest build, install, launch, and evidence collection.
+
+- MesmerPrism. "[rusty-quest-makepad](https://github.com/MesmerPrism/rusty-quest-makepad)." Legacy compatibility repository for Quest-specific Makepad adapter profiles, effective settings, and migration evidence.
 
 ### Architecture context
 
