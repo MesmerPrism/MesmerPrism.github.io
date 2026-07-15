@@ -1,0 +1,114 @@
+[
+  {
+    "id": "mesmerprism-rusty-morphospace-work-environment",
+    "type": "webpage",
+    "title": "rusty-morphospace-work-environment",
+    "URL": "https://github.com/MesmerPrism/rusty-morphospace-work-environment",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          7,
+          15
+        ]
+      ]
+    },
+    "note": "Referenced by Contributor Work Environment | Rusty Morphospace: https://mesmerprism.com/projects/rusty-morphospace/work-environment.html",
+    "author": [
+      {
+        "literal": "MesmerPrism"
+      }
+    ]
+  },
+  {
+    "id": "mesmerprism-rusty-morphospace-work-environment-0-4-0-2026",
+    "type": "webpage",
+    "title": "Rusty Morphospace Work Environment 0.4.0",
+    "URL": "https://github.com/MesmerPrism/rusty-morphospace-work-environment/releases/tag/v0.4.0",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          7,
+          15
+        ]
+      ]
+    },
+    "note": "Referenced by Contributor Work Environment | Rusty Morphospace: https://mesmerprism.com/projects/rusty-morphospace/work-environment.html",
+    "author": [
+      {
+        "literal": "MesmerPrism"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mesmerprism-meta-quest-agent-workflow",
+    "type": "webpage",
+    "title": "meta-quest-agent-workflow",
+    "URL": "https://github.com/MesmerPrism/meta-quest-agent-workflow",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          7,
+          15
+        ]
+      ]
+    },
+    "note": "Referenced by Contributor Work Environment | Rusty Morphospace: https://mesmerprism.com/projects/rusty-morphospace/work-environment.html",
+    "author": [
+      {
+        "literal": "MesmerPrism"
+      }
+    ]
+  },
+  {
+    "id": "mesmer-prism-rusty-morphospace",
+    "type": "webpage",
+    "title": "Rusty Morphospace",
+    "URL": "https://mesmerprism.com/projects/rusty-morphospace.html",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          7,
+          15
+        ]
+      ]
+    },
+    "note": "Referenced by Contributor Work Environment | Rusty Morphospace: https://mesmerprism.com/projects/rusty-morphospace/work-environment.html",
+    "author": [
+      {
+        "literal": "Mesmer Prism"
+      }
+    ]
+  },
+  {
+    "id": "mesmer-prism-native-app-build-workflow",
+    "type": "webpage",
+    "title": "Native App Build Workflow",
+    "URL": "https://mesmerprism.com/projects/rusty-morphospace/native-app-build-workflow.html",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          7,
+          15
+        ]
+      ]
+    },
+    "note": "Referenced by Contributor Work Environment | Rusty Morphospace: https://mesmerprism.com/projects/rusty-morphospace/work-environment.html",
+    "author": [
+      {
+        "literal": "Mesmer Prism"
+      }
+    ]
+  }
+]

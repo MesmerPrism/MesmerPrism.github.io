@@ -1,5 +1,26 @@
 [
   {
+    "id": "mesmerprism-rusty-morphospace-work-environment",
+    "type": "webpage",
+    "title": "rusty-morphospace-work-environment",
+    "URL": "https://github.com/MesmerPrism/rusty-morphospace-work-environment",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          7,
+          15
+        ]
+      ]
+    },
+    "note": "Referenced by Rusty Morphospace: https://mesmerprism.com/projects/rusty-morphospace.html",
+    "author": [
+      {
+        "literal": "MesmerPrism"
+      }
+    ]
+  },
+  {
     "id": "mesmerprism-rusty-matter",
     "type": "webpage",
     "title": "rusty-matter",
@@ -8,8 +29,8 @@
       "date-parts": [
         [
           2026,
-          6,
-          21
+          7,
+          15
         ]
       ]
     },
@@ -29,8 +50,8 @@
       "date-parts": [
         [
           2026,
-          6,
-          21
+          7,
+          15
         ]
       ]
     },
@@ -50,8 +71,8 @@
       "date-parts": [
         [
           2026,
-          6,
-          21
+          7,
+          15
         ]
       ]
     },
@@ -71,8 +92,29 @@
       "date-parts": [
         [
           2026,
-          6,
-          21
+          7,
+          15
+        ]
+      ]
+    },
+    "note": "Referenced by Rusty Morphospace: https://mesmerprism.com/projects/rusty-morphospace.html",
+    "author": [
+      {
+        "literal": "MesmerPrism"
+      }
+    ]
+  },
+  {
+    "id": "mesmerprism-rusty-lsl",
+    "type": "webpage",
+    "title": "rusty-lsl",
+    "URL": "https://github.com/MesmerPrism/rusty-lsl",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          7,
+          15
         ]
       ]
     },
@@ -92,8 +134,8 @@
       "date-parts": [
         [
           2026,
-          6,
-          21
+          7,
+          15
         ]
       ]
     },
@@ -113,8 +155,8 @@
       "date-parts": [
         [
           2026,
-          6,
-          21
+          7,
+          15
         ]
       ]
     },
@@ -134,8 +176,8 @@
       "date-parts": [
         [
           2026,
-          6,
-          21
+          7,
+          15
         ]
       ]
     },
@@ -155,8 +197,8 @@
       "date-parts": [
         [
           2026,
-          6,
-          21
+          7,
+          15
         ]
       ]
     },
@@ -176,8 +218,8 @@
       "date-parts": [
         [
           2026,
-          6,
-          21
+          7,
+          15
         ]
       ]
     },
@@ -197,8 +239,8 @@
       "date-parts": [
         [
           2026,
-          6,
-          21
+          7,
+          15
         ]
       ]
     },
@@ -218,8 +260,8 @@
       "date-parts": [
         [
           2026,
-          6,
-          21
+          7,
+          15
         ]
       ]
     },
@@ -239,8 +281,8 @@
       "date-parts": [
         [
           2026,
-          6,
-          21
+          7,
+          15
         ]
       ]
     },
@@ -260,8 +302,29 @@
       "date-parts": [
         [
           2026,
-          6,
-          21
+          7,
+          15
+        ]
+      ]
+    },
+    "note": "Referenced by Rusty Morphospace: https://mesmerprism.com/projects/rusty-morphospace.html",
+    "author": [
+      {
+        "literal": "MesmerPrism"
+      }
+    ]
+  },
+  {
+    "id": "mesmerprism-meta-quest-agent-workflow",
+    "type": "webpage",
+    "title": "meta-quest-agent-workflow",
+    "URL": "https://github.com/MesmerPrism/meta-quest-agent-workflow",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          7,
+          15
         ]
       ]
     },
@@ -281,8 +344,8 @@
       "date-parts": [
         [
           2026,
-          6,
-          21
+          7,
+          15
         ]
       ]
     },
@@ -302,8 +365,8 @@
       "date-parts": [
         [
           2026,
-          6,
-          21
+          7,
+          15
         ]
       ]
     },
@@ -330,8 +393,8 @@
       "date-parts": [
         [
           2026,
-          6,
-          21
+          7,
+          15
         ]
       ]
     },

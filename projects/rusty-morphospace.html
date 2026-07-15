@@ -7,12 +7,12 @@
     <link rel="canonical" href="https://mesmerprism.com/projects/rusty-morphospace.html">
     <meta
         name="description"
-        content="Rusty Morphospace is a modular Rust platform for computational-form systems with separate model, relation, command, inspection, packaging, and evidence layers."
+        content="Rusty Morphospace is an AGPL-first Rust platform for computational-form systems, with a 0.1.0 platform baseline and a public 0.4.0 contributor work environment."
     >
     <meta property="og:title" content="Rusty Morphospace | Mesmer Prism">
     <meta
         property="og:description"
-        content="A modular Rust platform for building computational-form systems without collapsing model state, spatial relation, commands, views, packaging, and runtime evidence into one app."
+        content="Current public architecture, repositories, onboarding, release workflow, native Quest routes, and compatibility boundaries for the Rusty Morphospace platform."
     >
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://mesmerprism.com/projects/rusty-morphospace.html">
@@ -29,7 +29,7 @@
           "@type": "Article",
           "headline": "Rusty Morphospace",
           "name": "Rusty Morphospace",
-          "description": "Rusty Morphospace is a modular Rust platform for computational-form systems with separate model, relation, command, inspection, packaging, and evidence layers.",
+          "description": "Rusty Morphospace is an AGPL-first Rust platform for computational-form systems, with a 0.1.0 platform baseline and a public 0.4.0 contributor work environment.",
           "author": {
                 "@type": "Person",
                 "name": "Till Holzapfel"
@@ -45,14 +45,16 @@
                 "url": "https://mesmerprism.com"
           },
           "url": "https://mesmerprism.com/projects/rusty-morphospace.html",
-          "dateModified": "2026-06-21",
+          "dateModified": "2026-07-15",
           "inLanguage": "en",
           "citation": [
                 "https://github.com/MesmerPrism",
+                "https://github.com/MesmerPrism/rusty-morphospace-work-environment",
                 "https://github.com/MesmerPrism/rusty-matter",
                 "https://github.com/MesmerPrism/rusty-optics",
                 "https://github.com/MesmerPrism/rusty-manifold",
                 "https://github.com/MesmerPrism/rusty-lattice",
+                "https://github.com/MesmerPrism/rusty-lsl",
                 "https://github.com/MesmerPrism/rusty-gui",
                 "https://github.com/MesmerPrism/rusty-makepad",
                 "https://github.com/MesmerPrism/rusty-quest",
@@ -62,6 +64,7 @@
                 "https://github.com/MesmerPrism/rusty-hostess",
                 "https://github.com/MesmerPrism/rusty-quest-sidecar-mesh",
                 "https://github.com/MesmerPrism/quest-termux-lab",
+                "https://github.com/MesmerPrism/meta-quest-agent-workflow",
                 "https://github.com/MesmerPrism/Rusty-XR"
           ]
     }
@@ -73,8 +76,8 @@
     <link rel="alternate" type="application/vnd.citationstyles.csl+json" href="/projects/rusty-morphospace.references.csl.json" title="CSL JSON references">
     <meta name="citation_title" content="Rusty Morphospace">
     <meta name="citation_author" content="Till Holzapfel">
-    <meta name="citation_publication_date" content="2026-06-21">
-    <meta name="citation_online_date" content="2026-06-21">
+    <meta name="citation_publication_date" content="2026-07-15">
+    <meta name="citation_online_date" content="2026-07-15">
     <meta name="citation_public_url" content="https://mesmerprism.com/projects/rusty-morphospace.html">
     <meta name="citation_language" content="en">
     <script type="application/ld+json" data-agent-metadata>
@@ -83,7 +86,7 @@
           "@type": "Article",
           "headline": "Rusty Morphospace",
           "name": "Rusty Morphospace",
-          "description": "Rusty Morphospace is a modular Rust platform for computational-form systems with separate model, relation, command, inspection, packaging, and evidence layers.",
+          "description": "Rusty Morphospace is an AGPL-first Rust platform for computational-form systems, with a 0.1.0 platform baseline and a public 0.4.0 contributor work environment.",
           "author": {
                 "@type": "Person",
                 "name": "Till Holzapfel"
@@ -99,7 +102,7 @@
                 "url": "https://mesmerprism.com"
           },
           "url": "https://mesmerprism.com/projects/rusty-morphospace.html",
-          "dateModified": "2026-06-21",
+          "dateModified": "2026-07-15",
           "inLanguage": "en",
           "encoding": [
                 {
@@ -124,10 +127,12 @@
                 }
           ],
           "citation": [
+                "https://github.com/MesmerPrism/rusty-morphospace-work-environment",
                 "https://github.com/MesmerPrism/rusty-matter",
                 "https://github.com/MesmerPrism/rusty-optics",
                 "https://github.com/MesmerPrism/rusty-manifold",
                 "https://github.com/MesmerPrism/rusty-lattice",
+                "https://github.com/MesmerPrism/rusty-lsl",
                 "https://github.com/MesmerPrism/rusty-gui",
                 "https://github.com/MesmerPrism/rusty-makepad",
                 "https://github.com/MesmerPrism/rusty-quest",
@@ -137,6 +142,7 @@
                 "https://github.com/MesmerPrism/rusty-studio",
                 "https://github.com/MesmerPrism/rusty-quest-sidecar-mesh",
                 "https://github.com/MesmerPrism/quest-termux-lab",
+                "https://github.com/MesmerPrism/meta-quest-agent-workflow",
                 "https://github.com/MesmerPrism/Rusty-XR",
                 "https://arxiv.org/abs/2512.17129",
                 "https://github.com/hormoz-lab/diffeomorph"
@@ -173,9 +179,10 @@
                     packaging, and runtime evidence need to stay separate but connected.
                     It is a repo family and architecture, not one XR app.
                 </p>
-                <p class="reviewed-date">Reviewed June 21, 2026.</p>
+                <p class="reviewed-date">Reviewed July 15, 2026.</p>
                 <div class="hero-actions">
                     <a class="action-link action-link--strong" href="#what-for">What it is for</a>
+                    <a class="action-link" href="/projects/rusty-morphospace/work-environment.html">Set up a workspace</a>
                     <a class="action-link" href="#start-here">Core model</a>
                     <a class="action-link" href="/projects/rusty-morphospace/native-app-build-workflow.html">Build a Quest APK</a>
                     <a class="action-link" href="#current-work">Inspect current evidence</a>
@@ -194,7 +201,7 @@
                     </div>
                     <div class="at-glance__item">
                         <strong>What exists now</strong>
-                        <p>Public core repos, app-build feature locks, native Quest/OpenXR/Vulkan routes, Makepad/Hostess validation paths, Matter/Optics teaching models, and legacy Rusty XR material.</p>
+                        <p>A consolidated 0.1.0 platform baseline, public core repos, protocol-v2 project workspaces, native Quest/OpenXR/Vulkan and Spatial SDK routes, and legacy compatibility material.</p>
                     </div>
                     <div class="at-glance__item">
                         <strong>What it is for</strong>
@@ -206,12 +213,53 @@
                     </div>
                 </div>
                 <div class="status-labels" aria-label="Status labels">
-                    <span class="status-label status-label--current">Public source</span>
-                    <span class="status-label status-label--current">Device evidence</span>
-                    <span class="status-label status-label--planned">Application-domain examples</span>
-                    <span class="status-label status-label--reference">Legacy reference</span>
-                    <span class="status-label">Not a clinical claim</span>
+                    <span class="status-label status-label--current">Platform 0.1.0</span>
+                    <span class="status-label status-label--current">Work environment 0.4.0</span>
+                    <span class="status-label status-label--planned">Active development continues</span>
+                    <span class="status-label status-label--reference">Makepad and Rusty XR: legacy/reference</span>
                 </div>
+            </section>
+
+            <section class="section" id="release-baseline">
+                <div class="section-heading">
+                    <h2>Current public baseline</h2>
+                    <p>
+                        Two version numbers describe different things. Rusty Morphospace
+                        <strong>0.1.0</strong> is the consolidated platform baseline across the
+                        source lanes. The independently versioned
+                        <a href="https://github.com/MesmerPrism/rusty-morphospace-work-environment/releases/tag/v0.4.0" target="_blank" rel="noopener noreferrer">work environment 0.4.0</a>
+                        is the public onboarding, project-workflow, validation, and release-audit
+                        toolkit. Updating that toolkit does not silently change the platform.
+                    </p>
+                </div>
+                <div class="table-wrap">
+                    <table class="summary-table">
+                        <caption>Version and development status</caption>
+                        <tbody>
+                            <tr>
+                                <th scope="row">Platform baseline</th>
+                                <td>Rusty Morphospace 0.1.0: the current consolidated architecture and module-ownership baseline.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Contributor environment</th>
+                                <td>Version 0.4.0: reproducible local setup, four installable agent skill routers, protocol-v2 project workspaces, closed feature locks, validation receipts, and release capsules.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Ongoing development</th>
+                                <td>Repository branches continue normally. A release records exact commits and trees; it does not require active branches or local worktrees to remain frozen.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Runtime direction</th>
+                                <td>New Quest work defaults to native OpenXR/Vulkan or Meta Spatial SDK. Makepad remains available for explicit compatibility, regression, and migration work.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="project-links">
+                    <a href="/projects/rusty-morphospace/work-environment.html">Contributor setup guide</a>
+                    <a href="https://github.com/MesmerPrism/rusty-morphospace-work-environment" target="_blank" rel="noopener noreferrer">Work environment repository</a>
+                    <a href="https://github.com/MesmerPrism/rusty-morphospace-work-environment/releases/tag/v0.4.0" target="_blank" rel="noopener noreferrer">0.4.0 release</a>
+                </p>
             </section>
 
             <section class="section" id="what-for">
@@ -246,11 +294,15 @@
                             </tr>
                             <tr>
                                 <th scope="row">Build GUI and editor surfaces</th>
-                                <td>GUI and Studio describe controls, panels, graph canvases, package review, and authoring.</td>
+                                <td>GUI describes portable controls and command bindings; Hostess projects operator workflows through WPF and CLI/API-equivalent routes.</td>
                             </tr>
                             <tr>
                                 <th scope="row">Target platforms without making them the core model</th>
-                                <td>Quest, Makepad, Quest-Makepad, Hostess, and sidecar routes validate deployment and evidence.</td>
+                                <td>Native Quest, Meta Spatial SDK, browser, and WPF routes adapt the contracts. Makepad routes remain explicit compatibility surfaces.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Integrate LSL without merging authority models</th>
+                                <td>Rusty LSL provides independently authored compatibility and typed observations or proposals; Manifold still owns accepted sessions, routes, revisions, and audit.</td>
                             </tr>
                             <tr>
                                 <th scope="row">Keep application domains modular</th>
@@ -307,7 +359,8 @@
                         Rusty Morphospace separates those responsibilities so a project can
                         change one part without silently changing the others. A particle surface
                         should be able to keep the same Matter state while being inspected through
-                        a browser view, adapted into a Makepad shell, or validated on Quest. The
+                        a browser view, hosted by a native Quest or WPF surface, or replayed through
+                        a legacy Makepad compatibility shell. The
                         particle state should not become Quest logic, and the Quest adapter should
                         not become simulation truth.
                     </p>
@@ -339,7 +392,7 @@
                     </div>
                     <div>
                         <dt>Adapt</dt>
-                        <dd>Which toolkit or platform hosts it. Lanes: browser, Makepad, Quest, native routes.</dd>
+                        <dd>Which toolkit or platform hosts it. Default routes: browser, native Quest/OpenXR, Spatial SDK, and WPF; Makepad is compatibility-only.</dd>
                     </div>
                     <div>
                         <dt>Validate</dt>
@@ -369,8 +422,8 @@
                         <span>Describes what can be inspected before a renderer draws it.</span>
                     </div>
                     <div class="architecture-node">
-                        <strong>Makepad / Browser / Quest</strong>
-                        <span>Adapt views into concrete app surfaces without owning simulation truth.</span>
+                        <strong>Native Quest / WPF / Browser</strong>
+                        <span>Adapt views and operator actions into concrete surfaces without owning simulation truth.</span>
                     </div>
                     <div class="architecture-node">
                         <strong>Lattice</strong>
@@ -379,6 +432,10 @@
                     <div class="architecture-node">
                         <strong>Manifold</strong>
                         <span>Decides which commands, sessions, streams, clocks, and audit records count.</span>
+                    </div>
+                    <div class="architecture-node">
+                        <strong>Rusty LSL</strong>
+                        <span>Provides independently authored LSL compatibility and typed observations or proposals without replacing Manifold authority.</span>
                     </div>
                     <div class="architecture-node">
                         <strong>Hostess</strong>
@@ -396,6 +453,10 @@
                         <strong>Rusty XR</strong>
                         <span>Preserves older examples and source vocabulary as a legacy/reference collection.</span>
                     </div>
+                    <div class="architecture-node">
+                        <strong>Makepad compatibility</strong>
+                        <span>Preserves explicit regression and migration routes without setting the default runtime direction.</span>
+                    </div>
                 </div>
             </section>
 
@@ -404,23 +465,23 @@
                 <div class="route-strip__steps">
                     <div class="route-step">
                         <span>1</span>
-                        <strong>Purpose</strong>
-                        <em>Decide what needs to stay separate: state, space, commands, views, routes, or evidence.</em>
+                        <strong>Workspace</strong>
+                        <em>Clone the public work environment, validate the machine, and install the four local skill routers.</em>
                     </div>
                     <div class="route-step">
                         <span>2</span>
-                        <strong>Core model</strong>
-                        <em>Map the behavior to model, situate, regulate, inspect, author, adapt, or validate.</em>
+                        <strong>Composition</strong>
+                        <em>Declare the project and resolve an exact closed feature lock; unlisted capabilities remain inert.</em>
                     </div>
                     <div class="route-step">
                         <span>3</span>
-                        <strong>Routes</strong>
-                        <em>Select only the app, package, renderer, or headset routes that the target needs.</em>
+                        <strong>Implementation</strong>
+                        <em>Map behavior to Matter, Lattice, Manifold, Optics, GUI, LSL, or a platform adapter.</em>
                     </div>
                     <div class="route-step">
                         <span>4</span>
-                        <strong>Evidence</strong>
-                        <em>Trust runtime markers and receipts from the consuming layer, not adapter readback alone.</em>
+                        <strong>Evidence and release</strong>
+                        <em>Validate the consuming layer, then seal exact commits and trees when publishing a coordinated release.</em>
                     </div>
                 </div>
             </figure>
@@ -436,6 +497,7 @@
                     </section>
                     <section>
                         <h3>Building</h3>
+                        <a href="/projects/rusty-morphospace/work-environment.html">Contributor work environment</a>
                         <a href="/projects/rusty-morphospace/native-app-build-workflow.html">Native app-build workflow</a>
                         <a href="#current-work">Current Rusty Quest routes</a>
                         <a href="https://github.com/MesmerPrism/rusty-quest" target="_blank" rel="noopener noreferrer">Rusty Quest source</a>
@@ -459,6 +521,7 @@
                 <h2 id="morphospace-reader-paths">Choose your path</h2>
                 <div class="reader-actions__grid">
                     <a href="#what-for">I am new to the project</a>
+                    <a href="/projects/rusty-morphospace/work-environment.html">I want to set up my workspace</a>
                     <a href="/projects/rusty-morphospace/native-app-build-workflow.html">I want to build something</a>
                     <a href="#morphospace-plain-terms">I want the core model</a>
                     <a href="#current-work">I want current evidence</a>
@@ -483,9 +546,10 @@
                 </p>
                 <p>
                     The current public family has moved beyond naming notes. Matter, Manifold,
-                    Optics, Lattice, GUI, Makepad, Quest, Quest-Makepad, Manifold Packages,
-                    Studio, Hostess, and the Quest sidecar lane now form a public source stack
-                    with explicit boundaries, license notes, and validation surfaces.
+                    Optics, Lattice, Rusty LSL, GUI, Quest, Manifold Packages, Hostess, and the
+                    project work environment form the primary source stack. Studio, sidecar,
+                    Rusty XR, and Makepad repositories remain useful authoring, integration,
+                    compatibility, or reference lanes with explicit boundaries.
                 </p>
                 <details class="deep-dive">
                     <summary>Deep dive: why the layers are separate</summary>
@@ -537,16 +601,17 @@
                     <h3>Current frame</h3>
                     <ul class="plain-list">
                         <li>Umbrella: Rusty Morphospace</li>
-                        <li>Clean source repos: Matter, Manifold, Optics, Lattice, GUI, Makepad, Quest, Quest-Makepad</li>
-                        <li>Package and host repos: Manifold Packages, Studio, Hostess, Quest Sidecar Mesh</li>
-                        <li>Current proofs: remote camera framing, native Quest rendering, direct Camera2/HWB import, MediaProjection display-composite feedback, live/recorded hand surfaces, SDF/ADF debug paths, particles, and bounded GPU readbacks</li>
+                        <li>Platform baseline: Rusty Morphospace 0.1.0</li>
+                        <li>Portable onboarding and workflow release: work environment 0.4.0</li>
+                        <li>Primary source repos: Matter, Manifold, Manifold Packages, Optics, Lattice, Rusty LSL, GUI, Quest, and Hostess</li>
+                        <li>Current source lines include peer/media authority, closed Android broker packaging, particle and hand conformance, native Quest/OpenXR rendering, Spatial SDK panels, and WPF/CLI operator routes</li>
                         <li>Licensing: AGPL-3.0-or-later for active Morphospace-owned source; MIT retained for legacy/reference and lab lanes where noted</li>
                     </ul>
                 </section>
                 <section class="detail-block">
                     <h3>License quick map</h3>
                     <ul class="plain-list">
-                        <li>AGPL-3.0-or-later: Matter, Optics, Manifold, Lattice, GUI, Makepad, Quest, Quest-Makepad, Manifold Packages, Studio, Hostess, and Quest Sidecar Mesh</li>
+                        <li>AGPL-3.0-or-later: the work environment and current Morphospace-owned source repos, including Matter, Optics, Manifold, Lattice, Rusty LSL, GUI, Quest, Hostess, and maintained compatibility lanes</li>
                         <li>MIT: Rusty XR compatibility/history collection and Quest Termux Lab</li>
                         <li>External references, such as DiffeoMorph, keep their upstream paper and code licenses</li>
                     </ul>
@@ -558,9 +623,10 @@
                         <li>Computational substance: Rusty Matter</li>
                         <li>Visual inspection: Rusty Optics</li>
                         <li>Situated relations: Rusty Lattice</li>
+                        <li>LSL compatibility and typed observations/proposals: Rusty LSL</li>
                         <li>Graphical descriptors: Rusty GUI</li>
-                        <li>Makepad adaptation: Rusty Makepad and Rusty Quest Makepad</li>
                         <li>Platform edge and native headset renderer: Rusty Quest</li>
+                        <li>Legacy Makepad adaptation: Rusty Makepad and Rusty Quest Makepad</li>
                     </ul>
                 </section>
                 <section class="detail-block">
@@ -578,9 +644,10 @@
                     <h3>Core routes</h3>
                     <ul class="plain-list">
                         <li><a href="/projects/rusty-morphospace/native-app-build-workflow.html">Native App Build Workflow</a> explains how APK profiles select only the required Rusty Quest feature modules</li>
+                        <li><a href="/projects/rusty-morphospace/work-environment.html">Contributor Work Environment</a> explains local setup, project workspaces, skill installation, validation, and release capsules</li>
                         <li><a href="https://github.com/MesmerPrism/rusty-quest" target="_blank" rel="noopener noreferrer">Rusty Quest</a> carries runtime profiles, Quest permission/tooling surfaces, and the native Rust/OpenXR/Vulkan renderer route</li>
-                        <li><a href="https://github.com/MesmerPrism/rusty-quest-makepad" target="_blank" rel="noopener noreferrer">Rusty Quest Makepad</a> carries Quest-specific Makepad adapter work</li>
-                        <li><a href="https://github.com/MesmerPrism/rusty-hostess" target="_blank" rel="noopener noreferrer">Rusty Hostess</a> provides install, staging, launch, replay, and evidence capture</li>
+                        <li><a href="https://github.com/MesmerPrism/rusty-hostess" target="_blank" rel="noopener noreferrer">Rusty Hostess</a> provides WPF and CLI/API-equivalent install, staging, launch, replay, and evidence routes</li>
+                        <li><a href="https://github.com/MesmerPrism/rusty-quest-makepad" target="_blank" rel="noopener noreferrer">Rusty Quest Makepad</a> remains available for explicit compatibility and migration work</li>
                     </ul>
                 </section>
                 <section class="detail-block">
@@ -619,8 +686,10 @@
                     describes debug views of that state without choosing the final renderer.
                     Lattice records where the surface, camera, device, or tracked input sits.
                     Manifold decides which commands and streams can change the state. GUI and
-                    Studio expose controls and package-review surfaces. Browser, Makepad, and
-                    Quest routes adapt the same contracts to concrete runtimes. Hostess and
+                    Hostess expose controls and package-review surfaces through CLI/API and WPF
+                    projections. Browser and native Quest routes adapt the same contracts to
+                    concrete runtimes; Makepad can replay the route when compatibility work calls
+                    for it. Hostess and
                     app-build evidence prove which package, settings, and runtime markers were
                     actually used.
                 </p>
@@ -637,8 +706,8 @@
                     <li>Inspect: Optics describes views and debug payloads.</li>
                     <li>Situate: Lattice records spaces, poses, and device context.</li>
                     <li>Regulate: Manifold owns commands, streams, clocks, and policy state.</li>
-                    <li>Operate: GUI and Studio expose controls and review surfaces.</li>
-                    <li>Adapt: browser, Makepad, Quest, and native routes host the contracts.</li>
+                    <li>Operate: GUI and Hostess expose controls and review surfaces through CLI/API-equivalent routes.</li>
+                    <li>Adapt: browser, native Quest/OpenXR, Spatial SDK, and WPF host the contracts; Makepad is an explicit compatibility route.</li>
                     <li>Validate: Hostess and app-build receipts prove what ran.</li>
                 </ul>
             </div>
@@ -698,11 +767,21 @@
                     </p>
                 </article>
                 <article class="project-card">
-                    <p class="project-kicker">Makepad adaptation</p>
+                    <p class="project-kicker">LSL compatibility</p>
+                    <h3><a href="https://github.com/MesmerPrism/rusty-lsl" target="_blank" rel="noopener noreferrer">Rusty LSL</a></h3>
+                    <p>
+                        Independently authored LSL compatibility, protocol behavior, fixtures,
+                        and typed observations or proposals. It does not replace Manifold's
+                        session, route, subscription, lease, revision, or audit authority.
+                    </p>
+                </article>
+                <article class="project-card">
+                    <p class="project-kicker">Legacy Makepad adaptation</p>
                     <h3><a href="https://github.com/MesmerPrism/rusty-makepad" target="_blank" rel="noopener noreferrer">Rusty Makepad</a></h3>
                     <p>
                         Generic Makepad adapters and canonical app settings surfaces, kept
                         separate from Quest platform writes and app-specific headset behavior.
+                        This is now a compatibility, regression, and migration lane.
                     </p>
                 </article>
                 <article class="project-card">
@@ -715,10 +794,10 @@
                     </p>
                 </article>
                 <article class="project-card">
-                    <p class="project-kicker">Quest Makepad apps</p>
+                    <p class="project-kicker">Legacy Quest Makepad apps</p>
                     <h3><a href="https://github.com/MesmerPrism/rusty-quest-makepad" target="_blank" rel="noopener noreferrer">Rusty Quest Makepad</a></h3>
                     <p>
-                        Quest-specific Makepad app adapters for camera-shell profiles, recorded
+                        Explicit compatibility adapters for camera-shell profiles, recorded
                         hand replay, Matter surface runtime handoff, SDF/ADF debug visuals,
                         particles, and bounded GPU evidence.
                     </p>
@@ -727,8 +806,9 @@
                     <p class="project-kicker">Authoring and validation</p>
                     <h3>Studio and Hostess</h3>
                     <p>
-                        Authoring, package review, installation, diagnostics, deployment, and
-                        operator workflows around the core layers without becoming Manifold
+                        Studio remains an authoring/review lane. Hostess is the current Windows
+                        operator lane for WPF projections backed by CLI/API-equivalent install,
+                        diagnostics, deployment, and evidence routes. Neither becomes Manifold
                         authority.
                     </p>
                 </article>
@@ -753,24 +833,50 @@
                     <tbody>
                         <tr>
                             <th scope="row">Core contracts</th>
-                            <td>rusty-matter, rusty-lattice, rusty-manifold, rusty-optics, rusty-gui</td>
+                            <td>rusty-matter, rusty-lattice, rusty-manifold, rusty-optics, rusty-lsl, rusty-gui</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Onboarding and project workflow</th>
+                            <td>rusty-morphospace-work-environment</td>
                         </tr>
                         <tr>
                             <th scope="row">Build, package, and authoring</th>
                             <td>rusty-manifold-packages, rusty-studio, rusty-hostess</td>
                         </tr>
                         <tr>
-                            <th scope="row">Platform and adapter routes</th>
-                            <td>rusty-makepad, rusty-quest, rusty-quest-makepad, rusty-quest-sidecar-mesh</td>
+                            <th scope="row">Platform and integration routes</th>
+                            <td>rusty-quest, rusty-hostess, rusty-quest-sidecar-mesh</td>
                         </tr>
                         <tr>
-                            <th scope="row">Reference and legacy</th>
-                            <td>Rusty-XR, quest-termux-lab, DiffeoMorph</td>
+                            <th scope="row">Compatibility, reference, and legacy</th>
+                            <td>rusty-makepad, rusty-quest-makepad, makepad-morphospace, Rusty-XR, quest-termux-lab, DiffeoMorph</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
             <div class="project-grid">
+                <article class="project-card">
+                    <p class="project-kicker">Onboarding / Workflow</p>
+                    <h3><a href="https://github.com/MesmerPrism/rusty-morphospace-work-environment" target="_blank" rel="noopener noreferrer">rusty-morphospace-work-environment</a></h3>
+                    <p>
+                        Portable machine setup, repo-lane orientation, four installable Codex
+                        skill routers, protocol-v2 project workspaces, closed feature locks,
+                        bounded work units, validators, and immutable release capsules.
+                    </p>
+                    <dl class="project-facts">
+                        <dt>Status</dt>
+                        <dd>Public release 0.4.0</dd>
+                        <dt>License</dt>
+                        <dd>AGPL-3.0-or-later</dd>
+                        <dt>Use</dt>
+                        <dd>Contributor onboarding and portable project workflow</dd>
+                    </dl>
+                    <p class="project-links">
+                        <a href="/projects/rusty-morphospace/work-environment.html">Setup guide</a>
+                        <a href="https://github.com/MesmerPrism/rusty-morphospace-work-environment" target="_blank" rel="noopener noreferrer">Repository</a>
+                    </p>
+                </article>
+
                 <article class="project-card">
                     <p class="project-kicker">Core / Matter</p>
                     <h3><a href="https://github.com/MesmerPrism/rusty-matter" target="_blank" rel="noopener noreferrer">rusty-matter</a></h3>
@@ -876,7 +982,28 @@
                 </article>
 
                 <article class="project-card">
-                    <p class="project-kicker">Adapter / Makepad</p>
+                    <p class="project-kicker">Compatibility / LSL</p>
+                    <h3><a href="https://github.com/MesmerPrism/rusty-lsl" target="_blank" rel="noopener noreferrer">rusty-lsl</a></h3>
+                    <p>
+                        Independently authored LSL protocol and API compatibility, conformance
+                        fixtures, and typed Morphospace observations or proposals. Accepted
+                        runtime routing and audit remain Manifold responsibilities.
+                    </p>
+                    <dl class="project-facts">
+                        <dt>Status</dt>
+                        <dd>Public main</dd>
+                        <dt>License</dt>
+                        <dd>AGPL-3.0-or-later</dd>
+                        <dt>Use</dt>
+                        <dd>LSL interoperability without authority substitution</dd>
+                    </dl>
+                    <p class="project-links">
+                        <a href="https://github.com/MesmerPrism/rusty-lsl" target="_blank" rel="noopener noreferrer">Repository</a>
+                    </p>
+                </article>
+
+                <article class="project-card">
+                    <p class="project-kicker">Legacy adapter / Makepad</p>
                     <h3><a href="https://github.com/MesmerPrism/rusty-makepad" target="_blank" rel="noopener noreferrer">rusty-makepad</a></h3>
                     <p>
                         Generic Makepad app settings contracts, deterministic effective-settings
@@ -885,7 +1012,7 @@
                     </p>
                     <dl class="project-facts">
                         <dt>Status</dt>
-                        <dd>Public main</dd>
+                        <dd>Public legacy/compatibility main</dd>
                         <dt>License</dt>
                         <dd>AGPL-3.0-or-later</dd>
                         <dt>Use</dt>
@@ -920,7 +1047,7 @@
                 </article>
 
                 <article class="project-card">
-                    <p class="project-kicker">Adapter / Quest Makepad</p>
+                    <p class="project-kicker">Legacy adapter / Quest Makepad</p>
                     <h3><a href="https://github.com/MesmerPrism/rusty-quest-makepad" target="_blank" rel="noopener noreferrer">rusty-quest-makepad</a></h3>
                     <p>
                         Quest-specific Makepad camera-shell profile bundles, recorded mesh and
@@ -929,7 +1056,7 @@
                     </p>
                     <dl class="project-facts">
                         <dt>Status</dt>
-                        <dd>Public main</dd>
+                        <dd>Public legacy/compatibility main</dd>
                         <dt>License</dt>
                         <dd>AGPL-3.0-or-later</dd>
                         <dt>Use</dt>
@@ -986,9 +1113,9 @@
                     <p class="project-kicker">Host validation / Hostess</p>
                     <h3><a href="https://github.com/MesmerPrism/rusty-hostess" target="_blank" rel="noopener noreferrer">rusty-hostess</a></h3>
                     <p>
-                        Default install, replay, capture, telemetry, and host-validation shell
-                        for proving Manifold packages across desktop, mobile, and headset
-                        profiles.
+                        WPF and CLI/API-equivalent install, replay, capture, telemetry, and
+                        host-validation routes for proving Manifold packages across desktop,
+                        mobile, and headset profiles.
                     </p>
                     <dl class="project-facts">
                         <dt>Status</dt>
@@ -1097,20 +1224,59 @@
             <div>
                 <div class="section-heading">
                     <p class="section-kicker">Current work</p>
-                    <h2>What is current as of June 21, 2026</h2>
+                    <h2>What is current as of July 15, 2026</h2>
                 </div>
                 <p>
-                    The active implementation line now has two Quest fronts. Quest Makepad still
-                    consumes Matter-owned live or recorded hand-surface truth, adapts
-                    renderer-neutral payloads to headset Makepad shells, and uses Hostess for
-                    install, staging, launch, and evidence capture. Rusty Quest now also carries a
-                    separate Rust-first NativeActivity/OpenXR/Vulkan stack for low-level native
-                    headset experiments
-                    (<a class="inline-citation" href="https://github.com/MesmerPrism/rusty-quest" target="_blank" rel="noopener noreferrer">rusty-quest</a>).
+                    The public 0.1.0 baseline now has a clearer default direction. Native
+                    OpenXR/Vulkan and Meta Spatial SDK apps in Rusty Quest are the primary Quest
+                    routes; WPF backed by CLI/API-equivalent commands is the primary Windows
+                    operator route. Makepad remains maintained for explicit compatibility and
+                    migration work rather than defining new development
+                    (<a class="inline-citation" href="https://github.com/MesmerPrism/rusty-quest" target="_blank" rel="noopener noreferrer">rusty-quest</a>;
+                    <a class="inline-citation" href="https://github.com/MesmerPrism/rusty-hostess" target="_blank" rel="noopener noreferrer">rusty-hostess</a>).
                 </p>
                 <div class="table-wrap">
                     <table class="summary-table">
-                        <caption>Current proof surfaces</caption>
+                        <caption>Recent public developments</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">Area</th>
+                                <th scope="col">Published development</th>
+                                <th scope="col">Boundary</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">Contributor workflow</th>
+                                <td>Work environment 0.4.0 adds clean-machine onboarding, four installable skill routers, protocol-v2 project workspaces, fail-closed validation, and immutable release capsules.</td>
+                                <td>It versions the workflow, not the platform runtime.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Manifold authority</th>
+                                <td>Peer sessions, signed enrollment and leases, bounded N-peer membership, source-neutral media sessions, packaged broker authority, and client admission now have explicit contracts.</td>
+                                <td>Rendezvous, Android networking, and transport acknowledgements remain evidence or adapters.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Particle and hand substrate</th>
+                                <td>Matter, Lattice, and Optics now carry conformance for particle payloads, situated anchors, provider-neutral hand frames, skinning, and identity-preserving visual profiles.</td>
+                                <td>Renderer and platform resources remain downstream.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Rusty LSL</th>
+                                <td>The clean Rusty LSL lane now provides independently authored compatibility, protocol fixtures, and typed observations or proposals.</td>
+                                <td>It does not replace Manifold route, subscription, lease, revision, or audit authority.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Quest platform</th>
+                                <td>Native OpenXR/Vulkan, Spatial SDK panels, closed broker packaging, direct Wi-Fi media, and receiver-first media adoption now coexist as explicit opt-in source routes.</td>
+                                <td>Available source and profiles do not activate a feature without the selected lock and runtime input.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="table-wrap">
+                    <table class="summary-table">
+                        <caption>0.1.0 platform evidence surfaces</caption>
                         <thead>
                             <tr>
                                 <th scope="col">Surface</th>
@@ -1141,38 +1307,41 @@
                             </tr>
                             <tr>
                                 <th scope="row">Quest Makepad / Hostess</th>
-                                <td>Recorded/live hand surfaces, SDF/ADF, particles, and bounded GPU readback.</td>
-                                <td>Validation route, not the authority model.</td>
+                                <td>Historical recorded/live hand surfaces, SDF/ADF, particles, and bounded GPU readback remain available.</td>
+                                <td>Explicit compatibility evidence, not the default runtime or authority model.</td>
                             </tr>
                             <tr>
-                                <th scope="row">Remote camera</th>
-                                <td><code>RMANVID1</code> framing and single-device evidence.</td>
-                                <td>No two-peer readiness claim yet.</td>
+                                <th scope="row">Native direct Wi-Fi media</th>
+                                <td>Same-group full-stereo duplex was promoted for the native OpenXR route; packed side-by-side remains an explicit profile.</td>
+                                <td>Legacy Makepad media remains a separate compatibility lane, and Android <code>Network</code> availability is not fabricated when absent.</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
                 <p>
-                    The native path is not only a launch wrapper. It has public profiles for direct
+                    The native path has public profiles for direct
                     Quest Camera2/AHardwareBuffer import into Vulkan external images, metadata-owned
                     camera target rectangles and orientation, native Meta passthrough profiles,
                     solid-black control profiles, resident GPU hand meshes and graft copies,
                     compact live OpenXR hand input, hand-anchor particles, target-space GPU SDF
                     diagnostics, stimulus-volume routes, and environment-depth particle/scene-map
-                    diagnostics. Its MediaProjection route is a display-composite feedback witness:
+                    diagnostics, plus a separate Spatial SDK panel lane and receiver-first media
+                    adoption. Its MediaProjection route is a display-composite feedback witness:
                     Android grants capture tokens, Rust owns the AImage/AHardwareBuffer handoff,
                     and a shared Vulkan AHardwareBuffer import helper is used by camera and
                     display-composite sampling.
                 </p>
                 <p>
-                    The current caveat is important. The native renderer has headset evidence and
+                    The 0.1.0 baseline binds specific source and
+                    evidence; later commits remain ongoing development until a new release
+                    candidate is cut. The native renderer has headset evidence and
                     profile/static validation for these routes, but MediaProjection is evidence of
                     the app-visible display composite, not raw passthrough texture, raw camera,
                     environment-depth, or scene geometry. Environment-depth and stimulus-volume
                     routes are diagnostic validation surfaces rather than finished participant
-                    tools. Remote-camera work remains deliberately bounded as Manifold-aligned
-                    <code>RMANVID1</code> H.264 framing plus single-device evidence until physical two-peer
-                    Quest or Quest-to-phone validation passes.
+                    tools. Native same-group full-stereo media has a promoted route, while
+                    compatibility remote-camera and Makepad paths retain their narrower evidence
+                    and do not become parallel authority.
                 </p>
             </div>
             <div class="detail-stack">
@@ -1181,6 +1350,9 @@
                     <ul class="plain-list">
                         <li>Camera-free Hostess Quest Makepad APK route with generated Quest manifest</li>
                         <li>Native Rusty Quest Android package with OpenXR/Vulkan session, stereo swapchain, profile matrix, and runtime markers</li>
+                        <li>Separate Meta Spatial SDK panel lane with behavior-neutral project-workspace adoption</li>
+                        <li>Receiver-first media composition and native same-group full-stereo duplex over Rust-owned direct-P2P sockets</li>
+                        <li>Manifold broker packaging from exact product and client locks rather than ambient permission unions</li>
                         <li>Reusable AHardwareBuffer Vulkan import module shared by Camera2 and display-composite sampling</li>
                         <li>Direct HWB camera quality profiles with stream metadata for target rectangles, aspect, orientation, and sync policy</li>
                         <li>Native passthrough and solid-black profiles for hand meshes, graft copies, and anchor-particle diagnostics</li>
@@ -1189,7 +1361,7 @@
                         <li>App-private settings plus sibling data-plane staging through Hostess tooling</li>
                         <li>Recorded and live hand providers shaped as bind mesh plus compact joint frames</li>
                         <li>Matter CPU oracle comparison for skinning, full mesh residency, mesh-SDF, ADF debug, and particle paths</li>
-                        <li>Manifold-aligned remote-camera framing with high-rate video kept out of command JSON</li>
+                        <li>Manifold-aligned media contracts with high-rate video kept out of command JSON</li>
                     </ul>
                 </section>
                 <section class="detail-block">
@@ -1198,9 +1370,8 @@
                         <li>Matter remains simulation, field, SDF/ADF, particle, and bioelectric truth</li>
                         <li>Manifold owns command/session authority, stream metadata, and audit</li>
                         <li>Rusty Quest owns Quest platform profiles, permission/tooling surfaces, and native renderer diagnostics, not Matter or Optics semantics</li>
-                        <li>Makepad and the native renderer are separate app routes; neither owns simulation truth</li>
-                        <li>Quest-Makepad owns Makepad adapter markers and headset app profile bundles</li>
-                        <li>Hostess owns install, staging, launch, and evidence capture</li>
+                        <li>Makepad and the native renderer are separate app routes; Makepad is now compatibility-only and neither owns simulation truth</li>
+                        <li>Hostess owns WPF/CLI-equivalent install, staging, launch, and evidence routes</li>
                         <li>MediaProjection evidence is display-composite evidence, not raw passthrough, camera, depth, or geometry truth</li>
                         <li>Camera and display-composite imports share reusable AHardwareBuffer mechanics without coupling their source policies</li>
                         <li>High-rate mesh, field, particle, and GPU buffers stay out of settings/control JSON</li>
@@ -1213,7 +1384,8 @@
                         <li>Keep display-composite projection area, aspect, orientation, opacity, and gain as stream/profile metadata rather than shader assumptions</li>
                         <li>Promote environment-depth only after known-distance, motion, and source-layer agreement evidence stays clean</li>
                         <li>Scale dense SDF or indexed ADF only after bounded oracle checks and cadence evidence stay clean</li>
-                        <li>Run physical two-peer camera validation before claiming peer streaming readiness</li>
+                        <li>Cut a new candidate before presenting post-0.1.0 source as a released platform baseline</li>
+                        <li>Keep native full-stereo and packed side-by-side routes separately selectable and independently evidenced</li>
                         <li>Keep GPU proof readbacks on ticket/poll or explicit evidence-command paths and keep particle force authority singular in normal profiles</li>
                     </ul>
                 </section>
@@ -1347,10 +1519,12 @@
                 <h2>External sources and public repos for this page</h2>
             </div>
             <ol class="reference-list">
+                <li><strong>MesmerPrism.</strong> "<a class="reference-link" href="https://github.com/MesmerPrism/rusty-morphospace-work-environment" target="_blank" rel="noopener noreferrer">rusty-morphospace-work-environment</a>." Public contributor onboarding, project-workflow, validation, and release-capsule repository; current release 0.4.0.</li>
                 <li><strong>MesmerPrism.</strong> "<a class="reference-link" href="https://github.com/MesmerPrism/rusty-matter" target="_blank" rel="noopener noreferrer">rusty-matter</a>." Public Rusty Matter repository for computational matter, surface, field, particle, SDF, and fixture contracts.</li>
                 <li><strong>MesmerPrism.</strong> "<a class="reference-link" href="https://github.com/MesmerPrism/rusty-optics" target="_blank" rel="noopener noreferrer">rusty-optics</a>." Public Rusty Optics repository for renderer-neutral projection, appearance, and visual validation contracts.</li>
                 <li><strong>MesmerPrism.</strong> "<a class="reference-link" href="https://github.com/MesmerPrism/rusty-manifold" target="_blank" rel="noopener noreferrer">rusty-manifold</a>." Public Rusty Manifold repository for command, stream, session, module, and audit authority.</li>
                 <li><strong>MesmerPrism.</strong> "<a class="reference-link" href="https://github.com/MesmerPrism/rusty-lattice" target="_blank" rel="noopener noreferrer">rusty-lattice</a>." Public Rusty Lattice repository for reference-space, tracked-pose, view-set, and capability contracts.</li>
+                <li><strong>MesmerPrism.</strong> "<a class="reference-link" href="https://github.com/MesmerPrism/rusty-lsl" target="_blank" rel="noopener noreferrer">rusty-lsl</a>." Public independently authored LSL compatibility repository for protocol behavior, conformance fixtures, and typed Morphospace observations or proposals.</li>
                 <li><strong>MesmerPrism.</strong> "<a class="reference-link" href="https://github.com/MesmerPrism/rusty-gui" target="_blank" rel="noopener noreferrer">rusty-gui</a>." Public Rusty GUI repository for framework-neutral panels, widgets, inspectors, and graphical descriptors.</li>
                 <li><strong>MesmerPrism.</strong> "<a class="reference-link" href="https://github.com/MesmerPrism/rusty-makepad" target="_blank" rel="noopener noreferrer">rusty-makepad</a>." Public Rusty Makepad repository for Makepad settings and adapter contracts.</li>
                 <li><strong>MesmerPrism.</strong> "<a class="reference-link" href="https://github.com/MesmerPrism/rusty-quest" target="_blank" rel="noopener noreferrer">rusty-quest</a>." Public Rusty Quest repository for Quest profiles, permission/tooling surfaces, remote-camera contracts, and the native Quest OpenXR/Vulkan renderer route.</li>
@@ -1360,6 +1534,7 @@
                 <li><strong>MesmerPrism.</strong> "<a class="reference-link" href="https://github.com/MesmerPrism/rusty-studio" target="_blank" rel="noopener noreferrer">rusty-studio</a>." Public Rusty Studio repository for authoring and review surfaces around Morphospace packages.</li>
                 <li><strong>MesmerPrism.</strong> "<a class="reference-link" href="https://github.com/MesmerPrism/rusty-quest-sidecar-mesh" target="_blank" rel="noopener noreferrer">rusty-quest-sidecar-mesh</a>." Public Quest sidecar mesh repository for integration contracts and synthetic fixtures.</li>
                 <li><strong>MesmerPrism.</strong> "<a class="reference-link" href="https://github.com/MesmerPrism/quest-termux-lab" target="_blank" rel="noopener noreferrer">quest-termux-lab</a>." Public Quest Termux lab source feeding Quest sidecar bridge work.</li>
+                <li><strong>MesmerPrism.</strong> "<a class="reference-link" href="https://github.com/MesmerPrism/meta-quest-agent-workflow" target="_blank" rel="noopener noreferrer">meta-quest-agent-workflow</a>." Public device-operation workflow for Quest build, install, launch, and evidence collection.</li>
                 <li><strong>MesmerPrism.</strong> "<a class="reference-link" href="https://github.com/MesmerPrism/Rusty-XR" target="_blank" rel="noopener noreferrer">Rusty-XR</a>." Public Rusty XR compatibility and historical Quest evidence surface.</li>
                 <li><strong>Pahng et al.</strong> "<a class="reference-link" href="https://arxiv.org/abs/2512.17129" target="_blank" rel="noopener noreferrer">DiffeoMorph: Learning to Morph 3D Shapes Using Differentiable Agent-Based Simulations</a>." <em>arXiv</em> 2512.17129 (submitted 2025; revised 2026).</li>
                 <li><strong>hormoz-lab.</strong> "<a class="reference-link" href="https://github.com/hormoz-lab/diffeomorph" target="_blank" rel="noopener noreferrer">diffeomorph</a>." Official implementation repository for the DiffeoMorph paper.</li>

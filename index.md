@@ -2,7 +2,7 @@
 
 Source: https://mesmerprism.com/
 Canonical HTML: https://mesmerprism.com/
-Generated: 2026-06-21
+Generated: 2026-07-15
 Description: XR systems, citizen-science tools, visual instruments, and essays for altered-perception design. Mesmer Prism makes strange experience vivid, inspectable, and evidence-bounded.
 Markdown: https://mesmerprism.com/index.md
 Plain text: https://mesmerprism.com/index.txt
@@ -95,14 +95,15 @@ Till Holzapfel
 
 ### [Rusty Morphospace](https://mesmerprism.com/projects/rusty-morphospace.html)
 
- A public mixed-license Rust repo family for computational matter,
- situated relations, runtime authority, renderer-neutral inspection,
- package evidence, authoring, host validation, and Quest-side
- integration. The active Morphospace-owned repos are AGPL-first; legacy
- compatibility and lab/reference repos keep their existing MIT lanes.
+ An AGPL-first Rust platform for computational matter, situated relations,
+ command and media authority, LSL compatibility, renderer-neutral
+ inspection, operator tooling, and native Quest integration. The current
+ platform baseline is 0.1.0; the separate public contributor environment
+ is at 0.4.0. Legacy compatibility and lab/reference repos keep their
+ existing license lanes.
 
  Status
- Public repo family
+ Platform 0.1.0; contributor work environment 0.4.0; active development continues
  Artifact
  Rust crates, fixtures, schemas, browser previews, and docs
  Licenses
@@ -113,9 +114,10 @@ Till Holzapfel
  Rust / Computational morphology / Toolchain architecture / XR boundaries
 
  [Project overview](https://mesmerprism.com/projects/rusty-morphospace.html)
+ [Start here](https://mesmerprism.com/projects/rusty-morphospace/work-environment.html)
  [Matter](https://github.com/MesmerPrism/rusty-matter)
  [Manifold](https://github.com/MesmerPrism/rusty-manifold)
- [Optics](https://github.com/MesmerPrism/rusty-optics)
+ [Rusty LSL](https://github.com/MesmerPrism/rusty-lsl)
 
  Bioelectric atlas and morphogenesis model
 

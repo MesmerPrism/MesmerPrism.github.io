@@ -7,12 +7,12 @@
     <link rel="canonical" href="https://mesmerprism.com/projects/rusty-morphospace/native-app-build-workflow.html">
     <meta
         name="description"
-        content="A public onboarding guide to the Rusty Morphospace native app-build workflow: feature library, app-build specs, generated settings, feature locks, adapters, and validation."
+        content="A public guide to Rusty Morphospace native Quest app composition: project workspaces, feature descriptors, closed locks, generated settings, adapters, and validation."
     >
     <meta property="og:title" content="Native App Build Workflow | Rusty Morphospace | Mesmer Prism">
     <meta
         property="og:description"
-        content="How Rusty Morphospace app-building agents choose only the required native APK features through explicit specs, feature locks, generated settings, and validation."
+        content="How Rusty Morphospace selects only the required native OpenXR/Vulkan or Spatial SDK app features through explicit specs, closed locks, generated settings, and validation."
     >
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://mesmerprism.com/projects/rusty-morphospace/native-app-build-workflow.html">
@@ -30,8 +30,8 @@
     <link rel="alternate" type="application/vnd.citationstyles.csl+json" href="/projects/rusty-morphospace/native-app-build-workflow.references.csl.json" title="CSL JSON references">
     <meta name="citation_title" content="Native App Build Workflow | Rusty Morphospace">
     <meta name="citation_author" content="Till Holzapfel">
-    <meta name="citation_publication_date" content="2026-06-21">
-    <meta name="citation_online_date" content="2026-06-21">
+    <meta name="citation_publication_date" content="2026-07-15">
+    <meta name="citation_online_date" content="2026-07-15">
     <meta name="citation_public_url" content="https://mesmerprism.com/projects/rusty-morphospace/native-app-build-workflow.html">
     <meta name="citation_language" content="en">
     <script type="application/ld+json" data-agent-metadata>
@@ -40,7 +40,7 @@
           "@type": "Article",
           "headline": "Native App Build Workflow | Rusty Morphospace",
           "name": "Native App Build Workflow | Rusty Morphospace",
-          "description": "A public onboarding guide to the Rusty Morphospace native app-build workflow: feature library, app-build specs, generated settings, feature locks, adapters, and validation.",
+          "description": "A public guide to Rusty Morphospace native Quest app composition: project workspaces, feature descriptors, closed locks, generated settings, adapters, and validation.",
           "author": {
                 "@type": "Person",
                 "name": "Till Holzapfel"
@@ -56,7 +56,7 @@
                 "url": "https://mesmerprism.com"
           },
           "url": "https://mesmerprism.com/projects/rusty-morphospace/native-app-build-workflow.html",
-          "dateModified": "2026-06-21",
+          "dateModified": "2026-07-15",
           "inLanguage": "en",
           "encoding": [
                 {
@@ -81,7 +81,9 @@
                 }
           ],
           "citation": [
+                "https://github.com/MesmerPrism/rusty-morphospace-work-environment",
                 "https://github.com/MesmerPrism/rusty-quest",
+                "https://github.com/MesmerPrism/meta-quest-agent-workflow",
                 "https://github.com/MesmerPrism/rusty-quest-makepad",
                 "https://mesmerprism.com/projects/rusty-morphospace.html",
                 "https://mesmerprism.com/projects/rusty-morphospace/rusty-xr.html"
@@ -120,8 +122,9 @@
                     manifests, property write plans, and build inputs are generated adapters
                     around that master settings surface.
                 </p>
-                <p class="reviewed-date">Reviewed June 21, 2026.</p>
+                <p class="reviewed-date">Reviewed July 15, 2026.</p>
                 <div class="hero-actions">
+                    <a class="action-link" href="/projects/rusty-morphospace/work-environment.html">Set up the work environment</a>
                     <a class="action-link action-link--strong" href="#start-here">Start here</a>
                     <a class="action-link" href="#workflow">Workflow</a>
                     <a class="action-link" href="#feature-library">Feature library</a>
@@ -148,6 +151,46 @@
                     </p>
                 </div>
             </article>
+
+            <section class="section" aria-labelledby="native-current-default">
+                <div class="section-heading">
+                    <h2 id="native-current-default">Current runtime default</h2>
+                    <p>
+                        New Quest apps start in <strong>rusty-quest</strong> with native
+                        OpenXR/Vulkan or Meta Spatial SDK surfaces. Makepad is no longer an
+                        ambient dependency or a co-default; use it only for explicit
+                        compatibility, regression, historical replay, or migration work.
+                    </p>
+                </div>
+                <div class="table-wrap">
+                    <table class="summary-table">
+                        <caption>Before composing an APK</caption>
+                        <tbody>
+                            <tr>
+                                <th scope="row">Contributor setup</th>
+                                <td>Use the public work environment 0.4.0 to validate dependencies and install the Morphospace, system-engineering, work-graph, and Quest workflow routers.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Project composition</th>
+                                <td>Declare the application in a protocol-v2 project workspace and resolve exact feature descriptors into a closed lock.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Runtime activation</th>
+                                <td>A selected lock is necessary but not sufficient: the current run also needs an approved runtime input and a consumer-emitted effective receipt or marker.</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Device operations</th>
+                                <td>Build, install, launch, log, screenshot, and performance operations follow the public Meta Quest agent workflow with explicit device selection.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="project-links">
+                    <a href="/projects/rusty-morphospace/work-environment.html">Contributor setup guide</a>
+                    <a href="https://github.com/MesmerPrism/rusty-morphospace-work-environment/releases/tag/v0.4.0" target="_blank" rel="noopener noreferrer">Work environment 0.4.0</a>
+                    <a href="https://github.com/MesmerPrism/meta-quest-agent-workflow" target="_blank" rel="noopener noreferrer">Meta Quest workflow</a>
+                </p>
+            </section>
 
             <section class="at-glance" aria-labelledby="native-minimal-path">
                 <h2 id="native-minimal-path">Minimal native APK path</h2>
@@ -728,8 +771,10 @@
                 <section class="detail-block">
                     <h3>Workflow sources</h3>
                     <ul class="plain-list">
+                        <li><strong>MesmerPrism.</strong> "<a class="reference-link" href="https://github.com/MesmerPrism/rusty-morphospace-work-environment" target="_blank" rel="noopener noreferrer">rusty-morphospace-work-environment</a>." Public contributor setup, protocol-v2 project workspace, validation, and release-capsule tooling.</li>
                         <li><strong>MesmerPrism.</strong> "<a class="reference-link" href="https://github.com/MesmerPrism/rusty-quest" target="_blank" rel="noopener noreferrer">rusty-quest</a>." Public repository for Quest platform contracts, native renderer profiles, app-build specs, feature descriptors, and validation tools.</li>
-                        <li><strong>MesmerPrism.</strong> "<a class="reference-link" href="https://github.com/MesmerPrism/rusty-quest-makepad" target="_blank" rel="noopener noreferrer">rusty-quest-makepad</a>." Public repository for Quest-specific Makepad adapter profiles, effective settings, and headset app staging routes.</li>
+                        <li><strong>MesmerPrism.</strong> "<a class="reference-link" href="https://github.com/MesmerPrism/meta-quest-agent-workflow" target="_blank" rel="noopener noreferrer">meta-quest-agent-workflow</a>." Public operational workflow for Quest build, install, launch, and evidence collection.</li>
+                        <li><strong>MesmerPrism.</strong> "<a class="reference-link" href="https://github.com/MesmerPrism/rusty-quest-makepad" target="_blank" rel="noopener noreferrer">rusty-quest-makepad</a>." Legacy compatibility repository for Quest-specific Makepad adapter profiles, effective settings, and migration evidence.</li>
                     </ul>
                 </section>
                 <section class="detail-block">
