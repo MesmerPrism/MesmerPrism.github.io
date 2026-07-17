@@ -2,7 +2,7 @@
 
 Source: https://mesmerprism.com/projects/deep-dream.html
 Canonical HTML: https://mesmerprism.com/projects/deep-dream.html
-Generated: 2026-06-13
+Generated: 2026-07-17
 Description: Deep Dream explains how machine-vision hallucination, community visual taxonomies, VR research, and cyberdelic systems shaped simulated psychedelic vision.
 Markdown: https://mesmerprism.com/projects/deep-dream.md
 Plain text: https://mesmerprism.com/projects/deep-dream.txt
@@ -34,6 +34,7 @@ Simulated psychedelic vision
  [Hartogsohn, 2023](https://doi.org/10.3389/fpsyg.2022.1073235)).
 
  [Start with the basics](https://mesmerprism.com/projects/deep-dream.html#field-guide)
+ [Cyberdelic prehistory](https://mesmerprism.com/projects/deep-dream.html#cyberdelic-prehistory)
  [Community role](https://mesmerprism.com/projects/deep-dream.html#community)
  [Evidence](https://mesmerprism.com/projects/deep-dream.html#evidence)
  [V1 form constants](https://mesmerprism.com/projects/bressloff-v1-form-constants.html)
@@ -98,6 +99,68 @@ Simulated psychedelic vision
 - Use as a controllable stimulus in a study
 
 - Whole-state recreation remains outside visual simulation
+
+ Before DeepDream
+
+## Cyberdelic language and culture were already forming in the late 1980s
+
+ DeepDream gave machine vision a new role in simulated altered perception.
+ It did not invent the older hope that computers and virtual reality could
+ work as psychedelic media.
+
+### The earliest exact source located so far is from 1988
+
+ Reality Hackers no. 6 contains two unusually clear pieces of
+ evidence. Its contributor page calls Timothy Leary a "Cyberdelic Guru
+ of the '80's," and a jointly authored article by Leary and VR developer
+ Eric Gullichsen uses the phrase "cyberdelic equations." This original
+ issue resolves the publication uncertainty that surrounds later text-file
+ copies. It supports a secure 1988 attestation, though not a claim that
+ Leary alone coined the word
+ ([Reality Hackers 6, 1988](https://archive.org/details/realityhackers06real)).
+
+ A year later, Paul Saffo described the magazine's mixture as
+ "cyberdelia" and explicitly identified it as Leary's term. That is strong
+ contemporary attribution, but it still leaves open how the word emerged
+ within the magazine's collaborative scene
+ ([Saffo, 1989](https://doi.org/10.1145/63526.315953);
+ [period reprint](https://phrack.org/issues/30/8)).
+
+### The meaning widened from experience to art and network culture
+
+ John Perry Barlow titled part of his 1990 VR essay "The Cyberdelic
+ Experience." He compared virtual reality with psychedelic experience
+ while warning that the two were not identical. By December 1992, the
+ FutureCulture FAQ defined "cyberdelic" as computer-based art:
+ fractals, generated images and music, and virtual worlds. A 1994
+ Cyberpoet's Guide repeated that definition
+ ([Barlow, 1990](https://w2.eff.org/Misc/Publications/John_Perry_Barlow/HTML/being_in_nothingness.html);
+ [FutureCulture FAQ , 1992](https://github.com/jbarke/textfiles.com/blob/12a04de3091d8d3fa1e5c98b96a2ab93e7b30006/textfiles.com/fun/fculture.html);
+ [Frost, 1994](https://github.com/jbarke/textfiles.com/blob/12a04de3091d8d3fa1e5c98b96a2ab93e7b30006/textfiles.com/fun/cpoet-01.txt)).
+
+ In May 1993, an announcement for the electronic magazine BLINK
+ promised to cover "cyberdelic society -- both on and off the net."
+ Here the phrase names a distributed milieu of magazines, mailing lists,
+ VR demonstrations, electronic art, and physical gatherings. It is not
+ evidence of a formal 1990s organization called The Cyberdelic Society
+ ([BLINK announcement, 1993](https://github.com/ItalianHackersEmbassy/ancient-ezines/blob/fb4b5d06e7b1a951ad2af1363ab4a0a40445064d/teknoraver.net/e-zines/surfpunk/0085)).
+
+### The culture is older than the current institution
+
+ Ben Delaney's archive of CyberEdge Journal never uses the word
+ "cyberdelic" in its searchable text, yet it documents the surrounding
+ culture: Brenda Laurel's recollection that Bay Area VR was closely tied
+ to psychedelics, Timothy Leary's presence at Cyberthon, immersive art
+ built around altered perception, and the early human-factors problems
+ of headset VR
+ ([Delaney, 2014](https://search.worldcat.org/search?q=bn%3A9781500893293)).
+
+ The current Cyberdelic Society is a separate institutional chapter. It
+ is documented by 2020 in later scholarship and is now presented within
+ Cyberdelic Nexus. No organizational continuity with BLINK 's
+ lower-case 1993 phrase has been established
+ ([Hartogsohn, 2023](https://doi.org/10.3389/fpsyg.2022.1073235);
+ [Cyberdelic Society](https://www.cyberdelic.nexus/cyberdelic-society)).
 
  Community lineage
 
@@ -210,6 +273,8 @@ Simulated psychedelic vision
 
 ### Compressed timeline
 
+- 1988-1993: Reality Hackers , Saffo, Barlow, FutureCulture , and BLINK document cyberdelic as experience, art, and network culture.
+
 - 2011: Kins begins public visual-effect taxonomy work ([Kins, 2011](https://disregardeverythingisay.com/post/9331287956/the-visual-components-of-a-psychedelic-experience)).
 
 - 2015: Google publishes Inceptionism and the DeepDream notebook ([Mordvintsev et al., 2015](https://research.google/blog/inceptionism-going-deeper-into-neural-networks/)).
@@ -258,6 +323,23 @@ Simulated psychedelic vision
  states. That dissociation gives the paradigm its use: it lets
  researchers ask what altered vision alone can do
  ([Suzuki et al., 2017](https://doi.org/10.1038/s41598-017-16316-2)).
+
+### The image is only one layer of the experience
+
+ The 1990s VR record adds a practical lesson to the claim ladder. An
+ image transformation sits inside a larger experience shaped by temporal
+ continuity, display geometry, latency, head tracking, posture, vestibular
+ cues, sound, duration, agency, and expectation. Early projects often
+ learned that task-relevant interaction and sensorimotor coherence mattered
+ more than visual detail alone
+ ([Delaney, 2014](https://search.worldcat.org/search?q=bn%3A9781500893293)).
+
+ A reproducible "DeepDream VR" condition should therefore report more
+ than its network and layer. It should also describe the source scene,
+ temporal stabilization, headset and field of view, latency and tracking,
+ audio, movement, exposure curve, participant history, and outcome measure.
+ Those variables do not turn visual resemblance into a whole psychedelic
+ state; they make the limited experience precise enough to compare.
 
 ### The studies show selected effects
 
@@ -322,7 +404,7 @@ Simulated psychedelic vision
 
 ## The field after DeepDream
 
- As of May 22, 2026, DeepDream is no longer the frontier of generative
+ As of July 17, 2026, DeepDream is no longer the frontier of generative
  image culture. Its importance is more historical and methodological:
  it made machine pareidolia vivid, gave researchers a controllable
  altered-vision stimulus, and forced the field to ask what kind of
@@ -348,10 +430,11 @@ Simulated psychedelic vision
  Current public records also need careful separation. ClinicalTrials.gov
  lists Yale's NCT06581263 "Psychedelic Virtual Reality" record as
  completed, with primary completion and completion dates of March 22,
- 2026, and an update posted on March 25, 2026. The University of
- Tartu's NCT06174285 Psyrreal record is listed as recruiting, with
- primary completion and completion dates planned for June 30, 2026.
- Those are registry-status claims, not outcome claims
+ 2026, but no results posted. The University of Tartu's NCT06174285
+ Psyrreal record still says recruiting and still gives June 30, 2026 as
+ its estimated completion date. That date has passed, and the record was
+ last verified in March 2025, so its public status may be stale. These are
+ registry facts, not evidence of efficacy
  ([ClinicalTrials.gov, NCT06581263](https://clinicaltrials.gov/study/NCT06581263);
  [ClinicalTrials.gov, NCT06174285](https://clinicaltrials.gov/study/NCT06174285)).
 
@@ -447,7 +530,7 @@ Simulated psychedelic vision
 ## Sources and entry points
 
  These references are grouped by role. Living pages, repositories,
- and trial records were checked on May 22, 2026 unless a more specific
+ and trial records were checked on July 17, 2026 unless a more specific
  update date is listed.
 
 ### Visual phenomenology
@@ -534,18 +617,34 @@ Simulated psychedelic vision
 
 ### Cyberdelic and current records
 
+- Leary and Gullichsen. "[Load & Run High-tech Paganism -- Digital Polytheism](https://archive.org/details/realityhackers06real)." Reality Hackers 6 (1988), pp. 66-67; contributor note on p. 7.
+
+- Saffo. "[Consensual Realities in Cyberspace](https://doi.org/10.1145/63526.315953)." Communications of the ACM 32(6) (1989), pp. 664-665. [Period full-text reprint](https://phrack.org/issues/30/8).
+
+- Barlow. "[Being in Nothingness](https://w2.eff.org/Misc/Publications/John_Perry_Barlow/HTML/being_in_nothingness.html)." Mondo 2000 2 (1990).
+
+- Hawks. "[FutureCulture FAQ](https://github.com/jbarke/textfiles.com/blob/12a04de3091d8d3fa1e5c98b96a2ab93e7b30006/textfiles.com/fun/fculture.html)." Updated December 31, 1992.
+
+- Germuska. "[BLINK announcement](https://github.com/ItalianHackersEmbassy/ancient-ezines/blob/fb4b5d06e7b1a951ad2af1363ab4a0a40445064d/teknoraver.net/e-zines/surfpunk/0085)." May 2, 1993; redistributed in SURFPUNK 0085.
+
+- Frost. "[The Cyberpoet's Guide to Virtual Culture](https://github.com/jbarke/textfiles.com/blob/12a04de3091d8d3fa1e5c98b96a2ab93e7b30006/textfiles.com/fun/cpoet-01.txt)." March 14, 1994.
+
+- Delaney. [Sex, Drugs and Tessellation](https://search.worldcat.org/search?q=bn%3A9781500893293). CyberEdge Information Services (2014).
+
 - Hartogsohn. "[Cyberdelics in Context](https://doi.org/10.3389/fpsyg.2022.1073235)." Frontiers in Psychology (2023).
 
 - Smith and Warner. "[Cyberdelics: Context Engineering Psychedelics for Altered Traits](https://doi.org/10.14236/ewic/EVA2022.48)." EVA London (2022).
+
+- Cyberdelic Nexus. "[Cyberdelic Society](https://www.cyberdelic.nexus/cyberdelic-society)." Current organization page; checked 2026-07-17.
 
 - Kaup et al. "[Psychedelic Replications in Virtual Reality and their Potential as a Therapeutic Instrument](https://doi.org/10.3389/fpsyt.2023.1088896)." Frontiers in Psychiatry 14 (2023).
 
 - Psyrreal. "[Psyrreal VR](https://psyrreal.mozellosite.com/)." Public project page.
 
-- ClinicalTrials.gov. "[NCT06174285: Effect of Psychedelic VR-augmented Therapy on Patients With Clinical Depression](https://clinicaltrials.gov/study/NCT06174285)." University of Tartu registry record; status checked 2026-05-22.
+- ClinicalTrials.gov. "[NCT06174285: Effect of Psychedelic VR-augmented Therapy on Patients With Clinical Depression](https://clinicaltrials.gov/study/NCT06174285)." University of Tartu registry record; status checked 2026-07-17.
 
 - Yale Medicine. "[Can Virtual Reality Help with Psychedelic Research?](https://www.yalemedicine.org/clinical-trials/psychedelic-virtual-reality)" DeepDream VRP study page.
 
-- ClinicalTrials.gov. "[NCT06581263: Psychedelic Virtual Reality](https://clinicaltrials.gov/study/NCT06581263)." Yale University registry record; status checked 2026-05-22.
+- ClinicalTrials.gov. "[NCT06581263: Psychedelic Virtual Reality](https://clinicaltrials.gov/study/NCT06581263)." Yale University registry record; status checked 2026-07-17.
 
 - Yale Ventures. "[Simulated Psychedelic Immersive Experience: Healthcare Intervention for Depression (Si-PHI)](https://ventures.yale.edu/yale-technologies/simulated-psychedelic-immersive-experience-healthcare-intervention-depression-si)." Technology page.
