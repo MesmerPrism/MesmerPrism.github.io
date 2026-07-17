@@ -388,6 +388,345 @@
     ]
   },
   {
+    "id": "heilig-sensorama-simulator-1962",
+    "type": "webpage",
+    "title": "Sensorama Simulator",
+    "URL": "https://patents.google.com/patent/US3050870A/en",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          7,
+          17
+        ]
+      ]
+    },
+    "note": "Referenced by Deep Dream: https://mesmerprism.com/projects/deep-dream.html",
+    "author": [
+      {
+        "literal": "Heilig"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          1962
+        ]
+      ]
+    }
+  },
+  {
+    "id": "sutherland-the-ultimate-display-1965",
+    "type": "webpage",
+    "title": "The Ultimate Display",
+    "URL": "https://is.muni.cz/el/phil/jaro2012/FAVBPa05/31787227/ivan_e._sutherland_the_ultimate_display.pdf",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          7,
+          17
+        ]
+      ]
+    },
+    "note": "Referenced by Deep Dream: https://mesmerprism.com/projects/deep-dream.html",
+    "author": [
+      {
+        "literal": "Sutherland"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          1965
+        ]
+      ]
+    }
+  },
+  {
+    "id": "sutherland-a-head-mounted-three-dimensional-display-1968",
+    "type": "article-journal",
+    "title": "A Head-Mounted Three Dimensional Display",
+    "URL": "https://doi.org/10.1145/1476589.1476686",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          7,
+          17
+        ]
+      ]
+    },
+    "note": "Referenced by Deep Dream: https://mesmerprism.com/projects/deep-dream.html",
+    "author": [
+      {
+        "literal": "Sutherland"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          1968
+        ]
+      ]
+    },
+    "DOI": "10.1145/1476589.1476686"
+  },
+  {
+    "id": "laurel-strickland-and-tow-placeholder-landscape-and-narrative-in-virtual-environme-1994",
+    "type": "webpage",
+    "title": "Placeholder: Landscape and Narrative in Virtual Environments",
+    "URL": "https://www.tauzero.com/Brenda_Laurel/Placeholder/CGQ_Placeholder.html",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          7,
+          17
+        ]
+      ]
+    },
+    "note": "Referenced by Deep Dream: https://mesmerprism.com/projects/deep-dream.html",
+    "author": [
+      {
+        "literal": "Laurel, Strickland, and Tow"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          1994
+        ]
+      ]
+    }
+  },
+  {
+    "id": "stenger-angels-1991",
+    "type": "webpage",
+    "title": "Angels",
+    "URL": "https://www.kcl.ac.uk/research/nicole-stenger",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          7,
+          17
+        ]
+      ]
+    },
+    "note": "Referenced by Deep Dream: https://mesmerprism.com/projects/deep-dream.html",
+    "author": [
+      {
+        "literal": "Stenger"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          1991
+        ]
+      ]
+    }
+  },
+  {
+    "id": "addison-detour-brain-deconstruction-area-ahead-1994",
+    "type": "webpage",
+    "title": "Detour: Brain Deconstruction Area Ahead",
+    "URL": "https://www.evl.uic.edu/art/1724",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          7,
+          17
+        ]
+      ]
+    },
+    "note": "Referenced by Deep Dream: https://mesmerprism.com/projects/deep-dream.html",
+    "author": [
+      {
+        "literal": "Addison"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          1994
+        ]
+      ]
+    }
+  },
+  {
+    "id": "caire-cyberhead-1994",
+    "type": "webpage",
+    "title": "Cyberhead",
+    "URL": "https://patricecaire.com/artist-category/exhibitions/",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          7,
+          17
+        ]
+      ]
+    },
+    "note": "Referenced by Deep Dream: https://mesmerprism.com/projects/deep-dream.html",
+    "author": [
+      {
+        "literal": "Caire"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          1994
+        ]
+      ]
+    }
+  },
+  {
+    "id": "davies-osmose-1995",
+    "type": "webpage",
+    "title": "Osmose",
+    "URL": "https://www.immersence.com/osmose",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          7,
+          17
+        ]
+      ]
+    },
+    "note": "Referenced by Deep Dream: https://mesmerprism.com/projects/deep-dream.html",
+    "author": [
+      {
+        "literal": "Davies"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          1995
+        ]
+      ]
+    }
+  },
+  {
+    "id": "mon-williams-wann-and-rushton-binocular-vision-in-a-virtual-world-visual-deficits-foll-1993",
+    "type": "article-journal",
+    "title": "Binocular Vision in a Virtual World: Visual Deficits Following the Wearing of a Head-Mounted Display",
+    "URL": "https://doi.org/10.1111/j.1475-1313.1993.tb00496.x",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          7,
+          17
+        ]
+      ]
+    },
+    "note": "Referenced by Deep Dream: https://mesmerprism.com/projects/deep-dream.html",
+    "author": [
+      {
+        "literal": "Mon-Williams, Wann, and Rushton"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          1993
+        ]
+      ]
+    },
+    "DOI": "10.1111/j.1475-1313.1993.tb00496.x"
+  },
+  {
+    "id": "lampton-et-al-the-virtual-environment-performance-assessment-battery-v-1994",
+    "type": "article-journal",
+    "title": "The Virtual Environment Performance Assessment Battery (VEPAB)",
+    "URL": "https://doi.org/10.1162/pres.1994.3.2.145",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          7,
+          17
+        ]
+      ]
+    },
+    "note": "Referenced by Deep Dream: https://mesmerprism.com/projects/deep-dream.html",
+    "author": [
+      {
+        "literal": "Lampton et al"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          1994
+        ]
+      ]
+    },
+    "DOI": "10.1162/pres.1994.3.2.145"
+  },
+  {
+    "id": "kolasinski-simulator-sickness-in-virtual-environments-1995",
+    "type": "webpage",
+    "title": "Simulator Sickness in Virtual Environments",
+    "URL": "https://www.govinfo.gov/app/details/GOVPUB-D101-PURL-gpo109226",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          7,
+          17
+        ]
+      ]
+    },
+    "note": "Referenced by Deep Dream: https://mesmerprism.com/projects/deep-dream.html",
+    "author": [
+      {
+        "literal": "Kolasinski"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          1995
+        ]
+      ]
+    }
+  },
+  {
+    "id": "delaney-sex-drugs-and-tessellation-2014",
+    "type": "webpage",
+    "title": "Sex, Drugs and Tessellation",
+    "URL": "https://search.worldcat.org/search?q=bn%3A9781500893293",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          7,
+          17
+        ]
+      ]
+    },
+    "note": "Referenced by Deep Dream: https://mesmerprism.com/projects/deep-dream.html",
+    "author": [
+      {
+        "literal": "Delaney"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2014
+        ]
+      ]
+    }
+  },
+  {
     "id": "mordvintsev-olah-and-tyka-inceptionism-going-deeper-into-neural-networks-2015",
     "type": "webpage",
     "title": "Inceptionism: Going Deeper into Neural Networks",
@@ -1129,34 +1468,6 @@
       "date-parts": [
         [
           1994
-        ]
-      ]
-    }
-  },
-  {
-    "id": "delaney-sex-drugs-and-tessellation-2014",
-    "type": "webpage",
-    "title": "Sex, Drugs and Tessellation",
-    "URL": "https://search.worldcat.org/search?q=bn%3A9781500893293",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          7,
-          17
-        ]
-      ]
-    },
-    "note": "Referenced by Deep Dream: https://mesmerprism.com/projects/deep-dream.html",
-    "author": [
-      {
-        "literal": "Delaney"
-      }
-    ],
-    "issued": {
-      "date-parts": [
-        [
-          2014
         ]
       ]
     }

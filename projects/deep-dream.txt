@@ -35,6 +35,7 @@ Deep Dream
 
  Start with the basics (https://mesmerprism.com/projects/deep-dream.html#field-guide)
  Cyberdelic prehistory (https://mesmerprism.com/projects/deep-dream.html#cyberdelic-prehistory)
+ Early VR lessons (https://mesmerprism.com/projects/deep-dream.html#early-vr)
  Community role (https://mesmerprism.com/projects/deep-dream.html#community)
  Evidence (https://mesmerprism.com/projects/deep-dream.html#evidence)
  V1 form constants (https://mesmerprism.com/projects/bressloff-v1-form-constants.html)
@@ -152,6 +153,97 @@ The culture is older than the current institution
  (Hartogsohn, 2023 (https://doi.org/10.3389/fpsyg.2022.1073235);
  Cyberdelic Society (https://www.cyberdelic.nexus/cyberdelic-society)).
 
+ The first VR boom
+
+Early VR had already separated a striking image from a convincing experience
+
+ Ben Delaney's Sex, Drugs and Tessellation is most useful here
+ as an archive. It preserves CyberEdge Journal reporting from
+ 1991 to 1997 alongside recollections written in 2014. Reading those
+ layers separately reveals a prehistory of synthetic altered
+ perception, and a record of the practical problems that survived the
+ first VR boom
+ (Delaney, 2014 (https://search.worldcat.org/search?q=bn%3A9781500893293)).
+
+Presence was a relationship, not a picture
+
+ Mort Heilig's Sensorama patent joined stereoscopic film to sound,
+ vibration, wind, and smell. Ivan Sutherland then described a tracked
+ display whose image changed with the viewer's head. Neither project
+ was a psychedelic simulator. Together they established the more
+ durable point: immersion depends on coordinated sensory and bodily
+ cues, not image complexity alone
+ (Heilig, 1962 (https://patents.google.com/patent/US3050870A/en);
+ Sutherland, 1965 (https://is.muni.cz/el/phil/jaro2012/FAVBPa05/31787227/ivan_e._sutherland_the_ultimate_display.pdf);
+ Sutherland, 1968 (https://doi.org/10.1145/1476589.1476686)).
+
+ The same lesson reappeared when headsets produced eyestrain or motion
+ sickness. Binocular geometry, lag, and disagreement between visual,
+ vestibular, and proprioceptive cues could undo an otherwise persuasive
+ world. A DeepDream transform therefore sits inside a display system;
+ it is not the whole stimulus
+ (Mon-Williams et al., 1993 (https://doi.org/10.1111/j.1475-1313.1993.tb00496.x);
+ Kolasinski, 1995 (https://www.govinfo.gov/app/details/GOVPUB-D101-PURL-gpo109226)).
+
+Artists treated immersion as a way to expose inner experience
+
+ The psychedelic connection in this archive is cultural and artistic
+ before it is experimental. Brenda Laurel remembered Timothy Leary and
+ Terence McKenna as part of the Bay Area imagination around VR. Her
+ collaborative Placeholder replaced combat conventions with
+ landscape, story, voice, and animal embodiment. Nicole Stenger's
+ Angels built an intimate mythical encounter, while Char
+ Davies's Osmose used breathing and balance to navigate a
+ translucent world
+ (Laurel, Strickland & Tow, 1994 (https://www.tauzero.com/Brenda_Laurel/Placeholder/CGQ_Placeholder.html);
+ Stenger, Angels (https://www.kcl.ac.uk/research/nicole-stenger);
+ Davies, Osmose (https://www.immersence.com/osmose)).
+
+ Rita Addison's Detour reconstructed her altered sensorium
+ after a brain injury. Patrice Caire's Cyberhead turned scans
+ of the artist's head into a passage through eye, optic nerve, brain,
+ and ear. These works are not evidence that VR duplicates injury,
+ psychedelics, or another person's consciousness. They are earlier
+ solutions to the formal problem DeepDream later made newly tractable:
+ how to give an internal mode of perception an inspectable external form
+ (Addison, Detour (https://www.evl.uic.edu/art/1724);
+ Caire, Cyberhead (https://patricecaire.com/artist-category/exhibitions/)).
+
+Useful fidelity was selective
+
+ Several reports in the anthology become more interesting when their
+ limits remain visible. In a NASA navigation comparison, a conventional
+ virtual walk-through reportedly lost to a map, but an impossible
+ overhead view greatly improved learning. A Motorola training study
+ used only twenty-one participants, seven per condition; its promising
+ error result was explicitly presented as small and unreplicated.
+ Hanford developers likewise valued task-relevant interaction over
+ decorative realism. These are historical reports, not settled effect
+ sizes, but they converge on a sound design principle: preserve the
+ cues needed for the question instead of maximizing spectacle
+ (Delaney, 2014 (https://search.worldcat.org/search?q=bn%3A9781500893293)).
+
+ The original Virtual Environment Performance Assessment Battery made
+ the same turn toward measurement. It asked what virtual-environment
+ interfaces did to concrete human performance. For psychedelic-vision
+ research, that means reporting the visual mechanism, source material,
+ temporal continuity, display, movement, exposure, participant history,
+ and outcome separately. "It felt immersive" is an observation, not a
+ substitute for that record
+ (Lampton et al., 1994 (https://doi.org/10.1162/pres.1994.3.2.145)).
+
+The failures belong in the lineage too
+
+ CyberEdge followed VPL's collapse, unreliable equipment,
+ delayed delivery, weak service, and announcements that cooled demand
+ for products already on sale. Its recurring anti-hype stance matters
+ as much as its enthusiasm. The first cycle repeatedly confused an
+ arresting demonstration with a dependable product, and presence with
+ measured benefit. That is why this page keeps visual resemblance,
+ participant report, behavioral or physiological change, and clinical
+ outcome on separate levels
+ (Delaney, 2014 (https://search.worldcat.org/search?q=bn%3A9781500893293)).
+
  Community lineage
 
 The target set was named before it was stabilized in the lab
@@ -262,6 +354,7 @@ How a feature-visualization trick became a moving hallucination machine
  Suzuki code (https://github.com/ksk-S/DeepDreamVideoOpticalFlow)).
 
 Compressed timeline
+- 1962-1995: Sensorama, tracked head-mounted displays, immersive art, performance assessment, and simulator-sickness research establish the wider experience-design lineage.
 - 1988-1993: Reality Hackers , Saffo, Barlow, FutureCulture , and BLINK document cyberdelic as experience, art, and network culture.
 - 2011: Kins begins public visual-effect taxonomy work (Kins, 2011 (https://disregardeverythingisay.com/post/9331287956/the-visual-components-of-a-psychedelic-experience)).
 - 2015: Google publishes Inceptionism and the DeepDream notebook (Mordvintsev et al., 2015 (https://research.google/blog/inceptionism-going-deeper-into-neural-networks/)).
@@ -510,6 +603,20 @@ Community practice
 - Loka. "Psychic Rendering (https://www.lokavision.com/psychic-rendering)." Practical hallucination-replication design page.
 - Symmetric Vision. "Symmetric Vision (https://www.symmetric-vision.xyz/)." Altered-state simulation portfolio.
 - Scry Visuals. "Atomic Discovery Collection (https://scry.art/blog/public/posts/atomic-discovery-collection/)." Generative visual-replication project note.
+
+Early VR and immersive altered perception
+- Heilig. "Sensorama Simulator (https://patents.google.com/patent/US3050870A/en)." US Patent 3,050,870 (1962).
+- Sutherland. "The Ultimate Display (https://is.muni.cz/el/phil/jaro2012/FAVBPa05/31787227/ivan_e._sutherland_the_ultimate_display.pdf)." IFIP Congress (1965).
+- Sutherland. "A Head-Mounted Three Dimensional Display (https://doi.org/10.1145/1476589.1476686)." Fall Joint Computer Conference (1968).
+- Laurel, Strickland, and Tow. "Placeholder: Landscape and Narrative in Virtual Environments (https://www.tauzero.com/Brenda_Laurel/Placeholder/CGQ_Placeholder.html)." Computer Graphics Quarterly 28(2) (1994).
+- Stenger. "Angels (https://www.kcl.ac.uk/research/nicole-stenger)." Immersive artwork and project record (1991-1992).
+- Addison. "Detour: Brain Deconstruction Area Ahead (https://www.evl.uic.edu/art/1724)." EVL project record (1994).
+- Caire. "Cyberhead (https://patricecaire.com/artist-category/exhibitions/)." Artist exhibition archive (1994).
+- Davies. "Osmose (https://www.immersence.com/osmose)." Artist project archive (1995).
+- Mon-Williams, Wann, and Rushton. "Binocular Vision in a Virtual World: Visual Deficits Following the Wearing of a Head-Mounted Display (https://doi.org/10.1111/j.1475-1313.1993.tb00496.x)." Ophthalmic and Physiological Optics 13(4) (1993).
+- Lampton et al. "The Virtual Environment Performance Assessment Battery (VEPAB) (https://doi.org/10.1162/pres.1994.3.2.145)." Presence 3(2) (1994).
+- Kolasinski. "Simulator Sickness in Virtual Environments (https://www.govinfo.gov/app/details/GOVPUB-D101-PURL-gpo109226)." U.S. Army Research Institute Technical Report 1027 (1995).
+- Delaney. Sex, Drugs and Tessellation (https://search.worldcat.org/search?q=bn%3A9781500893293). CyberEdge Journal archive with 2014 recollections (2014).
 
 Technical origin
 - Mordvintsev, Olah, and Tyka. "Inceptionism: Going Deeper into Neural Networks (https://research.google/blog/inceptionism-going-deeper-into-neural-networks/)." Google Research (2015).
