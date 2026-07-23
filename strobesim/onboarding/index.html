@@ -25,7 +25,7 @@
       <p>This is the working path for Trevor: explore or create stimuli in the browser, install the APK supplied by Till, test the result in the headset, and move profile sets between the two versions when needed.</p>
       <div class="guide-actions">
         <a class="primary" href="../">Open StrobeSim</a>
-        <a href="https://mesmerprism.com/Meta-Quest-File-Manager/">Get Meta Quest File Manager</a>
+        <a href="https://mesmerprism.com/QuestIonAble-File-Manager/">Get QuestIonAble File Manager</a>
         <a href="https://github.com/MesmerPrism/rusty-quest">Open the Rusty Quest repository</a>
       </div>
     </section>
@@ -40,7 +40,7 @@
       <div class="workflow-map">
         <div class="workflow-line">
           <strong>Application</strong>
-          <span>APK from Till → Meta Quest File Manager on Windows → installed Quest app</span>
+          <span>APK from Till → QuestIonAble File Manager on Windows → installed Quest app</span>
         </div>
         <div class="workflow-line">
           <strong>Profiles</strong>
@@ -80,15 +80,15 @@
 
     <section id="quest" class="guide-section">
       <h2>2. Install and run the Quest APK</h2>
-      <p class="section-lead">Till supplies the APK directly. Meta Quest File Manager provides the Windows installation route; it does not publish or download this shared test build.</p>
+      <p class="section-lead">Till supplies the APK directly. QuestIonAble File Manager provides the Windows installation route; it does not publish or download this shared test build.</p>
       <ol class="steps">
         <li>
-          <h3>Install Meta Quest File Manager</h3>
-          <p>Use its <a href="https://mesmerprism.com/Meta-Quest-File-Manager/">guided setup and onboarding page</a>. It requires Windows, Android SDK Platform Tools, a Quest in Developer Mode, and a USB data cable for the first authorization.</p>
+          <h3>Install QuestIonAble File Manager</h3>
+          <p>Use its <a href="https://mesmerprism.com/QuestIonAble-File-Manager/">guided setup and onboarding page</a>. It requires Windows, Android SDK Platform Tools, a Quest in Developer Mode, and a USB data cable for the first authorization.</p>
         </li>
         <li>
           <h3>Authorize the headset</h3>
-          <p>Connect the Quest by USB, put on the headset, and approve the USB debugging prompt. In Meta Quest File Manager choose <strong>Refresh</strong>, then select the ready <strong>[USB]</strong> headset at the top.</p>
+          <p>Connect the Quest by USB, put on the headset, and approve the USB debugging prompt. In QuestIonAble File Manager choose <strong>Refresh</strong>, then select the ready <strong>[USB]</strong> headset at the top.</p>
         </li>
         <li>
           <h3>Install the supplied file</h3>
@@ -136,7 +136,7 @@
           <p>Back in StrobeSim, choose <strong>Import JSON</strong> and select <code>quest-profiles.json</code>. A valid import replaces the current persistent browser library.</p>
         </li>
       </ol>
-      <p class="boundary-note"><strong>Why this is a separate bridge:</strong> Meta Quest File Manager handles the APK and normal ADB-accessible shared storage. The Quest app keeps its effective profile authority in app-private storage, so the ordinary Files tab is not described as a profile-sync route. The repository bridge provides the narrow, validated path.</p>
+      <p class="boundary-note"><strong>Why this is a separate bridge:</strong> QuestIonAble File Manager handles the APK and normal ADB-accessible shared storage. The Quest app keeps its effective profile authority in app-private storage, so the ordinary Files tab is not described as a profile-sync route. The repository bridge provides the narrow, validated path.</p>
     </section>
 
     <section id="code" class="guide-section">
@@ -159,7 +159,7 @@
   </main>
 
   <footer class="guide-footer">
-    StrobeSim is adapted with Trevor Hewitt's permission. Rusty Quest source is AGPL-3.0-or-later; Meta Quest File Manager is MIT licensed.
+    StrobeSim is adapted with Trevor Hewitt's permission. Rusty Quest source is AGPL-3.0-or-later; QuestIonAble File Manager is MIT licensed.
   </footer>
 </body>
 </html>
