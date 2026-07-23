@@ -3,7 +3,7 @@
 Source: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html
 Canonical HTML: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html
 Generated: 2026-07-23
-Description: A source-linked research article on mixed-ability human-swarm interaction, joining accessible shared agency with Tangent Lab's swarm interfaces and John Desnoyers-Stewart's relational mixed-reality work.
+Description: A source-linked proposal for mixed-ability human-swarm interaction built around a multimodal semantic swarm state, inspectable mappings, participant-authored access, and repair.
 Markdown: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.md
 Plain text: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.txt
 BibTeX references: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.bib
@@ -11,1617 +11,462 @@ CSL JSON references: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-
 
 ---
 
-Mixed-ability HSI | Updated July 23, 2026
+Mixed-ability HSI | Revised July 23, 2026
 
 # Mixed-Ability Human-Swarm Interaction
 
- Shared agency through many-part bodies
+ Sharing agency through a many-part body
 
- Imagine four people sharing a swarm body. It is not a humanoid avatar and not a single
- cursor. It is a moving cloud of many visible parts: particles, points, fields, light,
- aura, or small agents that gather, stretch, pulse, split, hide, reveal, and recover.
+ Mixed-ability human-swarm interaction asks how disabled and nondisabled people can
+ influence one collective system without using the same input, sustaining the same
+ effort, revealing the same information, or holding identical forms of control.
 
- Each person can affect the body differently. One participant might use breath to soften
- the edge. One might use text to name a goal. One might use a controller to seed a
- movement field. One might use a switch to pause or veto a high-intensity state.
-
- The same shared state can appear through projection or VR, a small physical interface
- swarm, and participant-specific sound or touch. Tangent Lab supplies the clearest
- robotics-side lineage for that approach. John Desnoyers-Stewart's work with iSpace
- supplies the corresponding mixed-reality lineage for abstract shared bodies and
- mediated connection.
-
-## Plain terms
-
- Swarm
- Many small parts whose local behavior creates a larger pattern.
-
- HSI
- Human-swarm interaction: a research inheritance for studying how people influence many coordinated parts at once.
-
- Plasmatic swarm body
- A reversible visual body made from particles, fields, aura, light, or animated matter.
-
- Mapping
- The link between a participant's action and what changes in the swarm.
-
- Sensor envelope
- The range of signals a person, device, or swarm agent can perceive and act through.
-
- Access practice
- A lived technique, device, rhythm, support relation, or refusal that already carries skill and meaning.
-
- Agency
- Who can affect what, and whether others can understand that influence.
-
- Mixed-ability
- Different bodies, devices, energy levels, sensory tolerances, communication styles, privacy needs, and willingness to disclose.
+ The proposed interface has one shared semantic state and several valid renderings. It
+ may appear as projected particles, spatial sound, a tactile pattern, text, or a small
+ physical interface swarm. No rendering is the authoritative version. What matters is
+ whether participants can understand what their actions do, negotiate unequal roles,
+ refuse unwanted effects, and repair the interaction when a mapping fails.
 
 ## Core question
 
- Can a mixed-ability group understand, rebalance, and repair how agency is distributed
- through a many-part body?
-
- This is a design and research-program page, not a therapeutic claim. It asks how
- contribution, privacy, fatigue, authorship, veto power, and repair can become legible
- to a group inside a reversible swarm body, before the work is asked to support task
- performance or physical deployment.
-
-## Thesis
-
- Most swarm interfaces ask how a person controls many parts. This page asks what
- happens when several differently situated people share influence over those parts.
- The swarm is not only something to control; it is a shared object through which
- pacing, visibility, authorship, and repair become negotiable.
-
-## Design stance
-
- Begin with a reversible visual swarm body, where mappings can be seen, changed,
- hidden, paused, or repaired. Use encounter and cooperative play to test those
- mappings under relation, goals, roles, pressure, and conflict. Treat physical
- deployment as a later translation problem, not the starting premise.
-
- First study in one screen
-
-### A reversible visual swarm body, not a deployment claim
-
- Participants
- Small mixed-ability groups with access planning, fallback inputs, non-HMD options, and disclosure controls.
-
- Medium
- A reversible visual swarm body whose mappings can be seen, paused, changed, hidden, and repaired.
-
- Question
- Can the group understand, rebalance, and repair distributed agency?
-
- Conditions
- Access-practice elicitation, low-demand exploration, encounter/storytelling, cooperative play, and translation reflection.
-
- Measures
- Shared agency, fatigue, sensory load, authorship, privacy comfort, repair success, and mapping legibility.
-
- The swarm is not only something to control; it is a shared object through which pacing,
- visibility, authorship, and repair become negotiable. The full protocol card remains
- below in the [minimal study module](https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html#study-module).
-
- Claim status
-
-### Conceptual now; study and translation claims later
-
- This page claims a design problem and a study direction. It does not claim therapeutic
- effect, diagnostic power, deployment safety, or a finished physical swarm system. The
- detailed [claim ladder](https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html#status) separates conceptual, design, research, and
- later-translation claims.
-
- The page moves in four steps. First, it explains why a swarm can read as a body at all:
- a many-part presence held together by coherent dynamics, not sealed skin. Second, it asks
- what mixed-ability access changes when several people shape those dynamics. Third, it maps
- access practice into channels, bindings, dynamic targets, feedback, social contracts, and
- provenance. Fourth, it proposes a staged study path and separates later translation
- horizons from the first visual swarm-body study.
-
-## How a swarm becomes a body
-
- Before asking how a mixed-ability group shares a swarm body, the page has to explain
- why a swarm can read as a body at all.
-
- The body in this page is not a humanoid avatar with a particle effect attached. It is
- closer to a murmuration, aura, constellation, cloud, flock, crowd, or field that can
- still be read as one presence. Its bodyhood comes from dynamics: common motion,
- density, rhythm, response, resistance, return, and repeated transformation.
-
- A swarm body does not need a sealed surface to be embodied. It needs coherence. If
- motion, rhythm, density, and response bind the parts together, the body can remain
- legible while its edges soften, leak, split, or merge. This is the Plasmatic
- Multitudes argument applied to mixed-ability interaction: weakly bounded bodies can
- become embodied when their dynamics are legible enough to support agency, trust, and
- relation
- ([Plasmatic essay](https://mesmerprism.com/plasmatic-multitudes/essay.html#opening); [Plasmatic design rules](https://mesmerprism.com/plasmatic-multitudes/essay.html#design)) .
-
- Coherence
-
-### Something remains recognizable
-
- A rhythm, density core, motion signature, contour, or response pattern lets the body return after change.
-
- Permeability
-
-### The edge changes state
-
- The body can gather, loosen, merge, split, hide, shield, saturate, rest, repair, or re-form.
-
- Relation
-
-### Dynamics carry agency
-
- The body matters when it mediates attention, pacing, distance, touch metaphor, co-presence, or group control.
-
-### How swarm bodies stay legible
-
- Do not ask softness to carry identity by itself. A swarm body needs at least one stable
- carrier: a rhythm that persists, a density core that reforms, a motion signature that
- remains recognizable, a color-temperature relation, a recurrent response pattern, or a
- return path after disturbance.
-
- Permeability should be stateful, not decorative. A swarm body should not merely look
- fuzzy. It should move between meaningful states: gathered, porous, merged, dispersed,
- shielded, hidden, saturated, resting, repairing, or re-forming. The same soft boundary
- might read as rest, vulnerability, privacy, overload, aura, intimacy, refusal, or
- repair depending on pacing, invitation, symbolic frame, and who controls it.
-
- This is why physics-like behavior matters even before any physical deployment is
- considered. The swarm can be impossible, but it should not be arbitrary. It can glow,
- stretch, split, or pour through itself, but the transformation needs timing, force,
- inertia, delay, rebound, resistance, or recovery. These cues make the body feel like a
- world with rules rather than a screensaver
- ([Gilland](https://archive.org/details/elemental-magic/page/n2/mode/1up); [Plasmatic design rules](https://mesmerprism.com/plasmatic-multitudes/essay.html#design)) .
-
- Glowacki's work makes this more than an animation analogy. His molecular-physics and
- art-science lineage runs from danceroom Spectroscopy and Hidden
- Fields , where people act as energy fields inside real-time atomic dynamics, into
- Isness and Clear Light , where light-body abstraction becomes a social
- and phenomenological medium. His 2024 aesthetics paper explicitly frames physics as a
- resource for weakly representational bodies: energy is diffuse, luminous, unbounded,
- and open to coalescence in ways that ordinary material bodies are not
- ([Glowacki](https://doi.org/10.3389/frvir.2023.1286950); [Mitchell et al.](https://doi.org/10.1162/LEON_a_00924); [Hidden Fields](https://www.intangiblerealitieslab.org/projects/hidden-fields)) .
-
- Legibility grammar
- In the first study, "soften the boundary" can mean a visible delay: particles lag, stretch, and recover so the group can read effort, pacing, and relation.
-
- Deep dive: how weakly bounded bodies stay legible
-
- Weakly bounded bodies do not become embodied by becoming vague. They need grouping
- cues, common motion, response, and recurrent structure. A body can lose surface
- closure if it keeps a stable carrier such as a density core, rhythm, motion
- signature, or contingent response pattern.
-
- This is why plasmatic design treats permeability as a state machine rather than a
- shader. The body gathers, disperses, merges, splits, protects, reveals, hides, and
- repairs as meaningful state changes.
-
-### Protean dynamics: appearance is not enough
-
- Avatar embodiment is not only about appearance. It is also about what a virtual body
- lets someone do. A small physical action can become a large virtual transformation; a
- pause can become a visible state; a breath can become boundary softness; a switch can
- become collective repair. In a swarm body, movement grammar carries agency.
-
- Deep dive: Proteus effect and protean kinematics
-
- Avatar research often explains embodiment through transformed self-representation.
- The Proteus effect is useful here because virtual bodies can influence conduct and
- self-perception: Stanford's VHIL summary describes studies where avatar height and
- attractiveness affected behavior in online and later face-to-face contexts
- ([Yee, Bailenson, and Ducheneaut, Proteus effect](https://vhil.stanford.edu/publications/avatars-and-agents/proteus-effect-implications-transformed-digital-self-representation)) .
-
- Swarm bodies need a movement-based extension of that idea. Jeong, Kim, Xu, and
- Miller call this Protean kinematics: an expansion from avatar appearance toward
- movement-based effects and the blend of physical inputs with virtual outputs. That is
- exactly the design space of a plasmatic swarm body
- ([Jeong et al., Protean Kinematics](https://doi.org/10.3389/fpsyg.2021.705170)) .
-
- In this page, the avatar is not a fixed body with a different appearance. It is a
- dynamic body whose movement grammar carries agency. The participant's relation to the
- body comes from how it moves, responds, waits, resists, and returns.
-
- Implementation note: authored emergence
-
- A swarm body is not just "emergence." It is authored emergence. Flocking, particles,
- crowd solvers, and morphogenetic systems become usable when they are shaped by
- fields, guide curves, zones, triggers, rhythms, constraints, repair rules, and levels
- of detail. Mixed-ability HSI needs the same middle layer: enough local autonomy to
- feel alive, enough authoring structure to stay legible and negotiable
- ([Computational morphogenesis](https://mesmerprism.com/plasmatic-multitudes/essay.html#morphogenesis); [Reynolds](https://www.red3d.com/cwr/steer/); [SideFX crowd docs](https://www.sidefx.com/docs/houdini/crowds/basics.html)) .
-
-## The access problem
-
- Once the swarm body is understood as a dynamic shared body, mixed-ability access
- becomes a question of who gets to shape which dynamics.
-
- The issue is not whether every participant can use the same controller. It is whether
- each participant can shape the body in a way that is voluntary, sustainable,
- meaningful, visible when desired, private when needed, and repairable when it fails.
- Access becomes concrete when the group decides who can affect density, rhythm,
- boundary, visibility, pacing, repair, and veto. Those are not cosmetic parameters.
- They are the social structure of the shared body.
-
- A shared swarm body makes that negotiation visible. One person might shape density,
- another rhythm, another boundary softness, another repair logic, another visibility,
- and another the timing of when the body acts at all. The swarm is not only something to
- control; it is a shared object through which access politics become inspectable.
-
- Evidence: access theory and XR accessibility
-
- Access is also the right to reshape what the interface thinks a body is. Crip
- Sensorama makes that especially clear for XR: default headset, controller,
- hand-gesture, vision, and dexterity assumptions quietly define an imagined user
- before accessibility is added. Mixed-ability HSI has to make that imagined user
- visible before it can design a fair swarm body
- ([Jain, Crip Sensorama gesture process](https://jainpuneet798.github.io/portfolio/cripgestures/); [Jain and Bayerlein, Hand to Mouth, 2026](https://doi.org/10.1007/s11569-025-00494-9)) .
-
- Mixed-ability collaboration cannot be reduced to one accessible controller or one
- adaptive interface. Ability-based design argues that systems should adapt to what
- people can and want to do, while interdependence work emphasizes that access is often
- produced between people, technologies, environments, and care relations
- ([Wobbrock et al.](https://doi.org/10.1145/1952383.1952384); [Bennett et al.](https://doi.org/10.1145/3234695.3236348)) .
-
- Mixed-ability therefore includes disability, chronic illness, pain and fatigue
- variation, neurodivergence, sensory tolerance, mobility variation, communication
- preference, temporary impairment, and different willingness to disclose. The design
- question is not whether each person has the same channel. It is whether the group can
- understand, contest, rebalance, and trust how agency is distributed.
-
- Disability and remote-VR research also warn against treating presence as a single
- default mode. Disclosure, sensory load, avatar presentation, recruitment, travel,
- fatigue, pacing, and asynchronous contribution can all change whether participation
- is actually available. W3C's XR Accessibility User Requirements similarly emphasize
- multimodal support, input/output synchronization, customization, motion-agnostic
- interaction, captions, alternatives, and time limits. A virtual-first HSI study
- should therefore support non-HMD modes from the beginning: desktop, browser,
- projection, tablet, captions, audio description, reduced motion, seated use,
- asynchronous annotation, and facilitator-mediated input
- ([Mottelson et al.](https://arxiv.org/abs/2102.11207); [Zhang et al.](https://arxiv.org/abs/2208.11170); [Gualano et al.](https://arxiv.org/abs/2408.08193); [W3C XR Accessibility User Requirements](https://www.w3.org/TR/xaur/)) .
-
- Deep dive: sensor envelopes and overlapping umwelten
-
- A mixed-ability group does not share one sensor envelope. Some participants may rely
- on audio, text, haptics, peripheral vision, facilitator description, memory, breath,
- assistive devices, or asynchronous annotation. The swarm body should make these
- differences negotiable without making them compulsory disclosures. Jain's umwelt work
- is useful here because it frames collaboration as overlapping sensory worlds and
- temporalities rather than as one average user model
- ([Jain, Umwelten](https://jainpuneet798.github.io/portfolio/umwelten/)) .
-
- Input access
-
- Can someone act through a channel that is voluntary, replaceable, and not unnecessarily tiring?
-
- Sensory access
-
- Can someone perceive what is happening through visual, auditory, tactile, textual, or mediated alternatives?
-
- Pacing access
-
- Can someone rest, slow down, contribute asynchronously, or reduce intensity without losing authorship?
-
- Privacy access
-
- Can someone participate without forced disclosure of disability, fatigue, pain, affect, or biosignal state?
-
- Repair access
-
- Can the group pause, undo, remap, replay, rebalance, or change consent after a mapping fails?
-
-## Why abstract bodies matter
-
- The dynamics claim is not speculative from scratch. Several XR and media-art
- precedents already show that abstract bodies can support ownership, touch metaphor,
- co-presence, emotion, and relation without returning to humanoid realism.
-
- These projects matter because they show that a body does not have to look like a normal
- human body to carry social meaning. A luminous aura, particle cloud, constellation, or
- abstract creature can still support ownership, touch metaphor, co-presence, emotion,
- and relation. This page borrows that lesson, then asks a different question: can those
- abstract-body qualities become negotiable access infrastructure for a mixed-ability
- group?
-
- David Glowacki's Isness line is especially important here because it treats abstraction
- as a designed social and phenomenological variable. Its light-body aesthetic lowers
- structural specificity and symbolic rigidity: the body is specific enough to be
- inhabited and encountered, but open enough to support projection, coalescence,
- connectedness, and physics-inspired meaning without hardening into a fixed humanoid
- symbol
- ([Glowacki et al.](https://doi.org/10.1038/s41598-022-12637-z); [Glowacki](https://doi.org/10.3389/frvir.2023.1286950)) .
-
- Isness / Clear Light
-
- Diffuse light bodies, energetic coalescence, and numadelic VR research with people facing life-threatening illness.
-
- Particle-body work
-
- Ownable abstract bodies through mirrors, point clouds, and shared public space.
-
- Body RemiXer
-
- Intercorporeality through particle auras, touch exchange, and abstract body swapping.
-
- ETC
-
- Telepresent social touch through aura avatars, pseudohaptics, and cross-modal cues.
-
- Emotional Beasts
-
- Non-realistic emotional expression through color, glow, aura, fur, and particles.
-
- Galea / PhysioHMD
-
- Sensor-rich XR lineage for optional physiological and muscular inputs.
-
- Crip Sensorama
-
- Disability-led mapping, mouth gestures, crip-hacking, and preference-tuned interaction.
-
- Evidence: abstract-body precedents
-
- Glowacki's Isness work gives this section its clearest bridge between abstract body
- form, social connectedness, and physics-inspired aesthetics. Isness-D represents
- participants as luminous energetic essences with diffuse boundaries that can
- coalesce, and the 2022 study reports strong self-report outcomes around
- ego attenuation, communitas, and connectedness. The 2024 aesthetic paper then makes
- the design vocabulary more explicit: low structural specificity and low symbolic
- rigidity allow a representation to remain bodily and meaningful without being
- locked into ordinary object, body, or identity categories
- ([Glowacki et al.](https://doi.org/10.1038/s41598-022-12637-z); [Glowacki](https://doi.org/10.3389/frvir.2023.1286950)) .
-
- This matters for the physics argument because the abstract body is not only a soft
- avatar. It inherits a molecular-simulation sensibility from Glowacki's earlier
- installation work: bodies can be modeled as fields, forces, densities, flows,
- coalescences, and perturbations. In public HSI language, that separates two claims
- that often get blurred. Physics can be a generative aesthetic substrate for shared
- embodiment, but it can also become a concrete implementation burden when sensors,
- simulations, particles, and hardware must keep the experience stable across time.
- The 2025 esencia paper is especially useful because it treats that lineage
- as an active reinterpretation problem across depth sensing, particle simulation,
- GPU execution, and changing software stacks
- ([Mitchell et al.](https://doi.org/10.1162/LEON_a_00924); [Toledo Castro, Protopopov, and Glowacki](https://doi.org/10.1145/3749893.3749972); [Essentia Foundation interview](https://www.youtube.com/watch?v=r6_VOOe8SMg)) .
-
- That same lineage is now being translated into clinical-adjacent work through
- aNUma's Clear Light program and the Tiny Blue Dot-funded NUMADELIC project.
- The current public evidence should be read carefully: a published observational
- cohort of 15 people facing life-threatening illness reports feasibility and
- improvements on self-report measures, while also stressing the limits of having no
- randomization or control group. The stronger efficacy question is routed through a
- public OSF registration for a randomized controlled trial, and IRL/CiTIUS describe
- the wider 2024-2028 project as combining lab studies, design iteration,
- physiological measurement, and an RCT. Numadelic Labs Collective adds a current
- nonprofit translation surface for the same lineage: its public materials describe
- AI-augmented group therapy in VR, with group, embodied, and immersive elements,
- energetic essences, arm-guided energy between bodies, and a science page that lists
- the peer-reviewed numadelic research base. That site is useful as organizational
- and design-context evidence, not as independent efficacy proof
- ([Kettner et al.](https://doi.org/10.3389/frvir.2024.1466362); [OSF RCT registration](https://osf.io/72uwz/); [CiTIUS NUMADELIC project](https://citius.gal/research/projects/experiencias-de-realidade-virtual-numadelicas-para-mellorar-a-saude-mental-e-o-benestar/); [aNUma Clear Light](https://anuma.com/clearlight); [Numadelic Labs](https://www.numadeliclabs.org/); [Numadelic Labs science page](https://www.numadeliclabs.org/the-science)) .
-
- John Desnoyers-Stewart's particle-body line is the clearest existing precedent for
- this middle layer. Transcending Projection and Transcending the Virtual
- Mirror Stage show how point-cloud and particle bodies can become ownable through
- mirrors and shared public space. Body RemiXer then moves from ownership into
- intercorporeality through particle auras, touch exchange, and abstract body swapping.
- Star-Stuff frames participants as constellation bodies in a shared cosmic
- encounter, while ETC turns aura avatars into a telepresent social-touch
- system using pseudohaptics and cross-modal cues
- ([Desnoyers-Stewart](https://www.medien.ifi.lmu.de/socialHMD/SHMD_19_submissions/SHMD_19_paper_12.pdf); [Desnoyers-Stewart, Smith, and Riecke](https://gala.gre.ac.uk/id/eprint/31046/7/31046%20PAPADAKI_DRHA2019_Conference_Proceedings_2020.pdf); [Desnoyers-Stewart et al. 2020](https://doi.org/10.1162/LEON_a_01925); [Desnoyers-Stewart 2022](https://www.isea-symposium-archives.org/presentation/star-stuff-a-shared-immersive-experience-in-space-presented-by-desnoyers-stewart/); [Desnoyers-Stewart et al. 2023](https://doi.org/10.1145/3544549.3585843)) .
-
- Bernal and Maes add a second useful precedent with Emotional Beasts . Their
- abstract avatars used color, glow, aura-like changes, fur, and particle expression to
- make internal state visible without returning to a realistic body. The later
- Bernal/OpenBCI line matters because it connects emotionally expressive avatars to
- sensor-rich HMD work: OpenBCI describes Emotional Beasts and PhysioHMD as
- part of Bernal's effort to integrate biosensors into head-mounted displays, while
- Galea carried that direction into a mixed-reality platform with EEG, EOG, EMG, EDA,
- and PPG sensing
- ([Bernal and Maes, Emotional Beasts](https://doi.org/10.1145/3027063.3053207); [OpenBCI Bernal interview, 2020](https://openbci.com/community/affective-computing-and-mixed-reality-guillermo-bernal/); [Bernal, Developing Galea, 2021](https://www.media.mit.edu/posts/galea/); [MIT PhysioHMD](https://www.media.mit.edu/projects/physiohmd/overview/); [OpenBCI Galea release, 2020](https://www.prnewswire.com/news-releases/openbci-unveils-galea-a-new-platform-that-brings-next-generation-biometrics-to-mixed-reality-301177149.html)) .
-
- These precedents do not prove mixed-ability HSI. They show that abstract, weakly
- bounded, luminous, particle-like, or aura-like bodies can still carry relation, touch
- metaphor, co-presence, and social meaning. Mixed-ability HSI asks whether those
- qualities can become negotiable group infrastructure.
-
-### Why input diversity is not enough
-
- A long list of inputs does not make a system accessible. Breath, gaze, EMG, mouth
- gestures, switches, controllers, text, and voice can all be useful, but none of them is
- automatically fair, private, comfortable, expressive, or sustainable. Even a category
- such as "mouth gesture" is not generic: it may mean mouth-joystick expertise, a
- painting practice, a wheelchair-control method, a public gesture, a tiring calibration
- routine, or a private access habit.
-
- For mixed-ability HSI, every mapping has provenance: who proposed it, whose practice it
- comes from, how it was tuned, what it costs, what it is allowed to show, and how it can
- be changed or withdrawn.
-
- Evidence: biosignals, EMG, mouth gestures, and crip-hacking
-
- The Galea development account makes that access lineage more concrete: Bernal
- describes working with Christian Bayerlein to connect EMG to muscles across Christian's
- body and use those signals as additional switches or actuators for controlling other
- devices. Christian's later XR/HCI work with Puneet Jain, including the Crip Sensorama
- gesture process, the Christian's Coffee installation, and the Hand to Mouth paper,
- reframes access around mouth gestures, crip-hacking, preference-tuned mappings, and
- disability-led interaction rather than around retrofitting hand-centric interfaces. For
- mixed-ability HSI, the lesson is not that more sensors are automatically better
- ([Bernal, Developing Galea, 2021](https://www.media.mit.edu/posts/galea/); [Jain, Crip Sensorama gesture process](https://jainpuneet798.github.io/portfolio/cripgestures/); [Jain, Crip Sensorama: Christian's Coffee](https://jainpuneet798.github.io/portfolio/cripsensorama_christians-coffee/); [Jain and Bayerlein, Hand to Mouth, 2026](https://doi.org/10.1007/s11569-025-00494-9)) .
-
- "Embodied" or "controllerless" interaction is not automatically accessible. Mid-air
- gestures, breath control, gaze dwell, and mouth gestures can all create fatigue,
- exposure, social awkwardness, or calibration burden. Access depends on whether the
- channel is voluntary, sustainable, replaceable, private when needed, and allowed to
- fail safely
- ([Jain, VR navigation study](https://jainpuneet798.github.io/portfolio/vrst/)) .
-
- Method precedent
-
-### Jain's access-as-instrument practice
-
- Puneet Jain's work is useful here because it joins disability-led XR, programming,
- complex systems, and research-creation. Crip Sensorama does not treat mouth gestures
- as a universal alternative to hand controllers. It begins from disabled artists'
- existing techniques, adapts XR hardware around those techniques, treats failures and
- workarounds as design knowledge, and turns the resulting interaction into a
- storytelling environment.
-
- For mixed-ability HSI, this means a mapping is not just an input binding. It is an
- authored access practice with calibration burden, aesthetic meaning, failure history,
- reuse permissions, and social consequences. A swarm-body instrument should therefore
- expose not only what signal controls what dynamic, but also who proposed the mapping,
- how it was tuned, what it costs, who sees it, and how it can be retired
- ([Jain, Crip Sensorama gesture process](https://jainpuneet798.github.io/portfolio/cripgestures/); [Jain, Crip Sensorama: Christian's Coffee](https://jainpuneet798.github.io/portfolio/cripsensorama_christians-coffee/); [Jain, AutonomX](https://jainpuneet798.github.io/portfolio/autonomx/); [Jain and Bayerlein, Hand to Mouth, 2026](https://doi.org/10.1007/s11569-025-00494-9)) .
-
-## One shared state, two interface lineages
-
- Tangent Lab and John Desnoyers-Stewart's iSpace work anchor different sides of the
- same design problem: how a collective body becomes physically graspable, virtually
- inhabitable, and open to more than one way of taking part.
-
- These are complementary precedents, not finished examples of mixed-ability HSI.
- Tangent's work develops small robots as programmable interface matter, then studies
- their motion, touch, legibility, cognitive load, and affect. Desnoyers-Stewart's work
- develops projected and virtual bodies that people can enter gradually, identify with,
- mix, touch at a distance, and alter through shared signals. Read together, they suggest
- a relational interface that can move across media without making a headset, a hand
- gesture, or a robot tabletop the only valid point of entry
- ([Tangent Lab](https://tangent.cs.sfu.ca/); [Desnoyers-Stewart at iSpace](https://ispace.iat.sfu.ca/person/john-desnoyers-stewart/)) .
-
- Robotics side
-
-### Tangent: the swarm as interface material
-
- Small robots can become moving controls, data, haptic contacts, conversational
- gestures, or configurable fidget objects. The research question shifts from
- commanding a distant swarm to handling a collective medium.
-
- Mixed-reality side
-
-### iSpace: the swarm as relational body
-
- Particle auras, constellation bodies, projected mirrors, pseudo-haptic contact,
- and breath-linked form let several people meet through a body that is shared
- without becoming anatomically fixed.
-
-### Tangent Lab: from moving robots to a bodily interface
-
- The Tangent lineage begins with Zooids , where small wheeled robots become
- individually addressable physical interface elements. UbiSwarm and the
- associated motion-perception study then show that collective movement is already an
- output language: speed, smoothness, gathering, and dispersion change how a swarm is
- read and can alter a participant's arousal. Robotic Assembly of Haptic Proxy
- Objects and SwarmHaptics add physical consequence. Robots can assemble
- selected low-resolution forms for VR or distribute touch across a body area
- ([Le Goc et al., 2016](https://doi.org/10.1145/2984511.2984547); [Kim and Follmer, 2017](https://doi.org/10.1145/3130931); [Dietz et al., 2017](https://doi.org/10.1145/3027063.3053220); [Zhao et al., 2017](https://doi.org/10.1145/3132272.3134143); [Kim and Follmer, 2019](https://doi.org/10.1145/3290605.3300918)) .
-
- Later studies make the human side more specific. User-defined control work found that
- robot number and proximity changed whether people used fingers, one hand, both hands,
- touch, gesture, or speech. Legibility work separated cues that support a considered
- reading of collective intent from cues that work at a glance. A study of multi-robot
- presence found that larger groups of non-anthropomorphic robots generally slowed task
- performance, while coordinated motion reduced that cost relative to random motion.
- Multiplicity is therefore an exposure variable as well as a technical one
- ([Kim et al., 2020](https://doi.org/10.1145/3313831.3376814); [Kim and Follmer, 2021](https://doi.org/10.1145/3442681); [Luo, Domova, and Kim, 2024](https://doi.org/10.1145/3613904.3642795)) .
-
- SwarmFidget carries this material into self-regulatory and affective
- interaction. The initial study explored programmable return, attraction, repulsion,
- linked motion, and shape repair. A later co-design study with 16 adults diagnosed with
- ADHD found varied preferences rather than one ideal fidget behaviour. More recent
- co-speech and emotion-regulation projects treat collective motion as social expression.
- The ADHD work is strong formative accessibility evidence, but none of these studies
- establishes therapeutic benefit
- ([Kim et al., 2023](https://doi.org/10.1145/3586183.3606746); [Pulatova and Kim, 2024](https://doi.org/10.1145/3663548.3675614); [Dang, Pulatova, and Kim, 2025](https://doi.org/10.1145/3706598.3714147); [Zhang et al., 2026](https://doi.org/10.1145/3772318.3791599)) .
-
-### iSpace: from projected entry to shared abstract bodies
-
- Transcending Perception provides the clearest entry model. A person can first
- watch projected bodies, then enter the tracked space, collaborate or perform, and only
- later use a headset. That sequence keeps witness, peripheral, projection-only, and HMD
- participation in the same social event. The digital-mirror work shows why this matters
- for embodiment: a responsive particle body can remain connected to the tracked body
- without copying ordinary anatomy
- ([iSpace, Transcending Perception](https://ispace.iat.sfu.ca/project/transcending-perception/); [Desnoyers-Stewart, 2019](https://www.medien.ifi.lmu.de/socialHMD/SHMD_19_submissions/SHMD_19_paper_12.pdf); [Desnoyers-Stewart, Smith, and Riecke, 2019](https://gala.gre.ac.uk/id/eprint/31046/7/31046%20PAPADAKI_DRHA2019_Conference_Proceedings_2020.pdf)) .
-
- Body RemiXer lets particle auras exchange through contact and lets one
- participant's aura overlay another's body. Star-Stuff turns two people into
- constellation fields whose relation produces a collaborative sculpture.
- Embodied Telepresent Connection uses aura avatars, audiovisual alignment, and
- simulated touch points to explore pseudo-haptic social touch at a distance. Together,
- the works distinguish exchange, overlay, co-creation, and contact from simple unison
- ([iSpace, Body RemiXer](https://ispace.iat.sfu.ca/project/body-remixer/); [Desnoyers-Stewart et al., 2020](https://doi.org/10.1162/LEON_a_01925); [Desnoyers-Stewart, 2022](https://doi.org/10.1145/3532834.3536198); [Desnoyers-Stewart et al., 2023](https://doi.org/10.1145/3544549.3585843)) .
-
- JeL and Breath of Light add low-motion, interoceptive contribution:
- breathing changes individual luminous forms and, when the system detects synchrony,
- produces a shared structure or ripple. That is a useful input precedent, but synchrony
- should not become the price of belonging. Resting, asynchronous, complementary, and
- deliberately divergent contributions need visible consequences too. The nine
- strategies described in Designing for Genuine Connection are therefore best
- used as prompts. Touch, closeness, unity, self-disclosure, provocation, and
- self-dissolution are not universally desirable outcomes
- ([Stepanova et al., 2020](https://doi.org/10.1145/3357236.3395532); [Liu et al., 2023](https://doi.org/10.1162/leon_a_02401); [Stepanova et al., 2022](https://doi.org/10.1145/3491102.3517580)) .
-
-### A joined physical–virtual instrument
-
- The combined design does not assign one device to each kind of participant. It keeps a
- common semantic layer between a person's chosen access route and the shared collective
- state. Projection, VR, small robots, sound, captions, and touch become different views
- or consequences of that state. A participant can change route without losing their
- history or authorship.
-
- The first comparison should replay the same logged group event through three
- substrates: a projected or virtual body; a small physical interface swarm; and a
- non-robot tactile, sonic, or tangible baseline. The comparison can then ask what
- survives the change of medium: perceived authorship, group legibility, continuity,
- fatigue, sensory load, and the ability to repair a mapping.
-
- Evidence boundary
-
-### The bridge is a research proposal, not a solved interface
-
- Tangent's direct disability-centred evidence is concentrated in ADHD co-design, and
- many swarm-interface prototypes use central coordination. Desnoyers-Stewart's work
- is highly relevant to social and bodily design, but it is not a disability-centred
- validation of mixed-ability HSI. Abstract embodiment is not automatically
- accessible, pseudo-haptic contact is not physical touch, and physiological synchrony
- is neither a universal measure nor a required form of connection.
-
-## The input stack has to stay explicit
-
- A signal is not the beginning of the design. The stack starts with access practice and
- ends with provenance, reuse, and retirement.
-
- The same breath estimate could soften the body's edge, slow the whole swarm, privately
- warn the participant about overload, or trigger a group pause. Those are different
- mappings, even though the input is identical. That is why the page uses a stack:
- access practice, human channel, binding, dynamic target, feedback, social contract,
- and provenance.
-
- Access practice names the lived technique behind a signal: mouth joystick use, gaze
- typing, switch timing, breath pacing, assisted communication, pain management, rest
- strategy, wheelchair control, or another situated practice. The human channel is the
- measurable signal. The binding says what scale the signal controls. The dynamic target
- says what changes. Feedback says how the participant and group know what happened. The
- social contract says how the mapping is seen, consented to, credited, paused, replayed,
- or remapped. Provenance and retirement say who proposed the mapping, who may reuse it,
- whether it can be public, and how it can be withdrawn from later versions.
-
- Evidence: HSI literature behind the stack
-
- The most useful explicit source here is Kim, Drew, Domova, and Follmer's
- user-defined swarm-control study. It shows that people do not simply choose "gesture"
- as a generic input. Their interaction vocabulary changes with swarm size, unit
- proximity, tabletop versus mobile context, one-hand versus two-hand use, touch, verbal
- commands, and whether the interface can infer the intended state of the swarm
- ([Kim et al.](https://doi.org/10.1145/3313831.3376814)) .
-
- That source should anchor the page, but the map has to be broader. HSI literature
- already distinguishes behavior selection, parameter setting, environmental influence,
- leader influence, and sub-swarm selection; Kolling's foraging-swarm study contrasts
- intermittent selection with environmental beacon control; gesture work distinguishes
- free-form and shape-constrained control, deictic, representational, manipulation,
- pose, motion, and hybrid gestures; mixed-granularity AR combines environment-oriented
- and unit-oriented control
- ([Kolling et al., HSI survey](https://www.ri.cmu.edu/publications/human-interaction-with-robot-swarms-a-survey/); [Kolling et al., two HSI types](https://publications.ri.cmu.edu/storage/publications/pub_files/2013/6/Paper_JHRI.pdf); [Alonso-Mora et al., gesture taxonomy](https://doi.org/10.1109/ICRA.2015.7140033); [Patel, Xu, and Pinciroli, mixed-granularity HSI](https://doi.org/10.1109/ICRA.2019.8793261)) .
-
- Mixed-ability HSI therefore needs a stack, not an input menu. A mouth gesture,
- EMG switch, breath signal, hand pose, touchscreen text entry, voice command, or
- environment marker can all be valid, but none is generic. The same family of signals can
- differ by anatomy, fatigue, equipment, history, comfort, cultural meaning, and
- preference. Each becomes a different social proposal when it binds to a whole swarm, a
- sub-swarm, one particle, a field, a rule, a color state, a safety veto, or a shared
- goal. MOSAIX is important because it moves this question
- into public multi-human-swarm interaction: people contribute ideas through tangible tiles,
- the swarm clusters them semantically, and the installation becomes a social sorting
- medium rather than a single-operator controller
- ([Alhafnawi et al., MOSAIX](https://arxiv.org/abs/2411.09975)) .
-
- Some mappings are only for the participant who created them. Some can be shared inside
- a group. Some can become audience-facing in an artwork, public installation, or teaching
- setting. Some should be retired after a session. These categories should not be
- collapsed. A private access practice should not become a public interaction technique
- without explicit consent, framing, and a way to withdraw it.
-
- Deep dive: adaptive timing and authored fields
-
- Existing HSI asks how a human can influence a swarm. Multi-human HSI asks how several
- people can influence a swarm. Mixed-ability HSI asks how several differently situated
- people can share, inspect, contest, and repair influence through a swarm body. MOSAIX
- is a useful contrast case because it makes public multi-human-swarm interaction
- concrete, while this page asks for shared embodiment, access negotiation, visibility
- choice, authorship, and repair.
-
- The working input families are direct manipulation, spatial gesture, speech and text,
- physiological and muscular sensing, device/controller pose, environmental annotation,
- and semantic contribution. None of those families determines the design by itself. The
- decisive question is whether the channel changes appearance, selection, a rule, an
- attractor, a form seed, a game role, or a safety and repair affordance.
-
- Some mappings also need to adapt over time. Dwell thresholds, gesture confidence,
- pause duration, sensitivity, and repair prompts may need to change across repeated use.
- Jain's adaptive gaze keyboard work is useful here because it treats timing as
- user-specific and dynamically adjustable rather than as one fixed setting. In a
- mixed-ability swarm body, adaptive rules should remain inspectable, reversible, and
- overridable, with a clear distinction between participant-controlled adaptation and
- system-controlled adaptation
- ([Jain, adaptive virtual keyboard](https://jainpuneet798.github.io/portfolio/adaptivevirtualkeyboard/); [Jeevithashree et al., adaptive virtual keyboard](https://doi.org/10.3233/TAD-200292)) .
-
- A useful adjacent vocabulary comes from crowd animation and VFX. Those systems often
- separate the behavior layer from the art-direction layer and the rig or production
- layer: seeking, avoiding, flocking, and following are tuned alongside fields, sketches,
- guide curves, zones, triggers, states, clips, skeletons, foot-planting, levels of
- detail, and caches. For mixed-ability HSI, the point is not that animated crowds are
- the same as deployed swarms. The point is that collaborators may approach the swarm
- through motion design, game AI, avatar rigs, simulation fields, or physical systems, so
- the stack has to name what a signal controls: behavior, field, rig state, appearance,
- goal, role, or safety state
- ([Reynolds, steering behaviors](https://www.red3d.com/cwr/steer/); [Patil et al.](https://gamma.cs.unc.edu/DCrowd/paper.pdf); [Colas et al.](https://doi.org/10.1111/cgf.14491); [Prazak et al.](https://doi.org/10.1145/3214745.3214809); [SideFX crowd docs](https://www.sidefx.com/docs/houdini/crowds/basics.html)) .
-
- Every mapping should specify whose access practice it comes from, what signal enters
- the system, what scale it controls, what dynamic changes, what feedback appears, who
- can see it, and how it can be repaired, reused, or retired.
-
- Method note: full mapping-stack checklist
-
- Mapping stack
-
- Layer
- What must be mapped
- Why it matters socially
-
- Access practice
- Mouth joystick use, gaze typing, switch timing, breath pacing, rest strategy, assisted communication, wheelchair control, or another situated technique.
- The mapping begins with skill, fatigue, privacy, support, refusal, and authorship, not with a neutral sensor list.
-
- Human channel
- Gesture, touch, voice, text, gaze, controller pose, switches, EMG, EOG, EEG, EDA, PPG, ECG, breath, accelerometer, mouth gesture, or asynchronous annotation.
- Access is not equal input hardware. The group needs to know which channels are optional, private, tiring, expressive, or replaceable.
-
- Binding granularity
- Individual element, sub-swarm, whole swarm, body region, field, SDF, environment object, semantic cluster, rule, or game role.
- Binding decides authorship. It should be clear who is shaping a local detail, who is moving a collective tendency, and who can repair a mapping.
-
- Dynamical target
- Color, glow, opacity, density, speed, rhythm, attraction, repulsion, alignment, cohesion, leader following, field impulse, SDF seed form, goal, trajectory, or beacon.
- Changing color is different from changing attraction. Appearance, motion, form, and environment influence carry different power and visibility.
-
- Feedback
- Private haptic cue, public visual trace, sound, caption, avatar change, facilitator cue, delayed replay, or log entry.
- Feedback decides who can perceive influence, whether contribution becomes exposure, and whether repair can start early.
-
- Social contract
- Consent, disclosure, turn-taking, veto, rest, replay, attribution, explanation, failure recovery, and conflict resolution.
- A mixed-ability swarm body only works if collaborators can challenge and rebalance how agency is distributed.
-
- Provenance / retirement
- Origin, naming, tuning history, rejected variants, reuse permission, audience status, attribution, licensing, withdrawal, and deletion.
- Participant-created mappings are authored practices. They need reuse rules before they travel into demos, games, logs, or later prototypes.
-
- Implementation note: Rusty Morphospace and open routing
-
- This part is implementation-facing. Its purpose is to show how the mapping stack
- could be made inspectable in software.
-
- Implementation bridge
-
-### Rusty Morphospace
-
- Rusty Morphospace is the implementation layer for the ideas above. Its job is not
- to add another theory; its job is to keep channels, bindings, dynamics, appearance,
- logs, consent state, and adapters separate enough that participants and facilitators
- can inspect them. That separation lets someone ask whether fatigue, unfairness, or
- confusion came from the input channel, the binding, the dynamic rule, the renderer,
- latency, calibration drift, or another collaborator's hidden control
- ([Rusty Morphospace HSI layer](https://mesmerprism.com/projects/rusty-morphospace.html#hsi-implementation-layer); [native app-build workflow](https://mesmerprism.com/projects/rusty-morphospace/native-app-build-workflow.html); [Rusty Quest](https://github.com/MesmerPrism/rusty-quest); [Rusty XR](https://mesmerprism.com/projects/rusty-morphospace/rusty-xr.html); [Polar H10 work](https://mesmerprism.com/projects/polar-h10.html)) .
-
- The current public base is a scaffold, not a finished mixed-ability study platform:
- separated Morphospace repositories, package lanes for synthetic/biosignal/Polar and
- hand-animation data, a Matter/Optics teaching model for bioelectric-inspired fields,
- a bounded Hostess/Quest Makepad validation route for recorded and live hand surfaces,
- and a newer Rusty Quest native OpenXR/Vulkan route for headset evidence. The native
- route now separates Camera2/AHardwareBuffer acquisition, native passthrough profiles,
- solid-black control profiles, display-composite MediaProjection feedback, live hand
- anchor particles, target-space SDF diagnostics, stimulus volumes, environment-depth
- diagnostics, and video projection as distinct feature families.
-
- The newest app-building change is methodological, not only technical: a native APK
- is assembled from explicit feature IDs, a source app spec, a generated feature lock,
- and a generated native-app-settings.json master settings surface. That
- matters for mixed-ability HSI because a study app should be able to say which input,
- display, feedback, and evidence routes are present, and which nearby routes were
- deliberately kept out.
-
- Jain's AutonomX work suggests the standard for this implementation layer: the system
- should behave like an authoring instrument, not only a hidden runtime. AutonomX
- separates generators, signals, and drawing so artists can compose with complex
- systems through a graphical interface and route outputs through OSC/MIDI. Rusty
- Morphospace can make the parallel move for mixed-ability HSI: channels, bindings,
- swarm dynamics, visibility rules, logs, and adapters should be visible enough to
- compose, inspect, retune, fork, and retire
- ([Jain, AutonomX](https://jainpuneet798.github.io/portfolio/autonomx/); [ISEA AutonomX archive](https://www.isea-symposium-archives.org/presentation/autonomx-real-time-creation-composition-with-complex-systems-presented-by-saunier-salter-vermette-quessy-demeule-et-al/)) .
-
- Rusty Lattice
- Sensing, effectors, reference spaces, calibration, validity, confidence, and capability snapshots.
-
- Rusty Manifold
- Routing, streams, commands, clocks, acknowledgements, consent state, and audit surfaces.
-
- Rusty Matter
- Particles, boids-like coupling, fields, SDF/TSDF geometry, constraints, and simulation state.
-
- Rusty Optics
- Color, glow, material descriptors, visibility, debug views, and renderer-neutral appearance.
-
- Rusty GUI / Studio
- Planned mapping editors, facilitator views, comparison tools, provenance, and retirement controls.
-
- Rusty Quest native renderer
- NativeActivity/OpenXR/Vulkan profiles for direct camera/HWB sampling, passthrough backgrounds, display-composite feedback, live hands, particles, SDF, stimulus volumes, video, and environment-depth diagnostics.
-
- Native app-build workflow
- Feature descriptors, source app specs, feature locks, master settings, generated adapters, and effective runtime markers so target apps do not inherit unrelated modules.
-
- Hostess / platform adapters
- Current validation shells and planned deployment routes without owning the social meaning of a mapping.
-
- Current Rusty Quest details now relevant to HSI
-
- The current native Quest route is useful for HSI planning because it keeps visual
- source categories separate. Native passthrough is a compositor background request,
- Camera2/HWB is app-visible camera acquisition, MediaProjection is a consented
- final-display feedback witness, environment depth is a separate diagnostic input,
- and video projection is an app-provided media source. Those distinctions matter
- when a participant or facilitator asks what the system can actually see, sample,
- log, replay, or explain.
-
- The app-build workflow gives future study apps a cleaner consent and review
- surface. A breathing, hand, camera, display-composite, depth, stimulus, SDF,
- particle, video, or biosignal route should be present because the app requested it,
- not because an agent copied a broad runtime profile. Runtime acceptance should come
- from effective app markers, not raw adapter readback alone.
-
-### Morphogenetic dynamics vocabulary
-
- This is not needed to understand the mixed-ability HSI argument. It belongs to the
- later [translation horizon](https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html#translation-horizons) where living-pattern
- ideas are used as design vocabulary, not as medical evidence. Bioelectricity is
- useful here only as an analogy for many-part systems that can form, perturb,
- remember, and repair patterns. It is not an access method, not a medical claim, and
- not evidence that physiological signals reveal intention or emotion. In Rusty
- Morphospace, it can remain a
- qualitative teaching model for voltage-like fields, conductance-like coupling,
- perturbation, memory, readout, and repair. Levin's broader work is useful because it
- treats living form as multi-level problem solving, but any future prosthetic or
- biotech application would need its own evidence and ethics path
- ([Bioelectricity and Morphogenesis](https://mesmerprism.com/projects/bioelectricity.html); [Levin, agential materials](https://doi.org/10.1007/s00018-023-04790-z); [Levin, bioelectric signaling](https://doi.org/10.1016/j.cell.2021.02.034)) .
-
- DiffeoMorph adds a more distant computational-morphogenesis reference for the same
- far-future lane. It learns decentralized update rules that guide many agents toward
- target 3D forms and evaluates those forms with a shape-matching loss rather than by
- asking one operator to place every part. For mixed-ability HSI, this is not a current
- access method and not evidence for bioelectric physiology. It is a possible future
- dynamics family: agentic swarm components might eventually learn repairable
- target-forming behaviors, while Rusty Morphospace would still need to expose goals,
- metrics, training data, failure cases, and override rights before such dynamics
- could become usable in a shared interface
- ([Pahng et al., DiffeoMorph](https://arxiv.org/abs/2512.17129); [hormoz-lab/diffeomorph](https://github.com/hormoz-lab/diffeomorph)) .
-
- The same signal can then be routed into several paradigms without pretending they are
- the same. A breath estimate might soften boundary opacity in Optics, bias local
- attraction in Matter, trigger a Manifold pause command, or become only a private
- self-monitoring cue. A mouth gesture might select a sub-swarm, change a role, or
- veto a game phase. A controller pose might seed an SDF form. A room surface, beacon,
- AruCo marker, semantic cluster, or obstacle might act as an environmental stimulus.
- A VR swarm-hand technique such as Swarm Manipulation shows how hand tracking can
- control selection, rotation, resizing, and particle distribution, while
- interpreter-based formation work shows how a wearable gesture can become a
- high-level command that is translated into low-level formation dynamics
- ([Li et al., Swarm Manipulation](https://doi.org/10.1016/j.cag.2024.104113); [Suresh and Martinez, formation interpreters](https://doi.org/10.1007/s12555-019-0497-3)) .
-
- Openness is not a publishing preference here; it is part of the method. If the stack is
- closed, a participant cannot tell whether fatigue came from the input channel, the
- binding, the dynamic rule, the renderer, latency, calibration drift, or another
- collaborator's hidden control. An explicit open stack makes it possible to swap sensors
- and platforms, compare versions across media, log what happened, preserve consent and
- authorship, and carry only the surviving dynamics into later translation. The public
- Morphospace page therefore serves as a status boundary: current contracts and validation
- proofs are separated from planned HSI authoring, future robotics translation, and
- farther biotech speculation.
-
- Physiological channels need an extra guardrail. EEG, EMG, EOG, EDA, PPG, ECG, breath,
- and related signals must be opt-in, inspectable, replaceable, and non-diagnostic. They
- should not be treated as truth about emotion, pain, intention, fatigue, or consent. A
- participant should be able to route a biosignal into public expression, private
- self-monitoring, or nowhere at all, and the system should document interpretation,
- privacy, and retention choices as part of the mapping
- ([Chiossi et al., PhysioCHI: Towards Best Practices for Integrating Physiological Signals in HCI](https://doi.org/10.1145/3613905.3636286)) .
-
-## What the instrument needs to expose
-
- To study shared agency, the prototype has to show its own mediation.
-
- Here, "instrument" means the prototype plus the study interface: the software, sensors,
- visual swarm body, logs, controls, and facilitator tools that make the shared body
- possible.
-
- The research instrument should make mediation inspectable. Participants and facilitators
- need to see what inputs are entering the system, what they affect, which logs are kept,
- who can see which contribution, and how a shared body changes when mappings are revised.
- Transparency does not solve access by itself, but it gives collaborators something
- concrete to question and repair.
-
- The instrument should answer a simple operational question for every mapping: who can
- act through which channel, at what scale, with what visibility, under what consent, and
- with what repair option?
-
- It should also expose failed mappings, not only successful ones. Calibration drift,
- occlusion, camera angle, headset weight, distance sensitivity, false positives,
- rejected gestures, device availability, environmental constraints, and fatigue costs
- are part of the access record. A failed mapping can still teach the group what the
- interface assumed about posture, visibility, strength, endurance, privacy, or bodily
- symmetry.
-
- Method note: instrument checklist and calibration burden
-
- Access practices
- existing devices, gestures, rhythms, rest strategies, communication habits, assisted routines, and off-limits signals
-
- Inputs
- gesture, touch, switches, controllers, voice, text, breath, biosignals, EMG, gaze, pose, timing, rule edits, and environmental markers
-
- Swarm variables
- density, rhythm, coupling, boundary softness, luminosity, color, speed, local attraction, SDF seed shape, and environment response
-
- Access variables
- visibility, disclosure, pacing, rest, turn-taking, veto, asynchronous contribution
-
- Repair variables
- undo, pause, rebalance, remap, explain, replay, consent change, authorship note
-
- Calibration burden
- setup time, posture, camera angle, occlusion, false positives, rejected gestures, assistance, and recalibration
-
- Mapping questions
-
- Mapping layer
- Example question
-
- Access practice
- Whose lived technique produced this mapping, and is it personal, shareable, audience-facing, or off-limits?
-
- Human channel
- Is this input voluntary, tiring, private, expressive, replaceable, involuntary, or only safe in short bursts?
-
- Binding
- Does it affect one particle, a sub-swarm, the whole body, a region, a field, a rule, a role, or a veto?
-
- Dynamic target
- Does it change color, density, rhythm, attraction, boundary softness, speed, repair, safety, or a form seed?
-
- Visibility
- Who sees the contribution, and is it anonymous, attributed, private, delayed, summarized, or public?
-
- Repair
- Can the group pause, undo, remap, replay, rebalance, change consent, or explain what happened?
-
- Provenance
- Who named the mapping, who approved reuse, what variations were rejected, and how can it be withdrawn?
-
-## Staged research arc
-
- The staged method exists because each phase adds one kind of difficulty. Exploration
- removes pressure so the group can discover meaningful mappings. Encounter adds
- authored access practices and storytelling. Games add goals, roles, conflict, and
- recovery. Later translation asks whether any of those mappings can leave the first
- visual setting without losing access, authorship, or repair.
-
-### 1. Access-practice elicitation
-
- The sequence starts before anyone tests a sensor. Participants first name existing
- access techniques, devices, rhythms, supports, environmental hacks, communication
- habits, and signals they do not want captured or made public. This protects the study
- from treating input as the beginning of access.
-
-### 2. Exploration and connectedness first
-
- The first phase should be creative and low-demand. Participants explore how a swarm body
- can glow, gather, split, soften, pulse, protect, reveal, or hide without immediate task
- pressure. The point is to find mappings that feel meaningful, comfortable, and socially
- negotiable before performance metrics dominate the design.
-
- This phase belongs inside Plasmatic Multitudes because weakly bounded bodies are already
- treated here as instruments for connectedness, coalescence, permeability, and altered
- self-other relation, not just as rendering styles
- ([Glowacki et al.](https://doi.org/10.1038/s41598-022-12637-z); [Glowacki](https://doi.org/10.3389/frvir.2023.1286950); [Desnoyers-Stewart et al. 2020](https://doi.org/10.1162/LEON_a_01925); [Desnoyers-Stewart et al. 2023](https://doi.org/10.1145/3544549.3585843)) .
-
- Desnoyers-Stewart's work is especially useful for mixed-ability HSI because it shows
- abstract bodies acting as social interfaces before they become task tools. That suggests
- a first workshop vocabulary of constellation, aura, field, exchange, gravity, touch,
- and coalescence: concepts that participants can accept, reject, or rename before the
- system asks them to optimize a goal.
-
-### 3. Encounter as access storytelling
-
- Exploration should also include encounter and storytelling, not only calibration or
- low-demand play. In encounter mode, participants meet an authored access practice
- through the swarm body without being asked to master it, simulate it, or optimize it.
- A workshop might translate an everyday access practice into a boundary that softens, a
- field that waits, a rhythm that insists on rest, a cluster that refuses speed, or a
- repair gesture that makes hidden support visible. The point is relation and attention,
- not an empathy simulation
- ([Jain, Crip Sensorama: Christian's Coffee](https://jainpuneet798.github.io/portfolio/cripsensorama_christians-coffee/); [Jain and Bayerlein, Hand to Mouth, 2026](https://doi.org/10.1007/s11569-025-00494-9)) .
-
-### 4. Game-oriented collaboration
-
- This phase turns promising mappings into structured play. Games can introduce
- goals, roles, timing, resource limits, asymmetric information, repair moments, and
- shared consequences without pretending that the first useful metric is workplace
- productivity. This is where the group can tune goal-directed dynamics: who can steer,
- who can veto, who can slow the swarm, who can make a contribution visible, and how the
- body recovers after conflict or overload.
-
- Game-oriented collaboration is also where access becomes measurable without becoming
- reductive. Measures can include shared agency, authorship, role comfort, recovery after
- errors, sensory load, visibility choice, coordination, and whether participants can
- explain and revise the mapping that shaped the group body.
-
-### 5. Translation reflection
-
- The final step in the first study is not a deployment trial. It is a reflection gate:
- which mappings might survive another medium, which are valuable only inside the first
- visual setting, and what would break first if the mapping had to leave the screen,
- headset, projection, or workshop room? This keeps translation from becoming an
- assumed destination.
-
-## A minimal study module
-
- A first study can isolate the social and access questions before later media add
- confounds.
-
- A practical study can begin inside a reversible visual swarm body. The first module can
- compare how small mixed-ability groups experience different shared-body mappings, with
- non-HMD participation available from the start.
-
- Before participants test swarm mappings, the study should elicit existing access
- practices: preferred devices, gestures, rhythms, rest strategies, environmental hacks,
- communication habits, and practices they do not want captured or made public. The goal
- is not to extract every possible signal, but to learn which practices are meaningful,
- shareable, private, tiring, skilled, or off-limits.
-
- Beginning in a reversible medium is not a retreat from HSI. If a group cannot
- understand, rebalance, or repair a mapping in a visual swarm body, later translation
- will not make that mapping more accessible.
-
-### Purpose
-
- Compare how small mixed-ability groups experience shared-body mappings.
+ Can a mixed-ability group understand, negotiate, and repair how agency is
+ distributed through a shared swarm body?
+
+ Current evidence supports a research model and a bounded first study. It does not
+ support claims about therapeutic benefit, diagnostic inference, physical-robot
+ safety, or completed mixed-ability validation.
+
+## The first study
+
+ The initial experiment compares researcher-configured mappings with mappings that
+ participants inspect, revise, and co-author.
+
+ Small mixed-ability groups would work with a swarm-inspired shared body: a
+ many-part form whose behavior can be rendered visually, sonically, tactilely, or
+ textually. The first implementation can be projection-led because projection makes
+ collective change easy to inspect in a shared room. It must also expose the same
+ semantic events through nonvisual and non-HMD routes. A failure in one rendering is
+ evidence about that rendering, not proof that the underlying mapping is inaccessible.
+
+ One controlled comparison
+
+### Configured mappings versus co-authored mappings
+
+ In both conditions, participants can pause, withdraw, use fallback inputs, and
+ request a lower-demand state. The independent variable is whether the mapping
+ between a person’s action and the collective effect is fixed by the researchers or
+ made inspectable and editable by the group. This keeps the first study focused on
+ causal legibility and negotiability rather than trying to validate an entire
+ deployment architecture at once.
 
 ### Participants
 
- Small groups with access planning, disclosure controls, fallback inputs, and non-HMD options.
+ Small groups of disabled and nondisabled adults, recruited with pre-session
+ access planning. Participants may bring existing devices, communication methods,
+ support people, or established access practices. Diagnosis disclosure is not a
+ condition of participation.
 
-### Conditions
+### Prototype
 
-- Access-practice elicitation: name existing techniques, devices, rhythms, supports, and off-limits signals.
+ One semantic swarm state with synchronized projection, text, spatial audio, and
+ optional tactile or tangible feedback. HMD use is optional. Each contribution has
+ a visible or otherwise inspectable scope, attribution setting, and undo path.
 
-- Exploration / connectedness: test low-demand mappings for comfort, expression, visibility, privacy, and co-presence.
+### Task
 
-- Encounter: translate an authored access practice into a visible swarm dynamic without turning it into disability simulation.
+ The group guides the shared body through a cooperative sequence that requires
+ gathering, dividing, holding, yielding, and recovering. The task is simple enough
+ that interaction failures remain interpretable.
 
-- Game: place the same mappings inside a cooperative goal with roles, time pressure, recovery, and negotiated control.
+### Comparison
 
-- Translation reflection: ask which mappings might survive another medium, and what would break first.
+ Each group encounters a researcher-configured condition and a co-authored
+ condition. Order is counterbalanced. The study compares what the system records
+ with what participants say they perceived, intended, and considered fair.
 
-### Safeguards
+### Research questions
 
- Rest, fallback input, consent change, withdrawal, reduced motion, sensory checks, disclosure control, and explicit non-goals.
+- Causal legibility. Can participants identify how their own and other people’s actions altered the shared state?
 
- Method note: study measures, logs, and authorship
+- Negotiability. Can participants pause, change, conceal, veto, or repair a mapping without relying on the facilitator to interpret the system for them?
 
- Study measures
+- Agency and fairness. How does co-authorship change felt agency, authorship, role satisfaction, and judgments about fair influence?
 
- Study surface
- What to capture
+- Access cost. How do mappings differ in fatigue, sensory demand, calibration effort, privacy cost, and willingness to use them again?
 
- Qualitative
- Shared agency, comfort, disclosure pressure, role fit, connectedness, and whether mappings felt fair.
+### Measures and experiential method
 
- Behavioral
- Pauses, vetoes, remaps, turn changes, repair attempts, fallback input use, and time-to-understand a mapping.
+ The primary outcomes are causal-attribution accuracy, successful repair, time and
+ steps required to repair, perceived fairness, and access cost. Secondary outcomes
+ include felt agency, authorship, privacy comfort, sensory load, connectedness, role
+ satisfaction, and willingness to reuse a mapping. System logs record pauses,
+ remappings, rejected signals, fallback-input use, facilitator interventions, and
+ differences between the logged account and participant accounts.
 
- Self-report
- Fatigue, sensory load, trust, authorship, privacy comfort, and willingness to reuse a mapping.
+ Global ratings such as “I felt in control” are too coarse for an emergent system. The
+ study therefore uses event marking and replay-assisted individual interviews before
+ group discussion. A participant can return to the moment when the swarm began to
+ split, a contribution became public, or a command was changed for safety, then
+ describe what they first noticed, expected, attempted, and attributed to themselves
+ or others. Conflicting accounts are evidence about the interaction, not noise to be
+ averaged away.
 
- System logs
- Channel changes, binding changes, dynamic targets, visibility settings, consent changes, and replay markers.
+### Pause and veto
 
- Access-practice provenance
- Who proposed the mapping, whose practice it came from, and whether it was participant-originated, facilitator-suggested, borrowed, rejected, or co-authored.
+- A safety stop immediately reduces motion, sound, and demand.
 
- Calibration burden
- Setup time, posture, camera angle, false positives, rejected gestures, fatigue cost, recalibration needs, device availability, and whether assistance was required.
+- Personal withdrawal removes or hides one participant’s contribution.
 
- Adaptation over time
- Whether thresholds, dwell times, sensitivity, pacing, or repair prompts changed across sessions, and who controlled those changes.
+- A discussion pause holds the shared state while the group inspects it.
 
- Feedback split
- What feedback was private to the participant, public to the group, logged for later, delayed, or hidden entirely.
+- A group veto prevents a proposed transition under agreed rules.
 
- Reuse and retirement
- Whether the mapping may be reused, demonstrated, anonymized, attributed, licensed, forked, or withdrawn.
+### Access operations
 
- Log contestation
- Whether participants agreed with system records or annotated, corrected, deleted, or challenged them.
+- Rest and return are ordinary participation states, not dropout.
 
- Outcomes should not stop at task score. The important measures include shared agency,
- legibility, fatigue, trust, role satisfaction, repair success, disclosure comfort,
- authorship, and whether participants can describe how the swarm body represented their
- contribution.
+- Every consequential command has confirmation, correction, and undo.
 
- Logs should be treated as situated records, not as neutral truth. A system may overcount
- fast signals, undercount quiet forms of participation, repeat uncertain classifications,
- or miss invisible labor such as waiting, masking fatigue, or deciding not to act. The
- study should pair system logs with participant interpretation and allow participants to
- annotate, contest, or delete records
- ([Jain, Epistemological Intervention](https://jainpuneet798.github.io/portfolio/epistemologicalintervention/)) .
+- Public feedback and private feedback can be configured separately.
 
- Authorship should be planned before data collection. If participants invent mappings,
- name swarm states, define repair gestures, reject sensor categories, or contribute
- access vocabulary, the study should specify how those contributions are credited,
- anonymized, withheld, licensed, or carried into later prototypes. Authorship is part of
- the mapping contract, not only a post-study acknowledgement.
+- Venue, device, or facilitator barriers are recorded as system failures.
 
-## Claim ladder
+## The Mixed-Ability HSI Mapping Model
 
- With those distinctions in place, the page makes four different kinds of claims. They
- should not be read as one large claim.
+ The central design object is the contract that turns an access practice into an
+ effect on a shared body.
 
- The page makes a design argument, not a therapeutic or deployment claim. The strongest
- current claim is conceptual: mixed-ability HSI needs negotiated shared agency rather
- than one universal controller. The evidence status becomes stricter as the work moves
- from visual bodies toward later media, settings, and deployments.
+ A mapping is more than an input binding. It specifies what is sensed, what the action
+ can affect, how the result returns to the participant, who else can perceive it, how
+ consent is maintained, who receives credit, and how the mapping can be revised or
+ retired. The shared state sits between input and rendering so that movement, speech,
+ AAC, switches, text, gaze, breath, direct manipulation, or facilitated input can
+ reach the same semantic commands without pretending to be equivalent bodily acts.
 
- Claim status is layered: conceptual now, design next, virtual-first study later, and
- physical or material translation later still.
+ Mapping record
 
- Method note: full claim ladder
+### What must remain inspectable
 
- Conceptual
+ M = (practice, channel, scope, dynamic, feedback, visibility, consent,
+ provenance, retirement)
 
-### Negotiated shared agency
+ Each record also carries a version, access cost, safety bounds, reuse permission,
+ and withdrawal state. A participant-authored mapping is therefore a contribution
+ with provenance and reuse conditions, not a disposable calibration setting.
 
- Mixed-ability HSI needs negotiated shared agency, not one universal controller.
+### Operational terms
 
- Still to show: whether participants experience this as useful, fair, and understandable.
+ Shared semantic state
+ The medium-independent collective variables and event history.
 
- Design
+ Shared swarm body
+ A many-part rendering that a group can perceive as one collective, several subgroups, or a surrounding field.
 
-### Visible mappings
+ Causal influence
+ What a participant’s action actually changes in the system.
 
- Plasmatic swarm bodies can expose agency, visibility, pacing, and repair.
+ Felt agency
+ Whether the resulting change is experienced as mine, ours, negotiated, or outside my control.
 
- Still to show: which mappings work for which groups, settings, and access needs.
+ Authorship
+ Who designed or substantially revised the mapping and its meaning.
 
- Research
+ Responsibility
+ Who is accountable for a consequential outcome, including designers and institutions.
 
-### Virtual-first study
+ Mapping
+ The complete social and technical contract linking an access practice to a collective effect.
 
- A virtual-first study can test connectedness, legibility, fatigue, authorship, and repair.
+ Repair
+ A technical, representational, interactional, social, or morphogenetic recovery from breakdown.
 
- Still to show: how those measures relate to long-term collaboration and group trust.
+ These definitions prevent several useful but different observations from collapsing
+ into “embodiment.” Participants may perceive one coherent body without identifying
+ with it. They may influence it without feeling ownership. They may feel connected to
+ the group while rejecting bodily fusion. The study keeps perceptual unity,
+ identification, causal influence, felt agency, ownership, authorship, and
+ connectedness separate.
 
- Later translation
+### Four system statuses
 
-### Survivability beyond the first medium
+ The word swarm also needs discipline. A swarm-inspired visual body is a
+ rendered many-part form and may be centrally computed. A multi-agent interface has
+ several individually addressable elements. A decentralized robot swarm produces
+ collective behavior through local interaction and partial autonomy. A morphogenetic
+ system develops or repairs form through a generative process. Evidence from one
+ category does not automatically validate the others.
 
- Some mappings may later be tested under physical, spatial, or deployment constraints.
+### A repair typology
 
- Still to show: what survives outside the first visual swarm-body setting.
+#### Technical repair
 
-## Boundaries
+ Recalibrate a sensor, restore an output, or change a failed access route.
 
- The narrow claim is the important one: mixed-ability HSI studies visible,
- negotiable, repairable agency, not cure, diagnosis, or guaranteed deployment safety.
+#### Representational repair
 
-### This work does not claim to:
+ Correct a misunderstanding about what a signal means or controls.
 
-- treat disability, loneliness, fatigue, pain, or social withdrawal;
+#### Interactional repair
 
-- infer emotion, pain, intention, fatigue, or consent from biosignals;
+ Recover from missed timing, conflicting commands, or an interrupted turn.
 
-- make VR tolerance a condition of participation;
+#### Social repair
 
-- equate equal input with fair authorship;
+ Address unfair influence, unwanted disclosure, or an ignored refusal.
 
-- simulate disability or let non-disabled participants "feel what disability is like";
+#### Morphogenetic repair
 
-- prove physical-system safety from particle-body success.
+ Let the collective restore or reorganize form after disruption.
 
-### It does claim to study:
+## What direct accessibility research establishes
 
-- negotiable shared agency;
+ Existing studies do not amount to an accessible decentralized swarm, but they already
+ impose concrete design constraints.
 
-- consent, pacing, visibility choice, inspectability, and repair;
+### [BotMap](https://doi.org/10.1145/3204460)
 
-- what survives across exploration, games, and later translation constraints.
+ Visually impaired participants used mobile robots as tactile landmarks while
+ panning and zooming through maps. The system was usable, but transformations
+ demanded training and could be cognitively difficult. Reconfiguration therefore
+ needs stable anchors, perceptible transitions, and easy return to a known state
+ ([Ducasse et al., 2018](https://doi.org/10.1145/3204460)).
 
- Mixed-ability HSI does not begin by asking every participant to control the same swarm
- in the same way. It begins by asking whether a group can see, question, rebalance, and
- repair how influence is distributed.
+### [RoboGraphics](https://www.colorado.edu/atlas/robographics-dynamic-tactile-graphics-powered-mobile-robots)
 
- When a mapping comes from a disabled participant's access practice, it must be treated
- as authored technique, not as an empathy machine, costume, spectacle, or novelty
- controller. Audience-facing mappings can be valid, but only when their origin,
- permission, framing, and withdrawal rules are explicit
- ([Jain and Bayerlein, Hand to Mouth, 2026](https://doi.org/10.1007/s11569-025-00494-9)) .
+ A static tactile overlay supplied a reference frame while mobile robots carried
+ changing information. Seven participants with varying levels of vision explored
+ the dynamic graphics. The useful principle is selective motion: keep invariants
+ stable and move only what has changed
+ ([Guinness et al., 2019](https://doi.org/10.1145/3308561.3353804)).
 
- A reversible swarm body is the first testbed because it makes those negotiations visible
- without immediately adding physical risk. Cooperative games add goals and pressure.
- Later translation horizons add stronger constraints: material systems add mass, safety,
- localization, maintenance, and failure, while morphogenetic analogies add a vocabulary
- of field, threshold, memory, and repair without making a medical claim.
+### [Robots for Inclusive Play](https://doi.org/10.1145/3313831.3376270)
 
- The contribution of this track is a method for carrying access concerns across those
- stages without reducing access to input hardware, productivity, or therapeutic promise.
+ Co-design with visually impaired and sighted children and educators produced an
+ inclusive game organized around shared goals, closely coupled roles, and
+ interaction symmetry. Accessible control is insufficient if the social role
+ remains peripheral
+ ([Metatla et al., 2020](https://doi.org/10.1145/3313831.3376270)).
 
-## Translation horizons: material action and living pattern
+### [The Robot Made Us Hear Each Other](https://doi.org/10.1145/3568162.3576997)
 
- Robotics and morphogenetic biology enter as two late ways of asking the same deeper
- question: how can many locally acting parts become a coherent, responsive, repairable
- body or body-like system?
+ In a study with 78 children, including 26 with visual impairments, a directive
+ robot balanced participation more strongly, while a less directive strategy made
+ children feel more heard. Observable equality and experienced inclusion are not
+ the same outcome
+ ([Neto et al., 2023](https://doi.org/10.1145/3568162.3576997)).
 
- The main subject here is the felt and social life of swarm bodies. A plasmatic swarm
- body asks whether many visible parts can become coherent enough to support agency,
- connectedness, privacy, authorship, rest, and repair. Physical and biological horizons
- enter only after that question is clear. They do not replace the phenomenological
- project. They place the same dynamic grammar under stronger constraints.
+### [TACTOPI](https://doi.org/10.1145/3585088.3589389)
 
- Felt body
+ Ten mixed-visual-ability dyads played in a shared multisensory environment.
+ Tangible, sonic, narrative, and robotic elements supported one collaborative
+ activity without requiring identical sensory access. A shared event can have
+ different but coordinated renderings
+ ([Pires et al., 2023](https://doi.org/10.1145/3585088.3589389)).
 
-### Phenomenological instrument
+### [Shape-changing emotion](https://doi.org/10.1145/3613904.3642525)
 
- The swarm is an experiential body or shared field for connectedness, embodiment, access, and agency.
+ Fifty children, including 26 with visual impairments, associated changing tactile
+ forms with emotions. Several associations differed with visual experience. A
+ morphing interface has no universal expressive vocabulary; meanings must be
+ tested across sensory histories
+ ([Neto et al., 2024](https://doi.org/10.1145/3613904.3642525)).
 
- Playable body
+ Boundary
 
-### Interaction grammar
+ BotMap and RoboGraphics are centrally coordinated multi-robot displays, not evidence
+ of accessible decentralized swarm control. The inclusive-play and conversation
+ studies concern shared robots rather than robot swarms. Their value lies in the
+ constraints they place on reconfiguration, multisensory access, role design, and
+ felt inclusion.
 
- The swarm becomes a negotiable system of roles, goals, conflict, pacing, repair, and authorship.
+### Two complementary interface lineages
 
- Consequential body
+### Tangent: the swarm as interface material
 
-### Translation horizon
+ Zooids established small robots as programmable physical interface elements.
+ UbiSwarm treated collective motion as display; SwarmHaptics distributed touch
+ across several agents; later work studied user-defined control, motion
+ legibility, programmable fidgeting, ADHD co-design, and affective interaction
+ ([Tangent Lab](https://tangent.cs.sfu.ca/);
+ [Le Goc et al., 2016](https://doi.org/10.1145/2984511.2984547);
+ [Kim and Follmer, 2019](https://doi.org/10.1145/3290605.3300918);
+ [Pulatova and Kim, 2024](https://doi.org/10.1145/3663548.3675614)).
 
- Selected dynamics are tested against material action or living-pattern analogies of coherence and repair.
+### iSpace: the swarm as relational body
 
- A physical or robotic horizon asks what changes when swarm dynamics have material
- consequences. A visual boundary can soften without danger. A physical boundary may
- block, touch, support, or collide. A visual repair can be immediate and reversible. A
- physical repair has to deal with latency, localization, actuation, maintenance, power,
- and failure. Robotics is therefore not the hidden goal of the page. It is a later
- translation test for selected mappings.
+ John Desnoyers-Stewart’s iSpace work shows how projection, tracked bodies,
+ particle exchange, constellation-like avatars, pseudo-haptic contact, and
+ biosignal-linked form can produce abstract shared embodiment. These projects
+ establish a mixed-reality vocabulary for relation, not mixed-ability validation
+ ([iSpace profile](https://ispace.iat.sfu.ca/person/john-desnoyers-stewart/);
+ [Desnoyers-Stewart et al., 2020](https://doi.org/10.1162/leon_a_01925);
+ [Desnoyers-Stewart et al., 2023](https://doi.org/10.1145/3544549.3585843)).
 
- A morphogenetic or biotech-inspired horizon asks a different question: how do many
- local parts maintain a coherent form, recover after disturbance, remember state, and
- coordinate without a single central controller? Biology is not used here as evidence
- that the interface is therapeutic, diagnostic, prosthetic, alive, or bioelectric. It is
- a disciplined design vocabulary for coherence, threshold, field, perturbation, repair,
- and return
- ([Bioelectricity and Morphogenesis](https://mesmerprism.com/projects/bioelectricity.html); [Levin, agential materials](https://doi.org/10.1007/s00018-023-04790-z); [Levin, bioelectric signaling](https://doi.org/10.1016/j.cell.2021.02.034)) .
+ Tangent contributes the physical interaction grammar; iSpace contributes the
+ relational and abstract-body grammar. The proposed study adds the missing
+ mixed-ability layer: modality-independent commands, participant-authored mappings,
+ inspectable asymmetry, private as well as public feedback, and repair.
 
- Repair is the concept that lets these domains meet without collapsing them. In the
- visual swarm body, repair is a visible return to coherence. In mixed-ability
- interaction, repair is the social right to pause, undo, remap, rest, explain, or
- withdraw. In robotics, repair is safe recovery from physical failure. In morphogenetic
- biology, repair is pattern restoration across many local parts. The word does not mean
- the same thing in each domain, but it marks the same design concern: how a many-part
- system remains trustworthy after disturbance.
+## When many parts become a body
 
- Deep dive: why robotics is a translation test, not the destination
+ A swarm can appear as many separate agents, one macro-agent, or a field that surrounds
+ action. The transition is not determined by robot count alone. Synchrony, spacing,
+ velocity, sound, occlusion, task, and bodily proximity all matter. A participant may
+ move from “I control those elements” to “we are shaping this” and then to “the system
+ moved on its own” during one short event.
 
- A visual swarm body can explore mappings cheaply and reversibly. That reversibility
- is not a weakness; it is what makes access negotiation safe enough to study.
- Physical swarms add material consequence: contact, obstruction, impact, actuator
- limits, localization error, maintenance, and partial failure.
+ The term body is therefore a question, not a result. The first study asks
+ whether the group perceives unity, identifies with the collective, experiences
+ influence, attributes ownership, or feels connected. These outcomes can diverge.
+ [Swarm Body](https://doi.org/10.1145/3613904.3642870)
+ demonstrates why a changing population of robots may become incorporated into bodily
+ action, while the iSpace works show that a radically abstract form can remain
+ relationally legible. Neither makes incorporation universal.
 
- Contemporary swarm robotics still faces substantial deployment barriers, so the
- physical horizon should be treated as a stress test for selected mappings rather
- than as the default endpoint of the project
- ([Kegeleirs and Birattari](https://www.frontiersin.org/journals/robotics-and-ai/articles/10.3389/frobt.2025.1607978/full)) .
+ Unit of analysis
 
- Deep dive: morphogenetic inspiration without medical overclaim
+### Study the event behind the opinion
 
- Morphogenetic and bioelectric work is useful here as a vocabulary for many-part
- coherence: fields, thresholds, state memory, perturbation, homeostasis, repair, and
- return. This does not mean the swarm body is biological, therapeutic, diagnostic, or
- prosthetic.
+ At the moment the collective divides, what was noticed first: a gap, a sound, a
+ change in resistance, one person’s action, or a loss of coherence? What did the
+ participant expect next? Did the split feel commanded, negotiated, resisted, or
+ simply produced by the system? This temporal sequence explains more than a single
+ post-session trust score.
 
- DiffeoMorph belongs in this horizon as a far-future computational-morphogenesis
- reference: it suggests learned many-agent target-forming dynamics, not a current
- access method and not evidence for bioelectric physiology
- ([Pahng et al., DiffeoMorph](https://arxiv.org/abs/2512.17129); [hormoz-lab/diffeomorph](https://github.com/hormoz-lab/diffeomorph)) .
+ Morphogenesis adds a further distinction. In
+ [Slavkov et al.’s 300-robot experiment](https://doi.org/10.1126/scirobotics.aau9178),
+ local interactions generated adaptable shapes that recovered from damage. That work
+ establishes an engineering process. It does not show how mixed-ability participants
+ experience damage, continuity, or repair. Biological morphogenesis likewise supplies
+ concepts for local-to-global formation and regeneration, not direct evidence for
+ human-swarm experience.
 
-## Material horizon: physical and robotic translation
+## Access is part of the swarm architecture
 
- This section is not needed for the first study. It asks what material consequence
- reveals about selected swarm-body mappings.
+ Equal control is not always fair control. One participant may shape rhythm
+ continuously, another may contribute occasional text, and another may hold a
+ high-authority veto. The relevant questions are whether each role is meaningful,
+ chosen, understandable, revisable, and protected from being silently overruled by a
+ faster or more continuous signal.
 
- A successful swarm-body mapping is not automatically ready for another medium. A
- visual body can be emotionally legible while remaining physically unconstrained. A
- physical swarm can be technically correct while remaining socially unreadable. The
- material question begins only after the group has discovered mappings worth testing
- under consequence.
+ This shifts accessibility from a menu of alternative inputs to the distribution of
+ authority. A control is operationally accessible only if the person can configure,
+ initiate, verify, correct, pause, undo, and recover through an available route.
+ Public systems must also remain accessible to people who do not operate them,
+ including bystanders, support workers, maintainers, and people who want no
+ interaction. The
+ [W3C XR Accessibility User Requirements](https://www.w3.org/TR/xaur/)
+ provide a useful baseline for alternatives, customization, and avoiding unnecessary
+ sensory or motor assumptions.
 
- Physics changes role across that boundary. In the visual swarm-body phase, physical
- behavior is a legibility grammar. In a tangible or robotic phase, it becomes a
- practical liability surface. Resistance is a useful example: in the first study,
- resistance might be a visual delay that makes a boundary feel soft but coherent; in a
- furniture-moving system, resistance becomes motor torque, friction, clearance, tipping
- risk, and user safety.
+### Provenance and collective data
 
- Glowacki's physics/aesthetics work is a useful bridge precisely because it sits before
- that robotic boundary. Hidden Fields and danceroom Spectroscopy use
- rigorous molecular-dynamics models to let bodies sculpt simulated atomic motion; they
- make force, field, and energy relations visible and participatory. That supports the
- aesthetic track of mixed-ability HSI: physics can organize legibility, embodiment, and
- shared transformation. It does not remove the later robotics constraint. The moment a
- swarm body becomes furniture, mobility support, or adaptive material, the same word
- "physics" shifts from expressive simulation to mass, safety, localization, actuation,
- and failure recovery
- ([Hidden Fields](https://www.intangiblerealitieslab.org/projects/hidden-fields); [Mitchell et al.](https://doi.org/10.1162/LEON_a_00924); [Toledo Castro, Protopopov, and Glowacki](https://doi.org/10.1145/3749893.3749972)) .
+ Every saved mapping needs a version, origin, access cost, scope, feedback routes,
+ visibility setting, safety bounds, consent state, reuse status, and retirement
+ record. Raw voice, video, motion, gaze, physiology, or AAC data should be stored only
+ when the research question requires it. Participants need a way to inspect and
+ contest the system’s account of what happened.
 
- Later horizon: physical swarm and robotics evidence
+ Group data creates a harder problem: one person may later withdraw from an event that
+ also contains other people’s contributions. The protocol must decide in advance
+ whether to delete raw media, retain only an agreed derived annotation, re-consent the
+ group, or exclude the event from public reuse. A collectively authored mapping cannot
+ be treated as the institution’s unencumbered property.
 
- RoomShift makes this shift concrete because it uses robot assistants to move real
- furniture for room-scale haptics, turning the design into questions of lift height,
- object weight, under-table clearance, optical tracking, path planning, collision
- avoidance, and whether the object can safely support a person's body once placed.
- Roombots similarly frames adaptive furniture as an active modular robotics problem,
- not only a shape-design problem
- ([Suzuki et al., RoomShift](https://doi.org/10.1145/3313831.3376523); [Sprowitz et al., Roombots](https://doi.org/10.1109/ROBOT.2009.5152613)) .
+### How the interaction can fail
 
- Swarm robotics is no longer only a metaphor or an animation vocabulary, but its
- real-world use is still limited. The current field has strong laboratory
- demonstrations, increasingly capable sensors and computation, better simulators,
- mixed-reality interfaces, ROS-based integration, hardware-in-the-loop testing, and
- growing interest in applied domains. It still struggles with platform limits,
- simplified simulations, robot-to-robot communication assumptions, localization,
- security, maintenance, and the deployment gap between one physical platform and
- another
- ([Kegeleirs and Birattari](https://www.frontiersin.org/journals/robotics-and-ai/articles/10.3389/frobt.2025.1607978/full); [Zheng, Jarecki, and Lee](https://doi.org/10.1038/s41598-023-40623-6)) .
+- A visual transformation can preserve the system state while destroying a tactile mental map.
 
- The related assembly field is not usually named "human swarm assembly robotics" as a
- single stable discipline. It overlaps with collective robotic construction,
- programmable self-assembly, modular self-reconfigurable robotics, swarm user
- interfaces, and tangible robotic swarms. The shared idea is that a person should not
- usually pilot every unit. The human should specify goals, constraints, fields,
- morphologies, roles, or safety conditions, while the swarm or modular body resolves
- lower-level coordination
- ([Petersen et al., collective robotic construction review](https://doi.org/10.1126/scirobotics.aau8479); [Werfel, Petersen, and Nagpal, TERMES](https://doi.org/10.1126/science.1245842); [Rubenstein, Cornejo, and Nagpal, Kilobot self-assembly](https://doi.org/10.1126/science.1254295)) .
+- A continuous high-frequency input can appear more valuable than waiting, restraint, or refusal.
 
- For mixed-ability HSI, assembly is important because it changes what "control" means.
- A participant might guide a desired furniture configuration, ask a modular body to
- extend reach, mark a construction zone, set an attractor field, request repair, or
- veto an unsafe intermediate state. Recent user-guided modular-robot work makes this
- especially concrete: the user can manipulate a morphology-matched interface, but an
- optimization layer blocks commands that would violate torque, collision, balance, or
- environmental constraints
- ([Bolotnikova et al., user-guided modular robots](https://doi.org/10.1038/s41467-025-63706-6)) .
+- A participant can feel obliged to disclose pain or fatigue to justify a pause.
 
- This is also why virtual simulations have limited translation capacity. They are useful
- for exploring mappings, roles, affective tone, and the social feel of shared control,
- but they can hide the hardest parts of real deployment. Kegeleirs and Birattari
- describe how swarm robotics still faces platform limitations, abstraction of real tasks
- such as object manipulation, a sim-to-real reality gap, and a wider deployment gap
- where a controller that works in one physical platform may fail on another. For
- mixed-ability HSI, that warning should become a design principle: if the goal is
- connectedness or game-based collaboration, visual physics can be tuned for legibility
- and felt agency; if the goal is physical accessibility, furniture, mobility, or
- assistive room support, physical envelopes, load cases, safety, localization,
- maintenance, and failure recovery have to enter the project early
- ([Kegeleirs and Birattari](https://www.frontiersin.org/journals/robotics-and-ai/articles/10.3389/frobt.2025.1607978/full)) .
+- A private bodily signal can become visible to the group through an expressive effect.
 
- The bridge is therefore not a straight export from visual design into robots. It is a
- staged constraint test. The swarm-body phase asks which dynamic cues make shared
- agency readable and inhabitable. The material phase asks which of those cues still work
- when the swarm must move mass through a room, stay safe around people, tolerate sensor
- uncertainty, and remain useful after errors.
+- Synchrony can feel coercive even when the resulting form looks harmonious.
 
- Translation gate
+- A repair process can remain unfair if it is controlled by the person or institution that caused the imbalance.
 
-### A mapping is not ready for physical swarm testing until it survives:
+ These failures are not edge cases to remove from the report. They are tests of whether
+ the mapping model exposes enough of the interaction for the group to respond.
 
-- latency and synchronization
+## Claims, limits, and translation
 
-- localization error and occlusion
+### The research can currently claim
 
-- collision risk, object weight, and load limits
+- A defined mapping model for mixed-ability shared agency.
 
-- bystander proximity and emergency stop
+- A multimodal architecture in which no single rendering is normative.
 
-- maintenance, battery limits, and partial swarm failure
+- A bounded comparison between configured and co-authored mappings.
 
-- fallback input and consent change mid-action
+- Operational measures for legibility, repair, fairness, and access cost.
 
-- participant confusion, explanation, and repair
+### It cannot yet claim
 
- Physical translation tests
+- Therapeutic or diagnostic effect.
 
- Translation test
- What has to survive
+- Validated control of a decentralized physical swarm.
 
- Timing
- Latency, synchronization, localization error, occlusion, and participant confusion.
+- Universal meanings for shape, motion, touch, or synchrony.
 
- Material safety
- Collision risk, object weight, load limits, surfaces, bystander proximity, and emergency stop.
+- Safe deployment in workplaces, public space, or clinical settings.
 
- System reliability
- Maintenance, battery limits, partial swarm failure, sensor drift, and recovery from blocked paths.
+ Later work can render selected collective variables through a Tangent-like physical
+ interface swarm, then compare the same logged event across projection, sound, touch,
+ tangible tokens, and physical robots. The interface swarm need not reproduce every
+ virtual particle, and it need not be the working swarm. A small number of physical
+ agents may instead provide stable landmarks, direction, subgroup summaries, or a
+ tactile warning that the shared state has fragmented.
 
- Access continuity
- Fatigue, consent change mid-action, fallback input, and the ability to explain or repair a mapping.
-
-## Sources by role
-
- The sources are doing different jobs. Reading them by role keeps the page from treating
- accessibility, XR embodiment, animation, HSI, and robotics as one interchangeable
- literature.
-
- Source roles: evidence map
-
- Source roles
-
- Source role
- What it supports
-
- Access foundation
- Ability-based design, interdependence, disability-led XR/HCI, and XR accessibility requirements.
-
- Crip-hacking, access instruments, and authored mappings
- Jain's Crip Sensorama, Hand to Mouth, adaptive gaze keyboard, AutonomX, and related portfolio work support access as a creative, technical, political, and programmable practice with provenance, calibration burden, authorship, failure histories, and reuse permissions.
-
- Protean embodiment bridge
- Proteus effect and Protean kinematics support the move from avatar appearance to movement grammar, dynamic affordance, and self-representation through transformed action.
-
- Embodiment precedent
- Isness, NUMADELIC / Clear Light, Body RemiXer, ETC, Emotional Beasts, aura avatars, pseudohaptics, and abstract social bodies.
-
- Robotics-side interface anchor
- Tangent Lab's sequence from Zooids and UbiSwarm through haptic proxies, SwarmHaptics, legible motion, SwarmFidget, ADHD co-design, and affective swarm interfaces supports small robots as programmable physical interface matter. It does not by itself establish decentralized morphogenesis or therapeutic benefit.
-
- Mixed-reality relational anchor
- Desnoyers-Stewart and iSpace support progressive public entry, abstract particle embodiment, shared-body exchange, constellation co-creation, pseudo-haptic telepresence, and breath-linked collective form. These projects are relational precedents, not disability-centred validation.
-
- Physics-aesthetics bridge
- Glowacki's molecular-physics installations, from danceroom Spectroscopy and Hidden Fields to the 2025 esencia reinterpretation, support physics as a generative aesthetic substrate and as a technical stack that must be maintained across sensors, simulation, and hardware.
-
- Clinical-adjacent translation boundary
- Clear Light, aNUma, and Numadelic Labs show numadelic light-body work moving toward life-threatening-illness, death-anxiety, and AI-augmented group-therapy research; the current public record supports feasibility, published observational results, organizational/current-program context, and a registered RCT plan, not established clinical efficacy.
-
- HSI foundation
- Behavior selection, parameter setting, attractors, leader influence, environmental influence, and sub-swarm selection.
-
- Multi-human precedent
- MOSAIX and other systems where a swarm becomes a public social medium rather than a single-user controller.
-
- Material translation evidence
- Applied swarm robotics limits, assembly, adaptive furniture, tangible swarms, embodied swarm robots, and deployment gaps as constraint tests for selected mappings.
-
- Morphogenetic pattern vocabulary
- Bioelectricity, Levin's agential-materials work, and DiffeoMorph support cautious language about coherence, field, threshold, perturbation, state memory, repair, and return.
-
- Implementation and caution
- Rusty Morphospace as the implementation layer with current public contracts, Rusty Quest native feature routes, the source-only native app-build workflow, planned HSI-facing authoring/inspection, biosignal transparency/privacy guidance, and guardrails against treating biology, robotics, or physiology as therapeutic proof.
+ Physical morphogenesis, city-scale logistics, and living or biohybrid systems belong
+ beyond that gate. Their material risks, maintenance demands, and institutional
+ responsibilities cannot be inferred from a reversible room-scale prototype. The
+ useful bridge is narrower: preserve the semantic commands, event history, consent,
+ attribution, and repair rights while the substrate changes.
 
 ## Sources
 
- These sources ground the distinction between access theory, protean embodiment,
- connectedness-first XR, Tangent's swarm-interface lineage, Desnoyers-Stewart's
- relational mixed-reality lineage, human-swarm interaction, material translation, and
- morphogenetic pattern vocabulary.
+ Core sources for the revised argument. The broader historical, technical, and
+ morphogenesis bibliography remains available on the
+ [Plasmatic Multitudes sources page](https://mesmerprism.com/plasmatic-multitudes/references.html).
 
-- Wobbrock et al. "[Ability-Based Design: Concept, Principles and Examples](https://doi.org/10.1145/1952383.1952384)." ACM Transactions on Accessible Computing 3(3) (2011).
+- Ducasse, Julie, Marc Macé, Bernard Oriola, and Christophe Jouffrais. "[BotMap: Non-Visual Panning and Zooming with an Actuated Tabletop Tangible Interface](https://doi.org/10.1145/3204460)." ACM Transactions on Computer-Human Interaction 25(4) (2018).
 
-- Bennett, Brady, and Branham. "[Interdependence as a Frame for Assistive Technology Research and Design](https://doi.org/10.1145/3234695.3236348)." ASSETS (2018).
+- Guinness, Darren, Annika Muehlbradt, Daniel Szafir, and Shaun K. Kane. "[RoboGraphics: Dynamic Tactile Graphics Powered by Mobile Robots](https://doi.org/10.1145/3308561.3353804)." ASSETS (2019).
 
-- Glowacki et al. "[Group VR Experiences Can Produce Ego Attenuation and Connectedness Comparable to Psychedelics](https://doi.org/10.1038/s41598-022-12637-z)." Scientific Reports 12 (2022).
+- Metatla, Oussama, Sandra Bardot, Clare Cullen, Marcos Serrano, and Christophe Jouffrais. "[Robots for Inclusive Play: Co-Designing an Educational Game with Visually Impaired and Sighted Children](https://doi.org/10.1145/3313831.3376270)." CHI (2020).
 
-- Glowacki. "[VR Models of Death and Psychedelics: An Aesthetic Paradigm for Design Beyond Day-to-Day Phenomenology](https://doi.org/10.3389/frvir.2023.1286950)." Frontiers in Virtual Reality (2024).
+- Neto, Isabel, Filipa Correia, Filipa Rocha, Patricia Piedade, Ana Paiva, and Hugo Nicolau. "[The Robot Made Us Hear Each Other: Fostering Inclusive Conversations among Mixed-Visual Ability Children](https://doi.org/10.1145/3568162.3576997)." HRI (2023).
 
-- Mitchell, Hyde, Tew, and Glowacki. "[danceroom Spectroscopy: At the Frontiers of Physics, Performance, Interactive Art and Technology](https://doi.org/10.1162/LEON_a_00924)." Leonardo 49(2), 138-147 (2016).
+- Pires, Ana Cristina, Lúcia Verónica Abreu, Filipa Rocha, Hugo Simão, João Guerreiro, Hugo Nicolau, and Tiago Guerreiro. "[TACTOPI: Exploring Play with an Inclusive Multisensory Environment for Children with Mixed-Visual Abilities](https://doi.org/10.1145/3585088.3589389)." IDC (2023).
 
-- Intangible Realities Laboratory. "[Hidden Fields](https://www.intangiblerealitieslab.org/projects/hidden-fields)." Project page on energy avatars and real-time atomic physics simulation (accessed 2026-06-12).
+- Neto, Isabel, Yuhan Hu, Filipa Correia, Filipa Rocha, Guy Hoffman, Hugo Nicolau, and Ana Paiva. "[Conveying Emotions through Shape-Changing to Children with and without Visual Impairment](https://doi.org/10.1145/3613904.3642525)." CHI (2024).
 
-- Toledo Castro, Protopopov, and Glowacki. "[esencia: A Case Study on Reinterpreting an Interactive Art and Science Installation Based on a Real-Time Atomic Physics Engine](https://doi.org/10.1145/3749893.3749972)." Expanded '25: Proceedings of the Conference on Animation and Interactive Art , 178-187 (2025).
+- Le Goc, Mathieu, Lawrence H. Kim, Ali Parsaei, Jean-Daniel Fekete, Pierre Dragicevic, and Sean Follmer. "[Zooids: Building Blocks for Swarm User Interfaces](https://doi.org/10.1145/2984511.2984547)." UIST (2016).
 
-- Essentia Foundation. "[Molecular Physicist Visualised The Process of Dying | David Glowacki](https://www.youtube.com/watch?v=r6_VOOe8SMg)." Video interview (accessed 2026-06-12).
+- Kim, Lawrence H., and Sean Follmer. "[UbiSwarm: Ubiquitous Robotic Interfaces and Investigation of Abstract Motion as a Display](https://doi.org/10.1145/3130931)." Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies 1(3) (2017).
 
-- Kettner et al. "[Observational Cohort Study of a Group-Based VR Program to Improve Mental Health and Wellbeing in People with Life-Threatening Illnesses](https://doi.org/10.3389/frvir.2024.1466362)." Frontiers in Virtual Reality 5 (2025).
+- Kim, Lawrence H., and Sean Follmer. "[SwarmHaptics: Haptic Display with Swarm Robots](https://doi.org/10.1145/3290605.3300918)." CHI (2019).
 
-- Andreu, Hardy, Bonnelle, and Glowacki. "[Numadelic VR Experiences for Improving Mental Health Outcomes in Patients Facing Life-Threatening Illness: Randomized Controlled Trial](https://osf.io/72uwz/)." OSF registration, registered May 10, 2024 (accessed 2026-06-12).
+- Kim, Lawrence H., Daniel S. Drew, Veronika Domova, and Sean Follmer. "[User-Defined Swarm Robot Control](https://doi.org/10.1145/3313831.3376814)." CHI (2020).
 
-- CiTIUS. "[Numadelic: Numadelic VR Experiences for Improving Mental Health Outcomes in Patients Facing Life-Threatening Illness](https://citius.gal/research/projects/experiencias-de-realidade-virtual-numadelicas-para-mellorar-a-saude-mental-e-o-benestar/)." Project page, execution timing 2024-10-01 / 2028-09-30, funded by Tiny Blue Dot Foundation (accessed 2026-06-12).
+- Kim, Lawrence H., and Sean Follmer. "[Generating Legible and Glanceable Swarm Robot Motion through Trajectory, Collective Behavior, and Pre-Attentive Processing Features](https://doi.org/10.1145/3442681)." ACM Transactions on Human-Robot Interaction 10(3) (2021).
 
-- aNUma. "[Clear Light](https://anuma.com/clearlight)." Program page for people facing life-threatening illness and their families (accessed 2026-06-12).
+- Kim, Lawrence H., et al. "[SwarmFidget: Exploring Programmable Actuated Fidgeting with Swarm Robots](https://doi.org/10.1145/3586183.3606746)." UIST (2023).
 
-- Numadelic Labs Collective. "[Numadelic Labs](https://www.numadeliclabs.org/)." Public page for a 501(c)(3) research organization developing AI-augmented group therapy in VR; see also "[The Science](https://www.numadeliclabs.org/the-science)" bibliography page (accessed 2026-06-12).
+- Pulatova, Sabina, and Lawrence H. Kim. "[Co-Designing Programmable Fidgeting Experience with Swarm Robots for Adults with ADHD](https://doi.org/10.1145/3663548.3675614)." ASSETS (2024).
 
-- Yee, Bailenson, and Ducheneaut. "[The Proteus Effect: Implications of Transformed Digital Self-Representation on Online and Offline Behavior](https://vhil.stanford.edu/publications/avatars-and-agents/proteus-effect-implications-transformed-digital-self-representation)." Stanford Virtual Human Interaction Lab summary of Communication Research 36(2) (2009).
+- Zhang, Kexin, et al. "[Feeling with Many: Rethinking Emotion Regulation with Swarm User Interfaces](https://doi.org/10.1145/3772318.3791599)." CHI (2026).
 
-- Jeong et al. "[Protean Kinematics: A Blended Model of VR Physics](https://doi.org/10.3389/fpsyg.2021.705170)." Frontiers in Psychology 12 (2021).
+- Ichihashi, Yudai, et al. "[Swarm Body: Embodied Swarm Robots](https://doi.org/10.1145/3613904.3642870)." CHI (2024).
 
-- iSpace Research Lab. "[John Desnoyers-Stewart](https://ispace.iat.sfu.ca/person/john-desnoyers-stewart/)." Profile, research summary, project index, and publication route (accessed 2026-07-23).
+- Desnoyers-Stewart, John, et al. "[Body RemiXer: Extending Bodies to Stimulate Social Connection in an Immersive Installation](https://doi.org/10.1162/leon_a_01925)." Leonardo 53(4) (2020).
 
-- iSpace Research Lab. Project pages for "[Transcending Perception](https://ispace.iat.sfu.ca/project/transcending-perception/)," "[Body RemiXer](https://ispace.iat.sfu.ca/project/body-remixer/)," "[Star-Stuff](https://ispace.iat.sfu.ca/project/star-stuff/)," "[JeL](https://ispace.iat.sfu.ca/project/jel/)," "[Breath of Light](https://ispace.iat.sfu.ca/project/breath-of-light/)," and "[Design Strategies for Genuine Connection](https://ispace.iat.sfu.ca/project/design-for-genuine-connection/)" (accessed 2026-07-23).
+- Desnoyers-Stewart, John, et al. "[Embodied Telepresent Connection](https://doi.org/10.1145/3544549.3585843)." CHI Extended Abstracts (2023).
 
-- Desnoyers-Stewart. "[Transcending Projection: Progressive Engagement with Virtual Reality in Public Spaces](https://www.medien.ifi.lmu.de/socialHMD/SHMD_19_submissions/SHMD_19_paper_12.pdf)." CHI workshop paper (2019).
+- Stepanova, Ekaterina R., John Desnoyers-Stewart, Kristina Höök, and Bernhard E. Riecke. "[Strategies for Fostering a Genuine Feeling of Connection in Technologically Mediated Systems](https://doi.org/10.1145/3491102.3517580)." CHI (2022).
 
-- Desnoyers-Stewart, Smith, and Riecke. "[Transcending the Virtual Mirror Stage: Embodying the Virtual Self Through the Digital Mirror](https://gala.gre.ac.uk/id/eprint/31046/7/31046%20PAPADAKI_DRHA2019_Conference_Proceedings_2020.pdf)." DRHA (2019).
-
-- Desnoyers-Stewart et al. "[Body RemiXer: Extending Bodies to Stimulate Social Connection in an Immersive Installation](https://doi.org/10.1162/LEON_a_01925)." Leonardo 53(4) (2020).
-
-- Desnoyers-Stewart. "[Star-Stuff: A Shared Immersive Experience in Space](https://www.isea-symposium-archives.org/presentation/star-stuff-a-shared-immersive-experience-in-space-presented-by-desnoyers-stewart/)." ISEA (2022).
-
-- Desnoyers-Stewart. "[Star-Stuff: A Way for the Universe to Know Itself](https://doi.org/10.1145/3532834.3536198)." ACM SIGGRAPH Immersive Pavilion (2022).
-
-- Desnoyers-Stewart et al. "[Embodied Telepresent Connection (ETC): Exploring Virtual Social Touch Through Pseudohaptics](https://doi.org/10.1145/3544549.3585843)." CHI EA (2023).
-
-- Stepanova et al. "[JeL](https://doi.org/10.1145/3357236.3395532)." Designing Interactive Systems Conference (2020).
-
-- Stepanova, Desnoyers-Stewart, Höök, and Riecke. "[Strategies for Fostering a Genuine Feeling of Connection in Technologically Mediated Systems](https://doi.org/10.1145/3491102.3517580)." CHI (2022).
-
-- Liu et al. "[Breath of Light: Reclaiming Shared Breathing Through a Meditative Installation](https://doi.org/10.1162/leon_a_02401)." Leonardo (2023).
-
-- Bernal and Maes. "[Emotional Beasts: Visually Expressing Emotions Through Avatars in VR](https://doi.org/10.1145/3027063.3053207)." CHI EA (2017).
-
-- OpenBCI. "[Affective Computing and Mixed Reality: An Interview with Guillermo Bernal](https://openbci.com/community/affective-computing-and-mixed-reality-guillermo-bernal/)." OpenBCI Community (2020).
-
-- Bernal. "[Developing Galea: An Open Source Tool at the Intersection of VR and Neuroscience](https://www.media.mit.edu/posts/galea/)." MIT Media Lab post (2021).
-
-- MIT Media Lab. "[PhysioHMD](https://www.media.mit.edu/projects/physiohmd/overview/)." Fluid Interfaces project page (accessed 2026-06-11).
-
-- OpenBCI. "[OpenBCI Unveils Galea, a New Platform that Brings Next Generation Biometrics to Mixed Reality](https://www.prnewswire.com/news-releases/openbci-unveils-galea-a-new-platform-that-brings-next-generation-biometrics-to-mixed-reality-301177149.html)." Press release (2020).
-
-- Jain. "[Re-imagining XR with People with Sensorimotor Disabilities Through Criptastic Hacking](https://jainpuneet798.github.io/portfolio/cripgestures/)." Project page (accessed 2026-06-11).
-
-- Jain. "[Crip Sensorama: Christian's Coffee](https://jainpuneet798.github.io/portfolio/cripsensorama_christians-coffee/)." Project page (accessed 2026-06-11).
-
-- Jain. "[Umwelten](https://jainpuneet798.github.io/portfolio/umwelten/)." Project page (accessed 2026-06-11).
-
-- Jain. "[Navigating in VR Using Free-Hand Gestures and Embodied Controllers](https://jainpuneet798.github.io/portfolio/vrst/)." Project page (accessed 2026-06-11).
-
-- Jain. "[Adaptive Virtual Keyboard](https://jainpuneet798.github.io/portfolio/adaptivevirtualkeyboard/)." Project page (accessed 2026-06-11).
-
-- Jeevithashree et al. "[Eye Gaze Controlled Adaptive Virtual Keyboard for Users with SSMI](https://doi.org/10.3233/TAD-200292)." Technology and Disability 33(1) (2021).
-
-- Jain. "[AutonomX](https://jainpuneet798.github.io/portfolio/autonomx/)." Project page (accessed 2026-06-11).
-
-- Saunier et al. "[AutonomX: Real Time Creation/Composition with Complex Systems](https://www.isea-symposium-archives.org/presentation/autonomx-real-time-creation-composition-with-complex-systems-presented-by-saunier-salter-vermette-quessy-demeule-et-al/)." ISEA archive (2022).
-
-- Jain. "[Epistemological Intervention](https://jainpuneet798.github.io/portfolio/epistemologicalintervention/)." Project page (accessed 2026-06-11).
-
-- Jain and Bayerlein. "[Hand to Mouth: Shifting the Bare-Minimum Accessibility Paradigm in XR Through Crip-Hacking and Crip-Aesthetics](https://doi.org/10.1007/s11569-025-00494-9)." Ethics and Society 20 (2026).
-
-- Gilland. "[Elemental Magic: The Art of Special Effects Animation](https://archive.org/details/elemental-magic/page/n2/mode/1up)." Focal Press (2009).
-
-- Suzuki et al. "[RoomShift: Room-Scale Dynamic Haptics for VR with Furniture-Moving Swarm Robots](https://doi.org/10.1145/3313831.3376523)." CHI (2020).
-
-- Sprowitz et al. "[Roombots: Mechanical Design of Self-Reconfiguring Modular Robots for Adaptive Furniture](https://doi.org/10.1109/ROBOT.2009.5152613)." ICRA (2009).
-
-- Mottelson et al. "[Remote VR Studies: A Framework for Running Virtual Reality Studies Remotely Via Participant-Owned HMDs](https://arxiv.org/abs/2102.11207)." arXiv:2102.11207 (2021).
-
-- Zhang et al. "[It's Just Part of Me: Understanding Avatar Diversity and Self-Presentation of People with Disabilities in Social Virtual Reality](https://arxiv.org/abs/2208.11170)." arXiv:2208.11170 (2022).
-
-- Gualano et al. "[I Try to Represent Myself as I Am: Self-Presentation Preferences of People with Invisible Disabilities through Embodied Social VR Avatars](https://arxiv.org/abs/2408.08193)." arXiv:2408.08193 (2024).
+- Slavkov, Ivica, et al. "[Morphogenesis in Robot Swarms](https://doi.org/10.1126/scirobotics.aau9178)." Science Robotics 3(25) (2018).
 
 - W3C Accessible Platform Architectures Working Group. "[XR Accessibility User Requirements](https://www.w3.org/TR/xaur/)." W3C Working Group Note (2021).
-
-- Ichihashi et al. "[Swarm Body: Embodied Swarm Robots](https://doi.org/10.1145/3613904.3642870)." CHI (2024).
-
-- Tangent Lab. "[Interfaces of Tomorrow](https://tangent.cs.sfu.ca/)." Simon Fraser University research lab for affective interaction, haptics, robotics, AR/VR, and tangible interfaces (accessed 2026-07-23).
-
-- Le Goc et al. "[Zooids: Building Blocks for Swarm User Interfaces](https://doi.org/10.1145/2984511.2984547)." UIST (2016).
-
-- Kim and Follmer. "[UbiSwarm: Ubiquitous Robotic Interfaces and Investigation of Abstract Motion as a Display](https://doi.org/10.1145/3130931)." Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies 1(3) (2017).
-
-- Dietz et al. "[Human Perception of Swarm Robot Motion](https://doi.org/10.1145/3027063.3053220)." CHI EA (2017).
-
-- Zhao et al. "[Robotic Assembly of Haptic Proxy Objects for Tangible Interaction and Virtual Reality](https://doi.org/10.1145/3132272.3134143)." ISS (2017).
-
-- Kim and Follmer. "[SwarmHaptics: Haptic Display with Swarm Robots](https://doi.org/10.1145/3290605.3300918)." CHI (2019).
-
-- Suzuki et al. "[ShapeBots: Shape-Changing Swarm Robots](https://doi.org/10.1145/3332165.3347911)." UIST (2019).
-
-- Santos and Egerstedt. "[From Motions to Emotions: Can the Fundamental Emotions be Expressed in a Robot Swarm?](https://doi.org/10.1007/s12369-020-00665-6)" International Journal of Social Robotics 13 (2021).
-
-- Kaduk et al. "[From One to Many: How Active Robot Swarm Sizes Influence Human Cognitive Processes](https://doi.org/10.1109/RO-MAN60168.2024.10731232)." RO-MAN (2024).
-
-- Kim, Drew, Domova, and Follmer. "[User-Defined Swarm Robot Control](https://doi.org/10.1145/3313831.3376814)." CHI (2020).
-
-- Kim and Follmer. "[Generating Legible and Glanceable Swarm Robot Motion Through Trajectory, Collective Behavior, and Pre-Attentive Processing Features](https://doi.org/10.1145/3442681)." ACM Transactions on Human-Robot Interaction 10(3) (2021).
-
-- Luo, Domova, and Kim. "[Impact of Multi-Robot Presence and Anthropomorphism on Human Cognition and Emotion](https://doi.org/10.1145/3613904.3642795)." CHI (2024).
-
-- Kim et al. "[SwarmFidget: Exploring Programmable Actuated Fidgeting with Swarm Robots](https://doi.org/10.1145/3586183.3606746)." UIST (2023).
-
-- Pulatova and Kim. "[Co-Designing Programmable Fidgeting Experience with Swarm Robots for Adults with ADHD](https://doi.org/10.1145/3663548.3675614)." ASSETS (2024).
-
-- Dang, Pulatova, and Kim. "[User-Defined Co-Speech Gesture Design with Swarm Robots](https://doi.org/10.1145/3706598.3714147)." CHI (2025).
-
-- Zhang et al. "[Feeling with Many: Rethinking Emotion Regulation with Swarm User Interfaces](https://doi.org/10.1145/3772318.3791599)." CHI (2026).
-
-- Kolling et al. "[Human Swarm Interaction: An Experimental Study of Two Types of Interaction with Foraging Swarms](https://publications.ri.cmu.edu/storage/publications/pub_files/2013/6/Paper_JHRI.pdf)." Journal of Human-Robot Interaction 1(1) (2012).
-
-- Kolling et al. "[Human Interaction with Robot Swarms: A Survey](https://www.ri.cmu.edu/publications/human-interaction-with-robot-swarms-a-survey/)." IEEE Transactions on Human-Machine Systems 46(1) (2016).
-
-- Petersen et al. "[A Review of Collective Robotic Construction](https://doi.org/10.1126/scirobotics.aau8479)." Science Robotics 4(28) (2019).
-
-- Werfel, Petersen, and Nagpal. "[Designing Collective Behavior in a Termite-Inspired Robot Construction Team](https://doi.org/10.1126/science.1245842)." Science 343(6172) (2014).
-
-- Rubenstein, Cornejo, and Nagpal. "[Programmable Self-Assembly in a Thousand-Robot Swarm](https://doi.org/10.1126/science.1254295)." Science 345(6198) (2014).
-
-- Alonso-Mora et al. "[Gesture Based Human - Multi-Robot Swarm Interaction and its Application to an Interactive Display](https://doi.org/10.1109/ICRA.2015.7140033)." ICRA (2015).
-
-- Patel, Xu, and Pinciroli. "[Mixed-Granularity Human-Swarm Interaction](https://doi.org/10.1109/ICRA.2019.8793261)." ICRA (2019).
-
-- Suresh and Martinez. "[Human-Swarm Interactions for Formation Control Using Interpreters](https://doi.org/10.1007/s12555-019-0497-3)." International Journal of Control, Automation and Systems 18 (2020).
-
-- Li et al. "[Swarm Manipulation: An Efficient and Accurate Technique for Multi-Object Manipulation in Virtual Reality](https://doi.org/10.1016/j.cag.2024.104113)." Computers & Graphics 125 (2024).
-
-- Alhafnawi et al. "[Express Yourself: Enabling Large-Scale Public Events Involving Multi-Human-Swarm Interaction for Social Applications with MOSAIX](https://arxiv.org/abs/2411.09975)." arXiv:2411.09975 (2024).
-
-- Reynolds. "[Steering Behaviors for Autonomous Characters](https://www.red3d.com/cwr/steer/)." Game Developers Conference (1999).
-
-- Patil et al. "[Directing Crowd Simulations Using Navigation Fields](https://doi.org/10.1109/TVCG.2010.33)." IEEE Transactions on Visualization and Computer Graphics 17(2) (2011).
-
-- Colas et al. "[Interaction Fields: Intuitive Sketch-Based Steering Behaviors for Crowd Simulation](https://doi.org/10.1111/cgf.14491)." Computer Graphics Forum 41(2) (2022).
-
-- Prazak et al. "[Taming the Swarm: Rippers on Pacific Rim Uprising](https://doi.org/10.1145/3214745.3214809)." SIGGRAPH '18 Talks (2018).
-
-- SideFX. "[Crowd Basics](https://www.sidefx.com/docs/houdini/crowds/basics.html)." Houdini Documentation (accessed 2026-06-11).
-
-- Zheng, Jarecki, and Lee. "[Integrated System Architecture with Mixed-Reality User Interface for Virtual-Physical Hybrid Swarm Simulations](https://doi.org/10.1038/s41598-023-40623-6)." Scientific Reports 13 (2023).
-
-- Bolotnikova et al. "[Optimized User-Guided Motion Control of Modular Robots](https://doi.org/10.1038/s41467-025-63706-6)." Nature Communications 16 (2025).
-
-- Brown, Kerman, and Goodrich. "[Human-Swarm Interactions Based on Managing Attractors](https://users.cs.utah.edu/~dsbrown/pubs/Brown_HRI2014.pdf)." HRI (2014).
-
-- Kegeleirs and Birattari. "[Towards Applied Swarm Robotics: Current Limitations and Enablers](https://www.frontiersin.org/journals/robotics-and-ai/articles/10.3389/frobt.2025.1607978/full)." Frontiers in Robotics and AI (2025).
-
-- Levin. "[Bioelectric Signaling: Reprogrammable Circuits Underlying Embryogenesis, Regeneration, and Cancer](https://doi.org/10.1016/j.cell.2021.02.034)." Cell 184(8) (2021).
-
-- Levin. "[Darwin's Agential Materials: Evolutionary Implications of Multiscale Competency in Developmental Biology](https://doi.org/10.1007/s00018-023-04790-z)." Cellular and Molecular Life Sciences 80 (2023).
-
-- Pahng, Guan, Fefferman, and Hormoz. "[DiffeoMorph: Learning to Morph 3D Shapes Using Differentiable Agent-Based Simulations](https://arxiv.org/abs/2512.17129)." arXiv:2512.17129 (2025; revised 2026).
-
-- hormoz-lab. "[diffeomorph](https://github.com/hormoz-lab/diffeomorph)." Official implementation repository for the DiffeoMorph paper.
-
-- Chiossi et al. "[PhysioCHI: Towards Best Practices for Integrating Physiological Signals in HCI](https://doi.org/10.1145/3613905.3636286)." CHI EA (2024).
-
-- Mesmer Prism. [Rusty Morphospace](https://mesmerprism.com/projects/rusty-morphospace.html), [Native App Build Workflow](https://mesmerprism.com/projects/rusty-morphospace/native-app-build-workflow.html), [Rusty Quest](https://github.com/MesmerPrism/rusty-quest), [Rusty XR](https://mesmerprism.com/projects/rusty-morphospace/rusty-xr.html), and [Polar H10 Work](https://mesmerprism.com/projects/polar-h10.html).
-
-- Mesmer Prism. "[Bioelectricity and Morphogenesis](https://mesmerprism.com/projects/bioelectricity.html)." Public project page.

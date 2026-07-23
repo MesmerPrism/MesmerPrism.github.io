@@ -25,6 +25,12 @@ html {
   background: var(--paper-deep);
 }
 
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
 body {
   min-height: 100vh;
   margin: 0;
@@ -54,9 +60,12 @@ a:focus-visible {
   color: var(--ink-soft);
 }
 
-a:focus-visible {
-  outline: 2px solid rgba(18, 16, 15, 0.18);
-  outline-offset: 2px;
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible {
+  outline: 3px solid var(--ink);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 2px var(--paper);
 }
 
 .skip-link {
@@ -74,6 +83,8 @@ a:focus-visible {
 
 .skip-link:focus-visible {
   color: var(--paper);
+  outline-color: var(--paper);
+  box-shadow: 0 0 0 2px var(--ink);
   transform: translateY(0);
 }
 
@@ -98,6 +109,10 @@ img {
 
 .page-hsi .shell {
   width: min(calc(100% - var(--page-gutter) - var(--page-gutter)), var(--wide));
+}
+
+.page-hsi .site-header .shell {
+  width: min(calc(100% - var(--page-gutter) - var(--page-gutter)), var(--max-width));
 }
 
 .site-header {
@@ -389,6 +404,10 @@ main.shell {
   margin-top: 0;
 }
 
+.reading-map__grid--three {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
 .reading-map section {
   min-width: 0;
 }
@@ -420,6 +439,50 @@ main.shell {
 
 .comparison-grid--three {
   grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.evidence-matrix {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 2rem;
+  width: min(100%, var(--wide));
+  margin: 1.5rem auto 0;
+  border-top: 1px solid var(--ink-faint);
+}
+
+.evidence-matrix--compact {
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+}
+
+.evidence-matrix article {
+  min-width: 0;
+  padding: 1.15rem 0 1.3rem;
+  border-bottom: 1px solid var(--ink-faint);
+}
+
+.evidence-matrix h3,
+.evidence-matrix h4 {
+  margin: 0 0 0.45rem;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.42rem;
+  font-style: italic;
+  font-weight: 600;
+  line-height: 1.05;
+}
+
+.evidence-matrix h4 {
+  font-size: 1.26rem;
+}
+
+.evidence-matrix p {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 1rem;
+  line-height: 1.58;
+}
+
+.research-question-list li {
+  margin-bottom: 0.85rem;
 }
 
 .card-kicker {
@@ -1027,6 +1090,7 @@ main.shell {
 .page-hsi .article > section > .claim-grid,
 .page-hsi .article > section > .comparison-grid,
 .page-hsi .article > section > .precedent-grid,
+.page-hsi .article > section > .evidence-matrix,
 .page-hsi .article > section > .concept-diagram,
 .page-hsi .article > section > .route-grid,
 .page-hsi .article > section > .status-grid,
@@ -1202,6 +1266,7 @@ main.shell {
   .route-strip__steps,
   .reading-map__grid,
   .claim-grid,
+  .evidence-matrix,
   .stack-flow__grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -1270,9 +1335,31 @@ main.shell {
     letter-spacing: 0.07em;
   }
 
+  .page-hsi .site-nav {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    gap: 0.75rem;
+    max-width: 100%;
+    padding: 0 0 0.2rem;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scrollbar-width: thin;
+  }
+
   .site-nav a {
     min-width: 0;
     overflow-wrap: anywhere;
+  }
+
+  .page-hsi .site-nav a {
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
+    min-height: 2rem;
+    padding: 0.25rem 0.1rem;
+    overflow-wrap: normal;
+    white-space: nowrap;
   }
 
   main.shell {
@@ -1316,6 +1403,7 @@ main.shell {
   .card-grid,
   .claim-grid,
   .comparison-grid,
+  .evidence-matrix,
   .precedent-grid,
   .scenario-card,
   .evidence-note,
@@ -1352,6 +1440,7 @@ main.shell {
   .reading-map__grid,
   .claim-grid,
   .comparison-grid,
+  .evidence-matrix,
   .stack-flow__grid,
   .module-list,
   .protocol-card,
