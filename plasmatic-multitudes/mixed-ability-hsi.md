@@ -2,8 +2,8 @@
 
 Source: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html
 Canonical HTML: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html
-Generated: 2026-06-21
-Description: A Plasmatic Multitudes research track on shared visual swarm bodies, mixed-ability collaboration, access-practice mapping, connectedness-first exploration, encounter, cooperative play, and later physical translation.
+Generated: 2026-07-23
+Description: A source-linked research article on mixed-ability human-swarm interaction, joining accessible shared agency with Tangent Lab's swarm interfaces and John Desnoyers-Stewart's relational mixed-reality work.
 Markdown: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.md
 Plain text: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.txt
 BibTeX references: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.bib
@@ -11,7 +11,7 @@ CSL JSON references: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-
 
 ---
 
-Mixed-ability HSI | Updated June 21, 2026
+Mixed-ability HSI | Updated July 23, 2026
 
 # Mixed-Ability Human-Swarm Interaction
 
@@ -24,6 +24,12 @@ Mixed-ability HSI | Updated June 21, 2026
  Each person can affect the body differently. One participant might use breath to soften
  the edge. One might use text to name a goal. One might use a controller to seed a
  movement field. One might use a switch to pause or veto a high-intensity state.
+
+ The same shared state can appear through projection or VR, a small physical interface
+ swarm, and participant-specific sound or touch. Tangent Lab supplies the clearest
+ robotics-side lineage for that approach. John Desnoyers-Stewart's work with iSpace
+ supplies the corresponding mixed-reality lineage for abstract shared bodies and
+ mediated connection.
 
 ## Plain terms
 
@@ -469,6 +475,119 @@ Mixed-ability HSI | Updated June 21, 2026
  expose not only what signal controls what dynamic, but also who proposed the mapping,
  how it was tuned, what it costs, who sees it, and how it can be retired
  ([Jain, Crip Sensorama gesture process](https://jainpuneet798.github.io/portfolio/cripgestures/); [Jain, Crip Sensorama: Christian's Coffee](https://jainpuneet798.github.io/portfolio/cripsensorama_christians-coffee/); [Jain, AutonomX](https://jainpuneet798.github.io/portfolio/autonomx/); [Jain and Bayerlein, Hand to Mouth, 2026](https://doi.org/10.1007/s11569-025-00494-9)) .
+
+## One shared state, two interface lineages
+
+ Tangent Lab and John Desnoyers-Stewart's iSpace work anchor different sides of the
+ same design problem: how a collective body becomes physically graspable, virtually
+ inhabitable, and open to more than one way of taking part.
+
+ These are complementary precedents, not finished examples of mixed-ability HSI.
+ Tangent's work develops small robots as programmable interface matter, then studies
+ their motion, touch, legibility, cognitive load, and affect. Desnoyers-Stewart's work
+ develops projected and virtual bodies that people can enter gradually, identify with,
+ mix, touch at a distance, and alter through shared signals. Read together, they suggest
+ a relational interface that can move across media without making a headset, a hand
+ gesture, or a robot tabletop the only valid point of entry
+ ([Tangent Lab](https://tangent.cs.sfu.ca/); [Desnoyers-Stewart at iSpace](https://ispace.iat.sfu.ca/person/john-desnoyers-stewart/)) .
+
+ Robotics side
+
+### Tangent: the swarm as interface material
+
+ Small robots can become moving controls, data, haptic contacts, conversational
+ gestures, or configurable fidget objects. The research question shifts from
+ commanding a distant swarm to handling a collective medium.
+
+ Mixed-reality side
+
+### iSpace: the swarm as relational body
+
+ Particle auras, constellation bodies, projected mirrors, pseudo-haptic contact,
+ and breath-linked form let several people meet through a body that is shared
+ without becoming anatomically fixed.
+
+### Tangent Lab: from moving robots to a bodily interface
+
+ The Tangent lineage begins with Zooids , where small wheeled robots become
+ individually addressable physical interface elements. UbiSwarm and the
+ associated motion-perception study then show that collective movement is already an
+ output language: speed, smoothness, gathering, and dispersion change how a swarm is
+ read and can alter a participant's arousal. Robotic Assembly of Haptic Proxy
+ Objects and SwarmHaptics add physical consequence. Robots can assemble
+ selected low-resolution forms for VR or distribute touch across a body area
+ ([Le Goc et al., 2016](https://doi.org/10.1145/2984511.2984547); [Kim and Follmer, 2017](https://doi.org/10.1145/3130931); [Dietz et al., 2017](https://doi.org/10.1145/3027063.3053220); [Zhao et al., 2017](https://doi.org/10.1145/3132272.3134143); [Kim and Follmer, 2019](https://doi.org/10.1145/3290605.3300918)) .
+
+ Later studies make the human side more specific. User-defined control work found that
+ robot number and proximity changed whether people used fingers, one hand, both hands,
+ touch, gesture, or speech. Legibility work separated cues that support a considered
+ reading of collective intent from cues that work at a glance. A study of multi-robot
+ presence found that larger groups of non-anthropomorphic robots generally slowed task
+ performance, while coordinated motion reduced that cost relative to random motion.
+ Multiplicity is therefore an exposure variable as well as a technical one
+ ([Kim et al., 2020](https://doi.org/10.1145/3313831.3376814); [Kim and Follmer, 2021](https://doi.org/10.1145/3442681); [Luo, Domova, and Kim, 2024](https://doi.org/10.1145/3613904.3642795)) .
+
+ SwarmFidget carries this material into self-regulatory and affective
+ interaction. The initial study explored programmable return, attraction, repulsion,
+ linked motion, and shape repair. A later co-design study with 16 adults diagnosed with
+ ADHD found varied preferences rather than one ideal fidget behaviour. More recent
+ co-speech and emotion-regulation projects treat collective motion as social expression.
+ The ADHD work is strong formative accessibility evidence, but none of these studies
+ establishes therapeutic benefit
+ ([Kim et al., 2023](https://doi.org/10.1145/3586183.3606746); [Pulatova and Kim, 2024](https://doi.org/10.1145/3663548.3675614); [Dang, Pulatova, and Kim, 2025](https://doi.org/10.1145/3706598.3714147); [Zhang et al., 2026](https://doi.org/10.1145/3772318.3791599)) .
+
+### iSpace: from projected entry to shared abstract bodies
+
+ Transcending Perception provides the clearest entry model. A person can first
+ watch projected bodies, then enter the tracked space, collaborate or perform, and only
+ later use a headset. That sequence keeps witness, peripheral, projection-only, and HMD
+ participation in the same social event. The digital-mirror work shows why this matters
+ for embodiment: a responsive particle body can remain connected to the tracked body
+ without copying ordinary anatomy
+ ([iSpace, Transcending Perception](https://ispace.iat.sfu.ca/project/transcending-perception/); [Desnoyers-Stewart, 2019](https://www.medien.ifi.lmu.de/socialHMD/SHMD_19_submissions/SHMD_19_paper_12.pdf); [Desnoyers-Stewart, Smith, and Riecke, 2019](https://gala.gre.ac.uk/id/eprint/31046/7/31046%20PAPADAKI_DRHA2019_Conference_Proceedings_2020.pdf)) .
+
+ Body RemiXer lets particle auras exchange through contact and lets one
+ participant's aura overlay another's body. Star-Stuff turns two people into
+ constellation fields whose relation produces a collaborative sculpture.
+ Embodied Telepresent Connection uses aura avatars, audiovisual alignment, and
+ simulated touch points to explore pseudo-haptic social touch at a distance. Together,
+ the works distinguish exchange, overlay, co-creation, and contact from simple unison
+ ([iSpace, Body RemiXer](https://ispace.iat.sfu.ca/project/body-remixer/); [Desnoyers-Stewart et al., 2020](https://doi.org/10.1162/LEON_a_01925); [Desnoyers-Stewart, 2022](https://doi.org/10.1145/3532834.3536198); [Desnoyers-Stewart et al., 2023](https://doi.org/10.1145/3544549.3585843)) .
+
+ JeL and Breath of Light add low-motion, interoceptive contribution:
+ breathing changes individual luminous forms and, when the system detects synchrony,
+ produces a shared structure or ripple. That is a useful input precedent, but synchrony
+ should not become the price of belonging. Resting, asynchronous, complementary, and
+ deliberately divergent contributions need visible consequences too. The nine
+ strategies described in Designing for Genuine Connection are therefore best
+ used as prompts. Touch, closeness, unity, self-disclosure, provocation, and
+ self-dissolution are not universally desirable outcomes
+ ([Stepanova et al., 2020](https://doi.org/10.1145/3357236.3395532); [Liu et al., 2023](https://doi.org/10.1162/leon_a_02401); [Stepanova et al., 2022](https://doi.org/10.1145/3491102.3517580)) .
+
+### A joined physical–virtual instrument
+
+ The combined design does not assign one device to each kind of participant. It keeps a
+ common semantic layer between a person's chosen access route and the shared collective
+ state. Projection, VR, small robots, sound, captions, and touch become different views
+ or consequences of that state. A participant can change route without losing their
+ history or authorship.
+
+ The first comparison should replay the same logged group event through three
+ substrates: a projected or virtual body; a small physical interface swarm; and a
+ non-robot tactile, sonic, or tangible baseline. The comparison can then ask what
+ survives the change of medium: perceived authorship, group legibility, continuity,
+ fatigue, sensory load, and the ability to repair a mapping.
+
+ Evidence boundary
+
+### The bridge is a research proposal, not a solved interface
+
+ Tangent's direct disability-centred evidence is concentrated in ADHD co-design, and
+ many swarm-interface prototypes use central coordination. Desnoyers-Stewart's work
+ is highly relevant to social and bodily design, but it is not a disability-centred
+ validation of mixed-ability HSI. Abstract embodiment is not automatically
+ accessible, pseudo-haptic contact is not physical touch, and physiological synchrony
+ is neither a universal measure nor a required form of connection.
 
 ## The input stack has to stay explicit
 
@@ -1291,6 +1410,12 @@ Mixed-ability HSI | Updated June 21, 2026
  Embodiment precedent
  Isness, NUMADELIC / Clear Light, Body RemiXer, ETC, Emotional Beasts, aura avatars, pseudohaptics, and abstract social bodies.
 
+ Robotics-side interface anchor
+ Tangent Lab's sequence from Zooids and UbiSwarm through haptic proxies, SwarmHaptics, legible motion, SwarmFidget, ADHD co-design, and affective swarm interfaces supports small robots as programmable physical interface matter. It does not by itself establish decentralized morphogenesis or therapeutic benefit.
+
+ Mixed-reality relational anchor
+ Desnoyers-Stewart and iSpace support progressive public entry, abstract particle embodiment, shared-body exchange, constellation co-creation, pseudo-haptic telepresence, and breath-linked collective form. These projects are relational precedents, not disability-centred validation.
+
  Physics-aesthetics bridge
  Glowacki's molecular-physics installations, from danceroom Spectroscopy and Hidden Fields to the 2025 esencia reinterpretation, support physics as a generative aesthetic substrate and as a technical stack that must be maintained across sensors, simulation, and hardware.
 
@@ -1315,8 +1440,9 @@ Mixed-ability HSI | Updated June 21, 2026
 ## Sources
 
  These sources ground the distinction between access theory, protean embodiment,
- connectedness-first XR, aesthetic swarm bodies, human-swarm interaction, material
- translation, and morphogenetic pattern vocabulary.
+ connectedness-first XR, Tangent's swarm-interface lineage, Desnoyers-Stewart's
+ relational mixed-reality lineage, human-swarm interaction, material translation, and
+ morphogenetic pattern vocabulary.
 
 - Wobbrock et al. "[Ability-Based Design: Concept, Principles and Examples](https://doi.org/10.1145/1952383.1952384)." ACM Transactions on Accessible Computing 3(3) (2011).
 
@@ -1348,6 +1474,10 @@ Mixed-ability HSI | Updated June 21, 2026
 
 - Jeong et al. "[Protean Kinematics: A Blended Model of VR Physics](https://doi.org/10.3389/fpsyg.2021.705170)." Frontiers in Psychology 12 (2021).
 
+- iSpace Research Lab. "[John Desnoyers-Stewart](https://ispace.iat.sfu.ca/person/john-desnoyers-stewart/)." Profile, research summary, project index, and publication route (accessed 2026-07-23).
+
+- iSpace Research Lab. Project pages for "[Transcending Perception](https://ispace.iat.sfu.ca/project/transcending-perception/)," "[Body RemiXer](https://ispace.iat.sfu.ca/project/body-remixer/)," "[Star-Stuff](https://ispace.iat.sfu.ca/project/star-stuff/)," "[JeL](https://ispace.iat.sfu.ca/project/jel/)," "[Breath of Light](https://ispace.iat.sfu.ca/project/breath-of-light/)," and "[Design Strategies for Genuine Connection](https://ispace.iat.sfu.ca/project/design-for-genuine-connection/)" (accessed 2026-07-23).
+
 - Desnoyers-Stewart. "[Transcending Projection: Progressive Engagement with Virtual Reality in Public Spaces](https://www.medien.ifi.lmu.de/socialHMD/SHMD_19_submissions/SHMD_19_paper_12.pdf)." CHI workshop paper (2019).
 
 - Desnoyers-Stewart, Smith, and Riecke. "[Transcending the Virtual Mirror Stage: Embodying the Virtual Self Through the Digital Mirror](https://gala.gre.ac.uk/id/eprint/31046/7/31046%20PAPADAKI_DRHA2019_Conference_Proceedings_2020.pdf)." DRHA (2019).
@@ -1356,7 +1486,15 @@ Mixed-ability HSI | Updated June 21, 2026
 
 - Desnoyers-Stewart. "[Star-Stuff: A Shared Immersive Experience in Space](https://www.isea-symposium-archives.org/presentation/star-stuff-a-shared-immersive-experience-in-space-presented-by-desnoyers-stewart/)." ISEA (2022).
 
+- Desnoyers-Stewart. "[Star-Stuff: A Way for the Universe to Know Itself](https://doi.org/10.1145/3532834.3536198)." ACM SIGGRAPH Immersive Pavilion (2022).
+
 - Desnoyers-Stewart et al. "[Embodied Telepresent Connection (ETC): Exploring Virtual Social Touch Through Pseudohaptics](https://doi.org/10.1145/3544549.3585843)." CHI EA (2023).
+
+- Stepanova et al. "[JeL](https://doi.org/10.1145/3357236.3395532)." Designing Interactive Systems Conference (2020).
+
+- Stepanova, Desnoyers-Stewart, Höök, and Riecke. "[Strategies for Fostering a Genuine Feeling of Connection in Technologically Mediated Systems](https://doi.org/10.1145/3491102.3517580)." CHI (2022).
+
+- Liu et al. "[Breath of Light: Reclaiming Shared Breathing Through a Meditative Installation](https://doi.org/10.1162/leon_a_02401)." Leonardo (2023).
 
 - Bernal and Maes. "[Emotional Beasts: Visually Expressing Emotions Through Avatars in VR](https://doi.org/10.1145/3027063.3053207)." CHI EA (2017).
 
@@ -1404,7 +1542,17 @@ Mixed-ability HSI | Updated June 21, 2026
 
 - Ichihashi et al. "[Swarm Body: Embodied Swarm Robots](https://doi.org/10.1145/3613904.3642870)." CHI (2024).
 
+- Tangent Lab. "[Interfaces of Tomorrow](https://tangent.cs.sfu.ca/)." Simon Fraser University research lab for affective interaction, haptics, robotics, AR/VR, and tangible interfaces (accessed 2026-07-23).
+
 - Le Goc et al. "[Zooids: Building Blocks for Swarm User Interfaces](https://doi.org/10.1145/2984511.2984547)." UIST (2016).
+
+- Kim and Follmer. "[UbiSwarm: Ubiquitous Robotic Interfaces and Investigation of Abstract Motion as a Display](https://doi.org/10.1145/3130931)." Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies 1(3) (2017).
+
+- Dietz et al. "[Human Perception of Swarm Robot Motion](https://doi.org/10.1145/3027063.3053220)." CHI EA (2017).
+
+- Zhao et al. "[Robotic Assembly of Haptic Proxy Objects for Tangible Interaction and Virtual Reality](https://doi.org/10.1145/3132272.3134143)." ISS (2017).
+
+- Kim and Follmer. "[SwarmHaptics: Haptic Display with Swarm Robots](https://doi.org/10.1145/3290605.3300918)." CHI (2019).
 
 - Suzuki et al. "[ShapeBots: Shape-Changing Swarm Robots](https://doi.org/10.1145/3332165.3347911)." UIST (2019).
 
@@ -1413,6 +1561,18 @@ Mixed-ability HSI | Updated June 21, 2026
 - Kaduk et al. "[From One to Many: How Active Robot Swarm Sizes Influence Human Cognitive Processes](https://doi.org/10.1109/RO-MAN60168.2024.10731232)." RO-MAN (2024).
 
 - Kim, Drew, Domova, and Follmer. "[User-Defined Swarm Robot Control](https://doi.org/10.1145/3313831.3376814)." CHI (2020).
+
+- Kim and Follmer. "[Generating Legible and Glanceable Swarm Robot Motion Through Trajectory, Collective Behavior, and Pre-Attentive Processing Features](https://doi.org/10.1145/3442681)." ACM Transactions on Human-Robot Interaction 10(3) (2021).
+
+- Luo, Domova, and Kim. "[Impact of Multi-Robot Presence and Anthropomorphism on Human Cognition and Emotion](https://doi.org/10.1145/3613904.3642795)." CHI (2024).
+
+- Kim et al. "[SwarmFidget: Exploring Programmable Actuated Fidgeting with Swarm Robots](https://doi.org/10.1145/3586183.3606746)." UIST (2023).
+
+- Pulatova and Kim. "[Co-Designing Programmable Fidgeting Experience with Swarm Robots for Adults with ADHD](https://doi.org/10.1145/3663548.3675614)." ASSETS (2024).
+
+- Dang, Pulatova, and Kim. "[User-Defined Co-Speech Gesture Design with Swarm Robots](https://doi.org/10.1145/3706598.3714147)." CHI (2025).
+
+- Zhang et al. "[Feeling with Many: Rethinking Emotion Regulation with Swarm User Interfaces](https://doi.org/10.1145/3772318.3791599)." CHI (2026).
 
 - Kolling et al. "[Human Swarm Interaction: An Experimental Study of Two Types of Interaction with Foraging Swarms](https://publications.ri.cmu.edu/storage/publications/pub_files/2013/6/Paper_JHRI.pdf)." Journal of Human-Robot Interaction 1(1) (2012).
 
