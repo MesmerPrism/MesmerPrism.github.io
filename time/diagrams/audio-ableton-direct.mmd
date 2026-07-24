@@ -1,0 +1,16 @@
+flowchart LR
+    MIC["Mic / sources"] --> IFACE["Audio interface"]
+    IFACE --> LIVE["Ableton Live<br/>separate loop tracks"]
+    LIVE --> OBJECTS["One WFS object<br/>per Ableton track"]
+    OBJECTS --> FIELD["WFS sound field"]
+
+    CTRL["MIDI controller / pedal"] -. "record · stop · undo · next track" .-> LIVE
+    SPAT["Spatial operator"] -. "position · movement · level" .-> OBJECTS
+
+    classDef audio fill:#fff5ef,stroke:#bd4b27,stroke-width:2px,color:#1d211e
+    classDef field fill:#f5e4dc,stroke:#843116,stroke-width:2px,color:#1d211e
+    classDef role fill:#f3eee0,stroke:#86621c,stroke-width:1.5px,color:#1d211e
+
+    class MIC,IFACE,LIVE,OBJECTS audio
+    class FIELD field
+    class CTRL,SPAT role

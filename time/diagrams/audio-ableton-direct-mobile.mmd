@@ -1,0 +1,11 @@
+flowchart TB
+    MIC["Mic / sources"] --> IFACE["Audio interface"]
+    IFACE --> LIVE["Ableton Live<br/>separate loop tracks<br/>performer uses MIDI controller"]
+    LIVE --> OBJECTS["One WFS object<br/>per Ableton track"]
+    OBJECTS --> FIELD["WFS sound field<br/>spatial operator positions objects"]
+
+    classDef audio fill:#fff5ef,stroke:#bd4b27,stroke-width:2px,color:#1d211e
+    classDef field fill:#f5e4dc,stroke:#843116,stroke-width:2px,color:#1d211e
+
+    class MIC,IFACE,LIVE,OBJECTS audio
+    class FIELD field

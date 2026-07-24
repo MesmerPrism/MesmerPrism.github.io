@@ -1,0 +1,17 @@
+flowchart TB
+    subgraph SEP["Separate tracks"]
+        direction LR
+        S1["Track 1 · beat"] --> O1["Object 1"]
+        S2["Track 2 · bass"] --> O2["Object 2"]
+        S3["Track 3 · voice"] --> O3["Object 3"]
+    end
+
+    subgraph MIX["Overdubs on one track"]
+        direction LR
+        M1["Track 1 · beat + bass + voice"] --> OM["One combined object"]
+    end
+
+    classDef track fill:#fff5ef,stroke:#bd4b27,stroke-width:1.5px,color:#1d211e
+    classDef object fill:#f5e4dc,stroke:#843116,stroke-width:2px,color:#1d211e
+    class S1,S2,S3,M1 track
+    class O1,O2,O3,OM object

@@ -1,0 +1,32 @@
+flowchart LR
+    MIC["Mic / sources"] --> RC["RC-505mkII<br/>loop engine"]
+
+    RC --> P1["Track 1 · MAIN L<br/>Input 1 · WFS Object 1"]
+    RC --> P2["Track 2 · MAIN R<br/>Input 2 · WFS Object 2"]
+    RC --> P3["Track 3 · SUB 1 L<br/>Input 3 · WFS Object 3"]
+    RC --> P4["Track 4 · SUB 1 R<br/>Input 4 · WFS Object 4"]
+    RC --> P5["Track 5 · SUB 2 L<br/>Input 5 · WFS Object 5"]
+
+    P1 --> FIELD["WFS sound field<br/>five independent positions"]
+    P2 --> FIELD
+    P3 --> FIELD
+    P4 --> FIELD
+    P5 --> FIELD
+
+    PERF["Loop performer"] -. "record · overdub · stop · undo · effects" .-> RC
+    SPAT["Spatial operator"] -. "position · movement · level" .-> FIELD
+
+    RC -. "optional capture / MIDI" .-> ABLE["Ableton Live<br/>recording or expansion"]
+    ABLE -. "additional objects" .-> FIELD
+
+    classDef audio fill:#fff5ef,stroke:#bd4b27,stroke-width:2px,color:#1d211e
+    classDef object fill:#fffdf9,stroke:#bd4b27,stroke-width:1.5px,color:#1d211e
+    classDef field fill:#f5e4dc,stroke:#843116,stroke-width:2px,color:#1d211e
+    classDef role fill:#f3eee0,stroke:#86621c,stroke-width:1.5px,color:#1d211e
+    classDef optional fill:#fafaf7,stroke:#7b827b,stroke-width:1.5px,stroke-dasharray:5 4,color:#1d211e
+
+    class MIC,RC audio
+    class P1,P2,P3,P4,P5 object
+    class FIELD field
+    class PERF,SPAT role
+    class ABLE optional

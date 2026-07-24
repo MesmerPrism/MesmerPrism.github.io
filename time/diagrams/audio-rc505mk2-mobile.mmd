@@ -1,0 +1,11 @@
+flowchart TB
+    MIC["Mic / sources"] --> RC["RC-505mkII loop engine<br/>performer records and overdubs"]
+    RC --> PATHS["Five mono outputs<br/>MAIN L · MAIN R · SUB 1 L<br/>SUB 1 R · SUB 2 L"]
+    PATHS --> OBJECTS["WFS Objects 1–5"]
+    OBJECTS --> FIELD["WFS sound field<br/>spatial operator moves each object"]
+
+    classDef audio fill:#fff5ef,stroke:#bd4b27,stroke-width:2px,color:#1d211e
+    classDef field fill:#f5e4dc,stroke:#843116,stroke-width:2px,color:#1d211e
+
+    class MIC,RC,PATHS audio
+    class OBJECTS,FIELD field

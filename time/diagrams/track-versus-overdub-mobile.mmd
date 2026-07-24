@@ -1,0 +1,9 @@
+flowchart TB
+    S["SEPARATE TRACKS<br/>T1 beat · T2 bass · T3 voice"] --> SO["THREE SOUND OBJECTS<br/>Object 1 · Object 2 · Object 3"]
+    SO ~~~ M
+    M["OVERDUBS ON ONE TRACK<br/>beat + bass + voice"] --> OM["ONE COMBINED<br/>SOUND OBJECT"]
+
+    classDef track fill:#fff5ef,stroke:#bd4b27,stroke-width:1.5px,color:#1d211e
+    classDef object fill:#f5e4dc,stroke:#843116,stroke-width:2px,color:#1d211e
+    class S,M track
+    class SO,OM object

@@ -1,0 +1,7 @@
+flowchart TB
+    PKG["Packaged<br/>TouchDesigner project"] --> LINUX["Venue Linux<br/>runtime"]
+    LINUX --> LOCAL["DisplayPort / HDMI"]
+    LOCAL --> PROJ["Projection<br/>processor"]
+
+    classDef alternative fill:#fafaf7,stroke:#7b827b,stroke-width:1.5px,stroke-dasharray:5 4,color:#1d211e
+    class PKG,LINUX,LOCAL,PROJ alternative

@@ -1,0 +1,8 @@
+flowchart LR
+    TD["Prepared<br/>TouchDesigner workstation"] --> NDI["NDI Out"]
+    NDI --> NET["Dedicated<br/>wired network"]
+    NET --> RX["Venue<br/>NDI receiver"]
+    RX --> PROJ["Projection<br/>processor"]
+
+    classDef primary fill:#edf5ef,stroke:#39705a,stroke-width:2px,color:#1d211e
+    class TD,NDI,NET,RX,PROJ primary
