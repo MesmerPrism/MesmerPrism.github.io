@@ -1,0 +1,725 @@
+[
+  {
+    "id": "reeves-william-t-particle-systems-a-technique-for-modeling-a-class-of-fuz-1983",
+    "type": "article-journal",
+    "title": "Particle Systems—A Technique for Modeling a Class of Fuzzy Objects",
+    "URL": "https://doi.org/10.1145/357318.357320",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          7,
+          24
+        ]
+      ]
+    },
+    "note": "Referenced by Joint Control of Digital Swarms | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/shared-swarm-control.html",
+    "author": [
+      {
+        "literal": "Reeves, William T"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          1983
+        ]
+      ]
+    },
+    "DOI": "10.1145/357318.357320"
+  },
+  {
+    "id": "reynolds-craig-w-flocks-herds-and-schools-a-distributed-behavioral-model-1987",
+    "type": "article-journal",
+    "title": "Flocks, Herds, and Schools: A Distributed Behavioral Model",
+    "URL": "https://doi.org/10.1145/37402.37406",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          7,
+          24
+        ]
+      ]
+    },
+    "note": "Referenced by Joint Control of Digital Swarms | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/shared-swarm-control.html",
+    "author": [
+      {
+        "literal": "Reynolds, Craig W"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          1987
+        ]
+      ]
+    },
+    "DOI": "10.1145/37402.37406"
+  },
+  {
+    "id": "glowacki-david-r-et-al-group-vr-experiences-can-produce-ego-attenuation-and-con-2022",
+    "type": "article-journal",
+    "title": "Group VR Experiences Can Produce Ego Attenuation and Connectedness Comparable to Psychedelics",
+    "URL": "https://doi.org/10.1038/s41598-022-12637-z",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          7,
+          24
+        ]
+      ]
+    },
+    "note": "Referenced by Joint Control of Digital Swarms | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/shared-swarm-control.html",
+    "author": [
+      {
+        "literal": "Glowacki, David R., et al"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2022
+        ]
+      ]
+    },
+    "DOI": "10.1038/s41598-022-12637-z"
+  },
+  {
+    "id": "glowacki-david-r-vr-models-of-death-and-psychedelics-an-aesthetic-paradig-2024",
+    "type": "article-journal",
+    "title": "VR Models of Death and Psychedelics: An Aesthetic Paradigm for Design Beyond Day-to-Day Phenomenology",
+    "URL": "https://doi.org/10.3389/frvir.2023.1286950",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          7,
+          24
+        ]
+      ]
+    },
+    "note": "Referenced by Joint Control of Digital Swarms | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/shared-swarm-control.html",
+    "author": [
+      {
+        "literal": "Glowacki, David R"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2024
+        ]
+      ]
+    },
+    "DOI": "10.3389/frvir.2023.1286950"
+  },
+  {
+    "id": "desnoyers-stewart-john-et-al-body-remixer-extending-bodies-to-stimulate-social-connec-2020",
+    "type": "article-journal",
+    "title": "Body RemiXer: Extending Bodies to Stimulate Social Connection in an Immersive Installation",
+    "URL": "https://doi.org/10.1162/leon_a_01925",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          7,
+          24
+        ]
+      ]
+    },
+    "note": "Referenced by Joint Control of Digital Swarms | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/shared-swarm-control.html",
+    "author": [
+      {
+        "literal": "Desnoyers-Stewart, John, et al"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2020
+        ]
+      ]
+    },
+    "DOI": "10.1162/leon_a_01925"
+  },
+  {
+    "id": "desnoyers-stewart-john-star-stuff-a-way-for-the-universe-to-know-itself-2022",
+    "type": "article-journal",
+    "title": "Star-Stuff: A Way for the Universe to Know Itself",
+    "URL": "https://doi.org/10.1145/3532834.3536198",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          7,
+          24
+        ]
+      ]
+    },
+    "note": "Referenced by Joint Control of Digital Swarms | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/shared-swarm-control.html",
+    "author": [
+      {
+        "literal": "Desnoyers-Stewart, John"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2022
+        ]
+      ]
+    },
+    "DOI": "10.1145/3532834.3536198"
+  },
+  {
+    "id": "desnoyers-stewart-john-et-al-embodied-telepresent-connection-exploring-virtual-social-2023",
+    "type": "article-journal",
+    "title": "Embodied Telepresent Connection: Exploring Virtual Social Touch Through Pseudohaptics",
+    "URL": "https://doi.org/10.1145/3544549.3585843",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          7,
+          24
+        ]
+      ]
+    },
+    "note": "Referenced by Joint Control of Digital Swarms | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/shared-swarm-control.html",
+    "author": [
+      {
+        "literal": "Desnoyers-Stewart, John, et al"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2023
+        ]
+      ]
+    },
+    "DOI": "10.1145/3544549.3585843"
+  },
+  {
+    "id": "kolling-andreas-et-al-human-interaction-with-robot-swarms-a-survey-2016",
+    "type": "article-journal",
+    "title": "Human Interaction With Robot Swarms: A Survey",
+    "URL": "https://doi.org/10.1109/THMS.2015.2480801",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          7,
+          24
+        ]
+      ]
+    },
+    "note": "Referenced by Joint Control of Digital Swarms | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/shared-swarm-control.html",
+    "author": [
+      {
+        "literal": "Kolling, Andreas, et al"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2016
+        ]
+      ]
+    },
+    "DOI": "10.1109/THMS.2015.2480801"
+  },
+  {
+    "id": "miyauchi-genki-yuri-kaszubowski-lopes-and-roderich-gro-sharing-the-control-of-robot-swarms-among-multiple-human-2023",
+    "type": "article-journal",
+    "title": "Sharing the Control of Robot Swarms Among Multiple Human Operators: A User Study",
+    "URL": "https://doi.org/10.1109/IROS55552.2023.10342457",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          7,
+          24
+        ]
+      ]
+    },
+    "note": "Referenced by Joint Control of Digital Swarms | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/shared-swarm-control.html",
+    "author": [
+      {
+        "literal": "Miyauchi, Genki, Yuri Kaszubowski Lopes, and Roderich Groß"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2023
+        ]
+      ]
+    },
+    "DOI": "10.1109/IROS55552.2023.10342457"
+  },
+  {
+    "id": "lee-myungin-entangled-a-multi-modal-multi-user-interactive-instrumen-2021",
+    "type": "article-journal",
+    "title": "Entangled: A Multi-Modal, Multi-User Interactive Instrument in Virtual 3D Space Using the Smartphone for Gesture Control",
+    "URL": "https://doi.org/10.21428/92fbeb44.eae7c23f",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          7,
+          24
+        ]
+      ]
+    },
+    "note": "Referenced by Joint Control of Digital Swarms | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/shared-swarm-control.html",
+    "author": [
+      {
+        "literal": "Lee, Myungin"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2021
+        ]
+      ]
+    },
+    "DOI": "10.21428/92fbeb44.eae7c23f"
+  },
+  {
+    "id": "fribourg-rebecca-et-al-virtual-co-embodiment-evaluation-of-the-sense-of-agency--2021",
+    "type": "article-journal",
+    "title": "Virtual Co-Embodiment: Evaluation of the Sense of Agency While Sharing the Control of a Virtual Body Among Two Individuals",
+    "URL": "https://doi.org/10.1109/TVCG.2020.2999197",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          7,
+          24
+        ]
+      ]
+    },
+    "note": "Referenced by Joint Control of Digital Swarms | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/shared-swarm-control.html",
+    "author": [
+      {
+        "literal": "Fribourg, Rebecca, et al"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2021
+        ]
+      ]
+    },
+    "DOI": "10.1109/TVCG.2020.2999197"
+  },
+  {
+    "id": "venkatraj-karthikeya-puttur-et-al-shareyourreality-investigating-haptic-feedback-and-agenc-2024",
+    "type": "article-journal",
+    "title": "ShareYourReality: Investigating Haptic Feedback and Agency in Virtual Avatar Co-Embodiment",
+    "URL": "https://doi.org/10.1145/3613904.3642425",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          7,
+          24
+        ]
+      ]
+    },
+    "note": "Referenced by Joint Control of Digital Swarms | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/shared-swarm-control.html",
+    "author": [
+      {
+        "literal": "Venkatraj, Karthikeya Puttur, et al"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2024
+        ]
+      ]
+    },
+    "DOI": "10.1145/3613904.3642425"
+  },
+  {
+    "id": "coucke-nicolas-et-al-hugos-a-virtual-environment-for-studying-collective-huma-2021",
+    "type": "article-journal",
+    "title": "HuGoS: A Virtual Environment for Studying Collective Human Behavior",
+    "URL": "https://doi.org/10.1007/s11721-021-00199-1",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          7,
+          24
+        ]
+      ]
+    },
+    "note": "Referenced by Joint Control of Digital Swarms | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/shared-swarm-control.html",
+    "author": [
+      {
+        "literal": "Coucke, Nicolas, et al"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2021
+        ]
+      ]
+    },
+    "DOI": "10.1007/s11721-021-00199-1"
+  },
+  {
+    "id": "van-den-bogaard-senna-timo-maessen-evelijn-van-hilten-yi-crowdcollab-a-multi-user-multi-perspective-collaborative-2025",
+    "type": "article-journal",
+    "title": "CrowdCollab: A Multi-User, Multi-Perspective Collaborative Tool for Crowd Planning",
+    "URL": "https://doi.org/10.1145/3689050.3706007",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          7,
+          24
+        ]
+      ]
+    },
+    "note": "Referenced by Joint Control of Digital Swarms | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/shared-swarm-control.html",
+    "author": [
+      {
+        "literal": "van den Bogaard, Senna, Timo Maessen, Evelijn van Hilten, Yinshi Jin, Hannah van Iterson, Steven Houben, and Rong-Hao Liang"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2025
+        ]
+      ]
+    },
+    "DOI": "10.1145/3689050.3706007"
+  },
+  {
+    "id": "lemonari-marilena-et-al-authoring-virtual-crowds-a-survey-2022",
+    "type": "article-journal",
+    "title": "Authoring Virtual Crowds: A Survey",
+    "URL": "https://doi.org/10.1111/cgf.14506",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          7,
+          24
+        ]
+      ]
+    },
+    "note": "Referenced by Joint Control of Digital Swarms | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/shared-swarm-control.html",
+    "author": [
+      {
+        "literal": "Lemonari, Marilena, et al"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2022
+        ]
+      ]
+    },
+    "DOI": "10.1111/cgf.14506"
+  },
+  {
+    "id": "monteiro-kyzyl-evan-atherton-george-fitzmaurice-and-qian-elemental-alchemist-a-generative-interface-for-semantic--2026",
+    "type": "article-journal",
+    "title": "Elemental Alchemist: A Generative Interface for Semantic Control of Particle Systems Across Dynamic Levels of Abstraction",
+    "URL": "https://doi.org/10.1145/3800645.3812946",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          7,
+          24
+        ]
+      ]
+    },
+    "note": "Referenced by Joint Control of Digital Swarms | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/shared-swarm-control.html",
+    "author": [
+      {
+        "literal": "Monteiro, Kyzyl, Evan Atherton, George Fitzmaurice, and Qian Zhou"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    },
+    "DOI": "10.1145/3800645.3812946"
+  },
+  {
+    "id": "armitage-jack-victor-shepardson-and-thor-magnusson-t-lvera-composing-with-basal-agencies-2024",
+    "type": "webpage",
+    "title": "Tölvera: Composing With Basal Agencies",
+    "URL": "https://nime.org/proceedings/2024/nime2024_71.pdf",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          7,
+          24
+        ]
+      ]
+    },
+    "note": "Referenced by Joint Control of Digital Swarms | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/shared-swarm-control.html",
+    "author": [
+      {
+        "literal": "Armitage, Jack, Victor Shepardson, and Thor Magnusson"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2024
+        ]
+      ]
+    }
+  },
+  {
+    "id": "david-ana-daniele-giunchi-stuart-james-anthony-steed-and-exploring-the-effects-of-asynchronous-collaborative-art--2026",
+    "type": "article-journal",
+    "title": "Exploring the Effects of Asynchronous Collaborative Art in VR with PaintBranch",
+    "URL": "https://doi.org/10.1007/s42979-026-04980-z",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          7,
+          24
+        ]
+      ]
+    },
+    "note": "Referenced by Joint Control of Digital Swarms | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/shared-swarm-control.html",
+    "author": [
+      {
+        "literal": "David, Ana, Daniele Giunchi, Stuart James, Anthony Steed, and Augusto Esteves"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    },
+    "DOI": "10.1007/s42979-026-04980-z"
+  },
+  {
+    "id": "ogborn-david-et-al-estuary-browser-based-collaborative-projectional-live-co-2017",
+    "type": "webpage",
+    "title": "Estuary: Browser-Based Collaborative Projectional Live Coding of Musical Patterns",
+    "URL": "https://iclc.toplap.org/2017/cameraReady/ICLC_2017_paper_78.pdf",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          7,
+          24
+        ]
+      ]
+    },
+    "note": "Referenced by Joint Control of Digital Swarms | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/shared-swarm-control.html",
+    "author": [
+      {
+        "literal": "Ogborn, David, et al"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2017
+        ]
+      ]
+    }
+  },
+  {
+    "id": "aleta-alberto-and-yamir-moreno-the-dynamics-of-collective-social-behavior-in-a-crowd-co-2019",
+    "type": "article-journal",
+    "title": "The Dynamics of Collective Social Behavior in a Crowd Controlled Game",
+    "URL": "https://doi.org/10.1140/epjds/s13688-019-0200-1",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          7,
+          24
+        ]
+      ]
+    },
+    "note": "Referenced by Joint Control of Digital Swarms | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/shared-swarm-control.html",
+    "author": [
+      {
+        "literal": "Aleta, Alberto, and Yamir Moreno"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2019
+        ]
+      ]
+    },
+    "DOI": "10.1140/epjds/s13688-019-0200-1"
+  },
+  {
+    "id": "m-ller-thomas-f-and-james-winters-compression-in-cultural-evolution-homogeneity-and-struct-2018",
+    "type": "article-journal",
+    "title": "Compression in Cultural Evolution: Homogeneity and Structure in the Emergence and Evolution of a Large-Scale Online Collaborative Art Project",
+    "URL": "https://doi.org/10.1371/journal.pone.0202019",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          7,
+          24
+        ]
+      ]
+    },
+    "note": "Referenced by Joint Control of Digital Swarms | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/shared-swarm-control.html",
+    "author": [
+      {
+        "literal": "Müller, Thomas F., and James Winters"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2018
+        ]
+      ]
+    },
+    "DOI": "10.1371/journal.pone.0202019"
+  },
+  {
+    "id": "gutwin-carl-and-saul-greenberg-a-descriptive-framework-of-workspace-awareness-for-real--2002",
+    "type": "article-journal",
+    "title": "A Descriptive Framework of Workspace Awareness for Real-Time Groupware",
+    "URL": "https://doi.org/10.1023/A:1021271517844",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          7,
+          24
+        ]
+      ]
+    },
+    "note": "Referenced by Joint Control of Digital Swarms | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/shared-swarm-control.html",
+    "author": [
+      {
+        "literal": "Gutwin, Carl, and Saul Greenberg"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2002
+        ]
+      ]
+    },
+    "DOI": "10.1023/A:1021271517844"
+  },
+  {
+    "id": "rezwana-jeba-and-mary-lou-maher-designing-creative-ai-partners-with-cofi-2023",
+    "type": "article-journal",
+    "title": "Designing Creative AI Partners With COFI",
+    "URL": "https://doi.org/10.1145/3519026",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          7,
+          24
+        ]
+      ]
+    },
+    "note": "Referenced by Joint Control of Digital Swarms | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/shared-swarm-control.html",
+    "author": [
+      {
+        "literal": "Rezwana, Jeba, and Mary Lou Maher"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2023
+        ]
+      ]
+    },
+    "DOI": "10.1145/3519026"
+  },
+  {
+    "id": "roth-daniel-and-marc-erich-latoschik-construction-of-the-virtual-embodiment-questionnaire-2020",
+    "type": "article-journal",
+    "title": "Construction of the Virtual Embodiment Questionnaire",
+    "URL": "https://doi.org/10.1109/TVCG.2020.3023603",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          7,
+          24
+        ]
+      ]
+    },
+    "note": "Referenced by Joint Control of Digital Swarms | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/shared-swarm-control.html",
+    "author": [
+      {
+        "literal": "Roth, Daniel, and Marc Erich Latoschik"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2020
+        ]
+      ]
+    },
+    "DOI": "10.1109/TVCG.2020.3023603"
+  },
+  {
+    "id": "cherry-erin-and-celine-latulipe-quantifying-the-creativity-support-of-digital-tools-thro-2014",
+    "type": "article-journal",
+    "title": "Quantifying the Creativity Support of Digital Tools Through the Creativity Support Index",
+    "URL": "https://doi.org/10.1145/2617588",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          7,
+          24
+        ]
+      ]
+    },
+    "note": "Referenced by Joint Control of Digital Swarms | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/shared-swarm-control.html",
+    "author": [
+      {
+        "literal": "Cherry, Erin, and Celine Latulipe"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2014
+        ]
+      ]
+    },
+    "DOI": "10.1145/2617588"
+  }
+]

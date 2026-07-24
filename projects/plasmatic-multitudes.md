@@ -2,8 +2,8 @@
 
 Source: https://mesmerprism.com/projects/plasmatic-multitudes.html
 Canonical HTML: https://mesmerprism.com/projects/plasmatic-multitudes.html
-Generated: 2026-06-13
-Description: A public overview of weakly bounded bodies: avatars, swarms, auras, particle forms, and luminous bodies that soften while remaining coherent enough for embodiment, relation, and cautious research translation.
+Generated: 2026-07-24
+Description: A public overview of weakly bounded bodies: avatars, swarms, auras, particle forms, and luminous bodies that remain coherent enough for embodiment, joint authorship, relation, and cautious research translation.
 Markdown: https://mesmerprism.com/projects/plasmatic-multitudes.md
 Plain text: https://mesmerprism.com/projects/plasmatic-multitudes.txt
 BibTeX references: https://mesmerprism.com/projects/plasmatic-multitudes.bib
@@ -31,6 +31,7 @@ Weakly bounded embodiment
  ownership, and cultural legibility let them soften without
  collapsing into formlessness. This page gives the public
  overview. The field guide collects the long essay, method note,
+ shared-swarm control study, mixed-ability HSI proposal,
  pain-translation hypothesis, vocabulary, and annotated sources.
 
  [Start with the basics](https://mesmerprism.com/projects/plasmatic-multitudes.html#field-guide)
@@ -193,6 +194,13 @@ Weakly bounded embodiment
  [Glowacki et al., 2022](https://doi.org/10.1038/s41598-022-12637-z);
  [Glowacki, 2024](https://doi.org/10.3389/frvir.2023.1286950)).
 
+ Those precedents also change the control question. Once several
+ people meet through porous particle bodies, coalescence and
+ separation are no longer visual effects alone. They distribute
+ agency, intimacy, and authorship across a shared boundary. The
+ [joint control study](https://mesmerprism.com/plasmatic-multitudes/shared-swarm-control.html) develops that problem through explicit scopes,
+ authority, arbitration, and history.
+
  Pseudo-haptics explains why such bodies can feel materially
  persuasive even without dedicated force feedback. Vision and
  cross-modal cueing can induce impressions of stiffness,
@@ -346,14 +354,17 @@ Weakly bounded embodiment
 
  The best-supported ground is perception, XR embodiment,
  pseudo-haptics, media genealogy, and several concrete avatar
- or installation precedents. The less settled ground is
- broader social translation: shared swarm bodies and
- mixed-input body fields are
- promising, but they need careful participant control,
- visibility, consent, and repair practices before they can
- support claims about collaboration or access
- ([Wobbrock et al., 2011](https://kgajos.seas.harvard.edu/papers/wobbrock11abd.pdf);
- [Bennett et al., 2018](https://doi.org/10.1145/3234695.3236348)).
+ or installation precedents. Multi-user digital-swarm evidence
+ is smaller but no longer absent. Entangled demonstrates that
+ several people can simultaneously influence one particle
+ field, while shared-avatar studies show that objective control
+ weight and felt agency can diverge
+ ([Lee, 2021](https://doi.org/10.21428/92fbeb44.eae7c23f);
+ [Fribourg et al., 2021](https://doi.org/10.1109/TVCG.2020.2999197)).
+ The open problem is comparative: leases, weighted fusion,
+ field superposition, voting, and branching have not been
+ tested within the same transformable body using common
+ measures of agency, authorship, access, and continuity.
 
  The clinical layer is still open. Pain studies support the
  broader relevance of body representation and multisensory
@@ -374,7 +385,7 @@ Weakly bounded embodiment
 
 ### Partial or open
 
-- Shared swarm bodies require more source work before becoming a central public essay.
+- Shared digital-swarm control has direct and bridge evidence, but no settled comparative model of multi-user arbitration.
 
 - Boundary-softened avatars are plausible pain variables, not proven clinical mechanisms.
 
@@ -402,12 +413,17 @@ Weakly bounded embodiment
 ## Where to continue
 
  The project page stays compact on purpose. The field guide holds the
- longer essay, method note, pain-translation hypothesis, vocabulary, and
- annotated references.
+ longer essay, method note, shared-swarm control study,
+ mixed-ability HSI proposal, pain-translation hypothesis,
+ vocabulary, and annotated references.
 
 ### Go deeper
 
 - [Long essay](https://mesmerprism.com/plasmatic-multitudes/essay.html) - semi-corporeal avatar aesthetics across media history, XR, morphogenesis, and pain translation.
+
+- [Shared swarms](https://mesmerprism.com/plasmatic-multitudes/shared-swarm-control.html) - several people shaping one digitally native particle, agent, body, or field.
+
+- [Mixed-ability HSI](https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html) - accessible mappings, consent, refusal, privacy, and repair.
 
 - [Pain translation](https://mesmerprism.com/plasmatic-multitudes/pain.html) - cautious hypotheses for boundary precision and avatar-pain research.
 
@@ -484,6 +500,14 @@ Weakly bounded embodiment
 - Glowacki. "[VR Models of Death and Psychedelics](https://doi.org/10.3389/frvir.2023.1286950)." Frontiers in Virtual Reality 4 (2024).
 
 - Bernal and Maes. "[Emotional Beasts](https://doi.org/10.1145/3027063.3053207)." CHI EA (2017).
+
+### Shared digital bodies
+
+- Lee. "[Entangled](https://doi.org/10.21428/92fbeb44.eae7c23f)." NIME (2021).
+
+- Fribourg et al. "[Virtual Co-Embodiment](https://doi.org/10.1109/TVCG.2020.2999197)." IEEE Transactions on Visualization and Computer Graphics 27(10) (2021).
+
+- Miyauchi, Lopes, and Groß. "[Sharing the Control of Robot Swarms Among Multiple Human Operators](https://doi.org/10.1109/IROS55552.2023.10342457)." IROS (2023).
 
 ### Installation and preservation
 

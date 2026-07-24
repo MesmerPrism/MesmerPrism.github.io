@@ -1,0 +1,793 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Joint Control of Digital Swarms | Plasmatic Multitudes</title>
+    <meta
+      name="description"
+      content="How several people can jointly shape one digitally native swarm through fields, rules, morphology, arbitration, provenance, and shared-body interaction."
+    >
+    <link rel="stylesheet" href="/assets/fonts.css">
+    <link rel="stylesheet" href="assets/site.css?v=20260724-1">
+    <!-- BEGIN agent-readable metadata -->
+    <link rel="alternate" type="text/markdown" href="/plasmatic-multitudes/shared-swarm-control.md" title="Markdown version">
+    <link rel="alternate" type="text/plain" href="/plasmatic-multitudes/shared-swarm-control.txt" title="Plain text version">
+    <link rel="alternate" type="application/x-bibtex" href="/plasmatic-multitudes/shared-swarm-control.bib" title="BibTeX references">
+    <link rel="alternate" type="application/vnd.citationstyles.csl+json" href="/plasmatic-multitudes/shared-swarm-control.references.csl.json" title="CSL JSON references">
+    <meta name="citation_title" content="Joint Control of Digital Swarms | Plasmatic Multitudes">
+    <meta name="citation_author" content="Till Holzapfel">
+    <meta name="citation_publication_date" content="2026-07-24">
+    <meta name="citation_online_date" content="2026-07-24">
+    <meta name="citation_public_url" content="https://mesmerprism.com/plasmatic-multitudes/shared-swarm-control.html">
+    <meta name="citation_language" content="en">
+    <script type="application/ld+json" data-agent-metadata>
+    {
+          "@context": "https://schema.org",
+          "@type": "Article",
+          "headline": "Joint Control of Digital Swarms | Plasmatic Multitudes",
+          "name": "Joint Control of Digital Swarms | Plasmatic Multitudes",
+          "description": "How several people can jointly shape one digitally native swarm through fields, rules, morphology, arbitration, provenance, and shared-body interaction.",
+          "author": {
+                "@type": "Person",
+                "name": "Till Holzapfel"
+          },
+          "publisher": {
+                "@type": "Organization",
+                "name": "Mesmer Prism",
+                "url": "https://mesmerprism.com"
+          },
+          "isPartOf": {
+                "@type": "WebSite",
+                "name": "Mesmer Prism",
+                "url": "https://mesmerprism.com"
+          },
+          "url": "https://mesmerprism.com/plasmatic-multitudes/shared-swarm-control.html",
+          "dateModified": "2026-07-24",
+          "inLanguage": "en",
+          "encoding": [
+                {
+                      "@type": "MediaObject",
+                      "encodingFormat": "text/markdown",
+                      "contentUrl": "https://mesmerprism.com/plasmatic-multitudes/shared-swarm-control.md"
+                },
+                {
+                      "@type": "MediaObject",
+                      "encodingFormat": "text/plain",
+                      "contentUrl": "https://mesmerprism.com/plasmatic-multitudes/shared-swarm-control.txt"
+                },
+                {
+                      "@type": "MediaObject",
+                      "encodingFormat": "application/x-bibtex",
+                      "contentUrl": "https://mesmerprism.com/plasmatic-multitudes/shared-swarm-control.bib"
+                },
+                {
+                      "@type": "MediaObject",
+                      "encodingFormat": "application/vnd.citationstyles.csl+json",
+                      "contentUrl": "https://mesmerprism.com/plasmatic-multitudes/shared-swarm-control.references.csl.json"
+                }
+          ],
+          "citation": [
+                "https://doi.org/10.1145/357318.357320",
+                "https://doi.org/10.1145/37402.37406",
+                "https://doi.org/10.1038/s41598-022-12637-z",
+                "https://doi.org/10.3389/frvir.2023.1286950",
+                "https://doi.org/10.1162/leon_a_01925",
+                "https://doi.org/10.1145/3532834.3536198",
+                "https://doi.org/10.1145/3544549.3585843",
+                "https://doi.org/10.1109/THMS.2015.2480801",
+                "https://doi.org/10.1109/IROS55552.2023.10342457",
+                "https://doi.org/10.21428/92fbeb44.eae7c23f",
+                "https://doi.org/10.1109/TVCG.2020.2999197",
+                "https://doi.org/10.1145/3613904.3642425",
+                "https://doi.org/10.1007/s11721-021-00199-1",
+                "https://doi.org/10.1145/3689050.3706007",
+                "https://doi.org/10.1111/cgf.14506",
+                "https://doi.org/10.1145/3800645.3812946",
+                "https://nime.org/proceedings/2024/nime2024_71.pdf",
+                "https://doi.org/10.1007/s42979-026-04980-z",
+                "https://iclc.toplap.org/2017/cameraReady/ICLC_2017_paper_78.pdf",
+                "https://doi.org/10.1140/epjds/s13688-019-0200-1",
+                "https://doi.org/10.1371/journal.pone.0202019",
+                "https://doi.org/10.1023/A:1021271517844",
+                "https://doi.org/10.1145/3519026",
+                "https://doi.org/10.1109/TVCG.2020.3023603",
+                "https://doi.org/10.1145/2617588"
+          ]
+    }
+    </script>
+    <!-- END agent-readable metadata -->
+</head>
+  <body class="page page-hsi">
+    <a class="skip-link" href="#top">Skip to main content</a>
+    <header class="site-header">
+      <div class="shell site-header__inner">
+        <div class="site-identity">
+          <a class="site-parent" href="/" aria-label="Return to Mesmer Prism">Mesmer Prism</a>
+          <a class="site-title" href="index.html">Plasmatic Multitudes</a>
+        </div>
+        <nav class="site-nav" aria-label="Primary">
+          <a href="index.html">Field Guide</a>
+          <a href="essay.html">Long Essay</a>
+          <a href="project.html">Method</a>
+          <a href="pain.html">Pain Translation</a>
+          <a href="shared-swarm-control.html" aria-current="page">Shared Swarms</a>
+          <a href="terminology.html">Field Terms</a>
+          <a href="references.html">Sources</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="top" class="shell">
+      <section class="hero">
+        <p class="eyebrow">Shared swarm control | July 24, 2026</p>
+        <h1>Joint Control of Digital Swarms</h1>
+        <p class="hero-subtitle">Several people shaping one many-part body</p>
+        <p class="deck">
+          A digitally native swarm can be a population of particles, agents, cells, points,
+          instances, or field samples. It does not have to imitate a fleet of robots. Its parts
+          may appear separately, gather into one body, dissolve into a field, divide, merge,
+          disappear, or return in another form.
+        </p>
+        <p class="deck">
+          Joint control asks what happens when several people act through that changing body at
+          once. The problem is larger than giving each person a cursor. Participants may shape
+          motion, local rules, density, morphology, boundaries, appearance, timing, or history.
+          A system must decide where each intention applies, how overlapping intentions combine,
+          what the autonomous swarm is allowed to change, and how the result remains attributable
+          without reducing authorship to command counts.
+        </p>
+
+        <aside class="thesis-card" aria-labelledby="central-question">
+          <div>
+            <h2 id="central-question">Central question</h2>
+            <p>
+              How can several people share a transformable digital body without hiding the
+              difference between individual influence, negotiated influence, and the body’s own
+              autonomous response?
+            </p>
+          </div>
+          <p>
+            The literature contains working examples of field superposition, weighted shared
+            control, voting, persistent overwrite, and branching. It does not yet compare those
+            policies within the same many-part body using common measures of agency, authorship,
+            access, continuity, and expressive range.
+          </p>
+        </aside>
+
+        <nav class="reading-map" aria-label="Article sections">
+          <h2>Read by question</h2>
+          <div class="reading-map__grid reading-map__grid--three">
+            <section>
+              <h3>Why a shared body?</h3>
+              <a href="#shared-boundaries">Particle bodies and shared boundaries</a>
+              <a href="#digital-substrate">A digital substrate in its own right</a>
+            </section>
+            <section>
+              <h3>How is control shared?</h3>
+              <a href="#control-stack">The control stack</a>
+              <a href="#arbitration">Arbitration patterns</a>
+            </section>
+            <section>
+              <h3>What remains open?</h3>
+              <a href="#evidence">Evidence and transfer boundaries</a>
+              <a href="#research-programme">Comparative research programme</a>
+            </section>
+          </div>
+        </nav>
+      </section>
+
+      <article class="article">
+        <section id="shared-boundaries">
+          <h2>Particle bodies make control a boundary question</h2>
+          <p class="section-deck">
+            A shared swarm body is both an interface and a way of staging the relation among
+            people.
+          </p>
+          <p>
+            The broader Plasmatic Multitudes argument begins with bodies whose edges can soften
+            while their coherence survives. David Glowacki’s Isness work gives this question an
+            explicitly social form. Participants appear as luminous energetic essences with
+            diffuse boundaries in a shared virtual environment designed to loosen conventional
+            self–other separation. The empirical study reports selected self-report similarities
+            with psychedelic phenomenology, including connectedness and ego attenuation, but it
+            does not establish that VR reproduces psychedelic states as a whole
+            (<a class="inline-citation" href="https://doi.org/10.1038/s41598-022-12637-z" target="_blank" rel="noopener noreferrer">Glowacki et al., 2022</a>).
+          </p>
+          <p>
+            Glowacki’s later account describes a wider design space of weakly representational,
+            light-energy bodies. Low structural specificity and low symbolic rigidity leave room
+            for participants to project meaning into an intentionally under-specified form. In
+            that setting, a boundary is not merely the outline of an avatar. It regulates how
+            strongly a body reads as separate, how easily it can coalesce with another, and how
+            much interpretation the representation invites
+            (<a class="inline-citation" href="https://doi.org/10.3389/frvir.2023.1286950" target="_blank" rel="noopener noreferrer">Glowacki, 2024</a>).
+          </p>
+          <p>
+            John Desnoyers-Stewart’s sequence makes the particle-body side of this problem more
+            operational. In <em>Body RemiXer</em>, tracked people appear as particle clouds and
+            three-dimensional silhouettes. Touch connects their auras through a steady particle
+            exchange, and body swapping superimposes one person’s aura onto another. In
+            <em>Star-Stuff</em>, two participants meet as galaxies and constellations rather than
+            humanoid avatars. <em>Embodied Telepresent Connection</em> uses particle-based aura
+            avatars, cloud-like hearts, sound, simulated physics, and biosignal-linked feedback to
+            support remote pseudohaptic touch
+            (<a class="inline-citation" href="https://doi.org/10.1162/leon_a_01925" target="_blank" rel="noopener noreferrer">Desnoyers-Stewart et al., 2020</a>;
+            <a class="inline-citation" href="https://doi.org/10.1145/3532834.3536198" target="_blank" rel="noopener noreferrer">Desnoyers-Stewart, 2022</a>;
+            <a class="inline-citation" href="https://doi.org/10.1145/3544549.3585843" target="_blank" rel="noopener noreferrer">Desnoyers-Stewart et al., 2023</a>).
+          </p>
+          <p>
+            These works show why shared control cannot be treated only as command allocation.
+            When a body carries intimacy, coalescence, or self–other ambiguity, an authority
+            policy also shapes the experienced boundary. A participant may feel that a movement
+            is mine, ours, negotiated, resisted, or produced by the system. The visual form alone
+            cannot explain that difference. The system must expose who acted, what was accepted,
+            what was transformed, and what the collective process did on its own.
+          </p>
+
+          <figure class="route-strip" aria-label="Shared-body states">
+            <figcaption>One body can pass through several social and perceptual states</figcaption>
+            <div class="route-strip__steps">
+              <div class="route-step">
+                <span>1</span>
+                <strong>Individuated</strong>
+                <em>Each person can locate a distinct contribution or body region.</em>
+              </div>
+              <div class="route-step">
+                <span>2</span>
+                <strong>Overlapping</strong>
+                <em>Influences meet through touch, shared fields, or intersecting scopes.</em>
+              </div>
+              <div class="route-step">
+                <span>3</span>
+                <strong>Coalesced</strong>
+                <em>The group acts through one body, macro-agent, or common field.</em>
+              </div>
+              <div class="route-step">
+                <span>4</span>
+                <strong>Re-individuated</strong>
+                <em>The body separates without erasing memory, attribution, or continuity.</em>
+              </div>
+            </div>
+          </figure>
+
+          <aside class="technical-note technical-note--subtle">
+            <p class="card-kicker">Evidence boundary</p>
+            <h3>Experiential precedent is not yet a control comparison</h3>
+            <p>
+              Isness, Body RemiXer, Star-Stuff, and ETC establish that diffuse and particle-based
+              bodies can remain meaningful, relational, and embodied. They do not compare locks,
+              blending, field superposition, voting, or branching as multi-user authority
+              policies. That control problem remains open.
+            </p>
+          </aside>
+        </section>
+
+        <section id="digital-substrate">
+          <h2>A digital swarm is a medium, not an unfinished robot</h2>
+          <p class="section-deck">
+            Physical robots expose material constraints. Digital swarms expose a different design
+            space.
+          </p>
+          <p>
+            Particle systems made birth, change, and death ordinary operations of computational
+            matter. Flocking models showed how local rules can produce coherent aggregate motion
+            without scripting every trajectory
+            (<a class="inline-citation" href="https://doi.org/10.1145/357318.357320" target="_blank" rel="noopener noreferrer">Reeves, 1983</a>;
+            <a class="inline-citation" href="https://doi.org/10.1145/37402.37406" target="_blank" rel="noopener noreferrer">Reynolds, 1987</a>).
+            A digitally native swarm can extend those foundations without inheriting wheel
+            dynamics, drone flight, battery limits, or a requirement to transfer to hardware.
+          </p>
+          <p>
+            Its native operations may include birth, death, duplication, replacement, merge,
+            split, resampling, graph rewiring, procedural growth, or conversion among particles,
+            clusters, surfaces, and fields. It can move through non-Euclidean space, cross through
+            itself, reverse time, or preserve incompatible outcomes as separate branches. Those
+            operations are not convenient approximations of robot behavior. They define the
+            ontology of the digital body.
+          </p>
+          <p>
+            Robot swarms remain useful comparison systems because they force questions about
+            collision, connectivity, communication loss, energy, maintenance, and physical
+            safety. They are a later translation branch, not a maturity ceiling. A rigorous
+            digital experiment should be judged by whether its participants, interaction,
+            technical behavior, and interpretive claims match the digital substrate it addresses.
+          </p>
+
+          <div class="evidence-matrix">
+            <article>
+              <h3>Element</h3>
+              <p>An identified particle, agent, point, cell, or temporary local exception.</p>
+            </article>
+            <article>
+              <h3>Cluster</h3>
+              <p>A selected group, connected component, region, role, or moving sub-body.</p>
+            </article>
+            <article>
+              <h3>Body</h3>
+              <p>A macro-form whose coherence comes from common motion, density, response, or silhouette.</p>
+            </article>
+            <article>
+              <h3>Field</h3>
+              <p>A spatial influence, ambient condition, or distributed body without stable member identity.</p>
+            </article>
+          </div>
+          <p>
+            A single session may pass among all four. Changing scale therefore changes more than
+            the camera zoom. It changes what kind of thing a person is controlling and what can
+            count as continuity.
+          </p>
+        </section>
+
+        <section id="control-stack">
+          <h2>Shared control is a stack of decisions</h2>
+          <p class="section-deck">
+            “Collaborative,” “shared,” and “multi-user” remain vague until the system states who
+            can affect what and what happens when intentions overlap.
+          </p>
+          <p>
+            Robot-swarm research offers a useful command vocabulary. Kolling and colleagues
+            distinguish behavior or algorithm selection, parameter setting, environmental
+            influence, and influence through selected members or leaders
+            (<a class="inline-citation" href="https://doi.org/10.1109/THMS.2015.2480801" target="_blank" rel="noopener noreferrer">Kolling et al., 2016</a>).
+            These categories describe ways human intent can reach a distributed process. They do
+            not by themselves describe multi-user authority, morphology, representation change,
+            or collaborative history.
+          </p>
+          <p>
+            A broader digital system needs at least five separate decisions. Binding determines
+            which people can affect which parts, regions, scales, roles, or functions. The control
+            target specifies what they may change. Arbitration resolves simultaneous or
+            conflicting intentions. Execution determines how local rules, constraints, or learned
+            systems interpret an accepted command. Feedback and history show what happened, why
+            it happened, and whether it can be reversed.
+          </p>
+
+          <figure class="stack-flow stack-flow--expanded" aria-labelledby="control-flow-title">
+            <figcaption id="control-flow-title">From human intention to collective behavior</figcaption>
+            <div class="stack-flow__grid">
+              <div class="stack-flow__node">
+                <strong>Issued intention</strong>
+                <span>A gesture, region, path, parameter, cue, command, refusal, or proposal.</span>
+              </div>
+              <div class="stack-flow__node">
+                <strong>Semantic intention</strong>
+                <span>A medium-independent action with target, scope, strength, duration, and provenance.</span>
+              </div>
+              <div class="stack-flow__node">
+                <strong>Authority and arbitration</strong>
+                <span>Permission, lease, weighting, superposition, vote, constraint, branch, or veto.</span>
+              </div>
+              <div class="stack-flow__node">
+                <strong>Accepted command</strong>
+                <span>The action that survives policy checks, with any attenuation or transformation exposed.</span>
+              </div>
+              <div class="stack-flow__node">
+                <strong>Swarm execution</strong>
+                <span>Local rules, fields, solvers, state machines, morphology, and autonomous constraints.</span>
+              </div>
+              <div class="stack-flow__node">
+                <strong>Observed effect</strong>
+                <span>Visible, audible, tactile, and historical consequences, including uncertainty and failure.</span>
+              </div>
+            </div>
+          </figure>
+
+          <h3>What a participant may influence</h3>
+          <div class="comparison-grid comparison-grid--three">
+            <article class="info-card">
+              <h3>Motion and space</h3>
+              <p>
+                Elements, subsets, leaders, regions, paths, attractors, repulsors, boundaries,
+                obstacles, vector fields, and migration points.
+              </p>
+            </article>
+            <article class="info-card">
+              <h3>Rules and state</h3>
+              <p>
+                Behaviors, local parameters, neighbour relations, state transitions, goals,
+                constraints, cues, timelines, and autonomy levels.
+              </p>
+            </article>
+            <article class="info-card">
+              <h3>Body and history</h3>
+              <p>
+                Density, silhouette, topology, birth, death, merge, split, representation,
+                appearance, checkpoints, branches, replay, and repair.
+              </p>
+            </article>
+          </div>
+
+          <p>
+            These targets can coexist. One person may shape a movement field while another edits
+            density and a third controls when a proposed merge becomes permissible. Different
+            inputs can also reach the same semantic action. A switch, a hand gesture, a line of
+            text, or a pre-authored pattern can all issue a consequential command without
+            pretending that the bodily acts are equivalent.
+          </p>
+        </section>
+
+        <section id="arbitration">
+          <h2>How several intentions become one event</h2>
+          <p>
+            Arbitration is not an implementation detail. It determines whether a shared body
+            behaves like a collection of personal territories, a negotiated instrument, a
+            majority system, an unstable compromise, or a field that preserves several forces at
+            once.
+          </p>
+          <div class="evidence-matrix evidence-matrix--compact">
+            <article>
+              <h4>Scope separation</h4>
+              <p>Participants receive different agents, regions, scales, roles, or control dimensions.</p>
+            </article>
+            <article>
+              <h4>Lock or lease</h4>
+              <p>One person temporarily controls a target; ownership and expiry remain visible.</p>
+            </article>
+            <article>
+              <h4>Weighted fusion</h4>
+              <p>Continuous inputs are averaged or combined using explicit weights.</p>
+            </article>
+            <article>
+              <h4>Field superposition</h4>
+              <p>Spatial influences add, cancel, mask, or modulate one another.</p>
+            </article>
+            <article>
+              <h4>Vote or quorum</h4>
+              <p>A discrete transition waits for enough support or a recognized decision rule.</p>
+            </article>
+            <article>
+              <h4>Branch on conflict</h4>
+              <p>Incompatible proposals create parallel futures instead of one forced compromise.</p>
+            </article>
+          </div>
+          <p>
+            A seventh possibility is to retain conflict as visible motion: competing attractors,
+            oscillation, seams, or local instability. Mass collaborative systems show that
+            minority action, overwrite, competition, and repair can materially shape a collective
+            result. They do not prove that participants will experience real-time swarm conflict
+            as expressive rather than frustrating. That remains a design hypothesis
+            (<a class="inline-citation" href="https://doi.org/10.1140/epjds/s13688-019-0200-1" target="_blank" rel="noopener noreferrer">Aleta and Moreno, 2019</a>;
+            <a class="inline-citation" href="https://doi.org/10.1371/journal.pone.0202019" target="_blank" rel="noopener noreferrer">Müller and Winters, 2018</a>).
+          </p>
+          <p>
+            Mathematical influence is also not the same as felt agency. In virtual
+            co-embodiment, paired participants shared one avatar through weighted averages.
+            Participants could estimate their objective contribution, yet predictable movement
+            could produce more agency than the control weight alone would suggest. A later study
+            found that haptic feedback and weight distribution interacted with the task rather
+            than improving agency in one simple direction
+            (<a class="inline-citation" href="https://doi.org/10.1109/TVCG.2020.2999197" target="_blank" rel="noopener noreferrer">Fribourg et al., 2021</a>;
+            <a class="inline-citation" href="https://doi.org/10.1145/3613904.3642425" target="_blank" rel="noopener noreferrer">Venkatraj et al., 2024</a>).
+          </p>
+          <p>
+            For a plasmatic body, the consequence is immediate: contribution weight, visible
+            causal effect, perceived agency, bodily ownership, and authorship must be measured
+            separately. A person may shape a transition without owning the resulting body, feel
+            agency with little objective influence, or regard a sparse but decisive veto as their
+            most meaningful contribution.
+          </p>
+        </section>
+
+        <section id="evidence">
+          <h2>Existing systems establish fragments of the design space</h2>
+          <p class="section-deck">
+            The strongest evidence comes from several neighboring fields. Their boundaries matter
+            as much as their contributions.
+          </p>
+          <div class="comparison-grid">
+            <article class="info-card">
+              <p class="card-kicker">Direct digital-particle precedent</p>
+              <h3>Entangled</h3>
+              <p>
+                Up to eight smartphone users applied continuous gravitational influence and
+                created persistent gravitational objects in one body of thousands of virtual
+                particles. The system directly demonstrates simultaneous field influence, but
+                its paper reports demonstrations rather than a controlled comparison of agency,
+                fairness, or authorship
+                (<a class="inline-citation" href="https://doi.org/10.21428/92fbeb44.eae7c23f" target="_blank" rel="noopener noreferrer">Lee, 2021</a>).
+              </p>
+            </article>
+            <article class="info-card">
+              <p class="card-kicker">Shared-body bridge</p>
+              <h3>Co-embodiment</h3>
+              <p>
+                Weighted avatar fusion provides controlled evidence about objective control,
+                predictability, feedback, and agency. These studies concern one humanoid avatar,
+                so transfer to a non-anthropomorphic swarm remains a testable proposition rather
+                than an established result.
+              </p>
+            </article>
+            <article class="info-card">
+              <p class="card-kicker">Many-agent participation</p>
+              <h3>HuGoS and CrowdCollab</h3>
+              <p>
+                HuGoS provides a browser-accessible environment for experiments with human and
+                autonomous agents, detailed logging, signalling, and stigmergy. CrowdCollab lets
+                collaborators plan a crowd from different perspectives. In both cases, the
+                participants do not continuously co-control one transformable body
+                (<a class="inline-citation" href="https://doi.org/10.1007/s11721-021-00199-1" target="_blank" rel="noopener noreferrer">Coucke et al., 2021</a>;
+                <a class="inline-citation" href="https://doi.org/10.1145/3689050.3706007" target="_blank" rel="noopener noreferrer">van den Bogaard et al., 2025</a>).
+              </p>
+            </article>
+            <article class="info-card">
+              <p class="card-kicker">Authoring and history</p>
+              <h3>Semantic control and branching</h3>
+              <p>
+                Elemental Alchemist translates conceptual and semantic particle intentions into
+                lower-level parameters, but it is a single-user system. PaintBranch preserves
+                divergent versions of collaborative VR art as parallel branches; it does not
+                automatically merge them
+                (<a class="inline-citation" href="https://doi.org/10.1145/3800645.3812946" target="_blank" rel="noopener noreferrer">Monteiro et al., 2026</a>;
+                <a class="inline-citation" href="https://doi.org/10.1007/s42979-026-04980-z" target="_blank" rel="noopener noreferrer">David et al., 2026</a>).
+              </p>
+            </article>
+          </div>
+
+          <h3>What the robot-swarm comparison contributes</h3>
+          <p>
+            Multi-operator robot research makes authority transfer and resource sharing explicit.
+            In Miyauchi, Lopes, and Groß’s paired study, operators normally controlled dedicated
+            leader-centered teams and could send or request followers while the controller
+            preserved connectivity. Robot sharing did not produce a simple task-performance win.
+            Direct communication improved task score; sharing primarily reduced movement and
+            energy and was perceived as useful
+            (<a class="inline-citation" href="https://doi.org/10.1109/IROS55552.2023.10342457" target="_blank" rel="noopener noreferrer">Miyauchi et al., 2023</a>).
+          </p>
+          <p>
+            The useful transfer is organizational: fixed allocation, shared pools, temporary
+            exchange, functional roles, overlapping scopes, hierarchy, and adaptive allocation
+            are different ways of binding people to a population. The robots also retain local
+            safety and connectivity constraints even when people redistribute authority. A
+            digital body can borrow those distinctions without pretending that physical
+            connectivity or robot ownership defines its expressive possibilities.
+          </p>
+
+          <aside class="scenario-card">
+            <p class="card-kicker">Sharpened gap</p>
+            <h3>The mechanisms exist; the comparison does not</h3>
+            <p>
+              Field superposition, weighted fusion, voting, persistent overwrite, and
+              branch-on-conflict have all been implemented in real systems. No strong study found
+              here applies several of them to the same transformable digital body with the same
+              task, participants, feedback, and measures.
+            </p>
+          </aside>
+        </section>
+
+        <section id="research-programme">
+          <h2>A comparative programme for one shared body</h2>
+          <p class="section-deck">
+            The first useful experiment is a comparison of authority policies, not a search for
+            one supposedly natural interface.
+          </p>
+          <p>
+            Two or three participants could guide one field-driven particle body through a short
+            sequence: gather, divide, hold, yield, merge, recover, and re-individuate. The task
+            should remain simple enough that a failure can be traced to a control policy, a
+            mapping, a rendering, the autonomous solver, or social coordination.
+          </p>
+          <div class="protocol-card" aria-label="Comparative study outline">
+            <section>
+              <h3>Control levels</h3>
+              <p>
+                Direct subset manipulation, spatial-field influence, and rule or semantic
+                control. Each level reaches the same body through a documented semantic command.
+              </p>
+            </section>
+            <section>
+              <h3>Authority policies</h3>
+              <p>
+                Visible short leases, weighted continuous fusion, field superposition, and
+                branch-on-conflict. Policy order is counterbalanced.
+              </p>
+            </section>
+            <section>
+              <h3>Body transitions</h3>
+              <p>
+                Separate elements, temporary subgroups, one macro-body, an ambient field, and a
+                renewed population. The study marks when continuity is preserved or lost.
+              </p>
+            </section>
+            <section>
+              <h3>Participant awareness</h3>
+              <p>
+                Active scopes, pending intentions, accepted commands, rejected or attenuated
+                actions, and recent history remain inspectable throughout the session.
+              </p>
+            </section>
+          </div>
+
+          <h3>Measures must follow the event</h3>
+          <p>
+            Technical measures include input-to-acceptance latency, input-to-visible-effect
+            latency, stability, command rejection, conflict frequency, participation
+            concentration, solver cost, recovery time, replay accuracy, and morphological
+            continuity. Task performance is useful, but it cannot establish meaningful
+            participation or shared authorship by itself.
+          </p>
+          <p>
+            Participant measures should separate agency, ownership, authorship, causal
+            understanding, fairness, expressive range, collaboration, access cost, and willingness
+            to preserve the result. Workspace-awareness research supports showing who is acting,
+            where, on what, and what they are likely to do next
+            (<a class="inline-citation" href="https://doi.org/10.1023/A:1021271517844" target="_blank" rel="noopener noreferrer">Gutwin and Greenberg, 2002</a>).
+            The Virtual Embodiment Questionnaire and Creativity Support Index offer useful
+            components, but neither can be transplanted without adaptation: one assumes a virtual
+            body, while the other does not measure causal authorship or authority
+            (<a class="inline-citation" href="https://doi.org/10.1109/TVCG.2020.3023603" target="_blank" rel="noopener noreferrer">Roth and Latoschik, 2020</a>;
+            <a class="inline-citation" href="https://doi.org/10.1145/2617588" target="_blank" rel="noopener noreferrer">Cherry and Latulipe, 2014</a>).
+          </p>
+          <p>
+            Mixed-ability participation makes this comparison more exact rather than peripheral.
+            High-rate motion, speech, gaze, touch, switches, text, facilitated input, and
+            pre-authored patterns should be able to reach meaningful semantic actions. A slower
+            or intermittent contribution must not become less authoritative merely because it
+            produces fewer events. The dedicated
+            <a href="mixed-ability-hsi.html">Mixed-Ability Human-Swarm Interaction</a>
+            page develops the access, mapping, consent, privacy, refusal, and repair requirements
+            for that work.
+          </p>
+        </section>
+
+        <section id="architecture">
+          <h2>An architecture for attributable transformation</h2>
+          <p>
+            The human-facing system should send semantic intentions rather than raw controller
+            events to the swarm. An intention records the participant, action, target, scope,
+            desired timing, strength, duration, branch, uncertainty, and attribution policy. The
+            authority layer then decides whether the action is accepted, transformed, delayed,
+            combined, refused, or branched.
+          </p>
+          <p>
+            The execution layer remains free to use particles, boids, fields, graph relations,
+            state machines, procedural morphology, or learned policies. It must return more than
+            the final animation. Participants need to know which elements were affected, which
+            constraints changed the command, whether another intention interfered, and whether
+            the result is continuing, complete, or failed.
+          </p>
+
+          <aside class="technical-note" aria-labelledby="event-record-title">
+            <p class="card-kicker">Minimum event record</p>
+            <h3 id="event-record-title">Keep four things separate</h3>
+            <ol class="section-list">
+              <li>The intention a participant issued.</li>
+              <li>The authority or arbitration decision.</li>
+              <li>The command accepted by the execution layer.</li>
+              <li>The observed effect produced by the swarm and its constraints.</li>
+            </ol>
+          </aside>
+
+          <p>
+            This separation also makes undo and replay more honest. A collaborative undo should
+            add a compensating historical event rather than silently erase evidence that an action
+            occurred. Incompatible transformations may need branches instead of a forced merge.
+            Periodic snapshots, semantic events, solver version, random seed, and dependency
+            information make it possible to reconstruct how a form arose.
+          </p>
+          <p>
+            Tölvera is a plausible open execution substrate for flocking, swarming, artificial
+            life, OSC, and interactive mappings, though it has no native multi-user authority
+            model. HuGoS provides a browser-delivered many-agent experiment pattern. Estuary
+            demonstrates a shared generative process with different participant views. None is a
+            turnkey solution; together they suggest a modular prototype with a semantic server,
+            interchangeable arbitration, a particle or boid adapter, participant clients, and an
+            append-only event log
+            (<a class="inline-citation" href="https://nime.org/proceedings/2024/nime2024_71.pdf" target="_blank" rel="noopener noreferrer">Armitage et al., 2024</a>;
+            <a class="inline-citation" href="https://iclc.toplap.org/2017/cameraReady/ICLC_2017_paper_78.pdf" target="_blank" rel="noopener noreferrer">Ogborn et al., 2017</a>).
+          </p>
+        </section>
+
+        <section id="physical-translation">
+          <h2>Physical embodiment is a translation problem</h2>
+          <p>
+            A later physical system does not have to reproduce every virtual particle. A small
+            robot group might render landmarks, subgroup boundaries, direction, tension, or
+            warnings while the digital body remains much larger. The semantic command and event
+            history can persist while the embodiment changes.
+          </p>
+          <p>
+            Translation must preserve authority, consent, attribution, and repair rights as well
+            as movement. Physical robots add hazards and maintenance responsibilities that a
+            reversible particle system does not have. Conversely, a robot test cannot validate
+            instant topology change, branching history, interpenetration, or field-like
+            embodiment when those are the research object.
+          </p>
+          <p>
+            This is why physical validation remains one branch of the programme. It tests which
+            semantic operations survive material constraints. It does not decide whether a
+            digitally native collective body is legitimate.
+          </p>
+        </section>
+
+        <section id="boundaries">
+          <h2>What the evidence supports</h2>
+          <div class="boundary-box">
+            <section>
+              <h3>Supported now</h3>
+              <ul class="compact-list">
+                <li>Several people can simultaneously influence one digital particle body through spatial fields.</li>
+                <li>Weighted shared control can separate objective contribution from perceived agency.</li>
+                <li>Digital particle systems can be controlled at conceptual, semantic, and technical levels.</li>
+                <li>Voting, overwrite, shared generative editing, and branching are implemented collaboration patterns.</li>
+                <li>Diffuse and particle-based bodies can support meaningful shared embodiment and social relation.</li>
+              </ul>
+            </section>
+            <section>
+              <h3>Still open</h3>
+              <ul class="compact-list">
+                <li>Which arbitration policy best supports a particular expressive or cooperative task.</li>
+                <li>How agency and authorship survive transitions among agents, body, and field.</li>
+                <li>When visible conflict reads as expressive tension rather than loss of control.</li>
+                <li>How low-bandwidth participation remains consequential in mixed groups.</li>
+                <li>How a collectively authored body should be preserved, withdrawn, branched, or remixed over time.</li>
+              </ul>
+            </section>
+          </div>
+          <p>
+            The central research object is therefore not a more efficient command panel. It is a
+            body whose boundaries, internal organization, authority, and history can all become
+            shared material. The body may transform the participants’ intentions as it executes
+            them, but it should not hide that transformation.
+          </p>
+        </section>
+      </article>
+
+      <section id="sources" class="references">
+        <h2>Sources</h2>
+        <p class="source-status">
+          Sources are grouped here by the claim they support. Robot, avatar, crowd, collaborative
+          art, and creative-tool evidence are treated as related but non-equivalent.
+        </p>
+        <ol class="references-list">
+          <li><strong>Reeves, William T.</strong> "<a class="reference-link" href="https://doi.org/10.1145/357318.357320" target="_blank" rel="noopener noreferrer">Particle Systems—A Technique for Modeling a Class of Fuzzy Objects</a>." <em>ACM Transactions on Graphics</em> (1983).</li>
+          <li><strong>Reynolds, Craig W.</strong> "<a class="reference-link" href="https://doi.org/10.1145/37402.37406" target="_blank" rel="noopener noreferrer">Flocks, Herds, and Schools: A Distributed Behavioral Model</a>." <em>SIGGRAPH</em> (1987).</li>
+          <li><strong>Glowacki, David R., et al.</strong> "<a class="reference-link" href="https://doi.org/10.1038/s41598-022-12637-z" target="_blank" rel="noopener noreferrer">Group VR Experiences Can Produce Ego Attenuation and Connectedness Comparable to Psychedelics</a>." <em>Scientific Reports</em> 12 (2022).</li>
+          <li><strong>Glowacki, David R.</strong> "<a class="reference-link" href="https://doi.org/10.3389/frvir.2023.1286950" target="_blank" rel="noopener noreferrer">VR Models of Death and Psychedelics: An Aesthetic Paradigm for Design Beyond Day-to-Day Phenomenology</a>." <em>Frontiers in Virtual Reality</em> 4 (2024).</li>
+          <li><strong>Desnoyers-Stewart, John, et al.</strong> "<a class="reference-link" href="https://doi.org/10.1162/leon_a_01925" target="_blank" rel="noopener noreferrer">Body RemiXer: Extending Bodies to Stimulate Social Connection in an Immersive Installation</a>." <em>Leonardo</em> 53(4) (2020).</li>
+          <li><strong>Desnoyers-Stewart, John.</strong> "<a class="reference-link" href="https://doi.org/10.1145/3532834.3536198" target="_blank" rel="noopener noreferrer">Star-Stuff: A Way for the Universe to Know Itself</a>." <em>SIGGRAPH Immersive Pavilion</em> (2022).</li>
+          <li><strong>Desnoyers-Stewart, John, et al.</strong> "<a class="reference-link" href="https://doi.org/10.1145/3544549.3585843" target="_blank" rel="noopener noreferrer">Embodied Telepresent Connection: Exploring Virtual Social Touch Through Pseudohaptics</a>." <em>CHI Extended Abstracts</em> (2023).</li>
+          <li><strong>Kolling, Andreas, et al.</strong> "<a class="reference-link" href="https://doi.org/10.1109/THMS.2015.2480801" target="_blank" rel="noopener noreferrer">Human Interaction With Robot Swarms: A Survey</a>." <em>IEEE Transactions on Human-Machine Systems</em> 46(1) (2016).</li>
+          <li><strong>Miyauchi, Genki, Yuri Kaszubowski Lopes, and Roderich Groß.</strong> "<a class="reference-link" href="https://doi.org/10.1109/IROS55552.2023.10342457" target="_blank" rel="noopener noreferrer">Sharing the Control of Robot Swarms Among Multiple Human Operators: A User Study</a>." <em>IROS</em> (2023).</li>
+          <li><strong>Lee, Myungin.</strong> "<a class="reference-link" href="https://doi.org/10.21428/92fbeb44.eae7c23f" target="_blank" rel="noopener noreferrer">Entangled: A Multi-Modal, Multi-User Interactive Instrument in Virtual 3D Space Using the Smartphone for Gesture Control</a>." <em>NIME</em> (2021).</li>
+          <li><strong>Fribourg, Rebecca, et al.</strong> "<a class="reference-link" href="https://doi.org/10.1109/TVCG.2020.2999197" target="_blank" rel="noopener noreferrer">Virtual Co-Embodiment: Evaluation of the Sense of Agency While Sharing the Control of a Virtual Body Among Two Individuals</a>." <em>IEEE Transactions on Visualization and Computer Graphics</em> 27(10) (2021).</li>
+          <li><strong>Venkatraj, Karthikeya Puttur, et al.</strong> "<a class="reference-link" href="https://doi.org/10.1145/3613904.3642425" target="_blank" rel="noopener noreferrer">ShareYourReality: Investigating Haptic Feedback and Agency in Virtual Avatar Co-Embodiment</a>." <em>CHI</em> (2024).</li>
+          <li><strong>Coucke, Nicolas, et al.</strong> "<a class="reference-link" href="https://doi.org/10.1007/s11721-021-00199-1" target="_blank" rel="noopener noreferrer">HuGoS: A Virtual Environment for Studying Collective Human Behavior</a>." <em>Swarm Intelligence</em> 15 (2021).</li>
+          <li><strong>van den Bogaard, Senna, Timo Maessen, Evelijn van Hilten, Yinshi Jin, Hannah van Iterson, Steven Houben, and Rong-Hao Liang.</strong> "<a class="reference-link" href="https://doi.org/10.1145/3689050.3706007" target="_blank" rel="noopener noreferrer">CrowdCollab: A Multi-User, Multi-Perspective Collaborative Tool for Crowd Planning</a>." <em>TEI</em> (2025).</li>
+          <li><strong>Lemonari, Marilena, et al.</strong> "<a class="reference-link" href="https://doi.org/10.1111/cgf.14506" target="_blank" rel="noopener noreferrer">Authoring Virtual Crowds: A Survey</a>." <em>Computer Graphics Forum</em> 41(2) (2022).</li>
+          <li><strong>Monteiro, Kyzyl, Evan Atherton, George Fitzmaurice, and Qian Zhou.</strong> "<a class="reference-link" href="https://doi.org/10.1145/3800645.3812946" target="_blank" rel="noopener noreferrer">Elemental Alchemist: A Generative Interface for Semantic Control of Particle Systems Across Dynamic Levels of Abstraction</a>." <em>DIS</em> (2026).</li>
+          <li><strong>Armitage, Jack, Victor Shepardson, and Thor Magnusson.</strong> "<a class="reference-link" href="https://nime.org/proceedings/2024/nime2024_71.pdf" target="_blank" rel="noopener noreferrer">Tölvera: Composing With Basal Agencies</a>." <em>NIME</em> (2024).</li>
+          <li><strong>David, Ana, Daniele Giunchi, Stuart James, Anthony Steed, and Augusto Esteves.</strong> "<a class="reference-link" href="https://doi.org/10.1007/s42979-026-04980-z" target="_blank" rel="noopener noreferrer">Exploring the Effects of Asynchronous Collaborative Art in VR with PaintBranch</a>." <em>SN Computer Science</em> 7 (2026).</li>
+          <li><strong>Ogborn, David, et al.</strong> "<a class="reference-link" href="https://iclc.toplap.org/2017/cameraReady/ICLC_2017_paper_78.pdf" target="_blank" rel="noopener noreferrer">Estuary: Browser-Based Collaborative Projectional Live Coding of Musical Patterns</a>." <em>International Conference on Live Coding</em> (2017).</li>
+          <li><strong>Aleta, Alberto, and Yamir Moreno.</strong> "<a class="reference-link" href="https://doi.org/10.1140/epjds/s13688-019-0200-1" target="_blank" rel="noopener noreferrer">The Dynamics of Collective Social Behavior in a Crowd Controlled Game</a>." <em>EPJ Data Science</em> 8 (2019).</li>
+          <li><strong>Müller, Thomas F., and James Winters.</strong> "<a class="reference-link" href="https://doi.org/10.1371/journal.pone.0202019" target="_blank" rel="noopener noreferrer">Compression in Cultural Evolution: Homogeneity and Structure in the Emergence and Evolution of a Large-Scale Online Collaborative Art Project</a>." <em>PLOS ONE</em> 13(9) (2018).</li>
+          <li><strong>Gutwin, Carl, and Saul Greenberg.</strong> "<a class="reference-link" href="https://doi.org/10.1023/A:1021271517844" target="_blank" rel="noopener noreferrer">A Descriptive Framework of Workspace Awareness for Real-Time Groupware</a>." <em>Computer Supported Cooperative Work</em> 11 (2002).</li>
+          <li><strong>Rezwana, Jeba, and Mary Lou Maher.</strong> "<a class="reference-link" href="https://doi.org/10.1145/3519026" target="_blank" rel="noopener noreferrer">Designing Creative AI Partners With COFI</a>." <em>ACM Transactions on Computer-Human Interaction</em> (2023).</li>
+          <li><strong>Roth, Daniel, and Marc Erich Latoschik.</strong> "<a class="reference-link" href="https://doi.org/10.1109/TVCG.2020.3023603" target="_blank" rel="noopener noreferrer">Construction of the Virtual Embodiment Questionnaire</a>." <em>IEEE Transactions on Visualization and Computer Graphics</em> (2020).</li>
+          <li><strong>Cherry, Erin, and Celine Latulipe.</strong> "<a class="reference-link" href="https://doi.org/10.1145/2617588" target="_blank" rel="noopener noreferrer">Quantifying the Creativity Support of Digital Tools Through the Creativity Support Index</a>." <em>ACM Transactions on Computer-Human Interaction</em> 21(4) (2014).</li>
+        </ol>
+      </section>
+        <!-- BEGIN page-export-links -->
+        <section class="agent-downloads" aria-labelledby="page-downloads">
+            <h2 id="page-downloads">Page exports</h2>
+            <div class="agent-downloads__links">
+                <a href="/plasmatic-multitudes/shared-swarm-control.md" download>Markdown</a>
+                <a href="/plasmatic-multitudes/shared-swarm-control.txt" download>Text</a>
+                <a href="/plasmatic-multitudes/shared-swarm-control.bib" download>BibTeX</a>
+                <a href="/plasmatic-multitudes/shared-swarm-control.references.csl.json" download>CSL JSON</a>
+            </div>
+        </section>
+        <!-- END page-export-links -->
+</main>
+
+    <footer class="footer">
+      <div class="shell">
+        Shared swarm control for <em>Plasmatic Multitudes</em>.
+        <nav class="footer-links" aria-label="Legal">
+          <a href="/impressum.html">Impressum</a>
+          <a href="/datenschutz.html">Datenschutz</a>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>

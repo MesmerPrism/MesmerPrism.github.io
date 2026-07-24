@@ -1,265 +1,74 @@
 [
   {
-    "id": "github-com-mesmer-prism-work-publications-background-contact",
+    "id": "shusterman-somaesthetics",
     "type": "webpage",
-    "title": "Mesmer Prism Work Publications Background Contact",
-    "URL": "https://github.com/MesmerPrism",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          13
-        ]
-      ]
-    },
-    "note": "Referenced by Plasmatic Multitudes - Weakly Bounded Embodiment and Semi-Corporeal Avatar Design: https://mesmerprism.com/projects/plasmatic-multitudes.html"
-  },
-  {
-    "id": "doi-org-wagemans-et-al-2012",
-    "type": "article-journal",
-    "title": "Wagemans et al., 2012",
-    "URL": "https://doi.org/10.1037/a0029333",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          13
-        ]
-      ]
-    },
-    "note": "Referenced by Plasmatic Multitudes - Weakly Bounded Embodiment and Semi-Corporeal Avatar Design: https://mesmerprism.com/projects/plasmatic-multitudes.html",
-    "DOI": "10.1037/a0029333"
-  },
-  {
-    "id": "link-springer-com-johansson-1973-2012",
-    "type": "article-journal",
-    "title": "Johansson, 1973",
-    "URL": "https://link.springer.com/article/10.3758/BF03212378",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          13
-        ]
-      ]
-    },
-    "note": "Referenced by Plasmatic Multitudes - Weakly Bounded Embodiment and Semi-Corporeal Avatar Design: https://mesmerprism.com/projects/plasmatic-multitudes.html",
-    "issued": {
-      "date-parts": [
-        [
-          2012
-        ]
-      ]
-    },
-    "DOI": "10.3758/BF03212378"
-  },
-  {
-    "id": "doi-org-lecuyer-2009-2012",
-    "type": "article-journal",
-    "title": "Lecuyer, 2009",
-    "URL": "https://doi.org/10.1162/pres.18.1.39",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          13
-        ]
-      ]
-    },
-    "note": "Referenced by Plasmatic Multitudes - Weakly Bounded Embodiment and Semi-Corporeal Avatar Design: https://mesmerprism.com/projects/plasmatic-multitudes.html",
-    "issued": {
-      "date-parts": [
-        [
-          2012
-        ]
-      ]
-    },
-    "DOI": "10.1162/pres.18.1.39"
-  },
-  {
-    "id": "doi-org-reeves-1983-2012",
-    "type": "article-journal",
-    "title": "Reeves, 1983",
-    "URL": "https://doi.org/10.1145/357318.357320",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          13
-        ]
-      ]
-    },
-    "note": "Referenced by Plasmatic Multitudes - Weakly Bounded Embodiment and Semi-Corporeal Avatar Design: https://mesmerprism.com/projects/plasmatic-multitudes.html",
-    "issued": {
-      "date-parts": [
-        [
-          2012
-        ]
-      ]
-    },
-    "DOI": "10.1145/357318.357320"
-  },
-  {
-    "id": "doi-org-reynolds-1987-2012",
-    "type": "article-journal",
-    "title": "Reynolds, 1987",
-    "URL": "https://doi.org/10.1145/37402.37406",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          13
-        ]
-      ]
-    },
-    "note": "Referenced by Plasmatic Multitudes - Weakly Bounded Embodiment and Semi-Corporeal Avatar Design: https://mesmerprism.com/projects/plasmatic-multitudes.html",
-    "issued": {
-      "date-parts": [
-        [
-          2012
-        ]
-      ]
-    },
-    "DOI": "10.1145/37402.37406"
-  },
-  {
-    "id": "arxiv-org-dos-anjos-and-pereira-2024-2012",
-    "type": "webpage",
-    "title": "dos Anjos and Pereira, 2024",
-    "URL": "https://arxiv.org/abs/2405.02672",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          13
-        ]
-      ]
-    },
-    "note": "Referenced by Plasmatic Multitudes - Weakly Bounded Embodiment and Semi-Corporeal Avatar Design: https://mesmerprism.com/projects/plasmatic-multitudes.html",
-    "issued": {
-      "date-parts": [
-        [
-          2012
-        ]
-      ]
-    }
-  },
-  {
-    "id": "doi-org-yee-and-bailenson-2007-2012",
-    "type": "article-journal",
-    "title": "Yee and Bailenson, 2007",
-    "URL": "https://doi.org/10.1111/j.1468-2958.2007.00299.x",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          13
-        ]
-      ]
-    },
-    "note": "Referenced by Plasmatic Multitudes - Weakly Bounded Embodiment and Semi-Corporeal Avatar Design: https://mesmerprism.com/projects/plasmatic-multitudes.html",
-    "issued": {
-      "date-parts": [
-        [
-          2012
-        ]
-      ]
-    },
-    "DOI": "10.1111/j.1468-2958.2007.00299.x"
-  },
-  {
-    "id": "www-interaction-design-org-shusterman-2012",
-    "type": "webpage",
-    "title": "Shusterman",
+    "title": "Somaesthetics",
     "URL": "https://www.interaction-design.org/literature/book/the-encyclopedia-of-human-computer-interaction-2nd-ed/somaesthetics",
     "accessed": {
       "date-parts": [
         [
           2026,
-          6,
-          13
+          7,
+          24
         ]
       ]
     },
     "note": "Referenced by Plasmatic Multitudes - Weakly Bounded Embodiment and Semi-Corporeal Avatar Design: https://mesmerprism.com/projects/plasmatic-multitudes.html",
-    "issued": {
-      "date-parts": [
-        [
-          2012
-        ]
-      ]
-    }
+    "author": [
+      {
+        "literal": "Shusterman"
+      }
+    ]
   },
   {
-    "id": "doi-org-hook-et-al-2015-2012",
+    "id": "hook-et-al-somaesthetic-design-2015",
     "type": "article-journal",
-    "title": "Hook et al., 2015",
+    "title": "Somaesthetic Design",
     "URL": "https://doi.org/10.1145/2598510.2598561",
     "accessed": {
       "date-parts": [
         [
           2026,
-          6,
-          13
+          7,
+          24
         ]
       ]
     },
     "note": "Referenced by Plasmatic Multitudes - Weakly Bounded Embodiment and Semi-Corporeal Avatar Design: https://mesmerprism.com/projects/plasmatic-multitudes.html",
+    "author": [
+      {
+        "literal": "Hook et al"
+      }
+    ],
     "issued": {
       "date-parts": [
         [
-          2012
+          2015
         ]
       ]
     },
     "DOI": "10.1145/2598510.2598561"
   },
   {
-    "id": "kgajos-seas-harvard-edu-wobbrock-et-al-2011-2012",
-    "type": "webpage",
-    "title": "Wobbrock et al., 2011",
-    "URL": "https://kgajos.seas.harvard.edu/papers/wobbrock11abd.pdf",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          13
-        ]
-      ]
-    },
-    "note": "Referenced by Plasmatic Multitudes - Weakly Bounded Embodiment and Semi-Corporeal Avatar Design: https://mesmerprism.com/projects/plasmatic-multitudes.html",
-    "issued": {
-      "date-parts": [
-        [
-          2012
-        ]
-      ]
-    }
-  },
-  {
-    "id": "doi-org-bennett-et-al-2018-2012",
+    "id": "wagemans-et-al-a-century-of-gestalt-psychology-in-visual-perception-2012",
     "type": "article-journal",
-    "title": "Bennett et al., 2018",
-    "URL": "https://doi.org/10.1145/3234695.3236348",
+    "title": "A Century of Gestalt Psychology in Visual Perception",
+    "URL": "https://doi.org/10.1037/a0029333",
     "accessed": {
       "date-parts": [
         [
           2026,
-          6,
-          13
+          7,
+          24
         ]
       ]
     },
     "note": "Referenced by Plasmatic Multitudes - Weakly Bounded Embodiment and Semi-Corporeal Avatar Design: https://mesmerprism.com/projects/plasmatic-multitudes.html",
+    "author": [
+      {
+        "literal": "Wagemans et al"
+      }
+    ],
     "issued": {
       "date-parts": [
         [
@@ -267,167 +76,428 @@
         ]
       ]
     },
-    "DOI": "10.1145/3234695.3236348"
+    "DOI": "10.1037/a0029333"
   },
   {
-    "id": "www-spiedigitallibrary-org-richards-et-al-1994-2012",
+    "id": "johansson-visual-perception-of-biological-motion-and-a-model-for-i-1973",
     "type": "article-journal",
-    "title": "Richards et al., 1994",
-    "URL": "https://www.spiedigitallibrary.org/conference-proceedings-of-spie/2177/0000/Virtual-reality-and-virtual-bodies/10.1117/12.173894.full",
+    "title": "Visual Perception of Biological Motion and a Model for Its Analysis",
+    "URL": "https://link.springer.com/article/10.3758/BF03212378",
     "accessed": {
       "date-parts": [
         [
           2026,
-          6,
-          13
+          7,
+          24
         ]
       ]
     },
     "note": "Referenced by Plasmatic Multitudes - Weakly Bounded Embodiment and Semi-Corporeal Avatar Design: https://mesmerprism.com/projects/plasmatic-multitudes.html",
+    "author": [
+      {
+        "literal": "Johansson"
+      }
+    ],
     "issued": {
       "date-parts": [
         [
-          2012
+          1973
         ]
       ]
     },
-    "DOI": "10.1117/12.173894.full"
+    "DOI": "10.3758/BF03212378"
   },
   {
-    "id": "doi-org-desnoyers-stewart-et-al-2020-2012",
+    "id": "yee-and-bailenson-the-proteus-effect-2007",
     "type": "article-journal",
-    "title": "Desnoyers-Stewart et al., 2020",
-    "URL": "https://doi.org/10.1162/LEON_a_01925",
+    "title": "The Proteus Effect",
+    "URL": "https://doi.org/10.1111/j.1468-2958.2007.00299.x",
     "accessed": {
       "date-parts": [
         [
           2026,
-          6,
-          13
+          7,
+          24
         ]
       ]
     },
     "note": "Referenced by Plasmatic Multitudes - Weakly Bounded Embodiment and Semi-Corporeal Avatar Design: https://mesmerprism.com/projects/plasmatic-multitudes.html",
+    "author": [
+      {
+        "literal": "Yee and Bailenson"
+      }
+    ],
     "issued": {
       "date-parts": [
         [
-          2012
+          2007
         ]
       ]
     },
-    "DOI": "10.1162/LEON_a_01925"
+    "DOI": "10.1111/j.1468-2958.2007.00299.x"
   },
   {
-    "id": "doi-org-desnoyers-stewart-et-al-2023-2012",
+    "id": "reeves-particle-systems-a-technique-for-modeling-a-class-of-fuz-1983",
     "type": "article-journal",
-    "title": "Desnoyers-Stewart et al., 2023",
-    "URL": "https://doi.org/10.1145/3544549.3585843",
+    "title": "Particle Systems: A Technique for Modeling a Class of Fuzzy Objects",
+    "URL": "https://doi.org/10.1145/357318.357320",
     "accessed": {
       "date-parts": [
         [
           2026,
-          6,
-          13
+          7,
+          24
         ]
       ]
     },
     "note": "Referenced by Plasmatic Multitudes - Weakly Bounded Embodiment and Semi-Corporeal Avatar Design: https://mesmerprism.com/projects/plasmatic-multitudes.html",
+    "author": [
+      {
+        "literal": "Reeves"
+      }
+    ],
     "issued": {
       "date-parts": [
         [
-          2012
+          1983
         ]
       ]
     },
-    "DOI": "10.1145/3544549.3585843"
+    "DOI": "10.1145/357318.357320"
   },
   {
-    "id": "doi-org-glowacki-et-al-2022-2012",
+    "id": "reynolds-flocks-herds-and-schools-1987",
     "type": "article-journal",
-    "title": "Glowacki et al., 2022",
-    "URL": "https://doi.org/10.1038/s41598-022-12637-z",
+    "title": "Flocks, Herds, and Schools",
+    "URL": "https://doi.org/10.1145/37402.37406",
     "accessed": {
       "date-parts": [
         [
           2026,
-          6,
-          13
+          7,
+          24
         ]
       ]
     },
     "note": "Referenced by Plasmatic Multitudes - Weakly Bounded Embodiment and Semi-Corporeal Avatar Design: https://mesmerprism.com/projects/plasmatic-multitudes.html",
+    "author": [
+      {
+        "literal": "Reynolds"
+      }
+    ],
     "issued": {
       "date-parts": [
         [
-          2012
+          1987
         ]
       ]
     },
-    "DOI": "10.1038/s41598-022-12637-z"
+    "DOI": "10.1145/37402.37406"
   },
   {
-    "id": "doi-org-glowacki-2024-2012",
+    "id": "lecuyer-simulating-haptic-feedback-using-vision-2009",
     "type": "article-journal",
-    "title": "Glowacki, 2024",
-    "URL": "https://doi.org/10.3389/frvir.2023.1286950",
+    "title": "Simulating Haptic Feedback Using Vision",
+    "URL": "https://doi.org/10.1162/pres.18.1.39",
     "accessed": {
       "date-parts": [
         [
           2026,
-          6,
-          13
+          7,
+          24
         ]
       ]
     },
     "note": "Referenced by Plasmatic Multitudes - Weakly Bounded Embodiment and Semi-Corporeal Avatar Design: https://mesmerprism.com/projects/plasmatic-multitudes.html",
+    "author": [
+      {
+        "literal": "Lecuyer"
+      }
+    ],
     "issued": {
       "date-parts": [
         [
-          2012
+          2009
         ]
       ]
     },
-    "DOI": "10.3389/frvir.2023.1286950"
+    "DOI": "10.1162/pres.18.1.39"
   },
   {
-    "id": "doi-org-pusch-and-lecuyer-2011-2012",
+    "id": "pusch-and-lecuyer-pseudo-haptics-from-the-theoretical-foundations-to-pract-2011",
     "type": "article-journal",
-    "title": "Pusch and Lecuyer, 2011",
+    "title": "Pseudo-Haptics: From the Theoretical Foundations to Practical System Design Guidelines",
     "URL": "https://doi.org/10.1145/2070481.2070494",
     "accessed": {
       "date-parts": [
         [
           2026,
-          6,
-          13
+          7,
+          24
         ]
       ]
     },
     "note": "Referenced by Plasmatic Multitudes - Weakly Bounded Embodiment and Semi-Corporeal Avatar Design: https://mesmerprism.com/projects/plasmatic-multitudes.html",
+    "author": [
+      {
+        "literal": "Pusch and Lecuyer"
+      }
+    ],
     "issued": {
       "date-parts": [
         [
-          2012
+          2011
         ]
       ]
     },
     "DOI": "10.1145/2070481.2070494"
   },
   {
-    "id": "doi-org-collins-and-kapralos-2019-2012",
+    "id": "collins-and-kapralos-pseudo-haptics-a-review-of-leveraging-cross-modal-percep-2019",
     "type": "article-journal",
-    "title": "Collins and Kapralos, 2019",
+    "title": "Pseudo-Haptics: A Review of Leveraging Cross-Modal Perception in Virtual Environments",
     "URL": "https://doi.org/10.1080/17458927.2019.1619318",
     "accessed": {
       "date-parts": [
         [
           2026,
-          6,
-          13
+          7,
+          24
         ]
       ]
     },
     "note": "Referenced by Plasmatic Multitudes - Weakly Bounded Embodiment and Semi-Corporeal Avatar Design: https://mesmerprism.com/projects/plasmatic-multitudes.html",
+    "author": [
+      {
+        "literal": "Collins and Kapralos"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2019
+        ]
+      ]
+    },
+    "DOI": "10.1080/17458927.2019.1619318"
+  },
+  {
+    "id": "eisenstein-on-disney-2017",
+    "type": "webpage",
+    "title": "On Disney",
+    "URL": "https://seagullbooks.org/products/on-disney",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          7,
+          24
+        ]
+      ]
+    },
+    "note": "Referenced by Plasmatic Multitudes - Weakly Bounded Embodiment and Semi-Corporeal Avatar Design: https://mesmerprism.com/projects/plasmatic-multitudes.html",
+    "author": [
+      {
+        "literal": "Eisenstein"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2017
+        ]
+      ]
+    }
+  },
+  {
+    "id": "geil-plasmatic-mimesis-2019",
+    "type": "webpage",
+    "title": "Plasmatic Mimesis",
+    "URL": "https://www.ceeol.com/search/article-detail?id=813411",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          7,
+          24
+        ]
+      ]
+    },
+    "note": "Referenced by Plasmatic Multitudes - Weakly Bounded Embodiment and Semi-Corporeal Avatar Design: https://mesmerprism.com/projects/plasmatic-multitudes.html",
+    "author": [
+      {
+        "literal": "Geil"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2019
+        ]
+      ]
+    }
+  },
+  {
+    "id": "whissel-spectacular-digital-effects-2014",
+    "type": "webpage",
+    "title": "Spectacular Digital Effects",
+    "URL": "https://www.dukeupress.edu/spectacular-digital-effects",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          7,
+          24
+        ]
+      ]
+    },
+    "note": "Referenced by Plasmatic Multitudes - Weakly Bounded Embodiment and Semi-Corporeal Avatar Design: https://mesmerprism.com/projects/plasmatic-multitudes.html",
+    "author": [
+      {
+        "literal": "Whissel"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2014
+        ]
+      ]
+    }
+  },
+  {
+    "id": "wilson-modernism-and-magic-2013",
+    "type": "article-journal",
+    "title": "Modernism and Magic",
+    "URL": "https://doi.org/10.3366/edinburgh/9780748627691.001.0001",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          7,
+          24
+        ]
+      ]
+    },
+    "note": "Referenced by Plasmatic Multitudes - Weakly Bounded Embodiment and Semi-Corporeal Avatar Design: https://mesmerprism.com/projects/plasmatic-multitudes.html",
+    "author": [
+      {
+        "literal": "Wilson"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2013
+        ]
+      ]
+    },
+    "DOI": "10.3366/edinburgh/9780748627691.001.0001"
+  },
+  {
+    "id": "bukatman-the-poetics-of-slumberland-2012",
+    "type": "webpage",
+    "title": "The Poetics of Slumberland",
+    "URL": "https://books.google.com/books/about/The_Poetics_of_Slumberland.html?id=wi8NYAAACAAJ",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          7,
+          24
+        ]
+      ]
+    },
+    "note": "Referenced by Plasmatic Multitudes - Weakly Bounded Embodiment and Semi-Corporeal Avatar Design: https://mesmerprism.com/projects/plasmatic-multitudes.html",
+    "author": [
+      {
+        "literal": "Bukatman"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2012
+        ]
+      ]
+    }
+  },
+  {
+    "id": "owens-the-ghost-2017",
+    "type": "webpage",
+    "title": "The Ghost",
+    "URL": "https://shop.tate.org.uk/the-ghost-a-cultural-history-paperback/22503.html",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          7,
+          24
+        ]
+      ]
+    },
+    "note": "Referenced by Plasmatic Multitudes - Weakly Bounded Embodiment and Semi-Corporeal Avatar Design: https://mesmerprism.com/projects/plasmatic-multitudes.html",
+    "author": [
+      {
+        "literal": "Owens"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2017
+        ]
+      ]
+    }
+  },
+  {
+    "id": "gunning-illusions-past-and-future-2004",
+    "type": "webpage",
+    "title": "Illusions Past and Future",
+    "URL": "https://mediaarthistory.org/refresh/Programmatic%20key%20texts/pdfs/Gunning.pdf",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          7,
+          24
+        ]
+      ]
+    },
+    "note": "Referenced by Plasmatic Multitudes - Weakly Bounded Embodiment and Semi-Corporeal Avatar Design: https://mesmerprism.com/projects/plasmatic-multitudes.html",
+    "author": [
+      {
+        "literal": "Gunning"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2004
+        ]
+      ]
+    }
+  },
+  {
+    "id": "natale-a-short-history-of-superimposition-2012",
+    "type": "article-journal",
+    "title": "A Short History of Superimposition",
+    "URL": "https://doi.org/10.1080/17460654.2012.664745",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          7,
+          24
+        ]
+      ]
+    },
+    "note": "Referenced by Plasmatic Multitudes - Weakly Bounded Embodiment and Semi-Corporeal Avatar Design: https://mesmerprism.com/projects/plasmatic-multitudes.html",
+    "author": [
+      {
+        "literal": "Natale"
+      }
+    ],
     "issued": {
       "date-parts": [
         [
@@ -435,248 +505,257 @@
         ]
       ]
     },
-    "DOI": "10.1080/17458927.2019.1619318"
-  },
-  {
-    "id": "seagullbooks-org-eisenstein-2017",
-    "type": "webpage",
-    "title": "Eisenstein, 2017",
-    "URL": "https://seagullbooks.org/products/on-disney",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          13
-        ]
-      ]
-    },
-    "note": "Referenced by Plasmatic Multitudes - Weakly Bounded Embodiment and Semi-Corporeal Avatar Design: https://mesmerprism.com/projects/plasmatic-multitudes.html"
-  },
-  {
-    "id": "www-ceeol-com-geil-2019-2017",
-    "type": "webpage",
-    "title": "Geil, 2019",
-    "URL": "https://www.ceeol.com/search/article-detail?id=813411",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          13
-        ]
-      ]
-    },
-    "note": "Referenced by Plasmatic Multitudes - Weakly Bounded Embodiment and Semi-Corporeal Avatar Design: https://mesmerprism.com/projects/plasmatic-multitudes.html",
-    "issued": {
-      "date-parts": [
-        [
-          2017
-        ]
-      ]
-    }
-  },
-  {
-    "id": "www-dukeupress-edu-whissel-2014-2017",
-    "type": "webpage",
-    "title": "Whissel, 2014",
-    "URL": "https://www.dukeupress.edu/spectacular-digital-effects",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          13
-        ]
-      ]
-    },
-    "note": "Referenced by Plasmatic Multitudes - Weakly Bounded Embodiment and Semi-Corporeal Avatar Design: https://mesmerprism.com/projects/plasmatic-multitudes.html",
-    "issued": {
-      "date-parts": [
-        [
-          2017
-        ]
-      ]
-    }
-  },
-  {
-    "id": "mediaarthistory-org-gunning-2004-2017",
-    "type": "webpage",
-    "title": "Gunning, 2004",
-    "URL": "https://mediaarthistory.org/refresh/Programmatic%20key%20texts/pdfs/Gunning.pdf",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          13
-        ]
-      ]
-    },
-    "note": "Referenced by Plasmatic Multitudes - Weakly Bounded Embodiment and Semi-Corporeal Avatar Design: https://mesmerprism.com/projects/plasmatic-multitudes.html",
-    "issued": {
-      "date-parts": [
-        [
-          2017
-        ]
-      ]
-    }
-  },
-  {
-    "id": "doi-org-natale-2012-2017",
-    "type": "article-journal",
-    "title": "Natale, 2012",
-    "URL": "https://doi.org/10.1080/17460654.2012.664745",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          13
-        ]
-      ]
-    },
-    "note": "Referenced by Plasmatic Multitudes - Weakly Bounded Embodiment and Semi-Corporeal Avatar Design: https://mesmerprism.com/projects/plasmatic-multitudes.html",
-    "issued": {
-      "date-parts": [
-        [
-          2017
-        ]
-      ]
-    },
     "DOI": "10.1080/17460654.2012.664745"
   },
   {
-    "id": "shop-tate-org-uk-owens-2017-2017",
+    "id": "gilland-elemental-magic-2009",
     "type": "webpage",
-    "title": "Owens, 2017",
-    "URL": "https://shop.tate.org.uk/the-ghost-a-cultural-history-paperback/22503.html",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          13
-        ]
-      ]
-    },
-    "note": "Referenced by Plasmatic Multitudes - Weakly Bounded Embodiment and Semi-Corporeal Avatar Design: https://mesmerprism.com/projects/plasmatic-multitudes.html",
-    "issued": {
-      "date-parts": [
-        [
-          2017
-        ]
-      ]
-    }
-  },
-  {
-    "id": "doi-org-wilson-2013-2017",
-    "type": "article-journal",
-    "title": "Wilson, 2013",
-    "URL": "https://doi.org/10.3366/edinburgh/9780748627691.001.0001",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          13
-        ]
-      ]
-    },
-    "note": "Referenced by Plasmatic Multitudes - Weakly Bounded Embodiment and Semi-Corporeal Avatar Design: https://mesmerprism.com/projects/plasmatic-multitudes.html",
-    "issued": {
-      "date-parts": [
-        [
-          2017
-        ]
-      ]
-    },
-    "DOI": "10.3366/edinburgh/9780748627691.001.0001"
-  },
-  {
-    "id": "books-google-com-bukatman-2012-2017",
-    "type": "webpage",
-    "title": "Bukatman, 2012",
-    "URL": "https://books.google.com/books/about/The_Poetics_of_Slumberland.html?id=wi8NYAAACAAJ",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          13
-        ]
-      ]
-    },
-    "note": "Referenced by Plasmatic Multitudes - Weakly Bounded Embodiment and Semi-Corporeal Avatar Design: https://mesmerprism.com/projects/plasmatic-multitudes.html",
-    "issued": {
-      "date-parts": [
-        [
-          2017
-        ]
-      ]
-    }
-  },
-  {
-    "id": "archive-org-gilland-2009-2017",
-    "type": "webpage",
-    "title": "Gilland, 2009",
+    "title": "Elemental Magic",
     "URL": "https://archive.org/details/elemental-magic/page/n2/mode/1up",
     "accessed": {
       "date-parts": [
         [
           2026,
-          6,
-          13
+          7,
+          24
         ]
       ]
     },
     "note": "Referenced by Plasmatic Multitudes - Weakly Bounded Embodiment and Semi-Corporeal Avatar Design: https://mesmerprism.com/projects/plasmatic-multitudes.html",
+    "author": [
+      {
+        "literal": "Gilland"
+      }
+    ],
     "issued": {
       "date-parts": [
         [
-          2017
+          2009
         ]
       ]
     }
   },
   {
-    "id": "archive-org-gilland-2012-2017",
+    "id": "gilland-elemental-magic-volume-ii-2012",
     "type": "webpage",
-    "title": "Gilland, 2012",
+    "title": "Elemental Magic, Volume II",
     "URL": "https://archive.org/details/elemental-magic-volume-ii/mode/1up",
     "accessed": {
       "date-parts": [
         [
           2026,
-          6,
-          13
+          7,
+          24
         ]
       ]
     },
     "note": "Referenced by Plasmatic Multitudes - Weakly Bounded Embodiment and Semi-Corporeal Avatar Design: https://mesmerprism.com/projects/plasmatic-multitudes.html",
+    "author": [
+      {
+        "literal": "Gilland"
+      }
+    ],
     "issued": {
       "date-parts": [
         [
-          2017
+          2012
         ]
       ]
     }
   },
   {
-    "id": "doi-org-bernal-and-maes-2017-2017",
+    "id": "richards-et-al-virtual-reality-and-virtual-bodies-1994",
     "type": "article-journal",
-    "title": "Bernal and Maes, 2017",
+    "title": "Virtual Reality and Virtual Bodies",
+    "URL": "https://www.spiedigitallibrary.org/conference-proceedings-of-spie/2177/0000/Virtual-reality-and-virtual-bodies/10.1117/12.173894.full",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          7,
+          24
+        ]
+      ]
+    },
+    "note": "Referenced by Plasmatic Multitudes - Weakly Bounded Embodiment and Semi-Corporeal Avatar Design: https://mesmerprism.com/projects/plasmatic-multitudes.html",
+    "author": [
+      {
+        "literal": "Richards et al"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          1994
+        ]
+      ]
+    },
+    "DOI": "10.1117/12.173894.full"
+  },
+  {
+    "id": "dos-anjos-and-pereira-effects-of-realism-and-representation-on-self-embodied-a-2024",
+    "type": "webpage",
+    "title": "Effects of Realism and Representation on Self-Embodied Avatars in Immersive Virtual Environments",
+    "URL": "https://arxiv.org/abs/2405.02672",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          7,
+          24
+        ]
+      ]
+    },
+    "note": "Referenced by Plasmatic Multitudes - Weakly Bounded Embodiment and Semi-Corporeal Avatar Design: https://mesmerprism.com/projects/plasmatic-multitudes.html",
+    "author": [
+      {
+        "literal": "dos Anjos and Pereira"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2024
+        ]
+      ]
+    }
+  },
+  {
+    "id": "desnoyers-stewart-et-al-body-remixer-2020",
+    "type": "article-journal",
+    "title": "Body RemiXer",
+    "URL": "https://doi.org/10.1162/LEON_a_01925",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          7,
+          24
+        ]
+      ]
+    },
+    "note": "Referenced by Plasmatic Multitudes - Weakly Bounded Embodiment and Semi-Corporeal Avatar Design: https://mesmerprism.com/projects/plasmatic-multitudes.html",
+    "author": [
+      {
+        "literal": "Desnoyers-Stewart et al"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2020
+        ]
+      ]
+    },
+    "DOI": "10.1162/LEON_a_01925"
+  },
+  {
+    "id": "desnoyers-stewart-et-al-embodied-telepresent-connection-etc-2023",
+    "type": "article-journal",
+    "title": "Embodied Telepresent Connection (ETC)",
+    "URL": "https://doi.org/10.1145/3544549.3585843",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          7,
+          24
+        ]
+      ]
+    },
+    "note": "Referenced by Plasmatic Multitudes - Weakly Bounded Embodiment and Semi-Corporeal Avatar Design: https://mesmerprism.com/projects/plasmatic-multitudes.html",
+    "author": [
+      {
+        "literal": "Desnoyers-Stewart et al"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2023
+        ]
+      ]
+    },
+    "DOI": "10.1145/3544549.3585843"
+  },
+  {
+    "id": "glowacki-et-al-group-vr-experiences-can-produce-ego-attenuation-and-con-2022",
+    "type": "article-journal",
+    "title": "Group VR Experiences Can Produce Ego Attenuation and Connectedness Comparable to Psychedelics",
+    "URL": "https://doi.org/10.1038/s41598-022-12637-z",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          7,
+          24
+        ]
+      ]
+    },
+    "note": "Referenced by Plasmatic Multitudes - Weakly Bounded Embodiment and Semi-Corporeal Avatar Design: https://mesmerprism.com/projects/plasmatic-multitudes.html",
+    "author": [
+      {
+        "literal": "Glowacki et al"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2022
+        ]
+      ]
+    },
+    "DOI": "10.1038/s41598-022-12637-z"
+  },
+  {
+    "id": "glowacki-vr-models-of-death-and-psychedelics-2024",
+    "type": "article-journal",
+    "title": "VR Models of Death and Psychedelics",
+    "URL": "https://doi.org/10.3389/frvir.2023.1286950",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          7,
+          24
+        ]
+      ]
+    },
+    "note": "Referenced by Plasmatic Multitudes - Weakly Bounded Embodiment and Semi-Corporeal Avatar Design: https://mesmerprism.com/projects/plasmatic-multitudes.html",
+    "author": [
+      {
+        "literal": "Glowacki"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2024
+        ]
+      ]
+    },
+    "DOI": "10.3389/frvir.2023.1286950"
+  },
+  {
+    "id": "bernal-and-maes-emotional-beasts-2017",
+    "type": "article-journal",
+    "title": "Emotional Beasts",
     "URL": "https://doi.org/10.1145/3027063.3053207",
     "accessed": {
       "date-parts": [
         [
           2026,
-          6,
-          13
+          7,
+          24
         ]
       ]
     },
     "note": "Referenced by Plasmatic Multitudes - Weakly Bounded Embodiment and Semi-Corporeal Avatar Design: https://mesmerprism.com/projects/plasmatic-multitudes.html",
+    "author": [
+      {
+        "literal": "Bernal and Maes"
+      }
+    ],
     "issued": {
       "date-parts": [
         [
@@ -687,232 +766,190 @@
     "DOI": "10.1145/3027063.3053207"
   },
   {
-    "id": "doi-org-mitchell-et-al-2016-2017",
+    "id": "lee-entangled-2021",
     "type": "article-journal",
-    "title": "Mitchell et al., 2016",
+    "title": "Entangled",
+    "URL": "https://doi.org/10.21428/92fbeb44.eae7c23f",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          7,
+          24
+        ]
+      ]
+    },
+    "note": "Referenced by Plasmatic Multitudes - Weakly Bounded Embodiment and Semi-Corporeal Avatar Design: https://mesmerprism.com/projects/plasmatic-multitudes.html",
+    "author": [
+      {
+        "literal": "Lee"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2021
+        ]
+      ]
+    },
+    "DOI": "10.21428/92fbeb44.eae7c23f"
+  },
+  {
+    "id": "fribourg-et-al-virtual-co-embodiment-2021",
+    "type": "article-journal",
+    "title": "Virtual Co-Embodiment",
+    "URL": "https://doi.org/10.1109/TVCG.2020.2999197",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          7,
+          24
+        ]
+      ]
+    },
+    "note": "Referenced by Plasmatic Multitudes - Weakly Bounded Embodiment and Semi-Corporeal Avatar Design: https://mesmerprism.com/projects/plasmatic-multitudes.html",
+    "author": [
+      {
+        "literal": "Fribourg et al"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2021
+        ]
+      ]
+    },
+    "DOI": "10.1109/TVCG.2020.2999197"
+  },
+  {
+    "id": "miyauchi-lopes-and-gro-sharing-the-control-of-robot-swarms-among-multiple-human-2023",
+    "type": "article-journal",
+    "title": "Sharing the Control of Robot Swarms Among Multiple Human Operators",
+    "URL": "https://doi.org/10.1109/IROS55552.2023.10342457",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          7,
+          24
+        ]
+      ]
+    },
+    "note": "Referenced by Plasmatic Multitudes - Weakly Bounded Embodiment and Semi-Corporeal Avatar Design: https://mesmerprism.com/projects/plasmatic-multitudes.html",
+    "author": [
+      {
+        "literal": "Miyauchi, Lopes, and Groß"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2023
+        ]
+      ]
+    },
+    "DOI": "10.1109/IROS55552.2023.10342457"
+  },
+  {
+    "id": "mitchell-et-al-danceroom-spectroscopy-2016",
+    "type": "article-journal",
+    "title": "danceroom Spectroscopy",
     "URL": "https://doi.org/10.1162/LEON_a_00924",
     "accessed": {
       "date-parts": [
         [
           2026,
-          6,
-          13
+          7,
+          24
         ]
       ]
     },
     "note": "Referenced by Plasmatic Multitudes - Weakly Bounded Embodiment and Semi-Corporeal Avatar Design: https://mesmerprism.com/projects/plasmatic-multitudes.html",
+    "author": [
+      {
+        "literal": "Mitchell et al"
+      }
+    ],
     "issued": {
       "date-parts": [
         [
-          2017
+          2016
         ]
       ]
     },
     "DOI": "10.1162/LEON_a_00924"
   },
   {
-    "id": "doi-org-o-connor-et-al-2018-2017",
+    "id": "o-connor-et-al-sampling-molecular-conformations-and-dynamics-in-a-multi-2018",
     "type": "article-journal",
-    "title": "O'Connor et al., 2018",
+    "title": "Sampling Molecular Conformations and Dynamics in a Multiuser Virtual Reality Framework",
     "URL": "https://doi.org/10.1126/sciadv.aat2731",
     "accessed": {
       "date-parts": [
         [
           2026,
-          6,
-          13
+          7,
+          24
         ]
       ]
     },
     "note": "Referenced by Plasmatic Multitudes - Weakly Bounded Embodiment and Semi-Corporeal Avatar Design: https://mesmerprism.com/projects/plasmatic-multitudes.html",
+    "author": [
+      {
+        "literal": "O'Connor et al"
+      }
+    ],
     "issued": {
       "date-parts": [
         [
-          2017
+          2018
         ]
       ]
     },
     "DOI": "10.1126/sciadv.aat2731"
   },
   {
-    "id": "doi-org-toledo-castro-et-al-2025-2017",
+    "id": "toledo-castro-protopopov-and-glowacki-esencia-2025",
     "type": "article-journal",
-    "title": "Toledo Castro et al., 2025",
+    "title": "esencia",
     "URL": "https://doi.org/10.1145/3749893.3749972",
     "accessed": {
       "date-parts": [
         [
           2026,
-          6,
-          13
+          7,
+          24
         ]
       ]
     },
     "note": "Referenced by Plasmatic Multitudes - Weakly Bounded Embodiment and Semi-Corporeal Avatar Design: https://mesmerprism.com/projects/plasmatic-multitudes.html",
+    "author": [
+      {
+        "literal": "Toledo Castro, Protopopov, and Glowacki"
+      }
+    ],
     "issued": {
       "date-parts": [
         [
-          2017
+          2025
         ]
       ]
     },
     "DOI": "10.1145/3749893.3749972"
   },
   {
-    "id": "doi-org-fiordelmondo-et-al-2023-2017",
+    "id": "fiordelmondo-et-al-a-multilevel-dynamic-model-for-documenting-reactivating--2023",
     "type": "article-journal",
-    "title": "Fiordelmondo et al., 2023",
+    "title": "A Multilevel Dynamic Model for Documenting, Reactivating and Preserving Interactive Multimedia Art",
     "URL": "https://doi.org/10.3389/frsip.2023.1183294",
     "accessed": {
       "date-parts": [
         [
           2026,
-          6,
-          13
-        ]
-      ]
-    },
-    "note": "Referenced by Plasmatic Multitudes - Weakly Bounded Embodiment and Semi-Corporeal Avatar Design: https://mesmerprism.com/projects/plasmatic-multitudes.html",
-    "issued": {
-      "date-parts": [
-        [
-          2017
-        ]
-      ]
-    },
-    "DOI": "10.3389/frsip.2023.1183294"
-  },
-  {
-    "id": "doi-org-ho-et-al-2022-2017",
-    "type": "article-journal",
-    "title": "Ho et al., 2022",
-    "URL": "https://doi.org/10.1016/j.jpain.2021.10.009",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          13
-        ]
-      ]
-    },
-    "note": "Referenced by Plasmatic Multitudes - Weakly Bounded Embodiment and Semi-Corporeal Avatar Design: https://mesmerprism.com/projects/plasmatic-multitudes.html",
-    "issued": {
-      "date-parts": [
-        [
-          2017
-        ]
-      ]
-    },
-    "DOI": "10.1016/j.jpain.2021.10.009"
-  },
-  {
-    "id": "doi-org-lewis-et-al-2021-2017",
-    "type": "article-journal",
-    "title": "Lewis et al., 2021",
-    "URL": "https://doi.org/10.1002/ejp.1766",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          13
-        ]
-      ]
-    },
-    "note": "Referenced by Plasmatic Multitudes - Weakly Bounded Embodiment and Semi-Corporeal Avatar Design: https://mesmerprism.com/projects/plasmatic-multitudes.html",
-    "issued": {
-      "date-parts": [
-        [
-          2017
-        ]
-      ]
-    },
-    "DOI": "10.1002/ejp.1766"
-  },
-  {
-    "id": "doi-org-martini-et-al-2013-2017",
-    "type": "article-journal",
-    "title": "Martini et al., 2013",
-    "URL": "https://doi.org/10.3389/fnhum.2013.00438",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          13
-        ]
-      ]
-    },
-    "note": "Referenced by Plasmatic Multitudes - Weakly Bounded Embodiment and Semi-Corporeal Avatar Design: https://mesmerprism.com/projects/plasmatic-multitudes.html",
-    "issued": {
-      "date-parts": [
-        [
-          2017
-        ]
-      ]
-    },
-    "DOI": "10.3389/fnhum.2013.00438"
-  },
-  {
-    "id": "doi-org-solca-et-al-2018-2017",
-    "type": "article-journal",
-    "title": "Solca et al., 2018",
-    "URL": "https://doi.org/10.1212/WNL.0000000000005905",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          13
-        ]
-      ]
-    },
-    "note": "Referenced by Plasmatic Multitudes - Weakly Bounded Embodiment and Semi-Corporeal Avatar Design: https://mesmerprism.com/projects/plasmatic-multitudes.html",
-    "issued": {
-      "date-parts": [
-        [
-          2017
-        ]
-      ]
-    },
-    "DOI": "10.1212/WNL.0000000000005905"
-  },
-  {
-    "id": "doi-org-bullington-2013-2017",
-    "type": "article-journal",
-    "title": "Bullington, 2013",
-    "URL": "https://doi.org/10.1007/978-94-007-6498-9",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          13
-        ]
-      ]
-    },
-    "note": "Referenced by Plasmatic Multitudes - Weakly Bounded Embodiment and Semi-Corporeal Avatar Design: https://mesmerprism.com/projects/plasmatic-multitudes.html",
-    "issued": {
-      "date-parts": [
-        [
-          2017
-        ]
-      ]
-    },
-    "DOI": "10.1007/978-94-007-6498-9"
-  },
-  {
-    "id": "fiordelmondo-et-al-reactivating-and-preserving-interactive-multimedia-artwo",
-    "type": "article-journal",
-    "title": "Reactivating and Preserving Interactive Multimedia Artworks",
-    "URL": "https://doi.org/10.1145/3647995",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          13
+          7,
+          24
         ]
       ]
     },
@@ -922,6 +959,244 @@
         "literal": "Fiordelmondo et al"
       }
     ],
+    "issued": {
+      "date-parts": [
+        [
+          2023
+        ]
+      ]
+    },
+    "DOI": "10.3389/frsip.2023.1183294"
+  },
+  {
+    "id": "fiordelmondo-canazza-and-pretto-reactivating-and-preserving-interactive-multimedia-artwo-2024",
+    "type": "article-journal",
+    "title": "Reactivating and Preserving Interactive Multimedia Artworks",
+    "URL": "https://doi.org/10.1145/3647995",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          7,
+          24
+        ]
+      ]
+    },
+    "note": "Referenced by Plasmatic Multitudes - Weakly Bounded Embodiment and Semi-Corporeal Avatar Design: https://mesmerprism.com/projects/plasmatic-multitudes.html",
+    "author": [
+      {
+        "literal": "Fiordelmondo, Canazza, and Pretto"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2024
+        ]
+      ]
+    },
     "DOI": "10.1145/3647995"
+  },
+  {
+    "id": "bullington-the-expression-of-the-psychosomatic-body-from-a-phenomen-2013",
+    "type": "article-journal",
+    "title": "The Expression of the Psychosomatic Body from a Phenomenological Perspective",
+    "URL": "https://doi.org/10.1007/978-94-007-6498-9",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          7,
+          24
+        ]
+      ]
+    },
+    "note": "Referenced by Plasmatic Multitudes - Weakly Bounded Embodiment and Semi-Corporeal Avatar Design: https://mesmerprism.com/projects/plasmatic-multitudes.html",
+    "author": [
+      {
+        "literal": "Bullington"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2013
+        ]
+      ]
+    },
+    "DOI": "10.1007/978-94-007-6498-9"
+  },
+  {
+    "id": "ho-et-al-real-bodies-not-required-2022",
+    "type": "article-journal",
+    "title": "Real Bodies Not Required?",
+    "URL": "https://doi.org/10.1016/j.jpain.2021.10.009",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          7,
+          24
+        ]
+      ]
+    },
+    "note": "Referenced by Plasmatic Multitudes - Weakly Bounded Embodiment and Semi-Corporeal Avatar Design: https://mesmerprism.com/projects/plasmatic-multitudes.html",
+    "author": [
+      {
+        "literal": "Ho et al"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2022
+        ]
+      ]
+    },
+    "DOI": "10.1016/j.jpain.2021.10.009"
+  },
+  {
+    "id": "lewis-et-al-visual-illusions-modulate-body-perception-disturbance-an-2021",
+    "type": "article-journal",
+    "title": "Visual Illusions Modulate Body Perception Disturbance and Pain in Complex Regional Pain Syndrome",
+    "URL": "https://doi.org/10.1002/ejp.1766",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          7,
+          24
+        ]
+      ]
+    },
+    "note": "Referenced by Plasmatic Multitudes - Weakly Bounded Embodiment and Semi-Corporeal Avatar Design: https://mesmerprism.com/projects/plasmatic-multitudes.html",
+    "author": [
+      {
+        "literal": "Lewis et al"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2021
+        ]
+      ]
+    },
+    "DOI": "10.1002/ejp.1766"
+  },
+  {
+    "id": "martini-perez-marcos-and-sanchez-vives-what-color-is-my-arm-2013",
+    "type": "article-journal",
+    "title": "What Color Is My Arm?",
+    "URL": "https://doi.org/10.3389/fnhum.2013.00438",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          7,
+          24
+        ]
+      ]
+    },
+    "note": "Referenced by Plasmatic Multitudes - Weakly Bounded Embodiment and Semi-Corporeal Avatar Design: https://mesmerprism.com/projects/plasmatic-multitudes.html",
+    "author": [
+      {
+        "literal": "Martini, Perez-Marcos, and Sanchez-Vives"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2013
+        ]
+      ]
+    },
+    "DOI": "10.3389/fnhum.2013.00438"
+  },
+  {
+    "id": "solca-et-al-heartbeat-enhanced-immersive-virtual-reality-to-treat-co-2018",
+    "type": "article-journal",
+    "title": "Heartbeat-Enhanced Immersive Virtual Reality to Treat Complex Regional Pain Syndrome",
+    "URL": "https://doi.org/10.1212/WNL.0000000000005905",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          7,
+          24
+        ]
+      ]
+    },
+    "note": "Referenced by Plasmatic Multitudes - Weakly Bounded Embodiment and Semi-Corporeal Avatar Design: https://mesmerprism.com/projects/plasmatic-multitudes.html",
+    "author": [
+      {
+        "literal": "Solca et al"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2018
+        ]
+      ]
+    },
+    "DOI": "10.1212/WNL.0000000000005905"
+  },
+  {
+    "id": "wobbrock-et-al-ability-based-design-2011",
+    "type": "webpage",
+    "title": "Ability-Based Design",
+    "URL": "https://kgajos.seas.harvard.edu/papers/wobbrock11abd.pdf",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          7,
+          24
+        ]
+      ]
+    },
+    "note": "Referenced by Plasmatic Multitudes - Weakly Bounded Embodiment and Semi-Corporeal Avatar Design: https://mesmerprism.com/projects/plasmatic-multitudes.html",
+    "author": [
+      {
+        "literal": "Wobbrock et al"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2011
+        ]
+      ]
+    }
+  },
+  {
+    "id": "bennett-brady-and-branham-interdependence-as-a-frame-for-assistive-technology-rese-2018",
+    "type": "article-journal",
+    "title": "Interdependence as a Frame for Assistive Technology Research and Design",
+    "URL": "https://doi.org/10.1145/3234695.3236348",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          7,
+          24
+        ]
+      ]
+    },
+    "note": "Referenced by Plasmatic Multitudes - Weakly Bounded Embodiment and Semi-Corporeal Avatar Design: https://mesmerprism.com/projects/plasmatic-multitudes.html",
+    "author": [
+      {
+        "literal": "Bennett, Brady, and Branham"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2018
+        ]
+      ]
+    },
+    "DOI": "10.1145/3234695.3236348"
   }
 ]

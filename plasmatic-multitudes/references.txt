@@ -2,8 +2,8 @@ Annotated Sources for Plasmatic Multitudes
 
 Source: https://mesmerprism.com/plasmatic-multitudes/references.html
 Canonical HTML: https://mesmerprism.com/plasmatic-multitudes/references.html
-Generated: 2026-06-13
-Description: Annotated references across somaesthetics, perception, pseudo-haptics, morphogenesis, XR embodiment, media genealogy, and pain/body-representation research.
+Generated: 2026-07-24
+Description: Annotated references across media genealogy, somaesthetics, perception, morphogenesis, XR embodiment, shared digital-swarm control, accessibility, and pain/body-representation research.
 Markdown: https://mesmerprism.com/plasmatic-multitudes/references.md
 Plain text: https://mesmerprism.com/plasmatic-multitudes/references.txt
 BibTeX references: https://mesmerprism.com/plasmatic-multitudes/references.bib
@@ -11,20 +11,20 @@ CSL JSON references: https://mesmerprism.com/plasmatic-multitudes/references.ref
 
 ---
 
-Annotated sources | Updated June 11, 2026
+Annotated sources | Updated July 24, 2026
 
 Annotated Sources
 
  This reference library gathers the sources cited across the essays and organizes them by
  topic. The method anchor is somaesthetics, followed by the perceptual, computational,
- XR, and pain literatures that make weakly bounded bodies legible, inhabitable, and
- testable.
+ XR, shared-control, accessibility, and pain literatures that make weakly bounded bodies
+ legible, inhabitable, collectively shapeable, and testable.
 
 Coverage
 
  This library brings together the works cited across the site, from historical media and
- perception foundations to computational morphogenesis, XR embodiment, pain
- translation, and tactile visualization.
+ perception foundations to computational morphogenesis, XR embodiment, shared
+ digital-swarm control, pain translation, and tactile visualization.
 
  For a field guide to the vocabulary itself, see the
  vocabulary page (https://mesmerprism.com/plasmatic-multitudes/terminology.html).
@@ -109,6 +109,27 @@ XR relation and altered-state design
 - Bergamo Meneghini, Margherita, and John Desnoyers-Stewart. Thresholds: Stories of Our Inner Selves . SIGGRAPH Spatial Storytelling, 2025. DOI (https://doi.org/10.1145/3721244.3749112) Context source for Desnoyers-Stewart's later move toward facilitated touch, embodied narrative, and live XR performance.
 - Desnoyers-Stewart, John, and Brad Necyk. "Kingdom of Illumination VR: Shining a Light on New Techniques for Immersive Video." EVA London 2025. DOI (https://doi.org/10.14236/ewic/EVA2025.17) Context source for immersive-video workflows, ethereal figure treatment, and coherent particle atmosphere.
 - Bernal, Guillermo, and Pattie Maes. "Emotional Beasts: Visually Expressing Emotions Through Avatars in VR." CHI '17 Extended Abstracts , 2017. DOI (https://doi.org/10.1145/3027063.3053207) Useful for expressive nonhuman avatars, second skins, and particle or fur transformations that become more relatable by tracking mannerism and affect.
+
+Shared digital-swarm control and collective authorship
+
+ Source status: direct digital-swarm prototypes, controlled shared-body studies,
+ participatory many-agent systems, robot-swarm comparison, and bounded transfer from
+ collaborative authoring. The particle-body and shared-boundary precedents from Glowacki
+ and Desnoyers-Stewart remain in the preceding XR section.
+- Kolling, Andreas, Phillip Walker, Nilanjan Chakraborty, Katia Sycara, and Michael Lewis. "Human Interaction With Robot Swarms: A Survey." IEEE Transactions on Human-Machine Systems 46, no. 1 (2016): 9-26. DOI (https://doi.org/10.1109/THMS.2015.2480801) Foundational command-semantics taxonomy: behavior or algorithm selection, parameter setting, environmental influence, and influence through selected members or leaders. It does not by itself cover multi-user authority, digital morphology, or collaborative history.
+- Miyauchi, Genki, Yuri Kaszubowski Lopes, and Roderich Groß. "Sharing the Control of Robot Swarms Among Multiple Human Operators: A User Study." IROS (2023). DOI (https://doi.org/10.1109/IROS55552.2023.10342457) Direct paired-operator evidence. Robot sharing did not simply improve task score; communication, strategy, energy use, and perceived usefulness changed differently.
+- Lee, Myungin. "Entangled: A Multi-Modal, Multi-User Interactive Instrument in Virtual 3D Space Using the Smartphone for Gesture Control." NIME (2021). DOI (https://doi.org/10.21428/92fbeb44.eae7c23f) One of the clearest direct precedents: up to eight people simultaneously influenced thousands of particles through gravitational fields. The paper documents a prototype, not a controlled comparison of agency or arbitration.
+- Fribourg, Rebecca, et al. "Virtual Co-Embodiment: Evaluation of the Sense of Agency While Sharing the Control of a Virtual Body Among Two Individuals." IEEE Transactions on Visualization and Computer Graphics 27, no. 10 (2021): 4023-4038. DOI (https://doi.org/10.1109/TVCG.2020.2999197) Controlled weighted-fusion study with 12 participant pairs. It is strong bridge evidence that objective control and experienced agency may diverge, but it concerns one humanoid body rather than many-part digital matter.
+- Venkatraj, Karthikeya Puttur, et al. "ShareYourReality: Investigating Haptic Feedback and Agency in Virtual Avatar Co-Embodiment." CHI (2024). DOI (https://doi.org/10.1145/3613904.3642425) Twenty pairs shared control under different weights, task types, and haptic conditions. Useful for the task-dependence of agency, ownership, co-presence, and synchrony.
+- Coucke, Nicolas, et al. "HuGoS: A Virtual Environment for Studying Collective Human Behavior from a Swarm Intelligence Perspective." Swarm Intelligence 15 (2021). DOI (https://doi.org/10.1007/s11721-021-00199-1) Open browser-based environment for groups of humans and autonomous agents using movement, signalling, communication, and stigmergy. Participants are agents in a collective rather than co-controllers of one body.
+- van den Bogaard, Senna, Timo Maessen, Evelijn van Hilten, Yinshi Jin, Hannah van Iterson, Steven Houben, and Rong-Hao Liang. "CrowdCollab: A Multi-User, Multi-Perspective Collaborative Tool for Crowd Planning." TEI (2025). DOI (https://doi.org/10.1145/3689050.3706007) Sixteen-user study of tangible and handheld, multi-perspective crowd planning. Valuable for role, view, and negotiation design; not evidence for continuous shared-body control.
+- Lemonari, Marilena, et al. "Authoring Virtual Crowds: A Survey." Computer Graphics Forum 41, no. 2 (2022): 677-701. DOI (https://doi.org/10.1111/cgf.14506) Broad authoring survey that clarifies controllable layers from global behavior and paths to local motion and animation. Crowd authoring is transferable to digital swarms, but the survey is not a multi-user authority study.
+- Monteiro, Kyzyl, Evan Atherton, George Fitzmaurice, and Qian Zhou. "Elemental Alchemist: A Generative Interface for Semantic Control of Particle Systems Across Dynamic Levels of Abstraction." DIS (2026). DOI (https://doi.org/10.1145/3800645.3812946) Single-user evidence for moving among conceptual, semantic, and technical controls over particle effects. Its main transfer value is the separation of creative intent from low-level parameters.
+- David, Ana, Daniele Giunchi, Stuart James, Anthony Steed, and Augusto Esteves. "Exploring the Effects of Asynchronous Collaborative Art in VR with PaintBranch." SN Computer Science 7 (2026). DOI (https://doi.org/10.1007/s42979-026-04980-z) Asynchronous collaborative VR-art study using snapshot branches. It supports branch-on-conflict and preservation thinking, but its artifact is not a continuously transforming swarm.
+- Armitage, Jack, Victor Shepardson, and Thor Magnusson. "Tölvera: Composing With Basal Agencies." NIME (2024). Proceedings PDF (https://nime.org/proceedings/2024/nime2024_71.pdf) Open creative-coding substrate for artificial life, flocking, swarming, OSC, and interactive mapping. Promising as an execution layer, but it has no native multi-user authority or provenance model.
+- Gutwin, Carl, and Saul Greenberg. "A Descriptive Framework of Workspace Awareness for Real-Time Groupware." Computer Supported Cooperative Work 11 (2002): 411-446. DOI (https://doi.org/10.1023/A:1021271517844) A durable framework for showing who is acting, what they are doing, where they are acting, and relevant past and future activity in a shared workspace.
+- Cherry, Erin, and Celine Latulipe. "Quantifying the Creativity Support of Digital Tools Through the Creativity Support Index." ACM Transactions on Computer-Human Interaction 21, no. 4 (2014). DOI (https://doi.org/10.1145/2617588) Validated creativity-support measure spanning exploration, expressiveness, immersion, enjoyment, results worth effort, and collaboration. It should be supplemented with causal authorship and authority measures.
+- Rezwana, Jeba, and Mary Lou Maher. "Designing Creative AI Partners With COFI: A Framework for Modeling Interaction in Human-AI Co-Creative Systems." ACM Transactions on Computer-Human Interaction (2023). DOI (https://doi.org/10.1145/3519026) Useful for describing contribution types, turn-taking, and communication in co-creative interaction. It is a framework for analysis, not a validated digital-swarm controller.
 
 Pain and body representation
 

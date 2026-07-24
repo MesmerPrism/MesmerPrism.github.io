@@ -12,6 +12,10 @@ Use the Markdown alternates for compact reading. Use the BibTeX or CSL JSON alte
 
 ## Site pages
 - [Shared Bodies for Mixed-Ability Collaboration](https://mesmerprism.com/duisburg/index.md): A Duisburg-facing research pitch for Mixed-Ability Human-Swarm Interaction: shared swarm bodies, inspectable input mappings, and a route from connectedness to robotics translation.
+- [Viscereality Companion Privacy Policy](https://mesmerprism.com/privacy/viscereality-companion/index.md): Privacy policy for the Viscereality Companion Android application published by Mesmer Prism.
+- [Stimulus Portal · Quest Profile Editor](https://mesmerprism.com/strobesim/index.md)
+- [Trevor workflow · StrobeSim](https://mesmerprism.com/strobesim/onboarding/index.md): Trevor's browser-to-Quest setup and profile workflow for StrobeSim.
+- [Looping, Visuals, and Wave Field Synthesis — Technical Coordination Brief](https://mesmerprism.com/time/index.md): Technical options, constraints, open questions, and a test plan for connecting a BOSS RC-505mkII, Ableton Live, TouchDesigner, NDI, and immersive projection.
 - [Video carousel demo](https://mesmerprism.com/tmp/video-carousel-demo.md)
 
 ## Core
@@ -24,11 +28,12 @@ Use the Markdown alternates for compact reading. Use the BibTeX or CSL JSON alte
 ## Plasmatic Multitudes
 - [Somaesthetics Appendix | Plasmatic Multitudes](https://mesmerprism.com/plasmatic-multitudes/background/somaesthetics.md): A short public note on somaesthetics as the method anchor for Plasmatic Multitudes.
 - [Long Essay: Semi-Corporeal Avatar Aesthetics | Plasmatic Multitudes](https://mesmerprism.com/plasmatic-multitudes/essay.md): A long-form essay on weakly bounded bodies, XR embodiment, media genealogy, computational morphogenesis, and cautious pain translation.
-- [Plasmatic Multitudes Field Guide](https://mesmerprism.com/plasmatic-multitudes/index.md): Long essay, method notes, vocabulary, pain-translation hypotheses, mixed-ability human-swarm interaction, and annotated references for weakly bounded bodies and semi-corporeal avatar aesthetics.
-- [Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes](https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.md): A Plasmatic Multitudes research track on shared visual swarm bodies, mixed-ability collaboration, access-practice mapping, connectedness-first exploration, encounter, cooperative play, and later physical translation.
+- [Plasmatic Multitudes Field Guide](https://mesmerprism.com/plasmatic-multitudes/index.md): Long essay, method notes, shared digital-swarm control, mixed-ability human-swarm interaction, vocabulary, pain-translation hypotheses, and annotated sources for weakly bounded bodies.
+- [Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes](https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.md): A source-linked proposal for mixed-ability human-swarm interaction built around a multimodal semantic swarm state, inspectable mappings, participant-authored access, and repair.
 - [Plasmatic Avatars and Chronic Pain VR | Plasmatic Multitudes](https://mesmerprism.com/plasmatic-multitudes/pain.md): A cautious research note on boundary precision, avatar materiality, protective fields, ownership, agency, and pain-related body-representation hypotheses. Not a treatment claim.
 - [Method: Boundary Precision | Plasmatic Multitudes](https://mesmerprism.com/plasmatic-multitudes/project.md): A compact method note on boundary precision, somaesthetics, coherence, morphogenesis, and weakly bounded body design.
-- [Annotated Sources for Plasmatic Multitudes](https://mesmerprism.com/plasmatic-multitudes/references.md): Annotated references across somaesthetics, perception, pseudo-haptics, morphogenesis, XR embodiment, media genealogy, and pain/body-representation research.
+- [Annotated Sources for Plasmatic Multitudes](https://mesmerprism.com/plasmatic-multitudes/references.md): Annotated references across media genealogy, somaesthetics, perception, morphogenesis, XR embodiment, shared digital-swarm control, accessibility, and pain/body-representation research.
+- [Joint Control of Digital Swarms | Plasmatic Multitudes](https://mesmerprism.com/plasmatic-multitudes/shared-swarm-control.md): How several people can jointly shape one digitally native swarm through fields, rules, morphology, arbitration, provenance, and shared-body interaction.
 - [Vocabulary for Weakly Bounded Bodies | Plasmatic Multitudes](https://mesmerprism.com/plasmatic-multitudes/terminology.md): Terms for semi-corporeal avatars, plasmatic bodies, particle bodies, swarm bodies, aura avatars, boundary precision, pseudo-haptics, and related design concepts.
 
 ## Project pages
@@ -42,7 +47,7 @@ Use the Markdown alternates for compact reading. Use the BibTeX or CSL JSON alte
 - [Hollow Face Lab](https://mesmerprism.com/projects/hollow-face-lab.md): Hollow Face Lab maps WebGL, WebXR, texture controls, and Rusty XR implementation choices against hollow-face and depth-inversion research.
 - [Optical Movement Illusions](https://mesmerprism.com/projects/optical-movement-illusions.md): Optical Movement Illusions maps peripheral drift, Rotating Snakes, static motion illusions, color and luminance parameters, and the mechanism-design bridge into perceptual tooling.
 - [Phenomenological Control](https://mesmerprism.com/projects/phenomenological-control.md): A public guide to phenomenological control, imagery variation, expectation-shaped experience, source monitoring, absorption, porosity, hypnosis, induced vision, and meaning-making.
-- [Plasmatic Multitudes - Weakly Bounded Embodiment and Semi-Corporeal Avatar Design](https://mesmerprism.com/projects/plasmatic-multitudes.md): A public overview of weakly bounded bodies: avatars, swarms, auras, particle forms, and luminous bodies that soften while remaining coherent enough for embodiment, relation, and cautious research translation.
+- [Plasmatic Multitudes - Weakly Bounded Embodiment and Semi-Corporeal Avatar Design](https://mesmerprism.com/projects/plasmatic-multitudes.md): A public overview of weakly bounded bodies: avatars, swarms, auras, particle forms, and luminous bodies that remain coherent enough for embodiment, joint authorship, relation, and cautious research translation.
 - [Polar H10 Work](https://mesmerprism.com/projects/polar-h10.md): Public overview of Mesmer Prism's Polar H10 work across minimal signal packages, Rusty XR, Quest broker streams, Windows capture, Android diagnostics, Unity Quest integration, and Viscereality research tooling.
 - [Prophantasia](https://mesmerprism.com/projects/prophantasia.md): Prophantasia covers projected imagery, aphantasia, source judgment, practice ecology, and neighboring phenomena such as imposition, flicker, DeepDream, visual snow, and HPPD.
 - [Rusty Morphospace](https://mesmerprism.com/projects/rusty-morphospace.md): Rusty Morphospace is an AGPL-first Rust platform for computational-form systems, with a 0.1.0 platform baseline and a public 0.4.0 contributor work environment.

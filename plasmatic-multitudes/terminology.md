@@ -2,7 +2,7 @@
 
 Source: https://mesmerprism.com/plasmatic-multitudes/terminology.html
 Canonical HTML: https://mesmerprism.com/plasmatic-multitudes/terminology.html
-Generated: 2026-06-13
+Generated: 2026-07-24
 Description: Terms for semi-corporeal avatars, plasmatic bodies, particle bodies, swarm bodies, aura avatars, boundary precision, pseudo-haptics, and related design concepts.
 Markdown: https://mesmerprism.com/plasmatic-multitudes/terminology.md
 Plain text: https://mesmerprism.com/plasmatic-multitudes/terminology.txt
@@ -11,7 +11,7 @@ CSL JSON references: https://mesmerprism.com/plasmatic-multitudes/terminology.re
 
 ---
 
-Field guide | Updated May 24, 2026
+Field guide | Updated July 24, 2026
 
 # Vocabulary / Field Terms
 
@@ -34,7 +34,8 @@ Field guide | Updated May 24, 2026
  action, and felt bodily meaning. Media theory then names staged transitions and image
  genealogies; XR work names rendering modes and interaction grammars; perception research
  explains how coherence survives soft boundaries; computational morphogenesis names
- many-agent body formation; and pain translation asks what boundary change does when
+ many-agent body formation; collective-control research describes how several people
+ share authority and authorship; and pain translation asks what boundary change does when
  body representation already matters clinically
  ([Shusterman](https://www.interaction-design.org/literature/book/the-encyclopedia-of-human-computer-interaction-2nd-ed/somaesthetics); [Hook et al.](https://doi.org/10.1145/2598510.2598561); [Eisenstein](https://seagullbooks.org/products/on-disney); [dos Anjos and Pereira](https://arxiv.org/abs/2405.02672); [Wagemans et al.](https://doi.org/10.1037/a0029333); [Pahng et al.](https://arxiv.org/abs/2512.17129); [Bullington](https://doi.org/10.1007/978-94-007-6498-9)) .
 
@@ -344,6 +345,73 @@ Field guide | Updated May 24, 2026
  Best when comparing particle, swarm, or point-cloud bodies that need more than
  visual fuzziness to remain legible
  ([Pahng et al.](https://arxiv.org/abs/2512.17129); [hormoz-lab](https://github.com/hormoz-lab/diffeomorph)) .
+
+## Collective control and authorship terms
+
+ These terms describe the relation among participants, a transformable many-part body,
+ and the autonomous process that makes it move. The dedicated
+ [shared-swarms study](https://mesmerprism.com/plasmatic-multitudes/shared-swarm-control.html) gives the fuller comparison.
+
+ Digitally native swarm
+
+ A population of computational elements whose meaningful operations need not imitate
+ physical robots. Birth, death, merge, split, replacement, interpenetration,
+ branching, and conversion among agents, bodies, and fields may be intrinsic to the
+ medium.
+
+ Best when physical embodiment is one possible translation rather than the standard
+ against which the digital system is judged
+ ([Reeves](https://doi.org/10.1145/357318.357320); [Reynolds](https://doi.org/10.1145/37402.37406)) .
+
+ Binding
+
+ The rule that connects a participant to agents, regions, scales, roles, modalities,
+ behaviors, or governance functions. Binding answers who may affect what before
+ simultaneous intentions are combined.
+
+ Control target
+
+ The aspect of the collective that an intention addresses: an element, subgroup,
+ spatial field, behavior, parameter, state, morphology, representation, autonomy
+ level, or historical branch.
+
+ Best when input modality must remain separate from command meaning
+ ([Kolling et al.](https://doi.org/10.1109/THMS.2015.2480801)) .
+
+ Arbitration
+
+ The policy that decides what happens when valid intentions overlap: exclusive
+ ownership, a timed lease, weighted fusion, field superposition, voting, constraint
+ intersection, branching, or visible unresolved conflict.
+
+ Best when “shared control” would otherwise hide how authority is actually resolved
+ ([Miyauchi et al.](https://doi.org/10.1109/IROS55552.2023.10342457); [Fribourg et al.](https://doi.org/10.1109/TVCG.2020.2999197)) .
+
+ Semantic intention
+
+ A modality-independent action that records what a participant wants to change,
+ together with target, scope, strength, timing, duration, and attribution. It is
+ distinct from the raw gesture or device event that produced it.
+
+ Contribution provenance
+
+ The trace linking an issued intention to its authority decision, accepted command,
+ and observed effect. Provenance makes blocked, attenuated, transformed, autonomous,
+ and jointly produced outcomes distinguishable without treating input count as
+ authorship.
+
+ Representation transition
+
+ A change in the collective’s operative form, such as moving from identified agents
+ to clusters, one implicit body, a graph, or an ambient field. The term concerns how
+ agency, scope, and identity survive the conversion, not only how it looks.
+
+ Retained conflict
+
+ An arbitration choice that renders incompatible intentions as oscillation,
+ interference, seams, local instability, or parallel branches instead of forcing a
+ single compromise. It is an expressive hypothesis, not a default remedy for unfair
+ control.
 
 ## Translation and care terms
 

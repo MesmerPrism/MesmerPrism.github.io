@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-15",
+  "generated": "2026-07-24",
   "site": "https://mesmerprism.com",
   "pages": [
     {
@@ -64,7 +64,7 @@
     },
     {
       "title": "Plasmatic Multitudes Field Guide",
-      "description": "Long essay, method notes, vocabulary, pain-translation hypotheses, mixed-ability human-swarm interaction, and annotated references for weakly bounded bodies and semi-corporeal avatar aesthetics.",
+      "description": "Long essay, method notes, shared digital-swarm control, mixed-ability human-swarm interaction, vocabulary, pain-translation hypotheses, and annotated sources for weakly bounded bodies.",
       "path": "plasmatic-multitudes/index.html",
       "url": "https://mesmerprism.com/plasmatic-multitudes/",
       "group": "Plasmatic Multitudes",
@@ -76,7 +76,7 @@
     },
     {
       "title": "Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes",
-      "description": "A Plasmatic Multitudes research track on shared visual swarm bodies, mixed-ability collaboration, access-practice mapping, connectedness-first exploration, encounter, cooperative play, and later physical translation.",
+      "description": "A source-linked proposal for mixed-ability human-swarm interaction built around a multimodal semantic swarm state, inspectable mappings, participant-authored access, and repair.",
       "path": "plasmatic-multitudes/mixed-ability-hsi.html",
       "url": "https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html",
       "group": "Plasmatic Multitudes",
@@ -84,7 +84,7 @@
       "text": "https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.txt",
       "bibtex": "https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.bib",
       "cslJson": "https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.references.csl.json",
-      "references": 74
+      "references": 25
     },
     {
       "title": "Plasmatic Avatars and Chronic Pain VR | Plasmatic Multitudes",
@@ -112,7 +112,7 @@
     },
     {
       "title": "Annotated Sources for Plasmatic Multitudes",
-      "description": "Annotated references across somaesthetics, perception, pseudo-haptics, morphogenesis, XR embodiment, media genealogy, and pain/body-representation research.",
+      "description": "Annotated references across media genealogy, somaesthetics, perception, morphogenesis, XR embodiment, shared digital-swarm control, accessibility, and pain/body-representation research.",
       "path": "plasmatic-multitudes/references.html",
       "url": "https://mesmerprism.com/plasmatic-multitudes/references.html",
       "group": "Plasmatic Multitudes",
@@ -120,7 +120,19 @@
       "text": "https://mesmerprism.com/plasmatic-multitudes/references.txt",
       "bibtex": "https://mesmerprism.com/plasmatic-multitudes/references.bib",
       "cslJson": "https://mesmerprism.com/plasmatic-multitudes/references.references.csl.json",
-      "references": 79
+      "references": 93
+    },
+    {
+      "title": "Joint Control of Digital Swarms | Plasmatic Multitudes",
+      "description": "How several people can jointly shape one digitally native swarm through fields, rules, morphology, arbitration, provenance, and shared-body interaction.",
+      "path": "plasmatic-multitudes/shared-swarm-control.html",
+      "url": "https://mesmerprism.com/plasmatic-multitudes/shared-swarm-control.html",
+      "group": "Plasmatic Multitudes",
+      "markdown": "https://mesmerprism.com/plasmatic-multitudes/shared-swarm-control.md",
+      "text": "https://mesmerprism.com/plasmatic-multitudes/shared-swarm-control.txt",
+      "bibtex": "https://mesmerprism.com/plasmatic-multitudes/shared-swarm-control.bib",
+      "cslJson": "https://mesmerprism.com/plasmatic-multitudes/shared-swarm-control.references.csl.json",
+      "references": 25
     },
     {
       "title": "Vocabulary for Weakly Bounded Bodies | Plasmatic Multitudes",
@@ -132,7 +144,19 @@
       "text": "https://mesmerprism.com/plasmatic-multitudes/terminology.txt",
       "bibtex": "https://mesmerprism.com/plasmatic-multitudes/terminology.bib",
       "cslJson": "https://mesmerprism.com/plasmatic-multitudes/terminology.references.csl.json",
-      "references": 46
+      "references": 49
+    },
+    {
+      "title": "Viscereality Companion Privacy Policy",
+      "description": "Privacy policy for the Viscereality Companion Android application published by Mesmer Prism.",
+      "path": "privacy/viscereality-companion/index.html",
+      "url": "https://mesmerprism.com/privacy/viscereality-companion/",
+      "group": "Site pages",
+      "markdown": "https://mesmerprism.com/privacy/viscereality-companion/index.md",
+      "text": "https://mesmerprism.com/privacy/viscereality-companion/index.txt",
+      "bibtex": "https://mesmerprism.com/privacy/viscereality-companion/index.bib",
+      "cslJson": "https://mesmerprism.com/privacy/viscereality-companion/index.references.csl.json",
+      "references": 1
     },
     {
       "title": "Altered Xperience Project",
@@ -204,7 +228,7 @@
       "text": "https://mesmerprism.com/projects/deep-dream.txt",
       "bibtex": "https://mesmerprism.com/projects/deep-dream.bib",
       "cslJson": "https://mesmerprism.com/projects/deep-dream.references.csl.json",
-      "references": 44
+      "references": 64
     },
     {
       "title": "Fractal Optics",
@@ -268,7 +292,7 @@
     },
     {
       "title": "Plasmatic Multitudes - Weakly Bounded Embodiment and Semi-Corporeal Avatar Design",
-      "description": "A public overview of weakly bounded bodies: avatars, swarms, auras, particle forms, and luminous bodies that soften while remaining coherent enough for embodiment, relation, and cautious research translation.",
+      "description": "A public overview of weakly bounded bodies: avatars, swarms, auras, particle forms, and luminous bodies that remain coherent enough for embodiment, joint authorship, relation, and cautious research translation.",
       "path": "projects/plasmatic-multitudes.html",
       "url": "https://mesmerprism.com/projects/plasmatic-multitudes.html",
       "group": "Project pages",
@@ -276,7 +300,7 @@
       "text": "https://mesmerprism.com/projects/plasmatic-multitudes.txt",
       "bibtex": "https://mesmerprism.com/projects/plasmatic-multitudes.bib",
       "cslJson": "https://mesmerprism.com/projects/plasmatic-multitudes.references.csl.json",
-      "references": 39
+      "references": 42
     },
     {
       "title": "Polar H10 Work",
@@ -411,6 +435,30 @@
       "references": 4
     },
     {
+      "title": "Stimulus Portal · Quest Profile Editor",
+      "description": "",
+      "path": "strobesim/index.html",
+      "url": "https://mesmerprism.com/strobesim/",
+      "group": "Site pages",
+      "markdown": "https://mesmerprism.com/strobesim/index.md",
+      "text": "https://mesmerprism.com/strobesim/index.txt",
+      "bibtex": null,
+      "cslJson": null,
+      "references": 0
+    },
+    {
+      "title": "Trevor workflow · StrobeSim",
+      "description": "Trevor's browser-to-Quest setup and profile workflow for StrobeSim.",
+      "path": "strobesim/onboarding/index.html",
+      "url": "https://mesmerprism.com/strobesim/onboarding/",
+      "group": "Site pages",
+      "markdown": "https://mesmerprism.com/strobesim/onboarding/index.md",
+      "text": "https://mesmerprism.com/strobesim/onboarding/index.txt",
+      "bibtex": "https://mesmerprism.com/strobesim/onboarding/index.bib",
+      "cslJson": "https://mesmerprism.com/strobesim/onboarding/index.references.csl.json",
+      "references": 5
+    },
+    {
       "title": "Flashing Light Safety | Strobotorch",
       "description": "Safety warnings, frequency background, and source references for Strobotorch flashlight signaling.",
       "path": "Strobotorch/flashing-light-safety/index.html",
@@ -457,6 +505,18 @@
       "bibtex": "https://mesmerprism.com/Strobotorch/sources/index.bib",
       "cslJson": "https://mesmerprism.com/Strobotorch/sources/index.references.csl.json",
       "references": 42
+    },
+    {
+      "title": "Looping, Visuals, and Wave Field Synthesis — Technical Coordination Brief",
+      "description": "Technical options, constraints, open questions, and a test plan for connecting a BOSS RC-505mkII, Ableton Live, TouchDesigner, NDI, and immersive projection.",
+      "path": "time/index.html",
+      "url": "https://mesmerprism.com/time/",
+      "group": "Site pages",
+      "markdown": "https://mesmerprism.com/time/index.md",
+      "text": "https://mesmerprism.com/time/index.txt",
+      "bibtex": "https://mesmerprism.com/time/index.bib",
+      "cslJson": "https://mesmerprism.com/time/index.references.csl.json",
+      "references": 15
     },
     {
       "title": "Video carousel demo",

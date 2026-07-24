@@ -9,7 +9,7 @@
         [
           2026,
           7,
-          23
+          24
         ]
       ]
     },
@@ -38,7 +38,7 @@
         [
           2026,
           7,
-          23
+          24
         ]
       ]
     },
@@ -67,7 +67,7 @@
         [
           2026,
           7,
-          23
+          24
         ]
       ]
     },
@@ -96,7 +96,7 @@
         [
           2026,
           7,
-          23
+          24
         ]
       ]
     },
@@ -125,7 +125,7 @@
         [
           2026,
           7,
-          23
+          24
         ]
       ]
     },
@@ -154,7 +154,7 @@
         [
           2026,
           7,
-          23
+          24
         ]
       ]
     },
@@ -183,7 +183,7 @@
         [
           2026,
           7,
-          23
+          24
         ]
       ]
     },
@@ -212,7 +212,7 @@
         [
           2026,
           7,
-          23
+          24
         ]
       ]
     },
@@ -241,7 +241,7 @@
         [
           2026,
           7,
-          23
+          24
         ]
       ]
     },
@@ -270,7 +270,7 @@
         [
           2026,
           7,
-          23
+          24
         ]
       ]
     },
@@ -299,7 +299,7 @@
         [
           2026,
           7,
-          23
+          24
         ]
       ]
     },
@@ -328,7 +328,7 @@
         [
           2026,
           7,
-          23
+          24
         ]
       ]
     },
@@ -357,7 +357,7 @@
         [
           2026,
           7,
-          23
+          24
         ]
       ]
     },
@@ -386,7 +386,7 @@
         [
           2026,
           7,
-          23
+          24
         ]
       ]
     },
@@ -415,7 +415,7 @@
         [
           2026,
           7,
-          23
+          24
         ]
       ]
     },
@@ -444,7 +444,7 @@
         [
           2026,
           7,
-          23
+          24
         ]
       ]
     },
@@ -473,7 +473,7 @@
         [
           2026,
           7,
-          23
+          24
         ]
       ]
     },
@@ -502,7 +502,7 @@
         [
           2026,
           7,
-          23
+          24
         ]
       ]
     },
@@ -522,6 +522,151 @@
     "DOI": "10.1145/3491102.3517580"
   },
   {
+    "id": "kolling-andreas-phillip-walker-nilanjan-chakraborty-kati-human-interaction-with-robot-swarms-a-survey-2016",
+    "type": "article-journal",
+    "title": "Human Interaction With Robot Swarms: A Survey",
+    "URL": "https://doi.org/10.1109/THMS.2015.2480801",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          7,
+          24
+        ]
+      ]
+    },
+    "note": "Referenced by Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html",
+    "author": [
+      {
+        "literal": "Kolling, Andreas, Phillip Walker, Nilanjan Chakraborty, Katia Sycara, and Michael Lewis"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2016
+        ]
+      ]
+    },
+    "DOI": "10.1109/THMS.2015.2480801"
+  },
+  {
+    "id": "lee-myungin-entangled-a-multi-modal-multi-user-interactive-instrumen-2021",
+    "type": "article-journal",
+    "title": "Entangled: A Multi-Modal, Multi-User Interactive Instrument in Virtual 3D Space Using the Smartphone for Gesture Control",
+    "URL": "https://doi.org/10.21428/92fbeb44.eae7c23f",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          7,
+          24
+        ]
+      ]
+    },
+    "note": "Referenced by Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html",
+    "author": [
+      {
+        "literal": "Lee, Myungin"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2021
+        ]
+      ]
+    },
+    "DOI": "10.21428/92fbeb44.eae7c23f"
+  },
+  {
+    "id": "fribourg-rebecca-et-al-virtual-co-embodiment-evaluation-of-the-sense-of-agency--2021",
+    "type": "article-journal",
+    "title": "Virtual Co-Embodiment: Evaluation of the Sense of Agency While Sharing the Control of a Virtual Body Among Two Individuals",
+    "URL": "https://doi.org/10.1109/TVCG.2020.2999197",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          7,
+          24
+        ]
+      ]
+    },
+    "note": "Referenced by Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html",
+    "author": [
+      {
+        "literal": "Fribourg, Rebecca, et al"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2021
+        ]
+      ]
+    },
+    "DOI": "10.1109/TVCG.2020.2999197"
+  },
+  {
+    "id": "venkatraj-karthikeya-puttur-et-al-shareyourreality-investigating-haptic-feedback-and-agenc-2024",
+    "type": "article-journal",
+    "title": "ShareYourReality: Investigating Haptic Feedback and Agency in Virtual Avatar Co-Embodiment",
+    "URL": "https://doi.org/10.1145/3613904.3642425",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          7,
+          24
+        ]
+      ]
+    },
+    "note": "Referenced by Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html",
+    "author": [
+      {
+        "literal": "Venkatraj, Karthikeya Puttur, et al"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2024
+        ]
+      ]
+    },
+    "DOI": "10.1145/3613904.3642425"
+  },
+  {
+    "id": "miyauchi-genki-yuri-kaszubowski-lopes-and-roderich-gro-sharing-the-control-of-robot-swarms-among-multiple-human-2023",
+    "type": "article-journal",
+    "title": "Sharing the Control of Robot Swarms Among Multiple Human Operators: A User Study",
+    "URL": "https://doi.org/10.1109/IROS55552.2023.10342457",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          7,
+          24
+        ]
+      ]
+    },
+    "note": "Referenced by Mixed-Ability Human-Swarm Interaction | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html",
+    "author": [
+      {
+        "literal": "Miyauchi, Genki, Yuri Kaszubowski Lopes, and Roderich Groß"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2023
+        ]
+      ]
+    },
+    "DOI": "10.1109/IROS55552.2023.10342457"
+  },
+  {
     "id": "slavkov-ivica-et-al-morphogenesis-in-robot-swarms-2018",
     "type": "article-journal",
     "title": "Morphogenesis in Robot Swarms",
@@ -531,7 +676,7 @@
         [
           2026,
           7,
-          23
+          24
         ]
       ]
     },
@@ -560,7 +705,7 @@
         [
           2026,
           7,
-          23
+          24
         ]
       ]
     },

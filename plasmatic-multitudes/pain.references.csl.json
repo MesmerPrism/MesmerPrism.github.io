@@ -1,6 +1,6 @@
 [
   {
-    "id": "doi-org-ho-et-al",
+    "id": "doi-org-ho-et-al-2020",
     "type": "article-journal",
     "title": "Ho et al.",
     "URL": "https://doi.org/10.1016/j.jpain.2021.10.009",
@@ -8,16 +8,23 @@
       "date-parts": [
         [
           2026,
-          6,
-          13
+          7,
+          24
         ]
       ]
     },
     "note": "Referenced by Plasmatic Avatars and Chronic Pain VR | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/pain.html",
+    "issued": {
+      "date-parts": [
+        [
+          2020
+        ]
+      ]
+    },
     "DOI": "10.1016/j.jpain.2021.10.009"
   },
   {
-    "id": "doi-org-lewis-et-al",
+    "id": "doi-org-lewis-et-al-2020",
     "type": "article-journal",
     "title": "Lewis et al.",
     "URL": "https://doi.org/10.1002/ejp.1766",
@@ -25,16 +32,23 @@
       "date-parts": [
         [
           2026,
-          6,
-          13
+          7,
+          24
         ]
       ]
     },
     "note": "Referenced by Plasmatic Avatars and Chronic Pain VR | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/pain.html",
+    "issued": {
+      "date-parts": [
+        [
+          2020
+        ]
+      ]
+    },
     "DOI": "10.1002/ejp.1766"
   },
   {
-    "id": "doi-org-martini-et-al",
+    "id": "doi-org-martini-et-al-2020",
     "type": "article-journal",
     "title": "Martini et al.",
     "URL": "https://doi.org/10.3389/fnhum.2013.00438",
@@ -42,16 +56,23 @@
       "date-parts": [
         [
           2026,
-          6,
-          13
+          7,
+          24
         ]
       ]
     },
     "note": "Referenced by Plasmatic Avatars and Chronic Pain VR | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/pain.html",
+    "issued": {
+      "date-parts": [
+        [
+          2020
+        ]
+      ]
+    },
     "DOI": "10.3389/fnhum.2013.00438"
   },
   {
-    "id": "doi-org-solca-et-al",
+    "id": "doi-org-solca-et-al-2020",
     "type": "article-journal",
     "title": "Solca et al.",
     "URL": "https://doi.org/10.1212/WNL.0000000000005905",
@@ -59,16 +80,23 @@
       "date-parts": [
         [
           2026,
-          6,
-          13
+          7,
+          24
         ]
       ]
     },
     "note": "Referenced by Plasmatic Avatars and Chronic Pain VR | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/pain.html",
+    "issued": {
+      "date-parts": [
+        [
+          2020
+        ]
+      ]
+    },
     "DOI": "10.1212/WNL.0000000000005905"
   },
   {
-    "id": "www-interaction-design-org-shusterman",
+    "id": "www-interaction-design-org-shusterman-2020",
     "type": "webpage",
     "title": "Shusterman",
     "URL": "https://www.interaction-design.org/literature/book/the-encyclopedia-of-human-computer-interaction-2nd-ed/somaesthetics",
@@ -76,15 +104,22 @@
       "date-parts": [
         [
           2026,
-          6,
-          13
+          7,
+          24
         ]
       ]
     },
-    "note": "Referenced by Plasmatic Avatars and Chronic Pain VR | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/pain.html"
+    "note": "Referenced by Plasmatic Avatars and Chronic Pain VR | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/pain.html",
+    "issued": {
+      "date-parts": [
+        [
+          2020
+        ]
+      ]
+    }
   },
   {
-    "id": "doi-org-hook-et-al",
+    "id": "doi-org-hook-et-al-2020",
     "type": "article-journal",
     "title": "Hook et al.",
     "URL": "https://doi.org/10.1145/2598510.2598561",
@@ -92,16 +127,23 @@
       "date-parts": [
         [
           2026,
-          6,
-          13
+          7,
+          24
         ]
       ]
     },
     "note": "Referenced by Plasmatic Avatars and Chronic Pain VR | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/pain.html",
+    "issued": {
+      "date-parts": [
+        [
+          2020
+        ]
+      ]
+    },
     "DOI": "10.1145/2598510.2598561"
   },
   {
-    "id": "seagullbooks-org-eisenstein",
+    "id": "seagullbooks-org-eisenstein-2020",
     "type": "webpage",
     "title": "Eisenstein",
     "URL": "https://seagullbooks.org/products/on-disney",
@@ -109,15 +151,22 @@
       "date-parts": [
         [
           2026,
-          6,
-          13
+          7,
+          24
         ]
       ]
     },
-    "note": "Referenced by Plasmatic Avatars and Chronic Pain VR | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/pain.html"
+    "note": "Referenced by Plasmatic Avatars and Chronic Pain VR | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/pain.html",
+    "issued": {
+      "date-parts": [
+        [
+          2020
+        ]
+      ]
+    }
   },
   {
-    "id": "doi-org-reeves",
+    "id": "doi-org-reeves-2020",
     "type": "article-journal",
     "title": "Reeves",
     "URL": "https://doi.org/10.1145/357318.357320",
@@ -125,16 +174,23 @@
       "date-parts": [
         [
           2026,
-          6,
-          13
+          7,
+          24
         ]
       ]
     },
     "note": "Referenced by Plasmatic Avatars and Chronic Pain VR | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/pain.html",
+    "issued": {
+      "date-parts": [
+        [
+          2020
+        ]
+      ]
+    },
     "DOI": "10.1145/357318.357320"
   },
   {
-    "id": "doi-org-reynolds",
+    "id": "doi-org-reynolds-2020",
     "type": "article-journal",
     "title": "Reynolds",
     "URL": "https://doi.org/10.1145/37402.37406",
@@ -142,16 +198,23 @@
       "date-parts": [
         [
           2026,
-          6,
-          13
+          7,
+          24
         ]
       ]
     },
     "note": "Referenced by Plasmatic Avatars and Chronic Pain VR | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/pain.html",
+    "issued": {
+      "date-parts": [
+        [
+          2020
+        ]
+      ]
+    },
     "DOI": "10.1145/37402.37406"
   },
   {
-    "id": "www-spiedigitallibrary-org-richards-et-al",
+    "id": "www-spiedigitallibrary-org-richards-et-al-2020",
     "type": "article-journal",
     "title": "Richards et al.",
     "URL": "https://www.spiedigitallibrary.org/conference-proceedings-of-spie/2177/0000/Virtual-reality-and-virtual-bodies/10.1117/12.173894.full",
@@ -159,16 +222,23 @@
       "date-parts": [
         [
           2026,
-          6,
-          13
+          7,
+          24
         ]
       ]
     },
     "note": "Referenced by Plasmatic Avatars and Chronic Pain VR | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/pain.html",
+    "issued": {
+      "date-parts": [
+        [
+          2020
+        ]
+      ]
+    },
     "DOI": "10.1117/12.173894.full"
   },
   {
-    "id": "arxiv-org-dos-anjos-and-pereira",
+    "id": "arxiv-org-dos-anjos-and-pereira-2020",
     "type": "webpage",
     "title": "dos Anjos and Pereira",
     "URL": "https://arxiv.org/abs/2405.02672",
@@ -176,15 +246,22 @@
       "date-parts": [
         [
           2026,
-          6,
-          13
+          7,
+          24
         ]
       ]
     },
-    "note": "Referenced by Plasmatic Avatars and Chronic Pain VR | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/pain.html"
+    "note": "Referenced by Plasmatic Avatars and Chronic Pain VR | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/pain.html",
+    "issued": {
+      "date-parts": [
+        [
+          2020
+        ]
+      ]
+    }
   },
   {
-    "id": "doi-org-desnoyers-stewart-et-al",
+    "id": "doi-org-desnoyers-stewart-et-al-2020",
     "type": "article-journal",
     "title": "Desnoyers-Stewart et al.",
     "URL": "https://doi.org/10.1145/3544549.3585843",
@@ -192,16 +269,23 @@
       "date-parts": [
         [
           2026,
-          6,
-          13
+          7,
+          24
         ]
       ]
     },
     "note": "Referenced by Plasmatic Avatars and Chronic Pain VR | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/pain.html",
+    "issued": {
+      "date-parts": [
+        [
+          2020
+        ]
+      ]
+    },
     "DOI": "10.1145/3544549.3585843"
   },
   {
-    "id": "www-medien-ifi-lmu-de-desnoyers-stewart",
+    "id": "www-medien-ifi-lmu-de-desnoyers-stewart-2020",
     "type": "webpage",
     "title": "Desnoyers-Stewart",
     "URL": "https://www.medien.ifi.lmu.de/socialHMD/SHMD_19_submissions/SHMD_19_paper_12.pdf",
@@ -209,15 +293,22 @@
       "date-parts": [
         [
           2026,
-          6,
-          13
+          7,
+          24
         ]
       ]
     },
-    "note": "Referenced by Plasmatic Avatars and Chronic Pain VR | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/pain.html"
+    "note": "Referenced by Plasmatic Avatars and Chronic Pain VR | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/pain.html",
+    "issued": {
+      "date-parts": [
+        [
+          2020
+        ]
+      ]
+    }
   },
   {
-    "id": "gala-gre-ac-uk-desnoyers-stewart-smith-and-riecke",
+    "id": "gala-gre-ac-uk-desnoyers-stewart-smith-and-riecke-2020",
     "type": "webpage",
     "title": "Desnoyers-Stewart, Smith, and Riecke",
     "URL": "https://gala.gre.ac.uk/id/eprint/31046/7/31046%20PAPADAKI_DRHA2019_Conference_Proceedings_2020.pdf",
@@ -225,15 +316,22 @@
       "date-parts": [
         [
           2026,
-          6,
-          13
+          7,
+          24
         ]
       ]
     },
-    "note": "Referenced by Plasmatic Avatars and Chronic Pain VR | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/pain.html"
+    "note": "Referenced by Plasmatic Avatars and Chronic Pain VR | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/pain.html",
+    "issued": {
+      "date-parts": [
+        [
+          2020
+        ]
+      ]
+    }
   },
   {
-    "id": "doi-org-desnoyers-stewart-et-al-2020",
+    "id": "doi-org-desnoyers-stewart-et-al-2020-2020",
     "type": "article-journal",
     "title": "Desnoyers-Stewart et al. 2020",
     "URL": "https://doi.org/10.1162/LEON_a_01925",
@@ -241,12 +339,19 @@
       "date-parts": [
         [
           2026,
-          6,
-          13
+          7,
+          24
         ]
       ]
     },
     "note": "Referenced by Plasmatic Avatars and Chronic Pain VR | Plasmatic Multitudes: https://mesmerprism.com/plasmatic-multitudes/pain.html",
+    "issued": {
+      "date-parts": [
+        [
+          2020
+        ]
+      ]
+    },
     "DOI": "10.1162/LEON_a_01925"
   },
   {
@@ -258,8 +363,8 @@
       "date-parts": [
         [
           2026,
-          6,
-          13
+          7,
+          24
         ]
       ]
     },
@@ -281,8 +386,8 @@
       "date-parts": [
         [
           2026,
-          6,
-          13
+          7,
+          24
         ]
       ]
     },
@@ -304,8 +409,8 @@
       "date-parts": [
         [
           2026,
-          6,
-          13
+          7,
+          24
         ]
       ]
     },
@@ -328,8 +433,8 @@
       "date-parts": [
         [
           2026,
-          6,
-          13
+          7,
+          24
         ]
       ]
     },
@@ -352,8 +457,8 @@
       "date-parts": [
         [
           2026,
-          6,
-          13
+          7,
+          24
         ]
       ]
     },
@@ -376,8 +481,8 @@
       "date-parts": [
         [
           2026,
-          6,
-          13
+          7,
+          24
         ]
       ]
     },
@@ -400,8 +505,8 @@
       "date-parts": [
         [
           2026,
-          6,
-          13
+          7,
+          24
         ]
       ]
     },
@@ -424,8 +529,8 @@
       "date-parts": [
         [
           2026,
-          6,
-          13
+          7,
+          24
         ]
       ]
     },
@@ -448,8 +553,8 @@
       "date-parts": [
         [
           2026,
-          6,
-          13
+          7,
+          24
         ]
       ]
     },
@@ -472,8 +577,8 @@
       "date-parts": [
         [
           2026,
-          6,
-          13
+          7,
+          24
         ]
       ]
     },
@@ -500,8 +605,8 @@
       "date-parts": [
         [
           2026,
-          6,
-          13
+          7,
+          24
         ]
       ]
     },
@@ -522,8 +627,8 @@
       "date-parts": [
         [
           2026,
-          6,
-          13
+          7,
+          24
         ]
       ]
     },

@@ -2,7 +2,7 @@
 
 Source: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html
 Canonical HTML: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html
-Generated: 2026-07-23
+Generated: 2026-07-24
 Description: A source-linked proposal for mixed-ability human-swarm interaction built around a multimodal semantic swarm state, inspectable mappings, participant-authored access, and repair.
 Markdown: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.md
 Plain text: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.txt
@@ -217,6 +217,38 @@ Mixed-ability HSI | Revised July 23, 2026
 #### Morphogenetic repair
 
  Let the collective restore or reorganize form after disruption.
+
+## Access sits inside a larger shared-control problem
+
+ An accessible input route matters only if its semantic reach, authority, and visible
+ consequence are also clear.
+
+ Human–swarm robotics provides a useful first vocabulary for how a person can influence
+ a distributed process: behavior or algorithm selection, parameter setting,
+ environmental influence, and influence through selected members or leaders
+ ([Kolling et al., 2016](https://doi.org/10.1109/THMS.2015.2480801)).
+ Those categories describe command semantics, not a complete multi-user governance
+ model. They do not decide who can act on which scope, how simultaneous intentions
+ combine, or how birth, merge, split, representation change, and collaborative history
+ should work in a digital body.
+
+ The direct evidence remains small. Entangled allowed up to eight people to apply
+ gravitational influence to thousands of shared particles, but reported a prototype
+ rather than a controlled comparison of authority policies
+ ([Lee, 2021](https://doi.org/10.21428/92fbeb44.eae7c23f)).
+ Shared-avatar studies add controlled evidence that mathematical input weight, felt
+ agency, and ownership do not move together in a simple way
+ ([Fribourg et al., 2021](https://doi.org/10.1109/TVCG.2020.2999197);
+ [Venkatraj et al., 2024](https://doi.org/10.1145/3613904.3642425)).
+ A paired robot-swarm study similarly found that shared robot allocation did not simply
+ improve task score; communication, strategy, energy use, and perceived usefulness
+ shifted in different ways
+ ([Miyauchi et al., 2023](https://doi.org/10.1109/IROS55552.2023.10342457)).
+
+ The [joint control of digital swarms](https://mesmerprism.com/plasmatic-multitudes/shared-swarm-control.html) page develops
+ this broader taxonomy. This page keeps the narrower responsibility: ensuring that
+ mappings, consent, privacy, refusal, repair, and contribution remain equitable when
+ participants use different bodies and modalities.
 
 ## What direct accessibility research establishes
 
@@ -466,6 +498,16 @@ Mixed-ability HSI | Revised July 23, 2026
 - Desnoyers-Stewart, John, et al. "[Embodied Telepresent Connection](https://doi.org/10.1145/3544549.3585843)." CHI Extended Abstracts (2023).
 
 - Stepanova, Ekaterina R., John Desnoyers-Stewart, Kristina Höök, and Bernhard E. Riecke. "[Strategies for Fostering a Genuine Feeling of Connection in Technologically Mediated Systems](https://doi.org/10.1145/3491102.3517580)." CHI (2022).
+
+- Kolling, Andreas, Phillip Walker, Nilanjan Chakraborty, Katia Sycara, and Michael Lewis. "[Human Interaction With Robot Swarms: A Survey](https://doi.org/10.1109/THMS.2015.2480801)." IEEE Transactions on Human-Machine Systems 46(1) (2016).
+
+- Lee, Myungin. "[Entangled: A Multi-Modal, Multi-User Interactive Instrument in Virtual 3D Space Using the Smartphone for Gesture Control](https://doi.org/10.21428/92fbeb44.eae7c23f)." NIME (2021).
+
+- Fribourg, Rebecca, et al. "[Virtual Co-Embodiment: Evaluation of the Sense of Agency While Sharing the Control of a Virtual Body Among Two Individuals](https://doi.org/10.1109/TVCG.2020.2999197)." IEEE Transactions on Visualization and Computer Graphics 27(10) (2021).
+
+- Venkatraj, Karthikeya Puttur, et al. "[ShareYourReality: Investigating Haptic Feedback and Agency in Virtual Avatar Co-Embodiment](https://doi.org/10.1145/3613904.3642425)." CHI (2024).
+
+- Miyauchi, Genki, Yuri Kaszubowski Lopes, and Roderich Groß. "[Sharing the Control of Robot Swarms Among Multiple Human Operators: A User Study](https://doi.org/10.1109/IROS55552.2023.10342457)." IROS (2023).
 
 - Slavkov, Ivica, et al. "[Morphogenesis in Robot Swarms](https://doi.org/10.1126/scirobotics.aau9178)." Science Robotics 3(25) (2018).
 

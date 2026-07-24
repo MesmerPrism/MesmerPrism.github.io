@@ -2,21 +2,21 @@
 
 Source: https://mesmerprism.com/plasmatic-multitudes/
 Canonical HTML: https://mesmerprism.com/plasmatic-multitudes/
-Generated: 2026-06-13
-Description: Long essay, method notes, vocabulary, pain-translation hypotheses, mixed-ability human-swarm interaction, and annotated references for weakly bounded bodies and semi-corporeal avatar aesthetics.
+Generated: 2026-07-24
+Description: Long essay, method notes, shared digital-swarm control, mixed-ability human-swarm interaction, vocabulary, pain-translation hypotheses, and annotated sources for weakly bounded bodies.
 Markdown: https://mesmerprism.com/plasmatic-multitudes/index.md
 Plain text: https://mesmerprism.com/plasmatic-multitudes/index.txt
 
 ---
 
-Field guide | Updated May 24, 2026
+Field guide | Updated July 24, 2026
 
 # Plasmatic Multitudes Field Guide
 
  This field guide extends the public project page into a deeper research library. It
  follows weakly bounded bodies across somaesthetics, media genealogy, XR embodiment,
- computational morphogenesis, pain translation, mixed-ability human-swarm interaction,
- vocabulary, and annotated sources.
+ computational morphogenesis, joint control of digital swarms, mixed-ability
+ human-swarm interaction, pain translation, vocabulary, and annotated sources.
 
 ## Reader path
 
@@ -33,7 +33,8 @@ Field guide | Updated May 24, 2026
  [Long essay Semi-corporeal avatar aesthetics across media history, XR, morphogenesis, and pain translation.](https://mesmerprism.com/essay.html)
  [Method Boundary precision as a somaesthetic design variable, with a compact conceptual map.](https://mesmerprism.com/project.html)
  [Pain translation Cautious avatar-pain hypotheses for boundary precision, protective fields, ownership, and agency.](https://mesmerprism.com/pain.html)
- [Mixed-ability HSI Shared swarm bodies for connectedness-first exploration, cooperative games, and the bridge to physical swarms.](https://mesmerprism.com/mixed-ability-hsi.html)
+ [Mixed-ability HSI Accessible mappings, consent, privacy, refusal, and repair when people contribute through different abilities and modalities.](https://mesmerprism.com/mixed-ability-hsi.html)
+ [Joint control of digital swarms How several people can shape one particle, agent, body, or field through explicit authority, arbitration, and history.](https://mesmerprism.com/shared-swarm-control.html)
  [Vocabulary / field terms Terms for weakly bounded bodies across media theory, XR, perception, and care.](https://mesmerprism.com/terminology.html)
  [Annotated sources Reference notes across somaesthetics, perception, pseudo-haptics, morphogenesis, XR, media genealogy, and pain.](https://mesmerprism.com/references.html)
  [Somaesthetics note A short background appendix on lived bodily experience as the method anchor.](https://mesmerprism.com/background/somaesthetics.html)
@@ -52,10 +53,12 @@ Field guide | Updated May 24, 2026
 
  The field guide is not a second project overview. It is the place for material that
  would make the public page too large: the long-form essay, a compact method page,
- clinical-adjacent caution, mixed-ability HSI, vocabulary control, source status, and
- background notes.
+ clinical-adjacent caution, shared digital-swarm control, mixed-ability HSI,
+ vocabulary control, source status, and background notes.
 
  The pages keep their own jobs. The long essay develops the media and XR argument. The
- pain page protects the clinical boundary. The vocabulary page keeps terms from becoming
- interchangeable mood language. The references page keeps the source architecture
+ pain page protects the clinical boundary. The shared-swarms page turns particle bodies
+ and shared boundaries into a multi-user control problem. The mixed-ability page develops
+ the access and repair requirements. The vocabulary page keeps terms from becoming
+ interchangeable mood language, and the references page keeps the source architecture
  visible.
