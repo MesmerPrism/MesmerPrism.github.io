@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Looping, Spatial Audio, and Immersive Visuals — Technical Guide</title>
+    <meta
+        name="description"
+        content="Orientation and decision guide for integrating RC-505mkII looping, wave field synthesis, TouchDesigner, NDI, and immersive projection."
+    >
+    <link rel="canonical" href="https://mesmerprism.com/time/">
+    <meta property="og:title" content="Looping, Spatial Audio, and Immersive Visuals">
+    <meta property="og:description" content="A technical coordination guide for the audio and visual systems at an immersive-media venue.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://mesmerprism.com/time/">
+    <meta name="theme-color" content="#20241f">
+    <link rel="stylesheet" href="/time/brief.css?v=20260724-rebuild">
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <header class="site-header">
+        <div class="page-shell site-nav">
+            <a class="site-name" href="/time/">A/V SYSTEM GUIDE</a>
+            <nav class="site-links" aria-label="Technical guide">
+                <a href="/time/" aria-current="page">Overview</a>
+                <a href="/time/audio/">Audio system</a>
+                <a href="/time/visuals/">Visual system</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="document" id="main-content">
+        <section class="document-intro" aria-labelledby="page-title">
+            <div>
+                <h1 id="page-title">Looping, spatial audio, and immersive visuals</h1>
+                <p class="document-intro__lead">
+                    This guide separates the project into two technical workstreams:
+                    an audio system that turns loop tracks into movable sound objects,
+                    and a visual system that delivers a TouchDesigner composition to the
+                    venue's large projection surface.
+                </p>
+            </div>
+            <aside class="document-intro__aside" aria-label="Document purpose">
+                <p><strong>Use this page first.</strong> It establishes the shared goal, recommended division of responsibility, and order of work.</p>
+                <p><strong>Then open one technical brief.</strong> Each subpage contains its own architecture, alternatives, questions, tests, and source links.</p>
+            </aside>
+        </section>
+
+        <section class="section" aria-labelledby="system-shape-title">
+            <div class="section-heading">
+                <h2 id="system-shape-title">The system in one minute</h2>
+                <p>
+                    Audio and visuals are separate delivery systems. They meet through
+                    timing, control data, rehearsal procedure, and operator coordination—not
+                    by sharing one application or computer.
+                </p>
+            </div>
+
+            <div class="overview-map">
+                <article class="workstream">
+                    <div class="workstream__summary">
+                        <h2>Audio system</h2>
+                        <p>
+                            Keep hands-on loop creation on the RC-505mkII. Route its five
+                            tracks as five mono signals so the WFS system can position them
+                            independently. Add Ableton only when recording or expansion
+                            beyond five objects is needed.
+                        </p>
+                    </div>
+                    <ol class="workstream__path" aria-label="Audio system summary">
+                        <li>RC-505mkII</li>
+                        <li>5 mono tracks</li>
+                        <li>5 WFS objects</li>
+                    </ol>
+                    <a class="workstream__link" href="/time/audio/">Open the audio brief →</a>
+                </article>
+
+                <article class="workstream workstream--visual">
+                    <div class="workstream__summary">
+                        <h2>Visual system</h2>
+                        <p>
+                            Run the working TouchDesigner project on a prepared workstation
+                            and send the finished image to the venue over NDI. Qualify the
+                            venue's experimental Linux runtime as an alternative rather
+                            than treating it as a drop-in replacement.
+                        </p>
+                    </div>
+                    <ol class="workstream__path" aria-label="Visual system summary">
+                        <li>TouchDesigner</li>
+                        <li>NDI transport</li>
+                        <li>Projection system</li>
+                    </ol>
+                    <a class="workstream__link" href="/time/visuals/">Open the visual brief →</a>
+                </article>
+            </div>
+        </section>
+
+        <section class="section" aria-labelledby="responsibility-title">
+            <div class="section-heading">
+                <h2 id="responsibility-title">Recommended division of responsibility</h2>
+                <p>
+                    The starting configuration keeps each specialist working in the system
+                    they know, while making the technical handoffs explicit.
+                </p>
+            </div>
+
+            <div class="role-map">
+                <article class="role">
+                    <h3>Loop performance</h3>
+                    <p>
+                        Owns loop recording, overdubbing, stopping, undo, faders, and
+                        looper effects on the RC-505mkII.
+                    </p>
+                </article>
+                <article class="role">
+                    <h3>Spatial audio</h3>
+                    <p>
+                        Owns channel ingest, WFS object assignment, object position,
+                        movement, monitoring, and audio recovery.
+                    </p>
+                </article>
+                <article class="role">
+                    <h3>Visual performance</h3>
+                    <p>
+                        Owns the TouchDesigner project, live controls, NDI output,
+                        projection framing, and the visual fallback state.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section" aria-labelledby="reading-title">
+            <div class="section-heading">
+                <h2 id="reading-title">How to use the briefs</h2>
+                <p>
+                    Work from the recommendation outward. Do not prototype the more complex
+                    alternatives until the basic venue interfaces and artistic requirements
+                    are known.
+                </p>
+            </div>
+
+            <ol class="reading-order">
+                <li>
+                    <strong>Understand the baseline</strong>
+                    <span>Read the main diagram and confirm that its division of control matches the intended performance.</span>
+                </li>
+                <li>
+                    <strong>Resolve the open decisions</strong>
+                    <span>Answer the interface, channel, object-count, projection, network, control-data, and monitoring questions.</span>
+                </li>
+                <li>
+                    <strong>Build the smallest complete system</strong>
+                    <span>Prove five separate loop objects and one stable visual route before adding Ableton handoff or venue-Linux deployment.</span>
+                </li>
+                <li>
+                    <strong>Rehearse failure and recovery</strong>
+                    <span>Test audio isolation, monitoring, visual fallback, restart behavior, and the operator handoff under show conditions.</span>
+                </li>
+            </ol>
+        </section>
+
+        <section class="section" aria-labelledby="shared-title">
+            <div class="section-heading">
+                <h2 id="shared-title">Shared decisions before rehearsal</h2>
+                <p>
+                    These items affect both workstreams and should be captured in one
+                    versioned venue sheet.
+                </p>
+            </div>
+
+            <ol class="readiness-list">
+                <li>
+                    <strong>Venue I/O contract</strong>
+                    <span>Audio inputs, sample rate, WFS object count, video canvas, frame rate, receiver, and physical connection points.</span>
+                </li>
+                <li>
+                    <strong>Operator positions</strong>
+                    <span>Who controls loops, sound-object motion, TouchDesigner, venue ingest, and emergency fallback—and from where.</span>
+                </li>
+                <li>
+                    <strong>A/V control link</strong>
+                    <span>Whether visuals need tempo, track state, levels, sound-object positions, or only live audio analysis; plus the chosen MIDI or OSC route.</span>
+                </li>
+                <li>
+                    <strong>Monitoring and preview</strong>
+                    <span>Low-latency performer monitoring, WFS confidence monitoring, visual operator preview, and a projection-safe work surface.</span>
+                </li>
+                <li>
+                    <strong>Fallback states</strong>
+                    <span>A safe audio state, a pre-rendered visual or still, a black-frame option, and a documented switch-over procedure.</span>
+                </li>
+            </ol>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="page-shell site-footer__row">
+            <p>Technical coordination guide · working version · 24 July 2026</p>
+            <a href="#main-content">Back to top</a>
+        </div>
+    </footer>
+</body>
+</html>

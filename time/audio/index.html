@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio System — RC-505mkII, Ableton, and Wave Field Synthesis</title>
+    <meta
+        name="description"
+        content="Recommended audio architecture, routing map, alternatives, open questions, and test plan for RC-505mkII looping and wave field synthesis."
+    >
+    <link rel="canonical" href="https://mesmerprism.com/time/audio/">
+    <meta property="og:title" content="Audio System — Looping and Wave Field Synthesis">
+    <meta property="og:description" content="A focused technical brief for turning RC-505mkII tracks into independently movable WFS objects.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://mesmerprism.com/time/audio/">
+    <meta name="theme-color" content="#20241f">
+    <link rel="stylesheet" href="/time/brief.css?v=20260724-rebuild">
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <header class="site-header">
+        <div class="page-shell site-nav">
+            <a class="site-name" href="/time/">A/V SYSTEM GUIDE</a>
+            <nav class="site-links" aria-label="Technical guide">
+                <a href="/time/">Overview</a>
+                <a href="/time/audio/" aria-current="page">Audio system</a>
+                <a href="/time/visuals/">Visual system</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="document" id="main-content">
+        <ol class="breadcrumbs" aria-label="Breadcrumb">
+            <li><a href="/time/">Overview</a></li>
+            <li>Audio system</li>
+        </ol>
+
+        <section class="document-intro" aria-labelledby="page-title">
+            <div>
+                <h1 id="page-title">Looping and wave field synthesis</h1>
+                <p class="document-intro__lead">
+                    The audio goal is to preserve hands-on looping while making each
+                    RC-505mkII track available as a separately positionable sound object.
+                    The core design therefore separates five loop tracks before they enter
+                    the WFS renderer.
+                </p>
+            </div>
+            <aside class="document-intro__aside" aria-label="Audio brief summary">
+                <p><strong>Starting point:</strong> RC-505mkII remains the loop engine.</p>
+                <p><strong>Baseline capacity:</strong> five independent mono loop objects.</p>
+                <p><strong>Main limitation:</strong> overdubs inside one RC track remain one combined object.</p>
+            </aside>
+        </section>
+
+        <section aria-labelledby="recommendation-title">
+            <div class="recommendation">
+                <h2 id="recommendation-title">Recommendation</h2>
+                <p>
+                    Assign RC Tracks 1–5 to five individual output jacks, connect those
+                    jacks to five independent interface inputs, and map them to five WFS
+                    objects. Keep loop control on the RC-505mkII and spatial control in
+                    the WFS system. Ableton may sit between the interface and renderer for
+                    recording or expansion, but it is not required for the baseline.
+                </p>
+            </div>
+        </section>
+
+        <section class="section" aria-labelledby="architecture-title">
+            <div class="section-heading">
+                <h2 id="architecture-title">Recommended architecture</h2>
+                <p>
+                    Read this from left to right. The performance instrument creates five
+                    tracks, the output section breaks them into physical channels, and the
+                    venue maps those channels to independently controlled WFS objects.
+                </p>
+            </div>
+
+            <figure class="diagram" aria-labelledby="audio-diagram-title">
+                <figcaption id="audio-diagram-title">
+                    <strong>Five-object audio system</strong>
+                    <span>Required components use solid borders. Ableton is shown as an optional, bypassable stage.</span>
+                </figcaption>
+                <div class="diagram-legend" aria-label="Audio diagram legend">
+                    <span><i class="legend-line" aria-hidden="true"></i>Audio path</span>
+                    <span><i class="legend-line legend-line--control" aria-hidden="true"></i>Operator control</span>
+                    <span><i class="legend-optional" aria-hidden="true"></i>Optional component</span>
+                </div>
+                <div class="zone-map">
+                    <section class="zone" aria-labelledby="zone-performance">
+                        <h3 class="zone__title" id="zone-performance">PERFORMANCE POSITION</h3>
+                        <div class="node">
+                            <strong>Microphone + sources</strong>
+                            <span>Voice, instruments, and any additional performance inputs</span>
+                        </div>
+                        <div class="node">
+                            <strong>RC-505mkII</strong>
+                            <span>Record, play, overdub, stop, undo, faders, and effects</span>
+                        </div>
+                    </section>
+
+                    <section class="zone" aria-labelledby="zone-breakout">
+                        <h3 class="zone__title" id="zone-breakout">TRACK BREAKOUT</h3>
+                        <div class="node">
+                            <strong>Output stereo link: OFF</strong>
+                            <span>Each L/R jack becomes an independently assignable mono output</span>
+                            <div class="channel-stack" aria-label="Five assigned outputs">
+                                <span><b>T1</b> MAIN L</span>
+                                <span><b>T2</b> MAIN R</span>
+                                <span><b>T3</b> SUB 1 L</span>
+                                <span><b>T4</b> SUB 1 R</span>
+                                <span><b>T5</b> SUB 2 L</span>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="zone" aria-labelledby="zone-render">
+                        <h3 class="zone__title" id="zone-render">INGEST + RENDER</h3>
+                        <div class="node">
+                            <strong>Interface / A-D conversion</strong>
+                            <span>Five independent line inputs, plus a sixth if a separate live source is required</span>
+                        </div>
+                        <div class="node node--optional">
+                            <strong>Ableton Live</strong>
+                            <span>Optional recording, routing, automation, or hybrid handoff stage</span>
+                        </div>
+                        <div class="node">
+                            <strong>WFS renderer</strong>
+                            <span>Objects 1–5 receive separate azimuth, elevation, and distance values</span>
+                        </div>
+                    </section>
+
+                    <section class="zone" aria-labelledby="zone-field">
+                        <h3 class="zone__title" id="zone-field">LISTENING AREA</h3>
+                        <div class="speaker-field" aria-label="Wave field synthesis loudspeaker field">
+                            <div class="speaker-field__ring">
+                                WFS<br>sound field
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </figure>
+
+            <div class="routing-map" aria-label="Proposed track-to-object routing map">
+                <div class="routing-map__row routing-map__row--head" aria-hidden="true">
+                    <div class="routing-map__cell">Track</div>
+                    <div class="routing-map__cell">RC output jack</div>
+                    <div></div>
+                    <div class="routing-map__cell">Interface</div>
+                    <div></div>
+                    <div class="routing-map__cell">WFS assignment</div>
+                </div>
+                <div class="routing-map__row">
+                    <div class="routing-map__cell routing-map__track">T1</div>
+                    <div class="routing-map__cell"><strong>MAIN L</strong><span>Track 1 only</span></div>
+                    <div class="routing-map__arrow" aria-hidden="true">→</div>
+                    <div class="routing-map__cell"><strong>Input 1</strong></div>
+                    <div class="routing-map__arrow" aria-hidden="true">→</div>
+                    <div class="routing-map__cell"><strong>Object 1</strong><span>Independent position</span></div>
+                </div>
+                <div class="routing-map__row">
+                    <div class="routing-map__cell routing-map__track">T2</div>
+                    <div class="routing-map__cell"><strong>MAIN R</strong><span>Track 2 only</span></div>
+                    <div class="routing-map__arrow" aria-hidden="true">→</div>
+                    <div class="routing-map__cell"><strong>Input 2</strong></div>
+                    <div class="routing-map__arrow" aria-hidden="true">→</div>
+                    <div class="routing-map__cell"><strong>Object 2</strong><span>Independent position</span></div>
+                </div>
+                <div class="routing-map__row">
+                    <div class="routing-map__cell routing-map__track">T3</div>
+                    <div class="routing-map__cell"><strong>SUB 1 L</strong><span>Track 3 only</span></div>
+                    <div class="routing-map__arrow" aria-hidden="true">→</div>
+                    <div class="routing-map__cell"><strong>Input 3</strong></div>
+                    <div class="routing-map__arrow" aria-hidden="true">→</div>
+                    <div class="routing-map__cell"><strong>Object 3</strong><span>Independent position</span></div>
+                </div>
+                <div class="routing-map__row">
+                    <div class="routing-map__cell routing-map__track">T4</div>
+                    <div class="routing-map__cell"><strong>SUB 1 R</strong><span>Track 4 only</span></div>
+                    <div class="routing-map__arrow" aria-hidden="true">→</div>
+                    <div class="routing-map__cell"><strong>Input 4</strong></div>
+                    <div class="routing-map__arrow" aria-hidden="true">→</div>
+                    <div class="routing-map__cell"><strong>Object 4</strong><span>Independent position</span></div>
+                </div>
+                <div class="routing-map__row">
+                    <div class="routing-map__cell routing-map__track">T5</div>
+                    <div class="routing-map__cell"><strong>SUB 2 L</strong><span>Track 5 only</span></div>
+                    <div class="routing-map__arrow" aria-hidden="true">→</div>
+                    <div class="routing-map__cell"><strong>Input 5</strong></div>
+                    <div class="routing-map__arrow" aria-hidden="true">→</div>
+                    <div class="routing-map__cell"><strong>Object 5</strong><span>Independent position</span></div>
+                </div>
+                <div class="routing-map__row">
+                    <div class="routing-map__cell routing-map__track">AUX</div>
+                    <div class="routing-map__cell"><strong>SUB 2 R</strong><span>Spare; dry live input only after isolation testing</span></div>
+                    <div class="routing-map__arrow" aria-hidden="true">→</div>
+                    <div class="routing-map__cell"><strong>Input 6</strong></div>
+                    <div class="routing-map__arrow" aria-hidden="true">→</div>
+                    <div class="routing-map__cell"><strong>Object 6</strong><span>Optional live source</span></div>
+                </div>
+            </div>
+
+            <div class="note">
+                <p>
+                    <strong>Track, not overdub, is the separable unit.</strong> A beat,
+                    bass line, and harmony overdubbed into the same RC track leave as one
+                    combined object. They must occupy different RC tracks—or be captured
+                    into different Ableton tracks before combining—if they need separate
+                    spatial positions.
+                </p>
+            </div>
+        </section>
+
+        <section class="section" aria-labelledby="roles-title">
+            <div class="section-heading">
+                <h2 id="roles-title">Control ownership</h2>
+                <p>
+                    The baseline is deliberately split so the performer does not need to
+                    operate the spatial system and the spatial operator does not take over
+                    loop creation.
+                </p>
+            </div>
+            <div class="role-map">
+                <article class="role">
+                    <h3>Loop performer</h3>
+                    <p>Controls RC record, play, overdub, stop, undo, clear, track faders, memories, and essential RC effects.</p>
+                </article>
+                <article class="role">
+                    <h3>Spatial operator</h3>
+                    <p>Controls the five WFS object positions, movement cues, object levels, and spatial scene recovery.</p>
+                </article>
+                <article class="role">
+                    <h3>Audio system operator</h3>
+                    <p>Maintains channel isolation, gain structure, monitoring, optional Ableton capture, clocking, and fallback routing.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section" aria-labelledby="options-title">
+            <div class="section-heading">
+                <h2 id="options-title">When to choose another architecture</h2>
+                <p>
+                    The RC-first design is the least disruptive starting point. Use one of
+                    the other designs only when a specific artistic or capacity requirement
+                    justifies its additional control logic.
+                </p>
+            </div>
+
+            <div class="table-wrap">
+                <table class="decision-table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Architecture</th>
+                            <th scope="col">Choose it when</th>
+                            <th scope="col">What it preserves</th>
+                            <th scope="col">Main cost</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="is-recommended">
+                            <th scope="row">RC-505mkII first</th>
+                            <td>Five simultaneous mono loop objects are sufficient.</td>
+                            <td>Full familiar RC track workflow and control.</td>
+                            <td>Five-object ceiling; stereo effects need a deliberate compromise.</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Ableton first</th>
+                            <td>Independent object count and detailed automation matter more than preserving the RC workflow.</td>
+                            <td>A hardware control surface can preserve hands-on commands.</td>
+                            <td>Custom session and control design; more rehearsal and computer dependence.</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">RC-to-Ableton handoff</th>
+                            <td>More than five objects are needed over time, but new loops should still be created on the RC.</td>
+                            <td>Familiar creation until a loop is committed.</td>
+                            <td>Clocked capture, latency compensation, double-playback protection, and loss of RC control after handoff.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="note">
+                <p>
+                    <strong>Stereo trade-off.</strong> Five separate RC tracks use five
+                    mono outputs. Preserving full stereo limits the basic system to three
+                    stereo feeds. A mixed layout—one stereo object plus three mono
+                    objects—is possible if it better matches the material.
+                </p>
+            </div>
+        </section>
+
+        <section class="section" aria-labelledby="questions-title">
+            <div class="section-heading">
+                <h2 id="questions-title">Decisions still required</h2>
+                <p>
+                    Resolve these before the patch is finalized. They determine object
+                    count, monitoring, stereo use, and whether Ableton is needed.
+                </p>
+            </div>
+
+            <div class="open-questions">
+                <section class="question-group" aria-labelledby="venue-questions">
+                    <h3 id="venue-questions">Venue and WFS</h3>
+                    <ol>
+                        <li>What physical or network inputs does the WFS chain accept?</li>
+                        <li>How many simultaneous objects are available, and does one mono input map directly to one object?</li>
+                        <li>Where are azimuth, elevation, and distance controlled?</li>
+                        <li>What sample rate, buffer size, channel naming, and session format are required?</li>
+                    </ol>
+                </section>
+                <section class="question-group" aria-labelledby="practice-questions">
+                    <h3 id="practice-questions">Looping practice</h3>
+                    <ol>
+                        <li>Are distinct musical elements normally kept on different RC tracks?</li>
+                        <li>Which stereo delays, reverbs, panning, or other effects are essential?</li>
+                        <li>Are more than five independently movable objects needed simultaneously?</li>
+                        <li>Do completed loops need continuing RC fader, undo, overdub, or effect control?</li>
+                    </ol>
+                </section>
+                <section class="question-group" aria-labelledby="routing-questions">
+                    <h3 id="routing-questions">Routing and monitoring</h3>
+                    <ol>
+                        <li>Can SUB 2 R isolate a dry live source, or should the microphone be split before the looper?</li>
+                        <li>Can dry input, rhythm, master effects, and unused tracks be excluded from every object output?</li>
+                        <li>What low-latency monitor mix does the performer hear?</li>
+                        <li>Should routing be stored globally so RC memory changes cannot alter the patch?</li>
+                    </ol>
+                </section>
+                <section class="question-group" aria-labelledby="ableton-questions">
+                    <h3 id="ableton-questions">Ableton and synchronization</h3>
+                    <ol>
+                        <li>Is Ableton required by the venue renderer, or only desired for recording and expansion?</li>
+                        <li>If used, which system is clock master?</li>
+                        <li>How are free-length or asynchronous loops handled?</li>
+                        <li>What is the recovery procedure after a missed capture, double playback, drift, or computer failure?</li>
+                    </ol>
+                </section>
+            </div>
+        </section>
+
+        <section class="section" aria-labelledby="test-title">
+            <div class="section-heading">
+                <h2 id="test-title">Audio validation sequence</h2>
+                <p>
+                    Approve the baseline only after every track remains isolated and the
+                    complete monitor-to-WFS path works under representative performance load.
+                </p>
+            </div>
+            <ol class="test-sequence">
+                <li><strong>Confirm the venue contract</strong><span>Record inputs, object count, renderer location, sample rate, buffer, output patch, and monitoring path.</span></li>
+                <li><strong>Build the five-channel patch</strong><span>Disable stereo linking; assign one RC track to each jack; exclude dry input, rhythm, and unwanted returns.</span></li>
+                <li><strong>Prove isolation</strong><span>Record a unique spoken identifier on every track and confirm each downstream meter receives only its assigned signal.</span></li>
+                <li><strong>Test real performance use</strong><span>Rehearse memories, faders, stop, undo, overdub, essential effects, the live microphone, and the actual monitoring position.</span></li>
+                <li><strong>Measure latency and gain</strong><span>Check round-trip feel, feedback risk, comb filtering, noise, headroom, and the transition between live and looped sound.</span></li>
+                <li><strong>Add Ableton only if justified</strong><span>Prototype one capture and handoff, including clock, exact loop boundary, muting, confirmation, and failure recovery.</span></li>
+                <li><strong>Freeze and document</strong><span>Save RC routing, venue session, channel labels, gain settings, control ownership, and an audio fallback procedure.</span></li>
+            </ol>
+        </section>
+
+        <section class="section" aria-labelledby="resources-title">
+            <div class="section-heading">
+                <h2 id="resources-title">Primary audio resources</h2>
+                <p>Product documentation supports the routing model; the actual venue interface still needs direct confirmation and rehearsal testing.</p>
+            </div>
+            <ul class="resource-list">
+                <li><a href="https://www.hhi.fraunhofer.de/en/fraunhofer-hhi/cooperation-platforms/time-lab-tomorrows-immersive-media-experience-laboratory.html" target="_blank" rel="noopener noreferrer">Fraunhofer HHI — TiME Lab</a><span>Official venue description, immersive projection, and wave field-based 3D sound system.</span></li>
+                <li><a href="https://www.boss.info/uk/products/rc-505mk2/" target="_blank" rel="noopener noreferrer">BOSS — RC-505mkII</a><span>Five stereo loop tracks, three stereo output pairs, connectors, and specifications.</span></li>
+                <li><a href="https://static.roland.com/assets/media/pdf/RC-505mk2_Parameter_eng04_W.pdf" target="_blank" rel="noopener noreferrer">BOSS — RC-505mkII Parameter Guide</a><span>Output stereo-link settings, per-jack routing, system preferences, USB routing, MIDI clock, and CC assignments.</span></li>
+                <li><a href="https://static.roland.com/assets/media/pdf/RC-505mk2_eng03_W.pdf" target="_blank" rel="noopener noreferrer">BOSS — RC-505mkII Owner's Manual</a><span>Loop workflow, track controls, system settings, computer connection, and MIDI overview.</span></li>
+                <li><a href="https://www.ableton.com/en/live-manual/12/routing-and-i-o/" target="_blank" rel="noopener noreferrer">Ableton Live 12 — Routing and I/O</a><span>External inputs and outputs, per-track routing, monitoring, MIDI ports, synchronization, and resampling.</span></li>
+                <li><a href="https://www.ableton.com/en/live-manual/12/live-audio-effect-reference/#looper" target="_blank" rel="noopener noreferrer">Ableton Live 12 — Looper</a><span>Looper operation, MIDI footswitch mapping, tempo behavior, and internal feedback routing.</span></li>
+                <li><a href="https://www.ableton.com/en/live-manual/12/recording-new-clips/" target="_blank" rel="noopener noreferrer">Ableton Live 12 — Recording new clips</a><span>External-source recording, track arming, monitoring, and Session View capture.</span></li>
+            </ul>
+            <p class="version-note">Source check: 24 July 2026. Validate the actual RC memories, interface, renderer, monitoring chain, and venue session together.</p>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="page-shell site-footer__row">
+            <p>Audio system brief · working version · 24 July 2026</p>
+            <a href="#main-content">Back to top</a>
+        </div>
+    </footer>
+</body>
+</html>
