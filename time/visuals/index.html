@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TouchDesigner to Venue Projection</title>
+    <title>External Visual System to Venue Projection</title>
     <meta
         name="description"
-        content="Preferred TouchDesigner-over-NDI delivery route, venue Linux alternative, show-ready criteria, open questions, and visual test plan."
+        content="Preferred external visual-system NDI route, optional venue TouchDesigner runtime, show-ready criteria, open questions, and visual test plan."
     >
     <link rel="canonical" href="https://mesmerprism.com/time/visuals/">
-    <meta property="og:title" content="TouchDesigner to Venue Projection">
-    <meta property="og:description" content="Use the prepared workstation over wired NDI and qualify venue Linux as an alternative.">
+    <meta property="og:title" content="External Visual System to Venue Projection">
+    <meta property="og:description" content="Use the visual artist's own hardware and software over wired NDI; keep venue TouchDesigner as an option.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://mesmerprism.com/time/visuals/">
     <meta name="theme-color" content="#20241f">
@@ -39,16 +39,16 @@
 
         <section class="hero" aria-labelledby="page-title">
             <h1 id="page-title">
-                TouchDesigner to venue projection
-                <span class="hero__subtitle">Use the prepared workstation over wired NDI; qualify venue Linux as an alternative.</span>
+                External visual system to venue projection
+                <span class="hero__subtitle">Use the visual artist's own hardware and software over wired NDI; keep venue TouchDesigner as an option.</span>
             </h1>
             <p class="hero__lead">
-                Render the working TouchDesigner project on a known workstation and
-                send the finished image to the venue. This preserves the tested
-                software, plug-ins, media, fonts, drivers, and controls.
+                The visual artist renders and controls the work on their own prepared
+                system and sends the finished image to the venue. This keeps creative
+                and runtime dependencies on the known hardware and software.
             </p>
             <div class="status-row" aria-label="Visual architecture status">
-                <span class="status status--recommended">Primary show route</span>
+                <span class="status status--recommended">Own visual system</span>
                 <span class="status">Wired NDI</span>
                 <span class="status">Full-load test required</span>
             </div>
@@ -63,8 +63,8 @@
             <div class="option option--primary">
                 <div class="option__head">
                     <div>
-                        <h2 id="primary-title">Primary: prepared workstation over NDI</h2>
-                        <p>The show uses a known TouchDesigner environment and transports only the finished image.</p>
+                        <h2 id="primary-title">Primary: own visual system over NDI</h2>
+                        <p>The show uses the visual artist's own hardware and software and transports only the finished image.</p>
                     </div>
                     <span class="option__label">USE FOR THE SHOW</span>
                 </div>
@@ -75,17 +75,17 @@
                     </div>
                     <div class="diagram__frame">
                         <picture>
-                            <source media="(max-width: 720px)" srcset="/time/diagrams/visual-primary-mobile.svg?v=20260724-guide">
+                            <source media="(max-width: 720px)" srcset="/time/diagrams/visual-primary-mobile.svg?v=20260727-ndi">
                             <img
-                                src="/time/diagrams/visual-primary.svg?v=20260724-guide"
-                                alt="A prepared TouchDesigner workstation sends NDI output over a dedicated wired network to the venue NDI receiver and projection processor."
-                                width="1100"
-                                height="142"
+                                src="/time/diagrams/visual-primary.svg?v=20260727-ndi"
+                                alt="The visual artist's own hardware and software sends a finished NDI stream over a dedicated wired network to the venue NDI receiver and projection processor."
+                                width="901"
+                                height="88"
                             >
                         </picture>
                     </div>
                     <figcaption id="visual-diagram-caption">
-                        Composition and rendering stay on the prepared workstation; the venue receives a locked image format.
+                        Composition, rendering, and live control stay on the visual artist's system; the venue receives a locked image format.
                     </figcaption>
                 </figure>
 
@@ -106,7 +106,7 @@
                 <p>
                     Provide the visual operator with a separate preview monitor and
                     controls. The public projection should never expose the
-                    TouchDesigner editor or operating-system interface.
+                    visual software interface or operating-system desktop.
                 </p>
             </div>
         </section>
@@ -117,7 +117,7 @@
             <div class="roles">
                 <article class="role">
                     <h3>Composition and render</h3>
-                    <p>Project, media, plug-ins, Python, controls, GPU load, output TOP, and license.</p>
+                    <p>Visual software, project, media, plug-ins, controls, GPU load, output format, and license.</p>
                 </article>
                 <article class="role">
                     <h3>Image transport</h3>
@@ -144,26 +144,26 @@
             <div class="details-list">
                 <details class="tech-detail">
                     <summary>
-                        <span class="summary-title">Alternative: venue Linux runtime</span>
-                        <span class="summary-description">Run the packaged project locally only after compatibility is proven.</span>
+                        <span class="summary-title">Option: TouchDesigner on the venue machine</span>
+                        <span class="summary-description">Run a packaged TouchDesigner project locally only after compatibility is proven.</span>
                         <span class="summary-meta">TEST FIRST</span>
                     </summary>
                     <div class="detail-body">
                         <figure class="diagram" aria-labelledby="linux-diagram-caption">
                             <div class="diagram__frame">
                                 <picture>
-                                        <source media="(max-width: 720px)" srcset="/time/diagrams/visual-linux-mobile.svg?v=20260724-guide">
+                                        <source media="(max-width: 720px)" srcset="/time/diagrams/visual-linux-mobile.svg?v=20260727-ndi">
                                     <img
-                                            src="/time/diagrams/visual-linux.svg?v=20260724-guide"
-                                        alt="A packaged TouchDesigner project runs on the venue Linux runtime and reaches the projection processor through DisplayPort or HDMI."
-                                        width="872"
-                                        height="142"
+                                            src="/time/diagrams/visual-linux.svg?v=20260727-ndi"
+                                        alt="A packaged TouchDesigner project runs on the venue's experimental Linux machine and reaches the projection processor through DisplayPort or HDMI."
+                                        width="977"
+                                        height="88"
                                         loading="lazy"
                                     >
                                 </picture>
                             </div>
                             <figcaption id="linux-diagram-caption">
-                                This route removes NDI transport but introduces a complete software, driver, control, and media-compatibility question.
+                                This route removes NDI transport but moves the complete visual runtime onto the venue machine.
                             </figcaption>
                         </figure>
                         <p>
@@ -199,7 +199,7 @@
                     </summary>
                     <div class="detail-body">
                         <ol class="question-list">
-                            <li>What application or hardware receives NDI?</li>
+                            <li>Which hardware and software send NDI, and which application or hardware receives it?</li>
                             <li>Which NDI version, pixel formats, and resolutions are supported?</li>
                             <li>Is there a dedicated wired path, and what other traffic shares it?</li>
                             <li>How are discovery, IP addresses, stream naming, and firewall rules handled?</li>
@@ -219,7 +219,7 @@
                         <div class="system-rows">
                             <div class="system-row">
                                 <div class="system-row__name">CONTROL</div>
-                                <div class="system-row__flow">RC / WFS state → MIDI or OSC bridge → TouchDesigner parameters</div>
+                                <div class="system-row__flow">RC / WFS state → MIDI or OSC bridge → visual-system parameters</div>
                                 <span class="technical">OPTIONAL</span>
                             </div>
                         </div>
@@ -233,13 +233,13 @@
 
                 <details class="tech-detail">
                     <summary>
-                        <span class="summary-title">TouchDesigner runtime checklist</span>
-                        <span class="summary-description">Freeze the working environment and identify platform-specific dependencies.</span>
+                        <span class="summary-title">Visual runtime checklist</span>
+                        <span class="summary-description">Freeze the primary visual environment and identify dependencies for the venue TouchDesigner option.</span>
                         <span class="summary-meta">RUNTIME</span>
                     </summary>
                     <div class="detail-body">
                         <ul class="question-list">
-                            <li>Record the OS, GPU driver, TouchDesigner build, license, and project version.</li>
+                            <li>Record the primary hardware, OS, GPU driver, visual software, license, and project version.</li>
                             <li>Package media, fonts, plug-ins, Python packages, codecs, and relative paths.</li>
                             <li>List every device input, custom operator, and platform-specific dependency.</li>
                             <li>Verify startup, save, restart, full-screen output, control input, and crash recovery.</li>
@@ -256,11 +256,11 @@
                     <div class="detail-body">
                         <ol class="test-list">
                             <li><strong>Lock the canvas</strong><span>Record size, aspect, frame rate, color, mapping, and physical handoff.</span></li>
-                            <li><strong>Freeze the workstation</strong><span>Record OS, GPU, driver, TouchDesigner, license, project, and dependencies.</span></li>
+                            <li><strong>Freeze the visual system</strong><span>Record hardware, OS, GPU, driver, software, license, project, and dependencies.</span></li>
                             <li><strong>Configure NDI</strong><span>Agree stream name, receiver, discovery, IP, firewall, switch path, and ownership.</span></li>
                             <li><strong>Test full load</strong><span>Run the heaviest real scenes and log render FPS, skipped frames, network use, receive FPS, misses, and latency.</span></li>
                             <li><strong>Verify projection</strong><span>Check crop, scaling, warp, slices, blending, color, tearing, and full-screen behavior.</span></li>
-                            <li><strong>Qualify Linux</strong><span>Test the packaged project on the exact venue image, including controls, save, restart, and recovery.</span></li>
+                            <li><strong>Qualify venue TouchDesigner</strong><span>Test the packaged project on the exact venue Linux image, including controls, save, restart, and recovery.</span></li>
                             <li><strong>Test A/V control</strong><span>Confirm normal, disconnected, restarted, and stale-data behavior.</span></li>
                             <li><strong>Rehearse fallback</strong><span>Switch to a pre-rendered asset, safe still, or black frame without exposing the editor.</span></li>
                         </ol>
@@ -270,16 +270,14 @@
                 <details class="tech-detail">
                     <summary>
                         <span class="summary-title">Visual sources</span>
-                        <span class="summary-description">Venue, TouchDesigner, and NDI documentation supporting the delivery plan.</span>
-                        <span class="summary-meta">7 DOCUMENTS</span>
+                        <span class="summary-description">Venue, NDI, and optional TouchDesigner documentation supporting the delivery plan.</span>
+                        <span class="summary-meta">5 DOCUMENTS</span>
                     </summary>
                     <div class="detail-body">
                         <ul class="resource-list">
                             <li><a href="https://www.hhi.fraunhofer.de/en/fraunhofer-hhi/cooperation-platforms/time-lab-tomorrows-immersive-media-experience-laboratory.html" target="_blank" rel="noopener noreferrer">Fraunhofer HHI — TiME Lab</a><span>Venue description, immersive projection, and spatial audio environment.</span></li>
                             <li><a href="https://derivative.ca/UserGuide/System_Requirements" target="_blank" rel="noopener noreferrer">Derivative — system requirements</a><span>Supported operating systems, GPU and driver requirements, and platform restrictions.</span></li>
                             <li><a href="https://derivative.ca/download" target="_blank" rel="noopener noreferrer">Derivative — builds and licenses</a><span>Official builds, platform downloads, release guidance, and license limits.</span></li>
-                            <li><a href="https://docs.derivative.ca/NDI_Out_TOP" target="_blank" rel="noopener noreferrer">TouchDesigner — NDI Out TOP</a><span>Source name, frame rate, format, resolution, receivers, and skipped-frame monitoring.</span></li>
-                            <li><a href="https://docs.derivative.ca/NDI_In_TOP" target="_blank" rel="noopener noreferrer">TouchDesigner — NDI In TOP</a><span>Discovery, source IPs, bandwidth mode, received frames, queues, and input format.</span></li>
                             <li><a href="https://docs.ndi.video/all/getting-started/white-paper/bandwidth" target="_blank" rel="noopener noreferrer">NDI — bandwidth</a><span>Reference data rates, production headroom, and network planning.</span></li>
                             <li><a href="https://docs.ndi.video/all/getting-started/white-paper/network-layout" target="_blank" rel="noopener noreferrer">NDI — network layout</a><span>Full-duplex links, switch throughput, topology, and physical network considerations.</span></li>
                         </ul>
@@ -291,7 +289,7 @@
 
     <footer class="site-footer">
         <div class="page-shell site-footer__row">
-            <p>Visual system brief · working version · 24 July 2026</p>
+            <p>Visual system brief · working version · 27 July 2026</p>
             <a href="#main-content">Back to top</a>
         </div>
     </footer>

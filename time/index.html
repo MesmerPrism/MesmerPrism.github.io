@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Performance System — RC-505mkII, WFS, and TouchDesigner</title>
+    <title>Performance System — RC-505mkII, WFS, and NDI Visuals</title>
     <meta
         name="description"
-        content="Recommended performance-system architecture for RC-505mkII looping, wave field synthesis, TouchDesigner, NDI, and venue projection."
+        content="Recommended performance-system architecture for RC-505mkII looping, wave field synthesis, an external visual system, NDI, and venue projection."
     >
     <link rel="canonical" href="https://mesmerprism.com/time/">
-    <meta property="og:title" content="Performance System — RC-505mkII, WFS, and TouchDesigner">
+    <meta property="og:title" content="Performance System — RC-505mkII, WFS, and NDI Visuals">
     <meta property="og:description" content="The recommended baseline, responsibilities, and rehearsal decisions for the audio and visual systems.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://mesmerprism.com/time/">
@@ -35,12 +35,12 @@
         <section class="hero" aria-labelledby="page-title">
             <h1 id="page-title">
                 Performance system
-                <span class="hero__subtitle">RC-505mkII looping, wave field synthesis, and TouchDesigner projection</span>
+                <span class="hero__subtitle">RC-505mkII looping, wave field synthesis, and external NDI visuals</span>
             </h1>
             <p class="hero__lead">
                 Keep loop performance on the RC-505mkII, expose its five tracks
                 as five independently movable WFS objects, and deliver the
-                TouchDesigner composition from a prepared workstation over wired NDI.
+                finished visual output from the visual artist's own hardware and software over wired NDI.
             </p>
             <div class="status-row" aria-label="System status">
                 <span class="status status--recommended">Recommended baseline</span>
@@ -59,7 +59,7 @@
                 </div>
                 <div class="system-row system-row--visual">
                     <div class="system-row__name">VISUAL</div>
-                    <div class="system-row__flow">TouchDesigner workstation → wired NDI → venue projection</div>
+                    <div class="system-row__flow">Visual artist system → wired NDI → venue projection</div>
                     <a class="text-link" href="/time/visuals/">Visual delivery →</a>
                 </div>
             </div>
@@ -79,7 +79,7 @@
                 </article>
                 <article class="role">
                     <h3>Visual operator</h3>
-                    <p>Runs TouchDesigner and delivers the projection output.</p>
+                    <p>Runs their own hardware and software, and sends the finished NDI output.</p>
                 </article>
             </div>
         </section>
@@ -166,10 +166,10 @@
                     </summary>
                     <div class="detail-body">
                         <ul class="question-list">
-                            <li>Who controls loops, WFS movement, TouchDesigner, venue ingest, and emergency fallback?</li>
+                            <li>Who controls loops, WFS movement, visual playback and rendering, venue ingest, and emergency fallback?</li>
                             <li>Does the visual operator have a private preview and input devices?</li>
                             <li>Which audio state and visual asset are used after a failure?</li>
-                            <li>Which loop or WFS data, if any, should reach TouchDesigner over MIDI or OSC?</li>
+                            <li>Which loop or WFS data, if any, should reach the visual system over MIDI or OSC?</li>
                         </ul>
                     </div>
                 </details>
@@ -186,7 +186,7 @@
                 </a>
                 <a class="brief-link brief-link--visual" href="/time/visuals/">
                     <strong>Visual delivery</strong>
-                    <span>Primary NDI route, venue Linux alternative, show-ready conditions, and fallback.</span>
+                    <span>Primary external-system NDI route, optional venue TouchDesigner runtime, show-ready conditions, and fallback.</span>
                 </a>
             </div>
         </section>
@@ -194,7 +194,7 @@
 
     <footer class="site-footer">
         <div class="page-shell site-footer__row">
-            <p>Technical coordination guide · working version · 24 July 2026</p>
+            <p>Technical coordination guide · working version · 27 July 2026</p>
             <a href="#main-content">Back to top</a>
         </div>
     </footer>
