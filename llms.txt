@@ -13,10 +13,12 @@ Use the Markdown alternates for compact reading. Use the BibTeX or CSL JSON alte
 ## Site pages
 - [Shared Bodies for Mixed-Ability Collaboration](https://mesmerprism.com/duisburg/index.md): A Duisburg-facing research pitch for Mixed-Ability Human-Swarm Interaction: shared swarm bodies, inspectable input mappings, and a route from connectedness to robotics translation.
 - [Viscereality Companion Privacy Policy](https://mesmerprism.com/privacy/viscereality-companion/index.md): Privacy policy for the Viscereality Companion Android application published by Mesmer Prism.
+- [Rusty Fleet onboarding](https://mesmerprism.com/Rusty-Fleet/index.md): A development-preview onboarding guide to Rusty Fleet, its Windows console, Hub, CLI and API, signed-release model, and opt-in Quest and hotspot capabilities.
 - [Stimulus Portal · Quest Profile Editor](https://mesmerprism.com/strobesim/index.md)
 - [Trevor workflow · StrobeSim](https://mesmerprism.com/strobesim/onboarding/index.md): Trevor's browser-to-Quest setup and profile workflow for StrobeSim.
-- [Looping, Visuals, and Wave Field Synthesis — Technical Coordination Brief](https://mesmerprism.com/time/index.md): Technical options, constraints, open questions, and a test plan for connecting a BOSS RC-505mkII, Ableton Live, TouchDesigner, NDI, and immersive projection.
-- [Video carousel demo](https://mesmerprism.com/tmp/video-carousel-demo.md)
+- [Five RC-505mkII Tracks as Five WFS Objects](https://mesmerprism.com/time/audio/index.md): Preferred RC-505mkII architecture and direct Ableton option for independently spatialized loop objects in a wave field synthesis system.
+- [Performance System — RC-505mkII, WFS, and NDI Visuals](https://mesmerprism.com/time/index.md): Recommended performance-system architecture for RC-505mkII looping, wave field synthesis, an external visual system, NDI, and venue projection.
+- [External Visual System to Venue Projection](https://mesmerprism.com/time/visuals/index.md): Preferred external visual-system NDI route, optional venue TouchDesigner runtime, show-ready criteria, open questions, and visual test plan.
 
 ## Core
 - [Mesmer Prism | Till Holzapfel](https://mesmerprism.com/index.md): XR systems, citizen-science tools, visual instruments, and essays for altered-perception design. Mesmer Prism makes strange experience vivid, inspectable, and evidence-bounded.

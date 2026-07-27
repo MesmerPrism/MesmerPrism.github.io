@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-24",
+  "generated": "2026-07-27",
   "site": "https://mesmerprism.com",
   "pages": [
     {
@@ -435,6 +435,18 @@
       "references": 4
     },
     {
+      "title": "Rusty Fleet onboarding",
+      "description": "A development-preview onboarding guide to Rusty Fleet, its Windows console, Hub, CLI and API, signed-release model, and opt-in Quest and hotspot capabilities.",
+      "path": "Rusty-Fleet/index.html",
+      "url": "https://mesmerprism.com/Rusty-Fleet/",
+      "group": "Site pages",
+      "markdown": "https://mesmerprism.com/Rusty-Fleet/index.md",
+      "text": "https://mesmerprism.com/Rusty-Fleet/index.txt",
+      "bibtex": "https://mesmerprism.com/Rusty-Fleet/index.bib",
+      "cslJson": "https://mesmerprism.com/Rusty-Fleet/index.references.csl.json",
+      "references": 2
+    },
+    {
       "title": "Stimulus Portal · Quest Profile Editor",
       "description": "",
       "path": "strobesim/index.html",
@@ -507,28 +519,40 @@
       "references": 42
     },
     {
-      "title": "Looping, Visuals, and Wave Field Synthesis — Technical Coordination Brief",
-      "description": "Technical options, constraints, open questions, and a test plan for connecting a BOSS RC-505mkII, Ableton Live, TouchDesigner, NDI, and immersive projection.",
+      "title": "Five RC-505mkII Tracks as Five WFS Objects",
+      "description": "Preferred RC-505mkII architecture and direct Ableton option for independently spatialized loop objects in a wave field synthesis system.",
+      "path": "time/audio/index.html",
+      "url": "https://mesmerprism.com/time/audio/",
+      "group": "Site pages",
+      "markdown": "https://mesmerprism.com/time/audio/index.md",
+      "text": "https://mesmerprism.com/time/audio/index.txt",
+      "bibtex": "https://mesmerprism.com/time/audio/index.bib",
+      "cslJson": "https://mesmerprism.com/time/audio/index.references.csl.json",
+      "references": 7
+    },
+    {
+      "title": "Performance System — RC-505mkII, WFS, and NDI Visuals",
+      "description": "Recommended performance-system architecture for RC-505mkII looping, wave field synthesis, an external visual system, NDI, and venue projection.",
       "path": "time/index.html",
       "url": "https://mesmerprism.com/time/",
       "group": "Site pages",
       "markdown": "https://mesmerprism.com/time/index.md",
       "text": "https://mesmerprism.com/time/index.txt",
-      "bibtex": "https://mesmerprism.com/time/index.bib",
-      "cslJson": "https://mesmerprism.com/time/index.references.csl.json",
-      "references": 15
-    },
-    {
-      "title": "Video carousel demo",
-      "description": "",
-      "path": "tmp/video-carousel-demo.html",
-      "url": "https://mesmerprism.com/tmp/video-carousel-demo.html",
-      "group": "Site pages",
-      "markdown": "https://mesmerprism.com/tmp/video-carousel-demo.md",
-      "text": "https://mesmerprism.com/tmp/video-carousel-demo.txt",
       "bibtex": null,
       "cslJson": null,
       "references": 0
+    },
+    {
+      "title": "External Visual System to Venue Projection",
+      "description": "Preferred external visual-system NDI route, optional venue TouchDesigner runtime, show-ready criteria, open questions, and visual test plan.",
+      "path": "time/visuals/index.html",
+      "url": "https://mesmerprism.com/time/visuals/",
+      "group": "Site pages",
+      "markdown": "https://mesmerprism.com/time/visuals/index.md",
+      "text": "https://mesmerprism.com/time/visuals/index.txt",
+      "bibtex": "https://mesmerprism.com/time/visuals/index.bib",
+      "cslJson": "https://mesmerprism.com/time/visuals/index.references.csl.json",
+      "references": 5
     }
   ]
 }
