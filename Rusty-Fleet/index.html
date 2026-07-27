@@ -133,7 +133,7 @@
             <div class="at-glance__grid">
                 <div class="at-glance__item">
                     <strong>Source exists</strong>
-                    <p>The Hub, Console, <code>fleetctl</code>, local API, owner adapters, and deterministic validation are under active development.</p>
+                    <p>The Hub, Console, <code>fleetctl</code>, inert <code>fleet-onboard</code>, local API, owner adapters, guided Setup source, and deterministic validation are under active development.</p>
                 </div>
                 <div class="at-glance__item">
                     <strong>No supported download yet</strong>
@@ -181,18 +181,18 @@
                         </tr>
                         <tr>
                             <th scope="row">GitHub Releases</th>
-                            <td>The future binary authority: signed artifacts, immutable release manifest, versions, hashes, and release notes.</td>
+                            <td>The future binary authority: the signed <code>RustyFleet-Setup.exe</code>, immutable versioned assets, hashes, and release notes.</td>
                             <td>A release name alone does not authorize a provider or a headset operation.</td>
                         </tr>
                         <tr>
                             <th scope="row">MesmerPrism.com</th>
-                            <td>The human-facing install, onboarding, safety, and troubleshooting guide.</td>
-                            <td>This site does not host an alternative unverified Fleet binary.</td>
+                            <td>The human-facing guide plus short-lived signed <code>release.json</code> metadata at <code>/Rusty-Fleet/metadata/&lt;channel&gt;/release.json</code>.</td>
+                            <td>This site never hosts, mirrors, or redirects to a second Fleet binary.</td>
                         </tr>
                         <tr>
                             <th scope="row">QuestIonAble File Manager</th>
-                            <td>A future convenience route that can verify a configured signed Fleet release and open its guided installer.</td>
-                            <td>File Manager does not select a release silently, become Fleet authority, or make headset approvals disappear.</td>
+                            <td>An optional convenience route that verifies the v2 metadata signature and freshness, exact immutable GitHub asset URL, Setup hash, and Setup signer before showing its no-change plan and opening the guided installer.</td>
+                            <td>File Manager does not compose or install Fleet itself, invoke <code>fleet-onboard</code>, select a release silently, become Fleet authority, or make headset approvals disappear.</td>
                         </tr>
                     </tbody>
                 </table>
@@ -239,14 +239,14 @@
                     </p>
                 </section>
                 <section class="detail-block">
-                    <h3>Release-pinned providers</h3>
+                    <h3>Offline onboarding and release-pinned providers</h3>
                     <p>
-                        A future signed Windows bundle is intended to carry the exact
-                        Windows-side provider components declared by its release manifest,
-                        including the Rusty Hostess provider for Windows hotspot work. Hostess
-                        retains effect ownership. File Manager, Kiosk, the headset Fleet Agent,
-                        and Termux remain independent owner components with explicit
-                        installation and activation.
+                        The exact five-component Windows bundle contains Fleet Console, Fleet
+                        Hub, <code>fleetctl</code>, inert <code>fleet-onboard</code>, and the
+                        release-pinned Rusty Hostess provider for Windows hotspot work.
+                        Installation never invokes onboarding. Hostess retains effect ownership.
+                        File Manager, Kiosk, the headset Fleet Agent, and Termux remain
+                        independent owner components with explicit installation and activation.
                     </p>
                 </section>
             </div>
@@ -262,29 +262,38 @@
             </div>
             <ol>
                 <li>
-                    <h3>Start with the File Manager guide</h3>
+                    <h3>Choose the direct or File Manager entry point</h3>
                     <p>
-                        Install <a href="https://mesmerprism.com/QuestIonAble-File-Manager/">QuestIonAble File Manager</a>
-                        through its guided Windows setup. Confirm the displayed product and
-                        publisher before accepting Windows trust prompts.
+                        Download the signed <code>RustyFleet-Setup.exe</code> directly from its
+                        exact numeric-version GitHub Release, or use
+                        <a href="https://mesmerprism.com/QuestIonAble-File-Manager/">QuestIonAble File Manager</a>
+                        as an optional verified handoff. Confirm the displayed product and
+                        publisher before accepting Windows trust prompts. Fleet does not require
+                        File Manager merely to install or open the dashboard.
                     </p>
                 </li>
                 <li>
-                    <h3>Select Fleet only when a signed release is configured</h3>
+                    <h3>Require the signed v2 handoff</h3>
                     <p>
-                        The Fleet option must remain unavailable until File Manager has a
-                        configured release manifest and can verify its identity, signature,
-                        version, and hashes. It then opens Fleet's installer; it does not install
-                        an arbitrary branch or an executable discovered on the machine.
+                        The File Manager option remains unavailable until release-owned trust
+                        configuration verifies the RSA-PSS signature over canonical JCS
+                        metadata, its at-most-24-hour freshness, the exact numeric-version
+                        GitHub URL, the signed Setup bytes, and the authorized Setup signer.
+                        File Manager then runs the exact no-change Setup plan and can open the
+                        visible installer; it never accepts an arbitrary branch, local path, or
+                        executable discovered on the machine.
                     </p>
                 </li>
                 <li>
-                    <h3>Review the bundle manifest</h3>
+                    <h3>Review Setup and the five-component manifest</h3>
                     <p>
-                        The release must enumerate Fleet Hub, Fleet Console,
-                        <code>fleetctl</code>, the local API contract, included providers, exact
-                        versions, hashes, and rollback instructions. Optional headset apps stay
-                        visibly separate.
+                        Setup must report its no-change plan before installation. The embedded
+                        release manifest enumerates Fleet Hub, Fleet Console,
+                        <code>fleetctl</code>, inert <code>fleet-onboard</code>, the exact
+                        Hostess provider, the local API contract, versions, hashes, update
+                        state, and rollback instructions. Setup requires no elevation and does
+                        not start Fleet, create configuration, invoke onboarding, or touch ADB.
+                        Optional headset apps stay visibly separate.
                     </p>
                 </li>
                 <li>

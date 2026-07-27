@@ -28,7 +28,7 @@ Meta Quest fleet operations for Windows
 ## Current status: development preview
 
  Source exists
- The Hub, Console, fleetctl , local API, owner adapters, and deterministic validation are under active development.
+ The Hub, Console, fleetctl , inert fleet-onboard , local API, owner adapters, guided Setup source, and deterministic validation are under active development.
 
  No supported download yet
  There is no signed Rusty Fleet Windows release or public guided installer to download from this page.
@@ -59,16 +59,16 @@ Meta Quest fleet operations for Windows
  A checkout or branch is not an installed or supported Windows product.
 
  GitHub Releases
- The future binary authority: signed artifacts, immutable release manifest, versions, hashes, and release notes.
+ The future binary authority: the signed RustyFleet-Setup.exe , immutable versioned assets, hashes, and release notes.
  A release name alone does not authorize a provider or a headset operation.
 
  MesmerPrism.com
- The human-facing install, onboarding, safety, and troubleshooting guide.
- This site does not host an alternative unverified Fleet binary.
+ The human-facing guide plus short-lived signed release.json metadata at /Rusty-Fleet/metadata/<channel>/release.json .
+ This site never hosts, mirrors, or redirects to a second Fleet binary.
 
  QuestIonAble File Manager
- A future convenience route that can verify a configured signed Fleet release and open its guided installer.
- File Manager does not select a release silently, become Fleet authority, or make headset approvals disappear.
+ An optional convenience route that verifies the v2 metadata signature and freshness, exact immutable GitHub asset URL, Setup hash, and Setup signer before showing its no-change plan and opening the guided installer.
+ File Manager does not compose or install Fleet itself, invoke fleet-onboard , select a release silently, become Fleet authority, or make headset approvals disappear.
 
  [Inspect Rusty Fleet source](https://github.com/MesmerPrism/rusty-fleet)
  [Install QuestIonAble File Manager](https://mesmerprism.com/QuestIonAble-File-Manager/)
@@ -98,25 +98,25 @@ Meta Quest fleet operations for Windows
  operations and evidence. A GUI-only capability is incomplete: operator
  actions require CLI or local API parity.
 
-### Release-pinned providers
+### Offline onboarding and release-pinned providers
 
- A future signed Windows bundle is intended to carry the exact
- Windows-side provider components declared by its release manifest,
- including the Rusty Hostess provider for Windows hotspot work. Hostess
- retains effect ownership. File Manager, Kiosk, the headset Fleet Agent,
- and Termux remain independent owner components with explicit
- installation and activation.
+ The exact five-component Windows bundle contains Fleet Console, Fleet
+ Hub, fleetctl , inert fleet-onboard , and the
+ release-pinned Rusty Hostess provider for Windows hotspot work.
+ Installation never invokes onboarding. Hostess retains effect ownership.
+ File Manager, Kiosk, the headset Fleet Agent, and Termux remain
+ independent owner components with explicit installation and activation.
 
 ## Supported onboarding path once a signed release exists
 
  These steps describe the release contract. They are not an invitation to
  treat the current local source candidate as a public installer.
 
-- ### Start with the File Manager guide Install [QuestIonAble File Manager](https://mesmerprism.com/QuestIonAble-File-Manager/) through its guided Windows setup. Confirm the displayed product and publisher before accepting Windows trust prompts.
+- ### Choose the direct or File Manager entry point Download the signed RustyFleet-Setup.exe directly from its exact numeric-version GitHub Release, or use [QuestIonAble File Manager](https://mesmerprism.com/QuestIonAble-File-Manager/) as an optional verified handoff. Confirm the displayed product and publisher before accepting Windows trust prompts. Fleet does not require File Manager merely to install or open the dashboard.
 
-- ### Select Fleet only when a signed release is configured The Fleet option must remain unavailable until File Manager has a configured release manifest and can verify its identity, signature, version, and hashes. It then opens Fleet's installer; it does not install an arbitrary branch or an executable discovered on the machine.
+- ### Require the signed v2 handoff The File Manager option remains unavailable until release-owned trust configuration verifies the RSA-PSS signature over canonical JCS metadata, its at-most-24-hour freshness, the exact numeric-version GitHub URL, the signed Setup bytes, and the authorized Setup signer. File Manager then runs the exact no-change Setup plan and can open the visible installer; it never accepts an arbitrary branch, local path, or executable discovered on the machine.
 
-- ### Review the bundle manifest The release must enumerate Fleet Hub, Fleet Console, fleetctl , the local API contract, included providers, exact versions, hashes, and rollback instructions. Optional headset apps stay visibly separate.
+- ### Review Setup and the five-component manifest Setup must report its no-change plan before installation. The embedded release manifest enumerates Fleet Hub, Fleet Console, fleetctl , inert fleet-onboard , the exact Hostess provider, the local API contract, versions, hashes, update state, and rollback instructions. Setup requires no elevation and does not start Fleet, create configuration, invoke onboarding, or touch ADB. Optional headset apps stay visibly separate.
 
 - ### Enroll one headset before adding a cohort Establish the headset Fleet Agent and Manifold identity, then wait for a fresh signed check-in. Base monitoring is app-level and must not require ADB.
 
