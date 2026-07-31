@@ -6,16 +6,16 @@
   "additionalProperties": false,
   "required": [
     "schema",
-    "default_channel",
+    "default_product_channel",
     "authority",
     "fleet_pages_contract",
     "products"
   ],
   "properties": {
     "schema": {
-      "const": "rusty.morphospace.public_distribution_catalog.v1"
+      "const": "rusty.morphospace.public_distribution_catalog.v2"
     },
-    "default_channel": {
+    "default_product_channel": {
       "const": "stable"
     },
     "authority": {
@@ -27,7 +27,7 @@
       "required": [
         "composition",
         "stable_metadata_path",
-        "alpha_metadata_path"
+        "labs_metadata_path"
       ],
       "properties": {
         "composition": {
@@ -36,8 +36,8 @@
         "stable_metadata_path": {
           "const": "/Rusty-Fleet/metadata/stable/release.json"
         },
-        "alpha_metadata_path": {
-          "const": "/Rusty-Fleet/metadata/alpha/release.json"
+        "labs_metadata_path": {
+          "const": "/Rusty-Fleet/metadata/labs/release.json"
         }
       }
     },
@@ -60,7 +60,7 @@
         "repository",
         "complete_product",
         "feedback",
-        "channels"
+        "product_channels"
       ],
       "properties": {
         "owner": {
@@ -105,7 +105,7 @@
             },
             "required_fields": {
               "const": [
-                "channel",
+                "product_channel",
                 "version",
                 "source_revision",
                 "artifact_sha256",
@@ -118,21 +118,23 @@
             }
           }
         },
-        "channels": {
+        "product_channels": {
           "type": "array",
           "minItems": 1,
           "maxItems": 2,
           "items": {
-            "$ref": "#/$defs/channel"
+            "$ref": "#/$defs/product_channel"
           }
         }
       }
     },
-    "channel": {
+    "product_channel": {
       "type": "object",
       "additionalProperties": false,
       "required": [
-        "channel",
+        "product_channel",
+        "maturity",
+        "distribution_track",
         "opt_in",
         "availability",
         "identity",
@@ -140,8 +142,14 @@
         "release"
       ],
       "properties": {
-        "channel": {
-          "enum": ["stable", "alpha"]
+        "product_channel": {
+          "enum": ["stable", "labs"]
+        },
+        "maturity": {
+          "enum": ["alpha", "beta", "rc", "released"]
+        },
+        "distribution_track": {
+          "enum": ["github-release", "github-prerelease", "meta-store-app"]
         },
         "opt_in": {
           "type": "boolean"
@@ -166,20 +174,20 @@
               "type": ["string", "null"]
             },
             "identity_authority": {
-              "enum": ["catalog-policy", "owner-release-metadata"]
+              "const": "owner-release-metadata"
             },
             "relationship_to_stable": {
-              "enum": ["stable", "separate-coinstallable", "same-package-in-place", "alpha-only"]
+              "enum": ["stable", "separate-coinstallable", "same-package-in-place", "labs-only"]
             }
           }
         },
         "transition": {
           "enum": [
             "stable-default",
-            "uninstall-alpha-without-changing-stable",
+            "uninstall-labs-without-changing-stable",
             "forward-only-to-later-stable",
-            "remove-alpha",
-            "remove-alpha-without-changing-other-products"
+            "remove-labs",
+            "remove-labs-without-changing-other-products"
           ]
         },
         "release": {
@@ -220,7 +228,7 @@
         {
           "if": {
             "properties": {
-              "channel": {
+              "product_channel": {
                 "const": "stable"
               }
             }
@@ -258,11 +266,11 @@
       "properties": {
         "tag": {
           "type": "string",
-          "pattern": "^(?:v[0-9]+\\.[0-9]+\\.[0-9]+(?:-alpha\\.[1-9][0-9]*)?|package-updater-v0\\.1\\.0-alpha\\.[1-9][0-9]*)$"
+          "pattern": "^(?:v[0-9]+\\.[0-9]+\\.[0-9]+(?:-(?:alpha|beta|rc)\\.[1-9][0-9]*)?|package-updater-v0\\.1\\.0-(?:alpha|beta|rc)\\.[1-9][0-9]*)$"
         },
         "version": {
           "type": "string",
-          "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+(?:-alpha\\.[1-9][0-9]*)?$"
+          "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+(?:-(?:alpha|beta|rc)\\.[1-9][0-9]*)?$"
         },
         "source_revision": {
           "type": "string",
@@ -274,7 +282,7 @@
         },
         "artifact_url": {
           "type": "string",
-          "pattern": "^https://github\\.com/MesmerPrism/[A-Za-z0-9._-]+/releases/download/(?:v[0-9]+\\.[0-9]+\\.[0-9]+(?:-alpha\\.[1-9][0-9]*)?|package-updater-v0\\.1\\.0-alpha\\.[1-9][0-9]*)/[A-Za-z0-9._-]+$"
+          "pattern": "^https://github\\.com/MesmerPrism/[A-Za-z0-9._-]+/releases/download/(?:v[0-9]+\\.[0-9]+\\.[0-9]+(?:-(?:alpha|beta|rc)\\.[1-9][0-9]*)?|package-updater-v0\\.1\\.0-(?:alpha|beta|rc)\\.[1-9][0-9]*)/[A-Za-z0-9._-]+$"
         },
         "artifact_sha256": {
           "type": "string",

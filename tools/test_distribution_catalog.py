@@ -39,9 +39,9 @@ OWNERS = {
     "rusty-kiosk",
     "rusty-quest-package-updater",
 }
-CHANNELS = {"stable", "alpha"}
+CHANNELS = {"stable", "labs"}
 REQUIRED_FEEDBACK = [
-    "channel",
+    "product_channel",
     "version",
     "source_revision",
     "artifact_sha256",
@@ -96,9 +96,9 @@ def validate_catalog(catalog: dict, *, allow_published: bool = False) -> None:
 def validate_catalog_semantics(
     catalog: dict, *, allow_published: bool = False
 ) -> None:
-    if catalog.get("schema") != "rusty.morphospace.public_distribution_catalog.v1":
+    if catalog.get("schema") != "rusty.morphospace.public_distribution_catalog.v2":
         fail("unknown catalog schema")
-    if catalog.get("default_channel") != "stable":
+    if catalog.get("default_product_channel") != "stable":
         fail("stable must remain the default")
     if catalog.get("authority") != "owner-release-metadata-only":
         fail("catalog attempted to become release authority")
@@ -106,7 +106,7 @@ def validate_catalog_semantics(
     if fleet != {
         "composition": "preserve-complete-site-replace-owner-channel-subtree",
         "stable_metadata_path": "/Rusty-Fleet/metadata/stable/release.json",
-        "alpha_metadata_path": "/Rusty-Fleet/metadata/alpha/release.json",
+        "labs_metadata_path": "/Rusty-Fleet/metadata/labs/release.json",
     }:
         fail("Fleet Pages composition contract drifted")
 
@@ -152,23 +152,41 @@ def validate_catalog_semantics(
             if phrase not in body:
                 fail(f"feedback template is missing {phrase}")
 
-        channels = product.get("channels")
-        channel_names = [item.get("channel") for item in channels]
+        channels = product.get("product_channels")
+        channel_names = [item.get("product_channel") for item in channels]
         expected_channels = (
-            ["alpha"]
+            ["labs"]
             if product["owner"] in {
                 "rusty-hostess", "rusty-quest-package-updater"
             }
-            else ["stable", "alpha"]
+            else ["stable", "labs"]
         )
         if not isinstance(channels, list) or channel_names != expected_channels:
             fail("owner channel set or stable-first ordering is invalid")
-        by_channel = {item["channel"]: item for item in channels}
+        by_channel = {item["product_channel"]: item for item in channels}
         for channel_name, channel in by_channel.items():
             if channel_name not in CHANNELS:
                 fail("unknown channel")
-            if channel.get("opt_in") is not (channel_name == "alpha"):
-                fail("stable/alpha opt-in policy drifted")
+            if channel.get("opt_in") is not (channel_name == "labs"):
+                fail("stable/labs opt-in policy drifted")
+            if channel.get("maturity") not in {"alpha", "beta", "rc", "released"}:
+                fail("product channel and release maturity were conflated")
+            if channel_name == "stable" and channel.get("maturity") != "released":
+                fail("the stable default must project released maturity")
+            if channel.get("distribution_track") not in {
+                "github-release", "github-prerelease", "meta-store-app"
+            }:
+                fail("distribution track is absent or outside its bound")
+            expected_track = (
+                "github-release" if channel_name == "stable"
+                else "github-prerelease"
+            )
+            if channel.get("distribution_track") != expected_track:
+                fail("owner-release distribution track was conflated with product channel")
+            if channel["identity"].get("identity_authority") != (
+                "owner-release-metadata"
+            ):
+                fail("catalog claimed owner installation-identity authority")
             availability = channel.get("availability")
             release = channel.get("release")
             if availability == "unpublished":
@@ -183,18 +201,18 @@ def validate_catalog_semantics(
             else:
                 fail("unknown availability")
 
-        alpha_identity = by_channel["alpha"]["identity"]
+        labs_identity = by_channel["labs"]["identity"]
         if product["owner"] == "rusty-hostess":
             notes = product.get("distribution_notes")
             if (
                 product["repository"]
                 != "https://github.com/MesmerPrism/rusty-hostess"
-                or alpha_identity["installation_identity"]
-                != "rusty-hostess-alpha"
-                or alpha_identity["platform"] != "windows"
-                or alpha_identity["relationship_to_stable"] != "alpha-only"
-                or by_channel["alpha"]["transition"]
-                != "remove-alpha-without-changing-other-products"
+                or labs_identity["installation_identity"]
+                != "rusty-hostess-labs"
+                or labs_identity["platform"] != "windows"
+                or labs_identity["relationship_to_stable"] != "labs-only"
+                or by_channel["labs"]["transition"]
+                != "remove-labs-without-changing-other-products"
                 or notes != {
                     "included": [
                         "source-owned WPF companion",
@@ -206,6 +224,7 @@ def validate_catalog_semantics(
                         "Casting.exe",
                     ],
                     "authority_exclusions": [
+                        "meta-software-redistribution",
                         "presentation effectiveness",
                         "recording",
                         "input forwarding",
@@ -213,48 +232,53 @@ def validate_catalog_semantics(
                         "device cleanup",
                     ],
                     "removal": (
-                        "Uninstalling Rusty Hostess Alpha removes only its "
-                        "separate Windows alpha identity and does not change "
+                        "Uninstalling Rusty Hostess Labs removes only its "
+                        "separate Windows labs identity and does not change "
                         "other products."
                     ),
                 }
             ):
-                fail("Hostess alpha owner scope or unpublished identity drifted")
+                fail("Hostess labs owner scope or unpublished identity drifted")
         elif product["owner"] == "rusty-quest-package-updater":
             if (
-                alpha_identity["installation_identity"]
-                != "io.github.mesmerprism.rustyquest.packageupdater.alpha"
-                or alpha_identity["relationship_to_stable"]
-                != "alpha-only"
-                or by_channel["alpha"]["transition"]
-                != "remove-alpha"
+                labs_identity["installation_identity"]
+                != "io.github.mesmerprism.rustyquest.packageupdater.labs"
+                or labs_identity["relationship_to_stable"]
+                != "labs-only"
+                or by_channel["labs"]["transition"]
+                != "remove-labs"
             ):
-                fail("Package Updater must remain alpha-only with its exact identity")
+                fail("Package Updater must remain labs-only with its exact identity")
         elif product["owner"] == "rusty-kiosk":
-            stable_identity = by_channel["stable"]["identity"]
             if (
-                alpha_identity["relationship_to_stable"]
-                != "same-package-in-place"
-                or alpha_identity["installation_identity"]
-                != stable_identity["installation_identity"]
-                or by_channel["alpha"]["transition"]
-                != "forward-only-to-later-stable"
+                labs_identity["relationship_to_stable"]
+                != "separate-coinstallable"
+                or labs_identity["installation_identity"]
+                != "io.github.mesmerprism.rustykiosk.labs"
+                or by_channel["labs"]["transition"]
+                != "uninstall-labs-without-changing-stable"
             ):
-                fail("Kiosk alpha must replace stable in place and exit forward")
+                fail("Kiosk Labs must remain coinstallable and leave stable unchanged")
         else:
             stable_identity = by_channel["stable"]["identity"]
             if (
-                alpha_identity["relationship_to_stable"]
+                labs_identity["relationship_to_stable"]
                 != "separate-coinstallable"
-                or by_channel["alpha"]["transition"]
-                != "uninstall-alpha-without-changing-stable"
+                or by_channel["labs"]["transition"]
+                != "uninstall-labs-without-changing-stable"
             ):
-                fail("separate alpha identity policy drifted")
+                fail("separate labs identity policy drifted")
             known_stable = stable_identity["installation_identity"]
-            known_alpha = alpha_identity["installation_identity"]
-            if known_stable is not None and known_alpha is not None:
-                if known_stable == known_alpha:
-                    fail("stable and separate alpha identities were substituted")
+            known_labs = labs_identity["installation_identity"]
+            if known_stable is not None and known_labs is not None:
+                if known_stable == known_labs:
+                    fail("stable and separate labs identities were substituted")
+            expected_labs_identity = {
+                "questionable-file-manager": "MesmerPrism.QuestIonAbleFileManager.Labs",
+                "rusty-fleet": "rusty-fleet-labs",
+            }[product["owner"]]
+            if known_labs != expected_labs_identity:
+                fail("Labs installation identity drifted")
 
 
 def validate_release(product: dict, channel_name: str, channel: dict) -> None:
@@ -280,9 +304,9 @@ def validate_release(product: dict, channel_name: str, channel: dict) -> None:
     )
     if not match or release["version"] != match.group(1):
         fail("release tag/version mismatch")
-    is_alpha = "-alpha." in release["tag"]
-    if is_alpha != (channel_name == "alpha"):
-        fail("stable/alpha release substitution")
+    is_labs = "-alpha." in release["tag"]
+    if is_labs != (channel_name == "labs"):
+        fail("stable/labs release substitution")
     if not SHA40.fullmatch(release["source_revision"]):
         fail("missing source revision")
     if not SHA64.fullmatch(release["artifact_sha256"]):
@@ -302,19 +326,19 @@ def validate_release(product: dict, channel_name: str, channel: dict) -> None:
         policy_identity is not None
         and release["installation_identity"] != policy_identity
     ):
-        fail("stable/alpha installation identity substitution")
+        fail("stable/labs installation identity substitution")
 
 
 def published_fixture(catalog: dict, owner: str, channel_name: str) -> dict:
     candidate = copy.deepcopy(catalog)
     product = next(item for item in candidate["products"] if item["owner"] == owner)
     channel = next(
-        item for item in product["channels"] if item["channel"] == channel_name
+        item for item in product["product_channels"] if item["product_channel"] == channel_name
     )
-    version = "1.2.3-alpha.4" if channel_name == "alpha" else "1.2.3"
+    version = "1.2.3-alpha.4" if channel_name == "labs" else "1.2.3"
     identity = channel["identity"]["installation_identity"] or (
-        "MesmerPrism.RustyFleet.Alpha"
-        if channel_name == "alpha"
+        "MesmerPrism.RustyFleet.Labs"
+        if channel_name == "labs"
         else "MesmerPrism.RustyFleet"
     )
     channel["availability"] = "published"
@@ -336,7 +360,7 @@ def published_fixture(catalog: dict, owner: str, channel_name: str) -> dict:
 
 def negative_tests(catalog: dict) -> None:
     published = published_fixture(
-        catalog, "questionable-file-manager", "alpha"
+        catalog, "questionable-file-manager", "labs"
     )
     if list(SCHEMA_VALIDATOR.iter_errors(published)):
         fail("schema rejected a structurally valid publication projection")
@@ -351,39 +375,39 @@ def negative_tests(catalog: dict) -> None:
 
     cases: list[tuple[str, dict]] = []
 
-    mutable = published_fixture(catalog, "rusty-fleet", "alpha")
-    mutable_release = mutable["products"][1]["channels"][1]["release"]
+    mutable = published_fixture(catalog, "rusty-fleet", "labs")
+    mutable_release = mutable["products"][1]["product_channels"][1]["release"]
     mutable_release["artifact_url"] = (
         "https://github.com/MesmerPrism/rusty-fleet/releases/latest/"
         "download/owner-product.zip"
     )
     cases.append(("mutable URL", mutable))
 
-    missing = published_fixture(catalog, "rusty-fleet", "alpha")
-    del missing["products"][1]["channels"][1]["release"]["source_revision"]
+    missing = published_fixture(catalog, "rusty-fleet", "labs")
+    del missing["products"][1]["product_channels"][1]["release"]["source_revision"]
     cases.append(("missing provenance", missing))
 
     substituted = published_fixture(
-        catalog, "questionable-file-manager", "alpha"
+        catalog, "questionable-file-manager", "labs"
     )
-    substituted["products"][0]["channels"][1]["release"]["tag"] = "v1.2.3"
-    substituted["products"][0]["channels"][1]["release"]["version"] = "1.2.3"
-    cases.append(("stable release in alpha", substituted))
+    substituted["products"][0]["product_channels"][1]["release"]["tag"] = "v1.2.3"
+    substituted["products"][0]["product_channels"][1]["release"]["version"] = "1.2.3"
+    cases.append(("stable release in labs", substituted))
 
     identity = published_fixture(
-        catalog, "questionable-file-manager", "alpha"
+        catalog, "questionable-file-manager", "labs"
     )
-    identity["products"][0]["channels"][1]["release"][
+    identity["products"][0]["product_channels"][1]["release"][
         "installation_identity"
     ] = "MesmerPrism.MetaQuestFileManager"
-    cases.append(("stable identity in alpha", identity))
+    cases.append(("stable identity in labs", identity))
 
     owner = copy.deepcopy(catalog)
     owner["products"][0]["owner"] = "unknown-owner"
     cases.append(("unknown owner", owner))
 
     channel = copy.deepcopy(catalog)
-    channel["products"][0]["channels"][1]["channel"] = "preview"
+    channel["products"][0]["product_channels"][1]["product_channel"] = "preview"
     cases.append(("unknown channel", channel))
 
     feedback = copy.deepcopy(catalog)
@@ -398,8 +422,8 @@ def negative_tests(catalog: dict) -> None:
         product for product in hostess_stable["products"]
         if product["owner"] == "rusty-hostess"
     )
-    hostess["channels"].insert(0, copy.deepcopy(
-        catalog["products"][0]["channels"][0]
+    hostess["product_channels"].insert(0, copy.deepcopy(
+        catalog["products"][0]["product_channels"][0]
     ))
     cases.append(("invented Hostess stable channel", hostess_stable))
 
@@ -408,8 +432,8 @@ def negative_tests(catalog: dict) -> None:
         product for product in hostess_identity["products"]
         if product["owner"] == "rusty-hostess"
     )
-    hostess["channels"][0]["identity"]["installation_identity"] = "rusty-hostess"
-    cases.append(("wrong Hostess alpha identity", hostess_identity))
+    hostess["product_channels"][0]["identity"]["installation_identity"] = "rusty-hostess"
+    cases.append(("wrong Hostess labs identity", hostess_identity))
 
     hostess_claim = copy.deepcopy(catalog)
     hostess = next(
@@ -418,6 +442,12 @@ def negative_tests(catalog: dict) -> None:
     )
     hostess["distribution_notes"]["authority_exclusions"].remove("recording")
     cases.append(("Hostess authority overclaim", hostess_claim))
+
+    identity_authority = copy.deepcopy(catalog)
+    identity_authority["products"][0]["product_channels"][0]["identity"][
+        "identity_authority"
+    ] = "catalog-policy"
+    cases.append(("catalog identity-authority overclaim", identity_authority))
 
     for name, candidate in cases:
         try:
@@ -431,7 +461,7 @@ def negative_schema_tests(catalog: dict) -> None:
     fixtures: list[tuple[str, dict]] = []
 
     missing = copy.deepcopy(catalog)
-    del missing["default_channel"]
+    del missing["default_product_channel"]
     fixtures.append(("missing required property", missing))
 
     expanded = copy.deepcopy(catalog)
@@ -443,11 +473,11 @@ def negative_schema_tests(catalog: dict) -> None:
     fixtures.append(("unknown schema owner", owner))
 
     channel = copy.deepcopy(catalog)
-    channel["products"][0]["channels"][1]["channel"] = "preview"
+    channel["products"][0]["product_channels"][1]["product_channel"] = "preview"
     fixtures.append(("unknown schema channel", channel))
 
     inconsistent = copy.deepcopy(catalog)
-    inconsistent_channel = inconsistent["products"][0]["channels"][1]
+    inconsistent_channel = inconsistent["products"][0]["product_channels"][1]
     inconsistent_channel["availability"] = "published"
     fixtures.append(("published channel without release", inconsistent))
 
@@ -471,7 +501,7 @@ def validate_page(catalog: dict) -> None:
         or any(
             identity["identity"]["installation_identity"] in page
             for product in catalog["products"]
-            for identity in product["channels"]
+            for identity in product["product_channels"]
             if identity["identity"]["installation_identity"] is not None
         )
     ):
@@ -489,6 +519,9 @@ def validate_page(catalog: dict) -> None:
         "product.feedback.issue_url",
         "release.artifact_url",
         "release.installation_identity",
+        "channel.product_channel",
+        "channel.maturity",
+        "channel.distribution_track",
         "product.distribution_notes",
         "product.distribution_notes.authority_exclusions",
     ):
@@ -546,7 +579,7 @@ def main() -> int:
     if any(
         channel["availability"] != "unpublished" or channel["release"] is not None
         for product in catalog["products"]
-        for channel in product["channels"]
+        for channel in product["product_channels"]
     ):
         fail("catalog publication must remain disabled without owner readback")
     negative_schema_tests(catalog)
@@ -555,7 +588,7 @@ def main() -> int:
     validate_public_boundary()
     validate_local_http()
     digest = hashlib.sha256(CATALOG_PATH.read_bytes()).hexdigest()
-    channel_count = sum(len(product["channels"]) for product in catalog["products"])
+    channel_count = sum(len(product["product_channels"]) for product in catalog["products"])
     print(
         "Distribution catalog contract passed: "
         f"5 owners, {channel_count} channel policies, catalog_sha256={digest}"

@@ -38,7 +38,7 @@ OWNERS = {
     "questionable-file-manager": {
         "repository": "MesmerPrism/QuestIonAble-File-Manager",
         "metadata_name": re.compile(
-            r"^questionable-file-manager-alpha-owner-release\.json$"
+            r"^questionable-file-manager-labs-owner-release\.json$"
         ),
         "adapter": "qfm",
     },
@@ -50,14 +50,14 @@ OWNERS = {
     "rusty-hostess": {
         "repository": "MesmerPrism/rusty-hostess",
         "metadata_name": re.compile(
-            r"^RustyHostess-Alpha-\d+\.\d+\.\d+-win-x64"
+            r"^RustyHostess-Labs-\d+\.\d+\.\d+-win-x64"
             r"\.release-metadata\.json$"
         ),
         "adapter": "hostess",
     },
     "rusty-kiosk": {
         "repository": "MesmerPrism/Rusty-Kiosk",
-        "metadata_name": re.compile(r"^rusty-kiosk-alpha-owner-release\.json$"),
+        "metadata_name": re.compile(r"^rusty-kiosk-labs-owner-release\.json$"),
         "adapter": "kiosk",
     },
     "rusty-quest-package-updater": {
@@ -139,14 +139,14 @@ def tag_version(owner: str, tag: str) -> str:
         else OWNER_TAG.fullmatch(tag)
     )
     if match is None:
-        fail(f"{owner} tag is outside its alpha product")
+        fail(f"{owner} tag is outside its labs product")
     return match.group(1) if owner == "rusty-quest-package-updater" else (
         f"{match.group(1)}-alpha.{match.group(2)}"
     )
 
 
 def validate_request(
-    value: Any, *, require_complete_alpha_set: bool = False
+    value: Any, *, require_complete_labs_set: bool = False
 ) -> list[dict[str, str]]:
     request = exact_object(
         value,
@@ -165,7 +165,9 @@ def validate_request(
             raw,
             {
                 "owner",
-                "channel",
+                "product_channel",
+                "maturity",
+                "distribution_track",
                 "tag",
                 "expected_source_revision",
                 "expected_owner_metadata_asset",
@@ -176,8 +178,14 @@ def validate_request(
         owner = record["owner"]
         if owner not in OWNERS:
             fail("publication request contains an unknown owner")
-        if record["channel"] != "alpha":
-            fail("initial catalog preflight admits alpha only")
+        if record["product_channel"] != "labs":
+            fail("initial catalog preflight admits labs only")
+        if record["maturity"] not in {"alpha", "beta", "rc", "released"}:
+            fail("publication request maturity is outside its bound")
+        if record["distribution_track"] != "github-prerelease":
+            fail("initial Labs catalog preflight requires github-prerelease")
+        if record["maturity"] != "alpha":
+            fail("the first Labs candidate set must declare alpha maturity")
         tag_version(owner, record["tag"])
         exact_string(
             record["expected_source_revision"],
@@ -196,15 +204,15 @@ def validate_request(
         )
         if OWNERS[owner]["metadata_name"].fullmatch(metadata_name) is None:
             fail("owner metadata asset name is outside the owner registry")
-        key = (owner, record["channel"])
+        key = (owner, record["product_channel"])
         if key in seen:
             fail("publication request duplicates an owner channel")
         seen.add(key)
         result.append(record)
-    if require_complete_alpha_set and seen != {
-        (owner, "alpha") for owner in OWNERS
+    if require_complete_labs_set and seen != {
+        (owner, "labs") for owner in OWNERS
     }:
-        fail("catalog preflight request is not the complete alpha owner set")
+        fail("catalog preflight request is not the complete labs owner set")
     return result
 
 
@@ -239,7 +247,9 @@ def adapt_qfm(metadata: Any, tag: str) -> dict[str, Any]:
         metadata,
         {
             "schema",
-            "channel",
+            "product_channel",
+            "maturity",
+            "distribution_track",
             "release",
             "source",
             "installation",
@@ -270,23 +280,25 @@ def adapt_qfm(metadata: Any, tag: str) -> dict[str, Any]:
     assert match is not None
     expected_windows_version = f"{match.group(1)}.{match.group(2)}"
     if (
-        root["schema"] != "questionable-file-manager.alpha-owner-release.v1"
-        or root["channel"] != "alpha"
+        root["schema"] != "questionable-file-manager.owner-release.v2"
+        or root["product_channel"] != "labs"
+        or root["maturity"] != "alpha"
+        or root["distribution_track"] != "github-prerelease"
         or release != {
             "tag": tag,
             "version": version,
             "windows_package_version": expected_windows_version,
         }
         or installation["package_identity"]
-        != "MesmerPrism.QuestIonAbleFileManager.Alpha"
-        or primary["name"] != "QuestIonAbleFileManager-Alpha-Setup.exe"
+        != "MesmerPrism.QuestIonAbleFileManager.Labs"
+        or primary["name"] != "QuestIonAbleFileManager-Labs-Setup.exe"
         or evidence
         != {
             "name": "release-validation.json",
-            "schema": "questionable-file-manager.release-validation.v1",
+            "schema": "questionable-file-manager.release-validation.v2",
         }
     ):
-        fail("QFM owner metadata is not the exact alpha contract")
+        fail("QFM owner metadata is not the exact labs contract")
     return owner_asset(
         name=primary["name"],
         sha256=primary["sha256"],
@@ -303,7 +315,10 @@ def adapt_fleet(metadata: Any, tag: str) -> dict[str, Any]:
         "result",
         "descriptor_id",
         "version",
+        "product_channel",
+        "maturity",
         "channel",
+        "distribution_track",
         "release_tag",
         "installation_identity",
         "primary_artifact",
@@ -337,20 +352,23 @@ def adapt_fleet(metadata: Any, tag: str) -> dict[str, Any]:
     assert match is not None
     if (
         root["schema"]
-        != "rusty.fleet.windows_release_descriptor_receipt.v3"
+        != "rusty.fleet.windows_release_descriptor_receipt.v4"
         or root["result"] != "pass"
         or root["version"] != match.group(1)
-        or root["channel"] != "alpha"
+        or root["product_channel"] != "labs"
+        or root["maturity"] != "alpha"
+        or root["channel"] != "labs"
+        or root["distribution_track"] != "github-prerelease"
         or root["release_tag"] != tag
-        or root["installation_identity"] != "rusty-fleet-alpha"
-        or root["pages_path"] != "Rusty-Fleet/metadata/alpha/release.json"
+        or root["installation_identity"] != "rusty-fleet-labs"
+        or root["pages_path"] != "Rusty-Fleet/metadata/labs/release.json"
         or primary["role"] != "complete-product"
-        or primary["name"] != "RustyFleet-Alpha-Setup.exe"
+        or primary["name"] != "RustyFleet-Labs-Setup.exe"
         or primary["url"] != root["asset_url"]
         or primary["sha256"] != root["setup_sha256"]
         or primary["bytes"] != root["setup_size_bytes"]
     ):
-        fail("Fleet owner metadata is not the exact alpha contract")
+        fail("Fleet owner metadata is not the exact labs contract")
     return owner_asset(
         name=primary["name"],
         sha256=primary["sha256"],
@@ -368,7 +386,9 @@ def adapt_hostess(metadata: Any, tag: str) -> dict[str, Any]:
             "schema",
             "repository",
             "product",
-            "channel",
+            "product_channel",
+            "maturity",
+            "distribution_track",
             "prerelease",
             "version",
             "tag",
@@ -390,19 +410,21 @@ def adapt_hostess(metadata: Any, tag: str) -> dict[str, Any]:
     assert match is not None
     if (
         root["schema"]
-        != "rusty.hostess.windows_alpha_release_metadata.v1"
+        != "rusty.hostess.windows_labs_release_metadata.v2"
         or root["repository"] != "MesmerPrism/rusty-hostess"
-        or root["product"] != "rusty-hostess-alpha"
-        or root["channel"] != "alpha"
+        or root["product"] != "rusty-hostess-labs"
+        or root["product_channel"] != "labs"
+        or root["maturity"] != "alpha"
+        or root["distribution_track"] != "github-prerelease"
         or root["prerelease"] is not True
         or root["version"] != match.group(1)
         or root["tag"] != tag
-        or root["installation_identity"] != "rusty-hostess-alpha"
+        or root["installation_identity"] != "rusty-hostess-labs"
         or primary["role"] != "complete-product"
         or primary["name"]
-        != f"RustyHostess-Alpha-{match.group(1)}-win-x64.zip"
+        != f"RustyHostess-Labs-{match.group(1)}-win-x64.zip"
     ):
-        fail("Hostess owner metadata is not the exact alpha contract")
+        fail("Hostess owner metadata is not the exact labs contract")
     return owner_asset(
         name=primary["name"],
         sha256=primary["sha256"],
@@ -436,21 +458,23 @@ def adapt_kiosk(metadata: Any, tag: str) -> dict[str, Any]:
             "schema",
             "repository",
             "product",
-            "channel",
+            "product_channel",
+            "maturity",
+            "distribution_track",
             "prerelease",
             "tag",
             "version",
             "source_revision",
             "source_tree",
             "installation_identity",
-            "same_package_lineage",
+            "coinstallable_lineage",
             "bundle_manifest",
             "primary_artifact",
         },
         "Kiosk metadata",
     )
     lineage = exact_object(
-        root["same_package_lineage"],
+        root["coinstallable_lineage"],
         {
             "identity_mode",
             "package_name",
@@ -459,7 +483,7 @@ def adapt_kiosk(metadata: Any, tag: str) -> dict[str, Any]:
             "version_code",
             "exit_policy",
         },
-        "Kiosk same-package lineage",
+        "Kiosk coinstallable lineage",
     )
     manifest = exact_object(
         root["bundle_manifest"],
@@ -474,27 +498,26 @@ def adapt_kiosk(metadata: Any, tag: str) -> dict[str, Any]:
     version = tag_version("rusty-kiosk", tag)
     version_code = kiosk_version_code(version)
     if (
-        root["schema"] != "rusty.kiosk.alpha_release_owner_metadata.v1"
+        root["schema"] != "rusty.kiosk.labs_release_owner_metadata.v2"
         or root["repository"] != "MesmerPrism/Rusty-Kiosk"
-        or root["product"] != "rusty-kiosk"
-        or root["channel"] != "alpha"
+        or root["product"] != "rusty-kiosk-labs"
+        or root["product_channel"] != "labs"
+        or root["maturity"] != "alpha"
+        or root["distribution_track"] != "github-prerelease"
         or root["prerelease"] is not True
         or root["tag"] != tag
         or root["version"] != version
         or root["installation_identity"]
-        != "io.github.mesmerprism.rustykiosk"
-        or lineage["identity_mode"] != "same-package-in-place"
+        != "io.github.mesmerprism.rustykiosk.labs"
+        or lineage["identity_mode"] != "separate-coinstallable"
         or lineage["package_name"] != root["installation_identity"]
         or SHA64.fullmatch(lineage["signer_sha256"]) is None
         or lineage["version_name"] != version
         or lineage["version_code"] != version_code
         or lineage["exit_policy"]
-        != (
-            "in-place; install a later same-signer stable build with a "
-            "higher versionCode"
-        )
+        != "uninstall-labs-without-changing-stable"
         or manifest["schema"]
-        != "meta.quest.file_manager.rusty_kiosk_bundle.v1"
+        != "meta.quest.file_manager.rusty_kiosk_bundle.v2"
         or manifest["name"] != "bundle-manifest.json"
         or SHA64.fullmatch(manifest["sha256"]) is None
         or positive_int(manifest["bytes"], "Kiosk manifest byte count")
@@ -502,7 +525,7 @@ def adapt_kiosk(metadata: Any, tag: str) -> dict[str, Any]:
         or primary["role"] != "complete-product"
         or primary["name"] != "rusty-kiosk.apk"
     ):
-        fail("Kiosk owner metadata is not the exact in-place alpha contract")
+        fail("Kiosk owner metadata is not the exact coinstallable Labs contract")
     adapted = owner_asset(
         name=primary["name"],
         sha256=primary["sha256"],
@@ -511,7 +534,7 @@ def adapt_kiosk(metadata: Any, tag: str) -> dict[str, Any]:
         source_revision=root["source_revision"],
         source_tree=root["source_tree"],
     )
-    adapted["same_package_lineage"] = lineage
+    adapted["coinstallable_lineage"] = lineage
     adapted["bundle_manifest"] = manifest
     return adapted
 
@@ -526,7 +549,9 @@ def adapt_quest_updater(metadata: Any, tag: str) -> dict[str, Any]:
             "release_version",
             "source_revision",
             "source_tree",
-            "channel",
+            "product_channel",
+            "maturity",
+            "distribution_track",
             "installation_identity",
             "apk_version_name",
             "apk_version_code",
@@ -544,13 +569,15 @@ def adapt_quest_updater(metadata: Any, tag: str) -> dict[str, Any]:
     assert match is not None
     sequence = int(match.group(2))
     if (
-        root["schema"] != "rusty.quest.package_updater_product_release.v1"
-        or root["product"] != "rusty-quest-package-updater"
+        root["schema"] != "rusty.quest.package_updater_product_release.v2"
+        or root["product"] != "rusty-quest-package-updater-labs"
         or root["release_tag"] != tag
         or root["release_version"] != match.group(1)
-        or root["channel"] != "alpha"
+        or root["product_channel"] != "labs"
+        or root["maturity"] != "alpha"
+        or root["distribution_track"] != "github-prerelease"
         or root["installation_identity"]
-        != "io.github.mesmerprism.rustyquest.packageupdater.alpha"
+        != "io.github.mesmerprism.rustyquest.packageupdater.labs"
         or root["apk_version_name"] != match.group(1)
         or root["apk_version_code"] != sequence
         or not isinstance(root["updater_signer_sha256"], str)
@@ -560,7 +587,7 @@ def adapt_quest_updater(metadata: Any, tag: str) -> dict[str, Any]:
         or not isinstance(primary["sha256"], str)
         or not primary["sha256"].startswith("sha256:")
     ):
-        fail("Quest updater owner metadata is not the exact alpha contract")
+        fail("Quest updater owner metadata is not the exact labs contract")
     return owner_asset(
         name=primary["name"],
         sha256=primary["sha256"][7:],
@@ -835,7 +862,9 @@ def validate_kiosk_manifest(
         {
             "schema",
             "build_type",
-            "channel",
+            "product_channel",
+            "maturity",
+            "distribution_track",
             "prerelease",
             "tag",
             "version",
@@ -852,7 +881,7 @@ def validate_kiosk_manifest(
     )
     version = tag_version("rusty-kiosk", tag)
     version_code = kiosk_version_code(version)
-    lineage = adapted["same_package_lineage"]
+    lineage = adapted["coinstallable_lineage"]
     files = manifest["files"]
     if not isinstance(files, list) or len(files) != 4:
         fail("Kiosk bundle manifest payload inventory is not exact")
@@ -894,36 +923,35 @@ def validate_kiosk_manifest(
     helper = by_name["rusty-kiosk-setup-helper.apk"]
     if (
         manifest["schema"]
-        != "meta.quest.file_manager.rusty_kiosk_bundle.v1"
+        != "meta.quest.file_manager.rusty_kiosk_bundle.v2"
         or manifest["build_type"] != "release"
-        or manifest["channel"] != "alpha"
+        or manifest["product_channel"] != "labs"
+        or manifest["maturity"] != "alpha"
+        or manifest["distribution_track"] != "github-prerelease"
         or manifest["prerelease"] is not True
         or manifest["tag"] != tag
         or manifest["version"] != version
         or manifest["version_code"] != version_code
-        or manifest["identity_mode"] != "same-package-in-place"
+        or manifest["identity_mode"] != "separate-coinstallable"
         or manifest["exit_policy"]
-        != (
-            "in-place; install a later same-signer stable build with a "
-            "higher versionCode"
-        )
+        != "uninstall-labs-without-changing-stable"
         or manifest["source_url"]
         != "https://github.com/MesmerPrism/Rusty-Kiosk"
         or manifest["source_revision"] != adapted["source_revision"]
         or manifest["source_tree"] != adapted["source_tree"]
         or manifest["signer_sha256"] != lineage["signer_sha256"]
         or primary["package_name"]
-        != "io.github.mesmerprism.rustykiosk"
+        != "io.github.mesmerprism.rustykiosk.labs"
         or primary["version_name"] != version
         or primary["version_code"] != version_code
         or primary["sha256"] != adapted["sha256"]
         or primary["bytes"] != adapted["bytes"]
         or helper["package_name"]
-        != "io.github.mesmerprism.rustykiosk.setuphelper"
+        != "io.github.mesmerprism.rustykiosk.setuphelper.labs"
         or helper["version_name"] != version
         or helper["version_code"] != version_code
     ):
-        fail("Kiosk bundle manifest is not the exact in-place alpha evidence")
+        fail("Kiosk bundle manifest is not the exact coinstallable Labs evidence")
     observed_assets: list[dict[str, Any]] = []
     for entry in files:
         observed_assets.append(
@@ -952,7 +980,7 @@ def normalized_snapshot(
         or release.get("draft") is not False
         or release.get("prerelease") is not True
     ):
-        fail("owner release is not the exact public alpha prerelease")
+        fail("owner release is not the exact public labs prerelease")
     assets = release.get("assets")
     if not isinstance(assets, list) or not assets:
         fail("release asset inventory is absent")
@@ -995,7 +1023,7 @@ def normalized_snapshot(
         "RUSTY-KIOSK-LICENSE.txt",
         "RUSTY-KIOSK-SOURCE.txt",
         "bundle-manifest.json",
-        "rusty-kiosk-alpha-owner-release.json",
+        "rusty-kiosk-labs-owner-release.json",
         "rusty-kiosk-setup-helper.apk",
         "rusty-kiosk.apk",
     }:
@@ -1144,7 +1172,7 @@ def admit_record(
                 "sha256": manifest_commitment["sha256"],
                 "bytes": manifest_commitment["bytes"],
             },
-            "same_package_lineage": adapted["same_package_lineage"],
+            "coinstallable_lineage": adapted["coinstallable_lineage"],
             "manifest_payload_asset_ids": sorted(
                 asset["id"] for asset in payload_assets
             ),
@@ -1165,7 +1193,9 @@ def admit_record(
     }
     receipt = {
         "owner": owner,
-        "channel": "alpha",
+        "product_channel": "labs",
+        "maturity": request["maturity"],
+        "distribution_track": request["distribution_track"],
         "repository": repository,
         "release_id": release["id"],
         "tag": tag,
@@ -1197,17 +1227,17 @@ def run_preflight(
     *,
     fixture: Any | None,
     token: str = "",
-    require_complete_alpha_set: bool = False,
+    require_complete_labs_set: bool = False,
 ) -> tuple[dict[str, Any], dict[str, Any]]:
     records = validate_request(
         request_value,
-        require_complete_alpha_set=require_complete_alpha_set,
+        require_complete_labs_set=require_complete_labs_set,
     )
     validate_catalog(baseline_catalog)
     if any(
         channel["availability"] != "unpublished" or channel["release"] is not None
         for product in baseline_catalog["products"]
-        for channel in product["channels"]
+        for channel in product["product_channels"]
     ):
         fail("catalog source baseline is not inert and unpublished")
     readbacks = fixture_readbacks(fixture) if fixture is not None else None
@@ -1239,9 +1269,11 @@ def run_preflight(
             item for item in generated["products"] if item["owner"] == owner
         )
         channel = next(
-            item for item in product["channels"] if item["channel"] == "alpha"
+            item for item in product["product_channels"] if item["product_channel"] == "labs"
         )
         channel["availability"] = "published"
+        channel["maturity"] = request["maturity"]
+        channel["distribution_track"] = request["distribution_track"]
         channel["identity"]["installation_identity"] = projection[
             "installation_identity"
         ]
@@ -1257,7 +1289,7 @@ def run_preflight(
         "source_catalog_sha256": sha256_bytes(source_bytes),
         "generated_catalog_sha256": sha256_bytes(generated_bytes),
         "record_count": len(receipt_records),
-        "complete_alpha_owner_set": {
+        "complete_labs_owner_set": {
             record["owner"] for record in receipt_records
         }
         == set(OWNERS),
@@ -1286,9 +1318,9 @@ def main() -> int:
     parser.add_argument("--out-catalog", required=True, type=Path)
     parser.add_argument("--out-receipt", required=True, type=Path)
     parser.add_argument(
-        "--require-complete-alpha-set",
+        "--require-complete-labs-set",
         action="store_true",
-        help="reject unless all registered alpha owners are requested",
+        help="reject unless all registered labs owners are requested",
     )
     args = parser.parse_args()
     request = load_json(args.request, "publication request", MAX_METADATA_BYTES)
@@ -1303,7 +1335,7 @@ def main() -> int:
         catalog,
         fixture=fixture,
         token=os.environ.get("GH_TOKEN", ""),
-        require_complete_alpha_set=args.require_complete_alpha_set,
+        require_complete_labs_set=args.require_complete_labs_set,
     )
     for path, value in (
         (args.out_catalog, generated),

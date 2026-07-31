@@ -1,11 +1,11 @@
 {
-  "schema": "rusty.morphospace.public_distribution_catalog.v1",
-  "default_channel": "stable",
+  "schema": "rusty.morphospace.public_distribution_catalog.v2",
+  "default_product_channel": "stable",
   "authority": "owner-release-metadata-only",
   "fleet_pages_contract": {
     "composition": "preserve-complete-site-replace-owner-channel-subtree",
     "stable_metadata_path": "/Rusty-Fleet/metadata/stable/release.json",
-    "alpha_metadata_path": "/Rusty-Fleet/metadata/alpha/release.json"
+    "labs_metadata_path": "/Rusty-Fleet/metadata/labs/release.json"
   },
   "products": [
     {
@@ -14,9 +14,9 @@
       "repository": "https://github.com/MesmerPrism/QuestIonAble-File-Manager",
       "complete_product": true,
       "feedback": {
-        "issue_url": "https://github.com/MesmerPrism/QuestIonAble-File-Manager/issues/new?title=%5BAlpha%20feedback%5D%20&body=Channel%3A%20alpha%0AVersion%3A%20%3Cversion%3E%0ASource%20revision%3A%20%3C40-hex%20commit%3E%0AArtifact%20SHA-256%3A%20%3C64-hex%20digest%3E%0AOperating%20system%3A%20%3COS%20and%20version%3E%0ADevice%20class%3A%20%3Cclass%2C%20not%20serial%3E%0A%0ADo%20not%20include%20credentials%2C%20personal%20data%2C%20device%20serials%2C%20network%20addresses%2C%20pairing%20material%2C%20or%20private%20logs.",
+        "issue_url": "https://github.com/MesmerPrism/QuestIonAble-File-Manager/issues/new?title=%5BLabs%20feedback%5D%20&body=Channel%3A%20labs%0AVersion%3A%20%3Cversion%3E%0ASource%20revision%3A%20%3C40-hex%20commit%3E%0AArtifact%20SHA-256%3A%20%3C64-hex%20digest%3E%0AOperating%20system%3A%20%3COS%20and%20version%3E%0ADevice%20class%3A%20%3Cclass%2C%20not%20serial%3E%0A%0ADo%20not%20include%20credentials%2C%20personal%20data%2C%20device%20serials%2C%20network%20addresses%2C%20pairing%20material%2C%20or%20private%20logs.",
         "required_fields": [
-          "channel",
+          "product_channel",
           "version",
           "source_revision",
           "artifact_sha256",
@@ -25,31 +25,35 @@
         ],
         "privacy_warning": "Do not include credentials, personal data, device serials, network addresses, pairing material, or private logs."
       },
-      "channels": [
+      "product_channels": [
         {
-          "channel": "stable",
+          "product_channel": "stable",
+          "maturity": "released",
+          "distribution_track": "github-release",
           "opt_in": false,
           "availability": "unpublished",
           "identity": {
             "platform": "windows",
             "installation_identity": "MesmerPrism.MetaQuestFileManager",
-            "identity_authority": "catalog-policy",
+            "identity_authority": "owner-release-metadata",
             "relationship_to_stable": "stable"
           },
           "transition": "stable-default",
           "release": null
         },
         {
-          "channel": "alpha",
+          "product_channel": "labs",
+          "maturity": "alpha",
+          "distribution_track": "github-prerelease",
           "opt_in": true,
           "availability": "unpublished",
           "identity": {
             "platform": "windows",
-            "installation_identity": "MesmerPrism.QuestIonAbleFileManager.Alpha",
-            "identity_authority": "catalog-policy",
+            "installation_identity": "MesmerPrism.QuestIonAbleFileManager.Labs",
+            "identity_authority": "owner-release-metadata",
             "relationship_to_stable": "separate-coinstallable"
           },
-          "transition": "uninstall-alpha-without-changing-stable",
+          "transition": "uninstall-labs-without-changing-stable",
           "release": null
         }
       ]
@@ -60,9 +64,9 @@
       "repository": "https://github.com/MesmerPrism/rusty-fleet",
       "complete_product": true,
       "feedback": {
-        "issue_url": "https://github.com/MesmerPrism/rusty-fleet/issues/new?title=%5BAlpha%20feedback%5D%20&body=Channel%3A%20alpha%0AVersion%3A%20%3Cversion%3E%0ASource%20revision%3A%20%3C40-hex%20commit%3E%0AArtifact%20SHA-256%3A%20%3C64-hex%20digest%3E%0AOperating%20system%3A%20%3COS%20and%20version%3E%0ADevice%20class%3A%20%3Cclass%2C%20not%20serial%3E%0A%0ADo%20not%20include%20credentials%2C%20personal%20data%2C%20device%20serials%2C%20network%20addresses%2C%20pairing%20material%2C%20or%20private%20logs.",
+        "issue_url": "https://github.com/MesmerPrism/rusty-fleet/issues/new?title=%5BLabs%20feedback%5D%20&body=Channel%3A%20labs%0AVersion%3A%20%3Cversion%3E%0ASource%20revision%3A%20%3C40-hex%20commit%3E%0AArtifact%20SHA-256%3A%20%3C64-hex%20digest%3E%0AOperating%20system%3A%20%3COS%20and%20version%3E%0ADevice%20class%3A%20%3Cclass%2C%20not%20serial%3E%0A%0ADo%20not%20include%20credentials%2C%20personal%20data%2C%20device%20serials%2C%20network%20addresses%2C%20pairing%20material%2C%20or%20private%20logs.",
         "required_fields": [
-          "channel",
+          "product_channel",
           "version",
           "source_revision",
           "artifact_sha256",
@@ -71,9 +75,11 @@
         ],
         "privacy_warning": "Do not include credentials, personal data, device serials, network addresses, pairing material, or private logs."
       },
-      "channels": [
+      "product_channels": [
         {
-          "channel": "stable",
+          "product_channel": "stable",
+          "maturity": "released",
+          "distribution_track": "github-release",
           "opt_in": false,
           "availability": "unpublished",
           "identity": {
@@ -86,16 +92,18 @@
           "release": null
         },
         {
-          "channel": "alpha",
+          "product_channel": "labs",
+          "maturity": "alpha",
+          "distribution_track": "github-prerelease",
           "opt_in": true,
           "availability": "unpublished",
           "identity": {
             "platform": "windows",
-            "installation_identity": null,
+            "installation_identity": "rusty-fleet-labs",
             "identity_authority": "owner-release-metadata",
             "relationship_to_stable": "separate-coinstallable"
           },
-          "transition": "uninstall-alpha-without-changing-stable",
+          "transition": "uninstall-labs-without-changing-stable",
           "release": null
         }
       ]
@@ -116,18 +124,19 @@
           "Casting.exe"
         ],
         "authority_exclusions": [
+          "meta-software-redistribution",
           "presentation effectiveness",
           "recording",
           "input forwarding",
           "extended-FOV restoration",
           "device cleanup"
         ],
-        "removal": "Uninstalling Rusty Hostess Alpha removes only its separate Windows alpha identity and does not change other products."
+        "removal": "Uninstalling Rusty Hostess Labs removes only its separate Windows labs identity and does not change other products."
       },
       "feedback": {
-        "issue_url": "https://github.com/MesmerPrism/rusty-hostess/issues/new?title=%5BAlpha%20feedback%5D%20&body=Channel%3A%20alpha%0AVersion%3A%20%3Cversion%3E%0ASource%20revision%3A%20%3C40-hex%20commit%3E%0AArtifact%20SHA-256%3A%20%3C64-hex%20digest%3E%0AOperating%20system%3A%20%3COS%20and%20version%3E%0ADevice%20class%3A%20%3Cclass%2C%20not%20serial%3E%0A%0ADo%20not%20include%20credentials%2C%20personal%20data%2C%20device%20serials%2C%20network%20addresses%2C%20pairing%20material%2C%20or%20private%20logs.",
+        "issue_url": "https://github.com/MesmerPrism/rusty-hostess/issues/new?title=%5BLabs%20feedback%5D%20&body=Channel%3A%20labs%0AVersion%3A%20%3Cversion%3E%0ASource%20revision%3A%20%3C40-hex%20commit%3E%0AArtifact%20SHA-256%3A%20%3C64-hex%20digest%3E%0AOperating%20system%3A%20%3COS%20and%20version%3E%0ADevice%20class%3A%20%3Cclass%2C%20not%20serial%3E%0A%0ADo%20not%20include%20credentials%2C%20personal%20data%2C%20device%20serials%2C%20network%20addresses%2C%20pairing%20material%2C%20or%20private%20logs.",
         "required_fields": [
-          "channel",
+          "product_channel",
           "version",
           "source_revision",
           "artifact_sha256",
@@ -136,18 +145,20 @@
         ],
         "privacy_warning": "Do not include credentials, personal data, device serials, network addresses, pairing material, or private logs."
       },
-      "channels": [
+      "product_channels": [
         {
-          "channel": "alpha",
+          "product_channel": "labs",
+          "maturity": "alpha",
+          "distribution_track": "github-prerelease",
           "opt_in": true,
           "availability": "unpublished",
           "identity": {
             "platform": "windows",
-            "installation_identity": "rusty-hostess-alpha",
-            "identity_authority": "catalog-policy",
-            "relationship_to_stable": "alpha-only"
+            "installation_identity": "rusty-hostess-labs",
+            "identity_authority": "owner-release-metadata",
+            "relationship_to_stable": "labs-only"
           },
-          "transition": "remove-alpha-without-changing-other-products",
+          "transition": "remove-labs-without-changing-other-products",
           "release": null
         }
       ]
@@ -158,9 +169,9 @@
       "repository": "https://github.com/MesmerPrism/Rusty-Kiosk",
       "complete_product": true,
       "feedback": {
-        "issue_url": "https://github.com/MesmerPrism/Rusty-Kiosk/issues/new?title=%5BAlpha%20feedback%5D%20&body=Channel%3A%20alpha%0AVersion%3A%20%3Cversion%3E%0ASource%20revision%3A%20%3C40-hex%20commit%3E%0AArtifact%20SHA-256%3A%20%3C64-hex%20digest%3E%0AOperating%20system%3A%20%3COS%20and%20version%3E%0ADevice%20class%3A%20%3Cclass%2C%20not%20serial%3E%0A%0ADo%20not%20include%20credentials%2C%20personal%20data%2C%20device%20serials%2C%20network%20addresses%2C%20pairing%20material%2C%20or%20private%20logs.",
+        "issue_url": "https://github.com/MesmerPrism/Rusty-Kiosk/issues/new?title=%5BLabs%20feedback%5D%20&body=Channel%3A%20labs%0AVersion%3A%20%3Cversion%3E%0ASource%20revision%3A%20%3C40-hex%20commit%3E%0AArtifact%20SHA-256%3A%20%3C64-hex%20digest%3E%0AOperating%20system%3A%20%3COS%20and%20version%3E%0ADevice%20class%3A%20%3Cclass%2C%20not%20serial%3E%0A%0ADo%20not%20include%20credentials%2C%20personal%20data%2C%20device%20serials%2C%20network%20addresses%2C%20pairing%20material%2C%20or%20private%20logs.",
         "required_fields": [
-          "channel",
+          "product_channel",
           "version",
           "source_revision",
           "artifact_sha256",
@@ -169,31 +180,35 @@
         ],
         "privacy_warning": "Do not include credentials, personal data, device serials, network addresses, pairing material, or private logs."
       },
-      "channels": [
+      "product_channels": [
         {
-          "channel": "stable",
+          "product_channel": "stable",
+          "maturity": "released",
+          "distribution_track": "github-release",
           "opt_in": false,
           "availability": "unpublished",
           "identity": {
             "platform": "android",
             "installation_identity": "io.github.mesmerprism.rustykiosk",
-            "identity_authority": "catalog-policy",
+            "identity_authority": "owner-release-metadata",
             "relationship_to_stable": "stable"
           },
           "transition": "stable-default",
           "release": null
         },
         {
-          "channel": "alpha",
+          "product_channel": "labs",
+          "maturity": "alpha",
+          "distribution_track": "github-prerelease",
           "opt_in": true,
           "availability": "unpublished",
           "identity": {
             "platform": "android",
-            "installation_identity": "io.github.mesmerprism.rustykiosk",
-            "identity_authority": "catalog-policy",
-            "relationship_to_stable": "same-package-in-place"
+            "installation_identity": "io.github.mesmerprism.rustykiosk.labs",
+            "identity_authority": "owner-release-metadata",
+            "relationship_to_stable": "separate-coinstallable"
           },
-          "transition": "forward-only-to-later-stable",
+          "transition": "uninstall-labs-without-changing-stable",
           "release": null
         }
       ]
@@ -204,9 +219,9 @@
       "repository": "https://github.com/MesmerPrism/Rusty-Quest",
       "complete_product": true,
       "feedback": {
-        "issue_url": "https://github.com/MesmerPrism/Rusty-Quest/issues/new?title=%5BPackage%20Updater%20alpha%20feedback%5D%20&body=Channel%3A%20alpha%0AVersion%3A%20%3Cversion%3E%0ASource%20revision%3A%20%3C40-hex%20commit%3E%0AArtifact%20SHA-256%3A%20%3C64-hex%20digest%3E%0AOperating%20system%3A%20%3COS%20and%20version%3E%0ADevice%20class%3A%20%3Cclass%2C%20not%20serial%3E%0A%0ADo%20not%20include%20credentials%2C%20personal%20data%2C%20device%20serials%2C%20network%20addresses%2C%20pairing%20material%2C%20or%20private%20logs.",
+        "issue_url": "https://github.com/MesmerPrism/Rusty-Quest/issues/new?title=%5BPackage%20Updater%20labs%20feedback%5D%20&body=Channel%3A%20labs%0AVersion%3A%20%3Cversion%3E%0ASource%20revision%3A%20%3C40-hex%20commit%3E%0AArtifact%20SHA-256%3A%20%3C64-hex%20digest%3E%0AOperating%20system%3A%20%3COS%20and%20version%3E%0ADevice%20class%3A%20%3Cclass%2C%20not%20serial%3E%0A%0ADo%20not%20include%20credentials%2C%20personal%20data%2C%20device%20serials%2C%20network%20addresses%2C%20pairing%20material%2C%20or%20private%20logs.",
         "required_fields": [
-          "channel",
+          "product_channel",
           "version",
           "source_revision",
           "artifact_sha256",
@@ -215,18 +230,20 @@
         ],
         "privacy_warning": "Do not include credentials, personal data, device serials, network addresses, pairing material, or private logs."
       },
-      "channels": [
+      "product_channels": [
         {
-          "channel": "alpha",
+          "product_channel": "labs",
+          "maturity": "alpha",
+          "distribution_track": "github-prerelease",
           "opt_in": true,
           "availability": "unpublished",
           "identity": {
             "platform": "android",
-            "installation_identity": "io.github.mesmerprism.rustyquest.packageupdater.alpha",
-            "identity_authority": "catalog-policy",
-            "relationship_to_stable": "alpha-only"
+            "installation_identity": "io.github.mesmerprism.rustyquest.packageupdater.labs",
+            "identity_authority": "owner-release-metadata",
+            "relationship_to_stable": "labs-only"
           },
-          "transition": "remove-alpha",
+          "transition": "remove-labs",
           "release": null
         }
       ]

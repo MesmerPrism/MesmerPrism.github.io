@@ -24,8 +24,8 @@
 
   const requireCatalogShape = (catalog) => {
     if (!catalog ||
-        catalog.schema !== "rusty.morphospace.public_distribution_catalog.v1" ||
-        catalog.default_channel !== "stable" ||
+        catalog.schema !== "rusty.morphospace.public_distribution_catalog.v2" ||
+        catalog.default_product_channel !== "stable" ||
         !Array.isArray(catalog.products) ||
         catalog.products.length !== 5) {
       throw new Error("Catalog shape is not supported.");
@@ -38,10 +38,12 @@
           repository.hostname !== "github.com" ||
           feedback.origin !== repository.origin ||
           feedback.pathname !== `${repository.pathname}/issues/new` ||
-          !Array.isArray(product.channels) ||
-          product.channels.length < 1 ||
-          product.channels.some((entry) =>
-            entry.channel !== "stable" && entry.channel !== "alpha")) {
+          !Array.isArray(product.product_channels) ||
+          product.product_channels.length < 1 ||
+          product.product_channels.some((entry) =>
+            (entry.product_channel !== "stable" && entry.product_channel !== "labs") ||
+            !["alpha", "beta", "rc", "released"].includes(entry.maturity) ||
+            !["github-release", "github-prerelease", "meta-store-app"].includes(entry.distribution_track))) {
         throw new Error("Catalog owner, feedback, or channel is invalid.");
       }
     }
@@ -69,28 +71,28 @@
         element("strong", null, "Not coinstallable and not directly reversible. ")
       );
       warning.append(
-        "Installing alpha replaces the installed stable package in place. " +
+        "Installing labs replaces the installed stable package in place. " +
         "Android will not accept a lower-version downgrade. Exit by installing " +
         "a later, same-signer stable release with a higher version code."
       );
       container.append(warning);
-    } else if (channel.transition === "remove-alpha" ||
-               channel.transition === "remove-alpha-without-changing-other-products") {
+    } else if (channel.transition === "remove-labs" ||
+               channel.transition === "remove-labs-without-changing-other-products") {
       container.append(
         element(
           "p",
           null,
-          channel.transition === "remove-alpha-without-changing-other-products"
-            ? "Removing alpha removes only this separate product identity and does not change other products."
-            : "Removing alpha removes this product; no stable package is asserted."
+          channel.transition === "remove-labs-without-changing-other-products"
+            ? "Removing labs removes only this separate product identity and does not change other products."
+            : "Removing labs removes this product; no stable package is asserted."
         )
       );
-    } else if (channel.channel === "alpha") {
+    } else if (channel.product_channel === "labs") {
       container.append(
         element(
           "p",
           null,
-          "This separate alpha identity can be removed without changing stable."
+          "This separate labs identity can be removed without changing stable."
         )
       );
     }
@@ -127,19 +129,19 @@
   const renderProduct = (product) => {
     const card = element("article", "product-card");
     const header = element("header");
-    const platforms = [...new Set(product.channels.map(
+    const platforms = [...new Set(product.product_channels.map(
       (channel) => channel.identity.platform === "windows" ? "Windows" : "Android / Quest"
     ))];
     header.append(element("p", "platform", platforms.join(" · ")));
     header.append(element("h3", null, product.name));
     card.append(header);
 
-    if (!product.channels.some((channel) => channel.channel === "stable")) {
+    if (!product.product_channels.some((channel) => channel.product_channel === "stable")) {
       card.append(
         element(
           "p",
           "availability",
-          "Owner channel: alpha only. No stable package or identity is asserted."
+          "Owner channel: labs only. No stable package or identity is asserted."
         )
       );
     }
@@ -160,10 +162,20 @@
       card.append(notes);
     }
 
-    for (const channel of product.channels) {
+    for (const channel of product.product_channels) {
       const section = element("section", "channel-section");
-      const label = channel.channel === "alpha" ? "Alpha · opt in" : "Stable · default";
-      section.append(element("h4", `channel ${channel.channel}`, label));
+      const label = channel.product_channel === "labs" ? "Labs · opt in" : "Stable · default";
+      section.append(element("h4", `channel ${channel.product_channel}`, label));
+      const axes = element("dl", "release-provenance");
+      for (const [term, value] of [
+        ["Product channel", channel.product_channel],
+        ["Maturity", channel.maturity],
+        ["Distribution track", channel.distribution_track]
+      ]) {
+        axes.append(element("dt", null, term));
+        axes.append(element("dd", null, value));
+      }
+      section.append(axes);
       addIdentity(section, channel);
       addTransition(section, channel);
       addRelease(section, product, channel);

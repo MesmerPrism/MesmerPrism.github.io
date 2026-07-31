@@ -62,7 +62,7 @@ jobs:
         run: |
           python tools/preflight_distribution_catalog.py \
             --request catalog-preflight-request.json \
-            --require-complete-alpha-set \
+            --require-complete-labs-set \
             --out-catalog _catalog-preflight/catalog.generated.json \
             --out-receipt _catalog-preflight/readback.receipt.json
 

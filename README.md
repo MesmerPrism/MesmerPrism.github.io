@@ -52,19 +52,25 @@ GitHub Pages links.
 
 ## Rusty Morphospace release channels
 
-The public stable/alpha policy catalog lives at
+The public stable/labs policy catalog lives at
 [`Rusty-Morphospace/catalog/`](Rusty-Morphospace/catalog/). It contains no
 binaries and makes no release claim until an owning workflow supplies complete
 exact-tag provenance. See
 [`docs/DISTRIBUTION_CATALOG.md`](docs/DISTRIBUTION_CATALOG.md) for the owner
 authority, Fleet Pages composition, feedback, and validation contracts.
 It currently models five complete-product owners, including the unpublished,
-opt-in Rusty Hostess Windows alpha owner without asserting a stable release.
+opt-in Rusty Hostess Windows labs owner without asserting a stable release.
 The protected read-only preflight can validate exact live owner releases and
 retain private review evidence, but it has no Pages deployment or publication
 permission and never changes the checked-in unpublished baseline. Its central
-workflow requires all five alpha owners; Kiosk adds strict JSON-manifest and
-same-package lineage validation without downloading either APK.
+workflow requires all five Labs owners; Kiosk adds strict JSON-manifest and
+coinstallable-lineage validation without downloading either APK. Product
+channel, release maturity, and distribution track remain separate bounded
+facts; first Labs candidates use the `github-prerelease` track and may retain
+`-alpha.N` maturity tags. Kiosk Meta Store distribution remains owned by its
+separate launcher metadata, outside this GitHub-bundle catalog projection.
+Installation identities likewise remain owner-metadata facts; the catalog is
+never their authority.
 
 ## Privacy-sensitive assets
 

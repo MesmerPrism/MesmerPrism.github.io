@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Public stable and opt-in alpha channel policies for Rusty Morphospace products.">
+  <meta name="description" content="Public stable and opt-in labs channel policies for Rusty Morphospace products.">
   <link rel="canonical" href="https://mesmerprism.com/Rusty-Morphospace/catalog/">
   <link rel="stylesheet" href="../../assets/fonts.css">
   <link rel="stylesheet" href="../../styles.css">
@@ -25,17 +25,17 @@
   <main>
     <section class="hero">
       <div class="shell catalog-lead">
-        <h1>Stable by default. Alpha by explicit choice.</h1>
+        <h1>Stable by default. Labs by explicit choice.</h1>
         <p class="lede">This catalog explains channel identity and transition policy. It does not publish binaries and does not assert that a release exists. Download links appear only after an owning product workflow supplies validated, immutable release metadata.</p>
         <div class="notice stable-notice">
-          <strong>Default: stable.</strong> Alpha is pre-release software. Confirm the product, channel, version, source revision, artifact SHA-256, and installation identity before opting in.
+          <strong>Default: stable.</strong> Labs is an explicit opt-in product channel. Its release maturity is reported separately as alpha, beta, release candidate, or released. Confirm the product channel, maturity, version, source revision, artifact SHA-256, and installation identity before opting in.
         </div>
       </div>
     </section>
 
     <section id="products" class="shell catalog-section" aria-labelledby="products-title">
       <h2 id="products-title">Complete-product channel policies</h2>
-      <p>Alpha builds contain the complete current owner product. They are not reduced feature editions.</p>
+      <p>Labs builds contain the complete current owner product. They are not reduced feature editions.</p>
 
       <div id="product-grid" class="product-grid" aria-live="polite" aria-busy="true">
         <p id="catalog-status">Loading validated catalog metadata…</p>
@@ -47,7 +47,7 @@
       <h2 id="feedback-title">Useful, public-safe feedback</h2>
       <p>Use the product-specific link above. Include these six facts:</p>
       <ul>
-        <li>channel and exact version;</li>
+        <li>product channel, maturity, and exact version;</li>
         <li>40-hex source revision;</li>
         <li>64-hex artifact SHA-256;</li>
         <li>operating system and version;</li>
@@ -61,7 +61,7 @@
 
     <section class="shell catalog-section authority-section" aria-labelledby="authority-title">
       <h2 id="authority-title">Where release authority lives</h2>
-      <p>Each product owner creates and signs its own release metadata and immutable GitHub release URLs. This page only projects owner-validated facts. Rusty Fleet continues to own <code>/Rusty-Fleet/metadata/stable/release.json</code> and <code>/Rusty-Fleet/metadata/alpha/release.json</code>; complete-site composition must preserve the other channel and every unrelated site path byte-for-byte.</p>
+      <p>Each product owner creates and signs its own release metadata and immutable GitHub release URLs. This page only projects owner-validated facts. Rusty Fleet continues to own <code>/Rusty-Fleet/metadata/stable/release.json</code> and <code>/Rusty-Fleet/metadata/labs/release.json</code>; complete-site composition must preserve the other channel and every unrelated site path byte-for-byte.</p>
     </section>
   </main>
 

@@ -36,22 +36,25 @@ def fail(message: str) -> None:
 
 def exact_fleet_metadata(tag: str) -> dict:
     return {
-        "schema": "rusty.fleet.windows_release_descriptor_receipt.v3",
+        "schema": "rusty.fleet.windows_release_descriptor_receipt.v4",
         "result": "pass",
-        "descriptor_id": "v1.2.3-alpha-owner-test",
+        "descriptor_id": "v1.2.3-labs-owner-test",
         "version": "1.2.3",
-        "channel": "alpha",
+        "product_channel": "labs",
+        "maturity": "alpha",
+        "channel": "labs",
+        "distribution_track": "github-prerelease",
         "release_tag": tag,
-        "installation_identity": "rusty-fleet-alpha",
+        "installation_identity": "rusty-fleet-labs",
         "primary_artifact": {
             "role": "complete-product",
-            "name": "RustyFleet-Alpha-Setup.exe",
+            "name": "RustyFleet-Labs-Setup.exe",
             "sha256": PRIMARY_HASH,
             "bytes": PRIMARY_BYTES,
             "url": canonical_asset_url(
                 OWNERS["rusty-fleet"]["repository"],
                 tag,
-                "RustyFleet-Alpha-Setup.exe",
+                "RustyFleet-Labs-Setup.exe",
             ),
         },
         "issued_at_ms": 1800000000000,
@@ -71,29 +74,28 @@ def exact_fleet_metadata(tag: str) -> dict:
         "descriptor_sha256": "9" * 64,
         "canonical_payload": "rfc8785_jcs_closed_shape",
         "signature": "rsa_pss_sha256",
-        "pages_path": "Rusty-Fleet/metadata/alpha/release.json",
+        "pages_path": "Rusty-Fleet/metadata/labs/release.json",
         "asset_url": canonical_asset_url(
             OWNERS["rusty-fleet"]["repository"],
             tag,
-            "RustyFleet-Alpha-Setup.exe",
+            "RustyFleet-Labs-Setup.exe",
         ),
     }
 
 
 def exact_kiosk_manifest(tag: str) -> dict:
     return {
-        "schema": "meta.quest.file_manager.rusty_kiosk_bundle.v1",
+        "schema": "meta.quest.file_manager.rusty_kiosk_bundle.v2",
         "build_type": "release",
-        "channel": "alpha",
+        "product_channel": "labs",
+        "maturity": "alpha",
+        "distribution_track": "github-prerelease",
         "prerelease": True,
         "tag": tag,
         "version": "1.2.3-alpha.4",
         "version_code": 1020304,
-        "identity_mode": "same-package-in-place",
-        "exit_policy": (
-            "in-place; install a later same-signer stable build with a "
-            "higher versionCode"
-        ),
+        "identity_mode": "separate-coinstallable",
+        "exit_policy": "uninstall-labs-without-changing-stable",
         "source_url": "https://github.com/MesmerPrism/Rusty-Kiosk",
         "source_revision": SOURCE,
         "source_tree": TREE,
@@ -101,7 +103,7 @@ def exact_kiosk_manifest(tag: str) -> dict:
         "files": [
             {
                 "name": "rusty-kiosk.apk",
-                "package_name": "io.github.mesmerprism.rustykiosk",
+                "package_name": "io.github.mesmerprism.rustykiosk.labs",
                 "version_name": "1.2.3-alpha.4",
                 "version_code": 1020304,
                 "sha256": PRIMARY_HASH,
@@ -110,7 +112,7 @@ def exact_kiosk_manifest(tag: str) -> dict:
             {
                 "name": "rusty-kiosk-setup-helper.apk",
                 "package_name":
-                    "io.github.mesmerprism.rustykiosk.setuphelper",
+                    "io.github.mesmerprism.rustykiosk.setuphelper.labs",
                 "version_name": "1.2.3-alpha.4",
                 "version_code": 1020304,
                 "sha256": HELPER_HASH,
@@ -134,8 +136,10 @@ def exact_metadata(owner: str, tag: str) -> tuple[dict, str]:
     if owner == "questionable-file-manager":
         return (
             {
-                "schema": "questionable-file-manager.alpha-owner-release.v1",
-                "channel": "alpha",
+                "schema": "questionable-file-manager.owner-release.v2",
+                "product_channel": "labs",
+                "maturity": "alpha",
+                "distribution_track": "github-prerelease",
                 "release": {
                     "tag": tag,
                     "version": "1.2.3-alpha.4",
@@ -144,73 +148,74 @@ def exact_metadata(owner: str, tag: str) -> tuple[dict, str]:
                 "source": {"revision": SOURCE, "tree": TREE},
                 "installation": {
                     "package_identity":
-                        "MesmerPrism.QuestIonAbleFileManager.Alpha"
+                        "MesmerPrism.QuestIonAbleFileManager.Labs"
                 },
                 "primary_windows_setup": {
-                    "name": "QuestIonAbleFileManager-Alpha-Setup.exe",
+                    "name": "QuestIonAbleFileManager-Labs-Setup.exe",
                     "sha256": PRIMARY_HASH,
                     "bytes": PRIMARY_BYTES,
                 },
                 "validation_evidence": {
                     "name": "release-validation.json",
-                    "schema": "questionable-file-manager.release-validation.v1",
+                    "schema": "questionable-file-manager.release-validation.v2",
                 },
             },
-            "QuestIonAbleFileManager-Alpha-Setup.exe",
+            "QuestIonAbleFileManager-Labs-Setup.exe",
         )
     if owner == "rusty-fleet":
-        return exact_fleet_metadata(tag), "RustyFleet-Alpha-Setup.exe"
+        return exact_fleet_metadata(tag), "RustyFleet-Labs-Setup.exe"
     if owner == "rusty-hostess":
         return (
             {
                 "schema":
-                    "rusty.hostess.windows_alpha_release_metadata.v1",
+                    "rusty.hostess.windows_labs_release_metadata.v2",
                 "repository": "MesmerPrism/rusty-hostess",
-                "product": "rusty-hostess-alpha",
-                "channel": "alpha",
+                "product": "rusty-hostess-labs",
+                "product_channel": "labs",
+                "maturity": "alpha",
+                "distribution_track": "github-prerelease",
                 "prerelease": True,
                 "version": "1.2.3",
                 "tag": tag,
                 "source": {"revision": SOURCE, "tree": TREE},
-                "installation_identity": "rusty-hostess-alpha",
+                "installation_identity": "rusty-hostess-labs",
                 "primary_artifact": {
                     "role": "complete-product",
-                    "name": "RustyHostess-Alpha-1.2.3-win-x64.zip",
+                    "name": "RustyHostess-Labs-1.2.3-win-x64.zip",
                     "sha256": PRIMARY_HASH,
                     "bytes": PRIMARY_BYTES,
                 },
             },
-            "RustyHostess-Alpha-1.2.3-win-x64.zip",
+            "RustyHostess-Labs-1.2.3-win-x64.zip",
         )
     if owner == "rusty-kiosk":
         manifest_bytes = canonical_json_bytes(exact_kiosk_manifest(tag))
         return (
             {
-                "schema": "rusty.kiosk.alpha_release_owner_metadata.v1",
+                "schema": "rusty.kiosk.labs_release_owner_metadata.v2",
                 "repository": "MesmerPrism/Rusty-Kiosk",
-                "product": "rusty-kiosk",
-                "channel": "alpha",
+                "product": "rusty-kiosk-labs",
+                "product_channel": "labs",
+                "maturity": "alpha",
+                "distribution_track": "github-prerelease",
                 "prerelease": True,
                 "tag": tag,
                 "version": "1.2.3-alpha.4",
                 "source_revision": SOURCE,
                 "source_tree": TREE,
                 "installation_identity":
-                    "io.github.mesmerprism.rustykiosk",
-                "same_package_lineage": {
-                    "identity_mode": "same-package-in-place",
-                    "package_name": "io.github.mesmerprism.rustykiosk",
+                    "io.github.mesmerprism.rustykiosk.labs",
+                "coinstallable_lineage": {
+                    "identity_mode": "separate-coinstallable",
+                    "package_name": "io.github.mesmerprism.rustykiosk.labs",
                     "signer_sha256": SIGNER_HASH,
                     "version_name": "1.2.3-alpha.4",
                     "version_code": 1020304,
-                    "exit_policy": (
-                        "in-place; install a later same-signer stable build "
-                        "with a higher versionCode"
-                    ),
+                    "exit_policy": "uninstall-labs-without-changing-stable",
                 },
                 "bundle_manifest": {
                     "schema":
-                        "meta.quest.file_manager.rusty_kiosk_bundle.v1",
+                        "meta.quest.file_manager.rusty_kiosk_bundle.v2",
                     "name": "bundle-manifest.json",
                     "sha256": sha256_bytes(manifest_bytes),
                     "bytes": len(manifest_bytes),
@@ -227,15 +232,17 @@ def exact_metadata(owner: str, tag: str) -> tuple[dict, str]:
     if owner == "rusty-quest-package-updater":
         return (
             {
-                "schema": "rusty.quest.package_updater_product_release.v1",
-                "product": "rusty-quest-package-updater",
+                "schema": "rusty.quest.package_updater_product_release.v2",
+                "product": "rusty-quest-package-updater-labs",
                 "release_tag": tag,
                 "release_version": "0.1.0-alpha.7",
                 "source_revision": SOURCE,
                 "source_tree": TREE,
-                "channel": "alpha",
+                "product_channel": "labs",
+                "maturity": "alpha",
+                "distribution_track": "github-prerelease",
                 "installation_identity":
-                    "io.github.mesmerprism.rustyquest.packageupdater.alpha",
+                    "io.github.mesmerprism.rustyquest.packageupdater.labs",
                 "apk_version_name": "0.1.0-alpha.7",
                 "apk_version_code": 7,
                 "updater_signer_sha256": f"sha256:{SIGNER_HASH}",
@@ -264,18 +271,20 @@ def make_record(owner: str) -> tuple[dict, dict]:
     metadata_bytes = canonical_json_bytes(metadata)
     metadata_name = {
         "questionable-file-manager":
-            "questionable-file-manager-alpha-owner-release.json",
+            "questionable-file-manager-labs-owner-release.json",
         "rusty-fleet": "release-descriptor.receipt.json",
         "rusty-hostess":
-            "RustyHostess-Alpha-1.2.3-win-x64.release-metadata.json",
-        "rusty-kiosk": "rusty-kiosk-alpha-owner-release.json",
+            "RustyHostess-Labs-1.2.3-win-x64.release-metadata.json",
+        "rusty-kiosk": "rusty-kiosk-labs-owner-release.json",
         "rusty-quest-package-updater":
             "rusty-quest-package-updater.release.json",
     }[owner]
     repository = OWNERS[owner]["repository"]
     request = {
         "owner": owner,
-        "channel": "alpha",
+        "product_channel": "labs",
+        "maturity": "alpha",
+        "distribution_track": "github-prerelease",
         "tag": tag,
         "expected_source_revision": SOURCE,
         "expected_owner_metadata_asset": metadata_name,
@@ -396,20 +405,20 @@ def main() -> int:
         request,
         baseline,
         fixture=fixture,
-        require_complete_alpha_set=True,
+        require_complete_labs_set=True,
     )
     generated_two, receipt_two = run_preflight(
         copy.deepcopy(request),
         baseline,
         fixture=copy.deepcopy(fixture),
-        require_complete_alpha_set=True,
+        require_complete_labs_set=True,
     )
     if generated != generated_two or receipt != receipt_two:
         fail("offline preflight is not deterministic")
     published = {
-        product["owner"]: product["channels"][-1]
+        product["owner"]: product["product_channels"][-1]
         for product in generated["products"]
-        if product["channels"][-1]["availability"] == "published"
+        if product["product_channels"][-1]["availability"] == "published"
     }
     if (
         set(published)
@@ -425,7 +434,7 @@ def main() -> int:
         or published["rusty-quest-package-updater"]["release"]["version"]
         != "0.1.0-alpha.7"
         or receipt["record_count"] != 5
-        or receipt["complete_alpha_owner_set"] is not True
+        or receipt["complete_labs_owner_set"] is not True
         or receipt["publication_authorized"] is not False
         or receipt["pages_deployment_invoked"] is not False
         or receipt["owner_binary_downloaded"] is not False
@@ -434,14 +443,26 @@ def main() -> int:
             item["same_run_final_readback_verified"] is True
             for item in receipt["records"]
         )
+        or not all(
+            item["product_channel"] == "labs"
+            and item["maturity"] == "alpha"
+            and item["distribution_track"] == "github-prerelease"
+            for item in receipt["records"]
+        )
+        or not all(
+            channel["product_channel"] == "labs"
+            and channel["maturity"] == "alpha"
+            and channel["distribution_track"] == "github-prerelease"
+            for channel in published.values()
+        )
     ):
         fail("happy-path read-only projection or receipt is incomplete")
     kiosk = next(
         item for item in generated["products"] if item["owner"] == "rusty-kiosk"
     )
     if (
-        kiosk["channels"][1]["availability"] != "published"
-        or kiosk["channels"][1]["release"]["artifact_name"]
+        kiosk["product_channels"][1]["availability"] != "published"
+        or kiosk["product_channels"][1]["release"]["artifact_name"]
         != "rusty-kiosk.apk"
     ):
         fail("Kiosk owner release was not projected exactly")
@@ -459,7 +480,7 @@ def main() -> int:
             current_request,
             baseline,
             fixture=current_fixture,
-            require_complete_alpha_set=True,
+            require_complete_labs_set=True,
         )
 
     mutations = [
@@ -472,17 +493,27 @@ def main() -> int:
             lambda r, _: r["records"].append(copy.deepcopy(r["records"][0])),
         ),
         (
+            "unbounded maturity",
+            lambda r, _: r["records"][0].update({"maturity": "nightly"}),
+        ),
+        (
+            "wrong distribution track",
+            lambda r, _: r["records"][0].update(
+                {"distribution_track": "github-release"}
+            ),
+        ),
+        (
             "draft release",
             lambda _, f: f["records"][0]["release"].update({"draft": True}),
         ),
         (
-            "non-prerelease alpha",
+            "non-prerelease labs",
             lambda _, f: f["records"][0]["release"].update(
                 {"prerelease": False}
             ),
         ),
         (
-            "alpha became latest",
+            "labs became latest",
             lambda r, f: f["records"][0].update(
                 {"latest_tag": r["records"][0]["tag"]}
             ),
@@ -577,9 +608,9 @@ def main() -> int:
             partial_request,
             baseline,
             fixture=partial_fixture,
-            require_complete_alpha_set=True,
+            require_complete_labs_set=True,
         ),
-        "incomplete central alpha owner set",
+        "incomplete central labs owner set",
     )
 
     expanded_request, expanded_fixture = complete_fixture()
@@ -654,7 +685,7 @@ def main() -> int:
             metadata_bytes
         )
         for asset in fixture_record["release"]["assets"]:
-            if asset["name"] == "rusty-kiosk-alpha-owner-release.json":
+            if asset["name"] == "rusty-kiosk-labs-owner-release.json":
                 asset["digest"] = f"sha256:{sha256_bytes(metadata_bytes)}"
                 asset["size"] = len(metadata_bytes)
             elif asset["name"] == "bundle-manifest.json":
@@ -763,7 +794,7 @@ def main() -> int:
         "python-version: 3.12.10",
         "tools/test_distribution_catalog_preflight.py",
         "tools/preflight_distribution_catalog.py",
-        "--require-complete-alpha-set",
+        "--require-complete-labs-set",
         "actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02",
     ):
         if token not in workflow:
