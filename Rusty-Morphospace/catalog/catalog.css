@@ -1,0 +1,135 @@
+.catalog-lead {
+    max-width: 58rem;
+}
+
+.platform,
+.availability {
+    color: var(--muted);
+    font-family: var(--font-ui);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.catalog-lead h1 {
+    max-width: 15ch;
+    margin: 0.25rem 0 1rem;
+    font-family: var(--font-display);
+    font-size: clamp(2.6rem, 6vw, 4.2rem);
+    font-weight: 500;
+    line-height: 1.02;
+    overflow-wrap: break-word;
+    white-space: normal;
+}
+
+.lede {
+    max-width: 48rem;
+    font-size: clamp(1.18rem, 2.2vw, 1.5rem);
+}
+
+.catalog-section {
+    padding: 2.5rem 0;
+}
+
+.catalog-section h2,
+.product-card h3 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    line-height: 1.08;
+}
+
+.catalog-section h2 {
+    font-size: clamp(2rem, 4vw, 3.3rem);
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 24rem), 1fr));
+    gap: 1.25rem;
+    margin-top: 2rem;
+}
+
+.product-card {
+    padding: clamp(1.3rem, 3vw, 2rem);
+    border: 1px solid var(--line);
+    border-radius: 0.3rem;
+    background: rgba(251, 248, 242, 0.86);
+}
+
+.product-card h3 {
+    margin: 0.2rem 0 1.2rem;
+    font-size: 2rem;
+}
+
+.channel {
+    display: inline-block;
+    padding: 0.08rem 0.22rem;
+    border-radius: 0.15rem;
+    font-family: var(--font-ui);
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+}
+
+.channel.stable {
+    background: #dceadf;
+    color: #19482b;
+}
+
+.channel.alpha {
+    background: #f2d9a8;
+    color: #603c00;
+}
+
+.notice {
+    margin: 1.4rem 0;
+    padding: 1rem 1.1rem;
+    border-left: 0.3rem solid var(--accent);
+    background: var(--accent-soft);
+}
+
+.stable-notice {
+    max-width: 48rem;
+}
+
+.warning {
+    border-color: #b46a00;
+    background: #fff1d2;
+}
+
+.privacy {
+    border-color: #714b85;
+    background: #eee4f2;
+}
+
+.feedback-link {
+    display: inline-block;
+    margin-top: 0.4rem;
+    font-family: var(--font-ui);
+    font-weight: 700;
+}
+
+.feedback-section,
+.authority-section {
+    max-width: 52rem;
+}
+
+.catalog-footer {
+    padding: 3rem 0;
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+}
+
+code {
+    overflow-wrap: anywhere;
+}
+
+@media (max-width: 40rem) {
+    .header-row {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .site-nav {
+        justify-content: flex-start;
+    }
+}

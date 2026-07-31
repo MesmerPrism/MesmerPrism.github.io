@@ -1,0 +1,280 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mesmerprism.com/Rusty-Morphospace/catalog/catalog.schema.json",
+  "title": "Rusty Morphospace public distribution catalog",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "default_channel",
+    "authority",
+    "fleet_pages_contract",
+    "products"
+  ],
+  "properties": {
+    "schema": {
+      "const": "rusty.morphospace.public_distribution_catalog.v1"
+    },
+    "default_channel": {
+      "const": "stable"
+    },
+    "authority": {
+      "const": "owner-release-metadata-only"
+    },
+    "fleet_pages_contract": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "composition",
+        "stable_metadata_path",
+        "alpha_metadata_path"
+      ],
+      "properties": {
+        "composition": {
+          "const": "preserve-complete-site-replace-owner-channel-subtree"
+        },
+        "stable_metadata_path": {
+          "const": "/Rusty-Fleet/metadata/stable/release.json"
+        },
+        "alpha_metadata_path": {
+          "const": "/Rusty-Fleet/metadata/alpha/release.json"
+        }
+      }
+    },
+    "products": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "items": {
+        "$ref": "#/$defs/product"
+      }
+    }
+  },
+  "$defs": {
+    "product": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "owner",
+        "name",
+        "repository",
+        "complete_product",
+        "feedback",
+        "channels"
+      ],
+      "properties": {
+        "owner": {
+          "enum": [
+            "questionable-file-manager",
+            "rusty-fleet",
+            "rusty-kiosk",
+            "rusty-quest-package-updater"
+          ]
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "repository": {
+          "type": "string",
+          "pattern": "^https://github\\.com/MesmerPrism/[A-Za-z0-9._-]+$"
+        },
+        "complete_product": {
+          "const": true
+        },
+        "feedback": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["issue_url", "required_fields", "privacy_warning"],
+          "properties": {
+            "issue_url": {
+              "type": "string",
+              "pattern": "^https://github\\.com/MesmerPrism/[A-Za-z0-9._-]+/issues/new\\?"
+            },
+            "required_fields": {
+              "const": [
+                "channel",
+                "version",
+                "source_revision",
+                "artifact_sha256",
+                "operating_system",
+                "device_class"
+              ]
+            },
+            "privacy_warning": {
+              "const": "Do not include credentials, personal data, device serials, network addresses, pairing material, or private logs."
+            }
+          }
+        },
+        "channels": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "$ref": "#/$defs/channel"
+          }
+        }
+      }
+    },
+    "channel": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "channel",
+        "opt_in",
+        "availability",
+        "identity",
+        "transition",
+        "release"
+      ],
+      "properties": {
+        "channel": {
+          "enum": ["stable", "alpha"]
+        },
+        "opt_in": {
+          "type": "boolean"
+        },
+        "availability": {
+          "enum": ["unpublished", "published"]
+        },
+        "identity": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "platform",
+            "installation_identity",
+            "identity_authority",
+            "relationship_to_stable"
+          ],
+          "properties": {
+            "platform": {
+              "enum": ["windows", "android"]
+            },
+            "installation_identity": {
+              "type": ["string", "null"]
+            },
+            "identity_authority": {
+              "enum": ["catalog-policy", "owner-release-metadata"]
+            },
+            "relationship_to_stable": {
+              "enum": ["stable", "separate-coinstallable", "same-package-in-place"]
+            }
+          }
+        },
+        "transition": {
+          "enum": [
+            "stable-default",
+            "uninstall-alpha-without-changing-stable",
+            "forward-only-to-later-stable"
+          ]
+        },
+        "release": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/$defs/release"
+            }
+          ]
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "availability": {
+                "const": "unpublished"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "release": {
+                "type": "null"
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "release": {
+                "$ref": "#/$defs/release"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "channel": {
+                "const": "stable"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "opt_in": {
+                "const": false
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "opt_in": {
+                "const": true
+              }
+            }
+          }
+        }
+      ]
+    },
+    "release": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "tag",
+        "version",
+        "source_revision",
+        "artifact_name",
+        "artifact_url",
+        "artifact_sha256",
+        "bytes",
+        "installation_identity"
+      ],
+      "properties": {
+        "tag": {
+          "type": "string",
+          "pattern": "^v[0-9]+\\.[0-9]+\\.[0-9]+(?:-alpha\\.[1-9][0-9]*)?$"
+        },
+        "version": {
+          "type": "string",
+          "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+(?:-alpha\\.[1-9][0-9]*)?$"
+        },
+        "source_revision": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{40}$"
+        },
+        "artifact_name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "artifact_url": {
+          "type": "string",
+          "pattern": "^https://github\\.com/MesmerPrism/[A-Za-z0-9._-]+/releases/download/v[0-9]+\\.[0-9]+\\.[0-9]+(?:-alpha\\.[1-9][0-9]*)?/[A-Za-z0-9._-]+$"
+        },
+        "artifact_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "bytes": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "installation_identity": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    }
+  }
+}

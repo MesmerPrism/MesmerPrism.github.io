@@ -22,3 +22,8 @@ Public pages should explain the subject matter directly. Avoid meta talk about
 what the private project, repo, archive, or pitch does for the author. Internal
 process language belongs in the private repo, not on the website.
 
+For the Rusty Morphospace distribution catalog, read
+`docs/DISTRIBUTION_CATALOG.md`. Product owners retain release authority.
+Catalog entries may project only complete owner-validated exact-tag metadata;
+never publish binaries, use `latest/download`, infer an unreleased version, or
+overwrite Fleet's sibling channel or unrelated complete-site metadata.

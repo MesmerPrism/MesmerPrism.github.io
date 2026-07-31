@@ -50,6 +50,15 @@ The Plasmatic Multitudes public pages live directly inside this site under
 `plasmatic-multitudes-pages` repo is only a legacy redirect shell for old
 GitHub Pages links.
 
+## Rusty Morphospace release channels
+
+The public stable/alpha policy catalog lives at
+[`Rusty-Morphospace/catalog/`](Rusty-Morphospace/catalog/). It contains no
+binaries and makes no release claim until an owning workflow supplies complete
+exact-tag provenance. See
+[`docs/DISTRIBUTION_CATALOG.md`](docs/DISTRIBUTION_CATALOG.md) for the owner
+authority, Fleet Pages composition, feedback, and validation contracts.
+
 ## Privacy-sensitive assets
 
 The site serves its fonts from [`assets/fonts.css`](assets/fonts.css) and local
