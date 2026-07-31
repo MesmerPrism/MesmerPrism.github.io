@@ -27,3 +27,7 @@ For the Rusty Morphospace distribution catalog, read
 Catalog entries may project only complete owner-validated exact-tag metadata;
 never publish binaries, use `latest/download`, infer an unreleased version, or
 overwrite Fleet's sibling channel or unrelated complete-site metadata.
+Apply `catalog.schema.json` with the pinned Draft 2020-12 validator before
+semantic admission. The human product cards render only from validated local
+catalog data using safe DOM construction; do not duplicate release state in
+HTML. Feedback issue paths must exactly extend the declared owner repository.

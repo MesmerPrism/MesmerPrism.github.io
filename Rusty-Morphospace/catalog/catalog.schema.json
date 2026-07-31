@@ -108,7 +108,7 @@
         },
         "channels": {
           "type": "array",
-          "minItems": 2,
+          "minItems": 1,
           "maxItems": 2,
           "items": {
             "$ref": "#/$defs/channel"
@@ -157,7 +157,7 @@
               "enum": ["catalog-policy", "owner-release-metadata"]
             },
             "relationship_to_stable": {
-              "enum": ["stable", "separate-coinstallable", "same-package-in-place"]
+              "enum": ["stable", "separate-coinstallable", "same-package-in-place", "alpha-only"]
             }
           }
         },
@@ -165,7 +165,8 @@
           "enum": [
             "stable-default",
             "uninstall-alpha-without-changing-stable",
-            "forward-only-to-later-stable"
+            "forward-only-to-later-stable",
+            "remove-alpha"
           ]
         },
         "release": {

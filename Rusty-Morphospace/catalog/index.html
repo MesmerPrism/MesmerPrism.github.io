@@ -37,41 +37,10 @@
       <h2 id="products-title">Complete-product channel policies</h2>
       <p>Alpha builds contain the complete current owner product. They are not reduced feature editions.</p>
 
-      <div class="product-grid">
-        <article class="product-card">
-          <header><p class="platform">Windows</p><h3>QuestIonAble File Manager</h3></header>
-          <p><span class="channel stable">Stable</span> remains the default package.</p>
-          <p><span class="channel alpha">Alpha · opt in</span> uses the separate identity <code>MesmerPrism.QuestIonAbleFileManager.Alpha</code>. It can be removed without changing stable.</p>
-          <p class="availability">No cataloged release yet.</p>
-          <a class="feedback-link" href="https://github.com/MesmerPrism/QuestIonAble-File-Manager/issues/new?title=%5BAlpha%20feedback%5D%20&amp;body=Channel%3A%20alpha%0AVersion%3A%20%3Cversion%3E%0ASource%20revision%3A%20%3C40-hex%20commit%3E%0AArtifact%20SHA-256%3A%20%3C64-hex%20digest%3E%0AOperating%20system%3A%20%3COS%20and%20version%3E%0ADevice%20class%3A%20%3Cclass%2C%20not%20serial%3E%0A%0ADo%20not%20include%20credentials%2C%20personal%20data%2C%20device%20serials%2C%20network%20addresses%2C%20pairing%20material%2C%20or%20private%20logs." target="_blank" rel="noopener noreferrer">Send owner feedback</a>
-        </article>
-
-        <article class="product-card">
-          <header><p class="platform">Windows</p><h3>Rusty Fleet</h3></header>
-          <p><span class="channel stable">Stable</span> remains the default installation.</p>
-          <p><span class="channel alpha">Alpha · opt in</span> has a separate Windows identity and can coexist with stable. Exact identities come only from Fleet owner metadata.</p>
-          <p class="availability">No cataloged release yet.</p>
-          <a class="feedback-link" href="https://github.com/MesmerPrism/rusty-fleet/issues/new?title=%5BAlpha%20feedback%5D%20&amp;body=Channel%3A%20alpha%0AVersion%3A%20%3Cversion%3E%0ASource%20revision%3A%20%3C40-hex%20commit%3E%0AArtifact%20SHA-256%3A%20%3C64-hex%20digest%3E%0AOperating%20system%3A%20%3COS%20and%20version%3E%0ADevice%20class%3A%20%3Cclass%2C%20not%20serial%3E%0A%0ADo%20not%20include%20credentials%2C%20personal%20data%2C%20device%20serials%2C%20network%20addresses%2C%20pairing%20material%2C%20or%20private%20logs." target="_blank" rel="noopener noreferrer">Send owner feedback</a>
-        </article>
-
-        <article class="product-card kiosk-card">
-          <header><p class="platform">Android / Quest</p><h3>Rusty Kiosk</h3></header>
-          <p><span class="channel alpha">Alpha · opt in · in place</span> uses the same package identity as stable: <code>io.github.mesmerprism.rustykiosk</code>.</p>
-          <div class="notice warning">
-            <strong>Not coinstallable and not directly reversible.</strong> Installing alpha replaces the installed stable Kiosk package in place. Android will not accept a lower-version downgrade. Exit by installing a later, same-signer stable release with a higher version code.
-          </div>
-          <p class="availability">No cataloged release yet.</p>
-          <a class="feedback-link" href="https://github.com/MesmerPrism/Rusty-Kiosk/issues/new?title=%5BAlpha%20feedback%5D%20&amp;body=Channel%3A%20alpha%0AVersion%3A%20%3Cversion%3E%0ASource%20revision%3A%20%3C40-hex%20commit%3E%0AArtifact%20SHA-256%3A%20%3C64-hex%20digest%3E%0AOperating%20system%3A%20%3COS%20and%20version%3E%0ADevice%20class%3A%20%3Cclass%2C%20not%20serial%3E%0A%0ADo%20not%20include%20credentials%2C%20personal%20data%2C%20device%20serials%2C%20network%20addresses%2C%20pairing%20material%2C%20or%20private%20logs." target="_blank" rel="noopener noreferrer">Send owner feedback</a>
-        </article>
-
-        <article class="product-card">
-          <header><p class="platform">Android / Quest</p><h3>Rusty Quest Package Updater</h3></header>
-          <p><span class="channel stable">Stable</span> remains the default package.</p>
-          <p><span class="channel alpha">Alpha · opt in</span> uses the separate identity <code>io.github.mesmerprism.rustyquest.packageupdater.alpha</code>. Removing it does not alter stable.</p>
-          <p class="availability">No cataloged release yet.</p>
-          <a class="feedback-link" href="https://github.com/MesmerPrism/Rusty-Quest/issues/new?title=%5BPackage%20Updater%20alpha%20feedback%5D%20&amp;body=Channel%3A%20alpha%0AVersion%3A%20%3Cversion%3E%0ASource%20revision%3A%20%3C40-hex%20commit%3E%0AArtifact%20SHA-256%3A%20%3C64-hex%20digest%3E%0AOperating%20system%3A%20%3COS%20and%20version%3E%0ADevice%20class%3A%20%3Cclass%2C%20not%20serial%3E%0A%0ADo%20not%20include%20credentials%2C%20personal%20data%2C%20device%20serials%2C%20network%20addresses%2C%20pairing%20material%2C%20or%20private%20logs." target="_blank" rel="noopener noreferrer">Send owner feedback</a>
-        </article>
+      <div id="product-grid" class="product-grid" aria-live="polite" aria-busy="true">
+        <p id="catalog-status">Loading validated catalog metadata…</p>
       </div>
+      <noscript><p class="notice warning">JavaScript is required to render owner catalog records. The validated source remains available as <a href="catalog.json">catalog JSON</a>.</p></noscript>
     </section>
 
     <section id="feedback" class="shell catalog-section feedback-section" aria-labelledby="feedback-title">
@@ -99,5 +68,6 @@
   <footer class="shell catalog-footer">
     <p><a href="../../">Mesmer Prism</a> · <a href="catalog.json">Catalog JSON</a> · <a href="catalog.schema.json">Schema</a></p>
   </footer>
+  <script src="catalog.js" defer></script>
 </body>
 </html>

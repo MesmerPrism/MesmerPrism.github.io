@@ -68,6 +68,7 @@
     font-size: 0.76rem;
     font-weight: 700;
     letter-spacing: 0.04em;
+    margin: 1rem 0 0.2rem;
 }
 
 .channel.stable {
@@ -104,6 +105,32 @@
 .feedback-link {
     display: inline-block;
     margin-top: 0.4rem;
+    font-family: var(--font-ui);
+    font-weight: 700;
+}
+
+.channel-section + .channel-section {
+    margin-top: 1.2rem;
+    padding-top: 0.4rem;
+    border-top: 1px solid var(--line);
+}
+
+.release-provenance {
+    display: grid;
+    grid-template-columns: max-content minmax(0, 1fr);
+    gap: 0.25rem 0.8rem;
+}
+
+.release-provenance dt {
+    font-weight: 700;
+}
+
+.release-provenance dd {
+    margin: 0;
+    overflow-wrap: anywhere;
+}
+
+.download-link {
     font-family: var(--font-ui);
     font-weight: 700;
 }

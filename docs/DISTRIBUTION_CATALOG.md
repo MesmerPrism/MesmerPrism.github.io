@@ -45,7 +45,9 @@ metadata from a GitHub “latest” endpoint and never publishes owner binaries.
 
 ## Channel Policy
 
-Stable is always the default. Alpha is conspicuous and opt-in.
+Stable is the ecosystem default wherever an owner has declared a stable
+channel. Alpha is conspicuous and opt-in. An alpha-only owner is represented
+without inventing a stable channel, identity, or transition.
 
 - QuestIonAble File Manager uses a separate Windows alpha package identity.
 - Rusty Fleet uses a separate Windows alpha identity. Exact stable and alpha
@@ -53,8 +55,9 @@ Stable is always the default. Alpha is conspicuous and opt-in.
 - Rusty Kiosk alpha uses the stable Android package identity in place. It is
   not coinstallable and Android downgrade is not an exit route. Install a
   later same-signer stable build with a higher version code to leave alpha.
-- Rusty Quest Package Updater alpha uses
-  `io.github.mesmerprism.rustyquest.packageupdater.alpha`.
+- Rusty Quest Package Updater currently exposes only alpha,
+  `io.github.mesmerprism.rustyquest.packageupdater.alpha`. The catalog asserts
+  no stable updater package or identity.
 
 Every channel entry represents the complete current owner product, not a
 feature-reduced build.
@@ -75,7 +78,10 @@ Run:
 python tools/test_distribution_catalog.py
 ```
 
-The test validates the static policy and schema, page/metadata agreement,
+Install the exactly pinned validator from
+`tools/requirements-distribution-catalog.txt` in the validation environment.
+The test applies the published Draft 2020-12 schema before semantic checks.
+It validates the static policy and schema, catalog-driven page rendering,
 stable-first ordering, owner-specific feedback routes, Kiosk in-place
 warnings, immutable URL shape, provenance requirements, identity isolation,
 unknown owner/channel rejection, and public-boundary leakage patterns.

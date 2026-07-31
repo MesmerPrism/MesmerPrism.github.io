@@ -15,6 +15,9 @@ from pathlib import Path
 from urllib.parse import parse_qs, urlparse
 from urllib.request import urlopen
 
+from jsonschema import Draft202012Validator
+from jsonschema.exceptions import ValidationError
+
 
 ROOT = Path(__file__).resolve().parents[1]
 CATALOG_ROOT = ROOT / "Rusty-Morphospace" / "catalog"
@@ -26,6 +29,8 @@ TARGET_FILES = [
     SCHEMA_PATH,
     PAGE_PATH,
     CATALOG_ROOT / "catalog.css",
+    CATALOG_ROOT / "catalog.js",
+    ROOT / "tools" / "requirements-distribution-catalog.txt",
 ]
 OWNERS = {
     "questionable-file-manager",
@@ -49,6 +54,9 @@ PRIVACY_WARNING = (
 TAG = re.compile(r"^v(\d+\.\d+\.\d+(?:-alpha\.[1-9]\d*)?)$")
 SHA40 = re.compile(r"^[0-9a-f]{40}$")
 SHA64 = re.compile(r"^[0-9a-f]{64}$")
+SCHEMA = json.loads(SCHEMA_PATH.read_text(encoding="utf-8"))
+Draft202012Validator.check_schema(SCHEMA)
+SCHEMA_VALIDATOR = Draft202012Validator(SCHEMA)
 
 
 class LinkParser(HTMLParser):
@@ -77,6 +85,7 @@ def fail(message: str) -> None:
 
 
 def validate_catalog(catalog: dict) -> None:
+    SCHEMA_VALIDATOR.validate(catalog)
     if catalog.get("schema") != "rusty.morphospace.public_distribution_catalog.v1":
         fail("unknown catalog schema")
     if catalog.get("default_channel") != "stable":
@@ -112,10 +121,12 @@ def validate_catalog(catalog: dict) -> None:
         if feedback.get("privacy_warning") != PRIVACY_WARNING:
             fail("feedback privacy warning drifted")
         issue = urlparse(feedback.get("issue_url", ""))
+        repository_url = urlparse(repository)
         if (
             issue.scheme != "https"
             or issue.netloc != "github.com"
-            or not issue.path.endswith("/issues/new")
+            or issue.netloc != repository_url.netloc
+            or issue.path != f"{repository_url.path}/issues/new"
         ):
             fail("feedback does not route to the owning GitHub repository")
         body = parse_qs(issue.query).get("body", [""])[0]
@@ -132,10 +143,14 @@ def validate_catalog(catalog: dict) -> None:
                 fail(f"feedback template is missing {phrase}")
 
         channels = product.get("channels")
-        if not isinstance(channels, list) or [
-            item.get("channel") for item in channels
-        ] != ["stable", "alpha"]:
-            fail("stable must be first and alpha must be the only opt-in channel")
+        channel_names = [item.get("channel") for item in channels]
+        expected_channels = (
+            ["alpha"]
+            if product["owner"] == "rusty-quest-package-updater"
+            else ["stable", "alpha"]
+        )
+        if not isinstance(channels, list) or channel_names != expected_channels:
+            fail("owner channel set or stable-first ordering is invalid")
         by_channel = {item["channel"]: item for item in channels}
         for channel_name, channel in by_channel.items():
             if channel_name not in CHANNELS:
@@ -152,9 +167,19 @@ def validate_catalog(catalog: dict) -> None:
             else:
                 fail("unknown availability")
 
-        stable_identity = by_channel["stable"]["identity"]
         alpha_identity = by_channel["alpha"]["identity"]
-        if product["owner"] == "rusty-kiosk":
+        if product["owner"] == "rusty-quest-package-updater":
+            if (
+                alpha_identity["installation_identity"]
+                != "io.github.mesmerprism.rustyquest.packageupdater.alpha"
+                or alpha_identity["relationship_to_stable"]
+                != "alpha-only"
+                or by_channel["alpha"]["transition"]
+                != "remove-alpha"
+            ):
+                fail("Package Updater must remain alpha-only with its exact identity")
+        elif product["owner"] == "rusty-kiosk":
+            stable_identity = by_channel["stable"]["identity"]
             if (
                 alpha_identity["relationship_to_stable"]
                 != "same-package-in-place"
@@ -165,6 +190,7 @@ def validate_catalog(catalog: dict) -> None:
             ):
                 fail("Kiosk alpha must replace stable in place and exit forward")
         else:
+            stable_identity = by_channel["stable"]["identity"]
             if (
                 alpha_identity["relationship_to_stable"]
                 != "separate-coinstallable"
@@ -294,12 +320,48 @@ def negative_tests(catalog: dict) -> None:
     channel["products"][0]["channels"][1]["channel"] = "preview"
     cases.append(("unknown channel", channel))
 
+    feedback = copy.deepcopy(catalog)
+    feedback["products"][0]["feedback"]["issue_url"] = (
+        "https://github.com/MesmerPrism/rusty-fleet/issues/new?"
+        "title=misrouted&body=Channel%3A"
+    )
+    cases.append(("cross-owner feedback repository", feedback))
+
     for name, candidate in cases:
         try:
             validate_catalog(candidate)
-        except AssertionError:
+        except (AssertionError, ValidationError):
             continue
         fail(f"negative fixture was accepted: {name}")
+
+
+def negative_schema_tests(catalog: dict) -> None:
+    fixtures: list[tuple[str, dict]] = []
+
+    missing = copy.deepcopy(catalog)
+    del missing["default_channel"]
+    fixtures.append(("missing required property", missing))
+
+    expanded = copy.deepcopy(catalog)
+    expanded["release_authority"] = True
+    fixtures.append(("unknown top-level property", expanded))
+
+    owner = copy.deepcopy(catalog)
+    owner["products"][0]["owner"] = "unknown-owner"
+    fixtures.append(("unknown schema owner", owner))
+
+    channel = copy.deepcopy(catalog)
+    channel["products"][0]["channels"][1]["channel"] = "preview"
+    fixtures.append(("unknown schema channel", channel))
+
+    inconsistent = copy.deepcopy(catalog)
+    inconsistent_channel = inconsistent["products"][0]["channels"][1]
+    inconsistent_channel["availability"] = "published"
+    fixtures.append(("published channel without release", inconsistent))
+
+    for name, fixture in fixtures:
+        if not list(SCHEMA_VALIDATOR.iter_errors(fixture)):
+            fail(f"Draft 2020-12 schema accepted negative fixture: {name}")
 
 
 def validate_page(catalog: dict) -> None:
@@ -310,31 +372,34 @@ def validate_page(catalog: dict) -> None:
         fail("page contains duplicate IDs")
     if "latest/download" in page or "/releases/download/" in page:
         fail("unpublished page contains a download URL")
-    for product in catalog["products"]:
-        if product["name"] not in page:
-            fail(f"page omits {product['name']}")
-        expected = product["feedback"]["issue_url"].replace("&", "&amp;")
-        if expected not in page:
-            fail(f"page feedback route drifted for {product['owner']}")
-    external = [
-        link
-        for link in parser.links
-        if link.get("href", "").startswith("https://")
-    ]
-    if not external or any(
-        link.get("target") != "_blank"
-        or "noopener" not in link.get("rel", "").split()
-        or "noreferrer" not in link.get("rel", "").split()
-        for link in external
+    if (
+        'id="product-grid"' not in page
+        or 'src="catalog.js"' not in page
+        or "issues/new" in page
+        or any(
+            identity["identity"]["installation_identity"] in page
+            for product in catalog["products"]
+            for identity in product["channels"]
+            if identity["identity"]["installation_identity"] is not None
+        )
     ):
-        fail("external feedback links lack safe browser attributes")
-    required_kiosk = (
-        "Not coinstallable and not directly reversible.",
-        "Installing alpha replaces the installed stable Kiosk package in place.",
-        "later, same-signer stable release with a higher version code",
-    )
-    if any(text not in page for text in required_kiosk):
-        fail("Kiosk in-place transition warning is incomplete")
+        fail("human product state is duplicated outside catalog-driven rendering")
+
+    script = (CATALOG_ROOT / "catalog.js").read_text(encoding="utf-8")
+    for forbidden in ("innerHTML", "outerHTML", "document.write", "eval("):
+        if forbidden in script:
+            fail(f"catalog renderer uses unsafe DOM operation: {forbidden}")
+    for required in (
+        'fetch("catalog.json"',
+        "document.createElement",
+        "textContent",
+        "replaceChildren",
+        "product.feedback.issue_url",
+        "release.artifact_url",
+        "release.installation_identity",
+    ):
+        if required not in script:
+            fail(f"catalog renderer is disconnected from metadata field: {required}")
 
 
 def validate_public_boundary() -> None:
@@ -378,21 +443,22 @@ def validate_local_http() -> None:
 
 def main() -> int:
     catalog = json.loads(CATALOG_PATH.read_text(encoding="utf-8"))
-    schema = json.loads(SCHEMA_PATH.read_text(encoding="utf-8"))
-    if schema.get("$id") != (
+    if SCHEMA.get("$id") != (
         "https://mesmerprism.com/Rusty-Morphospace/catalog/"
         "catalog.schema.json"
     ):
         fail("schema ID is not canonical")
     validate_catalog(catalog)
+    negative_schema_tests(catalog)
     negative_tests(catalog)
     validate_page(catalog)
     validate_public_boundary()
     validate_local_http()
     digest = hashlib.sha256(CATALOG_PATH.read_bytes()).hexdigest()
+    channel_count = sum(len(product["channels"]) for product in catalog["products"])
     print(
         "Distribution catalog contract passed: "
-        f"4 owners, 8 channel policies, catalog_sha256={digest}"
+        f"4 owners, {channel_count} channel policies, catalog_sha256={digest}"
     )
     return 0
 

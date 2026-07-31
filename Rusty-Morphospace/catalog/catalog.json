@@ -165,19 +165,6 @@
       },
       "channels": [
         {
-          "channel": "stable",
-          "opt_in": false,
-          "availability": "unpublished",
-          "identity": {
-            "platform": "android",
-            "installation_identity": "io.github.mesmerprism.rustyquest.packageupdater",
-            "identity_authority": "catalog-policy",
-            "relationship_to_stable": "stable"
-          },
-          "transition": "stable-default",
-          "release": null
-        },
-        {
           "channel": "alpha",
           "opt_in": true,
           "availability": "unpublished",
@@ -185,9 +172,9 @@
             "platform": "android",
             "installation_identity": "io.github.mesmerprism.rustyquest.packageupdater.alpha",
             "identity_authority": "catalog-policy",
-            "relationship_to_stable": "separate-coinstallable"
+            "relationship_to_stable": "alpha-only"
           },
-          "transition": "uninstall-alpha-without-changing-stable",
+          "transition": "remove-alpha",
           "release": null
         }
       ]
