@@ -31,3 +31,6 @@ Apply `catalog.schema.json` with the pinned Draft 2020-12 validator before
 semantic admission. The human product cards render only from validated local
 catalog data using safe DOM construction; do not duplicate release state in
 HTML. Feedback issue paths must exactly extend the declared owner repository.
+The catalog includes five owners. Rusty Hostess is alpha-only unless its owner
+publishes a reviewed stable identity; keep MQDH and `Casting.exe` external and
+preserve the Hostess cast-adapter authority exclusions.

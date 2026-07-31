@@ -35,6 +35,7 @@ TARGET_FILES = [
 OWNERS = {
     "questionable-file-manager",
     "rusty-fleet",
+    "rusty-hostess",
     "rusty-kiosk",
     "rusty-quest-package-updater",
 }
@@ -101,8 +102,8 @@ def validate_catalog(catalog: dict) -> None:
         fail("Fleet Pages composition contract drifted")
 
     products = catalog.get("products")
-    if not isinstance(products, list) or len(products) != 4:
-        fail("catalog must contain exactly four product owners")
+    if not isinstance(products, list) or len(products) != 5:
+        fail("catalog must contain exactly five product owners")
     owners = [product.get("owner") for product in products]
     if set(owners) != OWNERS or len(set(owners)) != len(owners):
         fail("unknown, missing, or duplicated owner")
@@ -146,7 +147,9 @@ def validate_catalog(catalog: dict) -> None:
         channel_names = [item.get("channel") for item in channels]
         expected_channels = (
             ["alpha"]
-            if product["owner"] == "rusty-quest-package-updater"
+            if product["owner"] in {
+                "rusty-hostess", "rusty-quest-package-updater"
+            }
             else ["stable", "alpha"]
         )
         if not isinstance(channels, list) or channel_names != expected_channels:
@@ -168,7 +171,45 @@ def validate_catalog(catalog: dict) -> None:
                 fail("unknown availability")
 
         alpha_identity = by_channel["alpha"]["identity"]
-        if product["owner"] == "rusty-quest-package-updater":
+        if product["owner"] == "rusty-hostess":
+            notes = product.get("distribution_notes")
+            if (
+                product["repository"]
+                != "https://github.com/MesmerPrism/rusty-hostess"
+                or alpha_identity["installation_identity"]
+                != "rusty-hostess-alpha"
+                or alpha_identity["platform"] != "windows"
+                or alpha_identity["relationship_to_stable"] != "alpha-only"
+                or by_channel["alpha"]["transition"]
+                != "remove-alpha-without-changing-other-products"
+                or by_channel["alpha"]["availability"] != "unpublished"
+                or by_channel["alpha"]["release"] is not None
+                or notes != {
+                    "included": [
+                        "source-owned WPF companion",
+                        "source-owned CLI and tools",
+                        "Meta Cinematic Cast adapter source",
+                    ],
+                    "external": [
+                        "Meta Quest Developer Hub",
+                        "Casting.exe",
+                    ],
+                    "authority_exclusions": [
+                        "presentation effectiveness",
+                        "recording",
+                        "input forwarding",
+                        "extended-FOV restoration",
+                        "device cleanup",
+                    ],
+                    "removal": (
+                        "Uninstalling Rusty Hostess Alpha removes only its "
+                        "separate Windows alpha identity and does not change "
+                        "other products."
+                    ),
+                }
+            ):
+                fail("Hostess alpha owner scope or unpublished identity drifted")
+        elif product["owner"] == "rusty-quest-package-updater":
             if (
                 alpha_identity["installation_identity"]
                 != "io.github.mesmerprism.rustyquest.packageupdater.alpha"
@@ -327,6 +368,32 @@ def negative_tests(catalog: dict) -> None:
     )
     cases.append(("cross-owner feedback repository", feedback))
 
+    hostess_stable = copy.deepcopy(catalog)
+    hostess = next(
+        product for product in hostess_stable["products"]
+        if product["owner"] == "rusty-hostess"
+    )
+    hostess["channels"].insert(0, copy.deepcopy(
+        catalog["products"][0]["channels"][0]
+    ))
+    cases.append(("invented Hostess stable channel", hostess_stable))
+
+    hostess_identity = copy.deepcopy(catalog)
+    hostess = next(
+        product for product in hostess_identity["products"]
+        if product["owner"] == "rusty-hostess"
+    )
+    hostess["channels"][0]["identity"]["installation_identity"] = "rusty-hostess"
+    cases.append(("wrong Hostess alpha identity", hostess_identity))
+
+    hostess_claim = copy.deepcopy(catalog)
+    hostess = next(
+        product for product in hostess_claim["products"]
+        if product["owner"] == "rusty-hostess"
+    )
+    hostess["distribution_notes"]["authority_exclusions"].remove("recording")
+    cases.append(("Hostess authority overclaim", hostess_claim))
+
     for name, candidate in cases:
         try:
             validate_catalog(candidate)
@@ -397,6 +464,8 @@ def validate_page(catalog: dict) -> None:
         "product.feedback.issue_url",
         "release.artifact_url",
         "release.installation_identity",
+        "product.distribution_notes",
+        "product.distribution_notes.authority_exclusions",
     ):
         if required not in script:
             fail(f"catalog renderer is disconnected from metadata field: {required}")
@@ -458,7 +527,7 @@ def main() -> int:
     channel_count = sum(len(product["channels"]) for product in catalog["products"])
     print(
         "Distribution catalog contract passed: "
-        f"4 owners, {channel_count} channel policies, catalog_sha256={digest}"
+        f"5 owners, {channel_count} channel policies, catalog_sha256={digest}"
     )
     return 0
 

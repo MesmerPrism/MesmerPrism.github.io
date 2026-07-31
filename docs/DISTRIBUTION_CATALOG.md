@@ -1,7 +1,7 @@
 # Rusty Morphospace Distribution Catalog
 
 The public catalog at `/Rusty-Morphospace/catalog/` explains stable and alpha
-channel policy across four complete products. It is a projection surface, not
+channel policy across five complete products. It is a projection surface, not
 a release authority, binary host, update feed, or substitute for owner
 metadata.
 
@@ -52,6 +52,13 @@ without inventing a stable channel, identity, or transition.
 - QuestIonAble File Manager uses a separate Windows alpha package identity.
 - Rusty Fleet uses a separate Windows alpha identity. Exact stable and alpha
   identity values remain null here until Fleet owner metadata supplies them.
+- Rusty Hostess currently exposes only the opt-in Windows alpha identity
+  `rusty-hostess-alpha`; no stable Hostess product identity or release is
+  asserted. Its complete product includes the source-owned WPF companion,
+  CLI/tools, and Meta Cinematic Cast adapter source. MQDH and `Casting.exe`
+  remain external. Hostess claims no presentation effectiveness, recording,
+  input forwarding, extended-FOV restoration, or device cleanup authority.
+  Removing alpha removes only Hostess Alpha and does not change other products.
 - Rusty Kiosk alpha uses the stable Android package identity in place. It is
   not coinstallable and Android downgrade is not an exit route. Install a
   later same-signer stable build with a higher version code to leave alpha.

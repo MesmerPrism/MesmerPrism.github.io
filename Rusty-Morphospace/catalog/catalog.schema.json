@@ -43,8 +43,8 @@
     },
     "products": {
       "type": "array",
-      "minItems": 4,
-      "maxItems": 4,
+      "minItems": 5,
+      "maxItems": 5,
       "items": {
         "$ref": "#/$defs/product"
       }
@@ -67,6 +67,7 @@
           "enum": [
             "questionable-file-manager",
             "rusty-fleet",
+            "rusty-hostess",
             "rusty-kiosk",
             "rusty-quest-package-updater"
           ]
@@ -81,6 +82,17 @@
         },
         "complete_product": {
           "const": true
+        },
+        "distribution_notes": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["included", "external", "authority_exclusions", "removal"],
+          "properties": {
+            "included": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+            "external": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+            "authority_exclusions": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+            "removal": {"type": "string", "minLength": 1}
+          }
         },
         "feedback": {
           "type": "object",
@@ -166,7 +178,8 @@
             "stable-default",
             "uninstall-alpha-without-changing-stable",
             "forward-only-to-later-stable",
-            "remove-alpha"
+            "remove-alpha",
+            "remove-alpha-without-changing-other-products"
           ]
         },
         "release": {

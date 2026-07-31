@@ -6,6 +6,7 @@
   const knownOwners = new Set([
     "questionable-file-manager",
     "rusty-fleet",
+    "rusty-hostess",
     "rusty-kiosk",
     "rusty-quest-package-updater"
   ]);
@@ -26,7 +27,7 @@
         catalog.schema !== "rusty.morphospace.public_distribution_catalog.v1" ||
         catalog.default_channel !== "stable" ||
         !Array.isArray(catalog.products) ||
-        catalog.products.length !== 4) {
+        catalog.products.length !== 5) {
       throw new Error("Catalog shape is not supported.");
     }
     for (const product of catalog.products) {
@@ -73,12 +74,15 @@
         "a later, same-signer stable release with a higher version code."
       );
       container.append(warning);
-    } else if (channel.transition === "remove-alpha") {
+    } else if (channel.transition === "remove-alpha" ||
+               channel.transition === "remove-alpha-without-changing-other-products") {
       container.append(
         element(
           "p",
           null,
-          "Removing alpha removes this product; no stable package is asserted."
+          channel.transition === "remove-alpha-without-changing-other-products"
+            ? "Removing alpha removes only this separate product identity and does not change other products."
+            : "Removing alpha removes this product; no stable package is asserted."
         )
       );
     } else if (channel.channel === "alpha") {
@@ -138,6 +142,22 @@
           "Owner channel: alpha only. No stable package or identity is asserted."
         )
       );
+    }
+    if (product.distribution_notes) {
+      const notes = element("section", "product-scope");
+      notes.append(element("h4", null, "Complete-product scope"));
+      notes.append(element(
+        "p", null, `Included: ${product.distribution_notes.included.join("; ")}.`
+      ));
+      notes.append(element(
+        "p", null, `External: ${product.distribution_notes.external.join("; ")}.`
+      ));
+      notes.append(element(
+        "p", null,
+        `Not claimed: ${product.distribution_notes.authority_exclusions.join("; ")}.`
+      ));
+      notes.append(element("p", null, product.distribution_notes.removal));
+      card.append(notes);
     }
 
     for (const channel of product.channels) {

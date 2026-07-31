@@ -58,6 +58,8 @@ binaries and makes no release claim until an owning workflow supplies complete
 exact-tag provenance. See
 [`docs/DISTRIBUTION_CATALOG.md`](docs/DISTRIBUTION_CATALOG.md) for the owner
 authority, Fleet Pages composition, feedback, and validation contracts.
+It currently models five complete-product owners, including the unpublished,
+opt-in Rusty Hostess Windows alpha owner without asserting a stable release.
 
 ## Privacy-sensitive assets
 

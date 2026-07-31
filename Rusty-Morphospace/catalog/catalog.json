@@ -101,6 +101,58 @@
       ]
     },
     {
+      "owner": "rusty-hostess",
+      "name": "Rusty Hostess",
+      "repository": "https://github.com/MesmerPrism/rusty-hostess",
+      "complete_product": true,
+      "distribution_notes": {
+        "included": [
+          "source-owned WPF companion",
+          "source-owned CLI and tools",
+          "Meta Cinematic Cast adapter source"
+        ],
+        "external": [
+          "Meta Quest Developer Hub",
+          "Casting.exe"
+        ],
+        "authority_exclusions": [
+          "presentation effectiveness",
+          "recording",
+          "input forwarding",
+          "extended-FOV restoration",
+          "device cleanup"
+        ],
+        "removal": "Uninstalling Rusty Hostess Alpha removes only its separate Windows alpha identity and does not change other products."
+      },
+      "feedback": {
+        "issue_url": "https://github.com/MesmerPrism/rusty-hostess/issues/new?title=%5BAlpha%20feedback%5D%20&body=Channel%3A%20alpha%0AVersion%3A%20%3Cversion%3E%0ASource%20revision%3A%20%3C40-hex%20commit%3E%0AArtifact%20SHA-256%3A%20%3C64-hex%20digest%3E%0AOperating%20system%3A%20%3COS%20and%20version%3E%0ADevice%20class%3A%20%3Cclass%2C%20not%20serial%3E%0A%0ADo%20not%20include%20credentials%2C%20personal%20data%2C%20device%20serials%2C%20network%20addresses%2C%20pairing%20material%2C%20or%20private%20logs.",
+        "required_fields": [
+          "channel",
+          "version",
+          "source_revision",
+          "artifact_sha256",
+          "operating_system",
+          "device_class"
+        ],
+        "privacy_warning": "Do not include credentials, personal data, device serials, network addresses, pairing material, or private logs."
+      },
+      "channels": [
+        {
+          "channel": "alpha",
+          "opt_in": true,
+          "availability": "unpublished",
+          "identity": {
+            "platform": "windows",
+            "installation_identity": "rusty-hostess-alpha",
+            "identity_authority": "catalog-policy",
+            "relationship_to_stable": "alpha-only"
+          },
+          "transition": "remove-alpha-without-changing-other-products",
+          "release": null
+        }
+      ]
+    },
+    {
       "owner": "rusty-kiosk",
       "name": "Rusty Kiosk",
       "repository": "https://github.com/MesmerPrism/Rusty-Kiosk",
