@@ -16,9 +16,10 @@ Each product owner remains the only authority for:
 - promotion, rollback, replacement, and withdrawal decisions.
 
 The checked-in catalog therefore uses `availability: unpublished` and
-`release: null` until an owner workflow supplies a complete validated release
-record. Human pages must say “No cataloged release yet” and must not construct,
-guess, probe, or expose a download URL.
+`release: null`. Publication admission is intentionally disabled until an
+authoritative deployment workflow performs live owner release readback. Human
+pages must say “No cataloged release yet” and must not construct, guess, probe,
+or expose a download URL.
 
 Published records use exact owner repository URLs and canonical
 `vX.Y.Z` or `vX.Y.Z-alpha.N` tags. `latest/download`, redirects, ranges,
@@ -38,9 +39,12 @@ only the subtree explicitly staged by the current owner workflow. Updating
 Fleet alpha metadata must preserve Fleet stable metadata and every unrelated
 site byte; updating this catalog must preserve both Fleet subtrees.
 
-An owner workflow may supply catalog release fields only after its own release
-creation and readback checks pass. The Pages composition step validates the
-candidate catalog before deployment. This repository never derives owner
+An owner release must exist and pass its own readback before Pages may project
+it. A future Pages deployment gate must then independently read the exact tag,
+peeled source revision, immutable owner metadata asset, and primary artifact
+digest and byte count from the owner repository. Until that live gate is
+present in the sole deployment authority, both the schema and semantic
+validator reject every `published` record. This repository never derives owner
 metadata from a GitHub “latest” endpoint and never publishes owner binaries.
 
 ## Channel Policy
@@ -90,5 +94,7 @@ Install the exactly pinned validator from
 The test applies the published Draft 2020-12 schema before semantic checks.
 It validates the static policy and schema, catalog-driven page rendering,
 stable-first ordering, owner-specific feedback routes, Kiosk in-place
-warnings, immutable URL shape, provenance requirements, identity isolation,
-unknown owner/channel rejection, and public-boundary leakage patterns.
+warnings, disabled publication admission, identity isolation, unknown
+owner/channel rejection, and public-boundary leakage patterns. Structural
+release fields remain reserved for a future owner-readback projection and are
+not publication evidence.

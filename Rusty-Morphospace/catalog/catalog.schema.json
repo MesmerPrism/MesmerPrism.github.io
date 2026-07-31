@@ -147,7 +147,7 @@
           "type": "boolean"
         },
         "availability": {
-          "enum": ["unpublished", "published"]
+          "const": "unpublished"
         },
         "identity": {
           "type": "object",

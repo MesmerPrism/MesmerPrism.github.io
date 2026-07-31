@@ -87,6 +87,10 @@ def fail(message: str) -> None:
 
 def validate_catalog(catalog: dict) -> None:
     SCHEMA_VALIDATOR.validate(catalog)
+    validate_catalog_semantics(catalog)
+
+
+def validate_catalog_semantics(catalog: dict) -> None:
     if catalog.get("schema") != "rusty.morphospace.public_distribution_catalog.v1":
         fail("unknown catalog schema")
     if catalog.get("default_channel") != "stable":
@@ -166,7 +170,9 @@ def validate_catalog(catalog: dict) -> None:
                 if release is not None:
                     fail("unpublished channel claimed release metadata")
             elif availability == "published":
-                validate_release(product, channel_name, channel)
+                fail(
+                    "published catalog records require authoritative owner readback"
+                )
             else:
                 fail("unknown availability")
 
@@ -320,12 +326,29 @@ def published_fixture(catalog: dict, owner: str, channel_name: str) -> dict:
 
 
 def negative_tests(catalog: dict) -> None:
-    validate_catalog(published_fixture(
+    published = published_fixture(
         catalog, "questionable-file-manager", "alpha"
-    ))
-    validate_catalog(published_fixture(catalog, "rusty-fleet", "alpha"))
+    )
+    if not list(SCHEMA_VALIDATOR.iter_errors(published)):
+        fail("schema did not reject a locally fabricated publication")
+    try:
+        validate_catalog_semantics(published)
+    except AssertionError as error:
+        if "authoritative owner readback" not in str(error):
+            raise
+    else:
+        fail("semantic gate accepted a locally fabricated publication")
 
     cases: list[tuple[str, dict]] = []
+    cases.append((
+        "locally fabricated QFM publication",
+        published_fixture(catalog, "questionable-file-manager", "alpha"),
+    ))
+    cases.append((
+        "locally fabricated Fleet publication",
+        published_fixture(catalog, "rusty-fleet", "alpha"),
+    ))
+
     mutable = published_fixture(catalog, "rusty-fleet", "alpha")
     mutable_release = mutable["products"][1]["channels"][1]["release"]
     mutable_release["artifact_url"] = (
@@ -518,6 +541,12 @@ def main() -> int:
     ):
         fail("schema ID is not canonical")
     validate_catalog(catalog)
+    if any(
+        channel["availability"] != "unpublished" or channel["release"] is not None
+        for product in catalog["products"]
+        for channel in product["channels"]
+    ):
+        fail("catalog publication must remain disabled without owner readback")
     negative_schema_tests(catalog)
     negative_tests(catalog)
     validate_page(catalog)
