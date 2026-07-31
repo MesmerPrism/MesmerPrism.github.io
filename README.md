@@ -60,6 +60,11 @@ exact-tag provenance. See
 authority, Fleet Pages composition, feedback, and validation contracts.
 It currently models five complete-product owners, including the unpublished,
 opt-in Rusty Hostess Windows alpha owner without asserting a stable release.
+The protected read-only preflight can validate exact live owner releases and
+retain private review evidence, but it has no Pages deployment or publication
+permission and never changes the checked-in unpublished baseline. Its central
+workflow requires all five alpha owners; Kiosk adds strict JSON-manifest and
+same-package lineage validation without downloading either APK.
 
 ## Privacy-sensitive assets
 

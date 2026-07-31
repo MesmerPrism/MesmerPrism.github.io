@@ -27,9 +27,14 @@ For the Rusty Morphospace distribution catalog, read
 Catalog entries may project only complete owner-validated exact-tag metadata;
 never publish binaries, use `latest/download`, infer an unreleased version, or
 overwrite Fleet's sibling channel or unrelated complete-site metadata.
-Until the authoritative live owner-readback deployment gate exists, every
-channel must remain `unpublished` with `release: null`; structurally plausible
-release fields are not publication evidence.
+Every checked-in channel must remain `unpublished` with `release: null`;
+structurally plausible release fields are not publication evidence. The
+read-only preflight may generate a published projection only after exact live
+owner readback, and its receipt must keep `publication_authorized=false` and
+`pages_deployment_invoked=false`. It may not write the site or owner releases.
+The protected central run requires all five alpha owners. Kiosk admission may
+download its hash-bound JSON bundle manifest for closed lineage validation but
+must never download either APK or infer authority from manifest array order.
 Apply `catalog.schema.json` with the pinned Draft 2020-12 validator before
 semantic admission. The human product cards render only from validated local
 catalog data using safe DOM construction; do not duplicate release state in

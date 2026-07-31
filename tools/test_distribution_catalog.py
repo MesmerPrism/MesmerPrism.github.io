@@ -53,6 +53,9 @@ PRIVACY_WARNING = (
     "addresses, pairing material, or private logs."
 )
 TAG = re.compile(r"^v(\d+\.\d+\.\d+(?:-alpha\.[1-9]\d*)?)$")
+UPDATER_TAG = re.compile(
+    r"^package-updater-v(0\.1\.0-alpha\.[1-9]\d*)$"
+)
 SHA40 = re.compile(r"^[0-9a-f]{40}$")
 SHA64 = re.compile(r"^[0-9a-f]{64}$")
 SCHEMA = json.loads(SCHEMA_PATH.read_text(encoding="utf-8"))
@@ -85,12 +88,14 @@ def fail(message: str) -> None:
     raise AssertionError(message)
 
 
-def validate_catalog(catalog: dict) -> None:
+def validate_catalog(catalog: dict, *, allow_published: bool = False) -> None:
     SCHEMA_VALIDATOR.validate(catalog)
-    validate_catalog_semantics(catalog)
+    validate_catalog_semantics(catalog, allow_published=allow_published)
 
 
-def validate_catalog_semantics(catalog: dict) -> None:
+def validate_catalog_semantics(
+    catalog: dict, *, allow_published: bool = False
+) -> None:
     if catalog.get("schema") != "rusty.morphospace.public_distribution_catalog.v1":
         fail("unknown catalog schema")
     if catalog.get("default_channel") != "stable":
@@ -170,9 +175,11 @@ def validate_catalog_semantics(catalog: dict) -> None:
                 if release is not None:
                     fail("unpublished channel claimed release metadata")
             elif availability == "published":
-                fail(
-                    "published catalog records require authoritative owner readback"
-                )
+                if not allow_published:
+                    fail(
+                        "published catalog records require authoritative owner readback"
+                    )
+                validate_release(product, channel_name, channel)
             else:
                 fail("unknown availability")
 
@@ -188,8 +195,6 @@ def validate_catalog_semantics(catalog: dict) -> None:
                 or alpha_identity["relationship_to_stable"] != "alpha-only"
                 or by_channel["alpha"]["transition"]
                 != "remove-alpha-without-changing-other-products"
-                or by_channel["alpha"]["availability"] != "unpublished"
-                or by_channel["alpha"]["release"] is not None
                 or notes != {
                     "included": [
                         "source-owned WPF companion",
@@ -268,7 +273,11 @@ def validate_release(product: dict, channel_name: str, channel: dict) -> None:
     }
     if set(release) != required:
         fail("published release provenance is missing or expanded")
-    match = TAG.fullmatch(release["tag"])
+    match = (
+        UPDATER_TAG.fullmatch(release["tag"])
+        if product["owner"] == "rusty-quest-package-updater"
+        else TAG.fullmatch(release["tag"])
+    )
     if not match or release["version"] != match.group(1):
         fail("release tag/version mismatch")
     is_alpha = "-alpha." in release["tag"]
@@ -329,8 +338,8 @@ def negative_tests(catalog: dict) -> None:
     published = published_fixture(
         catalog, "questionable-file-manager", "alpha"
     )
-    if not list(SCHEMA_VALIDATOR.iter_errors(published)):
-        fail("schema did not reject a locally fabricated publication")
+    if list(SCHEMA_VALIDATOR.iter_errors(published)):
+        fail("schema rejected a structurally valid publication projection")
     try:
         validate_catalog_semantics(published)
     except AssertionError as error:
@@ -338,16 +347,9 @@ def negative_tests(catalog: dict) -> None:
             raise
     else:
         fail("semantic gate accepted a locally fabricated publication")
+    validate_catalog(published, allow_published=True)
 
     cases: list[tuple[str, dict]] = []
-    cases.append((
-        "locally fabricated QFM publication",
-        published_fixture(catalog, "questionable-file-manager", "alpha"),
-    ))
-    cases.append((
-        "locally fabricated Fleet publication",
-        published_fixture(catalog, "rusty-fleet", "alpha"),
-    ))
 
     mutable = published_fixture(catalog, "rusty-fleet", "alpha")
     mutable_release = mutable["products"][1]["channels"][1]["release"]
@@ -419,7 +421,7 @@ def negative_tests(catalog: dict) -> None:
 
     for name, candidate in cases:
         try:
-            validate_catalog(candidate)
+            validate_catalog(candidate, allow_published=True)
         except (AssertionError, ValidationError):
             continue
         fail(f"negative fixture was accepted: {name}")
