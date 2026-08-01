@@ -146,14 +146,15 @@ jobs:
           ) {
             throw 'preflight artifact identity is not exact'
           }
+          $preparedRoot = Join-Path $env:RUNNER_TEMP 'catalog-publication'
           gh run download $env:PREFLIGHT_RUN_ID `
             --repo $env:GITHUB_REPOSITORY `
             --name $expectedName `
-            --dir _catalog-publication
+            --dir $preparedRoot
           if ($LASTEXITCODE -ne 0) {
             throw 'preflight artifact download failed'
           }
-          $files = @(Get-ChildItem -LiteralPath _catalog-publication -File)
+          $files = @(Get-ChildItem -LiteralPath $preparedRoot -File)
           $names = @($files.Name | Sort-Object -CaseSensitive)
           if (
             $files.Count -ne 2 -or
@@ -163,8 +164,8 @@ jobs:
           ) {
             throw 'preflight artifact file inventory is not closed'
           }
-          $catalog = Get-Item _catalog-publication/catalog.generated.json
-          $receipt = Get-Item _catalog-publication/readback.receipt.json
+          $catalog = Get-Item (Join-Path $preparedRoot 'catalog.generated.json')
+          $receipt = Get-Item (Join-Path $preparedRoot 'readback.receipt.json')
           if ($catalog.Length -gt 2097152 -or $receipt.Length -gt 2097152) {
             throw 'preflight artifact member exceeds its bound'
           }
@@ -185,7 +186,7 @@ jobs:
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         with:
           name: catalog-publication-prepared-${{ github.run_id }}
-          path: _catalog-publication/
+          path: ${{ runner.temp }}/catalog-publication/
           if-no-files-found: error
           retention-days: 7
 
@@ -227,7 +228,7 @@ jobs:
         uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
         with:
           name: catalog-publication-prepared-${{ github.run_id }}
-          path: _catalog-publication
+          path: ${{ runner.temp }}/catalog-publication
 
       - name: Install the exact authorized catalog projection
         shell: bash
@@ -238,11 +239,12 @@ jobs:
           ARTIFACT_DIGEST: ${{ inputs.artifact_digest }}
           ARTIFACT_SIZE_BYTES: ${{ inputs.artifact_size_bytes }}
           AUTHORIZED_AT: ${{ inputs.authorized_at }}
+          PREPARED_ROOT: ${{ runner.temp }}/catalog-publication
         run: |
           set -euo pipefail
           python tools/publish_distribution_catalog_projection.py \
-            --catalog _catalog-publication/catalog.generated.json \
-            --receipt _catalog-publication/readback.receipt.json \
+            --catalog "$PREPARED_ROOT/catalog.generated.json" \
+            --receipt "$PREPARED_ROOT/readback.receipt.json" \
             --site-root . \
             --preflight-run-id "$PREFLIGHT_RUN_ID" \
             --preflight-head-sha "$PREFLIGHT_HEAD_SHA" \
@@ -259,7 +261,12 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           set -euo pipefail
-          mapfile -t changed < <(git diff --name-only)
+          mapfile -t changed < <(
+            {
+              git diff --name-only
+              git ls-files --others --exclude-standard
+            } | sort -u
+          )
           expected=(
             "Rusty-Morphospace/catalog/catalog.json"
             "Rusty-Morphospace/catalog/publication.json"
