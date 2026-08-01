@@ -427,6 +427,13 @@ def main() -> int:
         for forbidden in ("pull_request:", "schedule:", "workflow_dispatch:"):
             if forbidden in workflow:
                 raise AssertionError(f"central workflow exposes route: {forbidden}")
+        staging_start = workflow.index("New-WindowsPagesDeployment.ps1")
+        staging_end = workflow.index("- name: Bundle the unprivileged candidate")
+        staging_contract = workflow[staging_start:staging_end]
+        if "$LASTEXITCODE" in staging_contract or "if (-not $?)" not in staging_contract:
+            raise AssertionError(
+                "PowerShell staging uses a native-process exit-code contract"
+            )
 
     print(
         "Fleet central Pages projection tests passed: exact owner subtree, "
