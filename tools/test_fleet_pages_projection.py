@@ -8,6 +8,7 @@ import copy
 import hashlib
 import json
 from pathlib import Path
+import subprocess
 import tempfile
 
 from publish_fleet_pages_projection import (
@@ -17,6 +18,7 @@ from publish_fleet_pages_projection import (
     ProjectionError,
     materialize,
     project,
+    verify_staged_fleet,
 )
 
 
@@ -396,6 +398,51 @@ def main() -> int:
         )
         damage_count += 1
 
+    with tempfile.TemporaryDirectory(prefix="fleet-pages-index-") as value:
+        root = Path(value)
+        subprocess.run(
+            ["git", "init", "--quiet"],
+            cwd=root,
+            check=True,
+            stdout=subprocess.DEVNULL,
+            stderr=subprocess.DEVNULL,
+        )
+        attributes = root / ".gitattributes"
+        attributes.write_text(
+            "* text=auto eol=lf\nRusty-Fleet/** -text\n",
+            encoding="utf-8",
+            newline="\n",
+        )
+        projected = root / "Rusty-Fleet" / "metadata" / "labs" / "release.json"
+        projected.parent.mkdir(parents=True)
+        projected.write_bytes(b'{"exact":true}\r\n')
+        subprocess.run(
+            ["git", "add", "--", ".gitattributes", "Rusty-Fleet"],
+            cwd=root,
+            check=True,
+            stdout=subprocess.DEVNULL,
+            stderr=subprocess.DEVNULL,
+        )
+        verify_staged_fleet(root)
+
+        attributes.write_text(
+            "* text=auto eol=lf\n*.json text eol=lf\n",
+            encoding="utf-8",
+            newline="\n",
+        )
+        subprocess.run(
+            ["git", "add", "--", ".gitattributes", "Rusty-Fleet"],
+            cwd=root,
+            check=True,
+            stdout=subprocess.DEVNULL,
+            stderr=subprocess.DEVNULL,
+        )
+        assert_rejected(
+            lambda: verify_staged_fleet(root),
+            "Git line-ending normalization",
+        )
+        damage_count += 1
+
     workflow_path = (
         Path(__file__).resolve().parents[1]
         / ".github"
@@ -417,6 +464,7 @@ def main() -> int:
             "actions/upload-artifact@",
             "actions/download-artifact@",
             "publish_fleet_pages_projection.py project",
+            "publish_fleet_pages_projection.py verify-index",
             "--fleet-source-site",
             "gh auth setup-git",
             "git push origin HEAD:main",
@@ -434,6 +482,9 @@ def main() -> int:
             raise AssertionError(
                 "PowerShell staging uses a native-process exit-code contract"
             )
+        attributes_path = Path(__file__).resolve().parents[1] / ".gitattributes"
+        if "Rusty-Fleet/** -text" not in attributes_path.read_text(encoding="utf-8"):
+            raise AssertionError("Fleet projection bytes are not exempt from EOL rewriting")
 
     print(
         "Fleet central Pages projection tests passed: exact owner subtree, "

@@ -11,6 +11,7 @@ import os
 from pathlib import Path
 import re
 import shutil
+import subprocess
 import tempfile
 from typing import Any
 
@@ -442,6 +443,63 @@ def tree_digest(inventory: dict[str, str]) -> str:
     return sha256_bytes(encoded)
 
 
+def git_output(site_root: Path, *args: str) -> bytes:
+    try:
+        result = subprocess.run(
+            ["git", "-C", str(site_root), *args],
+            check=True,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+        )
+    except (OSError, subprocess.CalledProcessError) as exc:
+        raise ProjectionError("central Git index cannot be verified") from exc
+    return result.stdout
+
+
+def nul_paths(value: bytes, label: str) -> set[str]:
+    try:
+        return {
+            item.decode("utf-8")
+            for item in value.split(b"\0")
+            if item
+        }
+    except UnicodeDecodeError as exc:
+        raise ProjectionError(f"{label} contains a non-UTF-8 path") from exc
+
+
+def verify_staged_fleet(site_root: Path) -> None:
+    fleet_root = site_root / "Rusty-Fleet"
+    worktree_inventory = file_inventory(fleet_root)
+    if not worktree_inventory:
+        raise ProjectionError("Fleet projection worktree is empty")
+    expected_paths = {f"Rusty-Fleet/{name}" for name in worktree_inventory}
+    indexed_paths = nul_paths(
+        git_output(site_root, "ls-files", "-z", "--", "Rusty-Fleet"),
+        "Fleet Git index",
+    )
+    if indexed_paths != expected_paths:
+        raise ProjectionError("Fleet Git index inventory is not exact")
+    changed_paths = nul_paths(
+        git_output(
+            site_root,
+            "diff",
+            "--cached",
+            "--name-only",
+            "-z",
+            "--",
+            "Rusty-Fleet",
+        ),
+        "staged Fleet projection",
+    )
+    if not changed_paths.issubset(expected_paths):
+        raise ProjectionError("staged Fleet projection inventory is not closed")
+    for relative, expected_digest in worktree_inventory.items():
+        path = f"Rusty-Fleet/{relative}"
+        indexed = git_output(site_root, "cat-file", "blob", f":{path}")
+        if sha256_bytes(indexed) != expected_digest:
+            raise ProjectionError(f"Git staging changed projected bytes: {path}")
+
+
 def project(
     request_path: Path,
     fleet_staging: Path,
@@ -591,6 +649,8 @@ def parse_args() -> argparse.Namespace:
     project_parser.add_argument("--fleet-source-site", type=Path, required=True)
     project_parser.add_argument("--site-root", type=Path, required=True)
     project_parser.add_argument("--out-receipt", type=Path, required=True)
+    verify_index_parser = subparsers.add_parser("verify-index")
+    verify_index_parser.add_argument("--site-root", type=Path, required=True)
     return parser.parse_args()
 
 
@@ -598,7 +658,7 @@ def main() -> int:
     args = parse_args()
     if args.command == "materialize":
         materialize(args.event, args.output, args.github_output)
-    else:
+    elif args.command == "project":
         project(
             args.request,
             args.fleet_staging,
@@ -606,6 +666,8 @@ def main() -> int:
             args.site_root,
             args.out_receipt,
         )
+    else:
+        verify_staged_fleet(args.site_root)
     return 0
 
 
