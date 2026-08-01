@@ -24,6 +24,7 @@ ROOT = Path(__file__).resolve().parents[1]
 CATALOG_PATH = ROOT / "Rusty-Morphospace" / "catalog" / "catalog.json"
 SHA40 = re.compile(r"^[0-9a-f]{40}$")
 SHA64 = re.compile(r"^[0-9a-f]{64}$")
+UPPER_SHA40 = re.compile(r"^[0-9A-F]{40}$")
 OWNER_TAG = re.compile(r"^v(\d+\.\d+\.\d+)-alpha\.([1-9]\d*)$")
 UPDATER_TAG = re.compile(r"^package-updater-v(0\.1\.0-alpha\.([1-9]\d*))$")
 STABLE_LATEST_TAG = re.compile(
@@ -328,6 +329,12 @@ def adapt_fleet(metadata: Any, tag: str) -> dict[str, Any]:
         "setup_sha256",
         "setup_size_bytes",
         "setup_signer_certificate_sha256",
+        "setup_signer_subject",
+        "setup_signer_thumbprint",
+        "setup_signer_self_issued",
+        "authenticode_trust_mode",
+        "public_trust_claim",
+        "timestamp_required",
         "setup_build_receipt_sha256",
         "source_revision",
         "source_tree",
@@ -350,9 +357,29 @@ def adapt_fleet(metadata: Any, tag: str) -> dict[str, Any]:
     )
     match = OWNER_TAG.fullmatch(tag)
     assert match is not None
+    exact_string(
+        root["setup_signer_certificate_sha256"],
+        SHA64,
+        "Fleet setup signer certificate SHA-256",
+    )
+    exact_string(
+        root["setup_signer_thumbprint"],
+        UPPER_SHA40,
+        "Fleet setup signer thumbprint",
+    )
+    exact_string(
+        root["setup_build_receipt_sha256"],
+        SHA64,
+        "Fleet setup build receipt SHA-256",
+    )
+    exact_string(
+        root["descriptor_signer_spki_sha256"],
+        SHA64,
+        "Fleet descriptor signer SPKI SHA-256",
+    )
     if (
         root["schema"]
-        != "rusty.fleet.windows_release_descriptor_receipt.v4"
+        != "rusty.fleet.windows_release_descriptor_receipt.v5"
         or root["result"] != "pass"
         or root["version"] != match.group(1)
         or root["product_channel"] != "labs"
@@ -361,6 +388,12 @@ def adapt_fleet(metadata: Any, tag: str) -> dict[str, Any]:
         or root["distribution_track"] != "github-prerelease"
         or root["release_tag"] != tag
         or root["installation_identity"] != "rusty-fleet-labs"
+        or root["setup_signer_subject"] != "CN=MesmerPrism"
+        or root["setup_signer_self_issued"] is not True
+        or root["authenticode_trust_mode"]
+        != "exact-pinned-self-issued-untrusted-root-only"
+        or root["public_trust_claim"] is not False
+        or root["timestamp_required"] is not True
         or root["pages_path"] != "Rusty-Fleet/metadata/labs/release.json"
         or primary["role"] != "complete-product"
         or primary["name"] != "RustyFleet-Labs-Setup.exe"
