@@ -1,0 +1,317 @@
+name: Distribution catalog publication
+
+on:
+  workflow_dispatch:
+    inputs:
+      preflight_run_id:
+        description: Successful read-only preflight run ID
+        required: true
+        type: string
+      preflight_head_sha:
+        description: Exact preflight workflow head SHA
+        required: true
+        type: string
+      artifact_id:
+        description: Exact preflight artifact ID
+        required: true
+        type: string
+      artifact_digest:
+        description: Exact preflight artifact SHA-256 digest
+        required: true
+        type: string
+      artifact_size_bytes:
+        description: Exact preflight artifact archive byte count
+        required: true
+        type: string
+      generated_catalog_sha256:
+        description: Exact generated catalog SHA-256
+        required: true
+        type: string
+      readback_receipt_sha256:
+        description: Exact read-only receipt SHA-256
+        required: true
+        type: string
+      authorized_at:
+        description: Explicit authorization time in UTC seconds
+        required: true
+        type: string
+
+concurrency:
+  group: distribution-catalog-publication
+  cancel-in-progress: false
+
+jobs:
+  prepare:
+    runs-on: ubuntu-24.04
+    permissions:
+      actions: read
+      contents: read
+    steps:
+      - name: Require the exact central main workflow
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$GITHUB_REF" = "refs/heads/main"
+
+      - name: Check out exact central authority
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+
+      - name: Set up exact Python
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: 3.12.10
+          cache: pip
+          cache-dependency-path: tools/requirements-distribution-catalog.txt
+
+      - name: Install the pinned catalog validator
+        run: >-
+          python -m pip install
+          --disable-pip-version-check
+          --requirement tools/requirements-distribution-catalog.txt
+
+      - name: Validate publication and preflight damage matrices
+        run: |
+          python tools/test_distribution_catalog.py
+          python tools/test_distribution_catalog_preflight.py
+          python tools/test_distribution_catalog_projection.py
+          python tools/test_fleet_pages_projection.py
+
+      - name: Admit the exact protected preflight artifact
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PREFLIGHT_RUN_ID: ${{ inputs.preflight_run_id }}
+          PREFLIGHT_HEAD_SHA: ${{ inputs.preflight_head_sha }}
+          ARTIFACT_ID: ${{ inputs.artifact_id }}
+          ARTIFACT_DIGEST: ${{ inputs.artifact_digest }}
+          ARTIFACT_SIZE_BYTES: ${{ inputs.artifact_size_bytes }}
+          GENERATED_CATALOG_SHA256: ${{ inputs.generated_catalog_sha256 }}
+          READBACK_RECEIPT_SHA256: ${{ inputs.readback_receipt_sha256 }}
+          AUTHORIZED_AT: ${{ inputs.authorized_at }}
+          PUBLICATION_WORKFLOW_SHA: ${{ github.sha }}
+        run: |
+          Set-StrictMode -Version Latest
+          $ErrorActionPreference = 'Stop'
+          if (
+            $env:PREFLIGHT_RUN_ID -cnotmatch '^[1-9][0-9]{0,19}$' -or
+            $env:ARTIFACT_ID -cnotmatch '^[1-9][0-9]{0,19}$' -or
+            $env:ARTIFACT_SIZE_BYTES -cnotmatch '^[1-9][0-9]{0,9}$' -or
+            $env:PREFLIGHT_HEAD_SHA -cnotmatch '^[0-9a-f]{40}$' -or
+            $env:ARTIFACT_DIGEST -cnotmatch '^sha256:[0-9a-f]{64}$' -or
+            $env:GENERATED_CATALOG_SHA256 -cnotmatch '^[0-9a-f]{64}$' -or
+            $env:READBACK_RECEIPT_SHA256 -cnotmatch '^[0-9a-f]{64}$' -or
+            $env:AUTHORIZED_AT -cnotmatch (
+              '^20[0-9]{2}-[01][0-9]-[0-3][0-9]T' +
+              '[0-2][0-9]:[0-5][0-9]:[0-5][0-9]Z$'
+            ) -or
+            $env:PREFLIGHT_HEAD_SHA -cne $env:PUBLICATION_WORKFLOW_SHA
+          ) {
+            throw 'catalog publication input is malformed'
+          }
+          $run = gh api (
+            "repos/$env:GITHUB_REPOSITORY/actions/runs/$env:PREFLIGHT_RUN_ID"
+          ) | ConvertFrom-Json -Depth 30
+          if (
+            $run.name -cne 'Distribution catalog read-only preflight' -or
+            $run.path -cne '.github/workflows/distribution-catalog-preflight.yml' -or
+            $run.event -cne 'workflow_dispatch' -or
+            $run.status -cne 'completed' -or
+            $run.conclusion -cne 'success' -or
+            $run.head_branch -cne 'main' -or
+            $run.head_sha -cne $env:PREFLIGHT_HEAD_SHA -or
+            $run.repository.full_name -cne $env:GITHUB_REPOSITORY
+          ) {
+            throw 'preflight workflow run identity is not exact'
+          }
+          $list = gh api (
+            "repos/$env:GITHUB_REPOSITORY/actions/runs/" +
+            "$env:PREFLIGHT_RUN_ID/artifacts"
+          ) | ConvertFrom-Json -Depth 30
+          $matches = @($list.artifacts | Where-Object {
+            [string]$_.id -ceq $env:ARTIFACT_ID
+          })
+          $expectedName = (
+            'distribution-catalog-readonly-preflight-' +
+            $env:PREFLIGHT_RUN_ID
+          )
+          if (
+            $matches.Count -ne 1 -or
+            $matches[0].name -cne $expectedName -or
+            $matches[0].digest -cne $env:ARTIFACT_DIGEST -or
+            [string]$matches[0].size_in_bytes -cne $env:ARTIFACT_SIZE_BYTES -or
+            $matches[0].expired -ne $false
+          ) {
+            throw 'preflight artifact identity is not exact'
+          }
+          gh run download $env:PREFLIGHT_RUN_ID `
+            --repo $env:GITHUB_REPOSITORY `
+            --name $expectedName `
+            --dir _catalog-publication
+          if ($LASTEXITCODE -ne 0) {
+            throw 'preflight artifact download failed'
+          }
+          $files = @(Get-ChildItem -LiteralPath _catalog-publication -File)
+          $names = @($files.Name | Sort-Object -CaseSensitive)
+          if (
+            $files.Count -ne 2 -or
+            ($names -join "`n") -cne (
+              "catalog.generated.json`nreadback.receipt.json"
+            )
+          ) {
+            throw 'preflight artifact file inventory is not closed'
+          }
+          $catalog = Get-Item _catalog-publication/catalog.generated.json
+          $receipt = Get-Item _catalog-publication/readback.receipt.json
+          if ($catalog.Length -gt 2097152 -or $receipt.Length -gt 2097152) {
+            throw 'preflight artifact member exceeds its bound'
+          }
+          $catalogHash = (
+            Get-FileHash -Algorithm SHA256 -LiteralPath $catalog.FullName
+          ).Hash.ToLowerInvariant()
+          $receiptHash = (
+            Get-FileHash -Algorithm SHA256 -LiteralPath $receipt.FullName
+          ).Hash.ToLowerInvariant()
+          if (
+            $catalogHash -cne $env:GENERATED_CATALOG_SHA256 -or
+            $receiptHash -cne $env:READBACK_RECEIPT_SHA256
+          ) {
+            throw 'preflight artifact members differ from protected inputs'
+          }
+
+      - name: Retain the same-run admitted projection
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: catalog-publication-prepared-${{ github.run_id }}
+          path: _catalog-publication/
+          if-no-files-found: error
+          retention-days: 7
+
+  publish:
+    needs: prepare
+    runs-on: ubuntu-24.04
+    environment: distribution-catalog-publication
+    permissions:
+      actions: read
+      contents: write
+      pages: write
+    steps:
+      - name: Require the exact central main workflow
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$GITHUB_REF" = "refs/heads/main"
+
+      - name: Check out exact central authority without credentials
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+
+      - name: Set up exact Python
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: 3.12.10
+          cache: pip
+          cache-dependency-path: tools/requirements-distribution-catalog.txt
+
+      - name: Install the pinned catalog validator
+        run: >-
+          python -m pip install
+          --disable-pip-version-check
+          --requirement tools/requirements-distribution-catalog.txt
+
+      - name: Download only this run's admitted projection
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
+        with:
+          name: catalog-publication-prepared-${{ github.run_id }}
+          path: _catalog-publication
+
+      - name: Install the exact authorized catalog projection
+        shell: bash
+        env:
+          PREFLIGHT_RUN_ID: ${{ inputs.preflight_run_id }}
+          PREFLIGHT_HEAD_SHA: ${{ inputs.preflight_head_sha }}
+          ARTIFACT_ID: ${{ inputs.artifact_id }}
+          ARTIFACT_DIGEST: ${{ inputs.artifact_digest }}
+          ARTIFACT_SIZE_BYTES: ${{ inputs.artifact_size_bytes }}
+          AUTHORIZED_AT: ${{ inputs.authorized_at }}
+        run: |
+          set -euo pipefail
+          python tools/publish_distribution_catalog_projection.py \
+            --catalog _catalog-publication/catalog.generated.json \
+            --receipt _catalog-publication/readback.receipt.json \
+            --site-root . \
+            --preflight-run-id "$PREFLIGHT_RUN_ID" \
+            --preflight-head-sha "$PREFLIGHT_HEAD_SHA" \
+            --artifact-id "$ARTIFACT_ID" \
+            --artifact-name "distribution-catalog-readonly-preflight-$PREFLIGHT_RUN_ID" \
+            --artifact-digest "$ARTIFACT_DIGEST" \
+            --artifact-size-bytes "$ARTIFACT_SIZE_BYTES" \
+            --authorized-at "$AUTHORIZED_AT"
+
+      - name: Commit only the catalog projection
+        id: commit
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mapfile -t changed < <(git diff --name-only)
+          expected=(
+            "Rusty-Morphospace/catalog/catalog.json"
+            "Rusty-Morphospace/catalog/publication.json"
+          )
+          if [[ "${changed[*]}" != "${expected[*]}" ]]; then
+            echo "unexpected catalog projection paths: ${changed[*]}" >&2
+            exit 1
+          fi
+          git add -- "${expected[@]}"
+          mapfile -t staged < <(git diff --cached --name-only)
+          if [[ "${staged[*]}" != "${expected[*]}" ]]; then
+            echo "catalog projection staging is not exact" >&2
+            exit 1
+          fi
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git commit -m "Publish exact five-owner Labs catalog"
+          commit_sha=$(git rev-parse HEAD)
+          catalog_sha=$(sha256sum Rusty-Morphospace/catalog/catalog.json | cut -d' ' -f1)
+          publication_sha=$(sha256sum Rusty-Morphospace/catalog/publication.json | cut -d' ' -f1)
+          {
+            echo "commit_sha=$commit_sha"
+            echo "catalog_sha=$catalog_sha"
+            echo "publication_sha=$publication_sha"
+          } >> "$GITHUB_OUTPUT"
+          gh auth setup-git
+          git push origin HEAD:main
+
+      - name: Request and verify the canonical Pages build
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          COMMIT_SHA: ${{ steps.commit.outputs.commit_sha }}
+          CATALOG_SHA: ${{ steps.commit.outputs.catalog_sha }}
+          PUBLICATION_SHA: ${{ steps.commit.outputs.publication_sha }}
+        run: |
+          set -euo pipefail
+          gh api --method POST "repos/$GITHUB_REPOSITORY/pages/builds" >/dev/null
+          for _ in $(seq 1 30); do
+            curl --fail --silent --show-error \
+              "https://mesmerprism.com/Rusty-Morphospace/catalog/catalog.json?sha=$COMMIT_SHA" \
+              --output "$RUNNER_TEMP/catalog.readback.json" || true
+            curl --fail --silent --show-error \
+              "https://mesmerprism.com/Rusty-Morphospace/catalog/publication.json?sha=$COMMIT_SHA" \
+              --output "$RUNNER_TEMP/publication.readback.json" || true
+            if [[ -f "$RUNNER_TEMP/catalog.readback.json" ]] && \
+               [[ -f "$RUNNER_TEMP/publication.readback.json" ]] && \
+               [[ "$(sha256sum "$RUNNER_TEMP/catalog.readback.json" | cut -d' ' -f1)" == "$CATALOG_SHA" ]] && \
+               [[ "$(sha256sum "$RUNNER_TEMP/publication.readback.json" | cut -d' ' -f1)" == "$PUBLICATION_SHA" ]]; then
+              exit 0
+            fi
+            sleep 10
+          done
+          echo "canonical catalog readback did not become exact" >&2
+          exit 1

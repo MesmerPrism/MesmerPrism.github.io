@@ -104,6 +104,27 @@ def canonical_json_bytes(value: Any) -> bytes:
     ).encode("utf-8")
 
 
+def inert_catalog(value: dict[str, Any]) -> dict[str, Any]:
+    """Return the policy-only baseline without carrying release projections."""
+    result = copy.deepcopy(value)
+    products = result.get("products")
+    if not isinstance(products, list):
+        fail("catalog products are absent")
+    for product in products:
+        if not isinstance(product, dict):
+            fail("catalog contains a non-object product")
+        channels = product.get("product_channels")
+        if not isinstance(channels, list):
+            fail("catalog product channels are absent")
+        for channel in channels:
+            if not isinstance(channel, dict):
+                fail("catalog contains a non-object channel")
+            channel["availability"] = "unpublished"
+            channel["release"] = None
+    validate_catalog(result)
+    return result
+
+
 def strict_json_bytes(value: bytes, label: str, maximum: int) -> Any:
     if not value or len(value) > maximum:
         fail(f"{label} size is outside its bound")
@@ -1267,16 +1288,11 @@ def run_preflight(
         request_value,
         require_complete_labs_set=require_complete_labs_set,
     )
-    validate_catalog(baseline_catalog)
-    if any(
-        channel["availability"] != "unpublished" or channel["release"] is not None
-        for product in baseline_catalog["products"]
-        for channel in product["product_channels"]
-    ):
-        fail("catalog source baseline is not inert and unpublished")
+    validate_catalog(baseline_catalog, allow_published=True)
+    source_catalog = inert_catalog(baseline_catalog)
     readbacks = fixture_readbacks(fixture) if fixture is not None else None
     client = None if readbacks is not None else GitHubClient(token)
-    generated = copy.deepcopy(baseline_catalog)
+    generated = copy.deepcopy(source_catalog)
     receipt_records: list[dict[str, Any]] = []
     for request in records:
         owner = request["owner"]
@@ -1314,7 +1330,7 @@ def run_preflight(
         channel["release"] = projection
         receipt_records.append(record_receipt)
     validate_catalog(generated, allow_published=True)
-    source_bytes = canonical_json_bytes(baseline_catalog)
+    source_bytes = canonical_json_bytes(source_catalog)
     generated_bytes = canonical_json_bytes(generated)
     receipt = {
         "schema": "rusty.morphospace.catalog_readonly_preflight.v1",
