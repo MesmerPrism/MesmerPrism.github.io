@@ -356,7 +356,11 @@ def make_record(owner: str) -> tuple[dict, dict]:
         },
         "tag_chain": [{"type": "commit", "sha": SOURCE}],
         "commit_tree": TREE,
-        "latest_tag": "v9.9.9",
+        "latest_tag": (
+            "windows-hotspot-provider-v0.1.3"
+            if owner == "rusty-hostess"
+            else "v9.9.9"
+        ),
         "metadata_base64": base64.b64encode(metadata_bytes).decode("ascii"),
         "supporting_json_base64": base64.b64encode(
             supporting_bytes
@@ -532,8 +536,11 @@ def main() -> int:
         ),
         (
             "noncanonical latest response",
-            lambda _, f: f["records"][0].update(
-                {"latest_tag": "not-a-stable-tag"}
+            lambda _, f: (
+                f["records"][0].update({"latest_tag": "not a tag"}),
+                f["records"][0]["final_readback"].update(
+                    {"latest_tag": "not a tag"}
+                ),
             ),
         ),
         (

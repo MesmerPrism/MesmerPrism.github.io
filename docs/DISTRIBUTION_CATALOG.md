@@ -73,6 +73,10 @@ projection must preserve both Fleet subtrees and independently admit the
 five-owner preflight receipt. The Fleet metadata projection is not catalog
 publication authority. This repository never derives owner metadata from a
 GitHub `latest` download and never downloads or publishes owner binaries.
+The `latest` endpoint is observed only for same-run drift and to ensure the
+requested prerelease did not become the repository default. A latest release
+owned by another product in a multi-product repository is retained as opaque,
+bounded evidence and is not reinterpreted as this product's Stable release.
 
 ## Channel Policy
 
