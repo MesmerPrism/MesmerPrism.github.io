@@ -72,6 +72,14 @@ separate launcher metadata, outside this GitHub-bundle catalog projection.
 Installation identities likewise remain owner-metadata facts; the catalog is
 never their authority.
 
+Fleet's renewable signed metadata uses a separate dispatch-only central
+workflow. Fleet signs and preflights the candidate, then sends a bounded
+hash-bound public request. This repository checks out the exact Fleet release
+tag, reruns Fleet's Pages staging verifier, replaces only `Rusty-Fleet/`,
+commits that owned subtree, requests the canonical Pages build, and leaves the
+catalog plus every unrelated byte unchanged. This route publishes no owner
+binary and grants no catalog publication authority.
+
 ## Privacy-sensitive assets
 
 The site serves its fonts from [`assets/fonts.css`](assets/fonts.css) and local
