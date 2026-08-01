@@ -1,0 +1,63 @@
+{
+  "schema": "rusty.fleet.windows_release_metadata_handoff.v2",
+  "result": "pass",
+  "deployment_id": "labs-b9c7f47f8236e4bfb59f7f79",
+  "deployment_sequence": 1,
+  "previous_handoff_sha256": null,
+  "product": "rusty-fleet-labs",
+  "version": "0.1.0",
+  "product_channel": "labs",
+  "maturity": "alpha",
+  "channel": "labs",
+  "distribution_track": "github-prerelease",
+  "tag": "v0.1.0-alpha.5",
+  "source_revision": "108782934f9ae5a08a77ffa1f3aa55b19af85b05",
+  "source_tree": "991214ac4486f5324d8b50cb5a047c686e9c5cd4",
+  "descriptor_id": "v0.1.0-labs-1785621831493",
+  "issued_at_ms": 1785621831493,
+  "expires_at_ms": 1785704631493,
+  "validity_duration_ms": 82800000,
+  "descriptor_signer_spki_sha256": "0b3ef04dc5481d5e0a0a243df298c31052501e014a6e27516c48b95846657d0c",
+  "setup_signer_certificate_sha256": "baead63c37e32085c3af19b4c739a6a308d700529f107d40e14fec2c94fe7ddf",
+  "binary_authority": "github_releases",
+  "pages_binary_count": 0,
+  "pages_path": "Rusty-Fleet/metadata/labs",
+  "publication_preflight_receipt_sha256": "4c2501046d479491be862f36718af477c7fd9b17bc4b2dd56faaf1231f7ba3e6",
+  "release_files": [
+    {
+      "role": "setup",
+      "name": "RustyFleet-Labs-Setup.exe",
+      "sha256": "5206234ef2602da6450d0cea83b8478e2f11a3caa75acb747b1cb95174b73fbb",
+      "size_bytes": 204304912,
+      "authority": "github_releases"
+    },
+    {
+      "role": "setup_build_receipt",
+      "name": "RustyFleet-Labs-Setup.build-receipt.json",
+      "sha256": "9f636985d7bccf1d2607693f8605cf5aed3eb8cbd39b69263da5954286a83ce0",
+      "size_bytes": 1179,
+      "authority": "github_releases"
+    },
+    {
+      "role": "descriptor",
+      "name": "release.json",
+      "sha256": "b9c7f47f8236e4bfb59f7f7913ebcf9826ee57497ecec32ff31c790fb5a45f87",
+      "size_bytes": 2109,
+      "authority": "github_pages"
+    },
+    {
+      "role": "descriptor_receipt",
+      "name": "release-descriptor.receipt.json",
+      "sha256": "766896115a17c3af586f258333da70a2a5fd96a3bc75f0d2ddb9edb8d99b7f16",
+      "size_bytes": 2326,
+      "authority": "github_pages"
+    },
+    {
+      "role": "descriptor_spki",
+      "name": "release-descriptor.spki.der",
+      "sha256": "0b3ef04dc5481d5e0a0a243df298c31052501e014a6e27516c48b95846657d0c",
+      "size_bytes": 422,
+      "authority": "github_pages"
+    }
+  ]
+}
