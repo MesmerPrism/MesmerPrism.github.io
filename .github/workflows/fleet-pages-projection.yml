@@ -1,0 +1,336 @@
+name: Fleet Pages projection
+
+on:
+  repository_dispatch:
+    types:
+      - fleet-pages-projection
+
+permissions:
+  contents: read
+
+concurrency:
+  group: central-pages-publication
+  cancel-in-progress: false
+
+jobs:
+  prepare:
+    runs-on: windows-latest
+    outputs:
+      request_sha256: ${{ steps.request.outputs.request_sha256 }}
+      release_tag: ${{ steps.request.outputs.release_tag }}
+      source_revision: ${{ steps.request.outputs.source_revision }}
+      source_tree: ${{ steps.request.outputs.source_tree }}
+      product_channel: ${{ steps.request.outputs.product_channel }}
+      version: ${{ steps.request.outputs.version }}
+      maturity: ${{ steps.request.outputs.maturity }}
+      distribution_track: ${{ steps.request.outputs.distribution_track }}
+      fleet_signer_thumbprint: ${{ steps.request.outputs.fleet_signer_thumbprint }}
+      hostess_signer_thumbprint: ${{ steps.request.outputs.hostess_signer_thumbprint }}
+      descriptor_signer_spki_sha256: ${{ steps.request.outputs.descriptor_signer_spki_sha256 }}
+    steps:
+      - name: Check out central validation code without credentials
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Set up exact Python
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: 3.12.10
+
+      - name: Validate the central projection damage matrix
+        run: python tools/test_fleet_pages_projection.py
+
+      - name: Materialize the closed dispatch request
+        id: request
+        shell: pwsh
+        run: |
+          python tools/publish_fleet_pages_projection.py materialize `
+            --event $env:GITHUB_EVENT_PATH `
+            --output (Join-Path $env:RUNNER_TEMP 'fleet-pages-request') `
+            --github-output $env:GITHUB_OUTPUT
+
+      - name: Check out the exact Fleet release tag without credentials
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          repository: MesmerPrism/rusty-fleet
+          ref: ${{ steps.request.outputs.release_tag }}
+          path: _fleet-source
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Validate exact Fleet source identity and tagged policy
+        shell: pwsh
+        env:
+          RELEASE_TAG: ${{ steps.request.outputs.release_tag }}
+          SOURCE_REVISION: ${{ steps.request.outputs.source_revision }}
+          SOURCE_TREE: ${{ steps.request.outputs.source_tree }}
+          CHANNEL: ${{ steps.request.outputs.product_channel }}
+          FLEET_SIGNER_THUMBPRINT: ${{ steps.request.outputs.fleet_signer_thumbprint }}
+          HOSTESS_SIGNER_THUMBPRINT: ${{ steps.request.outputs.hostess_signer_thumbprint }}
+          DESCRIPTOR_SIGNER_SPKI_SHA256: ${{ steps.request.outputs.descriptor_signer_spki_sha256 }}
+        run: |
+          $fleet = Join-Path $env:GITHUB_WORKSPACE '_fleet-source'
+          $head = (& git -C $fleet rev-parse HEAD).Trim()
+          $tagCommit = (& git -C $fleet rev-parse "$env:RELEASE_TAG^{commit}").Trim()
+          $tree = (& git -C $fleet rev-parse "$env:SOURCE_REVISION^{tree}").Trim()
+          $status = @(& git -C $fleet status --porcelain=v1 --untracked-files=no)
+          if ($LASTEXITCODE -ne 0 -or
+              $head -cne $env:SOURCE_REVISION -or
+              $tagCommit -cne $env:SOURCE_REVISION -or
+              $tree -cne $env:SOURCE_TREE -or
+              $status.Count -ne 0) {
+            throw 'Fleet dispatch is not the exact clean release tag, commit, and tree'
+          }
+          $policy = Get-Content `
+            -LiteralPath (Join-Path $fleet 'packaging\windows\trust\release-policy.json') `
+            -Raw | ConvertFrom-Json -Depth 20
+          $channelPolicy = $policy.channels.($env:CHANNEL)
+          if ($policy.schema -cne 'rusty.fleet.windows_release_trust_policy.v2' -or
+              $null -eq $channelPolicy -or
+              $channelPolicy.publication_enabled -ne $true -or
+              $channelPolicy.authenticode.thumbprint -cne
+                $env:FLEET_SIGNER_THUMBPRINT -or
+              $channelPolicy.authenticode.thumbprint -cne
+                $env:HOSTESS_SIGNER_THUMBPRINT -or
+              @($channelPolicy.authorized_descriptor_signer_spki_sha256) `
+                -cnotcontains $env:DESCRIPTOR_SIGNER_SPKI_SHA256) {
+            throw 'dispatch signer pins are not authorized by the exact tagged policy'
+          }
+
+      - name: Regenerate the exact Fleet-owned staging tree
+        shell: pwsh
+        env:
+          VERSION: ${{ steps.request.outputs.version }}
+          CHANNEL: ${{ steps.request.outputs.product_channel }}
+          MATURITY: ${{ steps.request.outputs.maturity }}
+          RELEASE_TAG: ${{ steps.request.outputs.release_tag }}
+          SOURCE_REVISION: ${{ steps.request.outputs.source_revision }}
+          SOURCE_TREE: ${{ steps.request.outputs.source_tree }}
+          DESCRIPTOR_SIGNER_SPKI_SHA256: ${{ steps.request.outputs.descriptor_signer_spki_sha256 }}
+        run: |
+          $fleet = Join-Path $env:GITHUB_WORKSPACE '_fleet-source'
+          $request = Join-Path $env:RUNNER_TEMP 'fleet-pages-request'
+          $metadata = Join-Path $env:RUNNER_TEMP 'fleet-pages-metadata'
+          $existing = Join-Path $env:RUNNER_TEMP 'fleet-existing-pages'
+          $output = Join-Path $env:RUNNER_TEMP 'fleet-central-pages-staging'
+          [IO.Directory]::CreateDirectory($metadata) | Out-Null
+          [IO.Directory]::CreateDirectory($existing) | Out-Null
+          foreach ($name in @(
+            'release.json',
+            'release-descriptor.receipt.json',
+            'release-descriptor.spki.der'
+          )) {
+            Copy-Item `
+              -LiteralPath (Join-Path $request "files\$name") `
+              -Destination (Join-Path $metadata $name)
+          }
+          $stable = Join-Path $env:GITHUB_WORKSPACE 'Rusty-Fleet\metadata\stable'
+          if (Test-Path -LiteralPath $stable -PathType Container) {
+            $metadataParent = Join-Path $existing 'Rusty-Fleet\metadata'
+            [IO.Directory]::CreateDirectory($metadataParent) | Out-Null
+            Copy-Item -LiteralPath $stable -Destination $metadataParent -Recurse
+          }
+          $arguments = @{
+            Version = $env:VERSION
+            Channel = $env:CHANNEL
+            Maturity = $env:MATURITY
+            ReleaseTag = $env:RELEASE_TAG
+            SiteDirectory = (Join-Path $fleet 'site')
+            MetadataDirectory = $metadata
+            PublicationPreflightReceiptPath = (
+              Join-Path $request 'files\metadata-preflight.json'
+            )
+            ExpectedSourceRevision = $env:SOURCE_REVISION
+            ExpectedSourceTree = $env:SOURCE_TREE
+            ExpectedDescriptorSignerSpkiSha256 = (
+              $env:DESCRIPTOR_SIGNER_SPKI_SHA256
+            )
+            OutputDirectory = $output
+            ExistingDeploymentDirectory = $existing
+          }
+          $previous = Join-Path $env:GITHUB_WORKSPACE (
+            "Rusty-Fleet\metadata\$env:CHANNEL\deployment-handoff.json"
+          )
+          if (Test-Path -LiteralPath $previous -PathType Leaf) {
+            $arguments.PreviousHandoffPath = $previous
+          }
+          & (Join-Path $fleet 'packaging\windows\New-WindowsPagesDeployment.ps1') `
+            @arguments | Out-Null
+          if ($LASTEXITCODE -ne 0) {
+            throw 'Fleet Pages staging regeneration failed'
+          }
+
+      - name: Bundle the unprivileged candidate
+        shell: pwsh
+        run: |
+          $bundle = Join-Path $env:RUNNER_TEMP 'fleet-pages-candidate'
+          [IO.Directory]::CreateDirectory($bundle) | Out-Null
+          Copy-Item `
+            -LiteralPath (Join-Path $env:RUNNER_TEMP 'fleet-pages-request') `
+            -Destination (Join-Path $bundle 'request') `
+            -Recurse
+          Copy-Item `
+            -LiteralPath (Join-Path $env:RUNNER_TEMP 'fleet-central-pages-staging') `
+            -Destination (Join-Path $bundle 'staging') `
+            -Recurse
+
+      - name: Upload the bounded unprivileged candidate
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: fleet-pages-candidate-${{ github.run_id }}
+          path: ${{ runner.temp }}/fleet-pages-candidate/
+          if-no-files-found: error
+          retention-days: 1
+
+  publish:
+    needs: prepare
+    permissions:
+      actions: read
+      contents: write
+      pages: write
+    environment: fleet-pages-publication
+    runs-on: windows-latest
+    steps:
+      - name: Check out central publication code without credentials
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Set up exact Python
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: 3.12.10
+
+      - name: Validate the privileged projection damage matrix
+        run: python tools/test_fleet_pages_projection.py
+
+      - name: Download only this run's candidate
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
+        with:
+          name: fleet-pages-candidate-${{ github.run_id }}
+          path: ${{ runner.temp }}/fleet-pages-candidate
+
+      - name: Bind the candidate to the pre-execution request
+        shell: pwsh
+        env:
+          EXPECTED_REQUEST_SHA256: ${{ needs.prepare.outputs.request_sha256 }}
+        run: |
+          $request = Join-Path $env:RUNNER_TEMP (
+            'fleet-pages-candidate\request\request.json'
+          )
+          $observed = (
+            Get-FileHash -LiteralPath $request -Algorithm SHA256
+          ).Hash.ToLowerInvariant()
+          if ($observed -cne $env:EXPECTED_REQUEST_SHA256) {
+            throw 'unprivileged Fleet execution changed the materialized request'
+          }
+
+      - name: Check out exact Fleet source without executing it
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          repository: MesmerPrism/rusty-fleet
+          ref: ${{ needs.prepare.outputs.release_tag }}
+          path: _fleet-source
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Revalidate exact Fleet source identity and tagged policy
+        shell: pwsh
+        env:
+          RELEASE_TAG: ${{ needs.prepare.outputs.release_tag }}
+          SOURCE_REVISION: ${{ needs.prepare.outputs.source_revision }}
+          SOURCE_TREE: ${{ needs.prepare.outputs.source_tree }}
+          CHANNEL: ${{ needs.prepare.outputs.product_channel }}
+          FLEET_SIGNER_THUMBPRINT: ${{ needs.prepare.outputs.fleet_signer_thumbprint }}
+          HOSTESS_SIGNER_THUMBPRINT: ${{ needs.prepare.outputs.hostess_signer_thumbprint }}
+          DESCRIPTOR_SIGNER_SPKI_SHA256: ${{ needs.prepare.outputs.descriptor_signer_spki_sha256 }}
+        run: |
+          $fleet = Join-Path $env:GITHUB_WORKSPACE '_fleet-source'
+          $head = (& git -C $fleet rev-parse HEAD).Trim()
+          $tagCommit = (& git -C $fleet rev-parse "$env:RELEASE_TAG^{commit}").Trim()
+          $tree = (& git -C $fleet rev-parse "$env:SOURCE_REVISION^{tree}").Trim()
+          $status = @(& git -C $fleet status --porcelain=v1 --untracked-files=no)
+          $policy = Get-Content `
+            -LiteralPath (Join-Path $fleet 'packaging\windows\trust\release-policy.json') `
+            -Raw | ConvertFrom-Json -Depth 20
+          $channelPolicy = $policy.channels.($env:CHANNEL)
+          if ($LASTEXITCODE -ne 0 -or
+              $head -cne $env:SOURCE_REVISION -or
+              $tagCommit -cne $env:SOURCE_REVISION -or
+              $tree -cne $env:SOURCE_TREE -or
+              $status.Count -ne 0 -or
+              $policy.schema -cne 'rusty.fleet.windows_release_trust_policy.v2' -or
+              $null -eq $channelPolicy -or
+              $channelPolicy.publication_enabled -ne $true -or
+              $channelPolicy.authenticode.thumbprint -cne
+                $env:FLEET_SIGNER_THUMBPRINT -or
+              $channelPolicy.authenticode.thumbprint -cne
+                $env:HOSTESS_SIGNER_THUMBPRINT -or
+              @($channelPolicy.authorized_descriptor_signer_spki_sha256) `
+                -cnotcontains $env:DESCRIPTOR_SIGNER_SPKI_SHA256) {
+            throw 'privileged projection source or tagged signer policy is not exact'
+          }
+
+      - name: Project only the Fleet-owned central subtree
+        shell: pwsh
+        run: |
+          python tools/publish_fleet_pages_projection.py project `
+            --request (Join-Path $env:RUNNER_TEMP 'fleet-pages-candidate\request\request.json') `
+            --fleet-staging (Join-Path $env:RUNNER_TEMP 'fleet-pages-candidate\staging') `
+            --fleet-source-site (Join-Path $env:GITHUB_WORKSPACE '_fleet-source\site') `
+            --site-root $env:GITHUB_WORKSPACE `
+            --out-receipt (Join-Path $env:RUNNER_TEMP 'fleet-pages-projection.receipt.json')
+
+      - name: Retain central projection evidence
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: fleet-pages-projection-${{ github.run_id }}
+          path: ${{ runner.temp }}/fleet-pages-projection.receipt.json
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Commit the exact Fleet-owned projection
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          & git add -- Rusty-Fleet
+          if ($LASTEXITCODE -ne 0) { throw 'Fleet projection staging failed' }
+          $changed = @(& git diff --cached --name-only)
+          if ($changed.Count -eq 0) {
+            'Exact Fleet projection is already current.'
+            exit 0
+          }
+          if (@($changed | Where-Object {
+            -not $_.Replace('\', '/').StartsWith(
+              'Rusty-Fleet/',
+              [StringComparison]::Ordinal
+            )
+          }).Count -ne 0) {
+            throw 'central commit escaped the Fleet-owned subtree'
+          }
+          & git config user.name 'Mesmer Prism Pages Bot'
+          & git config user.email 'pages-bot@users.noreply.github.com'
+          & git commit -m (
+            'Renew Fleet Pages metadata for ' +
+            '${{ needs.prepare.outputs.release_tag }}'
+          )
+          if ($LASTEXITCODE -ne 0) { throw 'central Fleet projection commit failed' }
+          gh auth setup-git
+          if ($LASTEXITCODE -ne 0) { throw 'step-scoped Git authentication failed' }
+          & git push origin HEAD:main
+          if ($LASTEXITCODE -ne 0) { throw 'central Fleet projection push failed' }
+
+      - name: Request the canonical legacy Pages build
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh api `
+            --method POST `
+            repos/MesmerPrism/MesmerPrism.github.io/pages/builds | Out-Null
+          if ($LASTEXITCODE -ne 0) {
+            throw 'canonical Pages build request failed'
+          }

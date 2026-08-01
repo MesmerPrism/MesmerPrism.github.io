@@ -41,10 +41,14 @@ Rusty Fleet continues to own:
 - `/Rusty-Fleet/metadata/labs/release.json`.
 
 The catalog does not write either path and does not reinterpret Fleet
-signatures. A deployment composes the complete existing site, then replaces
-only the subtree explicitly staged by the current owner workflow. Updating
-Fleet labs metadata must preserve Fleet stable metadata and every unrelated
-site byte; updating this catalog must preserve both Fleet subtrees.
+signatures. The dispatch-only `fleet-pages-projection` workflow is the
+central deployment authority for those Fleet paths. It accepts a bounded,
+hash-bound public request from Fleet, checks out the exact release tag,
+regenerates the staging tree with Fleet's verifier, replaces only the
+`Rusty-Fleet` human surface and target metadata channel, commits that exact
+subtree, and requests the canonical legacy Pages build. Updating Fleet Labs
+metadata must preserve Fleet Stable metadata and every unrelated site byte;
+updating this catalog must preserve both Fleet subtrees.
 
 An owner release must exist and pass its own readback before Pages may project
 it. The protected `distribution-catalog-preflight` workflow independently
@@ -61,11 +65,11 @@ the Pages adapter validates the closed six-asset release inventory, manifest
 payload digests and byte counts, package identities, signer, tag-derived
 version code, coinstallable lineage, and uninstall-only Labs exit policy.
 
-The checked-in catalog remains unpublished. A later single deployment
-authority must preserve both Fleet subtrees and independently admit the
-preflight receipt before any public projection. This repository never derives
-owner metadata from a GitHub `latest` download and never downloads or
-publishes owner binaries.
+The checked-in catalog remains unpublished. Its separately authorized public
+projection must preserve both Fleet subtrees and independently admit the
+five-owner preflight receipt. The Fleet metadata projection is not catalog
+publication authority. This repository never derives owner metadata from a
+GitHub `latest` download and never downloads or publishes owner binaries.
 
 ## Channel Policy
 
