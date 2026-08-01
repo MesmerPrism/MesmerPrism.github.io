@@ -59,7 +59,7 @@ OWNERS = {
         "adapter": "kiosk",
     },
     "rusty-quest-package-updater": {
-        "repository": "MesmerPrism/Rusty-Quest",
+        "repository": "MesmerPrism/rusty-quest",
         "metadata_name": re.compile(
             r"^rusty-quest-package-updater\.release\.json$"
         ),

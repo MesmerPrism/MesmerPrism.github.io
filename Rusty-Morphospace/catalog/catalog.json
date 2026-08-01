@@ -216,10 +216,10 @@
     {
       "owner": "rusty-quest-package-updater",
       "name": "Rusty Quest Package Updater",
-      "repository": "https://github.com/MesmerPrism/Rusty-Quest",
+      "repository": "https://github.com/MesmerPrism/rusty-quest",
       "complete_product": true,
       "feedback": {
-        "issue_url": "https://github.com/MesmerPrism/Rusty-Quest/issues/new?title=%5BPackage%20Updater%20labs%20feedback%5D%20&body=Channel%3A%20labs%0AVersion%3A%20%3Cversion%3E%0ASource%20revision%3A%20%3C40-hex%20commit%3E%0AArtifact%20SHA-256%3A%20%3C64-hex%20digest%3E%0AOperating%20system%3A%20%3COS%20and%20version%3E%0ADevice%20class%3A%20%3Cclass%2C%20not%20serial%3E%0A%0ADo%20not%20include%20credentials%2C%20personal%20data%2C%20device%20serials%2C%20network%20addresses%2C%20pairing%20material%2C%20or%20private%20logs.",
+        "issue_url": "https://github.com/MesmerPrism/rusty-quest/issues/new?title=%5BPackage%20Updater%20labs%20feedback%5D%20&body=Channel%3A%20labs%0AVersion%3A%20%3Cversion%3E%0ASource%20revision%3A%20%3C40-hex%20commit%3E%0AArtifact%20SHA-256%3A%20%3C64-hex%20digest%3E%0AOperating%20system%3A%20%3COS%20and%20version%3E%0ADevice%20class%3A%20%3Cclass%2C%20not%20serial%3E%0A%0ADo%20not%20include%20credentials%2C%20personal%20data%2C%20device%20serials%2C%20network%20addresses%2C%20pairing%20material%2C%20or%20private%20logs.",
         "required_fields": [
           "product_channel",
           "version",
