@@ -157,7 +157,7 @@ jobs:
           }
           & (Join-Path $fleet 'packaging\windows\New-WindowsPagesDeployment.ps1') `
             @arguments | Out-Null
-          if ($LASTEXITCODE -ne 0) {
+          if (-not $?) {
             throw 'Fleet Pages staging regeneration failed'
           }
 
