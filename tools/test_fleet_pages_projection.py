@@ -31,6 +31,10 @@ def encoded_json(value: object) -> bytes:
     return json.dumps(value, separators=(",", ":")).encode("utf-8")
 
 
+def fleet_json(value: object) -> bytes:
+    return encoded_json(value) + b"\n"
+
+
 def digest(value: bytes) -> str:
     return hashlib.sha256(value).hexdigest()
 
@@ -38,7 +42,7 @@ def digest(value: bytes) -> str:
 def make_request() -> tuple[dict, dict[str, bytes]]:
     spki = b"exact-test-spki"
     spki_hash = digest(spki)
-    release = encoded_json(
+    release = fleet_json(
         {
             "schema": "rusty.fleet.release_descriptor_envelope.v4",
             "payload_base64url": "e30",
@@ -46,7 +50,7 @@ def make_request() -> tuple[dict, dict[str, bytes]]:
             "signer_spki_sha256": spki_hash,
         }
     )
-    descriptor_receipt = encoded_json(
+    descriptor_receipt = fleet_json(
         {
             "schema": "rusty.fleet.windows_release_descriptor_receipt.v5",
             "result": "pass",
@@ -64,7 +68,7 @@ def make_request() -> tuple[dict, dict[str, bytes]]:
             "pages_path": "Rusty-Fleet/metadata/labs/release.json",
         }
     )
-    preflight = encoded_json(
+    preflight = fleet_json(
         {
             "schema": "rusty.fleet.windows_publication_receipt.v3",
             "result": "pass",
@@ -91,7 +95,7 @@ def make_request() -> tuple[dict, dict[str, bytes]]:
             "uploaded_asset_count": 0,
         }
     )
-    handoff = encoded_json(
+    handoff = fleet_json(
         {
             "schema": "rusty.fleet.windows_release_metadata_handoff.v2",
             "result": "pass",
@@ -312,6 +316,41 @@ def main() -> int:
             assert_rejected(
                 lambda current=make_event(damaged_request), slot=index: materialize_event(
                     root / f"request-{slot}", current
+                ),
+                label,
+            )
+            damage_count += 1
+
+        for index, (label, damaged_bytes) in enumerate(
+            (
+                ("leading JSON whitespace", b" " + files["release.json"]),
+                (
+                    "CRLF JSON terminator",
+                    files["release.json"][:-1] + b"\r\n",
+                ),
+                ("double JSON terminator", files["release.json"] + b"\n"),
+                (
+                    "space before JSON terminator",
+                    files["release.json"][:-1] + b" \n",
+                ),
+            )
+        ):
+            damaged_request = copy.deepcopy(request)
+            release_record = next(
+                item
+                for item in damaged_request["files"]
+                if item["name"] == "release.json"
+            )
+            release_record.update(
+                {
+                    "content_base64": base64.b64encode(damaged_bytes).decode("ascii"),
+                    "size_bytes": len(damaged_bytes),
+                    "sha256": digest(damaged_bytes),
+                }
+            )
+            assert_rejected(
+                lambda current=make_event(damaged_request), slot=index: materialize_event(
+                    root / f"json-whitespace-{slot}", current
                 ),
                 label,
             )

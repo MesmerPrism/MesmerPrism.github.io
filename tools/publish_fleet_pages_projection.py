@@ -77,11 +77,18 @@ def duplicate_rejecting_pairs(pairs: list[tuple[str, Any]]) -> dict[str, Any]:
     return result
 
 
-def strict_json_bytes(value: bytes, label: str, maximum: int) -> Any:
+def strict_json_bytes(
+    value: bytes,
+    label: str,
+    maximum: int,
+    *,
+    allow_trailing_lf: bool = False,
+) -> Any:
     if not value or len(value) > maximum or value.startswith(b"\xef\xbb\xbf"):
         raise ProjectionError(f"{label} size or encoding is outside its bound")
+    normalized = value[:-1] if allow_trailing_lf and value.endswith(b"\n") else value
     try:
-        text = value.decode("utf-8")
+        text = normalized.decode("utf-8")
         parsed = json.loads(text, object_pairs_hook=duplicate_rejecting_pairs)
     except (UnicodeDecodeError, json.JSONDecodeError) as exc:
         raise ProjectionError(f"{label} is not strict UTF-8 JSON") from exc
@@ -167,7 +174,12 @@ def require_fields(value: dict[str, Any], expected: dict[str, Any], label: str) 
 
 def validate_public_metadata(request: dict[str, Any], files: dict[str, bytes]) -> None:
     release = require_object(
-        strict_json_bytes(files["release.json"], "release.json", 32_768),
+        strict_json_bytes(
+            files["release.json"],
+            "release.json",
+            32_768,
+            allow_trailing_lf=True,
+        ),
         "release.json",
     )
     require_exact_keys(
@@ -189,6 +201,7 @@ def validate_public_metadata(request: dict[str, Any], files: dict[str, bytes]) -
             files["release-descriptor.receipt.json"],
             "release descriptor receipt",
             32_768,
+            allow_trailing_lf=True,
         ),
         "release descriptor receipt",
     )
@@ -221,7 +234,10 @@ def validate_public_metadata(request: dict[str, Any], files: dict[str, bytes]) -
 
     handoff = require_object(
         strict_json_bytes(
-            files["deployment-handoff.json"], "deployment handoff", 32_768
+            files["deployment-handoff.json"],
+            "deployment handoff",
+            32_768,
+            allow_trailing_lf=True,
         ),
         "deployment handoff",
     )
@@ -250,7 +266,10 @@ def validate_public_metadata(request: dict[str, Any], files: dict[str, bytes]) -
 
     preflight = require_object(
         strict_json_bytes(
-            files["metadata-preflight.json"], "publication preflight", 65_536
+            files["metadata-preflight.json"],
+            "publication preflight",
+            65_536,
+            allow_trailing_lf=True,
         ),
         "publication preflight",
     )
