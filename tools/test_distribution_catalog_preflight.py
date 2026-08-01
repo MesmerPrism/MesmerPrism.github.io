@@ -427,6 +427,18 @@ def main() -> int:
     )
     if generated != generated_two or receipt != receipt_two:
         fail("offline preflight is not deterministic")
+    renewed, renewal_receipt = run_preflight(
+        copy.deepcopy(request),
+        generated,
+        fixture=copy.deepcopy(fixture),
+        require_complete_labs_set=True,
+    )
+    if (
+        renewed != generated
+        or renewal_receipt["source_catalog_sha256"]
+        != receipt["source_catalog_sha256"]
+    ):
+        fail("published catalog did not renew from the inert policy baseline")
     published = {
         product["owner"]: product["product_channels"][-1]
         for product in generated["products"]

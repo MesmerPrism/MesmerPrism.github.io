@@ -68,11 +68,18 @@ the Pages adapter validates the closed six-asset release inventory, manifest
 payload digests and byte counts, package identities, signer, tag-derived
 version code, coinstallable lineage, and uninstall-only Labs exit policy.
 
-The checked-in catalog remains unpublished. Its separately authorized public
-projection must preserve both Fleet subtrees and independently admit the
-five-owner preflight receipt. The Fleet metadata projection is not catalog
-publication authority. This repository never derives owner metadata from a
-GitHub `latest` download and never downloads or publishes owner binaries.
+The checked-in catalog is inert until an exact five-owner projection is
+separately authorized. The dispatch-only catalog publication workflow admits
+one successful protected read-only preflight run and its exact artifact ID,
+archive digest, generated-catalog digest, and receipt digest. A read-only job
+closes that external artifact; a main-only environment job runs only central
+code, replaces `catalog.json`, records `publication.json`, stages only those
+two paths, and requests the canonical Pages build. Renewal first reconstructs
+the inert policy baseline, so an older public release record is never carried
+forward without fresh owner readback. Both Fleet subtrees and every unrelated
+site byte remain outside the projection. The Fleet metadata projection is not
+catalog publication authority. This repository never derives owner metadata
+from a GitHub `latest` download and never downloads or publishes owner binaries.
 The `latest` endpoint is observed only for same-run drift and to ensure the
 requested prerelease did not become the repository default. A latest release
 owned by another product in a multi-product repository is retained as opaque,

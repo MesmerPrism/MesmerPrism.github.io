@@ -22,6 +22,7 @@ from jsonschema.exceptions import ValidationError
 ROOT = Path(__file__).resolve().parents[1]
 CATALOG_ROOT = ROOT / "Rusty-Morphospace" / "catalog"
 CATALOG_PATH = CATALOG_ROOT / "catalog.json"
+PUBLICATION_PATH = CATALOG_ROOT / "publication.json"
 SCHEMA_PATH = CATALOG_ROOT / "catalog.schema.json"
 PAGE_PATH = CATALOG_ROOT / "index.html"
 TARGET_FILES = [
@@ -31,7 +32,7 @@ TARGET_FILES = [
     CATALOG_ROOT / "catalog.css",
     CATALOG_ROOT / "catalog.js",
     ROOT / "tools" / "requirements-distribution-catalog.txt",
-]
+] + ([PUBLICATION_PATH] if PUBLICATION_PATH.is_file() else [])
 OWNERS = {
     "questionable-file-manager",
     "rusty-fleet",
@@ -58,6 +59,8 @@ UPDATER_TAG = re.compile(
 )
 SHA40 = re.compile(r"^[0-9a-f]{40}$")
 SHA64 = re.compile(r"^[0-9a-f]{64}$")
+ARTIFACT_DIGEST = re.compile(r"^sha256:[0-9a-f]{64}$")
+UTC_SECOND = re.compile(r"^20\d\d-[01]\d-[0-3]\dT[0-2]\d:[0-5]\d:[0-5]\dZ$")
 SCHEMA = json.loads(SCHEMA_PATH.read_text(encoding="utf-8"))
 Draft202012Validator.check_schema(SCHEMA)
 SCHEMA_VALIDATOR = Draft202012Validator(SCHEMA)
@@ -91,6 +94,99 @@ def fail(message: str) -> None:
 def validate_catalog(catalog: dict, *, allow_published: bool = False) -> None:
     SCHEMA_VALIDATOR.validate(catalog)
     validate_catalog_semantics(catalog, allow_published=allow_published)
+
+
+def validate_publication(catalog: dict) -> None:
+    if not PUBLICATION_PATH.is_file() or PUBLICATION_PATH.is_symlink():
+        fail("published catalog lacks a safe publication authorization")
+    try:
+        publication = json.loads(PUBLICATION_PATH.read_text(encoding="utf-8"))
+    except (UnicodeDecodeError, json.JSONDecodeError) as error:
+        raise AssertionError("publication authorization is malformed") from error
+    top = {
+        "schema",
+        "result",
+        "projection",
+        "authorized_at",
+        "publication_target",
+        "publication_authorized",
+        "pages_build_request_mode",
+        "source_preflight",
+    }
+    source_keys = {
+        "repository",
+        "workflow_run_id",
+        "workflow_url",
+        "workflow_head_sha",
+        "artifact_id",
+        "artifact_name",
+        "artifact_digest",
+        "artifact_size_bytes",
+        "readback_receipt_sha256",
+        "source_catalog_sha256",
+        "published_catalog_sha256",
+        "record_count",
+        "complete_labs_owner_set",
+        "owner_binary_downloaded",
+        "read_only_preflight_publication_authorized",
+        "read_only_preflight_pages_deployment_invoked",
+    }
+    if not isinstance(publication, dict) or set(publication) != top:
+        fail("publication authorization fields are not exact")
+    source = publication["source_preflight"]
+    if not isinstance(source, dict) or set(source) != source_keys:
+        fail("publication preflight fields are not exact")
+    run_id = source["workflow_run_id"]
+    if (
+        publication["schema"]
+        != "rusty.morphospace.catalog_publication_authorization.v1"
+        or publication["result"] != "authorized"
+        or publication["projection"] != "complete-five-owner-labs-set"
+        or not isinstance(publication["authorized_at"], str)
+        or UTC_SECOND.fullmatch(publication["authorized_at"]) is None
+        or publication["publication_target"]
+        != "/Rusty-Morphospace/catalog/catalog.json"
+        or publication["publication_authorized"] is not True
+        or publication["pages_build_request_mode"]
+        != "post-commit-github-api"
+        or source["repository"] != "MesmerPrism/MesmerPrism.github.io"
+        or isinstance(run_id, bool)
+        or not isinstance(run_id, int)
+        or run_id < 1
+        or source["workflow_url"]
+        != (
+            "https://github.com/MesmerPrism/MesmerPrism.github.io/"
+            f"actions/runs/{run_id}"
+        )
+        or not isinstance(source["workflow_head_sha"], str)
+        or SHA40.fullmatch(source["workflow_head_sha"]) is None
+        or isinstance(source["artifact_id"], bool)
+        or not isinstance(source["artifact_id"], int)
+        or source["artifact_id"] < 1
+        or source["artifact_name"]
+        != f"distribution-catalog-readonly-preflight-{run_id}"
+        or not isinstance(source["artifact_digest"], str)
+        or ARTIFACT_DIGEST.fullmatch(source["artifact_digest"]) is None
+        or isinstance(source["artifact_size_bytes"], bool)
+        or not isinstance(source["artifact_size_bytes"], int)
+        or source["artifact_size_bytes"] < 1
+        or not all(
+            isinstance(source[key], str) and SHA64.fullmatch(source[key])
+            for key in (
+                "readback_receipt_sha256",
+                "source_catalog_sha256",
+                "published_catalog_sha256",
+            )
+        )
+        or source["published_catalog_sha256"]
+        != hashlib.sha256(CATALOG_PATH.read_bytes()).hexdigest()
+        or source["record_count"] != 5
+        or source["complete_labs_owner_set"] is not True
+        or source["owner_binary_downloaded"] is not False
+        or source["read_only_preflight_publication_authorized"] is not False
+        or source["read_only_preflight_pages_deployment_invoked"] is not False
+    ):
+        fail("publication authorization is not exact")
 
 
 def validate_catalog_semantics(
@@ -575,13 +671,16 @@ def main() -> int:
         "catalog.schema.json"
     ):
         fail("schema ID is not canonical")
-    validate_catalog(catalog)
-    if any(
+    published = any(
         channel["availability"] != "unpublished" or channel["release"] is not None
         for product in catalog["products"]
         for channel in product["product_channels"]
-    ):
-        fail("catalog publication must remain disabled without owner readback")
+    )
+    validate_catalog(catalog, allow_published=published)
+    if published:
+        validate_publication(catalog)
+    elif PUBLICATION_PATH.exists():
+        fail("inert catalog unexpectedly carries publication authorization")
     negative_schema_tests(catalog)
     negative_tests(catalog)
     validate_page(catalog)

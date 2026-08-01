@@ -69,6 +69,9 @@ channel, release maturity, and distribution track remain separate bounded
 facts; first Labs candidates use the `github-prerelease` track and may retain
 `-alpha.N` maturity tags. Kiosk Meta Store distribution remains owned by its
 separate launcher metadata, outside this GitHub-bundle catalog projection.
+An independently authorized, main-only publication workflow can then install
+the exact complete-set preflight artifact into the public catalog without
+downloading or hosting owner binaries.
 Installation identities likewise remain owner-metadata facts; the catalog is
 never their authority.
 
