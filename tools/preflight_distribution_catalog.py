@@ -27,10 +27,7 @@ SHA64 = re.compile(r"^[0-9a-f]{64}$")
 UPPER_SHA40 = re.compile(r"^[0-9A-F]{40}$")
 OWNER_TAG = re.compile(r"^v(\d+\.\d+\.\d+)-alpha\.([1-9]\d*)$")
 UPDATER_TAG = re.compile(r"^package-updater-v(0\.1\.0-alpha\.([1-9]\d*))$")
-STABLE_LATEST_TAG = re.compile(
-    r"^(?:v(?:0|[1-9]\d*)\.(?:0|[1-9]\d*)\.(?:0|[1-9]\d*)"
-    r"|package-updater-v0\.1\.0)$"
-)
+LATEST_TAG = re.compile(r"^[A-Za-z0-9][A-Za-z0-9._/-]{0,179}$")
 ASSET_NAME = re.compile(r"^[A-Za-z0-9._-]{1,180}$")
 MAX_JSON_BYTES = 2 * 1024 * 1024
 MAX_METADATA_BYTES = 128 * 1024
@@ -728,11 +725,13 @@ class GitHubClient:
         elif (
             not isinstance(latest, dict)
             or not isinstance(latest.get("tag_name"), str)
-            or STABLE_LATEST_TAG.fullmatch(latest["tag_name"]) is None
+            or LATEST_TAG.fullmatch(latest["tag_name"]) is None
         ):
             fail("latest release readback is malformed")
         else:
             latest_tag = latest["tag_name"]
+            if latest_tag == tag:
+                fail("Labs release became repository latest")
         return {
             "release": release,
             "tag_chain": tag_chain,
@@ -1082,8 +1081,10 @@ def normalized_snapshot(
     latest_tag = readback.get("latest_tag")
     if latest_tag is not None:
         latest_tag = exact_string(
-            latest_tag, STABLE_LATEST_TAG, "latest stable release tag"
+            latest_tag, LATEST_TAG, "latest repository release tag"
         )
+        if latest_tag == tag:
+            fail("Labs release became repository latest")
     return {
         "release": {
             "id": release_id,
