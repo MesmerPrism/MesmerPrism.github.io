@@ -1,0 +1,302 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mesmerprism.com/Rusty-Morphospace/catalog/catalog.schema.json",
+  "title": "Rusty Morphospace public distribution catalog",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "default_product_channel",
+    "authority",
+    "fleet_pages_contract",
+    "products"
+  ],
+  "properties": {
+    "schema": {
+      "const": "rusty.morphospace.public_distribution_catalog.v2"
+    },
+    "default_product_channel": {
+      "const": "stable"
+    },
+    "authority": {
+      "const": "owner-release-metadata-only"
+    },
+    "fleet_pages_contract": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "composition",
+        "stable_metadata_path",
+        "labs_metadata_path"
+      ],
+      "properties": {
+        "composition": {
+          "const": "preserve-complete-site-replace-owner-channel-subtree"
+        },
+        "stable_metadata_path": {
+          "const": "/Rusty-Fleet/metadata/stable/release.json"
+        },
+        "labs_metadata_path": {
+          "const": "/Rusty-Fleet/metadata/labs/release.json"
+        }
+      }
+    },
+    "products": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "items": {
+        "$ref": "#/$defs/product"
+      }
+    }
+  },
+  "$defs": {
+    "product": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "owner",
+        "name",
+        "repository",
+        "complete_product",
+        "feedback",
+        "product_channels"
+      ],
+      "properties": {
+        "owner": {
+          "enum": [
+            "questionable-file-manager",
+            "rusty-fleet",
+            "rusty-hostess",
+            "rusty-kiosk",
+            "rusty-quest-package-updater"
+          ]
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "repository": {
+          "type": "string",
+          "pattern": "^https://github\\.com/MesmerPrism/[A-Za-z0-9._-]+$"
+        },
+        "complete_product": {
+          "const": true
+        },
+        "distribution_notes": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["included", "external", "authority_exclusions", "removal"],
+          "properties": {
+            "included": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+            "external": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+            "authority_exclusions": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+            "removal": {"type": "string", "minLength": 1}
+          }
+        },
+        "feedback": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["issue_url", "required_fields", "privacy_warning"],
+          "properties": {
+            "issue_url": {
+              "type": "string",
+              "pattern": "^https://github\\.com/MesmerPrism/[A-Za-z0-9._-]+/issues/new\\?"
+            },
+            "required_fields": {
+              "const": [
+                "product_channel",
+                "version",
+                "source_revision",
+                "artifact_sha256",
+                "operating_system",
+                "device_class"
+              ]
+            },
+            "privacy_warning": {
+              "const": "Do not include credentials, personal data, device serials, network addresses, pairing material, or private logs."
+            }
+          }
+        },
+        "product_channels": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 2,
+          "items": {
+            "$ref": "#/$defs/product_channel"
+          }
+        }
+      }
+    },
+    "product_channel": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "product_channel",
+        "maturity",
+        "distribution_track",
+        "opt_in",
+        "availability",
+        "identity",
+        "transition",
+        "release"
+      ],
+      "properties": {
+        "product_channel": {
+          "enum": ["stable", "labs"]
+        },
+        "maturity": {
+          "enum": ["alpha", "beta", "rc", "released"]
+        },
+        "distribution_track": {
+          "enum": ["github-release", "github-prerelease", "meta-store-app"]
+        },
+        "opt_in": {
+          "type": "boolean"
+        },
+        "availability": {
+          "enum": ["unpublished", "published"]
+        },
+        "identity": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "platform",
+            "installation_identity",
+            "identity_authority",
+            "relationship_to_stable"
+          ],
+          "properties": {
+            "platform": {
+              "enum": ["windows", "android"]
+            },
+            "installation_identity": {
+              "type": ["string", "null"]
+            },
+            "identity_authority": {
+              "const": "owner-release-metadata"
+            },
+            "relationship_to_stable": {
+              "enum": ["stable", "separate-coinstallable", "same-package-in-place", "labs-only"]
+            }
+          }
+        },
+        "transition": {
+          "enum": [
+            "stable-default",
+            "uninstall-labs-without-changing-stable",
+            "forward-only-to-later-stable",
+            "remove-labs",
+            "remove-labs-without-changing-other-products"
+          ]
+        },
+        "release": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/$defs/release"
+            }
+          ]
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "availability": {
+                "const": "unpublished"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "release": {
+                "type": "null"
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "release": {
+                "$ref": "#/$defs/release"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "product_channel": {
+                "const": "stable"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "opt_in": {
+                "const": false
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "opt_in": {
+                "const": true
+              }
+            }
+          }
+        }
+      ]
+    },
+    "release": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "tag",
+        "version",
+        "source_revision",
+        "artifact_name",
+        "artifact_url",
+        "artifact_sha256",
+        "bytes",
+        "installation_identity"
+      ],
+      "properties": {
+        "tag": {
+          "type": "string",
+          "pattern": "^(?:v[0-9]+\\.[0-9]+\\.[0-9]+(?:-(?:alpha|beta|rc)\\.[1-9][0-9]*)?|package-updater-v0\\.1\\.0-(?:alpha|beta|rc)\\.[1-9][0-9]*)$"
+        },
+        "version": {
+          "type": "string",
+          "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+(?:-(?:alpha|beta|rc)\\.[1-9][0-9]*)?$"
+        },
+        "source_revision": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{40}$"
+        },
+        "artifact_name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "artifact_url": {
+          "type": "string",
+          "pattern": "^https://github\\.com/MesmerPrism/[A-Za-z0-9._-]+/releases/download/(?:v[0-9]+\\.[0-9]+\\.[0-9]+(?:-(?:alpha|beta|rc)\\.[1-9][0-9]*)?|package-updater-v0\\.1\\.0-(?:alpha|beta|rc)\\.[1-9][0-9]*)/[A-Za-z0-9._-]+$"
+        },
+        "artifact_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "bytes": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "installation_identity": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    }
+  }
+}
