@@ -298,6 +298,11 @@ jobs:
         run: |
           & git add -- Rusty-Fleet
           if ($LASTEXITCODE -ne 0) { throw 'Fleet projection staging failed' }
+          python tools/publish_fleet_pages_projection.py verify-index `
+            --site-root $env:GITHUB_WORKSPACE
+          if ($LASTEXITCODE -ne 0) {
+            throw 'Fleet projection Git index changed an owner byte'
+          }
           $changed = @(& git diff --cached --name-only)
           if ($changed.Count -eq 0) {
             'Exact Fleet projection is already current.'
