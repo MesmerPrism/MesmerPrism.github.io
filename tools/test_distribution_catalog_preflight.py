@@ -24,6 +24,7 @@ SOURCE = "1" * 40
 TREE = "2" * 40
 PRIMARY_HASH = "3" * 64
 SIGNER_HASH = "4" * 64
+FLEET_SIGNER_THUMBPRINT = "A" * 40
 PRIMARY_BYTES = 1234
 HELPER_HASH = "5" * 64
 LICENSE_HASH = "6" * 64
@@ -36,7 +37,7 @@ def fail(message: str) -> None:
 
 def exact_fleet_metadata(tag: str) -> dict:
     return {
-        "schema": "rusty.fleet.windows_release_descriptor_receipt.v4",
+        "schema": "rusty.fleet.windows_release_descriptor_receipt.v5",
         "result": "pass",
         "descriptor_id": "v1.2.3-labs-owner-test",
         "version": "1.2.3",
@@ -63,6 +64,13 @@ def exact_fleet_metadata(tag: str) -> dict:
         "setup_sha256": PRIMARY_HASH,
         "setup_size_bytes": PRIMARY_BYTES,
         "setup_signer_certificate_sha256": SIGNER_HASH,
+        "setup_signer_subject": "CN=MesmerPrism",
+        "setup_signer_thumbprint": FLEET_SIGNER_THUMBPRINT,
+        "setup_signer_self_issued": True,
+        "authenticode_trust_mode":
+            "exact-pinned-self-issued-untrusted-root-only",
+        "public_trust_claim": False,
+        "timestamp_required": True,
         "setup_build_receipt_sha256": "5" * 64,
         "source_revision": SOURCE,
         "source_tree": TREE,
@@ -656,6 +664,79 @@ def main() -> int:
         "cross-owner metadata",
     )
 
+    fleet_damage_count = 0
+
+    def assert_fleet_metadata_damage(label: str, mutate) -> None:
+        nonlocal fleet_damage_count
+        damaged_request, damaged_fixture = complete_fixture()
+        fleet_index = 1
+        fixture_record = damaged_fixture["records"][fleet_index]
+        metadata = json.loads(
+            base64.b64decode(fixture_record["metadata_base64"])
+        )
+        mutate(metadata)
+        metadata_bytes = canonical_json_bytes(metadata)
+        fixture_record["metadata_base64"] = base64.b64encode(
+            metadata_bytes
+        ).decode("ascii")
+        damaged_request["records"][fleet_index][
+            "expected_owner_metadata_sha256"
+        ] = sha256_bytes(metadata_bytes)
+        metadata_asset = fixture_record["release"]["assets"][0]
+        metadata_asset["digest"] = f"sha256:{sha256_bytes(metadata_bytes)}"
+        metadata_asset["size"] = len(metadata_bytes)
+        fixture_record["final_readback"]["release"] = copy.deepcopy(
+            fixture_record["release"]
+        )
+        assert_rejected(
+            lambda: run_preflight(
+                damaged_request, baseline, fixture=damaged_fixture
+            ),
+            label,
+        )
+        fleet_damage_count += 1
+
+    fleet_metadata_mutations = [
+        (
+            "Fleet descriptor reverted to v4",
+            lambda value: value.update(
+                {"schema": "rusty.fleet.windows_release_descriptor_receipt.v4"}
+            ),
+        ),
+        (
+            "Fleet signer is no longer self-issued",
+            lambda value: value.update({"setup_signer_self_issued": False}),
+        ),
+        (
+            "Fleet descriptor claims public trust",
+            lambda value: value.update({"public_trust_claim": True}),
+        ),
+        (
+            "Fleet signer thumbprint is noncanonical",
+            lambda value: value.update(
+                {"setup_signer_thumbprint": FLEET_SIGNER_THUMBPRINT.lower()}
+            ),
+        ),
+        (
+            "Fleet trust mode is weakened",
+            lambda value: value.update({"authenticode_trust_mode": "system"}),
+        ),
+        (
+            "Fleet signer subject is unexpected",
+            lambda value: value.update({"setup_signer_subject": "CN=Other"}),
+        ),
+        (
+            "Fleet timestamp requirement is disabled",
+            lambda value: value.update({"timestamp_required": False}),
+        ),
+        (
+            "Fleet timestamp disclosure is missing",
+            lambda value: value.pop("timestamp_required"),
+        ),
+    ]
+    for label, mutation in fleet_metadata_mutations:
+        assert_fleet_metadata_damage(label, mutation)
+
     kiosk_damage_count = 0
 
     def assert_kiosk_manifest_damage(label: str, mutate) -> None:
@@ -815,7 +896,8 @@ def main() -> int:
     print(
         "Distribution catalog read-only preflight tests passed: "
         "5 owner adapters with strict Kiosk manifest lineage, "
-        f"{len(mutations) + 4 + kiosk_damage_count} damage classes"
+        f"{len(mutations) + 4 + fleet_damage_count + kiosk_damage_count} "
+        "damage classes"
     )
     return 0
 

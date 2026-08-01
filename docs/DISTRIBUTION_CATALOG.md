@@ -54,6 +54,9 @@ An owner release must exist and pass its own readback before Pages may project
 it. The protected `distribution-catalog-preflight` workflow independently
 reads the exact tag, peeled source revision and tree, immutable owner metadata
 asset, and primary artifact digest and byte count from the owner repository.
+Fleet admission requires the v5 descriptor receipt and its explicit
+exact-pinned, self-issued Authenticode trust disclosure; the catalog repeats
+that owner claim without converting it into public trust.
 It emits only a private, seven-day workflow artifact containing an ephemeral
 catalog and Pages-owned readback receipt. It has no Pages, OIDC, release, push,
 or deployment permission and records `publication_authorized=false`. The
