@@ -1,0 +1,44 @@
+[
+  {
+    "id": "mesmer-prism-rusty-fleet-source-repository",
+    "type": "webpage",
+    "title": "Rusty Fleet source repository",
+    "URL": "https://github.com/MesmerPrism/rusty-fleet",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          7,
+          27
+        ]
+      ]
+    },
+    "note": "Referenced by Rusty Fleet onboarding: https://mesmerprism.com/Rusty-Fleet/",
+    "author": [
+      {
+        "literal": "Mesmer Prism"
+      }
+    ]
+  },
+  {
+    "id": "mesmer-prism-questionable-file-manager-onboarding",
+    "type": "webpage",
+    "title": "QuestIonAble File Manager onboarding",
+    "URL": "https://mesmerprism.com/QuestIonAble-File-Manager/",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          7,
+          27
+        ]
+      ]
+    },
+    "note": "Referenced by Rusty Fleet onboarding: https://mesmerprism.com/Rusty-Fleet/",
+    "author": [
+      {
+        "literal": "Mesmer Prism"
+      }
+    ]
+  }
+]

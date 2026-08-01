@@ -1,13 +1,13 @@
 # Mesmer Prism Full Agent Context
 
-Generated: 2026-07-24
+Generated: 2026-07-27
 
 <page url="https://mesmerprism.com/duisburg/" path="duisburg/index.html">
 # Shared Bodies for Mixed-Ability Collaboration
 
 Source: https://mesmerprism.com/duisburg/
 Canonical HTML: https://mesmerprism.com/duisburg/
-Generated: 2026-07-24
+Generated: 2026-07-27
 Description: A Duisburg-facing research pitch for Mixed-Ability Human-Swarm Interaction: shared swarm bodies, inspectable input mappings, and a route from connectedness to robotics translation.
 Markdown: https://mesmerprism.com/duisburg/index.md
 Plain text: https://mesmerprism.com/duisburg/index.txt
@@ -490,7 +490,7 @@ Mixed-ability XR research
 
 Source: https://mesmerprism.com/
 Canonical HTML: https://mesmerprism.com/
-Generated: 2026-07-24
+Generated: 2026-07-27
 Description: XR systems, citizen-science tools, visual instruments, and essays for altered-perception design. Mesmer Prism makes strange experience vivid, inspectable, and evidence-bounded.
 Markdown: https://mesmerprism.com/index.md
 Plain text: https://mesmerprism.com/index.txt
@@ -1066,7 +1066,7 @@ Till Holzapfel
 
 Source: https://mesmerprism.com/plasmatic-multitudes/assets/calligraphy-reference-pack/board.html
 Canonical HTML: https://mesmerprism.com/plasmatic-multitudes/assets/calligraphy-reference-pack/board.html
-Generated: 2026-07-24
+Generated: 2026-07-27
 Markdown: https://mesmerprism.com/plasmatic-multitudes/assets/calligraphy-reference-pack/board.md
 Plain text: https://mesmerprism.com/plasmatic-multitudes/assets/calligraphy-reference-pack/board.txt
 BibTeX references: https://mesmerprism.com/plasmatic-multitudes/assets/calligraphy-reference-pack/board.bib
@@ -1216,7 +1216,7 @@ Museum-backed pack
 
 Source: https://mesmerprism.com/plasmatic-multitudes/background/somaesthetics.html
 Canonical HTML: https://mesmerprism.com/plasmatic-multitudes/background/somaesthetics.html
-Generated: 2026-07-24
+Generated: 2026-07-27
 Description: A short public note on somaesthetics as the method anchor for Plasmatic Multitudes.
 Markdown: https://mesmerprism.com/plasmatic-multitudes/background/somaesthetics.md
 Plain text: https://mesmerprism.com/plasmatic-multitudes/background/somaesthetics.txt
@@ -1287,7 +1287,7 @@ Background appendix | Updated May 24, 2026
 
 Source: https://mesmerprism.com/plasmatic-multitudes/essay.html
 Canonical HTML: https://mesmerprism.com/plasmatic-multitudes/essay.html
-Generated: 2026-07-24
+Generated: 2026-07-27
 Description: A long-form essay on weakly bounded bodies, XR embodiment, media genealogy, computational morphogenesis, and cautious pain translation.
 Markdown: https://mesmerprism.com/plasmatic-multitudes/essay.md
 Plain text: https://mesmerprism.com/plasmatic-multitudes/essay.txt
@@ -1645,7 +1645,7 @@ Long essay | Updated May 24, 2026
 
 Source: https://mesmerprism.com/plasmatic-multitudes/
 Canonical HTML: https://mesmerprism.com/plasmatic-multitudes/
-Generated: 2026-07-24
+Generated: 2026-07-27
 Description: Long essay, method notes, shared digital-swarm control, mixed-ability human-swarm interaction, vocabulary, pain-translation hypotheses, and annotated sources for weakly bounded bodies.
 Markdown: https://mesmerprism.com/plasmatic-multitudes/index.md
 Plain text: https://mesmerprism.com/plasmatic-multitudes/index.txt
@@ -1712,7 +1712,7 @@ Field guide | Updated July 24, 2026
 
 Source: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html
 Canonical HTML: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html
-Generated: 2026-07-24
+Generated: 2026-07-27
 Description: A source-linked proposal for mixed-ability human-swarm interaction built around a multimodal semantic swarm state, inspectable mappings, participant-authored access, and repair.
 Markdown: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.md
 Plain text: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.txt
@@ -2229,7 +2229,7 @@ Mixed-ability HSI | Revised July 23, 2026
 
 Source: https://mesmerprism.com/plasmatic-multitudes/pain.html
 Canonical HTML: https://mesmerprism.com/plasmatic-multitudes/pain.html
-Generated: 2026-07-24
+Generated: 2026-07-27
 Description: A cautious research note on boundary precision, avatar materiality, protective fields, ownership, agency, and pain-related body-representation hypotheses. Not a treatment claim.
 Markdown: https://mesmerprism.com/plasmatic-multitudes/pain.md
 Plain text: https://mesmerprism.com/plasmatic-multitudes/pain.txt
@@ -2444,7 +2444,7 @@ Pain translation | Updated May 24, 2026
 
 Source: https://mesmerprism.com/plasmatic-multitudes/project.html
 Canonical HTML: https://mesmerprism.com/plasmatic-multitudes/project.html
-Generated: 2026-07-24
+Generated: 2026-07-27
 Description: A compact method note on boundary precision, somaesthetics, coherence, morphogenesis, and weakly bounded body design.
 Markdown: https://mesmerprism.com/plasmatic-multitudes/project.md
 Plain text: https://mesmerprism.com/plasmatic-multitudes/project.txt
@@ -2519,7 +2519,7 @@ Method | Updated May 24, 2026
 
 Source: https://mesmerprism.com/plasmatic-multitudes/references.html
 Canonical HTML: https://mesmerprism.com/plasmatic-multitudes/references.html
-Generated: 2026-07-24
+Generated: 2026-07-27
 Description: Annotated references across media genealogy, somaesthetics, perception, morphogenesis, XR embodiment, shared digital-swarm control, accessibility, and pain/body-representation research.
 Markdown: https://mesmerprism.com/plasmatic-multitudes/references.md
 Plain text: https://mesmerprism.com/plasmatic-multitudes/references.txt
@@ -2751,7 +2751,7 @@ Annotated sources | Updated July 24, 2026
 
 Source: https://mesmerprism.com/plasmatic-multitudes/shared-swarm-control.html
 Canonical HTML: https://mesmerprism.com/plasmatic-multitudes/shared-swarm-control.html
-Generated: 2026-07-24
+Generated: 2026-07-27
 Description: How several people can jointly shape one digitally native swarm through fields, rules, morphology, arbitration, provenance, and shared-body interaction.
 Markdown: https://mesmerprism.com/plasmatic-multitudes/shared-swarm-control.md
 Plain text: https://mesmerprism.com/plasmatic-multitudes/shared-swarm-control.txt
@@ -3264,7 +3264,7 @@ Shared swarm control | July 24, 2026
 
 Source: https://mesmerprism.com/plasmatic-multitudes/terminology.html
 Canonical HTML: https://mesmerprism.com/plasmatic-multitudes/terminology.html
-Generated: 2026-07-24
+Generated: 2026-07-27
 Description: Terms for semi-corporeal avatars, plasmatic bodies, particle bodies, swarm bodies, aura avatars, boundary precision, pseudo-haptics, and related design concepts.
 Markdown: https://mesmerprism.com/plasmatic-multitudes/terminology.md
 Plain text: https://mesmerprism.com/plasmatic-multitudes/terminology.txt
@@ -3778,7 +3778,7 @@ Field guide | Updated July 24, 2026
 
 Source: https://mesmerprism.com/privacy/viscereality-companion/
 Canonical HTML: https://mesmerprism.com/privacy/viscereality-companion/
-Generated: 2026-07-24
+Generated: 2026-07-27
 Description: Privacy policy for the Viscereality Companion Android application published by Mesmer Prism.
 Markdown: https://mesmerprism.com/privacy/viscereality-companion/index.md
 Plain text: https://mesmerprism.com/privacy/viscereality-companion/index.txt
@@ -3869,7 +3869,7 @@ Android application privacy
 
 Source: https://mesmerprism.com/projects/altered-xperience-project.html
 Canonical HTML: https://mesmerprism.com/projects/altered-xperience-project.html
-Generated: 2026-07-24
+Generated: 2026-07-27
 Description: The Altered Xperience Project is a CIRCE-led citizen-science survey for anonymous altered-state reports, with multilingual questionnaires, feedback, scoring, exports, and collaborator workflow.
 Markdown: https://mesmerprism.com/projects/altered-xperience-project.md
 Plain text: https://mesmerprism.com/projects/altered-xperience-project.txt
@@ -3993,7 +3993,7 @@ Citizen-science altered-state survey
 
 Source: https://mesmerprism.com/projects/bioelectricity.html
 Canonical HTML: https://mesmerprism.com/projects/bioelectricity.html
-Generated: 2026-07-24
+Generated: 2026-07-27
 Description: Bioelectricity and morphogenesis across Rusty Morphospace and Planarian Regeneration XR: source-bounded teaching models, data-first atlas navigation, reviewed records, observed Zenodo geometry, and marker replays.
 Markdown: https://mesmerprism.com/projects/bioelectricity.md
 Plain text: https://mesmerprism.com/projects/bioelectricity.txt
@@ -4671,7 +4671,7 @@ Rusty Morphospace and tissue-scale patterning
 
 Source: https://mesmerprism.com/projects/brain-candy.html
 Canonical HTML: https://mesmerprism.com/projects/brain-candy.html
-Generated: 2026-07-24
+Generated: 2026-07-27
 Description: Brain Candy studies rhythmic light, recursive visual structure, sound, breath, expectation, and interaction as tunable non-drug state-shift design.
 Markdown: https://mesmerprism.com/projects/brain-candy.md
 Plain text: https://mesmerprism.com/projects/brain-candy.txt
@@ -5219,7 +5219,7 @@ Non-drug state-shift design
 
 Source: https://mesmerprism.com/projects/bressloff-v1-form-constants-deep-dive.html
 Canonical HTML: https://mesmerprism.com/projects/bressloff-v1-form-constants-deep-dive.html
-Generated: 2026-07-24
+Generated: 2026-07-27
 Description: A notebook-style deep dive into Bressloff form constants, Rule flicker modeling, and generated driven neural-field diagnostics after Rule.
 Markdown: https://mesmerprism.com/projects/bressloff-v1-form-constants-deep-dive.md
 Plain text: https://mesmerprism.com/projects/bressloff-v1-form-constants-deep-dive.txt
@@ -6216,7 +6216,7 @@ Modeling deep dive
 
 Source: https://mesmerprism.com/projects/bressloff-v1-form-constants.html
 Canonical HTML: https://mesmerprism.com/projects/bressloff-v1-form-constants.html
-Generated: 2026-07-24
+Generated: 2026-07-27
 Description: Animated notes on Bressloff visual-cortex form constants, Rule flicker modeling, and generated MacKay, Bolelli, and Nicks driven-field diagnostics.
 Markdown: https://mesmerprism.com/projects/bressloff-v1-form-constants.md
 Plain text: https://mesmerprism.com/projects/bressloff-v1-form-constants.txt
@@ -6674,7 +6674,7 @@ Visual cortex and form constants
 
 Source: https://mesmerprism.com/projects/deep-dream.html
 Canonical HTML: https://mesmerprism.com/projects/deep-dream.html
-Generated: 2026-07-24
+Generated: 2026-07-27
 Description: Deep Dream explains how machine-vision hallucination, community visual taxonomies, VR research, and cyberdelic systems shaped simulated psychedelic vision.
 Markdown: https://mesmerprism.com/projects/deep-dream.md
 Plain text: https://mesmerprism.com/projects/deep-dream.txt
@@ -7447,7 +7447,7 @@ Simulated psychedelic vision
 
 Source: https://mesmerprism.com/projects/fractal-optics.html
 Canonical HTML: https://mesmerprism.com/projects/fractal-optics.html
-Generated: 2026-07-24
+Generated: 2026-07-27
 Description: Fractal Optics maps fractal phototherapy, retinal and ophthalmic stimulation, VR delivery, and patterned-light comparator literatures.
 Markdown: https://mesmerprism.com/projects/fractal-optics.md
 Plain text: https://mesmerprism.com/projects/fractal-optics.txt
@@ -7695,7 +7695,7 @@ Retinal stimulation and patterned light
 
 Source: https://mesmerprism.com/projects/hollow-face-lab.html
 Canonical HTML: https://mesmerprism.com/projects/hollow-face-lab.html
-Generated: 2026-07-24
+Generated: 2026-07-27
 Description: Hollow Face Lab maps WebGL, WebXR, texture controls, and Rusty XR implementation choices against hollow-face and depth-inversion research.
 Markdown: https://mesmerprism.com/projects/hollow-face-lab.md
 Plain text: https://mesmerprism.com/projects/hollow-face-lab.txt
@@ -7859,7 +7859,7 @@ Depth inversion and research tooling
 
 Source: https://mesmerprism.com/projects/hollow-face-lab/app/
 Canonical HTML: https://mesmerprism.com/projects/hollow-face-lab/app/
-Generated: 2026-07-24
+Generated: 2026-07-27
 Description: Browser-hosted Hollow Face Lab renderer with concavity, lighting, mesh, probe, texture, and response controls.
 Markdown: https://mesmerprism.com/projects/hollow-face-lab/app/index.md
 Plain text: https://mesmerprism.com/projects/hollow-face-lab/app/index.txt
@@ -8002,7 +8002,7 @@ Fullscreen
 
 Source: https://mesmerprism.com/projects/optical-movement-illusions.html
 Canonical HTML: https://mesmerprism.com/projects/optical-movement-illusions.html
-Generated: 2026-07-24
+Generated: 2026-07-27
 Description: Optical Movement Illusions maps peripheral drift, Rotating Snakes, static motion illusions, color and luminance parameters, and the mechanism-design bridge into perceptual tooling.
 Markdown: https://mesmerprism.com/projects/optical-movement-illusions.md
 Plain text: https://mesmerprism.com/projects/optical-movement-illusions.txt
@@ -8201,7 +8201,7 @@ Static motion and perceptual mechanics
 
 Source: https://mesmerprism.com/projects/phenomenological-control.html
 Canonical HTML: https://mesmerprism.com/projects/phenomenological-control.html
-Generated: 2026-07-24
+Generated: 2026-07-27
 Description: A public guide to phenomenological control, imagery variation, expectation-shaped experience, source monitoring, absorption, porosity, hypnosis, induced vision, and meaning-making.
 Markdown: https://mesmerprism.com/projects/phenomenological-control.md
 Plain text: https://mesmerprism.com/projects/phenomenological-control.txt
@@ -8746,7 +8746,7 @@ Imagery, suggestion, and source monitoring
 
 Source: https://mesmerprism.com/projects/plasmatic-multitudes.html
 Canonical HTML: https://mesmerprism.com/projects/plasmatic-multitudes.html
-Generated: 2026-07-24
+Generated: 2026-07-27
 Description: A public overview of weakly bounded bodies: avatars, swarms, auras, particle forms, and luminous bodies that remain coherent enough for embodiment, joint authorship, relation, and cautious research translation.
 Markdown: https://mesmerprism.com/projects/plasmatic-multitudes.md
 Plain text: https://mesmerprism.com/projects/plasmatic-multitudes.txt
@@ -9287,7 +9287,7 @@ Weakly bounded embodiment
 
 Source: https://mesmerprism.com/projects/polar-h10.html
 Canonical HTML: https://mesmerprism.com/projects/polar-h10.html
-Generated: 2026-07-24
+Generated: 2026-07-27
 Description: Public overview of Mesmer Prism's Polar H10 work across minimal signal packages, Rusty XR, Quest broker streams, Windows capture, Android diagnostics, Unity Quest integration, and Viscereality research tooling.
 Markdown: https://mesmerprism.com/projects/polar-h10.md
 Plain text: https://mesmerprism.com/projects/polar-h10.txt
@@ -9559,7 +9559,7 @@ Biofeedback sensor integration
 
 Source: https://mesmerprism.com/projects/prophantasia.html
 Canonical HTML: https://mesmerprism.com/projects/prophantasia.html
-Generated: 2026-07-24
+Generated: 2026-07-27
 Description: Prophantasia covers projected imagery, aphantasia, source judgment, practice ecology, and neighboring phenomena such as imposition, flicker, DeepDream, visual snow, and HPPD.
 Markdown: https://mesmerprism.com/projects/prophantasia.md
 Plain text: https://mesmerprism.com/projects/prophantasia.txt
@@ -10165,7 +10165,7 @@ Projected imagery and source judgment
 
 Source: https://mesmerprism.com/projects/rusty-morphospace.html
 Canonical HTML: https://mesmerprism.com/projects/rusty-morphospace.html
-Generated: 2026-07-24
+Generated: 2026-07-27
 Description: Rusty Morphospace is an AGPL-first Rust platform for computational-form systems, with a 0.1.0 platform baseline and a public 0.4.0 contributor work environment.
 Markdown: https://mesmerprism.com/projects/rusty-morphospace.md
 Plain text: https://mesmerprism.com/projects/rusty-morphospace.txt
@@ -11247,7 +11247,7 @@ Modular Rust platform for computational-form systems
 
 Source: https://mesmerprism.com/projects/rusty-morphospace/native-app-build-workflow.html
 Canonical HTML: https://mesmerprism.com/projects/rusty-morphospace/native-app-build-workflow.html
-Generated: 2026-07-24
+Generated: 2026-07-27
 Description: A public guide to Rusty Morphospace native Quest app composition: project workspaces, feature descriptors, closed locks, generated settings, adapters, and validation.
 Markdown: https://mesmerprism.com/projects/rusty-morphospace/native-app-build-workflow.md
 Plain text: https://mesmerprism.com/projects/rusty-morphospace/native-app-build-workflow.txt
@@ -11749,7 +11749,7 @@ Native app-build workflow
 
 Source: https://mesmerprism.com/projects/rusty-morphospace/rusty-xr.html
 Canonical HTML: https://mesmerprism.com/projects/rusty-morphospace/rusty-xr.html
-Generated: 2026-07-24
+Generated: 2026-07-27
 Description: Rusty XR is the legacy/reference Quest and XR compatibility surface under Rusty Morphospace, preserving public examples, passthrough notes, diagnostics, and companion-tool history.
 Markdown: https://mesmerprism.com/projects/rusty-morphospace/rusty-xr.md
 Plain text: https://mesmerprism.com/projects/rusty-morphospace/rusty-xr.txt
@@ -11965,7 +11965,7 @@ Legacy Quest and XR reference
 
 Source: https://mesmerprism.com/projects/rusty-morphospace/work-environment.html
 Canonical HTML: https://mesmerprism.com/projects/rusty-morphospace/work-environment.html
-Generated: 2026-07-24
+Generated: 2026-07-27
 Description: Set up a reproducible Rusty Morphospace development environment with portable dependency checks, four installable skill routers, protocol-v2 project workspaces, validation, and release capsules.
 Markdown: https://mesmerprism.com/projects/rusty-morphospace/work-environment.md
 Plain text: https://mesmerprism.com/projects/rusty-morphospace/work-environment.txt
@@ -12168,7 +12168,7 @@ Contributor setup and project workflow
 
 Source: https://mesmerprism.com/projects/sane.html
 Canonical HTML: https://mesmerprism.com/projects/sane.html
-Generated: 2026-07-24
+Generated: 2026-07-27
 Description: SANE is a proposed framework for reading coupled changes across somaesthetic practice, anthropotechnical mediation, noetic meaning, and emergent systems.
 Markdown: https://mesmerprism.com/projects/sane.md
 Plain text: https://mesmerprism.com/projects/sane.txt
@@ -12679,7 +12679,7 @@ Body, tools, meaning, systems
 
 Source: https://mesmerprism.com/projects/scientific-surrealism.html
 Canonical HTML: https://mesmerprism.com/projects/scientific-surrealism.html
-Generated: 2026-07-24
+Generated: 2026-07-27
 Description: Scientific surrealism studies dream bureaus, scientific-looking journals, diagrams, and experimental machines that change what counts as an observation.
 Markdown: https://mesmerprism.com/projects/scientific-surrealism.md
 Plain text: https://mesmerprism.com/projects/scientific-surrealism.txt
@@ -13093,7 +13093,7 @@ Research apparatus and knowledge-art
 
 Source: https://mesmerprism.com/projects/tulpas.html
 Canonical HTML: https://mesmerprism.com/projects/tulpas.html
-Generated: 2026-07-24
+Generated: 2026-07-27
 Description: Tulpas covers modern online tulpamancy, thoughtforms, headmates, servitors, egregores, imposition, voice-like experience, and adjacent AI companion analogies.
 Markdown: https://mesmerprism.com/projects/tulpas.md
 Plain text: https://mesmerprism.com/projects/tulpas.txt
@@ -13619,7 +13619,7 @@ Made inner others and modern tulpamancy
 
 Source: https://mesmerprism.com/projects/viscereality-companion.html
 Canonical HTML: https://mesmerprism.com/projects/viscereality-companion.html
-Generated: 2026-07-24
+Generated: 2026-07-27
 Description: Quest Companion Tools provides Windows and Android utilities for Meta Quest install, launch, casting, diagnostics, and evidence capture.
 Markdown: https://mesmerprism.com/projects/viscereality-companion.md
 Plain text: https://mesmerprism.com/projects/viscereality-companion.txt
@@ -13769,7 +13769,7 @@ Meta Quest operator tooling
 
 Source: https://mesmerprism.com/projects/viscereality.html
 Canonical HTML: https://mesmerprism.com/projects/viscereality.html
-Generated: 2026-07-24
+Generated: 2026-07-27
 Description: Viscereality is a Quest-based bioresponsive VR research system for breath interaction, cardiac coherence training, oscillator-driven visuals, and repeatable study sessions.
 Markdown: https://mesmerprism.com/projects/viscereality.md
 Plain text: https://mesmerprism.com/projects/viscereality.txt
@@ -13897,12 +13897,291 @@ Current XR research system
 - Mesmer Prism GitHub. [github.com/MesmerPrism](https://github.com/MesmerPrism) indexes surrounding tooling and related research code that can be shared openly.
 </page>
 
+<page url="https://mesmerprism.com/Rusty-Fleet/" path="Rusty-Fleet/index.html">
+# Rusty Fleet onboarding
+
+Source: https://mesmerprism.com/Rusty-Fleet/
+Canonical HTML: https://mesmerprism.com/Rusty-Fleet/
+Generated: 2026-07-27
+Description: A development-preview onboarding guide to Rusty Fleet, its Windows console, Hub, CLI and API, signed-release model, and opt-in Quest and hotspot capabilities.
+Markdown: https://mesmerprism.com/Rusty-Fleet/index.md
+Plain text: https://mesmerprism.com/Rusty-Fleet/index.txt
+BibTeX references: https://mesmerprism.com/Rusty-Fleet/index.bib
+CSL JSON references: https://mesmerprism.com/Rusty-Fleet/index.references.csl.json
+
+---
+
+Meta Quest fleet operations for Windows
+
+# Rusty Fleet
+
+ Rusty Fleet is a dedicated operator control surface for monitoring and
+ managing a group of enrolled Meta Quest headsets. It keeps fleet policy in
+ Fleet while routing every effect to the application that actually owns it.
+
+ Development-preview guide reviewed July 27, 2026.
+
+ [Understand the future install path](https://mesmerprism.com/Rusty-Fleet/#install)
+ [How distribution works](https://mesmerprism.com/Rusty-Fleet/#distribution)
+ [Read the trust boundary](https://mesmerprism.com/Rusty-Fleet/#safety)
+
+## Current status: development preview
+
+ Source exists
+ The Hub, Console, fleetctl , inert fleet-onboard , local API, owner adapters, guided Setup source, and deterministic validation are under active development.
+
+ No supported download yet
+ There is no signed Rusty Fleet Windows release or public guided installer to download from this page.
+
+ Local tests are not a release
+ Source checkpoints and synthetic tests do not claim a published bundle, attended headset pass, or production support.
+
+ This page is the guide
+ It documents the intended supported path without turning an unpublished build into an implied release.
+
+ Development preview
+ Signed release pending
+ No public download link
+
+## Where code, downloads, and guidance live
+
+ The distribution layers have different jobs. A page, repository checkout,
+ or provider description never substitutes for a verified release.
+
+ Rusty Fleet distribution model
+
+ Surface
+ What it owns
+ What it does not prove
+
+ GitHub source repository
+ Public source, architecture, contracts, tests, and exact development history.
+ A checkout or branch is not an installed or supported Windows product.
+
+ GitHub Releases
+ The future binary authority: the signed RustyFleet-Setup.exe , immutable versioned assets, hashes, and release notes.
+ A release name alone does not authorize a provider or a headset operation.
+
+ MesmerPrism.com
+ The human-facing guide plus short-lived signed release.json metadata at /Rusty-Fleet/metadata/<channel>/release.json .
+ This site never hosts, mirrors, or redirects to a second Fleet binary.
+
+ QuestIonAble File Manager
+ An optional convenience route that verifies the v2 metadata signature and freshness, exact immutable GitHub asset URL, Setup hash, and Setup signer before showing its no-change plan and opening the guided installer.
+ File Manager does not compose or install Fleet itself, invoke fleet-onboard , select a release silently, become Fleet authority, or make headset approvals disappear.
+
+ [Inspect Rusty Fleet source](https://github.com/MesmerPrism/rusty-fleet)
+ [Install QuestIonAble File Manager](https://mesmerprism.com/QuestIonAble-File-Manager/)
+
+## What the Fleet product contains
+
+ Fleet is one product with several projections over the same
+ authority-aware engine. It is not a new name for File Manager.
+
+### Fleet Hub
+
+ The local service owns the enrolled device directory, accepted
+ observations, operation lifecycle, audit records, saved views, and
+ adapter registry. The supported first deployment keeps its operator API
+ local to the Windows host unless a separately documented ingress is
+ explicitly configured.
+
+### Fleet Console
+
+ The native Windows dashboard presents the dense fleet table, device
+ inspector, previews, confirmations, progress, evidence, and recovery
+ states. It is the human projection, not a separate state engine.
+
+### fleetctl and the local API
+
+ Automation receives structured CLI and HTTP access to the same
+ operations and evidence. A GUI-only capability is incomplete: operator
+ actions require CLI or local API parity.
+
+### Offline onboarding and release-pinned providers
+
+ The exact five-component Windows bundle contains Fleet Console, Fleet
+ Hub, fleetctl , inert fleet-onboard , and the
+ release-pinned Rusty Hostess provider for Windows hotspot work.
+ Installation never invokes onboarding. Hostess retains effect ownership.
+ File Manager, Kiosk, the headset Fleet Agent, and Termux remain
+ independent owner components with explicit installation and activation.
+
+## Supported onboarding path once a signed release exists
+
+ These steps describe the release contract. They are not an invitation to
+ treat the current local source candidate as a public installer.
+
+- ### Choose the direct or File Manager entry point Download the signed RustyFleet-Setup.exe directly from its exact numeric-version GitHub Release, or use [QuestIonAble File Manager](https://mesmerprism.com/QuestIonAble-File-Manager/) as an optional verified handoff. Confirm the displayed product and publisher before accepting Windows trust prompts. Fleet does not require File Manager merely to install or open the dashboard.
+
+- ### Require the signed v2 handoff The File Manager option remains unavailable until release-owned trust configuration verifies the RSA-PSS signature over canonical JCS metadata, its at-most-24-hour freshness, the exact numeric-version GitHub URL, the signed Setup bytes, and the authorized Setup signer. File Manager then runs the exact no-change Setup plan and can open the visible installer; it never accepts an arbitrary branch, local path, or executable discovered on the machine.
+
+- ### Review Setup and the five-component manifest Setup must report its no-change plan before installation. The embedded release manifest enumerates Fleet Hub, Fleet Console, fleetctl , inert fleet-onboard , the exact Hostess provider, the local API contract, versions, hashes, update state, and rollback instructions. Setup requires no elevation and does not start Fleet, create configuration, invoke onboarding, or touch ADB. Optional headset apps stay visibly separate.
+
+- ### Enroll one headset before adding a cohort Establish the headset Fleet Agent and Manifold identity, then wait for a fresh signed check-in. Base monitoring is app-level and must not require ADB.
+
+- ### Enable capabilities individually Configure exact provider pins and private device bindings locally. Preview and test one owner-routed capability at a time before using a multi-device target snapshot.
+
+## Capabilities and their real owners
+
+ Fleet owns operator intent, exact targets, authorization flow, bounded
+ dispatch, and the audit projection. The component that can observe or
+ perform the effect remains its owner.
+
+ Opt-in capability routes
+
+ Capability
+ Owner route
+ Important condition
+
+ Fleet monitoring
+ Rusty Quest Fleet Agent → signed Manifold admission → Fleet Hub
+ Works without ADB; stale or untrusted check-ins stay visibly stale or rejected.
+
+ Quest awake controls
+ Fleet policy → Manifold authorization → pinned File Manager provider
+ The Meta development hold is bounded to at most eight hours. Windows and on-device watchdogs are explicit modes with separate stop and restore-normal actions.
+
+ Quest Wi-Fi ADB
+ Fleet policy → File Manager provider → Kiosk request → Meta wearer approval → signed Quest capability
+ The request is not usable-shell proof. Fleet requires a fresh enrolled check-in derived from an on-device Termux loopback result of exactly uid=2000(shell) .
+
+ Classic USB tcpip
+ Pinned File Manager provider with an exact authorized USB target
+ This is a separate recovery/bootstrap route, not evidence that the modern Kiosk/Meta request succeeded.
+
+ Windows Mobile Hotspot
+ Fleet host policy → pinned Rusty Hostess provider → Windows networking API
+ It is one host-scoped resource, not a headset setting and not File Manager ownership.
+
+## Why Wi-Fi ADB remains attended
+
+ The modern route deliberately preserves the headset's protected approval.
+ A successful sequence has several distinct facts:
+
+- Fleet freezes the exact enrolled target and obtains command authorization.
+
+- The pinned File Manager provider resolves private connection details without exposing them to Fleet.
+
+- Kiosk asks Android to present the wireless-debugging request.
+
+- The wearer puts on the headset and approves Meta's protected prompt.
+
+- An on-device Termux check uses loopback ADB and observes uid=2000(shell) .
+
+- The Rusty Quest Fleet Agent signs the fresh capability evidence into its next enrolled check-in.
+
+- Fleet admits that signed owner evidence before reporting an effective usable shell.
+
+ A request receipt, visible prompt, open port, ADB process, or provider exit code
+ can describe progress, but none is interchangeable with the final signed shell
+ capability.
+
+## Provider descriptions are not permissions
+
+ Fleet can ask a known, locally configured provider for bounded
+ --describe-json metadata. The catalog can show a provider's
+ identity, contract version, advertised actions, artifact digest, freshness,
+ and validation result.
+
+### What discovery may do
+
+- Explain which independently installed owner supplies a capability.
+
+- Reject malformed, stale, unexpected, or incorrectly pinned descriptions.
+
+- Present unconfigured, unavailable, descriptive, stale, and rejected states consistently in Console, CLI, and API.
+
+### What discovery may never do
+
+- Turn a path, action name, or provider-supplied command line into dynamic execution.
+
+- Claim that a provider is authorized, healthy, connected, or safe to run.
+
+- Reveal device serials, credentials, private paths, pairing material, or hotspot secrets.
+
+## Security and privacy checklist
+
+- Keep enrollment keys, exact device bindings, serials, endpoints, paths, tokens, pairing material, and network secrets in private machine configuration.
+
+- Pin provider executables and supporting tools by exact artifact identity; do not fall back to whichever executable appears on PATH .
+
+- Require immutable preview, explicit confirmation, command authorization, owner acknowledgement, effective result, and cleanup evidence as separate stages.
+
+- Treat missing configuration as inert. Do not auto-download, auto-pair, auto-enable, or silently widen a target cohort.
+
+- Keep the operator API loopback-only by default and protect every separately enabled ingress according to its documented threat model.
+
+- Never automate Meta's protected wearer confirmation or relabel a Windows/ADB observation as headset-owner proof.
+
+## Disable, recovery, and troubleshooting
+
+ Prefer returning to an explicit known state over retrying an effect until it
+ appears to work.
+
+### Fleet cannot see a headset
+
+ Check enrollment, signed check-in age, device time, network reachability,
+ and the Fleet Agent first. Do not assume ADB is the base monitoring route.
+
+### Wi-Fi ADB disappears
+
+ Reboot, network changes, authorization changes, or service loss can end
+ the shell. Reconnect through the documented USB bootstrap if needed, make
+ a new request, approve it in-headset, and wait for a new signed
+ uid=2000(shell) proof. Never reuse an expired proof.
+
+### Disable Wi-Fi ADB completely
+
+ Disable the current wireless-debugging request and disable any separate
+ request-after-boot policy. Confirm the owner readback and then confirm the
+ signed usable-shell capability disappears or expires.
+
+### Awake behavior persists
+
+ Stop Windows and on-device watchdog modes, then use the explicit
+ restore-normal action. A bounded Meta hold is not a permanent policy and
+ must not be reported as one.
+
+### Hotspot state is uncertain
+
+ Refresh through the Hostess owner, inspect whether the hotspot is
+ external or Fleet-owned, and use the explicit stop route only when the
+ current ownership generation permits it. A provider restart invalidates
+ prior ownership assumptions.
+
+### A provider is missing or rejected
+
+ Leave the capability unavailable. Reinstall from the matching signed
+ release or correct the private pin; do not browse for a similarly named
+ executable or bypass its descriptor/artifact checks.
+
+## Independent software and wearer control
+
+ Rusty Fleet and the related tools are independent projects and are not
+ affiliated with or endorsed by Meta. Meta Quest is a trademark of Meta
+ Platforms, Inc. Device protections, visible Android surfaces, and wearer
+ approvals remain part of the system design.
+
+ [Rusty Fleet source](https://github.com/MesmerPrism/rusty-fleet)
+ [QuestIonAble File Manager guide](https://mesmerprism.com/QuestIonAble-File-Manager/)
+ [Rusty Morphospace overview](https://mesmerprism.com/projects/rusty-morphospace.html)
+
+## Project links
+
+ Use the source repository for development evidence and the File Manager page for its currently published installer guidance.
+
+- Mesmer Prism. [Rusty Fleet source repository](https://github.com/MesmerPrism/rusty-fleet). Development source and public architecture; not a signed Fleet release.
+
+- Mesmer Prism. [QuestIonAble File Manager onboarding](https://mesmerprism.com/QuestIonAble-File-Manager/). Current File Manager download, setup, and first-device guide.
+</page>
+
 <page url="https://mesmerprism.com/strobesim/" path="strobesim/index.html">
 # Stimulus Portal · Quest Profile Editor
 
 Source: https://mesmerprism.com/strobesim/
 Canonical HTML: https://mesmerprism.com/strobesim/
-Generated: 2026-07-24
+Generated: 2026-07-27
 Markdown: https://mesmerprism.com/strobesim/index.md
 Plain text: https://mesmerprism.com/strobesim/index.txt
 
@@ -13924,7 +14203,7 @@ Before entering
 
 Source: https://mesmerprism.com/strobesim/onboarding/
 Canonical HTML: https://mesmerprism.com/strobesim/onboarding/
-Generated: 2026-07-24
+Generated: 2026-07-27
 Description: Trevor's browser-to-Quest setup and profile workflow for StrobeSim.
 Markdown: https://mesmerprism.com/strobesim/onboarding/index.md
 Plain text: https://mesmerprism.com/strobesim/onboarding/index.txt
@@ -14020,7 +14299,7 @@ CSL JSON references: https://mesmerprism.com/strobesim/onboarding/index.referenc
 
 Source: https://mesmerprism.com/Strobotorch/flashing-light-safety/
 Canonical HTML: https://mesmerprism.com/Strobotorch/flashing-light-safety/
-Generated: 2026-07-24
+Generated: 2026-07-27
 Description: Safety warnings, frequency background, and source references for Strobotorch flashlight signaling.
 Markdown: https://mesmerprism.com/Strobotorch/flashing-light-safety/index.md
 Plain text: https://mesmerprism.com/Strobotorch/flashing-light-safety/index.txt
@@ -14208,7 +14487,7 @@ Public warning and source background
 
 Source: https://mesmerprism.com/Strobotorch/
 Canonical HTML: https://mesmerprism.com/Strobotorch/
-Generated: 2026-07-24
+Generated: 2026-07-27
 Description: Strobotorch is an Android flashlight-signaling and diagnostics tool for torch and camera APIs, visible-light signal tests, device logging, and flashing-light safety.
 Markdown: https://mesmerprism.com/Strobotorch/index.md
 Plain text: https://mesmerprism.com/Strobotorch/index.txt
@@ -14308,7 +14587,7 @@ Flashlight signaling safety
 
 Source: https://mesmerprism.com/Strobotorch/project-boundary/
 Canonical HTML: https://mesmerprism.com/Strobotorch/project-boundary/
-Generated: 2026-07-24
+Generated: 2026-07-27
 Description: The scope of Strobotorch Android flashlight signaling and diagnostics tooling.
 Markdown: https://mesmerprism.com/Strobotorch/project-boundary/index.md
 Plain text: https://mesmerprism.com/Strobotorch/project-boundary/index.txt
@@ -14349,7 +14628,7 @@ Project scope
 
 Source: https://mesmerprism.com/Strobotorch/sources/
 Canonical HTML: https://mesmerprism.com/Strobotorch/sources/
-Generated: 2026-07-24
+Generated: 2026-07-27
 Description: Academic and public sources for Strobotorch flashing-light safety, frequency context, torch/camera diagnostics, and visible-light signal tooling.
 Markdown: https://mesmerprism.com/Strobotorch/sources/index.md
 Plain text: https://mesmerprism.com/Strobotorch/sources/index.txt
@@ -14587,496 +14866,514 @@ Source library
 - Woollacott et al. "[Fire Kasina Advanced Meditation Produces Experiences Comparable to Psychedelic and Near-Death Experiences: A Pilot Study](https://doi.org/10.1016/j.explore.2024.103056)." EXPLORE (2024).
 </page>
 
+<page url="https://mesmerprism.com/time/audio/" path="time/audio/index.html">
+# Five RC-505mkII Tracks as Five WFS Objects
+
+Source: https://mesmerprism.com/time/audio/
+Canonical HTML: https://mesmerprism.com/time/audio/
+Generated: 2026-07-27
+Description: Preferred RC-505mkII architecture and direct Ableton option for independently spatialized loop objects in a wave field synthesis system.
+Markdown: https://mesmerprism.com/time/audio/index.md
+Plain text: https://mesmerprism.com/time/audio/index.txt
+BibTeX references: https://mesmerprism.com/time/audio/index.bib
+CSL JSON references: https://mesmerprism.com/time/audio/index.references.csl.json
+
+---
+
+- [Overview](https://mesmerprism.com/time/)
+
+- Audio
+
+# Five RC-505mkII tracks as five WFS objects Keep looping on the hardware; spatialize each track independently.
+
+ The loop performer continues using the RC-505mkII normally.
+ Each of its five tracks leaves through a separate mono output and
+ becomes an independently movable sound object. Ableton is optional
+ for this baseline.
+
+ Preferred solution
+ 5 mono loop objects
+ Ableton optional
+
+ Important: one RC track equals one spatial object.
+ Multiple overdubs recorded into the same track remain combined.
+
+## Preferred: RC-505mkII owns the loops
+
+ Lowest disruption to the performance workflow and the simplest path to five separate sound objects.
+
+ RECOMMENDED BASELINE
+
+ What changes for the performer?
+
+ Almost nothing. Recording, overdubbing, stopping, undo, memories,
+ faders, and effects remain on the RC-505mkII. The artistic constraint
+ is that sounds needing different spatial positions must occupy
+ different RC tracks.
+
+## Track and overdub are not the same thing
+
+ This distinction determines what the WFS operator can move independently.
+
+## Direct Ableton option
+
+ Use Ableton as the loop engine when object count, routing, recording, and automation matter more than preserving the RC audio workflow.
+
+ MORE FLEXIBLE
+
+### Choose direct Ableton when
+
+- more than five independent objects are required;
+
+- detailed automation or recording is central;
+
+- a purpose-built MIDI control workflow is acceptable.
+
+### What it changes
+
+ Loop audio lives in Ableton rather than the RC-505mkII.
+ The performer uses a MIDI controller or pedal for record,
+ stop, undo, clear, and track selection.
+
+## Control ownership
+
+ The recommended system keeps three responsibilities separate.
+
+### Loop performer
+
+ Creates and performs loops; owns the musical timing and gestures.
+
+### Spatial operator
+
+ Positions, moves, balances, and recalls the WFS objects.
+
+### Audio system operator
+
+ Maintains isolation, gain, monitoring, synchronization, and recovery.
+
+## Technical details
+
+ Use these foldouts for patching, planning, and rehearsal. The preferred architecture above does not depend on reading them first.
+
+ Open all technical details
+
+ Exact RC-505mkII output routing
+ One track, output jack, interface input, and WFS object per row.
+ 6 CHANNELS
+
+ RC track
+ Output jack
+ Interface
+ WFS role
+
+ Track 1 MAIN L Input 1 Object 1
+ Track 2 MAIN R Input 2 Object 2
+ Track 3 SUB 1 L Input 3 Object 3
+ Track 4 SUB 1 R Input 4 Object 4
+ Track 5 SUB 2 L Input 5 Object 5
+ Optional live source SUB 2 R or mic split Input 6 Object 6 after isolation testing
+
+ Disable output stereo linking and exclude dry input, rhythm,
+ master effects, and unintended tracks from each object output.
+ Store the routing globally if memory changes would otherwise
+ alter the patch.
+
+ When Ableton becomes useful
+ Direct looping, optional recording, or a synchronized RC-to-Ableton handoff.
+ 3 ROLES
+
+ Use
+ Why choose it
+ Main cost
+
+ Optional receiver / recorder The RC remains the loop engine; Ableton records or routes the five incoming tracks. Additional computer and monitoring complexity.
+ Direct Ableton looping Independent object count scales with the session, interface, computer, and WFS renderer. Custom controller workflow and greater computer dependence.
+ Hybrid handoff A completed RC loop is captured into Ableton, freeing the RC track for new material. Clocked capture, mute/start handoff, latency compensation, and loss of RC control after commit.
+
+ Stereo and effects trade-offs
+ Five separate loop objects require mono outputs.
+ DECISION
+
+ The RC-505mkII provides three stereo output pairs. Unlinking
+ them creates six mono outputs, which is appropriate when the
+ WFS renderer creates the spatial image. If stereo delays,
+ reverbs, panning, or stereo instruments are essential, test
+ the presets in mono or choose a mixed layout such as one stereo
+ object plus three mono objects.
+
+ Live microphone and monitoring
+ Keep live sound isolated from loop capture and provide predictable low latency.
+ SIGNAL PATH
+
+ A microphone split before the looper is safer than assuming the
+ spare RC output can always provide an isolated dry source. Test
+ INPUT THRU , dry-input routing, the performer
+ headphone path, the WFS return, feedback, latency, and comb
+ filtering with the actual performance setup.
+
+ Questions for the loop performer
+ Confirm how the five tracks, effects, memories, and older loops are used artistically.
+ 5 QUESTIONS
+
+- Are sounds needing different positions already kept on different RC tracks?
+
+- Which stereo effects or panning behaviors are essential?
+
+- Must the live, unlooped microphone be a separate WFS object?
+
+- Are completed loops still faded, undone, overdubbed, or effected later?
+
+- Are more than five independently movable loops needed at the same time?
+
+ Questions for the venue
+ Confirm the WFS ingest, object model, monitoring, and session contract.
+ 7 QUESTIONS
+
+- What analog or network inputs does the WFS chain accept?
+
+- How many simultaneous objects are available?
+
+- Does one mono input map directly to one object?
+
+- Where are azimuth, elevation, distance, level, and automation controlled?
+
+- Is Ableton required by the renderer or only optional?
+
+- What sample rate, buffer size, channel naming, and session format are required?
+
+- What monitoring and fallback paths are available?
+
+ Audio test plan
+ Prove isolation and monitoring before adding Ableton handoff or complex control.
+ 7 STEPS
+
+- Confirm the contract Record inputs, object count, renderer location, sample rate, buffer, output patch, and monitoring.
+
+- Build the patch Disable stereo linking; assign one track to each jack; exclude unintended routes.
+
+- Prove isolation Record a unique spoken identifier on every RC track and check every downstream meter.
+
+- Test real use Rehearse memories, faders, stop, undo, overdub, effects, and the live microphone.
+
+- Measure the path Check latency, gain, noise, feedback, comb filtering, and headroom.
+
+- Add Ableton if justified Prototype capture, clock, loop boundary, muting, confirmation, and recovery.
+
+- Freeze and document Save routing, labels, gains, ownership, monitoring, and fallback procedure.
+
+ Audio sources
+ Manufacturer and venue documentation supporting the architecture.
+ 7 DOCUMENTS
+
+- [Fraunhofer HHI — TiME Lab](https://www.hhi.fraunhofer.de/en/fraunhofer-hhi/cooperation-platforms/time-lab-tomorrows-immersive-media-experience-laboratory.html) Venue description, projection, and wave field-based 3D sound system.
+
+- [BOSS — RC-505mkII](https://www.boss.info/uk/products/rc-505mk2/) Five stereo tracks, three stereo output pairs, connectors, and specifications.
+
+- [BOSS — Parameter Guide](https://static.roland.com/assets/media/pdf/RC-505mk2_Parameter_eng04_W.pdf) Per-jack routing, stereo-link settings, system preferences, USB, and MIDI.
+
+- [BOSS — Owner's Manual](https://static.roland.com/assets/media/pdf/RC-505mk2_eng03_W.pdf) Loop workflow, track controls, system settings, and MIDI overview.
+
+- [Ableton Live 12 — Routing and I/O](https://www.ableton.com/en/live-manual/12/routing-and-i-o/) External I/O, per-track routing, monitoring, MIDI ports, and resampling.
+
+- [Ableton Live 12 — Looper](https://www.ableton.com/en/live-manual/12/live-audio-effect-reference/#looper) Looper operation, footswitch mapping, tempo behavior, and feedback routing.
+
+- [Ableton Live 12 — Recording clips](https://www.ableton.com/en/live-manual/12/recording-new-clips/) External recording, monitoring, and Session View capture.
+</page>
+
 <page url="https://mesmerprism.com/time/" path="time/index.html">
-# Looping, Visuals, and Wave Field Synthesis — Technical Coordination Brief
+# Performance System — RC-505mkII, WFS, and NDI Visuals
 
 Source: https://mesmerprism.com/time/
 Canonical HTML: https://mesmerprism.com/time/
-Generated: 2026-07-24
-Description: Technical options, constraints, open questions, and a test plan for connecting a BOSS RC-505mkII, Ableton Live, TouchDesigner, NDI, and immersive projection.
+Generated: 2026-07-27
+Description: Recommended performance-system architecture for RC-505mkII looping, wave field synthesis, an external visual system, NDI, and venue projection.
 Markdown: https://mesmerprism.com/time/index.md
 Plain text: https://mesmerprism.com/time/index.txt
-BibTeX references: https://mesmerprism.com/time/index.bib
-CSL JSON references: https://mesmerprism.com/time/index.references.csl.json
 
 ---
 
-# Looping, visuals, and wave field synthesis
+# Performance system RC-505mkII looping, wave field synthesis, and external NDI visuals
 
- A technical decision brief for connecting a BOSS RC-505mkII,
- Ableton Live, and TouchDesigner to the spatial audio and immersive
- projection systems at Fraunhofer HHI's TiME Lab.
-
- Purpose: preserve hands-on looping, expose loop material as independently positionable sound objects, and deliver responsive visuals to the large projection system.
-
- Status: audio and visual starting points identified; venue interfaces, monitoring, networking, compatibility, and performance still require rehearsal tests.
-
- Scope: audio looping and WFS spatialization, TouchDesigner delivery, operator control, validation, and fallback planning.
-
-## Recommended starting system
-
- Keep loop creation and performance control on the RC-505mkII. Route
- its five tracks through five separate mono outputs and map them to five
- WFS objects. Run TouchDesigner on a prepared workstation and deliver
- its output over NDI. Ableton remains an optional recording and
- expansion layer; the venue Linux workstation remains a tested visual
- alternative.
-
- Loop owner
- RC-505mkII
-
- Spatial objects
- 5 mono loop tracks
-
- Visual primary
- Prepared TD system + NDI
-
- Optional extension
- Ableton capture / handoff
-
- “Unlimited loop layers” is not a useful system specification. Every
- architecture is bounded by track structure, computer resources, physical
- and virtual audio channels, and the WFS renderer's object limit.
-
-## Recommended integrated system
-
- This is the first complete system to build and validate. The
- RC-505mkII's three stereo output pairs can be unlinked, and each of
- Tracks 1–5 can be assigned to an individual L/R jack
- ([BOSS Parameter Guide, pp. 10–12](https://static.roland.com/assets/media/pdf/RC-505mk2_Parameter_eng04_W.pdf)).
-
- Proposed mono output assignment; final labels should match the venue input patch.
-
- RC-505mkII jack
- Signal
- Downstream role
-
- MAIN L
- Track 1 only
- WFS object 1
-
- MAIN R
- Track 2 only
- WFS object 2
-
- SUB 1 L
- Track 3 only
- WFS object 3
-
- SUB 1 R
- Track 4 only
- WFS object 4
-
- SUB 2 L
- Track 5 only
- WFS object 5
-
- SUB 2 R
- Spare, or isolated live input after testing
- Potential live-microphone object 6
-
- Track is the separable unit. Multiple overdub passes
- recorded inside one RC track leave through that track's output as one
- combined signal. To move a beat, bass line, and harmony independently,
- they must occupy different RC tracks or be committed to separate
- Ableton tracks before they are combined.
-
-## Three workable architectures
-
- The choice is less about whether Ableton is present and more about
- which system owns loop recording, what remains under performer control,
- and how many independently movable objects are actually required.
-
-### RC-505mkII first
+ Keep loop performance on the RC-505mkII, expose its five tracks
+ as five independently movable WFS objects, and deliver the
+ finished visual output from the visual artist's own hardware and software over wired NDI.
 
  Recommended baseline
+ Direct Ableton option
+ Venue test required
 
- The hardware looper records and plays all loops. Its five tracks
- arrive downstream as five mono signals; Ableton can act as a
- receiver, recorder, spatializer host, or be omitted if the WFS
- renderer accepts the inputs directly.
+## The baseline in two lines
 
-- Create Five RC tracks
+ AUDIO
 
-- Separate Five mono jacks
+ RC-505mkII → five mono channels → five WFS objects
 
-- Convert Interface / A-D
+ [Audio architecture →](https://mesmerprism.com/time/audio/)
 
-- Position Five WFS objects
+ VISUAL
 
-- Preserves the familiar track buttons, faders, undo, overdub, and effects workflow.
+ Visual artist system → wired NDI → venue projection
 
-- Provides five simultaneous independent loop objects with relatively little custom control logic.
+ [Visual delivery →](https://mesmerprism.com/time/visuals/)
 
-- Requires mono per track for all five objects; stereo-dependent effects need a separate decision.
+## Who controls what
 
-- Object independence ends at the RC track boundary.
+ Each operator keeps a clear domain. The handoffs happen through audio channels, control data, and rehearsed cues.
 
-### Ableton first
+### Loop performer
 
- Most flexible object count
+ Creates and performs loops on the RC-505mkII.
 
- Audio enters Ableton before looping. Every independent layer is
- recorded to its own clip, audio track, or Looper instance and
- routed to its own WFS input. A MIDI controller provides hands-on
- record, stop, undo, clear, and track-selection commands.
+### Spatial operator
 
-- Input Mic + interface
+ Moves, balances, and recalls the WFS sound objects.
 
-- Create Separate Live tracks
+### Visual operator
 
-- Control MIDI surface
+ Runs their own hardware and software, and sends the finished NDI output.
 
-- Position One WFS object per track
+## Before the first rehearsal
 
-- Scales beyond five objects, subject to the audio interface, computer, session design, and WFS limits.
+ Five decisions need owners and written answers. Open an item for the questions behind it.
 
-- Supports detailed recording, automation, routing, and operator control.
+ Open all technical details
 
-- Requires a carefully designed control template and more rehearsal.
+ WFS inputs and object count
+ Confirm how five mono signals become five controllable objects.
+ AUDIO
 
-- Repeated overdubs in one Ableton Looper buffer are still one combined object.
+- What physical or network inputs does the WFS chain accept?
 
-### Hybrid with handoff
+- How many simultaneous objects are available?
 
- Optional expansion beyond five objects
+- Does one mono input map directly to one object?
 
- A completed RC track is captured for exactly one loop cycle into
- the next available Ableton track. At a synchronized boundary,
- Ableton starts its copy and the RC track stops; the freed RC track
- can then record new material.
+- Where are position, movement, level, and scene recall controlled?
 
-- Create RC loop
+ Performer monitoring
+ Provide a predictable, low-latency path for live and looped sound.
+ AUDIO
 
-- Capture One exact cycle
+- Does the performer monitor from the looper, a dedicated mix, or the WFS return?
 
-- Handoff Start and stop on one boundary
+- How is the live microphone separated from the loop-object outputs?
 
-- Manage Ableton object
+- What latency, feedback, and comb-filtering checks are required?
 
-- Reuse Freed RC track
+ Projection canvas
+ Lock the image dimensions and venue handoff before scene optimization.
+ VISUAL
 
-- Combines familiar loop creation with a larger long-term object pool.
+- What are the native dimensions, aspect ratio, frame rate, and color space?
 
-- Lets the spatialization operator manage committed loops in Ableton.
+- Does the venue expect one frame, multiple slices, or a pre-warped image?
 
-- Committed loops no longer respond to that RC track's fader, undo, overdub, or effects controls.
+- Which device receives the final signal?
 
-- Needs clocking, quantized handoff, latency compensation, and protection against double playback.
+ NDI receiver and network
+ Prove the complete sender-to-projection path at representative load.
+ VISUAL
 
- Decision factor
- RC first
- Ableton first
- Hybrid handoff
+- Which NDI receiver and version are used?
 
- Performer continuity
- Highest
- Custom controller workflow
- High while creating; lower after commit
+- Is a dedicated wired path available?
 
- Independent objects
- Five mono RC tracks
- Scales with the full system
- More than five over time
+- How are discovery, IP addressing, stream naming, and firewall rules handled?
 
- Old-loop control from RC
- Retained
- Not applicable
- Lost after handoff
+- What frame-loss and end-to-end latency thresholds are acceptable?
 
- Integration risk
- Low to medium
- Medium
- Highest
+ Operators and fallback
+ Define control ownership, preview positions, and safe recovery states.
+ SHARED
 
- Best reason to choose it
- Reliable first rehearsal
- Maximum object flexibility
- More objects without abandoning RC creation
+- Who controls loops, WFS movement, visual playback and rendering, venue ingest, and emergency fallback?
 
- Stereo trade-off. The mkII provides three stereo
- output pairs, so preserving full stereo output limits the basic design
- to three independent stereo feeds. Five independent RC tracks require
- mono outputs. A mixed layout—such as one stereo object plus three mono
- objects—is also possible, but must match both the artistic need and the
- WFS renderer's input model.
+- Does the visual operator have a private preview and input devices?
 
-## TouchDesigner and the large projection
+- Which audio state and visual asset are used after a failure?
 
- Two visual delivery routes are available: send TouchDesigner output
- from a prepared workstation over NDI, or run the project on the
- venue's Linux workstation and connect it directly to the display
- system. Both are viable test candidates, with different validation
- needs and failure modes.
+- Which loop or WFS data, if any, should reach the visual system over MIDI or OSC?
 
-### Visual starting point
+## Technical briefs
 
- Prefer the known, prepared TouchDesigner workstation over NDI for the
- first complete test. It preserves the project's working software,
- plug-ins, media, fonts, drivers, and control mappings. Promote it to
- the primary show path only after the venue network and receiver sustain
- the agreed resolution and frame rate without missed frames or
- unacceptable latency. Treat the venue-Linux route as a tested
- alternative, not an assumed drop-in replacement.
+ The essential answer stays visible on each page. Exact routing, alternatives, tests, and sources are available in foldouts.
 
-### Path 1: prepared workstation over NDI
-
- TouchDesigner renders on a known Windows or macOS system and uses an
- NDI Out TOP to send the final image across the venue network. A venue
- receiver converts or presents that stream to the projection chain.
-
-- TouchDesigner project on the prepared workstation
-
-- Final-resolution TOP and NDI Out TOP
-
-- Wired Ethernet network with measured headroom
-
-- Venue NDI receiver or receiving application
-
-- Projection processor and 180° display
-
-#### Preparation and proof required
-
-- Install and freeze the exact TouchDesigner build, project dependencies, NDI components, GPU driver, and license tier.
-
-- Agree the stream name, receiving application, discovery method, IP range, firewall rules, and any manual source-IP configuration.
-
-- Lock output resolution, aspect ratio, frame rate, pixel format, color space, and whether audio or alpha is carried.
-
-- Use wired Ethernet and measure sender frame rate, skipped frames, receiver frame rate, missed frames, and end-to-end latency.
-
-- Test the actual scene at its representative geometry, particle, shader, and media-playback load—not an empty NDI test pattern.
-
-### Path 2: venue Linux workstation
-
- The project runs on the venue's high-performance Linux machine and
- reaches the projection chain through its local DisplayPort or HDMI
- output. This removes NDI encoding and network transport, but it
- introduces a larger software-compatibility question.
-
-- Packaged TouchDesigner project and all external assets
-
-- Venue-specific TouchDesigner-on-Linux environment
-
-- Venue GPU at the required scene and output load
-
-- Direct DisplayPort or HDMI connection
-
-- Projection processor and 180° display
-
-#### Preparation and proof required
-
-- Record the exact Linux distribution, compatibility layer or runtime, TouchDesigner build, GPU, driver, display server, and license.
-
-- Audit every external plug-in, Python package, codec, font, movie, device input, custom operator, and file path used by the project.
-
-- Test loading, saving, startup automation, full-screen output, audio/MIDI/OSC input, and clean recovery after a crash.
-
-- Give the operator a local monitor and controls if possible; the public projection should be a dedicated output, not the editing interface.
-
-- Measure the same representative project scenes and retain a known-good packaged copy on the venue machine.
-
- Decision factor
- Prepared workstation + NDI
- Venue Linux workstation
-
- Project environment
- Known and rehearsable before arrival
- Venue-specific and described as experimental
-
- Video transport
- NDI encoding, wired network, receiver, then projection
- Local GPU output through DisplayPort or HDMI
-
- Primary bottleneck
- Sender performance, network headroom, receiver, and latency
- Software compatibility, GPU behavior, drivers, and display configuration
-
- Resolution constraint
- Project/license, render GPU, NDI bandwidth, receiver, and projection input
- Project/license, venue GPU, compatibility environment, and projection input
-
- Best role
- Likely primary after a full-load network test
- Alternative after the exact project passes on the exact venue image
-
- Required fallback
- Pre-rendered representative video, a safe still or black frame, and a documented switch-over procedure.
-
- Why the tests matter. Current official TouchDesigner
- requirements list Windows and macOS, not Linux
- ([Derivative system requirements](https://derivative.ca/UserGuide/System_Requirements)).
- The Linux path is therefore a venue-specific compatibility deployment.
- NDI also needs real bandwidth planning: official guidance gives up to
- roughly 150 Mbps for 1080p60 and about 250 Mbps for 2160p60,
- before allowing headroom or additional receivers
- ([NDI bandwidth guidance](https://docs.ndi.video/all/getting-started/white-paper/bandwidth)).
- A wired gigabit connection is a starting point, not proof that the
- complete project will be stable.
-
- License and resolution must be checked. TouchDesigner
- Non-Commercial is limited to 1280×1280, while paid tiers can use the
- GPU's available resolution
- ([Derivative licensing comparison](https://derivative.ca/download)).
- The selected license must cover both the intended output size and the
- nature of the performance.
-
-## Questions that still need answers
-
- These questions determine whether the baseline can be patched directly
- and whether the more complex options are worth prototyping.
-
-### Venue and WFS interface
-
-- What exact inputs does the WFS chain accept: analog line, a venue interface, Dante, MADI, or another transport?
-
-- How many simultaneous sound objects are available, and is one mono input mapped directly to one object?
-
-- Does spatialization run inside Ableton, through a plug-in, or in a separate WFS application?
-
-- Where are azimuth, elevation, and distance controlled, and can their motion be automated or externally controlled?
-
-- What sample rate, buffer size, channel format, and naming convention does the venue session require?
-
-### Looping practice
-
-- Are distinct musical elements normally placed on different RC tracks, or are many layers overdubbed into the same track?
-
-- Are stereo panning, stereo delays, reverbs, or other left/right effects essential to the performance?
-
-- Must the live, unlooped microphone be a separate movable WFS object?
-
-- Are older loops still changed, faded, overdubbed, undone, or effected after new tracks have been created?
-
-- Are more than five independently movable loop objects needed at the same moment?
-
-### Routing and monitoring
-
-- Can the unused sixth RC output isolate the live microphone cleanly, or should a proper mic splitter or preamp send feed the live object?
-
-- Can dry input, rhythm, master effects, and unused tracks be excluded from every loop-object output without leakage?
-
-- What does the performer monitor: the RC headphone mix, an Ableton return, the WFS field, or a dedicated low-latency mix?
-
-- Will long analog runs require DI boxes, isolation, or conversion near the looper?
-
-- Should output routing be stored as a system preference so memory changes cannot alter the patch?
-
-### Clock, control, and handoff
-
-- If Ableton is used, which system is clock master, and does free first-loop timing need to remain possible?
-
-- Does the RC-505mkII send the required assigned MIDI CC messages for the intended Ableton control workflow?
-
-- For a hybrid handoff, who triggers capture and commit, and what confirms a successful transfer?
-
-- How are free-length, asynchronous, or polyrhythmic RC loops captured when they do not share a global bar grid?
-
-- What is the safe recovery procedure after a missed capture, double playback, MIDI drift, or computer failure?
-
-### Projection and NDI network
-
-- What are the projection canvas's native pixel dimensions, aspect ratio, refresh rate, color space, and expected input frame rate?
-
-- Does the venue expect one conventional video frame, a wide custom canvas, multiple slices, or a pre-warped image?
-
-- What device or application receives NDI, which NDI version and format does it support, and who configures it?
-
-- Is a dedicated wired network path available, and does it share switches or uplinks with Dante, control traffic, or other high-bandwidth services?
-
-- What sustained resolution and frame rate can the complete sender-network-receiver chain deliver with the representative project running?
-
-- What end-to-end visual latency, frame loss, color change, scaling, or tearing is acceptable?
-
-### TouchDesigner runtime and A/V control
-
-- Which exact TouchDesigner build and license will each machine use, and does the license permit the required resolution and performance context?
-
-- Which Linux distribution, compatibility method, GPU, driver, and display configuration make up the venue's experimental runtime?
-
-- Does the project depend on Windows- or macOS-specific operators, third-party plug-ins, Python packages, codecs, fonts, devices, or absolute file paths?
-
-- How will loop record/play/stop state, track levels, tempo, and spatial positions reach TouchDesigner: MIDI, OSC, audio analysis, metadata, or another control feed?
-
-- Does the visual operator have a separate monitor, preview, keyboard, and pointing device while the projection remains in full-screen output?
-
-- Which pre-rendered asset or safe visual state is used if both live-rendering paths fail?
-
-## Integrated validation plan
-
- Prove the five-object baseline before spending rehearsal time on an
- Ableton handoff system, then qualify both visual routes with the real
- TouchDesigner project. Each step should produce a saved configuration,
- measured result, and clear pass/fail decision.
-
-- Confirm the venue contract Document the input transport, available channels, object count, spatializer location, sample rate, buffer size, and monitoring path.
-
-- Build the six-jack patch Disable output stereo linking; assign Tracks 1–5 to five individual jacks; disable all unintended track, dry-input, and rhythm routes.
-
-- Run an isolation test Record a different spoken identifier on every RC track. Verify that every downstream meter receives only its assigned track and that faders, mute, stop, undo, and effects behave as expected.
-
-- Test the performance reality Rehearse representative presets, memory changes, stereo effects, the live-mic path, and the actual monitoring position. Measure practical latency and check for feedback or comb filtering.
-
-- Add hybrid capture only if needed Prototype one synchronized RC-to-Ableton commit, including cycle-accurate capture, latency compensation, mute/start handoff, failure recovery, and control ownership.
-
-- Lock the projection contract Record the required canvas dimensions, aspect ratio, frame rate, color space, input format, projection mapping, and whether the venue expects one frame or multiple slices.
-
-- Prove NDI at full load Run the representative TouchDesigner scenes at the target resolution and frame rate through the actual switch, receiver, and projection chain. Log sender FPS, skipped frames, receiver FPS, missed frames, network use, and end-to-end latency.
-
-- Qualify the Linux alternative Open the packaged project on the exact venue image; verify media, fonts, plug-ins, Python, codecs, input devices, full-screen output, performance, saving, startup, and recovery. Record every required workaround.
-
-- Rehearse the complete A/V system Run representative audio loops, spatial motion, visual control signals, memory or scene changes, and operator handoffs together. Trigger the planned audio and visual fallback paths deliberately before approving the show configuration.
-
-## Primary resources
-
- These sources support the current architecture. Venue-specific claims
- should be confirmed directly with the technical team rather than
- inferred from general product documentation.
-
-- [Fraunhofer HHI — TiME Lab](https://www.hhi.fraunhofer.de/en/fraunhofer-hhi/cooperation-platforms/time-lab-tomorrows-immersive-media-experience-laboratory.html) Official description of the immersive-media laboratory, its 180° projection, and its wave field-based 3D sound system.
-
-- [BOSS — RC-505mkII product and specifications](https://www.boss.info/uk/products/rc-505mk2/) Five stereo loop tracks, three stereo output pairs, assignable routing, connectors, signal levels, and device specifications.
-
-- [BOSS — RC-505mkII Parameter Guide](https://static.roland.com/assets/media/pdf/RC-505mk2_Parameter_eng04_W.pdf) Output stereo-link settings, per-jack track routing, input/rhythm routing, system-versus-memory preferences, USB routing, MIDI clock, and assigned MIDI CC targets.
-
-- [BOSS — RC-505mkII Owner's Manual](https://static.roland.com/assets/media/pdf/RC-505mk2_eng03_W.pdf) Loop recording and overdub workflow, track controls, system settings, computer connection, and MIDI overview.
-
-- [Ableton Live 12 Manual — Routing and I/O](https://www.ableton.com/en/live-manual/12/routing-and-i-o/) External mono/stereo inputs and outputs, per-track routing, monitoring, MIDI ports, remote control, synchronization, and resampling.
-
-- [Ableton Live 12 Manual — Looper](https://www.ableton.com/en/live-manual/12/live-audio-effect-reference/#looper) Looper operation, MIDI footswitch mapping, tempo behavior, and internal feedback routing.
-
-- [Ableton Live 12 Manual — Recording new clips](https://www.ableton.com/en/live-manual/12/recording-new-clips/) External-source recording, track arming, monitoring, and recording into Session View slots.
-
-- [Ableton Live 12 Manual — MIDI and key remote control](https://www.ableton.com/en/live-manual/12/midi-and-key-remote-control/) Manual mappings from external MIDI controllers to Live controls when no dedicated control-surface script is used.
-
-- [Ableton Live 12 Manual — Synchronization](https://www.ableton.com/en/live-manual/12/synchronizing-with-link-tempo-follower-and-midi/) MIDI Clock, external synchronization, timing adjustment, and hardware resynchronization.
-
-- [Derivative — TouchDesigner system requirements](https://derivative.ca/UserGuide/System_Requirements) Currently supported Windows and macOS versions, GPU and driver requirements, and operators with platform-specific restrictions.
-
-- [Derivative — TouchDesigner builds and license tiers](https://derivative.ca/download) Current Official builds, platform downloads, production-versus-experimental guidance, and the 1280×1280 Non-Commercial resolution limit.
-
-- [TouchDesigner documentation — NDI Out TOP](https://docs.derivative.ca/NDI_Out_TOP) NDI source naming, output frame rate, pixel format, color space, resolution controls, low-performance behavior, connected receivers, and skipped-frame monitoring.
-
-- [TouchDesigner documentation — NDI In TOP](https://docs.derivative.ca/NDI_In_TOP) NDI discovery, manual source IPs, bandwidth mode, received and missed frames, receive queues, hardware decoding, and input format.
-
-- [NDI documentation — Bandwidth](https://docs.ndi.video/all/getting-started/white-paper/bandwidth) Reference data rates by resolution and frame rate, the need for production network headroom, and the role of dedicated high-availability networks.
-
-- [NDI documentation — Network layout](https://docs.ndi.video/all/getting-started/white-paper/network-layout) Full-duplex gigabit links, switch throughput, topology, auto-negotiation, and physical network considerations.
-
- Source check: 24 July 2026. This is a technical working document,
- not a substitute for testing the actual RC-505mkII, saved memories,
- interface, WFS renderer, monitoring chain, TouchDesigner workstations,
- NDI network, and projection chain together.
+ [Audio architecture Preferred RC-505mkII system, direct Ableton option, track limits, routing, and testing.](https://mesmerprism.com/time/audio/)
+ [Visual delivery Primary external-system NDI route, optional venue TouchDesigner runtime, show-ready conditions, and fallback.](https://mesmerprism.com/time/visuals/)
 </page>
 
-<page url="https://mesmerprism.com/tmp/video-carousel-demo.html" path="tmp/video-carousel-demo.html">
-# Video carousel demo
+<page url="https://mesmerprism.com/time/visuals/" path="time/visuals/index.html">
+# External Visual System to Venue Projection
 
-Source: https://mesmerprism.com/tmp/video-carousel-demo.html
-Canonical HTML: https://mesmerprism.com/tmp/video-carousel-demo.html
-Generated: 2026-07-24
-Markdown: https://mesmerprism.com/tmp/video-carousel-demo.md
-Plain text: https://mesmerprism.com/tmp/video-carousel-demo.txt
+Source: https://mesmerprism.com/time/visuals/
+Canonical HTML: https://mesmerprism.com/time/visuals/
+Generated: 2026-07-27
+Description: Preferred external visual-system NDI route, optional venue TouchDesigner runtime, show-ready criteria, open questions, and visual test plan.
+Markdown: https://mesmerprism.com/time/visuals/index.md
+Plain text: https://mesmerprism.com/time/visuals/index.txt
+BibTeX references: https://mesmerprism.com/time/visuals/index.bib
+CSL JSON references: https://mesmerprism.com/time/visuals/index.references.csl.json
 
 ---
+
+- [Overview](https://mesmerprism.com/time/)
+
+- Visuals
+
+# External visual system to venue projection Use the visual artist's own hardware and software over wired NDI; keep venue TouchDesigner as an option.
+
+ The visual artist renders and controls the work on their own prepared
+ system and sends the finished image to the venue. This keeps creative
+ and runtime dependencies on the known hardware and software.
+
+ Own visual system
+ Wired NDI
+ Full-load test required
+
+ Approval condition: the actual sender, network,
+ receiver, and projection chain must sustain the agreed canvas and
+ frame rate with acceptable latency.
+
+## Primary: own visual system over NDI
+
+ The show uses the visual artist's own hardware and software and transports only the finished image.
+
+ USE FOR THE SHOW
+
+### Show-ready when
+
+- the projection canvas is confirmed;
+
+- the target frame rate is sustained;
+
+- receiver compatibility is proven;
+
+- end-to-end latency is acceptable;
+
+- a clean fallback has been rehearsed.
+
+ The large projection is an output, not a work surface.
+
+ Provide the visual operator with a separate preview monitor and
+ controls. The public projection should never expose the
+ visual software interface or operating-system desktop.
+
+## Keep three layers separate
+
+ Each layer needs its own owner, specification, and test.
+
+### Composition and render
+
+ Visual software, project, media, plug-ins, controls, GPU load, output format, and license.
+
+### Image transport
+
+ NDI encode, stream discovery, network capacity, receiver compatibility, and latency.
+
+### Projection delivery
+
+ Canvas, frame rate, color, mapping, operator preview, and fallback.
+
+## Preparation and alternatives
+
+ The preferred route stays visible above. Open these sections for the venue-specific deployment and validation work.
+
+ Open all technical details
+
+ Option: TouchDesigner on the venue machine
+ Run a packaged TouchDesigner project locally only after compatibility is proven.
+ TEST FIRST
+
+ Record the exact Linux distribution, compatibility layer,
+ TouchDesigner build, GPU, driver, display server, and license.
+ Audit every plug-in, Python package, codec, font, movie,
+ device input, custom operator, and file path.
+
+ Projection canvas contract
+ Define the exact image the venue expects before optimizing scenes.
+ 4 QUESTIONS
+
+- What are the native pixel dimensions, aspect ratio, refresh rate, and expected frame rate?
+
+- Does the venue expect one frame, a wide canvas, multiple slices, or a pre-warped image?
+
+- What color space, range, pixel format, and scaling behavior should be used?
+
+- Which device accepts the final signal, and what formats does it support?
+
+ NDI receiver and network
+ Specify discovery, capacity, compatibility, monitoring, and latency.
+ 6 QUESTIONS
+
+- Which hardware and software send NDI, and which application or hardware receives it?
+
+- Which NDI version, pixel formats, and resolutions are supported?
+
+- Is there a dedicated wired path, and what other traffic shares it?
+
+- How are discovery, IP addresses, stream naming, and firewall rules handled?
+
+- What sustained sender and receiver frame rates are acceptable?
+
+- What missed-frame count and end-to-end latency are acceptable?
+
+ Optional: audio-responsive visuals
+ Use only the loop, tempo, level, or WFS data that serves the composition.
+ MIDI / OSC
+
+ CONTROL
+
+ RC / WFS state → MIDI or OSC bridge → visual-system parameters
+
+ OPTIONAL
+
+ Define the sender, receiver, message names, update rate,
+ ownership, and failure state. The visual output should remain
+ valid when control data pauses or disconnects.
+
+ Visual runtime checklist
+ Freeze the primary visual environment and identify dependencies for the venue TouchDesigner option.
+ RUNTIME
+
+- Record the primary hardware, OS, GPU driver, visual software, license, and project version.
+
+- Package media, fonts, plug-ins, Python packages, codecs, and relative paths.
+
+- List every device input, custom operator, and platform-specific dependency.
+
+- Verify startup, save, restart, full-screen output, control input, and crash recovery.
+
+ Visual test plan
+ Approve each route independently with the representative project.
+ 8 STEPS
+
+- Lock the canvas Record size, aspect, frame rate, color, mapping, and physical handoff.
+
+- Freeze the visual system Record hardware, OS, GPU, driver, software, license, project, and dependencies.
+
+- Configure NDI Agree stream name, receiver, discovery, IP, firewall, switch path, and ownership.
+
+- Test full load Run the heaviest real scenes and log render FPS, skipped frames, network use, receive FPS, misses, and latency.
+
+- Verify projection Check crop, scaling, warp, slices, blending, color, tearing, and full-screen behavior.
+
+- Qualify venue TouchDesigner Test the packaged project on the exact venue Linux image, including controls, save, restart, and recovery.
+
+- Test A/V control Confirm normal, disconnected, restarted, and stale-data behavior.
+
+- Rehearse fallback Switch to a pre-rendered asset, safe still, or black frame without exposing the editor.
+
+ Visual sources
+ Venue, NDI, and optional TouchDesigner documentation supporting the delivery plan.
+ 5 DOCUMENTS
+
+- [Fraunhofer HHI — TiME Lab](https://www.hhi.fraunhofer.de/en/fraunhofer-hhi/cooperation-platforms/time-lab-tomorrows-immersive-media-experience-laboratory.html) Venue description, immersive projection, and spatial audio environment.
+
+- [Derivative — system requirements](https://derivative.ca/UserGuide/System_Requirements) Supported operating systems, GPU and driver requirements, and platform restrictions.
+
+- [Derivative — builds and licenses](https://derivative.ca/download) Official builds, platform downloads, release guidance, and license limits.
+
+- [NDI — bandwidth](https://docs.ndi.video/all/getting-started/white-paper/bandwidth) Reference data rates, production headroom, and network planning.
+
+- [NDI — network layout](https://docs.ndi.video/all/getting-started/white-paper/network-layout) Full-duplex links, switch throughput, topology, and physical network considerations.
 </page>

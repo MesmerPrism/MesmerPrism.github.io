@@ -1,0 +1,555 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Rusty Fleet onboarding | Mesmer Prism</title>
+    <link rel="canonical" href="https://mesmerprism.com/Rusty-Fleet/">
+    <meta
+        name="description"
+        content="A development-preview onboarding guide to Rusty Fleet, its Windows console, Hub, CLI and API, signed-release model, and opt-in Quest and hotspot capabilities."
+    >
+    <meta property="og:title" content="Rusty Fleet onboarding | Mesmer Prism">
+    <meta
+        property="og:description"
+        content="How the Rusty Fleet control surface, owner-routed providers, signed releases, and attended Quest capabilities fit together."
+    >
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mesmerprism.com/Rusty-Fleet/">
+    <meta property="og:image" content="https://mesmerprism.com/assets/rusty-fleet/fleet-icon.svg">
+    <meta name="theme-color" content="#f4efe7">
+    <link rel="icon" href="/assets/rusty-fleet/fleet-icon.svg" type="image/svg+xml">
+    <link rel="alternate icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="stylesheet" href="/assets/fonts.css">
+    <link rel="stylesheet" href="/styles.css?v=20260727-fleet-onboarding">
+    <!-- BEGIN agent-readable metadata -->
+    <link rel="alternate" type="text/markdown" href="/Rusty-Fleet/index.md" title="Markdown version">
+    <link rel="alternate" type="text/plain" href="/Rusty-Fleet/index.txt" title="Plain text version">
+    <link rel="alternate" type="application/x-bibtex" href="/Rusty-Fleet/index.bib" title="BibTeX references">
+    <link rel="alternate" type="application/vnd.citationstyles.csl+json" href="/Rusty-Fleet/index.references.csl.json" title="CSL JSON references">
+    <meta name="citation_title" content="Rusty Fleet onboarding">
+    <meta name="citation_author" content="Till Holzapfel">
+    <meta name="citation_publication_date" content="2026-07-27">
+    <meta name="citation_online_date" content="2026-07-27">
+    <meta name="citation_public_url" content="https://mesmerprism.com/Rusty-Fleet/">
+    <meta name="citation_language" content="en">
+    <script type="application/ld+json" data-agent-metadata>
+    {
+          "@context": "https://schema.org",
+          "@type": "Article",
+          "headline": "Rusty Fleet onboarding",
+          "name": "Rusty Fleet onboarding",
+          "description": "A development-preview onboarding guide to Rusty Fleet, its Windows console, Hub, CLI and API, signed-release model, and opt-in Quest and hotspot capabilities.",
+          "author": {
+                "@type": "Person",
+                "name": "Till Holzapfel"
+          },
+          "publisher": {
+                "@type": "Organization",
+                "name": "Mesmer Prism",
+                "url": "https://mesmerprism.com"
+          },
+          "isPartOf": {
+                "@type": "WebSite",
+                "name": "Mesmer Prism",
+                "url": "https://mesmerprism.com"
+          },
+          "url": "https://mesmerprism.com/Rusty-Fleet/",
+          "dateModified": "2026-07-27",
+          "inLanguage": "en",
+          "encoding": [
+                {
+                      "@type": "MediaObject",
+                      "encodingFormat": "text/markdown",
+                      "contentUrl": "https://mesmerprism.com/Rusty-Fleet/index.md"
+                },
+                {
+                      "@type": "MediaObject",
+                      "encodingFormat": "text/plain",
+                      "contentUrl": "https://mesmerprism.com/Rusty-Fleet/index.txt"
+                },
+                {
+                      "@type": "MediaObject",
+                      "encodingFormat": "application/x-bibtex",
+                      "contentUrl": "https://mesmerprism.com/Rusty-Fleet/index.bib"
+                },
+                {
+                      "@type": "MediaObject",
+                      "encodingFormat": "application/vnd.citationstyles.csl+json",
+                      "contentUrl": "https://mesmerprism.com/Rusty-Fleet/index.references.csl.json"
+                }
+          ],
+          "citation": [
+                "https://github.com/MesmerPrism/rusty-fleet",
+                "https://mesmerprism.com/QuestIonAble-File-Manager/"
+          ]
+    }
+    </script>
+    <!-- END agent-readable metadata -->
+</head>
+<body class="project-page">
+    <a class="skip-link" href="#content">Skip to main content</a>
+
+    <header class="site-header">
+        <div class="shell header-row">
+            <a class="site-name" href="/" aria-label="Mesmer Prism home">
+                <img class="site-mark" src="/assets/brand/mesmer-prism-logo.png" alt="" width="1200" height="508" decoding="async">
+                <span>Mesmer Prism</span>
+            </a>
+            <nav class="site-nav" aria-label="Rusty Fleet">
+                <a href="#status">Status</a>
+                <a href="#install">Onboarding</a>
+                <a href="#capabilities">Capabilities</a>
+                <a href="#recovery">Recovery</a>
+                <a href="https://github.com/MesmerPrism/rusty-fleet" target="_blank" rel="noopener noreferrer">Source</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="content" class="shell">
+        <section class="hero">
+            <div class="hero-shell hero-shell--page">
+                <img src="/assets/rusty-fleet/fleet-icon.svg" width="112" height="112" alt="Rusty Fleet">
+                <p class="eyebrow">Meta Quest fleet operations for Windows</p>
+                <h1>Rusty Fleet</h1>
+                <p class="project-lede">
+                    Rusty Fleet is a dedicated operator control surface for monitoring and
+                    managing a group of enrolled Meta Quest headsets. It keeps fleet policy in
+                    Fleet while routing every effect to the application that actually owns it.
+                </p>
+                <p class="reviewed-date">Development-preview guide reviewed July 27, 2026.</p>
+                <div class="hero-actions">
+                    <a class="action-link action-link--strong" href="#install">Understand the future install path</a>
+                    <a class="action-link" href="#distribution">How distribution works</a>
+                    <a class="action-link" href="#safety">Read the trust boundary</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="at-glance" id="status" aria-labelledby="status-heading">
+            <h2 id="status-heading">Current status: development preview</h2>
+            <div class="at-glance__grid">
+                <div class="at-glance__item">
+                    <strong>Source exists</strong>
+                    <p>The Hub, Console, <code>fleetctl</code>, inert <code>fleet-onboard</code>, local API, owner adapters, guided Setup source, and deterministic validation are under active development.</p>
+                </div>
+                <div class="at-glance__item">
+                    <strong>No supported download yet</strong>
+                    <p>There is no signed Rusty Fleet Windows release or public guided installer to download from this page.</p>
+                </div>
+                <div class="at-glance__item">
+                    <strong>Local tests are not a release</strong>
+                    <p>Source checkpoints and synthetic tests do not claim a published bundle, attended headset pass, or production support.</p>
+                </div>
+                <div class="at-glance__item">
+                    <strong>This page is the guide</strong>
+                    <p>It documents the intended supported path without turning an unpublished build into an implied release.</p>
+                </div>
+            </div>
+            <div class="status-labels" aria-label="Rusty Fleet status labels">
+                <span class="status-label status-label--planned">Development preview</span>
+                <span class="status-label status-label--planned">Signed release pending</span>
+                <span class="status-label status-label--reference">No public download link</span>
+            </div>
+        </section>
+
+        <section class="section" id="distribution">
+            <div class="section-heading">
+                <h2>Where code, downloads, and guidance live</h2>
+                <p>
+                    The distribution layers have different jobs. A page, repository checkout,
+                    or provider description never substitutes for a verified release.
+                </p>
+            </div>
+            <div class="table-wrap">
+                <table class="summary-table">
+                    <caption>Rusty Fleet distribution model</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Surface</th>
+                            <th scope="col">What it owns</th>
+                            <th scope="col">What it does not prove</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">GitHub source repository</th>
+                            <td>Public source, architecture, contracts, tests, and exact development history.</td>
+                            <td>A checkout or branch is not an installed or supported Windows product.</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">GitHub Releases</th>
+                            <td>The future binary authority: the signed <code>RustyFleet-Setup.exe</code>, immutable versioned assets, hashes, and release notes.</td>
+                            <td>A release name alone does not authorize a provider or a headset operation.</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">MesmerPrism.com</th>
+                            <td>The human-facing guide plus short-lived signed <code>release.json</code> metadata at <code>/Rusty-Fleet/metadata/&lt;channel&gt;/release.json</code>.</td>
+                            <td>This site never hosts, mirrors, or redirects to a second Fleet binary.</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">QuestIonAble File Manager</th>
+                            <td>An optional convenience route that verifies the v2 metadata signature and freshness, exact immutable GitHub asset URL, Setup hash, and Setup signer before showing its no-change plan and opening the guided installer.</td>
+                            <td>File Manager does not compose or install Fleet itself, invoke <code>fleet-onboard</code>, select a release silently, become Fleet authority, or make headset approvals disappear.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="project-links">
+                <a href="https://github.com/MesmerPrism/rusty-fleet" target="_blank" rel="noopener noreferrer">Inspect Rusty Fleet source</a>
+                <a href="https://mesmerprism.com/QuestIonAble-File-Manager/">Install QuestIonAble File Manager</a>
+            </p>
+        </section>
+
+        <section class="section" id="product">
+            <div class="section-heading">
+                <h2>What the Fleet product contains</h2>
+                <p>
+                    Fleet is one product with several projections over the same
+                    authority-aware engine. It is not a new name for File Manager.
+                </p>
+            </div>
+            <div class="detail-stack">
+                <section class="detail-block">
+                    <h3>Fleet Hub</h3>
+                    <p>
+                        The local service owns the enrolled device directory, accepted
+                        observations, operation lifecycle, audit records, saved views, and
+                        adapter registry. The supported first deployment keeps its operator API
+                        local to the Windows host unless a separately documented ingress is
+                        explicitly configured.
+                    </p>
+                </section>
+                <section class="detail-block">
+                    <h3>Fleet Console</h3>
+                    <p>
+                        The native Windows dashboard presents the dense fleet table, device
+                        inspector, previews, confirmations, progress, evidence, and recovery
+                        states. It is the human projection, not a separate state engine.
+                    </p>
+                </section>
+                <section class="detail-block">
+                    <h3><code>fleetctl</code> and the local API</h3>
+                    <p>
+                        Automation receives structured CLI and HTTP access to the same
+                        operations and evidence. A GUI-only capability is incomplete: operator
+                        actions require CLI or local API parity.
+                    </p>
+                </section>
+                <section class="detail-block">
+                    <h3>Offline onboarding and release-pinned providers</h3>
+                    <p>
+                        The exact five-component Windows bundle contains Fleet Console, Fleet
+                        Hub, <code>fleetctl</code>, inert <code>fleet-onboard</code>, and the
+                        release-pinned Rusty Hostess provider for Windows hotspot work.
+                        Installation never invokes onboarding. Hostess retains effect ownership.
+                        File Manager, Kiosk, the headset Fleet Agent, and Termux remain
+                        independent owner components with explicit installation and activation.
+                    </p>
+                </section>
+            </div>
+        </section>
+
+        <section class="section" id="install">
+            <div class="section-heading">
+                <h2>Supported onboarding path once a signed release exists</h2>
+                <p>
+                    These steps describe the release contract. They are not an invitation to
+                    treat the current local source candidate as a public installer.
+                </p>
+            </div>
+            <ol>
+                <li>
+                    <h3>Choose the direct or File Manager entry point</h3>
+                    <p>
+                        Download the signed <code>RustyFleet-Setup.exe</code> directly from its
+                        exact numeric-version GitHub Release, or use
+                        <a href="https://mesmerprism.com/QuestIonAble-File-Manager/">QuestIonAble File Manager</a>
+                        as an optional verified handoff. Confirm the displayed product and
+                        publisher before accepting Windows trust prompts. Fleet does not require
+                        File Manager merely to install or open the dashboard.
+                    </p>
+                </li>
+                <li>
+                    <h3>Require the signed v2 handoff</h3>
+                    <p>
+                        The File Manager option remains unavailable until release-owned trust
+                        configuration verifies the RSA-PSS signature over canonical JCS
+                        metadata, its at-most-24-hour freshness, the exact numeric-version
+                        GitHub URL, the signed Setup bytes, and the authorized Setup signer.
+                        File Manager then runs the exact no-change Setup plan and can open the
+                        visible installer; it never accepts an arbitrary branch, local path, or
+                        executable discovered on the machine.
+                    </p>
+                </li>
+                <li>
+                    <h3>Review Setup and the five-component manifest</h3>
+                    <p>
+                        Setup must report its no-change plan before installation. The embedded
+                        release manifest enumerates Fleet Hub, Fleet Console,
+                        <code>fleetctl</code>, inert <code>fleet-onboard</code>, the exact
+                        Hostess provider, the local API contract, versions, hashes, update
+                        state, and rollback instructions. Setup requires no elevation and does
+                        not start Fleet, create configuration, invoke onboarding, or touch ADB.
+                        Optional headset apps stay visibly separate.
+                    </p>
+                </li>
+                <li>
+                    <h3>Enroll one headset before adding a cohort</h3>
+                    <p>
+                        Establish the headset Fleet Agent and Manifold identity, then wait for a
+                        fresh signed check-in. Base monitoring is app-level and must not require
+                        ADB.
+                    </p>
+                </li>
+                <li>
+                    <h3>Enable capabilities individually</h3>
+                    <p>
+                        Configure exact provider pins and private device bindings locally.
+                        Preview and test one owner-routed capability at a time before using a
+                        multi-device target snapshot.
+                    </p>
+                </li>
+            </ol>
+        </section>
+
+        <section class="section" id="capabilities">
+            <div class="section-heading">
+                <h2>Capabilities and their real owners</h2>
+                <p>
+                    Fleet owns operator intent, exact targets, authorization flow, bounded
+                    dispatch, and the audit projection. The component that can observe or
+                    perform the effect remains its owner.
+                </p>
+            </div>
+            <div class="table-wrap">
+                <table class="summary-table">
+                    <caption>Opt-in capability routes</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Capability</th>
+                            <th scope="col">Owner route</th>
+                            <th scope="col">Important condition</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Fleet monitoring</th>
+                            <td>Rusty Quest Fleet Agent → signed Manifold admission → Fleet Hub</td>
+                            <td>Works without ADB; stale or untrusted check-ins stay visibly stale or rejected.</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Quest awake controls</th>
+                            <td>Fleet policy → Manifold authorization → pinned File Manager provider</td>
+                            <td>The Meta development hold is bounded to at most eight hours. Windows and on-device watchdogs are explicit modes with separate stop and restore-normal actions.</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Quest Wi-Fi ADB</th>
+                            <td>Fleet policy → File Manager provider → Kiosk request → Meta wearer approval → signed Quest capability</td>
+                            <td>The request is not usable-shell proof. Fleet requires a fresh enrolled check-in derived from an on-device Termux loopback result of exactly <code>uid=2000(shell)</code>.</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Classic USB <code>tcpip</code></th>
+                            <td>Pinned File Manager provider with an exact authorized USB target</td>
+                            <td>This is a separate recovery/bootstrap route, not evidence that the modern Kiosk/Meta request succeeded.</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Windows Mobile Hotspot</th>
+                            <td>Fleet host policy → pinned Rusty Hostess provider → Windows networking API</td>
+                            <td>It is one host-scoped resource, not a headset setting and not File Manager ownership.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="section" id="wifi-adb">
+            <div class="section-heading">
+                <h2>Why Wi-Fi ADB remains attended</h2>
+                <p>
+                    The modern route deliberately preserves the headset's protected approval.
+                    A successful sequence has several distinct facts:
+                </p>
+            </div>
+            <ol>
+                <li>Fleet freezes the exact enrolled target and obtains command authorization.</li>
+                <li>The pinned File Manager provider resolves private connection details without exposing them to Fleet.</li>
+                <li>Kiosk asks Android to present the wireless-debugging request.</li>
+                <li>The wearer puts on the headset and approves Meta's protected prompt.</li>
+                <li>An on-device Termux check uses loopback ADB and observes <code>uid=2000(shell)</code>.</li>
+                <li>The Rusty Quest Fleet Agent signs the fresh capability evidence into its next enrolled check-in.</li>
+                <li>Fleet admits that signed owner evidence before reporting an effective usable shell.</li>
+            </ol>
+            <p>
+                A request receipt, visible prompt, open port, ADB process, or provider exit code
+                can describe progress, but none is interchangeable with the final signed shell
+                capability.
+            </p>
+        </section>
+
+        <section class="section" id="catalog">
+            <div class="section-heading">
+                <h2>Provider descriptions are not permissions</h2>
+                <p>
+                    Fleet can ask a known, locally configured provider for bounded
+                    <code>--describe-json</code> metadata. The catalog can show a provider's
+                    identity, contract version, advertised actions, artifact digest, freshness,
+                    and validation result.
+                </p>
+            </div>
+            <div class="detail-stack">
+                <section class="detail-block">
+                    <h3>What discovery may do</h3>
+                    <ul class="plain-list">
+                        <li>Explain which independently installed owner supplies a capability.</li>
+                        <li>Reject malformed, stale, unexpected, or incorrectly pinned descriptions.</li>
+                        <li>Present unconfigured, unavailable, descriptive, stale, and rejected states consistently in Console, CLI, and API.</li>
+                    </ul>
+                </section>
+                <section class="detail-block">
+                    <h3>What discovery may never do</h3>
+                    <ul class="plain-list">
+                        <li>Turn a path, action name, or provider-supplied command line into dynamic execution.</li>
+                        <li>Claim that a provider is authorized, healthy, connected, or safe to run.</li>
+                        <li>Reveal device serials, credentials, private paths, pairing material, or hotspot secrets.</li>
+                    </ul>
+                </section>
+            </div>
+        </section>
+
+        <section class="section" id="safety">
+            <div class="section-heading">
+                <h2>Security and privacy checklist</h2>
+            </div>
+            <ul class="plain-list">
+                <li>Keep enrollment keys, exact device bindings, serials, endpoints, paths, tokens, pairing material, and network secrets in private machine configuration.</li>
+                <li>Pin provider executables and supporting tools by exact artifact identity; do not fall back to whichever executable appears on <code>PATH</code>.</li>
+                <li>Require immutable preview, explicit confirmation, command authorization, owner acknowledgement, effective result, and cleanup evidence as separate stages.</li>
+                <li>Treat missing configuration as inert. Do not auto-download, auto-pair, auto-enable, or silently widen a target cohort.</li>
+                <li>Keep the operator API loopback-only by default and protect every separately enabled ingress according to its documented threat model.</li>
+                <li>Never automate Meta's protected wearer confirmation or relabel a Windows/ADB observation as headset-owner proof.</li>
+            </ul>
+        </section>
+
+        <section class="section" id="recovery">
+            <div class="section-heading">
+                <h2>Disable, recovery, and troubleshooting</h2>
+                <p>
+                    Prefer returning to an explicit known state over retrying an effect until it
+                    appears to work.
+                </p>
+            </div>
+            <div class="detail-stack">
+                <section class="detail-block">
+                    <h3>Fleet cannot see a headset</h3>
+                    <p>
+                        Check enrollment, signed check-in age, device time, network reachability,
+                        and the Fleet Agent first. Do not assume ADB is the base monitoring route.
+                    </p>
+                </section>
+                <section class="detail-block">
+                    <h3>Wi-Fi ADB disappears</h3>
+                    <p>
+                        Reboot, network changes, authorization changes, or service loss can end
+                        the shell. Reconnect through the documented USB bootstrap if needed, make
+                        a new request, approve it in-headset, and wait for a new signed
+                        <code>uid=2000(shell)</code> proof. Never reuse an expired proof.
+                    </p>
+                </section>
+                <section class="detail-block">
+                    <h3>Disable Wi-Fi ADB completely</h3>
+                    <p>
+                        Disable the current wireless-debugging request and disable any separate
+                        request-after-boot policy. Confirm the owner readback and then confirm the
+                        signed usable-shell capability disappears or expires.
+                    </p>
+                </section>
+                <section class="detail-block">
+                    <h3>Awake behavior persists</h3>
+                    <p>
+                        Stop Windows and on-device watchdog modes, then use the explicit
+                        restore-normal action. A bounded Meta hold is not a permanent policy and
+                        must not be reported as one.
+                    </p>
+                </section>
+                <section class="detail-block">
+                    <h3>Hotspot state is uncertain</h3>
+                    <p>
+                        Refresh through the Hostess owner, inspect whether the hotspot is
+                        external or Fleet-owned, and use the explicit stop route only when the
+                        current ownership generation permits it. A provider restart invalidates
+                        prior ownership assumptions.
+                    </p>
+                </section>
+                <section class="detail-block">
+                    <h3>A provider is missing or rejected</h3>
+                    <p>
+                        Leave the capability unavailable. Reinstall from the matching signed
+                        release or correct the private pin; do not browse for a similarly named
+                        executable or bypass its descriptor/artifact checks.
+                    </p>
+                </section>
+            </div>
+        </section>
+
+        <section class="section" id="independence">
+            <div class="section-heading">
+                <h2>Independent software and wearer control</h2>
+                <p>
+                    Rusty Fleet and the related tools are independent projects and are not
+                    affiliated with or endorsed by Meta. Meta Quest is a trademark of Meta
+                    Platforms, Inc. Device protections, visible Android surfaces, and wearer
+                    approvals remain part of the system design.
+                </p>
+            </div>
+            <p class="project-links">
+                <a href="https://github.com/MesmerPrism/rusty-fleet" target="_blank" rel="noopener noreferrer">Rusty Fleet source</a>
+                <a href="https://mesmerprism.com/QuestIonAble-File-Manager/">QuestIonAble File Manager guide</a>
+                <a href="/projects/rusty-morphospace.html">Rusty Morphospace overview</a>
+            </p>
+        </section>
+
+        <section class="section" id="references">
+            <div class="section-heading">
+                <h2>Project links</h2>
+                <p>Use the source repository for development evidence and the File Manager page for its currently published installer guidance.</p>
+            </div>
+            <ul class="plain-list">
+                <li>
+                    <strong>Mesmer Prism.</strong>
+                    <a class="reference-link" href="https://github.com/MesmerPrism/rusty-fleet" target="_blank" rel="noopener noreferrer">Rusty Fleet source repository</a>.
+                    Development source and public architecture; not a signed Fleet release.
+                </li>
+                <li>
+                    <strong>Mesmer Prism.</strong>
+                    <a class="reference-link" href="https://mesmerprism.com/QuestIonAble-File-Manager/" target="_blank" rel="noopener noreferrer">QuestIonAble File Manager onboarding</a>.
+                    Current File Manager download, setup, and first-device guide.
+                </li>
+            </ul>
+        </section>
+        <!-- BEGIN page-export-links -->
+        <section class="agent-downloads" aria-labelledby="page-downloads">
+            <h2 id="page-downloads">Page exports</h2>
+            <div class="agent-downloads__links">
+                <a href="/Rusty-Fleet/index.md" download>Markdown</a>
+                <a href="/Rusty-Fleet/index.txt" download>Text</a>
+                <a href="/Rusty-Fleet/index.bib" download>BibTeX</a>
+                <a href="/Rusty-Fleet/index.references.csl.json" download>CSL JSON</a>
+            </div>
+        </section>
+        <!-- END page-export-links -->
+</main>
+
+    <footer class="site-footer">
+        <div class="shell footer-row">
+            <p>Rusty Fleet onboarding and development-preview status.</p>
+            <nav class="footer-links" aria-label="Legal">
+                <a href="/impressum.html">Impressum</a>
+                <a href="/datenschutz.html">Datenschutz</a>
+            </nav>
+        </div>
+    </footer>
+</body>
+</html>

@@ -12,6 +12,21 @@ python -m http.server 8000
 
 Then open `http://localhost:8000`.
 
+## Validation
+
+The Rusty Fleet onboarding page has one repository-owned deterministic gate:
+
+```powershell
+pwsh -NoProfile -File .\tools\Test-FleetOnboarding.ps1
+```
+
+The gate regenerates the Fleet page and global agent artifacts in an isolated
+tracked-file scratch copy, then checks source/generated parity, local links and
+fragments, JSON/CSL/sitemap/SVG syntax, the absence of binary download links,
+the exact canonical icon bytes and provenance, and public-boundary patterns.
+It also runs synthetic negative cases for the important rejection paths and
+does not rewrite the working tree.
+
 ## Deployment
 
 This repository is intended to publish through GitHub Pages from the `main`
