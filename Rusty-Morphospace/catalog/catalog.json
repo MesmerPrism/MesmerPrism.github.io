@@ -237,13 +237,13 @@
           },
           "transition": "uninstall-labs-without-changing-stable",
           "release": {
-            "tag": "v0.6.6-alpha.6",
-            "version": "0.6.6-alpha.6",
-            "source_revision": "132b45325ec082f6ade9c5824d2c510194eccb22",
+            "tag": "v0.6.6-alpha.8",
+            "version": "0.6.6-alpha.8",
+            "source_revision": "22f45fccdeee458c4f6e21f2d482fe6e15ad0c98",
             "artifact_name": "rusty-kiosk.apk",
-            "artifact_url": "https://github.com/MesmerPrism/Rusty-Kiosk/releases/download/v0.6.6-alpha.6/rusty-kiosk.apk",
-            "artifact_sha256": "be7856e3ad91150747e640410d53087f81dd1466dc41a8e95df2b0a1275408bd",
-            "bytes": 87062353,
+            "artifact_url": "https://github.com/MesmerPrism/Rusty-Kiosk/releases/download/v0.6.6-alpha.8/rusty-kiosk.apk",
+            "artifact_sha256": "522a28254b0a154e610b1977ee49a9a2850db958d8e6934811220c19bb62e373",
+            "bytes": 87275373,
             "installation_identity": "io.github.mesmerprism.rustykiosk.labs"
           }
         }
