@@ -575,6 +575,7 @@ def negative_schema_tests(catalog: dict) -> None:
     inconsistent = copy.deepcopy(catalog)
     inconsistent_channel = inconsistent["products"][0]["product_channels"][1]
     inconsistent_channel["availability"] = "published"
+    inconsistent_channel["release"] = None
     fixtures.append(("published channel without release", inconsistent))
 
     for name, fixture in fixtures:
