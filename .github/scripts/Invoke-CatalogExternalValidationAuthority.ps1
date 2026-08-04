@@ -9,7 +9,6 @@ param(
     [Parameter(Mandatory = $true)][string]$EventName,
     [Parameter(Mandatory = $true)][string]$BaseCommit,
     [Parameter(Mandatory = $true)][string]$CandidateCommit,
-    [Parameter(Mandatory = $true)][string]$EventMergeCommit,
     [Parameter(Mandatory = $true)][string]$PullRequestNumber
 )
 
@@ -91,6 +90,25 @@ function Assert-PinnedVerifierObject {
     }
 }
 
+function Assert-PullRequestObjectCoherence {
+    param(
+        [Parameter(Mandatory = $true)][string]$FetchedHead,
+        [Parameter(Mandatory = $true)][string]$FetchedMerge,
+        [Parameter(Mandatory = $true)][string[]]$MergeParents,
+        [Parameter(Mandatory = $true)][string]$BaseCommit,
+        [Parameter(Mandatory = $true)][string]$CandidateCommit
+    )
+    if ($FetchedHead -cne $CandidateCommit) {
+        throw 'fetched pull-request head does not match event candidate'
+    }
+    if ($MergeParents.Count -ne 3 -or
+        $MergeParents[0] -cne $FetchedMerge -or
+        $MergeParents[1] -cne $BaseCommit -or
+        $MergeParents[2] -cne $CandidateCommit) {
+        throw 'current GitHub merge witness is not exactly event base plus head'
+    }
+}
+
 Assert-CleanGitEnvironment
 if ($EventName -cne 'pull_request_target' -or
     $Repository -cne $ExpectedRepository -or
@@ -99,11 +117,8 @@ if ($EventName -cne 'pull_request_target' -or
     $HeadRepository -cnotmatch '^[A-Za-z0-9_.-]{1,100}/[A-Za-z0-9_.-]{1,100}$' -or
     $BaseCommit -cnotmatch '^[0-9a-f]{40}$' -or
     $CandidateCommit -cnotmatch '^[0-9a-f]{40}$' -or
-    $EventMergeCommit -cnotmatch '^[0-9a-f]{40}$' -or
     $PullRequestNumber -cnotmatch '^[1-9][0-9]*$' -or
-    $BaseCommit -ceq $CandidateCommit -or
-    $BaseCommit -ceq $EventMergeCommit -or
-    $CandidateCommit -ceq $EventMergeCommit) {
+    $BaseCommit -ceq $CandidateCommit) {
     throw 'pull-request identity is incomplete, malformed, or outside main'
 }
 
@@ -156,19 +171,18 @@ if ($LASTEXITCODE -ne 0) {
 }
 $fetchedHead = Invoke-GitText -Root $BaseRoot -Arguments @('rev-parse', $headRef)
 $fetchedMerge = Invoke-GitText -Root $BaseRoot -Arguments @('rev-parse', $mergeRef)
-if ($fetchedHead -cne $CandidateCommit -or $fetchedMerge -cne $EventMergeCommit) {
-    throw 'fetched pull-request objects do not match event identity'
-}
 $mergeLine = Invoke-GitText -Root $BaseRoot -Arguments @(
     'rev-list', '--parents', '-n', '1', $fetchedMerge
 )
-$mergeParents = @($mergeLine.Split(' ', [StringSplitOptions]::RemoveEmptyEntries))
-if ($mergeParents.Count -ne 3 -or
-    $mergeParents[0] -cne $EventMergeCommit -or
-    $mergeParents[1] -cne $BaseCommit -or
-    $mergeParents[2] -cne $CandidateCommit) {
-    throw 'GitHub merge candidate is not exactly base plus head'
-}
+[string[]]$mergeParents = @(
+    $mergeLine.Split(' ', [StringSplitOptions]::RemoveEmptyEntries)
+)
+Assert-PullRequestObjectCoherence `
+    -FetchedHead $fetchedHead `
+    -FetchedMerge $fetchedMerge `
+    -MergeParents $mergeParents `
+    -BaseCommit $BaseCommit `
+    -CandidateCommit $CandidateCommit
 
 & $verifierScript `
     -RepositoryRoot $BaseRoot `
