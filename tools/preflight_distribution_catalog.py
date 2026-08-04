@@ -17,7 +17,12 @@ import urllib.request
 from pathlib import Path
 from typing import Any
 
-from connection_hub_catalog_contract import adapt_connection_hub
+from connection_hub_catalog_contract import (
+    OWNER as CONNECTION_HUB_OWNER,
+    ConnectionHubContractError,
+    adapt_connection_hub,
+    required_release_asset_names,
+)
 from test_distribution_catalog import validate_catalog
 
 
@@ -1095,6 +1100,18 @@ def normalized_snapshot(
         "rusty-kiosk.apk",
     }:
         fail("Kiosk release inventory is not the exact six-asset contract")
+    if owner == CONNECTION_HUB_OWNER:
+        try:
+            expected_connection_hub_assets = required_release_asset_names(tag)
+        except ConnectionHubContractError as error:
+            raise PreflightError(
+                "Connection Hub release tag is outside its dormant contract"
+            ) from error
+        if names != expected_connection_hub_assets:
+            fail(
+                "Connection Hub release inventory is not the exact "
+                "two-asset contract"
+            )
     chain = readback.get("tag_chain")
     if not isinstance(chain, list) or not 1 <= len(chain) <= 6:
         fail("owner tag peel is incomplete")

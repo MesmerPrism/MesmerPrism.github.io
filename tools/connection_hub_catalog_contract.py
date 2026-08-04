@@ -46,6 +46,18 @@ def tag_version(tag: str) -> str:
     return match.group(1)
 
 
+def required_release_asset_names(tag: str) -> frozenset[str]:
+    """Return the complete immutable public asset-name set for one Hub tag."""
+
+    version = tag_version(tag)
+    return frozenset(
+        {
+            METADATA_ASSET,
+            f"rusty-connection-hub-{version}.apk",
+        }
+    )
+
+
 def adapt_connection_hub(metadata: Any, tag: str) -> dict[str, Any]:
     """Validate owner bytes and project only the generic catalog asset facts."""
 

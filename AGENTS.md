@@ -49,7 +49,8 @@ owner manifest, but it is not a sixth catalog owner: keep it absent from the
 catalog, catalog schema owner enum, browser allowlist, complete-owner set, and
 publication projection until a separate externally validated authority change.
 That later change must retain the exact `connection-hub-v0.1.0-alpha.N` tag
-family, immutable non-latest GitHub prerelease readback, listener-off default,
+family, exact owner-manifest-plus-APK release inventory, immutable non-latest
+GitHub prerelease readback, listener-off default,
 and the conspicuous `trusted_lan_experimental` / `confidentiality=none` /
 `production_eligible=false` warning. Pairing authenticates a controller; it
 does not encrypt the plaintext WebSocket option.

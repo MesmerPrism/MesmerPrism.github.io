@@ -17,6 +17,7 @@ from connection_hub_catalog_contract import (
     REPOSITORY,
     ConnectionHubContractError,
     adapt_connection_hub,
+    required_release_asset_names,
     tag_version,
 )
 
@@ -78,6 +79,13 @@ class ConnectionHubCatalogContractTest(unittest.TestCase):
     def test_valid_owner_manifest_projects_only_generic_asset_facts(self) -> None:
         manifest = load(VALID_FIXTURE)
         self.assertEqual(tag_version(TAG), VERSION)
+        self.assertEqual(
+            required_release_asset_names(TAG),
+            {
+                METADATA_ASSET,
+                f"rusty-connection-hub-{VERSION}.apk",
+            },
+        )
         self.assertEqual(
             adapt_connection_hub(manifest, TAG),
             {
@@ -208,6 +216,61 @@ class ConnectionHubCatalogContractTest(unittest.TestCase):
                     mutate(candidate)
                     with self.assertRaises(preflight.PreflightError):
                         preflight.normalized_snapshot(OWNER, TAG, candidate)
+
+    def test_release_inventory_is_closed_and_stable(self) -> None:
+        def unexpected_asset(name: str, asset_id: int) -> dict:
+            return {
+                "id": asset_id,
+                "name": name,
+                "size": 42,
+                "digest": "sha256:" + "9" * 64,
+                "state": "uploaded",
+                "browser_download_url": (
+                    f"https://github.com/{REPOSITORY}/releases/download/"
+                    f"{TAG}/{name}"
+                ),
+            }
+
+        registry = copy.deepcopy(preflight.DORMANT_OWNER_CONTRACTS[OWNER])
+        registry.pop("activation")
+        with patch.dict(preflight.OWNERS, {OWNER: registry}, clear=False):
+            inventory_damage = {
+                "extra asset": lambda value: value["release"]["assets"].append(
+                    unexpected_asset("README.txt", 103)
+                ),
+                "missing owner manifest": lambda value: value["release"][
+                    "assets"
+                ].pop(0),
+                "missing primary APK": lambda value: value["release"]["assets"].pop(
+                    1
+                ),
+                "duplicate name": lambda value: value["release"]["assets"].append(
+                    {
+                        **copy.deepcopy(value["release"]["assets"][0]),
+                        "id": 103,
+                    }
+                ),
+                "duplicate ID": lambda value: value["release"]["assets"][1].update(
+                    {"id": value["release"]["assets"][0]["id"]}
+                ),
+                "wrong-name substitution": lambda value: (
+                    value["release"]["assets"][1].update(
+                        unexpected_asset("rusty-connection-hub-other.apk", 102)
+                    )
+                ),
+            }
+            for label, mutate in inventory_damage.items():
+                with self.subTest(label=label):
+                    candidate = release_snapshot()
+                    mutate(candidate)
+                    with self.assertRaises(preflight.PreflightError):
+                        preflight.normalized_snapshot(OWNER, TAG, candidate)
+
+            initial = release_snapshot()
+            final = release_snapshot()
+            final["release"]["assets"][1]["size"] += 1
+            with self.assertRaises(preflight.PreflightError):
+                preflight.assert_same_run_stability(OWNER, TAG, initial, final)
 
     def test_contract_is_dormant_and_current_projection_is_unchanged(self) -> None:
         self.assertNotIn(OWNER, preflight.OWNERS)
