@@ -367,13 +367,13 @@
           },
           "transition": "remove-labs",
           "release": {
-            "tag": "connection-hub-v0.1.0-alpha.3",
-            "version": "0.1.0-alpha.3",
-            "source_revision": "90dee15aebbe150c074550c5510900b393191f28",
-            "artifact_name": "rusty-connection-hub-0.1.0-alpha.3.apk",
-            "artifact_url": "https://github.com/MesmerPrism/rusty-quest/releases/download/connection-hub-v0.1.0-alpha.3/rusty-connection-hub-0.1.0-alpha.3.apk",
-            "artifact_sha256": "494e0996e99ac598d1f20c49ac4c7fd8a079dcf1e5329aa064cea076b04195bc",
-            "bytes": 19711402,
+            "tag": "connection-hub-v0.1.0-alpha.4",
+            "version": "0.1.0-alpha.4",
+            "source_revision": "45de5da6cdf022de577b93c418031eb6e7b5c655",
+            "artifact_name": "rusty-connection-hub-0.1.0-alpha.4.apk",
+            "artifact_url": "https://github.com/MesmerPrism/rusty-quest/releases/download/connection-hub-v0.1.0-alpha.4/rusty-connection-hub-0.1.0-alpha.4.apk",
+            "artifact_sha256": "dc4803a4ff6cb974628fdcaf0f9afc1710b6afe3d0b9efbdd4d0a33efddb4ebc",
+            "bytes": 19723691,
             "installation_identity": "io.github.mesmerprism.rustymanifold.broker"
           }
         }
