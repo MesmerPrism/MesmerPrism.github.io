@@ -44,6 +44,16 @@ HTML. Feedback issue paths must exactly extend the declared owner repository.
 The catalog includes five owners. Rusty Hostess is labs-only unless its owner
 publishes a reviewed stable identity; keep MQDH and `Casting.exe` external and
 preserve the Hostess cast-adapter authority exclusions.
+A dormant Pages adapter contract may validate a future Rusty Connection Hub
+owner manifest, but it is not a sixth catalog owner: keep it absent from the
+catalog, catalog schema owner enum, browser allowlist, complete-owner set, and
+publication projection until a separate externally validated authority change.
+That later change must retain the exact `connection-hub-v0.1.0-alpha.N` tag
+family, exact owner-manifest-plus-APK release inventory, immutable non-latest
+GitHub prerelease readback, listener-off default,
+and the conspicuous `trusted_lan_experimental` / `confidentiality=none` /
+`production_eligible=false` warning. Pairing authenticates a controller; it
+does not encrypt the plaintext WebSocket option.
 Keep `product_channel` persistent and bounded to `stable|labs`; keep maturity
 independent and bounded to `alpha|beta|rc|released`; and bound
 `distribution_track` to `github-release|github-prerelease|meta-store-app`. An

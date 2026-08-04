@@ -17,6 +17,12 @@ import urllib.request
 from pathlib import Path
 from typing import Any
 
+from connection_hub_catalog_contract import (
+    OWNER as CONNECTION_HUB_OWNER,
+    ConnectionHubContractError,
+    adapt_connection_hub,
+    required_release_asset_names,
+)
 from test_distribution_catalog import validate_catalog
 
 
@@ -64,6 +70,18 @@ OWNERS = {
             r"^rusty-quest-package-updater\.release\.json$"
         ),
         "adapter": "quest-updater",
+    },
+}
+
+# This contract is intentionally not part of OWNERS. It cannot appear in a
+# request, complete-owner set, generated catalog, publication receipt, or UI
+# until a separately reviewed validation-authority change activates it.
+DORMANT_OWNER_CONTRACTS = {
+    "rusty-connection-hub": {
+        "repository": "MesmerPrism/rusty-quest",
+        "metadata_name": re.compile(r"^connection-hub-release-manifest\.json$"),
+        "adapter": "connection-hub",
+        "activation": "requires-external-validation-authority",
     },
 }
 
@@ -655,6 +673,7 @@ ADAPTERS = {
     "hostess": adapt_hostess,
     "kiosk": adapt_kiosk,
     "quest-updater": adapt_quest_updater,
+    "connection-hub": adapt_connection_hub,
 }
 
 
@@ -1081,6 +1100,18 @@ def normalized_snapshot(
         "rusty-kiosk.apk",
     }:
         fail("Kiosk release inventory is not the exact six-asset contract")
+    if owner == CONNECTION_HUB_OWNER:
+        try:
+            expected_connection_hub_assets = required_release_asset_names(tag)
+        except ConnectionHubContractError as error:
+            raise PreflightError(
+                "Connection Hub release tag is outside its dormant contract"
+            ) from error
+        if names != expected_connection_hub_assets:
+            fail(
+                "Connection Hub release inventory is not the exact "
+                "two-asset contract"
+            )
     chain = readback.get("tag_chain")
     if not isinstance(chain, list) or not 1 <= len(chain) <= 6:
         fail("owner tag peel is incomplete")
