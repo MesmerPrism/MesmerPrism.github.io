@@ -31,7 +31,7 @@ SCHEMA_VALIDATOR = Draft202012Validator(SCHEMA)
 
 
 class ConnectionHubContractError(ValueError):
-    """Fail-closed rejection of a dormant Connection Hub owner manifest."""
+    """Fail-closed rejection of an active Connection Hub owner manifest."""
 
 
 def fail(message: str) -> None:

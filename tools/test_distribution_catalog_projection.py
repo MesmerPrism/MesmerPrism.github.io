@@ -105,7 +105,8 @@ def main() -> int:
         if (
             published != generated
             or publication["publication_authorized"] is not True
-            or publication["source_preflight"]["record_count"] != 5
+            or publication["projection"] != "complete-six-owner-labs-set"
+            or publication["source_preflight"]["record_count"] != 6
             or (site_root / "unrelated.txt").read_text(encoding="utf-8")
             != "preserve\n"
             or not (site_root / PUBLICATION_RELATIVE).is_file()

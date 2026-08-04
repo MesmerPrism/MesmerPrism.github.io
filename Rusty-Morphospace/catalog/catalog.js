@@ -8,7 +8,8 @@
     "rusty-fleet",
     "rusty-hostess",
     "rusty-kiosk",
-    "rusty-quest-package-updater"
+    "rusty-quest-package-updater",
+    "rusty-connection-hub"
   ]);
 
   const element = (name, className, text) => {
@@ -27,7 +28,7 @@
         catalog.schema !== "rusty.morphospace.public_distribution_catalog.v2" ||
         catalog.default_product_channel !== "stable" ||
         !Array.isArray(catalog.products) ||
-        catalog.products.length !== 5) {
+        catalog.products.length !== 6) {
       throw new Error("Catalog shape is not supported.");
     }
     for (const product of catalog.products) {
@@ -46,6 +47,34 @@
             !["github-release", "github-prerelease", "meta-store-app"].includes(entry.distribution_track))) {
         throw new Error("Catalog owner, feedback, or channel is invalid.");
       }
+    }
+    const hub = catalog.products.find(
+      (product) => product.owner === "rusty-connection-hub"
+    );
+    const notice = hub && hub.security_notice;
+    const routes = hub && hub.companion_routes;
+    if (!notice ||
+        notice.transport_classification !== "trusted_lan_experimental" ||
+        notice.confidentiality !== "none" ||
+        notice.production_eligible !== false ||
+        notice.pairing_authenticates_but_does_not_encrypt !== true ||
+        notice.listener_default !== "stopped" ||
+        notice.explicit_wearer_opt_in_required !== true ||
+        !Array.isArray(routes) ||
+        routes.length !== 2 ||
+        routes[0].owner !== "questionable-file-manager" ||
+        routes[0].product_channel !== "labs" ||
+        routes[0].purpose !== "quest-installation" ||
+        routes[0].relationship !== "distinct-product" ||
+        routes[1].owner !== "rusty-hostess" ||
+        routes[1].product_channel !== "labs" ||
+        routes[1].purpose !== "windows-control-companion" ||
+        routes[1].relationship !== "distinct-product" ||
+        catalog.products.some((product) =>
+          product.owner !== "rusty-connection-hub" &&
+          (product.security_notice !== undefined ||
+           product.companion_routes !== undefined))) {
+      throw new Error("Connection Hub safety or companion contract is invalid.");
     }
     return catalog;
   };
@@ -128,6 +157,7 @@
 
   const renderProduct = (product) => {
     const card = element("article", "product-card");
+    card.id = `product-${product.owner}`;
     const header = element("header");
     const platforms = [...new Set(product.product_channels.map(
       (channel) => channel.identity.platform === "windows" ? "Windows" : "Android / Quest"
@@ -135,6 +165,19 @@
     header.append(element("p", "platform", platforms.join(" · ")));
     header.append(element("h3", null, product.name));
     card.append(header);
+
+    if (product.security_notice) {
+      const warning = element("div", "notice warning");
+      warning.append(
+        element("strong", null, "Experimental plaintext trusted-LAN control. ")
+      );
+      warning.append(
+        "This option has no confidentiality and is not production eligible. " +
+        "Pairing authenticates a controller but does not encrypt the WebSocket. " +
+        "The listener starts stopped and requires explicit wearer opt-in."
+      );
+      card.append(warning);
+    }
 
     if (!product.product_channels.some((channel) => channel.product_channel === "stable")) {
       card.append(
@@ -160,6 +203,34 @@
       ));
       notes.append(element("p", null, product.distribution_notes.removal));
       card.append(notes);
+    }
+    if (product.companion_routes) {
+      const companionNames = {
+        "questionable-file-manager": "QuestIonAble File Manager Labs",
+        "rusty-hostess": "Rusty Hostess Labs"
+      };
+      const routes = element("section", "product-scope");
+      routes.append(element("h4", null, "Distinct companion routes"));
+      routes.append(element(
+        "p",
+        null,
+        "Connection Hub has no standalone guided installer. These links open " +
+        "separate owner product cards; they do not make either companion part " +
+        "of the Hub package or release authority."
+      ));
+      for (const route of product.companion_routes) {
+        const paragraph = element("p");
+        const link = element("a", "companion-link", companionNames[route.owner]);
+        link.href = `#product-${route.owner}`;
+        paragraph.append(link);
+        paragraph.append(
+          route.purpose === "quest-installation"
+            ? " — separate Quest installation route."
+            : " — separate Windows control companion."
+        );
+        routes.append(paragraph);
+      }
+      card.append(routes);
     }
 
     for (const channel of product.product_channels) {

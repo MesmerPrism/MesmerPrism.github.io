@@ -292,6 +292,83 @@
           }
         }
       ]
+    },
+    {
+      "owner": "rusty-connection-hub",
+      "name": "Rusty Connection Hub",
+      "repository": "https://github.com/MesmerPrism/rusty-quest",
+      "complete_product": true,
+      "distribution_notes": {
+        "included": [
+          "on-device connection and session hub",
+          "paired controller admission",
+          "explicit experimental trusted-LAN plaintext WebSocket control"
+        ],
+        "external": [
+          "QuestIonAble File Manager Labs installation route",
+          "Rusty Hostess Labs Windows control companion"
+        ],
+        "authority_exclusions": [
+          "standalone guided installer",
+          "transport confidentiality",
+          "pairing-based encryption",
+          "production eligibility",
+          "arbitrary remote commands",
+          "high-rate media data plane"
+        ],
+        "removal": "Uninstalling Rusty Connection Hub Labs removes only its labs-only Android package and does not remove its distinct companion products."
+      },
+      "security_notice": {
+        "transport_classification": "trusted_lan_experimental",
+        "confidentiality": "none",
+        "production_eligible": false,
+        "pairing_authenticates_but_does_not_encrypt": true,
+        "listener_default": "stopped",
+        "explicit_wearer_opt_in_required": true
+      },
+      "companion_routes": [
+        {
+          "owner": "questionable-file-manager",
+          "product_channel": "labs",
+          "purpose": "quest-installation",
+          "relationship": "distinct-product"
+        },
+        {
+          "owner": "rusty-hostess",
+          "product_channel": "labs",
+          "purpose": "windows-control-companion",
+          "relationship": "distinct-product"
+        }
+      ],
+      "feedback": {
+        "issue_url": "https://github.com/MesmerPrism/rusty-quest/issues/new?title=%5BConnection%20Hub%20labs%20feedback%5D%20&body=Channel%3A%20labs%0AVersion%3A%20%3Cversion%3E%0ASource%20revision%3A%20%3C40-hex%20commit%3E%0AArtifact%20SHA-256%3A%20%3C64-hex%20digest%3E%0AOperating%20system%3A%20%3COS%20and%20version%3E%0ADevice%20class%3A%20%3Cclass%2C%20not%20serial%3E%0A%0ADo%20not%20include%20credentials%2C%20personal%20data%2C%20device%20serials%2C%20network%20addresses%2C%20pairing%20material%2C%20or%20private%20logs.",
+        "required_fields": [
+          "product_channel",
+          "version",
+          "source_revision",
+          "artifact_sha256",
+          "operating_system",
+          "device_class"
+        ],
+        "privacy_warning": "Do not include credentials, personal data, device serials, network addresses, pairing material, or private logs."
+      },
+      "product_channels": [
+        {
+          "product_channel": "labs",
+          "maturity": "alpha",
+          "distribution_track": "github-prerelease",
+          "opt_in": true,
+          "availability": "unpublished",
+          "identity": {
+            "platform": "android",
+            "installation_identity": "io.github.mesmerprism.rustymanifold.broker",
+            "identity_authority": "owner-release-metadata",
+            "relationship_to_stable": "labs-only"
+          },
+          "transition": "remove-labs",
+          "release": null
+        }
+      ]
     }
   ]
 }

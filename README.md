@@ -58,26 +58,28 @@ binaries and makes no release claim until an owning workflow supplies complete
 exact-tag provenance. See
 [`docs/DISTRIBUTION_CATALOG.md`](docs/DISTRIBUTION_CATALOG.md) for the owner
 authority, Fleet Pages composition, feedback, and validation contracts.
-It currently models five complete-product owners, including the unpublished,
-opt-in Rusty Hostess Windows labs owner without asserting a stable release.
-A fail-closed Rusty Connection Hub owner-manifest adapter is retained only as a
-dormant candidate contract. It does not add a sixth product, release link, or
-publication claim. Activation requires a separate externally validated change
-to the catalog, owner registry, browser projection, and complete-set authority;
-the plaintext trusted-LAN option must remain explicitly labelled as providing
-no confidentiality and as not production eligible.
+It currently models six complete-product owners, including the labs-only Rusty
+Hostess and Rusty Connection Hub owners without inventing stable identities.
+Connection Hub enters as an unpublished channel policy. Its plaintext
+trusted-LAN option is explicitly labelled as providing no confidentiality and
+as not production eligible; pairing authenticates a controller but does not
+encrypt the WebSocket. The Hub card claims no standalone guided installer and
+links only to the separate QuestIonAble File Manager installation and Rusty
+Hostess control-companion product cards.
 The protected read-only preflight can validate exact live owner releases and
 retain private review evidence, but it has no Pages deployment or publication
 permission and never changes the checked-in unpublished baseline. Its central
-workflow requires all five Labs owners; Kiosk adds strict JSON-manifest and
+workflow requires all six Labs owners; Kiosk adds strict JSON-manifest and
 coinstallable-lineage validation without downloading either APK. Product
 channel, release maturity, and distribution track remain separate bounded
 facts; first Labs candidates use the `github-prerelease` track and may retain
 `-alpha.N` maturity tags. Kiosk Meta Store distribution remains owned by its
 separate launcher metadata, outside this GitHub-bundle catalog projection.
 An independently authorized, main-only publication workflow can then install
-the exact complete-set preflight artifact into the public catalog without
-downloading or hosting owner binaries.
+the exact six-owner preflight artifact into the public catalog without
+downloading or hosting owner binaries. The prior five-owner publication record
+remains evidence only for its original five-product projection while Hub is
+unpublished; the first real six-owner publication replaces it.
 Installation identities likewise remain owner-metadata facts; the catalog is
 never their authority.
 

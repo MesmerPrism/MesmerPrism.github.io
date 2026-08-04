@@ -18,6 +18,7 @@ from preflight_distribution_catalog import (
     run_preflight,
     sha256_bytes,
     strict_json_bytes,
+    validate_request,
 )
 from test_connection_hub_catalog_contract import ConnectionHubCatalogContractTest
 
@@ -31,6 +32,12 @@ PRIMARY_BYTES = 1234
 HELPER_HASH = "5" * 64
 LICENSE_HASH = "6" * 64
 SOURCE_TEXT_HASH = "7" * 64
+ACTIVATION_REQUEST = (
+    Path(__file__).resolve().parent
+    / "fixtures"
+    / "distribution-catalog"
+    / "connection-hub-six-owner-activation-request.json"
+)
 
 
 def fail(message: str) -> None:
@@ -264,15 +271,52 @@ def exact_metadata(owner: str, tag: str) -> tuple[dict, str]:
             },
             "rusty-quest-package-updater.apk",
         )
+    if owner == "rusty-connection-hub":
+        version = tag.removeprefix("connection-hub-v")
+        sequence = int(version.rsplit(".", 1)[1])
+        return (
+            {
+                "$schema": "rusty.quest.connection_hub_labs_release.v1",
+                "product": "Rusty Connection Hub",
+                "release_tag": tag,
+                "channel": "labs",
+                "maturity": "alpha",
+                "package_name": "io.github.mesmerprism.rustymanifold.broker",
+                "version_code": 10000 + sequence,
+                "version_name": version,
+                "source_revision": SOURCE,
+                "source_tree": TREE,
+                "source_url": (
+                    "https://github.com/MesmerPrism/rusty-quest/tree/"
+                    f"{SOURCE}/apps/manifold-broker-android"
+                ),
+                "manifold_source_revision": "8" * 40,
+                "manifold_source_tree": "9" * 40,
+                "signer_sha256": SIGNER_HASH,
+                "artifact_name": f"rusty-connection-hub-{version}.apk",
+                "artifact_sha256": PRIMARY_HASH,
+                "artifact_size": PRIMARY_BYTES,
+                "build_manifest_sha256": "8" * 64,
+                "release_manifest_debug_operator_absent": True,
+                "listener_default": "stopped",
+                "transport_classification": "trusted_lan_experimental",
+                "confidentiality": "none",
+                "production_eligible": False,
+                "insecure_trusted_lan_requires_explicit_opt_in": True,
+                "arbitrary_remote_commands": False,
+                "high_rate_media_data_plane": False,
+            },
+            f"rusty-connection-hub-{version}.apk",
+        )
     fail(f"unsupported fixture owner: {owner}")
 
 
 def owner_tag(owner: str) -> str:
-    return (
-        "package-updater-v0.1.0-alpha.7"
-        if owner == "rusty-quest-package-updater"
-        else "v1.2.3-alpha.4"
-    )
+    if owner == "rusty-quest-package-updater":
+        return "package-updater-v0.1.0-alpha.7"
+    if owner == "rusty-connection-hub":
+        return "connection-hub-v0.1.0-alpha.4"
+    return "v1.2.3-alpha.4"
 
 
 def make_record(owner: str) -> tuple[dict, dict]:
@@ -288,6 +332,7 @@ def make_record(owner: str) -> tuple[dict, dict]:
         "rusty-kiosk": "rusty-kiosk-labs-owner-release.json",
         "rusty-quest-package-updater":
             "rusty-quest-package-updater.release.json",
+        "rusty-connection-hub": "connection-hub-release-manifest.json",
     }[owner]
     repository = OWNERS[owner]["repository"]
     request = {
@@ -347,6 +392,26 @@ def make_record(owner: str) -> tuple[dict, dict]:
                     ),
                 }
             )
+    elif owner == "rusty-connection-hub":
+        for asset_id, (name, digest, size) in enumerate(
+            (
+                ("LICENSE", "6" * 64, 34523),
+                ("SOURCE-NOTICE.md", "7" * 64, 1122),
+            ),
+            start=103,
+        ):
+            assets.append(
+                {
+                    "id": asset_id,
+                    "name": name,
+                    "size": size,
+                    "digest": f"sha256:{digest}",
+                    "state": "uploaded",
+                    "browser_download_url": canonical_asset_url(
+                        repository, tag, name
+                    ),
+                }
+            )
     readback = {
         "owner": owner,
         "release": {
@@ -388,6 +453,7 @@ def complete_fixture() -> tuple[dict, dict]:
         "rusty-hostess",
         "rusty-kiosk",
         "rusty-quest-package-updater",
+        "rusty-connection-hub",
     ):
         request, readback = make_record(owner)
         requests.append(request)
@@ -413,14 +479,36 @@ def assert_rejected(action, label: str) -> None:
 
 
 def main() -> int:
-    dormant_suite = unittest.defaultTestLoader.loadTestsFromTestCase(
+    connection_hub_suite = unittest.defaultTestLoader.loadTestsFromTestCase(
         ConnectionHubCatalogContractTest
     )
-    dormant_result = unittest.TextTestRunner(verbosity=1).run(dormant_suite)
-    if not dormant_result.wasSuccessful():
-        fail("dormant Connection Hub catalog contract tests failed")
+    connection_hub_result = unittest.TextTestRunner(verbosity=1).run(
+        connection_hub_suite
+    )
+    if not connection_hub_result.wasSuccessful():
+        fail("active Connection Hub catalog contract tests failed")
 
     baseline = json.loads(CATALOG_PATH.read_text(encoding="utf-8"))
+    reviewed_request = strict_json_bytes(
+        ACTIVATION_REQUEST.read_bytes(),
+        "reviewed six-owner activation request",
+        65536,
+    )
+    validated_request = validate_request(
+        reviewed_request,
+        require_complete_labs_set=True,
+    )
+    if {
+        record["owner"]: record["tag"] for record in validated_request
+    } != {
+        "questionable-file-manager": "v0.5.0-alpha.14",
+        "rusty-fleet": "v0.1.0-alpha.8",
+        "rusty-hostess": "v0.1.0-alpha.7",
+        "rusty-kiosk": "v0.6.6-alpha.9",
+        "rusty-quest-package-updater": "package-updater-v0.1.0-alpha.3",
+        "rusty-connection-hub": "connection-hub-v0.1.0-alpha.3",
+    }:
+        fail("reviewed six-owner activation request drifted")
     request, fixture = complete_fixture()
     generated, receipt = run_preflight(
         request,
@@ -461,12 +549,13 @@ def main() -> int:
             "rusty-hostess",
             "rusty-kiosk",
             "rusty-quest-package-updater",
+            "rusty-connection-hub",
         }
         or published["rusty-quest-package-updater"]["release"]["tag"]
         != "package-updater-v0.1.0-alpha.7"
         or published["rusty-quest-package-updater"]["release"]["version"]
         != "0.1.0-alpha.7"
-        or receipt["record_count"] != 5
+        or receipt["record_count"] != 6
         or receipt["complete_labs_owner_set"] is not True
         or receipt["publication_authorized"] is not False
         or receipt["pages_deployment_invoked"] is not False
@@ -499,6 +588,25 @@ def main() -> int:
         != "rusty-kiosk.apk"
     ):
         fail("Kiosk owner release was not projected exactly")
+    hub = next(
+        item for item in generated["products"]
+        if item["owner"] == "rusty-connection-hub"
+    )
+    hub_labs = hub["product_channels"][0]
+    if (
+        hub_labs["availability"] != "published"
+        or hub_labs["release"]["tag"]
+        != "connection-hub-v0.1.0-alpha.4"
+        or hub_labs["release"]["artifact_name"]
+        != "rusty-connection-hub-0.1.0-alpha.4.apk"
+        or hub["security_notice"]["confidentiality"] != "none"
+        or hub["security_notice"][
+            "pairing_authenticates_but_does_not_encrypt"
+        ] is not True
+        or [route["owner"] for route in hub["companion_routes"]]
+        != ["questionable-file-manager", "rusty-hostess"]
+    ):
+        fail("Connection Hub owner release or safety policy was not projected")
 
     def damaged(
         mutate,
@@ -923,7 +1031,7 @@ def main() -> int:
             fail(f"read-only preflight workflow contains route: {forbidden}")
     print(
         "Distribution catalog read-only preflight tests passed: "
-        "5 active owner adapters, dormant Connection Hub contract, "
+        "6 active owner adapters including Connection Hub, "
         "strict Kiosk manifest lineage, "
         f"{len(mutations) + 4 + fleet_damage_count + kiosk_damage_count} "
         "damage classes"
