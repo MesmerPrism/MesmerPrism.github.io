@@ -369,6 +369,86 @@ foreach ($forbidden in @(
     }
 }
 
+$adapterTokens = $null
+$adapterParseErrors = $null
+$adapterAst = [Management.Automation.Language.Parser]::ParseInput(
+    $adapter,
+    [ref]$adapterTokens,
+    [ref]$adapterParseErrors
+)
+if (@($adapterParseErrors).Count -ne 0) {
+    throw 'base-owned adapter does not parse cleanly'
+}
+$coherenceDefinitions = @($adapterAst.FindAll({
+    param($node)
+    return (
+        $node -is [Management.Automation.Language.FunctionDefinitionAst] -and
+        $node.Name -ceq 'Assert-PullRequestObjectCoherence'
+    )
+}, $true))
+if ($coherenceDefinitions.Count -ne 1) {
+    throw 'base-owned adapter must define exactly one merge-coherence function'
+}
+. ([scriptblock]::Create($coherenceDefinitions[0].Extent.Text))
+
+$coherenceBase = '1' * 40
+$coherenceHead = '2' * 40
+$eventMerge = '3' * 40
+$currentMerge = '4' * 40
+if ($eventMerge -ceq $currentMerge) {
+    throw 'merge-object churn regression is not distinct'
+}
+Assert-PullRequestObjectCoherence `
+    -FetchedHead $coherenceHead `
+    -FetchedMerge $currentMerge `
+    -MergeParents @($currentMerge, $coherenceBase, $coherenceHead) `
+    -BaseCommit $coherenceBase `
+    -CandidateCommit $coherenceHead
+
+$coherenceDamages = @(
+    @{
+        Label = 'wrong fetched head'
+        FetchedHead = '5' * 40
+        Parents = @($currentMerge, $coherenceBase, $coherenceHead)
+    },
+    @{
+        Label = 'wrong merge base parent'
+        FetchedHead = $coherenceHead
+        Parents = @($currentMerge, ('6' * 40), $coherenceHead)
+    },
+    @{
+        Label = 'wrong merge head parent'
+        FetchedHead = $coherenceHead
+        Parents = @($currentMerge, $coherenceBase, ('7' * 40))
+    },
+    @{
+        Label = 'missing merge parent'
+        FetchedHead = $coherenceHead
+        Parents = @($currentMerge, $coherenceBase)
+    },
+    @{
+        Label = 'extra merge parent'
+        FetchedHead = $coherenceHead
+        Parents = @($currentMerge, $coherenceBase, $coherenceHead, ('8' * 40))
+    }
+)
+foreach ($damage in $coherenceDamages) {
+    $rejected = $false
+    try {
+        Assert-PullRequestObjectCoherence `
+            -FetchedHead ([string]$damage.FetchedHead) `
+            -FetchedMerge $currentMerge `
+            -MergeParents ([string[]]$damage.Parents) `
+            -BaseCommit $coherenceBase `
+            -CandidateCommit $coherenceHead
+    } catch {
+        $rejected = $true
+    }
+    if (-not $rejected) {
+        throw "merge-coherence damage was accepted: $($damage.Label)"
+    }
+}
+
 & $verifierSelfTest
 if (-not $?) {
     throw 'pinned shared verifier adversarial self-test failed'

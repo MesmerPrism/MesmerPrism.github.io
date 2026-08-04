@@ -91,6 +91,25 @@ function Assert-PinnedVerifierObject {
     }
 }
 
+function Assert-PullRequestObjectCoherence {
+    param(
+        [Parameter(Mandatory = $true)][string]$FetchedHead,
+        [Parameter(Mandatory = $true)][string]$FetchedMerge,
+        [Parameter(Mandatory = $true)][string[]]$MergeParents,
+        [Parameter(Mandatory = $true)][string]$BaseCommit,
+        [Parameter(Mandatory = $true)][string]$CandidateCommit
+    )
+    if ($FetchedHead -cne $CandidateCommit) {
+        throw 'fetched pull-request head does not match event candidate'
+    }
+    if ($MergeParents.Count -ne 3 -or
+        $MergeParents[0] -cne $FetchedMerge -or
+        $MergeParents[1] -cne $BaseCommit -or
+        $MergeParents[2] -cne $CandidateCommit) {
+        throw 'current GitHub merge witness is not exactly event base plus head'
+    }
+}
+
 Assert-CleanGitEnvironment
 if ($EventName -cne 'pull_request_target' -or
     $Repository -cne $ExpectedRepository -or
@@ -156,19 +175,18 @@ if ($LASTEXITCODE -ne 0) {
 }
 $fetchedHead = Invoke-GitText -Root $BaseRoot -Arguments @('rev-parse', $headRef)
 $fetchedMerge = Invoke-GitText -Root $BaseRoot -Arguments @('rev-parse', $mergeRef)
-if ($fetchedHead -cne $CandidateCommit -or $fetchedMerge -cne $EventMergeCommit) {
-    throw 'fetched pull-request objects do not match event identity'
-}
 $mergeLine = Invoke-GitText -Root $BaseRoot -Arguments @(
     'rev-list', '--parents', '-n', '1', $fetchedMerge
 )
-$mergeParents = @($mergeLine.Split(' ', [StringSplitOptions]::RemoveEmptyEntries))
-if ($mergeParents.Count -ne 3 -or
-    $mergeParents[0] -cne $EventMergeCommit -or
-    $mergeParents[1] -cne $BaseCommit -or
-    $mergeParents[2] -cne $CandidateCommit) {
-    throw 'GitHub merge candidate is not exactly base plus head'
-}
+[string[]]$mergeParents = @(
+    $mergeLine.Split(' ', [StringSplitOptions]::RemoveEmptyEntries)
+)
+Assert-PullRequestObjectCoherence `
+    -FetchedHead $fetchedHead `
+    -FetchedMerge $fetchedMerge `
+    -MergeParents $mergeParents `
+    -BaseCommit $BaseCommit `
+    -CandidateCommit $CandidateCommit
 
 & $verifierScript `
     -RepositoryRoot $BaseRoot `
