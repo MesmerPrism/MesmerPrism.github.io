@@ -21,6 +21,7 @@ SCHEMA_PATH = (
 OWNER = "rusty-connection-hub"
 REPOSITORY = "MesmerPrism/rusty-quest"
 METADATA_ASSET = "connection-hub-release-manifest.json"
+AUXILIARY_ASSETS = frozenset({"LICENSE", "SOURCE-NOTICE.md"})
 INSTALLATION_IDENTITY = "io.github.mesmerprism.rustymanifold.broker"
 TAG = re.compile(r"^connection-hub-v(0\.1\.0-alpha\.([1-9]\d*))$")
 
@@ -54,6 +55,7 @@ def required_release_asset_names(tag: str) -> frozenset[str]:
         {
             METADATA_ASSET,
             f"rusty-connection-hub-{version}.apk",
+            *AUXILIARY_ASSETS,
         }
     )
 

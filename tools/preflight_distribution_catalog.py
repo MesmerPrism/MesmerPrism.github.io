@@ -1110,7 +1110,7 @@ def normalized_snapshot(
         if names != expected_connection_hub_assets:
             fail(
                 "Connection Hub release inventory is not the exact "
-                "two-asset contract"
+                "four-asset contract"
             )
     chain = readback.get("tag_chain")
     if not isinstance(chain, list) or not 1 <= len(chain) <= 6:
