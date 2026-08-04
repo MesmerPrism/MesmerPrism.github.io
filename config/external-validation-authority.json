@@ -186,6 +186,23 @@
         }
       ],
       "status": "approved"
+    },
+    {
+      "approval_id": "connection-hub-six-owner-renewal-contract",
+      "required_ancestor": "8b4ebc80cdd147c8835446893caa0b075006d375",
+      "changed_paths": [
+        "tools/test_connection_hub_catalog_contract.py"
+      ],
+      "artifacts": [
+        {
+          "path": "tools/test_connection_hub_catalog_contract.py",
+          "state": "present",
+          "mode": "100644",
+          "size_bytes": 26432,
+          "sha256": "f97ea14886feeed8cff66b40af3fa56020de14b023cb667be7f9993ff3e251f7"
+        }
+      ],
+      "status": "approved"
     }
   ],
   "status": "active"
