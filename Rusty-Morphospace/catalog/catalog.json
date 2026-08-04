@@ -55,13 +55,13 @@
           },
           "transition": "uninstall-labs-without-changing-stable",
           "release": {
-            "tag": "v0.5.0-alpha.6",
-            "version": "0.5.0-alpha.6",
-            "source_revision": "146eaed6e56460c520a073d8d224708bb36bc35c",
+            "tag": "v0.5.0-alpha.10",
+            "version": "0.5.0-alpha.10",
+            "source_revision": "fea16667a2adf2cd4ef0ea815b981fd5c3be5150",
             "artifact_name": "QuestIonAbleFileManager-Labs-Setup.exe",
-            "artifact_url": "https://github.com/MesmerPrism/QuestIonAble-File-Manager/releases/download/v0.5.0-alpha.6/QuestIonAbleFileManager-Labs-Setup.exe",
-            "artifact_sha256": "d1d2a678cf20f613ee30fb0072928e20a2265f82e2a2b7bd778be5ec53786eec",
-            "bytes": 142615464,
+            "artifact_url": "https://github.com/MesmerPrism/QuestIonAble-File-Manager/releases/download/v0.5.0-alpha.10/QuestIonAbleFileManager-Labs-Setup.exe",
+            "artifact_sha256": "f01d28c467bd80a5be28e8fff03b90bf35dd0d6ef5849c7b23c1c131ba39e000",
+            "bytes": 142779304,
             "installation_identity": "MesmerPrism.QuestIonAbleFileManager.Labs"
           }
         }
@@ -114,13 +114,13 @@
           },
           "transition": "uninstall-labs-without-changing-stable",
           "release": {
-            "tag": "v0.1.0-alpha.5",
-            "version": "0.1.0-alpha.5",
-            "source_revision": "108782934f9ae5a08a77ffa1f3aa55b19af85b05",
+            "tag": "v0.1.0-alpha.8",
+            "version": "0.1.0-alpha.8",
+            "source_revision": "1078a92703dab80bf5af3da01f0c2082c4db8abd",
             "artifact_name": "RustyFleet-Labs-Setup.exe",
-            "artifact_url": "https://github.com/MesmerPrism/rusty-fleet/releases/download/v0.1.0-alpha.5/RustyFleet-Labs-Setup.exe",
-            "artifact_sha256": "5206234ef2602da6450d0cea83b8478e2f11a3caa75acb747b1cb95174b73fbb",
-            "bytes": 204304912,
+            "artifact_url": "https://github.com/MesmerPrism/rusty-fleet/releases/download/v0.1.0-alpha.8/RustyFleet-Labs-Setup.exe",
+            "artifact_sha256": "79baf76b1de6163ff93c0274c35f8c1fca467b35b9eab9489a02cb6fb3fd4200",
+            "bytes": 204481040,
             "installation_identity": "rusty-fleet-labs"
           }
         }
@@ -237,12 +237,12 @@
           },
           "transition": "uninstall-labs-without-changing-stable",
           "release": {
-            "tag": "v0.6.6-alpha.8",
-            "version": "0.6.6-alpha.8",
-            "source_revision": "22f45fccdeee458c4f6e21f2d482fe6e15ad0c98",
+            "tag": "v0.6.6-alpha.9",
+            "version": "0.6.6-alpha.9",
+            "source_revision": "be1321c9cf6c9c0d7e61d6920a815ab44166ea5a",
             "artifact_name": "rusty-kiosk.apk",
-            "artifact_url": "https://github.com/MesmerPrism/Rusty-Kiosk/releases/download/v0.6.6-alpha.8/rusty-kiosk.apk",
-            "artifact_sha256": "522a28254b0a154e610b1977ee49a9a2850db958d8e6934811220c19bb62e373",
+            "artifact_url": "https://github.com/MesmerPrism/Rusty-Kiosk/releases/download/v0.6.6-alpha.9/rusty-kiosk.apk",
+            "artifact_sha256": "269bbc923407525acb954d164c21cc5f34e1a6d436dce2466d204ea68508a366",
             "bytes": 87275373,
             "installation_identity": "io.github.mesmerprism.rustykiosk.labs"
           }
