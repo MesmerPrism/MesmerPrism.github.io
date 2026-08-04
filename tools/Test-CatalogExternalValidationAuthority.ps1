@@ -150,9 +150,49 @@ if ($policy.schema -cne `
         'rusty.morphospace.workflow.external_validation_authority_policy.v1' -or
     $policy.policy_id -cne 'mesmerprism-catalog-external-validation-authority-v1' -or
     $policy.repository -cne 'MesmerPrism/MesmerPrism.github.io' -or
-    $policy.status -cne 'active' -or
-    @($policy.approved_change_sets).Count -ne 0) {
-    throw 'bootstrap policy identity differs or it contains an approval'
+    $policy.status -cne 'active') {
+    throw 'catalog authority policy identity differs'
+}
+
+$zeroApprovalPolicy = $policyJson | ConvertFrom-Json -Depth 40
+$zeroApprovalPolicy.approved_change_sets = @()
+$zeroApprovalJson = $zeroApprovalPolicy | ConvertTo-Json -Depth 40
+if (-not (Test-Json -Json $zeroApprovalJson -SchemaFile $policySchemaPath `
+        -ErrorAction Stop)) {
+    throw 'zero-approval policy rejected its repository-owned schema'
+}
+
+$nonzeroApprovalPolicy = $zeroApprovalJson | ConvertFrom-Json -Depth 40
+$nonzeroApprovalPolicy.approved_change_sets = @(
+    [pscustomobject][ordered]@{
+        approval_id = 'schema-regression-approval'
+        required_ancestor = ('1' * 40)
+        changed_paths = @('AGENTS.md')
+        artifacts = @(
+            [pscustomobject][ordered]@{
+                path = 'AGENTS.md'
+                state = 'present'
+                mode = '100644'
+                size_bytes = 0
+                sha256 = ('2' * 64)
+            }
+        )
+        status = 'approved'
+    }
+)
+$nonzeroApprovalJson = $nonzeroApprovalPolicy | ConvertTo-Json -Depth 40
+if (-not (Test-Json -Json $nonzeroApprovalJson -SchemaFile $policySchemaPath `
+        -ErrorAction Stop)) {
+    throw 'schema-valid nonzero approval policy was rejected'
+}
+$malformedApprovalPolicy = $nonzeroApprovalJson | ConvertFrom-Json -Depth 40
+$malformedApprovalPolicy.approved_change_sets[0].artifacts[0].sha256 = 'bad'
+$malformedAccepted = Test-Json `
+    -Json ($malformedApprovalPolicy | ConvertTo-Json -Depth 40) `
+    -SchemaFile $policySchemaPath `
+    -ErrorAction SilentlyContinue
+if ($malformedAccepted) {
+    throw 'malformed nonzero approval policy was accepted'
 }
 
 $expectedMandatory = @(
@@ -399,6 +439,12 @@ try {
     Invoke-GitText $tempRoot @('merge', '--no-ff', 'main', '-m', 'merge approved base') | Out-Null
     $authorizedHead = Invoke-GitText $tempRoot @('rev-parse', 'HEAD')
 
+    Invoke-GitText $tempRoot @('switch', '-c', 'widened-candidate', $authorizedHead) | Out-Null
+    Write-Utf8Lf (Join-Path $tempRoot 'ordinary.txt') "widened candidate bytes`n"
+    Invoke-GitText $tempRoot @('add', '--', 'ordinary.txt') | Out-Null
+    Invoke-GitText $tempRoot @('commit', '-m', 'widen sealed candidate') | Out-Null
+    $widenedHead = Invoke-GitText $tempRoot @('rev-parse', 'HEAD')
+
     Invoke-GitText $tempRoot @('switch', '-c', 'unauthorized-protected', $approvedBase) | Out-Null
     Write-Utf8Lf (Join-Path $tempRoot 'protected.txt') "unapproved protected bytes`n"
     Invoke-GitText $tempRoot @('add', '--', 'protected.txt') | Out-Null
@@ -440,6 +486,22 @@ try {
         throw 'unauthorized protected synthetic candidate was admitted'
     }
 
+    $widenedRejected = $false
+    try {
+        & $verifierScript `
+            -RepositoryRoot $tempRoot `
+            -PolicyPath 'config/external-validation-authority.json' `
+            -Repository 'MesmerPrism/MesmerPrism.github.io' `
+            -BaseCommit $approvedBase `
+            -CandidateCommit $widenedHead `
+            -Json | Out-Null
+    } catch {
+        $widenedRejected = $true
+    }
+    if (-not $widenedRejected) {
+        throw 'approved synthetic candidate was admitted after path widening'
+    }
+
     $ordinaryJson = & $verifierScript `
         -RepositoryRoot $tempRoot `
         -PolicyPath 'config/external-validation-authority.json' `
@@ -463,4 +525,4 @@ try {
     Remove-Item -LiteralPath $resolvedTemp -Recurse -Force
 }
 
-Write-Output 'Catalog external validation authority bootstrap contract passed.'
+Write-Output 'Catalog external validation authority contract passed.'
