@@ -55,13 +55,13 @@
           },
           "transition": "uninstall-labs-without-changing-stable",
           "release": {
-            "tag": "v0.5.0-alpha.10",
-            "version": "0.5.0-alpha.10",
-            "source_revision": "fea16667a2adf2cd4ef0ea815b981fd5c3be5150",
+            "tag": "v0.5.0-alpha.14",
+            "version": "0.5.0-alpha.14",
+            "source_revision": "f38f9d245d0669dff0d28d7de514ac38144b3a54",
             "artifact_name": "QuestIonAbleFileManager-Labs-Setup.exe",
-            "artifact_url": "https://github.com/MesmerPrism/QuestIonAble-File-Manager/releases/download/v0.5.0-alpha.10/QuestIonAbleFileManager-Labs-Setup.exe",
-            "artifact_sha256": "f01d28c467bd80a5be28e8fff03b90bf35dd0d6ef5849c7b23c1c131ba39e000",
-            "bytes": 142779304,
+            "artifact_url": "https://github.com/MesmerPrism/QuestIonAble-File-Manager/releases/download/v0.5.0-alpha.14/QuestIonAbleFileManager-Labs-Setup.exe",
+            "artifact_sha256": "ee69b174be7aa316d9e705be9d62ffbd1b39a108345706f61d2a3063c92342e5",
+            "bytes": 142798248,
             "installation_identity": "MesmerPrism.QuestIonAbleFileManager.Labs"
           }
         }
@@ -178,13 +178,13 @@
           },
           "transition": "remove-labs-without-changing-other-products",
           "release": {
-            "tag": "v0.1.0-alpha.6",
-            "version": "0.1.0-alpha.6",
-            "source_revision": "f9b631a4535be4d658a22de41470efb8e7adec30",
+            "tag": "v0.1.0-alpha.7",
+            "version": "0.1.0-alpha.7",
+            "source_revision": "a6a62e6f9de2d8d03957cd59e786ddf96bc669e2",
             "artifact_name": "RustyHostess-Labs-0.1.0-win-x64.zip",
-            "artifact_url": "https://github.com/MesmerPrism/rusty-hostess/releases/download/v0.1.0-alpha.6/RustyHostess-Labs-0.1.0-win-x64.zip",
-            "artifact_sha256": "f58d99b4e57dc08502f5384933127a1071a3e9f23f28cfc8881dc2566fcf3a52",
-            "bytes": 71269149,
+            "artifact_url": "https://github.com/MesmerPrism/rusty-hostess/releases/download/v0.1.0-alpha.7/RustyHostess-Labs-0.1.0-win-x64.zip",
+            "artifact_sha256": "74e4cf5c5c912fb308b9b80a82080feed81a35753392a22375287234260a437a",
+            "bytes": 71321800,
             "installation_identity": "rusty-hostess-labs"
           }
         }
@@ -358,7 +358,7 @@
           "maturity": "alpha",
           "distribution_track": "github-prerelease",
           "opt_in": true,
-          "availability": "unpublished",
+          "availability": "published",
           "identity": {
             "platform": "android",
             "installation_identity": "io.github.mesmerprism.rustymanifold.broker",
@@ -366,7 +366,16 @@
             "relationship_to_stable": "labs-only"
           },
           "transition": "remove-labs",
-          "release": null
+          "release": {
+            "tag": "connection-hub-v0.1.0-alpha.3",
+            "version": "0.1.0-alpha.3",
+            "source_revision": "90dee15aebbe150c074550c5510900b393191f28",
+            "artifact_name": "rusty-connection-hub-0.1.0-alpha.3.apk",
+            "artifact_url": "https://github.com/MesmerPrism/rusty-quest/releases/download/connection-hub-v0.1.0-alpha.3/rusty-connection-hub-0.1.0-alpha.3.apk",
+            "artifact_sha256": "494e0996e99ac598d1f20c49ac4c7fd8a079dcf1e5329aa064cea076b04195bc",
+            "bytes": 19711402,
+            "installation_identity": "io.github.mesmerprism.rustymanifold.broker"
+          }
         }
       ]
     }
