@@ -57,6 +57,136 @@
       "path": "config/external-validation-authority.json"
     }
   ],
-  "approved_change_sets": [],
+  "approved_change_sets": [
+    {
+      "approval_id": "connection-hub-six-owner-activation-qfm-alpha14",
+      "required_ancestor": "958251b00faafeac953b8365b86cd5c08a9c70fe",
+      "changed_paths": [
+        ".github/workflows/distribution-catalog-publish.yml",
+        "AGENTS.md",
+        "README.md",
+        "Rusty-Morphospace/catalog/catalog.js",
+        "Rusty-Morphospace/catalog/catalog.json",
+        "Rusty-Morphospace/catalog/catalog.schema.json",
+        "docs/DISTRIBUTION_CATALOG.md",
+        "tools/connection_hub_catalog_contract.py",
+        "tools/fixtures/distribution-catalog/connection-hub-six-owner-activation-request.json",
+        "tools/preflight_distribution_catalog.py",
+        "tools/publish_distribution_catalog_projection.py",
+        "tools/test_connection_hub_catalog_contract.py",
+        "tools/test_distribution_catalog.py",
+        "tools/test_distribution_catalog_preflight.py",
+        "tools/test_distribution_catalog_projection.py"
+      ],
+      "artifacts": [
+        {
+          "path": ".github/workflows/distribution-catalog-publish.yml",
+          "state": "present",
+          "mode": "100644",
+          "size_bytes": 13049,
+          "sha256": "64f1c0c8092542148bd69c640bc4567fff3f84756f76b82d7a38447ab0c2f313"
+        },
+        {
+          "path": "AGENTS.md",
+          "state": "present",
+          "mode": "100644",
+          "size_bytes": 3824,
+          "sha256": "b69ca2aa539c765ee5708792a705fa1a9614fff15822d281f080d6c571b9c61a"
+        },
+        {
+          "path": "README.md",
+          "state": "present",
+          "mode": "100644",
+          "size_bytes": 4335,
+          "sha256": "77c1b359e1cbcd83113872f0709511559219620694ece7bf4a2cffa1de061d2b"
+        },
+        {
+          "path": "Rusty-Morphospace/catalog/catalog.js",
+          "state": "present",
+          "mode": "100644",
+          "size_bytes": 11146,
+          "sha256": "bb90a1cc6f7ece29fe1cbfb33dcd40f0239306b529412c069980785f3634a4b7"
+        },
+        {
+          "path": "Rusty-Morphospace/catalog/catalog.json",
+          "state": "present",
+          "mode": "100644",
+          "size_bytes": 17133,
+          "sha256": "f33d293af885078b13c17dbb27b53281ad5f6d61e882e4b16682741a0d2e3685"
+        },
+        {
+          "path": "Rusty-Morphospace/catalog/catalog.schema.json",
+          "state": "present",
+          "mode": "100644",
+          "size_bytes": 10188,
+          "sha256": "7a9755e5aeb12d54580f87d5762ed716f518a302eb09166f74aa83010d2ae583"
+        },
+        {
+          "path": "docs/DISTRIBUTION_CATALOG.md",
+          "state": "present",
+          "mode": "100644",
+          "size_bytes": 12952,
+          "sha256": "825cf089984ea200d1636452c171cde53c9dcb666c35095d8e2f38dc429c67b1"
+        },
+        {
+          "path": "tools/connection_hub_catalog_contract.py",
+          "state": "present",
+          "mode": "100644",
+          "size_bytes": 3031,
+          "sha256": "60e3509f6b28abdef4004b3e639b33cf83326717c681929b4b3b60e295eb0cbe"
+        },
+        {
+          "path": "tools/fixtures/distribution-catalog/connection-hub-six-owner-activation-request.json",
+          "state": "present",
+          "mode": "100644",
+          "size_bytes": 2867,
+          "sha256": "4975ebe47c6869832a72fcc31483f69ec8723d798f1d800d67d419fe574bbd56"
+        },
+        {
+          "path": "tools/preflight_distribution_catalog.py",
+          "state": "present",
+          "mode": "100644",
+          "size_bytes": 52397,
+          "sha256": "d0f7309490bcbb0776a9a20fd6661530dafa26fef38853ba7e4a9b0b8b490dca"
+        },
+        {
+          "path": "tools/publish_distribution_catalog_projection.py",
+          "state": "present",
+          "mode": "100644",
+          "size_bytes": 11662,
+          "sha256": "0faf94f992288c7e1a75660946a5cf92ef87668c86b25aec44f01c6b791058fa"
+        },
+        {
+          "path": "tools/test_connection_hub_catalog_contract.py",
+          "state": "present",
+          "mode": "100644",
+          "size_bytes": 14098,
+          "sha256": "06817643395a8654bf41e649684a3a0d4740c477689d97555cf4977793e4acdb"
+        },
+        {
+          "path": "tools/test_distribution_catalog.py",
+          "state": "present",
+          "mode": "100644",
+          "size_bytes": 35728,
+          "sha256": "79aeb1b6f2c1e69cfc861463d33dae853ea0b4692669cce4dbdc8579257c346d"
+        },
+        {
+          "path": "tools/test_distribution_catalog_preflight.py",
+          "state": "present",
+          "mode": "100644",
+          "size_bytes": 37049,
+          "sha256": "8752368f4c22ed2d5639b8719d1e961c4f022acade0641ad8e9b5e54f36d4269"
+        },
+        {
+          "path": "tools/test_distribution_catalog_projection.py",
+          "state": "present",
+          "mode": "100644",
+          "size_bytes": 7466,
+          "sha256": "e8ab8e6a2141301b737aa46251e2d7ecc84b3e45aa34061d1f51ac3867c2147a"
+        }
+      ],
+      "status": "approved"
+    }
+  ],
   "status": "active"
 }
