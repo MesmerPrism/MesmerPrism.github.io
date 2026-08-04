@@ -307,7 +307,8 @@ foreach ($token in @(
     'Test-ExternalValidationAuthoritySelfTest\.ps1',
     'Test-CatalogExternalValidationAuthority\.ps1',
     'Invoke-CatalogExternalValidationAuthority\.ps1',
-    'EVENT_MERGE_SHA: \$\{\{ github\.event\.pull_request\.merge_commit_sha \}\}'
+    'EVENT_BASE_SHA: \$\{\{ github\.event\.pull_request\.base\.sha \}\}',
+    'EVENT_HEAD_SHA: \$\{\{ github\.event\.pull_request\.head\.sha \}\}'
 )) {
     if ($workflow -notmatch $token) {
         throw "external validation workflow is missing contract token: $token"
@@ -331,7 +332,9 @@ foreach ($forbidden in @(
     'submodules:\s*true',
     'lfs:\s*true',
     'persist-credentials:\s*true',
-    'ref:\s*\$\{\{\s*github\.event\.pull_request\.head\.sha'
+    'ref:\s*\$\{\{\s*github\.event\.pull_request\.head\.sha',
+    'merge_commit_sha',
+    'EVENT_MERGE_SHA'
 )) {
     if ($workflow -match $forbidden) {
         throw "external validation workflow contains forbidden authority: $forbidden"
@@ -345,6 +348,7 @@ foreach ($token in @(
     "ExpectedVerifierTree = 'ead3855a2ecc5e1240e271d81a938985457f10e8'",
     "EventName -cne 'pull_request_target'",
     "BaseRef -cne 'main'",
+    'Assert-PullRequestObjectCoherence',
     'refs/codex-validation/pr-',
     '+refs/pull/',
     "'rev-list', '--parents', '-n', '1'",
@@ -362,7 +366,8 @@ foreach ($forbidden in @(
     '(?i)Invoke-Expression',
     '(?i)Start-Process',
     '(?i)Invoke-WebRequest',
-    '(?i)Invoke-RestMethod'
+    '(?i)Invoke-RestMethod',
+    '(?i)EventMergeCommit'
 )) {
     if ($adapter -match $forbidden) {
         throw "base-owned adapter contains forbidden execution route: $forbidden"
@@ -393,11 +398,7 @@ if ($coherenceDefinitions.Count -ne 1) {
 
 $coherenceBase = '1' * 40
 $coherenceHead = '2' * 40
-$eventMerge = '3' * 40
 $currentMerge = '4' * 40
-if ($eventMerge -ceq $currentMerge) {
-    throw 'merge-object churn regression is not distinct'
-}
 Assert-PullRequestObjectCoherence `
     -FetchedHead $coherenceHead `
     -FetchedMerge $currentMerge `
@@ -406,6 +407,11 @@ Assert-PullRequestObjectCoherence `
     -CandidateCommit $coherenceHead
 
 $coherenceDamages = @(
+    @{
+        Label = 'wrong merge witness'
+        FetchedHead = $coherenceHead
+        Parents = @(('9' * 40), $coherenceBase, $coherenceHead)
+    },
     @{
         Label = 'wrong fetched head'
         FetchedHead = '5' * 40

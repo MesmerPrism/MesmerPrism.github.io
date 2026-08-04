@@ -9,7 +9,6 @@ param(
     [Parameter(Mandatory = $true)][string]$EventName,
     [Parameter(Mandatory = $true)][string]$BaseCommit,
     [Parameter(Mandatory = $true)][string]$CandidateCommit,
-    [Parameter(Mandatory = $true)][string]$EventMergeCommit,
     [Parameter(Mandatory = $true)][string]$PullRequestNumber
 )
 
@@ -118,11 +117,8 @@ if ($EventName -cne 'pull_request_target' -or
     $HeadRepository -cnotmatch '^[A-Za-z0-9_.-]{1,100}/[A-Za-z0-9_.-]{1,100}$' -or
     $BaseCommit -cnotmatch '^[0-9a-f]{40}$' -or
     $CandidateCommit -cnotmatch '^[0-9a-f]{40}$' -or
-    $EventMergeCommit -cnotmatch '^[0-9a-f]{40}$' -or
     $PullRequestNumber -cnotmatch '^[1-9][0-9]*$' -or
-    $BaseCommit -ceq $CandidateCommit -or
-    $BaseCommit -ceq $EventMergeCommit -or
-    $CandidateCommit -ceq $EventMergeCommit) {
+    $BaseCommit -ceq $CandidateCommit) {
     throw 'pull-request identity is incomplete, malformed, or outside main'
 }
 
