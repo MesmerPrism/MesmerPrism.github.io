@@ -94,7 +94,6 @@ jobs:
           EVENT_BASE_SHA: ${{ github.event.pull_request.base.sha }}
           EVENT_HEAD_REPOSITORY: ${{ github.event.pull_request.head.repo.full_name }}
           EVENT_HEAD_SHA: ${{ github.event.pull_request.head.sha }}
-          EVENT_MERGE_SHA: ${{ github.event.pull_request.merge_commit_sha }}
           EVENT_NAME_EXACT: ${{ github.event_name }}
           PR_NUMBER_EXACT: ${{ github.event.pull_request.number }}
           REPOSITORY_EXACT: ${{ github.repository }}
@@ -110,7 +109,6 @@ jobs:
             -EventName $env:EVENT_NAME_EXACT `
             -BaseCommit $env:EVENT_BASE_SHA `
             -CandidateCommit $env:EVENT_HEAD_SHA `
-            -EventMergeCommit $env:EVENT_MERGE_SHA `
             -PullRequestNumber $env:PR_NUMBER_EXACT
           if (-not $?) {
             throw 'base-owned external validation authority rejected candidate'
