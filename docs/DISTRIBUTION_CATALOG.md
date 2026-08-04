@@ -85,6 +85,56 @@ requested prerelease did not become the repository default. A latest release
 owned by another product in a multi-product repository is retained as opaque,
 bounded evidence and is not reinterpreted as this product's Stable release.
 
+## Dormant Connection Hub Candidate Contract
+
+The repository carries a fail-closed Pages admission adapter for a possible
+sixth product, Rusty Connection Hub. It is deliberately dormant. The owner is
+not present in `OWNERS`, the checked-in catalog, the catalog schema owner enum,
+the browser allowlist, the protected complete-owner set, or the publication
+projection. A structurally valid manifest therefore remains insufficient and
+the current preflight rejects a `rusty-connection-hub` request as unknown.
+
+The adapter schema at
+`/Rusty-Morphospace/catalog/connection-hub-owner-release-admission.schema.json`
+validates, but does not redefine, owner-authored
+`rusty.quest.connection_hub_labs_release.v1` metadata. It admits only:
+
+- tags matching `connection-hub-v0.1.0-alpha.N`, with positive canonical `N`;
+- owner metadata named `connection-hub-release-manifest.json`;
+- the package `io.github.mesmerprism.rustymanifold.broker` and matching
+  `rusty-connection-hub-0.1.0-alpha.N.apk` primary artifact;
+- exact Rusty Quest source commit/tree and source URL, exact Manifold source
+  commit/tree, signer, build-manifest digest, artifact digest, and byte count;
+- a release APK with the debug shell operator absent and listener stopped by
+  default;
+- `transport_classification=trusted_lan_experimental`,
+  `confidentiality=none`, `production_eligible=false`, and an explicit insecure
+  trusted-LAN opt-in;
+- no arbitrary remote-command surface and no high-rate media data plane.
+
+The current generic GitHub readback remains the immutable distribution gate:
+the exact tag must peel to the protected source revision, the release must be
+public, `draft=false`, `prerelease=true`, and not the repository's latest
+release, and every admitted asset must retain its exact-tag GitHub URL, digest,
+byte count, uploaded state, and same-run identity. A release body, generated
+manifest, workflow artifact, `latest/download` URL, or schema-valid fixture is
+not publication evidence.
+
+Pairing authenticates a controller but does not encrypt the current plaintext
+WebSocket transport. Any future human card must show a conspicuous warning that
+the option is only for a private trusted LAN, has no confidentiality, is not
+production eligible, and starts only through explicit wearer action. The
+catalog currently has no standalone Connection Hub guided installer; an APK or
+documentation link must not be relabelled as one.
+
+Activating this candidate changes validation authority. It requires the
+two-PR external-validation route: independently seal and review the activation
+commit; merge one exact base-policy approval binding its complete path/mode/
+size/SHA-256 set; merge that new base into the unchanged candidate; then run
+base-owned static Git-object admission and separate credential-free dynamic
+tests. Only the later activation may add the sixth owner, change the catalog
+count or projection, or dispatch a six-owner readback and publication.
+
 ## Channel Policy
 
 Stable is the ecosystem default wherever an owner has declared a stable
@@ -148,4 +198,6 @@ owner/channel rejection, and public-boundary leakage patterns. Structural
 release fields remain reserved for a future owner-readback projection and are
 not publication evidence by themselves. Run
 `python tools/test_distribution_catalog_preflight.py` for the strict
-five-owner adapter and damage matrix.
+five-owner adapter and damage matrix. That runner also executes the dormant
+Connection Hub contract damage matrix while proving that the five-owner catalog
+and publication projection remain authoritative and unchanged.

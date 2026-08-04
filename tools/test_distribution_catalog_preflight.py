@@ -6,6 +6,7 @@ from __future__ import annotations
 import base64
 import copy
 import json
+import unittest
 from pathlib import Path
 
 from preflight_distribution_catalog import (
@@ -18,6 +19,7 @@ from preflight_distribution_catalog import (
     sha256_bytes,
     strict_json_bytes,
 )
+from test_connection_hub_catalog_contract import ConnectionHubCatalogContractTest
 
 
 SOURCE = "1" * 40
@@ -411,6 +413,13 @@ def assert_rejected(action, label: str) -> None:
 
 
 def main() -> int:
+    dormant_suite = unittest.defaultTestLoader.loadTestsFromTestCase(
+        ConnectionHubCatalogContractTest
+    )
+    dormant_result = unittest.TextTestRunner(verbosity=1).run(dormant_suite)
+    if not dormant_result.wasSuccessful():
+        fail("dormant Connection Hub catalog contract tests failed")
+
     baseline = json.loads(CATALOG_PATH.read_text(encoding="utf-8"))
     request, fixture = complete_fixture()
     generated, receipt = run_preflight(
@@ -914,7 +923,8 @@ def main() -> int:
             fail(f"read-only preflight workflow contains route: {forbidden}")
     print(
         "Distribution catalog read-only preflight tests passed: "
-        "5 owner adapters with strict Kiosk manifest lineage, "
+        "5 active owner adapters, dormant Connection Hub contract, "
+        "strict Kiosk manifest lineage, "
         f"{len(mutations) + 4 + fleet_damage_count + kiosk_damage_count} "
         "damage classes"
     )

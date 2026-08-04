@@ -1,0 +1,133 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mesmerprism.com/Rusty-Morphospace/catalog/connection-hub-owner-release-admission.schema.json",
+  "title": "Pages admission schema for a Rusty Connection Hub owner release manifest",
+  "description": "A fail-closed adapter schema for owner-authored rusty.quest.connection_hub_labs_release.v1 metadata. This schema does not register a catalog owner or authorize publication.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "$schema",
+    "product",
+    "release_tag",
+    "channel",
+    "maturity",
+    "package_name",
+    "version_code",
+    "version_name",
+    "source_revision",
+    "source_tree",
+    "source_url",
+    "manifold_source_revision",
+    "manifold_source_tree",
+    "signer_sha256",
+    "artifact_name",
+    "artifact_sha256",
+    "artifact_size",
+    "build_manifest_sha256",
+    "release_manifest_debug_operator_absent",
+    "listener_default",
+    "transport_classification",
+    "confidentiality",
+    "production_eligible",
+    "insecure_trusted_lan_requires_explicit_opt_in",
+    "arbitrary_remote_commands",
+    "high_rate_media_data_plane"
+  ],
+  "properties": {
+    "$schema": {
+      "const": "rusty.quest.connection_hub_labs_release.v1"
+    },
+    "product": {
+      "const": "Rusty Connection Hub"
+    },
+    "release_tag": {
+      "type": "string",
+      "pattern": "^connection-hub-v0\\.1\\.0-alpha\\.[1-9][0-9]*$"
+    },
+    "channel": {
+      "const": "labs"
+    },
+    "maturity": {
+      "const": "alpha"
+    },
+    "package_name": {
+      "const": "io.github.mesmerprism.rustymanifold.broker"
+    },
+    "version_code": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 2100000000
+    },
+    "version_name": {
+      "type": "string",
+      "pattern": "^0\\.1\\.0-alpha\\.[1-9][0-9]*$"
+    },
+    "source_revision": {
+      "$ref": "#/$defs/sha40"
+    },
+    "source_tree": {
+      "$ref": "#/$defs/sha40"
+    },
+    "source_url": {
+      "type": "string",
+      "pattern": "^https://github\\.com/MesmerPrism/rusty-quest/tree/[0-9a-f]{40}/apps/manifold-broker-android$"
+    },
+    "manifold_source_revision": {
+      "$ref": "#/$defs/sha40"
+    },
+    "manifold_source_tree": {
+      "$ref": "#/$defs/sha40"
+    },
+    "signer_sha256": {
+      "$ref": "#/$defs/sha256"
+    },
+    "artifact_name": {
+      "type": "string",
+      "pattern": "^rusty-connection-hub-0\\.1\\.0-alpha\\.[1-9][0-9]*\\.apk$"
+    },
+    "artifact_sha256": {
+      "$ref": "#/$defs/sha256"
+    },
+    "artifact_size": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "build_manifest_sha256": {
+      "$ref": "#/$defs/sha256"
+    },
+    "release_manifest_debug_operator_absent": {
+      "const": true
+    },
+    "listener_default": {
+      "const": "stopped"
+    },
+    "transport_classification": {
+      "const": "trusted_lan_experimental"
+    },
+    "confidentiality": {
+      "const": "none"
+    },
+    "production_eligible": {
+      "const": false
+    },
+    "insecure_trusted_lan_requires_explicit_opt_in": {
+      "const": true
+    },
+    "arbitrary_remote_commands": {
+      "const": false
+    },
+    "high_rate_media_data_plane": {
+      "const": false
+    }
+  },
+  "$defs": {
+    "sha40": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{40}$"
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    }
+  }
+}

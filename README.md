@@ -60,6 +60,12 @@ exact-tag provenance. See
 authority, Fleet Pages composition, feedback, and validation contracts.
 It currently models five complete-product owners, including the unpublished,
 opt-in Rusty Hostess Windows labs owner without asserting a stable release.
+A fail-closed Rusty Connection Hub owner-manifest adapter is retained only as a
+dormant candidate contract. It does not add a sixth product, release link, or
+publication claim. Activation requires a separate externally validated change
+to the catalog, owner registry, browser projection, and complete-set authority;
+the plaintext trusted-LAN option must remain explicitly labelled as providing
+no confidentiality and as not production eligible.
 The protected read-only preflight can validate exact live owner releases and
 retain private review evidence, but it has no Pages deployment or publication
 permission and never changes the checked-in unpublished baseline. Its central

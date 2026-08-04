@@ -28,6 +28,7 @@ PAGE_PATH = CATALOG_ROOT / "index.html"
 TARGET_FILES = [
     CATALOG_PATH,
     SCHEMA_PATH,
+    CATALOG_ROOT / "connection-hub-owner-release-admission.schema.json",
     PAGE_PATH,
     CATALOG_ROOT / "catalog.css",
     CATALOG_ROOT / "catalog.js",
