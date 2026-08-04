@@ -1,0 +1,65 @@
+{
+  "schema": "rusty.morphospace.catalog_preflight_request.v1",
+  "records": [
+    {
+      "owner": "questionable-file-manager",
+      "product_channel": "labs",
+      "maturity": "alpha",
+      "distribution_track": "github-prerelease",
+      "tag": "v0.5.0-alpha.12",
+      "expected_source_revision": "2a117616be90486408c30a12def4f5df5504b345",
+      "expected_owner_metadata_asset": "questionable-file-manager-labs-owner-release.json",
+      "expected_owner_metadata_sha256": "584dd1b58173238cc398b06665cf53aef98dceec7f15d0177b4647a1714061a8"
+    },
+    {
+      "owner": "rusty-fleet",
+      "product_channel": "labs",
+      "maturity": "alpha",
+      "distribution_track": "github-prerelease",
+      "tag": "v0.1.0-alpha.8",
+      "expected_source_revision": "1078a92703dab80bf5af3da01f0c2082c4db8abd",
+      "expected_owner_metadata_asset": "release-descriptor.receipt.json",
+      "expected_owner_metadata_sha256": "fe1497d018b149fa08d261e5124e8b2db355e015cfd1eb3781c251545e989ec5"
+    },
+    {
+      "owner": "rusty-hostess",
+      "product_channel": "labs",
+      "maturity": "alpha",
+      "distribution_track": "github-prerelease",
+      "tag": "v0.1.0-alpha.7",
+      "expected_source_revision": "a6a62e6f9de2d8d03957cd59e786ddf96bc669e2",
+      "expected_owner_metadata_asset": "RustyHostess-Labs-0.1.0-win-x64.release-metadata.json",
+      "expected_owner_metadata_sha256": "ebf970fbb6c9594030206d181754f9c6084a5a76ec308e23cb015987e1d87ff0"
+    },
+    {
+      "owner": "rusty-kiosk",
+      "product_channel": "labs",
+      "maturity": "alpha",
+      "distribution_track": "github-prerelease",
+      "tag": "v0.6.6-alpha.9",
+      "expected_source_revision": "be1321c9cf6c9c0d7e61d6920a815ab44166ea5a",
+      "expected_owner_metadata_asset": "rusty-kiosk-labs-owner-release.json",
+      "expected_owner_metadata_sha256": "74a6e51ce44340e232518d5e3201d730c54f5e07739efec333455019f7340b11"
+    },
+    {
+      "owner": "rusty-quest-package-updater",
+      "product_channel": "labs",
+      "maturity": "alpha",
+      "distribution_track": "github-prerelease",
+      "tag": "package-updater-v0.1.0-alpha.3",
+      "expected_source_revision": "8c1b84ddcce6d552cf5602d84208a4cd296df522",
+      "expected_owner_metadata_asset": "rusty-quest-package-updater.release.json",
+      "expected_owner_metadata_sha256": "ffca4f9daf6030ab2ca81da83d3fd7cc86a65a8ada33ef4147c4b8bf460c1f13"
+    },
+    {
+      "owner": "rusty-connection-hub",
+      "product_channel": "labs",
+      "maturity": "alpha",
+      "distribution_track": "github-prerelease",
+      "tag": "connection-hub-v0.1.0-alpha.3",
+      "expected_source_revision": "90dee15aebbe150c074550c5510900b393191f28",
+      "expected_owner_metadata_asset": "connection-hub-release-manifest.json",
+      "expected_owner_metadata_sha256": "93aed756a5c2bc62d85e8cfc0f5e8d8a5166666030e0b83bafd83eacead27553"
+    }
+  ]
+}

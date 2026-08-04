@@ -22,6 +22,7 @@ from connection_hub_catalog_contract import (
     ConnectionHubContractError,
     adapt_connection_hub,
     required_release_asset_names,
+    tag_version as connection_hub_tag_version,
 )
 from test_distribution_catalog import validate_catalog
 
@@ -71,17 +72,10 @@ OWNERS = {
         ),
         "adapter": "quest-updater",
     },
-}
-
-# This contract is intentionally not part of OWNERS. It cannot appear in a
-# request, complete-owner set, generated catalog, publication receipt, or UI
-# until a separately reviewed validation-authority change activates it.
-DORMANT_OWNER_CONTRACTS = {
     "rusty-connection-hub": {
         "repository": "MesmerPrism/rusty-quest",
         "metadata_name": re.compile(r"^connection-hub-release-manifest\.json$"),
         "adapter": "connection-hub",
-        "activation": "requires-external-validation-authority",
     },
 }
 
@@ -170,6 +164,13 @@ def strict_json_bytes(value: bytes, label: str, maximum: int) -> Any:
 
 
 def tag_version(owner: str, tag: str) -> str:
+    if owner == CONNECTION_HUB_OWNER:
+        try:
+            return connection_hub_tag_version(tag)
+        except ConnectionHubContractError as error:
+            raise PreflightError(
+                "rusty-connection-hub tag is outside its labs product"
+            ) from error
     match = (
         UPDATER_TAG.fullmatch(tag)
         if owner == "rusty-quest-package-updater"
@@ -1105,7 +1106,7 @@ def normalized_snapshot(
             expected_connection_hub_assets = required_release_asset_names(tag)
         except ConnectionHubContractError as error:
             raise PreflightError(
-                "Connection Hub release tag is outside its dormant contract"
+                "Connection Hub release tag is outside its active contract"
             ) from error
         if names != expected_connection_hub_assets:
             fail(

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Damage matrix for the dormant Rusty Connection Hub catalog contract."""
+"""Damage matrix for the active Rusty Connection Hub catalog contract."""
 
 from __future__ import annotations
 
@@ -7,7 +7,6 @@ import copy
 import json
 import unittest
 from pathlib import Path
-from unittest.mock import patch
 
 import preflight_distribution_catalog as preflight
 from connection_hub_catalog_contract import (
@@ -206,36 +205,33 @@ class ConnectionHubCatalogContractTest(unittest.TestCase):
                     tag_version(damaged)
 
     def test_generic_readback_requires_immutable_nonlatest_prerelease(self) -> None:
-        registry = copy.deepcopy(preflight.DORMANT_OWNER_CONTRACTS[OWNER])
-        registry.pop("activation")
-        with patch.dict(preflight.OWNERS, {OWNER: registry}, clear=False):
-            accepted = preflight.normalized_snapshot(OWNER, TAG, release_snapshot())
-            self.assertTrue(accepted["release"]["prerelease"])
-            self.assertEqual(accepted["latest_tag"], "package-updater-v0.1.0-alpha.3")
+        accepted = preflight.normalized_snapshot(OWNER, TAG, release_snapshot())
+        self.assertTrue(accepted["release"]["prerelease"])
+        self.assertEqual(accepted["latest_tag"], "package-updater-v0.1.0-alpha.3")
 
-            for label, mutate in {
-                "draft": lambda value: value["release"].update({"draft": True}),
-                "not prerelease": lambda value: value["release"].update(
-                    {"prerelease": False}
-                ),
-                "became latest": lambda value: value.update({"latest_tag": TAG}),
-                "mutable URL": lambda value: value["release"]["assets"][1].update(
-                    {
-                        "browser_download_url": (
-                            f"https://github.com/{REPOSITORY}/releases/latest/download/"
-                            f"rusty-connection-hub-{VERSION}.apk"
-                        )
-                    }
-                ),
-                "missing digest": lambda value: value["release"]["assets"][1].update(
-                    {"digest": None}
-                ),
-            }.items():
-                with self.subTest(label=label):
-                    candidate = release_snapshot()
-                    mutate(candidate)
-                    with self.assertRaises(preflight.PreflightError):
-                        preflight.normalized_snapshot(OWNER, TAG, candidate)
+        for label, mutate in {
+            "draft": lambda value: value["release"].update({"draft": True}),
+            "not prerelease": lambda value: value["release"].update(
+                {"prerelease": False}
+            ),
+            "became latest": lambda value: value.update({"latest_tag": TAG}),
+            "mutable URL": lambda value: value["release"]["assets"][1].update(
+                {
+                    "browser_download_url": (
+                        f"https://github.com/{REPOSITORY}/releases/latest/download/"
+                        f"rusty-connection-hub-{VERSION}.apk"
+                    )
+                }
+            ),
+            "missing digest": lambda value: value["release"]["assets"][1].update(
+                {"digest": None}
+            ),
+        }.items():
+            with self.subTest(label=label):
+                candidate = release_snapshot()
+                mutate(candidate)
+                with self.assertRaises(preflight.PreflightError):
+                    preflight.normalized_snapshot(OWNER, TAG, candidate)
 
     def test_release_inventory_is_closed_and_stable(self) -> None:
         def remove_asset(value: dict, name: str) -> None:
@@ -258,61 +254,54 @@ class ConnectionHubCatalogContractTest(unittest.TestCase):
                 ),
             }
 
-        registry = copy.deepcopy(preflight.DORMANT_OWNER_CONTRACTS[OWNER])
-        registry.pop("activation")
-        with patch.dict(preflight.OWNERS, {OWNER: registry}, clear=False):
-            inventory_damage = {
-                "extra asset": lambda value: value["release"]["assets"].append(
-                    unexpected_asset("README.txt", 105)
-                ),
-                "missing owner manifest": lambda value: remove_asset(
-                    value, METADATA_ASSET
-                ),
-                "missing primary APK": lambda value: remove_asset(
-                    value, f"rusty-connection-hub-{VERSION}.apk"
-                ),
-                "missing LICENSE": lambda value: remove_asset(value, "LICENSE"),
-                "missing SOURCE-NOTICE": lambda value: remove_asset(
-                    value, "SOURCE-NOTICE.md"
-                ),
-                "duplicate name": lambda value: value["release"]["assets"].append(
-                    {
-                        **copy.deepcopy(value["release"]["assets"][0]),
-                        "id": 105,
-                    }
-                ),
-                "duplicate ID": lambda value: value["release"]["assets"][1].update(
-                    {"id": value["release"]["assets"][0]["id"]}
-                ),
-                "wrong-name substitution": lambda value: (
-                    value["release"]["assets"][1].update(
-                        unexpected_asset("rusty-connection-hub-other.apk", 102)
-                    )
-                ),
-            }
-            for label, mutate in inventory_damage.items():
-                with self.subTest(label=label):
-                    candidate = release_snapshot()
-                    mutate(candidate)
-                    with self.assertRaises(preflight.PreflightError):
-                        preflight.normalized_snapshot(OWNER, TAG, candidate)
+        inventory_damage = {
+            "extra asset": lambda value: value["release"]["assets"].append(
+                unexpected_asset("README.txt", 105)
+            ),
+            "missing owner manifest": lambda value: remove_asset(
+                value, METADATA_ASSET
+            ),
+            "missing primary APK": lambda value: remove_asset(
+                value, f"rusty-connection-hub-{VERSION}.apk"
+            ),
+            "missing LICENSE": lambda value: remove_asset(value, "LICENSE"),
+            "missing SOURCE-NOTICE": lambda value: remove_asset(
+                value, "SOURCE-NOTICE.md"
+            ),
+            "duplicate name": lambda value: value["release"]["assets"].append(
+                {
+                    **copy.deepcopy(value["release"]["assets"][0]),
+                    "id": 105,
+                }
+            ),
+            "duplicate ID": lambda value: value["release"]["assets"][1].update(
+                {"id": value["release"]["assets"][0]["id"]}
+            ),
+            "wrong-name substitution": lambda value: (
+                value["release"]["assets"][1].update(
+                    unexpected_asset("rusty-connection-hub-other.apk", 102)
+                )
+            ),
+        }
+        for label, mutate in inventory_damage.items():
+            with self.subTest(label=label):
+                candidate = release_snapshot()
+                mutate(candidate)
+                with self.assertRaises(preflight.PreflightError):
+                    preflight.normalized_snapshot(OWNER, TAG, candidate)
 
-            initial = release_snapshot()
-            final = release_snapshot()
-            final["release"]["assets"][1]["size"] += 1
-            with self.assertRaises(preflight.PreflightError):
-                preflight.assert_same_run_stability(OWNER, TAG, initial, final)
+        initial = release_snapshot()
+        final = release_snapshot()
+        final["release"]["assets"][1]["size"] += 1
+        with self.assertRaises(preflight.PreflightError):
+            preflight.assert_same_run_stability(OWNER, TAG, initial, final)
 
-    def test_contract_is_dormant_and_current_projection_is_unchanged(self) -> None:
-        self.assertNotIn(OWNER, preflight.OWNERS)
-        self.assertIn(OWNER, preflight.DORMANT_OWNER_CONTRACTS)
+    def test_contract_is_active_with_an_inert_catalog_channel(self) -> None:
+        self.assertIn(OWNER, preflight.OWNERS)
         self.assertIs(preflight.ADAPTERS["connection-hub"], adapt_connection_hub)
-        dormant = preflight.DORMANT_OWNER_CONTRACTS[OWNER]
-        self.assertEqual(dormant["repository"], REPOSITORY)
-        self.assertEqual(
-            dormant["activation"], "requires-external-validation-authority"
-        )
-        self.assertIsNotNone(dormant["metadata_name"].fullmatch(METADATA_ASSET))
+        active = preflight.OWNERS[OWNER]
+        self.assertEqual(active["repository"], REPOSITORY)
+        self.assertIsNotNone(active["metadata_name"].fullmatch(METADATA_ASSET))
 
         request = {
             "schema": "rusty.morphospace.catalog_preflight_request.v1",
@@ -329,12 +318,19 @@ class ConnectionHubCatalogContractTest(unittest.TestCase):
                 }
             ],
         }
-        with self.assertRaises(preflight.PreflightError):
-            preflight.validate_request(request)
+        self.assertEqual(preflight.validate_request(request)[0]["owner"], OWNER)
 
         catalog = load(ROOT / "Rusty-Morphospace" / "catalog" / "catalog.json")
-        self.assertEqual(len(catalog["products"]), 5)
-        self.assertNotIn(OWNER, {item["owner"] for item in catalog["products"]})
+        self.assertEqual(len(catalog["products"]), 6)
+        hub = next(item for item in catalog["products"] if item["owner"] == OWNER)
+        self.assertEqual(hub["product_channels"][0]["availability"], "unpublished")
+        self.assertIsNone(hub["product_channels"][0]["release"])
+        self.assertEqual(hub["security_notice"]["confidentiality"], "none")
+        self.assertFalse(hub["security_notice"]["production_eligible"])
+        self.assertEqual(
+            [route["owner"] for route in hub["companion_routes"]],
+            ["questionable-file-manager", "rusty-hostess"],
+        )
         catalog_schema = load(
             ROOT / "Rusty-Morphospace" / "catalog" / "catalog.schema.json"
         )
@@ -342,12 +338,13 @@ class ConnectionHubCatalogContractTest(unittest.TestCase):
         owner_enum = catalog_schema["$defs"]["product"]["properties"]["owner"][
             "enum"
         ]
-        self.assertEqual((products["minItems"], products["maxItems"]), (5, 5))
-        self.assertNotIn(OWNER, owner_enum)
+        self.assertEqual((products["minItems"], products["maxItems"]), (6, 6))
+        self.assertIn(OWNER, owner_enum)
         browser = (
             ROOT / "Rusty-Morphospace" / "catalog" / "catalog.js"
         ).read_text(encoding="utf-8")
-        self.assertNotIn(OWNER, browser)
+        self.assertIn(OWNER, browser)
+        self.assertIn("Pairing authenticates a controller", browser)
         publication = load(
             ROOT / "Rusty-Morphospace" / "catalog" / "publication.json"
         )

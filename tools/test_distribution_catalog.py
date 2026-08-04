@@ -33,9 +33,17 @@ TARGET_FILES = [
     CATALOG_ROOT / "catalog.css",
     CATALOG_ROOT / "catalog.js",
     ROOT / "tools" / "requirements-distribution-catalog.txt",
+    (
+        ROOT
+        / "tools"
+        / "fixtures"
+        / "distribution-catalog"
+        / "connection-hub-six-owner-activation-request.json"
+    ),
 ] + ([PUBLICATION_PATH] if PUBLICATION_PATH.is_file() else [])
 OWNERS = {
     "questionable-file-manager",
+    "rusty-connection-hub",
     "rusty-fleet",
     "rusty-hostess",
     "rusty-kiosk",
@@ -57,6 +65,9 @@ PRIVACY_WARNING = (
 TAG = re.compile(r"^v(\d+\.\d+\.\d+(?:-alpha\.[1-9]\d*)?)$")
 UPDATER_TAG = re.compile(
     r"^package-updater-v(0\.1\.0-alpha\.[1-9]\d*)$"
+)
+CONNECTION_HUB_TAG = re.compile(
+    r"^connection-hub-v(0\.1\.0-alpha\.[1-9]\d*)$"
 )
 SHA40 = re.compile(r"^[0-9a-f]{40}$")
 SHA64 = re.compile(r"^[0-9a-f]{64}$")
@@ -138,11 +149,45 @@ def validate_publication(catalog: dict) -> None:
     if not isinstance(source, dict) or set(source) != source_keys:
         fail("publication preflight fields are not exact")
     run_id = source["workflow_run_id"]
+    projection = publication.get("projection")
+    if projection == "complete-six-owner-labs-set":
+        expected_record_count = 6
+        expected_catalog_sha256 = hashlib.sha256(CATALOG_PATH.read_bytes()).hexdigest()
+    elif projection == "complete-five-owner-labs-set":
+        legacy = copy.deepcopy(catalog)
+        hub = [
+            product
+            for product in legacy.get("products", [])
+            if product.get("owner") == "rusty-connection-hub"
+        ]
+        if (
+            len(hub) != 1
+            or any(
+                channel.get("availability") != "unpublished"
+                or channel.get("release") is not None
+                for channel in hub[0].get("product_channels", [])
+            )
+        ):
+            fail("legacy publication cannot authorize a Connection Hub release")
+        legacy["products"] = [
+            product
+            for product in legacy["products"]
+            if product["owner"] != "rusty-connection-hub"
+        ]
+        expected_record_count = 5
+        expected_catalog_sha256 = hashlib.sha256(
+            (
+                json.dumps(legacy, ensure_ascii=True, indent=2, sort_keys=False)
+                + "\n"
+            ).encode("utf-8")
+        ).hexdigest()
+    else:
+        fail("publication projection is unknown")
     if (
         publication["schema"]
         != "rusty.morphospace.catalog_publication_authorization.v1"
         or publication["result"] != "authorized"
-        or publication["projection"] != "complete-five-owner-labs-set"
+        or publication["projection"] != projection
         or not isinstance(publication["authorized_at"], str)
         or UTC_SECOND.fullmatch(publication["authorized_at"]) is None
         or publication["publication_target"]
@@ -180,8 +225,8 @@ def validate_publication(catalog: dict) -> None:
             )
         )
         or source["published_catalog_sha256"]
-        != hashlib.sha256(CATALOG_PATH.read_bytes()).hexdigest()
-        or source["record_count"] != 5
+        != expected_catalog_sha256
+        or source["record_count"] != expected_record_count
         or source["complete_labs_owner_set"] is not True
         or source["owner_binary_downloaded"] is not False
         or source["read_only_preflight_publication_authorized"] is not False
@@ -208,8 +253,8 @@ def validate_catalog_semantics(
         fail("Fleet Pages composition contract drifted")
 
     products = catalog.get("products")
-    if not isinstance(products, list) or len(products) != 5:
-        fail("catalog must contain exactly five product owners")
+    if not isinstance(products, list) or len(products) != 6:
+        fail("catalog must contain exactly six product owners")
     owners = [product.get("owner") for product in products]
     if set(owners) != OWNERS or len(set(owners)) != len(owners):
         fail("unknown, missing, or duplicated owner")
@@ -254,7 +299,9 @@ def validate_catalog_semantics(
         expected_channels = (
             ["labs"]
             if product["owner"] in {
-                "rusty-hostess", "rusty-quest-package-updater"
+                "rusty-hostess",
+                "rusty-quest-package-updater",
+                "rusty-connection-hub",
             }
             else ["stable", "labs"]
         )
@@ -299,6 +346,12 @@ def validate_catalog_semantics(
                 fail("unknown availability")
 
         labs_identity = by_channel["labs"]["identity"]
+        if product["owner"] not in {"rusty-hostess", "rusty-connection-hub"} and (
+            product.get("distribution_notes") is not None
+            or product.get("security_notice") is not None
+            or product.get("companion_routes") is not None
+        ):
+            fail("owner-specific catalog policy leaked across products")
         if product["owner"] == "rusty-hostess":
             notes = product.get("distribution_notes")
             if (
@@ -310,6 +363,8 @@ def validate_catalog_semantics(
                 or labs_identity["relationship_to_stable"] != "labs-only"
                 or by_channel["labs"]["transition"]
                 != "remove-labs-without-changing-other-products"
+                or product.get("security_notice") is not None
+                or product.get("companion_routes") is not None
                 or notes != {
                     "included": [
                         "source-owned WPF companion",
@@ -336,6 +391,69 @@ def validate_catalog_semantics(
                 }
             ):
                 fail("Hostess labs owner scope or unpublished identity drifted")
+        elif product["owner"] == "rusty-connection-hub":
+            notes = product.get("distribution_notes")
+            notice = product.get("security_notice")
+            companions = product.get("companion_routes")
+            if (
+                product["repository"]
+                != "https://github.com/MesmerPrism/rusty-quest"
+                or labs_identity["installation_identity"]
+                != "io.github.mesmerprism.rustymanifold.broker"
+                or labs_identity["platform"] != "android"
+                or labs_identity["relationship_to_stable"] != "labs-only"
+                or by_channel["labs"]["transition"] != "remove-labs"
+                or notes != {
+                    "included": [
+                        "on-device connection and session hub",
+                        "paired controller admission",
+                        (
+                            "explicit experimental trusted-LAN plaintext "
+                            "WebSocket control"
+                        ),
+                    ],
+                    "external": [
+                        "QuestIonAble File Manager Labs installation route",
+                        "Rusty Hostess Labs Windows control companion",
+                    ],
+                    "authority_exclusions": [
+                        "standalone guided installer",
+                        "transport confidentiality",
+                        "pairing-based encryption",
+                        "production eligibility",
+                        "arbitrary remote commands",
+                        "high-rate media data plane",
+                    ],
+                    "removal": (
+                        "Uninstalling Rusty Connection Hub Labs removes only "
+                        "its labs-only Android package and does not remove its "
+                        "distinct companion products."
+                    ),
+                }
+                or notice != {
+                    "transport_classification": "trusted_lan_experimental",
+                    "confidentiality": "none",
+                    "production_eligible": False,
+                    "pairing_authenticates_but_does_not_encrypt": True,
+                    "listener_default": "stopped",
+                    "explicit_wearer_opt_in_required": True,
+                }
+                or companions != [
+                    {
+                        "owner": "questionable-file-manager",
+                        "product_channel": "labs",
+                        "purpose": "quest-installation",
+                        "relationship": "distinct-product",
+                    },
+                    {
+                        "owner": "rusty-hostess",
+                        "product_channel": "labs",
+                        "purpose": "windows-control-companion",
+                        "relationship": "distinct-product",
+                    },
+                ]
+            ):
+                fail("Connection Hub safety, identity, or companion policy drifted")
         elif product["owner"] == "rusty-quest-package-updater":
             if (
                 labs_identity["installation_identity"]
@@ -395,9 +513,13 @@ def validate_release(product: dict, channel_name: str, channel: dict) -> None:
     if set(release) != required:
         fail("published release provenance is missing or expanded")
     match = (
-        UPDATER_TAG.fullmatch(release["tag"])
-        if product["owner"] == "rusty-quest-package-updater"
-        else TAG.fullmatch(release["tag"])
+        CONNECTION_HUB_TAG.fullmatch(release["tag"])
+        if product["owner"] == "rusty-connection-hub"
+        else (
+            UPDATER_TAG.fullmatch(release["tag"])
+            if product["owner"] == "rusty-quest-package-updater"
+            else TAG.fullmatch(release["tag"])
+        )
     )
     if not match or release["version"] != match.group(1):
         fail("release tag/version mismatch")
@@ -540,6 +662,40 @@ def negative_tests(catalog: dict) -> None:
     hostess["distribution_notes"]["authority_exclusions"].remove("recording")
     cases.append(("Hostess authority overclaim", hostess_claim))
 
+    hub_confidentiality = copy.deepcopy(catalog)
+    hub = next(
+        product for product in hub_confidentiality["products"]
+        if product["owner"] == "rusty-connection-hub"
+    )
+    hub["security_notice"]["confidentiality"] = "tls"
+    cases.append(("Connection Hub confidentiality overclaim", hub_confidentiality))
+
+    hub_pairing = copy.deepcopy(catalog)
+    hub = next(
+        product for product in hub_pairing["products"]
+        if product["owner"] == "rusty-connection-hub"
+    )
+    hub["security_notice"]["pairing_authenticates_but_does_not_encrypt"] = False
+    cases.append(("Connection Hub pairing encryption drift", hub_pairing))
+
+    hub_companion = copy.deepcopy(catalog)
+    hub = next(
+        product for product in hub_companion["products"]
+        if product["owner"] == "rusty-connection-hub"
+    )
+    hub["companion_routes"][0]["owner"] = "rusty-kiosk"
+    cases.append(("Connection Hub companion substitution", hub_companion))
+
+    hub_installer = copy.deepcopy(catalog)
+    hub = next(
+        product for product in hub_installer["products"]
+        if product["owner"] == "rusty-connection-hub"
+    )
+    hub["distribution_notes"]["authority_exclusions"].remove(
+        "standalone guided installer"
+    )
+    cases.append(("Connection Hub guided-installer claim", hub_installer))
+
     identity_authority = copy.deepcopy(catalog)
     identity_authority["products"][0]["product_channels"][0]["identity"][
         "identity_authority"
@@ -622,6 +778,13 @@ def validate_page(catalog: dict) -> None:
         "channel.distribution_track",
         "product.distribution_notes",
         "product.distribution_notes.authority_exclusions",
+        "product.security_notice",
+        "product.companion_routes",
+        "notice.pairing_authenticates_but_does_not_encrypt",
+        "Pairing authenticates a controller but does not encrypt the WebSocket.",
+        "Connection Hub has no standalone guided installer.",
+        "card.id = `product-${product.owner}`",
+        "link.href = `#product-${route.owner}`",
     ):
         if required not in script:
             fail(f"catalog renderer is disconnected from metadata field: {required}")
@@ -681,6 +844,21 @@ def main() -> int:
     validate_catalog(catalog, allow_published=published)
     if published:
         validate_publication(catalog)
+        publication = json.loads(PUBLICATION_PATH.read_text(encoding="utf-8"))
+        if publication["projection"] == "complete-five-owner-labs-set":
+            damaged = copy.deepcopy(catalog)
+            hub = next(
+                product for product in damaged["products"]
+                if product["owner"] == "rusty-connection-hub"
+            )
+            hub["product_channels"][0]["availability"] = "published"
+            hub["product_channels"][0]["release"] = {}
+            try:
+                validate_publication(damaged)
+            except AssertionError:
+                pass
+            else:
+                fail("legacy five-owner publication authorized Connection Hub")
     elif PUBLICATION_PATH.exists():
         fail("inert catalog unexpectedly carries publication authorization")
     negative_schema_tests(catalog)
@@ -692,7 +870,7 @@ def main() -> int:
     channel_count = sum(len(product["product_channels"]) for product in catalog["products"])
     print(
         "Distribution catalog contract passed: "
-        f"5 owners, {channel_count} channel policies, catalog_sha256={digest}"
+        f"6 owners, {channel_count} channel policies, catalog_sha256={digest}"
     )
     return 0
 

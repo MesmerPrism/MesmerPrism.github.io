@@ -1,7 +1,7 @@
 # Rusty Morphospace Distribution Catalog
 
 The public catalog at `/Rusty-Morphospace/catalog/` explains stable and labs
-channel policy across five complete products. It is a projection surface, not
+channel policy across six complete products. It is a projection surface, not
 a release authority, binary host, update feed, or substitute for owner
 metadata.
 
@@ -15,12 +15,14 @@ Each product owner remains the only authority for:
 - the immutable `releases/download/<exact-tag>/<asset>` URL;
 - promotion, rollback, replacement, and withdrawal decisions.
 
-The checked-in catalog therefore uses `availability: unpublished` and
-`release: null`. The schema can validate an ephemeral published projection,
-but the normal semantic validator rejects one unless its caller explicitly
-identifies it as a preflight-generated projection. Human pages must say “No
-cataloged release yet” and must not construct, guess, probe, or expose a
-download URL.
+The preflight derives an inert policy baseline with
+`availability: unpublished` and `release: null` for every channel. A checked-in
+published projection additionally requires its exact `publication.json`
+authorization. The schema can validate an ephemeral published projection, but
+the normal semantic validator rejects one unless its caller explicitly
+identifies it as a preflight-generated projection. Human cards say “No
+cataloged release yet” for unpublished channels and must not construct, guess,
+probe, or expose a download URL for them.
 
 Published records use exact owner repository URLs and canonical
 `vX.Y.Z` or `vX.Y.Z-alpha.N` tags. `latest/download`, redirects, ranges,
@@ -60,7 +62,7 @@ that owner claim without converting it into public trust.
 It emits only a private, seven-day workflow artifact containing an ephemeral
 catalog and Pages-owned readback receipt. It has no Pages, OIDC, release, push,
 or deployment permission and records `publication_authorized=false`. The
-protected workflow requires the complete five-owner labs set.
+protected workflow requires the complete six-owner labs set.
 
 Kiosk admission additionally downloads only its small JSON bundle manifest,
 never either APK. The owner metadata must hash-bind those exact manifest bytes;
@@ -68,8 +70,7 @@ the Pages adapter validates the closed six-asset release inventory, manifest
 payload digests and byte counts, package identities, signer, tag-derived
 version code, coinstallable lineage, and uninstall-only Labs exit policy.
 
-The checked-in catalog is inert until an exact five-owner projection is
-separately authorized. The dispatch-only catalog publication workflow admits
+The dispatch-only catalog publication workflow admits
 one successful protected read-only preflight run and its exact artifact ID,
 archive digest, generated-catalog digest, and receipt digest. A read-only job
 closes that external artifact; a main-only environment job runs only central
@@ -85,14 +86,13 @@ requested prerelease did not become the repository default. A latest release
 owned by another product in a multi-product repository is retained as opaque,
 bounded evidence and is not reinterpreted as this product's Stable release.
 
-## Dormant Connection Hub Candidate Contract
+## Active Connection Hub Owner Contract
 
-The repository carries a fail-closed Pages admission adapter for a possible
-sixth product, Rusty Connection Hub. It is deliberately dormant. The owner is
-not present in `OWNERS`, the checked-in catalog, the catalog schema owner enum,
-the browser allowlist, the protected complete-owner set, or the publication
-projection. A structurally valid manifest therefore remains insufficient and
-the current preflight rejects a `rusty-connection-hub` request as unknown.
+Rusty Connection Hub is the sixth labs-only product owner. It is present in the
+closed owner registry, checked-in catalog policy, schema owner enum, browser
+allowlist, and protected complete-owner set. Its checked-in channel starts
+`unpublished`; a structurally valid manifest alone remains insufficient to
+publish it.
 
 The adapter schema at
 `/Rusty-Morphospace/catalog/connection-hub-owner-release-admission.schema.json`
@@ -125,19 +125,38 @@ release body, generated manifest, workflow artifact, `latest/download` URL, or
 schema-valid fixture is not publication evidence.
 
 Pairing authenticates a controller but does not encrypt the current plaintext
-WebSocket transport. Any future human card must show a conspicuous warning that
-the option is only for a private trusted LAN, has no confidentiality, is not
-production eligible, and starts only through explicit wearer action. The
-catalog currently has no standalone Connection Hub guided installer; an APK or
-documentation link must not be relabelled as one.
+WebSocket transport. The human card shows a conspicuous warning that the option
+is only for a private trusted LAN, has no confidentiality, is not production
+eligible, starts stopped, and requires explicit wearer action. The catalog has
+no standalone Connection Hub guided installer; an APK or documentation link
+must not be relabelled as one.
 
-Activating this candidate changes validation authority. It requires the
-two-PR external-validation route: independently seal and review the activation
-commit; merge one exact base-policy approval binding its complete path/mode/
-size/SHA-256 set; merge that new base into the unchanged candidate; then run
-base-owned static Git-object admission and separate credential-free dynamic
-tests. Only the later activation may add the sixth owner, change the catalog
-count or projection, or dispatch a six-owner readback and publication.
+The Hub card links to QuestIonAble File Manager Labs only as a separate Quest
+installation route and to Rusty Hostess Labs only as a separate Windows control
+companion. The first reviewed six-owner request binds QFM
+`v0.5.0-alpha.12`, Hostess `v0.1.0-alpha.7`, and Connection Hub
+`connection-hub-v0.1.0-alpha.3` under their own owners. It does not copy either
+companion's release URL or metadata into Hub authority.
+That exact request is retained at
+`tools/fixtures/distribution-catalog/connection-hub-six-owner-activation-request.json`;
+fresh live readback remains mandatory because the fixture is reviewed input,
+not release or publication evidence.
+
+This activation changes validation authority and follows the two-PR external-
+validation route: independently seal and review the activation commit; merge
+one exact base-policy approval binding its complete path/mode/size/SHA-256 set;
+merge that new base into the unchanged candidate; then run base-owned static
+Git-object admission and separate credential-free dynamic tests. Neither the
+candidate nor its tests authorize merge or publication.
+
+The checked-in `publication.json` initially remains the immutable authorization
+for its earlier five-owner catalog bytes. During this transition it may validate
+only the exact five-product projection obtained by removing the unpublished Hub
+record; it cannot authorize a Hub release. The next successful six-owner live
+preflight and separately authorized publication replaces it with
+`complete-six-owner-labs-set` and a six-record source receipt. No workflow ID,
+artifact digest, timestamp, or publication claim is fabricated in this
+activation candidate.
 
 ## Channel Policy
 
@@ -167,6 +186,10 @@ without inventing a stable channel, identity, or transition.
 - Rusty Quest Package Updater currently exposes only labs,
   `io.github.mesmerprism.rustyquest.packageupdater.labs`. The catalog asserts
   no stable updater package or identity.
+- Rusty Connection Hub exposes only labs,
+  `io.github.mesmerprism.rustymanifold.broker`. Removing it does not remove its
+  distinct QFM or Hostess companions. Its trusted-LAN plaintext option remains
+  explicit opt-in and provides no confidentiality.
 
 Every channel entry represents the complete current owner product, not a
 feature-reduced build.
@@ -201,7 +224,8 @@ warnings, disabled publication admission, identity isolation, unknown
 owner/channel rejection, and public-boundary leakage patterns. Structural
 release fields remain reserved for a future owner-readback projection and are
 not publication evidence by themselves. Run
-`python tools/test_distribution_catalog_preflight.py` for the strict
-five-owner adapter and damage matrix. That runner also executes the dormant
-Connection Hub contract damage matrix while proving that the five-owner catalog
-and publication projection remain authoritative and unchanged.
+`python tools/test_distribution_catalog_preflight.py` for the strict six-owner
+adapter and damage matrix. That runner executes the active Connection Hub
+four-asset contract matrix and validates the exact reviewed six-owner request.
+Run the request through the protected read-only workflow for fresh public owner
+readback before any six-owner publication.

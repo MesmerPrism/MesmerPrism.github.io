@@ -283,7 +283,7 @@ jobs:
           fi
           git config user.name github-actions[bot]
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
-          git commit -m "Publish exact five-owner Labs catalog"
+          git commit -m "Publish exact six-owner Labs catalog"
           commit_sha=$(git rev-parse HEAD)
           catalog_sha=$(sha256sum Rusty-Morphospace/catalog/catalog.json | cut -d' ' -f1)
           publication_sha=$(sha256sum Rusty-Morphospace/catalog/publication.json | cut -d' ' -f1)

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Install a hash-bound five-owner catalog projection from read-only evidence."""
+"""Install a hash-bound six-owner catalog projection from read-only evidence."""
 
 from __future__ import annotations
 
@@ -221,7 +221,7 @@ def publish_projection(
     publication = {
         "schema": "rusty.morphospace.catalog_publication_authorization.v1",
         "result": "authorized",
-        "projection": "complete-five-owner-labs-set",
+        "projection": "complete-six-owner-labs-set",
         "authorized_at": authorized_at,
         "publication_target": "/Rusty-Morphospace/catalog/catalog.json",
         "publication_authorized": True,
