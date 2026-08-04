@@ -1,0 +1,62 @@
+{
+  "schema": "rusty.morphospace.workflow.external_validation_authority_policy.v1",
+  "policy_id": "mesmerprism-catalog-external-validation-authority-v1",
+  "repository": "MesmerPrism/MesmerPrism.github.io",
+  "mandatory_protected_paths": [
+    ".github/scripts/Invoke-CatalogExternalValidationAuthority.ps1",
+    ".github/workflows/external-validation-authority.yml",
+    "config/external-validation-authority.json",
+    "schemas/external-validation-authority-assessment-v1.schema.json",
+    "schemas/external-validation-authority-policy-v1.schema.json",
+    "tools/Test-CatalogExternalValidationAuthority.ps1"
+  ],
+  "protected_rules": [
+    {
+      "rule_id": "catalog-authority",
+      "match": "prefix",
+      "path": "Rusty-Morphospace/catalog/"
+    },
+    {
+      "rule_id": "catalog-doc",
+      "match": "exact",
+      "path": "docs/DISTRIBUTION_CATALOG.md"
+    },
+    {
+      "rule_id": "catalog-instructions",
+      "match": "exact",
+      "path": "AGENTS.md"
+    },
+    {
+      "rule_id": "catalog-readme",
+      "match": "exact",
+      "path": "README.md"
+    },
+    {
+      "rule_id": "catalog-tools",
+      "match": "prefix",
+      "path": "tools/"
+    },
+    {
+      "rule_id": "fleet-pages-projection",
+      "match": "prefix",
+      "path": "Rusty-Fleet/"
+    },
+    {
+      "rule_id": "github-authority",
+      "match": "prefix",
+      "path": ".github/"
+    },
+    {
+      "rule_id": "schema-contracts",
+      "match": "prefix",
+      "path": "schemas/"
+    },
+    {
+      "rule_id": "validation-authority-policy",
+      "match": "exact",
+      "path": "config/external-validation-authority.json"
+    }
+  ],
+  "approved_change_sets": [],
+  "status": "active"
+}

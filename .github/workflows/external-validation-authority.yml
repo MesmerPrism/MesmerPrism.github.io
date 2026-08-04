@@ -1,0 +1,117 @@
+name: External validation authority
+
+on:
+  pull_request_target:
+    branches:
+      - main
+    types:
+      - opened
+      - reopened
+      - synchronize
+      - ready_for_review
+
+permissions:
+  contents: read
+
+jobs:
+  static-admission:
+    name: Static admission
+    runs-on: windows-2025
+    timeout-minutes: 10
+    steps:
+      - name: Checkout exact trusted base
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+          lfs: false
+          path: trusted-base
+          persist-credentials: false
+          ref: ${{ github.event.pull_request.base.sha }}
+          submodules: false
+
+      - name: Checkout pinned external verifier
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 1
+          lfs: false
+          path: pinned-verifier
+          persist-credentials: false
+          ref: 50a4c5222c9d6c4567bac09405e43049c61b126f
+          repository: MesmerPrism/rusty-morphospace-work-environment
+          submodules: false
+
+      - name: Verify and exercise the pinned external verifier
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $commit = (& git -C .\pinned-verifier rev-parse HEAD).Trim()
+          $tree = (& git -C .\pinned-verifier rev-parse 'HEAD^{tree}').Trim()
+          if ($LASTEXITCODE -ne 0 -or
+              $commit -cne '50a4c5222c9d6c4567bac09405e43049c61b126f' -or
+              $tree -cne 'ead3855a2ecc5e1240e271d81a938985457f10e8') {
+            throw 'pinned external verifier Git identity differs'
+          }
+          $objects = @(
+            @{
+              Path = 'scripts/Test-ExternalValidationAuthority.ps1'
+              Blob = '277a3bbbabfdedc66d50263a37e06bb094acac5f'
+              Bytes = 34411
+            },
+            @{
+              Path = 'scripts/Test-ExternalValidationAuthoritySelfTest.ps1'
+              Blob = 'cee0dfd6e1db989a6d4788a109c50ef01687e7f5'
+              Bytes = 21030
+            }
+          )
+          foreach ($object in $objects) {
+            $blob = (& git -C .\pinned-verifier rev-parse ('HEAD:' + $object.Path)).Trim()
+            $bytes = (& git -C .\pinned-verifier cat-file -s $blob).Trim()
+            if ($LASTEXITCODE -ne 0 -or $blob -cne $object.Blob -or
+                [int64]$bytes -ne $object.Bytes) {
+              throw "pinned external verifier object differs: $($object.Path)"
+            }
+          }
+          $status = @(& git -C .\pinned-verifier status --porcelain=v1)
+          if ($LASTEXITCODE -ne 0 -or $status.Count -ne 0) {
+            throw 'pinned external verifier checkout is not clean'
+          }
+          & .\pinned-verifier\scripts\Test-ExternalValidationAuthoritySelfTest.ps1
+          if (-not $?) {
+            throw 'pinned external validation authority self-test failed'
+          }
+          & .\trusted-base\tools\Test-CatalogExternalValidationAuthority.ps1 `
+            -RepositoryRoot .\trusted-base `
+            -VerifierRoot .\pinned-verifier
+          if (-not $?) {
+            throw 'base-owned catalog authority self-test failed'
+          }
+
+      - name: Assess candidate Git objects without checkout or execution
+        shell: pwsh
+        env:
+          EVENT_BASE_REF: ${{ github.event.pull_request.base.ref }}
+          EVENT_BASE_REPOSITORY: ${{ github.event.pull_request.base.repo.full_name }}
+          EVENT_BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          EVENT_HEAD_REPOSITORY: ${{ github.event.pull_request.head.repo.full_name }}
+          EVENT_HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+          EVENT_MERGE_SHA: ${{ github.event.pull_request.merge_commit_sha }}
+          EVENT_NAME_EXACT: ${{ github.event_name }}
+          PR_NUMBER_EXACT: ${{ github.event.pull_request.number }}
+          REPOSITORY_EXACT: ${{ github.repository }}
+        run: |
+          $ErrorActionPreference = 'Stop'
+          & .\trusted-base\.github\scripts\Invoke-CatalogExternalValidationAuthority.ps1 `
+            -BaseRoot .\trusted-base `
+            -VerifierRoot .\pinned-verifier `
+            -Repository $env:REPOSITORY_EXACT `
+            -BaseRepository $env:EVENT_BASE_REPOSITORY `
+            -BaseRef $env:EVENT_BASE_REF `
+            -HeadRepository $env:EVENT_HEAD_REPOSITORY `
+            -EventName $env:EVENT_NAME_EXACT `
+            -BaseCommit $env:EVENT_BASE_SHA `
+            -CandidateCommit $env:EVENT_HEAD_SHA `
+            -EventMergeCommit $env:EVENT_MERGE_SHA `
+            -PullRequestNumber $env:PR_NUMBER_EXACT
+          if (-not $?) {
+            throw 'base-owned external validation authority rejected candidate'
+          }
