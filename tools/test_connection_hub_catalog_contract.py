@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import copy
+import hashlib
 import json
 import unittest
 from pathlib import Path
@@ -31,9 +32,211 @@ DAMAGED_FIXTURE = (
 TAG = "connection-hub-v0.1.0-alpha.1"
 VERSION = "0.1.0-alpha.1"
 
+CATALOG_PATH = ROOT / "Rusty-Morphospace" / "catalog" / "catalog.json"
+PUBLICATION_PATH = ROOT / "Rusty-Morphospace" / "catalog" / "publication.json"
+EXPECTED_SECURITY_NOTICE = {
+    "transport_classification": "trusted_lan_experimental",
+    "confidentiality": "none",
+    "production_eligible": False,
+    "pairing_authenticates_but_does_not_encrypt": True,
+    "listener_default": "stopped",
+    "explicit_wearer_opt_in_required": True,
+}
+EXPECTED_COMPANION_ROUTES = [
+    {
+        "owner": "questionable-file-manager",
+        "product_channel": "labs",
+        "purpose": "quest-installation",
+        "relationship": "distinct-product",
+    },
+    {
+        "owner": "rusty-hostess",
+        "product_channel": "labs",
+        "purpose": "windows-control-companion",
+        "relationship": "distinct-product",
+    },
+]
+EXPECTED_PUBLISHED_RELEASE = {
+    "tag": "connection-hub-v0.1.0-alpha.3",
+    "version": "0.1.0-alpha.3",
+    "source_revision": "90dee15aebbe150c074550c5510900b393191f28",
+    "artifact_name": "rusty-connection-hub-0.1.0-alpha.3.apk",
+    "artifact_url": (
+        "https://github.com/MesmerPrism/rusty-quest/releases/download/"
+        "connection-hub-v0.1.0-alpha.3/"
+        "rusty-connection-hub-0.1.0-alpha.3.apk"
+    ),
+    "artifact_sha256": (
+        "494e0996e99ac598d1f20c49ac4c7fd8a079dcf1e5329aa064cea076b04195bc"
+    ),
+    "bytes": 19711402,
+    "installation_identity": INSTALLATION_IDENTITY,
+}
+
 
 def load(path: Path) -> dict:
     return json.loads(path.read_text(encoding="utf-8"))
+
+
+def catalog_bytes(value: dict) -> bytes:
+    return (json.dumps(value, indent=2, ensure_ascii=True) + "\n").encode("utf-8")
+
+
+def legacy_five_owner_hash(catalog: dict) -> str:
+    legacy = copy.deepcopy(catalog)
+    legacy["products"] = [
+        product for product in legacy["products"] if product.get("owner") != OWNER
+    ]
+    return hashlib.sha256(catalog_bytes(legacy)).hexdigest()
+
+
+def validate_checked_in_catalog_state(raw_catalog: bytes, publication: dict) -> None:
+    catalog = json.loads(raw_catalog.decode("utf-8"))
+    if catalog.get("schema") != "rusty.morphospace.public_distribution_catalog.v2":
+        raise ValueError("catalog schema differs")
+    products = catalog.get("products")
+    if not isinstance(products, list) or len(products) != len(preflight.OWNERS):
+        raise ValueError("catalog product set is incomplete")
+    owners = [product.get("owner") for product in products]
+    if len(set(owners)) != len(owners) or set(owners) != set(preflight.OWNERS):
+        raise ValueError("catalog owner set differs")
+
+    hubs = [product for product in products if product.get("owner") == OWNER]
+    if len(hubs) != 1:
+        raise ValueError("Connection Hub owner is not unique")
+    hub = hubs[0]
+    channels = hub.get("product_channels")
+    if not isinstance(channels, list) or len(channels) != 1:
+        raise ValueError("Connection Hub channel set differs")
+    channel = channels[0]
+    expected_channel = {
+        "product_channel": "labs",
+        "maturity": "alpha",
+        "distribution_track": "github-prerelease",
+        "opt_in": True,
+        "identity": {
+            "platform": "android",
+            "installation_identity": INSTALLATION_IDENTITY,
+            "identity_authority": "owner-release-metadata",
+            "relationship_to_stable": "labs-only",
+        },
+        "transition": "remove-labs",
+    }
+    for key, expected in expected_channel.items():
+        if channel.get(key) != expected:
+            raise ValueError(f"Connection Hub channel field differs: {key}")
+    if hub.get("security_notice") != EXPECTED_SECURITY_NOTICE:
+        raise ValueError("Connection Hub security notice differs")
+    if hub.get("companion_routes") != EXPECTED_COMPANION_ROUTES:
+        raise ValueError("Connection Hub companion routes differ")
+    authority_exclusions = hub.get("distribution_notes", {}).get(
+        "authority_exclusions"
+    )
+    if not isinstance(authority_exclusions, list) or (
+        "standalone guided installer" not in authority_exclusions
+    ):
+        raise ValueError("Connection Hub no-installer boundary differs")
+
+    publication_keys = {
+        "schema",
+        "result",
+        "projection",
+        "authorized_at",
+        "publication_target",
+        "publication_authorized",
+        "pages_build_request_mode",
+        "source_preflight",
+    }
+    source_keys = {
+        "repository",
+        "workflow_run_id",
+        "workflow_url",
+        "workflow_head_sha",
+        "artifact_id",
+        "artifact_name",
+        "artifact_digest",
+        "artifact_size_bytes",
+        "readback_receipt_sha256",
+        "source_catalog_sha256",
+        "published_catalog_sha256",
+        "record_count",
+        "complete_labs_owner_set",
+        "owner_binary_downloaded",
+        "read_only_preflight_publication_authorized",
+        "read_only_preflight_pages_deployment_invoked",
+    }
+    if set(publication) != publication_keys:
+        raise ValueError("publication fields differ")
+    if publication.get("schema") != (
+        "rusty.morphospace.catalog_publication_authorization.v1"
+    ):
+        raise ValueError("publication schema differs")
+    if (
+        publication.get("result") != "authorized"
+        or publication.get("publication_authorized") is not True
+        or publication.get("publication_target")
+        != "/Rusty-Morphospace/catalog/catalog.json"
+        or publication.get("pages_build_request_mode")
+        != "post-commit-github-api"
+    ):
+        raise ValueError("publication authority differs")
+    source = publication.get("source_preflight")
+    if not isinstance(source, dict) or set(source) != source_keys:
+        raise ValueError("publication source preflight is missing")
+    run_id = source.get("workflow_run_id")
+    if (
+        source.get("repository") != "MesmerPrism/MesmerPrism.github.io"
+        or isinstance(run_id, bool)
+        or not isinstance(run_id, int)
+        or run_id < 1
+        or source.get("workflow_url")
+        != (
+            "https://github.com/MesmerPrism/MesmerPrism.github.io/"
+            f"actions/runs/{run_id}"
+        )
+        or source.get("artifact_name")
+        != f"distribution-catalog-readonly-preflight-{run_id}"
+    ):
+        raise ValueError("publication source identity differs")
+
+    availability = channel.get("availability")
+    if availability == "unpublished":
+        if channel.get("release") is not None:
+            raise ValueError("inert Connection Hub channel has a release")
+        if (
+            publication.get("projection") != "complete-five-owner-labs-set"
+            or source.get("record_count") != 5
+            or source.get("published_catalog_sha256")
+            != legacy_five_owner_hash(catalog)
+        ):
+            raise ValueError("inert channel lacks prior five-owner authority")
+        return
+    if availability != "published":
+        raise ValueError("Connection Hub availability is outside its lifecycle")
+
+    if channel.get("release") != EXPECTED_PUBLISHED_RELEASE:
+        raise ValueError("published Connection Hub release differs")
+    if publication.get("projection") != "complete-six-owner-labs-set":
+        raise ValueError("published channel lacks six-owner authority")
+    if (
+        source.get("record_count") != len(preflight.OWNERS)
+        or source.get("complete_labs_owner_set") is not True
+        or source.get("owner_binary_downloaded") is not False
+        or source.get("read_only_preflight_publication_authorized") is not False
+        or source.get("read_only_preflight_pages_deployment_invoked") is not False
+    ):
+        raise ValueError("six-owner preflight boundary differs")
+    actual_hash = hashlib.sha256(raw_catalog).hexdigest()
+    if source.get("published_catalog_sha256") != actual_hash:
+        raise ValueError("publication does not hash-bind the catalog")
+    for product in products:
+        labs = [
+            item
+            for item in product.get("product_channels", [])
+            if item.get("product_channel") == "labs"
+        ]
+        if len(labs) != 1 or labs[0].get("availability") != "published":
+            raise ValueError("complete six-owner Labs set is not published")
 
 
 def release_snapshot() -> dict:
@@ -296,7 +499,7 @@ class ConnectionHubCatalogContractTest(unittest.TestCase):
         with self.assertRaises(preflight.PreflightError):
             preflight.assert_same_run_stability(OWNER, TAG, initial, final)
 
-    def test_contract_is_active_with_an_inert_catalog_channel(self) -> None:
+    def test_contract_is_active_across_the_authorized_catalog_lifecycle(self) -> None:
         self.assertIn(OWNER, preflight.OWNERS)
         self.assertIs(preflight.ADAPTERS["connection-hub"], adapt_connection_hub)
         active = preflight.OWNERS[OWNER]
@@ -320,11 +523,10 @@ class ConnectionHubCatalogContractTest(unittest.TestCase):
         }
         self.assertEqual(preflight.validate_request(request)[0]["owner"], OWNER)
 
-        catalog = load(ROOT / "Rusty-Morphospace" / "catalog" / "catalog.json")
+        raw_catalog = CATALOG_PATH.read_bytes()
+        catalog = json.loads(raw_catalog.decode("utf-8"))
         self.assertEqual(len(catalog["products"]), 6)
         hub = next(item for item in catalog["products"] if item["owner"] == OWNER)
-        self.assertEqual(hub["product_channels"][0]["availability"], "unpublished")
-        self.assertIsNone(hub["product_channels"][0]["release"])
         self.assertEqual(hub["security_notice"]["confidentiality"], "none")
         self.assertFalse(hub["security_notice"]["production_eligible"])
         self.assertEqual(
@@ -345,11 +547,111 @@ class ConnectionHubCatalogContractTest(unittest.TestCase):
         ).read_text(encoding="utf-8")
         self.assertIn(OWNER, browser)
         self.assertIn("Pairing authenticates a controller", browser)
-        publication = load(
-            ROOT / "Rusty-Morphospace" / "catalog" / "publication.json"
+        publication = load(PUBLICATION_PATH)
+        validate_checked_in_catalog_state(raw_catalog, publication)
+
+        inert = copy.deepcopy(catalog)
+        inert_hub = next(item for item in inert["products"] if item["owner"] == OWNER)
+        inert_hub["product_channels"][0]["availability"] = "unpublished"
+        inert_hub["product_channels"][0]["release"] = None
+        prior_publication = copy.deepcopy(publication)
+        prior_publication["projection"] = "complete-five-owner-labs-set"
+        prior_publication["source_preflight"]["record_count"] = 5
+        prior_publication["source_preflight"]["published_catalog_sha256"] = (
+            legacy_five_owner_hash(inert)
         )
-        self.assertEqual(publication["projection"], "complete-five-owner-labs-set")
-        self.assertEqual(publication["source_preflight"]["record_count"], 5)
+        validate_checked_in_catalog_state(
+            catalog_bytes(inert), prior_publication
+        )
+
+    def test_published_catalog_authority_damage_matrix_rejects(self) -> None:
+        catalog = load(CATALOG_PATH)
+        publication = load(PUBLICATION_PATH)
+
+        def bind(candidate: dict, authority: dict) -> None:
+            authority["source_preflight"]["published_catalog_sha256"] = (
+                hashlib.sha256(catalog_bytes(candidate)).hexdigest()
+            )
+
+        damages: list[tuple[str, dict, dict]] = []
+
+        unauthorized = copy.deepcopy(publication)
+        unauthorized["publication_authorized"] = False
+        damages.append(("published without authorization", catalog, unauthorized))
+
+        publication_drift = copy.deepcopy(publication)
+        publication_drift["projection"] = "complete-five-owner-labs-set"
+        damages.append(("publication drift", catalog, publication_drift))
+
+        catalog_drift = copy.deepcopy(catalog)
+        catalog_drift["schema"] = "other"
+        catalog_drift_authority = copy.deepcopy(publication)
+        bind(catalog_drift, catalog_drift_authority)
+        damages.append(("catalog drift", catalog_drift, catalog_drift_authority))
+
+        hash_drift = copy.deepcopy(catalog)
+        hash_drift["products"][0]["name"] += " drift"
+        damages.append(("catalog hash drift", hash_drift, publication))
+
+        authorization_hash_drift = copy.deepcopy(publication)
+        authorization_hash_drift["source_preflight"]["published_catalog_sha256"] = (
+            "0" * 64
+        )
+        damages.append(
+            ("publication hash drift", catalog, authorization_hash_drift)
+        )
+
+        owner_drift = copy.deepcopy(catalog)
+        owner_drift["products"][0]["owner"] = "other-owner"
+        owner_drift_authority = copy.deepcopy(publication)
+        bind(owner_drift, owner_drift_authority)
+        damages.append(("owner drift", owner_drift, owner_drift_authority))
+
+        partial = copy.deepcopy(catalog)
+        partial["products"].pop()
+        partial_authority = copy.deepcopy(publication)
+        bind(partial, partial_authority)
+        damages.append(("partial owner set", partial, partial_authority))
+
+        security_drift = copy.deepcopy(catalog)
+        security_hub = next(
+            item for item in security_drift["products"] if item["owner"] == OWNER
+        )
+        security_hub["security_notice"]["confidentiality"] = "tls"
+        security_authority = copy.deepcopy(publication)
+        bind(security_drift, security_authority)
+        damages.append(
+            ("Connection Hub security drift", security_drift, security_authority)
+        )
+
+        release_drift = copy.deepcopy(catalog)
+        release_hub = next(
+            item for item in release_drift["products"] if item["owner"] == OWNER
+        )
+        release_hub["product_channels"][0]["release"]["artifact_sha256"] = (
+            "9" * 64
+        )
+        release_authority = copy.deepcopy(publication)
+        bind(release_drift, release_authority)
+        damages.append(
+            ("Connection Hub release drift", release_drift, release_authority)
+        )
+
+        alternate = copy.deepcopy(catalog)
+        alternate_hub = next(
+            item for item in alternate["products"] if item["owner"] == OWNER
+        )
+        alternate_hub["product_channels"][0]["availability"] = "withdrawn"
+        alternate_authority = copy.deepcopy(publication)
+        bind(alternate, alternate_authority)
+        damages.append(("alternate availability", alternate, alternate_authority))
+
+        for label, damaged_catalog, damaged_publication in damages:
+            with self.subTest(label=label):
+                with self.assertRaises(ValueError):
+                    validate_checked_in_catalog_state(
+                        catalog_bytes(damaged_catalog), damaged_publication
+                    )
 
 
 if __name__ == "__main__":
