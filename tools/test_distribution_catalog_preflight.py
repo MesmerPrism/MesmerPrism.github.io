@@ -501,7 +501,7 @@ def main() -> int:
     if {
         record["owner"]: record["tag"] for record in validated_request
     } != {
-        "questionable-file-manager": "v0.5.0-alpha.12",
+        "questionable-file-manager": "v0.5.0-alpha.14",
         "rusty-fleet": "v0.1.0-alpha.8",
         "rusty-hostess": "v0.1.0-alpha.7",
         "rusty-kiosk": "v0.6.6-alpha.9",

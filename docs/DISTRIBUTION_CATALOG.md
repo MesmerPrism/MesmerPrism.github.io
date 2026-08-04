@@ -134,7 +134,7 @@ must not be relabelled as one.
 The Hub card links to QuestIonAble File Manager Labs only as a separate Quest
 installation route and to Rusty Hostess Labs only as a separate Windows control
 companion. The first reviewed six-owner request binds QFM
-`v0.5.0-alpha.12`, Hostess `v0.1.0-alpha.7`, and Connection Hub
+`v0.5.0-alpha.14`, Hostess `v0.1.0-alpha.7`, and Connection Hub
 `connection-hub-v0.1.0-alpha.3` under their own owners. It does not copy either
 companion's release URL or metadata into Hub authority.
 That exact request is retained at

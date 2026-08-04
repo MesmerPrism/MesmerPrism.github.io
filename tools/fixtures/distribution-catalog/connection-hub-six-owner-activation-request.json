@@ -6,10 +6,10 @@
       "product_channel": "labs",
       "maturity": "alpha",
       "distribution_track": "github-prerelease",
-      "tag": "v0.5.0-alpha.12",
-      "expected_source_revision": "2a117616be90486408c30a12def4f5df5504b345",
+      "tag": "v0.5.0-alpha.14",
+      "expected_source_revision": "f38f9d245d0669dff0d28d7de514ac38144b3a54",
       "expected_owner_metadata_asset": "questionable-file-manager-labs-owner-release.json",
-      "expected_owner_metadata_sha256": "584dd1b58173238cc398b06665cf53aef98dceec7f15d0177b4647a1714061a8"
+      "expected_owner_metadata_sha256": "e4eff4855f2987c907b549dd89ff883e5c35c54a0a9eb48c18c20dfb54e3f350"
     },
     {
       "owner": "rusty-fleet",
