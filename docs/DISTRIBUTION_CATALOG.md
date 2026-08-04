@@ -103,7 +103,8 @@ validates, but does not redefine, owner-authored
 - owner metadata named `connection-hub-release-manifest.json`;
 - the package `io.github.mesmerprism.rustymanifold.broker` and matching
   `rusty-connection-hub-0.1.0-alpha.N.apk` primary artifact;
-- exactly those two public release assets, with no extra name, duplicate name,
+- exactly those two tag-bound assets plus the fixed `LICENSE` and
+  `SOURCE-NOTICE.md` auxiliary assets, with no extra name, duplicate name,
   duplicate asset ID, missing member, or substituted member;
 - exact Rusty Quest source commit/tree and source URL, exact Manifold source
   commit/tree, signer, build-manifest digest, artifact digest, and byte count;
@@ -119,10 +120,9 @@ the exact tag must peel to the protected source revision, the release must be
 public, `draft=false`, `prerelease=true`, and not the repository's latest
 release, and every admitted asset must retain its exact-tag GitHub URL, digest,
 byte count, uploaded state, and same-run identity. Initial and final readback
-must preserve the complete normalized two-asset GitHub inventory exactly. A
-release body, generated
-manifest, workflow artifact, `latest/download` URL, or schema-valid fixture is
-not publication evidence.
+must preserve the complete normalized four-asset GitHub inventory exactly. A
+release body, generated manifest, workflow artifact, `latest/download` URL, or
+schema-valid fixture is not publication evidence.
 
 Pairing authenticates a controller but does not encrypt the current plaintext
 WebSocket transport. Any future human card must show a conspicuous warning that

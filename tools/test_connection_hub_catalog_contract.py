@@ -11,6 +11,7 @@ from unittest.mock import patch
 
 import preflight_distribution_catalog as preflight
 from connection_hub_catalog_contract import (
+    AUXILIARY_ASSETS,
     INSTALLATION_IDENTITY,
     METADATA_ASSET,
     OWNER,
@@ -60,6 +61,24 @@ def release_snapshot() -> dict:
                 f"rusty-connection-hub-{VERSION}.apk"
             ),
         },
+        {
+            "id": 103,
+            "name": "LICENSE",
+            "size": 34523,
+            "digest": "sha256:" + "7" * 64,
+            "state": "uploaded",
+            "browser_download_url": f"{repository}/releases/download/{TAG}/LICENSE",
+        },
+        {
+            "id": 104,
+            "name": "SOURCE-NOTICE.md",
+            "size": 1122,
+            "digest": "sha256:" + "5" * 64,
+            "state": "uploaded",
+            "browser_download_url": (
+                f"{repository}/releases/download/{TAG}/SOURCE-NOTICE.md"
+            ),
+        },
     ]
     return {
         "release": {
@@ -84,6 +103,7 @@ class ConnectionHubCatalogContractTest(unittest.TestCase):
             {
                 METADATA_ASSET,
                 f"rusty-connection-hub-{VERSION}.apk",
+                *AUXILIARY_ASSETS,
             },
         )
         self.assertEqual(
@@ -218,6 +238,13 @@ class ConnectionHubCatalogContractTest(unittest.TestCase):
                         preflight.normalized_snapshot(OWNER, TAG, candidate)
 
     def test_release_inventory_is_closed_and_stable(self) -> None:
+        def remove_asset(value: dict, name: str) -> None:
+            value["release"]["assets"] = [
+                asset
+                for asset in value["release"]["assets"]
+                if asset["name"] != name
+            ]
+
         def unexpected_asset(name: str, asset_id: int) -> dict:
             return {
                 "id": asset_id,
@@ -236,18 +263,22 @@ class ConnectionHubCatalogContractTest(unittest.TestCase):
         with patch.dict(preflight.OWNERS, {OWNER: registry}, clear=False):
             inventory_damage = {
                 "extra asset": lambda value: value["release"]["assets"].append(
-                    unexpected_asset("README.txt", 103)
+                    unexpected_asset("README.txt", 105)
                 ),
-                "missing owner manifest": lambda value: value["release"][
-                    "assets"
-                ].pop(0),
-                "missing primary APK": lambda value: value["release"]["assets"].pop(
-                    1
+                "missing owner manifest": lambda value: remove_asset(
+                    value, METADATA_ASSET
+                ),
+                "missing primary APK": lambda value: remove_asset(
+                    value, f"rusty-connection-hub-{VERSION}.apk"
+                ),
+                "missing LICENSE": lambda value: remove_asset(value, "LICENSE"),
+                "missing SOURCE-NOTICE": lambda value: remove_asset(
+                    value, "SOURCE-NOTICE.md"
                 ),
                 "duplicate name": lambda value: value["release"]["assets"].append(
                     {
                         **copy.deepcopy(value["release"]["assets"][0]),
-                        "id": 103,
+                        "id": 105,
                     }
                 ),
                 "duplicate ID": lambda value: value["release"]["assets"][1].update(
