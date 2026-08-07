@@ -8,14 +8,15 @@ https://mesmerprism.com
 
 For writing-project pages, read:
 
-1. [`docs/WRITING_PROJECT_PAGES.md`](docs/WRITING_PROJECT_PAGES.md)
-2. any private authoring material that the user explicitly provides and
-   separately authorizes for consultation
+1. `docs/WRITING_PROJECT_PAGES.md`
+2. `S:\Work\writing\AGENTS.md`
+3. `S:\Work\writing\_registry\STRUCTURE_STANDARD.md`
+4. the owning private writing project's `AGENTS.md`
 
-This public website owns reader-facing synthesis, context, and linked
-references. Separately controlled private authoring material owns original
-sources, source audits, drafts, claim ledgers, and worklogs. Do not discover or
-route to private material from this repository.
+Most public project pages correspond to a private writing/research repo under
+`S:\Work\writing\active`. The private repo owns original sources, source
+audits, drafts, claim ledgers, and worklogs. The public website owns synthesis,
+reader-facing context, and linked references.
 
 Public pages should explain the subject matter directly. Avoid meta talk about
 what the private project, repo, archive, or pitch does for the author. Internal
