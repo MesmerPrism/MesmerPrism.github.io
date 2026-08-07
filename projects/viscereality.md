@@ -2,8 +2,8 @@
 
 Source: https://mesmerprism.com/projects/viscereality.html
 Canonical HTML: https://mesmerprism.com/projects/viscereality.html
-Generated: 2026-06-13
-Description: Viscereality is a Quest-based bioresponsive VR research system for breath interaction, cardiac coherence training, oscillator-driven visuals, and repeatable study sessions.
+Generated: 2026-08-07
+Description: Viscereality is a bioresponsive virtual-reality research system that turns breathing into spatial visual feedback.
 Markdown: https://mesmerprism.com/projects/viscereality.md
 Plain text: https://mesmerprism.com/projects/viscereality.txt
 BibTeX references: https://mesmerprism.com/projects/viscereality.bib
@@ -11,120 +11,178 @@ CSL JSON references: https://mesmerprism.com/projects/viscereality.references.cs
 
 ---
 
-Current XR research system
+Bioresponsive virtual reality
 
 # Viscereality
 
- Viscereality is a Quest-based biofeedback research system that links
- breathing, cardiac rhythm, oscillator-driven visuals, and visual state
- changes. It combines a participant VR runtime with an operator workflow for
- running repeatable research sessions around regulation, coherence, and
- embodied interaction.
+ Viscereality is a bioresponsive virtual-reality research system that turns
+ breathing into changes across an immersive visual environment. Its published
+ design work combines spatial respiratory feedback with particle-based and
+ oscillator-organized visuals. A preregistered empirical manuscript tests how
+ the environment affects guided box breathing and subjective experience.
 
  [Project site](https://viscereality.org/)
- [Companion app](https://mesmerprism.com/projects/viscereality-companion.html)
- [Docs & downloads](https://mesmerprism.github.io/ViscerealityCompanion/)
  [Back to work](https://mesmerprism.com/#work)
 
- Direction
+ Design lineage
 
-## System shape
+## Breathing made spatial
 
- Viscereality is a research system for making breath, heart rhythm, visual
- state, and operator workflow repeatable enough to study. It builds an
- environment where breath pacing, interoceptive feedback, oscillator-driven
- motion, and visual state changes can be aligned tightly enough to become
- experimentally meaningful.
+ The 2025 Viscereality workshop paper describes a system that maps breathing
+ onto dynamic, spatialized particle feedback. Coupled oscillators organize
+ symmetry in the visual field, giving the respiratory signal a changing
+ spatial form
+ ([Fejer et al., 2025](https://doi.org/10.18420/MUC2025-MCI-WS11-174)).
 
- The system has two visible parts. The participant runtime on Quest couples
- breathing sources, heart-rate signals, coherence metrics, and visual structure
- in real time. The Windows operator workflow keeps installation, launch,
- monitoring, telemetry, study-shell control, and session evidence outside the
- headset so research sessions remain stable and reproducible.
+ A 2026 proceedings article, Breathing Space , extends this published
+ design lineage to spatial mappings of breath and cardiac biofeedback for
+ affective-state representation and coherence training. It establishes the
+ publication history of those design ideas; it is not evidence that the system
+ is clinically effective
+ ([Fejer et al., 2026](https://doi.org/10.1145/3780045.3780061)).
 
- The description focuses on system architecture and design aims. Claims about
- participant outcomes belong in the cited proceedings or future participant data
- rather than in the interface description alone.
+ These papers explain how Viscereality represents physiological signals. The
+ empirical question is narrower: whether the responsive visual environment is
+ associated with closer synchronization to a guided breathing rhythm, and how
+ participants describe the experience.
 
-### Current focus
+### Published design
 
-- Breath-linked visual interaction and respiratory pacing
+- Spatial visual feedback linked to breathing
 
-- Cardiac biofeedback and coherence-oriented training interfaces
+- Particle-based immersive visuals
 
-- Oscillator-driven particle systems and structured visual symmetries
+- Coupled oscillators that organize visual symmetry
 
-- Quest study tooling, transport, monitoring, and operator-shell design
+- Breath and cardiac biofeedback as design inputs
 
-### Public systems and links
+### Reading the evidence
 
-- [viscereality.org](https://viscereality.org/) is the main project site for the broader Viscereality system
+- The published papers document the design lineage.
 
-- [Quest Companion Tools](https://mesmerprism.com/projects/viscereality-companion.html) covers install, launch, monitoring, study shells, and custom adaptation work
+- The empirical results come from a separate manuscript.
 
-- [Plasmatic Multitudes](https://mesmerprism.com/projects/plasmatic-multitudes.html) for the semi-corporeal and embodiment-facing design layer
+- The manuscript reports associations, not proof of a mechanism.
 
-- [Brain Candy](https://mesmerprism.com/projects/brain-candy.html) for guided state-shift design and altered-perception framing
+- The study does not establish therapeutic or clinical benefit.
 
- Translation
+ Empirical manuscript
 
-## Why it matters
+## Study design and sample
 
- Viscereality matters because biofeedback VR only becomes researchable when
- participant experience, sensor reliability, visual behavior, and operator
- workflow are stable enough to repeat. Breath, heartbeat, coherence metrics,
- oscillator visuals, and study guidance have to survive headset thermals,
- transport issues, and operator burden together.
+ The preregistered manuscript reports a within-subject study with three guided
+ box-breathing blocks: a black screen, a high-symmetry Viscereality condition,
+ and an asymmetric Viscereality condition. Each block used a 4-4-4-4 rhythm.
+ The study design is described in the unpublished manuscript
+ ([Fejer et al., unpublished manuscript](https://mesmerprism.com/projects/viscereality.html#ref-manuscript)).
+ The preregistration is publicly available
+ ([AsPredicted, qc3rz2](https://aspredicted.org/qc3rz2.pdf)).
 
- That makes the participant runtime and the Windows companion part of the same
- research object. One shapes the experience inside the headset; the other makes
- installation, launch, monitoring, and session evidence repeatable outside it.
+ Forty-seven people were tested. Eight were excluded under the manuscript's
+ phase-locking-value signal-quality criterion, leaving 39 in the analysis. The
+ sample was not systematically assessed for previous experience with VR,
+ meditation, breathwork, or psychedelics
+ ([Fejer et al., unpublished manuscript](https://mesmerprism.com/projects/viscereality.html#ref-manuscript)).
 
-### System parts
+### Conditions
 
-- Standalone Quest runtime with oscillator-driven particle rendering
+- Black-screen guided breathing
 
-- Breath, heartbeat, coherence, and runtime-config pathways
+- High-symmetry responsive VR
 
-- Windows operator shell for launch, monitoring, installation, study guidance, and collaborator transfer
+- Asymmetric responsive VR
 
-- Publications across immersive systems, breath interaction, and coherence training
+- Within-subject comparison across all three blocks
 
-### Status
+### Sample accounting
 
-- The current release path supports collaboration with [Hugo Critchley's lab at Sussex](https://www.sussex.ac.uk/research/centres/sussex-neuroscience/phd/4yearphd/supervisors/translational-projects/hugo-critchley-project)
+- 47 participants tested
 
-- The companion app handles install, launch, monitoring, and session guidance from Windows
+- 8 excluded by the stated signal-quality criterion
 
-- General-purpose operator tooling follows once that workflow is stable enough to reuse cleanly
+- 39 participants analyzed
+
+ Results
+
+## Breathing and subjective experience
+
+ The manuscript reports stronger phase locking to the guided breathing rhythm
+ when the two VR conditions were pooled and compared with black screen
+ ( W = 169, p = .002, r = .51). The high-symmetry and
+ asymmetric conditions did not reliably differ ( W = 346,
+ p = .548). The result therefore supports a VR-versus-black-screen
+ association, not a demonstrated advantage for symmetric visuals
+ ([Fejer et al., unpublished manuscript](https://mesmerprism.com/projects/viscereality.html#ref-manuscript)).
+
+ Of three pictographic measures related to the sense of self, only spatial
+ frame of reference survived correction. Participants reported a more spatially
+ extended frame in VR than with the black screen. This was a single-item measure
+ and may be vulnerable to demand characteristics
+ ([Fejer et al., unpublished manuscript](https://mesmerprism.com/projects/viscereality.html#ref-manuscript)).
+
+ Differences in altered-state ratings were also mainly between VR and black
+ screen. No symmetric-versus-asymmetric outcome survived correction. Reports of
+ elementary imagery and audio-visual synesthesia are especially difficult to
+ interpret because the VR conditions contained dynamic visuals while the control
+ was black
+ ([Fejer et al., unpublished manuscript](https://mesmerprism.com/projects/viscereality.html#ref-manuscript)).
+
+### What the manuscript reports
+
+- Closer synchronization with the breathing guide in pooled VR conditions
+
+- No reliable difference between the two active VR conditions
+
+- A more spatially extended frame of reference in VR
+
+- Altered-state differences concentrated in VR-versus-black-screen comparisons
+
+### What remains open
+
+- The contribution of respiratory responsiveness versus visual stimulation
+
+- Whether a matched non-responsive visual control would produce similar results
+
+- How prior VR, meditation, breathwork, or psychedelic experience affects responses
+
+- Whether multi-item measures reproduce the spatial-frame finding
+
+ Limits
+
+## What the study does not establish
+
+ The black-screen control cannot separate the effect of respiratory coupling from
+ the effect of seeing a dynamic immersive environment, or from the combination of
+ the two. A matched visual condition that does not respond to breathing is the next
+ mechanistic comparison identified in the manuscript. Until then, the results do
+ not show that bioresponsiveness itself caused the reported differences
+ ([Fejer et al., unpublished manuscript](https://mesmerprism.com/projects/viscereality.html#ref-manuscript)).
+
+ The manuscript does not establish clinical benefit, therapeutic efficacy, or
+ altered-state induction as a general property of Viscereality. It also does not
+ show that symmetric visuals are superior to asymmetric visuals. The findings are
+ best read as an initial, preregistered comparison that narrows the questions for a
+ better-matched control study
+ ([Fejer et al., unpublished manuscript](https://mesmerprism.com/projects/viscereality.html#ref-manuscript)).
 
  References
 
-## Current references
+## References
 
- These are the main public papers and system links currently defining
- Viscereality. They anchor the breath, biofeedback,
- visualization, and study-tooling descriptions separately from broader aspirations
- about altered experience.
+ Published sources document Viscereality's design lineage. The study results and
+ limitations above are attributed to an empirical manuscript that does not yet
+ have a stable public URL.
 
-### Papers and public outputs
+### Study and publications
 
-- Fejer et al. "[Breathing Space: Spatial Mapping of Breath and Cardiac Biofeedback for Affective State Representation and Coherence Training in Viscereality](https://doi.org/10.1145/3780045.3780061)." AlpCHI proceedings (2026).
+- George Fejer, Till Holzapfel, Taru Hirvonen, Johannes Blum, Anestis Lalidis Mateo, Michael Gaebler, and Bigna Lenggenhager. "Viscereality: Empirical Validation of a Bioresponsive Virtual-Reality Breathing Environment with Dynamic Particle-Driven Aesthetics to Improve Box Breathing and Modulate Altered States of Consciousness." Unpublished manuscript.
 
-- Fejer et al. "[Viscereality: A Bio-responsive VR System for Breath-Based Interactions and Coupled Oscillator Dynamics to Augment Altered States of Consciousness](https://doi.org/10.18420/muc2025-mci-ws11-174)." Mensch und Computer workshop proceedings (2025).
+- George Fejer, Till Holzapfel, Taru Hirvonen, Anestis Lalidis Mateo, Johannes Blum, Michael Gaebler, and Bigna Lenggenhager. "[Breathing Space: Spatial Mapping of Breath and Cardiac Biofeedback for Affective State Representation and Coherence Training in Viscereality](https://doi.org/10.1145/3780045.3780061)." Proceedings of the 1st International Conference on Human-Computer Interaction in the Alps . ACM (2026).
 
-- Barton et al. "[The Restorative and State Enhancing Potential of Abstract Fractal-Like Imagery and Interactive Mindfulness Interventions in Virtual Reality](https://doi.org/10.1007/s10055-023-00916-7)." Virtual Reality (2024).
+- George Fejer et al. "[Viscereality: A Bio-responsive VR System for Breath-Based Interactions and Coupled Oscillator Dynamics to Augment Altered States of Consciousness](https://doi.org/10.18420/MUC2025-MCI-WS11-174)." Mensch und Computer 2025 - Workshopband . Gesellschaft für Informatik e.V. (2025).
 
-- Pinilla et al. "[Affective Visualization in Virtual Reality: An Integrative Review](https://doi.org/10.3389/frvir.2021.630731)." Frontiers in Virtual Reality (2021).
+### Public records
 
-### Public systems and research links
+- AsPredicted. "[Viscereality preregistration (qc3rz2)](https://aspredicted.org/qc3rz2.pdf)." Preregistration.
 
-- Viscereality project site. [viscereality.org](https://viscereality.org/) describes the system and its current experiential framing.
-
-- Alius Research project page. [aliusresearch.org/viscereality.html](https://aliusresearch.org/viscereality.html) situates the project within its broader research context.
-
-- Current Quest runtime. The participant-facing runtime is described through [viscereality.org](https://viscereality.org/), Mesmer Prism, and the cited papers; source release decisions follow the research collaboration requirements.
-
-- Viscereality Companion. [The companion page](https://mesmerprism.com/projects/viscereality-companion.html), the public [docs and downloads](https://mesmerprism.github.io/ViscerealityCompanion/), and [the source repository](https://github.com/MesmerPrism/ViscerealityCompanion) cover the Windows operator app, study-shell packaging, and public documentation.
-
-- Mesmer Prism GitHub. [github.com/MesmerPrism](https://github.com/MesmerPrism) indexes surrounding tooling and related research code that can be shared openly.
+- The Viscereality Project. "[The Viscereality Project](https://viscereality.org/)." Official project website. Accessed August 7, 2026.
