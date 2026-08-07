@@ -1,70 +1,6 @@
 [
   {
-    "id": "github-com-mesmer-prism-work-publications-background-contact",
-    "type": "webpage",
-    "title": "Mesmer Prism Work Publications Background Contact",
-    "URL": "https://github.com/MesmerPrism",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          13
-        ]
-      ]
-    },
-    "note": "Referenced by Viscereality: https://mesmerprism.com/projects/viscereality.html"
-  },
-  {
-    "id": "viscereality-org-project-site",
-    "type": "webpage",
-    "title": "Project site",
-    "URL": "https://viscereality.org/",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          13
-        ]
-      ]
-    },
-    "note": "Referenced by Viscereality: https://mesmerprism.com/projects/viscereality.html"
-  },
-  {
-    "id": "mesmerprism-github-io-docs-downloads",
-    "type": "webpage",
-    "title": "Docs & downloads",
-    "URL": "https://mesmerprism.github.io/ViscerealityCompanion/",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          13
-        ]
-      ]
-    },
-    "note": "Referenced by Viscereality: https://mesmerprism.com/projects/viscereality.html"
-  },
-  {
-    "id": "www-sussex-ac-uk-hugo-critchley-s-lab-at-sussex",
-    "type": "webpage",
-    "title": "Hugo Critchley's lab at Sussex",
-    "URL": "https://www.sussex.ac.uk/research/centres/sussex-neuroscience/phd/4yearphd/supervisors/translational-projects/hugo-critchley-project",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          13
-        ]
-      ]
-    },
-    "note": "Referenced by Viscereality: https://mesmerprism.com/projects/viscereality.html"
-  },
-  {
-    "id": "fejer-et-al-breathing-space-spatial-mapping-of-breath-and-cardiac-bi",
+    "id": "george-fejer-till-holzapfel-taru-hirvonen-anestis-lalidi-breathing-space-spatial-mapping-of-breath-and-cardiac-bi-2026",
     "type": "article-journal",
     "title": "Breathing Space: Spatial Mapping of Breath and Cardiac Biofeedback for Affective State Representation and Coherence Training in Viscereality",
     "URL": "https://doi.org/10.1145/3780045.3780061",
@@ -72,125 +8,102 @@
       "date-parts": [
         [
           2026,
-          6,
-          13
+          8,
+          7
         ]
       ]
     },
     "note": "Referenced by Viscereality: https://mesmerprism.com/projects/viscereality.html",
     "author": [
       {
-        "literal": "Fejer et al"
+        "literal": "George Fejer, Till Holzapfel, Taru Hirvonen, Anestis Lalidis Mateo, Johannes Blum, Michael Gaebler, and Bigna Lenggenhager"
       }
     ],
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    },
     "DOI": "10.1145/3780045.3780061"
   },
   {
-    "id": "fejer-et-al-viscereality-a-bio-responsive-vr-system-for-breath-based",
+    "id": "george-fejer-et-al-viscereality-a-bio-responsive-vr-system-for-breath-based-2025",
     "type": "article-journal",
     "title": "Viscereality: A Bio-responsive VR System for Breath-Based Interactions and Coupled Oscillator Dynamics to Augment Altered States of Consciousness",
-    "URL": "https://doi.org/10.18420/muc2025-mci-ws11-174",
+    "URL": "https://doi.org/10.18420/MUC2025-MCI-WS11-174",
     "accessed": {
       "date-parts": [
         [
           2026,
-          6,
-          13
+          8,
+          7
         ]
       ]
     },
     "note": "Referenced by Viscereality: https://mesmerprism.com/projects/viscereality.html",
     "author": [
       {
-        "literal": "Fejer et al"
+        "literal": "George Fejer et al"
       }
     ],
-    "DOI": "10.18420/muc2025-mci-ws11-174"
-  },
-  {
-    "id": "fejer-et-al-the-restorative-and-state-enhancing-potential-of-abstrac",
-    "type": "article-journal",
-    "title": "The Restorative and State Enhancing Potential of Abstract Fractal-Like Imagery and Interactive Mindfulness Interventions in Virtual Reality",
-    "URL": "https://doi.org/10.1007/s10055-023-00916-7",
-    "accessed": {
+    "issued": {
       "date-parts": [
         [
-          2026,
-          6,
-          13
+          2025
         ]
       ]
     },
-    "note": "Referenced by Viscereality: https://mesmerprism.com/projects/viscereality.html",
-    "author": [
-      {
-        "literal": "Fejer et al"
-      }
-    ],
-    "DOI": "10.1007/s10055-023-00916-7"
+    "DOI": "10.18420/MUC2025-MCI-WS11-174"
   },
   {
-    "id": "barton-et-al-affective-visualization-in-virtual-reality-an-integrativ",
-    "type": "article-journal",
-    "title": "Affective Visualization in Virtual Reality: An Integrative Review",
-    "URL": "https://doi.org/10.3389/frvir.2021.630731",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          6,
-          13
-        ]
-      ]
-    },
-    "note": "Referenced by Viscereality: https://mesmerprism.com/projects/viscereality.html",
-    "author": [
-      {
-        "literal": "Barton et al"
-      }
-    ],
-    "DOI": "10.3389/frvir.2021.630731"
-  },
-  {
-    "id": "viscereality-project-site-aliusresearch-org-viscereality-html",
+    "id": "aspredicted-viscereality-preregistration-qc3rz2",
     "type": "webpage",
-    "title": "aliusresearch.org/viscereality.html",
-    "URL": "https://aliusresearch.org/viscereality.html",
+    "title": "Viscereality preregistration (qc3rz2)",
+    "URL": "https://aspredicted.org/qc3rz2.pdf",
     "accessed": {
       "date-parts": [
         [
           2026,
-          6,
-          13
+          8,
+          7
         ]
       ]
     },
     "note": "Referenced by Viscereality: https://mesmerprism.com/projects/viscereality.html",
     "author": [
       {
-        "literal": "Viscereality project site"
+        "literal": "AsPredicted"
       }
     ]
   },
   {
-    "id": "current-quest-runtime-the-source-repository",
+    "id": "the-viscereality-project-the-viscereality-project-2026",
     "type": "webpage",
-    "title": "the source repository",
-    "URL": "https://github.com/MesmerPrism/ViscerealityCompanion",
+    "title": "The Viscereality Project",
+    "URL": "https://viscereality.org/",
     "accessed": {
       "date-parts": [
         [
           2026,
-          6,
-          13
+          8,
+          7
         ]
       ]
     },
     "note": "Referenced by Viscereality: https://mesmerprism.com/projects/viscereality.html",
     "author": [
       {
-        "literal": "Current Quest runtime"
+        "literal": "The Viscereality Project"
       }
-    ]
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    }
   }
 ]
