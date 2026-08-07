@@ -1,11 +1,16 @@
 # Writing Project Pages
 
-Mesmer Prism is the public surface for selected private writing projects.
-Almost every writing project should eventually have:
+Mesmer Prism is the public surface for selected writing projects. A writing
+project may have:
 
-- a private development/source repo under `S:\Work\writing\active`;
 - a public-facing page or section on `mesmerprism.com`;
-- a source-checked handoff from private notes into public prose.
+- separately controlled private authoring material; and
+- a source-checked handoff into public prose when that material is explicitly
+  provided and separately authorized for consultation.
+
+The public page is the first route for website work. Do not search for or infer
+private repositories, archives, planning documents, or machine-local authoring
+locations from this repository.
 
 ## Public page purpose
 
@@ -142,19 +147,22 @@ source is cited in the text, it should usually appear in the references section;
 if a source is listed in references, it should usually support a visible claim
 in the page.
 
-## Private-to-public handoff
+## Authorized source-to-public handoff
 
-Before editing a public writing page:
+When source material is explicitly provided and separately authorized for
+consultation:
 
-1. Run or refresh a private research pass in the owning writing repo.
-2. Produce `PUBLIC_HANDOFF.md` with public-safe claims, caveats, and reference plan.
+1. Use only the material within that explicit authorization.
+2. Carry over only public-safe claims, caveats, and reference information.
 3. Remove private process framing and pitch language.
 4. Add or update references in the public page.
 5. Add inline citation links throughout the page, not only at the end.
 6. Apply a humanizer pass for plain, direct prose.
 7. Validate the static page locally, including citation-link checks and mobile
    overflow checks.
-8. Commit the private research pass separately from the website update.
+8. Keep private authoring material and website changes under their separate
+   authorities; never copy private archives or machine-local routes into the
+   public repository.
 
 Minimum validation for a citation-heavy page:
 
