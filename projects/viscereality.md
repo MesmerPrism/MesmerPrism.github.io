@@ -73,13 +73,16 @@ Bioresponsive virtual reality
  The preregistered manuscript reports a within-subject study with three guided
  box-breathing blocks: a black screen, a high-symmetry Viscereality condition,
  and an asymmetric Viscereality condition. Each block used a 4-4-4-4 rhythm.
+ The study design is described in the unpublished manuscript
+ ([Fejer et al., unpublished manuscript](https://mesmerprism.com/projects/viscereality.html#ref-manuscript)).
  The preregistration is publicly available
  ([AsPredicted, qc3rz2](https://aspredicted.org/qc3rz2.pdf)).
 
  Forty-seven people were tested. Eight were excluded under the manuscript's
  phase-locking-value signal-quality criterion, leaving 39 in the analysis. The
  sample was not systematically assessed for previous experience with VR,
- meditation, breathwork, or psychedelics.
+ meditation, breathwork, or psychedelics
+ ([Fejer et al., unpublished manuscript](https://mesmerprism.com/projects/viscereality.html#ref-manuscript)).
 
 ### Conditions
 
@@ -108,18 +111,21 @@ Bioresponsive virtual reality
  ( W = 169, p = .002, r = .51). The high-symmetry and
  asymmetric conditions did not reliably differ ( W = 346,
  p = .548). The result therefore supports a VR-versus-black-screen
- association, not a demonstrated advantage for symmetric visuals.
+ association, not a demonstrated advantage for symmetric visuals
+ ([Fejer et al., unpublished manuscript](https://mesmerprism.com/projects/viscereality.html#ref-manuscript)).
 
  Of three pictographic measures related to the sense of self, only spatial
  frame of reference survived correction. Participants reported a more spatially
  extended frame in VR than with the black screen. This was a single-item measure
- and may be vulnerable to demand characteristics.
+ and may be vulnerable to demand characteristics
+ ([Fejer et al., unpublished manuscript](https://mesmerprism.com/projects/viscereality.html#ref-manuscript)).
 
  Differences in altered-state ratings were also mainly between VR and black
  screen. No symmetric-versus-asymmetric outcome survived correction. Reports of
  elementary imagery and audio-visual synesthesia are especially difficult to
  interpret because the VR conditions contained dynamic visuals while the control
- was black.
+ was black
+ ([Fejer et al., unpublished manuscript](https://mesmerprism.com/projects/viscereality.html#ref-manuscript)).
 
 ### What the manuscript reports
 
@@ -149,13 +155,15 @@ Bioresponsive virtual reality
  the effect of seeing a dynamic immersive environment, or from the combination of
  the two. A matched visual condition that does not respond to breathing is the next
  mechanistic comparison identified in the manuscript. Until then, the results do
- not show that bioresponsiveness itself caused the reported differences.
+ not show that bioresponsiveness itself caused the reported differences
+ ([Fejer et al., unpublished manuscript](https://mesmerprism.com/projects/viscereality.html#ref-manuscript)).
 
  The manuscript does not establish clinical benefit, therapeutic efficacy, or
  altered-state induction as a general property of Viscereality. It also does not
  show that symmetric visuals are superior to asymmetric visuals. The findings are
  best read as an initial, preregistered comparison that narrows the questions for a
- better-matched control study.
+ better-matched control study
+ ([Fejer et al., unpublished manuscript](https://mesmerprism.com/projects/viscereality.html#ref-manuscript)).
 
  References
 
@@ -167,7 +175,7 @@ Bioresponsive virtual reality
 
 ### Study and publications
 
-- George Fejer, Till Holzapfel, Taru Hirvonen, Johannes Blum, Anestis Lalidis Mateo, Michael Gaebler, and Bigna Lenggenhager. "Viscereality: Empirical Validation of a Bioresponsive Virtual-Reality Breathing Environment with Dynamic Particle-Driven Aesthetics to Improve Box Breathing and Modulate Altered States of Consciousness." Manuscript.
+- George Fejer, Till Holzapfel, Taru Hirvonen, Johannes Blum, Anestis Lalidis Mateo, Michael Gaebler, and Bigna Lenggenhager. "Viscereality: Empirical Validation of a Bioresponsive Virtual-Reality Breathing Environment with Dynamic Particle-Driven Aesthetics to Improve Box Breathing and Modulate Altered States of Consciousness." Unpublished manuscript.
 
 - George Fejer, Till Holzapfel, Taru Hirvonen, Anestis Lalidis Mateo, Johannes Blum, Michael Gaebler, and Bigna Lenggenhager. "[Breathing Space: Spatial Mapping of Breath and Cardiac Biofeedback for Affective State Representation and Coherence Training in Viscereality](https://doi.org/10.1145/3780045.3780061)." Proceedings of the 1st International Conference on Human-Computer Interaction in the Alps . ACM (2026).
 

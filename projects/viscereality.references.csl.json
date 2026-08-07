@@ -1,109 +1,83 @@
 [
   {
-    "id": "george-fejer-till-holzapfel-taru-hirvonen-anestis-lalidi-breathing-space-spatial-mapping-of-breath-and-cardiac-bi-2026",
-    "type": "article-journal",
-    "title": "Breathing Space: Spatial Mapping of Breath and Cardiac Biofeedback for Affective State Representation and Coherence Training in Viscereality",
-    "URL": "https://doi.org/10.1145/3780045.3780061",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          8,
-          7
-        ]
-      ]
-    },
-    "note": "Referenced by Viscereality: https://mesmerprism.com/projects/viscereality.html",
+    "id": "fejer-viscereality-empirical-validation",
+    "type": "manuscript",
+    "title": "Viscereality: Empirical Validation of a Bioresponsive Virtual-Reality Breathing Environment with Dynamic Particle-Driven Aesthetics to Improve Box Breathing and Modulate Altered States of Consciousness",
     "author": [
-      {
-        "literal": "George Fejer, Till Holzapfel, Taru Hirvonen, Anestis Lalidis Mateo, Johannes Blum, Michael Gaebler, and Bigna Lenggenhager"
-      }
+      { "given": "George", "family": "Fejer" },
+      { "given": "Till", "family": "Holzapfel" },
+      { "given": "Taru", "family": "Hirvonen" },
+      { "given": "Johannes", "family": "Blum" },
+      { "given": "Anestis", "family": "Lalidis Mateo" },
+      { "given": "Michael", "family": "Gaebler" },
+      { "given": "Bigna", "family": "Lenggenhager" }
     ],
-    "issued": {
-      "date-parts": [
-        [
-          2026
-        ]
-      ]
-    },
-    "DOI": "10.1145/3780045.3780061"
+    "genre": "Unpublished manuscript",
+    "note": "Unpublished manuscript"
   },
   {
-    "id": "george-fejer-et-al-viscereality-a-bio-responsive-vr-system-for-breath-based-2025",
-    "type": "article-journal",
-    "title": "Viscereality: A Bio-responsive VR System for Breath-Based Interactions and Coupled Oscillator Dynamics to Augment Altered States of Consciousness",
-    "URL": "https://doi.org/10.18420/MUC2025-MCI-WS11-174",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          8,
-          7
-        ]
-      ]
-    },
-    "note": "Referenced by Viscereality: https://mesmerprism.com/projects/viscereality.html",
+    "id": "fejer-breathing-space-2026",
+    "type": "paper-conference",
+    "title": "Breathing Space: Spatial Mapping of Breath and Cardiac Biofeedback for Affective State Representation and Coherence Training in Viscereality",
     "author": [
-      {
-        "literal": "George Fejer et al"
-      }
+      { "given": "George", "family": "Fejer" },
+      { "given": "Till", "family": "Holzapfel" },
+      { "given": "Taru", "family": "Hirvonen" },
+      { "given": "Anestis", "family": "Lalidis Mateo" },
+      { "given": "Johannes", "family": "Blum" },
+      { "given": "Michael", "family": "Gaebler" },
+      { "given": "Bigna", "family": "Lenggenhager" }
     ],
-    "issued": {
-      "date-parts": [
-        [
-          2025
-        ]
-      ]
-    },
-    "DOI": "10.18420/MUC2025-MCI-WS11-174"
+    "container-title": "Proceedings of the 1st International Conference on Human-Computer Interaction in the Alps",
+    "publisher": "ACM",
+    "page": "79-86",
+    "issued": { "date-parts": [[2026]] },
+    "DOI": "10.1145/3780045.3780061",
+    "URL": "https://doi.org/10.1145/3780045.3780061",
+    "accessed": { "date-parts": [[2026, 8, 7]] },
+    "note": "Referenced by Viscereality: https://mesmerprism.com/projects/viscereality.html"
+  },
+  {
+    "id": "fejer-viscereality-bioresponsive-2025",
+    "type": "paper-conference",
+    "title": "Viscereality: A Bio-responsive VR System for Breath-Based Interactions and Coupled Oscillator Dynamics to Augment Altered States of Consciousness",
+    "author": [
+      { "given": "George", "family": "Fejer" },
+      { "given": "Till", "family": "Holzapfel" },
+      { "given": "Andrés", "family": "Gómez-Emilsson" },
+      { "given": "Taru", "family": "Hirvonen" },
+      { "given": "Raimonds", "family": "Jermaks" },
+      { "given": "Johannes", "family": "Blum" },
+      { "given": "David", "family": "Lobser" },
+      { "given": "Anestis", "family": "Lalidis Mateo" },
+      { "given": "David", "family": "Glowacki" },
+      { "given": "Michael", "family": "Gaebler" },
+      { "given": "Bigna", "family": "Lenggenhager" }
+    ],
+    "container-title": "Mensch und Computer 2025 - Workshopband",
+    "publisher": "Gesellschaft für Informatik e.V.",
+    "issued": { "date-parts": [[2025]] },
+    "DOI": "10.18420/MUC2025-MCI-WS11-174",
+    "URL": "https://doi.org/10.18420/MUC2025-MCI-WS11-174",
+    "accessed": { "date-parts": [[2026, 8, 7]] },
+    "note": "Referenced by Viscereality: https://mesmerprism.com/projects/viscereality.html"
   },
   {
     "id": "aspredicted-viscereality-preregistration-qc3rz2",
     "type": "webpage",
     "title": "Viscereality preregistration (qc3rz2)",
+    "author": [{ "literal": "AsPredicted" }],
     "URL": "https://aspredicted.org/qc3rz2.pdf",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          8,
-          7
-        ]
-      ]
-    },
-    "note": "Referenced by Viscereality: https://mesmerprism.com/projects/viscereality.html",
-    "author": [
-      {
-        "literal": "AsPredicted"
-      }
-    ]
+    "accessed": { "date-parts": [[2026, 8, 7]] },
+    "note": "Referenced by Viscereality: https://mesmerprism.com/projects/viscereality.html"
   },
   {
-    "id": "the-viscereality-project-the-viscereality-project-2026",
+    "id": "viscereality-project-website",
     "type": "webpage",
     "title": "The Viscereality Project",
+    "author": [{ "literal": "The Viscereality Project" }],
     "URL": "https://viscereality.org/",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          8,
-          7
-        ]
-      ]
-    },
-    "note": "Referenced by Viscereality: https://mesmerprism.com/projects/viscereality.html",
-    "author": [
-      {
-        "literal": "The Viscereality Project"
-      }
-    ],
-    "issued": {
-      "date-parts": [
-        [
-          2026
-        ]
-      ]
-    }
+    "accessed": { "date-parts": [[2026, 8, 7]] },
+    "note": "Official project website; accessed 2026-08-07"
   }
 ]
