@@ -1,9 +1,9 @@
 {
   "schema": "rusty.fleet.windows_release_metadata_handoff.v2",
   "result": "pass",
-  "deployment_id": "labs-c6fadc5a78b897af806e2c72",
-  "deployment_sequence": 60,
-  "previous_handoff_sha256": "d3ab66726095eddb3de90cc58a5119aa6f3223287c7d57afe6bafe8765d70f52",
+  "deployment_id": "labs-e653bc06d201543fcf8c47e8",
+  "deployment_sequence": 61,
+  "previous_handoff_sha256": "0e221a24ccab5049a830099aa14d6581c15f82403b9339195ada05ba41031914",
   "product": "rusty-fleet-labs",
   "version": "0.1.0",
   "product_channel": "labs",
@@ -13,16 +13,16 @@
   "tag": "v0.1.0-alpha.8",
   "source_revision": "1078a92703dab80bf5af3da01f0c2082c4db8abd",
   "source_tree": "870a94f07bae7655ebad28efce5c1d50f9f766f4",
-  "descriptor_id": "v0.1.0-labs-1788452911804",
-  "issued_at_ms": 1788452911804,
-  "expires_at_ms": 1788535711804,
+  "descriptor_id": "v0.1.0-labs-1788496682628",
+  "issued_at_ms": 1788496682628,
+  "expires_at_ms": 1788579482628,
   "validity_duration_ms": 82800000,
   "descriptor_signer_spki_sha256": "0b3ef04dc5481d5e0a0a243df298c31052501e014a6e27516c48b95846657d0c",
   "setup_signer_certificate_sha256": "baead63c37e32085c3af19b4c739a6a308d700529f107d40e14fec2c94fe7ddf",
   "binary_authority": "github_releases",
   "pages_binary_count": 0,
   "pages_path": "Rusty-Fleet/metadata/labs",
-  "publication_preflight_receipt_sha256": "eaa8d020611a6e7b840f1c5a09b06cc8cef26f753d06a0ac1c0e0f33b0517f12",
+  "publication_preflight_receipt_sha256": "ed7e6abc5091873303468b20600363d14ef88fc9b428878a9c7d7ef7ac8a116a",
   "release_files": [
     {
       "role": "setup",
@@ -41,14 +41,14 @@
     {
       "role": "descriptor",
       "name": "release.json",
-      "sha256": "c6fadc5a78b897af806e2c723d7b8cc0cd92f7b2378b673d6392b25d61f1f377",
+      "sha256": "e653bc06d201543fcf8c47e8677612ac06d712765432a3bf4ab43a053162c8a9",
       "size_bytes": 2109,
       "authority": "github_pages"
     },
     {
       "role": "descriptor_receipt",
       "name": "release-descriptor.receipt.json",
-      "sha256": "1e82e30d50dd3b442d4148fa903aeeb666c2890931782b62bc285670187131e1",
+      "sha256": "6e2a497243078aa89703b510adbefeb6358f61d3a1667736fecf658c8762b9a0",
       "size_bytes": 2326,
       "authority": "github_pages"
     },
