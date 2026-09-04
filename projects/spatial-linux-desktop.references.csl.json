@@ -1,0 +1,39 @@
+[
+  {
+    "id": "github-com-view-source",
+    "type": "webpage",
+    "title": "View source",
+    "URL": "https://github.com/MesmerPrism/quest-termux-lab",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          9,
+          4
+        ]
+      ]
+    },
+    "note": "Referenced by Spatial Linux Desktop | Termux-powered Linux on Meta Quest: https://mesmerprism.com/projects/spatial-linux-desktop.html"
+  },
+  {
+    "id": "read-the-architecture-read-the-architecture",
+    "type": "webpage",
+    "title": "Read the architecture",
+    "URL": "https://github.com/MesmerPrism/quest-termux-lab/blob/main/docs/spatial-desktop-panel.md",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          9,
+          4
+        ]
+      ]
+    },
+    "note": "Referenced by Spatial Linux Desktop | Termux-powered Linux on Meta Quest: https://mesmerprism.com/projects/spatial-linux-desktop.html",
+    "author": [
+      {
+        "literal": "Read the architecture"
+      }
+    ]
+  }
+]

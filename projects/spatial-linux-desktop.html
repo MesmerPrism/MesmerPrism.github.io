@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spatial Linux Desktop | Termux-powered Linux on Meta Quest</title>
+    <link rel="canonical" href="https://mesmerprism.com/projects/spatial-linux-desktop.html">
+    <meta name="description" content="A local, interactive Linux workstation for Meta Quest, presented through a native Android app in Horizon window and Spatial SDK panel modes.">
+    <meta property="og:title" content="Spatial Linux Desktop">
+    <meta property="og:description" content="Linux, locally in your headset. A Termux-powered desktop with native Quest pointer, keyboard, right-click, and microphone input.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mesmerprism.com/projects/spatial-linux-desktop.html">
+    <meta property="og:image" content="https://mesmerprism.com/projects/spatial-linux-desktop/assets/spatial-linux-desktop-key-art.png">
+    <meta property="og:image:alt" content="A floating Linux workstation panel controlled inside a mixed-reality environment">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="theme-color" content="#f5f1ea">
+    <link rel="icon" href="/projects/spatial-linux-desktop/assets/spatial-linux-desktop-logo.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/assets/fonts.css">
+    <link rel="stylesheet" href="/projects/spatial-linux-desktop/styles.css?v=20260904">
+    <link rel="alternate" type="text/markdown" href="/projects/spatial-linux-desktop.md" title="Markdown version">
+    <link rel="alternate" type="text/plain" href="/projects/spatial-linux-desktop.txt" title="Plain-text version">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareSourceCode",
+        "name": "Spatial Linux Desktop",
+        "description": "A Termux-powered interactive Linux desktop for Meta Quest with native Android and Spatial SDK presentation modes.",
+        "codeRepository": "https://github.com/MesmerPrism/quest-termux-lab",
+        "license": "https://opensource.org/license/mit",
+        "programmingLanguage": ["Kotlin", "Python", "Shell"],
+        "runtimePlatform": "Meta Horizon OS",
+        "author": {
+            "@type": "Person",
+            "name": "Till Holzapfel",
+            "url": "https://mesmerprism.com/"
+        },
+        "url": "https://mesmerprism.com/projects/spatial-linux-desktop.html"
+    }
+    </script>
+    <!-- BEGIN agent-readable metadata -->
+    <link rel="alternate" type="text/markdown" href="/projects/spatial-linux-desktop.md" title="Markdown version">
+    <link rel="alternate" type="text/plain" href="/projects/spatial-linux-desktop.txt" title="Plain text version">
+    <link rel="alternate" type="application/x-bibtex" href="/projects/spatial-linux-desktop.bib" title="BibTeX references">
+    <link rel="alternate" type="application/vnd.citationstyles.csl+json" href="/projects/spatial-linux-desktop.references.csl.json" title="CSL JSON references">
+    <meta name="citation_title" content="Spatial Linux Desktop | Termux-powered Linux on Meta Quest">
+    <meta name="citation_author" content="Till Holzapfel">
+    <meta name="citation_publication_date" content="2026-09-04">
+    <meta name="citation_online_date" content="2026-09-04">
+    <meta name="citation_public_url" content="https://mesmerprism.com/projects/spatial-linux-desktop.html">
+    <meta name="citation_language" content="en">
+    <script type="application/ld+json" data-agent-metadata>
+    {
+          "@context": "https://schema.org",
+          "@type": "Article",
+          "headline": "Spatial Linux Desktop | Termux-powered Linux on Meta Quest",
+          "name": "Spatial Linux Desktop | Termux-powered Linux on Meta Quest",
+          "description": "A local, interactive Linux workstation for Meta Quest, presented through a native Android app in Horizon window and Spatial SDK panel modes.",
+          "author": {
+                "@type": "Person",
+                "name": "Till Holzapfel"
+          },
+          "publisher": {
+                "@type": "Organization",
+                "name": "Mesmer Prism",
+                "url": "https://mesmerprism.com"
+          },
+          "isPartOf": {
+                "@type": "WebSite",
+                "name": "Mesmer Prism",
+                "url": "https://mesmerprism.com"
+          },
+          "url": "https://mesmerprism.com/projects/spatial-linux-desktop.html",
+          "dateModified": "2026-09-04",
+          "inLanguage": "en",
+          "encoding": [
+                {
+                      "@type": "MediaObject",
+                      "encodingFormat": "text/markdown",
+                      "contentUrl": "https://mesmerprism.com/projects/spatial-linux-desktop.md"
+                },
+                {
+                      "@type": "MediaObject",
+                      "encodingFormat": "text/plain",
+                      "contentUrl": "https://mesmerprism.com/projects/spatial-linux-desktop.txt"
+                },
+                {
+                      "@type": "MediaObject",
+                      "encodingFormat": "application/x-bibtex",
+                      "contentUrl": "https://mesmerprism.com/projects/spatial-linux-desktop.bib"
+                },
+                {
+                      "@type": "MediaObject",
+                      "encodingFormat": "application/vnd.citationstyles.csl+json",
+                      "contentUrl": "https://mesmerprism.com/projects/spatial-linux-desktop.references.csl.json"
+                }
+          ],
+          "citation": [
+                "https://github.com/MesmerPrism/quest-termux-lab",
+                "https://github.com/MesmerPrism/quest-termux-lab/blob/main/docs/spatial-desktop-panel.md"
+          ]
+    }
+    </script>
+    <!-- END agent-readable metadata -->
+</head>
+<body class="sld-page">
+    <header class="sld-header">
+        <div class="sld-shell sld-header__row">
+            <a class="sld-brand" href="#top" aria-label="Spatial Linux Desktop home">
+                <img src="/projects/spatial-linux-desktop/assets/spatial-linux-desktop-logo.svg" alt="" width="128" height="128">
+                <span>Spatial Linux Desktop</span>
+            </a>
+            <nav class="sld-nav" aria-label="Project navigation">
+                <a href="#system">System</a>
+                <a href="#inputs">Inputs</a>
+                <a href="#showcase">Showcase</a>
+                <a href="#source">Source</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="top">
+        <section class="sld-shell sld-hero" aria-labelledby="hero-title">
+            <div>
+                <h1 id="hero-title">Linux, locally in your headset.</h1>
+                <p class="sld-lede">A Termux-powered desktop for Meta Quest, presented through a native Android and Spatial SDK interface.</p>
+                <div class="sld-actions">
+                    <a class="sld-button sld-button--strong" href="https://github.com/MesmerPrism/quest-termux-lab" target="_blank" rel="noopener noreferrer">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m5 7 5 5-5 5M12 17h7"/></svg>
+                        View source
+                    </a>
+                    <a class="sld-button" href="#inputs">Explore the interaction system</a>
+                </div>
+            </div>
+            <figure class="sld-hero__visual">
+                <picture>
+                    <source srcset="/projects/spatial-linux-desktop/assets/spatial-linux-desktop-key-art.webp" type="image/webp">
+                    <img src="/projects/spatial-linux-desktop/assets/spatial-linux-desktop-key-art.png" alt="A floating Linux development desktop in a mixed-reality room, targeted by a controller ray" width="1672" height="941" fetchpriority="high">
+                </picture>
+                <figcaption class="sld-hero__caption"><span>Quest-native presentation · Linux-owned session</span><span class="sld-status">● local desktop connected</span></figcaption>
+            </figure>
+        </section>
+
+        <section class="sld-section" id="system" aria-labelledby="system-title">
+            <div class="sld-shell">
+                <div class="sld-system__intro">
+                    <h2 id="system-title">A desktop bridge, built for Quest.</h2>
+                    <p class="sld-section__copy">Termux, Termux:X11 and XFCE own the Linux session. A native Android app carries the pixels and input over device-local loopback.</p>
+                </div>
+                <div class="sld-flow" aria-label="System architecture: Meta Quest to native panel to loopback RFB to Termux X11 to Linux desktop">
+                    <div class="sld-flow__node">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 10.5c1.3-3.8 4.1-5.7 9-5.7s7.7 1.9 9 5.7v4.8c0 1.2-1 2.2-2.2 2.2h-2.5l-2.2-3.4H9.9l-2.2 3.4H5.2A2.2 2.2 0 0 1 3 15.3Z"/><path d="M3.2 11.2h5.2M15.6 11.2h5.2"/></svg>
+                        <span>Meta Quest</span>
+                    </div>
+                    <span class="sld-flow__line" aria-hidden="true"></span>
+                    <div class="sld-flow__node">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="1.5"/><path d="M3 8h18M7 6h.01"/></svg>
+                        <span>Native panel</span>
+                    </div>
+                    <span class="sld-flow__line" aria-hidden="true"></span>
+                    <span class="sld-flow__protocol">loopback RFB</span>
+                    <span class="sld-flow__line" aria-hidden="true"></span>
+                    <div class="sld-flow__node">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m6 8 4 4-4 4M12 16h6"/><rect x="2" y="3" width="20" height="18" rx="1.5"/></svg>
+                        <span>Termux:X11</span>
+                    </div>
+                    <span class="sld-flow__line" aria-hidden="true"></span>
+                    <div class="sld-flow__node">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="3" width="18" height="14" rx="1.5"/><path d="M8 21h8M12 17v4"/></svg>
+                        <span>Linux desktop</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="sld-section sld-inputs" id="inputs" aria-labelledby="inputs-title">
+            <div class="sld-shell sld-inputs__layout">
+                <div>
+                    <h2 id="inputs-title">Every practical way to interact.</h2>
+                    <p class="sld-section__copy">One shared input system works in both Horizon-managed window mode and a grabbable Spatial SDK panel.</p>
+                    <ul class="sld-input-list">
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="m4 3 7.5 17 2-7 7-2Z"/></svg><span>Ray pointer</span><small>hover · tap · drag</small></li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M7 2h10a4 4 0 0 1 4 4v12a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V6a4 4 0 0 1 4-4Z"/><path d="M12 2v7"/></svg><span>Right click</span><small>armed · controller</small></li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M6 9h.01M10 9h.01M14 9h.01M18 9h.01M6 13h.01M10 13h.01M14 13h.01M18 13h.01M8 16h8"/></svg><span>Virtual keyboard</span><small>Horizon IME</small></li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M5 9h14M7 13h10M9 16h6"/></svg><span>Bluetooth keyboard</span><small>physical keys</small></li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v4M8 22h8"/></svg><span>Quest microphone</span><small>synchronized voice</small></li>
+                    </ul>
+                </div>
+                <div class="sld-panel-detail" aria-label="Illustration of the Codex showcase workspace with microphone input live">
+                    <div class="sld-panel-detail__bar"><span>sld@quest: ~/workspace</span><span class="sld-mic-live">MIC LIVE</span></div>
+                    <div class="sld-panel-detail__body">
+                        <div class="sld-tree">workspace/<br>├─ app/<br>│&nbsp; ├─ src/<br>│&nbsp; └─ build.gradle.kts<br>├─ README.md<br>└─ LICENSE</div>
+                        <pre class="sld-code"><span class="violet">You</span>
+Add a small status action and test it.
+
+<span class="green">Codex</span>
+I’ll inspect the project, make the change,
+run the tests, and show you the diff.
+
+✓ source updated
+✓ tests passed
+✓ APK assembled</pre>
+                    </div>
+                    <div class="sld-panel-detail__prompt">Ask Codex… <span class="sld-status">● voice input active</span></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="sld-section" id="showcase" aria-labelledby="showcase-title">
+            <div class="sld-shell sld-showcase">
+                <figure class="sld-showcase__visual">
+                    <picture>
+                        <source srcset="/projects/spatial-linux-desktop/assets/spatial-linux-desktop-key-art.webp" type="image/webp">
+                        <img src="/projects/spatial-linux-desktop/assets/spatial-linux-desktop-key-art.png" alt="An agentic coding workspace running in the floating Quest Linux desktop" width="1672" height="941" loading="lazy">
+                    </picture>
+                    <figcaption class="sld-video-label">▷&nbsp; Demo video coming soon</figcaption>
+                </figure>
+                <div class="sld-showcase__copy">
+                    <h2 id="showcase-title">The showcase: agentic work, entirely on Quest.</h2>
+                    <p>Run the Codex desktop app inside the local Linux environment. Point, right-click, type with a virtual or Bluetooth keyboard, dictate through the Quest microphone, work with Git, and build Android apps on the headset.</p>
+                    <p class="sld-secondary-proof">Inkscape, camera import and local printing are also validated.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="sld-source" id="source" aria-labelledby="source-title">
+            <div class="sld-shell sld-source__layout">
+                <h2 id="source-title">A working reference, not a black box.</h2>
+                <p>The Android client, bounded RFB transport, Linux setup, fixtures and validation notes are public and MIT licensed. Third-party applications remain user-installed dependencies under their own terms.</p>
+                <div class="sld-source__actions">
+                    <a class="sld-button sld-button--strong" href="https://github.com/MesmerPrism/quest-termux-lab" target="_blank" rel="noopener noreferrer">Open the GitHub repository</a>
+                    <a class="sld-button" href="https://github.com/MesmerPrism/quest-termux-lab/blob/main/docs/spatial-desktop-panel.md" target="_blank" rel="noopener noreferrer">Read the architecture</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="sld-press-kit" aria-labelledby="press-kit-title">
+            <div class="sld-shell sld-press-kit__row">
+                <h2 id="press-kit-title">Press kit</h2>
+                <div class="sld-downloads">
+                    <a href="/projects/spatial-linux-desktop/assets/spatial-linux-desktop-logo.svg" download>Project logo · SVG</a>
+                    <a href="/projects/spatial-linux-desktop/assets/spatial-linux-desktop-logo.png" download>Project logo · PNG · 300 dpi</a>
+                    <a href="/projects/spatial-linux-desktop/assets/spatial-linux-desktop-key-art.png" download>Key art · PNG · 300 dpi</a>
+                    <a href="/projects/spatial-linux-desktop/assets/mesmer-prism-logo-300dpi.png" download>Mesmer Prism logo · PNG · 300 dpi</a>
+                </div>
+            </div>
+        </section>
+        <!-- BEGIN page-export-links -->
+        <section class="agent-downloads" aria-labelledby="page-downloads">
+            <h2 id="page-downloads">Page exports</h2>
+            <div class="agent-downloads__links">
+                <a href="/projects/spatial-linux-desktop.md" download>Markdown</a>
+                <a href="/projects/spatial-linux-desktop.txt" download>Text</a>
+                <a href="/projects/spatial-linux-desktop.bib" download>BibTeX</a>
+                <a href="/projects/spatial-linux-desktop.references.csl.json" download>CSL JSON</a>
+            </div>
+        </section>
+        <!-- END page-export-links -->
+</main>
+
+    <footer class="sld-footer">
+        <div class="sld-shell sld-footer__row">
+            <div class="sld-footer__brand">
+                <img src="/projects/spatial-linux-desktop/assets/spatial-linux-desktop-logo.svg" alt="" width="128" height="128">
+                <span><strong>Spatial Linux Desktop</strong><small>An open-source project by <a href="/">Mesmer Prism</a></small></span>
+            </div>
+            <p class="sld-boundary">No root. No external PC during normal use. Loopback-only desktop transport.</p>
+        </div>
+    </footer>
+</body>
+</html>

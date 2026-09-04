@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-24",
+  "generated": "2026-09-04",
   "site": "https://mesmerprism.com",
   "pages": [
     {
@@ -24,7 +24,7 @@
       "text": "https://mesmerprism.com/index.txt",
       "bibtex": "https://mesmerprism.com/index.bib",
       "cslJson": "https://mesmerprism.com/index.references.csl.json",
-      "references": 19
+      "references": 20
     },
     {
       "title": "Calligraphy Reference Pack",
@@ -145,6 +145,18 @@
       "bibtex": "https://mesmerprism.com/plasmatic-multitudes/terminology.bib",
       "cslJson": "https://mesmerprism.com/plasmatic-multitudes/terminology.references.csl.json",
       "references": 49
+    },
+    {
+      "title": "Rusty Launcher Lite Privacy Policy | Viscereality",
+      "description": "Privacy policy for Rusty Launcher Lite, developed and published by Viscereality.",
+      "path": "privacy/rusty-launcher-lite/index.html",
+      "url": "https://mesmerprism.com/privacy/rusty-launcher-lite/",
+      "group": "Site pages",
+      "markdown": "https://mesmerprism.com/privacy/rusty-launcher-lite/index.md",
+      "text": "https://mesmerprism.com/privacy/rusty-launcher-lite/index.txt",
+      "bibtex": null,
+      "cslJson": null,
+      "references": 0
     },
     {
       "title": "Viscereality Companion Privacy Policy",
@@ -276,7 +288,7 @@
       "text": "https://mesmerprism.com/projects/optical-movement-illusions.txt",
       "bibtex": "https://mesmerprism.com/projects/optical-movement-illusions.bib",
       "cslJson": "https://mesmerprism.com/projects/optical-movement-illusions.references.csl.json",
-      "references": 14
+      "references": 16
     },
     {
       "title": "Phenomenological Control",
@@ -399,6 +411,18 @@
       "references": 22
     },
     {
+      "title": "Spatial Linux Desktop | Termux-powered Linux on Meta Quest",
+      "description": "A local, interactive Linux workstation for Meta Quest, presented through a native Android app in Horizon window and Spatial SDK panel modes.",
+      "path": "projects/spatial-linux-desktop.html",
+      "url": "https://mesmerprism.com/projects/spatial-linux-desktop.html",
+      "group": "Project pages",
+      "markdown": "https://mesmerprism.com/projects/spatial-linux-desktop.md",
+      "text": "https://mesmerprism.com/projects/spatial-linux-desktop.txt",
+      "bibtex": "https://mesmerprism.com/projects/spatial-linux-desktop.bib",
+      "cslJson": "https://mesmerprism.com/projects/spatial-linux-desktop.references.csl.json",
+      "references": 2
+    },
+    {
       "title": "Tulpas",
       "description": "Tulpas covers modern online tulpamancy, thoughtforms, headmates, servitors, egregores, imposition, voice-like experience, and adjacent AI companion analogies.",
       "path": "projects/tulpas.html",
@@ -424,7 +448,7 @@
     },
     {
       "title": "Viscereality",
-      "description": "Viscereality is a Quest-based bioresponsive VR research system for breath interaction, cardiac coherence training, oscillator-driven visuals, and repeatable study sessions.",
+      "description": "Viscereality is a bioresponsive virtual-reality research system that turns breathing into spatial visual feedback.",
       "path": "projects/viscereality.html",
       "url": "https://mesmerprism.com/projects/viscereality.html",
       "group": "Project pages",
@@ -433,6 +457,30 @@
       "bibtex": "https://mesmerprism.com/projects/viscereality.bib",
       "cslJson": "https://mesmerprism.com/projects/viscereality.references.csl.json",
       "references": 4
+    },
+    {
+      "title": "Rusty Fleet for Windows — distribution preview",
+      "description": "Preview the Rusty Fleet Windows distribution model.",
+      "path": "Rusty-Fleet/index.html",
+      "url": "https://mesmerprism.com/Rusty-Fleet/",
+      "group": "Site pages",
+      "markdown": "https://mesmerprism.com/Rusty-Fleet/index.md",
+      "text": "https://mesmerprism.com/Rusty-Fleet/index.txt",
+      "bibtex": "https://mesmerprism.com/Rusty-Fleet/index.bib",
+      "cslJson": "https://mesmerprism.com/Rusty-Fleet/index.references.csl.json",
+      "references": 4
+    },
+    {
+      "title": "Rusty Morphospace release channels",
+      "description": "Public stable and opt-in labs channel policies for Rusty Morphospace products.",
+      "path": "Rusty-Morphospace/catalog/index.html",
+      "url": "https://mesmerprism.com/Rusty-Morphospace/catalog/",
+      "group": "Site pages",
+      "markdown": "https://mesmerprism.com/Rusty-Morphospace/catalog/index.md",
+      "text": "https://mesmerprism.com/Rusty-Morphospace/catalog/index.txt",
+      "bibtex": null,
+      "cslJson": null,
+      "references": 0
     },
     {
       "title": "Stimulus Portal · Quest Profile Editor",
@@ -507,16 +555,40 @@
       "references": 42
     },
     {
-      "title": "Looping, Visuals, and Wave Field Synthesis — Technical Coordination Brief",
-      "description": "Technical options, constraints, open questions, and a test plan for connecting a BOSS RC-505mkII, Ableton Live, TouchDesigner, NDI, and immersive projection.",
+      "title": "Five RC-505mkII Tracks as Five WFS Objects",
+      "description": "Preferred RC-505mkII architecture and direct Ableton option for independently spatialized loop objects in a wave field synthesis system.",
+      "path": "time/audio/index.html",
+      "url": "https://mesmerprism.com/time/audio/",
+      "group": "Site pages",
+      "markdown": "https://mesmerprism.com/time/audio/index.md",
+      "text": "https://mesmerprism.com/time/audio/index.txt",
+      "bibtex": "https://mesmerprism.com/time/audio/index.bib",
+      "cslJson": "https://mesmerprism.com/time/audio/index.references.csl.json",
+      "references": 7
+    },
+    {
+      "title": "Performance System — RC-505mkII, WFS, and NDI Visuals",
+      "description": "Recommended performance-system architecture for RC-505mkII looping, wave field synthesis, an external visual system, NDI, and venue projection.",
       "path": "time/index.html",
       "url": "https://mesmerprism.com/time/",
       "group": "Site pages",
       "markdown": "https://mesmerprism.com/time/index.md",
       "text": "https://mesmerprism.com/time/index.txt",
-      "bibtex": "https://mesmerprism.com/time/index.bib",
-      "cslJson": "https://mesmerprism.com/time/index.references.csl.json",
-      "references": 15
+      "bibtex": null,
+      "cslJson": null,
+      "references": 0
+    },
+    {
+      "title": "External Visual System to Venue Projection",
+      "description": "Preferred external visual-system NDI route, optional venue TouchDesigner runtime, show-ready criteria, open questions, and visual test plan.",
+      "path": "time/visuals/index.html",
+      "url": "https://mesmerprism.com/time/visuals/",
+      "group": "Site pages",
+      "markdown": "https://mesmerprism.com/time/visuals/index.md",
+      "text": "https://mesmerprism.com/time/visuals/index.txt",
+      "bibtex": "https://mesmerprism.com/time/visuals/index.bib",
+      "cslJson": "https://mesmerprism.com/time/visuals/index.references.csl.json",
+      "references": 5
     },
     {
       "title": "Video carousel demo",

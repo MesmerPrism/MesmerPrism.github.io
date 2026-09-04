@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title desc">
+  <title id="title">Spatial Linux Desktop logo</title>
+  <desc id="desc">An outlined spatial cube unfolding into a desktop panel.</desc>
+  <g fill="none" stroke="#1c1d1f" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M18 38 49 20l31 18-31 18Z"/>
+    <path d="M18 38v40l31 18V56"/>
+    <path d="M80 38v18"/>
+    <rect x="52" y="49" width="61" height="49" rx="5"/>
+  </g>
+  <path d="M88 108h18" fill="none" stroke="#63d46c" stroke-width="7" stroke-linecap="round"/>
+</svg>

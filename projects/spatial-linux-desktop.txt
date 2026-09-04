@@ -1,0 +1,84 @@
+Spatial Linux Desktop | Termux-powered Linux on Meta Quest
+
+Source: https://mesmerprism.com/projects/spatial-linux-desktop.html
+Canonical HTML: https://mesmerprism.com/projects/spatial-linux-desktop.html
+Generated: 2026-09-04
+Description: A local, interactive Linux workstation for Meta Quest, presented through a native Android app in Horizon window and Spatial SDK panel modes.
+Markdown: https://mesmerprism.com/projects/spatial-linux-desktop.md
+Plain text: https://mesmerprism.com/projects/spatial-linux-desktop.txt
+BibTeX references: https://mesmerprism.com/projects/spatial-linux-desktop.bib
+CSL JSON references: https://mesmerprism.com/projects/spatial-linux-desktop.references.csl.json
+
+---
+
+Linux, locally in your headset.
+
+ A Termux-powered desktop for Meta Quest, presented through a native Android and Spatial SDK interface.
+
+ View source (https://github.com/MesmerPrism/quest-termux-lab)
+ Explore the interaction system (https://mesmerprism.com/projects/spatial-linux-desktop.html#inputs)
+
+A desktop bridge, built for Quest.
+
+ Termux, Termux:X11 and XFCE own the Linux session. A native Android app carries the pixels and input over device-local loopback.
+
+ Meta Quest
+
+ Native panel
+
+ loopback RFB
+
+ Termux:X11
+
+ Linux desktop
+
+Every practical way to interact.
+
+ One shared input system works in both Horizon-managed window mode and a grabbable Spatial SDK panel.
+- Ray pointer hover · tap · drag
+- Right click armed · controller
+- Virtual keyboard Horizon IME
+- Bluetooth keyboard physical keys
+- Quest microphone synchronized voice
+
+ sld@quest: ~/workspace MIC LIVE
+
+ workspace/
+├─ app/
+│ ├─ src/
+│ └─ build.gradle.kts
+├─ README.md
+└─ LICENSE
+
+ You
+Add a small status action and test it.
+
+ Codex
+I’ll inspect the project, make the change,
+run the tests, and show you the diff.
+
+✓ source updated
+✓ tests passed
+✓ APK assembled
+
+ Ask Codex… ● voice input active
+
+The showcase: agentic work, entirely on Quest.
+
+ Run the Codex desktop app inside the local Linux environment. Point, right-click, type with a virtual or Bluetooth keyboard, dictate through the Quest microphone, work with Git, and build Android apps on the headset.
+
+ Inkscape, camera import and local printing are also validated.
+
+A working reference, not a black box.
+
+ The Android client, bounded RFB transport, Linux setup, fixtures and validation notes are public and MIT licensed. Third-party applications remain user-installed dependencies under their own terms.
+
+ Open the GitHub repository (https://github.com/MesmerPrism/quest-termux-lab)
+ Read the architecture (https://github.com/MesmerPrism/quest-termux-lab/blob/main/docs/spatial-desktop-panel.md)
+
+Press kit
+
+ Project logo · SVG (https://mesmerprism.com/projects/spatial-linux-desktop/assets/spatial-linux-desktop-logo.svg)
+ Project logo · PNG · 300 dpi (https://mesmerprism.com/projects/spatial-linux-desktop/assets/spatial-linux-desktop-logo.png)
+ Key art · PNG · 300 dpi (https://mesmerprism.com/projects/spatial-linux-desktop/assets/spatial-linux-desktop-key-art.png)
+ Mesmer Prism logo · PNG · 300 dpi (https://mesmerprism.com/projects/spatial-linux-desktop/assets/mesmer-prism-logo-300dpi.png)
