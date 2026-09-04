@@ -86,4 +86,5 @@ run the tests, and show you the diff.
  [Project logo · SVG](https://mesmerprism.com/projects/spatial-linux-desktop/assets/spatial-linux-desktop-logo.svg)
  [Project logo · PNG · 300 dpi](https://mesmerprism.com/projects/spatial-linux-desktop/assets/spatial-linux-desktop-logo.png)
  [Key art · PNG · 300 dpi](https://mesmerprism.com/projects/spatial-linux-desktop/assets/spatial-linux-desktop-key-art.png)
+ [Mesmer Prism logo · EPS vector](https://mesmerprism.com/assets/brand/mesmer-prism-logo.eps)
  [Mesmer Prism logo · PNG · 300 dpi](https://mesmerprism.com/projects/spatial-linux-desktop/assets/mesmer-prism-logo-300dpi.png)

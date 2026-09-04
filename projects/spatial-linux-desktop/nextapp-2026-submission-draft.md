@@ -38,7 +38,8 @@ Prepared studio fields:
 - **Five-minute uncut demo video:** Add the shared Google Drive folder or final video URL here.
 - **Trailer:** Leave blank until one exists.
 - **Additional link:** https://github.com/MesmerPrism/quest-termux-lab
-- **Company logo:** https://mesmerprism.com/projects/spatial-linux-desktop/assets/mesmer-prism-logo-300dpi.png
+- **Company logo — preferred vector:** https://mesmerprism.com/assets/brand/mesmer-prism-logo.eps
+- **Company logo — 300-DPI PNG fallback:** https://mesmerprism.com/projects/spatial-linux-desktop/assets/mesmer-prism-logo-300dpi.png
 - **Project logo / key art:** https://mesmerprism.com/projects/spatial-linux-desktop/assets/spatial-linux-desktop-key-art.png
 - **How you learned about the submission:** Confirm the exact wording. If accurate: “Personal recommendation and direct coordination with the XR Showcase team.”
 
