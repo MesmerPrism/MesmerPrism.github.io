@@ -465,6 +465,232 @@ body.sld-page {
     font-size: 0.9rem;
 }
 
+.sld-landscape {
+    background: var(--sld-paper);
+}
+
+.sld-landscape__intro {
+    display: grid;
+    grid-template-columns: 0.78fr 1.22fr;
+    gap: clamp(2.5rem, 6vw, 7rem);
+    align-items: end;
+}
+
+.sld-eyebrow {
+    margin: 0 0 1rem;
+    color: var(--sld-violet);
+    font-family: var(--sld-mono);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+}
+
+.sld-landscape__lead p {
+    margin: 0;
+    color: var(--sld-muted);
+    font-size: clamp(1.02rem, 1.35vw, 1.2rem);
+}
+
+.sld-landscape__lead .sld-landscape__boundary {
+    margin-top: 1.2rem;
+    color: var(--sld-ink);
+    font-weight: 700;
+}
+
+.inline-citation,
+.reference-link {
+    color: var(--sld-violet);
+    text-underline-offset: 0.16em;
+}
+
+.sld-timeline {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1px;
+    margin-top: clamp(3.5rem, 7vw, 6rem);
+    border: 1px solid var(--sld-line);
+    background: var(--sld-line);
+}
+
+.sld-timeline article {
+    min-height: 18rem;
+    padding: clamp(1.4rem, 2.5vw, 2.2rem);
+    background: var(--sld-paper);
+}
+
+.sld-timeline time,
+.sld-lessons span {
+    color: var(--sld-green);
+    font-family: var(--sld-mono);
+    font-size: 0.77rem;
+    font-weight: 700;
+}
+
+.sld-timeline h3,
+.sld-comparison-heading h3,
+.sld-lessons h3 {
+    margin: 1.2rem 0 0;
+    font-family: var(--sld-display);
+    font-size: clamp(1.65rem, 2.2vw, 2.3rem);
+    font-weight: 500;
+    letter-spacing: -0.025em;
+    line-height: 1.05;
+}
+
+.sld-timeline p,
+.sld-lessons p {
+    margin: 1rem 0 0;
+    color: var(--sld-muted);
+    font-size: 0.9rem;
+}
+
+.sld-comparison-heading {
+    display: grid;
+    grid-template-columns: 0.72fr 1.28fr;
+    gap: clamp(2rem, 5vw, 6rem);
+    align-items: end;
+    margin-top: clamp(4rem, 8vw, 7rem);
+}
+
+.sld-comparison-heading h3 {
+    margin: 0;
+    font-size: clamp(2.5rem, 4vw, 4.4rem);
+}
+
+.sld-comparison-heading p {
+    max-width: 48rem;
+    margin: 0;
+    color: var(--sld-muted);
+    font-size: 1.03rem;
+}
+
+.sld-table-wrap {
+    margin-top: 2.4rem;
+    overflow-x: auto;
+    border-top: 1px solid var(--sld-ink);
+    border-bottom: 1px solid var(--sld-ink);
+}
+
+.sld-table-wrap:focus-visible {
+    outline: 2px solid var(--sld-violet);
+    outline-offset: 4px;
+}
+
+.sld-comparison {
+    width: 100%;
+    min-width: 62rem;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.sld-comparison th,
+.sld-comparison td {
+    padding: 1rem 0.9rem;
+    border-bottom: 1px solid var(--sld-line);
+    vertical-align: top;
+    font-size: 0.86rem;
+}
+
+.sld-comparison thead th {
+    color: var(--sld-muted);
+    font-family: var(--sld-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+}
+
+.sld-comparison tbody th {
+    min-width: 11rem;
+    font-weight: 700;
+}
+
+.sld-comparison tbody tr:last-child th,
+.sld-comparison tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+.sld-comparison__self {
+    background: rgba(84, 185, 95, 0.08);
+}
+
+.sld-lessons {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1px;
+    margin-top: clamp(4rem, 8vw, 7rem);
+    border: 1px solid var(--sld-line);
+    background: var(--sld-line);
+}
+
+.sld-lessons article {
+    padding: clamp(1.5rem, 3vw, 2.7rem);
+    background: var(--sld-paper);
+}
+
+.sld-lessons h3 {
+    margin-top: 0.7rem;
+}
+
+.sld-research-note {
+    display: grid;
+    grid-template-columns: 0.35fr 1.3fr auto;
+    gap: 1.5rem;
+    align-items: start;
+    margin-top: 3rem;
+    padding: 1.4rem;
+    border-left: 3px solid var(--sld-violet);
+    background: rgba(118, 87, 214, 0.06);
+}
+
+.sld-research-note strong {
+    font-family: var(--sld-mono);
+    font-size: 0.78rem;
+    text-transform: uppercase;
+}
+
+.sld-research-note p {
+    margin: 0;
+    color: var(--sld-muted);
+    font-size: 0.86rem;
+}
+
+.sld-research-note a {
+    color: var(--sld-violet);
+    font-size: 0.83rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.sld-references {
+    padding-block: clamp(4rem, 7vw, 6rem);
+    border-top: 1px solid var(--sld-line);
+    background: #eeebe4;
+}
+
+.sld-references h2 {
+    margin: 0;
+    font-family: var(--sld-display);
+    font-size: clamp(2.5rem, 4vw, 4.5rem);
+    font-weight: 500;
+    letter-spacing: -0.035em;
+}
+
+.sld-references ol {
+    columns: 2 24rem;
+    column-gap: clamp(2rem, 5vw, 6rem);
+    margin: 2.5rem 0 0;
+    padding-left: 1.25rem;
+}
+
+.sld-references li {
+    break-inside: avoid;
+    margin: 0 0 1rem;
+    padding-left: 0.35rem;
+    color: var(--sld-muted);
+    font-size: 0.84rem;
+}
+
 .sld-source {
     border-top: 1px solid var(--sld-line);
     padding-block: clamp(4.5rem, 8vw, 7.5rem);
@@ -597,8 +823,22 @@ body.sld-page {
     .sld-hero,
     .sld-inputs__layout,
     .sld-showcase,
+    .sld-landscape__intro,
+    .sld-comparison-heading,
     .sld-source__layout {
         grid-template-columns: 1fr;
+    }
+
+    .sld-timeline {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .sld-research-note {
+        grid-template-columns: 1fr;
+    }
+
+    .sld-research-note a {
+        white-space: normal;
     }
 
     .sld-hero {
@@ -644,6 +884,15 @@ body.sld-page {
     .sld-system__intro,
     .sld-footer__row {
         grid-template-columns: 1fr;
+    }
+
+    .sld-timeline,
+    .sld-lessons {
+        grid-template-columns: 1fr;
+    }
+
+    .sld-timeline article {
+        min-height: auto;
     }
 
     .sld-panel-detail {

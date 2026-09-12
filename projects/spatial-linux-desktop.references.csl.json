@@ -1,38 +1,505 @@
 [
   {
-    "id": "github-com-view-source",
+    "id": "mesmerprism-spatial-desktop-panel-implementation-snapshot-2026",
     "type": "webpage",
-    "title": "View source",
-    "URL": "https://github.com/MesmerPrism/quest-termux-lab",
+    "title": "Spatial Desktop Panel implementation snapshot",
+    "URL": "https://github.com/MesmerPrism/quest-termux-lab/tree/1ed3a4544ac3883e4c4928c4f114b22466c7c783/examples/spatial-desktop-panel",
     "accessed": {
       "date-parts": [
         [
           2026,
           9,
-          4
-        ]
-      ]
-    },
-    "note": "Referenced by Spatial Linux Desktop | Termux-powered Linux on Meta Quest: https://mesmerprism.com/projects/spatial-linux-desktop.html"
-  },
-  {
-    "id": "read-the-architecture-read-the-architecture",
-    "type": "webpage",
-    "title": "Read the architecture",
-    "URL": "https://github.com/MesmerPrism/quest-termux-lab/blob/main/docs/spatial-desktop-panel.md",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          9,
-          4
+          12
         ]
       ]
     },
     "note": "Referenced by Spatial Linux Desktop | Termux-powered Linux on Meta Quest: https://mesmerprism.com/projects/spatial-linux-desktop.html",
     "author": [
       {
-        "literal": "Read the architecture"
+        "literal": "MesmerPrism"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    }
+  },
+  {
+    "id": "tokoro-a-standalone-vr-work-environment-on-oculus-go-2018",
+    "type": "webpage",
+    "title": "A standalone VR work environment on Oculus Go",
+    "URL": "https://blog.tokor.org/2018/11/27/Oculus-Go%E3%81%A7%E3%82%B9%E3%82%BF%E3%83%B3%E3%83%89%E3%82%A2%E3%83%AD%E3%83%B3VR%E4%BD%9C%E6%A5%AD%E7%92%B0%E5%A2%83%E3%82%92%E4%BD%9C%E3%81%A3%E3%81%9F/",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          9,
+          12
+        ]
+      ]
+    },
+    "note": "Referenced by Spatial Linux Desktop | Termux-powered Linux on Meta Quest: https://mesmerprism.com/projects/spatial-linux-desktop.html",
+    "author": [
+      {
+        "literal": "Tokoro"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2018
+        ]
+      ]
+    }
+  },
+  {
+    "id": "y-fujii-ovrvnc",
+    "type": "webpage",
+    "title": "OVRVNC",
+    "URL": "https://github.com/y-fujii/ovrvnc",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          9,
+          12
+        ]
+      ]
+    },
+    "note": "Referenced by Spatial Linux Desktop | Termux-powered Linux on Meta Quest: https://mesmerprism.com/projects/spatial-linux-desktop.html",
+    "author": [
+      {
+        "literal": "y-fujii"
+      }
+    ]
+  },
+  {
+    "id": "rangermauve-linux-on-the-oculus-quest-2019",
+    "type": "webpage",
+    "title": "Linux on the Oculus Quest",
+    "URL": "https://medium.com/@RangerMauve/linux-on-the-oculus-quest-406ba5d0c982",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          9,
+          12
+        ]
+      ]
+    },
+    "note": "Referenced by Spatial Linux Desktop | Termux-powered Linux on Meta Quest: https://mesmerprism.com/projects/spatial-linux-desktop.html",
+    "author": [
+      {
+        "literal": "RangerMauve"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2019
+        ]
+      ]
+    }
+  },
+  {
+    "id": "eternal-density-xfce-desktop-environment-on-quest-2-2020",
+    "type": "webpage",
+    "title": "XFCE desktop environment on Quest 2",
+    "URL": "https://www.reddit.com/r/OculusQuest/comments/ji9k7z/xfce_desktop_environment_on_my_quest_2_running_in/",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          9,
+          12
+        ]
+      ]
+    },
+    "note": "Referenced by Spatial Linux Desktop | Termux-powered Linux on Meta Quest: https://mesmerprism.com/projects/spatial-linux-desktop.html",
+    "author": [
+      {
+        "literal": "Eternal_Density"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2020
+        ]
+      ]
+    }
+  },
+  {
+    "id": "legokichi-standalone-linux-with-termux-on-meta-quest-3-2025",
+    "type": "webpage",
+    "title": "Standalone Linux with Termux on Meta Quest 3",
+    "URL": "https://qiita.com/legokichi/items/66975c203aebb5a4121c",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          9,
+          12
+        ]
+      ]
+    },
+    "note": "Referenced by Spatial Linux Desktop | Termux-powered Linux on Meta Quest: https://mesmerprism.com/projects/spatial-linux-desktop.html",
+    "author": [
+      {
+        "literal": "legokichi"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2025
+        ]
+      ]
+    }
+  },
+  {
+    "id": "ben-kaiser-web-development-in-vr-2025",
+    "type": "webpage",
+    "title": "Web development in VR",
+    "URL": "https://benkaiser.dev/web-development-in-vr/",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          9,
+          12
+        ]
+      ]
+    },
+    "note": "Referenced by Spatial Linux Desktop | Termux-powered Linux on Meta Quest: https://mesmerprism.com/projects/spatial-linux-desktop.html",
+    "author": [
+      {
+        "literal": "Ben Kaiser"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2025
+        ]
+      ]
+    }
+  },
+  {
+    "id": "devwithzachary-ubuntu-desktop-on-meta-quest-3-2025",
+    "type": "webpage",
+    "title": "Ubuntu Desktop on Meta Quest 3",
+    "URL": "https://www.youtube.com/watch?v=Xshj_xjwVjc",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          9,
+          12
+        ]
+      ]
+    },
+    "note": "Referenced by Spatial Linux Desktop | Termux-powered Linux on Meta Quest: https://mesmerprism.com/projects/spatial-linux-desktop.html",
+    "author": [
+      {
+        "literal": "DevWithZachary"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2025
+        ]
+      ]
+    }
+  },
+  {
+    "id": "devwithzachary-andronix-documentation-2025",
+    "type": "webpage",
+    "title": "Andronix documentation",
+    "URL": "https://docs.andronix.app/get-started/how-does-andronix-work",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          9,
+          12
+        ]
+      ]
+    },
+    "note": "Referenced by Spatial Linux Desktop | Termux-powered Linux on Meta Quest: https://mesmerprism.com/projects/spatial-linux-desktop.html",
+    "author": [
+      {
+        "literal": "DevWithZachary"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2025
+        ]
+      ]
+    }
+  },
+  {
+    "id": "orailnoor-droiddesk",
+    "type": "webpage",
+    "title": "DroidDesk",
+    "URL": "https://github.com/orailnoor/DroidDesk",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          9,
+          12
+        ]
+      ]
+    },
+    "note": "Referenced by Spatial Linux Desktop | Termux-powered Linux on Meta Quest: https://mesmerprism.com/projects/spatial-linux-desktop.html",
+    "author": [
+      {
+        "literal": "orailnoor"
+      }
+    ]
+  },
+  {
+    "id": "orailnoor-compliance-record",
+    "type": "webpage",
+    "title": "compliance record",
+    "URL": "https://github.com/orailnoor/DroidDesk/blob/main/COMPLIANCE.md",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          9,
+          12
+        ]
+      ]
+    },
+    "note": "Referenced by Spatial Linux Desktop | Termux-powered Linux on Meta Quest: https://mesmerprism.com/projects/spatial-linux-desktop.html",
+    "author": [
+      {
+        "literal": "orailnoor"
+      }
+    ]
+  },
+  {
+    "id": "winlatorxr-contributors-winlatorxr",
+    "type": "webpage",
+    "title": "WinlatorXR",
+    "URL": "https://github.com/WinlatorXR/WinlatorXR/tree/cmod_bionic",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          9,
+          12
+        ]
+      ]
+    },
+    "note": "Referenced by Spatial Linux Desktop | Termux-powered Linux on Meta Quest: https://mesmerprism.com/projects/spatial-linux-desktop.html",
+    "author": [
+      {
+        "literal": "WinlatorXR contributors"
+      }
+    ]
+  },
+  {
+    "id": "winlatorxr-contributors-xr-controller-implementation",
+    "type": "webpage",
+    "title": "XR controller implementation",
+    "URL": "https://github.com/WinlatorXR/WinlatorXR/blob/d4c830526eb5562067d21685a975845ab705da60/app/src/main/java/com/winlator/xr/XrController.java",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          9,
+          12
+        ]
+      ]
+    },
+    "note": "Referenced by Spatial Linux Desktop | Termux-powered Linux on Meta Quest: https://mesmerprism.com/projects/spatial-linux-desktop.html",
+    "author": [
+      {
+        "literal": "WinlatorXR contributors"
+      }
+    ]
+  },
+  {
+    "id": "yves-hughes-remote-desktop-for-ubuntu-2026",
+    "type": "webpage",
+    "title": "Remote desktop for Ubuntu",
+    "URL": "https://github.com/yveshughes/remote-desktop-for-ubuntu",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          9,
+          12
+        ]
+      ]
+    },
+    "note": "Referenced by Spatial Linux Desktop | Termux-powered Linux on Meta Quest: https://mesmerprism.com/projects/spatial-linux-desktop.html",
+    "author": [
+      {
+        "literal": "Yves Hughes"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    }
+  },
+  {
+    "id": "xxjones21-moonlight-spatialsdk",
+    "type": "webpage",
+    "title": "Moonlight-SpatialSDK",
+    "URL": "https://github.com/XXJones21/Moonlight-SpatialSDK",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          9,
+          12
+        ]
+      ]
+    },
+    "note": "Referenced by Spatial Linux Desktop | Termux-powered Linux on Meta Quest: https://mesmerprism.com/projects/spatial-linux-desktop.html",
+    "author": [
+      {
+        "literal": "XXJones21"
+      }
+    ]
+  },
+  {
+    "id": "wayvr-and-wivrn-contributors-wayvr",
+    "type": "webpage",
+    "title": "WayVR",
+    "URL": "https://github.com/wayvr-org/wayvr",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          9,
+          12
+        ]
+      ]
+    },
+    "note": "Referenced by Spatial Linux Desktop | Termux-powered Linux on Meta Quest: https://mesmerprism.com/projects/spatial-linux-desktop.html",
+    "author": [
+      {
+        "literal": "WayVR and WiVRn contributors"
+      }
+    ]
+  },
+  {
+    "id": "wayvr-and-wivrn-contributors-wivrn",
+    "type": "webpage",
+    "title": "WiVRn",
+    "URL": "https://github.com/WiVRn/WiVRn",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          9,
+          12
+        ]
+      ]
+    },
+    "note": "Referenced by Spatial Linux Desktop | Termux-powered Linux on Meta Quest: https://mesmerprism.com/projects/spatial-linux-desktop.html",
+    "author": [
+      {
+        "literal": "WayVR and WiVRn contributors"
+      }
+    ]
+  },
+  {
+    "id": "termux-contributors-termux",
+    "type": "webpage",
+    "title": "Termux",
+    "URL": "https://github.com/termux/termux-app",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          9,
+          12
+        ]
+      ]
+    },
+    "note": "Referenced by Spatial Linux Desktop | Termux-powered Linux on Meta Quest: https://mesmerprism.com/projects/spatial-linux-desktop.html",
+    "author": [
+      {
+        "literal": "Termux contributors"
+      }
+    ]
+  },
+  {
+    "id": "termux-contributors-termux-x11",
+    "type": "webpage",
+    "title": "Termux:X11",
+    "URL": "https://github.com/termux/termux-x11",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          9,
+          12
+        ]
+      ]
+    },
+    "note": "Referenced by Spatial Linux Desktop | Termux-powered Linux on Meta Quest: https://mesmerprism.com/projects/spatial-linux-desktop.html",
+    "author": [
+      {
+        "literal": "Termux contributors"
+      }
+    ]
+  },
+  {
+    "id": "libvnc-and-novnc-contributors-x11vnc",
+    "type": "webpage",
+    "title": "x11vnc",
+    "URL": "https://github.com/LibVNC/x11vnc",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          9,
+          12
+        ]
+      ]
+    },
+    "note": "Referenced by Spatial Linux Desktop | Termux-powered Linux on Meta Quest: https://mesmerprism.com/projects/spatial-linux-desktop.html",
+    "author": [
+      {
+        "literal": "LibVNC and noVNC contributors"
+      }
+    ]
+  },
+  {
+    "id": "libvnc-and-novnc-contributors-novnc",
+    "type": "webpage",
+    "title": "noVNC",
+    "URL": "https://github.com/novnc/noVNC",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          9,
+          12
+        ]
+      ]
+    },
+    "note": "Referenced by Spatial Linux Desktop | Termux-powered Linux on Meta Quest: https://mesmerprism.com/projects/spatial-linux-desktop.html",
+    "author": [
+      {
+        "literal": "LibVNC and noVNC contributors"
       }
     ]
   }

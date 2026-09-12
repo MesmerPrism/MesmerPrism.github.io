@@ -16,7 +16,7 @@
     <meta name="theme-color" content="#f5f1ea">
     <link rel="icon" href="/projects/spatial-linux-desktop/assets/spatial-linux-desktop-logo.svg" type="image/svg+xml">
     <link rel="stylesheet" href="/assets/fonts.css">
-    <link rel="stylesheet" href="/projects/spatial-linux-desktop/styles.css?v=20260904">
+    <link rel="stylesheet" href="/projects/spatial-linux-desktop/styles.css?v=20260912">
     <link rel="alternate" type="text/markdown" href="/projects/spatial-linux-desktop.md" title="Markdown version">
     <link rel="alternate" type="text/plain" href="/projects/spatial-linux-desktop.txt" title="Plain-text version">
     <script type="application/ld+json">
@@ -44,8 +44,8 @@
     <link rel="alternate" type="application/vnd.citationstyles.csl+json" href="/projects/spatial-linux-desktop.references.csl.json" title="CSL JSON references">
     <meta name="citation_title" content="Spatial Linux Desktop | Termux-powered Linux on Meta Quest">
     <meta name="citation_author" content="Till Holzapfel">
-    <meta name="citation_publication_date" content="2026-09-04">
-    <meta name="citation_online_date" content="2026-09-04">
+    <meta name="citation_publication_date" content="2026-09-12">
+    <meta name="citation_online_date" content="2026-09-12">
     <meta name="citation_public_url" content="https://mesmerprism.com/projects/spatial-linux-desktop.html">
     <meta name="citation_language" content="en">
     <script type="application/ld+json" data-agent-metadata>
@@ -70,7 +70,7 @@
                 "url": "https://mesmerprism.com"
           },
           "url": "https://mesmerprism.com/projects/spatial-linux-desktop.html",
-          "dateModified": "2026-09-04",
+          "dateModified": "2026-09-12",
           "inLanguage": "en",
           "encoding": [
                 {
@@ -95,8 +95,27 @@
                 }
           ],
           "citation": [
-                "https://github.com/MesmerPrism/quest-termux-lab",
-                "https://github.com/MesmerPrism/quest-termux-lab/blob/main/docs/spatial-desktop-panel.md"
+                "https://github.com/MesmerPrism/quest-termux-lab/tree/1ed3a4544ac3883e4c4928c4f114b22466c7c783/examples/spatial-desktop-panel",
+                "https://blog.tokor.org/2018/11/27/Oculus-Go%E3%81%A7%E3%82%B9%E3%82%BF%E3%83%B3%E3%83%89%E3%82%A2%E3%83%AD%E3%83%B3VR%E4%BD%9C%E6%A5%AD%E7%92%B0%E5%A2%83%E3%82%92%E4%BD%9C%E3%81%A3%E3%81%9F/",
+                "https://github.com/y-fujii/ovrvnc",
+                "https://medium.com/@RangerMauve/linux-on-the-oculus-quest-406ba5d0c982",
+                "https://www.reddit.com/r/OculusQuest/comments/ji9k7z/xfce_desktop_environment_on_my_quest_2_running_in/",
+                "https://qiita.com/legokichi/items/66975c203aebb5a4121c",
+                "https://benkaiser.dev/web-development-in-vr/",
+                "https://www.youtube.com/watch?v=Xshj_xjwVjc",
+                "https://docs.andronix.app/get-started/how-does-andronix-work",
+                "https://github.com/orailnoor/DroidDesk",
+                "https://github.com/orailnoor/DroidDesk/blob/main/COMPLIANCE.md",
+                "https://github.com/WinlatorXR/WinlatorXR/tree/cmod_bionic",
+                "https://github.com/WinlatorXR/WinlatorXR/blob/d4c830526eb5562067d21685a975845ab705da60/app/src/main/java/com/winlator/xr/XrController.java",
+                "https://github.com/yveshughes/remote-desktop-for-ubuntu",
+                "https://github.com/XXJones21/Moonlight-SpatialSDK",
+                "https://github.com/wayvr-org/wayvr",
+                "https://github.com/WiVRn/WiVRn",
+                "https://github.com/termux/termux-app",
+                "https://github.com/termux/termux-x11",
+                "https://github.com/LibVNC/x11vnc",
+                "https://github.com/novnc/noVNC"
           ]
     }
     </script>
@@ -113,6 +132,7 @@
                 <a href="#system">System</a>
                 <a href="#inputs">Inputs</a>
                 <a href="#showcase">Showcase</a>
+                <a href="#landscape">Landscape</a>
                 <a href="#source">Source</a>
             </nav>
         </div>
@@ -222,6 +242,165 @@ run the tests, and show you the diff.
             </div>
         </section>
 
+        <section class="sld-section sld-landscape" id="landscape" aria-labelledby="landscape-title">
+            <div class="sld-shell">
+                <div class="sld-landscape__intro">
+                    <div>
+                        <p class="sld-eyebrow">Related work and alternatives</p>
+                        <h2 id="landscape-title">Part of a much wider ecosystem.</h2>
+                    </div>
+                    <div class="sld-landscape__lead">
+                        <p>Linux on Quest is established prior work. Local userlands appeared on the original Quest, a Quest 2 demonstration combined XFCE with noVNC, and current projects offer direct Termux:X11, PRoot/VNC, local compatibility runtimes, and remote spatial desktops. Our contribution is this specific local Termux:X11, loopback RFB, and hybrid Spatial SDK integration—not a claim to have invented Linux in a headset. (<a class="inline-citation" href="https://medium.com/@RangerMauve/linux-on-the-oculus-quest-406ba5d0c982" target="_blank" rel="noopener noreferrer">RangerMauve, 2019</a>; <a class="inline-citation" href="https://www.reddit.com/r/OculusQuest/comments/ji9k7z/xfce_desktop_environment_on_my_quest_2_running_in/" target="_blank" rel="noopener noreferrer">Eternal_Density, 2020</a>)</p>
+                        <p class="sld-landscape__boundary">We make no “first,” “only,” or “unprecedented” claim.</p>
+                    </div>
+                </div>
+
+                <div class="sld-timeline" aria-label="Selected chronology of local Linux and spatial desktop work on standalone Oculus and Meta headsets">
+                    <article>
+                        <time datetime="2018-11-27">2018</time>
+                        <h3>Local Linux + native VR VNC</h3>
+                        <p>Tokoro paired UserLAnd, OVRVNC, and a Bluetooth keyboard on Oculus Go—adjacent hardware, but important standalone precedent. (<a class="inline-citation" href="https://blog.tokor.org/2018/11/27/Oculus-Go%E3%81%A7%E3%82%B9%E3%82%BF%E3%83%B3%E3%83%89%E3%82%A2%E3%83%AD%E3%83%B3VR%E4%BD%9C%E6%A5%AD%E7%92%B0%E5%A2%83%E3%82%92%E4%BD%9C%E3%81%A3%E3%81%9F/" target="_blank" rel="noopener noreferrer">Tokoro, 2018</a>; <a class="inline-citation" href="https://github.com/y-fujii/ovrvnc" target="_blank" rel="noopener noreferrer">OVRVNC</a>)</p>
+                    </article>
+                    <article>
+                        <time datetime="2019-05-24">2019–20</time>
+                        <h3>Linux reaches Quest</h3>
+                        <p>The 2019 record establishes a local UserLAnd workflow; the 2020 Quest 2 record supplies the earlier graphical XFCE/noVNC evidence found in this scan.</p>
+                    </article>
+                    <article>
+                        <time datetime="2025">2025</time>
+                        <h3>Reproducible Quest 3 routes</h3>
+                        <p>Direct Termux:X11, UserLAnd, and Andronix/bVNC guides made the conventional local desktop route increasingly accessible. (<a class="inline-citation" href="https://qiita.com/legokichi/items/66975c203aebb5a4121c" target="_blank" rel="noopener noreferrer">legokichi</a>; <a class="inline-citation" href="https://benkaiser.dev/web-development-in-vr/" target="_blank" rel="noopener noreferrer">Ben Kaiser</a>; <a class="inline-citation" href="https://www.youtube.com/watch?v=Xshj_xjwVjc" target="_blank" rel="noopener noreferrer">DevWithZachary</a>)</p>
+                    </article>
+                    <article>
+                        <time datetime="2026">2026</time>
+                        <h3>Spatial SDK desktops</h3>
+                        <p>A native Meta Spatial SDK Ubuntu client demonstrated panel-coordinate input, right-click, scrolling, keyboard forwarding, and hardware HEVC decode from an external Linux host. (<a class="inline-citation" href="https://github.com/yveshughes/remote-desktop-for-ubuntu" target="_blank" rel="noopener noreferrer">Hughes, 2026</a>)</p>
+                    </article>
+                </div>
+
+                <div class="sld-comparison-heading">
+                    <h3>Choose by where the workload runs.</h3>
+                    <p>A spatial panel is only one design choice. For many users, direct X11 or a mature generic VNC client is the simpler answer; for demanding workloads, a remote Linux workstation can be the better answer.</p>
+                </div>
+                <div class="sld-table-wrap" tabindex="0" aria-label="Comparison of Linux desktop routes for Meta Quest">
+                    <table class="sld-comparison">
+                        <thead>
+                            <tr>
+                                <th scope="col">Route</th>
+                                <th scope="col">Runs on</th>
+                                <th scope="col">Presentation</th>
+                                <th scope="col">Best fit</th>
+                                <th scope="col">Boundary</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">Direct Termux:X11</th>
+                                <td>Quest</td>
+                                <td>Horizon-managed Android window</td>
+                                <td>The shortest local display path</td>
+                                <td>No application-owned XR panel (<a class="inline-citation" href="https://qiita.com/legokichi/items/66975c203aebb5a4121c" target="_blank" rel="noopener noreferrer">legokichi</a>)</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Andronix / UserLAnd + VNC</th>
+                                <td>Quest</td>
+                                <td>Generic VNC app or browser</td>
+                                <td>Familiar distribution setup and mature client behavior</td>
+                                <td>Normally PRoot and a virtual VNC desktop, not privileged chroot or a Spatial SDK surface (<a class="inline-citation" href="https://docs.andronix.app/get-started/how-does-andronix-work" target="_blank" rel="noopener noreferrer">Andronix architecture</a>)</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">DroidDesk</th>
+                                <td>Android / Quest-compatible route</td>
+                                <td>Direct Termux:X11 or its standalone Android app</td>
+                                <td>Consolidated installation and desktop packaging</td>
+                                <td>No Quest-specific spatial renderer was established in the inspected material (<a class="inline-citation" href="https://github.com/orailnoor/DroidDesk" target="_blank" rel="noopener noreferrer">DroidDesk</a>)</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">WinlatorXR</th>
+                                <td>Quest</td>
+                                <td>Purpose-built native XR frontend</td>
+                                <td>Locally executing Windows applications</td>
+                                <td>Wine/CPU translation and a local X server, rather than native ARM Linux/XFCE or Meta Spatial SDK (<a class="inline-citation" href="https://github.com/WinlatorXR/WinlatorXR/tree/cmod_bionic" target="_blank" rel="noopener noreferrer">WinlatorXR</a>)</td>
+                            </tr>
+                            <tr class="sld-comparison__self">
+                                <th scope="row">Spatial Linux Desktop</th>
+                                <td>Quest</td>
+                                <td>Horizon window or Spatial SDK panel</td>
+                                <td>Local Linux plus Quest-specific input and device bridges</td>
+                                <td>More setup and local transport work; deliberately bounded compatibility</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Spatial SDK remote desktop</th>
+                                <td>External Ubuntu/PC host</td>
+                                <td>Native video surface and spatial panel</td>
+                                <td>Desktop-class compute and efficient media transport</td>
+                                <td>Requires a host and network (<a class="inline-citation" href="https://github.com/yveshughes/remote-desktop-for-ubuntu" target="_blank" rel="noopener noreferrer">remote-desktop-for-ubuntu</a>; <a class="inline-citation" href="https://github.com/XXJones21/Moonlight-SpatialSDK" target="_blank" rel="noopener noreferrer">Moonlight-SpatialSDK</a>)</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">WayVR + WiVRn</th>
+                                <td>External Linux host</td>
+                                <td>Linux-native spatial workspace streamed to Quest</td>
+                                <td>Several apps, richer compute, and open Linux XR</td>
+                                <td>Not an Android-hosted local desktop (<a class="inline-citation" href="https://github.com/wayvr-org/wayvr" target="_blank" rel="noopener noreferrer">WayVR</a>; <a class="inline-citation" href="https://github.com/WiVRn/WiVRn" target="_blank" rel="noopener noreferrer">WiVRn</a>)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="sld-lessons">
+                    <article>
+                        <span>01</span>
+                        <h3>Finish text input</h3>
+                        <p>Unicode, dead keys, composition, selection, and clipboard behavior are a more consequential adopter gap than another application screenshot. noVNC and mature Android VNC clients are useful protocol references, subject to their licenses. (<a class="inline-citation" href="https://github.com/novnc/noVNC" target="_blank" rel="noopener noreferrer">noVNC</a>)</p>
+                    </article>
+                    <article>
+                        <span>02</span>
+                        <h3>Measure the whole local path</h3>
+                        <p>Direct Termux:X11, retained RFB, and any hardware-video experiment should run the same visible tasks. Local encoding, copies, queueing, decode, text clarity, latency, thermal state, and battery all count.</p>
+                    </article>
+                    <article>
+                        <span>03</span>
+                        <h3>Study direct surfaces</h3>
+                        <p>WinlatorXR and the Ubuntu Spatial SDK client are useful references for direct local rendering boundaries and decoder-to-panel surfaces. Neither proves that a zero-copy Termux:X11 handoff already exists.</p>
+                    </article>
+                    <article>
+                        <span>04</span>
+                        <h3>Treat lifecycle and trust as features</h3>
+                        <p>Release held input, stop the microphone on interruption, bound reconnects, and authenticate local peers if hostile same-device applications enter the threat model. Loopback limits exposure; it is not per-app authentication.</p>
+                    </article>
+                </div>
+
+                <aside class="sld-research-note" aria-label="Research scope and evidence boundary">
+                    <strong>Research boundary.</strong>
+                    <p>The 12 September 2026 scan tracked 53 target, candidate, upstream, adjacent, and lead records plus 74 source/access entries. It did not independently reproduce other projects, perform a legal prior-art search, or exhaust every video, archive, fork, language, or app store. “Not verified” does not mean “absent.”</p>
+                    <a href="https://github.com/MesmerPrism/quest-termux-lab/blob/codex/spatial-desktop-panel/docs/quest-linux-desktop-ecosystem.md" target="_blank" rel="noopener noreferrer">Read the engineering comparison and research queue</a>
+                </aside>
+            </div>
+        </section>
+
+        <section class="sld-references" id="references" aria-labelledby="references-title">
+            <div class="sld-shell">
+                <h2 id="references-title">Selected references</h2>
+                <ol>
+                    <li><strong>MesmerPrism.</strong> “<a class="reference-link" href="https://github.com/MesmerPrism/quest-termux-lab/tree/1ed3a4544ac3883e4c4928c4f114b22466c7c783/examples/spatial-desktop-panel" target="_blank" rel="noopener noreferrer">Spatial Desktop Panel implementation snapshot</a>.” 2026.</li>
+                    <li><strong>Tokoro.</strong> “<a class="reference-link" href="https://blog.tokor.org/2018/11/27/Oculus-Go%E3%81%A7%E3%82%B9%E3%82%BF%E3%83%B3%E3%83%89%E3%82%A2%E3%83%AD%E3%83%B3VR%E4%BD%9C%E6%A5%AD%E7%92%B0%E5%A2%83%E3%82%92%E4%BD%9C%E3%81%A3%E3%81%9F/" target="_blank" rel="noopener noreferrer">A standalone VR work environment on Oculus Go</a>.” 2018.</li>
+                    <li><strong>y-fujii.</strong> “<a class="reference-link" href="https://github.com/y-fujii/ovrvnc" target="_blank" rel="noopener noreferrer">OVRVNC</a>.” Source repository.</li>
+                    <li><strong>RangerMauve.</strong> “<a class="reference-link" href="https://medium.com/@RangerMauve/linux-on-the-oculus-quest-406ba5d0c982" target="_blank" rel="noopener noreferrer">Linux on the Oculus Quest</a>.” 2019.</li>
+                    <li><strong>Eternal_Density.</strong> “<a class="reference-link" href="https://www.reddit.com/r/OculusQuest/comments/ji9k7z/xfce_desktop_environment_on_my_quest_2_running_in/" target="_blank" rel="noopener noreferrer">XFCE desktop environment on Quest 2</a>.” 2020.</li>
+                    <li><strong>legokichi.</strong> “<a class="reference-link" href="https://qiita.com/legokichi/items/66975c203aebb5a4121c" target="_blank" rel="noopener noreferrer">Standalone Linux with Termux on Meta Quest 3</a>.” 2025.</li>
+                    <li><strong>Ben Kaiser.</strong> “<a class="reference-link" href="https://benkaiser.dev/web-development-in-vr/" target="_blank" rel="noopener noreferrer">Web development in VR</a>.” 2025.</li>
+                    <li><strong>DevWithZachary.</strong> “<a class="reference-link" href="https://www.youtube.com/watch?v=Xshj_xjwVjc" target="_blank" rel="noopener noreferrer">Ubuntu Desktop on Meta Quest 3</a>.” Video, 2025. Architecture cross-checked against <a class="reference-link" href="https://docs.andronix.app/get-started/how-does-andronix-work" target="_blank" rel="noopener noreferrer">Andronix documentation</a>.</li>
+                    <li><strong>orailnoor.</strong> “<a class="reference-link" href="https://github.com/orailnoor/DroidDesk" target="_blank" rel="noopener noreferrer">DroidDesk</a>.” Source repository and <a class="reference-link" href="https://github.com/orailnoor/DroidDesk/blob/main/COMPLIANCE.md" target="_blank" rel="noopener noreferrer">compliance record</a>.</li>
+                    <li><strong>WinlatorXR contributors.</strong> “<a class="reference-link" href="https://github.com/WinlatorXR/WinlatorXR/tree/cmod_bionic" target="_blank" rel="noopener noreferrer">WinlatorXR</a>.” See the inspected <a class="reference-link" href="https://github.com/WinlatorXR/WinlatorXR/blob/d4c830526eb5562067d21685a975845ab705da60/app/src/main/java/com/winlator/xr/XrController.java" target="_blank" rel="noopener noreferrer">XR controller implementation</a>.</li>
+                    <li><strong>Yves Hughes.</strong> “<a class="reference-link" href="https://github.com/yveshughes/remote-desktop-for-ubuntu" target="_blank" rel="noopener noreferrer">Remote desktop for Ubuntu</a>.” Meta Spatial SDK client, 2026.</li>
+                    <li><strong>XXJones21.</strong> “<a class="reference-link" href="https://github.com/XXJones21/Moonlight-SpatialSDK" target="_blank" rel="noopener noreferrer">Moonlight-SpatialSDK</a>.” Source repository.</li>
+                    <li><strong>WayVR and WiVRn contributors.</strong> “<a class="reference-link" href="https://github.com/wayvr-org/wayvr" target="_blank" rel="noopener noreferrer">WayVR</a>” and “<a class="reference-link" href="https://github.com/WiVRn/WiVRn" target="_blank" rel="noopener noreferrer">WiVRn</a>.” Open-source Linux XR workspace and transport.</li>
+                    <li><strong>Termux contributors.</strong> “<a class="reference-link" href="https://github.com/termux/termux-app" target="_blank" rel="noopener noreferrer">Termux</a>” and “<a class="reference-link" href="https://github.com/termux/termux-x11" target="_blank" rel="noopener noreferrer">Termux:X11</a>.” Core upstream projects.</li>
+                    <li><strong>LibVNC and noVNC contributors.</strong> “<a class="reference-link" href="https://github.com/LibVNC/x11vnc" target="_blank" rel="noopener noreferrer">x11vnc</a>” and “<a class="reference-link" href="https://github.com/novnc/noVNC" target="_blank" rel="noopener noreferrer">noVNC</a>.” Display-transport references.</li>
+                </ol>
+            </div>
+        </section>
+
         <section class="sld-source" id="source" aria-labelledby="source-title">
             <div class="sld-shell sld-source__layout">
                 <h2 id="source-title">A working reference, not a black box.</h2>
@@ -229,6 +408,7 @@ run the tests, and show you the diff.
                 <div class="sld-source__actions">
                     <a class="sld-button sld-button--strong" href="https://github.com/MesmerPrism/quest-termux-lab" target="_blank" rel="noopener noreferrer">Open the GitHub repository</a>
                     <a class="sld-button" href="https://github.com/MesmerPrism/quest-termux-lab/blob/main/docs/spatial-desktop-panel.md" target="_blank" rel="noopener noreferrer">Read the architecture</a>
+                    <a class="sld-button" href="https://github.com/MesmerPrism/quest-termux-lab/blob/codex/spatial-desktop-panel/docs/quest-linux-desktop-ecosystem.md" target="_blank" rel="noopener noreferrer">Explore related work</a>
                 </div>
             </div>
         </section>
