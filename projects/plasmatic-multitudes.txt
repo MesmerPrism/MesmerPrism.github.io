@@ -2,7 +2,7 @@ Plasmatic Multitudes - Weakly Bounded Embodiment and Semi-Corporeal Avatar Desig
 
 Source: https://mesmerprism.com/projects/plasmatic-multitudes.html
 Canonical HTML: https://mesmerprism.com/projects/plasmatic-multitudes.html
-Generated: 2026-07-24
+Generated: 2026-09-16
 Description: A public overview of weakly bounded bodies: avatars, swarms, auras, particle forms, and luminous bodies that remain coherent enough for embodiment, joint authorship, relation, and cautious research translation.
 Markdown: https://mesmerprism.com/projects/plasmatic-multitudes.md
 Plain text: https://mesmerprism.com/projects/plasmatic-multitudes.txt
@@ -31,7 +31,7 @@ Plasmatic Multitudes
  ownership, and cultural legibility let them soften without
  collapsing into formlessness. This page gives the public
  overview. The field guide collects the long essay, method note,
- shared-swarm control study, mixed-ability HSI proposal,
+ shared-swarm control discussion, mixed-ability HSI research questions,
  pain-translation hypothesis, vocabulary, and annotated sources.
 
  Start with the basics (https://mesmerprism.com/projects/plasmatic-multitudes.html#field-guide)
@@ -41,6 +41,24 @@ Plasmatic Multitudes
  Deep field guide (https://mesmerprism.com/plasmatic-multitudes/)
  References (https://mesmerprism.com/projects/plasmatic-multitudes.html#references)
  Back to work (https://mesmerprism.com/#work)
+
+Avatar work, shared embodiment, and the next question
+
+ Plasmatic Multitudes grows out of Till Holzapfel's work on semi-corporeal
+ avatars at the Intangible Realities Lab, in the context of its Isness work
+ and collaboration with aNUma. The lab's numadelic design lineage uses
+ luminous bodies and fluid boundaries to explore experiences beyond everyday
+ embodiment
+ (IRL, Isness (https://www.intangiblerealitieslab.org/projects/isness);
+ IRL, Numadelic Flow (https://www.intangiblerealitieslab.org/projects/numadelic-flow);
+ aNUma, Science (https://anuma.com/science)).
+
+ The current research direction, Combinatorial Swarmability (https://mesmerprism.com/projects/combinatorial-swarmability.html),
+ carries the question of a body's changing boundary into mixed-ability
+ human–swarm interaction. Several people might shape one many-part form through
+ different inputs and roles. The question is then how they recognize, negotiate,
+ and revise their contributions. Shared embodiment provides a starting point;
+ whether it supports more equitable participation requires its own evidence.
 
  Field guide
 
@@ -390,6 +408,7 @@ Where to continue
  vocabulary, and annotated references.
 
 Go deeper
+- Combinatorial Swarmability (https://mesmerprism.com/projects/combinatorial-swarmability.html) — the current PhD direction in mixed-ability human–swarm interaction.
 - Long essay (https://mesmerprism.com/plasmatic-multitudes/essay.html) - semi-corporeal avatar aesthetics across media history, XR, morphogenesis, and pain translation.
 - Shared swarms (https://mesmerprism.com/plasmatic-multitudes/shared-swarm-control.html) - several people shaping one digitally native particle, agent, body, or field.
 - Mixed-ability HSI (https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html) - accessible mappings, consent, refusal, privacy, and repair.
@@ -404,6 +423,10 @@ Sources and entry points
  These are the main sources cited above. For deeper reading, the
  field guide collects the long essay, vocabulary, pain-translation
  note, and annotated references.
+
+Design context
+- Intangible Realities Lab. “Isness (https://www.intangiblerealitieslab.org/projects/isness)” and “Numadelic Flow (https://www.intangiblerealitieslab.org/projects/numadelic-flow).” Public project and aesthetic context. Accessed September 16, 2026.
+- aNUma. “Science (https://anuma.com/science).” Isness research context, not independent clinical evidence. Accessed September 16, 2026.
 
 Embodiment and perception
 - Shusterman. "Somaesthetics (https://www.interaction-design.org/literature/book/the-encyclopedia-of-human-computer-interaction-2nd-ed/somaesthetics)." The Encyclopedia of Human-Computer Interaction .

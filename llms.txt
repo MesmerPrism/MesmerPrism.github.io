@@ -24,7 +24,7 @@ Use the Markdown alternates for compact reading. Use the BibTeX or CSL JSON alte
 - [Video carousel demo](https://mesmerprism.com/tmp/video-carousel-demo.md)
 
 ## Core
-- [Mesmer Prism | Till Holzapfel](https://mesmerprism.com/index.md): XR systems, citizen-science tools, visual instruments, and essays for altered-perception design. Mesmer Prism makes strange experience vivid, inspectable, and evidence-bounded.
+- [Mesmer Prism | Till Holzapfel](https://mesmerprism.com/index.md): Till Holzapfel: PhD research in mixed-ability human–swarm interaction, Combinatorial Swarmability, embodied perception, biofeedback, and open-source tools.
 
 ## Optional
 - [Calligraphy Reference Pack](https://mesmerprism.com/plasmatic-multitudes/assets/calligraphy-reference-pack/board.md)
@@ -47,6 +47,7 @@ Use the Markdown alternates for compact reading. Use the BibTeX or CSL JSON alte
 - [Brain Candy](https://mesmerprism.com/projects/brain-candy.md): Brain Candy studies rhythmic light, recursive visual structure, sound, breath, expectation, and interaction as tunable non-drug state-shift design.
 - [Bressloff and Rule Modeling Deep Dive](https://mesmerprism.com/projects/bressloff-v1-form-constants-deep-dive.md): A notebook-style deep dive into Bressloff form constants, Rule flicker modeling, and generated driven neural-field diagnostics after Rule.
 - [Bressloff V1 Form Constants](https://mesmerprism.com/projects/bressloff-v1-form-constants.md): Animated notes on Bressloff visual-cortex form constants, Rule flicker modeling, and generated MacKay, Bolelli, and Nicks driven-field diagnostics.
+- [Combinatorial Swarmability](https://mesmerprism.com/projects/combinatorial-swarmability.md): Mixed-ability human–swarm interaction: combining different forms of participation through shared, changing systems. Research by Till Holzapfel at UDE / RC Trust.
 - [Deep Dream](https://mesmerprism.com/projects/deep-dream.md): Deep Dream explains how machine-vision hallucination, community visual taxonomies, VR research, and cyberdelic systems shaped simulated psychedelic vision.
 - [Fractal Optics](https://mesmerprism.com/projects/fractal-optics.md): Fractal Optics maps fractal phototherapy, retinal and ophthalmic stimulation, VR delivery, and patterned-light comparator literatures.
 - [Hollow Face Lab](https://mesmerprism.com/projects/hollow-face-lab.md): Hollow Face Lab maps WebGL, WebXR, texture controls, and Rusty XR implementation choices against hollow-face and depth-inversion research.

@@ -1,397 +1,5 @@
 [
   {
-    "id": "fejer-et-al-mesmer-prism-work-publications-background-contact-2026",
-    "type": "webpage",
-    "title": "Mesmer Prism Work Publications Background Contact",
-    "URL": "https://github.com/MesmerPrism",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          7,
-          15
-        ]
-      ]
-    },
-    "note": "Referenced by Mesmer Prism | Till Holzapfel: https://mesmerprism.com/",
-    "author": [
-      {
-        "literal": "Fejer et al"
-      }
-    ],
-    "issued": {
-      "date-parts": [
-        [
-          2026
-        ]
-      ]
-    }
-  },
-  {
-    "id": "fejer-et-al-project-site-2026",
-    "type": "webpage",
-    "title": "Project site",
-    "URL": "https://viscereality.org/",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          7,
-          15
-        ]
-      ]
-    },
-    "note": "Referenced by Mesmer Prism | Till Holzapfel: https://mesmerprism.com/",
-    "author": [
-      {
-        "literal": "Fejer et al"
-      }
-    ],
-    "issued": {
-      "date-parts": [
-        [
-          2026
-        ]
-      ]
-    }
-  },
-  {
-    "id": "fejer-et-al-docs-downloads-2026",
-    "type": "webpage",
-    "title": "Docs & downloads",
-    "URL": "https://mesmerprism.github.io/ViscerealityCompanion/",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          7,
-          15
-        ]
-      ]
-    },
-    "note": "Referenced by Mesmer Prism | Till Holzapfel: https://mesmerprism.com/",
-    "author": [
-      {
-        "literal": "Fejer et al"
-      }
-    ],
-    "issued": {
-      "date-parts": [
-        [
-          2026
-        ]
-      ]
-    }
-  },
-  {
-    "id": "fejer-et-al-matter-2026",
-    "type": "webpage",
-    "title": "Matter",
-    "URL": "https://github.com/MesmerPrism/rusty-matter",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          7,
-          15
-        ]
-      ]
-    },
-    "note": "Referenced by Mesmer Prism | Till Holzapfel: https://mesmerprism.com/",
-    "author": [
-      {
-        "literal": "Fejer et al"
-      }
-    ],
-    "issued": {
-      "date-parts": [
-        [
-          2026
-        ]
-      ]
-    }
-  },
-  {
-    "id": "fejer-et-al-manifold-2026",
-    "type": "webpage",
-    "title": "Manifold",
-    "URL": "https://github.com/MesmerPrism/rusty-manifold",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          7,
-          15
-        ]
-      ]
-    },
-    "note": "Referenced by Mesmer Prism | Till Holzapfel: https://mesmerprism.com/",
-    "author": [
-      {
-        "literal": "Fejer et al"
-      }
-    ],
-    "issued": {
-      "date-parts": [
-        [
-          2026
-        ]
-      ]
-    }
-  },
-  {
-    "id": "fejer-et-al-rusty-lsl-2026",
-    "type": "webpage",
-    "title": "Rusty LSL",
-    "URL": "https://github.com/MesmerPrism/rusty-lsl",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          7,
-          15
-        ]
-      ]
-    },
-    "note": "Referenced by Mesmer Prism | Till Holzapfel: https://mesmerprism.com/",
-    "author": [
-      {
-        "literal": "Fejer et al"
-      }
-    ],
-    "issued": {
-      "date-parts": [
-        [
-          2026
-        ]
-      ]
-    }
-  },
-  {
-    "id": "fejer-et-al-optics-2026",
-    "type": "webpage",
-    "title": "Optics",
-    "URL": "https://github.com/MesmerPrism/rusty-optics",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          7,
-          15
-        ]
-      ]
-    },
-    "note": "Referenced by Mesmer Prism | Till Holzapfel: https://mesmerprism.com/",
-    "author": [
-      {
-        "literal": "Fejer et al"
-      }
-    ],
-    "issued": {
-      "date-parts": [
-        [
-          2026
-        ]
-      ]
-    }
-  },
-  {
-    "id": "fejer-et-al-signal-packages-2026",
-    "type": "webpage",
-    "title": "Signal packages",
-    "URL": "https://github.com/MesmerPrism/polar-h10-signals",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          7,
-          15
-        ]
-      ]
-    },
-    "note": "Referenced by Mesmer Prism | Till Holzapfel: https://mesmerprism.com/",
-    "author": [
-      {
-        "literal": "Fejer et al"
-      }
-    ],
-    "issued": {
-      "date-parts": [
-        [
-          2026
-        ]
-      ]
-    }
-  },
-  {
-    "id": "fejer-et-al-live-axp-survey-2026",
-    "type": "webpage",
-    "title": "Live AXP survey",
-    "URL": "https://alteredxproject.com/",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          7,
-          15
-        ]
-      ]
-    },
-    "note": "Referenced by Mesmer Prism | Till Holzapfel: https://mesmerprism.com/",
-    "author": [
-      {
-        "literal": "Fejer et al"
-      }
-    ],
-    "issued": {
-      "date-parts": [
-        [
-          2026
-        ]
-      ]
-    }
-  },
-  {
-    "id": "fejer-et-al-access-guide-2026",
-    "type": "webpage",
-    "title": "Access guide",
-    "URL": "https://mesmerprism.com/axp-mvp-survey-guide/",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          7,
-          15
-        ]
-      ]
-    },
-    "note": "Referenced by Mesmer Prism | Till Holzapfel: https://mesmerprism.com/",
-    "author": [
-      {
-        "literal": "Fejer et al"
-      }
-    ],
-    "issued": {
-      "date-parts": [
-        [
-          2026
-        ]
-      ]
-    }
-  },
-  {
-    "id": "fejer-et-al-project-site-2026",
-    "type": "webpage",
-    "title": "Project site",
-    "URL": "https://braincandyapp.com/",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          7,
-          15
-        ]
-      ]
-    },
-    "note": "Referenced by Mesmer Prism | Till Holzapfel: https://mesmerprism.com/",
-    "author": [
-      {
-        "literal": "Fejer et al"
-      }
-    ],
-    "issued": {
-      "date-parts": [
-        [
-          2026
-        ]
-      ]
-    }
-  },
-  {
-    "id": "fejer-et-al-source-repo-2026",
-    "type": "webpage",
-    "title": "Source repo",
-    "URL": "https://github.com/MesmerPrism/Strobotorch",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          7,
-          15
-        ]
-      ]
-    },
-    "note": "Referenced by Mesmer Prism | Till Holzapfel: https://mesmerprism.com/",
-    "author": [
-      {
-        "literal": "Fejer et al"
-      }
-    ],
-    "issued": {
-      "date-parts": [
-        [
-          2026
-        ]
-      ]
-    }
-  },
-  {
-    "id": "fejer-et-al-source-code-2026",
-    "type": "webpage",
-    "title": "Source code",
-    "URL": "https://github.com/MesmerPrism/bressloff-v1-form-constants",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          7,
-          15
-        ]
-      ]
-    },
-    "note": "Referenced by Mesmer Prism | Till Holzapfel: https://mesmerprism.com/",
-    "author": [
-      {
-        "literal": "Fejer et al"
-      }
-    ],
-    "issued": {
-      "date-parts": [
-        [
-          2026
-        ]
-      ]
-    }
-  },
-  {
-    "id": "fejer-et-al-original-notebook-2026",
-    "type": "webpage",
-    "title": "Original notebook",
-    "URL": "https://github.com/karacsm/V1-sim",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          7,
-          15
-        ]
-      ]
-    },
-    "note": "Referenced by Mesmer Prism | Till Holzapfel: https://mesmerprism.com/",
-    "author": [
-      {
-        "literal": "Fejer et al"
-      }
-    ],
-    "issued": {
-      "date-parts": [
-        [
-          2026
-        ]
-      ]
-    }
-  },
-  {
     "id": "fejer-et-al-breathing-space-spatial-mapping-of-breath-and-cardiac-bi-2026",
     "type": "article-journal",
     "title": "Breathing Space: Spatial Mapping of Breath and Cardiac Biofeedback for Affective State Representation and Coherence Training in Viscereality.",
@@ -400,8 +8,8 @@
       "date-parts": [
         [
           2026,
-          7,
-          15
+          9,
+          16
         ]
       ]
     },
@@ -429,8 +37,8 @@
       "date-parts": [
         [
           2026,
-          7,
-          15
+          9,
+          16
         ]
       ]
     },
@@ -450,6 +58,34 @@
     "DOI": "10.18420/muc2025-mci-ws11-174"
   },
   {
+    "id": "lobser-and-holzapfel-brain-candy-2025",
+    "type": "webpage",
+    "title": "Brain Candy",
+    "URL": "https://braincandyapp.com/",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          9,
+          16
+        ]
+      ]
+    },
+    "note": "Referenced by Mesmer Prism | Till Holzapfel: https://mesmerprism.com/",
+    "author": [
+      {
+        "literal": "Lobser and Holzapfel"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2025
+        ]
+      ]
+    }
+  },
+  {
     "id": "roebuck-williams-et-al-measuring-the-limit-of-perception-of-bond-stiffness-of-i-2024",
     "type": "article-journal",
     "title": "Measuring the Limit of Perception of Bond Stiffness of Interactive Molecules in VR via a Gamified Psychophysics Experiment.",
@@ -458,8 +94,8 @@
       "date-parts": [
         [
           2026,
-          7,
-          15
+          9,
+          16
         ]
       ]
     },
@@ -477,37 +113,5 @@
       ]
     },
     "DOI": "10.1007/978-3-031-71707-9_13"
-  },
-  {
-    "id": "light-clinic-light-clinic",
-    "type": "webpage",
-    "title": "Light Clinic",
-    "URL": "https://light.clinic/",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          7,
-          15
-        ]
-      ]
-    },
-    "note": "Referenced by Mesmer Prism | Till Holzapfel: https://mesmerprism.com/"
-  },
-  {
-    "id": "www-linkedin-com-linkedin-com-in-till-holzapfel-intangiblerealitieslab",
-    "type": "webpage",
-    "title": "linkedin.com/in/till-holzapfel-intangiblerealitieslab",
-    "URL": "https://www.linkedin.com/in/till-holzapfel-intangiblerealitieslab/",
-    "accessed": {
-      "date-parts": [
-        [
-          2026,
-          7,
-          15
-        ]
-      ]
-    },
-    "note": "Referenced by Mesmer Prism | Till Holzapfel: https://mesmerprism.com/"
   }
 ]

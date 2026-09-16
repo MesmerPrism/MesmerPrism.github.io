@@ -1,13 +1,13 @@
 # Mesmer Prism Full Agent Context
 
-Generated: 2026-09-04
+Generated: 2026-09-16
 
 <page url="https://mesmerprism.com/duisburg/" path="duisburg/index.html">
 # Shared Bodies for Mixed-Ability Collaboration
 
 Source: https://mesmerprism.com/duisburg/
 Canonical HTML: https://mesmerprism.com/duisburg/
-Generated: 2026-09-04
+Generated: 2026-09-16
 Description: A Duisburg-facing research pitch for Mixed-Ability Human-Swarm Interaction: shared swarm bodies, inspectable input mappings, and a route from connectedness to robotics translation.
 Markdown: https://mesmerprism.com/duisburg/index.md
 Plain text: https://mesmerprism.com/duisburg/index.txt
@@ -490,8 +490,8 @@ Mixed-ability XR research
 
 Source: https://mesmerprism.com/
 Canonical HTML: https://mesmerprism.com/
-Generated: 2026-09-04
-Description: XR systems, citizen-science tools, visual instruments, and essays for altered-perception design. Mesmer Prism makes strange experience vivid, inspectable, and evidence-bounded.
+Generated: 2026-09-16
+Description: Till Holzapfel: PhD research in mixed-ability human–swarm interaction, Combinatorial Swarmability, embodied perception, biofeedback, and open-source tools.
 Markdown: https://mesmerprism.com/index.md
 Plain text: https://mesmerprism.com/index.txt
 BibTeX references: https://mesmerprism.com/index.bib
@@ -503,26 +503,71 @@ Till Holzapfel
 
 # Mesmer Prism
 
- Mesmer Prism is Till Holzapfel's public interface for
- altered-perception design: XR systems, citizen-science tools, visual
- instruments, and essays that make breath, light, imagery, and body
- boundaries inspectable. The design philosophy is bounded transformation:
- let experience change, but keep agency, apparatus, variables, sources,
- and limits visible.
+ I study how people perceive, inhabit, and shape shared worlds.
+ I am now a PhD candidate in mixed-ability human–swarm interaction.
+ My approach, Combinatorial Swarmability, asks how people with different
+ abilities can act through a shared, changing system and negotiate
+ how their contributions matter. This grows out of my work with
+ embodied perception, biofeedback, and luminous, porous virtual bodies.
 
- Start with live systems, perception tools, embodiment essays, research maps,
- or publications.
+ Based in the [Inclusive Technology and Collective Engagement group](https://rc-trust.ai/groups/inclusive-technology-and-collective-engagement),
+ University of Duisburg-Essen / RC Trust.
 
- [Enter the work](https://mesmerprism.com/#work)
- [Publications](https://mesmerprism.com/#publications)
+ [Combinatorial Swarmability](https://mesmerprism.com/projects/combinatorial-swarmability.html)
+ [Projects and tools](https://mesmerprism.com/#work)
  [Contact](https://mesmerprism.com/#contact)
+
+## How can different abilities become shared possibilities?
+
+ A shared interface does not have to give everyone the same controls.
+ One person might shape a swarm's direction, another its rhythm or density,
+ and another the rules by which it responds. The research question is how
+ those contributions can become understandable, negotiable, and meaningful
+ to the people making them.
+
+ [Combinatorial Swarmability](https://mesmerprism.com/projects/combinatorial-swarmability.html)
+ is the focus of my PhD in mixed-ability human–swarm interaction, in
+ Prof. Giulia Barbareschi's group. I plan to develop it through participatory
+ design, shared virtual environments, and studies of how people coordinate
+ and repair interaction. Swarms are a medium to explore; more equitable
+ collaboration is a question to investigate, not an automatic result.
+
+ One direction is a dynamic reflection of a group's meeting: a system whose
+ behaviour helps participants discuss what is happening between them.
+ Its meanings would have to be defined and revised with the group.
+ This is an early research proposal, not a tool that can already measure
+ inclusion or infer how people feel.
+
+ [Read the research direction and its foundations](https://mesmerprism.com/projects/combinatorial-swarmability.html)
+
+### From perception to relations between people
+
+ My earlier work asks how a person interfaces with the world: how perception,
+ expectation, and belief shape experience, and how an interface can change
+ the felt boundary of the body. The new work carries those questions into
+ the space between people.
+
+ [Viscereality](https://mesmerprism.com/projects/viscereality.html) brings breath and
+ physiological feedback into changing visual systems. It is a practical
+ meeting point for my interests in dynamical systems and neuroaesthetics:
+ how the behaviour of a visual environment relates to bodily experience.
+
+ [Plasmatic Multitudes](https://mesmerprism.com/projects/plasmatic-multitudes.html)
+ develops porous, particle-based bodies. My avatar work at the Intangible
+ Realities Lab grew within its Isness work and collaboration with aNUma,
+ in the wider context of numadelic aesthetics and shared embodiment.
+
+ [Rusty Morphospace](https://mesmerprism.com/projects/rusty-morphospace.html) is the
+ open-source infrastructure thread: making immersive systems easier to
+ build, operate, and inspect. Extending this work toward robotic systems,
+ including Reachy Mini, is a planned next step.
 
  Projects
 
-## Choose a route
+## Projects, tools, and earlier work
 
- Systems, tools, essays, and references sit together here so the reader can
- move by use, topic, or artifact.
+ Working systems sit alongside essays on perception and embodiment.
+ These remain active interests and foundations for the new research.
 
 ### Use or inspect a system
 
@@ -1015,35 +1060,33 @@ Till Holzapfel
 
 ## Background
 
- My background moves between cognitive science, HCI, psychophysics, media
- theory, and research writing. The essays name concepts, lineages, and
- source limits before carrying those questions into XR systems, browser
- simulations, physiological sensing, and embodied prototypes.
+ I am a cognitive scientist, researcher, and developer working across HCI,
+ psychophysics, immersive media, and artistic research. Much of my work has
+ concerned the relationship between perception and interpretation: how
+ attention, expectation, imagery, and belief affect the world we experience.
+ The essays on [mental imagery](https://mesmerprism.com/projects/prophantasia.html),
+ [phenomenological control](https://mesmerprism.com/projects/phenomenological-control.html),
+ and [scientific surrealism](https://mesmerprism.com/projects/scientific-surrealism.html)
+ develop that strand.
 
- Across [Plasmatic Multitudes](https://mesmerprism.com/projects/plasmatic-multitudes.html),
- [SANE](https://mesmerprism.com/projects/sane.html),
- [Tulpas](https://mesmerprism.com/projects/tulpas.html),
- [Scientific Surrealism](https://mesmerprism.com/projects/scientific-surrealism.html),
- [Rusty Morphospace](https://mesmerprism.com/projects/rusty-morphospace.html),
- [Polar H10 Work](https://mesmerprism.com/projects/polar-h10.html),
- [Quest Companion Tools](https://mesmerprism.com/projects/viscereality-companion.html),
- [Hollow Face Lab](https://mesmerprism.com/projects/hollow-face-lab.html),
- [Altered Xperience Project](https://mesmerprism.com/projects/altered-xperience-project.html),
- [Brain Candy](https://mesmerprism.com/projects/brain-candy.html),
- [Strobotorch](https://mesmerprism.com/Strobotorch/),
- [Bressloff V1 Form Constants](https://mesmerprism.com/projects/bressloff-v1-form-constants.html),
- [Deep Dream](https://mesmerprism.com/projects/deep-dream.html),
- [Optical Movement Illusions](https://mesmerprism.com/projects/optical-movement-illusions.html),
- [Phenomenological Control](https://mesmerprism.com/projects/phenomenological-control.html),
- [Prophantasia](https://mesmerprism.com/projects/prophantasia.html),
- and [Fractal Optics](https://mesmerprism.com/projects/fractal-optics.html), the recurring terrain is
- altered perception, weakly bounded bodies, phenomenological variation, and
- the practical conditions that make strange experience legible without flattening
- it.
+ Building interactive systems gives these questions a material form.
+ My work has included avatar development and public engagement at the
+ [Intangible Realities Lab](https://www.intangiblerealitieslab.org/),
+ bioresponsive VR through Viscereality, and citizen-science infrastructure
+ through the Altered Xperience Project. Open tools make the apparatus easier
+ to inspect and adapt, while research writing makes its assumptions and
+ limits available for discussion.
+
+ My PhD shifts the emphasis toward collective interaction: who can act,
+ how actions combine, and how people negotiate the rules of a shared
+ environment. The earlier questions about perception and embodiment remain,
+ now joined by questions about access, interdependence, and shared authorship.
 
 ### Core strengths
 
 - Unity and C# for XR and interactive systems
+
+- Rust and open-source infrastructure for spatial and interactive tools
 
 - Biofeedback, breath interaction, and interoception-oriented design
 
@@ -1057,6 +1100,8 @@ Till Holzapfel
 
 ### Current and recent roles
 
+- PhD candidate, mixed-ability human–swarm interaction, [Inclusive Technology and Collective Engagement, University of Duisburg-Essen / RC Trust](https://rc-trust.ai/groups/inclusive-technology-and-collective-engagement)
+
 - VR Developer & Researcher, Viscereality Project
 
 - Citizen-science survey infrastructure, Altered Xperience Project / CIRCE collaboration
@@ -1065,12 +1110,13 @@ Till Holzapfel
 
 - Visual Artist / Developer / Researcher, Tactile Visualizer Project
 
-- Public Outreach & Citizen Science, Intangible Realities Lab
+- Earlier work: avatar development, public outreach, and citizen science, Intangible Realities Lab
 
 ## Contact
 
- If you are building something across XR, altered perception, embodiment,
- research tooling, or interdisciplinary writing and design, contact me here.
+ I welcome conversations about mixed-ability collaboration, human–swarm
+ interaction, shared embodiment, and open research tools, as well as
+ connections to perception, biofeedback, and artistic research.
 
 - Email [mesmerprism@gmail.com](mailto:mesmerprism@gmail.com)
 
@@ -1078,7 +1124,7 @@ Till Holzapfel
 
 - LinkedIn [linkedin.com/in/till-holzapfel-intangiblerealitieslab](https://www.linkedin.com/in/till-holzapfel-intangiblerealitieslab/)
 
-- Current project [viscereality.org](https://viscereality.org/)
+- Research group [Inclusive Technology and Collective Engagement](https://rc-trust.ai/groups/inclusive-technology-and-collective-engagement)
 </page>
 
 <page url="https://mesmerprism.com/plasmatic-multitudes/assets/calligraphy-reference-pack/board.html" path="plasmatic-multitudes/assets/calligraphy-reference-pack/board.html">
@@ -1086,7 +1132,7 @@ Till Holzapfel
 
 Source: https://mesmerprism.com/plasmatic-multitudes/assets/calligraphy-reference-pack/board.html
 Canonical HTML: https://mesmerprism.com/plasmatic-multitudes/assets/calligraphy-reference-pack/board.html
-Generated: 2026-09-04
+Generated: 2026-09-16
 Markdown: https://mesmerprism.com/plasmatic-multitudes/assets/calligraphy-reference-pack/board.md
 Plain text: https://mesmerprism.com/plasmatic-multitudes/assets/calligraphy-reference-pack/board.txt
 BibTeX references: https://mesmerprism.com/plasmatic-multitudes/assets/calligraphy-reference-pack/board.bib
@@ -1236,7 +1282,7 @@ Museum-backed pack
 
 Source: https://mesmerprism.com/plasmatic-multitudes/background/somaesthetics.html
 Canonical HTML: https://mesmerprism.com/plasmatic-multitudes/background/somaesthetics.html
-Generated: 2026-09-04
+Generated: 2026-09-16
 Description: A short public note on somaesthetics as the method anchor for Plasmatic Multitudes.
 Markdown: https://mesmerprism.com/plasmatic-multitudes/background/somaesthetics.md
 Plain text: https://mesmerprism.com/plasmatic-multitudes/background/somaesthetics.txt
@@ -1307,7 +1353,7 @@ Background appendix | Updated May 24, 2026
 
 Source: https://mesmerprism.com/plasmatic-multitudes/essay.html
 Canonical HTML: https://mesmerprism.com/plasmatic-multitudes/essay.html
-Generated: 2026-09-04
+Generated: 2026-09-16
 Description: A long-form essay on weakly bounded bodies, XR embodiment, media genealogy, computational morphogenesis, and cautious pain translation.
 Markdown: https://mesmerprism.com/plasmatic-multitudes/essay.md
 Plain text: https://mesmerprism.com/plasmatic-multitudes/essay.txt
@@ -1665,7 +1711,7 @@ Long essay | Updated May 24, 2026
 
 Source: https://mesmerprism.com/plasmatic-multitudes/
 Canonical HTML: https://mesmerprism.com/plasmatic-multitudes/
-Generated: 2026-09-04
+Generated: 2026-09-16
 Description: Long essay, method notes, shared digital-swarm control, mixed-ability human-swarm interaction, vocabulary, pain-translation hypotheses, and annotated sources for weakly bounded bodies.
 Markdown: https://mesmerprism.com/plasmatic-multitudes/index.md
 Plain text: https://mesmerprism.com/plasmatic-multitudes/index.txt
@@ -1732,7 +1778,7 @@ Field guide | Updated July 24, 2026
 
 Source: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html
 Canonical HTML: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.html
-Generated: 2026-09-04
+Generated: 2026-09-16
 Description: A source-linked proposal for mixed-ability human-swarm interaction built around a multimodal semantic swarm state, inspectable mappings, participant-authored access, and repair.
 Markdown: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.md
 Plain text: https://mesmerprism.com/plasmatic-multitudes/mixed-ability-hsi.txt
@@ -2249,7 +2295,7 @@ Mixed-ability HSI | Revised July 23, 2026
 
 Source: https://mesmerprism.com/plasmatic-multitudes/pain.html
 Canonical HTML: https://mesmerprism.com/plasmatic-multitudes/pain.html
-Generated: 2026-09-04
+Generated: 2026-09-16
 Description: A cautious research note on boundary precision, avatar materiality, protective fields, ownership, agency, and pain-related body-representation hypotheses. Not a treatment claim.
 Markdown: https://mesmerprism.com/plasmatic-multitudes/pain.md
 Plain text: https://mesmerprism.com/plasmatic-multitudes/pain.txt
@@ -2464,7 +2510,7 @@ Pain translation | Updated May 24, 2026
 
 Source: https://mesmerprism.com/plasmatic-multitudes/project.html
 Canonical HTML: https://mesmerprism.com/plasmatic-multitudes/project.html
-Generated: 2026-09-04
+Generated: 2026-09-16
 Description: A compact method note on boundary precision, somaesthetics, coherence, morphogenesis, and weakly bounded body design.
 Markdown: https://mesmerprism.com/plasmatic-multitudes/project.md
 Plain text: https://mesmerprism.com/plasmatic-multitudes/project.txt
@@ -2539,7 +2585,7 @@ Method | Updated May 24, 2026
 
 Source: https://mesmerprism.com/plasmatic-multitudes/references.html
 Canonical HTML: https://mesmerprism.com/plasmatic-multitudes/references.html
-Generated: 2026-09-04
+Generated: 2026-09-16
 Description: Annotated references across media genealogy, somaesthetics, perception, morphogenesis, XR embodiment, shared digital-swarm control, accessibility, and pain/body-representation research.
 Markdown: https://mesmerprism.com/plasmatic-multitudes/references.md
 Plain text: https://mesmerprism.com/plasmatic-multitudes/references.txt
@@ -2771,7 +2817,7 @@ Annotated sources | Updated July 24, 2026
 
 Source: https://mesmerprism.com/plasmatic-multitudes/shared-swarm-control.html
 Canonical HTML: https://mesmerprism.com/plasmatic-multitudes/shared-swarm-control.html
-Generated: 2026-09-04
+Generated: 2026-09-16
 Description: How several people can jointly shape one digitally native swarm through fields, rules, morphology, arbitration, provenance, and shared-body interaction.
 Markdown: https://mesmerprism.com/plasmatic-multitudes/shared-swarm-control.md
 Plain text: https://mesmerprism.com/plasmatic-multitudes/shared-swarm-control.txt
@@ -3284,7 +3330,7 @@ Shared swarm control | July 24, 2026
 
 Source: https://mesmerprism.com/plasmatic-multitudes/terminology.html
 Canonical HTML: https://mesmerprism.com/plasmatic-multitudes/terminology.html
-Generated: 2026-09-04
+Generated: 2026-09-16
 Description: Terms for semi-corporeal avatars, plasmatic bodies, particle bodies, swarm bodies, aura avatars, boundary precision, pseudo-haptics, and related design concepts.
 Markdown: https://mesmerprism.com/plasmatic-multitudes/terminology.md
 Plain text: https://mesmerprism.com/plasmatic-multitudes/terminology.txt
@@ -3798,7 +3844,7 @@ Field guide | Updated July 24, 2026
 
 Source: https://mesmerprism.com/privacy/rusty-launcher-lite/
 Canonical HTML: https://mesmerprism.com/privacy/rusty-launcher-lite/
-Generated: 2026-09-04
+Generated: 2026-09-16
 Description: Privacy policy for Rusty Launcher Lite, developed and published by Viscereality.
 Markdown: https://mesmerprism.com/privacy/rusty-launcher-lite/index.md
 Plain text: https://mesmerprism.com/privacy/rusty-launcher-lite/index.txt
@@ -3873,7 +3919,7 @@ Meta Quest application privacy
 
 Source: https://mesmerprism.com/privacy/viscereality-companion/
 Canonical HTML: https://mesmerprism.com/privacy/viscereality-companion/
-Generated: 2026-09-04
+Generated: 2026-09-16
 Description: Privacy policy for the Viscereality Companion Android application published by Mesmer Prism.
 Markdown: https://mesmerprism.com/privacy/viscereality-companion/index.md
 Plain text: https://mesmerprism.com/privacy/viscereality-companion/index.txt
@@ -3964,7 +4010,7 @@ Android application privacy
 
 Source: https://mesmerprism.com/projects/altered-xperience-project.html
 Canonical HTML: https://mesmerprism.com/projects/altered-xperience-project.html
-Generated: 2026-09-04
+Generated: 2026-09-16
 Description: The Altered Xperience Project is a CIRCE-led citizen-science survey for anonymous altered-state reports, with multilingual questionnaires, feedback, scoring, exports, and collaborator workflow.
 Markdown: https://mesmerprism.com/projects/altered-xperience-project.md
 Plain text: https://mesmerprism.com/projects/altered-xperience-project.txt
@@ -4088,7 +4134,7 @@ Citizen-science altered-state survey
 
 Source: https://mesmerprism.com/projects/bioelectricity.html
 Canonical HTML: https://mesmerprism.com/projects/bioelectricity.html
-Generated: 2026-09-04
+Generated: 2026-09-16
 Description: Bioelectricity and morphogenesis across Rusty Morphospace and Planarian Regeneration XR: source-bounded teaching models, data-first atlas navigation, reviewed records, observed Zenodo geometry, and marker replays.
 Markdown: https://mesmerprism.com/projects/bioelectricity.md
 Plain text: https://mesmerprism.com/projects/bioelectricity.txt
@@ -4766,7 +4812,7 @@ Rusty Morphospace and tissue-scale patterning
 
 Source: https://mesmerprism.com/projects/brain-candy.html
 Canonical HTML: https://mesmerprism.com/projects/brain-candy.html
-Generated: 2026-09-04
+Generated: 2026-09-16
 Description: Brain Candy studies rhythmic light, recursive visual structure, sound, breath, expectation, and interaction as tunable non-drug state-shift design.
 Markdown: https://mesmerprism.com/projects/brain-candy.md
 Plain text: https://mesmerprism.com/projects/brain-candy.txt
@@ -5314,7 +5360,7 @@ Non-drug state-shift design
 
 Source: https://mesmerprism.com/projects/bressloff-v1-form-constants-deep-dive.html
 Canonical HTML: https://mesmerprism.com/projects/bressloff-v1-form-constants-deep-dive.html
-Generated: 2026-09-04
+Generated: 2026-09-16
 Description: A notebook-style deep dive into Bressloff form constants, Rule flicker modeling, and generated driven neural-field diagnostics after Rule.
 Markdown: https://mesmerprism.com/projects/bressloff-v1-form-constants-deep-dive.md
 Plain text: https://mesmerprism.com/projects/bressloff-v1-form-constants-deep-dive.txt
@@ -6311,7 +6357,7 @@ Modeling deep dive
 
 Source: https://mesmerprism.com/projects/bressloff-v1-form-constants.html
 Canonical HTML: https://mesmerprism.com/projects/bressloff-v1-form-constants.html
-Generated: 2026-09-04
+Generated: 2026-09-16
 Description: Animated notes on Bressloff visual-cortex form constants, Rule flicker modeling, and generated MacKay, Bolelli, and Nicks driven-field diagnostics.
 Markdown: https://mesmerprism.com/projects/bressloff-v1-form-constants.md
 Plain text: https://mesmerprism.com/projects/bressloff-v1-form-constants.txt
@@ -6764,12 +6810,272 @@ Visual cortex and form constants
 - Publisher rights pages. [PLOS licenses and copyright](https://journals.plos.org/ploscompbiol/s/licenses-and-copyright); [Royal Society permissions](https://royalsociety.org/journals/permissions/); [MIT Press rights and permissions](https://mitpress.mit.edu/rights-permissions/); [Springer Nature rights and permissions](https://www.springernature.com/gp/partners/rights-permissions-third-party-distribution); [IOP permissions FAQ](https://publishingsupport.iopscience.iop.org/permissionsfaq/).
 </page>
 
+<page url="https://mesmerprism.com/projects/combinatorial-swarmability.html" path="projects/combinatorial-swarmability.html">
+# Combinatorial Swarmability
+
+Source: https://mesmerprism.com/projects/combinatorial-swarmability.html
+Canonical HTML: https://mesmerprism.com/projects/combinatorial-swarmability.html
+Generated: 2026-09-16
+Description: Mixed-ability human–swarm interaction: combining different forms of participation through shared, changing systems. Research by Till Holzapfel at UDE / RC Trust.
+Markdown: https://mesmerprism.com/projects/combinatorial-swarmability.md
+Plain text: https://mesmerprism.com/projects/combinatorial-swarmability.txt
+BibTeX references: https://mesmerprism.com/projects/combinatorial-swarmability.bib
+CSL JSON references: https://mesmerprism.com/projects/combinatorial-swarmability.references.csl.json
+
+---
+
+# Combinatorial Swarmability
+
+ People contribute to a shared activity in different ways. Combinatorial
+ Swarmability asks how a changing, many-part system might let those
+ contributions combine, while leaving the people involved able to negotiate
+ what their actions mean. The research joins mixed-ability interaction,
+ swarm systems, artificial life, and shared embodiment.
+
+ This is the research direction of Till Holzapfel's PhD in mixed-ability
+ human–swarm interaction, in Prof. Giulia Barbareschi's
+ [Inclusive Technology and Collective Engagement group](https://rc-trust.ai/groups/inclusive-technology-and-collective-engagement)
+ at the University of Duisburg-Essen / RC Trust.
+
+ Research direction and literature context, September 2026. The systems and studies proposed below are work ahead.
+
+## Combining abilities without making everyone act alike
+
+ A shared task need not require identical actions. Someone might contribute through
+ speech, a switch, a gesture, or an intentionally slow text exchange. They might
+ direct movement, change a rhythm, set a boundary, or decide when to pause.
+ The design question is how these contributions depend on one another and how
+ much influence each person can exercise. Giving everyone an input is only a start.
+
+ Ability-based design asks systems to respond to what people can do, rather than
+ requiring people to fit a fixed interface. Work on interdependence extends the
+ question beyond an individual user: access is also produced through relationships,
+ assistance, and the organization of an activity. A review of ability-diverse
+ collaboration makes this collective setting an explicit design concern
+ ([Wobbrock et al., 2011](https://doi.org/10.1145/1952383.1952384);
+ [Bennett et al., 2018](https://doi.org/10.1145/3234695.3236348);
+ [Xiao et al., 2024](https://doi.org/10.1145/3613904.3641930)).
+
+ Recent interviews with 18 members of mixed-ability teams describe accessibility
+ as ongoing work within virtual collaboration, including coordination, relationships,
+ and responsibility. Those accounts help identify questions to bring to co-design;
+ they do not supply an automatic way to infer an individual's needs
+ ([Jung et al., 2026](https://doi.org/10.1145/3772318.3790419)).
+
+ Here, combinatorial means exploring arrangements of contributions:
+ different inputs, roles, timings, and forms of feedback. Swarmability
+ names the possibility of acting through a shared, many-part body whose behaviour
+ can change. This is a proposed design approach, not a measure of a person's
+ ability. It does not presume that a swarm dissolves hierarchy. A shared system
+ could just as easily give one participant more authority or make another's
+ contribution hard to recognize.
+
+## A shared medium that keeps changing
+
+ A swarm is interesting here because its overall form can emerge from interactions
+ among many elements. Reynolds' flocking model is a foundational example: local
+ movement rules produce coordinated aggregate motion without prescribing every
+ trajectory separately. Artificial-life systems broaden the available forms and
+ behaviours, without requiring each simulated element to stand for a robot or a
+ person
+ ([Reynolds, 1987](https://doi.org/10.1145/37402.37406);
+ [Kumar et al., 2025](https://doi.org/10.1162/artl.a.8)).
+
+ Control can therefore mean more than steering. Participants could alter local
+ rules, shape an attractor, change how strongly parts respond to one another, or
+ choose a different mode of behaviour. They could also negotiate the mapping
+ itself: which input affects which property, whose changes take precedence, and
+ how to undo an unwanted result. These are proposed interaction choices to test,
+ not a claim that a particular control scheme is already accessible.
+
+### Behaviour maps as a design resource
+
+ Automated Search for Artificial Life (ASAL) uses foundation-model representations
+ to search for target appearances, novelty, and diverse behaviours across systems
+ including Boids and Lenia. Its Boids atlas is especially useful as a way to think
+ about possible motion. In that implementation, search changes a neural local
+ controller, rather than only adjusting the familiar three flocking weights.
+ The visual atlas is a projection of model representations, not a taxonomy of
+ social relationships or an experimentally validated account of what people see
+ ([Kumar et al., 2025](https://doi.org/10.1162/artl.a.8)).
+
+ Semantic-feedback work offers a complementary route: participants use language
+ to influence the evolution of artificial-life forms. Li and colleagues combine
+ a trained prompt-to-parameter model, evolutionary search, and a vision-language
+ similarity signal. This provides a concrete precedent for language-mediated
+ shaping of dynamics, but it is not evidence that an LLM can faithfully read a
+ group's relationships
+ ([Li et al., 2025](https://doi.org/10.1145/3757369.3767620)).
+
+ An agentic layer could help propose mappings, search a behaviour library, or
+ explain a change. That layer would need bounded authority: participant approval,
+ visible reasons, recoverable earlier configurations, and a way to stop it.
+ A prompt such as “make this more collaborative” should invite discussion of
+ what collaboration means, not silently turn into an optimization target.
+
+## From the felt body to the relations between bodies
+
+ [Plasmatic Multitudes](https://mesmerprism.com/projects/plasmatic-multitudes.html) explores
+ bodies whose boundaries are porous: particles gather, disperse, overlap, and
+ become recognizable through movement. It grows out of Holzapfel's avatar work
+ at the Intangible Realities Lab, in the context of Isness, the lab's collaboration
+ with aNUma, and numadelic aesthetics. In this design lineage, luminous and
+ fluid bodies offer ways of questioning ordinary bodily boundaries
+ ([IRL, Isness](https://www.intangiblerealitieslab.org/projects/isness);
+ [IRL, Numadelic Flow](https://www.intangiblerealitieslab.org/projects/numadelic-flow);
+ [aNUma, Science](https://anuma.com/science)).
+
+ Research on Isness-D describes shared VR in which participants experience
+ diffuse, luminous bodies and can coalesce with one another. Its findings concern
+ connectedness and self-transcendent experience. They do not establish that shared
+ embodiment produces equitable collaboration or meets the access needs of a
+ mixed-ability group
+ ([Glowacki et al., 2022](https://doi.org/10.1038/s41598-022-12637-z)).
+
+ [Viscereality](https://mesmerprism.com/projects/viscereality.html) supplies another part of
+ the lineage: physiological signals coupled to a changing visual environment.
+ Its published design uses breathing and coupled oscillators to organize spatial
+ particle feedback
+ ([Fejer et al., 2025](https://doi.org/10.18420/MUC2025-MCI-WS11-174)).
+ The proposed connection to swarm interaction is methodological: a dynamic
+ system can give a signal a form that people experience and respond to.
+ Moving from bodily feedback to social feedback introduces a further problem:
+ the meaning of the signal has to be negotiated among people.
+
+## A meeting reflected through a living form
+
+ One proposed application is a sensory presence during a meeting: a dynamic
+ simulation that reflects selected aspects of an unfolding conversation. A group
+ might use it to discuss whether questions receive attention, whether decisions
+ remain open, or whether participants have the time and channels they need to
+ contribute. Language could be one input; deliberate annotations and accessible
+ non-speech contributions could be equally important.
+
+ The first version could be a workshop object, with a facilitator or participants
+ changing its behaviour manually. Its value would lie in the discussion it makes
+ possible. Only later, if the mappings prove useful and acceptable, would it make
+ sense to explore a more continuous process monitor. A vivid animation can prompt
+ reflection before it is a valid measurement instrument; those are different
+ achievements.
+
+### What existing meeting systems offer
+
+ MeetMap turns online dialogue into editable maps, comparing manual and
+ AI-assisted mapping in a study with 20 participants. It offers a useful precedent
+ for revisable representations rather than a single final summary. Its study
+ does not establish usefulness for mixed-ability meetings
+ ([Chen et al., 2025](https://doi.org/10.1145/3711030)).
+ Meeting AIssist explores tangible feedback about speaking time in two workplace
+ meetings. Its cues were controlled by a researcher in a Wizard-of-Oz study;
+ the findings concern responses to the intervention, not validated autonomous AI
+ facilitation
+ ([Kleinau and Hoggan, 2025](https://doi.org/10.48340/ecscw2025_cp04)).
+
+ These systems suggest things to test: editable representations, gentle prompts,
+ tangible feedback, and different ways to acknowledge or reject an intervention.
+ They also expose the difficulty of deciding what a signal means. Speaking time
+ is observable under some conditions; inclusion is a much broader and contested
+ construct. A person may be listening by choice, waiting for interpretation, using
+ another channel, or struggling to enter the conversation. The same silence can
+ have very different meanings.
+
+ Measurement research distinguishes a construct from the procedure used to
+ represent it. Applying that distinction here means asking whether a chosen
+ signal actually supports the interpretation placed on it, for this group and
+ activity. Reliability alone is insufficient: a consistently produced score can
+ consistently represent the wrong thing
+ ([Jacobs and Wallach, 2021](https://doi.org/10.1145/3442188.3445901)).
+
+### Conditions for a responsible prototype
+
+- Participants define the meeting's goals and can disagree about the mappings.
+
+- The display distinguishes observations, model interpretations, and participant annotations.
+
+- Contributions through text, assisted communication, pauses, and other agreed channels remain legible.
+
+- People can correct, refuse, pause, or remove a representation without having to disclose a diagnosis.
+
+- The group agrees what is sensed, stored, and shared; identifiable traces are minimized.
+
+- The visualization has alternatives for people who cannot comfortably see, hear, or inhabit it.
+
+ These are proposed requirements for the research. The simulation should not
+ assign an emotional state, a trust score, or a judgement of someone's value to
+ the group. Its most defensible early role is a contestable reflection that people
+ can use together.
+
+## Research through shared use
+
+ The planned work begins with co-design and exploratory use: which forms of
+ collective action people want, what they wish to keep private, and what would
+ make participation worth the effort. That orientation fits the group's stated
+ commitment to participatory work with marginalized communities
+ ([Inclusive Technology and Collective Engagement](https://rc-trust.ai/groups/inclusive-technology-and-collective-engagement)).
+
+ Shared virtual environments can make different arrangements available for
+ comparison. Creative exploration could be followed by more structured activities
+ in which participants negotiate roles, change rules, and recover from conflict
+ or misunderstanding. Evaluation would need to consider both the observable
+ interaction and participants' interpretations: who influenced an outcome,
+ whose contribution was recognized, what was tiring, and whether repair was
+ possible. Equal activity and a pleasing swarm animation would not settle
+ those questions.
+
+ [Rusty Morphospace](https://mesmerprism.com/projects/rusty-morphospace.html) connects this
+ research to continuing open-source development. Its modular approach separates
+ computational state, commands, visual inspection, and application packaging.
+ Practical VR tools can reduce the work of operating research environments.
+ Extending that infrastructure toward robots such as Reachy Mini is a planned
+ direction, not a released swarm-control capability.
+
+ The programme's central test is whether people can use these systems to shape
+ their relations on terms they can understand and revise. Some prototypes may
+ remain useful mainly as ways of starting a conversation. Others may support
+ more sustained shared activity. The evidence for that distinction has to come
+ from the people involved.
+
+## References and context
+
+ Papers support the distinctions above; institutional pages document the research and design context. The proposed combinations remain research questions.
+
+- Wobbrock, J. O., et al. “[Ability-Based Design: Concept, Principles and Examples](https://doi.org/10.1145/1952383.1952384).” ACM Transactions on Accessible Computing 3(3) (2011).
+
+- Bennett, C. L., Brady, E., and Branham, S. M. “[Interdependence as a Frame for Assistive Technology Research and Design](https://doi.org/10.1145/3234695.3236348).” ASSETS (2018).
+
+- Xiao, L., et al. “[A Systematic Review of Ability-Diverse Collaboration through Ability-Based Lens in HCI](https://doi.org/10.1145/3613904.3641930).” CHI (2024).
+
+- Jung, C., Cheng, K., Heung, S., Jung, M. F., and Azenkot, S. “[Understanding How Accessibility Practices Impact Teamwork in Mixed-Ability Teams that Collaborate Virtually](https://doi.org/10.1145/3772318.3790419).” CHI (2026). [Open manuscript](https://arxiv.org/abs/2602.04015).
+
+- Reynolds, C. W. “[Flocks, Herds, and Schools: A Distributed Behavioral Model](https://doi.org/10.1145/37402.37406).” SIGGRAPH (1987), 25–34.
+
+- Kumar, A., et al. “[Automating the Search for Artificial Life With Foundation Models](https://doi.org/10.1162/artl.a.8).” Artificial Life 31(3) (2025), 368–396. [Interactive atlas](https://asal.sakana.ai/).
+
+- Li, S., et al. “[Participatory Evolution of Artificial Life Systems via Semantic Feedback](https://doi.org/10.1145/3757369.3767620).” SIGGRAPH Asia Art Papers (2025).
+
+- Glowacki, D. R., et al. “[Group VR experiences can produce ego attenuation and connectedness comparable to psychedelics](https://doi.org/10.1038/s41598-022-12637-z).” Scientific Reports 12, 8995 (2022).
+
+- Fejer, G., et al. “[Viscereality: A Bio-responsive VR System for Breath-Based Interactions and Coupled Oscillator Dynamics to Augment Altered States of Consciousness](https://doi.org/10.18420/MUC2025-MCI-WS11-174).” Mensch und Computer 2025 – Workshopband (2025). Published design work, not clinical validation.
+
+- Chen, X., Yap, N., Lu, X., Gunal, A., and Wang, X. “[MeetMap: Real-Time Collaborative Dialogue Mapping with LLMs in Online Meetings](https://doi.org/10.1145/3711030).” Proceedings of the ACM on Human-Computer Interaction 9(2), CSCW132 (2025).
+
+- Kleinau, J., and Hoggan, E. “[Mediating Meeting Dynamics: An Exploration of AI-Based Multimodal Feedback in Hybrid Meetings](https://doi.org/10.48340/ecscw2025_cp04).” ECSCW (2025). Wizard-of-Oz study of Meeting AIssist.
+
+- Jacobs, A. Z., and Wallach, H. “[Measurement and Fairness](https://doi.org/10.1145/3442188.3445901).” FAccT (2021).
+
+- Intangible Realities Lab. “[Isness](https://www.intangiblerealitieslab.org/projects/isness)” and “[Numadelic Flow](https://www.intangiblerealitieslab.org/projects/numadelic-flow).” Project and design context; accessed September 16, 2026.
+
+- aNUma. “[Science](https://anuma.com/science).” Isness research context; accessed September 16, 2026. Institutional provenance, not an independent efficacy assessment.
+
+- RC Trust. “[Inclusive Technology and Collective Engagement](https://rc-trust.ai/groups/inclusive-technology-and-collective-engagement).” Group led by Prof. Dr. Giulia Barbareschi, University of Duisburg-Essen; accessed September 16, 2026.
+</page>
+
 <page url="https://mesmerprism.com/projects/deep-dream.html" path="projects/deep-dream.html">
 # Deep Dream
 
 Source: https://mesmerprism.com/projects/deep-dream.html
 Canonical HTML: https://mesmerprism.com/projects/deep-dream.html
-Generated: 2026-09-04
+Generated: 2026-09-16
 Description: Deep Dream explains how machine-vision hallucination, community visual taxonomies, VR research, and cyberdelic systems shaped simulated psychedelic vision.
 Markdown: https://mesmerprism.com/projects/deep-dream.md
 Plain text: https://mesmerprism.com/projects/deep-dream.txt
@@ -7542,7 +7848,7 @@ Simulated psychedelic vision
 
 Source: https://mesmerprism.com/projects/fractal-optics.html
 Canonical HTML: https://mesmerprism.com/projects/fractal-optics.html
-Generated: 2026-09-04
+Generated: 2026-09-16
 Description: Fractal Optics maps fractal phototherapy, retinal and ophthalmic stimulation, VR delivery, and patterned-light comparator literatures.
 Markdown: https://mesmerprism.com/projects/fractal-optics.md
 Plain text: https://mesmerprism.com/projects/fractal-optics.txt
@@ -7790,7 +8096,7 @@ Retinal stimulation and patterned light
 
 Source: https://mesmerprism.com/projects/hollow-face-lab.html
 Canonical HTML: https://mesmerprism.com/projects/hollow-face-lab.html
-Generated: 2026-09-04
+Generated: 2026-09-16
 Description: Hollow Face Lab maps WebGL, WebXR, texture controls, and Rusty XR implementation choices against hollow-face and depth-inversion research.
 Markdown: https://mesmerprism.com/projects/hollow-face-lab.md
 Plain text: https://mesmerprism.com/projects/hollow-face-lab.txt
@@ -7954,7 +8260,7 @@ Depth inversion and research tooling
 
 Source: https://mesmerprism.com/projects/hollow-face-lab/app/
 Canonical HTML: https://mesmerprism.com/projects/hollow-face-lab/app/
-Generated: 2026-09-04
+Generated: 2026-09-16
 Description: Browser-hosted Hollow Face Lab renderer with concavity, lighting, mesh, probe, texture, and response controls.
 Markdown: https://mesmerprism.com/projects/hollow-face-lab/app/index.md
 Plain text: https://mesmerprism.com/projects/hollow-face-lab/app/index.txt
@@ -8097,7 +8403,7 @@ Fullscreen
 
 Source: https://mesmerprism.com/projects/optical-movement-illusions.html
 Canonical HTML: https://mesmerprism.com/projects/optical-movement-illusions.html
-Generated: 2026-09-04
+Generated: 2026-09-16
 Description: Optical Movement Illusions maps peripheral drift, Rotating Snakes, static motion illusions, color and luminance parameters, and the mechanism-design bridge into perceptual tooling.
 Markdown: https://mesmerprism.com/projects/optical-movement-illusions.md
 Plain text: https://mesmerprism.com/projects/optical-movement-illusions.txt
@@ -8307,7 +8613,7 @@ Static motion and perceptual mechanics
 
 Source: https://mesmerprism.com/projects/phenomenological-control.html
 Canonical HTML: https://mesmerprism.com/projects/phenomenological-control.html
-Generated: 2026-09-04
+Generated: 2026-09-16
 Description: A public guide to phenomenological control, imagery variation, expectation-shaped experience, source monitoring, absorption, porosity, hypnosis, induced vision, and meaning-making.
 Markdown: https://mesmerprism.com/projects/phenomenological-control.md
 Plain text: https://mesmerprism.com/projects/phenomenological-control.txt
@@ -8852,7 +9158,7 @@ Imagery, suggestion, and source monitoring
 
 Source: https://mesmerprism.com/projects/plasmatic-multitudes.html
 Canonical HTML: https://mesmerprism.com/projects/plasmatic-multitudes.html
-Generated: 2026-09-04
+Generated: 2026-09-16
 Description: A public overview of weakly bounded bodies: avatars, swarms, auras, particle forms, and luminous bodies that remain coherent enough for embodiment, joint authorship, relation, and cautious research translation.
 Markdown: https://mesmerprism.com/projects/plasmatic-multitudes.md
 Plain text: https://mesmerprism.com/projects/plasmatic-multitudes.txt
@@ -8881,7 +9187,7 @@ Weakly bounded embodiment
  ownership, and cultural legibility let them soften without
  collapsing into formlessness. This page gives the public
  overview. The field guide collects the long essay, method note,
- shared-swarm control study, mixed-ability HSI proposal,
+ shared-swarm control discussion, mixed-ability HSI research questions,
  pain-translation hypothesis, vocabulary, and annotated sources.
 
  [Start with the basics](https://mesmerprism.com/projects/plasmatic-multitudes.html#field-guide)
@@ -8891,6 +9197,24 @@ Weakly bounded embodiment
  [Deep field guide](https://mesmerprism.com/plasmatic-multitudes/)
  [References](https://mesmerprism.com/projects/plasmatic-multitudes.html#references)
  [Back to work](https://mesmerprism.com/#work)
+
+## Avatar work, shared embodiment, and the next question
+
+ Plasmatic Multitudes grows out of Till Holzapfel's work on semi-corporeal
+ avatars at the Intangible Realities Lab, in the context of its Isness work
+ and collaboration with aNUma. The lab's numadelic design lineage uses
+ luminous bodies and fluid boundaries to explore experiences beyond everyday
+ embodiment
+ ([IRL, Isness](https://www.intangiblerealitieslab.org/projects/isness);
+ [IRL, Numadelic Flow](https://www.intangiblerealitieslab.org/projects/numadelic-flow);
+ [aNUma, Science](https://anuma.com/science)).
+
+ The current research direction, [Combinatorial Swarmability](https://mesmerprism.com/projects/combinatorial-swarmability.html),
+ carries the question of a body's changing boundary into mixed-ability
+ human–swarm interaction. Several people might shape one many-part form through
+ different inputs and roles. The question is then how they recognize, negotiate,
+ and revise their contributions. Shared embodiment provides a starting point;
+ whether it supports more equitable participation requires its own evidence.
 
  Field guide
 
@@ -9269,6 +9593,8 @@ Weakly bounded embodiment
 
 ### Go deeper
 
+- [Combinatorial Swarmability](https://mesmerprism.com/projects/combinatorial-swarmability.html) — the current PhD direction in mixed-ability human–swarm interaction.
+
 - [Long essay](https://mesmerprism.com/plasmatic-multitudes/essay.html) - semi-corporeal avatar aesthetics across media history, XR, morphogenesis, and pain translation.
 
 - [Shared swarms](https://mesmerprism.com/plasmatic-multitudes/shared-swarm-control.html) - several people shaping one digitally native particle, agent, body, or field.
@@ -9288,6 +9614,12 @@ Weakly bounded embodiment
  These are the main sources cited above. For deeper reading, the
  field guide collects the long essay, vocabulary, pain-translation
  note, and annotated references.
+
+### Design context
+
+- Intangible Realities Lab. “[Isness](https://www.intangiblerealitieslab.org/projects/isness)” and “[Numadelic Flow](https://www.intangiblerealitieslab.org/projects/numadelic-flow).” Public project and aesthetic context. Accessed September 16, 2026.
+
+- aNUma. “[Science](https://anuma.com/science).” Isness research context, not independent clinical evidence. Accessed September 16, 2026.
 
 ### Embodiment and perception
 
@@ -9393,7 +9725,7 @@ Weakly bounded embodiment
 
 Source: https://mesmerprism.com/projects/polar-h10.html
 Canonical HTML: https://mesmerprism.com/projects/polar-h10.html
-Generated: 2026-09-04
+Generated: 2026-09-16
 Description: Public overview of Mesmer Prism's Polar H10 work across minimal signal packages, Rusty XR, Quest broker streams, Windows capture, Android diagnostics, Unity Quest integration, and Viscereality research tooling.
 Markdown: https://mesmerprism.com/projects/polar-h10.md
 Plain text: https://mesmerprism.com/projects/polar-h10.txt
@@ -9665,7 +9997,7 @@ Biofeedback sensor integration
 
 Source: https://mesmerprism.com/projects/prophantasia.html
 Canonical HTML: https://mesmerprism.com/projects/prophantasia.html
-Generated: 2026-09-04
+Generated: 2026-09-16
 Description: Prophantasia covers projected imagery, aphantasia, source judgment, practice ecology, and neighboring phenomena such as imposition, flicker, DeepDream, visual snow, and HPPD.
 Markdown: https://mesmerprism.com/projects/prophantasia.md
 Plain text: https://mesmerprism.com/projects/prophantasia.txt
@@ -10271,7 +10603,7 @@ Projected imagery and source judgment
 
 Source: https://mesmerprism.com/projects/rusty-morphospace.html
 Canonical HTML: https://mesmerprism.com/projects/rusty-morphospace.html
-Generated: 2026-09-04
+Generated: 2026-09-16
 Description: Rusty Morphospace is an AGPL-first Rust platform for computational-form systems, with a 0.1.0 platform baseline and a public 0.4.0 contributor work environment.
 Markdown: https://mesmerprism.com/projects/rusty-morphospace.md
 Plain text: https://mesmerprism.com/projects/rusty-morphospace.txt
@@ -10318,6 +10650,20 @@ Modular Rust platform for computational-form systems
  Work environment 0.4.0
  Active development continues
  Makepad and Rusty XR: legacy/reference
+
+## Open tools for shared interaction
+
+ Rusty Morphospace is also part of the infrastructure direction for
+ [Combinatorial Swarmability](https://mesmerprism.com/projects/combinatorial-swarmability.html),
+ Till Holzapfel's PhD research in mixed-ability human–swarm interaction.
+ The aim is to make research environments easier to build, operate, inspect,
+ and adapt while keeping participants' control over interaction a separate
+ design and evaluation problem.
+
+ Continuing VR tooling and a planned extension toward robotic systems,
+ including Reachy Mini, belong to this direction. This is a research outlook
+ added in September 2026, not a new release or a claim that Morphospace already
+ supplies a robotics backend. The versioned capabilities below remain distinct.
 
 ## Current public baseline
 
@@ -11353,7 +11699,7 @@ Modular Rust platform for computational-form systems
 
 Source: https://mesmerprism.com/projects/rusty-morphospace/native-app-build-workflow.html
 Canonical HTML: https://mesmerprism.com/projects/rusty-morphospace/native-app-build-workflow.html
-Generated: 2026-09-04
+Generated: 2026-09-16
 Description: A public guide to Rusty Morphospace native Quest app composition: project workspaces, feature descriptors, closed locks, generated settings, adapters, and validation.
 Markdown: https://mesmerprism.com/projects/rusty-morphospace/native-app-build-workflow.md
 Plain text: https://mesmerprism.com/projects/rusty-morphospace/native-app-build-workflow.txt
@@ -11855,7 +12201,7 @@ Native app-build workflow
 
 Source: https://mesmerprism.com/projects/rusty-morphospace/rusty-xr.html
 Canonical HTML: https://mesmerprism.com/projects/rusty-morphospace/rusty-xr.html
-Generated: 2026-09-04
+Generated: 2026-09-16
 Description: Rusty XR is the legacy/reference Quest and XR compatibility surface under Rusty Morphospace, preserving public examples, passthrough notes, diagnostics, and companion-tool history.
 Markdown: https://mesmerprism.com/projects/rusty-morphospace/rusty-xr.md
 Plain text: https://mesmerprism.com/projects/rusty-morphospace/rusty-xr.txt
@@ -12071,7 +12417,7 @@ Legacy Quest and XR reference
 
 Source: https://mesmerprism.com/projects/rusty-morphospace/work-environment.html
 Canonical HTML: https://mesmerprism.com/projects/rusty-morphospace/work-environment.html
-Generated: 2026-09-04
+Generated: 2026-09-16
 Description: Set up a reproducible Rusty Morphospace development environment with portable dependency checks, four installable skill routers, protocol-v2 project workspaces, validation, and release capsules.
 Markdown: https://mesmerprism.com/projects/rusty-morphospace/work-environment.md
 Plain text: https://mesmerprism.com/projects/rusty-morphospace/work-environment.txt
@@ -12274,7 +12620,7 @@ Contributor setup and project workflow
 
 Source: https://mesmerprism.com/projects/sane.html
 Canonical HTML: https://mesmerprism.com/projects/sane.html
-Generated: 2026-09-04
+Generated: 2026-09-16
 Description: SANE is a proposed framework for reading coupled changes across somaesthetic practice, anthropotechnical mediation, noetic meaning, and emergent systems.
 Markdown: https://mesmerprism.com/projects/sane.md
 Plain text: https://mesmerprism.com/projects/sane.txt
@@ -12785,7 +13131,7 @@ Body, tools, meaning, systems
 
 Source: https://mesmerprism.com/projects/scientific-surrealism.html
 Canonical HTML: https://mesmerprism.com/projects/scientific-surrealism.html
-Generated: 2026-09-04
+Generated: 2026-09-16
 Description: Scientific surrealism studies dream bureaus, scientific-looking journals, diagrams, and experimental machines that change what counts as an observation.
 Markdown: https://mesmerprism.com/projects/scientific-surrealism.md
 Plain text: https://mesmerprism.com/projects/scientific-surrealism.txt
@@ -13199,7 +13545,7 @@ Research apparatus and knowledge-art
 
 Source: https://mesmerprism.com/projects/spatial-linux-desktop.html
 Canonical HTML: https://mesmerprism.com/projects/spatial-linux-desktop.html
-Generated: 2026-09-04
+Generated: 2026-09-16
 Description: A local, interactive Linux workstation for Meta Quest, presented through a native Android app in Horizon window and Spatial SDK panel modes.
 Markdown: https://mesmerprism.com/projects/spatial-linux-desktop.md
 Plain text: https://mesmerprism.com/projects/spatial-linux-desktop.txt
@@ -13271,12 +13617,158 @@ run the tests, and show you the diff.
 
  Inkscape, camera import and local printing are also validated.
 
+ Related work and alternatives
+
+## Part of a much wider ecosystem.
+
+ Linux on Quest is established prior work. Local userlands appeared on the original Quest, a Quest 2 demonstration combined XFCE with noVNC, and current projects offer direct Termux:X11, PRoot/VNC, local compatibility runtimes, and remote spatial desktops. Our contribution is this specific local Termux:X11, loopback RFB, and hybrid Spatial SDK integration—not a claim to have invented Linux in a headset. ([RangerMauve, 2019](https://medium.com/@RangerMauve/linux-on-the-oculus-quest-406ba5d0c982); [Eternal_Density, 2020](https://www.reddit.com/r/OculusQuest/comments/ji9k7z/xfce_desktop_environment_on_my_quest_2_running_in/))
+
+ We make no “first,” “only,” or “unprecedented” claim.
+
+ 2018
+
+### Local Linux + native VR VNC
+
+ Tokoro paired UserLAnd, OVRVNC, and a Bluetooth keyboard on Oculus Go—adjacent hardware, but important standalone precedent. ([Tokoro, 2018](https://blog.tokor.org/2018/11/27/Oculus-Go%E3%81%A7%E3%82%B9%E3%82%BF%E3%83%B3%E3%83%89%E3%82%A2%E3%83%AD%E3%83%B3VR%E4%BD%9C%E6%A5%AD%E7%92%B0%E5%A2%83%E3%82%92%E4%BD%9C%E3%81%A3%E3%81%9F/); [OVRVNC](https://github.com/y-fujii/ovrvnc))
+
+ 2019–20
+
+### Linux reaches Quest
+
+ The 2019 record establishes a local UserLAnd workflow; the 2020 Quest 2 record supplies the earlier graphical XFCE/noVNC evidence found in this scan.
+
+ 2025
+
+### Reproducible Quest 3 routes
+
+ Direct Termux:X11, UserLAnd, and Andronix/bVNC guides made the conventional local desktop route increasingly accessible. ([legokichi](https://qiita.com/legokichi/items/66975c203aebb5a4121c); [Ben Kaiser](https://benkaiser.dev/web-development-in-vr/); [DevWithZachary](https://www.youtube.com/watch?v=Xshj_xjwVjc))
+
+ 2026
+
+### Spatial SDK desktops
+
+ A native Meta Spatial SDK Ubuntu client demonstrated panel-coordinate input, right-click, scrolling, keyboard forwarding, and hardware HEVC decode from an external Linux host. ([Hughes, 2026](https://github.com/yveshughes/remote-desktop-for-ubuntu))
+
+### Choose by where the workload runs.
+
+ A spatial panel is only one design choice. For many users, direct X11 or a mature generic VNC client is the simpler answer; for demanding workloads, a remote Linux workstation can be the better answer.
+
+ Route
+ Runs on
+ Presentation
+ Best fit
+ Boundary
+
+ Direct Termux:X11
+ Quest
+ Horizon-managed Android window
+ The shortest local display path
+ No application-owned XR panel ([legokichi](https://qiita.com/legokichi/items/66975c203aebb5a4121c))
+
+ Andronix / UserLAnd + VNC
+ Quest
+ Generic VNC app or browser
+ Familiar distribution setup and mature client behavior
+ Normally PRoot and a virtual VNC desktop, not privileged chroot or a Spatial SDK surface ([Andronix architecture](https://docs.andronix.app/get-started/how-does-andronix-work))
+
+ DroidDesk
+ Android / Quest-compatible route
+ Direct Termux:X11 or its standalone Android app
+ Consolidated installation and desktop packaging
+ No Quest-specific spatial renderer was established in the inspected material ([DroidDesk](https://github.com/orailnoor/DroidDesk))
+
+ WinlatorXR
+ Quest
+ Purpose-built native XR frontend
+ Locally executing Windows applications
+ Wine/CPU translation and a local X server, rather than native ARM Linux/XFCE or Meta Spatial SDK ([WinlatorXR](https://github.com/WinlatorXR/WinlatorXR/tree/cmod_bionic))
+
+ Spatial Linux Desktop
+ Quest
+ Horizon window or Spatial SDK panel
+ Local Linux plus Quest-specific input and device bridges
+ More setup and local transport work; deliberately bounded compatibility
+
+ Spatial SDK remote desktop
+ External Ubuntu/PC host
+ Native video surface and spatial panel
+ Desktop-class compute and efficient media transport
+ Requires a host and network ([remote-desktop-for-ubuntu](https://github.com/yveshughes/remote-desktop-for-ubuntu); [Moonlight-SpatialSDK](https://github.com/XXJones21/Moonlight-SpatialSDK))
+
+ WayVR + WiVRn
+ External Linux host
+ Linux-native spatial workspace streamed to Quest
+ Several apps, richer compute, and open Linux XR
+ Not an Android-hosted local desktop ([WayVR](https://github.com/wayvr-org/wayvr); [WiVRn](https://github.com/WiVRn/WiVRn))
+
+ 01
+
+### Finish text input
+
+ Unicode, dead keys, composition, selection, and clipboard behavior are a more consequential adopter gap than another application screenshot. noVNC and mature Android VNC clients are useful protocol references, subject to their licenses. ([noVNC](https://github.com/novnc/noVNC))
+
+ 02
+
+### Measure the whole local path
+
+ Direct Termux:X11, retained RFB, and any hardware-video experiment should run the same visible tasks. Local encoding, copies, queueing, decode, text clarity, latency, thermal state, and battery all count.
+
+ 03
+
+### Study direct surfaces
+
+ WinlatorXR and the Ubuntu Spatial SDK client are useful references for direct local rendering boundaries and decoder-to-panel surfaces. Neither proves that a zero-copy Termux:X11 handoff already exists.
+
+ 04
+
+### Treat lifecycle and trust as features
+
+ Release held input, stop the microphone on interruption, bound reconnects, and authenticate local peers if hostile same-device applications enter the threat model. Loopback limits exposure; it is not per-app authentication.
+
+ Research boundary.
+ The 12 September 2026 scan tracked 53 target, candidate, upstream, adjacent, and lead records plus 74 source/access entries. It did not independently reproduce other projects, perform a legal prior-art search, or exhaust every video, archive, fork, language, or app store. “Not verified” does not mean “absent.”
+
+ [Read the engineering comparison and research queue](https://github.com/MesmerPrism/quest-termux-lab/blob/codex/spatial-desktop-panel/docs/quest-linux-desktop-ecosystem.md)
+
+## Selected references
+
+- MesmerPrism. “[Spatial Desktop Panel implementation snapshot](https://github.com/MesmerPrism/quest-termux-lab/tree/1ed3a4544ac3883e4c4928c4f114b22466c7c783/examples/spatial-desktop-panel).” 2026.
+
+- Tokoro. “[A standalone VR work environment on Oculus Go](https://blog.tokor.org/2018/11/27/Oculus-Go%E3%81%A7%E3%82%B9%E3%82%BF%E3%83%B3%E3%83%89%E3%82%A2%E3%83%AD%E3%83%B3VR%E4%BD%9C%E6%A5%AD%E7%92%B0%E5%A2%83%E3%82%92%E4%BD%9C%E3%81%A3%E3%81%9F/).” 2018.
+
+- y-fujii. “[OVRVNC](https://github.com/y-fujii/ovrvnc).” Source repository.
+
+- RangerMauve. “[Linux on the Oculus Quest](https://medium.com/@RangerMauve/linux-on-the-oculus-quest-406ba5d0c982).” 2019.
+
+- Eternal_Density. “[XFCE desktop environment on Quest 2](https://www.reddit.com/r/OculusQuest/comments/ji9k7z/xfce_desktop_environment_on_my_quest_2_running_in/).” 2020.
+
+- legokichi. “[Standalone Linux with Termux on Meta Quest 3](https://qiita.com/legokichi/items/66975c203aebb5a4121c).” 2025.
+
+- Ben Kaiser. “[Web development in VR](https://benkaiser.dev/web-development-in-vr/).” 2025.
+
+- DevWithZachary. “[Ubuntu Desktop on Meta Quest 3](https://www.youtube.com/watch?v=Xshj_xjwVjc).” Video, 2025. Architecture cross-checked against [Andronix documentation](https://docs.andronix.app/get-started/how-does-andronix-work).
+
+- orailnoor. “[DroidDesk](https://github.com/orailnoor/DroidDesk).” Source repository and [compliance record](https://github.com/orailnoor/DroidDesk/blob/main/COMPLIANCE.md).
+
+- WinlatorXR contributors. “[WinlatorXR](https://github.com/WinlatorXR/WinlatorXR/tree/cmod_bionic).” See the inspected [XR controller implementation](https://github.com/WinlatorXR/WinlatorXR/blob/d4c830526eb5562067d21685a975845ab705da60/app/src/main/java/com/winlator/xr/XrController.java).
+
+- Yves Hughes. “[Remote desktop for Ubuntu](https://github.com/yveshughes/remote-desktop-for-ubuntu).” Meta Spatial SDK client, 2026.
+
+- XXJones21. “[Moonlight-SpatialSDK](https://github.com/XXJones21/Moonlight-SpatialSDK).” Source repository.
+
+- WayVR and WiVRn contributors. “[WayVR](https://github.com/wayvr-org/wayvr)” and “[WiVRn](https://github.com/WiVRn/WiVRn).” Open-source Linux XR workspace and transport.
+
+- Termux contributors. “[Termux](https://github.com/termux/termux-app)” and “[Termux:X11](https://github.com/termux/termux-x11).” Core upstream projects.
+
+- LibVNC and noVNC contributors. “[x11vnc](https://github.com/LibVNC/x11vnc)” and “[noVNC](https://github.com/novnc/noVNC).” Display-transport references.
+
 ## A working reference, not a black box.
 
  The Android client, bounded RFB transport, Linux setup, fixtures and validation notes are public and MIT licensed. Third-party applications remain user-installed dependencies under their own terms.
 
  [Open the GitHub repository](https://github.com/MesmerPrism/quest-termux-lab)
  [Read the architecture](https://github.com/MesmerPrism/quest-termux-lab/blob/main/docs/spatial-desktop-panel.md)
+ [Explore related work](https://github.com/MesmerPrism/quest-termux-lab/blob/codex/spatial-desktop-panel/docs/quest-linux-desktop-ecosystem.md)
 
 ## Press kit
 
@@ -13292,7 +13784,7 @@ run the tests, and show you the diff.
 
 Source: https://mesmerprism.com/projects/tulpas.html
 Canonical HTML: https://mesmerprism.com/projects/tulpas.html
-Generated: 2026-09-04
+Generated: 2026-09-16
 Description: Tulpas covers modern online tulpamancy, thoughtforms, headmates, servitors, egregores, imposition, voice-like experience, and adjacent AI companion analogies.
 Markdown: https://mesmerprism.com/projects/tulpas.md
 Plain text: https://mesmerprism.com/projects/tulpas.txt
@@ -13818,7 +14310,7 @@ Made inner others and modern tulpamancy
 
 Source: https://mesmerprism.com/projects/viscereality-companion.html
 Canonical HTML: https://mesmerprism.com/projects/viscereality-companion.html
-Generated: 2026-09-04
+Generated: 2026-09-16
 Description: Quest Companion Tools provides Windows and Android utilities for Meta Quest install, launch, casting, diagnostics, and evidence capture.
 Markdown: https://mesmerprism.com/projects/viscereality-companion.md
 Plain text: https://mesmerprism.com/projects/viscereality-companion.txt
@@ -13968,7 +14460,7 @@ Meta Quest operator tooling
 
 Source: https://mesmerprism.com/projects/viscereality.html
 Canonical HTML: https://mesmerprism.com/projects/viscereality.html
-Generated: 2026-09-04
+Generated: 2026-09-16
 Description: Viscereality is a bioresponsive virtual-reality research system that turns breathing into spatial visual feedback.
 Markdown: https://mesmerprism.com/projects/viscereality.md
 Plain text: https://mesmerprism.com/projects/viscereality.txt
@@ -13989,6 +14481,20 @@ Bioresponsive virtual reality
 
  [Project site](https://viscereality.org/)
  [Back to work](https://mesmerprism.com/#work)
+
+## From bodily feedback to collective dynamics
+
+ For Till Holzapfel, Viscereality connects dynamical systems, neuroaesthetics,
+ and the practical design of bodily feedback. That line continues in
+ [Combinatorial Swarmability](https://mesmerprism.com/projects/combinatorial-swarmability.html),
+ his PhD research into mixed-ability human–swarm interaction: how several people
+ might shape a shared, changing system through different forms of contribution.
+
+ The proposed connection is a way of working with responsive dynamics.
+ A physiological signal and a social interpretation are different things.
+ Translating this approach to group interaction would require new, participant-defined
+ mappings and separate evaluation; Viscereality's evidence does not validate a
+ meeting monitor or a measure of inclusion.
 
  Design lineage
 
@@ -14159,7 +14665,7 @@ Bioresponsive virtual reality
 
 Source: https://mesmerprism.com/Rusty-Fleet/
 Canonical HTML: https://mesmerprism.com/Rusty-Fleet/
-Generated: 2026-09-04
+Generated: 2026-09-16
 Description: Preview the Rusty Fleet Windows distribution model.
 Markdown: https://mesmerprism.com/Rusty-Fleet/index.md
 Plain text: https://mesmerprism.com/Rusty-Fleet/index.txt
@@ -14220,7 +14726,7 @@ Windows fleet operations
 
 Source: https://mesmerprism.com/Rusty-Morphospace/catalog/
 Canonical HTML: https://mesmerprism.com/Rusty-Morphospace/catalog/
-Generated: 2026-09-04
+Generated: 2026-09-16
 Description: Public stable and opt-in labs channel policies for Rusty Morphospace products.
 Markdown: https://mesmerprism.com/Rusty-Morphospace/catalog/index.md
 Plain text: https://mesmerprism.com/Rusty-Morphospace/catalog/index.txt
@@ -14269,7 +14775,7 @@ Plain text: https://mesmerprism.com/Rusty-Morphospace/catalog/index.txt
 
 Source: https://mesmerprism.com/strobesim/
 Canonical HTML: https://mesmerprism.com/strobesim/
-Generated: 2026-09-04
+Generated: 2026-09-16
 Markdown: https://mesmerprism.com/strobesim/index.md
 Plain text: https://mesmerprism.com/strobesim/index.txt
 
@@ -14291,7 +14797,7 @@ Before entering
 
 Source: https://mesmerprism.com/strobesim/onboarding/
 Canonical HTML: https://mesmerprism.com/strobesim/onboarding/
-Generated: 2026-09-04
+Generated: 2026-09-16
 Description: Trevor's browser-to-Quest setup and profile workflow for StrobeSim.
 Markdown: https://mesmerprism.com/strobesim/onboarding/index.md
 Plain text: https://mesmerprism.com/strobesim/onboarding/index.txt
@@ -14387,7 +14893,7 @@ CSL JSON references: https://mesmerprism.com/strobesim/onboarding/index.referenc
 
 Source: https://mesmerprism.com/Strobotorch/flashing-light-safety/
 Canonical HTML: https://mesmerprism.com/Strobotorch/flashing-light-safety/
-Generated: 2026-09-04
+Generated: 2026-09-16
 Description: Safety warnings, frequency background, and source references for Strobotorch flashlight signaling.
 Markdown: https://mesmerprism.com/Strobotorch/flashing-light-safety/index.md
 Plain text: https://mesmerprism.com/Strobotorch/flashing-light-safety/index.txt
@@ -14575,7 +15081,7 @@ Public warning and source background
 
 Source: https://mesmerprism.com/Strobotorch/
 Canonical HTML: https://mesmerprism.com/Strobotorch/
-Generated: 2026-09-04
+Generated: 2026-09-16
 Description: Strobotorch is an Android flashlight-signaling and diagnostics tool for torch and camera APIs, visible-light signal tests, device logging, and flashing-light safety.
 Markdown: https://mesmerprism.com/Strobotorch/index.md
 Plain text: https://mesmerprism.com/Strobotorch/index.txt
@@ -14675,7 +15181,7 @@ Flashlight signaling safety
 
 Source: https://mesmerprism.com/Strobotorch/project-boundary/
 Canonical HTML: https://mesmerprism.com/Strobotorch/project-boundary/
-Generated: 2026-09-04
+Generated: 2026-09-16
 Description: The scope of Strobotorch Android flashlight signaling and diagnostics tooling.
 Markdown: https://mesmerprism.com/Strobotorch/project-boundary/index.md
 Plain text: https://mesmerprism.com/Strobotorch/project-boundary/index.txt
@@ -14716,7 +15222,7 @@ Project scope
 
 Source: https://mesmerprism.com/Strobotorch/sources/
 Canonical HTML: https://mesmerprism.com/Strobotorch/sources/
-Generated: 2026-09-04
+Generated: 2026-09-16
 Description: Academic and public sources for Strobotorch flashing-light safety, frequency context, torch/camera diagnostics, and visible-light signal tooling.
 Markdown: https://mesmerprism.com/Strobotorch/sources/index.md
 Plain text: https://mesmerprism.com/Strobotorch/sources/index.txt
@@ -14959,7 +15465,7 @@ Source library
 
 Source: https://mesmerprism.com/time/audio/
 Canonical HTML: https://mesmerprism.com/time/audio/
-Generated: 2026-09-04
+Generated: 2026-09-16
 Description: Preferred RC-505mkII architecture and direct Ableton option for independently spatialized loop objects in a wave field synthesis system.
 Markdown: https://mesmerprism.com/time/audio/index.md
 Plain text: https://mesmerprism.com/time/audio/index.txt
@@ -15173,7 +15679,7 @@ CSL JSON references: https://mesmerprism.com/time/audio/index.references.csl.jso
 
 Source: https://mesmerprism.com/time/
 Canonical HTML: https://mesmerprism.com/time/
-Generated: 2026-09-04
+Generated: 2026-09-16
 Description: Recommended performance-system architecture for RC-505mkII looping, wave field synthesis, an external visual system, NDI, and venue projection.
 Markdown: https://mesmerprism.com/time/index.md
 Plain text: https://mesmerprism.com/time/index.txt
@@ -15295,7 +15801,7 @@ Plain text: https://mesmerprism.com/time/index.txt
 
 Source: https://mesmerprism.com/time/visuals/
 Canonical HTML: https://mesmerprism.com/time/visuals/
-Generated: 2026-09-04
+Generated: 2026-09-16
 Description: Preferred external visual-system NDI route, optional venue TouchDesigner runtime, show-ready criteria, open questions, and visual test plan.
 Markdown: https://mesmerprism.com/time/visuals/index.md
 Plain text: https://mesmerprism.com/time/visuals/index.txt
@@ -15471,7 +15977,7 @@ CSL JSON references: https://mesmerprism.com/time/visuals/index.references.csl.j
 
 Source: https://mesmerprism.com/tmp/video-carousel-demo.html
 Canonical HTML: https://mesmerprism.com/tmp/video-carousel-demo.html
-Generated: 2026-09-04
+Generated: 2026-09-16
 Markdown: https://mesmerprism.com/tmp/video-carousel-demo.md
 Plain text: https://mesmerprism.com/tmp/video-carousel-demo.txt
 

@@ -304,12 +304,20 @@ function genericAnchorText(text) {
     .test(String(text || "").trim());
 }
 
-function enclosingListLead(html, index) {
-  const start = html.lastIndexOf("<li", index);
-  if (start < 0) return "";
+function enclosingListItem(html, index) {
+  // A <link> element is not a <li>; a previously closed item is not a parent.
+  const stack = [];
+  const tags = /<\/?li\b[^>]*>/gi;
+  let tag;
+  while ((tag = tags.exec(html)) && tag.index < index) {
+    if (/^<\//.test(tag[0])) stack.pop();
+    else stack.push(tag.index);
+  }
+  const start = stack.at(-1);
+  if (start === undefined) return null;
   const end = html.indexOf("</li>", index);
-  if (end < index) return "";
-  return stripTags(html.slice(start, index)).replace(/\s+/g, " ").trim();
+  if (end < index) return null;
+  return { lead: html.slice(start, index), html: html.slice(start, end + 5) };
 }
 
 function inferAuthor(label) {
@@ -339,24 +347,17 @@ function referenceEntries(html, page) {
     if (!/^https?:\/\//i.test(href) || seen.has(href)) continue;
     seen.add(href);
     const anchorText = stripTags(match[4]);
-    const listStart = html.lastIndexOf("<li", match.index);
-    const listEnd = html.indexOf("</li>", match.index);
-    const listHtml = listStart >= 0 && listEnd >= match.index
-      ? html.slice(listStart, listEnd + "</li>".length)
-      : "";
-    const start = Math.max(0, match.index - 600);
-    const end = Math.min(html.length, match.index + match[0].length + 700);
-    const context = html.slice(start, end);
-    const strong = (listHtml.match(/<strong\b[^>]*>([\s\S]*?)<\/strong>/i)
-      || context.match(/<strong\b[^>]*>([\s\S]*?)<\/strong>/i));
-    const listLead = enclosingListLead(html, match.index);
-    const contextLabel = stripTags(listHtml) || listLead || stripTags(context);
+    const item = enclosingListItem(html, match.index);
+    const listHtml = item?.html || "";
+    const strong = (item?.lead || "").match(/<strong\b[^>]*>([\s\S]*?)<\/strong>/i);
+    const listLead = stripTags(item?.lead || "").replace(/\s+/g, " ").trim();
+    const contextLabel = stripTags(listHtml);
     const title = (!anchorText || genericAnchorText(anchorText))
       ? (listLead || anchorText || href)
       : anchorText;
     const author = strong
       ? stripTags(strong[1]).replace(/[.:]+$/, "")
-      : (listLead ? inferAuthor(listLead) : (genericAnchorText(anchorText) ? "" : anchorText));
+      : (listLead ? inferAuthor(listLead) : "");
     const year = firstYear(contextLabel);
     const doi = doiFromUrl(href);
     const id = `${slug(author || new URL(href).hostname)}-${slug(title)}${year ? `-${year}` : ""}`;
@@ -718,4 +719,5 @@ function main() {
   }, null, 2));
 }
 
-main();
+if (require.main === module) main();
+module.exports = { referenceEntries };

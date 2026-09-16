@@ -2,7 +2,7 @@
 
 Source: https://mesmerprism.com/projects/rusty-morphospace.html
 Canonical HTML: https://mesmerprism.com/projects/rusty-morphospace.html
-Generated: 2026-07-15
+Generated: 2026-09-16
 Description: Rusty Morphospace is an AGPL-first Rust platform for computational-form systems, with a 0.1.0 platform baseline and a public 0.4.0 contributor work environment.
 Markdown: https://mesmerprism.com/projects/rusty-morphospace.md
 Plain text: https://mesmerprism.com/projects/rusty-morphospace.txt
@@ -49,6 +49,20 @@ Modular Rust platform for computational-form systems
  Work environment 0.4.0
  Active development continues
  Makepad and Rusty XR: legacy/reference
+
+## Open tools for shared interaction
+
+ Rusty Morphospace is also part of the infrastructure direction for
+ [Combinatorial Swarmability](https://mesmerprism.com/projects/combinatorial-swarmability.html),
+ Till Holzapfel's PhD research in mixed-ability human–swarm interaction.
+ The aim is to make research environments easier to build, operate, inspect,
+ and adapt while keeping participants' control over interaction a separate
+ design and evaluation problem.
+
+ Continuing VR tooling and a planned extension toward robotic systems,
+ including Reachy Mini, belong to this direction. This is a research outlook
+ added in September 2026, not a new release or a claim that Morphospace already
+ supplies a robotics backend. The versioned capabilities below remain distinct.
 
 ## Current public baseline
 

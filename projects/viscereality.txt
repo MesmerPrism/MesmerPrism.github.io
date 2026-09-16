@@ -2,7 +2,7 @@ Viscereality
 
 Source: https://mesmerprism.com/projects/viscereality.html
 Canonical HTML: https://mesmerprism.com/projects/viscereality.html
-Generated: 2026-08-07
+Generated: 2026-09-16
 Description: Viscereality is a bioresponsive virtual-reality research system that turns breathing into spatial visual feedback.
 Markdown: https://mesmerprism.com/projects/viscereality.md
 Plain text: https://mesmerprism.com/projects/viscereality.txt
@@ -23,6 +23,20 @@ Viscereality
 
  Project site (https://viscereality.org/)
  Back to work (https://mesmerprism.com/#work)
+
+From bodily feedback to collective dynamics
+
+ For Till Holzapfel, Viscereality connects dynamical systems, neuroaesthetics,
+ and the practical design of bodily feedback. That line continues in
+ Combinatorial Swarmability (https://mesmerprism.com/projects/combinatorial-swarmability.html),
+ his PhD research into mixed-ability human–swarm interaction: how several people
+ might shape a shared, changing system through different forms of contribution.
+
+ The proposed connection is a way of working with responsive dynamics.
+ A physiological signal and a social interpretation are different things.
+ Translating this approach to group interaction would require new, participant-defined
+ mappings and separate evaluation; Viscereality's evidence does not validate a
+ meeting monitor or a measure of inclusion.
 
  Design lineage
 

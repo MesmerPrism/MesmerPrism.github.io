@@ -2,8 +2,8 @@ Mesmer Prism | Till Holzapfel
 
 Source: https://mesmerprism.com/
 Canonical HTML: https://mesmerprism.com/
-Generated: 2026-07-15
-Description: XR systems, citizen-science tools, visual instruments, and essays for altered-perception design. Mesmer Prism makes strange experience vivid, inspectable, and evidence-bounded.
+Generated: 2026-09-16
+Description: Till Holzapfel: PhD research in mixed-ability human–swarm interaction, Combinatorial Swarmability, embodied perception, biofeedback, and open-source tools.
 Markdown: https://mesmerprism.com/index.md
 Plain text: https://mesmerprism.com/index.txt
 BibTeX references: https://mesmerprism.com/index.bib
@@ -15,26 +15,71 @@ Till Holzapfel
 
 Mesmer Prism
 
- Mesmer Prism is Till Holzapfel's public interface for
- altered-perception design: XR systems, citizen-science tools, visual
- instruments, and essays that make breath, light, imagery, and body
- boundaries inspectable. The design philosophy is bounded transformation:
- let experience change, but keep agency, apparatus, variables, sources,
- and limits visible.
+ I study how people perceive, inhabit, and shape shared worlds.
+ I am now a PhD candidate in mixed-ability human–swarm interaction.
+ My approach, Combinatorial Swarmability, asks how people with different
+ abilities can act through a shared, changing system and negotiate
+ how their contributions matter. This grows out of my work with
+ embodied perception, biofeedback, and luminous, porous virtual bodies.
 
- Start with live systems, perception tools, embodiment essays, research maps,
- or publications.
+ Based in the Inclusive Technology and Collective Engagement group (https://rc-trust.ai/groups/inclusive-technology-and-collective-engagement),
+ University of Duisburg-Essen / RC Trust.
 
- Enter the work (https://mesmerprism.com/#work)
- Publications (https://mesmerprism.com/#publications)
+ Combinatorial Swarmability (https://mesmerprism.com/projects/combinatorial-swarmability.html)
+ Projects and tools (https://mesmerprism.com/#work)
  Contact (https://mesmerprism.com/#contact)
+
+How can different abilities become shared possibilities?
+
+ A shared interface does not have to give everyone the same controls.
+ One person might shape a swarm's direction, another its rhythm or density,
+ and another the rules by which it responds. The research question is how
+ those contributions can become understandable, negotiable, and meaningful
+ to the people making them.
+
+ Combinatorial Swarmability (https://mesmerprism.com/projects/combinatorial-swarmability.html)
+ is the focus of my PhD in mixed-ability human–swarm interaction, in
+ Prof. Giulia Barbareschi's group. I plan to develop it through participatory
+ design, shared virtual environments, and studies of how people coordinate
+ and repair interaction. Swarms are a medium to explore; more equitable
+ collaboration is a question to investigate, not an automatic result.
+
+ One direction is a dynamic reflection of a group's meeting: a system whose
+ behaviour helps participants discuss what is happening between them.
+ Its meanings would have to be defined and revised with the group.
+ This is an early research proposal, not a tool that can already measure
+ inclusion or infer how people feel.
+
+ Read the research direction and its foundations (https://mesmerprism.com/projects/combinatorial-swarmability.html)
+
+From perception to relations between people
+
+ My earlier work asks how a person interfaces with the world: how perception,
+ expectation, and belief shape experience, and how an interface can change
+ the felt boundary of the body. The new work carries those questions into
+ the space between people.
+
+ Viscereality (https://mesmerprism.com/projects/viscereality.html) brings breath and
+ physiological feedback into changing visual systems. It is a practical
+ meeting point for my interests in dynamical systems and neuroaesthetics:
+ how the behaviour of a visual environment relates to bodily experience.
+
+ Plasmatic Multitudes (https://mesmerprism.com/projects/plasmatic-multitudes.html)
+ develops porous, particle-based bodies. My avatar work at the Intangible
+ Realities Lab grew within its Isness work and collaboration with aNUma,
+ in the wider context of numadelic aesthetics and shared embodiment.
+
+ Rusty Morphospace (https://mesmerprism.com/projects/rusty-morphospace.html) is the
+ open-source infrastructure thread: making immersive systems easier to
+ build, operate, and inspect. Extending this work toward robotic systems,
+ including Reachy Mini, is a planned next step.
 
  Projects
 
-Choose a route
+Projects, tools, and earlier work
 
- Systems, tools, essays, and references sit together here so the reader can
- move by use, topic, or artifact.
+ Working systems sit alongside essays on perception and embodiment.
+ These remain active interests and foundations for the new research.
 
 Use or inspect a system
 
@@ -46,6 +91,26 @@ Public record and contact
 
  Across the work: tune the condition, preserve agency, record what changed, and
  keep mechanisms and claims separate.
+
+ Local Linux workstation for Meta Quest
+
+Spatial Linux Desktop (https://mesmerprism.com/projects/spatial-linux-desktop.html)
+
+ A Termux-powered interactive Linux desktop presented through a native
+ Quest app in both Horizon window and Spatial SDK panel modes. The current
+ showcase runs Codex with ray, right-click, keyboard, and microphone input.
+
+ Status
+ Working open-source demonstration
+ Artifact
+ Quest Android app + local ARM64 Linux environment
+ License
+ MIT for repository-owned source and documentation
+
+ Meta Quest / Termux / Linux / Spatial SDK / Codex
+
+ Project page (https://mesmerprism.com/projects/spatial-linux-desktop.html)
+ Source (https://github.com/MesmerPrism/quest-termux-lab)
 
  XR research system
 
@@ -503,34 +568,31 @@ Publications and presentations
 
 Background
 
- My background moves between cognitive science, HCI, psychophysics, media
- theory, and research writing. The essays name concepts, lineages, and
- source limits before carrying those questions into XR systems, browser
- simulations, physiological sensing, and embodied prototypes.
+ I am a cognitive scientist, researcher, and developer working across HCI,
+ psychophysics, immersive media, and artistic research. Much of my work has
+ concerned the relationship between perception and interpretation: how
+ attention, expectation, imagery, and belief affect the world we experience.
+ The essays on mental imagery (https://mesmerprism.com/projects/prophantasia.html),
+ phenomenological control (https://mesmerprism.com/projects/phenomenological-control.html),
+ and scientific surrealism (https://mesmerprism.com/projects/scientific-surrealism.html)
+ develop that strand.
 
- Across Plasmatic Multitudes (https://mesmerprism.com/projects/plasmatic-multitudes.html),
- SANE (https://mesmerprism.com/projects/sane.html),
- Tulpas (https://mesmerprism.com/projects/tulpas.html),
- Scientific Surrealism (https://mesmerprism.com/projects/scientific-surrealism.html),
- Rusty Morphospace (https://mesmerprism.com/projects/rusty-morphospace.html),
- Polar H10 Work (https://mesmerprism.com/projects/polar-h10.html),
- Quest Companion Tools (https://mesmerprism.com/projects/viscereality-companion.html),
- Hollow Face Lab (https://mesmerprism.com/projects/hollow-face-lab.html),
- Altered Xperience Project (https://mesmerprism.com/projects/altered-xperience-project.html),
- Brain Candy (https://mesmerprism.com/projects/brain-candy.html),
- Strobotorch (https://mesmerprism.com/Strobotorch/),
- Bressloff V1 Form Constants (https://mesmerprism.com/projects/bressloff-v1-form-constants.html),
- Deep Dream (https://mesmerprism.com/projects/deep-dream.html),
- Optical Movement Illusions (https://mesmerprism.com/projects/optical-movement-illusions.html),
- Phenomenological Control (https://mesmerprism.com/projects/phenomenological-control.html),
- Prophantasia (https://mesmerprism.com/projects/prophantasia.html),
- and Fractal Optics (https://mesmerprism.com/projects/fractal-optics.html), the recurring terrain is
- altered perception, weakly bounded bodies, phenomenological variation, and
- the practical conditions that make strange experience legible without flattening
- it.
+ Building interactive systems gives these questions a material form.
+ My work has included avatar development and public engagement at the
+ Intangible Realities Lab (https://www.intangiblerealitieslab.org/),
+ bioresponsive VR through Viscereality, and citizen-science infrastructure
+ through the Altered Xperience Project. Open tools make the apparatus easier
+ to inspect and adapt, while research writing makes its assumptions and
+ limits available for discussion.
+
+ My PhD shifts the emphasis toward collective interaction: who can act,
+ how actions combine, and how people negotiate the rules of a shared
+ environment. The earlier questions about perception and embodiment remain,
+ now joined by questions about access, interdependence, and shared authorship.
 
 Core strengths
 - Unity and C# for XR and interactive systems
+- Rust and open-source infrastructure for spatial and interactive tools
 - Biofeedback, breath interaction, and interoception-oriented design
 - Perception research, psychophysics, and embodied HCI
 - Citizen-science survey systems, research tooling, and public guides
@@ -538,17 +600,19 @@ Core strengths
 - Weakly bounded embodiment, avatar design, and plasmatic interaction
 
 Current and recent roles
+- PhD candidate, mixed-ability human–swarm interaction, Inclusive Technology and Collective Engagement, University of Duisburg-Essen / RC Trust (https://rc-trust.ai/groups/inclusive-technology-and-collective-engagement)
 - VR Developer & Researcher, Viscereality Project
 - Citizen-science survey infrastructure, Altered Xperience Project / CIRCE collaboration
 - Scientific Advisor, Light Clinic (https://light.clinic/)
 - Visual Artist / Developer / Researcher, Tactile Visualizer Project
-- Public Outreach & Citizen Science, Intangible Realities Lab
+- Earlier work: avatar development, public outreach, and citizen science, Intangible Realities Lab
 
 Contact
 
- If you are building something across XR, altered perception, embodiment,
- research tooling, or interdisciplinary writing and design, contact me here.
+ I welcome conversations about mixed-ability collaboration, human–swarm
+ interaction, shared embodiment, and open research tools, as well as
+ connections to perception, biofeedback, and artistic research.
 - Email mesmerprism@gmail.com (mailto:mesmerprism@gmail.com)
 - GitHub github.com/MesmerPrism (https://github.com/MesmerPrism)
 - LinkedIn linkedin.com/in/till-holzapfel-intangiblerealitieslab (https://www.linkedin.com/in/till-holzapfel-intangiblerealitieslab/)
-- Current project viscereality.org (https://viscereality.org/)
+- Research group Inclusive Technology and Collective Engagement (https://rc-trust.ai/groups/inclusive-technology-and-collective-engagement)

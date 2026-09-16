@@ -1,0 +1,462 @@
+[
+  {
+    "id": "wobbrock-j-o-et-al-ability-based-design-concept-principles-and-examples-2011",
+    "type": "article-journal",
+    "title": "Ability-Based Design: Concept, Principles and Examples",
+    "URL": "https://doi.org/10.1145/1952383.1952384",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          9,
+          16
+        ]
+      ]
+    },
+    "note": "Referenced by Combinatorial Swarmability: https://mesmerprism.com/projects/combinatorial-swarmability.html",
+    "author": [
+      {
+        "literal": "Wobbrock, J. O., et al"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2011
+        ]
+      ]
+    },
+    "DOI": "10.1145/1952383.1952384"
+  },
+  {
+    "id": "bennett-c-l-brady-e-and-branham-s-m-interdependence-as-a-frame-for-assistive-technology-rese-2018",
+    "type": "article-journal",
+    "title": "Interdependence as a Frame for Assistive Technology Research and Design",
+    "URL": "https://doi.org/10.1145/3234695.3236348",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          9,
+          16
+        ]
+      ]
+    },
+    "note": "Referenced by Combinatorial Swarmability: https://mesmerprism.com/projects/combinatorial-swarmability.html",
+    "author": [
+      {
+        "literal": "Bennett, C. L., Brady, E., and Branham, S. M"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2018
+        ]
+      ]
+    },
+    "DOI": "10.1145/3234695.3236348"
+  },
+  {
+    "id": "xiao-l-et-al-a-systematic-review-of-ability-diverse-collaboration-thr-2024",
+    "type": "article-journal",
+    "title": "A Systematic Review of Ability-Diverse Collaboration through Ability-Based Lens in HCI",
+    "URL": "https://doi.org/10.1145/3613904.3641930",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          9,
+          16
+        ]
+      ]
+    },
+    "note": "Referenced by Combinatorial Swarmability: https://mesmerprism.com/projects/combinatorial-swarmability.html",
+    "author": [
+      {
+        "literal": "Xiao, L., et al"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2024
+        ]
+      ]
+    },
+    "DOI": "10.1145/3613904.3641930"
+  },
+  {
+    "id": "jung-c-cheng-k-heung-s-jung-m-f-and-azenkot-s-understanding-how-accessibility-practices-impact-teamwor-2026",
+    "type": "article-journal",
+    "title": "Understanding How Accessibility Practices Impact Teamwork in Mixed-Ability Teams that Collaborate Virtually",
+    "URL": "https://doi.org/10.1145/3772318.3790419",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          9,
+          16
+        ]
+      ]
+    },
+    "note": "Referenced by Combinatorial Swarmability: https://mesmerprism.com/projects/combinatorial-swarmability.html",
+    "author": [
+      {
+        "literal": "Jung, C., Cheng, K., Heung, S., Jung, M. F., and Azenkot, S"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    },
+    "DOI": "10.1145/3772318.3790419"
+  },
+  {
+    "id": "reynolds-c-w-flocks-herds-and-schools-a-distributed-behavioral-model-1987",
+    "type": "article-journal",
+    "title": "Flocks, Herds, and Schools: A Distributed Behavioral Model",
+    "URL": "https://doi.org/10.1145/37402.37406",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          9,
+          16
+        ]
+      ]
+    },
+    "note": "Referenced by Combinatorial Swarmability: https://mesmerprism.com/projects/combinatorial-swarmability.html",
+    "author": [
+      {
+        "literal": "Reynolds, C. W"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          1987
+        ]
+      ]
+    },
+    "DOI": "10.1145/37402.37406"
+  },
+  {
+    "id": "kumar-a-et-al-automating-the-search-for-artificial-life-with-foundatio-2025",
+    "type": "article-journal",
+    "title": "Automating the Search for Artificial Life With Foundation Models",
+    "URL": "https://doi.org/10.1162/artl.a.8",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          9,
+          16
+        ]
+      ]
+    },
+    "note": "Referenced by Combinatorial Swarmability: https://mesmerprism.com/projects/combinatorial-swarmability.html",
+    "author": [
+      {
+        "literal": "Kumar, A., et al"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2025
+        ]
+      ]
+    },
+    "DOI": "10.1162/artl.a.8"
+  },
+  {
+    "id": "li-s-et-al-participatory-evolution-of-artificial-life-systems-via-s-2025",
+    "type": "article-journal",
+    "title": "Participatory Evolution of Artificial Life Systems via Semantic Feedback",
+    "URL": "https://doi.org/10.1145/3757369.3767620",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          9,
+          16
+        ]
+      ]
+    },
+    "note": "Referenced by Combinatorial Swarmability: https://mesmerprism.com/projects/combinatorial-swarmability.html",
+    "author": [
+      {
+        "literal": "Li, S., et al"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2025
+        ]
+      ]
+    },
+    "DOI": "10.1145/3757369.3767620"
+  },
+  {
+    "id": "glowacki-d-r-et-al-group-vr-experiences-can-produce-ego-attenuation-and-con-2022",
+    "type": "article-journal",
+    "title": "Group VR experiences can produce ego attenuation and connectedness comparable to psychedelics",
+    "URL": "https://doi.org/10.1038/s41598-022-12637-z",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          9,
+          16
+        ]
+      ]
+    },
+    "note": "Referenced by Combinatorial Swarmability: https://mesmerprism.com/projects/combinatorial-swarmability.html",
+    "author": [
+      {
+        "literal": "Glowacki, D. R., et al"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2022
+        ]
+      ]
+    },
+    "DOI": "10.1038/s41598-022-12637-z"
+  },
+  {
+    "id": "fejer-g-et-al-viscereality-a-bio-responsive-vr-system-for-breath-based-2025",
+    "type": "article-journal",
+    "title": "Viscereality: A Bio-responsive VR System for Breath-Based Interactions and Coupled Oscillator Dynamics to Augment Altered States of Consciousness",
+    "URL": "https://doi.org/10.18420/MUC2025-MCI-WS11-174",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          9,
+          16
+        ]
+      ]
+    },
+    "note": "Referenced by Combinatorial Swarmability: https://mesmerprism.com/projects/combinatorial-swarmability.html",
+    "author": [
+      {
+        "literal": "Fejer, G., et al"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2025
+        ]
+      ]
+    },
+    "DOI": "10.18420/MUC2025-MCI-WS11-174"
+  },
+  {
+    "id": "chen-x-yap-n-lu-x-gunal-a-and-wang-x-meetmap-real-time-collaborative-dialogue-mapping-with-ll-2025",
+    "type": "article-journal",
+    "title": "MeetMap: Real-Time Collaborative Dialogue Mapping with LLMs in Online Meetings",
+    "URL": "https://doi.org/10.1145/3711030",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          9,
+          16
+        ]
+      ]
+    },
+    "note": "Referenced by Combinatorial Swarmability: https://mesmerprism.com/projects/combinatorial-swarmability.html",
+    "author": [
+      {
+        "literal": "Chen, X., Yap, N., Lu, X., Gunal, A., and Wang, X"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2025
+        ]
+      ]
+    },
+    "DOI": "10.1145/3711030"
+  },
+  {
+    "id": "kleinau-j-and-hoggan-e-mediating-meeting-dynamics-an-exploration-of-ai-based-mu-2025",
+    "type": "article-journal",
+    "title": "Mediating Meeting Dynamics: An Exploration of AI-Based Multimodal Feedback in Hybrid Meetings",
+    "URL": "https://doi.org/10.48340/ecscw2025_cp04",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          9,
+          16
+        ]
+      ]
+    },
+    "note": "Referenced by Combinatorial Swarmability: https://mesmerprism.com/projects/combinatorial-swarmability.html",
+    "author": [
+      {
+        "literal": "Kleinau, J., and Hoggan, E"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2025
+        ]
+      ]
+    },
+    "DOI": "10.48340/ecscw2025_cp04"
+  },
+  {
+    "id": "jacobs-a-z-and-wallach-h-measurement-and-fairness-2021",
+    "type": "article-journal",
+    "title": "Measurement and Fairness",
+    "URL": "https://doi.org/10.1145/3442188.3445901",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          9,
+          16
+        ]
+      ]
+    },
+    "note": "Referenced by Combinatorial Swarmability: https://mesmerprism.com/projects/combinatorial-swarmability.html",
+    "author": [
+      {
+        "literal": "Jacobs, A. Z., and Wallach, H"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2021
+        ]
+      ]
+    },
+    "DOI": "10.1145/3442188.3445901"
+  },
+  {
+    "id": "intangible-realities-lab-isness-2026",
+    "type": "webpage",
+    "title": "Isness",
+    "URL": "https://www.intangiblerealitieslab.org/projects/isness",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          9,
+          16
+        ]
+      ]
+    },
+    "note": "Referenced by Combinatorial Swarmability: https://mesmerprism.com/projects/combinatorial-swarmability.html",
+    "author": [
+      {
+        "literal": "Intangible Realities Lab"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    }
+  },
+  {
+    "id": "intangible-realities-lab-numadelic-flow-2026",
+    "type": "webpage",
+    "title": "Numadelic Flow",
+    "URL": "https://www.intangiblerealitieslab.org/projects/numadelic-flow",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          9,
+          16
+        ]
+      ]
+    },
+    "note": "Referenced by Combinatorial Swarmability: https://mesmerprism.com/projects/combinatorial-swarmability.html",
+    "author": [
+      {
+        "literal": "Intangible Realities Lab"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    }
+  },
+  {
+    "id": "anuma-science-2026",
+    "type": "webpage",
+    "title": "Science",
+    "URL": "https://anuma.com/science",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          9,
+          16
+        ]
+      ]
+    },
+    "note": "Referenced by Combinatorial Swarmability: https://mesmerprism.com/projects/combinatorial-swarmability.html",
+    "author": [
+      {
+        "literal": "aNUma"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    }
+  },
+  {
+    "id": "rc-trust-inclusive-technology-and-collective-engagement-2026",
+    "type": "webpage",
+    "title": "Inclusive Technology and Collective Engagement",
+    "URL": "https://rc-trust.ai/groups/inclusive-technology-and-collective-engagement",
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          9,
+          16
+        ]
+      ]
+    },
+    "note": "Referenced by Combinatorial Swarmability: https://mesmerprism.com/projects/combinatorial-swarmability.html",
+    "author": [
+      {
+        "literal": "RC Trust"
+      }
+    ],
+    "issued": {
+      "date-parts": [
+        [
+          2026
+        ]
+      ]
+    }
+  }
+]
