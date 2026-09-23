@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; connect-src 'none'; img-src 'none'; base-uri 'none'; form-action 'none'">
+  <title>Quest BLE Link Test</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main class="page">
+    <h1>Quest BLE Link Test</h1>
+    <p class="intro">Connect to a nearby Quest headset via Web Bluetooth.</p>
+
+    <button id="connect" class="primary" type="button">Connect to Quest</button>
+    <p class="connection"><strong>Status:</strong> <span id="connection">Not connected</span></p>
+
+    <section class="readout" aria-labelledby="readout-title">
+      <h2 id="readout-title">Status</h2>
+      <dl>
+        <div><dt>Device</dt><dd id="device">—</dd></div>
+        <div><dt>BLE link</dt><dd id="link">—</dd></div>
+        <div><dt>Quest status</dt><dd id="quest-status">—</dd></div>
+      </dl>
+    </section>
+
+    <button id="exchange" class="secondary" type="button" disabled>Send test exchange</button>
+    <p class="note">The exchange only verifies the BLE link. It does not control an app or change headset settings.</p>
+
+    <section class="event-log" aria-labelledby="log-title">
+      <h2 id="log-title">Event log</h2>
+      <ol id="events" aria-live="polite"><li>No events yet.</li></ol>
+    </section>
+  </main>
+</body>
+</html>
