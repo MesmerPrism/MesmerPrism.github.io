@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#191b20">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; connect-src 'none'; img-src 'none'; base-uri 'none'; form-action 'none'">
+  <title>Viscereality Experimenter</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="app-shell">
+    <header class="app-header">
+      <div class="header-line">
+        <h1>Viscereality</h1>
+        <span class="connection-label" id="connection-label" aria-live="polite">Not connected</span>
+      </div>
+      <p class="foreground-line" id="foreground-line">Immersive app status unavailable</p>
+      <div class="connection-actions">
+        <button id="connect" class="button button-small" type="button">Connect to Quest</button>
+        <button id="disconnect" class="button button-small button-quiet" type="button" hidden>Disconnect</button>
+        <button id="refresh" class="button button-small button-quiet" type="button" disabled>Refresh status</button>
+      </div>
+      <div id="access" class="access" hidden>
+        <label for="pair-code">Quest pairing code</label>
+        <div class="access-row">
+          <input id="pair-code" type="password" autocomplete="off" autocapitalize="characters" spellcheck="false" maxlength="32" placeholder="Enter code shown in headset">
+          <button id="unlock" class="button button-small" type="button">Unlock controls</button>
+        </div>
+        <p id="access-note">Status is visible without a code. Commands require the code shown in the headset.</p>
+      </div>
+    </header>
+
+    <main id="main-content" class="main-content">
+      <section class="page" data-page="prepare" aria-labelledby="prepare-title">
+        <h2 id="prepare-title">Prepare</h2>
+        <p class="lead">Check the headset and sensor before choosing a condition.</p>
+        <dl class="status-list">
+          <div><dt>Bluetooth</dt><dd id="bluetooth-status">Unavailable</dd></div>
+          <div><dt>Polar sensor</dt><dd id="polar-status">Unavailable</dd></div>
+          <div><dt>Recording storage</dt><dd id="storage-status">Unavailable</dd></div>
+          <div><dt>In-app session guard</dt><dd id="kiosk-status">Unavailable</dd></div>
+        </dl>
+        <p class="guidance" id="prepare-guidance">Connect to the Quest to see live readiness.</p>
+        <button id="open-polar" class="button button-secondary" type="button" disabled>Open Polar setup on Quest</button>
+      </section>
+
+      <section class="page" data-page="controls" aria-labelledby="controls-title" hidden>
+        <h2 id="controls-title">Controls</h2>
+        <p class="lead">These headset gestures still control the official run.</p>
+        <div class="instruction-list">
+          <div><h3>Start or resume</h3><p>Hold Right Grip + A for at least 0.75 seconds, then release after the confirmation pulse.</p></div>
+          <div><h3>Pause</h3><p>Hold Right Grip + B for at least 0.75 seconds, then release after the confirmation pulse.</p></div>
+          <div><h3>Experimenter menu</h3><p>Triple-press B without gripping.</p></div>
+          <div><h3>Developer settings</h3><p>Triple-press the trigger.</p></div>
+        </div>
+        <button id="return-vr" class="button button-secondary" type="button" disabled>Return to VR</button>
+      </section>
+
+      <section class="page" data-page="condition" aria-labelledby="condition-title" hidden>
+        <h2 id="condition-title">Choose condition</h2>
+        <p class="lead">Arming prepares the recording and audio. The official run starts with the headset gesture.</p>
+        <div class="condition-group">
+          <h3>Condition 1</h3>
+          <p id="audio-one">Audio: unavailable</p>
+          <p id="guidance-one">Breathing pattern: unavailable</p>
+          <button id="arm-one" class="button button-primary" type="button" disabled>Arm Condition 1</button>
+        </div>
+        <div class="condition-group">
+          <h3>Condition 2</h3>
+          <p id="audio-two">Audio: unavailable</p>
+          <p id="guidance-two">Breathing pattern: unavailable</p>
+          <button id="arm-two" class="button button-secondary" type="button" disabled>Arm Condition 2</button>
+        </div>
+        <div class="bias-control">
+          <label for="breath-bias">Breath guidance bias <output id="breath-bias-value">0%</output></label>
+          <input id="breath-bias" type="range" min="0" max="100" value="0" disabled>
+          <p>Applied when the selected condition is armed; unavailable when no breathing pattern is packaged.</p>
+        </div>
+      </section>
+
+      <section class="page" data-page="session" aria-labelledby="session-title" hidden>
+        <h2 id="session-title">Session</h2>
+        <p class="stage" id="stage-title">No live session readback</p>
+        <p class="lead" id="stage-instruction">Connect to the Quest to see the current run.</p>
+        <dl class="status-list session-list">
+          <div><dt>Condition</dt><dd id="active-condition">—</dd></div>
+          <div><dt>Status</dt><dd id="phase">Unavailable</dd></div>
+          <div><dt>Recording</dt><dd id="recording">—</dd></div>
+          <div><dt>Active time</dt><dd id="active-time">—</dd></div>
+          <div><dt>Completion</dt><dd id="completion">—</dd></div>
+          <div><dt>Storage</dt><dd id="session-storage">—</dd></div>
+          <div><dt>Completed</dt><dd id="completed">—</dd></div>
+          <div><dt>Stopped early</dt><dd id="stopped-early">—</dd></div>
+        </dl>
+        <button id="save-next" class="button button-primary" type="button" disabled>Save session &amp; prepare next</button>
+        <button id="save-exit" class="button button-secondary" type="button" disabled>Save and exit</button>
+      </section>
+
+      <section class="command-progress" aria-labelledby="command-title">
+        <h2 id="command-title">Command progress</h2>
+        <p id="command-name" class="command-name">No command sent</p>
+        <ol class="progress-steps">
+          <li id="progress-sent">Sent</li>
+          <li id="progress-waiting">Waiting for feedback</li>
+          <li id="progress-confirmed">Confirmed</li>
+        </ol>
+        <p id="command-detail" class="command-detail" aria-live="polite">Quest confirmation will appear here.</p>
+      </section>
+    </main>
+
+    <nav class="bottom-nav" aria-label="Experimenter pages">
+      <button type="button" data-target="prepare" aria-current="page">Prepare</button>
+      <button type="button" data-target="controls">Controls</button>
+      <button type="button" data-target="condition">Condition</button>
+      <button type="button" data-target="session">Session</button>
+    </nav>
+  </div>
+</body>
+</html>
