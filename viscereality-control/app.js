@@ -32,7 +32,7 @@ function label(id, value, tone = "") {
 
 function connected() { return !!device?.gatt?.connected && !!characteristics; }
 function controlsUnlocked() { return connected() && (questStatus?.m === "open" || !!accessCode); }
-function freshStatus() { return questStatus && Date.now() - lastStatusAt < 5000; }
+function freshStatus() { return questStatus && (preview || Date.now() - lastStatusAt < 5000); }
 function canCommand() { return controlsUnlocked() && freshStatus() && !commandBusy; }
 
 function showProgress(name, stage, detail) {
