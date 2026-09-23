@@ -1,0 +1,78 @@
+:root {
+  color-scheme: dark;
+  font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #191b20;
+  color: #f6f7f8;
+  font-synthesis: none;
+}
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 320px; }
+button, input { font: inherit; }
+button { cursor: pointer; }
+button:disabled { cursor: not-allowed; opacity: .44; }
+[hidden] { display: none !important; }
+.app-shell { max-width: 680px; min-height: 100dvh; margin: 0 auto; padding: 0 20px 92px; }
+.app-header { padding: max(34px, env(safe-area-inset-top)) 0 25px; border-bottom: 1px solid #373b43; }
+.header-line { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+h1 { margin: 0; font-size: clamp(30px, 7.2vw, 39px); line-height: 1.12; letter-spacing: -.04em; font-weight: 700; }
+.connection-label { flex: 0 0 auto; font-size: 13px; font-weight: 600; color: #aeb5bf; }
+.connection-label.connected { color: #85e6bf; }
+.connection-label.connected::before { content: ""; display: inline-block; width: 8px; height: 8px; margin-right: 7px; border-radius: 50%; background: currentColor; }
+.foreground-line { margin: 18px 0 0; font-size: 16px; line-height: 1.4; color: #abb2bd; }
+.foreground-line.focused { color: #85e6bf; }
+.connection-actions { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 20px; }
+.button { min-height: 51px; width: 100%; padding: 12px 17px; border-radius: 7px; border: 1px solid #6c727c; background: transparent; color: #f6f7f8; font-size: 16px; line-height: 1.25; font-weight: 600; text-align: center; }
+.button:not(:disabled):active { transform: translateY(1px); }
+.button:focus-visible, .bottom-nav button:focus-visible, input:focus-visible { outline: 2px solid #85e6bf; outline-offset: 3px; }
+.button-primary { border-color: #85e6bf; background: #85e6bf; color: #17231e; }
+.button-secondary { margin-top: 12px; }
+.button-small { width: auto; min-height: 40px; padding: 8px 13px; font-size: 13px; }
+.button-quiet { border-color: #444954; color: #c9ced5; }
+.access { margin-top: 22px; padding-top: 18px; border-top: 1px solid #373b43; }
+.access label { display: block; margin-bottom: 9px; font-size: 14px; font-weight: 600; }
+.access-row { display: flex; gap: 8px; }
+.access input { flex: 1; min-width: 0; padding: 9px 12px; border: 1px solid #777e89; border-radius: 7px; background: #25282f; color: #f6f7f8; font-size: 15px; }
+.access p { margin: 10px 0 0; color: #aeb5bf; font-size: 12px; line-height: 1.5; }
+.main-content { padding-top: 28px; }
+.page h2, .command-progress h2 { margin: 0 0 18px; font-size: 27px; line-height: 1.2; letter-spacing: -.025em; }
+.lead, .guidance { margin: 0 0 25px; color: #aeb5bf; font-size: 15px; line-height: 1.48; }
+.status-list { margin: 0 0 26px; }
+.status-list div { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); gap: 16px; margin-bottom: 15px; font-size: 16px; line-height: 1.35; }
+.status-list dt { color: #adb4be; }
+.status-list dd { margin: 0; overflow-wrap: anywhere; }
+.status-list .ready { color: #85e6bf; }
+.status-list .attention { color: #f1ba7b; }
+.instruction-list { border-top: 1px solid #373b43; }
+.instruction-list div { padding: 16px 0; border-bottom: 1px solid #373b43; }
+.instruction-list h3 { margin: 0 0 5px; font-size: 16px; }
+.instruction-list p { margin: 0; color: #aeb5bf; font-size: 14px; line-height: 1.45; }
+.condition-group { padding: 17px 0 23px; border-top: 1px solid #373b43; }
+.condition-group h3 { margin: 0 0 13px; font-size: 19px; }
+.condition-group p { margin: 0 0 8px; color: #b7bdc6; font-size: 14px; }
+.condition-group .button { margin-top: 12px; }
+.bias-control { padding-top: 18px; border-top: 1px solid #373b43; }
+.bias-control label { display: flex; justify-content: space-between; gap: 12px; font-size: 15px; font-weight: 600; }
+.bias-control output { color: #85e6bf; }
+.bias-control input { width: 100%; margin: 18px 0 5px; accent-color: #85e6bf; }
+.bias-control p { margin: 0; color: #aeb5bf; font-size: 12px; line-height: 1.45; }
+.stage { margin: 0 0 9px; font-size: 17px; font-weight: 600; color: #85e6bf; }
+.session-list { margin-top: 27px; }
+.command-progress { margin-top: 31px; padding-top: 27px; border-top: 1px solid #373b43; }
+.command-progress h2 { font-size: 21px; margin-bottom: 15px; }
+.command-name { margin: 0 0 15px; padding: 12px 14px; border-radius: 7px; background: #272a31; font-size: 15px; }
+.progress-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; padding: 0; margin: 0; list-style: none; }
+.progress-steps li { position: relative; padding-top: 24px; color: #949ca8; font-size: 12px; line-height: 1.3; }
+.progress-steps li::before { content: ""; position: absolute; top: 0; left: 0; width: 13px; height: 13px; border: 2px solid #949ca8; border-radius: 50%; }
+.progress-steps li.done { color: #85e6bf; }
+.progress-steps li.done::before { background: #85e6bf; border-color: #85e6bf; }
+.progress-steps li.current { color: #f4cc80; }
+.progress-steps li.current::before { border-color: #f4cc80; }
+.progress-steps li.failed { color: #f39c9c; }
+.progress-steps li.failed::before { border-color: #f39c9c; }
+.command-detail { margin: 18px 0 0; color: #aeb5bf; font-size: 13px; line-height: 1.45; }
+.bottom-nav { position: fixed; z-index: 2; inset: auto 0 0; display: flex; justify-content: center; gap: 0; padding: 10px max(10px, env(safe-area-inset-right)) max(10px, env(safe-area-inset-bottom)) max(10px, env(safe-area-inset-left)); border-top: 1px solid #373b43; background: #191b20; }
+.bottom-nav button { flex: 1 1 0; max-width: 170px; min-width: 0; padding: 12px 3px 11px; border: 0; border-bottom: 3px solid transparent; background: transparent; color: #aeb5bf; font-size: clamp(11px, 2.9vw, 14px); font-weight: 600; }
+.bottom-nav button[aria-current="page"] { color: #85e6bf; border-bottom-color: #85e6bf; }
+@media (min-width: 720px) { .app-shell { border-left: 1px solid #30343b; border-right: 1px solid #30343b; padding-left: 36px; padding-right: 36px; } }
+@media (max-width: 380px) { .header-line { display: block; } .connection-label { display: block; margin-top: 9px; } .access-row { flex-direction: column; } .access-row .button { width: 100%; } }
+@media (prefers-reduced-motion: reduce) { .button:not(:disabled):active { transform: none; } }
