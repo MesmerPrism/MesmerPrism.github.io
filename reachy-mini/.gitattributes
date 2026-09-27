@@ -1,0 +1,3 @@
+# Release manifests bind raw exported source, licenses and runtime assets.
+# Keep their bytes identical in Git, downloads and the deployed Pages files.
+** -text

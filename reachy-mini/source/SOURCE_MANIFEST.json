@@ -1,0 +1,436 @@
+{
+  "schema": "reachy.public-source.v1",
+  "name": "reachy-mini-browser-control",
+  "version": "0.1.0",
+  "originalCodeLicense": "MIT",
+  "dependencyLicenses": "THIRD_PARTY_NOTICES.md",
+  "exclusions": [
+    "private configuration and evidence",
+    "Git history",
+    "installed dependencies",
+    "generated model/WASM binaries",
+    "source CAD and robot meshes"
+  ],
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 88,
+      "sha256": "9e2c09da9774512f6669d8164ccaa7df45f5e47fd2fe6b2a84e6f72aca7d5f8a"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1068,
+      "sha256": "3d48cc037ba38280a043309ca7b3c23a7baa3f844475029193c989ada38ed6c3"
+    },
+    {
+      "path": "README.md",
+      "bytes": 3577,
+      "sha256": "4f02050c388a0c5e17e820b13f21142025e7c31f073426f15c1c45675d61a29b"
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.md",
+      "bytes": 6660,
+      "sha256": "4374794d9b2cbf9d32ee3a1833f8176fb23d52767d3a5f90ee57b6414bb18284"
+    },
+    {
+      "path": "config.example.json",
+      "bytes": 297,
+      "sha256": "6c06086d85e1821ec7391810b39a5aca8312519fbdf721d0c810d84d617eb2ef"
+    },
+    {
+      "path": "docs/SETUP.md",
+      "bytes": 3485,
+      "sha256": "261b7814693152797d6312107a53d302fd86793912eb7499d38ff384ff1fd0a4"
+    },
+    {
+      "path": "index.html",
+      "bytes": 273,
+      "sha256": "3b675d2244974c230a8170bc1199510f6f63e84ca8a093813ff6c77d1903e23c"
+    },
+    {
+      "path": "licenses/Hugging-Face-Hub.txt",
+      "bytes": 1069,
+      "sha256": "d6e7b19451c1b3d1d66353bb4b1274138953b3bfd9ae60c56e77b1f548796982"
+    },
+    {
+      "path": "licenses/Hugging-Face-Tasks.txt",
+      "bytes": 1068,
+      "sha256": "6930e6fa431d44bce40c7e60463141c6ce9444c8111e899d6df033e441c4662a"
+    },
+    {
+      "path": "licenses/Lucide.txt",
+      "bytes": 880,
+      "sha256": "1e7290b35280a048667bbf0ebabac1c7fd52a75300e8b2946ac165715997f2bc"
+    },
+    {
+      "path": "licenses/MediaPipe-Apache-2.0.txt",
+      "bytes": 12331,
+      "sha256": "8707eef0533987efc5b155d64761eeb6e20793f50b9bd1a68dad1cf4719d0ed8"
+    },
+    {
+      "path": "licenses/Newsreader-OFL.txt",
+      "bytes": 4394,
+      "sha256": "865f0949b59fab5925506f80102dff3d12e8666412daf52d212db969d40adc25"
+    },
+    {
+      "path": "licenses/Pretext.txt",
+      "bytes": 1077,
+      "sha256": "e9355cb16457e81acd97dac2e50f2f8bbf2a9a464025f9c46db3680cf9598846"
+    },
+    {
+      "path": "licenses/Reachy-Mini-Apache-2.0.txt",
+      "bytes": 11345,
+      "sha256": "1cd66cd7ef50bb247f43d247f7c2a3259a600d951170e778d75c9278e5680f03"
+    },
+    {
+      "path": "licenses/Reachy-Mini-JavaScript-SDK.txt",
+      "bytes": 11345,
+      "sha256": "1cd66cd7ef50bb247f43d247f7c2a3259a600d951170e778d75c9278e5680f03"
+    },
+    {
+      "path": "licenses/React-DOM.txt",
+      "bytes": 1088,
+      "sha256": "da6d3703ed11cbe42bd212c725957c98da23cbff1998c05fa4b3d976d1a58e93"
+    },
+    {
+      "path": "licenses/React-Scheduler.txt",
+      "bytes": 1088,
+      "sha256": "da6d3703ed11cbe42bd212c725957c98da23cbff1998c05fa4b3d976d1a58e93"
+    },
+    {
+      "path": "licenses/React.txt",
+      "bytes": 1088,
+      "sha256": "da6d3703ed11cbe42bd212c725957c98da23cbff1998c05fa4b3d976d1a58e93"
+    },
+    {
+      "path": "licenses/Three.txt",
+      "bytes": 1081,
+      "sha256": "8b378ebe60e2fe500158cb0ac71cb5e8b7d92953c2abcc63a0eb90499653b5bc"
+    },
+    {
+      "path": "licenses/Vite.txt",
+      "bytes": 101176,
+      "sha256": "a77a1c089806b39ad339535bdf3677f636c91d96693e8ad7b11fe733f650ea64"
+    },
+    {
+      "path": "licenses/ws.txt",
+      "bytes": 1183,
+      "sha256": "2b29dcfe0d6471f7e8c92c5fb38c9f93edee10330937055440192f1832b1ecef"
+    },
+    {
+      "path": "package-lock.json",
+      "bytes": 79561,
+      "sha256": "94a1d93b422e7c6b005ff4028f1cf8a8154d02e19f00ea6d9d7151e2196c0673"
+    },
+    {
+      "path": "package.json",
+      "bytes": 902,
+      "sha256": "d4cb3a75ab58e1be71736c530df70c43e7648c8d8beb6d44053ff7d65a1c147c"
+    },
+    {
+      "path": "public-site/FitText.jsx",
+      "bytes": 2689,
+      "sha256": "e68490d0338a68e908be414df5ecd539777b0e7a4b707bb28e7aef9852fac3a1"
+    },
+    {
+      "path": "public-site/WirelessPanel.jsx",
+      "bytes": 18990,
+      "sha256": "053c100c025e411453bd10db36c56502f5ff9ff007ca0cb132c0ff7f22f48fa7"
+    },
+    {
+      "path": "public-site/demo-sdk.mjs",
+      "bytes": 1616,
+      "sha256": "946ef4eb1e9f543777b49fbb04e7d3abd7267664ad8a537baf01ba226070a12c"
+    },
+    {
+      "path": "public-site/index.html",
+      "bytes": 436,
+      "sha256": "de4342985479e82e212c2751f86f09b6f9a6f989dab230c1816c56ddfcbb18ac"
+    },
+    {
+      "path": "public-site/main.jsx",
+      "bytes": 8288,
+      "sha256": "9b0e0bd199003df650c2e674e1c6db8b55bca44d15ed38130421a968a31e9bab"
+    },
+    {
+      "path": "public-site/style.css",
+      "bytes": 4954,
+      "sha256": "0474068b38e3811ddc080a4a6f070ca714a6ecb606a0f56fe4f1334d2e43a9e0"
+    },
+    {
+      "path": "server/audio-control.mjs",
+      "bytes": 7587,
+      "sha256": "4f6811046fa8da1b8b3c5b5495ceb2e0d255e4f04d54562cc98561ac67aa51c7"
+    },
+    {
+      "path": "server/control.mjs",
+      "bytes": 46414,
+      "sha256": "2dd3bf5a01d0a94da2bfdc3eecc581678c4aa678018c92090742c73cae91a8da"
+    },
+    {
+      "path": "server/head-pose.mjs",
+      "bytes": 5390,
+      "sha256": "35d38b695ebc32d67b404dd14febc74d947b24ab7d81440d6e268946a52e7755"
+    },
+    {
+      "path": "server/index.mjs",
+      "bytes": 8344,
+      "sha256": "044c10fe2f3604fd9e7d78a8d91753b22566e7c997c406fbe3ec6748e704e94b"
+    },
+    {
+      "path": "server/media-guard.mjs",
+      "bytes": 1103,
+      "sha256": "01d703ec19d4a6e31cab910a1661b1c5709e0265ab522f217196dd4d33d4eafd"
+    },
+    {
+      "path": "src/Antennas.jsx",
+      "bytes": 3507,
+      "sha256": "7cfceb36e6822c8d02f43f32e894dfb52a31abf6ec263ff28e060d3743d90653"
+    },
+    {
+      "path": "src/App.jsx",
+      "bytes": 4367,
+      "sha256": "8c9377bf947bf1d6815e221a3182bb646ec70f325792723d8585e91bb240e791"
+    },
+    {
+      "path": "src/AudioControls.jsx",
+      "bytes": 7113,
+      "sha256": "30101da506c5a48ac35c61edc1ae2f9beb5ff63cd7a742fe5887cac09ebc0bc0"
+    },
+    {
+      "path": "src/Camera.jsx",
+      "bytes": 2754,
+      "sha256": "a60ccd6381c814ca8ffd4004c27ed02b8173830303e08c173b409e7e8173d98b"
+    },
+    {
+      "path": "src/Emotes.jsx",
+      "bytes": 1106,
+      "sha256": "503a553abbff76794245c1779c91ae7317617de4e2ce3454ee093180d63f5e4b"
+    },
+    {
+      "path": "src/HeadControls.jsx",
+      "bytes": 5394,
+      "sha256": "8c575319e442cbd02edf191cbc6fac968197128acfe22483ae1c390e12cd6678"
+    },
+    {
+      "path": "src/HeadTracking.jsx",
+      "bytes": 8292,
+      "sha256": "b1270d9328cf86150a9f9168095b8186ad81fcf98beba382d22cd2370e2283fa"
+    },
+    {
+      "path": "src/RobotModel.jsx",
+      "bytes": 13353,
+      "sha256": "fd33136e7afc2b4746e0deaac45588711c0f00b26dd6a19237d3cc1d8fa67c16"
+    },
+    {
+      "path": "src/head-follow.mjs",
+      "bytes": 3527,
+      "sha256": "fae1849ea24b76a08847fdad4384983d98d7a0233802a466078018e889043f44"
+    },
+    {
+      "path": "src/head-manual-queue.mjs",
+      "bytes": 1538,
+      "sha256": "34e99d972aa04651937989aafe2f1f592442551db86492cc62d5d01c698ca91d"
+    },
+    {
+      "path": "src/head-math.mjs",
+      "bytes": 2713,
+      "sha256": "ed5c762ce21683a2b3db5ae94fc0448e91ab05bf13bc9810dd8a7dc694e4ce00"
+    },
+    {
+      "path": "src/head-tracker.js",
+      "bytes": 6561,
+      "sha256": "56aff5305465009f843f637e83c67652aba4c2671812cbdb2d48c6161916027b"
+    },
+    {
+      "path": "src/head-tracker.worker.js",
+      "bytes": 1932,
+      "sha256": "5f4821459c9e5a79b466bade2890591ebf9d425a134a567b47964b88782dd335"
+    },
+    {
+      "path": "src/main.jsx",
+      "bytes": 188,
+      "sha256": "2ec4bc653249c65ae05ba956ba10ff79aaa1c0faccefd6db289b1f306f688fdc"
+    },
+    {
+      "path": "src/media.js",
+      "bytes": 5431,
+      "sha256": "85df3140a104093b437cb01cdf24bd3af319e880fc421dc55e73dbefad2443ae"
+    },
+    {
+      "path": "src/robot-model-state.mjs",
+      "bytes": 7448,
+      "sha256": "2734c6c6432f743bbd0bd46fef608a69ceb1eecb3c216f5e6bb0c2ddbeb9ff13"
+    },
+    {
+      "path": "src/styles.css",
+      "bytes": 15398,
+      "sha256": "64051127398c58533f456472119991a730ee25864ee515729771eab205dc1b8f"
+    },
+    {
+      "path": "src/talk-lifecycle.mjs",
+      "bytes": 3281,
+      "sha256": "60c41ddeafdfd93d794887860a8934426c1738c1bf74daa8133fb897a53cd2ed"
+    },
+    {
+      "path": "src/useControl.js",
+      "bytes": 10918,
+      "sha256": "e6e8044186f5b4b5a9ac25146bbce6759fa576a00723f1c2f2eed08ff1789a34"
+    },
+    {
+      "path": "src/useHeadControl.js",
+      "bytes": 7355,
+      "sha256": "32f615b58c258f7e30e5859c6ae7306b28cb604ae377c75a14ae1fe9af03daf2"
+    },
+    {
+      "path": "src/useReachyMedia.js",
+      "bytes": 5986,
+      "sha256": "1169f038d9b29315c02750f1f19fd74b34c462da915dcc652bfb2175c6f6b98a"
+    },
+    {
+      "path": "src/wireless-audio.mjs",
+      "bytes": 1345,
+      "sha256": "19916846e342bd709d098dc01f8cb8316ede5144e199674801b9b81a23d4c095"
+    },
+    {
+      "path": "src/wireless-control.mjs",
+      "bytes": 15478,
+      "sha256": "43b16178fa088c414da645d80cfbe73ea875d2a869ba92ecd64aad7ecd15b7fd"
+    },
+    {
+      "path": "test/audio-control.test.mjs",
+      "bytes": 6695,
+      "sha256": "5c5df6ae84cd1778b6c994a96941a5648a0ded271f0f1f27a2ae0778dc4a6fbe"
+    },
+    {
+      "path": "test/control-recovery.test.mjs",
+      "bytes": 9897,
+      "sha256": "1ed19c143d7c20335ddba0000c5bc2d1c4b9ea4e5ba05210aa926f87d1ef6fb6"
+    },
+    {
+      "path": "test/control.test.mjs",
+      "bytes": 11993,
+      "sha256": "cc1ab3de7a8f2060e19fb79fe6f9f8284c0d79e87029657db0477d7b7c099b35"
+    },
+    {
+      "path": "test/fixtures/text-qa.html",
+      "bytes": 311,
+      "sha256": "dccddef7345c30731efe83de9cc908a592162b6a09d3df55c77029ad858efa61"
+    },
+    {
+      "path": "test/fixtures/text-qa.jsx",
+      "bytes": 2079,
+      "sha256": "017e3def1c66dff8f1661c6e60ca010f9a162021a02e58871c6fc3bd32b3d45a"
+    },
+    {
+      "path": "test/head-control.test.mjs",
+      "bytes": 16511,
+      "sha256": "f6db31102deb2a82b09bb220031780dfc4d540d3226f0b0103dee35421aea0ce"
+    },
+    {
+      "path": "test/head-follow.test.mjs",
+      "bytes": 4305,
+      "sha256": "8b857e64f11c502d46bb5a387b7245ef6690bec20e373f4f852e79a3152608e1"
+    },
+    {
+      "path": "test/head-manual-queue.test.mjs",
+      "bytes": 3982,
+      "sha256": "02e7fa436c0e2832986194e3b5d48a535d34e4857e6b1c286ca77affb618a7ce"
+    },
+    {
+      "path": "test/head-math.test.mjs",
+      "bytes": 2298,
+      "sha256": "487dc7ac7198b141b9fd1a959d30898584ab36842582d59f5668c4af01696cf4"
+    },
+    {
+      "path": "test/head-tracker.test.mjs",
+      "bytes": 3884,
+      "sha256": "037254bf83378ae1862fd4fed51d1f6ab8f96d9acbf5d135d345f604ab8871ae"
+    },
+    {
+      "path": "test/manual-head-control.test.mjs",
+      "bytes": 16910,
+      "sha256": "941c97973c025ab2d6f74fcb7a1c4cc39dfeffa5b07caf00e9ec2ccaec321bad"
+    },
+    {
+      "path": "test/media-guard.test.mjs",
+      "bytes": 1892,
+      "sha256": "c25a092e62d61cc9a8a8f8c6a7300185431bc35978e85d1fa0a582d16d8ebc3e"
+    },
+    {
+      "path": "test/public-export.test.mjs",
+      "bytes": 4645,
+      "sha256": "841a252bf7fcb65813d8281438ccb4d6afba6246e07b5dee526383c39d1ce125"
+    },
+    {
+      "path": "test/robot-model-state.test.mjs",
+      "bytes": 6990,
+      "sha256": "43255b77a74b7e6290ff22c7c09baa694231c534798ad8024c8729fed5c095d8"
+    },
+    {
+      "path": "test/robot-schematic.test.mjs",
+      "bytes": 1985,
+      "sha256": "3069d220796736dea195ca25b7c53b7268a8532510d747c0118f4a5df8bca206"
+    },
+    {
+      "path": "test/setup-local.test.mjs",
+      "bytes": 5834,
+      "sha256": "329ad8e9eb3cef3dbc34b879061b3670f48c356c48cb4c1f2f2288380175432b"
+    },
+    {
+      "path": "test/talk-lifecycle.test.mjs",
+      "bytes": 3802,
+      "sha256": "f32e59de2a96edf413f3511eb50d7d6b2a24c6cea84b695defeac39eb3b32749"
+    },
+    {
+      "path": "test/wireless-audio.test.mjs",
+      "bytes": 1762,
+      "sha256": "246991387351e2aab99e3441431c7bc1d21a1c7db3ed7cf01516816b6923e9fb"
+    },
+    {
+      "path": "test/wireless-control.test.mjs",
+      "bytes": 9969,
+      "sha256": "7a26cd9cf332cd278c15d310d61fbdfb4428e9f99f4186a38d859f1a7aaa2e5b"
+    },
+    {
+      "path": "tools/Build-Pages.mjs",
+      "bytes": 2029,
+      "sha256": "937a9d1ddae74cbb172252ec7fd067cd894786371a3fd407316ff7fca481b380"
+    },
+    {
+      "path": "tools/Export-Public.mjs",
+      "bytes": 11260,
+      "sha256": "988c921c17da6e0a8a8196d4c181eba03a824456b502d06a7f912d7b0b66103a"
+    },
+    {
+      "path": "tools/Prepare-HeadAssets.mjs",
+      "bytes": 2111,
+      "sha256": "4de12adba20377f3bbcd2c8925af891903f994319e7184ed78b7d6a560ea4e6d"
+    },
+    {
+      "path": "tools/Prepare-ReachyModel.mjs",
+      "bytes": 10820,
+      "sha256": "d2b651df74ef1fb667f929cae4dd5faf6a7b89afe64ef5dc886e9d0e9fcd812c"
+    },
+    {
+      "path": "tools/Setup-Local.mjs",
+      "bytes": 7764,
+      "sha256": "d4f5d3d332442db2084f6e7768767c501fc070055eb6ad4027461653aa64902f"
+    },
+    {
+      "path": "tools/Validate-ReachyModel.mjs",
+      "bytes": 1985,
+      "sha256": "7cd152a2d612423917624b733994abf55abf7129437faee5b32e38e95db394e4"
+    },
+    {
+      "path": "tools/reachy-model-source.mjs",
+      "bytes": 6374,
+      "sha256": "902e758513511eb34111b620a3d8ddc6acdb936ddcd35f0b6705506fdb1218fa"
+    },
+    {
+      "path": "vite.config.js",
+      "bytes": 127,
+      "sha256": "054c5ad26587cec72607796613268a42f2b475f62b2aa00f5ee07802e9685317"
+    }
+  ]
+}

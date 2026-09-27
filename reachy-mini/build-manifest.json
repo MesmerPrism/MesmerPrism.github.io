@@ -1,0 +1,50 @@
+{
+  "version": "0.1.0",
+  "files": [
+    {
+      "path": "assets/RobotModel-BCixHaPe.js",
+      "bytes": 654994,
+      "sha256": "0aea8ee48a9cf2e7df440a7bf8331372c9086360d6930a5ed8084ac55dfab3f0"
+    },
+    {
+      "path": "assets/demo-sdk-o9b2IEeu.js",
+      "bytes": 1317,
+      "sha256": "059b52cd9cc1708ce47bafa801f5c8c3982c6f5292e97146c421cca831322145"
+    },
+    {
+      "path": "assets/head-tracker-C8P4Y3-k.js",
+      "bytes": 4541,
+      "sha256": "3718f9bf6c23cde760269ffb63504173479577bd27cafc0739f1796396df9e90"
+    },
+    {
+      "path": "assets/head-tracker.worker-DnB2ziEb.js",
+      "bytes": 1083,
+      "sha256": "626da8f1e2aab1cac8f2e275644358fb3dd211f050925ae34f70e0ec720503b9"
+    },
+    {
+      "path": "assets/index-DKsi9aFd.js",
+      "bytes": 308503,
+      "sha256": "96bb71c121a3e75cff81a88c317a88df7462a245be0afb9a90f510c528a50d19"
+    },
+    {
+      "path": "assets/index-DOWxG7eL.css",
+      "bytes": 4300,
+      "sha256": "8dd3416e8c0b15eccb535429d5815ca83b5d64288862937ac39443fec812fae9"
+    },
+    {
+      "path": "assets/reachy-mini-sdk-B7WY160u.js",
+      "bytes": 37031,
+      "sha256": "15e5a5339d53c32baef127601199210b9ca91cdac78b7c09f36e5fac1cb5bef9"
+    },
+    {
+      "path": "assets/vision_bundle-9zIsgJJP.js",
+      "bytes": 154060,
+      "sha256": "de28b043cbc2f9736bbdeb08fed63851cb51af85f50b0b3f8e121bb4e5e535f6"
+    },
+    {
+      "path": "index.html",
+      "bytes": 562,
+      "sha256": "9cb7076525623884b31127f1697765a38eb429f4934e926a046985c7f8c71a9a"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "schema": "reachy.public-artifacts.v1",
+  "version": "0.1.0",
+  "sourceManifest": "source/SOURCE_MANIFEST.json",
+  "archive": {
+    "path": "downloads/reachy-mini-controller-v0.1.0.zip",
+    "bytes": 199164,
+    "sha256": "da2e4de4d9fa5a094bb05cbba8a70c9241549ee9a775b6e5c0f05b714b567de3"
+  },
+  "sourceFiles": 85
+}

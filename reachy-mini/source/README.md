@@ -1,0 +1,42 @@
+# Reachy Mini browser control
+
+A browser interface for Reachy Mini camera, audio, antenna and head controls, emotes, and measured state. The public viewer uses an original schematic model. This independent prototype uses Reachy's existing interfaces and does not replace official device setup or firmware tools.
+
+## Hosted browser mode
+
+Open **[mesmerprism.com/reachy-mini](https://mesmerprism.com/reachy-mini/)** for the Wireless controller. It connects through the official JavaScript SDK without a local Node bridge or desktop helper during control. Initial Wi-Fi configuration may use the official Reachy Mini Control application's wizard, described in the [Wireless guide](https://huggingface.co/docs/reachy_mini/platforms/reachy_mini/get_started).
+
+Enter your robot's Hugging Face identity and read token as prompted. The token stays in memory during the connection; it is not saved in browser storage or included in downloads. The supported daemon version is **1.10.0**. Camera and microphone features require browser permissions.
+
+Hosted SDK transport and the local bridge have different motion and Stop capabilities. The local bridge's identity checks, recovery and measured-hold guarantees do not automatically apply to hosted connections. Follow the connection status and capability limitations shown in the UI. Stop is software control, not a hardware emergency stop.
+
+## Local guarded bridge
+
+Download the source ZIP linked from the hosted page. Install Node **22.12+ or 24**, extract the archive, and run:
+
+```sh
+npm ci
+npm run setup
+npm run build
+npm start
+```
+
+Open **http://localhost:18750**. Setup performs read-only daemon discovery, requires **1.10.0**, and saves your origin and hardware identity in ignored `local/config.json`. Existing configuration requires explicit replacement. See [the setup guide](docs/SETUP.md) for Wireless versus USB-tethered Lite and unattended options.
+
+Local head movement is disabled by default. `npm run setup -- --head-follow` approves attended manual head controls and webcam following, enabling ±20° turn and ±15° nod without claiming physical axis verification. Movement still requires explicit UI input. Manual tilt is ±15° and position axes ±10 mm; these are application limits, not certified robot bounds.
+
+The local controller validates finite targets, excludes competing writers, discards queued motion after disconnect and distinguishes requested from measured state. Stop drains in-flight writes before holding fresh measured positions. Uncertain mutations or a foreign controller can lock movement until a safe stop is confirmed. Closing the interface does not automatically put the robot to sleep.
+
+## Development and assets
+
+```sh
+npm test
+npm run build
+npm run demo
+```
+
+Demo mode simulates a robot without hardware commands. The project uses React, Vite and Node, with no Unity or WebXR dependency. Automated tests do not operate hardware.
+
+Public downloads exclude official CAD binaries and private configuration. Local build preparation can retrieve pinned official CAD for private staging. Its hardware licensing is separate from this project's MIT software license: official notices describe Creative Commons BY-SA-NC without resolving every asset's version or vendor provenance. Read [third-party notices and CAD rights](THIRD_PARTY_NOTICES.md) before redistributing generated models. The original public schematic avoids those CAD files.
+
+Bundled dependencies retain their own license notices. Do not publish local configuration, hardware identities, tokens, caches or generated private models.
