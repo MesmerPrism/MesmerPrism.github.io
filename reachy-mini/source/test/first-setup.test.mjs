@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { generateKeyPairSync, diffieHellman, hkdfSync, createDecipheriv, createPublicKey, webcrypto } from 'node:crypto';
-import { BLE_UUIDS, MAX_COMMAND_BYTES, PROVISIONING_ALGORITHM, createFirstSetupClient, cryptoPreflight, sealWifiPassword, commandByteLength, validateWifiStatus } from '../src/first-setup.mjs';
+import { BLE_UUIDS, MAX_COMMAND_BYTES, PROVISIONING_ALGORITHM, FIRST_SETUP_PROGRESS, createFirstSetupClient, cryptoPreflight, sealWifiPassword, commandByteLength, validateWifiStatus } from '../src/first-setup.mjs';
 
 // Receiver uses Node's native key objects/HKDF/cipher API independently of WebCrypto.
 function receiver() {
@@ -43,9 +43,9 @@ function transport(handler, { optional = false, timeoutMs = 100 } = {}) {
       throw new Error('optional status service missing');
     } };
   device.gatt = server;
-  let disconnected = 0;
-  const client = createFirstSetupClient({ bluetooth: { requestDevice(value) { asked = true; options = value; return Promise.resolve(device); } }, crypto: webcrypto, timeoutMs, onDisconnect() { disconnected++; } });
-  return { client, response, server, writes, order, asked: () => asked, options: () => options, disconnected: () => disconnected };
+  let disconnected = 0; const disconnectReasons = []; const progress = [];
+  const client = createFirstSetupClient({ bluetooth: { requestDevice(value) { asked = true; options = value; return Promise.resolve(device); } }, crypto: webcrypto, timeoutMs, onDisconnect(reason) { disconnected++; disconnectReasons.push(reason); }, onProgress(label) { progress.push(label); } });
+  return { client, response, command, server, writes, order, disconnectReasons, progress, asked: () => asked, options: () => options, disconnected: () => disconnected };
 }
 function stockHandler(keyExchange, status = { mode: 'hotspot', connected: null, error: null }) {
   return (value, response) => {
@@ -91,6 +91,74 @@ test('chooser is called synchronously, subscription precedes writes, optional id
   assert.equal(fake.order[0], 'subscribe'); assert.deepEqual(fake.writes, ['PING', 'WIFI_STATUS', 'WIFI_KEYEX']);
   fake.client.disconnect(); assert.equal(fake.client.connected, false);
 });
+test('synchronous and asynchronous chooser errors use safe names and distinguish policy, no selection, unsupported, and unknown failures', async () => {
+  const cases = [
+    ['SecurityError', 'permission', /browser blocked Bluetooth/],
+    ['NotAllowedError', 'permission', /browser blocked Bluetooth/],
+    ['NotFoundError', 'no_device', /No Bluetooth device was selected/],
+    ['NotSupportedError', 'unavailable', /Web Bluetooth is unavailable/],
+    ['NetworkError', 'selection', /device chooser did not complete/],
+    ['raw-secret-in-name', 'selection', /device chooser did not complete/],
+  ];
+  for (const synchronous of [true, false]) for (const [name, code, message] of cases) {
+    let requested = 0;
+    const exception = new Error('raw-secret-in-message'); exception.name = name;
+    const client = createFirstSetupClient({ bluetooth: { requestDevice() { requested++; if (synchronous) throw exception; return Promise.reject(exception); } } });
+    const selecting = client.selectAndConnect(); assert.equal(requested, 1);
+    await assert.rejects(selecting, (error) => {
+      assert.equal(error.code, code); assert.equal(error.stage, 'selection'); assert.match(error.message, message);
+      assert.doesNotMatch(error.message, /cancelled|raw-secret/);
+      assert.doesNotMatch(JSON.stringify(error), /raw-secret/);
+      assert.equal(error.name, 'FirstSetupError');
+      return true;
+    });
+    assert.equal(client.connected, false);
+  }
+});
+test('post-selection failures identify their exact GATT stage and deliver the same safe reason to disconnect UI', async () => {
+  for (const stage of ['gatt_connect', 'gatt_service', 'gatt_command', 'gatt_response', 'gatt_notifications', 'gatt_properties']) {
+    const fake = transport(() => {});
+    const exception = new Error('raw-secret-in-message'); exception.name = 'raw-secret-in-name';
+    const original = fake.server.getPrimaryService.bind(fake.server);
+    if (stage === 'gatt_connect') fake.server.connect = () => { throw exception; };
+    else if (stage === 'gatt_service') fake.server.getPrimaryService = async () => { throw exception; };
+    else if (stage === 'gatt_command' || stage === 'gatt_response') fake.server.getPrimaryService = async uuid => {
+      const service = await original(uuid); const get = service.getCharacteristic.bind(service);
+      service.getCharacteristic = async id => { if (id === BLE_UUIDS[stage === 'gatt_command' ? 'command' : 'response']) throw exception; return get(id); };
+      return service;
+    };
+    else if (stage === 'gatt_notifications') fake.response.startNotifications = async () => { throw exception; };
+    else fake.command.properties.write = false;
+    let received;
+    await assert.rejects(fake.client.selectAndConnect(), error => {
+      received = error; assert.equal(error.code, stage); assert.doesNotMatch(error.message, /raw-secret/); assert.doesNotMatch(JSON.stringify(error), /raw-secret/); return true;
+    });
+    assert.equal(fake.disconnectReasons.length, 1); assert.equal(fake.disconnectReasons[0], received);
+    assert.equal(fake.client.connected, false); assert.equal(fake.server.connected, false); assert.deepEqual(fake.writes, []);
+  }
+});
+test('known policy exceptions during GATT discovery retain the stage without reflecting browser details', async () => {
+  const fake = transport(() => {});
+  fake.server.getPrimaryService = async () => { throw new DOMException('raw-secret', 'SecurityError'); };
+  await assert.rejects(fake.client.selectAndConnect(), error => {
+    assert.equal(error.code, 'permission'); assert.equal(error.stage, 'gatt_service'); assert.equal(error.browserErrorName, 'SecurityError');
+    assert.match(error.message, /^Provisioning service discovery:/); assert.match(error.message, /permission and browser policy/); assert.doesNotMatch(error.message, /raw-secret/);
+    assert.equal(fake.disconnectReasons[0], error); return true;
+  });
+});
+test('public inspection progress and timeout diagnostics distinguish PING, status, and key exchange', async () => {
+  const robot = receiver(); const stock = stockHandler(robot.keyExchange);
+  for (const [command, stage] of [['PING', 'ping'], ['WIFI_STATUS', 'wifi_status'], ['WIFI_KEYEX', 'key_exchange']]) {
+    const fake = transport((value, response) => { if (value !== command) return stock(value, response); response.emit('OK: working'); }, { timeoutMs: 15 });
+    await fake.client.selectAndConnect();
+    await assert.rejects(fake.client.inspect(), error => {
+      assert.equal(error.code, 'timeout'); assert.equal(error.stage, stage); assert.ok(error.message.startsWith(FIRST_SETUP_PROGRESS[stage]));
+      assert.equal(fake.disconnectReasons[0], error); return true;
+    });
+    assert.equal(fake.progress.at(-1), FIRST_SETUP_PROGRESS[stage]);
+    assert.equal(fake.client.connected, false);
+  }
+});
 test('reads optional identity without granting extra command capabilities', async () => {
   const fake = transport(() => {}, { optional: true });
   assert.deepEqual(await fake.client.selectAndConnect(), { deviceName: 'Synthetic Reachy', network: 'CONNECTED [wlan0] robot.invalid', hardwareId: 'synthetic-hardware' });
@@ -104,17 +172,52 @@ test('GATT initialization times out and its late completion cannot overwrite a n
     if (uuid === BLE_UUIDS.service && first) { first = false; return new Promise((resolve) => { finishOldService = async () => resolve(await original(uuid)); }); }
     return original(uuid);
   };
-  await assert.rejects(fake.client.selectAndConnect(), { code: 'timeout' });
+  await assert.rejects(fake.client.selectAndConnect(), { code: 'init_timeout', stage: 'gatt_service' });
   assert.equal(fake.client.connected, false);
   await fake.client.selectAndConnect(); await finishOldService();
   await new Promise((resolve) => setImmediate(resolve));
   assert.equal(fake.client.connected, true); assert.equal((await fake.client.inspect()).status.mode, 'hotspot'); fake.client.disconnect();
 });
+test('late GATT rejection after timeout cannot disconnect a newer selected session', async () => {
+  const fake = transport(stockHandler(receiver().keyExchange), { timeoutMs: 15 });
+  const original = fake.server.getPrimaryService.bind(fake.server);
+  let rejectOldService; let first = true;
+  fake.server.getPrimaryService = uuid => {
+    if (uuid === BLE_UUIDS.service && first) { first = false; return new Promise((_, reject) => { rejectOldService = reject; }); }
+    return original(uuid);
+  };
+  await assert.rejects(fake.client.selectAndConnect(), { code: 'init_timeout', stage: 'gatt_service' });
+  await fake.client.selectAndConnect(); rejectOldService(new DOMException('raw-secret', 'SecurityError'));
+  await new Promise(resolve => setImmediate(resolve));
+  assert.equal(fake.client.connected, true); assert.equal(fake.disconnectReasons.length, 1);
+  assert.equal((await fake.client.inspect()).status.mode, 'hotspot'); fake.client.disconnect();
+});
+test('late GATT connect success cannot disconnect a newer session using the same browser GATT object', async () => {
+  const fake = transport(stockHandler(receiver().keyExchange), { timeoutMs: 15 });
+  let finishOldConnect; let first = true;
+  fake.server.connect = async () => {
+    if (first) { first = false; return new Promise(resolve => { finishOldConnect = () => resolve(fake.server); }); }
+    fake.server.connected = true; return fake.server;
+  };
+  await assert.rejects(fake.client.selectAndConnect(), { code: 'init_timeout', stage: 'gatt_connect' });
+  await fake.client.selectAndConnect(); finishOldConnect();
+  await new Promise(resolve => setImmediate(resolve));
+  assert.equal(fake.client.connected, true); assert.equal(fake.disconnectReasons.length, 1);
+  assert.equal((await fake.client.inspect()).status.mode, 'hotspot'); fake.client.disconnect();
+});
+test('throwing progress and disconnect callbacks cannot break provisioning or cleanup', async () => {
+  const fake = transport(stockHandler(receiver().keyExchange));
+  fake.client.onProgress = () => { throw new Error('UI callback error'); };
+  fake.client.onDisconnect = () => { throw new Error('UI callback error'); };
+  await fake.client.selectAndConnect(); await fake.client.inspect(); await fake.client.authenticate('ABCDE');
+  assert.equal((await fake.client.connectWifi({ ssid: 'lab', password: 'temporary-password', pin: 'ABCDE' })).accepted, true);
+  assert.doesNotThrow(() => fake.client.disconnect()); assert.equal(fake.client.connected, false);
+});
 test('optional identity transport stall is finite and closes the connection', async () => {
   const fake = transport(() => {}, { timeoutMs: 15 });
   const original = fake.server.getPrimaryService.bind(fake.server);
   fake.server.getPrimaryService = (uuid) => uuid === BLE_UUIDS.status ? new Promise(() => {}) : original(uuid);
-  await assert.rejects(fake.client.selectAndConnect(), { code: 'timeout' }); assert.equal(fake.client.connected, false);
+  await assert.rejects(fake.client.selectAndConnect(), { code: 'identity_timeout', stage: 'identity' }); assert.equal(fake.client.connected, false);
 });
 test('ignores intermediate working ACK and serializes concurrent command callers', async () => {
   let complete;
@@ -200,6 +303,9 @@ test('successful synthetic probes precede one sealed mutation; accepted ACK is n
   const mutations = fake.writes.filter((value) => value.startsWith('WIFI_CONNECT_ENC ')); assert.equal(mutations.length, 1);
   assert.equal(robot.open(JSON.parse(mutations[0].slice(17))), 'temporary-secret');
   assert.ok(!fake.writes.join('\n').includes('temporary-secret'));
+  assert.ok(fake.progress.every(label => Object.values(FIRST_SETUP_PROGRESS).includes(label)));
+  assert.doesNotMatch(fake.progress.join('\n'), /ABCDE|temporary-secret/);
+  assert.equal(fake.progress.at(-1), FIRST_SETUP_PROGRESS.wifi_connect);
   assert.equal((await fake.client.getWifiStatus()).mode, 'hotspot'); fake.client.disconnect();
 });
 test('truncated, wrong-sentinel, and unsupported ECHO prevent the secret write', async () => {

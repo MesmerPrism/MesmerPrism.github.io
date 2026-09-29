@@ -4,8 +4,8 @@
   "sourceManifest": "source/SOURCE_MANIFEST.json",
   "archive": {
     "path": "downloads/reachy-mini-controller-v0.1.0.zip",
-    "bytes": 213852,
-    "sha256": "6de66099f0214a3a1c97f2a9b4713859e6367dde5f5eb247884f0995fe1055c1"
+    "bytes": 217403,
+    "sha256": "06acb938726e81b6f38a73c96ef9046af990009c3370b1013a61365c461f9376"
   },
   "sourceFiles": 88
 }

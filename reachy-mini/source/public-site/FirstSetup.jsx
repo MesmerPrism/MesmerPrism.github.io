@@ -21,6 +21,7 @@ export default function FirstSetup() {
   const pin = useRef('');
   const requestedNetwork = useRef('');
   const operation = useRef(0);
+  const progress = useRef('');
   const mounted = useRef(true);
   const wifiForm = useRef(null);
   const pinForm = useRef(null);
@@ -36,7 +37,25 @@ export default function FirstSetup() {
       }
       try {
         await cryptoPreflight();
-        if (!cancelled) { setCapability('ready'); setMessage('Browser check passed. Setup code is loaded; keep this tab open. You can stay connected to the internet while Bluetooth configures Reachy.'); }
+        // Availability is advisory: it does not prove permission, discovery, or
+        // robot compatibility. Never open a chooser outside the Select click.
+        let available;
+        if (typeof navigator.bluetooth.getAvailability === 'function') {
+          let timer;
+          try {
+            available = await Promise.race([
+              navigator.bluetooth.getAvailability(),
+              new Promise(resolve => { timer = setTimeout(resolve, 1500); }),
+            ]);
+          } catch { /* The explicit chooser will report policy failures. */ }
+          finally { clearTimeout(timer); }
+        }
+        if (!cancelled) {
+          setCapability('ready');
+          setMessage(available === false
+            ? 'Encryption check passed, but the browser currently reports Bluetooth unavailable. Check that Bluetooth is on. Select Reachy to test the chooser; browser policy or adapter support may still prevent access.'
+            : 'Encryption check passed. Select Reachy to test Bluetooth access and find your robot. This check does not verify discovery or robot compatibility. You can keep this computer connected to the internet during Bluetooth setup.');
+        }
       } catch {
         if (!cancelled) { setCapability('unsupported'); setMessage('This browser could not complete the encryption check. Try an up-to-date Chrome or Edge browser.'); }
       }
@@ -61,6 +80,13 @@ export default function FirstSetup() {
     setMessage('Bluetooth disconnected. No Wi-Fi request will be repeated automatically.');
   }
 
+  function errorText(failure) {
+    const safe = failure instanceof FirstSetupError ? failure.message : 'The browser operation failed. Check Bluetooth and try selecting Reachy again.';
+    // Progress labels come from the client's fixed vocabulary, never replies,
+    // device names, network names, credentials, or browser exception messages.
+    return progress.current ? `${safe} Last step: ${progress.current}` : safe;
+  }
+
   async function run(label, action) {
     const id = ++operation.current;
     setBusy(true); setError(''); setMessage(label);
@@ -69,7 +95,7 @@ export default function FirstSetup() {
       if (mounted.current && operation.current === id) {
         // Protocol errors are fixed public messages; never display raw browser
         // exceptions or a credential-bearing command/robot response.
-        setError(failure instanceof FirstSetupError ? failure.message : 'The browser operation failed. Check Bluetooth and try selecting Reachy again.');
+        setError(errorText(failure));
         clearSecrets();
         if (!client.current?.connected) setConnected(false);
         setMessage('Setup stopped. Check the last observed status before trying again.');
@@ -79,12 +105,19 @@ export default function FirstSetup() {
 
   function select() {
     client.current?.disconnect();
+    progress.current = '';
     clearSecrets(); setJoined(false); setStatus(null); setIdentity(null); setConnected(false);
-    const selectedClient = createFirstSetupClient({ onDisconnect: reason => {
+    const selectedClient = createFirstSetupClient({ onProgress: label => {
+      if (client.current !== selectedClient || !mounted.current) return;
+      progress.current = label;
+      setMessage(label);
+    }, onDisconnect: reason => {
       if (client.current !== selectedClient || !mounted.current) return;
       operation.current++; clearSecrets(); setConnected(false); setBusy(false);
-      if (reason instanceof FirstSetupError && reason.code !== 'disconnected') setError(reason.message);
-      setMessage('Bluetooth disconnected. A Wi-Fi request may still be running on Reachy. Select the same robot and read its status before submitting again.');
+      if (reason instanceof FirstSetupError && reason.code !== 'disconnected') setError(errorText(reason));
+      setMessage(requestedNetwork.current
+        ? 'Bluetooth disconnected. A Wi-Fi request may still be running on Reachy. Select the same robot and read its status before submitting again.'
+        : 'Bluetooth disconnected during setup checks. No Wi-Fi details were submitted. Check the error’s last step before selecting Reachy again.');
     } });
     client.current = selectedClient;
     // Start requestDevice in this click's activation, before any async preflight.
@@ -169,6 +202,7 @@ export default function FirstSetup() {
     <p className="status" role="status" aria-live="polite">{message}</p>
     {error && <p className="error" role="alert">{error}</p>}
     <div className="actions"><button type="button" onClick={select} disabled={capability !== 'ready' || busy || connected}>Select Reachy</button><button type="button" onClick={refresh} disabled={!connected || busy}>Read network status</button><button type="button" onClick={disconnect} disabled={!client.current}>Disconnect Bluetooth</button></div>
+    <p>In the chooser, wait up to 30 seconds for a named Reachy entry. An “Unknown or unsupported device” entry does not identify your robot. If Reachy never appears, cancel and check discovery before entering any credentials.</p>
     {identity && <dl className="setup-identity"><dt>Selected device</dt><dd>{identity.deviceName || 'Unnamed Bluetooth device'}</dd><dt>Reported hardware identity</dt><dd>{identity.hardwareId || 'Not exposed by this firmware'}</dd><dt>Last observed network</dt><dd>{statusText(status)}</dd><dt>Reported address information</dt><dd>{identity.network || 'Not exposed by this firmware'}</dd></dl>}
     <div className="setup-forms">
       <form ref={pinForm} className="connection-form" onSubmit={authenticate}>

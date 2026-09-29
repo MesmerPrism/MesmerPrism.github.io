@@ -24,8 +24,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 4748,
-      "sha256": "e958d72b6e2ad4c635c00ae3302115e5184f94ec32f6341d4b0bfa9247862320"
+      "bytes": 5136,
+      "sha256": "8bcae3c52314557be4ef98ad6777a1ee1001bd95ef8c94f534a864bfbd9141c8"
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",
@@ -129,8 +129,8 @@
     },
     {
       "path": "public-site/FirstSetup.jsx",
-      "bytes": 12576,
-      "sha256": "176db776dd3b6238ad34a81527d2af707a3c37bbcff5b8fbea8a53771deb8d01"
+      "bytes": 14513,
+      "sha256": "b7e584e7a0620e820c599c5827df698a4c2dbe979b4a7ea22682372683f23936"
     },
     {
       "path": "public-site/FitText.jsx",
@@ -229,8 +229,8 @@
     },
     {
       "path": "src/first-setup.mjs",
-      "bytes": 16611,
-      "sha256": "25af263d46bc0c6e966c11274692181d3d5aa5e091aee556236b34a2d0c4af6d"
+      "bytes": 22030,
+      "sha256": "b53b4229cca5c349532179ff2f1272de9ab6f393b5ca5454e9caa2b7c07cfcf0"
     },
     {
       "path": "src/head-follow.mjs",
@@ -324,8 +324,8 @@
     },
     {
       "path": "test/first-setup.test.mjs",
-      "bytes": 16165,
-      "sha256": "4368ebee984c8e437328b30f1a9de01d2af97b5612fb09aba935c554ff1fd967"
+      "bytes": 23968,
+      "sha256": "770224e95fe154ce792c94fd088de42eb00710d8b83db8b5b8c19672a4c8393b"
     },
     {
       "path": "test/fixtures/text-qa.html",

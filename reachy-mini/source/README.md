@@ -8,6 +8,8 @@ Open **[mesmerprism.com/reachy-mini](https://mesmerprism.com/reachy-mini/)** for
 
 Setup code loads with the page; keep its tab open. The PIN and network password stay in the active tab and are cleared after Wi-Fi submission or disconnection. Reachy's stock encryption protects passive observation but does not authenticate against an active Bluetooth impersonator; use an isolated temporary network for initial testing. This form configures personal Wi-Fi, not eduroam/802.1X. Hugging Face registration is a separate robot-hosted browser handoff after joining the network; review the requested scopes yourself. Setup sends no motion, Wake, audio or firmware-update commands.
 
+The encryption preflight does not prove Bluetooth access or device discovery. Select Reachy to open the browser chooser; allow about 30 seconds for a named Reachy entry. An unknown or unsupported entry alone does not establish robot identity. Browser availability checks are advisory; the explicit chooser reports permission or policy failures separately from robot connection failures.
+
 Enter your robot's Hugging Face identity and read token as prompted. The token stays in memory during the connection; it is not saved in browser storage or included in downloads. The supported daemon version is **1.10.0**. Camera and microphone features require browser permissions.
 
 Hosted SDK transport and the local bridge have different motion and Stop capabilities. The local bridge's identity checks, recovery and measured-hold guarantees do not automatically apply to hosted connections. Follow the connection status and capability limitations shown in the UI. Stop is software control, not a hardware emergency stop.
