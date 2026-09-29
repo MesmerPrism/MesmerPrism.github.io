@@ -31,7 +31,7 @@ const messages = {
   gatt_service: 'The selected device did not expose an accessible Reachy provisioning service. Check that you selected Reachy and that its firmware supports Bluetooth setup.',
   gatt_command: 'The Reachy provisioning command characteristic could not be accessed. This firmware may not support this setup path.',
   gatt_response: 'The Reachy provisioning response characteristic could not be accessed. This firmware may not support this setup path.',
-  gatt_properties: 'The Reachy provisioning characteristics lack the required write and notification capabilities. This firmware cannot use this setup path.',
+  gatt_properties: 'The Reachy provisioning characteristics lack the required write, read, and notification capabilities. This firmware cannot use this setup path.',
   gatt_notifications: 'Bluetooth response notifications could not be enabled. No setup commands were sent; try selecting Reachy again.',
   disconnected: 'Bluetooth disconnected. Select the robot again and observe its status before another attempt.',
   timeout: 'Bluetooth response timed out. The connection was closed; select the robot again and observe status before another attempt.',
@@ -141,7 +141,7 @@ class FirstSetupClient {
     this.device = null; this.server = null; this.command = null; this.response = null; this.pending = null;
     this.authenticated = false; this.queue = Promise.resolve(); this.generation = 0;
     this.notification = (event) => {
-      if (!this.pending || this.pending.settled) return;
+      if (!this.pending || this.pending.settled || this.pending.readAfterWrite) return;
       try {
         const reply = decoder.decode(event.target.value);
         if (reply === 'OK: working') return;
@@ -196,7 +196,7 @@ class FirstSetupClient {
         if (generation !== this.generation) throw fail('disconnected');
         stage = 'gatt_properties';
         this.progress(stage);
-        if (!command.properties?.write || !response.properties?.notify || typeof command.writeValueWithResponse !== 'function') throw fail('gatt_properties');
+        if (!command.properties?.write || !response.properties?.read || !response.properties?.notify || typeof response.readValue !== 'function' || typeof command.writeValueWithResponse !== 'function') throw fail('gatt_properties');
         this.command = command; this.response = response;
         stage = 'gatt_notifications';
         this.progress(stage);
@@ -226,21 +226,35 @@ class FirstSetupClient {
     if (!this.connected || this.pending) throw fail('disconnected');
     const generation = this.generation;
     const characteristic = this.command;
+    const responseCharacteristic = this.response;
+    // Upstream WriteValue stores synchronous replies without notifying. Only
+    // these explicitly known commands use a read after the completed write.
+    // Async Wi-Fi results must never accept an old cached read value.
+    const readAfterWrite = command === 'PING' || command.startsWith('PIN_') || command.startsWith('BROWSER_SETUP_PROBE_');
     const stage = command === 'PING' ? 'ping' : command === 'WIFI_STATUS' ? 'wifi_status' : command === 'WIFI_KEYEX' ? 'key_exchange'
       : command.startsWith('PIN_') ? 'authenticate' : command === 'WIFI_SCAN' ? 'wifi_scan' : command.startsWith('BROWSER_SETUP_PROBE_') ? 'probe' : 'wifi_connect';
     this.progress(stage);
     if (generation !== this.generation || !this.connected) throw fail('disconnected');
     let timer;
     const reply = new Promise((resolve, reject) => {
-      this.pending = { resolve, reject, settled: false };
+      this.pending = { resolve, reject, settled: false, readAfterWrite };
       timer = setTimeout(() => { if (generation === this.generation) this.invalidate('timeout', stageTimeout('timeout', stage)); }, this.timeoutMs);
     });
-    // Notifications can arrive synchronously inside the write, before its promise resolves.
-    // The timeout covers both the write promise and the final reply.
+    // Async notifications can precede write completion. Synchronous commands
+    // instead read only after the write resolves. One timeout covers write,
+    // notification or read; neither path retries an uncertain operation.
     const pending = this.pending;
-    const write = Promise.resolve().then(() => {
+    const write = Promise.resolve().then(async () => {
       if (generation !== this.generation) throw fail('disconnected');
-      return characteristic.writeValueWithResponse(encoder.encode(command));
+      await characteristic.writeValueWithResponse(encoder.encode(command));
+      if (readAfterWrite) {
+        if (generation !== this.generation || this.pending !== pending) throw fail('disconnected');
+        const value = await responseCharacteristic.readValue();
+        if (generation !== this.generation || this.pending !== pending) throw fail('disconnected');
+        const reply = decoder.decode(value);
+        pending.settled = true;
+        pending.resolve(reply);
+      }
     }).catch(() => {
       if (generation === this.generation) this.invalidate('transport');
       throw fail('transport');

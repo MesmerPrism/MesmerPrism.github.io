@@ -2,14 +2,14 @@
   "version": "0.1.0",
   "files": [
     {
-      "path": "assets/RobotModel-CQJIkgTe.js",
+      "path": "assets/RobotModel-CAEuTgVP.js",
       "bytes": 654994,
-      "sha256": "ef438d55545b8dda04c21f0df46b461d3d408b8927932ee62623cf3cc1e12f77"
+      "sha256": "ee365fc5481d1dbef3c921b98183120f0ac028d19a949fc7c02cddb0f177bf94"
     },
     {
-      "path": "assets/demo-sdk-D6twd4iN.js",
+      "path": "assets/demo-sdk-5TJ5h4h7.js",
       "bytes": 1317,
-      "sha256": "47efc3cac9ba2fa7d4e9ca54ea2c22172dc7f102138589c9d6be60a66dc9f3a8"
+      "sha256": "9d5db57bdc61097e8329a8ad5b70e128e81a287cfdb92573716a83a09b5ec827"
     },
     {
       "path": "assets/head-tracker-C8P4Y3-k.js",
@@ -22,9 +22,9 @@
       "sha256": "626da8f1e2aab1cac8f2e275644358fb3dd211f050925ae34f70e0ec720503b9"
     },
     {
-      "path": "assets/index-DjHfaBu1.js",
-      "bytes": 333936,
-      "sha256": "e02d2eadce9ab05d1ef046817b0e4aa2bcee7659e6f8a3e72de41f08bd71a6a4"
+      "path": "assets/index-DC0ksn-o.js",
+      "bytes": 334349,
+      "sha256": "7a87d938ee7cf3d151dd5601d32539c8077af070f7bd3d8854e8b30ac6840b9c"
     },
     {
       "path": "assets/index-WviORm3d.css",
@@ -44,7 +44,7 @@
     {
       "path": "index.html",
       "bytes": 562,
-      "sha256": "0e84ea3c58a2ef79da52c2443aa3b642747c76ebf0f5ff167345a20b8b5d172d"
+      "sha256": "701514e40e1de3a82032a57f05056cb012e038066b584d057cb0f68dc5c078f8"
     }
   ]
 }

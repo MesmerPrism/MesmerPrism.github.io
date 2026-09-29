@@ -23,9 +23,12 @@ function receiver() {
 function transport(handler, { optional = false, timeoutMs = 100 } = {}) {
   const writes = []; const order = []; let asked = false; let options;
   class Response extends EventTarget {
-    properties = { notify: true };
+    properties = { read: true, notify: true };
+    value = new DataView(new ArrayBuffer(0));
     async startNotifications() { order.push('subscribe'); }
-    emit(text) { this.value = new DataView(new TextEncoder().encode(text).buffer); this.dispatchEvent(new Event('characteristicvaluechanged')); }
+    store(text) { this.value = new DataView(new TextEncoder().encode(text).buffer); }
+    async readValue() { order.push('read'); return this.value; }
+    emit(text) { this.store(text); this.dispatchEvent(new Event('characteristicvaluechanged')); }
   }
   const response = new Response();
   const command = { properties: { write: true }, writeValueWithResponse(data) {
@@ -49,11 +52,11 @@ function transport(handler, { optional = false, timeoutMs = 100 } = {}) {
 }
 function stockHandler(keyExchange, status = { mode: 'hotspot', connected: null, error: null }) {
   return (value, response) => {
-    if (value === 'PING') response.emit('PONG');
-    else if (value.startsWith('PIN_')) response.emit('OK: Connected');
+    if (value === 'PING') response.store('PONG');
+    else if (value.startsWith('PIN_')) response.store('OK: Connected');
     else if (value === 'WIFI_STATUS') { response.emit('OK: working'); queueMicrotask(() => response.emit(JSON.stringify(status))); }
     else if (value === 'WIFI_KEYEX') { response.emit('OK: working'); queueMicrotask(() => response.emit(JSON.stringify(keyExchange))); }
-    else if (value.startsWith('BROWSER_SETUP_PROBE_')) response.emit(`ECHO: ${value}`);
+    else if (value.startsWith('BROWSER_SETUP_PROBE_')) response.store(`ECHO: ${value}`);
     else if (value.startsWith('WIFI_CONNECT_ENC ')) { const payload = JSON.parse(value.slice(17)); response.emit('OK: working'); queueMicrotask(() => response.emit(`OK: Connecting to ${payload.ssid}`)); }
   };
 }
@@ -150,6 +153,7 @@ test('public inspection progress and timeout diagnostics distinguish PING, statu
   const robot = receiver(); const stock = stockHandler(robot.keyExchange);
   for (const [command, stage] of [['PING', 'ping'], ['WIFI_STATUS', 'wifi_status'], ['WIFI_KEYEX', 'key_exchange']]) {
     const fake = transport((value, response) => { if (value !== command) return stock(value, response); response.emit('OK: working'); }, { timeoutMs: 15 });
+    if (command === 'PING') fake.response.readValue = () => new Promise(() => {});
     await fake.client.selectAndConnect();
     await assert.rejects(fake.client.inspect(), error => {
       assert.equal(error.code, 'timeout'); assert.equal(error.stage, stage); assert.ok(error.message.startsWith(FIRST_SETUP_PROGRESS[stage]));
@@ -157,6 +161,63 @@ test('public inspection progress and timeout diagnostics distinguish PING, statu
     });
     assert.equal(fake.progress.at(-1), FIRST_SETUP_PROGRESS[stage]);
     assert.equal(fake.client.connected, false);
+  }
+});
+test('stock synchronous replies require a response read strictly after the completed write, ignoring notifications', async () => {
+  let completeWrite;
+  const fake = transport((_, response) => {
+    response.emit('OK: Connected');
+    return new Promise(resolve => { completeWrite = () => { response.store('ERROR: Incorrect PIN reflected-secret'); resolve(); }; });
+  });
+  await fake.client.selectAndConnect();
+  const auth = fake.client.authenticate('ABCDE');
+  await new Promise(resolve => setImmediate(resolve));
+  assert.equal(fake.client.authenticated, false); assert.equal(fake.order.includes('read'), false);
+  completeWrite();
+  await assert.rejects(auth, error => error.code === 'pin' && !error.message.includes('reflected-secret'));
+  assert.deepEqual(fake.order, ['subscribe', 'write', 'read']); fake.client.disconnect();
+});
+test('async Wi-Fi status and key exchange never accept cached readback without a final notification', async () => {
+  const robot = receiver(); const stock = stockHandler(robot.keyExchange);
+  for (const blocked of ['WIFI_STATUS', 'WIFI_KEYEX']) {
+    const fake = transport((command, response) => {
+      if (command !== blocked) return stock(command, response);
+      response.store(JSON.stringify(blocked === 'WIFI_STATUS' ? { mode: 'wlan', connected: 'lab', error: null } : robot.keyExchange));
+    }, { timeoutMs: 15 });
+    await fake.client.selectAndConnect(); await assert.rejects(fake.client.inspect(), { code: 'timeout' });
+    assert.equal(fake.order.filter(item => item === 'read').length, 1); // PING only.
+    assert.equal(fake.client.connected, false);
+  }
+});
+test('cached asynchronous connect acknowledgement cannot declare acceptance or trigger a retry', async () => {
+  const stock = stockHandler(receiver().keyExchange);
+  const fake = transport((command, response) => {
+    if (!command.startsWith('WIFI_CONNECT_ENC ')) return stock(command, response);
+    response.store('OK: Connecting to lab');
+  }, { timeoutMs: 15 });
+  await fake.client.selectAndConnect(); await fake.client.authenticate('ABCDE');
+  await assert.rejects(fake.client.connectWifi({ ssid: 'lab', password: 'temporary-password', pin: 'ABCDE' }), { code: 'timeout', stage: 'wifi_connect' });
+  assert.equal(fake.writes.filter(command => command.startsWith('WIFI_CONNECT_ENC ')).length, 1);
+  assert.equal(fake.client.connected, false);
+});
+test('a timed-out synchronous read cannot satisfy a newer session pending PIN command', async () => {
+  const fake = transport(stockHandler(receiver().keyExchange), { timeoutMs: 30 });
+  let oldRead; let newRead; let count = 0;
+  fake.response.readValue = () => new Promise(resolve => { count++; if (count === 1) oldRead = resolve; else newRead = resolve; });
+  await fake.client.selectAndConnect(); await assert.rejects(fake.client.authenticate('ABCDE'), { code: 'timeout', stage: 'authenticate' });
+  await fake.client.selectAndConnect();
+  const auth = fake.client.authenticate('ABCDE'); await new Promise(resolve => setImmediate(resolve));
+  const value = text => new DataView(new TextEncoder().encode(text).buffer);
+  oldRead(value('OK: Connected')); await new Promise(resolve => setImmediate(resolve));
+  assert.equal(fake.client.connected, true); assert.equal(fake.client.authenticated, false);
+  newRead(value('OK: Connected')); await auth; assert.equal(fake.client.authenticated, true); fake.client.disconnect();
+});
+test('missing response read capability stops before any command write', async () => {
+  for (const missing of ['property', 'method']) {
+    const fake = transport(() => {});
+    if (missing === 'property') fake.response.properties.read = false; else fake.response.readValue = undefined;
+    await assert.rejects(fake.client.selectAndConnect(), { code: 'gatt_properties' });
+    assert.deepEqual(fake.writes, []); assert.equal(fake.client.connected, false);
   }
 });
 test('reads optional identity without granting extra command capabilities', async () => {
