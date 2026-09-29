@@ -24,6 +24,9 @@ export const FIRST_SETUP_PROGRESS = Object.freeze({
 });
 const encoder = new TextEncoder();
 const decoder = new TextDecoder('utf-8', { fatal: true });
+// A browser may reuse a characteristic object across reconnects/clients.
+// Reads dispatch value-changed events, including late reads from old sessions.
+const responseReads = new WeakMap();
 const messages = {
   crypto: 'This browser cannot perform the required provisioning cryptography.',
   unavailable: 'Web Bluetooth is unavailable. Use a supported browser in a secure context.',
@@ -145,7 +148,7 @@ class FirstSetupClient {
     this.device = null; this.server = null; this.command = null; this.response = null; this.pending = null;
     this.authenticated = false; this.queue = Promise.resolve(); this.generation = 0;
     this.notification = (event) => {
-      if (!this.pending || this.pending.settled || this.pending.readAfterWrite) return;
+      if (!this.pending || this.pending.settled || this.pending.readAfterWrite || this.pending.diagnosticReading || responseReads.get(event.target)) return;
       try {
         const reply = decoder.decode(event.target.value);
         if (reply === 'OK: working') return;
@@ -254,7 +257,20 @@ class FirstSetupClient {
       await characteristic.writeValueWithResponse(encoder.encode(command));
       if (readAfterWrite || (publicDiagnosticRead && !pending.settled)) {
         if (generation !== this.generation || this.pending !== pending) throw fail('disconnected');
-        const value = await responseCharacteristic.readValue();
+        // Web Bluetooth also emits characteristicvaluechanged for reads.
+        // Diagnostic reads must never turn cached data into a notification.
+        // A genuine notification overlapping this read is conservatively
+        // ignored too; it may time out but cannot produce false success.
+        pending.diagnosticReading = publicDiagnosticRead;
+        responseReads.set(responseCharacteristic, (responseReads.get(responseCharacteristic) || 0) + 1);
+        let value;
+        try { value = await responseCharacteristic.readValue(); }
+        finally {
+          const remaining = responseReads.get(responseCharacteristic) - 1;
+          if (remaining) responseReads.set(responseCharacteristic, remaining);
+          else responseReads.delete(responseCharacteristic);
+          pending.diagnosticReading = false;
+        }
         if (generation !== this.generation || this.pending !== pending) throw fail('disconnected');
         const reply = decoder.decode(value);
         if (readAfterWrite) {

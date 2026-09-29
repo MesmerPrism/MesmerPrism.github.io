@@ -229,8 +229,8 @@
     },
     {
       "path": "src/first-setup.mjs",
-      "bytes": 24895,
-      "sha256": "322630c09f271679107fa9b680cb595e7579a9614f83caf4deb9bd20d77146de"
+      "bytes": 25926,
+      "sha256": "2d3dd930a0c8f94e9fc3f414d03f8362ce913f46a49b9c52d76dbd9842b798e9"
     },
     {
       "path": "src/head-follow.mjs",
@@ -324,8 +324,8 @@
     },
     {
       "path": "test/first-setup.test.mjs",
-      "bytes": 31825,
-      "sha256": "4811df02951567aaaf91c659f418d56506df7479539629a2a9fdbc2fe537c7db"
+      "bytes": 37407,
+      "sha256": "cbd923ea154875a43c2e56e528585bcfac706eb4da6585e64d790dc615399eaa"
     },
     {
       "path": "test/fixtures/text-qa.html",

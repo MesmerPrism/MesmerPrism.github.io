@@ -2,14 +2,14 @@
   "version": "0.1.0",
   "files": [
     {
-      "path": "assets/RobotModel-BEFdwBkF.js",
+      "path": "assets/RobotModel-CjLV_CV6.js",
       "bytes": 654994,
-      "sha256": "b2fed1676051ee105a741a40d5ee8dabd5eabe9e3f0178b64baed6be538fbf1e"
+      "sha256": "10eab0afe52b6e453b84ad33dd1ef45f1d994756ab0b8dcf2000e2f66f8377e0"
     },
     {
-      "path": "assets/demo-sdk-DP836DcM.js",
+      "path": "assets/demo-sdk-DWIbnaNU.js",
       "bytes": 1317,
-      "sha256": "ecb33c132a0b299e6b1fe9b308622ec4a44b1b526636e898e110fcab9b425df3"
+      "sha256": "3fb29acc40dfaf8118d04dc31e16293d8161aa7ca95004c02dfa80a4883da13b"
     },
     {
       "path": "assets/head-tracker-C8P4Y3-k.js",
@@ -22,9 +22,9 @@
       "sha256": "626da8f1e2aab1cac8f2e275644358fb3dd211f050925ae34f70e0ec720503b9"
     },
     {
-      "path": "assets/index-DqF__mzU.js",
-      "bytes": 335296,
-      "sha256": "915440c240910e07d89f859c9d0dc56098d5f42e3c65a96ef4f1c4b09de2c3d4"
+      "path": "assets/index-D2J4ldKz.js",
+      "bytes": 335492,
+      "sha256": "f108dcd8773a1692d66a9d97ecd6a37fd5dad68a2ff59a511c1189d97bf64a58"
     },
     {
       "path": "assets/index-WviORm3d.css",
@@ -44,7 +44,7 @@
     {
       "path": "index.html",
       "bytes": 562,
-      "sha256": "268d46260f63029d46fcb2d7aa44b24ad55fe4bc9a4f30140623b3df28e1e111"
+      "sha256": "b7209e9d5c1cee8de417fbd4dc1ef2f86028720e2f9f7792929fbf9a0397d6da"
     }
   ]
 }

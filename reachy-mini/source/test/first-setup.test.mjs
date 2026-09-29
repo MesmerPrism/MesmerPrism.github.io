@@ -27,7 +27,13 @@ function transport(handler, { optional = false, timeoutMs = 100 } = {}) {
     value = new DataView(new ArrayBuffer(0));
     async startNotifications() { order.push('subscribe'); }
     store(text) { this.value = new DataView(new TextEncoder().encode(text).buffer); }
-    async readValue() { order.push('read'); return this.value; }
+    async readValue() {
+      order.push('read');
+      // Web Bluetooth reads also dispatch characteristicvaluechanged; this is
+      // deliberately indistinguishable from a notification in the event API.
+      this.dispatchEvent(new Event('characteristicvaluechanged'));
+      return this.value;
+    }
     emit(text) { this.store(text); this.dispatchEvent(new Event('characteristicvaluechanged')); }
   }
   const response = new Response();
@@ -48,7 +54,7 @@ function transport(handler, { optional = false, timeoutMs = 100 } = {}) {
   device.gatt = server;
   let disconnected = 0; const disconnectReasons = []; const progress = [];
   const client = createFirstSetupClient({ bluetooth: { requestDevice(value) { asked = true; options = value; return Promise.resolve(device); } }, crypto: webcrypto, timeoutMs, onDisconnect(reason) { disconnected++; disconnectReasons.push(reason); }, onProgress(label) { progress.push(label); } });
-  return { client, response, command, server, writes, order, disconnectReasons, progress, asked: () => asked, options: () => options, disconnected: () => disconnected };
+  return { client, device, response, command, server, writes, order, disconnectReasons, progress, asked: () => asked, options: () => options, disconnected: () => disconnected };
 }
 function stockHandler(keyExchange, status = { mode: 'hotspot', connected: null, error: null }) {
   return (value, response) => {
@@ -177,7 +183,7 @@ test('stock synchronous replies require a response read strictly after the compl
   await assert.rejects(auth, error => error.code === 'pin' && !error.message.includes('reflected-secret'));
   assert.deepEqual(fake.order, ['subscribe', 'write', 'read']); fake.client.disconnect();
 });
-test('async Wi-Fi status and key exchange never accept cached readback without a final notification', async () => {
+test('async Wi-Fi status and key exchange never accept cached readback or its read-induced event without a final notification', async () => {
   const robot = receiver(); const stock = stockHandler(robot.keyExchange);
   for (const blocked of ['WIFI_STATUS', 'WIFI_KEYEX']) {
     const fake = transport((command, response) => {
@@ -190,7 +196,7 @@ test('async Wi-Fi status and key exchange never accept cached readback without a
     assert.equal(fake.client.connected, false);
   }
 });
-test('exact synchronous public Wi-Fi ECHOs identify unsupported provisioning without sending credentials', async () => {
+test('exact synchronous public Wi-Fi ECHOs and read-induced events identify unsupported provisioning without sending credentials', async () => {
   const stock = stockHandler(receiver().keyExchange);
   for (const [command, stage] of [['WIFI_STATUS', 'wifi_status'], ['WIFI_KEYEX', 'key_exchange']]) {
     const fake = transport((value, response) => { if (value === command) response.store(`ECHO: ${value}`); else return stock(value, response); });
@@ -203,6 +209,18 @@ test('exact synchronous public Wi-Fi ECHOs identify unsupported provisioning wit
     assert.equal(fake.client.connected, false);
     assert.ok(fake.writes.every(value => ['PING', 'WIFI_STATUS', 'WIFI_KEYEX'].includes(value)));
   }
+});
+test('a genuine final notification overlapping a public diagnostic read is conservatively ignored', async () => {
+  const fake = transport((_, response) => response.store('OK: working'), { timeoutMs: 15 });
+  const originalRead = fake.response.readValue.bind(fake.response);
+  fake.response.readValue = async () => {
+    fake.response.emit('{"mode":"wlan","connected":"lab","error":null}');
+    return originalRead();
+  };
+  await fake.client.selectAndConnect();
+  await assert.rejects(fake.client.getWifiStatus(), { code: 'timeout', stage: 'wifi_status' });
+  assert.equal(fake.client.connected, false);
+  assert.equal(fake.progress.at(-1), FIRST_SETUP_PROGRESS.wifi_status_cached);
 });
 test('public diagnostic readback rejects synchronous errors safely, but unrelated ECHOs and ACKs prove nothing', async () => {
   for (const cached of ['ERROR: reflected-private-value', 'ECHO: WIFI_KEYEX', 'ECHO: WIFI_STATUS trailing', 'OK: working']) {
@@ -240,6 +258,72 @@ test('a late timed-out public diagnostic ECHO cannot reject a newer pending comm
   await new Promise(resolve => setImmediate(resolve));
   oldRead(new DataView(new TextEncoder().encode('ECHO: WIFI_STATUS').buffer));
   await new Promise(resolve => setImmediate(resolve)); assert.equal(fake.client.connected, true);
+  fake.response.emit('{"mode":"hotspot","connected":null,"error":null}');
+  assert.equal((await current).mode, 'hotspot'); fake.client.disconnect();
+});
+test('a timed-out synchronous read event cannot settle a new async command sharing the response characteristic', async () => {
+  const fake = transport((command, response) => response.store(command.startsWith('PIN_') ? 'OK: Connected' : 'OK: working'), { timeoutMs: 50 });
+  const originalRead = fake.response.readValue.bind(fake.response);
+  let completeOldRead; let reads = 0;
+  fake.response.readValue = () => {
+    reads++;
+    if (reads === 1) return new Promise(resolve => { completeOldRead = text => { fake.response.store(text); fake.response.dispatchEvent(new Event('characteristicvaluechanged')); resolve(fake.response.value); }; });
+    return originalRead();
+  };
+  await fake.client.selectAndConnect(); await assert.rejects(fake.client.authenticate('ABCDE'), { code: 'timeout' });
+  await fake.client.selectAndConnect();
+  let settled = false;
+  const current = fake.client.getWifiStatus().then(value => { settled = true; return value; });
+  await new Promise(resolve => setImmediate(resolve));
+  // The new operation's diagnostic read has finished. Only the old read's
+  // characteristic-level count can now distinguish this event from a notify.
+  completeOldRead('{"mode":"wlan","connected":"stale-network","error":null}');
+  await new Promise(resolve => setImmediate(resolve));
+  assert.equal(settled, false); assert.equal(fake.client.connected, true);
+  fake.response.emit('{"mode":"hotspot","connected":null,"error":null}');
+  assert.equal((await current).mode, 'hotspot'); fake.client.disconnect();
+});
+test('read-induced JSON from an old client cannot settle a different client sharing the characteristic', async () => {
+  const fake = transport((_, response) => response.store('OK: working'), { timeoutMs: 50 });
+  const originalRead = fake.response.readValue.bind(fake.response);
+  let completeOldRead; let reads = 0;
+  fake.response.readValue = () => {
+    reads++;
+    if (reads === 1) return new Promise(resolve => { completeOldRead = text => { fake.response.store(text); fake.response.dispatchEvent(new Event('characteristicvaluechanged')); resolve(fake.response.value); }; });
+    return originalRead();
+  };
+  await fake.client.selectAndConnect(); await assert.rejects(fake.client.getWifiStatus(), { code: 'timeout' });
+  const nextClient = createFirstSetupClient({ bluetooth: { requestDevice: () => Promise.resolve(fake.device) }, timeoutMs: 50, crypto: webcrypto });
+  await nextClient.selectAndConnect();
+  let settled = false;
+  const current = nextClient.getWifiStatus().then(value => { settled = true; return value; });
+  await new Promise(resolve => setImmediate(resolve));
+  completeOldRead('{"mode":"wlan","connected":"stale-network","error":null}');
+  await new Promise(resolve => setImmediate(resolve));
+  assert.equal(settled, false); assert.equal(nextClient.connected, true);
+  fake.response.emit('{"mode":"hotspot","connected":null,"error":null}');
+  assert.equal((await current).mode, 'hotspot'); nextClient.disconnect();
+});
+test('two overlapping timed-out reads remain suppressed until both characteristic read counts release', async () => {
+  const fake = transport((command, response) => response.store(command.startsWith('PIN_') ? 'OK: Connected' : 'OK: working'), { timeoutMs: 50 });
+  const originalRead = fake.response.readValue.bind(fake.response);
+  const finish = []; let reads = 0;
+  fake.response.readValue = () => {
+    reads++;
+    if (reads <= 2) return new Promise(resolve => { finish.push(text => { fake.response.store(text); fake.response.dispatchEvent(new Event('characteristicvaluechanged')); resolve(fake.response.value); }); });
+    return originalRead();
+  };
+  await fake.client.selectAndConnect(); await assert.rejects(fake.client.authenticate('ABCDE'), { code: 'timeout' });
+  await fake.client.selectAndConnect(); await assert.rejects(fake.client.getWifiStatus(), { code: 'timeout' });
+  await fake.client.selectAndConnect();
+  let settled = false;
+  const current = fake.client.getWifiStatus().then(value => { settled = true; return value; });
+  await new Promise(resolve => setImmediate(resolve));
+  const stale = '{"mode":"wlan","connected":"stale-network","error":null}';
+  finish[0](stale); await new Promise(resolve => setImmediate(resolve));
+  assert.equal(settled, false); assert.equal(fake.client.connected, true);
+  finish[1](stale); await new Promise(resolve => setImmediate(resolve));
+  assert.equal(settled, false); assert.equal(fake.client.connected, true);
   fake.response.emit('{"mode":"hotspot","connected":null,"error":null}');
   assert.equal((await current).mode, 'hotspot'); fake.client.disconnect();
 });
