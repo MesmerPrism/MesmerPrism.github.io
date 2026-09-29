@@ -159,7 +159,7 @@ test('public inspection progress and timeout diagnostics distinguish PING, statu
       assert.equal(error.code, 'timeout'); assert.equal(error.stage, stage); assert.ok(error.message.startsWith(FIRST_SETUP_PROGRESS[stage]));
       assert.equal(fake.disconnectReasons[0], error); return true;
     });
-    assert.equal(fake.progress.at(-1), FIRST_SETUP_PROGRESS[stage]);
+    assert.equal(fake.progress.at(-1), FIRST_SETUP_PROGRESS[command === 'PING' ? stage : 'public_ack']);
     assert.equal(fake.client.connected, false);
   }
 });
@@ -185,9 +185,63 @@ test('async Wi-Fi status and key exchange never accept cached readback without a
       response.store(JSON.stringify(blocked === 'WIFI_STATUS' ? { mode: 'wlan', connected: 'lab', error: null } : robot.keyExchange));
     }, { timeoutMs: 15 });
     await fake.client.selectAndConnect(); await assert.rejects(fake.client.inspect(), { code: 'timeout' });
-    assert.equal(fake.order.filter(item => item === 'read').length, 1); // PING only.
+    assert.equal(fake.order.filter(item => item === 'read').length, 2); // PING and negative-only public diagnostic.
+    assert.equal(fake.progress.at(-1), FIRST_SETUP_PROGRESS[blocked === 'WIFI_STATUS' ? 'wifi_status_cached' : 'key_exchange_cached']);
     assert.equal(fake.client.connected, false);
   }
+});
+test('exact synchronous public Wi-Fi ECHOs identify unsupported provisioning without sending credentials', async () => {
+  const stock = stockHandler(receiver().keyExchange);
+  for (const [command, stage] of [['WIFI_STATUS', 'wifi_status'], ['WIFI_KEYEX', 'key_exchange']]) {
+    const fake = transport((value, response) => { if (value === command) response.store(`ECHO: ${value}`); else return stock(value, response); });
+    await fake.client.selectAndConnect();
+    await assert.rejects(fake.client.inspect(), error => {
+      assert.equal(error.code, 'unsupported_provisioning'); assert.equal(error.stage, stage);
+      assert.match(error.message, /does not support this Wi-Fi provisioning command/);
+      assert.equal(fake.disconnectReasons[0], error); return true;
+    });
+    assert.equal(fake.client.connected, false);
+    assert.ok(fake.writes.every(value => ['PING', 'WIFI_STATUS', 'WIFI_KEYEX'].includes(value)));
+  }
+});
+test('public diagnostic readback rejects synchronous errors safely, but unrelated ECHOs and ACKs prove nothing', async () => {
+  for (const cached of ['ERROR: reflected-private-value', 'ECHO: WIFI_KEYEX', 'ECHO: WIFI_STATUS trailing', 'OK: working']) {
+    const fake = transport((_, response) => response.store(cached), { timeoutMs: 15 });
+    await fake.client.selectAndConnect();
+    await assert.rejects(fake.client.getWifiStatus(), error => {
+      assert.equal(error.code, cached.startsWith('ERROR:') ? 'rejected' : 'timeout'); assert.equal(error.stage, 'wifi_status');
+      assert.doesNotMatch(error.message, /reflected-private-value|trailing/); return true;
+    });
+    assert.equal(fake.order.filter(item => item === 'read').length, 1);
+    assert.equal(fake.client.connected, false);
+  }
+});
+test('final public notifications received during the write skip needless diagnostic readback', async () => {
+  const robot = receiver();
+  const fake = transport((command, response) => {
+    if (command === 'PING') response.store('PONG');
+    else if (command === 'WIFI_STATUS') response.emit('{"mode":"hotspot","connected":null,"error":null}');
+    else if (command === 'WIFI_KEYEX') response.emit(JSON.stringify(robot.keyExchange));
+  });
+  const read = fake.response.readValue.bind(fake.response);
+  fake.response.readValue = () => {
+    assert.equal(fake.writes.at(-1), 'PING'); return read();
+  };
+  await fake.client.selectAndConnect(); assert.equal((await fake.client.inspect()).status.mode, 'hotspot');
+  assert.equal(fake.order.filter(item => item === 'read').length, 1); fake.client.disconnect();
+});
+test('a late timed-out public diagnostic ECHO cannot reject a newer pending command', async () => {
+  let oldRead; let reads = 0;
+  const fake = transport((_, response) => response.store('OK: working'), { timeoutMs: 30 });
+  const read = fake.response.readValue.bind(fake.response);
+  fake.response.readValue = () => { reads++; if (reads === 1) return new Promise(resolve => { oldRead = resolve; }); return read(); };
+  await fake.client.selectAndConnect(); await assert.rejects(fake.client.getWifiStatus(), { code: 'timeout' });
+  await fake.client.selectAndConnect(); const current = fake.client.getWifiStatus();
+  await new Promise(resolve => setImmediate(resolve));
+  oldRead(new DataView(new TextEncoder().encode('ECHO: WIFI_STATUS').buffer));
+  await new Promise(resolve => setImmediate(resolve)); assert.equal(fake.client.connected, true);
+  fake.response.emit('{"mode":"hotspot","connected":null,"error":null}');
+  assert.equal((await current).mode, 'hotspot'); fake.client.disconnect();
 });
 test('cached asynchronous connect acknowledgement cannot declare acceptance or trigger a retry', async () => {
   const stock = stockHandler(receiver().keyExchange);

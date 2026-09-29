@@ -18,6 +18,9 @@ export const FIRST_SETUP_PROGRESS = Object.freeze({
   key_exchange: 'Checking encrypted provisioning support…', authenticate: 'Verifying the printed PIN…',
   wifi_scan: 'Reading available Wi-Fi networks…', probe: 'Checking complete synthetic Bluetooth writes…',
   wifi_connect: 'Submitting the encrypted Wi-Fi request…',
+  wifi_status_cached: 'A cached Wi-Fi status value was readable; waiting for the final notification…',
+  key_exchange_cached: 'A cached provisioning key value was readable; waiting for the final notification…',
+  public_ack: 'Bluetooth write acknowledgement received; waiting for the final Wi-Fi notification…',
 });
 const encoder = new TextEncoder();
 const decoder = new TextDecoder('utf-8', { fatal: true });
@@ -45,6 +48,7 @@ const messages = {
   input: 'Enter a valid SSID, password, and five-character printed PIN.',
   size: 'The complete command exceeds the 512-byte Bluetooth limit.',
   probe: 'The robot did not return the complete synthetic write probe. No Wi-Fi credentials were sent.',
+  unsupported_provisioning: 'The robot’s Bluetooth handler does not support this Wi-Fi provisioning command. No Wi-Fi credentials were sent. Use the reported address to inspect its shipped firmware and setup options.',
 };
 export class FirstSetupError extends Error {
   constructor(code) { super(messages[code] || messages.protocol); this.name = 'FirstSetupError'; this.code = code; }
@@ -67,7 +71,7 @@ function selectionError(error, stage) {
   if (code !== stage) safe.message = `${selectionStages[stage]} ${safe.message}`;
   return safe;
 }
-function stageTimeout(code, stage) {
+function stageFailure(code, stage) {
   const error = fail(code); error.stage = stage;
   error.message = `${FIRST_SETUP_PROGRESS[stage]} ${error.message}`;
   return error;
@@ -172,7 +176,7 @@ class FirstSetupClient {
       if (generation !== this.generation) throw fail('disconnected');
       this.device = device; device.addEventListener('gattserverdisconnected', this.disconnection);
       let timer;
-      const timeout = new Promise((_, reject) => { timer = setTimeout(() => { const error = stageTimeout('init_timeout', stage); if (generation === this.generation) this.invalidate(error.code, error); reject(error); }, this.timeoutMs); });
+      const timeout = new Promise((_, reject) => { timer = setTimeout(() => { const error = stageFailure('init_timeout', stage); if (generation === this.generation) this.invalidate(error.code, error); reject(error); }, this.timeoutMs); });
       const initialize = async () => {
         const server = await device.gatt.connect();
         if (generation !== this.generation) {
@@ -231,6 +235,7 @@ class FirstSetupClient {
     // these explicitly known commands use a read after the completed write.
     // Async Wi-Fi results must never accept an old cached read value.
     const readAfterWrite = command === 'PING' || command.startsWith('PIN_') || command.startsWith('BROWSER_SETUP_PROBE_');
+    const publicDiagnosticRead = command === 'WIFI_STATUS' || command === 'WIFI_KEYEX';
     const stage = command === 'PING' ? 'ping' : command === 'WIFI_STATUS' ? 'wifi_status' : command === 'WIFI_KEYEX' ? 'key_exchange'
       : command.startsWith('PIN_') ? 'authenticate' : command === 'WIFI_SCAN' ? 'wifi_scan' : command.startsWith('BROWSER_SETUP_PROBE_') ? 'probe' : 'wifi_connect';
     this.progress(stage);
@@ -238,7 +243,7 @@ class FirstSetupClient {
     let timer;
     const reply = new Promise((resolve, reject) => {
       this.pending = { resolve, reject, settled: false, readAfterWrite };
-      timer = setTimeout(() => { if (generation === this.generation) this.invalidate('timeout', stageTimeout('timeout', stage)); }, this.timeoutMs);
+      timer = setTimeout(() => { if (generation === this.generation) this.invalidate('timeout', stageFailure('timeout', stage)); }, this.timeoutMs);
     });
     // Async notifications can precede write completion. Synchronous commands
     // instead read only after the write resolves. One timeout covers write,
@@ -247,13 +252,36 @@ class FirstSetupClient {
     const write = Promise.resolve().then(async () => {
       if (generation !== this.generation) throw fail('disconnected');
       await characteristic.writeValueWithResponse(encoder.encode(command));
-      if (readAfterWrite) {
+      if (readAfterWrite || (publicDiagnosticRead && !pending.settled)) {
         if (generation !== this.generation || this.pending !== pending) throw fail('disconnected');
         const value = await responseCharacteristic.readValue();
         if (generation !== this.generation || this.pending !== pending) throw fail('disconnected');
         const reply = decoder.decode(value);
-        pending.settled = true;
-        pending.resolve(reply);
+        if (readAfterWrite) {
+          pending.settled = true;
+          pending.resolve(reply);
+        } else if (!pending.settled) {
+          // Older firmware may synchronously ECHO unknown Wi-Fi commands.
+          // Public readback diagnoses explicit failure only. Cached JSON,
+          // keys, ACKs, or unrelated ECHOs can never satisfy an async request.
+          if (reply === `ECHO: ${command}`) {
+            const error = stageFailure('unsupported_provisioning', stage);
+            this.invalidate(error.code, error);
+          } else if (reply.startsWith('ERROR:')) {
+            const error = stageFailure('rejected', stage);
+            this.invalidate(error.code, error);
+          } else if (reply === 'OK: working') {
+            this.progress('public_ack');
+          } else {
+            // Classify a readable cached value for diagnostics only. Neither
+            // schema validation nor this fixed label accepts it as a result.
+            try {
+              if (command === 'WIFI_STATUS') validateWifiStatus(json(reply));
+              else keySchema(json(reply));
+              this.progress(`${stage}_cached`);
+            } catch { /* Unknown cached values are ignored, never displayed. */ }
+          }
+        }
       }
     }).catch(() => {
       if (generation === this.generation) this.invalidate('transport');
@@ -314,7 +342,7 @@ class FirstSetupClient {
     this.progress('identity');
     const identity = { deviceName: this.device?.name || null, network: null, hardwareId: null };
     let timer;
-    const timeout = new Promise((_, reject) => { timer = setTimeout(() => { const error = stageTimeout('identity_timeout', 'identity'); if (generation === this.generation) this.invalidate(error.code, error); reject(error); }, this.timeoutMs); });
+    const timeout = new Promise((_, reject) => { timer = setTimeout(() => { const error = stageFailure('identity_timeout', 'identity'); if (generation === this.generation) this.invalidate(error.code, error); reject(error); }, this.timeoutMs); });
     const read = async () => { try {
       const service = await this.server.getPrimaryService(BLE_UUIDS.status);
       for (const [key, uuid] of [['network', BLE_UUIDS.network], ['hardwareId', BLE_UUIDS.hardwareId]]) {

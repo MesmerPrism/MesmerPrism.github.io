@@ -129,8 +129,8 @@
     },
     {
       "path": "public-site/FirstSetup.jsx",
-      "bytes": 14513,
-      "sha256": "b7e584e7a0620e820c599c5827df698a4c2dbe979b4a7ea22682372683f23936"
+      "bytes": 14586,
+      "sha256": "9502a93e4a277768c877d7c6939c11dc2289569c1b892b10bcd2abf246c5a527"
     },
     {
       "path": "public-site/FitText.jsx",
@@ -229,8 +229,8 @@
     },
     {
       "path": "src/first-setup.mjs",
-      "bytes": 23037,
-      "sha256": "41568f0d2b4d28635dcc2237d878284462cc5e497fa50b4668e4fd007526af74"
+      "bytes": 24895,
+      "sha256": "322630c09f271679107fa9b680cb595e7579a9614f83caf4deb9bd20d77146de"
     },
     {
       "path": "src/head-follow.mjs",
@@ -324,8 +324,8 @@
     },
     {
       "path": "test/first-setup.test.mjs",
-      "bytes": 28074,
-      "sha256": "08999da579b438cc491691bd56530741a411fc8534f3c5c9bfa6815db05032e1"
+      "bytes": 31825,
+      "sha256": "4811df02951567aaaf91c659f418d56506df7479539629a2a9fdbc2fe537c7db"
     },
     {
       "path": "test/fixtures/text-qa.html",

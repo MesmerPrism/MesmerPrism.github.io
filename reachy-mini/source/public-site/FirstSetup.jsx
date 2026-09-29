@@ -124,6 +124,8 @@ export default function FirstSetup() {
     const selection = selectedClient.selectAndConnect();
     run('Select your powered-on Reachy in the browser chooser…', async id => {
       const observed = await selection;
+      if (operation.current !== id) return;
+      setIdentity(observed);
       const inspected = await selectedClient.inspect();
       if (operation.current !== id) return;
       setIdentity(observed); setStatus(inspected.status); setConnected(true);
