@@ -1,7 +1,8 @@
-import React, { useState, Suspense, lazy } from 'react';
+import React, { useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import WirelessPanel from './WirelessPanel.jsx';
 import FitText from './FitText.jsx';
+import FirstSetup from './FirstSetup.jsx';
 import './style.css';
 
 function Page() {
@@ -13,11 +14,13 @@ function Page() {
       <div className="text-options"><label htmlFor="text-size"><FitText>Text display</FitText></label><select id="text-size" value={size} onChange={event => setSize(event.target.value)}><option value="normal">Normal</option><option value="large">200% text</option><option value="spaced">Increased text spacing</option></select></div>
       <section id="connect"><h2>Connect to Reachy</h2><WirelessPanel /></section>
       <section id="setup"><h2>Set up your robot</h2>
+        <FirstSetup />
+        <details><summary>Official setup alternative and control requirements</summary>
         <ol><li><strong>Choose your model.</strong> Browser-only control is for Wireless Mini with daemon 1.10.0. For Lite over USB, use the <a href="#local">local controller</a>. Other daemon versions are blocked until their protocol has been checked.</li>
           <li><strong>Connect Wireless to Wi-Fi.</strong> Power it on and follow the official <a href="https://huggingface.co/docs/reachy_mini/platforms/reachy_mini/get_started">first-time connection guide</a> in Reachy Mini Control. Its wizard joins the robot’s temporary access point and configures your home network. Keep your computer and robot on the same home network for the simplest connection. Guest networks or firewalls may prevent peer-to-peer media.</li>
           <li><strong>Enable remote access.</strong> In the official Control app, sign the robot in to your Hugging Face account and enable its remote/WebRTC connection. Check that the robot appears in Pollen’s robot picker. Follow the <a href="https://huggingface.co/docs/reachy_mini/SDK/javascript-sdk">official browser connection documentation</a> if it does not.</li>
           <li><strong>Create a read token.</strong> Open <a href="https://huggingface.co/settings/tokens">Hugging Face access tokens</a>, create a read token in the same account, and paste it in the form above. The token is held in this tab’s memory and sent to Pollen’s signaling service; it is never written to browser storage or our server. Clear it by disconnecting or closing the tab.</li>
-          <li><strong>Select your robot.</strong> Close other controllers and stop robot apps first. Connect, check the displayed identity and version, then press Wake when you are ready. Connecting does not wake or move Reachy.</li></ol>
+          <li><strong>Select your robot.</strong> Close other controllers and stop robot apps first. Connect, check the displayed identity and version, then press Wake when you are ready. Connecting does not wake or move Reachy.</li></ol></details>
         <details><summary>Connection troubleshooting</summary><p>If no robots appear, check the account, token, robot power and remote-access setting. If a session is rejected, close the other controller. If video cannot connect, check your router/firewall and try the same network. Refreshing this page does not reconnect or replay movement. Camera and microphone permission are needed only for local webcam tracking and push to talk.</p></details>
       </section>
       <section id="use"><h2>Use the controls</h2><p>Sliders show requested targets; the values below them and the 3D view show measured telemetry. Head movement covers turn, nod, tilt and three translation axes, with separate speed limits. Start with small movements. These are conservative software limits, not the robot’s entire mechanically possible workspace.</p>

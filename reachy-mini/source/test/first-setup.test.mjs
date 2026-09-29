@@ -1,0 +1,217 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { generateKeyPairSync, diffieHellman, hkdfSync, createDecipheriv, createPublicKey, webcrypto } from 'node:crypto';
+import { BLE_UUIDS, MAX_COMMAND_BYTES, PROVISIONING_ALGORITHM, createFirstSetupClient, cryptoPreflight, sealWifiPassword, commandByteLength, validateWifiStatus } from '../src/first-setup.mjs';
+
+// Receiver uses Node's native key objects/HKDF/cipher API independently of WebCrypto.
+function receiver() {
+  const pair = generateKeyPairSync('x25519');
+  const raw = pair.publicKey.export({ format: 'der', type: 'spki' }).subarray(-32);
+  const keyExchange = { alg: PROVISIONING_ALGORITHM, kid: 'test-key', pk: raw.toString('base64') };
+  function open(payload, pin = 'ABCDE') {
+    const epk = createPublicKey({ key: Buffer.concat([Buffer.from('302a300506032b656e032100', 'hex'), Buffer.from(payload.epk, 'base64')]), format: 'der', type: 'spki' });
+    const shared = diffieHellman({ privateKey: pair.privateKey, publicKey: epk });
+    const key = hkdfSync('sha256', shared, Buffer.from(pin), Buffer.from('reachy-mini-wifi-psk-v1'), 32);
+    const sealed = Buffer.from(payload.ct, 'base64');
+    const decipher = createDecipheriv('aes-256-gcm', key, Buffer.from(payload.nonce, 'base64'));
+    decipher.setAAD(Buffer.from(payload.ssid)); decipher.setAuthTag(sealed.subarray(-16));
+    return Buffer.concat([decipher.update(sealed.subarray(0, -16)), decipher.final()]).toString('utf8');
+  }
+  return { keyExchange, open };
+}
+
+function transport(handler, { optional = false, timeoutMs = 100 } = {}) {
+  const writes = []; const order = []; let asked = false; let options;
+  class Response extends EventTarget {
+    properties = { notify: true };
+    async startNotifications() { order.push('subscribe'); }
+    emit(text) { this.value = new DataView(new TextEncoder().encode(text).buffer); this.dispatchEvent(new Event('characteristicvaluechanged')); }
+  }
+  const response = new Response();
+  const command = { properties: { write: true }, writeValueWithResponse(data) {
+    const value = new TextDecoder().decode(data); writes.push(value); order.push('write');
+    return handler(value, response, writes);
+  } };
+  const device = new EventTarget(); device.name = 'Synthetic Reachy';
+  const server = { connected: false, async connect() { this.connected = true; return this; }, disconnect() { this.connected = false; device.dispatchEvent(new Event('gattserverdisconnected')); },
+    async getPrimaryService(uuid) {
+      if (uuid === BLE_UUIDS.service) return { async getCharacteristic(id) { if (id === BLE_UUIDS.command) return command; if (id === BLE_UUIDS.response) return response; throw new Error('absent'); } };
+      if (uuid === BLE_UUIDS.status && optional) return { async getCharacteristic(id) {
+        const value = id === BLE_UUIDS.network ? 'CONNECTED [wlan0] robot.invalid' : 'synthetic-hardware';
+        return { async readValue() { return new DataView(new TextEncoder().encode(value).buffer); } };
+      } };
+      throw new Error('optional status service missing');
+    } };
+  device.gatt = server;
+  let disconnected = 0;
+  const client = createFirstSetupClient({ bluetooth: { requestDevice(value) { asked = true; options = value; return Promise.resolve(device); } }, crypto: webcrypto, timeoutMs, onDisconnect() { disconnected++; } });
+  return { client, response, server, writes, order, asked: () => asked, options: () => options, disconnected: () => disconnected };
+}
+function stockHandler(keyExchange, status = { mode: 'hotspot', connected: null, error: null }) {
+  return (value, response) => {
+    if (value === 'PING') response.emit('PONG');
+    else if (value.startsWith('PIN_')) response.emit('OK: Connected');
+    else if (value === 'WIFI_STATUS') { response.emit('OK: working'); queueMicrotask(() => response.emit(JSON.stringify(status))); }
+    else if (value === 'WIFI_KEYEX') { response.emit('OK: working'); queueMicrotask(() => response.emit(JSON.stringify(keyExchange))); }
+    else if (value.startsWith('BROWSER_SETUP_PROBE_')) response.emit(`ECHO: ${value}`);
+    else if (value.startsWith('WIFI_CONNECT_ENC ')) { const payload = JSON.parse(value.slice(17)); response.emit('OK: working'); queueMicrotask(() => response.emit(`OK: Connecting to ${payload.ssid}`)); }
+  };
+}
+
+test('synthetic preflight performs a complete cryptographic round trip without Bluetooth', async () => {
+  assert.deepEqual(await cryptoPreflight({ crypto: webcrypto }), { ok: true });
+  await assert.rejects(cryptoPreflight({ crypto: {} }), { code: 'crypto' });
+});
+test('sealed UTF-8 password interoperates with independent receiver and binds PIN, SSID, ciphertext', async () => {
+  const robot = receiver(); const password = 'temporary-秘密-é';
+  const payload = await sealWifiPassword({ ssid: 'Lab-λ', password, pin: 'ABCDE', keyExchange: robot.keyExchange, crypto: webcrypto });
+  assert.equal(robot.open(payload), password);
+  assert.equal(Buffer.from(payload.epk, 'base64').length, 32);
+  assert.equal(Buffer.from(payload.nonce, 'base64').length, 12);
+  assert.throws(() => robot.open(payload, 'ABCDX'));
+  assert.throws(() => robot.open({ ...payload, ssid: 'Other' }));
+  const ct = Buffer.from(payload.ct, 'base64'); ct[0] ^= 1;
+  assert.throws(() => robot.open({ ...payload, ct: ct.toString('base64') }));
+  assert.ok(!JSON.stringify(payload).includes(password));
+});
+test('UTF-8 byte limits count complete writes and reject credentials before encryption', async () => {
+  assert.equal(commandByteLength('λ'.repeat(256)), MAX_COMMAND_BYTES);
+  assert.throws(() => commandByteLength('λ'.repeat(257)), { code: 'size' });
+  const robot = receiver();
+  for (const fields of [{ ssid: 'λ'.repeat(17) }, { password: 'λ'.repeat(33) }, { password: 'short' }, { pin: 'AB\nDE' }]) {
+    await assert.rejects(sealWifiPassword({ ssid: 'lab', password: 'temporary', pin: 'ABCDE', keyExchange: robot.keyExchange, crypto: webcrypto, ...fields }), { code: 'input' });
+  }
+});
+test('chooser is called synchronously, subscription precedes writes, optional identity absence is nonfatal', async () => {
+  const robot = receiver(); const fake = transport(stockHandler(robot.keyExchange));
+  const choosing = fake.client.selectAndConnect(); assert.equal(fake.asked(), true);
+  assert.deepEqual(fake.options(), { filters: [{ services: [BLE_UUIDS.status] }, { services: [BLE_UUIDS.service] }], optionalServices: [BLE_UUIDS.service, BLE_UUIDS.status] });
+  assert.deepEqual(await choosing, { deviceName: 'Synthetic Reachy', network: null, hardwareId: null });
+  assert.deepEqual(await fake.client.inspect(), { status: { mode: 'hotspot', connected: null, error: null }, keyExchange: robot.keyExchange });
+  assert.equal(fake.order[0], 'subscribe'); assert.deepEqual(fake.writes, ['PING', 'WIFI_STATUS', 'WIFI_KEYEX']);
+  fake.client.disconnect(); assert.equal(fake.client.connected, false);
+});
+test('reads optional identity without granting extra command capabilities', async () => {
+  const fake = transport(() => {}, { optional: true });
+  assert.deepEqual(await fake.client.selectAndConnect(), { deviceName: 'Synthetic Reachy', network: 'CONNECTED [wlan0] robot.invalid', hardwareId: 'synthetic-hardware' });
+  assert.deepEqual(fake.writes, []); fake.client.disconnect();
+});
+test('GATT initialization times out and its late completion cannot overwrite a new connection', async () => {
+  const fake = transport(stockHandler(receiver().keyExchange), { timeoutMs: 15 });
+  const original = fake.server.getPrimaryService.bind(fake.server);
+  let finishOldService; let first = true;
+  fake.server.getPrimaryService = (uuid) => {
+    if (uuid === BLE_UUIDS.service && first) { first = false; return new Promise((resolve) => { finishOldService = async () => resolve(await original(uuid)); }); }
+    return original(uuid);
+  };
+  await assert.rejects(fake.client.selectAndConnect(), { code: 'timeout' });
+  assert.equal(fake.client.connected, false);
+  await fake.client.selectAndConnect(); await finishOldService();
+  await new Promise((resolve) => setImmediate(resolve));
+  assert.equal(fake.client.connected, true); assert.equal((await fake.client.inspect()).status.mode, 'hotspot'); fake.client.disconnect();
+});
+test('optional identity transport stall is finite and closes the connection', async () => {
+  const fake = transport(() => {}, { timeoutMs: 15 });
+  const original = fake.server.getPrimaryService.bind(fake.server);
+  fake.server.getPrimaryService = (uuid) => uuid === BLE_UUIDS.status ? new Promise(() => {}) : original(uuid);
+  await assert.rejects(fake.client.selectAndConnect(), { code: 'timeout' }); assert.equal(fake.client.connected, false);
+});
+test('ignores intermediate working ACK and serializes concurrent command callers', async () => {
+  let complete;
+  const fake = transport((value, response) => {
+    response.emit('OK: working');
+    if (value === 'WIFI_STATUS') complete = () => response.emit('{"mode":"busy","connected":null,"error":null}');
+    else response.emit('OK: Connected');
+  });
+  await fake.client.selectAndConnect();
+  const status = fake.client.getWifiStatus(); const auth = fake.client.authenticate('ABCDE');
+  await new Promise((resolve) => setImmediate(resolve));
+  assert.deepEqual(fake.writes, ['WIFI_STATUS']); assert.equal(fake.client.authenticated, false);
+  complete(); assert.equal((await status).mode, 'busy'); await auth;
+  assert.deepEqual(fake.writes, ['WIFI_STATUS', 'PIN_ABCDE']); fake.client.disconnect();
+});
+test('PIN requires exact upstream reply and never includes a raw reflected secret in errors', async () => {
+  for (const reply of ['OK: Connected extra', 'ERROR: Incorrect PIN secret-value', 'ECHO: PIN_ABCDE']) {
+    const fake = transport((_, response) => response.emit(reply)); await fake.client.selectAndConnect();
+    await assert.rejects(fake.client.authenticate('ABCDE'), (error) => error.code === 'pin' && !error.message.includes('ABCDE') && !error.message.includes('secret-value'));
+    assert.equal(fake.client.authenticated, false); fake.client.disconnect();
+  }
+});
+test('timeout closes transport, queued mutations do not write, and stale replies cannot rescue next command', async () => {
+  const fake = transport(() => {}, { timeoutMs: 15 }); await fake.client.selectAndConnect();
+  const first = fake.client.getWifiStatus(); const second = fake.client.authenticate('ABCDE');
+  const results = await Promise.allSettled([first, second]);
+  assert.equal(results[0].reason.code, 'timeout'); assert.equal(results[1].reason.code, 'disconnected');
+  assert.equal(fake.server.connected, false); assert.deepEqual(fake.writes, ['WIFI_STATUS']);
+  fake.response.emit('OK: Connected'); assert.equal(fake.client.authenticated, false);
+  await assert.rejects(fake.client.getWifiStatus(), { code: 'disconnected' });
+});
+test('timeout also covers a hung write after a synchronous final notification', async () => {
+  const fake = transport((_, response) => { response.emit('{"mode":"hotspot","connected":null,"error":null}'); return new Promise(() => {}); }, { timeoutMs: 15 });
+  await fake.client.selectAndConnect(); await assert.rejects(fake.client.getWifiStatus(), { code: 'timeout' });
+  assert.equal(fake.client.connected, false);
+});
+test('late rejection of a timed-out write cannot invalidate a new connection', async () => {
+  let rejectOldWrite; let attempt = 0;
+  const fake = transport((_, response) => {
+    attempt++;
+    if (attempt === 1) return new Promise((_, reject) => { rejectOldWrite = reject; });
+    response.emit('{"mode":"hotspot","connected":null,"error":null}');
+  }, { timeoutMs: 15 });
+  await fake.client.selectAndConnect(); await assert.rejects(fake.client.getWifiStatus(), { code: 'timeout' });
+  await fake.client.selectAndConnect();
+  rejectOldWrite(new Error('old transport failure'));
+  await new Promise((resolve) => setImmediate(resolve));
+  assert.equal(fake.client.connected, true); assert.equal((await fake.client.getWifiStatus()).mode, 'hotspot'); fake.client.disconnect();
+});
+test('explicit and remote disconnect clean pending work and notification handlers', async () => {
+  for (const remote of [false, true]) {
+    const fake = transport(() => {}); await fake.client.selectAndConnect(); const pending = fake.client.getWifiStatus();
+    await new Promise((resolve) => setImmediate(resolve));
+    if (remote) fake.server.disconnect(); else fake.client.disconnect();
+    await assert.rejects(pending, { code: 'disconnected' }); fake.response.emit('OK: Connected');
+    assert.equal(fake.client.connected, false); assert.equal(fake.client.authenticated, false); assert.equal(fake.disconnected(), 1);
+  }
+});
+test('write rejection after early notification invalidates rather than declaring success or leaking raw errors', async () => {
+  const fake = transport((_, response) => { response.emit('OK: Connected'); throw new Error('reflected secret-value'); });
+  await fake.client.selectAndConnect();
+  await assert.rejects(fake.client.authenticate('ABCDE'), (error) => error.code === 'transport' && !error.message.includes('secret-value'));
+  assert.equal(fake.client.authenticated, false); assert.equal(fake.client.connected, false);
+});
+test('malformed final status JSON invalidates the connection instead of accepting a truncated response', async () => {
+  const fake = transport((_, response) => { response.emit('OK: working'); response.emit('{"mode":"wlan"'); });
+  await fake.client.selectAndConnect(); await assert.rejects(fake.client.getWifiStatus(), { code: 'protocol' });
+  assert.equal(fake.client.connected, false);
+});
+test('Wi-Fi status rejects malformed schemas, preserves unknown, and sanitizes daemon errors', () => {
+  for (const value of [{}, { mode: 'CONNECTED', connected: null, error: null }, { mode: 'wlan', connected: false, error: null }, { mode: 'wlan', connected: 'lab', error: null, known: [2] }]) assert.throws(() => validateWifiStatus(value), { code: 'protocol' });
+  assert.deepEqual(validateWifiStatus({ mode: null, connected: null, error: 'raw password' }), { mode: null, connected: null, error: 'Robot reported a Wi-Fi error.' });
+});
+test('successful synthetic probes precede one sealed mutation; accepted ACK is not WLAN success', async () => {
+  const robot = receiver(); const fake = transport(stockHandler(robot.keyExchange)); await fake.client.selectAndConnect();
+  await assert.rejects(fake.client.connectWifi({ ssid: 'lab', password: 'temporary-secret', pin: 'ABCDE' }), { code: 'auth' });
+  await fake.client.authenticate('ABCDE');
+  const accepted = await fake.client.connectWifi({ ssid: 'lab', password: 'temporary-secret', pin: 'ABCDE' });
+  assert.equal(accepted.accepted, true); assert.equal('connected' in accepted, false);
+  const probes = fake.writes.filter((value) => value.startsWith('BROWSER_SETUP_PROBE_'));
+  assert.deepEqual(probes.map((value) => Buffer.byteLength(value)), accepted.probeLengths);
+  assert.ok(probes.every((value) => /_END_/.test(value)));
+  const mutations = fake.writes.filter((value) => value.startsWith('WIFI_CONNECT_ENC ')); assert.equal(mutations.length, 1);
+  assert.equal(robot.open(JSON.parse(mutations[0].slice(17))), 'temporary-secret');
+  assert.ok(!fake.writes.join('\n').includes('temporary-secret'));
+  assert.equal((await fake.client.getWifiStatus()).mode, 'hotspot'); fake.client.disconnect();
+});
+test('truncated, wrong-sentinel, and unsupported ECHO prevent the secret write', async () => {
+  const robot = receiver();
+  for (const mode of ['truncated', 'wrong', 'unsupported']) {
+    const stock = stockHandler(robot.keyExchange);
+    const fake = transport((value, response) => {
+      if (!value.startsWith('BROWSER_SETUP_PROBE_')) return stock(value, response);
+      response.emit(mode === 'truncated' ? `ECHO: ${value.slice(0, -1)}` : mode === 'wrong' ? 'ECHO: unrelated' : 'ERROR: Unsupported');
+    });
+    await fake.client.selectAndConnect(); await fake.client.authenticate('ABCDE');
+    await assert.rejects(fake.client.connectWifi({ ssid: 'lab', password: 'temporary-secret', pin: 'ABCDE' }), { code: 'probe' });
+    assert.equal(fake.writes.some((value) => value.startsWith('WIFI_CONNECT_ENC ')), false); assert.equal(fake.client.connected, false);
+  }
+});

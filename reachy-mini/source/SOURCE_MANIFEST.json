@@ -24,8 +24,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 3577,
-      "sha256": "4f02050c388a0c5e17e820b13f21142025e7c31f073426f15c1c45675d61a29b"
+      "bytes": 4748,
+      "sha256": "e958d72b6e2ad4c635c00ae3302115e5184f94ec32f6341d4b0bfa9247862320"
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",
@@ -128,6 +128,11 @@
       "sha256": "d4cb3a75ab58e1be71736c530df70c43e7648c8d8beb6d44053ff7d65a1c147c"
     },
     {
+      "path": "public-site/FirstSetup.jsx",
+      "bytes": 12576,
+      "sha256": "176db776dd3b6238ad34a81527d2af707a3c37bbcff5b8fbea8a53771deb8d01"
+    },
+    {
       "path": "public-site/FitText.jsx",
       "bytes": 2689,
       "sha256": "e68490d0338a68e908be414df5ecd539777b0e7a4b707bb28e7aef9852fac3a1"
@@ -149,13 +154,13 @@
     },
     {
       "path": "public-site/main.jsx",
-      "bytes": 8288,
-      "sha256": "9b0e0bd199003df650c2e674e1c6db8b55bca44d15ed38130421a968a31e9bab"
+      "bytes": 8436,
+      "sha256": "95ba0cc27a0eb8ff30b4c69a53b19714f104d1343dcc88bdd464987ab75141d4"
     },
     {
       "path": "public-site/style.css",
-      "bytes": 4954,
-      "sha256": "0474068b38e3811ddc080a4a6f070ca714a6ecb606a0f56fe4f1334d2e43a9e0"
+      "bytes": 5708,
+      "sha256": "279e509f66f56e8332efcdac8477ab08def55c9352367625b37a6bce014aa807"
     },
     {
       "path": "server/audio-control.mjs",
@@ -221,6 +226,11 @@
       "path": "src/RobotModel.jsx",
       "bytes": 13353,
       "sha256": "fd33136e7afc2b4746e0deaac45588711c0f00b26dd6a19237d3cc1d8fa67c16"
+    },
+    {
+      "path": "src/first-setup.mjs",
+      "bytes": 16611,
+      "sha256": "25af263d46bc0c6e966c11274692181d3d5aa5e091aee556236b34a2d0c4af6d"
     },
     {
       "path": "src/head-follow.mjs",
@@ -313,6 +323,11 @@
       "sha256": "cc1ab3de7a8f2060e19fb79fe6f9f8284c0d79e87029657db0477d7b7c099b35"
     },
     {
+      "path": "test/first-setup.test.mjs",
+      "bytes": 16165,
+      "sha256": "4368ebee984c8e437328b30f1a9de01d2af97b5612fb09aba935c554ff1fd967"
+    },
+    {
       "path": "test/fixtures/text-qa.html",
       "bytes": 311,
       "sha256": "dccddef7345c30731efe83de9cc908a592162b6a09d3df55c77029ad858efa61"
@@ -399,8 +414,8 @@
     },
     {
       "path": "tools/Export-Public.mjs",
-      "bytes": 11260,
-      "sha256": "988c921c17da6e0a8a8196d4c181eba03a824456b502d06a7f912d7b0b66103a"
+      "bytes": 11342,
+      "sha256": "5c4fbff6999fe9b0ddbfe90297734c27ff71af32fdb30ac8004879b7b22c8195"
     },
     {
       "path": "tools/Prepare-HeadAssets.mjs",

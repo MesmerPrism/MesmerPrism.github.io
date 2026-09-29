@@ -2,14 +2,14 @@
   "version": "0.1.0",
   "files": [
     {
-      "path": "assets/RobotModel-BCixHaPe.js",
+      "path": "assets/RobotModel-hytSAIlU.js",
       "bytes": 654994,
-      "sha256": "0aea8ee48a9cf2e7df440a7bf8331372c9086360d6930a5ed8084ac55dfab3f0"
+      "sha256": "02dc75cbcc5930209f82450e9d09d8592f856bf41370b1885aa58d62410b75e4"
     },
     {
-      "path": "assets/demo-sdk-o9b2IEeu.js",
+      "path": "assets/demo-sdk-DEWD8Men.js",
       "bytes": 1317,
-      "sha256": "059b52cd9cc1708ce47bafa801f5c8c3982c6f5292e97146c421cca831322145"
+      "sha256": "63207ef348b35aea8aaf1d8bd87397b162ffe3c0c2498aea49707b02cb07f8c5"
     },
     {
       "path": "assets/head-tracker-C8P4Y3-k.js",
@@ -22,14 +22,14 @@
       "sha256": "626da8f1e2aab1cac8f2e275644358fb3dd211f050925ae34f70e0ec720503b9"
     },
     {
-      "path": "assets/index-DKsi9aFd.js",
-      "bytes": 308503,
-      "sha256": "96bb71c121a3e75cff81a88c317a88df7462a245be0afb9a90f510c528a50d19"
+      "path": "assets/index-CVwUfL-r.js",
+      "bytes": 328908,
+      "sha256": "92566f126ceadc61acce05d8bdcb9dd6b7a915e4fcbf46061938ca16ab64ca70"
     },
     {
-      "path": "assets/index-DOWxG7eL.css",
-      "bytes": 4300,
-      "sha256": "8dd3416e8c0b15eccb535429d5815ca83b5d64288862937ac39443fec812fae9"
+      "path": "assets/index-WviORm3d.css",
+      "bytes": 4931,
+      "sha256": "cc38a550f0365d160740adced30fc9c72d58762a7fd3aa8c4a715376fb9db0d8"
     },
     {
       "path": "assets/reachy-mini-sdk-B7WY160u.js",
@@ -44,7 +44,7 @@
     {
       "path": "index.html",
       "bytes": 562,
-      "sha256": "9cb7076525623884b31127f1697765a38eb429f4934e926a046985c7f8c71a9a"
+      "sha256": "68c70923a53fb41839bc9cbccd5625bbb2b2c75a6ca03a4995ffaece5c78c35e"
     }
   ]
 }
