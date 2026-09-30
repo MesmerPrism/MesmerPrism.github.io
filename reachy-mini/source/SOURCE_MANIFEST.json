@@ -39,8 +39,8 @@
     },
     {
       "path": "docs/SETUP.md",
-      "bytes": 8331,
-      "sha256": "dc601f28d25dc19c9ae0cbc266f6d00896a9077e791fa8537714176126507c20"
+      "bytes": 10191,
+      "sha256": "6a1e64a526be1099370dad22af5ecb6b995a7f79a6497f404278d3a01e814be1"
     },
     {
       "path": "index.html",
@@ -134,8 +134,8 @@
     },
     {
       "path": "public-site/FirstSetup.jsx",
-      "bytes": 26984,
-      "sha256": "0cff1952ab2d970ffd5c4846d96345f19c68949d67d5ca9d2268317dd5f8f90a"
+      "bytes": 28519,
+      "sha256": "5a89ea535666ab05d943a8fbfe3f772c1c743d7b9427cc7e116d5920916a43ca"
     },
     {
       "path": "public-site/FitText.jsx",

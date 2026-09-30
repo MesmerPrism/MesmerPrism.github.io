@@ -351,9 +351,16 @@ export default function FirstSetup({ createClient = createFirstSetupClient, brow
       <label htmlFor="connected-host">Reachy’s address on the joined network</label>
       <input className="robot-host" id="connected-host" type="text" value={host} onChange={event => changeHost(event.target.value)} autoComplete="off" spellCheck={false} maxLength={253} />
       {links ? <p><a href={links.status} target="_blank" rel="noopener noreferrer">Open current daemon status</a></p> : <p className="error">Enter a local IP address or .local hostname without a scheme, port or path.</p>}
+      {daemon?.wireless && daemon.version === '1.2.11' && links && <div className="software-update">
+        <h4>Update Reachy software</h4>
+        <p>This version includes a browser updater on the robot. Reachy downloads and installs the official software itself; no laptop download is needed. Network setup alone does not establish that the robot has internet.</p>
+        <ol><li>Keep Reachy powered and its network connected. Open the updater below and check the offered version. Leave pre-release unchecked to use the stable channel.</li><li>When you are ready to update the robot, click Start Update on its own page once. This older updater installs the current stable release; it cannot select an exact version.</li><li>Keep this setup tab open while Reachy restarts. Return here, open its current daemon status, and check the installed version below. A lost connection or a Completed message alone does not confirm installation.</li></ol>
+        <p><a className="download" href={links.settings} target="_blank" rel="noopener noreferrer">Open Reachy’s software updater</a></p>
+        <p className="notice">An update may install a version our controller has not yet validated. The installed version will be checked before control is offered. If installation fails or Reachy does not return, use the <a href="https://huggingface.co/docs/reachy_mini/troubleshooting" target="_blank" rel="noopener noreferrer">official recovery guide</a>; keep the update outcome unconfirmed instead of submitting again.</p>
+      </div>}
       <DaemonStatusForm onResult={setDaemon} />
       <p>{guidance.text}</p>
-      <p>Our motion controller currently supports daemon 1.10.0. Setup success does not establish control compatibility. Do not downgrade a fresh robot to bypass this check.</p>
+      <p>Our motion controller currently supports daemon 1.10.0. Setup or update success does not establish control compatibility; the installed version needs its own validation.</p>
       {guidance.oauth && links ? <p><a href={links.oauth} target="_blank" rel="noopener noreferrer">Open Reachy’s Hugging Face sign-in</a>. Review the requested permissions before approving. The robot needs internet.</p> : <p>Use the sign-in and remote-access options actually provided by your robot’s dashboard or the <a href="https://huggingface.co/docs/reachy_mini/SDK/javascript-sdk" target="_blank" rel="noopener noreferrer">official browser connection guide</a>. Older images need a separate compatibility review before browser control; this helper does not start an update.</p>}
       {daemon?.wireless && daemon.version === '1.10.0' && <p>After enabling remote access, create a <a href="https://huggingface.co/settings/tokens" target="_blank" rel="noopener noreferrer">read token for the same account</a> and <a className="download" href="#connect">Open the controls</a>.</p>}
     </>}

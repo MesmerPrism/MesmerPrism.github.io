@@ -116,3 +116,28 @@ replayed. Internet access and remote-control compatibility are separate checks.
 The adapter is independently written MIT code against the audited Pollen
 [Wi-Fi API](https://github.com/pollen-robotics/reachy_mini/blob/e25d28a52f657354716b693ca6d557fe3595702a/src/reachy_mini/daemon/app/routers/wifi_config.py).
 See Chrome's [Local Network Access documentation](https://developer.chrome.com/blog/local-network-access).
+
+### Browser software update after network setup
+
+For an observed Wireless daemon 1.2.11, Step 4 now links directly to the robot's
+own Settings updater. The robot needs internet to download the official packages;
+the user does not need to download an installer on their computer. Check the
+offered version, leave pre-release unchecked, and explicitly start an update on
+the robot page only when ready. Keep robot power and network available throughout.
+The legacy updater selects the current stable package at installation time; it
+cannot select our controller's audited version. This page never starts an update
+automatically and the handoff button only opens the robot's page.
+
+After the restart, return to the wizard and inspect/paste the fresh daemon status.
+A job reporting done, a Completed label or a closed connection is not verification:
+the legacy subprocess wrapper does not check installer exit codes, and its job
+records do not survive daemon restart. Only a new healthy daemon/version readback
+establishes the observed result. Unknown controller versions remain blocked.
+Newer daemons can restrict direct public-origin API reads; opening their raw status
+page and pasting its bounded response remains the browser-only verification route.
+For failures, use the official recovery guide rather than automatically repeating
+an uncertain update.
+
+Reviewed source: [1.2.11 update router](https://github.com/pollen-robotics/reachy_mini/blob/e25d28a52f657354716b693ca6d557fe3595702a/src/reachy_mini/daemon/app/routers/update.py),
+[installer](https://github.com/pollen-robotics/reachy_mini/blob/e25d28a52f657354716b693ca6d557fe3595702a/src/reachy_mini/utils/wireless_version/update.py),
+and [subprocess wrapper](https://github.com/pollen-robotics/reachy_mini/blob/e25d28a52f657354716b693ca6d557fe3595702a/src/reachy_mini/utils/wireless_version/utils.py).
