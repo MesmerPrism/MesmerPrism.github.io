@@ -9,6 +9,11 @@ export const BLE_UUIDS = Object.freeze({
 });
 export const MAX_COMMAND_BYTES = 512;
 export const PROVISIONING_ALGORITHM = 'x25519-hkdf-sha256-aesgcm';
+export const SETUP_CHECKS = Object.freeze([
+  Object.freeze({ id: 'ping', label: 'Robot reply' }),
+  Object.freeze({ id: 'wifi_status', label: 'Wi-Fi status' }),
+  Object.freeze({ id: 'key_exchange', label: 'Encrypted provisioning' }),
+]);
 export const FIRST_SETUP_PROGRESS = Object.freeze({
   selection: 'Select Reachy in the Bluetooth chooser…',
   gatt_connect: 'Connecting to Reachy…', gatt_service: 'Reading setup service…',
@@ -322,6 +327,32 @@ class FirstSetupClient {
     const status = await this.status();
     const keyExchange = await this.keyExchange();
     return { status, keyExchange };
+  }); }
+  // Capability discovery is independent of daemon version. It sends only
+  // these public checks, stops at the first failure, and never retries or
+  // submits credentials. Keep inspect() strict for its existing callers.
+  probeCapabilities({ onCheck = () => {} } = {}) { return this.enqueue(async () => {
+    const checks = SETUP_CHECKS.map(check => ({ ...check, outcome: 'skipped' }));
+    let status = null;
+    const publish = () => { try { onCheck(checks.map(check => ({ ...check }))); } catch { /* UI cannot affect transport. */ } };
+    for (let index = 0; index < checks.length; index++) {
+      const check = checks[index];
+      check.outcome = 'checking'; publish();
+      try {
+        if (check.id === 'ping') await this.send('PING', reply => { if (reply !== 'PONG') throw fail('protocol'); });
+        else if (check.id === 'wifi_status') status = await this.status();
+        else await this.keyExchange();
+        check.outcome = 'passed'; publish();
+      } catch (error) {
+        // Only the exact current-command ECHO classifier establishes absence.
+        // Missing/malformed replies and timeouts cannot identify a version.
+        check.outcome = error instanceof FirstSetupError && error.code === 'unsupported_provisioning' ? 'unsupported' : 'inconclusive';
+        check.code = error instanceof FirstSetupError && Object.hasOwn(messages, error.code) ? error.code : 'protocol';
+        publish();
+        return { ready: false, checks, status };
+      }
+    }
+    return { ready: true, checks, status };
   }); }
   status() { return this.send('WIFI_STATUS', (reply) => validateWifiStatus(json(reply))); }
   getWifiStatus() { return this.enqueue(() => this.status()); }

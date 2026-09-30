@@ -67,6 +67,73 @@ function stockHandler(keyExchange, status = { mode: 'hotspot', connected: null, 
   };
 }
 
+test('capability discovery is serial, exposes progress, and enables setup only after all strict checks pass', async () => {
+  const robot = receiver(); const fake = transport(stockHandler(robot.keyExchange));
+  await fake.client.selectAndConnect();
+  const snapshots = [];
+  const result = await fake.client.probeCapabilities({ onCheck(checks) { snapshots.push(checks); } });
+  assert.equal(result.ready, true);
+  assert.deepEqual(fake.writes, ['PING', 'WIFI_STATUS', 'WIFI_KEYEX']);
+  assert.deepEqual(result.checks.map(check => check.outcome), ['passed', 'passed', 'passed']);
+  assert.deepEqual(snapshots[0].map(check => check.outcome), ['checking', 'skipped', 'skipped']);
+  assert.deepEqual(snapshots[2].map(check => check.outcome), ['passed', 'checking', 'skipped']);
+  assert.deepEqual(snapshots[4].map(check => check.outcome), ['passed', 'passed', 'checking']);
+  assert.equal(fake.client.authenticated, false);
+  assert.ok(!Object.hasOwn(result, 'version'));
+  fake.client.disconnect();
+});
+
+test('explicit unsupported public command skips remaining checks, never infers version or sends credentials', async () => {
+  const robot = receiver(); const stock = stockHandler(robot.keyExchange);
+  for (const target of ['WIFI_STATUS', 'WIFI_KEYEX']) {
+    const fake = transport((command, response) => command === target ? response.store(`ECHO: ${command}`) : stock(command, response));
+    await fake.client.selectAndConnect();
+    const result = await fake.client.probeCapabilities();
+    assert.equal(result.ready, false);
+    assert.deepEqual(result.checks.map(check => check.outcome), target === 'WIFI_STATUS' ? ['passed', 'unsupported', 'skipped'] : ['passed', 'passed', 'unsupported']);
+    assert.equal(result.checks.find(check => check.outcome === 'unsupported').code, 'unsupported_provisioning');
+    assert.deepEqual(fake.writes, target === 'WIFI_STATUS' ? ['PING', 'WIFI_STATUS'] : ['PING', 'WIFI_STATUS', 'WIFI_KEYEX']);
+    assert.equal(fake.client.connected, false); assert.equal(fake.disconnected(), 1);
+    assert.ok(!Object.hasOwn(result, 'version')); assert.doesNotMatch(JSON.stringify(result), /1\.2\.11|PIN_|WIFI_CONNECT/);
+  }
+});
+
+test('discovery keeps malformed replies, unknown echoes and timeouts inconclusive rather than unsupported', async () => {
+  const robot = receiver(); const stock = stockHandler(robot.keyExchange);
+  const cases = [
+    ['PING', response => response.store('other-raw-secret'), ['inconclusive', 'skipped', 'skipped']],
+    ['WIFI_STATUS', response => response.emit('{bad raw-secret'), ['passed', 'inconclusive', 'skipped']],
+    ['WIFI_STATUS', response => response.store('ECHO: WIFI_OTHER raw-secret'), ['passed', 'inconclusive', 'skipped']],
+    ['WIFI_KEYEX', response => response.emit(JSON.stringify({ alg: 'unknown', pk: 'raw-secret' })), ['passed', 'passed', 'inconclusive']],
+  ];
+  for (const [target, reply, expected] of cases) {
+    const fake = transport((command, response) => command === target ? reply(response) : stock(command, response), { timeoutMs: 20 });
+    await fake.client.selectAndConnect();
+    const result = await fake.client.probeCapabilities();
+    assert.equal(result.ready, false); assert.deepEqual(result.checks.map(check => check.outcome), expected);
+    assert.doesNotMatch(JSON.stringify(result), /raw-secret|PIN_|WIFI_CONNECT/);
+    assert.equal(fake.client.connected, false);
+  }
+});
+
+test('capability observers cannot mutate the remaining sequence or inject commands', async () => {
+  const robot = receiver(); const fake = transport(stockHandler(robot.keyExchange));
+  await fake.client.selectAndConnect();
+  const result = await fake.client.probeCapabilities({ onCheck(checks) { checks[1].id = 'injected'; checks[1].outcome = 'passed'; throw Error('ignored observer'); } });
+  assert.equal(result.ready, true); assert.equal(result.checks[1].id, 'wifi_status');
+  assert.deepEqual(fake.writes, ['PING', 'WIFI_STATUS', 'WIFI_KEYEX']); fake.client.disconnect();
+});
+
+test('disconnect between discovery steps prevents later command writes and cannot enable credentials', async () => {
+  const robot = receiver(); const fake = transport(stockHandler(robot.keyExchange));
+  await fake.client.selectAndConnect();
+  const result = await fake.client.probeCapabilities({ onCheck(checks) { if (checks[0].outcome === 'passed') fake.client.disconnect(); } });
+  assert.equal(result.ready, false);
+  assert.deepEqual(fake.writes, ['PING']);
+  assert.deepEqual(result.checks.map(check => check.outcome), ['passed', 'inconclusive', 'skipped']);
+  assert.equal(fake.client.authenticated, false);
+});
+
 test('synthetic preflight performs a complete cryptographic round trip without Bluetooth', async () => {
   assert.deepEqual(await cryptoPreflight({ crypto: webcrypto }), { ok: true });
   await assert.rejects(cryptoPreflight({ crypto: {} }), { code: 'crypto' });

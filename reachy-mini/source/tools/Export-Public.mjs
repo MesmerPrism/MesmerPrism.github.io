@@ -16,16 +16,16 @@ export const PUBLIC_FILES = Object.freeze([
   'src/head-follow.mjs', 'src/head-manual-queue.mjs', 'src/head-math.mjs', 'src/head-tracker.js',
   'src/head-tracker.worker.js', 'src/media.js', 'src/robot-model-state.mjs', 'src/talk-lifecycle.mjs',
   'src/useControl.js', 'src/useHeadControl.js', 'src/useReachyMedia.js',
-  'src/wireless-control.mjs', 'src/wireless-audio.mjs', 'src/first-setup.mjs',
+  'src/wireless-control.mjs', 'src/wireless-audio.mjs', 'src/first-setup.mjs', 'src/setup-guidance.mjs',
   'server/audio-control.mjs', 'server/control.mjs', 'server/head-pose.mjs', 'server/index.mjs', 'server/media-guard.mjs',
   'tools/Prepare-HeadAssets.mjs', 'tools/Prepare-ReachyModel.mjs', 'tools/Validate-ReachyModel.mjs',
   'tools/reachy-model-source.mjs', 'tools/Export-Public.mjs', 'tools/Setup-Local.mjs', 'tools/Build-Pages.mjs',
   'public-site/WirelessPanel.jsx', 'public-site/index.html', 'public-site/FitText.jsx', 'public-site/FirstSetup.jsx', 'public-site/main.jsx', 'public-site/style.css', 'public-site/demo-sdk.mjs',
-  'test/audio-control.test.mjs', 'test/control-recovery.test.mjs', 'test/control.test.mjs', 'test/first-setup.test.mjs',
+  'test/audio-control.test.mjs', 'test/control-recovery.test.mjs', 'test/control.test.mjs', 'test/first-setup.test.mjs', 'test/setup-guidance.test.mjs',
   'test/head-control.test.mjs', 'test/head-follow.test.mjs', 'test/head-manual-queue.test.mjs',
   'test/head-math.test.mjs', 'test/head-tracker.test.mjs', 'test/manual-head-control.test.mjs',
   'test/media-guard.test.mjs', 'test/robot-model-state.test.mjs', 'test/talk-lifecycle.test.mjs',
-  'test/fixtures/text-qa.html', 'test/fixtures/text-qa.jsx', 'test/setup-local.test.mjs', 'test/public-export.test.mjs', 'test/robot-schematic.test.mjs', 'test/wireless-control.test.mjs', 'test/wireless-audio.test.mjs',
+  'test/fixtures/text-qa.html', 'test/fixtures/text-qa.jsx', 'test/fixtures/setup-qa.html', 'test/fixtures/setup-qa.jsx', 'test/setup-local.test.mjs', 'test/public-export.test.mjs', 'test/robot-schematic.test.mjs', 'test/wireless-control.test.mjs', 'test/wireless-audio.test.mjs',
 ].sort());
 
 const hash = bytes => crypto.createHash('sha256').update(bytes).digest('hex');

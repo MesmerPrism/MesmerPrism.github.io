@@ -1,5 +1,27 @@
 import { useEffect, useRef, useState } from 'react';
-import { createFirstSetupClient, cryptoPreflight, FirstSetupError } from '../src/first-setup.mjs';
+import { createFirstSetupClient, cryptoPreflight, FirstSetupError, SETUP_CHECKS } from '../src/first-setup.mjs';
+import { parseDaemonStatus, daemonGuidance, robotBrowserLinks, reportedRobotHost } from '../src/setup-guidance.mjs';
+
+const steps = ['Choose a route', 'Check compatibility', 'Connect Wi-Fi', 'Browser control'];
+const outcomes = { checking: 'Checking…', passed: 'Passed', unsupported: 'Not supported', inconclusive: 'Inconclusive', skipped: 'Not run' };
+const emptyChecks = () => SETUP_CHECKS.map(check => ({ ...check, outcome: 'skipped' }));
+
+function DaemonStatusForm({ onResult }) {
+  const [error, setError] = useState('');
+  return <form className="connection-form" onSubmit={event => {
+    event.preventDefault();
+    const text = new FormData(event.currentTarget).get('daemon-status');
+    event.currentTarget.reset();
+    try { const daemon = parseDaemonStatus(text); setError(''); onResult(daemon); }
+    catch (failure) { onResult(null); setError(failure.message); }
+  }}>
+    <label htmlFor="daemon-status">Paste the JSON from Reachy’s daemon status page</label>
+    <textarea id="daemon-status" name="daemon-status" rows={4} maxLength={16384} required autoComplete="off" spellCheck={false} />
+    <p>Only the version, model type and status summary are retained in this tab. Pasted status does not enable Bluetooth credentials.</p>
+    <button>Check daemon version</button>
+    {error && <p className="error" role="alert">{error}</p>}
+  </form>;
+}
 
 function statusText(status) {
   if (!status) return 'No Wi-Fi status read yet.';
@@ -7,7 +29,8 @@ function statusText(status) {
   return `${modes[status.mode] || 'Unknown network state'}${status.connected ? `: ${status.connected}` : ''}${status.error ? '. The robot reports a network error.' : ''}`;
 }
 
-export default function FirstSetup() {
+const hasBrowserBluetooth = () => window.isSecureContext && Boolean(navigator.bluetooth?.requestDevice);
+export default function FirstSetup({ createClient = createFirstSetupClient, browserSupported = hasBrowserBluetooth } = {}) {
   const [capability, setCapability] = useState('checking');
   const [identity, setIdentity] = useState(null);
   const [status, setStatus] = useState(null);
@@ -17,6 +40,17 @@ export default function FirstSetup() {
   const [error, setError] = useState('');
   const [message, setMessage] = useState('Checking this browser…');
   const [joined, setJoined] = useState(false);
+  const [step, setStep] = useState(0);
+  const [route, setRoute] = useState(null);
+  const [checks, setChecks] = useState(emptyChecks);
+  const [access, setAccess] = useState('skipped');
+  const [daemon, setDaemon] = useState(null);
+  const [host, setHost] = useState('reachy-mini.local');
+  const [browserPage, setBrowserPage] = useState(0);
+  const [pageFound, setPageFound] = useState(false);
+  const [manualJoined, setManualJoined] = useState(false);
+  const probing = useRef(null);
+  const stepHeading = useRef(null);
   const client = useRef(null);
   const pin = useRef('');
   const requestedNetwork = useRef('');
@@ -25,12 +59,16 @@ export default function FirstSetup() {
   const mounted = useRef(true);
   const wifiForm = useRef(null);
   const pinForm = useRef(null);
+  const links = robotBrowserLinks(host);
+  const guidance = daemonGuidance(daemon);
+
+  useEffect(() => { stepHeading.current?.focus(); }, [step]);
 
   useEffect(() => {
     mounted.current = true;
     let cancelled = false;
     async function check() {
-      if (!window.isSecureContext || !navigator.bluetooth?.requestDevice) {
+      if (!browserSupported()) {
         setCapability('unsupported');
         setMessage('Bluetooth setup needs a browser with Web Bluetooth, such as desktop Chrome or Edge, or Chrome on Android. Open this page there; no helper download is needed.');
         return;
@@ -106,13 +144,20 @@ export default function FirstSetup() {
   function select() {
     client.current?.disconnect();
     progress.current = '';
+    setStep(1); setRoute('bluetooth'); setAccess('checking'); setChecks(emptyChecks());
+    setDaemon(null); setHost('reachy-mini.local'); setManualJoined(false); setPageFound(false); setBrowserPage(0);
     clearSecrets(); setJoined(false); setStatus(null); setIdentity(null); setConnected(false);
-    const selectedClient = createFirstSetupClient({ onProgress: label => {
+    const selectedClient = createClient({ onProgress: label => {
       if (client.current !== selectedClient || !mounted.current) return;
       progress.current = label;
       setMessage(label);
     }, onDisconnect: reason => {
       if (client.current !== selectedClient || !mounted.current) return;
+      if (probing.current === selectedClient) {
+        // Terminal probe failures close transport. Let the discovery result
+        // settle so its evidence is not erased by the disconnect callback.
+        clearSecrets(); setConnected(false); return;
+      }
       operation.current++; clearSecrets(); setConnected(false); setBusy(false);
       if (reason instanceof FirstSetupError && reason.code !== 'disconnected') setError(errorText(reason));
       setMessage(requestedNetwork.current
@@ -120,18 +165,41 @@ export default function FirstSetup() {
         : 'Bluetooth disconnected during setup checks. No Wi-Fi details were submitted. Check the error’s last step before selecting Reachy again.');
     } });
     client.current = selectedClient;
+    probing.current = selectedClient;
     // Start requestDevice in this click's activation, before any async preflight.
     const selection = selectedClient.selectAndConnect();
     run('Select your powered-on Reachy in the browser chooser…', async id => {
-      const observed = await selection;
-      if (operation.current !== id) return;
-      setIdentity(observed);
-      const inspected = await selectedClient.inspect();
-      if (operation.current !== id) return;
-      setIdentity(observed); setStatus(inspected.status); setConnected(true);
-      setJoined(Boolean(requestedNetwork.current && inspected.status.mode === 'wlan' && inspected.status.connected === requestedNetwork.current && !inspected.status.error));
-      setMessage('Reachy answered the connection and encrypted-setup checks. Compare its identity with the robot in front of you.');
+      try {
+        let observed;
+        try { observed = await selection; }
+        catch (failure) { if (operation.current === id) setAccess('inconclusive'); throw failure; }
+        if (operation.current !== id) return;
+        setIdentity(observed); setAccess('passed');
+        const reported = reportedRobotHost(observed.network);
+        if (reported) setHost(reported);
+        const inspected = await selectedClient.probeCapabilities({ onCheck: next => {
+          if (mounted.current && operation.current === id) setChecks(next);
+        } });
+        if (operation.current !== id) return;
+        setChecks(inspected.checks); setStatus(inspected.status); setConnected(inspected.ready && selectedClient.connected);
+        setJoined(Boolean(inspected.ready && requestedNetwork.current && inspected.status.mode === 'wlan' && inspected.status.connected === requestedNetwork.current && !inspected.status.error));
+        setMessage(inspected.ready
+          ? 'All Bluetooth checks passed. Compare the reported identity with your robot, then continue to Wi-Fi.'
+          : inspected.checks.some(check => check.outcome === 'unsupported')
+            ? 'Reachy explicitly does not support one of these Bluetooth commands. Continue using its browser pages. No credentials were submitted.'
+            : 'Bluetooth checks were inconclusive. You can inspect the robot’s browser pages or explicitly try Bluetooth again when it is nearby. No credentials were submitted.');
+      } finally { if (probing.current === selectedClient) probing.current = null; }
     });
+  }
+
+  function useBrowser() {
+    disconnect(); setRoute('browser'); setStep(1);
+    setDaemon(null); setBrowserPage(0); setPageFound(false); setManualJoined(false);
+    setMessage('Join Reachy’s access point using your device’s Wi-Fi controls, then open its status page in a separate tab. Keep this setup tab loaded.');
+  }
+
+  function changeHost(value) {
+    setHost(value); setDaemon(null); setBrowserPage(0); setPageFound(false); setManualJoined(false);
   }
 
   function authenticate(event) {
@@ -198,23 +266,52 @@ export default function FirstSetup() {
   }
 
   return <div className="first-setup">
-    <h3>Set up a new Wireless Mini with Bluetooth</h3>
-    <p>This is an experimental first-time setup path. Keep Reachy nearby and powered on. Use a personal Wi-Fi network or phone hotspot with internet; this form cannot configure eduroam’s university sign-in.</p>
-    <p className="notice">For this first test, use a temporary network password. Reachy’s built-in protocol encrypts the password, but does not authenticate the Bluetooth key exchange against an active impersonator. The PIN and password are used only in this tab’s memory and are cleared after Wi-Fi submission or disconnection.</p>
-    <p className="status" role="status" aria-live="polite">{message}</p>
+    <nav className="setup-steps" aria-label="Setup progress"><ol>{steps.map((name, index) => <li key={name} aria-current={step === index ? 'step' : undefined}>{index + 1}. {name}</li>)}</ol></nav>
+    <h3 ref={stepHeading} tabIndex={-1}>Step {step + 1}: {steps[step]}</h3>
+    {step === 0 && <>
+      <p>For a new Wireless Mini, start with Bluetooth checks. The helper discovers supported setup commands without needing the daemon version in advance.</p>
+      <p>Keep the robot nearby and powered on. Use a personal Wi-Fi network or phone hotspot with internet. The current setup forms do not configure eduroam’s university sign-in.</p>
+      <p className="status" role="status" aria-live="polite">{message}</p>
+      <div className="actions"><button type="button" className="primary" onClick={select} disabled={capability !== 'ready' || busy}>Check with Bluetooth</button><button type="button" onClick={useBrowser} disabled={busy}>Use Reachy’s browser pages</button></div>
+      <p>Using a Lite over USB? Follow the <a href="#local">local controller setup</a>. Already connected your Wireless Mini to Wi-Fi and remote access? <a href="#connect">Open the controls</a>.</p>
+    </>}
+    {step > 0 && route === 'bluetooth' && <p className="status" role="status" aria-live="polite">{message}</p>}
     {error && <p className="error" role="alert">{error}</p>}
-    <div className="actions"><button type="button" onClick={select} disabled={capability !== 'ready' || busy || connected}>Select Reachy</button><button type="button" onClick={refresh} disabled={!connected || busy}>Read network status</button><button type="button" onClick={disconnect} disabled={!client.current}>Disconnect Bluetooth</button></div>
-    <p>In the chooser, wait up to 30 seconds for a named Reachy entry. An “Unknown or unsupported device” entry does not identify your robot. If Reachy never appears, cancel and check discovery before entering any credentials.</p>
-    {identity && <dl className="setup-identity"><dt>Selected device</dt><dd>{identity.deviceName || 'Unnamed Bluetooth device'}</dd><dt>Reported hardware identity</dt><dd>{identity.hardwareId || 'Not exposed by this firmware'}</dd><dt>Last observed network</dt><dd>{statusText(status)}</dd><dt>Reported address information</dt><dd>{identity.network || 'Not exposed by this firmware'}</dd></dl>}
+    {route === 'browser' && requestedNetwork.current && !joined && !manualJoined && <p className="notice">A previous Wi-Fi request has not been confirmed. Inspect the robot’s current network status before submitting another connection request.</p>}
+    {step === 1 && <>
+      {route === 'bluetooth' && <>
+        <p>The checks run in order and stop at the first failure. “Not supported” requires an explicit reply; a timeout stays inconclusive. Later checks are skipped when the connection closes.</p>
+        <dl className="setup-checks"><dt>Bluetooth access and reported identity</dt><dd>{outcomes[access]}</dd>{checks.map(check => <div key={check.id}><dt>{check.label}</dt><dd>{outcomes[check.outcome]}{check.code ? ` (${check.code.replaceAll('_', ' ')})` : ''}</dd></div>)}</dl>
+        <p>In the chooser, wait up to 30 seconds for a named Reachy entry. An “Unknown or unsupported device” entry does not identify your robot.</p>
+        {identity && <dl className="setup-identity"><dt>Selected device</dt><dd>{identity.deviceName || 'Unnamed Bluetooth device'}</dd><dt>Reported hardware identity</dt><dd>{identity.hardwareId || 'Not exposed by this firmware'}</dd><dt>Reported address information</dt><dd>{identity.network || 'Not exposed by this firmware'}</dd></dl>}
+        <div className="actions">{connected && <button type="button" className="primary" onClick={() => setStep(2)}>Continue with Bluetooth</button>}<button type="button" onClick={useBrowser} disabled={busy}>Continue with robot browser</button><button type="button" onClick={select} disabled={capability !== 'ready' || busy || connected}>Try Bluetooth again</button><button type="button" onClick={disconnect} disabled={!client.current}>Disconnect Bluetooth</button></div>
+      </>}
+      {route === 'browser' && <>
+        <ol><li>Keep this tab open, then manually join Reachy’s Wi-Fi access point.</li><li>Open the status link below in a new tab. Unlike the documentation viewer, this raw JSON page needs no external scripts.</li><li>Copy the response, return here and paste it below. You can reconnect this computer to the internet while keeping the robot page open.</li></ol>
+        <p>The public page cannot silently change your Wi-Fi or directly read the robot’s local HTTP API. These links navigate separate browser tabs.</p>
+        <label htmlFor="robot-host">Robot hostname or local IP address — confirm this belongs to your Reachy</label>
+        <input className="robot-host" id="robot-host" type="text" value={host} onChange={event => changeHost(event.target.value)} autoComplete="off" spellCheck={false} maxLength={253} />
+        <p>If the local hostname does not resolve, use the gateway address shown in your device’s Wi-Fi details for Reachy’s access point, or the address reported by Bluetooth.</p>
+        {!links && <p className="error" role="alert">Enter a local IP address or a .local hostname, without a scheme, port, path or password.</p>}
+        {links && <p><a href={links.status} target="_blank" rel="noopener noreferrer">Open robot daemon status</a></p>}
+        <DaemonStatusForm onResult={setDaemon} />
+        <p>{guidance.text}</p>
+        {daemon && <p>Reported state: {daemon.state || 'unknown'}{daemon.hasError ? '. The robot reports an error; inspect it on its own page.' : ''}. This response does not verify the Bluetooth service version.</p>}
+        <div className="actions"><button type="button" className="primary" disabled={!links || guidance.kind === 'lite'} onClick={() => setStep(2)}>Continue to robot Wi-Fi pages</button><button type="button" onClick={select} disabled={capability !== 'ready' || busy}>Try Bluetooth checks</button></div>
+      </>}
+    </>}
+    {step === 2 && route === 'bluetooth' && <>
+    <p>{statusText(status)}</p>
+    <p className="notice">Use a temporary network password. The built-in protocol encrypts it but does not authenticate the Bluetooth key exchange against an active impersonator. Credentials stay in this tab’s memory and are cleared after submission or disconnection.</p>
     <div className="setup-forms">
       <form ref={pinForm} className="connection-form" onSubmit={authenticate}>
-        <h3>1. Verify the robot</h3>
+        <h3>Verify the robot</h3>
         <label htmlFor="setup-pin">Setup PIN — last five characters of the printed serial</label>
         <input id="setup-pin" name="pin" type="password" autoComplete="off" required minLength={5} maxLength={5} disabled={!connected || busy} />
         <button disabled={!connected || busy || authenticated}>Verify PIN</button>
       </form>
       <form ref={wifiForm} className="connection-form" onSubmit={connectWifi}>
-        <h3>2. Connect Reachy to Wi-Fi</h3>
+        <h3>Connect Reachy to Wi-Fi</h3>
         <label htmlFor="setup-ssid">Network name (SSID)</label>
         <input id="setup-ssid" name="ssid" type="text" autoComplete="off" required maxLength={32} disabled={!authenticated || busy} />
         <label htmlFor="setup-password">Temporary Wi-Fi password</label>
@@ -222,12 +319,33 @@ export default function FirstSetup() {
         <button disabled={!authenticated || busy}>Connect to this Wi-Fi network</button>
       </form>
     </div>
-    <h3>3. Enable browser control</h3>
-    <p>{joined ? 'The requested Wi-Fi network was confirmed over Bluetooth.' : 'Complete the Wi-Fi step first.'} Once Reachy and this computer are on the same network with internet, check the robot’s status page for its installed version. Our motion controller currently supports daemon 1.10.0; do not downgrade a fresh robot to bypass this check.</p>
-    {joined && <p><a href="http://reachy-mini.local:8000/api/daemon/status" target="_blank" rel="noopener noreferrer">Open Reachy’s status page</a></p>}
-    <p>Then use Reachy’s Hugging Face sign-in. Review the permissions it requests before approving. The robot needs internet for this step. If the local name does not resolve, retain the address information above and return to the setup diagnostics.</p>
-    {joined && <p><a href="http://reachy-mini.local:8000/api/hf-auth/oauth/begin" target="_blank" rel="noopener noreferrer">Open Reachy’s Hugging Face sign-in</a></p>}
-    <p>After sign-in, return here, create a <a href="https://huggingface.co/settings/tokens" target="_blank" rel="noopener noreferrer">read token for the same account</a>, and use <a href="#connect">Connect to Reachy</a>. Bluetooth setup does not wake the robot or start its camera or microphone.</p>
-    <details><summary>If setup stops</summary><p>A cancelled chooser makes no changes. After a disconnect or timeout, select the same robot and read its status before another Wi-Fi request. A request acknowledgement does not prove network connection. If encrypted provisioning is absent on the shipped firmware, this wizard stops without updating or resetting it. The robot’s documentation page may be blank on its access point because it requires internet-hosted scripts.</p></details>
+    <div className="actions"><button type="button" onClick={refresh} disabled={!connected || busy}>Read network status</button><button type="button" className="primary" onClick={() => setStep(3)} disabled={!joined || busy}>Continue to browser control</button><button type="button" onClick={useBrowser} disabled={busy}>Switch to robot browser</button></div>
+    <p>An accepted request is not proof of joining Wi-Fi. After a timeout or disconnect, read the same robot’s status before sending another request.</p>
+    </>}
+    {step === 2 && route === 'browser' && <>
+      <p>{guidance.text}</p>
+      <p>While connected to Reachy’s access point, try these pages in order. Each opens in a separate tab. Leave the robot’s daemon OFF while setting up the network.</p>
+      {browserPage < 2 && links ? <>
+        <p><a className="download" href={browserPage === 0 ? links.settings : links.dashboard} target="_blank" rel="noopener noreferrer">{browserPage === 0 ? 'Open Reachy Settings' : 'Open Reachy dashboard'}</a></p>
+        <div className="actions"><button type="button" onClick={() => setPageFound(true)}>I found Wi-Fi controls</button><button type="button" onClick={() => { setBrowserPage(page => page + 1); setPageFound(false); setManualJoined(false); }}>This page has no Wi-Fi controls</button></div>
+      </> : <p>Neither browser page offered Wi-Fi setup. Follow the <a href="https://huggingface.co/docs/reachy_mini/platforms/reachy_mini/get_started" target="_blank" rel="noopener noreferrer">official connection guide</a> for this image. It may require the official Control app; this helper cannot promise a browser-only route for every shipped image.</p>}
+      {pageFound && <>
+        <ol><li>Choose your personal network or phone hotspot in the robot’s own form.</li><li>Enter its password there and submit the connection. On older images, this travels over local HTTP; use a dedicated temporary password.</li><li>Connect this computer to the same network. Check Reachy’s status there and note its new address before continuing.</li></ol>
+        <label className="checkbox"><input type="checkbox" checked={manualJoined} onChange={event => setManualJoined(event.target.checked)} />I checked that Reachy joined the network. This is my confirmation, rather than a Bluetooth result.</label>
+      </>}
+      <div className="actions"><button type="button" className="primary" disabled={!manualJoined || !pageFound} onClick={() => setStep(3)}>Continue to browser control</button></div>
+    </>}
+    {step === 3 && <>
+      <p>{route === 'bluetooth' && joined ? 'Bluetooth confirmed the requested Wi-Fi network.' : 'You confirmed the network connection on the robot’s own page.'} Put this computer and Reachy on that network with internet, then check the current daemon status.</p>
+      <label htmlFor="connected-host">Reachy’s address on the joined network</label>
+      <input className="robot-host" id="connected-host" type="text" value={host} onChange={event => changeHost(event.target.value)} autoComplete="off" spellCheck={false} maxLength={253} />
+      {links ? <p><a href={links.status} target="_blank" rel="noopener noreferrer">Open current daemon status</a></p> : <p className="error">Enter a local IP address or .local hostname without a scheme, port or path.</p>}
+      <DaemonStatusForm onResult={setDaemon} />
+      <p>{guidance.text}</p>
+      <p>Our motion controller currently supports daemon 1.10.0. Setup success does not establish control compatibility. Do not downgrade a fresh robot to bypass this check.</p>
+      {guidance.oauth && links ? <p><a href={links.oauth} target="_blank" rel="noopener noreferrer">Open Reachy’s Hugging Face sign-in</a>. Review the requested permissions before approving. The robot needs internet.</p> : <p>Use the sign-in and remote-access options actually provided by your robot’s dashboard or the <a href="https://huggingface.co/docs/reachy_mini/SDK/javascript-sdk" target="_blank" rel="noopener noreferrer">official browser connection guide</a>. Older images need a separate compatibility review before browser control; this helper does not start an update.</p>}
+      {daemon?.wireless && daemon.version === '1.10.0' && <p>After enabling remote access, create a <a href="https://huggingface.co/settings/tokens" target="_blank" rel="noopener noreferrer">read token for the same account</a> and <a className="download" href="#connect">Open the controls</a>.</p>}
+    </>}
+    {step > 0 && <div className="actions"><button type="button" disabled={busy} onClick={() => setStep(current => current - 1)}>Back</button></div>}
   </div>;
 }

@@ -4,7 +4,7 @@ The [hosted browser controller](https://mesmerprism.com/reachy-mini/) is the pre
 
 Install Node **22.12+ or 24**, download and extract the source ZIP linked from the hosted page, and open a terminal in that directory.
 
-Wireless runs its daemon on the robot. Initial Wi-Fi configuration uses the official Reachy Mini Control application's first-connection wizard; browser control needs no desktop helper once setup is complete. See the [official Wireless guide](https://huggingface.co/docs/reachy_mini/platforms/reachy_mini/get_started). Lite instead uses USB and its supplied power adapter, with a daemon on the computer, commonly `http://localhost:8000`. See the [official Lite guide](https://huggingface.co/docs/reachy_mini/platforms/reachy_mini_lite/get_started) and [REST API guide](https://huggingface.co/docs/reachy_mini/API/rest-api).
+Wireless runs its daemon on the robot. The hosted page’s [guided setup](https://mesmerprism.com/reachy-mini/#setup) checks Bluetooth capabilities in sequence and offers robot-owned browser pages when provisioning is unavailable. Browser setup depends on the installed image; network setup and control compatibility are checked separately. The official alternative is Reachy Mini Control’s first-connection wizard, described in the [Wireless guide](https://huggingface.co/docs/reachy_mini/platforms/reachy_mini/get_started). Lite instead uses USB and its supplied power adapter, with a daemon on the computer, commonly `http://localhost:8000`. See the [official Lite guide](https://huggingface.co/docs/reachy_mini/platforms/reachy_mini_lite/get_started) and [REST API guide](https://huggingface.co/docs/reachy_mini/API/rest-api).
 
 ```sh
 npm ci
