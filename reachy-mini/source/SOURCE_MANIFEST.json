@@ -144,8 +144,8 @@
     },
     {
       "path": "public-site/RobotUpdate.jsx",
-      "bytes": 6164,
-      "sha256": "717ad309b8f3e7b7f5874168d5d98aee6a7f23fc69fdaa17b9d9972a892943f6"
+      "bytes": 6311,
+      "sha256": "29b59035579260041c7b5bcdeed8bbf3e8360d8bd1603f7d867d6a67eea64cdb"
     },
     {
       "path": "public-site/SimulatedCamera.jsx",
@@ -304,8 +304,8 @@
     },
     {
       "path": "src/robot-update.mjs",
-      "bytes": 8863,
-      "sha256": "8cdebf0a4ff15728c6e08075d8b51cc8011182ce3f48f31010e28d99f13e48ba"
+      "bytes": 8922,
+      "sha256": "76c219e95eea7b4ed8dc125b38211332810967a3aec0d974203d1784a2caa97c"
     },
     {
       "path": "src/setup-guidance.mjs",
@@ -469,8 +469,8 @@
     },
     {
       "path": "test/robot-update.test.mjs",
-      "bytes": 8592,
-      "sha256": "70a59434d88732bdf27d6a5ab7f1d2f22e067ae6af04e4c13f3460dfff9162f5"
+      "bytes": 8689,
+      "sha256": "14c3e753217aa3fa9195a7980db6242ca007750921d929e09dac59e4ac0f8cc4"
     },
     {
       "path": "test/setup-guidance.test.mjs",

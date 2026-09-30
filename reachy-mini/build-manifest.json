@@ -2,14 +2,14 @@
   "version": "0.1.0",
   "files": [
     {
-      "path": "assets/RobotModel-BuE76mil.js",
+      "path": "assets/RobotModel-Df6SSmhV.js",
       "bytes": 655033,
-      "sha256": "5db3f31b2583bd0db682750a3d3eac59f5d904af990ce590e4a3b0a6ec402a46"
+      "sha256": "41868b5c4757129ee0f6951488477ad00f62cefa978d02e034e34386a5ae7d0a"
     },
     {
-      "path": "assets/SimulatedCamera-Bg4gQs5U.js",
+      "path": "assets/SimulatedCamera-CvVdlPKx.js",
       "bytes": 4084,
-      "sha256": "8b5086f53b5f08150ba8a083ec43ed427de2daa76082490ba9713ee296b177c6"
+      "sha256": "751d0a90196678f5d515ceb091f5f47d284998f8c7be80d4f351ee33e82e057b"
     },
     {
       "path": "assets/demo-room-panorama-8bnGy0Ap.png",
@@ -17,9 +17,9 @@
       "sha256": "ea4fe2bad1e747547dfb20d1e1d1e17d02c20b41a9ac6b6ccf8bf2163a536e96"
     },
     {
-      "path": "assets/demo-sdk-D8M914Ps.js",
+      "path": "assets/demo-sdk-CKXpwEFM.js",
       "bytes": 1317,
-      "sha256": "b69f589401dd8df626cc78144df74004b9162fc2d6f2d1ab7067e2d129cbe4dc"
+      "sha256": "33c87226c931f56b19e4968320fccc05d283c72703bd01914e13724f515726a2"
     },
     {
       "path": "assets/head-tracker-C8P4Y3-k.js",
@@ -37,9 +37,9 @@
       "sha256": "f21fd61254faad1a7cadc2cdd78013f1299e0aed9a3506089b7799fbc3f68392"
     },
     {
-      "path": "assets/index-Cr0BA3mB.js",
-      "bytes": 381752,
-      "sha256": "567f36f14135b188d9af43914b888b3aca7696da68ffec69776d7f2a5c755c5e"
+      "path": "assets/index-8ScckZhh.js",
+      "bytes": 381944,
+      "sha256": "be9e2af2035dd14e03368a0387f74b152819ae39bb194a552a3335613c89bdc8"
     },
     {
       "path": "assets/reachy-mini-sdk-B7WY160u.js",
@@ -54,7 +54,7 @@
     {
       "path": "index.html",
       "bytes": 562,
-      "sha256": "19e4ba99e737bf5b128a9098e185abd68ad35dd19a179d9cb88755bbe8e90bd9"
+      "sha256": "bb571f0199265aa8813f2a09d0bc00618aea2e6b01bbb570136c0f453e06c249"
     }
   ]
 }

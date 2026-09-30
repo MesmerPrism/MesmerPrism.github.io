@@ -29,7 +29,7 @@ class RobotUpdateClient {
   emit() { try { this.onChange(this.snapshot()); } catch {} }
   alive() { if(this.disposed) throw fail('disposed'); }
   async operation(action) { this.alive(); if(this.active) throw fail('busy'); this.active=true;this.failureCode=null;this.emit();
-    try { return await action(); } catch(error) { const safe=error instanceof RobotUpdateError ? error : fail('transport'); this.failureCode=safe.code; if(this.attempted && !['confirmed','reported'].includes(this.phase)) this.phase='unknown'; throw safe; }
+    try { return await action(); } catch(error) { const safe=error instanceof RobotUpdateError ? error : fail('transport'); this.failureCode=safe.code; if(this.attempted && !['confirmed','reported'].includes(this.phase)) this.phase='unknown'; else if(this.phase==='checking') this.phase='unavailable'; throw safe; }
     finally { this.active=false;this.emit(); } }
   async request(path, method='GET') {
     this.alive(); const controller=new AbortController();this.controllers.add(controller);let reader,timer;

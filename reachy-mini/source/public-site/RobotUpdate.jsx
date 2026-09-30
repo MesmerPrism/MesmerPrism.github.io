@@ -3,6 +3,7 @@ import { createRobotUpdateClient, RobotUpdateError } from '../src/robot-update.m
 
 const descriptions = {
   idle: 'Check Reachy’s software before continuing to browser control.', checking: 'Checking Reachy and available software…',
+  unavailable: 'The software check did not complete. Use Reachy’s status page to check its current version, or try this read-only check again.',
   offered: 'A stable update is available. Keep Reachy powered and connected to the internet.', current: 'Reachy reports no newer stable update.',
   unsupported: 'This page cannot start an update for the reported software or robot state. Use Reachy’s own settings if an update is needed.',
   submitted: 'Update requested. Keep Reachy powered. Use the buttons below to check progress and verify its version afterwards.',
