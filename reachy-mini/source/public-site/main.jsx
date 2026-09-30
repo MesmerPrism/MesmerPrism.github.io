@@ -7,7 +7,7 @@ import './style.css';
 
 function currentView() {
   const hash = window.location.hash.slice(1);
-  return ['setup', 'connect', 'use', 'source', 'local'].includes(hash) ? hash : 'home';
+  return ['setup', 'connect', 'demo', 'use', 'source', 'local'].includes(hash) ? hash : 'home';
 }
 function Page() {
   const [size, setSize] = useState('normal');
@@ -26,10 +26,13 @@ function Page() {
         <p className="intro">Move the head and antennas, see Reachy’s measured pose, watch its camera and talk through its speaker.</p>
         <div className="start-options"><div><h2>Setting up a new robot?</h2><p>Start with guided connection checks. The helper finds a supported setup route for your Wireless Mini.</p><a className="download primary" href="#setup">Set up a new Reachy</a></div><div><h2>Already set up?</h2><p>If Reachy has Wi-Fi and remote access, open the controls. You can also try them in simulation.</p><a className="download" href="#connect">Open browser controls</a></div></div>
         <p>Browser control currently supports Wireless daemon 1.10.0. Network setup can use other versions’ own browser pages. For Lite over USB, use the <a href="#local">local controller</a>.</p>
+        <p>No robot yet? <a href="#demo">Try the simulated Reachy</a>. Move its head and see how the camera view changes in a 360° room.</p>
       </section>
       <section id="connect" hidden={view !== 'connect'}><h2>Connect to Reachy</h2><p>New robot or no Wi-Fi yet? <a href="#setup">Start guided setup</a>. Leaving the controls page disconnects the control session.</p>{view === 'connect' && <WirelessPanel />}</section>
+      <section id="demo" hidden={view !== 'demo'}><h2>Try Reachy without a robot</h2><p>This simulation uses an animated schematic robot and an AI-generated room panorama. It does not connect to hardware. Turn, nod or tilt the head to explore the camera view.</p>{view === 'demo' && <WirelessPanel initialDemo />}</section>
       <section id="setup" hidden={view !== 'setup'}><h2>Set up your robot</h2>
         <p>Keep this tab on Setup while provisioning. Leaving setup disconnects Bluetooth and clears credentials; a network request already submitted to Reachy may still finish there.</p>
+        <p>Exploring without hardware? <a href="#demo">Try the simulated robot and camera</a>.</p>
         {view === 'setup' && <FirstSetup />}
         <details><summary>Official setup alternative and control requirements</summary>
         <ol><li><strong>Choose your model.</strong> Browser-only control is for Wireless Mini with daemon 1.10.0. For Lite over USB, use the <a href="#local">local controller</a>. Other daemon versions are blocked until their protocol has been checked.</li>
@@ -52,6 +55,7 @@ function Page() {
       <section id="source" hidden={view !== 'source'}><h2>Source, license & credits</h2><p>Original controller code and schematic geometry © 2026 MesmerPrism, released under the <a href="./source/LICENSE">MIT license</a>. View the <a href="https://github.com/MesmerPrism/MesmerPrism.github.io/tree/main/reachy-mini/source">complete source</a> and <a href="./source/THIRD_PARTY_NOTICES.md">third-party notices</a>.</p>
         <p>Reachy Mini, its daemon, JavaScript SDK and CAD are by <a href="https://github.com/pollen-robotics/reachy_mini">Pollen Robotics</a>. Software and SDK: Apache-2.0. Hardware README: Creative Commons BY-SA-NC, with no version stated; CAD is not included in this public bundle. Head tracking uses <a href="https://ai.google.dev/edge/mediapipe/solutions/vision/face_landmarker">Google MediaPipe</a> and Apache-2.0 face models. Rendering uses Three.js, React and Lucide; text measurement uses Cheng Lou’s <a href="https://github.com/chenglou/pretext">Pretext</a>. Newsreader typeface: Production Type, <a href="/assets/fonts/newsreader-OFL.txt">SIL Open Font License</a>. Design guidance: <a href="https://github.com/GeorgeFejer91/uncodixfy-pretext">Uncodixfy Pretext</a>.</p>
         <p>This is an independent community controller. It is not an official Pollen Robotics product. There is no analytics, recording or automatic microphone/camera capture. Authentication and signaling contact Hugging Face/Pollen; WebRTC may contact the SDK’s STUN service to establish a peer connection.</p>
+        <p>The simulated camera uses an AI-generated panorama distributed with the MIT-licensed demo. See its <a href="./source/public-site/DEMO_ASSETS.md">provenance and limitations</a>. Optional <a href="./source/docs/SETUP.md#agent-diagnostics-cli">agent diagnostics</a> provide read-only JSON reports without changing robot settings.</p>
       </section>
     </main><footer><a href="/">Mesmer Prism</a> · <a href="./source/README.md">Documentation</a> · <a href="https://github.com/MesmerPrism/MesmerPrism.github.io/issues">Report a problem</a></footer>
   </div>;

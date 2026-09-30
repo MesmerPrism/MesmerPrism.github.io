@@ -59,6 +59,13 @@ export default function RobotModel({ control, schematic = false, Text = 'span' }
     let disposed = false, failed = false, renderer, scene, orbit, observer, timer, frame;
     setLoading(true);setError('');setWireframe(false);setAxes(false);
     const abort = new AbortController(), loaded = [], container = host.current;
+    const releaseRenderer = () => {
+      if (!renderer) return;
+      renderer.dispose();
+      // Removing a canvas does not release its WebGL context. Repeated route
+      // changes must release the context instead of waiting for browser GC.
+      renderer.forceContextLoss(); renderer.domElement.remove(); renderer = null;
+    };
     const updateFeedback = next => { if (!disposed) setFeedback(old => old.label === next.label && old.reason === next.reason && old.frozen === next.frozen ? old : next); };
     const render = () => {
       if (disposed || failed || document.hidden || frame || !runtime.current) return;
@@ -143,7 +150,7 @@ export default function RobotModel({ control, schematic = false, Text = 'span' }
       } catch (problem) {
         failed = true; clearInterval(timer); cancelAnimationFrame(frame); observer?.disconnect(); orbit?.dispose();
         if (scene) { disposeTree(scene); scene.clear(); }
-        renderer?.dispose(); renderer?.domElement.remove(); runtime.current = null;
+        releaseRenderer(); runtime.current = null;
         if (!disposed && problem.name !== 'AbortError') { setError(problem.message || '3D model could not load.'); setLoading(false); }
       }
     };
@@ -152,7 +159,7 @@ export default function RobotModel({ control, schematic = false, Text = 'span' }
       disposed = true; abort.abort(); clearInterval(timer); cancelAnimationFrame(frame);
       document.removeEventListener('visibilitychange', visibility); observer?.disconnect(); orbit?.dispose();
       if (scene && !failed) disposeTree(scene);
-      renderer?.dispose(); renderer?.domElement.remove(); runtime.current = null;
+      releaseRenderer(); runtime.current = null;
     };
   }, [schematic]);
   useEffect(() => { runtime.current?.refresh(); }, [control.status, control.statusReadAt, control.session]);

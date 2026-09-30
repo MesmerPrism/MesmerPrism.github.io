@@ -13,7 +13,7 @@ const files = new Set((Array.isArray(result) ? result : [result]).flatMap(bundle
 // output directory or touch the separate source/download release inventory.
 const assets = path.join(outDir, 'assets');
 for (const file of await fs.readdir(assets, { withFileTypes: true })) {
-  if (file.isFile() && /^(?:index|RobotModel|head-tracker(?:\.worker)?|vision_bundle|demo-sdk|reachy-mini-sdk)-[\w-]+\.(?:js|css)$/.test(file.name) && !files.has(`assets/${file.name}`)) await fs.unlink(path.join(assets, file.name));
+  if (file.isFile() && /^(?:index|RobotModel|SimulatedCamera|three\.module|head-tracker(?:\.worker)?|vision_bundle|demo-sdk|reachy-mini-sdk|demo-room-panorama)-[\w-]+\.(?:js|css|png)$/.test(file.name) && !files.has(`assets/${file.name}`)) await fs.unlink(path.join(assets, file.name));
 }
 // Explicitly copy only reviewed Apache-2.0 webcam resources, never private CAD/config.
 for (const name of ['mediapipe', 'models']) await fs.cp(path.join(root, 'public', name), path.join(outDir, name), { recursive: true });

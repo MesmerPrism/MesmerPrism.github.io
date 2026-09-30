@@ -19,6 +19,45 @@ The wizard requests only `GET /api/daemon/status`, checks its hardware identity 
 
 After confirmation, setup writes ignored `local/config.json`. Existing configuration is preserved unless you type `REPLACE` or pass `--replace`. Replacement writes a new configuration; retain any custom settings before choosing it. Setup never clears `local/unknown-outcome.json`. Open **http://localhost:18750** after starting. The bridge binds to loopback; do not expose it directly to the internet.
 
+## Agent diagnostics CLI
+
+This optional Node tool supports unattended diagnostics and publication checks.
+The hosted webpage and simulation still work without a helper download.
+Use Node 22.12+ or 24 and the same source package:
+
+```sh
+npm run agent -- --help
+npm run agent -- status --host reachy-mini.local
+npm run agent -- guidance --status-file local/daemon-status.json
+npm run agent -- validate-export
+npm run agent -- verify-site --url https://mesmerprism.com/reachy-mini/
+```
+
+For JSON-only stdout, call `node tools/Agent-Diagnostics.mjs` directly with the
+same arguments. Exit 0 means completed; exit 2 means failed with a sanitized
+error code. `guidance --stdin` accepts status JSON from a pipe. Reports omit
+hardware identity, network names, addresses, raw errors and credentials.
+
+`status` makes one bounded GET request to the specified private/local host,
+without redirects, network scanning, config reading or config writes. It shares
+the browser helper's status parser and version guidance. Daemon 1.2.11 is a
+successful diagnostic result with legacy setup guidance, even though the
+controller is still unsupported. A daemon version never proves the separately
+installed Bluetooth service's capabilities.
+
+`validate-export` runs the existing publication privacy audit without exporting.
+`verify-site` checks every declared build/source file and the source ZIP against
+manifest sizes and SHA-256 hashes. For a local preview use
+`verify-site --site-dir <website-root>/reachy-mini`. This establishes publication
+consistency, not independent authenticity, rendered browser behavior, or robot
+health. Build manifests do not inventory the separately copied MediaPipe models.
+
+The CLI has no mutation commands. Browser first pairing requires a device
+chooser, and account authorization remains an explicit browser handoff. For
+automated browser testing, the repository's `test/fixtures/setup-qa.html` uses
+synthetic GATT rather than hardware; `npm test` retains the protocol regression
+tests. Do not replace these with a test that assumes one shipped daemon version.
+
 ## Approve head controls
 
 Head movement is disabled by default. For attended manual head controls and webcam following:

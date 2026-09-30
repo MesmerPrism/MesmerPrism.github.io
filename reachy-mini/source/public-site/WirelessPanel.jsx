@@ -3,13 +3,14 @@ import { WirelessControl, WIRELESS_EMOTES } from '../src/wireless-control.mjs';
 import { createWirelessTalk } from '../src/wireless-audio.mjs';
 import FitText from './FitText.jsx';
 const RobotModel = lazy(() => import('../src/RobotModel.jsx'));
+const SimulatedCamera = lazy(() => import('./SimulatedCamera.jsx'));
 const zero = { yaw: 0, pitch: 0, roll: 0, x: 0, y: 0, z: 0 };
 const names = { yaw: 'Turn', pitch: 'Nod', roll: 'Tilt', x: 'Forward / back', y: 'Left / right', z: 'Up / down' };
 const degrees = value => Number.isFinite(value) ? value.toFixed(1) : '—';
 function Slider({ label, value, min, max, measured, unit, disabled, onChange }) {
   return <div className="slider-row"><label><span className="slider-heading"><FitText>{label}</FitText><FitText>{`${value}${unit} requested`}</FitText></span><input type="range" min={min} max={max} step={1} value={value} disabled={disabled} onChange={event => onChange(Number(event.target.value))} aria-label={label} /></label><FitText as="p" className="measured">{`${degrees(measured)}${unit} measured`}</FitText></div>;
 }
-export default function WirelessPanel() {
+export default function WirelessPanel({ initialDemo = false }) {
   const control = useRef(null), latest = useRef({}), goal = useRef(null), tokenInput = useRef(null), video = useRef(null), webcam = useRef(null), tracker = useRef(null), follow = useRef(false), pose = useRef(null), talk = useRef(null), tickBusy = useRef(false), picker = useRef(null), generation = useRef(0), previewGeneration=useRef(0);
   const [status, setStatus] = useState({ connected: false }), [token, setToken] = useState(''), [consent, setConsent] = useState(false), [busy, setBusy] = useState(false), [error, setError] = useState(''), [message, setMessage] = useState('Disconnected'), [demo, setDemo] = useState(false), [choices, setChoices] = useState([]), [selection, setSelection] = useState(''), [head, setHead] = useState(zero), [antennas, setAntennas] = useState({ left: 0, right: 0 }), [listen, setListen] = useState(false), [listeningVolume, setListeningVolume] = useState(60), [volume, setVolume] = useState(40), [webcamState, setWebcamState] = useState('off'), [following, setFollowing] = useState(false), [tracked, setTracked] = useState(null), [micState, setMicState] = useState('off'), [held, setHeld] = useState(false), [speed, setSpeed] = useState(20);
   latest.current = { status, busy, demo, speed };
@@ -21,7 +22,8 @@ export default function WirelessPanel() {
   const command = async body => { goal.current = null; follow.current = false; setFollowing(false); setBusy(true); setError(''); try { const result = await control.current.command({...body,epoch:control.current.snapshot().controlEpoch}); if (result.queued === false) throw Error('Request was not queued.'); setMessage(result.confirmed ? `${body.action}: daemon response received` : `${body.action}: queued, application unconfirmed`); } catch (error) { setError(error.message); } finally { setBusy(false); } };
   const connect = async isDemo => {
     const captured = token.trim(); setToken(''); setBusy(true); setError('');
-    await disconnect(); const gen = ++generation.current;
+    const disconnecting = disconnect(); const gen = ++generation.current; await disconnecting;
+    if (gen !== generation.current) return;
     let next;
     try {
       const { ReachyMini } = isDemo ? { ReachyMini: (await import('./demo-sdk.mjs')).DemoWirelessSDK } : await import('@pollen-robotics/reachy-mini-sdk');
@@ -63,10 +65,11 @@ export default function WirelessPanel() {
     }, 50);
     const hide = () => { if (document.hidden) { void disconnect(); } };
     const blur = () => { if (goal.current || follow.current) void stop(); else talk.current?.release(); };
-    const exit = () => { halt(); stopPreview(); void control.current?.close(); };
+    const exit = () => { generation.current++; halt(); stopPreview(); void control.current?.close(); };
     document.addEventListener('visibilitychange', hide); window.addEventListener('blur', blur); window.addEventListener('pagehide', exit);
     return () => { clearInterval(timer); document.removeEventListener('visibilitychange', hide); window.removeEventListener('blur', blur); window.removeEventListener('pagehide', exit); exit(); };
   }, []);
+  useEffect(() => { if (initialDemo) void connect(true); }, []);
   useEffect(() => { const node = video.current; if (node) { node.muted = !listen; node.volume = listeningVolume / 100; control.current?.robot?.setAudioMuted(!listen); if (listen) void node.play().catch(error => setError(error.message)); } }, [listen, listeningVolume]);
   const startWebcam = async () => {
     const requested=++previewGeneration.current;
@@ -79,7 +82,8 @@ export default function WirelessPanel() {
   // older monotonic timestamp through Date.now()/performance.now() rounding.
   const modelControl = { session: { mode: demo ? 'demo' : 'wireless', token:`${generation.current}:${status.hardwareId || 'pending'}` }, status: { ...status, headPose: status.measured?.headMatrix, bodyYaw: status.measured?.bodyYawRad, antennas: status.measured?.antennas, diagnostics: { snapshot: { startAgeMs: status.measured ? Date.now() - status.measured.receivedAt : Infinity } } }, statusReadAt: status.measured ? status.measured.receivedAt-performance.timeOrigin : -Infinity };
   return <>
-    {!status.connected && <form className="connection-form" onSubmit={event => { event.preventDefault(); void connect(false); }}>
+    {!status.connected && initialDemo && <div className="actions"><button type="button" disabled={busy} onClick={() => void connect(true)}><FitText>Start simulation</FitText></button></div>}
+    {!status.connected && !initialDemo && <form className="connection-form" onSubmit={event => { event.preventDefault(); void connect(false); }}>
       <label htmlFor="hf-token"><FitText>Hugging Face read token</FitText></label><input ref={tokenInput} id="hf-token" type="password" autoComplete="off" spellCheck={false} value={token} onChange={event => setToken(event.target.value)} disabled={busy} placeholder="Paste your own read token" />
       <label className="checkbox"><input type="checkbox" checked={consent} onChange={event => setConsent(event.target.checked)} /><FitText>I have stopped other robot apps and understand that browser Stop and target delivery are unconfirmed.</FitText></label>
       <div className="actions"><button type="submit" className="primary" disabled={busy || !consent || !token.trim()}><FitText>{busy ? 'Connecting…' : 'Connect Wireless Mini'}</FitText></button><button type="button" disabled={busy} onClick={() => void connect(true)}><FitText>Try simulated controls</FitText></button></div>
@@ -89,10 +93,10 @@ export default function WirelessPanel() {
     {error && <FitText as="p" className="error" role="alert">{error}</FitText>}
     {status.connected && <>
       {!demo&&<FitText as="p">{`Connected robot hardware ID: ${status.hardwareId || 'checking'}`}</FitText>}
-      <p className="notice">WebRTC targets and Stop are queued only. Measured telemetry is shown separately. Keep one controller active. <a href="#use">Read the transport limits</a>.</p>
+      {demo ? <p>Head and antenna controls affect this simulation only. Camera and microphone permissions are not needed for the room view.</p> : <p className="notice">WebRTC targets and Stop are queued only. Measured telemetry is shown separately. Keep one controller active. <a href="#use">Read the transport limits</a>.</p>}
       <div className="actions"><button className="stop" onClick={() => void stop()}><FitText>Stop motion requests</FitText></button><button disabled={busy || !status.ready || status.awake} onClick={() => void command({action:'wake'})}><FitText>Wake</FitText></button><button disabled={busy || !status.ready || !status.awake} onClick={() => { talk.current?.disable(); void command({action:'sleep'}); }}><FitText>Sleep</FitText></button><button onClick={() => void disconnect()}><FitText>Disconnect</FitText></button></div>
     </>}
-    <div className="media-grid"><section className="control-section"><h3>Reachy camera & microphone</h3><video ref={video} autoPlay muted playsInline /><FitText as="p">{status.connected && !demo ? 'Live WebRTC media; audio is off until you enable Listen.' : 'Connect a real robot to receive its camera and microphone.'}</FitText><label className="checkbox"><input type="checkbox" checked={listen} disabled={!status.connected || demo} onChange={event => setListen(event.target.checked)} /><FitText>Listen to Reachy’s microphone</FitText></label><Slider label="Listening volume" value={listeningVolume} min={0} max={100} unit="%" disabled={!listen} onChange={setListeningVolume} /></section><Suspense fallback={<FitText as="p">Loading 3D view…</FitText>}><RobotModel control={modelControl} schematic Text={FitText} /></Suspense></div>
+    <div className="media-grid"><section className="control-section"><h3>{initialDemo || demo ? 'Simulated Reachy camera' : 'Reachy camera & microphone'}</h3><video ref={video} autoPlay muted playsInline hidden={initialDemo || demo && status.connected} />{demo && status.connected && <Suspense fallback={<FitText as="p">Loading simulated camera…</FitText>}><SimulatedCamera measured={status.measured} /></Suspense>}<FitText as="p">{status.connected && !demo ? 'Live WebRTC media; audio is off until you enable Listen.' : demo && status.connected ? 'Simulation has no microphone stream.' : initialDemo ? 'Start simulation to explore the room view.' : 'Connect a real robot to receive its camera and microphone.'}</FitText><label className="checkbox"><input type="checkbox" checked={listen} disabled={!status.connected || demo} onChange={event => setListen(event.target.checked)} /><FitText>Listen to Reachy’s microphone</FitText></label><Slider label="Listening volume" value={listeningVolume} min={0} max={100} unit="%" disabled={!listen} onChange={setListeningVolume} /></section><Suspense fallback={<FitText as="p">Loading 3D view…</FitText>}><RobotModel control={modelControl} schematic Text={FitText} /></Suspense></div>
     <div className="controls-grid"><section className="control-section"><h3>Head movement</h3>{Object.keys(zero).map(axis => <Slider key={axis} label={names[axis]} value={head[axis]} min={axis==='yaw'?-20:['pitch','roll'].includes(axis)?-15:-10} max={axis==='yaw'?20:['pitch','roll'].includes(axis)?15:10} unit={['x','y','z'].includes(axis)?' mm':'°'} measured={status.measured?.head[axis]} disabled={!canMove || following} onChange={value => { const next = {...head,[axis]:value}; setHead(next); goal.current={action:'head-manual',pose:next}; }} />)}<div className="actions"><button disabled={!canMove || following} onClick={() => { setHead(zero); goal.current={action:'head-manual',pose:zero}; }}><FitText>Center head</FitText></button></div><Slider label="Angular speed limit" value={speed} min={5} max={30} unit="°/s" onChange={setSpeed} /><p>Translation is limited to 10 mm/s. The robot may limit combined poses further.</p></section>
       <section className="control-section"><h3>Antennas</h3>{['left','right'].map(side=><Slider key={side} label={`${side==='left'?'Left':'Right'} antenna`} value={antennas[side]} min={-90} max={90} unit="°" measured={status.measured?.antennas[side]} disabled={!canMove || following} onChange={value => {const next={...antennas,[side]:value};setAntennas(next);goal.current={action:'antennas',targets:next};}} />)}<button disabled={!canMove} onClick={() => {setAntennas({left:0,right:0});goal.current={action:'antennas',targets:{left:0,right:0}};}}><FitText>Center antennas</FitText></button><p>Antenna speed is limited to 120°/s.</p>
         <h3>Recorded emotes</h3><label htmlFor="emote-picker"><FitText>Official emotion library</FitText></label><select id="emote-picker" value={emote} onChange={event=>setEmote(event.target.value)}>{WIRELESS_EMOTES.map(name=><option key={name}>{name}</option>)}</select><FitText>{emote}</FitText><button disabled={!canMove || demo} onClick={()=>void command({action:'emote',name:emote})}><FitText>Play selected emote</FitText></button><p>Playback is queued only. The robot must have the official emotion library available.</p>

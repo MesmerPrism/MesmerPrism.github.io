@@ -41,6 +41,15 @@ test('every selected current source file passes the release privacy audit',async
   assert.equal(entries.length,PUBLIC_FILES.length);assert.ok(entries.every(entry=>entry.bytes.length>0));
 });
 
+test('only the exact reviewed synthetic panorama is admitted as a binary source asset',async()=>{
+  const name='public-site/demo-room-panorama.png';
+  const bytes=await fs.readFile(fileURLToPath(new URL('../'+name,import.meta.url)));
+  assert.doesNotThrow(()=>auditPublicFile(name,bytes));
+  const changed=Buffer.from(bytes);changed[changed.length-1]^=1;
+  assert.throws(()=>auditPublicFile(name,changed),/Unreviewed demo panorama/);
+  assert.throws(()=>auditPublicFile('public-site/other-panorama.png',bytes));
+});
+
 test('export writes a verifiable complete source release and preserves website files',async()=>{
   const siteRoot=await fs.mkdtemp(path.join(os.tmpdir(),'reachy-public-export-'));
   try {

@@ -16,11 +16,12 @@ export const PUBLIC_FILES = Object.freeze([
   'src/head-follow.mjs', 'src/head-manual-queue.mjs', 'src/head-math.mjs', 'src/head-tracker.js',
   'src/head-tracker.worker.js', 'src/media.js', 'src/robot-model-state.mjs', 'src/talk-lifecycle.mjs',
   'src/useControl.js', 'src/useHeadControl.js', 'src/useReachyMedia.js',
-  'src/wireless-control.mjs', 'src/wireless-audio.mjs', 'src/first-setup.mjs', 'src/setup-guidance.mjs',
+  'src/wireless-control.mjs', 'src/wireless-audio.mjs', 'src/first-setup.mjs', 'src/setup-guidance.mjs', 'src/panorama-camera.mjs',
   'server/audio-control.mjs', 'server/control.mjs', 'server/head-pose.mjs', 'server/index.mjs', 'server/media-guard.mjs',
   'tools/Prepare-HeadAssets.mjs', 'tools/Prepare-ReachyModel.mjs', 'tools/Validate-ReachyModel.mjs',
-  'tools/reachy-model-source.mjs', 'tools/Export-Public.mjs', 'tools/Setup-Local.mjs', 'tools/Build-Pages.mjs',
-  'public-site/WirelessPanel.jsx', 'public-site/index.html', 'public-site/FitText.jsx', 'public-site/FirstSetup.jsx', 'public-site/main.jsx', 'public-site/style.css', 'public-site/demo-sdk.mjs',
+  'tools/reachy-model-source.mjs', 'tools/Export-Public.mjs', 'tools/Setup-Local.mjs', 'tools/Build-Pages.mjs', 'tools/Agent-Diagnostics.mjs',
+  'public-site/WirelessPanel.jsx', 'public-site/index.html', 'public-site/FitText.jsx', 'public-site/FirstSetup.jsx', 'public-site/main.jsx', 'public-site/style.css', 'public-site/demo-sdk.mjs', 'public-site/SimulatedCamera.jsx', 'public-site/demo-room-panorama.png', 'public-site/DEMO_ASSETS.md',
+  'test/agent-diagnostics.test.mjs', 'test/panorama-camera.test.mjs',
   'test/audio-control.test.mjs', 'test/control-recovery.test.mjs', 'test/control.test.mjs', 'test/first-setup.test.mjs', 'test/setup-guidance.test.mjs',
   'test/head-control.test.mjs', 'test/head-follow.test.mjs', 'test/head-manual-queue.test.mjs',
   'test/head-math.test.mjs', 'test/head-tracker.test.mjs', 'test/manual-head-control.test.mjs',
@@ -33,6 +34,12 @@ export function auditPublicFile(name, bytes) {
   if (name.includes('\\') || name.startsWith('/') || name.split('/').some(part => part === '..' || part === '.')) throw Error('Unsafe publication path');
   if (/(?:^|\/)(?:local|node_modules|dist|\.git|\.env|AGENTS\.md|VALIDATION\.md)(?:\/|$)/i.test(name) ||
       /\.(?:glb|gltf|stl|urdf|mjcf|wasm|task|apk|exe|dll|log|pem|key)$/i.test(name) || name.startsWith('public/')) throw Error(`Excluded publication content: ${name}`);
+  // One reviewed synthetic panorama is a binary source asset. Fail closed on
+  // substitutions; this exception admits no arbitrary images or CAD binaries.
+  if (name === 'public-site/demo-room-panorama.png') {
+    if (hash(bytes) !== 'ea4fe2bad1e747547dfb20d1e1d1e17d02c20b41a9ac6b6ccf8bf2163a536e96') throw Error('Unreviewed demo panorama');
+    return null;
+  }
   const text = new TextDecoder('utf-8', { fatal: true }).decode(bytes);
   if (text.includes('\0')) throw Error(`Non-text publication content: ${name}`);
   // Reject personal machine paths, UNC roots, credentials and network addresses.

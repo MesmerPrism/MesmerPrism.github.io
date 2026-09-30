@@ -34,3 +34,5 @@ h1,h2,h3,p,li,summary { overflow-wrap: break-word; } .control-section>button,.co
 .setup-identity dd { margin: 0; overflow-wrap: anywhere; }
 @media(max-width:760px) { .setup-forms { grid-template-columns: minmax(0,1fr); } .setup-identity { grid-template-columns: minmax(0,1fr); } }
 .large .setup-forms { grid-template-columns: minmax(0,1fr); }
+
+.simulated-camera-stage { width: 100%; aspect-ratio: 4/3; background: #202821; border-radius: 5px; overflow: hidden; } .simulated-camera-stage canvas { display: block; width: 100%; height: 100%; }

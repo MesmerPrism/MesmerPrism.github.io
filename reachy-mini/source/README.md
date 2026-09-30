@@ -16,6 +16,10 @@ The encryption preflight does not prove Bluetooth access or device discovery. Se
 
 Enter your robot's Hugging Face identity and read token as prompted. The token stays in memory during the connection; it is not saved in browser storage or included in downloads. The supported daemon version is **1.10.0**. Camera and microphone features require browser permissions.
 
+No robot is required for the [simulation](https://mesmerprism.com/reachy-mini/#demo). Its default camera view projects an AI-generated 360° room using the simulated head's feedback; turn, nod and tilt affect the view. Translation animates the model without camera parallax because the panorama has no depth. This is approximate visualization, not a calibrated sensor or physics simulator. The real camera path never substitutes this image. See [demo asset provenance](public-site/DEMO_ASSETS.md).
+
+For optional agent-driven read-only diagnostics, run `npm run agent -- --help`. The CLI reads a specified robot's status, analyzes offline status, audits the public source allowlist, and verifies publication hashes. It does not require the robot's version in advance or change configuration. See [agent diagnostics](docs/SETUP.md#agent-diagnostics-cli).
+
 Hosted SDK transport and the local bridge have different motion and Stop capabilities. The local bridge's identity checks, recovery and measured-hold guarantees do not automatically apply to hosted connections. Follow the connection status and capability limitations shown in the UI. Stop is software control, not a hardware emergency stop.
 
 ## Local guarded bridge
