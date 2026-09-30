@@ -78,3 +78,41 @@ npm run setup -- --help
 `--yes` requires `--url`. Add `--replace` only to replace existing configuration. Credentials, URL paths, queries and fragments are rejected. Setup output does not print the detected hardware identity.
 
 Public downloads omit official CAD binaries and use an original schematic. Local build preparation can retrieve pinned official models for private staging; their unresolved hardware redistribution terms are separate from this application's MIT license. Review [third-party notices](../THIRD_PARTY_NOTICES.md) before sharing generated models. Configuration, downloaded caches and official generated assets remain ignored.
+
+## Hosted first-time network setup
+
+Open the public [setup wizard](https://mesmerprism.com/reachy-mini/#setup) and
+choose **Bluetooth** or **Wi-Fi**. Keep the tab loaded when changing networks.
+Neither route changes the computer's Wi-Fi automatically.
+
+Bluetooth checks the actual installed service's public reply, Wi-Fi status and
+encrypted provisioning before offering PIN and credential submission. Direct
+Wi-Fi asks for Reachy's address and checks the daemon and Wi-Fi status through
+its local HTTP API. Supporting browsers may request Local Network Access
+permission. Requests are limited to the explicit private/local host, with no
+address scan, redirects, cookies, storage or cloud relay.
+
+Direct Wi-Fi currently supports audited Wireless daemon 1.2.11. Newer source
+restricts website origins and cannot be admitted from API shape alone. Unknown
+versions, blocked browser access and unsupported Bluetooth keep the separate
+robot-owned Settings/dashboard workflow. Do not disable browser protections.
+
+For direct Wi-Fi, keep the daemon OFF and use a dedicated temporary hotspot
+password. The 1.2.11 API accepts the password in a local HTTP request URL;
+robot/browser diagnostic logs may contain it. This is an upstream interface
+limitation, disclosed before the explicit submit button. Existing saved profiles
+may reuse their saved password instead of replacing it with the submitted one.
+
+An accepted request is not proof of joining. A network transition can disconnect
+the old access point and produce an apparent page error despite successful setup.
+Join the target network on the computer, enter Reachy's current address and
+check status. Only the intended SSID in WLAN mode confirms the request. An
+unconfirmed write blocks another submission, including switching to Bluetooth,
+while this setup instance remains open. Leaving setup cancels local work and
+clears credentials; a submitted robot request can still finish. Reloading clears
+in-memory evidence, so observe the robot before submitting again. Nothing is
+replayed. Internet access and remote-control compatibility are separate checks.
+
+The adapter is independently written MIT code against the audited Pollen
+[Wi-Fi API](https://github.com/pollen-robotics/reachy_mini/blob/e25d28a52f657354716b693ca6d557fe3595702a/src/reachy_mini/daemon/app/routers/wifi_config.py).
+See Chrome's [Local Network Access documentation](https://developer.chrome.com/blog/local-network-access).

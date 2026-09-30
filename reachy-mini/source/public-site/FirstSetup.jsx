@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { createFirstSetupClient, cryptoPreflight, FirstSetupError, SETUP_CHECKS } from '../src/first-setup.mjs';
 import { parseDaemonStatus, daemonGuidance, robotBrowserLinks, reportedRobotHost } from '../src/setup-guidance.mjs';
+import WifiSetup from './WifiSetup.jsx';
 
 const steps = ['Choose a route', 'Check compatibility', 'Connect Wi-Fi', 'Browser control'];
 const outcomes = { checking: 'Checking…', passed: 'Passed', unsupported: 'Not supported', inconclusive: 'Inconclusive', skipped: 'Not run' };
@@ -30,7 +31,7 @@ function statusText(status) {
 }
 
 const hasBrowserBluetooth = () => window.isSecureContext && Boolean(navigator.bluetooth?.requestDevice);
-export default function FirstSetup({ createClient = createFirstSetupClient, browserSupported = hasBrowserBluetooth } = {}) {
+export default function FirstSetup({ createClient = createFirstSetupClient, browserSupported = hasBrowserBluetooth, createWifiClient } = {}) {
   const [capability, setCapability] = useState('checking');
   const [identity, setIdentity] = useState(null);
   const [status, setStatus] = useState(null);
@@ -49,6 +50,7 @@ export default function FirstSetup({ createClient = createFirstSetupClient, brow
   const [browserPage, setBrowserPage] = useState(0);
   const [pageFound, setPageFound] = useState(false);
   const [manualJoined, setManualJoined] = useState(false);
+  const [pendingWifi, setPendingWifi] = useState('');
   const probing = useRef(null);
   const stepHeading = useRef(null);
   const client = useRef(null);
@@ -142,6 +144,7 @@ export default function FirstSetup({ createClient = createFirstSetupClient, brow
   }
 
   function select() {
+    if (pendingWifi) { setError('A Wi-Fi request is unconfirmed. Check the same robot through Wi-Fi before submitting through Bluetooth.'); return; }
     client.current?.disconnect();
     progress.current = '';
     setStep(1); setRoute('bluetooth'); setAccess('checking'); setChecks(emptyChecks());
@@ -196,6 +199,11 @@ export default function FirstSetup({ createClient = createFirstSetupClient, brow
     disconnect(); setRoute('browser'); setStep(1);
     setDaemon(null); setBrowserPage(0); setPageFound(false); setManualJoined(false);
     setMessage('Join Reachy’s access point using your device’s Wi-Fi controls, then open its status page in a separate tab. Keep this setup tab loaded.');
+  }
+
+  function useWifi() {
+    disconnect(); setRoute('wifi'); setStep(1); setDaemon(null); setJoined(false);
+    setBrowserPage(0); setPageFound(false); setManualJoined(false);
   }
 
   function changeHost(value) {
@@ -269,26 +277,29 @@ export default function FirstSetup({ createClient = createFirstSetupClient, brow
     <nav className="setup-steps" aria-label="Setup progress"><ol>{steps.map((name, index) => <li key={name} aria-current={step === index ? 'step' : undefined}>{index + 1}. {name}</li>)}</ol></nav>
     <h3 ref={stepHeading} tabIndex={-1}>Step {step + 1}: {steps[step]}</h3>
     {step === 0 && <>
-      <p>For a new Wireless Mini, start with Bluetooth checks. The helper discovers supported setup commands without needing the daemon version in advance.</p>
+      <p>Choose how to reach your Wireless Mini. Both routes check support before accepting network credentials.</p>
       <p>Keep the robot nearby and powered on. Use a personal Wi-Fi network or phone hotspot with internet. The current setup forms do not configure eduroam’s university sign-in.</p>
       <p className="status" role="status" aria-live="polite">{message}</p>
-      <div className="actions"><button type="button" className="primary" onClick={select} disabled={capability !== 'ready' || busy}>Check with Bluetooth</button><button type="button" onClick={useBrowser} disabled={busy}>Use Reachy’s browser pages</button></div>
+      <div className="start-options"><div><h4>Bluetooth</h4><p>Keep this computer online while selecting Reachy. The helper checks the installed Bluetooth service’s setup commands.</p><button type="button" className="primary" onClick={select} disabled={capability !== 'ready' || busy || Boolean(pendingWifi)}>Check with Bluetooth</button></div><div><h4>Wi-Fi</h4><p>Join Reachy’s access point or share its network. Allow browser local-network access to use the supported Wi-Fi API directly from this page.</p><button type="button" className="primary" onClick={useWifi} disabled={busy}>Set up over Wi-Fi</button></div></div>
+      {pendingWifi && <p className="notice">A Wi-Fi request remains unconfirmed. Choose Wi-Fi and check the same robot’s current network before another submission.</p>}
+      <div className="actions"><button type="button" onClick={useBrowser} disabled={busy}>Use Reachy’s browser pages</button></div>
       <p>Using a Lite over USB? Follow the <a href="#local">local controller setup</a>. Already connected your Wireless Mini to Wi-Fi and remote access? <a href="#connect">Open the controls</a>.</p>
     </>}
     {step > 0 && route === 'bluetooth' && <p className="status" role="status" aria-live="polite">{message}</p>}
     {error && <p className="error" role="alert">{error}</p>}
     {route === 'browser' && requestedNetwork.current && !joined && !manualJoined && <p className="notice">A previous Wi-Fi request has not been confirmed. Inspect the robot’s current network status before submitting another connection request.</p>}
+    {route === 'wifi' && step > 0 && step < 3 && <WifiSetup host={host} onHost={changeHost} step={step} onStep={setStep} pendingNetwork={pendingWifi || (!joined ? requestedNetwork.current : '')} onPending={value => { setPendingWifi(value); requestedNetwork.current = value; }} onDaemon={setDaemon} onJoined={value => { setDaemon(value); setJoined(true); requestedNetwork.current = ''; }} onBrowser={useBrowser} createClient={createWifiClient} />}
     {step === 1 && <>
       {route === 'bluetooth' && <>
         <p>The checks run in order and stop at the first failure. “Not supported” requires an explicit reply; a timeout stays inconclusive. Later checks are skipped when the connection closes.</p>
         <dl className="setup-checks"><dt>Bluetooth access and reported identity</dt><dd>{outcomes[access]}</dd>{checks.map(check => <div key={check.id}><dt>{check.label}</dt><dd>{outcomes[check.outcome]}{check.code ? ` (${check.code.replaceAll('_', ' ')})` : ''}</dd></div>)}</dl>
         <p>In the chooser, wait up to 30 seconds for a named Reachy entry. An “Unknown or unsupported device” entry does not identify your robot.</p>
         {identity && <dl className="setup-identity"><dt>Selected device</dt><dd>{identity.deviceName || 'Unnamed Bluetooth device'}</dd><dt>Reported hardware identity</dt><dd>{identity.hardwareId || 'Not exposed by this firmware'}</dd><dt>Reported address information</dt><dd>{identity.network || 'Not exposed by this firmware'}</dd></dl>}
-        <div className="actions">{connected && <button type="button" className="primary" onClick={() => setStep(2)}>Continue with Bluetooth</button>}<button type="button" onClick={useBrowser} disabled={busy}>Continue with robot browser</button><button type="button" onClick={select} disabled={capability !== 'ready' || busy || connected}>Try Bluetooth again</button><button type="button" onClick={disconnect} disabled={!client.current}>Disconnect Bluetooth</button></div>
+        <div className="actions">{connected && <button type="button" className="primary" onClick={() => setStep(2)}>Continue with Bluetooth</button>}<button type="button" onClick={useWifi} disabled={busy}>Try direct Wi-Fi setup</button><button type="button" onClick={useBrowser} disabled={busy}>Continue with robot browser</button><button type="button" onClick={select} disabled={capability !== 'ready' || busy || connected || Boolean(pendingWifi)}>Try Bluetooth again</button><button type="button" onClick={disconnect} disabled={!client.current}>Disconnect Bluetooth</button></div>
       </>}
       {route === 'browser' && <>
         <ol><li>Keep this tab open, then manually join Reachy’s Wi-Fi access point.</li><li>Open the status link below in a new tab. Unlike the documentation viewer, this raw JSON page needs no external scripts.</li><li>Copy the response, return here and paste it below. You can reconnect this computer to the internet while keeping the robot page open.</li></ol>
-        <p>The public page cannot silently change your Wi-Fi or directly read the robot’s local HTTP API. These links navigate separate browser tabs.</p>
+      <p>This route uses separate browser tabs. The public page cannot silently change your computer’s Wi-Fi. The direct Wi-Fi route can read supported robot APIs after browser local-network permission.</p>
         <label htmlFor="robot-host">Robot hostname or local IP address — confirm this belongs to your Reachy</label>
         <input className="robot-host" id="robot-host" type="text" value={host} onChange={event => changeHost(event.target.value)} autoComplete="off" spellCheck={false} maxLength={253} />
         <p>If the local hostname does not resolve, use the gateway address shown in your device’s Wi-Fi details for Reachy’s access point, or the address reported by Bluetooth.</p>
@@ -336,7 +347,7 @@ export default function FirstSetup({ createClient = createFirstSetupClient, brow
       <div className="actions"><button type="button" className="primary" disabled={!manualJoined || !pageFound} onClick={() => setStep(3)}>Continue to browser control</button></div>
     </>}
     {step === 3 && <>
-      <p>{route === 'bluetooth' && joined ? 'Bluetooth confirmed the requested Wi-Fi network.' : 'You confirmed the network connection on the robot’s own page.'} Put this computer and Reachy on that network with internet, then check the current daemon status.</p>
+      <p>{joined && route === 'bluetooth' ? 'Bluetooth confirmed the requested Wi-Fi network.' : joined && route === 'wifi' ? 'Reachy’s Wi-Fi API reports a joined network.' : 'You confirmed the network connection on the robot’s own page.'} Put this computer and Reachy on that network with internet, then check the current daemon status.</p>
       <label htmlFor="connected-host">Reachy’s address on the joined network</label>
       <input className="robot-host" id="connected-host" type="text" value={host} onChange={event => changeHost(event.target.value)} autoComplete="off" spellCheck={false} maxLength={253} />
       {links ? <p><a href={links.status} target="_blank" rel="noopener noreferrer">Open current daemon status</a></p> : <p className="error">Enter a local IP address or .local hostname without a scheme, port or path.</p>}

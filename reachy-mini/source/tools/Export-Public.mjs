@@ -21,7 +21,7 @@ export const PUBLIC_FILES = Object.freeze([
   'tools/Prepare-HeadAssets.mjs', 'tools/Prepare-ReachyModel.mjs', 'tools/Validate-ReachyModel.mjs',
   'tools/reachy-model-source.mjs', 'tools/Export-Public.mjs', 'tools/Setup-Local.mjs', 'tools/Build-Pages.mjs', 'tools/Agent-Diagnostics.mjs',
   'public-site/WirelessPanel.jsx', 'public-site/index.html', 'public-site/FitText.jsx', 'public-site/FirstSetup.jsx', 'public-site/main.jsx', 'public-site/style.css', 'public-site/demo-sdk.mjs', 'public-site/SimulatedCamera.jsx', 'public-site/demo-room-panorama.png', 'public-site/DEMO_ASSETS.md',
-  'test/agent-diagnostics.test.mjs', 'test/panorama-camera.test.mjs',
+  'test/agent-diagnostics.test.mjs', 'test/panorama-camera.test.mjs', 'src/wifi-setup.mjs', 'public-site/WifiSetup.jsx', 'test/wifi-setup.test.mjs',
   'test/audio-control.test.mjs', 'test/control-recovery.test.mjs', 'test/control.test.mjs', 'test/first-setup.test.mjs', 'test/setup-guidance.test.mjs',
   'test/head-control.test.mjs', 'test/head-follow.test.mjs', 'test/head-manual-queue.test.mjs',
   'test/head-math.test.mjs', 'test/head-tracker.test.mjs', 'test/manual-head-control.test.mjs',

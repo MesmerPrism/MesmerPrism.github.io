@@ -24,8 +24,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 6692,
-      "sha256": "ed25bb5591c0fb3f44d74a2de7d109344ce67b87612529a64cfa5a48f05b51f4"
+      "bytes": 7363,
+      "sha256": "9ee34f844b418c5ffcbcdfd25ca1b0890969121c1c1a82f69c9197394b4ab454"
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",
@@ -39,8 +39,8 @@
     },
     {
       "path": "docs/SETUP.md",
-      "bytes": 5770,
-      "sha256": "c1e214389195ab6f690caadebec9283919fe95a5c34a8bc7b5a1275f73885950"
+      "bytes": 8331,
+      "sha256": "dc601f28d25dc19c9ae0cbc266f6d00896a9077e791fa8537714176126507c20"
     },
     {
       "path": "index.html",
@@ -134,8 +134,8 @@
     },
     {
       "path": "public-site/FirstSetup.jsx",
-      "bytes": 25225,
-      "sha256": "96971097a9154e02f28135be0de6f34e81f356c1d622d057ba6887b7a16a06c4"
+      "bytes": 26984,
+      "sha256": "0cff1952ab2d970ffd5c4846d96345f19c68949d67d5ca9d2268317dd5f8f90a"
     },
     {
       "path": "public-site/FitText.jsx",
@@ -146,6 +146,11 @@
       "path": "public-site/SimulatedCamera.jsx",
       "bytes": 4696,
       "sha256": "ed10a658cae01a4fcd71913fb570cd3bc5e46de6a2c6215680dad0db382efea1"
+    },
+    {
+      "path": "public-site/WifiSetup.jsx",
+      "bytes": 10004,
+      "sha256": "b09f8019be3465f8c9b47f5648f33cfa3c2ccac00f11e74973381cdafb8ad365"
     },
     {
       "path": "public-site/WirelessPanel.jsx",
@@ -169,8 +174,8 @@
     },
     {
       "path": "public-site/main.jsx",
-      "bytes": 10951,
-      "sha256": "f0ec2e580c232dfe3f3012dca87be6a459732633a8db05371ac211ad19dec536"
+      "bytes": 11072,
+      "sha256": "02d107c50cdd49aa20e2ecd039a1aeade0b886e121b5e4ac732579996cfab64a"
     },
     {
       "path": "public-site/style.css",
@@ -323,6 +328,11 @@
       "sha256": "1169f038d9b29315c02750f1f19fd74b34c462da915dcc652bfb2175c6f6b98a"
     },
     {
+      "path": "src/wifi-setup.mjs",
+      "bytes": 10163,
+      "sha256": "d1268b12d40e9c2dddf99e173bf6cf548d825262658af705e9844425b88b9163"
+    },
+    {
       "path": "src/wireless-audio.mjs",
       "bytes": 1345,
       "sha256": "19916846e342bd709d098dc01f8cb8316ede5144e199674801b9b81a23d4c095"
@@ -364,8 +374,8 @@
     },
     {
       "path": "test/fixtures/setup-qa.jsx",
-      "bytes": 4028,
-      "sha256": "df662c7400a45057b758beb34d076c14ae339371123afc2050257b33254a19f2"
+      "bytes": 5703,
+      "sha256": "b0828929cb77ef57dd44bf66e3dc7a0ab7e06b2aa7c7a42e7f8648fe72d1e626"
     },
     {
       "path": "test/fixtures/text-qa.html",
@@ -448,6 +458,11 @@
       "sha256": "f32e59de2a96edf413f3511eb50d7d6b2a24c6cea84b695defeac39eb3b32749"
     },
     {
+      "path": "test/wifi-setup.test.mjs",
+      "bytes": 11073,
+      "sha256": "3ecdf379f1adfed26375cde39660e1a5b6f2cd91f68c82805516784fc97ce6f5"
+    },
+    {
       "path": "test/wireless-audio.test.mjs",
       "bytes": 1762,
       "sha256": "246991387351e2aab99e3441431c7bc1d21a1c7db3ed7cf01516816b6923e9fb"
@@ -469,8 +484,8 @@
     },
     {
       "path": "tools/Export-Public.mjs",
-      "bytes": 12058,
-      "sha256": "c480192aa240f34a4c4fbab7af0a51ea2a1c42f10e35bfc5ac3c67a91d916785"
+      "bytes": 12137,
+      "sha256": "fe84045694cd0a381f928093099ae8b1254c6e3621ada67c62022e8b0ea70f7f"
     },
     {
       "path": "tools/Prepare-HeadAssets.mjs",
