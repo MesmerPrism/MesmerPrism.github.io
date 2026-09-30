@@ -39,8 +39,8 @@
     },
     {
       "path": "docs/SETUP.md",
-      "bytes": 10191,
-      "sha256": "6a1e64a526be1099370dad22af5ecb6b995a7f79a6497f404278d3a01e814be1"
+      "bytes": 10601,
+      "sha256": "211901171a089113cf68d264c91499b6a15ae6c0e88bb6416787f5569725e0c0"
     },
     {
       "path": "index.html",
@@ -134,13 +134,18 @@
     },
     {
       "path": "public-site/FirstSetup.jsx",
-      "bytes": 28519,
-      "sha256": "5a89ea535666ab05d943a8fbfe3f772c1c743d7b9427cc7e116d5920916a43ca"
+      "bytes": 27299,
+      "sha256": "578f1486c9f03a446925c2fef9cb6393b86d729b195c21d56b52f4f54972f44a"
     },
     {
       "path": "public-site/FitText.jsx",
       "bytes": 2689,
       "sha256": "e68490d0338a68e908be414df5ecd539777b0e7a4b707bb28e7aef9852fac3a1"
+    },
+    {
+      "path": "public-site/RobotUpdate.jsx",
+      "bytes": 6164,
+      "sha256": "717ad309b8f3e7b7f5874168d5d98aee6a7f23fc69fdaa17b9d9972a892943f6"
     },
     {
       "path": "public-site/SimulatedCamera.jsx",
@@ -298,6 +303,11 @@
       "sha256": "2734c6c6432f743bbd0bd46fef608a69ceb1eecb3c216f5e6bb0c2ddbeb9ff13"
     },
     {
+      "path": "src/robot-update.mjs",
+      "bytes": 8863,
+      "sha256": "8cdebf0a4ff15728c6e08075d8b51cc8011182ce3f48f31010e28d99f13e48ba"
+    },
+    {
       "path": "src/setup-guidance.mjs",
       "bytes": 3876,
       "sha256": "7f4eb8804e0cf4afa2e791dd2ed15f2e0ec51fc61cb6beee4b21240dada5d961"
@@ -339,8 +349,13 @@
     },
     {
       "path": "src/wireless-control.mjs",
-      "bytes": 15478,
-      "sha256": "43b16178fa088c414da645d80cfbe73ea875d2a869ba92ecd64aad7ecd15b7fd"
+      "bytes": 16436,
+      "sha256": "77da426a3a439d89830bbe55a1be6d8cab5bf392a2e80059fa0bbc9ceb458c63"
+    },
+    {
+      "path": "src/wireless-telemetry.mjs",
+      "bytes": 2531,
+      "sha256": "e9adabc10f9c9c742b33c7b640c3b68d299726bc3bf3e1e1ab431ec644d01332"
     },
     {
       "path": "test/agent-diagnostics.test.mjs",
@@ -363,9 +378,19 @@
       "sha256": "cc1ab3de7a8f2060e19fb79fe6f9f8284c0d79e87029657db0477d7b7c099b35"
     },
     {
+      "path": "test/daemon-1.11-compatibility.test.mjs",
+      "bytes": 12542,
+      "sha256": "2c4911084aa93e3ffcd19d1a8f61eed04e185de0f5802fa8954a07f5e35e77e2"
+    },
+    {
       "path": "test/first-setup.test.mjs",
       "bytes": 41987,
       "sha256": "ced1a413b0b0468fb7e985a74aa3a88a008f2bb945ef5f7059845bcad33d0568"
+    },
+    {
+      "path": "test/fixtures/daemon-1.11-wire.mjs",
+      "bytes": 2863,
+      "sha256": "874fa017aa0cbe37a02ea2da7c00c6431ed085b9ec212b2442ba45c349a56580"
     },
     {
       "path": "test/fixtures/setup-qa.html",
@@ -374,8 +399,8 @@
     },
     {
       "path": "test/fixtures/setup-qa.jsx",
-      "bytes": 5703,
-      "sha256": "b0828929cb77ef57dd44bf66e3dc7a0ab7e06b2aa7c7a42e7f8648fe72d1e626"
+      "bytes": 6890,
+      "sha256": "d6905d83fe6f27e5cfe93e15e33153f963efd628be3413919200d9640cb692f6"
     },
     {
       "path": "test/fixtures/text-qa.html",
@@ -443,6 +468,11 @@
       "sha256": "3069d220796736dea195ca25b7c53b7268a8532510d747c0118f4a5df8bca206"
     },
     {
+      "path": "test/robot-update.test.mjs",
+      "bytes": 8592,
+      "sha256": "70a59434d88732bdf27d6a5ab7f1d2f22e067ae6af04e4c13f3460dfff9162f5"
+    },
+    {
       "path": "test/setup-guidance.test.mjs",
       "bytes": 3718,
       "sha256": "cf44af9dc7995c9b04549c6532208750138f238be7da209ef67dc4dc10972172"
@@ -484,8 +514,8 @@
     },
     {
       "path": "tools/Export-Public.mjs",
-      "bytes": 12137,
-      "sha256": "fe84045694cd0a381f928093099ae8b1254c6e3621ada67c62022e8b0ea70f7f"
+      "bytes": 12337,
+      "sha256": "9501c27e694c26624eb48dfb11c0e6d9fc1a84486f31cf810fc6864f4a86ba6f"
     },
     {
       "path": "tools/Prepare-HeadAssets.mjs",

@@ -119,20 +119,25 @@ See Chrome's [Local Network Access documentation](https://developer.chrome.com/b
 
 ### Browser software update after network setup
 
-For an observed Wireless daemon 1.2.11, Step 4 now links directly to the robot's
-own Settings updater. The robot needs internet to download the official packages;
-the user does not need to download an installer on their computer. Check the
-offered version, leave pre-release unchecked, and explicitly start an update on
-the robot page only when ready. Keep robot power and network available throughout.
+For an observed Wireless daemon 1.2.11, Step 4 can check and start the robot's
+stable updater directly within the wizard. Keep its motion daemon stopped, check
+the offered version, then acknowledge readiness and click Start software update
+once. The robot needs internet to download the official packages; no computer
+installer is needed. Keep robot power and network available throughout.
 The legacy updater selects the current stable package at installation time; it
-cannot select our controller's audited version. This page never starts an update
-automatically and the handoff button only opens the robot's page.
+cannot select our controller's audited version. No request runs automatically.
+The tab records the attempt before sending it and does not allow another update
+submission after an uncertain response. Progress checks and version verification
+are explicit read-only actions. Keep this setup tab loaded: reloading discards its
+in-memory receipt, so observe the robot before submitting again. Unsupported
+versions and blocked browser access retain robot-owned Settings as a fallback.
 
 After the restart, return to the wizard and inspect/paste the fresh daemon status.
 A job reporting done, a Completed label or a closed connection is not verification:
 the legacy subprocess wrapper does not check installer exit codes, and its job
-records do not survive daemon restart. Only a new healthy daemon/version readback
-establishes the observed result. Unknown controller versions remain blocked.
+records do not survive daemon restart. A fresh healthy read matching the offered
+version confirms the observed result; a pasted response is labeled user-reported.
+An unexpected version remains unconfirmed. Unknown controller versions remain blocked.
 Newer daemons can restrict direct public-origin API reads; opening their raw status
 page and pasting its bounded response remains the browser-only verification route.
 For failures, use the official recovery guide rather than automatically repeating

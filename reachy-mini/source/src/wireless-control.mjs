@@ -1,6 +1,7 @@
 // Wireless is deliberately a limited transport. SDK target calls only report
 // that a frame was queued on WebRTC; they are never represented as applied.
 import { rigidPose } from '../server/head-pose.mjs';
+import { installWirelessTelemetryGuard } from './wireless-telemetry.mjs';
 const RAD = Math.PI / 180;
 const deg = value => value / RAD;
 const rad = value => value * RAD;
@@ -47,8 +48,10 @@ function step(from, to, seconds, angular = 20, linear = 10) {
 }
 
 export class WirelessControl {
-  constructor({ ReachyMini, expectedVersion = '1.10.0', now = () => Date.now() }) {
+  constructor({ ReachyMini, expectedVersion = '1.10.0', now = () => Date.now(), connectionTimeoutMs = 5000 }) {
     if (typeof ReachyMini !== 'function') throw Error('ReachyMini SDK constructor is required');
+    if (!Number.isFinite(connectionTimeoutMs) || connectionTimeoutMs <= 0 || connectionTimeoutMs > 30000) throw Error('Identity timeout must be from 1 to 30000 milliseconds');
+    this.connectionTimeoutMs = connectionTimeoutMs;
     this.ReachyMini = ReachyMini; this.expectedVersion = expectedVersion; this.now = now;
     this.sdk = null; this.robotId = null; this.hardwareId = null; this.version = null;
     this.measured = null; this.lastSent = null; this.epoch = 0; this.uncertain = null; this.listeners = new Set(); this.detachVideo = null;
@@ -91,6 +94,10 @@ export class WirelessControl {
   async connect({ token, robotId, pickRobot, video } = {}) {
     await this.close();
     const sdk = new this.ReachyMini({ autoStartFromUrl: false, appName: 'Reachy Mini Browser Control' });
+    this.detachTelemetry = installWirelessTelemetryGuard(sdk, { now: this.now, onInvalid: () => {
+      if (this.sdk !== sdk) return;
+      this.measured = null; this.lastSent = null; ++this.epoch; this.#emit();
+    } });
     this.sdk = sdk; sdk.addEventListener?.('state', this.onState); sdk.addEventListener?.('sessionStopped', this.onSessionStopped);
     try {
       const authenticated = token ? false : (typeof sdk.authenticate === 'function' ? await sdk.authenticate() : false);
@@ -103,7 +110,13 @@ export class WirelessControl {
       // Attach before it so the initial camera stream is not lost.
       if (video) this.detachVideo = this.#attachVideo(sdk, video);
       await sdk.startSession(selected);
-      const [hardwareId, version] = await Promise.all([sdk.getHardwareId(), sdk.getVersion()]);
+      let identityTimer;
+      const identityDeadline = new Promise((_, reject) => {
+        identityTimer = setTimeout(() => reject(Error('Wireless robot identity and version check timed out')), this.connectionTimeoutMs);
+      });
+      let hardwareId, version;
+      try { [hardwareId, version] = await Promise.race([Promise.all([sdk.getHardwareId(), sdk.getVersion()]), identityDeadline]); }
+      finally { clearTimeout(identityTimer); }
       if (!hardwareId || version !== this.expectedVersion) throw Error('Wireless robot identity or daemon version is not supported');
       this.robotId = selected; this.hardwareId = hardwareId; this.version = version; sdk.requestState(); this.#emit();
       return { robotId: selected, hardwareId, version, limitedTransport: true };
@@ -201,6 +214,7 @@ export class WirelessControl {
   async close() {
     ++this.epoch; this.lastSent = null; const sdk = this.sdk; const detachVideo = this.detachVideo; this.sdk = null; this.detachVideo = null; this.robotId = null; this.hardwareId = null; this.version = null; this.measured = null; this.uncertain = null;
     try { detachVideo?.(); } catch { /* teardown must continue even if a media element was removed */ }
+    this.detachTelemetry?.(); this.detachTelemetry = null;
     if (sdk) { sdk.removeEventListener?.('state', this.onState); sdk.removeEventListener?.('sessionStopped', this.onSessionStopped); try { await sdk.stopSession?.(); } finally { sdk.disconnect?.(); sdk._token = null; } }
     this.#emit();
   }

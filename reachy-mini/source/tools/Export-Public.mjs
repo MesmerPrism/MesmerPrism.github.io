@@ -17,6 +17,8 @@ export const PUBLIC_FILES = Object.freeze([
   'src/head-tracker.worker.js', 'src/media.js', 'src/robot-model-state.mjs', 'src/talk-lifecycle.mjs',
   'src/useControl.js', 'src/useHeadControl.js', 'src/useReachyMedia.js',
   'src/wireless-control.mjs', 'src/wireless-audio.mjs', 'src/first-setup.mjs', 'src/setup-guidance.mjs', 'src/panorama-camera.mjs',
+  'src/wireless-telemetry.mjs', 'src/robot-update.mjs', 'public-site/RobotUpdate.jsx', 'test/robot-update.test.mjs',
+  'test/daemon-1.11-compatibility.test.mjs', 'test/fixtures/daemon-1.11-wire.mjs',
   'server/audio-control.mjs', 'server/control.mjs', 'server/head-pose.mjs', 'server/index.mjs', 'server/media-guard.mjs',
   'tools/Prepare-HeadAssets.mjs', 'tools/Prepare-ReachyModel.mjs', 'tools/Validate-ReachyModel.mjs',
   'tools/reachy-model-source.mjs', 'tools/Export-Public.mjs', 'tools/Setup-Local.mjs', 'tools/Build-Pages.mjs', 'tools/Agent-Diagnostics.mjs',

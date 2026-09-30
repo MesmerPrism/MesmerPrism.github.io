@@ -4,9 +4,23 @@ import { createRoot } from 'react-dom/client';
 import FirstSetup from '../../public-site/FirstSetup.jsx';
 import { BLE_UUIDS, createFirstSetupClient, PROVISIONING_ALGORITHM } from '../../src/first-setup.mjs';
 import { createWifiSetupClient } from '../../src/wifi-setup.mjs';
+import { createRobotUpdateClient } from '../../src/robot-update.mjs';
 import '../../public-site/style.css';
 const available = () => true;
 const unavailable = () => false;
+function updateFactory(record) {
+  let attempted=false, complete=false;
+  return options=>createRobotUpdateClient({...options,fetchImpl:async(url,init)=>{
+    const path=new URL(url).pathname;record(`${init.method} ${path}`);
+    let value;
+    if(path==='/api/daemon/status')value={version:complete?'1.11.0':'1.2.11',wireless_version:true,state:'not_initialized',error:null};
+    else if(path==='/update/available')value={update:{reachy_mini:{is_available:true,current_version:'1.2.11',available_version:'1.11.0'}}};
+    else if(path==='/update/start'){if(attempted)throw Error('Duplicate fixture update');attempted=true;value={job_id:'00000000-0000-4000-8000-000000000001'};}
+    else if(path==='/update/info'){complete=true;value={command:'update_reachy_mini',status:'done',logs:[]};}
+    else throw Error('Unexpected update fixture request');
+    return new globalThis.Response(JSON.stringify(value),{headers:{'Content-Type':'application/json'}});
+  }});
+}
 function wifiFactory(mode, record) {
   let target = '', submitted = false;
   return options => createWifiSetupClient({ ...options, fetchImpl: async (url, init) => {
@@ -58,8 +72,9 @@ function Harness() {
   const [active, setActive] = useState(true);
   const [closed, setClosed] = useState(0);
   const createWifiClient = useMemo(() => wifiFactory(mode, request => setWrites(current => [...current, request])), [mode]);
+  const createUpdateClient = useMemo(() => updateFactory(request => setWrites(current=>[...current,request])), [mode]);
   return <main><h1>Synthetic onboarding checks</h1><p>No robot traffic. Bluetooth checks and Wi-Fi requests use synthetic responses.</p><label htmlFor="scenario">Scenario</label><select id="scenario" value={mode} onChange={event => { setWrites([]); setClosed(0); setActive(true); setMode(event.target.value); }}>
     {['unsupported-status', 'unsupported-key', 'ready', 'timeout', 'pending-status', 'malformed', 'no-bluetooth', 'wifi-ready', 'wifi-blocked', 'wifi-unsupported', 'wifi-unknown', 'wifi-wrong-network'].map(value => <option key={value}>{value}</option>)}
-  </select><button type="button" onClick={() => setActive(value => !value)}>{active ? 'Leave setup' : 'Return to setup'}</button>{active && <FirstSetup key={mode} createWifiClient={createWifiClient} browserSupported={mode === 'no-bluetooth' ? unavailable : available} createClient={options => syntheticClient(mode, command => setWrites(current => [...current, command]), { ...options, onDisconnect(reason) { setClosed(count => count + 1); options.onDisconnect(reason); } })} />}<p data-testid="writes">Synthetic requests sent: {writes.join(', ') || 'none'}</p><p>Closed Bluetooth connections: {closed}</p></main>;
+  </select><button type="button" onClick={() => setActive(value => !value)}>{active ? 'Leave setup' : 'Return to setup'}</button>{active && <FirstSetup key={mode} createUpdateClient={createUpdateClient} createWifiClient={createWifiClient} browserSupported={mode === 'no-bluetooth' ? unavailable : available} createClient={options => syntheticClient(mode, command => setWrites(current => [...current, command]), { ...options, onDisconnect(reason) { setClosed(count => count + 1); options.onDisconnect(reason); } })} />}<p data-testid="writes">Synthetic requests sent: {writes.join(', ') || 'none'}</p><p>Closed Bluetooth connections: {closed}</p></main>;
 }
 createRoot(document.getElementById('root')).render(<Harness />);
