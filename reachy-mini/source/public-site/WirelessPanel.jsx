@@ -10,7 +10,7 @@ const degrees = value => Number.isFinite(value) ? value.toFixed(1) : '—';
 function Slider({ label, value, min, max, measured, unit, disabled, onChange }) {
   return <div className="slider-row"><label><span className="slider-heading"><FitText>{label}</FitText><FitText>{`${value}${unit} requested`}</FitText></span><input type="range" min={min} max={max} step={1} value={value} disabled={disabled} onChange={event => onChange(Number(event.target.value))} aria-label={label} /></label><FitText as="p" className="measured">{`${degrees(measured)}${unit} measured`}</FitText></div>;
 }
-export default function WirelessPanel({ initialDemo = false }) {
+export default function WirelessPanel({ initialDemo = false, expectedVersion = '1.10.0' }) {
   const control = useRef(null), latest = useRef({}), goal = useRef(null), tokenInput = useRef(null), video = useRef(null), webcam = useRef(null), tracker = useRef(null), follow = useRef(false), pose = useRef(null), talk = useRef(null), tickBusy = useRef(false), picker = useRef(null), generation = useRef(0), previewGeneration=useRef(0);
   const [status, setStatus] = useState({ connected: false }), [token, setToken] = useState(''), [consent, setConsent] = useState(false), [busy, setBusy] = useState(false), [error, setError] = useState(''), [message, setMessage] = useState('Disconnected'), [demo, setDemo] = useState(false), [choices, setChoices] = useState([]), [selection, setSelection] = useState(''), [head, setHead] = useState(zero), [antennas, setAntennas] = useState({ left: 0, right: 0 }), [listen, setListen] = useState(false), [listeningVolume, setListeningVolume] = useState(60), [volume, setVolume] = useState(40), [webcamState, setWebcamState] = useState('off'), [following, setFollowing] = useState(false), [tracked, setTracked] = useState(null), [micState, setMicState] = useState('off'), [held, setHeld] = useState(false), [speed, setSpeed] = useState(20);
   latest.current = { status, busy, demo, speed };
@@ -28,7 +28,7 @@ export default function WirelessPanel({ initialDemo = false }) {
     try {
       const { ReachyMini } = isDemo ? { ReachyMini: (await import('./demo-sdk.mjs')).DemoWirelessSDK } : await import('@pollen-robotics/reachy-mini-sdk');
       if (gen !== generation.current) return;
-      next = new WirelessControl({ ReachyMini }); control.current = next; setDemo(isDemo);
+      next = new WirelessControl({ ReachyMini, expectedVersion: isDemo ? '1.10.0' : expectedVersion }); control.current = next; setDemo(isDemo);
       next.subscribe(value => { if (control.current === next) setStatus(value); });
       await next.connect({ token: isDemo ? 'simulation' : captured, video: video.current, pickRobot: robots => new Promise(resolve => {
         setChoices(robots); setSelection(robots[0]?.id || ''); picker.current = resolve;
