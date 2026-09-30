@@ -188,7 +188,7 @@ export async function verifySite({ url, directory, fetchImpl = globalThis.fetch 
     || typeof release.archive.path !== 'string' || !/^downloads\/[A-Za-z0-9_.-]+\.zip$/.test(release.archive.path)) throw fail('manifest');
   const inventory = [...entries(build.files), ...entries(source.files, 'source/'), ...entries([release.archive])];
   if (!inventory.some(file => file.path === 'index.html') || new Set(inventory.map(file => file.path)).size !== inventory.length
-    || inventory.reduce((sum, file) => sum + file.bytes, 0) > 32 * 1024 * 1024) throw fail('manifest');
+    || inventory.reduce((sum, file) => sum + file.bytes, 0) > 64 * 1024 * 1024) throw fail('manifest');
   // Sequential bounded reads keep load predictable and stop at first mismatch.
   for (const file of inventory) {
     const bytes = await read(file.path, Math.max(file.bytes, 1));

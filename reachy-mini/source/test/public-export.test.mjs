@@ -11,14 +11,40 @@ import { PUBLIC_FILES, auditPublicFile, sourceZip, collectPublicSource, exportPu
 test('publication allowlist excludes private and generated content',()=>{
   for(const name of PUBLIC_FILES) assert.doesNotMatch(name,/^(?:local|public|node_modules|dist|\.git)\//);
   assert.ok(PUBLIC_FILES.includes('LICENSE'));assert.ok(PUBLIC_FILES.includes('THIRD_PARTY_NOTICES.md'));
-  assert.ok(!PUBLIC_FILES.includes('AGENTS.md'));assert.ok(!PUBLIC_FILES.includes('docs/VALIDATION.md'));
+  assert.ok(PUBLIC_FILES.includes('AGENTS.md'));assert.ok(PUBLIC_FILES.includes('.github/workflows/checks.yml'));
+  assert.ok(!PUBLIC_FILES.includes('docs/VALIDATION.md'));
 });
 test('audit rejects private roots, numeric robot addresses, credentials and hardware binaries',()=>{
   const privateRoot='S:'+String.fromCharCode(92)+'Work'+String.fromCharCode(92)+'secret';
   const robotAddress=['192','168','1','44'].join('.');
   for(const text of [privateRoot,robotAddress,'ghp_'+'a'.repeat(30)]) assert.throws(()=>auditPublicFile('src/example.js',Buffer.from(text)));
-  for(const name of ['local/config.json','model.glb','../escape.js','AGENTS.md']) assert.throws(()=>auditPublicFile(name,Buffer.from('safe')));
+  for(const name of ['local/config.json','model.glb','../escape.js','docs/VALIDATION.md']) assert.throws(()=>auditPublicFile(name,Buffer.from('safe')));
   assert.doesNotThrow(()=>auditPublicFile('src/example.js',Buffer.from('http://127.0.0.1:18750 http://robot.invalid')));
+});
+
+test('release retries preserve bytes and a reused version rejects changed source before replacement', async t => {
+  const root = await fs.mkdtemp(path.join(os.tmpdir(), 'reachy-release-identity-'));
+  t.after(() => fs.rm(root, { recursive: true, force: true }));
+  const appRoot = path.join(root, 'app'), siteRoot = path.join(root, 'site');
+  await fs.mkdir(siteRoot);
+  const entries = await collectPublicSource(fileURLToPath(new URL('..', import.meta.url)));
+  for (const entry of entries) {
+    const target = path.join(appRoot, entry.name);
+    await fs.mkdir(path.dirname(target), { recursive: true });
+    await fs.writeFile(target, entry.bytes);
+  }
+  const sourceRevision = 'a'.repeat(40);
+  const first = await exportPublic({ appRoot, siteRoot, sourceRevision });
+  assert.deepEqual(await exportPublic({ appRoot, siteRoot, sourceRevision }), first);
+  const product = path.join(siteRoot, 'reachy-mini');
+  const receipt = await fs.readFile(path.join(product, 'PUBLIC_ARTIFACTS.json'));
+  const manifest = JSON.parse(await fs.readFile(path.join(product, 'source/SOURCE_MANIFEST.json')));
+  assert.equal(manifest.sourceRevision, sourceRevision);
+  assert.match(manifest.sourceTreeSha256, /^[a-f0-9]{64}$/);
+  await fs.appendFile(path.join(appRoot, 'README.md'), '\nReviewed release fixture change.\n');
+  await assert.rejects(exportPublic({ appRoot, siteRoot, sourceRevision }), /already exists with different bytes/);
+  assert.deepEqual(await fs.readFile(path.join(product, 'PUBLIC_ARTIFACTS.json')), receipt);
+  assert.equal(await fs.readFile(path.join(product, 'source/README.md'), 'utf8'), entries.find(e => e.name === 'README.md').bytes.toString());
 });
 test('ZIP has deterministic timestamps, CRC headers and exact source entry payloads',()=>{
   const entries=[{name:'package/LICENSE',bytes:Buffer.from('MIT')},{name:'package/src/example.js',bytes:Buffer.from('export const ok = true;')},{name:'package/crc-fixture.txt',bytes:Buffer.from('123456789')}];

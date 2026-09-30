@@ -28,11 +28,11 @@ Exact installed versions and dependency integrity values are in
 distributions; their notices must also be retained when redistributing a built
 application. The source ZIP does not bundle those installed distributions.
 
-The hosted page uses the website's existing Newsreader font by Production Type /
-the Newsreader Project Authors, under SIL Open Font License 1.1. Its notice is
-served at [/assets/fonts/newsreader-OFL.txt](https://mesmerprism.com/assets/fonts/newsreader-OFL.txt)
-and retained as [Newsreader OFL](licenses/Newsreader-OFL.txt). Font binaries are
-not in the controller source ZIP. The SDK's optional host-shell MUI/Emotion
+The hosted page bundles reviewed, unmodified Newsreader Latin and Latin Extended
+WOFF2 fonts by Production Type / the Newsreader Project Authors, under SIL Open
+Font License 1.1. The binaries are included in the source repository and ZIP;
+their [Newsreader OFL](licenses/Newsreader-OFL.txt) notice is retained separately
+from the application's MIT license. The SDK's optional host-shell MUI/Emotion
 packages are installed dependencies but are not imported into this page's
 browser runtime; their own distribution notices remain with those packages.
 

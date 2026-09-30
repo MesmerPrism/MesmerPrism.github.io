@@ -1,9 +1,18 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { createHeadTracker } from '../src/head-tracker.js';
+import { createHeadTracker, headAssetBase } from '../src/head-tracker.js';
 
 const identity = {rows:4,columns:4,data:[1,0,0,0,0,1,0,0,0,0,1,0,0,0,-50,1]};
 const tick = () => new Promise(resolve => setImmediate(resolve));
+
+test('head assets resolve from the document for root and relocated deployments', () => {
+  for (const [base, page, expected] of [
+    ['./', 'https://site.invalid/reachy-mini/#demo', 'https://site.invalid/reachy-mini/'],
+    ['./', 'https://site.invalid/elsewhere/index.html', 'https://site.invalid/elsewhere/'],
+    ['/reachy-mini/', 'https://site.invalid/elsewhere/', 'https://site.invalid/reachy-mini/'],
+    ['/', 'https://site.invalid/index.html', 'https://site.invalid/'],
+  ]) assert.equal(headAssetBase(base, page), expected);
+});
 
 function environment(t, capture) {
   const saved = new Map();

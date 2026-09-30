@@ -1,15 +1,15 @@
 {
-  "version": "0.1.0",
+  "version": "0.1.1",
   "files": [
     {
-      "path": "assets/RobotModel-Df6SSmhV.js",
+      "path": "assets/RobotModel-DUTHl84S.js",
       "bytes": 655033,
-      "sha256": "41868b5c4757129ee0f6951488477ad00f62cefa978d02e034e34386a5ae7d0a"
+      "sha256": "3c245a7b22b2e5c57108cfed56d46be9f89edd445d1de03f71ffb62c85f94bdc"
     },
     {
-      "path": "assets/SimulatedCamera-CvVdlPKx.js",
-      "bytes": 4084,
-      "sha256": "751d0a90196678f5d515ceb091f5f47d284998f8c7be80d4f351ee33e82e057b"
+      "path": "assets/SimulatedCamera-CVY9WqPT.js",
+      "bytes": 4097,
+      "sha256": "ee0ddfcc33552ce1bcc115d7299441ca918212f9ec9c35c256ff12589082f39b"
     },
     {
       "path": "assets/demo-room-panorama-8bnGy0Ap.png",
@@ -17,29 +17,39 @@
       "sha256": "ea4fe2bad1e747547dfb20d1e1d1e17d02c20b41a9ac6b6ccf8bf2163a536e96"
     },
     {
-      "path": "assets/demo-sdk-CKXpwEFM.js",
+      "path": "assets/demo-sdk-D-GFNoZG.js",
       "bytes": 1317,
-      "sha256": "33c87226c931f56b19e4968320fccc05d283c72703bd01914e13724f515726a2"
+      "sha256": "e542b6a60e0afa400d0050e90faa049eee23389229e7eb212de16a034a6638a2"
     },
     {
-      "path": "assets/head-tracker-C8P4Y3-k.js",
-      "bytes": 4541,
-      "sha256": "3718f9bf6c23cde760269ffb63504173479577bd27cafc0739f1796396df9e90"
+      "path": "assets/head-tracker-fX2IH65l.js",
+      "bytes": 4679,
+      "sha256": "47afb11a4b5b570baec68c87e035cfe9e3e05129f21d9080214d021600a48f19"
     },
     {
-      "path": "assets/head-tracker.worker-DnB2ziEb.js",
-      "bytes": 1083,
-      "sha256": "626da8f1e2aab1cac8f2e275644358fb3dd211f050925ae34f70e0ec720503b9"
+      "path": "assets/head-tracker.worker-CC2R4iy5.js",
+      "bytes": 1112,
+      "sha256": "b97c31aafd45c7e885d6abe3ea85e3e7dc414294532c25741b64f4e017c5699a"
     },
     {
-      "path": "assets/index-0zgkMCuJ.css",
-      "bytes": 6403,
-      "sha256": "f21fd61254faad1a7cadc2cdd78013f1299e0aed9a3506089b7799fbc3f68392"
+      "path": "assets/index-D366upNK.css",
+      "bytes": 7065,
+      "sha256": "0f4f33d5713a6befddf0d5e3c4ced4894eb7f113a29cb870636a3876cdf07a35"
     },
     {
-      "path": "assets/index-8ScckZhh.js",
-      "bytes": 381944,
-      "sha256": "be9e2af2035dd14e03368a0387f74b152819ae39bb194a552a3335613c89bdc8"
+      "path": "assets/index-naEF_q3-.js",
+      "bytes": 382127,
+      "sha256": "2c5a7ded06d4daf97360ae76ad5c111bd456d31bf1d12bd71646c19e80240489"
+    },
+    {
+      "path": "assets/newsreader-latin-ext-BQn1nviT.woff2",
+      "bytes": 86608,
+      "sha256": "45683de03de37187604102316c0b42c0cb2d8dc9c4140a20ad471c3148cc1278"
+    },
+    {
+      "path": "assets/newsreader-latin-s-izfB6B.woff2",
+      "bytes": 132000,
+      "sha256": "6e4f2958c3a7c4a80acde4e5a679abe7e01bc1e30b92be3c7a8b696ef401d101"
     },
     {
       "path": "assets/reachy-mini-sdk-B7WY160u.js",
@@ -53,8 +63,48 @@
     },
     {
       "path": "index.html",
-      "bytes": 562,
-      "sha256": "bb571f0199265aa8813f2a09d0bc00618aea2e6b01bbb570136c0f453e06c249"
+      "bytes": 492,
+      "sha256": "d301d72bd66c59db5d0142690dd9d248bc3604994429af010b44356fbee7d33f"
+    },
+    {
+      "path": "mediapipe/assets.json",
+      "bytes": 1151,
+      "sha256": "1c29186288872873459f6a6e6c5141c66a097f20ea29d4c1cd9f9be0b604f87d"
+    },
+    {
+      "path": "mediapipe/vision_wasm_internal.js",
+      "bytes": 323377,
+      "sha256": "e170ee67dd4e16c1a6fcd8840a206687e5a59b22c20e4a902bc445b095454d73"
+    },
+    {
+      "path": "mediapipe/vision_wasm_internal.wasm",
+      "bytes": 11756954,
+      "sha256": "8da277a733926eacd0474b8704b36742d6ec3231c57a860c5b889dff8f1df886"
+    },
+    {
+      "path": "mediapipe/vision_wasm_module_internal.js",
+      "bytes": 323415,
+      "sha256": "da8934057f147b622e82cfb4c0dbd85461c598e268588b5a8ba9ca963a8ff82d"
+    },
+    {
+      "path": "mediapipe/vision_wasm_module_internal.wasm",
+      "bytes": 11756972,
+      "sha256": "2dabd8e23c60984628beb7bb338764c81a08e6837145273f59578684b5d53c1b"
+    },
+    {
+      "path": "mediapipe/vision_wasm_nosimd_internal.js",
+      "bytes": 323180,
+      "sha256": "e81d715a3d42cc3373602eb2f7aff795d164934db680e32496b65dab537f9658"
+    },
+    {
+      "path": "mediapipe/vision_wasm_nosimd_internal.wasm",
+      "bytes": 10960242,
+      "sha256": "a28483cd42e74e855bf5ebdb6b40d9b66a5b49e35e95020bc97669e6822a3192"
+    },
+    {
+      "path": "models/face_landmarker.task",
+      "bytes": 3758596,
+      "sha256": "64184e229b263107bc2b804c6625db1341ff2bb731874b0bcc2fe6544e0bc9ff"
     }
   ]
 }

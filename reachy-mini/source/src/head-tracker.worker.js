@@ -8,8 +8,8 @@ self.onmessage = async ({ data }) => {
       const { FaceLandmarker, FilesetResolver } = await import('@mediapipe/tasks-vision');
       // v1.0.1's second argument selects its ES-module WASM loader. Classic UMD
       // loader cannot install ModuleFactory when dynamically imported in a module worker.
-      const base = import.meta.env.BASE_URL;
-      const fileset = await FilesetResolver.forVisionTasks(`${base}mediapipe`, true);
+      const base = new URL(data.assetBase);
+      const fileset = await FilesetResolver.forVisionTasks(new URL('mediapipe', base).href, true);
       const options = {
         runningMode: 'VIDEO', numFaces: 1,
         outputFacialTransformationMatrixes: true,
@@ -19,7 +19,7 @@ self.onmessage = async ({ data }) => {
       };
       const create = delegate => FaceLandmarker.createFromOptions(fileset, {
         ...options, canvas: new OffscreenCanvas(640, 480),
-        baseOptions: { modelAssetPath: `${base}models/face_landmarker.task`, delegate },
+        baseOptions: { modelAssetPath: new URL('models/face_landmarker.task', base).href, delegate },
       });
       try { landmarker = await create('GPU'); }
       catch { landmarker = await create('CPU'); }

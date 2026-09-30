@@ -4,6 +4,12 @@ const MAX_AGE_MS = 250;
 const START_TIMEOUT_MS = 20000;
 const INFERENCE_TIMEOUT_MS = 5000;
 
+// Resolve relative deployment bases in the document, before transferring them
+// to the worker emitted beneath assets/. Worker-relative paths lose that base.
+export function headAssetBase(base = import.meta.env?.BASE_URL ?? '/', page = globalThis.document?.baseURI ?? import.meta.url) {
+  return new URL(base, page).href;
+}
+
 export function createHeadTracker({ video, onPose = () => {}, onState = () => {}, onError = () => {} }) {
   let session = 0, running = false, starting = false, stream = null, worker = null;
   let frameId = null, frameKind = null, busy = false, pendingBitmap = null;
@@ -105,7 +111,7 @@ export function createHeadTracker({ video, onPose = () => {}, onState = () => {}
           onPose({ ...angles, ageMs, tracked: true, calibrated: !!neutral });
           setState(neutral ? 'calibrated' : 'ready');
         };
-        worker.postMessage({ type: 'init' });
+        worker.postMessage({ type: 'init', assetBase: headAssetBase() });
       });
       await Promise.race([initialized, cancellation]);
       if (token !== session) return;

@@ -172,6 +172,7 @@ test('site inventory rejects traversal, duplicates, oversized budgets, bad manif
     fixture => { fixture.source.files[0].path = 'a\\b'; }, fixture => { fixture.source.files[0].path = '%2e%2e/secret'; },
     fixture => { fixture.build.files.push(fixture.build.files[0]); }, fixture => { fixture.build.files[0].bytes = 12 * 1024 * 1024 + 1; },
     fixture => { fixture.build.files = Array.from({ length: 257 }, () => fixture.build.files[0]); },
+    fixture => { fixture.build.files = Array.from({ length: 6 }, (_, index) => ({ ...fixture.build.files[0], path: `assets/budget-${index}.wasm`, bytes: 12 * 1024 * 1024 })); },
     fixture => { fixture.build.files[0].sha256 = 'private-secret'; }, fixture => { fixture.release.archive.path = 'source/archive.zip'; },
     fixture => { fixture.release.sourceManifest = '../private-secret'; }, fixture => { fixture.source.files = []; }];
   for (const change of changes) {

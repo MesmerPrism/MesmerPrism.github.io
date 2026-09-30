@@ -37,7 +37,7 @@ export default function App() {
     {control.error && <p className="error-banner" role="alert">{control.error}</p>}
     <div className="control-grid">
       <Camera media={media} token={session?.token} demo={session?.mode === 'demo'} connected={status.connected} mediaReady={status.mediaReady} />
-      <ModelBoundary><Suspense fallback={<section className="panel robot-model"><h2>Reachy in 3D</h2><p>Loading model…</p></section>}><RobotModel control={control} /></Suspense></ModelBoundary>
+      <ModelBoundary><Suspense fallback={<section className="panel robot-model"><h2>Reachy in 3D</h2><p>Loading model…</p></section>}><RobotModel control={control} schematic={import.meta.env.VITE_REACHY_MODEL !== 'private-cad'} /></Suspense></ModelBoundary>
     </div>
     <Antennas targets={control.targets} measured={status.antennas} disabled={disabled || otherControlBusy || !status.awake || session?.antennaModes !== true || control.invalidSpeed} optionsDisabled={disabled || otherControlBusy || session?.antennaModes !== true} bridgeUpdateRequired={!!session && session.antennaModes !== true} setAngle={control.setAngle} centre={control.centre} limitSpeed={control.limitSpeed} speedLimit={control.speedLimit} changeLimitSpeed={control.changeLimitSpeed} invalidSpeed={control.invalidSpeed} />
     <AudioControls control={control} media={media} />

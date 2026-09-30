@@ -1,6 +1,6 @@
 {
   "name": "reachy-mini-browser-control",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "license": "MIT",
   "type": "module",
@@ -13,7 +13,8 @@
     "setup": "node tools/Setup-Local.mjs",
     "agent": "node tools/Agent-Diagnostics.mjs",
     "build:pages": "node tools/Prepare-HeadAssets.mjs && node tools/Build-Pages.mjs",
-    "prebuild": "node tools/Prepare-HeadAssets.mjs && node tools/Prepare-ReachyModel.mjs"
+    "prebuild": "node tools/Prepare-HeadAssets.mjs",
+    "prepare:cad": "node tools/Prepare-ReachyModel.mjs"
   },
   "dependencies": {
     "@chenglou/pretext": "0.0.9",

@@ -4,6 +4,9 @@ import WirelessPanel from './WirelessPanel.jsx';
 import FitText from './FitText.jsx';
 import FirstSetup from './FirstSetup.jsx';
 import './style.css';
+import { version } from '../package.json';
+
+const sourceArchive = `./downloads/reachy-mini-controller-v${version}.zip`;
 
 function currentView() {
   const hash = window.location.hash.slice(1);
@@ -49,15 +52,15 @@ function Page() {
         <p><strong>Browser transport limits:</strong> target and Stop frames are queued, not acknowledged as applied. A fresh pose is not proof that a command was accepted. The daemon may ignore a target during another move. WebRTC session admission does not expose external app/motion ownership. Stop is a software request, not an emergency stop; use the robot’s power switch if motion does not stop.</p>
       </section>
       <section id="local" hidden={view !== 'local'}><h2>Full local controller</h2><p>Use this option for Lite, official CAD, or the existing acknowledgement and app-ownership checks. It runs a loopback bridge on your computer. Robot addresses entered in hosted Wi-Fi setup stay in your browser and are used only to contact the robot directly.</p>
-        <p><a className="download" href="./downloads/reachy-mini-controller-v0.1.0.zip"><FitText>Download controller source ZIP</FitText></a> <a href="./downloads/reachy-mini-controller-v0.1.0.zip.sha256">SHA-256</a></p>
+        <p><a className="download" href={sourceArchive}><FitText>Download controller source ZIP</FitText></a> <a href={`${sourceArchive}.sha256`}>SHA-256</a></p>
         <ol><li>Install <a href="https://nodejs.org/">Node.js 24 LTS</a> (or 22.12+), extract the ZIP, and open a terminal in the extracted folder.</li><li>Run <code>npm ci</code>, then <code>npm run setup</code>. Enter the robot’s dashboard address, such as <code>http://reachy-mini.local:8000</code> for Wireless or <code>http://localhost:8000</code> for Lite. Setup reads and pins its identity; it does not move the robot.</li><li>Run <code>npm run build</code>, then <code>npm start</code>. Open <code>http://localhost:18750</code>. To enable webcam motion, use <code>npm run setup -- --head-follow</code> and follow the <a href="./source/docs/SETUP.md">setup guide</a>.</li></ol>
       </section>
-      <section id="source" hidden={view !== 'source'}><h2>Source, license & credits</h2><p>Original controller code and schematic geometry © 2026 MesmerPrism, released under the <a href="./source/LICENSE">MIT license</a>. View the <a href="https://github.com/MesmerPrism/MesmerPrism.github.io/tree/main/reachy-mini/source">complete source</a> and <a href="./source/THIRD_PARTY_NOTICES.md">third-party notices</a>.</p>
-        <p>Reachy Mini, its daemon, JavaScript SDK and CAD are by <a href="https://github.com/pollen-robotics/reachy_mini">Pollen Robotics</a>. Software and SDK: Apache-2.0. Hardware README: Creative Commons BY-SA-NC, with no version stated; CAD is not included in this public bundle. Head tracking uses <a href="https://ai.google.dev/edge/mediapipe/solutions/vision/face_landmarker">Google MediaPipe</a> and Apache-2.0 face models. Rendering uses Three.js, React and Lucide; text measurement uses Cheng Lou’s <a href="https://github.com/chenglou/pretext">Pretext</a>. Newsreader typeface: Production Type, <a href="/assets/fonts/newsreader-OFL.txt">SIL Open Font License</a>. Design guidance: <a href="https://github.com/GeorgeFejer91/uncodixfy-pretext">Uncodixfy Pretext</a>.</p>
+      <section id="source" hidden={view !== 'source'}><h2>Source, license & credits</h2><p>Original controller code and schematic geometry © 2026 MesmerPrism, released under the <a href="./source/LICENSE">MIT license</a>. View the <a href="https://github.com/MesmerPrism/reachy-mini-browser-control">complete source</a> and <a href="./source/THIRD_PARTY_NOTICES.md">third-party notices</a>.</p>
+        <p>Reachy Mini, its daemon, JavaScript SDK and CAD are by <a href="https://github.com/pollen-robotics/reachy_mini">Pollen Robotics</a>. Software and SDK: Apache-2.0. Hardware README: Creative Commons BY-SA-NC, with no version stated; CAD is not included in this public bundle. Head tracking uses <a href="https://ai.google.dev/edge/mediapipe/solutions/vision/face_landmarker">Google MediaPipe</a> and Apache-2.0 face models. Rendering uses Three.js, React and Lucide; text measurement uses Cheng Lou’s <a href="https://github.com/chenglou/pretext">Pretext</a>. Newsreader typeface: Production Type, <a href="./source/licenses/Newsreader-OFL.txt">SIL Open Font License</a>. Design guidance: <a href="https://github.com/GeorgeFejer91/uncodixfy-pretext">Uncodixfy Pretext</a>.</p>
         <p>This is an independent community controller. It is not an official Pollen Robotics product. There is no analytics, recording or automatic microphone/camera capture. Authentication and signaling contact Hugging Face/Pollen; WebRTC may contact the SDK’s STUN service to establish a peer connection.</p>
         <p>The simulated camera uses an AI-generated panorama distributed with the MIT-licensed demo. See its <a href="./source/public-site/DEMO_ASSETS.md">provenance and limitations</a>. Optional <a href="./source/docs/SETUP.md#agent-diagnostics-cli">agent diagnostics</a> provide read-only JSON reports without changing robot settings.</p>
       </section>
-    </main><footer><a href="/">Mesmer Prism</a> · <a href="./source/README.md">Documentation</a> · <a href="https://github.com/MesmerPrism/MesmerPrism.github.io/issues">Report a problem</a></footer>
+    </main><footer><a href="https://mesmerprism.com/">Mesmer Prism</a> · <a href="./source/README.md">Documentation</a> · <a href="https://github.com/MesmerPrism/reachy-mini-browser-control/issues">Report a problem</a></footer>
   </div>;
 }
 createRoot(document.getElementById('root')).render(<Page />);

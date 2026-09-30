@@ -3,11 +3,14 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import crypto from 'node:crypto';
 import { deflateRawSync } from 'node:zlib';
+import { execFileSync } from 'node:child_process';
 
 // This is a deliberately explicit publication list, never a recursive repo copy.
 // Adding a new runtime/setup file requires a fresh source and privacy review.
 export const PUBLIC_FILES = Object.freeze([
-  '.gitignore', 'LICENSE', 'THIRD_PARTY_NOTICES.md', 'README.md',
+  '.gitignore', '.gitattributes', 'LICENSE', 'THIRD_PARTY_NOTICES.md', 'README.md', 'AGENTS.md', 'CONTRIBUTING.md',
+  '.github/workflows/checks.yml', 'docs/ARCHITECTURE.md', 'docs/STATUS.md', 'docs/DAEMON_1_11_COMPATIBILITY.md',
+  'public-site/newsreader-latin.woff2', 'public-site/newsreader-latin-ext.woff2', 'test/build-pages.test.mjs',
   'docs/SETUP.md', 'package.json', 'package-lock.json', 'config.example.json', 'index.html', 'vite.config.js',
   'licenses/React-Scheduler.txt', 'licenses/Hugging-Face-Hub.txt', 'licenses/Hugging-Face-Tasks.txt', 'licenses/Newsreader-OFL.txt', 'licenses/React.txt', 'licenses/React-DOM.txt', 'licenses/Lucide.txt', 'licenses/Three.txt',
   'licenses/ws.txt', 'licenses/Vite.txt', 'licenses/Pretext.txt', 'licenses/MediaPipe-Apache-2.0.txt', 'licenses/Reachy-Mini-Apache-2.0.txt', 'licenses/Reachy-Mini-JavaScript-SDK.txt',
@@ -34,7 +37,7 @@ export const PUBLIC_FILES = Object.freeze([
 const hash = bytes => crypto.createHash('sha256').update(bytes).digest('hex');
 export function auditPublicFile(name, bytes) {
   if (name.includes('\\') || name.startsWith('/') || name.split('/').some(part => part === '..' || part === '.')) throw Error('Unsafe publication path');
-  if (/(?:^|\/)(?:local|node_modules|dist|\.git|\.env|AGENTS\.md|VALIDATION\.md)(?:\/|$)/i.test(name) ||
+  if (/(?:^|\/)(?:local|node_modules|dist|\.git|\.env|VALIDATION\.md)(?:\/|$)/i.test(name) ||
       /\.(?:glb|gltf|stl|urdf|mjcf|wasm|task|apk|exe|dll|log|pem|key)$/i.test(name) || name.startsWith('public/')) throw Error(`Excluded publication content: ${name}`);
   // One reviewed synthetic panorama is a binary source asset. Fail closed on
   // substitutions; this exception admits no arbitrary images or CAD binaries.
@@ -42,6 +45,15 @@ export function auditPublicFile(name, bytes) {
     if (hash(bytes) !== 'ea4fe2bad1e747547dfb20d1e1d1e17d02c20b41a9ac6b6ccf8bf2163a536e96') throw Error('Unreviewed demo panorama');
     return null;
   }
+  const fontHashes = {
+    'public-site/newsreader-latin.woff2': '6e4f2958c3a7c4a80acde4e5a679abe7e01bc1e30b92be3c7a8b696ef401d101',
+    'public-site/newsreader-latin-ext.woff2': '45683de03de37187604102316c0b42c0cb2d8dc9c4140a20ad471c3148cc1278',
+  };
+  if (Object.hasOwn(fontHashes, name)) {
+    if (hash(bytes) !== fontHashes[name]) throw Error(`Unreviewed font: ${name}`);
+    return null;
+  }
+  if (/\.woff2?$/i.test(name)) throw Error(`Unreviewed font: ${name}`);
   const text = new TextDecoder('utf-8', { fatal: true }).decode(bytes);
   if (text.includes('\0')) throw Error(`Non-text publication content: ${name}`);
   // Reject personal machine paths, UNC roots, credentials and network addresses.
@@ -116,16 +128,20 @@ export async function collectPublicSource(appRoot) {
   return entries;
 }
 
-export async function exportPublic({ appRoot, siteRoot }) {
+export async function exportPublic({ appRoot, siteRoot, sourceRevision = null }) {
   siteRoot = await fs.realpath(siteRoot);
   const entries = await collectPublicSource(appRoot);
   const metadata = JSON.parse(entries.find(entry => entry.name === 'package.json').bytes.toString());
-  if (metadata.version !== '0.1.0') throw Error('Review the publication version and archive name before a new release');
+  if (!/^\d+\.\d+\.\d+$/.test(metadata.version)) throw Error('Use an explicit stable numeric release version');
+  if (sourceRevision !== null && !/^[a-f0-9]{40}$/.test(sourceRevision)) throw Error('Invalid source revision');
   const prefix = `reachy-mini-controller-v${metadata.version}`;
+  const sourceFiles = entries.map(entry => ({ path: entry.name, bytes: entry.bytes.length, sha256: hash(entry.bytes) }));
+  const sourceTreeSha256 = hash(Buffer.from(JSON.stringify(sourceFiles)));
   const manifest = { schema: 'reachy.public-source.v1', name: metadata.name, version: metadata.version,
+    sourceRevision, sourceTreeSha256,
     originalCodeLicense: 'MIT', dependencyLicenses: 'THIRD_PARTY_NOTICES.md',
     exclusions: ['private configuration and evidence','Git history','installed dependencies','generated model/WASM binaries','source CAD and robot meshes'],
-    files: entries.map(entry => ({ path:entry.name, bytes:entry.bytes.length, sha256:hash(entry.bytes) })) };
+    files: sourceFiles };
   entries.push({ name:'SOURCE_MANIFEST.json', bytes:Buffer.from(JSON.stringify(manifest,null,2)+'\n') });
   const zip = sourceZip(entries.map(entry => ({ name:`${prefix}/${entry.name}`, bytes:entry.bytes })));
   const product = childPath(siteRoot,'reachy-mini'), source = childPath(product,'source'), downloads = childPath(product,'downloads');
@@ -138,15 +154,22 @@ export async function exportPublic({ appRoot, siteRoot }) {
     try { if ((await fs.lstat(directory)).isSymbolicLink()) throw Error('Export directory is a symbolic link'); }
     catch (error) { if (error.code !== 'ENOENT') throw error; }
   }
+  const zipName = `${prefix}.zip`, sha256 = hash(zip);
+  // A published version identifies immutable bytes. Refuse before replacing
+  // source or release metadata; an unchanged retry remains idempotent.
+  try {
+    const prior = await fs.readFile(childPath(downloads, zipName));
+    if (hash(prior) !== sha256) throw Error(`Release ${metadata.version} already exists with different bytes; increment the version`);
+  } catch (error) { if (error.code !== 'ENOENT') throw error; }
   await fs.rm(staging,{recursive:true,force:true}); await fs.mkdir(staging);
   for (const entry of entries) { const file = childPath(staging,entry.name); await fs.mkdir(path.dirname(file),{recursive:true}); await fs.writeFile(file,entry.bytes); }
   await fs.rm(source,{recursive:true,force:true}); await fs.rename(staging,source);
   await fs.mkdir(downloads,{recursive:true});
   if (!(await fs.realpath(downloads)).startsWith(siteRoot + path.sep)) throw Error('Download directory escaped its root');
-  const zipName = `${prefix}.zip`, sha256 = hash(zip);
   await fs.writeFile(childPath(downloads,zipName),zip);
   await fs.writeFile(childPath(downloads,`${zipName}.sha256`),`${sha256}  ${zipName}\n`);
   await fs.writeFile(childPath(product,'PUBLIC_ARTIFACTS.json'),JSON.stringify({schema:'reachy.public-artifacts.v1',version:metadata.version,
+    sourceRevision, sourceTreeSha256,
     sourceManifest:'source/SOURCE_MANIFEST.json',archive:{path:`downloads/${zipName}`,bytes:zip.length,sha256},sourceFiles:entries.length},null,2)+'\n');
   return { sourceFiles:entries.length, archive:zipName, bytes:zip.length, sha256 };
 }
@@ -155,5 +178,7 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
   const args = process.argv.slice(2);
   if (args.length !== 2 || args[0] !== '--site-dir') throw Error('Usage: node tools/Export-Public.mjs --site-dir <website-root>');
   const appRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
-  console.log(JSON.stringify(await exportPublic({ appRoot, siteRoot:path.resolve(args[1]) }),null,2));
+  const sourceRevision = execFileSync('git', ['rev-parse', 'HEAD'], { cwd: appRoot, encoding: 'utf8' }).trim();
+  if (execFileSync('git', ['status', '--porcelain'], { cwd: appRoot, encoding: 'utf8' }).trim()) throw Error('Commit the reviewed source before exporting a release');
+  console.log(JSON.stringify(await exportPublic({ appRoot, siteRoot:path.resolve(args[1]), sourceRevision }),null,2));
 }
