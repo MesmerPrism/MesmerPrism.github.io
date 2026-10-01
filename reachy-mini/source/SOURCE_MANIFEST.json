@@ -1,9 +1,9 @@
 {
   "schema": "reachy.public-source.v1",
   "name": "reachy-mini-browser-control",
-  "version": "0.1.2",
-  "sourceRevision": "fd9f863c685a18cce361084515ad905cafb06878",
-  "sourceTreeSha256": "78b12e7e711f2d8590a4d873fa1fe9380aa89df56aafed838709fb78d8eed8a9",
+  "version": "0.2.1",
+  "sourceRevision": "af90993c59f44287f521ae74d511c0907bfcdc28",
+  "sourceTreeSha256": "66d4a622206c13f82a776741f7927cc7e1d76a4060e0e86906e988d9100a9fd5",
   "originalCodeLicense": "MIT",
   "dependencyLicenses": "THIRD_PARTY_NOTICES.md",
   "exclusions": [
@@ -52,8 +52,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 4607,
-      "sha256": "ecc3d6615e48b27168adb1938d60005223724f72ae8bba722e2853f518ff77d0",
+      "bytes": 4829,
+      "sha256": "51f1d0739d854123a5c3b36bae4eaf5afc294304ceaee0ee969b365aebd467b7",
       "sitePath": "README.md"
     },
     {
@@ -70,8 +70,8 @@
     },
     {
       "path": "docs/ARCHITECTURE.md",
-      "bytes": 3182,
-      "sha256": "f5d2356253df3df5b1ea316a271020a92cf2839b3408e7985a0d958a3bc8d6d7",
+      "bytes": 3722,
+      "sha256": "10882dff227fe340af495cda3e8ede9f1db8bbd7b9e523b8a674dad109aacdb4",
       "sitePath": "docs/ARCHITECTURE.md"
     },
     {
@@ -82,14 +82,14 @@
     },
     {
       "path": "docs/SETUP.md",
-      "bytes": 9593,
-      "sha256": "7069db917260e7177208ed2fa299db12a98dac458272b40b29d6451700ab3b24",
+      "bytes": 15031,
+      "sha256": "daa73b8fb85537fc63630433c3fbb0f057dab0131ac22e85407d5cd9e440a463",
       "sitePath": "docs/SETUP.md"
     },
     {
       "path": "docs/STATUS.md",
-      "bytes": 3140,
-      "sha256": "8870583fd130148a8b7b122fd8f5bd63162b8fd5cdf42370afaf5f891d1898e5",
+      "bytes": 5221,
+      "sha256": "7acba3f799e34b782c0d686e5af116637083167e1bab504c4e828bdfb7b6568c",
       "sitePath": "docs/STATUS.md"
     },
     {
@@ -185,13 +185,13 @@
     {
       "path": "package-lock.json",
       "bytes": 77313,
-      "sha256": "9a7547f3c68416d81df8b021f11879895164070b8f6c4cedcfec769c75ed1f78",
+      "sha256": "c8d02a506add00dc28d5b4770ee255a6b3ed553e38708d1cddef6045d718d511",
       "sitePath": "package-lock.json"
     },
     {
       "path": "package.json",
       "bytes": 945,
-      "sha256": "2036788438f0e2ea116181c29eba8e3e0fac8bf1bbf00c53e7d6b15d8b3328a6",
+      "sha256": "34a140f787fecb6aaadb058940db14845dbe15459d22a86305fe7d72555dbf85",
       "sitePath": "package.json"
     },
     {
@@ -202,8 +202,8 @@
     },
     {
       "path": "public-site/FirstSetup.jsx",
-      "bytes": 27299,
-      "sha256": "578f1486c9f03a446925c2fef9cb6393b86d729b195c21d56b52f4f54972f44a",
+      "bytes": 31795,
+      "sha256": "c703298fde61785d061ac4d6197b41ae6235e44433ea366dfe9f4351253b0d78",
       "sitePath": "public-site/FirstSetup.jsx"
     },
     {
@@ -232,8 +232,8 @@
     },
     {
       "path": "public-site/WirelessPanel.jsx",
-      "bytes": 20074,
-      "sha256": "f97ee0fa2c6641031fdc5c7dc2964463a2523a4e20713489681db5b5da9493bd",
+      "bytes": 25747,
+      "sha256": "150b11c6eef2e26d1e1704c680ceccd1d3100d142c6eeea4ca52cc92f336c188",
       "sitePath": "public-site/WirelessPanel.jsx"
     },
     {
@@ -256,8 +256,8 @@
     },
     {
       "path": "public-site/main.jsx",
-      "bytes": 11081,
-      "sha256": "f1c55bd756542557583ebdb6338b5186d119fb875e28f36184e03c1abd65659e",
+      "bytes": 11293,
+      "sha256": "9852752715df4d504fd9c3d825f8ea5da16d10b14994e418084552061cd330c3",
       "sitePath": "public-site/main.jsx"
     },
     {
@@ -274,8 +274,8 @@
     },
     {
       "path": "public-site/style.css",
-      "bytes": 8094,
-      "sha256": "7774f5314e57c5d3f1505eab643b10cb4c94465514af6e0c71561e1bf7c0a128",
+      "bytes": 10263,
+      "sha256": "24f25c2d6491e3f1b61184ce796f530dc3117df4c5221f6f01d0b57e94fa72fe",
       "sitePath": "public-site/style.css"
     },
     {
@@ -298,8 +298,8 @@
     },
     {
       "path": "server/index.mjs",
-      "bytes": 8344,
-      "sha256": "044c10fe2f3604fd9e7d78a8d91753b22566e7c997c406fbe3ec6748e704e94b",
+      "bytes": 7961,
+      "sha256": "96b33d7cff5e78e1cd1286d1649c814b3dfe58cce38777008767c7d7f11db57e",
       "sitePath": "server/index.mjs"
     },
     {
@@ -309,15 +309,27 @@
       "sitePath": "server/media-guard.mjs"
     },
     {
+      "path": "server/security-headers.mjs",
+      "bytes": 806,
+      "sha256": "532b8151a4d5be8a884060941db8d956b9f8f4652a63583f43ee123d7499a04c",
+      "sitePath": "server/security-headers.mjs"
+    },
+    {
+      "path": "src/AgentConsole.jsx",
+      "bytes": 4572,
+      "sha256": "e58ca22c9cae7875a110c6c81dab803e0bc7cf5aaf8cfd460a7f34028bbd062d",
+      "sitePath": "src/AgentConsole.jsx"
+    },
+    {
       "path": "src/Antennas.jsx",
-      "bytes": 3507,
-      "sha256": "7cfceb36e6822c8d02f43f32e894dfb52a31abf6ec263ff28e060d3743d90653",
+      "bytes": 1954,
+      "sha256": "3ba88b4afe82fd2e6f4e5f43ff3dd4892b682bc846379245d630f1ed0913eea0",
       "sitePath": "src/Antennas.jsx"
     },
     {
       "path": "src/App.jsx",
-      "bytes": 4431,
-      "sha256": "42f041adb45615945402ad0ca956b5fd83f60c68ede4113ead5f329602d4a833",
+      "bytes": 4513,
+      "sha256": "252462794b50be5ae3a9e452e107e5246f2dca733547983fbe0108e8e2ba9647",
       "sitePath": "src/App.jsx"
     },
     {
@@ -340,8 +352,8 @@
     },
     {
       "path": "src/HeadControls.jsx",
-      "bytes": 5394,
-      "sha256": "8c575319e442cbd02edf191cbc6fac968197128acfe22483ae1c390e12cd6678",
+      "bytes": 5047,
+      "sha256": "c40d0356a8683b7e4615e7d6df278c48195909bb688b810d2259903c45220450",
       "sitePath": "src/HeadControls.jsx"
     },
     {
@@ -355,6 +367,36 @@
       "bytes": 13622,
       "sha256": "64bc5d9b2250efa598fc4354b30e9a6225c77a904ed5ce2673aa840dca4cc0c2",
       "sitePath": "src/RobotModel.jsx"
+    },
+    {
+      "path": "src/SpatialControls.jsx",
+      "bytes": 8531,
+      "sha256": "110fc978d9f8998992325d544382ac584eeb47deb5073591a541963f1a27f846",
+      "sitePath": "src/SpatialControls.jsx"
+    },
+    {
+      "path": "src/WebXRControls.jsx",
+      "bytes": 15384,
+      "sha256": "b7a2d0cc153b07f32c63f85d8babcafebb0c2c8f0b6f4d6d7cd659668b4f75d5",
+      "sitePath": "src/WebXRControls.jsx"
+    },
+    {
+      "path": "src/agent-console.css",
+      "bytes": 722,
+      "sha256": "0d33f74265ee9cf82fbfde94e881ee18e65d63e35f6d32ef57a793aa339065e7",
+      "sitePath": "src/agent-console.css"
+    },
+    {
+      "path": "src/agent-console.mjs",
+      "bytes": 7899,
+      "sha256": "36707aed81c2b2ccad1e82fff376d998667e40bff41681e3f4e7600fe1a8836e",
+      "sitePath": "src/agent-console.mjs"
+    },
+    {
+      "path": "src/command-flight.mjs",
+      "bytes": 700,
+      "sha256": "1517c8f64830ac2654c9cc45b80f554755cbfdf74060197bfd6894de45289817",
+      "sitePath": "src/command-flight.mjs"
     },
     {
       "path": "src/first-setup.mjs",
@@ -429,6 +471,18 @@
       "sitePath": "src/setup-guidance.mjs"
     },
     {
+      "path": "src/spatial-control.mjs",
+      "bytes": 1318,
+      "sha256": "1d0f1a57270cc4df21f4e54ddfdbb675cef85142199a5c8cce424b976faf0bbf",
+      "sitePath": "src/spatial-control.mjs"
+    },
+    {
+      "path": "src/spatial-controls.css",
+      "bytes": 3588,
+      "sha256": "ac3a08376ef8c43380d65bf9388714b1e692e579dd47e3e7b92f6566087d551b",
+      "sitePath": "src/spatial-controls.css"
+    },
+    {
       "path": "src/styles.css",
       "bytes": 15392,
       "sha256": "4274f65b1234ed00b11a6a32b5d2120f83acee60ac5beb8012de1cf5ac70d7b8",
@@ -442,14 +496,14 @@
     },
     {
       "path": "src/useControl.js",
-      "bytes": 10918,
-      "sha256": "e6e8044186f5b4b5a9ac25146bbce6759fa576a00723f1c2f2eed08ff1789a34",
+      "bytes": 11004,
+      "sha256": "71dd25b9aaf26d6b3172ab768c18d6b92d95deb497bdb18771d5513129c365f2",
       "sitePath": "src/useControl.js"
     },
     {
       "path": "src/useHeadControl.js",
-      "bytes": 7355,
-      "sha256": "32f615b58c258f7e30e5859c6ae7306b28cb604ae377c75a14ae1fe9af03daf2",
+      "bytes": 7988,
+      "sha256": "8a1a9cb7e591ea6f4d4400e56bfcf13b2bd012570e2c60fa22d0f71cc105281a",
       "sitePath": "src/useHeadControl.js"
     },
     {
@@ -457,6 +511,12 @@
       "bytes": 5986,
       "sha256": "1169f038d9b29315c02750f1f19fd74b34c462da915dcc652bfb2175c6f6b98a",
       "sitePath": "src/useReachyMedia.js"
+    },
+    {
+      "path": "src/webxr-controls.css",
+      "bytes": 783,
+      "sha256": "037e509fcacdee0627839c865ccf6b895d8e96cb18e624ac13c2bfaaed294b4f",
+      "sitePath": "src/webxr-controls.css"
     },
     {
       "path": "src/wifi-setup.mjs",
@@ -483,6 +543,18 @@
       "sitePath": "src/wireless-telemetry.mjs"
     },
     {
+      "path": "src/xr-head-follow.mjs",
+      "bytes": 3818,
+      "sha256": "3a7cacace86355ee321adff00fdb29b83f54ec7c348984fe35688bc61f2e1919",
+      "sitePath": "src/xr-head-follow.mjs"
+    },
+    {
+      "path": "test/agent-console.test.mjs",
+      "bytes": 7531,
+      "sha256": "4b3b3c330ce8a5474cbf272d7b0b658365fc752453d6c1eda2e9d3eaabaf9f5a",
+      "sitePath": "test/agent-console.test.mjs"
+    },
+    {
       "path": "test/agent-diagnostics.test.mjs",
       "bytes": 16454,
       "sha256": "8c5f4b00579732d560d3a80079b0ab5b9632b9e4a1600eef1600cea85ea0af43",
@@ -499,6 +571,12 @@
       "bytes": 1657,
       "sha256": "1797d8f92ead082b85a5a280a053d08024dd5ae959cfb1d75477d2140aece5e0",
       "sitePath": "test/build-pages.test.mjs"
+    },
+    {
+      "path": "test/command-flight.test.mjs",
+      "bytes": 1081,
+      "sha256": "a30a2005f14a52fba12d226925f833f271f0a64550adc904abd0df028e045bd8",
+      "sitePath": "test/command-flight.test.mjs"
     },
     {
       "path": "test/control-recovery.test.mjs",
@@ -627,6 +705,12 @@
       "sitePath": "test/robot-update.test.mjs"
     },
     {
+      "path": "test/security-headers.test.mjs",
+      "bytes": 1479,
+      "sha256": "0e1f87ff9968393d9d05528609aa7723e0e65e8d171640f33726993e4cc5a56c",
+      "sitePath": "test/security-headers.test.mjs"
+    },
+    {
       "path": "test/setup-guidance.test.mjs",
       "bytes": 3718,
       "sha256": "cf44af9dc7995c9b04549c6532208750138f238be7da209ef67dc4dc10972172",
@@ -637,6 +721,12 @@
       "bytes": 5834,
       "sha256": "329ad8e9eb3cef3dbc34b879061b3670f48c356c48cb4c1f2f2288380175432b",
       "sitePath": "test/setup-local.test.mjs"
+    },
+    {
+      "path": "test/spatial-control.test.mjs",
+      "bytes": 1806,
+      "sha256": "dd5e63adf149e1efc17e49f513b2a7bc7a4039263a9a93bda1e68436b654e134",
+      "sitePath": "test/spatial-control.test.mjs"
     },
     {
       "path": "test/talk-lifecycle.test.mjs",
@@ -663,6 +753,12 @@
       "sitePath": "test/wireless-control.test.mjs"
     },
     {
+      "path": "test/xr-head-follow.test.mjs",
+      "bytes": 3712,
+      "sha256": "6c332c48fcf059e790f86376c45a618a5bd52727778dcf8f6e906447266dee29",
+      "sitePath": "test/xr-head-follow.test.mjs"
+    },
+    {
       "path": "tools/Agent-Diagnostics.mjs",
       "bytes": 11704,
       "sha256": "07c6ba2fa3fc7cbd35ff09bffe968bf3bd85228202c458c094336a4f9f03913a",
@@ -670,14 +766,14 @@
     },
     {
       "path": "tools/Build-Pages.mjs",
-      "bytes": 3594,
-      "sha256": "4f1c085f734dd6d7b77db98a85605ea438e8fc6db12a7967ab1f1ee8e79359a4",
+      "bytes": 3608,
+      "sha256": "e695093f50dcb43b4c54fa47caf37cd360db875920b268d1b80f32c62bada1bf",
       "sitePath": "tools/Build-Pages.mjs"
     },
     {
       "path": "tools/Export-Public.mjs",
-      "bytes": 14488,
-      "sha256": "a090b2b667cc298f37e80a02b06068446b4ffe2bba38ed7ec434786076f9d4ef",
+      "bytes": 14950,
+      "sha256": "6cd7ed8234464ff3b75b21de2707ccceee3d545b2e18003d3ee3186986bf08d6",
       "sitePath": "tools/Export-Public.mjs"
     },
     {
