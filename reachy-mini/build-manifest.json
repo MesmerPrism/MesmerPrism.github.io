@@ -1,20 +1,20 @@
 {
-  "version": "0.3.0",
+  "version": "0.3.1",
   "files": [
     {
-      "path": "assets/RobotModel-CIwfudHe.js",
-      "bytes": 84675,
-      "sha256": "b7c1eab83ac1aa09155d1e454e023be51de68d089b7221e6f36f5e06ae91f99e"
+      "path": "assets/RobotModel-Pahl5Zk8.js",
+      "bytes": 85821,
+      "sha256": "1e3a810159ece338f9e49cb7acff7462b53347c41c98ee0f0fb3f4ccde22a768"
     },
     {
-      "path": "assets/SimulatedCamera-CeUXFWhu.js",
-      "bytes": 4444,
-      "sha256": "bf664bf02d6aeac79c2d83e243eec9df136960338c281871add7bc75d117c2f6"
+      "path": "assets/SimulatedCamera-DKXVYr6M.js",
+      "bytes": 4552,
+      "sha256": "f5ffd2a878f8d4c386a59f613dd5a4c3d81b6e40f0dffcd8b1517cadf6370991"
     },
     {
-      "path": "assets/WebXRControls-BwnvY5QQ.js",
+      "path": "assets/WebXRControls-DUZ-ya6Q.js",
       "bytes": 11507,
-      "sha256": "13011606bfadb7fb69aa72208cbd102bed8e35b93cf6f3c216dcb7a8f9b17d40"
+      "sha256": "c64d1328d643f850e79c62bebf9dfad7f7104ef4a08de22521ed39a40686aeed"
     },
     {
       "path": "assets/WebXRControls-YRAoBpK6.css",
@@ -27,9 +27,9 @@
       "sha256": "ea4fe2bad1e747547dfb20d1e1d1e17d02c20b41a9ac6b6ccf8bf2163a536e96"
     },
     {
-      "path": "assets/demo-sdk-D8NjZk7M.js",
+      "path": "assets/demo-sdk-C4WsHf4d.js",
       "bytes": 1317,
-      "sha256": "26a46f481a9af4697ac24b00950426a80c27e8b3bd4fc7e3281e5e0ce51ecbaf"
+      "sha256": "7cefd5f2f693378de50630770ee54b23ab9086c491fa9210948dbebe0b861f4a"
     },
     {
       "path": "assets/head-tracker-Cvv6zmS1.js",
@@ -42,14 +42,14 @@
       "sha256": "b97c31aafd45c7e885d6abe3ea85e3e7dc414294532c25741b64f4e017c5699a"
     },
     {
-      "path": "assets/index-CG0Epfqs.js",
-      "bytes": 405671,
-      "sha256": "a44391d7db72932a9a48f529f997732584334e4788a32af292e3de5c5335c984"
+      "path": "assets/index-AxsqHohX.css",
+      "bytes": 20326,
+      "sha256": "9830b5b034768f2aca14ef57dbb255711a03848c4a60366aab0790ffd627caef"
     },
     {
-      "path": "assets/index-D0LmZl6N.css",
-      "bytes": 17929,
-      "sha256": "c7c1befa7b498101155373d1e256f0d72dcc4250c213adf7cb3103310dc39c40"
+      "path": "assets/index-eSD9MwA2.js",
+      "bytes": 410670,
+      "sha256": "713efaf1e8ccc2141d1816d717ecee38ff19ddb55c4a639a1e075aa46bd2b817"
     },
     {
       "path": "assets/newsreader-latin-ext-BQn1nviT.woff2",
@@ -79,7 +79,7 @@
     {
       "path": "index.html",
       "bytes": 514,
-      "sha256": "8ec1dfcee55e0b0947dbd219469ff7acb2ed3e9430c43fa2054816246eaf7979"
+      "sha256": "c980eef2355a08fc3c1f3e170d7e8295ee231d20be19bb955aec9af3e593eaf0"
     },
     {
       "path": "mediapipe/assets.json",

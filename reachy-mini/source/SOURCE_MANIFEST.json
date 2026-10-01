@@ -1,9 +1,9 @@
 {
   "schema": "reachy.public-source.v1",
   "name": "reachy-mini-browser-control",
-  "version": "0.3.0",
-  "sourceRevision": "ec277d933b22fac3d99a48134f6f6b0681ca4de1",
-  "sourceTreeSha256": "06165a017912acec76f8812896cdd6fb43c2bab71f7d240387151c5e05cf035a",
+  "version": "0.3.1",
+  "sourceRevision": "b62728fed58bbeb51b9c68ba8bbbf43d716c98ee",
+  "sourceTreeSha256": "0969cc82ef21db662ee8454a6ffb6ba91a21bf527c894b61079d34ad134988d2",
   "originalCodeLicense": "MIT",
   "dependencyLicenses": "THIRD_PARTY_NOTICES.md",
   "exclusions": [
@@ -52,8 +52,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 5207,
-      "sha256": "5cd974671efc7c0564f4049510994866fdab5b9c37058e4a00d7e6af0bfbc324",
+      "bytes": 5397,
+      "sha256": "31d4ebe55cef34216272f4f1539315594e54f8beb9d7b62f03bf865eef2fe5f0",
       "sitePath": "README.md"
     },
     {
@@ -82,14 +82,14 @@
     },
     {
       "path": "docs/SETUP.md",
-      "bytes": 15550,
-      "sha256": "1a8e2de596c562985ea04dc67b4d970b3277e87fca128e7331dbe8243fec6b81",
+      "bytes": 16059,
+      "sha256": "03be186436d5a567802d73f258c27a096d1babdbebd9b55624cdb8717f31eb87",
       "sitePath": "docs/SETUP.md"
     },
     {
       "path": "docs/STATUS.md",
-      "bytes": 5847,
-      "sha256": "6e79951bf85b146faf59edc8d88d81e9b3632fe10643727c1c4542ccc70fc0b9",
+      "bytes": 6415,
+      "sha256": "32136f44de09438e8a2d5248e82be5141347556d3c3f5293c6470e2bee944857",
       "sitePath": "docs/STATUS.md"
     },
     {
@@ -185,13 +185,13 @@
     {
       "path": "package-lock.json",
       "bytes": 77313,
-      "sha256": "0f7096da11c34b9e3f494873fbad6e6b8858c40a4c026445ab07cfa3563b4cd5",
+      "sha256": "d5536ed613575359483499105e3e55d3a0128de0ff46b858dea33a85d3f235ca",
       "sitePath": "package-lock.json"
     },
     {
       "path": "package.json",
       "bytes": 945,
-      "sha256": "95fbae621b33514a63f5ec3f585e7af4673d9e1b815d898b4e8d7a05b989a587",
+      "sha256": "075503ef8b6b85ded57d6ea35de0bf248e44365fe09551bc63b7cdacf462b189",
       "sitePath": "package.json"
     },
     {
@@ -220,8 +220,8 @@
     },
     {
       "path": "public-site/SimulatedCamera.jsx",
-      "bytes": 5030,
-      "sha256": "b06cfbb90a454070ca6c5d51b3f158685d0c13838c05b6c0f6cd092b0205ea4b",
+      "bytes": 5236,
+      "sha256": "e6a8f580fc85962c8e40b8e69a2b53a0b804a0f32599b495a47be1b5565f0a94",
       "sitePath": "public-site/SimulatedCamera.jsx"
     },
     {
@@ -232,8 +232,8 @@
     },
     {
       "path": "public-site/WirelessPanel.jsx",
-      "bytes": 25501,
-      "sha256": "f928621366974622c88a6da4fdaa04dab4a5e3ca9117a26fdb997bdffead4c78",
+      "bytes": 27091,
+      "sha256": "9c06f6008373cb3d4b99d7c73ac05c61b956cbf182d4068ae800f827769734b4",
       "sitePath": "public-site/WirelessPanel.jsx"
     },
     {
@@ -274,8 +274,8 @@
     },
     {
       "path": "public-site/style.css",
-      "bytes": 15458,
-      "sha256": "a5fee0ad6a6ea1024ee3589b39f77db17463f7f922b6162f07728ed6a56166ad",
+      "bytes": 17394,
+      "sha256": "602fcbef0298a5556251af496a9c7a3fb182919aeac1db10ac110a4603d96fcf",
       "sitePath": "public-site/style.css"
     },
     {
@@ -328,8 +328,8 @@
     },
     {
       "path": "src/App.jsx",
-      "bytes": 5858,
-      "sha256": "56dfddbc71b5b7c0d5a5e45259391e7a3f735f1d83c3833d6d47bc90e0c40029",
+      "bytes": 6894,
+      "sha256": "9ae6b25049f7420ab51889b6264dc210b98e896e5a21ec82cc25f9442cabf6d1",
       "sitePath": "src/App.jsx"
     },
     {
@@ -340,8 +340,8 @@
     },
     {
       "path": "src/Camera.jsx",
-      "bytes": 2832,
-      "sha256": "6c63a621e4ea4a34378d5281df919c4da2a59143bf99d8831237f99aedaf776f",
+      "bytes": 3038,
+      "sha256": "32de0ad2c252fed536bf20df71bb2aa5286a482fc6d48bd405321318dc27209a",
       "sitePath": "src/Camera.jsx"
     },
     {
@@ -352,8 +352,8 @@
     },
     {
       "path": "src/HeadControls.jsx",
-      "bytes": 5507,
-      "sha256": "2526d622d178be3440084ac4a88ff145c5e75312ed6c87472cb980a1a731547a",
+      "bytes": 5874,
+      "sha256": "c70f9e9251c935f319c8105c0296f85ad3d234770bb4362a2c3875f1b5457260",
       "sitePath": "src/HeadControls.jsx"
     },
     {
@@ -364,14 +364,14 @@
     },
     {
       "path": "src/RobotModel.jsx",
-      "bytes": 25170,
-      "sha256": "8109fbd6587c693b63ea2afba53f0c31c2cd8d89cb0068ba57506a1508ab55c4",
+      "bytes": 26944,
+      "sha256": "3788e3bd6a69587da1df042880184a12c23610e5234d2950eca757f0db53cc92",
       "sitePath": "src/RobotModel.jsx"
     },
     {
       "path": "src/SpatialControls.jsx",
-      "bytes": 8531,
-      "sha256": "110fc978d9f8998992325d544382ac584eeb47deb5073591a541963f1a27f846",
+      "bytes": 13752,
+      "sha256": "5741db0355413041f9f155b7f092f267c675bac0fbb07a34e5ecd46be68be378",
       "sitePath": "src/SpatialControls.jsx"
     },
     {
@@ -478,20 +478,20 @@
     },
     {
       "path": "src/spatial-control.mjs",
-      "bytes": 1318,
-      "sha256": "1d0f1a57270cc4df21f4e54ddfdbb675cef85142199a5c8cce424b976faf0bbf",
+      "bytes": 1543,
+      "sha256": "57a5d6c4b9b94c39b9d44a769b87d36623104bd7dd5f72cc3bac67a17cdaff36",
       "sitePath": "src/spatial-control.mjs"
     },
     {
       "path": "src/spatial-controls.css",
-      "bytes": 3588,
-      "sha256": "ac3a08376ef8c43380d65bf9388714b1e692e579dd47e3e7b92f6566087d551b",
+      "bytes": 4259,
+      "sha256": "457bddc69add912f322df63aaede87aa6d8c57ee76fe8181ac5502dae6a9c8a3",
       "sitePath": "src/spatial-controls.css"
     },
     {
       "path": "src/styles.css",
-      "bytes": 19499,
-      "sha256": "debc075a3605736bba713178c54b9e46f201f007946dd89bf63c14e4026bc198",
+      "bytes": 20501,
+      "sha256": "c788bd29754ac6300b335590b138dbda2f84e9a2ef5612012c83ba8f7784c75c",
       "sitePath": "src/styles.css"
     },
     {
@@ -736,8 +736,8 @@
     },
     {
       "path": "test/spatial-control.test.mjs",
-      "bytes": 1806,
-      "sha256": "dd5e63adf149e1efc17e49f513b2a7bc7a4039263a9a93bda1e68436b654e134",
+      "bytes": 2475,
+      "sha256": "c0caa4a4a9bcf9b01c603a85c2b67ac87aaa6f14c863bc2c6d39f1ae38e067be",
       "sitePath": "test/spatial-control.test.mjs"
     },
     {
