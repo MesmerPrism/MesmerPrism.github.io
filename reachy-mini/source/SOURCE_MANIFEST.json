@@ -1,9 +1,9 @@
 {
   "schema": "reachy.public-source.v1",
   "name": "reachy-mini-browser-control",
-  "version": "0.2.1",
-  "sourceRevision": "af90993c59f44287f521ae74d511c0907bfcdc28",
-  "sourceTreeSha256": "66d4a622206c13f82a776741f7927cc7e1d76a4060e0e86906e988d9100a9fd5",
+  "version": "0.3.0",
+  "sourceRevision": "ec277d933b22fac3d99a48134f6f6b0681ca4de1",
+  "sourceTreeSha256": "06165a017912acec76f8812896cdd6fb43c2bab71f7d240387151c5e05cf035a",
   "originalCodeLicense": "MIT",
   "dependencyLicenses": "THIRD_PARTY_NOTICES.md",
   "exclusions": [
@@ -52,8 +52,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 4829,
-      "sha256": "51f1d0739d854123a5c3b36bae4eaf5afc294304ceaee0ee969b365aebd467b7",
+      "bytes": 5207,
+      "sha256": "5cd974671efc7c0564f4049510994866fdab5b9c37058e4a00d7e6af0bfbc324",
       "sitePath": "README.md"
     },
     {
@@ -82,14 +82,14 @@
     },
     {
       "path": "docs/SETUP.md",
-      "bytes": 15031,
-      "sha256": "daa73b8fb85537fc63630433c3fbb0f057dab0131ac22e85407d5cd9e440a463",
+      "bytes": 15550,
+      "sha256": "1a8e2de596c562985ea04dc67b4d970b3277e87fca128e7331dbe8243fec6b81",
       "sitePath": "docs/SETUP.md"
     },
     {
       "path": "docs/STATUS.md",
-      "bytes": 5221,
-      "sha256": "7acba3f799e34b782c0d686e5af116637083167e1bab504c4e828bdfb7b6568c",
+      "bytes": 5847,
+      "sha256": "6e79951bf85b146faf59edc8d88d81e9b3632fe10643727c1c4542ccc70fc0b9",
       "sitePath": "docs/STATUS.md"
     },
     {
@@ -185,13 +185,13 @@
     {
       "path": "package-lock.json",
       "bytes": 77313,
-      "sha256": "c8d02a506add00dc28d5b4770ee255a6b3ed553e38708d1cddef6045d718d511",
+      "sha256": "0f7096da11c34b9e3f494873fbad6e6b8858c40a4c026445ab07cfa3563b4cd5",
       "sitePath": "package-lock.json"
     },
     {
       "path": "package.json",
       "bytes": 945,
-      "sha256": "34a140f787fecb6aaadb058940db14845dbe15459d22a86305fe7d72555dbf85",
+      "sha256": "95fbae621b33514a63f5ec3f585e7af4673d9e1b815d898b4e8d7a05b989a587",
       "sitePath": "package.json"
     },
     {
@@ -220,8 +220,8 @@
     },
     {
       "path": "public-site/SimulatedCamera.jsx",
-      "bytes": 4695,
-      "sha256": "4b9c87851ab50c6378c2d602c8a41ba0d63ab3c84f3bcc13769d9742507ccc53",
+      "bytes": 5030,
+      "sha256": "b06cfbb90a454070ca6c5d51b3f158685d0c13838c05b6c0f6cd092b0205ea4b",
       "sitePath": "public-site/SimulatedCamera.jsx"
     },
     {
@@ -232,8 +232,8 @@
     },
     {
       "path": "public-site/WirelessPanel.jsx",
-      "bytes": 25747,
-      "sha256": "150b11c6eef2e26d1e1704c680ceccd1d3100d142c6eeea4ca52cc92f336c188",
+      "bytes": 25501,
+      "sha256": "f928621366974622c88a6da4fdaa04dab4a5e3ca9117a26fdb997bdffead4c78",
       "sitePath": "public-site/WirelessPanel.jsx"
     },
     {
@@ -256,8 +256,8 @@
     },
     {
       "path": "public-site/main.jsx",
-      "bytes": 11293,
-      "sha256": "9852752715df4d504fd9c3d825f8ea5da16d10b14994e418084552061cd330c3",
+      "bytes": 11111,
+      "sha256": "8f79851063e3c7495c9277456d6659c4c57ee5f67278dd6eb83f8c6932654d4d",
       "sitePath": "public-site/main.jsx"
     },
     {
@@ -274,8 +274,8 @@
     },
     {
       "path": "public-site/style.css",
-      "bytes": 10263,
-      "sha256": "24f25c2d6491e3f1b61184ce796f530dc3117df4c5221f6f01d0b57e94fa72fe",
+      "bytes": 15458,
+      "sha256": "a5fee0ad6a6ea1024ee3589b39f77db17463f7f922b6162f07728ed6a56166ad",
       "sitePath": "public-site/style.css"
     },
     {
@@ -322,14 +322,14 @@
     },
     {
       "path": "src/Antennas.jsx",
-      "bytes": 1954,
-      "sha256": "3ba88b4afe82fd2e6f4e5f43ff3dd4892b682bc846379245d630f1ed0913eea0",
+      "bytes": 2105,
+      "sha256": "955e2eb3b48693e2c5bd2e377ac8ed2be5d8ba580ebfd667e1e41f44053d9502",
       "sitePath": "src/Antennas.jsx"
     },
     {
       "path": "src/App.jsx",
-      "bytes": 4513,
-      "sha256": "252462794b50be5ae3a9e452e107e5246f2dca733547983fbe0108e8e2ba9647",
+      "bytes": 5858,
+      "sha256": "56dfddbc71b5b7c0d5a5e45259391e7a3f735f1d83c3833d6d47bc90e0c40029",
       "sitePath": "src/App.jsx"
     },
     {
@@ -340,8 +340,8 @@
     },
     {
       "path": "src/Camera.jsx",
-      "bytes": 2753,
-      "sha256": "6049e9a0d89f3657a4843116005446bfb8acbe58fa9fa6451202d87d32e62985",
+      "bytes": 2832,
+      "sha256": "6c63a621e4ea4a34378d5281df919c4da2a59143bf99d8831237f99aedaf776f",
       "sitePath": "src/Camera.jsx"
     },
     {
@@ -352,8 +352,8 @@
     },
     {
       "path": "src/HeadControls.jsx",
-      "bytes": 5047,
-      "sha256": "c40d0356a8683b7e4615e7d6df278c48195909bb688b810d2259903c45220450",
+      "bytes": 5507,
+      "sha256": "2526d622d178be3440084ac4a88ff145c5e75312ed6c87472cb980a1a731547a",
       "sitePath": "src/HeadControls.jsx"
     },
     {
@@ -364,8 +364,8 @@
     },
     {
       "path": "src/RobotModel.jsx",
-      "bytes": 13622,
-      "sha256": "64bc5d9b2250efa598fc4354b30e9a6225c77a904ed5ce2673aa840dca4cc0c2",
+      "bytes": 25170,
+      "sha256": "8109fbd6587c693b63ea2afba53f0c31c2cd8d89cb0068ba57506a1508ab55c4",
       "sitePath": "src/RobotModel.jsx"
     },
     {
@@ -447,6 +447,12 @@
       "sitePath": "src/media.js"
     },
     {
+      "path": "src/model-antenna-control.mjs",
+      "bytes": 628,
+      "sha256": "959ff8cdaa9c97de3b63dec9dfdd7b4fcee3b968092e42683289031682fb5381",
+      "sitePath": "src/model-antenna-control.mjs"
+    },
+    {
       "path": "src/panorama-camera.mjs",
       "bytes": 3591,
       "sha256": "168e152bc14723b778226d6d1f3a04c054cc7f9a36ed5610230df4b46601d04b",
@@ -484,8 +490,8 @@
     },
     {
       "path": "src/styles.css",
-      "bytes": 15392,
-      "sha256": "4274f65b1234ed00b11a6a32b5d2120f83acee60ac5beb8012de1cf5ac70d7b8",
+      "bytes": 19499,
+      "sha256": "debc075a3605736bba713178c54b9e46f201f007946dd89bf63c14e4026bc198",
       "sitePath": "src/styles.css"
     },
     {
@@ -675,6 +681,12 @@
       "sitePath": "test/media-guard.test.mjs"
     },
     {
+      "path": "test/model-antenna-control.test.mjs",
+      "bytes": 1465,
+      "sha256": "78db1f7d0010f6b4a4496773fa8805c464eee09d04ed74c56580a8d2b996bd50",
+      "sitePath": "test/model-antenna-control.test.mjs"
+    },
+    {
       "path": "test/panorama-camera.test.mjs",
       "bytes": 5341,
       "sha256": "46203a158aedb16dd5a9a73edf2016b8daa93de63e366842913daefc3a4acec1",
@@ -694,8 +706,8 @@
     },
     {
       "path": "test/robot-schematic.test.mjs",
-      "bytes": 1985,
-      "sha256": "3069d220796736dea195ca25b7c53b7268a8532510d747c0118f4a5df8bca206",
+      "bytes": 2009,
+      "sha256": "5d2b4ba067cdd0b138b814f89e38958df7882c2ce2e89a69a416fe79033d4838",
       "sitePath": "test/robot-schematic.test.mjs"
     },
     {
@@ -772,8 +784,8 @@
     },
     {
       "path": "tools/Export-Public.mjs",
-      "bytes": 14950,
-      "sha256": "6cd7ed8234464ff3b75b21de2707ccceee3d545b2e18003d3ee3186986bf08d6",
+      "bytes": 15024,
+      "sha256": "2082fb7362301859ad79a6685631ccbed1b1dea27dc2e260e932e9668f7b9cac",
       "sitePath": "tools/Export-Public.mjs"
     },
     {
