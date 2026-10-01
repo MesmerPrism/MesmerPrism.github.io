@@ -1,9 +1,9 @@
 {
   "schema": "reachy.public-source.v1",
   "name": "reachy-mini-browser-control",
-  "version": "0.2.0",
-  "sourceRevision": "1323c6852612702ca6693734c575c85046b8b6c2",
-  "sourceTreeSha256": "701d3ba0fc9f5f1adf14ddcd1b83099f5ba133e62f5eda7585e39f86d7518154",
+  "version": "0.2.1",
+  "sourceRevision": "af90993c59f44287f521ae74d511c0907bfcdc28",
+  "sourceTreeSha256": "66d4a622206c13f82a776741f7927cc7e1d76a4060e0e86906e988d9100a9fd5",
   "originalCodeLicense": "MIT",
   "dependencyLicenses": "THIRD_PARTY_NOTICES.md",
   "exclusions": [
@@ -70,8 +70,8 @@
     },
     {
       "path": "docs/ARCHITECTURE.md",
-      "bytes": 3720,
-      "sha256": "a2d733368903cc6f11624263805f843fbfeb1bf4aa3882067ee34b5c248cefce",
+      "bytes": 3722,
+      "sha256": "10882dff227fe340af495cda3e8ede9f1db8bbd7b9e523b8a674dad109aacdb4",
       "sitePath": "docs/ARCHITECTURE.md"
     },
     {
@@ -82,14 +82,14 @@
     },
     {
       "path": "docs/SETUP.md",
-      "bytes": 14240,
-      "sha256": "250841a83f3e6b1bc988621e2346ed27d870a8a50e8ad7c229a7f296e9ff111a",
+      "bytes": 15031,
+      "sha256": "daa73b8fb85537fc63630433c3fbb0f057dab0131ac22e85407d5cd9e440a463",
       "sitePath": "docs/SETUP.md"
     },
     {
       "path": "docs/STATUS.md",
-      "bytes": 4765,
-      "sha256": "da3d0a178671a22dd52955eddeb131880501efbd9f76bdb4fdd8a7ac06a3473e",
+      "bytes": 5221,
+      "sha256": "7acba3f799e34b782c0d686e5af116637083167e1bab504c4e828bdfb7b6568c",
       "sitePath": "docs/STATUS.md"
     },
     {
@@ -185,13 +185,13 @@
     {
       "path": "package-lock.json",
       "bytes": 77313,
-      "sha256": "18fbbf63552ebf33f0b0d6d58441276acf56c19e4763347f3af3c704409da891",
+      "sha256": "c8d02a506add00dc28d5b4770ee255a6b3ed553e38708d1cddef6045d718d511",
       "sitePath": "package-lock.json"
     },
     {
       "path": "package.json",
       "bytes": 945,
-      "sha256": "cc8c97f568f063ae5897e721ce54c959d793818dce7872b5d2278efd1eaa8f28",
+      "sha256": "34a140f787fecb6aaadb058940db14845dbe15459d22a86305fe7d72555dbf85",
       "sitePath": "package.json"
     },
     {
@@ -232,8 +232,8 @@
     },
     {
       "path": "public-site/WirelessPanel.jsx",
-      "bytes": 25705,
-      "sha256": "80951d27d0441ca4101d4bfdef4e91899c1248226777a5685da63556dd06262b",
+      "bytes": 25747,
+      "sha256": "150b11c6eef2e26d1e1704c680ceccd1d3100d142c6eeea4ca52cc92f336c188",
       "sitePath": "public-site/WirelessPanel.jsx"
     },
     {
@@ -316,8 +316,8 @@
     },
     {
       "path": "src/AgentConsole.jsx",
-      "bytes": 3366,
-      "sha256": "1991ee530498c241c492f7a890874aab942b4166fb62c7c87d30b7830f049f2f",
+      "bytes": 4572,
+      "sha256": "e58ca22c9cae7875a110c6c81dab803e0bc7cf5aaf8cfd460a7f34028bbd062d",
       "sitePath": "src/AgentConsole.jsx"
     },
     {
@@ -388,8 +388,8 @@
     },
     {
       "path": "src/agent-console.mjs",
-      "bytes": 4345,
-      "sha256": "c3d159cd3f363e7ab0ce713780be1d0a7606d179e9e307778a45aefc25bb8dc4",
+      "bytes": 7899,
+      "sha256": "36707aed81c2b2ccad1e82fff376d998667e40bff41681e3f4e7600fe1a8836e",
       "sitePath": "src/agent-console.mjs"
     },
     {
@@ -550,8 +550,8 @@
     },
     {
       "path": "test/agent-console.test.mjs",
-      "bytes": 3097,
-      "sha256": "139ffd71ca110eabd7d02498f8c7046cc6b0a97512decda1fbb69de8f20d03cc",
+      "bytes": 7531,
+      "sha256": "4b3b3c330ce8a5474cbf272d7b0b658365fc752453d6c1eda2e9d3eaabaf9f5a",
       "sitePath": "test/agent-console.test.mjs"
     },
     {

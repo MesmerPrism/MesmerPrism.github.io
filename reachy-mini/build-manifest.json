@@ -1,15 +1,20 @@
 {
-  "version": "0.2.0",
+  "version": "0.2.1",
   "files": [
     {
-      "path": "assets/RobotModel-DIiFs575.js",
+      "path": "assets/RobotModel-BrlMDoyV.js",
       "bytes": 78004,
-      "sha256": "0497efdb7a166b4361b1b28665ab8ffc82e5d8ad03823e09043dad70ac789459"
+      "sha256": "8930e64e6c133c4d6ba160c032d4c6178d34300eddd71438669b5c58239b5a6c"
     },
     {
-      "path": "assets/SimulatedCamera-C-nve0j-.js",
+      "path": "assets/SimulatedCamera-BjAfZUDw.js",
       "bytes": 4084,
-      "sha256": "6d0277939e14cf37741eafec721a4e9f7f3b81ffaf7187907565032c4e02699d"
+      "sha256": "7fdd889e8855f48b4d18e759635cd75e2586564895f749684f1a0754e0942fcd"
+    },
+    {
+      "path": "assets/WebXRControls-D5Z2vsE2.js",
+      "bytes": 11507,
+      "sha256": "141f08f094aafc0938aa4c550dcb760cb6965984a977ab77a1a300329e3b90cc"
     },
     {
       "path": "assets/WebXRControls-YRAoBpK6.css",
@@ -17,19 +22,14 @@
       "sha256": "8a9ce01a28803bd97745d3a7cb90ec7f3b96c027c5aa3d45da920eb254a82abf"
     },
     {
-      "path": "assets/WebXRControls-xwzXVNdw.js",
-      "bytes": 11507,
-      "sha256": "664d096b2408ecb0c656934392e6ed524acc2cb24813cf52c4d3cbace96e6ae5"
-    },
-    {
       "path": "assets/demo-room-panorama-8bnGy0Ap.png",
       "bytes": 2038378,
       "sha256": "ea4fe2bad1e747547dfb20d1e1d1e17d02c20b41a9ac6b6ccf8bf2163a536e96"
     },
     {
-      "path": "assets/demo-sdk-BkYwtcsd.js",
+      "path": "assets/demo-sdk-yvVZPyml.js",
       "bytes": 1317,
-      "sha256": "be6407645b9bc31974578bf6c2ef99a6fd1f4991ccc87d87a6ac4d958a1c22de"
+      "sha256": "0cca71ec0c181050733e6c6dc7e40798112f26ebd62f82b89033ccb86b0c8e27"
     },
     {
       "path": "assets/head-tracker-Cvv6zmS1.js",
@@ -42,14 +42,14 @@
       "sha256": "b97c31aafd45c7e885d6abe3ea85e3e7dc414294532c25741b64f4e017c5699a"
     },
     {
-      "path": "assets/index-BLYQn6jz.js",
-      "bytes": 403112,
-      "sha256": "8471c4c248a7a4a6337c5cfb28b3e19d81484a871934b2cf89c523a9c47aca4d"
-    },
-    {
       "path": "assets/index-CN3BW411.css",
       "bytes": 13204,
       "sha256": "4e8347c3b070b11b5ecc189bbd8e7b49dbfb7764d48c5a0889de7603c6a42ac4"
+    },
+    {
+      "path": "assets/index-DcKZeU50.js",
+      "bytes": 406497,
+      "sha256": "49036e1225e5d1b69554c74bfb02b8ffdb26fed5bb4de5b3a6e9090ae1c77ec8"
     },
     {
       "path": "assets/newsreader-latin-ext-BQn1nviT.woff2",
@@ -79,7 +79,7 @@
     {
       "path": "index.html",
       "bytes": 514,
-      "sha256": "2dc923844ec13145eef5bc504db0ed770e7044a040d90ffcb9b179960a0f74e5"
+      "sha256": "734f4234a35b84710d6411b7daa40d271c12a81367833a0c14bb480d7c4a463e"
     },
     {
       "path": "mediapipe/assets.json",
