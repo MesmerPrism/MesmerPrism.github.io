@@ -14,13 +14,22 @@ async function fixture(options={}){
   const write={writeValueWithResponse:bytes=>operation(async()=>{if(options.beforeWrite)await options.beforeWrite();writes.push(Uint8Array.from(bytes));})};
   const read={readValue:()=>operation(async()=>view(incoming.shift()||new Uint8Array()))};
   const stat={readValue:()=>operation(async()=>{state.statusReads++;if(options.beforeStatus)await options.beforeStatus(state.statusReads);return view(new TextEncoder().encode(JSON.stringify(status)));})};
-  const device={id:"target-free-helper",addEventListener(){},gatt:{async connect(){return{getPrimaryService:async()=>({getCharacteristic:async uuid=>uuid.includes("3002-")?write:uuid.includes("3003-")?read:stat})};},disconnect(){state.disconnects++;}}};
+  let discoveryCalls=0;
+  const device={id:"target-free-helper",addEventListener(){},gatt:{async connect(){return{getPrimaryService:()=>operation(async()=>({getCharacteristic:uuid=>operation(async()=>{discoveryCalls++;if(options.beforeDiscovery)await options.beforeDiscovery(discoveryCalls);await tick();return uuid.includes("3002-")?write:uuid.includes("3003-")?read:stat;})}))};},disconnect(){state.disconnects++;}}};
   const old=Object.getOwnPropertyDescriptor(globalThis,"navigator");
   Object.defineProperty(globalThis,"navigator",{value:{bluetooth:{requestDevice:async()=>device}},configurable:true});
   const socket=new B.HubBleSocket();let error=null;
   const ready=new Promise(resolve=>{socket.onopen=()=>resolve(true);socket.onclose=()=>resolve(false);socket.onerror=e=>{error=e.message;};});
-  return{socket,writes,incoming,state,ready,get error(){return error;},dispose(){socket.close();if(old)Object.defineProperty(globalThis,"navigator",old);else delete globalThis.navigator;}};
+  return{socket,writes,incoming,state,ready,get discoveryCalls(){return discoveryCalls;},get error(){return error;},dispose(){socket.close();if(old)Object.defineProperty(globalThis,"navigator",old);else delete globalThis.navigator;}};
 }
+test("actual Hub discovery is serialized with GATT operations",async()=>{
+  const f=await fixture();try{assert.equal(await f.ready,true);assert.equal(f.discoveryCalls,3);assert.equal(f.state.maximum,1);}finally{f.dispose();}
+});
+test("retirement during characteristic discovery suppresses the remaining discovery and channel open",async()=>{
+  let release;const blocked=new Promise(resolve=>{release=resolve;});
+  const f=await fixture({beforeDiscovery:n=>n===1?blocked:undefined});
+  try{while(f.discoveryCalls===0)await tick();f.socket.close();release();await tick();await tick();assert.equal(f.discoveryCalls,1);assert.equal(f.socket.readyState,3);assert.equal(f.writes.length,0);}finally{release();f.dispose();}
+});
 test("actual adapter forwards unchanged native authentication and receives unchanged owner frames",async()=>{
   const f=await fixture();try{assert.equal(await f.ready,true);const auth='{"$schema":"rusty.quest.connection_hub.socket_authenticate.v2","type":"authenticate","session":"'+'A'.repeat(43)+'"}';
     f.socket.send(auth);assert.throws(()=>f.socket.send(auth),/busy/);while(f.socket.sending)await tick();

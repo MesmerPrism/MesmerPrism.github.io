@@ -27,6 +27,12 @@ Deploy through the repository’s existing GitHub Pages main/root route after re
 
 ## Focused checks
 
+The production Hub carrier and the experiment controller use the same pinned
+Quest-owned GATT lifetime helper under `shared/quest-ble`. Its operation queue
+guards both queued work and late readback against connection retirement.
+`node --test shared/quest-ble/*.test.cjs viscereality-control/gatt-lifetime.test.cjs`
+checks the producer bytes and both production consumer paths.
+
 `node --test quest-pair-control/protocol.test.cjs` checks wire bytes, authentication damage, configured/observed separation, stale/conflicting group fields, endpoint safety, expired controller sessions, command receipt joins and the exact published canonical vector. Browser tests must keep simulated BLE/socket evidence explicitly separate from live device qualification.
 
 `node --test quest-pair-control/hub-ble.test.cjs` exercises the production carrier with target-free GATT callbacks: exact UTF8 and MTU bounds, reordered/replayed fragments, expiry, unavailable helper status, unchanged native frames, serialized operations and retirement before a queued write. These checks do not qualify a real radio, Android service permission, wearer listener, controller grant or GPU effect.
