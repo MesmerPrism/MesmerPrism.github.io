@@ -46,7 +46,7 @@
                     This policy explains how Rusty Launcher Lite processes information locally
                     on a Meta Quest headset.
                 </p>
-                <p class="project-meta">Last updated: August 6, 2026</p>
+                <p class="project-meta">Last updated: October 8, 2026</p>
             </div>
         </section>
 
@@ -69,7 +69,7 @@
                 <ul class="plain-list">
                     <li>labels, package and activity names, and icons for enabled apps that publish a launchable front door;</li>
                     <li>whether ordinary Wi-Fi is currently on or off; and</li>
-                    <li>favorites, bounded tags, search text, and per-app Wi-Fi preferences selected by the user.</li>
+                    <li>favorites, bounded tags, search and selection state, library filters including System apps and Internal activities, and per-app Wi-Fi preferences selected by the user.</li>
                 </ul>
                 <p>
                     Rusty Launcher Lite does not create an account or identity. It does not read
@@ -90,10 +90,21 @@
             </article>
 
             <article class="detail-block">
+                <h2>Hybrid update presentation</h2>
+                <p>
+                    The hybrid update uses Meta Spatial SDK to display the same local library
+                    panel in immersive mode as well as a normal window. SDK display permissions
+                    support this presentation; the app adds no network service, account, or
+                    data-upload route. This describes the hybrid update, not its Store
+                    publication status.
+                </p>
+            </article>
+
+            <article class="detail-block">
                 <h2>Storage, retention, and deletion</h2>
                 <p>
-                    Favorites, tags, search text, and Wi-Fi preferences are stored in Rusty
-                    Launcher Lite's private app data on the headset. They remain until the user
+                    Favorites, tags, search and selection state, library filters, and Wi-Fi
+                    preferences are stored in Rusty Launcher Lite's private app data on the headset. They remain until the user
                     clears the app's storage or uninstalls the app. Either action deletes these
                     local preferences. Android owns installed-app information and Wi-Fi state;
                     Rusty Launcher Lite reads their current values when needed rather than
