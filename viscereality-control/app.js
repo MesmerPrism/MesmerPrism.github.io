@@ -22,6 +22,14 @@ let commandBusy = false;
 let reading = false;
 let pollTimer;
 let currentPage = "prepare";
+let connectionGeneration = 0;
+function operationQueue() { return new QuestBleLifetime.OperationQueue(generation => {
+  if (generation !== connectionGeneration || !device?.gatt?.connected) throw new Error("BLE connection retired");
+}); }
+let gattOperations = operationQueue();
+function gattOperation(task, generation = connectionGeneration) {
+  return gattOperations.run(generation, task);
+}
 
 function label(id, value, tone = "") {
   const node = byId(id);
@@ -158,21 +166,25 @@ function parseJson(data) {
 
 async function refreshStatus() {
   if (!connected() || reading || commandBusy) return;
+  const generation = connectionGeneration;
   reading = true;
   try {
-    const status = parseJson(await characteristics.status.readValue());
+    const source = characteristics.status;
+    const status = parseJson(await gattOperation(() => source.readValue()));
     if (!["open", "gated"].includes(status.m)) throw new Error("Invalid Quest access mode");
     questStatus = status;
     lastStatusAt = Date.now();
     render();
   } catch (error) {
-    label("command-detail", `Status read failed: ${error.message}`);
+    if (generation === connectionGeneration) label("command-detail", `Status read failed: ${error.message}`);
   } finally {
-    reading = false;
+    if (generation === connectionGeneration) reading = false;
   }
 }
 
 function disconnected() {
+  connectionGeneration++;
+  reading = false;
   if (commandBusy) showProgress(byId("command-name").textContent, "unknown", "Quest disconnected before confirmation. Check the headset before retrying.");
   commandBusy = false;
   clearInterval(pollTimer);
@@ -186,23 +198,30 @@ function disconnected() {
 
 async function connect() {
   if (connected() || preview) return;
+  const generation = ++connectionGeneration;
+  gattOperations = operationQueue();
   try {
     if (!navigator.bluetooth) throw new Error("Web Bluetooth is unavailable. Open this HTTPS page directly in Chrome on Android.");
     label("connection-label", "Choose Quest…");
-    device = await navigator.bluetooth.requestDevice({ filters: [{ services: [UUID.service] }] });
-    device.addEventListener("gattserverdisconnected", disconnected, { once: true });
-    const server = await device.gatt.connect();
-    const service = await server.getPrimaryService(UUID.service);
-    characteristics = {
-      status: await service.getCharacteristic(UUID.status),
-      challenge: await service.getCharacteristic(UUID.challenge),
-      command: await service.getCharacteristic(UUID.command),
-      receipt: await service.getCharacteristic(UUID.receipt),
+    const selectedDevice = await navigator.bluetooth.requestDevice({ filters: [{ services: [UUID.service] }] });
+    if (generation !== connectionGeneration) return;
+    device = selectedDevice;
+    device.addEventListener("gattserverdisconnected", () => { if (generation === connectionGeneration) disconnected(); }, { once: true });
+    const server = await selectedDevice.gatt.connect();
+    if (generation !== connectionGeneration) { selectedDevice.gatt.disconnect(); return; }
+    const service = await gattOperation(() => server.getPrimaryService(UUID.service), generation);
+    const selected = {
+      status: await gattOperation(() => service.getCharacteristic(UUID.status), generation),
+      challenge: await gattOperation(() => service.getCharacteristic(UUID.challenge), generation),
+      command: await gattOperation(() => service.getCharacteristic(UUID.command), generation),
+      receipt: await gattOperation(() => service.getCharacteristic(UUID.receipt), generation),
     };
+    characteristics = selected;
     await refreshStatus();
     pollTimer = setInterval(refreshStatus, 1500);
     render();
   } catch (error) {
+    if (generation !== connectionGeneration) return;
     if (device?.gatt?.connected) device.gatt.disconnect();
     disconnected();
     label("command-detail", `Connection failed: ${error.message}`);
@@ -217,7 +236,8 @@ async function signedCommand(id, op, condition, bias) {
   const message = { v: 1, id, op, condition, bias, nonce };
   if (questStatus.m === "gated") {
     if (!accessCode) throw new Error("Enter the pairing code shown in the headset");
-    const challenge = parseJson(await characteristics.challenge.readValue());
+    const source = characteristics.challenge;
+    const challenge = parseJson(await gattOperation(() => source.readValue()));
     if (!/^[0-9a-f]{32}$/.test(challenge.n || "")) throw new Error("Invalid Quest challenge");
     const signingInput = `RQEC1|${challenge.n}|${id}|${op}|${condition}|${bias}|${nonce}`;
     const key = await crypto.subtle.importKey("raw", encoder.encode(accessCode),
@@ -236,15 +256,18 @@ async function sendCommand(op, name, condition = "", bias = 0) {
   commandBusy = true;
   render();
   const id = randomHex(8);
+  const generation = connectionGeneration;
   showProgress(name, "none", "Preparing authenticated command…");
   try {
     const bytes = await signedCommand(id, op, condition, bias);
-    await characteristics.command.writeValueWithResponse(bytes);
+    const command = characteristics.command;
+    await gattOperation(() => command.writeValueWithResponse(bytes), generation);
     showProgress(name, "sent", "Bluetooth write accepted. Waiting for Quest runtime feedback…");
     const deadline = Date.now() + 23000;
-    while (connected() && Date.now() < deadline) {
-      const receipt = parseJson(await characteristics.receipt.readValue());
-      if (receipt.id === id) {
+    while (connected() && generation === connectionGeneration && Date.now() < deadline) {
+      const source = characteristics.receipt;
+      const receipt = QuestBleLifetime.commandReceipt(parseJson(await gattOperation(() => source.readValue(), generation)), id);
+      if (receipt) {
         if (["accepted", "pending"].includes(receipt.state)) {
           showProgress(name, "waiting", "Quest accepted the request; waiting for the immersive app’s result…");
         } else if (receipt.state === "confirmed") {
@@ -262,8 +285,9 @@ async function sendCommand(op, name, condition = "", bias = 0) {
     }
     if (Date.now() >= deadline) showProgress(name, "unknown", "No confirmation arrived. Check the headset before retrying.");
   } catch (error) {
-    showProgress(name, "failed", `Command failed: ${error.message}`);
+    if (generation === connectionGeneration) showProgress(name, "unknown", `Command result unavailable: ${error.message}. Check the headset before retrying.`);
   } finally {
+    if (generation !== connectionGeneration) return;
     commandBusy = false;
     await refreshStatus();
     render();

@@ -6,7 +6,9 @@ async function pollFixture({text,emptyReads=0,latency=0,deadline=900000,retireOn
   let now=0,reads=0,active=0,maximum=0,received=null,error=null;
   const sleeps=[],context={module:{exports:{}},TextEncoder,TextDecoder,DataView,Uint8Array,Promise,queueMicrotask,
     performance:{now:()=>now},setTimeout:(callback,ms)=>{sleeps.push(ms);now+=ms;queueMicrotask(callback);}};
-  vm.createContext(context);vm.runInContext(fs.readFileSync(require.resolve("./hub-ble.js"),"utf8"),context);
+  vm.createContext(context);vm.runInContext(fs.readFileSync(require.resolve("../shared/quest-ble/gatt-lifetime.js"),"utf8"),context);context.QuestBleLifetime=context.module.exports;delete context.module;
+  context.module={exports:{}};context.require=()=>context.QuestBleLifetime;
+  vm.runInContext(fs.readFileSync(require.resolve("./hub-ble.js"),"utf8"),context);
   const B=context.module.exports,frames=B.fragments(text,1,23),socket=Object.create(B.HubBleSocket.prototype);
   Object.assign(socket,{readyState:1,generation:0,deadline,mtu:23,operations:Promise.resolve(),assembly:new B.Assembly(),device:null,
     read:{readValue:async()=>{reads++;active++;maximum=Math.max(maximum,active);try{

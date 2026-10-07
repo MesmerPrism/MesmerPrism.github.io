@@ -3,7 +3,7 @@
 <head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; connect-src wss:; img-src 'self'; base-uri 'none'; form-action 'none'">
 <title>Quest pair console · Mesmer Prism</title><link rel="stylesheet" href="styles.css">
-<script defer src="hub-protocol.js"></script><script defer src="protocol.js"></script><script defer src="hub-ble.js"></script><script defer src="app.js"></script></head>
+<script defer src="hub-protocol.js"></script><script defer src="protocol.js"></script><script defer src="../shared/quest-ble/gatt-lifetime.js"></script><script defer src="hub-ble.js"></script><script defer src="app.js"></script></head>
 <body><main><header><a href="/">Mesmer Prism</a><p class="eyebrow">Nearby devices · explicit controls</p><h1>Quest pair console</h1><p>Read each headset’s rendezvous state over Bluetooth. Use an authenticated Connection Hub session for controls offered by its running apps.</p></header>
 <aside>Bluetooth exchanges coordinate role hints; they do not start streaming or form a Wi-Fi group. Observed v2 group agreement is separate from Broker or camera readiness.</aside>
 <section class="pair" id="peers" aria-label="Two headset connections"></section>
