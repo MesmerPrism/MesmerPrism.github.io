@@ -23,6 +23,74 @@ let reading = false;
 let pollTimer;
 let currentPage = "prepare";
 let connectionGeneration = 0;
+let connectionAttempt = 0;
+let connecting = false;
+let nativeAgeScope;
+function nativeAgeClock() {
+  const now = typeof performance === "object" ? performance.now() : NaN;
+  if (!Number.isFinite(now) || now < 0 || now < nativeAgeScope.clock) {
+    nativeAgeScope.visible = null; return null;
+  }
+  nativeAgeScope.clock = now; return now;
+}
+function nativeAgeConnection() {
+  if (nativeAgeScope?.generation !== connectionGeneration) {
+    nativeAgeScope = {generation: connectionGeneration, clock: -Infinity, epoch: null, read: null, visible: null};
+  }
+}
+function decimalOrder(a, b) { return a.length === b.length ? (a === b ? 0 : a < b ? -1 : 1) : a.length < b.length ? -1 : 1; }
+function positiveInt64(value) {
+  return typeof value === "string" && /^[1-9][0-9]{0,18}$/.test(value)
+    && decimalOrder(value, "9223372036854775807") <= 0;
+}
+function nativeAgeAt(now) {
+  const v = nativeAgeScope.visible;
+  if (!v) return null;
+  const age = v.age + Math.floor(now - v.at);
+  if (!Number.isSafeInteger(age) || age < 0) { nativeAgeScope.visible = null; return null; }
+  return age;
+}
+function receiveNativeAge(status) {
+  nativeAgeConnection();
+  const now = nativeAgeClock();
+  if (now === null) return;
+  const o = status.o;
+  const keys = value => value !== null && typeof value === "object" && !Array.isArray(value) ? Object.keys(value).sort().join(",") : "";
+  if (keys(o) !== "a,e,g,i,r,s,v" || o.v !== 1 || o.s !== "observed"
+      || !positiveInt64(o.e) || !positiveInt64(o.i)
+      || ![o.g,o.r,o.a,status.g,status.r].every(value => Number.isSafeInteger(value) && value >= 0)
+      || o.g !== status.g || o.r !== status.r) {
+    nativeAgeScope.visible = null; return;
+  }
+  if (nativeAgeScope.epoch !== null && decimalOrder(o.e, nativeAgeScope.epoch) < 0) {
+    nativeAgeScope.visible = null; return;
+  }
+  if (nativeAgeScope.epoch === null || decimalOrder(o.e, nativeAgeScope.epoch) > 0) {
+    nativeAgeScope.epoch = o.e; nativeAgeScope.read = null; nativeAgeScope.visible = null;
+  }
+  const order = nativeAgeScope.read === null ? 1 : decimalOrder(o.i, nativeAgeScope.read);
+  if (order < 0 || (order === 0 && !nativeAgeScope.visible)) {
+    nativeAgeScope.visible = null; return;
+  }
+  if (order === 0 && (o.g !== nativeAgeScope.readGeneration || o.r !== nativeAgeScope.readRevision)) {
+    nativeAgeScope.visible = null; return;
+  }
+  const priorAge = order === 0 ? nativeAgeAt(now) : o.a;
+  if (priorAge === null) return;
+  const age = Math.max(o.a, priorAge);
+  nativeAgeScope.readGeneration = o.g; nativeAgeScope.readRevision = o.r;
+  nativeAgeScope.read = o.i;
+  nativeAgeScope.visible = {age, at: now};
+}
+function nativeAgeLabel() {
+  nativeAgeConnection();
+  if (!connected() || preview) return "Native status-read age unavailable";
+  const now = nativeAgeClock();
+  const age = now === null ? null : nativeAgeAt(now);
+  return age === null ? "Native status-read age unavailable"
+    : `Native status read: at least ${age} ms old; delivery delay unknown`;
+}
+let pageActive = true;
 function operationQueue() { return new QuestBleLifetime.OperationQueue(generation => {
   if (generation !== connectionGeneration || !device?.gatt?.connected) throw new Error("BLE connection retired");
 }); }
@@ -95,18 +163,20 @@ function stageInstruction(status) {
 function render() {
   const live = connected();
   const s = freshStatus() ? questStatus : undefined;
+  label('native-readback-age', nativeAgeLabel());
   const conn = byId("connection-label");
   conn.textContent = preview ? "Preview · not connected" : live ? "Quest connected" : "Not connected";
   conn.classList.toggle("connected", live && !preview);
   byId("connect").hidden = live || preview;
+  byId("connect").disabled = connecting;
   byId("disconnect").hidden = !live;
   byId("refresh").disabled = !live || commandBusy;
   const foreground = s?.f;
   const fg = byId("foreground-line");
-  fg.textContent = foreground === "focused" ? "Immersive app in foreground"
-    : foreground === "panel" ? "Experimenter panel in foreground"
-    : foreground === "background" ? "Immersive app not in foreground"
-    : "Immersive app status unavailable";
+  fg.textContent = foreground === "focused" ? "Android input focus observed on VR activity"
+    : foreground === "panel" ? "Android input focus observed on experimenter panel"
+    : foreground === "background" ? "Android input focus not observed · XR focus unverified"
+    : "Android input focus status unavailable · XR focus unverified";
   fg.classList.toggle("focused", foreground === "focused");
   const gated = live && s?.m === "gated" && !accessCode;
   byId("access").hidden = !gated;
@@ -164,19 +234,34 @@ function parseJson(data) {
   return value;
 }
 
+function connectionErrorText(error) {
+  const name = String(error?.name || "Error").slice(0, 64);
+  const message = String(error?.message || "Unknown error").replace(/[\u0000-\u001f\u007f]/g, " ").slice(0, 256);
+  return `${name}: ${message}`;
+}
+
 async function refreshStatus() {
-  if (!connected() || reading || commandBusy) return;
+  if (!connected() || reading || commandBusy) return {ok: false, error: new Error("Status read not ready")};
   const generation = connectionGeneration;
   reading = true;
   try {
     const source = characteristics.status;
     const status = parseJson(await gattOperation(() => source.readValue()));
     if (!["open", "gated"].includes(status.m)) throw new Error("Invalid Quest access mode");
+    if (status.p === "UNAVAILABLE") throw new Error("Quest status source unavailable");
+    if (!["IDLE", "STARTING", "ARMING", "ARMED", "RUNNING", "PAUSED", "RECORDING", "FINALIZING", "SAVING", "RECOVERY", "ERROR"].includes(status.p)) throw new Error("Invalid Quest session phase");
+    receiveNativeAge(status);
     questStatus = status;
     lastStatusAt = Date.now();
     render();
+    return {ok: true};
   } catch (error) {
-    if (generation === connectionGeneration) label("command-detail", `Status read failed: ${error.message}`);
+    if (generation === connectionGeneration) {
+      nativeAgeConnection(); nativeAgeScope.visible = null;
+      questStatus = undefined; lastStatusAt = 0; render();
+      label("connection-detail", `Status read failed: ${connectionErrorText(error)}`);
+    }
+    return {ok: false, error};
   } finally {
     if (generation === connectionGeneration) reading = false;
   }
@@ -197,34 +282,55 @@ function disconnected() {
 }
 
 async function connect() {
-  if (connected() || preview) return;
+  if (connected() || connecting || preview || !pageActive) return;
+  connecting = true;
+  const attempt = ++connectionAttempt;
   const generation = ++connectionGeneration;
+  let stage = "browser capability";
+  render();
+  label("connection-detail", "Connecting to Quest...");
   gattOperations = operationQueue();
   try {
     if (!navigator.bluetooth) throw new Error("Web Bluetooth is unavailable. Open this HTTPS page directly in Chrome on Android.");
     label("connection-label", "Choose Quest…");
+    stage = "device chooser";
     const selectedDevice = await navigator.bluetooth.requestDevice({ filters: [{ services: [UUID.service] }] });
     if (generation !== connectionGeneration) return;
     device = selectedDevice;
     device.addEventListener("gattserverdisconnected", () => { if (generation === connectionGeneration) disconnected(); }, { once: true });
+    stage = "GATT connect";
     const server = await selectedDevice.gatt.connect();
-    if (generation !== connectionGeneration) { selectedDevice.gatt.disconnect(); return; }
+    if (generation !== connectionGeneration) {
+      // A restored page may already own this same BluetoothDevice handle.
+      if (selectedDevice !== device || !pageActive) selectedDevice.gatt.disconnect();
+      return;
+    }
+    stage = "service discovery";
     const service = await gattOperation(() => server.getPrimaryService(UUID.service), generation);
-    const selected = {
-      status: await gattOperation(() => service.getCharacteristic(UUID.status), generation),
-      challenge: await gattOperation(() => service.getCharacteristic(UUID.challenge), generation),
-      command: await gattOperation(() => service.getCharacteristic(UUID.command), generation),
-      receipt: await gattOperation(() => service.getCharacteristic(UUID.receipt), generation),
-    };
+    const selected = {};
+    for (const name of ["status", "challenge", "command", "receipt"]) {
+      stage = `${name} characteristic discovery`;
+      selected[name] = await gattOperation(() => service.getCharacteristic(UUID[name]), generation);
+    }
     characteristics = selected;
-    await refreshStatus();
+    stage = "initial status read";
+    const initial = await refreshStatus();
+    if (!initial.ok) throw initial.error;
+    if (generation !== connectionGeneration) return;
+    label("connection-detail", "Quest status received.");
     pollTimer = setInterval(refreshStatus, 1500);
     render();
   } catch (error) {
-    if (generation !== connectionGeneration) return;
-    if (device?.gatt?.connected) device.gatt.disconnect();
-    disconnected();
-    label("command-detail", `Connection failed: ${error.message}`);
+    // The current attempt owns its failure even when its disconnect callback
+    // retired the GATT generation before the rejected promise resumed.
+    if (attempt !== connectionAttempt) return;
+    if (generation === connectionGeneration) {
+      if (device?.gatt?.connected) device.gatt.disconnect();
+      if (generation === connectionGeneration) disconnected();
+    }
+    label("connection-detail", `Connection failed at ${stage}: ${connectionErrorText(error)}`);
+  } finally {
+    if (attempt === connectionAttempt) { connecting = false; render(); }
   }
 }
 
@@ -263,7 +369,9 @@ async function sendCommand(op, name, condition = "", bias = 0) {
     const command = characteristics.command;
     await gattOperation(() => command.writeValueWithResponse(bytes), generation);
     showProgress(name, "sent", "Bluetooth write accepted. Waiting for Quest runtime feedback…");
-    const deadline = Date.now() + 23000;
+    // Owner declares Unknown at 30s; leave 5s for its bounded receipt read.
+    const deadline = Date.now() + 35000;
+    let terminalReceipt = false;
     while (connected() && generation === connectionGeneration && Date.now() < deadline) {
       const source = characteristics.receipt;
       const receipt = QuestBleLifetime.commandReceipt(parseJson(await gattOperation(() => source.readValue(), generation)), id);
@@ -271,19 +379,22 @@ async function sendCommand(op, name, condition = "", bias = 0) {
         if (["accepted", "pending"].includes(receipt.state)) {
           showProgress(name, "waiting", "Quest accepted the request; waiting for the immersive app’s result…");
         } else if (receipt.state === "confirmed") {
+          terminalReceipt = true;
           showProgress(name, "confirmed", receipt.detail || "Confirmed by the Quest runtime.");
           break;
         } else if (receipt.state === "rejected") {
+          terminalReceipt = true;
           showProgress(name, "failed", receipt.detail || "Quest rejected the request.");
           break;
         } else if (receipt.state === "outcome_unknown") {
+          terminalReceipt = true;
           showProgress(name, "unknown", receipt.detail || "Quest could not confirm the result. Check the headset before retrying.");
           break;
         }
       }
       await delay(550);
     }
-    if (Date.now() >= deadline) showProgress(name, "unknown", "No confirmation arrived. Check the headset before retrying.");
+    if (generation === connectionGeneration && !terminalReceipt && Date.now() >= deadline) showProgress(name, "unknown", "No confirmation arrived. Check the headset before retrying.");
   } catch (error) {
     if (generation === connectionGeneration) showProgress(name, "unknown", `Command result unavailable: ${error.message}. Check the headset before retrying.`);
   } finally {
@@ -295,6 +406,8 @@ async function sendCommand(op, name, condition = "", bias = 0) {
 }
 
 async function unlock() {
+  if (!connected() || !freshStatus() || commandBusy) return;
+  const generation = connectionGeneration;
   const code = byId("pair-code").value.trim().toUpperCase();
   if (!/^[A-Z2-7]{12}$/.test(code)) {
     label("access-note", "Enter the 12-character code shown in the headset.");
@@ -303,6 +416,7 @@ async function unlock() {
   accessCode = code;
   byId("pair-code").value = "";
   await sendCommand("ping", "Check pairing code");
+  if (generation !== connectionGeneration) return;
   if (!byId("progress-confirmed").classList.contains("done")) {
     accessCode = "";
     byId("access").hidden = false;
@@ -312,6 +426,24 @@ async function unlock() {
 
 for (const button of document.querySelectorAll(".bottom-nav button")) {
   button.addEventListener("click", () => selectPage(button.dataset.target));
+}
+// A page owns only its selected Web Bluetooth handle, not other tabs/clients.
+function retirePageConnection() {
+  pageActive = false;
+  connectionAttempt++;
+  connecting = false;
+  const retired = device;
+  disconnected();
+  device = undefined;
+  try { if (retired?.gatt?.connected) retired.gatt.disconnect(); } catch (_) { }
+}
+if (typeof window.addEventListener === "function") {
+  window.addEventListener("pagehide", retirePageConnection);
+  window.addEventListener("pageshow", event => {
+    if (event.persisted) retirePageConnection();
+    pageActive = true;
+    render();
+  });
 }
 byId("connect").addEventListener("click", connect);
 byId("disconnect").addEventListener("click", () => device?.gatt?.disconnect());
