@@ -18,7 +18,7 @@ function fixture(readReceipt) {
   const context={QuestBleLifetime:core,TextEncoder,TextDecoder,URLSearchParams,Promise,
     crypto:require("node:crypto").webcrypto,location:{search:""},window:{scrollTo(){},addEventListener:(name,fn)=>events.set(name,fn)},
     document:{getElementById:node,querySelectorAll:()=>[]},
-    Date:{now:()=>now},setTimeout:(callback,ms)=>{now+=ms;queueMicrotask(callback);},clearInterval(){},
+    Date:{now:()=>now},performance:{now:()=>now},setTimeout:(callback,ms)=>{now+=ms;queueMicrotask(callback);},clearInterval(){},
     testDevice:{gatt:{connected:true}},
     testCharacteristics:{status:{readValue:async()=>data(status)},
       command:{writeValueWithResponse:async bytes=>{request=JSON.parse(new TextDecoder().decode(bytes));writes++;}},
@@ -289,4 +289,66 @@ test("all available owner phases remain observable without dispatching commands"
     assert.equal(vm.runInContext("questStatus.p",f.context),phase);
     assert.equal(f.writes(),0);
   }
+});
+
+function observed(e="101",i="195",a=10,g=1,r=2) { return {v:1,s:"observed",e,i,g,r,a}; }
+async function receiveAge(f,o,g=1,r=2) {
+  f.context.testStatus.o=o;f.context.testStatus.g=g;f.context.testStatus.r=r;
+  return vm.runInContext("refreshStatus()",f.context);
+}
+function ageText(f){return f.node("native-readback-age").textContent;}
+test("old v1 source has unavailable native age while access and command behavior stay unchanged",async()=>{
+  const f=fixture(()=>({v:1,id:"unused",state:"pending"}));
+  const result=await receiveAge(f,undefined);assert.equal(result.ok,true);
+  assert.equal(vm.runInContext("!!canCommand()",f.context),true);assert.match(ageText(f),/unavailable/);
+});
+test("read-only native age uses local elapsed time and cached reads cannot refresh it",async()=>{
+  const f=fixture(()=>({v:1,id:"unused",state:"pending"}));
+  await receiveAge(f,observed());assert.match(ageText(f),/at least 10 ms/);
+  f.setNow(1025.9);await receiveAge(f,observed("101","195",0));assert.match(ageText(f),/at least 35 ms/);
+  f.setNow(1035.9);vm.runInContext("render()",f.context);assert.match(ageText(f),/at least 45 ms/);
+  assert.equal(f.writes(),0);assert.equal(vm.runInContext("!!canCommand()",f.context),true);
+});
+test("unknown or malformed source clears visible age but retains read and epoch replay history",async()=>{
+  for(const absent of [{v:1,s:"unknown"},undefined,{v:1,s:"observed",e:"101"}]) {
+    const f=fixture(()=>({v:1,id:"unused",state:"pending"}));await receiveAge(f,observed());
+    f.setNow(1100);await receiveAge(f,absent);assert.match(ageText(f),/unavailable/);
+    await receiveAge(f,observed("101","195",0));assert.match(ageText(f),/unavailable/);
+    await receiveAge(f,observed("101","194",0));assert.match(ageText(f),/unavailable/);
+    await receiveAge(f,observed("100","999",0));assert.match(ageText(f),/unavailable/);
+    await receiveAge(f,observed("101","196",0));assert.match(ageText(f),/at least 0 ms/);
+  }
+});
+test("strict age projection rejects closed-shape, int64, safe integer and state join negatives",async()=>{
+  const invalid=[{...observed(),v:2},{...observed(),extra:1},{...observed(),g:0},
+    {...observed(),r:3},{...observed(),a:-1},{...observed(),a:1.5},{...observed(),a:Number.MAX_SAFE_INTEGER+1},
+    {...observed(),e:101},{...observed(),e:"0"},{...observed(),e:"01"},{...observed(),e:"-1"},
+    {...observed(),e:"9223372036854775808"},{...observed(),i:"1e3"},{...observed(),i:"9223372036854775808"},
+    {...observed(),g:Number.MAX_SAFE_INTEGER+1},{...observed(),r:null}];
+  for(const o of invalid){const f=fixture(()=>({v:1,id:"unused",state:"pending"}));await receiveAge(f,o);assert.match(ageText(f),/unavailable/);assert.equal(f.writes(),0);}
+  const f=fixture(()=>({v:1,id:"unused",state:"pending"}));
+  await receiveAge(f,observed("9223372036854775807","9223372036854775807",0));assert.match(ageText(f),/at least 0 ms/);
+  await receiveAge(f,observed("9223372036854775806","9223372036854775807",0));assert.match(ageText(f),/unavailable/);
+});
+test("same observation ID cannot acquire a new state join and clock regression cannot revive it",async()=>{
+  const f=fixture(()=>({v:1,id:"unused",state:"pending"}));await receiveAge(f,observed());
+  await receiveAge(f,observed("101","195",0,2,2),2,2);assert.match(ageText(f),/unavailable/);
+  await receiveAge(f,observed());assert.match(ageText(f),/unavailable/);
+  await receiveAge(f,observed("101","196",0));assert.match(ageText(f),/at least 0 ms/);
+  f.setNow(999);vm.runInContext("render()",f.context);assert.match(ageText(f),/unavailable/);
+  f.setNow(1100);await receiveAge(f,observed("101","196",0));assert.match(ageText(f),/unavailable/);
+  await receiveAge(f,observed("101","197",0));assert.match(ageText(f),/at least 0 ms/);
+});
+test("connection replacement resets only its observation scope and preserves historical Unknown",async()=>{
+  const f=fixture(()=>({v:1,id:"unused",state:"pending"}));await receiveAge(f,observed());
+  vm.runInContext('showProgress("Arm","unknown","OLD_UNKNOWN");disconnected();device=testDevice;characteristics=testCharacteristics;',f.context);
+  await receiveAge(f,observed("1","1",0));assert.match(ageText(f),/at least 0 ms/);
+  assert.equal(f.node("command-detail").textContent,"OLD_UNKNOWN");assert.equal(f.writes(),0);
+});
+test("age extension cannot re-enable commands or mutate a pending command outcome",async()=>{
+  const f=fixture(()=>({v:1,id:"unused",state:"pending"}));
+  vm.runInContext('commandBusy=true;showProgress("Arm","unknown","PRESERVE_UNKNOWN");',f.context);
+  const result=await receiveAge(f,observed());assert.equal(result.ok,false);
+  assert.equal(vm.runInContext("!!canCommand()",f.context),false);assert.equal(f.writes(),0);
+  assert.equal(f.node("command-detail").textContent,"PRESERVE_UNKNOWN");
 });

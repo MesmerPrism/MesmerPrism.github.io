@@ -25,6 +25,71 @@ let currentPage = "prepare";
 let connectionGeneration = 0;
 let connectionAttempt = 0;
 let connecting = false;
+let nativeAgeScope;
+function nativeAgeClock() {
+  const now = typeof performance === "object" ? performance.now() : NaN;
+  if (!Number.isFinite(now) || now < 0 || now < nativeAgeScope.clock) {
+    nativeAgeScope.visible = null; return null;
+  }
+  nativeAgeScope.clock = now; return now;
+}
+function nativeAgeConnection() {
+  if (nativeAgeScope?.generation !== connectionGeneration) {
+    nativeAgeScope = {generation: connectionGeneration, clock: -Infinity, epoch: null, read: null, visible: null};
+  }
+}
+function decimalOrder(a, b) { return a.length === b.length ? (a === b ? 0 : a < b ? -1 : 1) : a.length < b.length ? -1 : 1; }
+function positiveInt64(value) {
+  return typeof value === "string" && /^[1-9][0-9]{0,18}$/.test(value)
+    && decimalOrder(value, "9223372036854775807") <= 0;
+}
+function nativeAgeAt(now) {
+  const v = nativeAgeScope.visible;
+  if (!v) return null;
+  const age = v.age + Math.floor(now - v.at);
+  if (!Number.isSafeInteger(age) || age < 0) { nativeAgeScope.visible = null; return null; }
+  return age;
+}
+function receiveNativeAge(status) {
+  nativeAgeConnection();
+  const now = nativeAgeClock();
+  if (now === null) return;
+  const o = status.o;
+  const keys = value => value !== null && typeof value === "object" && !Array.isArray(value) ? Object.keys(value).sort().join(",") : "";
+  if (keys(o) !== "a,e,g,i,r,s,v" || o.v !== 1 || o.s !== "observed"
+      || !positiveInt64(o.e) || !positiveInt64(o.i)
+      || ![o.g,o.r,o.a,status.g,status.r].every(value => Number.isSafeInteger(value) && value >= 0)
+      || o.g !== status.g || o.r !== status.r) {
+    nativeAgeScope.visible = null; return;
+  }
+  if (nativeAgeScope.epoch !== null && decimalOrder(o.e, nativeAgeScope.epoch) < 0) {
+    nativeAgeScope.visible = null; return;
+  }
+  if (nativeAgeScope.epoch === null || decimalOrder(o.e, nativeAgeScope.epoch) > 0) {
+    nativeAgeScope.epoch = o.e; nativeAgeScope.read = null; nativeAgeScope.visible = null;
+  }
+  const order = nativeAgeScope.read === null ? 1 : decimalOrder(o.i, nativeAgeScope.read);
+  if (order < 0 || (order === 0 && !nativeAgeScope.visible)) {
+    nativeAgeScope.visible = null; return;
+  }
+  if (order === 0 && (o.g !== nativeAgeScope.readGeneration || o.r !== nativeAgeScope.readRevision)) {
+    nativeAgeScope.visible = null; return;
+  }
+  const priorAge = order === 0 ? nativeAgeAt(now) : o.a;
+  if (priorAge === null) return;
+  const age = Math.max(o.a, priorAge);
+  nativeAgeScope.readGeneration = o.g; nativeAgeScope.readRevision = o.r;
+  nativeAgeScope.read = o.i;
+  nativeAgeScope.visible = {age, at: now};
+}
+function nativeAgeLabel() {
+  nativeAgeConnection();
+  if (!connected() || preview) return "Native status-read age unavailable";
+  const now = nativeAgeClock();
+  const age = now === null ? null : nativeAgeAt(now);
+  return age === null ? "Native status-read age unavailable"
+    : `Native status read: at least ${age} ms old; delivery delay unknown`;
+}
 let pageActive = true;
 function operationQueue() { return new QuestBleLifetime.OperationQueue(generation => {
   if (generation !== connectionGeneration || !device?.gatt?.connected) throw new Error("BLE connection retired");
@@ -98,6 +163,7 @@ function stageInstruction(status) {
 function render() {
   const live = connected();
   const s = freshStatus() ? questStatus : undefined;
+  label('native-readback-age', nativeAgeLabel());
   const conn = byId("connection-label");
   conn.textContent = preview ? "Preview · not connected" : live ? "Quest connected" : "Not connected";
   conn.classList.toggle("connected", live && !preview);
@@ -184,12 +250,14 @@ async function refreshStatus() {
     if (!["open", "gated"].includes(status.m)) throw new Error("Invalid Quest access mode");
     if (status.p === "UNAVAILABLE") throw new Error("Quest status source unavailable");
     if (!["IDLE", "STARTING", "ARMING", "ARMED", "RUNNING", "PAUSED", "RECORDING", "FINALIZING", "SAVING", "RECOVERY", "ERROR"].includes(status.p)) throw new Error("Invalid Quest session phase");
+    receiveNativeAge(status);
     questStatus = status;
     lastStatusAt = Date.now();
     render();
     return {ok: true};
   } catch (error) {
     if (generation === connectionGeneration) {
+      nativeAgeConnection(); nativeAgeScope.visible = null;
       questStatus = undefined; lastStatusAt = 0; render();
       label("connection-detail", `Status read failed: ${connectionErrorText(error)}`);
     }
