@@ -28,7 +28,10 @@
       const url=this.routeToken && method==="GET" ? this.url.replace(/\/exchange$/,"/identity") : this.url;
       const headers=body?{"Content-Type":"application/json"}:{};
       if(this.routeToken) headers.Authorization=`Bearer ${this.routeToken}`;
-      const response = await this.fetcher(url,{method,body:body && JSON.stringify(body),headers,cache:"no-store",credentials:"omit",redirect:"error",referrerPolicy:"no-referrer",signal:AbortSignal.timeout(10000)});
+      // Relay exchanges may wait twelve seconds for the device; allow response
+      // transit time without extending direct-LAN or identity request deadlines.
+      const timeoutMs=this.routeToken && method==="POST" ? 15000 : 10000;
+      const response = await this.fetcher(url,{method,body:body && JSON.stringify(body),headers,cache:"no-store",credentials:"omit",redirect:"error",referrerPolicy:"no-referrer",signal:AbortSignal.timeout(timeoutMs)});
       if (!response.ok) throw new Error(`Gateway unavailable (${response.status}); reconnect and read current state`);
       const text = await response.text();
       if (text.length > 65536) throw new Error("Gateway response too large");
