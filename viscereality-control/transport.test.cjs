@@ -58,3 +58,25 @@ test('relay credentials in headers only with distinct identity path',async()=>{
   assert.equal(calls[0].url,'https://relay.example/v1/relay/session/identity');assert.equal(calls[1].url,gateway.url);
   for(const call of calls)assert.equal(call.options.headers.Authorization,'Bearer private-token');
 });
+
+
+test('default browser APIs retain Window, Crypto and SubtleCrypto receivers',async()=>{
+  const vm=require('node:vm'),fs=require('node:fs');
+  const {gateway:stub,calls}=fixture();
+  const used={random:0,importKey:0,sign:0};
+  const subtle={
+    importKey(...args){assert.equal(this,subtle);used.importKey++;return webcrypto.subtle.importKey(...args);},
+    sign(...args){assert.equal(this,subtle);used.sign++;return webcrypto.subtle.sign(...args);}
+  };
+  const cryptoApi={subtle,getRandomValues(bytes){assert.equal(this,cryptoApi);used.random++;return webcrypto.getRandomValues(bytes);}};
+  const context=vm.createContext({TextEncoder,TextDecoder,AbortSignal,URL,crypto:cryptoApi,fixtureFetch:stub.fetcher});
+  vm.runInContext(`globalThis.fetch=function(...args){
+    if(this!==globalThis)throw new TypeError('Illegal invocation: Window receiver required');
+    return fixtureFetch(...args);
+  };`,context);
+  vm.runInContext(fs.readFileSync(require.resolve('./transport.js'),'utf8'),context);
+  const gateway=new context.ViscerealityTransport.Gateway({url:'https://gateway.example/v1/gateway',controller,device,key});
+  await gateway.connect();
+  assert.equal(gateway.active,true);assert.equal(calls.length,2);
+  assert.deepEqual(used,{random:1,importKey:2,sign:2});
+});
