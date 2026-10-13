@@ -59,6 +59,69 @@ test('relay credentials in headers only with distinct identity path',async()=>{
   for(const call of calls)assert.equal(call.options.headers.Authorization,'Bearer private-token');
 });
 
+// Advance a synthetic clock through the production AbortSignal deadline without
+// sleeping or changing global timers used by other tests. Responses still use
+// the production request/response MAC verification and native lifetime checks.
+function deadlineFixture({relay=true}={}) {
+  const vm=require('node:vm'),fs=require('node:fs'),timers=[],deadlines=[],attempts=[];
+  const {gateway:stub,calls}=fixture();
+  let now=0,delay=0,lost=false;
+  const context=vm.createContext({TextEncoder,TextDecoder,URL,crypto:webcrypto,
+    AbortSignal:{timeout(ms){
+      const controller=new AbortController();deadlines.push(ms);
+      timers.push({at:now+ms,controller});return controller.signal;
+    }},fetch:async(url,options)=>{
+      attempts.push({url,options});
+      now+=delay;
+      for(const timer of timers)if(timer.at<=now)timer.controller.abort(new Error('deadline expired'));
+      options.signal.throwIfAborted();
+      const response=await stub.fetcher(url,options);
+      return lost?{ok:false,status:504,text:async()=>'{"error":"outcome_unknown"}'}:response;
+    }});
+  vm.runInContext(fs.readFileSync(require.resolve('./transport.js'),'utf8'),context);
+  function gateway(){return new context.ViscerealityTransport.Gateway({
+    url:relay?'https://relay.example/v1/relay/session/exchange':'http://192.168.1.5/v1/gateway',
+    routeToken:relay?'synthetic-route-token':'',trustedLan:!relay,controller,device,key});}
+  return {gateway,calls,attempts,deadlines,setDelay(ms){delay=ms;},loseReply(value){lost=value;}};
+}
+
+test('relay accepts an authenticated reply after ten seconds but within its twelve-second host wait',async()=>{
+  const f=deadlineFixture(),gateway=f.gateway();await gateway.connect();
+  f.setDelay(11000);
+  const id='2'.repeat(16);
+  const receipt=await gateway.write(new TextEncoder().encode(JSON.stringify({v:1,id,op:'arm'})));
+  assert.equal(receipt.id,id);assert.equal(receipt.state,'pending');assert.equal(gateway.active,true);
+  assert.deepEqual(f.deadlines,[10000,15000,15000]);
+  assert.equal(f.calls.filter(c=>c.options.method==='POST'&&JSON.parse(c.options.body).action==='command').length,1);
+});
+
+test('relay lost reply at its twelve-second bound retires transport; reconnect observes the original ID without replay',async()=>{
+  const f=deadlineFixture(),gateway=f.gateway();await gateway.connect();
+  const id='3'.repeat(16);f.setDelay(12000);f.loseReply(true);
+  await assert.rejects(gateway.write(new TextEncoder().encode(JSON.stringify({v:1,id,op:'arm'}))),/504/);
+  assert.equal(gateway.lastId,id);assert.equal(gateway.active,false);assert.equal(gateway.key,'');
+  await assert.rejects(gateway.read('receipt',id),/retired/);
+  f.setDelay(0);f.loseReply(false);
+  const observer=f.gateway();await observer.connect();
+  const observed=JSON.parse(new TextDecoder().decode(await observer.read('receipt',id)));
+  assert.equal(observed.id,id);assert.equal(observed.state,'pending');
+  const requests=f.calls.filter(c=>c.options.method==='POST').map(c=>JSON.parse(c.options.body));
+  assert.equal(requests.filter(r=>r.action==='command').length,1);
+  assert.equal(JSON.parse(requests.find(r=>r.action==='receipt').payload).id,id);
+});
+
+test('relay remains bounded and LAN retains its ten-second deadline',async()=>{
+  for(const [relay,delay] of [[true,15001],[false,10001]]){
+    const f=deadlineFixture({relay}),gateway=f.gateway();await gateway.connect();
+    f.setDelay(delay);const before=f.attempts.length;
+    await assert.rejects(gateway.write(new TextEncoder().encode('{"v":1,"id":"4444444444444444","op":"arm"}')),/deadline expired/);
+    assert.equal(gateway.active,false);assert.equal(gateway.key,'');
+    await assert.rejects(gateway.read('receipt','4444444444444444'),/retired/);
+    assert.equal(f.attempts.length,before+1);
+    if(!relay)assert.ok(f.deadlines.every(ms=>ms===10000));
+  }
+});
+
 
 test('default browser APIs retain Window, Crypto and SubtleCrypto receivers',async()=>{
   const vm=require('node:vm'),fs=require('node:fs');
