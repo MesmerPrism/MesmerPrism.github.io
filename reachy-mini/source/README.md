@@ -27,7 +27,10 @@ unknown versions and browser access restrictions retain the robot-owned fallback
 The [reconnection guide](https://mesmerprism.com/reachy-mini/#recover) helps an
 already configured robot recover through current status checks, official Bluetooth
 maintenance or a physical power cycle. It explains browser support and uncertain
-restart replies without automatically sending robot commands. See [recovery](docs/RECOVERY.md).
+restart replies without automatically sending robot commands. Second-device checks
+help distinguish browser access problems from shared network failures. The guide
+also explains an observed OS routing fault and why daemon restart may not repair
+it; the experimental networking patch is not installed or bundled. See [recovery](docs/RECOVERY.md).
 Setup sends no motion or Wake commands. Its optional software updater requires
 explicit readiness and submission; the complete fresh access-point workflow and
 in-page update path still need attended hardware validation. See [setup](docs/SETUP.md).
@@ -105,5 +108,10 @@ headset view share the same Controls page. Read [interaction and automation deta
 
 For read-only diagnostics, `npm run agent -- --help` lists bounded status,
 offline guidance and publication-integrity commands. See [CLI details](docs/SETUP.md#agent-diagnostics-cli).
+The hosted controller also exposes `window.reachyAgent.diagnostics()` and an
+expandable **Connection & diagnostics** panel. Its copyable summary excludes
+identity, addresses and credentials and reads the current tab snapshot only.
+Head and antenna targets expire after 15 seconds without new input; discarding
+unsent targets is separate from software Stop and does not prove physical arrival.
 For project structure and changes, read [architecture](docs/ARCHITECTURE.md) and
 [contributing](CONTRIBUTING.md).

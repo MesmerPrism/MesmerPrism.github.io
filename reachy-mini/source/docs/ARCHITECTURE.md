@@ -61,6 +61,15 @@ the distinction between uncertain restart replies and freshly verified connectiv
 It adds no reconnect replay, automatic Wake, admission exception or required
 integration with another project.
 
+Its second-device comparison separates a device/browser access problem from a
+failure shared across devices, without claiming a timeout diagnoses OS routing.
+The guide explains the observed NetworkManager local-route failure and the
+limits of daemon restart, a network-specific workaround and an offline candidate
+fix. It does not execute SSH, change routes, disable conflict detection or install
+packages. A future privileged maintenance helper would need its own authenticated,
+explicitly authorized capability and rollback contract; it is not part of this
+release. The experimental OS patch is not bundled with the MIT controller.
+
 `npm run build` produces the local UI in `dist/`. `npm run build:pages` produces
 static hosted assets in `local/pages`, with relative URLs by default and an optional
 deployment `--base`. Neither command publishes or fetches private CAD. The original
@@ -85,3 +94,17 @@ transport. WebXR owns presentation and relative rotation mapping; the parent
 retains connection, epoch, authorization and Stop authority. Every XR stream is
 bound to the control context that admitted it. These optional interfaces do not
 require a Quest installation or Rusty Morphospace service.
+
+The hosted target staging helper bounds head and antenna sending to 15 seconds
+after deliberate input. Loop iterations do not renew that deadline. Only a later
+telemetry receipt can satisfy the unchanged explicit-axis comparison; this is
+measured convergence, not a daemon acknowledgement or physical arrival proof.
+Expiry discards unsent intent without automatic Stop, hold or command replay.
+Connection and telemetry guards retain authority over every send.
+
+`controller-diagnostics.mjs` projects a bounded read-only summary from the current
+adapter snapshot. The page disclosure, agent command and WebMCP diagnostic tool
+perform no network reads or writes. They omit identifiers, endpoints, raw errors
+and credentials. Hosted receipt freshness, session-only ownership and queued-only
+targets remain distinct from the local bridge's recovery contract and from demo
+simulation. Sensor age and unavailable evidence are reported as unknown.
