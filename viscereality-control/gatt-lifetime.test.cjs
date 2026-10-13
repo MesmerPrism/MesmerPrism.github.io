@@ -119,7 +119,7 @@ test("inert preview shows the actual scan prerequisite and active-session essent
 });
 test("guided flow follows fresh native stage, shows missing grants and panel exception",()=>{
   const f=fixture(()=>({v:1,id:"unused",state:"pending"}));
-  f.setStatus({p:"IDLE",h:"vr-preparation",g:7,rec:false,st:"ready",bt:"ON",y:{...setupGrant,c:true,a:true,e:false},a:["track-ready","track-ready"]});
+  f.setStatus({p:"IDLE",h:"vr-preparation",g:0,r:1,o:{v:1,s:"observed",e:"7",i:"1",g:0,r:1,a:0},rec:false,st:"ready",bt:"UNAVAILABLE",y:{...setupGrant,c:true,a:true,e:false},a:["track-ready","track-ready"]});
   f.render();assert.equal(f.node("guide-title").textContent,"Choose condition");assert.equal(f.node("guide-action").textContent,"Arm condition");
   const html=fs.readFileSync(require.resolve("./index.html"),"utf8");
   assert.match(html,/<details class="foldout" id="maintenance"><summary>Maintenance controls<\/summary>/);
@@ -131,7 +131,7 @@ test("guided flow follows fresh native stage, shows missing grants and panel exc
 });
 test("Polar setup signs current revision and observes exact receipt without replay",async()=>{
   let reads=0;const f=fixture(get=>({v:1,id:get().id,state:++reads===1?"pending":"confirmed"}));
-  f.setStatus({p:"IDLE",h:"vr-preparation",g:7,rec:false,st:"ready",bt:"ON",m:"gated",y:setupGrant});
+  f.setStatus({p:"IDLE",h:"vr-preparation",g:0,r:1,o:{v:1,s:"observed",e:"7",i:"1",g:0,r:1,a:0},rec:false,st:"ready",bt:"UNAVAILABLE",m:"gated",y:setupGrant});
   vm.runInContext('accessCode="ABCDEFGH2345"',f.context);
   f.context.testCharacteristics.challenge={readValue:async()=>new DataView(new TextEncoder().encode(JSON.stringify({v:1,n:"a".repeat(32)})).buffer)};
   await vm.runInContext('sendPolarSetup("connect")',f.context);
@@ -140,7 +140,7 @@ test("Polar setup signs current revision and observes exact receipt without repl
   assert.equal(r.mac,expected);assert.equal(reads,2);assert.equal(f.node("progress-confirmed").className,"done");
 });
 test("Polar setup revision change before write prevents dispatch",async()=>{
-  const f=fixture(()=>{throw Error("no receipt expected")});f.setStatus({p:"IDLE",h:"vr-preparation",g:7,rec:false,st:"ready",bt:"ON",m:"gated",y:{...setupGrant}});
+  const f=fixture(()=>{throw Error("no receipt expected")});f.setStatus({p:"IDLE",h:"vr-preparation",g:0,r:1,o:{v:1,s:"observed",e:"7",i:"1",g:0,r:1,a:0},rec:false,st:"ready",bt:"UNAVAILABLE",m:"gated",y:{...setupGrant}});
   vm.runInContext('accessCode="ABCDEFGH2345"',f.context);
   f.context.testCharacteristics.challenge={readValue:async()=>{f.setStatus({y:{...setupGrant,r:4}});return new DataView(new TextEncoder().encode(JSON.stringify({v:1,n:"a".repeat(32)})).buffer);}};
   await vm.runInContext('sendPolarSetup("connect")',f.context);assert.equal(f.writes(),0);assert.match(f.node("command-detail").textContent,/Polar setup changed/);
@@ -870,4 +870,40 @@ test("lost network command response preserves original ID before effect admissio
   const original=JSON.parse(saved.get("viscereality-original-command"));
   assert.match(original.id,/^[0-9a-f]{16}$/);assert.equal(original.epoch,"123");assert.equal(original.deviceId,'gateway:'+ 'b'.repeat(32)+':321');
   assert.equal(vm.runInContext('pendingOriginal.state',f.context),'uncertain');
+});
+
+
+test("idle Polar setup uses the observed runtime epoch and process radio before any recording",()=>{
+  const f=fixture(()=>{throw Error("no command expected")});
+  const initial={p:"IDLE",h:"vr-preparation",g:0,r:1,rec:false,pending:false,st:"ready",bt:"UNAVAILABLE",
+    o:{v:1,s:"observed",e:"7",i:"1",g:0,r:1,a:0},y:{...setupGrant,c:true,a:true},a:["track-ready","track-ready"]};
+  f.setStatus(initial);f.render();
+  assert.equal(f.node("guide-title").textContent,"Choose condition");
+  assert.equal(f.node("bluetooth-status").textContent,"On");
+  assert.equal(f.node("guide-action").disabled,false);
+  f.setStatus({g:4,o:{...initial.o,g:4}});f.render();
+  assert.equal(f.node("guide-title").textContent,"Choose condition");
+  f.setStatus({y:{...initial.y,b:false},bt:"ON"});f.render();
+  assert.equal(f.node("guide-title").textContent,"Polar radio unavailable");
+  assert.equal(f.node("bluetooth-status").textContent,"OFF");
+  for(const o of [undefined,{...initial.o,e:"8"},{...initial.o,e:7},{...initial.o,e:"07"},
+      {...initial.o,g:9},{...initial.o,r:2},{...initial.o,s:"unavailable"},{...initial.o,extra:true}]) {
+    f.setStatus({...initial,o});f.render();
+    assert.equal(f.node("guide-title").textContent,"Polar setup unavailable");
+    assert.equal(f.node("rescan-polar").disabled,true);
+  }
+  assert.equal(f.writes(),0);
+});
+
+test("Polar setup runtime change before write prevents dispatch",async()=>{
+  const f=fixture(()=>{throw Error("no receipt expected")});
+  f.setStatus({p:"IDLE",h:"vr-preparation",g:0,r:1,rec:false,st:"ready",bt:"UNAVAILABLE",m:"gated",
+    o:{v:1,s:"observed",e:"7",i:"1",g:0,r:1,a:0},y:{...setupGrant}});
+  vm.runInContext('accessCode="ABCDEFGH2345"',f.context);
+  f.context.testCharacteristics.challenge={readValue:async()=>{
+    f.setStatus({o:{v:1,s:"observed",e:"8",i:"2",g:0,r:1,a:0}});
+    return new DataView(new TextEncoder().encode(JSON.stringify({v:1,n:"a".repeat(32)})).buffer);
+  }};
+  await vm.runInContext('sendPolarSetup("connect")',f.context);
+  assert.equal(f.writes(),0);assert.match(f.node("command-detail").textContent,/Polar setup changed/);
 });

@@ -99,16 +99,20 @@ function nativeAgeAt(now) {
   if (!Number.isSafeInteger(age) || age < 0) { nativeAgeScope.visible = null; return null; }
   return age;
 }
+function nativeObservationValid(status) {
+  const o = status?.o;
+  const keys = value => value !== null && typeof value === "object" && !Array.isArray(value) ? Object.keys(value).sort().join(",") : "";
+  return keys(o) === "a,e,g,i,r,s,v" && o.v === 1 && o.s === "observed"
+    && positiveInt64(o.e) && positiveInt64(o.i)
+    && [o.g,o.r,o.a,status.g,status.r].every(value => Number.isSafeInteger(value) && value >= 0)
+    && o.g === status.g && o.r === status.r;
+}
 function receiveNativeAge(status) {
   nativeAgeConnection();
   const now = nativeAgeClock();
   if (now === null) return;
   const o = status.o;
-  const keys = value => value !== null && typeof value === "object" && !Array.isArray(value) ? Object.keys(value).sort().join(",") : "";
-  if (keys(o) !== "a,e,g,i,r,s,v" || o.v !== 1 || o.s !== "observed"
-      || !positiveInt64(o.e) || !positiveInt64(o.i)
-      || ![o.g,o.r,o.a,status.g,status.r].every(value => Number.isSafeInteger(value) && value >= 0)
-      || o.g !== status.g || o.r !== status.r) {
+  if (!nativeObservationValid(status)) {
     nativeAgeScope.visible = null; return;
   }
   if (nativeAgeScope.epoch !== null && decimalOrder(o.e, nativeAgeScope.epoch) < 0) {
@@ -175,7 +179,9 @@ function polarSetupCapability(status) {
   if (!y || typeof y !== "object" || Array.isArray(y)
       || Object.keys(y).sort().join(",") !== "a,b,c,d,e,g,p,r,s,sc,x"
       || typeof y.s !== "string" || !/^[0-9a-f]{32}$/.test(y.s)
-      || !Number.isSafeInteger(y.g) || y.g <= 0 || y.g !== status.g
+      // Setup g is the process runtime epoch, not the recording generation.
+      || !Number.isSafeInteger(y.g) || y.g <= 0
+      || !nativeObservationValid(status) || String(y.g) !== status.o.e
       || !Number.isSafeInteger(y.r) || y.r < 0
       || ![y.p,y.b,y.c,y.a,y.e,y.sc].every(value => typeof value === "boolean")
       || typeof y.x !== "string" || !/^(?:|[0-9a-f]{12})$/.test(y.x)
@@ -315,7 +321,6 @@ function guidedStep(status) {
     return {title: "Session needs attention", instruction: "Refresh the Quest state before choosing an action.", action: "refresh", label: "Refresh status"};
   }
   if (status.p !== "IDLE" || status.h !== "vr-preparation") return {title: "Check headset readiness", instruction: "Wait for VR preparation and an idle session, then refresh status.", action: "refresh", label: "Refresh status"};
-  if (status.bt !== "ON") return {title: "Bluetooth needed", instruction: "Enable Bluetooth on the Quest, then refresh status.", action: "refresh", label: "Refresh status"};
   if (status.st !== "ready") return {title: "Storage needs attention", instruction: "Recording storage is not ready. Resolve this on the Quest before arming.", action: "refresh", label: "Refresh status"};
   const y = polarSetupCapability(status);
   if (!y) return {title: "Polar setup unavailable", instruction: "This Quest has no current remote Polar setup grant. Refresh status or use a compatible app build.", action: "refresh", label: "Refresh status"};
@@ -399,7 +404,9 @@ function render() {
   const gated = live && s?.m === "gated" && !accessCode;
   byId("access").hidden = !!networkTransport || !gated;
 
-  label("bluetooth-status", s?.bt === "ON" ? "On" : s?.bt || "Unavailable", s?.bt === "ON" ? "ready" : "attention");
+  const setup = polarSetupCapability(s);
+  const bluetooth = setup ? (setup.b ? "ON" : "OFF") : s?.bt;
+  label("bluetooth-status", bluetooth === "ON" ? "On" : bluetooth || "Unavailable", bluetooth === "ON" ? "ready" : "attention");
   label("polar-status", s?.po === "CONNECTED" && s.pf ? "Connected" : s?.po || "Unavailable", s?.po === "CONNECTED" && s.pf ? "ready" : "attention");
   label("storage-status", s?.st || "Unavailable", s?.st === "ready" ? "ready" : "attention");
   label("kiosk-status", s?.k || "Unavailable", s?.k === "ready" ? "ready" : "attention");
@@ -1023,7 +1030,7 @@ if (preview) {
     bt: "ON", po: "CONNECTED", pf: true, done: 0, early: 0,
     a: ["track-ready", "track-ready"], b: ["pattern-ready", "pattern-ready"],
     q:{v:2,s:"b".repeat(32),g:1,o:["start","pause","resume"]},
-    y:readySetup,
+    y:readySetup,o:{v:1,s:"observed",e:"1",i:"1",g:1,r:9,a:0},
     ...examples[scenario] };
   lastStatusAt = Date.now();
 }
