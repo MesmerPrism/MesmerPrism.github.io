@@ -13,7 +13,7 @@
     return url.href;
   }
   class Gateway {
-    constructor({url, controller, key, device, routeToken = "", trustedLan = false, fetcher = fetch, cryptoApi = crypto, pageProtocol = "https:"}) {
+    constructor({url, controller, key, device, routeToken = "", trustedLan = false, fetcher = root.fetch.bind(root), cryptoApi = root.crypto, pageProtocol = "https:"}) {
       this.url = endpoint(url,pageProtocol,trustedLan);
       if(routeToken && new URL(this.url).protocol!=="https:") throw new Error("Relay requires HTTPS");
       if (!/^[0-9a-f]{32}$/.test(controller) || !/^[0-9a-f]{64}$/.test(key) || !/^[0-9a-f]{32}$/.test(device)) throw new Error("Enter the controller ID, device ID and controller key approved on the headset");
