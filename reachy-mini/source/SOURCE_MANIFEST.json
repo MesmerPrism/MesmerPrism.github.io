@@ -1,9 +1,9 @@
 {
   "schema": "reachy.public-source.v1",
   "name": "reachy-mini-browser-control",
-  "version": "0.3.4",
-  "sourceRevision": "ded9db02b12c3f727b73f0550cb1aadf5a7f69da",
-  "sourceTreeSha256": "7c142414be84f98563e4bf83db1a264d3efef8b5a6eb7ffd0485dc10e2733213",
+  "version": "0.3.5",
+  "sourceRevision": "7ecb5182c35c13b9d9db381df11743711b257571",
+  "sourceTreeSha256": "c6b5045f9f3cb4de9c7107640238da312c9843603aed7600fde3a9bf5425fe22",
   "originalCodeLicense": "MIT",
   "dependencyLicenses": "THIRD_PARTY_NOTICES.md",
   "exclusions": [
@@ -52,8 +52,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 6380,
-      "sha256": "e7fc25efbd72d5402b4d64ce6f4d8549234afe4a7543ebbdaf8b8e3ac42d7938",
+      "bytes": 6752,
+      "sha256": "8f6def8415bc784290549fcada2dd042b47a04038614c8e8874571ee39b44740",
       "sitePath": "README.md"
     },
     {
@@ -70,8 +70,8 @@
     },
     {
       "path": "docs/ARCHITECTURE.md",
-      "bytes": 7342,
-      "sha256": "05df2f581cb81f32c442f2261777636287b44da3cb80075ec8f25144a042e795",
+      "bytes": 8737,
+      "sha256": "519cc1c22afc46a2e11640e96a9bc028fb5b1a3f4cbfe93fe2708438d13a640d",
       "sitePath": "docs/ARCHITECTURE.md"
     },
     {
@@ -79,6 +79,12 @@
       "bytes": 5963,
       "sha256": "d270bcdbcf150e163540c9c5a6827fb882bf94398ecd5eb6c01ef3a5c59223f6",
       "sitePath": "docs/DAEMON_1_11_COMPATIBILITY.md"
+    },
+    {
+      "path": "docs/PHONE_CONTROL.md",
+      "bytes": 4365,
+      "sha256": "19951f854a3424a61f5ba6d5f71f6d7b4023cb5195d2d9db002f8ffa9b620182",
+      "sitePath": "docs/PHONE_CONTROL.md"
     },
     {
       "path": "docs/RECOVERY.md",
@@ -94,8 +100,8 @@
     },
     {
       "path": "docs/STATUS.md",
-      "bytes": 23434,
-      "sha256": "2b093a9efc246217625b1429237b6312db5c79215e5eb3be03bdb07020010aea",
+      "bytes": 25374,
+      "sha256": "6441fe0d318b538e811f7b7b4ebb39a912ff837c378019c33de3a81fe13d5314",
       "sitePath": "docs/STATUS.md"
     },
     {
@@ -191,13 +197,13 @@
     {
       "path": "package-lock.json",
       "bytes": 77313,
-      "sha256": "73dd3070212aeef81c8b92e5ce598f3758a8f469004ee97b4b0162527c599a3f",
+      "sha256": "2074ee53f77fcf5b3ad4faecd4cf764e8f61cf70370521c789ffd3cd1bf5903e",
       "sitePath": "package-lock.json"
     },
     {
       "path": "package.json",
       "bytes": 945,
-      "sha256": "c0c863760aa69ad56eeeec4a7af8fd641e1117ce0c563c34d850fd6d7015dafa",
+      "sha256": "7f8519e53eda3a522a07f4255d31433dc8b80fc16b360eced73e04be4ca036b2",
       "sitePath": "package.json"
     },
     {
@@ -225,6 +231,18 @@
       "sitePath": "public-site/FitText.jsx"
     },
     {
+      "path": "public-site/PhoneController.jsx",
+      "bytes": 5413,
+      "sha256": "e116421371d4b7347507be544d336d4cd11abd3ad78ccb3487b08b66b6d6c91c",
+      "sitePath": "public-site/PhoneController.jsx"
+    },
+    {
+      "path": "public-site/PhoneMotionControls.jsx",
+      "bytes": 9990,
+      "sha256": "acc9dc4c71f7c659187adcb2291e757c5cb23d9a958f58c31aa9b4bf4e8240ca",
+      "sitePath": "public-site/PhoneMotionControls.jsx"
+    },
+    {
       "path": "public-site/RecoveryGuide.jsx",
       "bytes": 13073,
       "sha256": "0dc473b8015a1e9c9aa8d81ab5651ec4c99b495b7ea46966f472340c941d211a",
@@ -250,8 +268,8 @@
     },
     {
       "path": "public-site/WirelessPanel.jsx",
-      "bytes": 27491,
-      "sha256": "55299c3ca8342c743edaec4cd1e144890658c5ec26b4abbd54a10671b56ea0e5",
+      "bytes": 29927,
+      "sha256": "09f18ab5884080e5e69c08bdfc250f168dc8dbaead3a5d26e9fd40841027ff3e",
       "sitePath": "public-site/WirelessPanel.jsx"
     },
     {
@@ -274,8 +292,8 @@
     },
     {
       "path": "public-site/main.jsx",
-      "bytes": 11305,
-      "sha256": "99d5d144a97210f3d957f3f4ad1e807bd4408ad196df8ca041ba79244910e335",
+      "bytes": 11644,
+      "sha256": "17a4726d5c297a327e12fe440045e1d619af421f1518e18a2a3a69e5e31feeef",
       "sitePath": "public-site/main.jsx"
     },
     {
@@ -292,8 +310,8 @@
     },
     {
       "path": "public-site/style.css",
-      "bytes": 18512,
-      "sha256": "8a35ec20d7dc323b1278423849830d2a5cd810605ad8e44cbf9542917394f075",
+      "bytes": 19053,
+      "sha256": "633c4dc20c588fe891b172586d1ae325bf7bd51ae3ab5cf263df358559571070",
       "sitePath": "public-site/style.css"
     },
     {
@@ -379,6 +397,12 @@
       "bytes": 8292,
       "sha256": "b1270d9328cf86150a9f9168095b8186ad81fcf98beba382d22cd2370e2283fa",
       "sitePath": "src/HeadTracking.jsx"
+    },
+    {
+      "path": "src/PhoneSensorPad.jsx",
+      "bytes": 5235,
+      "sha256": "3e444126835f81d5f67f5c2cb09c9bb7a9c8b67773daf4b50edb86e5718aebd2",
+      "sitePath": "src/PhoneSensorPad.jsx"
     },
     {
       "path": "src/RobotModel.jsx",
@@ -487,6 +511,24 @@
       "bytes": 3591,
       "sha256": "168e152bc14723b778226d6d1f3a04c054cc7f9a36ed5610230df4b46601d04b",
       "sitePath": "src/panorama-camera.mjs"
+    },
+    {
+      "path": "src/phone-follow.mjs",
+      "bytes": 5601,
+      "sha256": "a2bc68c44659fe96818b314b796d446a7042b8e59b7f040c8faa489bcf860e3c",
+      "sitePath": "src/phone-follow.mjs"
+    },
+    {
+      "path": "src/phone-orientation.mjs",
+      "bytes": 7263,
+      "sha256": "8f8ec834d801ae38d697331bf05a83382f2a2c0757f8bac9d59a9576594bc0a4",
+      "sitePath": "src/phone-orientation.mjs"
+    },
+    {
+      "path": "src/phone-peer.mjs",
+      "bytes": 19911,
+      "sha256": "477a5f7c9d6ca80a239c0004660752a4257fec2ed213008f1d7a0070e517c802",
+      "sitePath": "src/phone-peer.mjs"
     },
     {
       "path": "src/robot-model-state.mjs",
@@ -753,9 +795,27 @@
       "sitePath": "test/panorama-camera.test.mjs"
     },
     {
+      "path": "test/phone-follow.test.mjs",
+      "bytes": 12387,
+      "sha256": "07b6ca4c769d495c4b8ce630ea8174a02b3edd6b4839d39d5fc857af5b5d9143",
+      "sitePath": "test/phone-follow.test.mjs"
+    },
+    {
+      "path": "test/phone-orientation.test.mjs",
+      "bytes": 10815,
+      "sha256": "4a9b0f90431ba3f502e771bab87244495d88f846bac2f8bb556d3df8caba3f81",
+      "sitePath": "test/phone-orientation.test.mjs"
+    },
+    {
+      "path": "test/phone-peer.test.mjs",
+      "bytes": 22093,
+      "sha256": "a67dd61c5e79293d793eed421aa6b0c0ff636a5cd18bf4e333069a273500bfe1",
+      "sitePath": "test/phone-peer.test.mjs"
+    },
+    {
       "path": "test/public-export.test.mjs",
-      "bytes": 7075,
-      "sha256": "5022b01f05c8d5c105612f765757abb6b97132daabca03007281be590cdb93ee",
+      "bytes": 7634,
+      "sha256": "0be114ade7c3534afa8c08bf035a03896793a34d27f0a01d0a0b408c8199ac06",
       "sitePath": "test/public-export.test.mjs"
     },
     {
@@ -850,8 +910,8 @@
     },
     {
       "path": "tools/Export-Public.mjs",
-      "bytes": 15387,
-      "sha256": "2581d9485ee29ab874ea6c31c59587fb03faa0cae0a47e32de1afb0239f873ab",
+      "bytes": 15997,
+      "sha256": "a2cc5744b8e7492c7c3e5976bcf2ae4648a2feaaec2f02d56752712e3423fd59",
       "sitePath": "tools/Export-Public.mjs"
     },
     {

@@ -1,13 +1,13 @@
 {
   "schema": "reachy.public-artifacts.v1",
-  "version": "0.3.4",
-  "sourceRevision": "ded9db02b12c3f727b73f0550cb1aadf5a7f69da",
-  "sourceTreeSha256": "7c142414be84f98563e4bf83db1a264d3efef8b5a6eb7ffd0485dc10e2733213",
+  "version": "0.3.5",
+  "sourceRevision": "7ecb5182c35c13b9d9db381df11743711b257571",
+  "sourceTreeSha256": "c6b5045f9f3cb4de9c7107640238da312c9843603aed7600fde3a9bf5425fe22",
   "sourceManifest": "source/SOURCE_MANIFEST.json",
   "archive": {
-    "path": "downloads/reachy-mini-controller-v0.3.4.zip",
-    "bytes": 2620098,
-    "sha256": "8963d61cfabc041a646f2cf471483501aae50c1760fa9c9e4ab6db8604d57f9b"
+    "path": "downloads/reachy-mini-controller-v0.3.5.zip",
+    "bytes": 2654945,
+    "sha256": "d900c920c02c835ba6f39588e70094d7926f811bba0fcc0e35a746c565e3eb53"
   },
-  "sourceFiles": 147
+  "sourceFiles": 157
 }
