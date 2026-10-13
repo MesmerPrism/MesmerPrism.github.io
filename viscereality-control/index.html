@@ -5,10 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#191b20">
   <meta name="referrer" content="no-referrer">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; connect-src 'none'; img-src 'none'; base-uri 'none'; form-action 'none'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; connect-src https: http:; worker-src 'self'; img-src 'none'; base-uri 'none'; form-action 'none'">
   <title>Viscereality Experimenter</title>
   <link rel="stylesheet" href="styles.css">
   <script src="../shared/quest-ble/gatt-lifetime.js" defer></script>
+  <script src="transport.js" defer></script>
   <script src="app.js" defer></script>
 </head>
 <body>
@@ -18,12 +19,8 @@
         <h1>Viscereality</h1>
         <span class="connection-label" id="connection-label" aria-live="polite">Not connected</span>
       </div>
-      <p class="foreground-line" id="foreground-line">Immersive app status unavailable</p>
-      <div class="connection-actions">
-        <button id="connect" class="button button-small" type="button">Connect to Quest</button>
-        <button id="disconnect" class="button button-small button-quiet" type="button" hidden>Disconnect</button>
-        <button id="refresh" class="button button-small button-quiet" type="button" disabled>Refresh status</button>
-      </div>
+      <p class="foreground-line" id="connection-detail" aria-live="polite">Choose a Quest to read its status.</p>
+      <p class="presentation" id="presentation" role="status">Headset state unknown</p>
       <div id="access" class="access" hidden>
         <label for="pair-code">Quest pairing code</label>
         <div class="access-row">
@@ -35,6 +32,50 @@
     </header>
 
     <main id="main-content" class="main-content">
+      <section id="connection-options" class="connection-options" aria-label="Connection setup">
+        <label for="connection-route">Connect using</label>
+        <select id="connection-route">
+          <option id="route-ble" value="ble">Nearby Bluetooth</option>
+          <option value="lan">Same Wi-Fi  -  gateway enrollment required</option>
+          <option value="relay">Internet relay  -  private setup required</option>
+          <option value="direct">Direct / offline  -  join network in system settings</option>
+        </select>
+        <p id="route-note">Choose the nearby Quest. Bluetooth permission is requested by your browser.</p>
+        <div id="network-enrollment" hidden>
+          <label for="gateway-url">Gateway URL</label><input id="gateway-url" type="url" autocomplete="off" placeholder="https://your-gateway/v1/gateway">
+          <label for="gateway-device">Headset device ID</label><input id="gateway-device" autocomplete="off" spellcheck="false" maxlength="32">
+          <label for="controller-id">Approved controller ID</label><input id="controller-id" autocomplete="off" spellcheck="false" maxlength="32">
+          <label for="controller-key">Controller key shown by headset</label><input id="controller-key" type="password" autocomplete="off" spellcheck="false" maxlength="64">
+          <div id="relay-token-row" hidden><label for="relay-token">Private relay route token</label><input id="relay-token" type="password" autocomplete="off" spellcheck="false"></div>
+          <div id="trusted-lan-row"><label class="lan-consent"><input id="trusted-lan" type="checkbox"> Allow experimental plaintext access on this trusted local network</label><p>Plain HTTP authenticates commands but does not encrypt status or receipts. Your browser may request local-network permission or block access. Use Bluetooth when unavailable; do not bypass browser security.</p></div>
+          <p>Approve this controller on the headset first. Keys stay in this tab and must be entered again after disconnection.</p>
+        </div>
+        <p id="offline-note">Offline availability has not been checked.</p>
+      </section>
+      <section class="guide" aria-labelledby="guide-title">
+        <h2 id="guide-title">Connect to Quest</h2>
+        <p id="guide-instruction" class="lead" aria-live="polite">Connect to read the current headset state.</p>
+        <p id="guide-session-facts" class="stage" hidden></p>
+        <p id="guide-pending" class="pending" role="status" hidden></p>
+        <div id="guide-choices" class="guide-choices" hidden>
+          <label for="guide-condition">Condition</label>
+          <select id="guide-condition"><option value="condition-a">Condition 1</option><option value="condition-b">Condition 2</option></select>
+        </div>
+        <div id="guide-candidates" class="guide-choices" hidden>
+          <label for="guide-polar-device">Polar sensor</label><select id="guide-polar-device"></select>
+          <p class="candidate-note">The app reference distinguishes scan results; it is not a printed sensor ID.</p>
+        </div>
+        <button id="guide-action" class="button button-primary" type="button">Connect to Quest</button>
+        <button id="guide-finish" class="button button-secondary" type="button" hidden>Finish &amp; prepare next</button>
+      </section>
+      <div class="panel-exception" id="panel-exception" hidden><strong>Headset panel open</strong><p>The headset is showing its settings panel.</p><button id="guide-return-vr" class="button button-primary" type="button" disabled>Return to VR</button></div>
+      <details class="foldout" id="maintenance"><summary>Maintenance controls</summary>
+      <div class="connection-actions">
+        <button id="connect" class="button button-small" type="button">Choose Quest</button>
+        <button id="reconnect" class="button button-small button-quiet" type="button" hidden>Reconnect to Quest</button>
+        <button id="disconnect" class="button button-small button-quiet" type="button" hidden>Disconnect</button>
+        <button id="refresh" class="button button-small button-quiet" type="button" disabled>Refresh status</button>
+      </div>
       <section class="page" data-page="prepare" aria-labelledby="prepare-title">
         <h2 id="prepare-title">Prepare</h2>
         <p class="lead">Check the headset and sensor before choosing a condition.</p>
@@ -46,11 +87,16 @@
         </dl>
         <p class="guidance" id="prepare-guidance">Connect to the Quest to see live readiness.</p>
         <button id="open-polar" class="button button-secondary" type="button" disabled>Open Polar setup on Quest</button>
+        <button id="rescan-polar" class="button button-secondary" type="button" disabled>Scan for Polar again</button>
+        <button id="start-polar-ecg" class="button button-secondary" type="button" disabled>Start optional ECG</button>
+        <button id="stop-polar-acc" class="button button-secondary" type="button" disabled>Stop ACC</button>
+        <button id="stop-polar-ecg" class="button button-secondary" type="button" disabled>Stop ECG</button>
+        <p id="polar-stop-note" class="guidance">This Quest has no current Polar stop capability.</p>
       </section>
 
       <section class="page" data-page="controls" aria-labelledby="controls-title" hidden>
         <h2 id="controls-title">Controls</h2>
-        <p class="lead">These headset gestures still control the official run.</p>
+        <p class="lead">Use the session controls or these headset gestures to control the run.</p>
         <div class="instruction-list">
           <div><h3>Start or resume</h3><p>Hold Right Grip + A for at least 0.75 seconds, then release after the confirmation pulse.</p></div>
           <div><h3>Pause</h3><p>Hold Right Grip + B for at least 0.75 seconds, then release after the confirmation pulse.</p></div>
@@ -62,7 +108,7 @@
 
       <section class="page" data-page="condition" aria-labelledby="condition-title" hidden>
         <h2 id="condition-title">Choose condition</h2>
-        <p class="lead">Arming prepares the recording and audio. The official run starts with the headset gesture.</p>
+        <p class="lead">Arming prepares the recording and audio. Start the run from Session or with the headset gesture.</p>
         <div class="condition-group">
           <h3>Condition 1</h3>
           <p id="audio-one">Audio: unavailable</p>
@@ -86,6 +132,20 @@
         <h2 id="session-title">Session</h2>
         <p class="stage" id="stage-title">No live session readback</p>
         <p class="lead" id="stage-instruction">Connect to the Quest to see the current run.</p>
+        <button id="start-session" class="button button-primary" type="button" disabled>Start session</button>
+        <button id="pause-session" class="button button-secondary" type="button" disabled>Pause session</button>
+        <button id="resume-session" class="button button-primary" type="button" disabled>Resume session</button>
+        <p id="session-control-note" class="guidance">Connect to the Quest to see available session controls.</p>
+        <button id="save-next" class="button button-primary" type="button" disabled>Save session &amp; prepare next</button>
+        <button id="save-exit" class="button button-secondary" type="button" disabled>Save and exit</button>
+      </section>
+
+      </details>
+      <details class="foldout" id="diagnostics"><summary>Diagnostics</summary>
+        <p id="native-readback-age">Native status-read age unavailable</p>
+        <p id="foreground-line">Android input focus unavailable</p>
+        <p id="timing-detail">No command timing yet.</p>
+        <p id="polar-candidate-ids">No Polar candidates observed.</p>
         <dl class="status-list session-list">
           <div><dt>Condition</dt><dd id="active-condition">—</dd></div>
           <div><dt>Status</dt><dd id="phase">Unavailable</dd></div>
@@ -96,10 +156,6 @@
           <div><dt>Completed</dt><dd id="completed">—</dd></div>
           <div><dt>Stopped early</dt><dd id="stopped-early">—</dd></div>
         </dl>
-        <button id="save-next" class="button button-primary" type="button" disabled>Save session &amp; prepare next</button>
-        <button id="save-exit" class="button button-secondary" type="button" disabled>Save and exit</button>
-      </section>
-
       <section class="command-progress" aria-labelledby="command-title">
         <h2 id="command-title">Command progress</h2>
         <p id="command-name" class="command-name">No command sent</p>
@@ -108,11 +164,13 @@
           <li id="progress-waiting">Waiting for feedback</li>
           <li id="progress-confirmed">Confirmed</li>
         </ol>
+        <button id="cancel-polar-observation" type="button" hidden>Stop observing</button>
         <p id="command-detail" class="command-detail" aria-live="polite">Quest confirmation will appear here.</p>
       </section>
+      </details>
     </main>
 
-    <nav class="bottom-nav" aria-label="Experimenter pages">
+    <nav class="bottom-nav" aria-label="Experimenter pages" hidden>
       <button type="button" data-target="prepare" aria-current="page">Prepare</button>
       <button type="button" data-target="controls">Controls</button>
       <button type="button" data-target="condition">Condition</button>
