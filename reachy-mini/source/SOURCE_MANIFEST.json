@@ -1,9 +1,9 @@
 {
   "schema": "reachy.public-source.v1",
   "name": "reachy-mini-browser-control",
-  "version": "0.3.1",
-  "sourceRevision": "b62728fed58bbeb51b9c68ba8bbbf43d716c98ee",
-  "sourceTreeSha256": "0969cc82ef21db662ee8454a6ffb6ba91a21bf527c894b61079d34ad134988d2",
+  "version": "0.3.2",
+  "sourceRevision": "fb71320773a39a6d723a8efaec198728ba768ef4",
+  "sourceTreeSha256": "fd29290d647a48400ee244505e48c503c4a8b8a01b4c2846c687dbc3da863b98",
   "originalCodeLicense": "MIT",
   "dependencyLicenses": "THIRD_PARTY_NOTICES.md",
   "exclusions": [
@@ -52,8 +52,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 5397,
-      "sha256": "31d4ebe55cef34216272f4f1539315594e54f8beb9d7b62f03bf865eef2fe5f0",
+      "bytes": 5737,
+      "sha256": "85ec5250008d2d29658842fecc003c516870a383f658b5067238eac3663d48fc",
       "sitePath": "README.md"
     },
     {
@@ -70,8 +70,8 @@
     },
     {
       "path": "docs/ARCHITECTURE.md",
-      "bytes": 3722,
-      "sha256": "10882dff227fe340af495cda3e8ede9f1db8bbd7b9e523b8a674dad109aacdb4",
+      "bytes": 5766,
+      "sha256": "8fb118e4c5fa93ad53689249372ef1a391ac301898d1f526d713ee09e7781eb2",
       "sitePath": "docs/ARCHITECTURE.md"
     },
     {
@@ -81,6 +81,12 @@
       "sitePath": "docs/DAEMON_1_11_COMPATIBILITY.md"
     },
     {
+      "path": "docs/RECOVERY.md",
+      "bytes": 3867,
+      "sha256": "ae8a6cd8237dd1db96c8b88bf24448b449899356dc77d10857730619f56a8d02",
+      "sitePath": "docs/RECOVERY.md"
+    },
+    {
       "path": "docs/SETUP.md",
       "bytes": 16059,
       "sha256": "03be186436d5a567802d73f258c27a096d1babdbebd9b55624cdb8717f31eb87",
@@ -88,8 +94,8 @@
     },
     {
       "path": "docs/STATUS.md",
-      "bytes": 6415,
-      "sha256": "32136f44de09438e8a2d5248e82be5141347556d3c3f5293c6470e2bee944857",
+      "bytes": 17681,
+      "sha256": "22223cf802686729ee8cd94d8286dff382105b3ef663a3b50c435eb28b1ce160",
       "sitePath": "docs/STATUS.md"
     },
     {
@@ -185,13 +191,13 @@
     {
       "path": "package-lock.json",
       "bytes": 77313,
-      "sha256": "d5536ed613575359483499105e3e55d3a0128de0ff46b858dea33a85d3f235ca",
+      "sha256": "75708ee5920a493296743c6797c3dd75b412878b95c2ba94f580da53e8b8fd2b",
       "sitePath": "package-lock.json"
     },
     {
       "path": "package.json",
       "bytes": 945,
-      "sha256": "075503ef8b6b85ded57d6ea35de0bf248e44365fe09551bc63b7cdacf462b189",
+      "sha256": "5a94ee714d03524d98d4fa2a8582411f8e1d2bb9553c47899498647ec86ab601",
       "sitePath": "package.json"
     },
     {
@@ -202,8 +208,8 @@
     },
     {
       "path": "public-site/FirstSetup.jsx",
-      "bytes": 31795,
-      "sha256": "c703298fde61785d061ac4d6197b41ae6235e44433ea366dfe9f4351253b0d78",
+      "bytes": 31847,
+      "sha256": "950f3d28517426fa1954aa1a2905c750c35f62cf5a2d01e69cf4701cb7db7671",
       "sitePath": "public-site/FirstSetup.jsx"
     },
     {
@@ -211,6 +217,12 @@
       "bytes": 2689,
       "sha256": "e68490d0338a68e908be414df5ecd539777b0e7a4b707bb28e7aef9852fac3a1",
       "sitePath": "public-site/FitText.jsx"
+    },
+    {
+      "path": "public-site/RecoveryGuide.jsx",
+      "bytes": 9345,
+      "sha256": "5e8182ad28aa8bf5b82f063f408237bb015b3f8d03561a353f64ed4e77d8c597",
+      "sitePath": "public-site/RecoveryGuide.jsx"
     },
     {
       "path": "public-site/RobotUpdate.jsx",
@@ -232,8 +244,8 @@
     },
     {
       "path": "public-site/WirelessPanel.jsx",
-      "bytes": 27091,
-      "sha256": "9c06f6008373cb3d4b99d7c73ac05c61b956cbf182d4068ae800f827769734b4",
+      "bytes": 27147,
+      "sha256": "e92b3646d831dd9aa5ee5ae6b9e8f69720933d81aecc98ab46b852e6f7031abf",
       "sitePath": "public-site/WirelessPanel.jsx"
     },
     {
@@ -256,8 +268,8 @@
     },
     {
       "path": "public-site/main.jsx",
-      "bytes": 11111,
-      "sha256": "8f79851063e3c7495c9277456d6659c4c57ee5f67278dd6eb83f8c6932654d4d",
+      "bytes": 11305,
+      "sha256": "99d5d144a97210f3d957f3f4ad1e807bd4408ad196df8ca041ba79244910e335",
       "sitePath": "public-site/main.jsx"
     },
     {
@@ -274,8 +286,8 @@
     },
     {
       "path": "public-site/style.css",
-      "bytes": 17394,
-      "sha256": "602fcbef0298a5556251af496a9c7a3fb182919aeac1db10ac110a4603d96fcf",
+      "bytes": 18098,
+      "sha256": "64960d84cc0aa4161d2b942f999739c1f62984bea8701560727fcbe5c17c3080",
       "sitePath": "public-site/style.css"
     },
     {
@@ -286,14 +298,14 @@
     },
     {
       "path": "server/control.mjs",
-      "bytes": 45787,
-      "sha256": "345f7f875fdba3bf13226586cea464ab12a4b113c1e616dd0b290b37e7bace03",
+      "bytes": 50245,
+      "sha256": "21c5ccb5ed5e91540714e80f793150ce2e1f080a404676a4c14a73c34897900a",
       "sitePath": "server/control.mjs"
     },
     {
       "path": "server/head-pose.mjs",
-      "bytes": 5292,
-      "sha256": "7ef27b53327ab8181afe6062eba076d88f0d98d54ac21231bb49baf201ef1fcd",
+      "bytes": 6356,
+      "sha256": "a19fd95e6f5e77e34e0aba81bd607355a094bbeb496e93b10aca910fefe8f1b2",
       "sitePath": "server/head-pose.mjs"
     },
     {
@@ -352,8 +364,8 @@
     },
     {
       "path": "src/HeadControls.jsx",
-      "bytes": 5874,
-      "sha256": "c70f9e9251c935f319c8105c0296f85ad3d234770bb4362a2c3875f1b5457260",
+      "bytes": 5922,
+      "sha256": "66b14313e285a2a2f1307e01457f82a2dc1e30a1f7d3f1f54c8e73b6f414d6d9",
       "sitePath": "src/HeadControls.jsx"
     },
     {
@@ -370,8 +382,8 @@
     },
     {
       "path": "src/SpatialControls.jsx",
-      "bytes": 13752,
-      "sha256": "5741db0355413041f9f155b7f092f267c675bac0fbb07a34e5ecd46be68be378",
+      "bytes": 12118,
+      "sha256": "a4e160ee88270f41c9898467e5f73635cc203762a1b42b1f15206d085374006c",
       "sitePath": "src/SpatialControls.jsx"
     },
     {
@@ -391,6 +403,12 @@
       "bytes": 7899,
       "sha256": "36707aed81c2b2ccad1e82fff376d998667e40bff41681e3f4e7600fe1a8836e",
       "sitePath": "src/agent-console.mjs"
+    },
+    {
+      "path": "src/browser-bluetooth.mjs",
+      "bytes": 2922,
+      "sha256": "6f4d562118c0053a5374df7e33b4a5399c546a3768c4c19980721c227d545742",
+      "sitePath": "src/browser-bluetooth.mjs"
     },
     {
       "path": "src/command-flight.mjs",
@@ -478,8 +496,8 @@
     },
     {
       "path": "src/spatial-control.mjs",
-      "bytes": 1543,
-      "sha256": "57a5d6c4b9b94c39b9d44a769b87d36623104bd7dd5f72cc3bac67a17cdaff36",
+      "bytes": 3113,
+      "sha256": "419fcc4840946336275cb5b88e5bb8d6380c050e8f0885dd64e6e6f8619119ab",
       "sitePath": "src/spatial-control.mjs"
     },
     {
@@ -538,8 +556,8 @@
     },
     {
       "path": "src/wireless-control.mjs",
-      "bytes": 16436,
-      "sha256": "77da426a3a439d89830bbe55a1be6d8cab5bf392a2e80059fa0bbc9ceb458c63",
+      "bytes": 16881,
+      "sha256": "ec7af61e275250f5e33f0ec5499de149239f740ca6278a7051e70903d1870932",
       "sitePath": "src/wireless-control.mjs"
     },
     {
@@ -573,6 +591,12 @@
       "sitePath": "test/audio-control.test.mjs"
     },
     {
+      "path": "test/browser-bluetooth.test.mjs",
+      "bytes": 3033,
+      "sha256": "8e0e2b3d081fab5463a59ec4427b4fb9a147038309ff48d89d6d916d5c6e1d68",
+      "sitePath": "test/browser-bluetooth.test.mjs"
+    },
+    {
       "path": "test/build-pages.test.mjs",
       "bytes": 1657,
       "sha256": "1797d8f92ead082b85a5a280a053d08024dd5ae959cfb1d75477d2140aece5e0",
@@ -586,8 +610,8 @@
     },
     {
       "path": "test/control-recovery.test.mjs",
-      "bytes": 9811,
-      "sha256": "2304796932a16eb1410c9aae93f10f859cedacad2ca818a85407795fbf8b9274",
+      "bytes": 15792,
+      "sha256": "5da108e8770eecbf7fee62b827c3c2652554e839e741e0ec92e605e487445eba",
       "sitePath": "test/control-recovery.test.mjs"
     },
     {
@@ -613,6 +637,18 @@
       "bytes": 2863,
       "sha256": "874fa017aa0cbe37a02ea2da7c00c6431ed085b9ec212b2442ba45c349a56580",
       "sitePath": "test/fixtures/daemon-1.11-wire.mjs"
+    },
+    {
+      "path": "test/fixtures/recovery-qa.html",
+      "bytes": 276,
+      "sha256": "430eca738229f74ceb62728611f621d5e961b1c73bd4b9b2255553da222fad35",
+      "sitePath": "test/fixtures/recovery-qa.html"
+    },
+    {
+      "path": "test/fixtures/recovery-qa.jsx",
+      "bytes": 1809,
+      "sha256": "abc67c204658efdda7690bb2ea0c29ed99aa5af382cc627d3f0f72d228316e4f",
+      "sitePath": "test/fixtures/recovery-qa.jsx"
     },
     {
       "path": "test/fixtures/setup-qa.html",
@@ -670,8 +706,8 @@
     },
     {
       "path": "test/manual-head-control.test.mjs",
-      "bytes": 16772,
-      "sha256": "2163f4bceea6be2c447f5cc7d69fe33d7ab9f354a9b1571b8c04ebcc3d59293a",
+      "bytes": 27165,
+      "sha256": "eaf8872839ec92a9340ffd951518815edaccbff6b64a1a3c9830dafb1c3debcf",
       "sitePath": "test/manual-head-control.test.mjs"
     },
     {
@@ -736,8 +772,8 @@
     },
     {
       "path": "test/spatial-control.test.mjs",
-      "bytes": 2475,
-      "sha256": "c0caa4a4a9bcf9b01c603a85c2b67ac87aaa6f14c863bc2c6d39f1ae38e067be",
+      "bytes": 7625,
+      "sha256": "a591666f19c57b61e87daee381e21121e716cae5e70de4d9d1e6a6b39e42b4c6",
       "sitePath": "test/spatial-control.test.mjs"
     },
     {
@@ -760,8 +796,8 @@
     },
     {
       "path": "test/wireless-control.test.mjs",
-      "bytes": 9969,
-      "sha256": "7a26cd9cf332cd278c15d310d61fbdfb4428e9f99f4186a38d859f1a7aaa2e5b",
+      "bytes": 14107,
+      "sha256": "58ee8e27303d895a48fe5f30c94e4c26c9bffe45628b7e9163669e53e93b2a8c",
       "sitePath": "test/wireless-control.test.mjs"
     },
     {
@@ -784,8 +820,8 @@
     },
     {
       "path": "tools/Export-Public.mjs",
-      "bytes": 15024,
-      "sha256": "2082fb7362301859ad79a6685631ccbed1b1dea27dc2e260e932e9668f7b9cac",
+      "bytes": 15212,
+      "sha256": "4df46bda14ca5e09d726940abfb0a23c2557c6839dd748cd9dad655e50ccabb7",
       "sitePath": "tools/Export-Public.mjs"
     },
     {
