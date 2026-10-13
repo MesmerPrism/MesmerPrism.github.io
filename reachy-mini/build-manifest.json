@@ -1,20 +1,20 @@
 {
-  "version": "0.3.2",
+  "version": "0.3.3",
   "files": [
     {
-      "path": "assets/RobotModel-Sjw7U1eR.js",
+      "path": "assets/RobotModel-D4Eyt4xv.js",
       "bytes": 85821,
-      "sha256": "9c65968cfc68739209b2aa3ae4b87e954a260b9fba20e0bd1e355990f51e2b52"
+      "sha256": "e3d38fb7ca7bb8c9c08a4b6e3f2974ea419a05a635351cf40794bf60bc3b0037"
     },
     {
-      "path": "assets/SimulatedCamera-Brh6KvE9.js",
+      "path": "assets/SimulatedCamera-eDvAXqyd.js",
       "bytes": 4565,
-      "sha256": "7e5385f54d2802ad6c314c6f65fca289ac793e9ae1dbc900289dc0c31d2f4df4"
+      "sha256": "8e4088279f7f466940e85ef61f22b6701cefb155c3cef5b74a2dcbadbb0e06d6"
     },
     {
-      "path": "assets/WebXRControls-Cyv3F34G.js",
+      "path": "assets/WebXRControls-CCdXHLkj.js",
       "bytes": 11507,
-      "sha256": "059ce4a46adaf0527e9f1566254a02bc4dcceca48f26ad5a81f4bfa513e94d6e"
+      "sha256": "0711a834d1c48f97f453fa601ab5b826a4f440bfe44c8533ba661910b61c9bd9"
     },
     {
       "path": "assets/WebXRControls-YRAoBpK6.css",
@@ -27,9 +27,9 @@
       "sha256": "ea4fe2bad1e747547dfb20d1e1d1e17d02c20b41a9ac6b6ccf8bf2163a536e96"
     },
     {
-      "path": "assets/demo-sdk-BLW8O11X.js",
+      "path": "assets/demo-sdk-Bj2ira5E.js",
       "bytes": 1317,
-      "sha256": "81624215db5da1aa5e46cf64277265e34843473f17416ec484d79857ffc630e1"
+      "sha256": "51b6d48c014ed801fd4f0f9acdd6f38980973a1afe4e5b46f9b2accdf40df7ee"
     },
     {
       "path": "assets/head-tracker-fX2IH65l.js",
@@ -42,9 +42,9 @@
       "sha256": "b97c31aafd45c7e885d6abe3ea85e3e7dc414294532c25741b64f4e017c5699a"
     },
     {
-      "path": "assets/index-CMvUY1e-.js",
-      "bytes": 421928,
-      "sha256": "bb6e498f2d6530df7116761c44bca8c6aaeb90515f622e1caf501461a117fdd7"
+      "path": "assets/index-aLcAT6g5.js",
+      "bytes": 425722,
+      "sha256": "b05863e522e197c2fde95389121f70fe61f15d3dc16c8d4ac4e034bea3ab7148"
     },
     {
       "path": "assets/index-tNDRjo4F.css",
@@ -79,7 +79,7 @@
     {
       "path": "index.html",
       "bytes": 492,
-      "sha256": "68a75f91ed9607ae1d887287d51aec272fd65b1a2a5139dbb75d833cd06df9ee"
+      "sha256": "9d906b2a0a6433c6cfb4f490e7d87867e4b1412a569fbe121f0a188aec954b72"
     },
     {
       "path": "mediapipe/assets.json",

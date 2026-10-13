@@ -1,9 +1,9 @@
 {
   "schema": "reachy.public-source.v1",
   "name": "reachy-mini-browser-control",
-  "version": "0.3.2",
-  "sourceRevision": "fb71320773a39a6d723a8efaec198728ba768ef4",
-  "sourceTreeSha256": "fd29290d647a48400ee244505e48c503c4a8b8a01b4c2846c687dbc3da863b98",
+  "version": "0.3.3",
+  "sourceRevision": "e56d8630b066c97ed74fe025a1ab19a5056e60d5",
+  "sourceTreeSha256": "ce98767ad2c83e7d6dde6342dccdfa25cd6a3655b548fcb5f749875e37eb123b",
   "originalCodeLicense": "MIT",
   "dependencyLicenses": "THIRD_PARTY_NOTICES.md",
   "exclusions": [
@@ -52,8 +52,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 5737,
-      "sha256": "85ec5250008d2d29658842fecc003c516870a383f658b5067238eac3663d48fc",
+      "bytes": 5987,
+      "sha256": "5b727691774bb5526853ce31cbc1198f8cd815d5884e9dd3958c6bb9d4b51c56",
       "sitePath": "README.md"
     },
     {
@@ -70,8 +70,8 @@
     },
     {
       "path": "docs/ARCHITECTURE.md",
-      "bytes": 5766,
-      "sha256": "8fb118e4c5fa93ad53689249372ef1a391ac301898d1f526d713ee09e7781eb2",
+      "bytes": 6401,
+      "sha256": "3b62d97430e02cdad043fa3bec1d51ef631af343eea306174236c0fd320e1f4a",
       "sitePath": "docs/ARCHITECTURE.md"
     },
     {
@@ -82,8 +82,8 @@
     },
     {
       "path": "docs/RECOVERY.md",
-      "bytes": 3867,
-      "sha256": "ae8a6cd8237dd1db96c8b88bf24448b449899356dc77d10857730619f56a8d02",
+      "bytes": 10473,
+      "sha256": "fe6fc9d407c5e69cad04ed025ba4d7edc1db477ee24ba449c97f4f05fc9c29c0",
       "sitePath": "docs/RECOVERY.md"
     },
     {
@@ -94,8 +94,8 @@
     },
     {
       "path": "docs/STATUS.md",
-      "bytes": 17681,
-      "sha256": "22223cf802686729ee8cd94d8286dff382105b3ef663a3b50c435eb28b1ce160",
+      "bytes": 21105,
+      "sha256": "4c977772bae6801ff14396edf4708e88a6c3b62b1a4f5ca329c46d22af9ee7cc",
       "sitePath": "docs/STATUS.md"
     },
     {
@@ -191,13 +191,13 @@
     {
       "path": "package-lock.json",
       "bytes": 77313,
-      "sha256": "75708ee5920a493296743c6797c3dd75b412878b95c2ba94f580da53e8b8fd2b",
+      "sha256": "4ae2b22e82c5a7db5349c7a913d22d3217b29b6711e8c15fa8262e06c06a35f6",
       "sitePath": "package-lock.json"
     },
     {
       "path": "package.json",
       "bytes": 945,
-      "sha256": "5a94ee714d03524d98d4fa2a8582411f8e1d2bb9553c47899498647ec86ab601",
+      "sha256": "bd5e67a7790eac945f266914b71a53e16f80f1e51dda0544cfe06c1677cb1dd7",
       "sitePath": "package.json"
     },
     {
@@ -220,8 +220,8 @@
     },
     {
       "path": "public-site/RecoveryGuide.jsx",
-      "bytes": 9345,
-      "sha256": "5e8182ad28aa8bf5b82f063f408237bb015b3f8d03561a353f64ed4e77d8c597",
+      "bytes": 13073,
+      "sha256": "0dc473b8015a1e9c9aa8d81ab5651ec4c99b495b7ea46966f472340c941d211a",
       "sitePath": "public-site/RecoveryGuide.jsx"
     },
     {
