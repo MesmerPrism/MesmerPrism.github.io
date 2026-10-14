@@ -102,3 +102,9 @@ h1 { margin: 0; font-size: clamp(30px, 7.2vw, 39px); line-height: 1.12; letter-s
 .connection-options input:focus-visible, .connection-options select:focus-visible { outline: 2px solid #85e6bf; outline-offset: 3px; }
 
 .connection-options .lan-consent input { width: auto; min-height: auto; margin-right: 8px; }
+
+.active-clock { display: block; font-size: clamp(2.6rem, 10vw, 4rem); font-variant-numeric: tabular-nums; font-weight: 650; line-height: 1.2; }
+.active-clock[hidden] { display: none; }
+.clock-label { margin: .4rem 0; color: var(--muted, #616775); }
+#live-bias { width: 100%; margin: .7rem 0; }
+#bias-confirmation:empty { display: none; }

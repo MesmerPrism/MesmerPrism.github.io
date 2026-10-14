@@ -56,6 +56,19 @@
         <h2 id="guide-title">Connect to Quest</h2>
         <p id="guide-instruction" class="lead" aria-live="polite">Connect to read the current headset state.</p>
         <p id="guide-session-facts" class="stage" hidden></p>
+        <p id="guide-clock-label" class="clock-label">Official active time</p>
+        <output id="guide-active-clock" class="active-clock" aria-live="off" hidden>00:00</output>
+        <p id="guide-preparation-clock" class="clock-label" hidden></p>
+        <div id="guide-bias" hidden>
+          <p id="current-bias" aria-live="polite">Current bias unavailable</p>
+          <details class="foldout"><summary>Adjust breathing bias</summary>
+            <label for="live-bias">Requested bias <output id="live-bias-value">0%</output></label>
+            <input id="live-bias" type="range" min="0" max="100" step="1" value="0" disabled>
+            <p>0% follows the sensor signal. Higher values favor the breathing pattern. Valid tracking is still required.</p>
+            <button id="apply-live-bias" class="button button-secondary" type="button" disabled>Apply live bias</button>
+          </details>
+          <p id="bias-confirmation" role="status"></p>
+        </div>
         <p id="guide-pending" class="pending" role="status" hidden></p>
         <div id="guide-choices" class="guide-choices" hidden>
           <label for="guide-condition">Condition</label>
