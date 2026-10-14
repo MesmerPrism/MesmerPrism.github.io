@@ -164,3 +164,18 @@ the preserved unknown result. A caller may explicitly supply `observeForMs`
 issues no command. A selected finite window is an observer policy, not a Polar
 owner deadline or proof of failure. Session commands retain their separate
 existing owner receipt contract. No automatic retry is performed.
+
+Network status recovery is limited to a `TimeoutError` from an already
+authenticated connection's read-only status exchange. Recording controls become
+unavailable immediately. Two recovery attempts wait one and three seconds,
+respectively, then check the original device and gateway epoch and authenticate
+a fresh status reply under the original controller key and native runtime epoch.
+Each request retains its existing deadline (ten seconds for identity/direct
+network, fifteen seconds for relay exchanges). HTTP errors, failed authentication,
+revocation and changed scope retire the connection without recovery. Exhaustion,
+Disconnect and page retirement erase in-memory credentials and abort outstanding
+requests or recovery waits. Credentials are never persisted. Commands and receipt
+reads are never automatically retried by recovery; an uncertain original command
+retains its ID and normal read-only reconciliation rules after status returns.
+Host tests simulate these transitions; they do not establish browser permission,
+background scheduling or headset acceptance.

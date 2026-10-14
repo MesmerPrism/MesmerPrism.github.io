@@ -66,8 +66,8 @@ function deadlineFixture({relay=true}={}) {
   const vm=require('node:vm'),fs=require('node:fs'),timers=[],deadlines=[],attempts=[];
   const {gateway:stub,calls}=fixture();
   let now=0,delay=0,lost=false;
-  const context=vm.createContext({TextEncoder,TextDecoder,URL,crypto:webcrypto,
-    AbortSignal:{timeout(ms){
+  const context=vm.createContext({TextEncoder,TextDecoder,URL,crypto:webcrypto,AbortController,
+    AbortSignal:{any:AbortSignal.any.bind(AbortSignal),timeout(ms){
       const controller=new AbortController();deadlines.push(ms);
       timers.push({at:now+ms,controller});return controller.signal;
     }},fetch:async(url,options)=>{
@@ -132,7 +132,7 @@ test('default browser APIs retain Window, Crypto and SubtleCrypto receivers',asy
     sign(...args){assert.equal(this,subtle);used.sign++;return webcrypto.subtle.sign(...args);}
   };
   const cryptoApi={subtle,getRandomValues(bytes){assert.equal(this,cryptoApi);used.random++;return webcrypto.getRandomValues(bytes);}};
-  const context=vm.createContext({TextEncoder,TextDecoder,AbortSignal,URL,crypto:cryptoApi,fixtureFetch:stub.fetcher});
+  const context=vm.createContext({TextEncoder,TextDecoder,AbortSignal,AbortController,URL,crypto:cryptoApi,fixtureFetch:stub.fetcher});
   vm.runInContext(`globalThis.fetch=function(...args){
     if(this!==globalThis)throw new TypeError('Illegal invocation: Window receiver required');
     return fixtureFetch(...args);
@@ -142,4 +142,73 @@ test('default browser APIs retain Window, Crypto and SubtleCrypto receivers',asy
   await gateway.connect();
   assert.equal(gateway.active,true);assert.equal(calls.length,2);
   assert.deepEqual(used,{random:1,importKey:2,sign:2});
+});
+
+const timeout=()=>new DOMException('synthetic deadline','TimeoutError');
+async function interruptedStatus(tamper) {
+  const f=fixture(tamper);await f.gateway.connect();
+  const good=f.gateway.fetcher;f.gateway.fetcher=async()=>{throw timeout();};
+  await assert.rejects(f.gateway.read('status'),{name:'TimeoutError'});
+  f.gateway.fetcher=good;f.gateway.waitForRecovery=async()=>{};
+  return {...f,good};
+}
+test('status timeout disables writes then reauthenticates exact scope with fresh status only',async()=>{
+  const {gateway,calls}=await interruptedStatus();
+  assert.equal(gateway.active,false);assert.equal(gateway.key,key);
+  await assert.rejects(gateway.write(new TextEncoder().encode('{}')),/no command sent/);
+  await assert.rejects(gateway.read('receipt','1'.repeat(16)),/recovering/);
+  const status=await gateway.recoverStatus();
+  assert.equal(JSON.parse(new TextDecoder().decode(status)).p,'IDLE');assert.equal(gateway.active,true);
+  const posts=calls.filter(c=>c.options.method==='POST').map(c=>JSON.parse(c.options.body));
+  assert.deepEqual(posts.map(p=>p.action),['status','status']);assert.notEqual(posts[0].nonce,posts[1].nonce);
+});
+test('permanent outage ends after two attempts and erases credentials',async()=>{
+  const {gateway}=await interruptedStatus();let attempts=0;
+  gateway.fetcher=async()=>{attempts++;throw timeout();};
+  await assert.rejects(gateway.recoverStatus(),{name:'TimeoutError'});
+  assert.equal(attempts,2);assert.equal(gateway.key,'');assert.equal(gateway.retired,true);
+});
+for(const changed of [{enabled:false},{epoch:'124'},{device:'d'.repeat(32)}])test(`recovery denies identity change ${JSON.stringify(changed)}`,async()=>{
+  const {gateway}=await interruptedStatus();let calls=0;
+  gateway.fetcher=async()=>{calls++;return {ok:true,text:async()=>JSON.stringify({v:1,device,epoch,enabled:true,...changed})};};
+  await assert.rejects(gateway.recoverStatus(),/changed/);assert.equal(calls,1);assert.equal(gateway.key,'');
+});
+for(const failure of ['http','mac','nativeEpoch'])test(`recovery ${failure} fails closed without retry`,async()=>{
+  let changed=false;
+  const {gateway,good}=await interruptedStatus(reply=>{
+    if(changed&&failure==='mac')reply.mac='0'.repeat(64);
+    if(changed&&failure==='nativeEpoch'){
+      reply.payload=JSON.stringify({o:{e:'124',s:'observed'}});
+      reply.mac=sign(`RQG1-REPLY|${controller}|${device}|${epoch}|${reply.nonce}|${reply.action}|${reply.payload}`);
+    }return reply;
+  });changed=true;let count=0;
+  gateway.fetcher=async(...args)=>{count++;return failure==='http'?{ok:false,status:403}:good(...args);};
+  await assert.rejects(gateway.recoverStatus());assert.equal(count,failure==='http'?1:2);assert.equal(gateway.key,'');
+});
+for(const stage of ['wait','GET','POST'])test(`human close cancels recovery during ${stage}`,async()=>{
+  const {gateway,good}=await interruptedStatus();let entered;
+  const ready=new Promise(resolve=>entered=resolve);
+  if(stage==='wait')gateway.waitForRecovery=function(){entered();return Gateway.prototype.waitForRecovery.call(this,60000);};
+  else gateway.fetcher=async(url,options)=>{
+    if(options.method!==stage)return good(url,options);
+    entered();return new Promise((_,reject)=>options.signal.addEventListener('abort',()=>reject(options.signal.reason),{once:true}));
+  };
+  const recovery=gateway.recoverStatus();await ready;gateway.close();await assert.rejects(recovery);
+  assert.equal(gateway.active,false);assert.equal(gateway.key,'');assert.equal(gateway.retired,true);
+});
+test('unknown mutation timeout retires without recovery or replay',async()=>{
+  const {gateway}=fixture();await gateway.connect();let writes=0;
+  gateway.fetcher=async()=>{writes++;throw timeout();};
+  await assert.rejects(gateway.write(new TextEncoder().encode('{"v":1,"id":"1111111111111111","op":"arm"}')));
+  await assert.rejects(gateway.recoverStatus());assert.equal(writes,1);assert.equal(gateway.key,'');
+});
+
+test('two status response timeouts exhaust recovery without command or receipt dispatch',async()=>{
+  const {gateway,good}=await interruptedStatus();const actions=[];
+  gateway.fetcher=async(url,options)=>{
+    actions.push(options.method==='GET'?'identity':JSON.parse(options.body).action);
+    if(options.method==='POST')throw timeout();return good(url,options);
+  };
+  await assert.rejects(gateway.recoverStatus(),{name:'TimeoutError'});
+  assert.deepEqual(actions,['identity','status','identity','status']);assert.equal(gateway.key,'');
 });

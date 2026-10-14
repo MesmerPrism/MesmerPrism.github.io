@@ -907,3 +907,25 @@ test("Polar setup runtime change before write prevents dispatch",async()=>{
   await vm.runInContext('sendPolarSetup("connect")',f.context);
   assert.equal(f.writes(),0);assert.match(f.node("command-detail").textContent,/Polar setup changed/);
 });
+
+for(const cancel of [false,true])test(`network timeout pauses controls and ${cancel?'human cancellation retires generation':'same-scope read resumes without replay'}`,async()=>{
+  const f=fixture(()=>{throw Error('no command or receipt expected');});
+  let release,closed=false;
+  const bytes=new DataView(new TextEncoder().encode(JSON.stringify({v:1,m:'gated',p:'IDLE',o:{s:'observed',e:'123'}})).buffer);
+  const transport={active:true,retired:false,statusTimedOut:false,
+    read:async()=>{transport.active=false;transport.statusTimedOut=true;throw new DOMException('deadline','TimeoutError');},
+    recoverStatus:async report=>{report(1,2);await new Promise(resolve=>release=resolve);if(closed)throw Error('retired');transport.active=true;return bytes;},
+    close:()=>{closed=true;transport.active=false;transport.retired=true;release();}};
+  f.context.transport=transport;
+  vm.runInContext('networkTransport=transport;device=undefined;characteristics=undefined;pendingOriginal={id:"1111111111111111",state:"uncertain",deviceId:"original",epoch:"123"};',f.context);
+  const operation=vm.runInContext('refreshStatus()',f.context);await tick();
+  assert.equal(f.node('guide-title').textContent,'Reconnecting to Quest');
+  for(const id of ['guide-action','guide-finish','save-next','save-exit','start-session','pause-session','resume-session','arm-one','arm-two'])assert.equal(f.node(id).disabled,true,id);
+  assert.equal(f.node('disconnect').hidden,false);assert.equal(vm.runInContext('canCommand()',f.context),false);
+  if(cancel)vm.runInContext('cancelConnection()',f.context);else release();
+  await operation;
+  assert.equal(f.writes(),0);assert.equal(vm.runInContext('pendingOriginal.id',f.context),'1111111111111111');
+  assert.equal(vm.runInContext('networkRecovering',f.context),false);
+  if(cancel){assert.equal(closed,true);assert.equal(vm.runInContext('connected()',f.context),false);assert.match(f.node('connection-detail').textContent,/cancelled/);}
+  else {assert.equal(vm.runInContext('connected()',f.context),true);assert.equal(vm.runInContext('canCommand()',f.context),false);}
+});
