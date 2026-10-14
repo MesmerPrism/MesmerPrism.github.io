@@ -112,7 +112,7 @@ test("inert preview shows the actual scan prerequisite and active-session essent
   const choose=fixture(()=>({v:1,id:"unused",state:"pending"}),"?preview=1&state=select");
   assert.equal(choose.node("guide-polar-device").children[0].textContent,"Nearby Polar · app ref 3456");
   const complete=fixture(()=>({v:1,id:"unused",state:"pending"}),"?preview=1&state=complete");
-  assert.match(complete.node("guide-session-facts").textContent,/Condition 1 · active 00:00:30 · condition complete; recording continues/);
+  assert.match(complete.node("guide-session-facts").textContent,/Condition 1 · condition complete; recording continues/);
   assert.equal(complete.node("guide-title").textContent,"Condition complete · recording continues");
   assert.equal(complete.node("guide-action").textContent,"Finish & prepare next");
   assert.equal(complete.node("guide-action").disabled,true);
@@ -928,4 +928,40 @@ for(const cancel of [false,true])test(`network timeout pauses controls and ${can
   assert.equal(vm.runInContext('networkRecovering',f.context),false);
   if(cancel){assert.equal(closed,true);assert.equal(vm.runInContext('connected()',f.context),false);assert.match(f.node('connection-detail').textContent,/cancelled/);}
   else {assert.equal(vm.runInContext('connected()',f.context),true);assert.equal(vm.runInContext('canCommand()',f.context),false);}
+});
+
+for (const phase of ["ARMED","RUNNING","PAUSED"]) test(`live bias uses fenced session grant while ${phase}`,async()=>{
+  const f=fixture(get=>({v:1,id:get().id,state:"confirmed",detail:"Breathing bias applied and saved: 70%."}));
+  f.setStatus({...controlStatus(),p:phase,co:"DURABLE",bg:[25,0],q:{v:2,s:sessionRef,g:7,o:["set-bias"]}});
+  await vm.runInContext('sendCommand("set-bias","Apply breathing bias 70%","",70,sessionControlCapability(questStatus))',f.context);
+  assert.equal(f.writes(),1);assert.equal(f.request().b,70);assert.equal(f.request().op,"set-bias");
+  assert.match(f.node("bias-confirmation").textContent,/applied and saved/);
+});
+test("completed paused session prioritizes Resume and retains frozen official MM:SS",()=>{
+  const f=fixture(()=>({}));f.setStatus({...controlStatus(),p:"PAUSED",h:"vr-session",co:"DURABLE",ms:125000,q:{v:2,s:sessionRef,g:7,o:["resume","set-bias"]},bg:[30,2]});f.render();
+  assert.equal(f.node("guide-action").textContent,"Resume session");assert.equal(f.node("guide-active-clock").textContent,"02:05");
+  f.setNow(3000);f.render();assert.equal(f.node("guide-active-clock").textContent,"02:05");assert.equal(f.node("current-bias").textContent,"Current breathing bias: 30%");
+});
+test("armed clock is official zero with separate owner preparation elapsed",()=>{
+  const f=fixture(()=>({}));f.setStatus({...controlStatus(),p:"ARMED",ms:9999,pm:14000});f.render();
+  assert.equal(f.node("guide-active-clock").textContent,"00:00");assert.equal(f.node("guide-preparation-clock").textContent,"Preparation recording 00:14");
+});
+test("bias signing binds exact percent, bounded integer and retained grant",async()=>{
+  const f=fixture(get=>({v:1,id:get().id,state:"confirmed"}));f.setStatus({...controlStatus(),m:"gated",q:{v:2,s:sessionRef,g:7,o:["set-bias"]}});
+  vm.runInContext('accessCode="ABCDEFGH2345"',f.context);
+  f.context.testCharacteristics.challenge={readValue:async()=>new DataView(new TextEncoder().encode(JSON.stringify({v:1,n:"a".repeat(32)})).buffer)};
+  await vm.runInContext('sendCommand("set-bias","Bias","",100,sessionControlCapability(questStatus))',f.context);
+  const r=f.request();assert.equal(f.writes(),1);
+  const expected=require("node:crypto").createHmac("sha256","ABCDEFGH2345").update(`RQEC2|${"a".repeat(32)}|${r.id}|set-bias|${r.s}|${r.g}|${r.n}|100`).digest("hex").slice(0,32);
+  assert.equal(r.mac,expected);assert.ok(JSON.stringify(r).length<=240);
+  for(const value of [-1,101,1.5,true]){f.context.bad=value;await assert.rejects(vm.runInContext('signedSessionCommand("1".repeat(16),"set-bias",sessionControlCapability(questStatus),bad)',f.context));}
+});
+
+test("successful poll clears prior status error without overwriting unresolved command",async()=>{
+ const f=fixture(()=>({}));vm.runInContext('label("connection-detail","Status read failed: old error");showProgress("Earlier command","unknown","Original outcome still unknown")',f.context);
+ await vm.runInContext('refreshStatus()',f.context);assert.equal(f.node("connection-detail").textContent,"Quest status received.");assert.equal(f.node("command-detail").textContent,"Original outcome still unknown");
+});
+test("live bias rejects no grant and retired grant without issuing a command",async()=>{
+ const f=fixture(()=>({}));f.setStatus({...controlStatus(),q:{v:2,s:sessionRef,g:7,o:["pause"]}});
+ await vm.runInContext('sendCommand("set-bias","Bias","",50,sessionControlCapability(questStatus))',f.context);assert.equal(f.writes(),0);
 });

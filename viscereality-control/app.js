@@ -208,13 +208,13 @@ function sessionControlCapability(status) {
       || q.v !== 2 || typeof q.s !== "string" || !/^[0-9a-f]{32}$/.test(q.s)
       || !Number.isSafeInteger(q.g) || q.g <= 0 || q.g !== status.g
       || !Array.isArray(q.o) || new Set(q.o).size !== q.o.length
-      || q.o.some(op => !["start", "pause", "resume"].includes(op))) return null;
+      || q.o.some(op => !["start", "pause", "resume", "set-bias"].includes(op))) return null;
   return {v: 2, s: q.s, g: q.g, o: [...q.o]};
 }
 
 function sessionControlAllowed(op, status) {
   const capability = sessionControlCapability(status);
-  const phases = {start: ["ARMED"], pause: ["RUNNING", "RECORDING"], resume: ["PAUSED"]};
+  const phases = {start: ["ARMED"], pause: ["RUNNING", "RECORDING"], resume: ["PAUSED"], "set-bias": ["ARMED", "RUNNING", "RECORDING", "PAUSED"]};
   return !!capability && capability.o.includes(op) && status.rec === true
     && !status.pending && phases[op]?.includes(status.p) === true;
 }
@@ -265,7 +265,7 @@ function formatMs(value) {
   if (!Number.isSafeInteger(value) || value < 0) return "—";
   const seconds = Math.floor(value / 1000);
   const minutes = Math.floor(seconds / 60);
-  return `${String(Math.floor(minutes / 60)).padStart(2, "0")}:${String(minutes % 60).padStart(2, "0")}:${String(seconds % 60).padStart(2, "0")}`;
+  return `${String(minutes).padStart(2, "0")}:${String(seconds % 60).padStart(2, "0")}`;
 }
 
 function conditionLabel(condition) {
@@ -275,6 +275,7 @@ function conditionLabel(condition) {
 function stageTitle(status) {
   if (status.p === "RECOVERY" || status.recovery) return "Recovery needs attention";
   if (status.p === "ERROR") return status.rec ? "Session needs attention" : "Condition was not armed";
+  if (status.p === "PAUSED") return status.co === "DURABLE" ? "Paused · condition complete" : "Paused · resume when ready";
   if (status.co === "DURABLE" && status.rec) return "Condition complete · recording continues";
   if (status.co === "PERSISTENCE_PENDING" && status.rec) return "Condition time reached · confirming completion";
   return ({ ARMED: "Armed · ready for the experimenter", PAUSED: "Paused · resume when ready",
@@ -314,7 +315,7 @@ function guidedStep(status) {
   if (["ARMING","STARTING","SAVING","FINALIZING"].includes(status.p) || status.pending)
     return {title: status.p === "SAVING" || status.p === "FINALIZING" ? "Saving recording" : "Preparing session", instruction: "Waiting for the Quest to finish its current operation.", action: null};
   if (status.rec) {
-    if (status.co === "DURABLE") return {title:"Condition complete · recording continues",instruction:"Finish and save this recording, then prepare the headset for the next participant.",action:"finish",label:"Finish & prepare next"};
+    if (status.co === "DURABLE" && status.p !== "PAUSED") return {title:"Condition complete · recording continues",instruction:"Finish and save this recording, then prepare the headset for the next participant.",action:"finish",label:"Finish & prepare next"};
     if (["ARMED","PAUSED","RUNNING","RECORDING"].includes(status.p)
         && !sessionControlCapability(status)) return {title:"Session control unavailable",instruction:"The Quest has not granted browser session controls. Refresh status and check the app before continuing.",action:"refresh",label:"Refresh status",finish:status.p!=="ARMED"};
     if (status.p === "ARMED") return {title: "Armed", instruction: "The recording is prepared. Start when the participant is ready.", action: "start", label: "Start session"};
@@ -343,7 +344,27 @@ function renderGuide(s) {
   label("guide-instruction", step.instruction);
   const facts=byId("guide-session-facts");
   facts.hidden = !s?.rec;
-  if (s?.rec) facts.textContent = `${conditionLabel(s.c)} · active ${formatMs(s.ms)}${s.co === "DURABLE" ? " · condition complete; recording continues" : ""}`;
+  if (s?.rec) facts.textContent = `${conditionLabel(s.c)}${s.co === "DURABLE" ? " · condition complete; recording continues" : ""}`;
+  const timer = byId("guide-active-clock");
+  timer.hidden = !s?.rec;
+  timer.textContent = s?.rec ? formatMs(s.p === "ARMED" ? 0 : s.ms) : "—";
+  byId("guide-clock-label").hidden = !s?.rec;
+  label("guide-clock-label", s?.p === "ARMED" ? "Official active time · waiting for Start" : s?.p === "PAUSED" ? "Official active time · paused" : "Official active time");
+  const preparation = byId("guide-preparation-clock");
+  preparation.hidden = s?.p !== "ARMED" || !Number.isSafeInteger(s?.pm);
+  preparation.textContent = !preparation.hidden ? `Preparation recording ${formatMs(s.pm)}` : "";
+  const bias = Array.isArray(s?.bg) && s.bg.length === 2 && Number.isInteger(s.bg[0]) && s.bg[0] >= 0 && s.bg[0] <= 100 ? s.bg[0] : null;
+  byId("guide-bias").hidden = !s?.rec || bias === null;
+  const biasScope = s?.rec && bias !== null ? `${s?.o?.e || ""}:${s.g}` : "";
+  if (byId("live-bias").dataset.scope !== biasScope) {
+    byId("live-bias").dataset.scope = biasScope;
+    byId("live-bias").value = String(bias ?? 0);
+    label("bias-confirmation", "");
+  }
+  label("current-bias", bias === null ? "Current bias unavailable" : `Current breathing bias: ${bias}%`);
+  byId("live-bias").disabled = !canCommand() || !sessionControlAllowed("set-bias", s);
+  byId("apply-live-bias").disabled = byId("live-bias").disabled;
+  label("live-bias-value", `${byId("live-bias").value}%`);
   const pending = commandBusy || !!s?.pending || connected() && !!pendingOriginal && pendingOriginal.state !== "uncertain";
   const pendingNode = byId("guide-pending");
   pendingNode.hidden = !pending;
@@ -428,7 +449,7 @@ function render() {
       || !!s.pending || audio !== "track-ready";
   }
   const guidanceAvailable = s?.b?.includes("pattern-ready");
-  byId("breath-bias").disabled = !canCommand() || !guidanceAvailable;
+  byId("breath-bias").disabled = !canCommand() || !guidanceAvailable || !!s?.rec;
   label("breath-bias-value", `${byId("breath-bias").value}%`);
 
   label("stage-title", s ? stageTitle(s) : "No live session readback");
@@ -556,6 +577,7 @@ async function refreshStatus() {
     receiveNativeAge(status);
     questStatus = status;
     lastStatusAt = Date.now();
+    label("connection-detail", "Quest status received.");
     if (pendingOriginal?.state === "reconciled_receipt" && !status.pending) clearOriginal();
     render();
     await observeOriginalReceipt(status,generation);
@@ -715,16 +737,20 @@ async function signedCommand(id, op, condition, bias) {
 
 function delay(ms) { return new Promise((resolve) => setTimeout(resolve, ms)); }
 
-async function signedSessionCommand(id, op, selected) {
+async function signedSessionCommand(id, op, selected, bias = 0) {
   assertSelectedSessionControl(op, selected);
   const nonce = randomHex(8);
   const message = {v: 2, id, op, s: selected.s, g: selected.g, n: nonce};
+  if (op === "set-bias") {
+    if (!Number.isInteger(bias) || bias < 0 || bias > 100) throw new Error("Bias must be an integer from 0 to 100");
+    message.b = bias;
+  }
   if (questStatus.m === "gated" && !networkTransport) {
     const source = {readValue: () => transportRead("challenge")};
     const challenge = parseJson(await gattOperation(() => source.readValue()));
     assertSelectedSessionControl(op, selected);
     if (!/^[0-9a-f]{32}$/.test(challenge.n || "")) throw new Error("Invalid Quest challenge");
-    const input = `RQEC2|${challenge.n}|${id}|${op}|${selected.s}|${selected.g}|${nonce}`;
+    const input = `RQEC2|${challenge.n}|${id}|${op}|${selected.s}|${selected.g}|${nonce}${op === "set-bias" ? `|${bias}` : ""}`;
     const key = await crypto.subtle.importKey("raw", encoder.encode(accessCode),
       {name: "HMAC", hash: "SHA-256"}, false, ["sign"]);
     message.mac = hex(new Uint8Array(await crypto.subtle.sign("HMAC", key, encoder.encode(input))).slice(0, 16));
@@ -832,7 +858,7 @@ function cancelPolarObservation() {
 
 async function sendCommand(op, name, condition = "", bias = 0, selectedSession = null,selectedPolar=null,observationOptions={},selectedSetup=null) {
   if (!canCommand(op)) return;
-  const durable = !selectedSession && !selectedPolar && !selectedSetup && ["arm", "save-next", "save-exit"].includes(op);
+  const durable = op === "set-bias" || !selectedSession && !selectedPolar && !selectedSetup && ["arm", "save-next", "save-exit"].includes(op);
   const observer = selectedPolar ? createPolarObservation(observationOptions)
     : durable || selectedSetup ? createReceiptObservation(observationOptions, "Command") : null;
   if (observer?.cancelled) { observer.close(); return; }
@@ -844,9 +870,10 @@ async function sendCommand(op, name, condition = "", bias = 0, selectedSession =
   commandTiming = {id, name, click: performance.now(), writeStart: null, writeEnd: null, receipt: null, rendered: null};
   const generation = connectionGeneration;
   showProgress(name, "none", "Preparing authenticated command…");
+  if (op === "set-bias") label("bias-confirmation", "Waiting for saved bias confirmation…");
   render();
   try {
-    const preparation = selectedSetup ? signedPolarSetup(id,op,selectedSetup) : selectedPolar ? signedPolarStop(id,op,selectedPolar) : selectedSession ? signedSessionCommand(id, op, selectedSession)
+    const preparation = selectedSetup ? signedPolarSetup(id,op,selectedSetup) : selectedPolar ? signedPolarStop(id,op,selectedPolar) : selectedSession ? signedSessionCommand(id, op, selectedSession, bias)
       : signedCommand(id, op, condition, bias);
     const bytes = await (observer ? observer.wait(preparation) : preparation);
     if (selectedSession) assertSelectedSessionControl(op, selectedSession);
@@ -899,17 +926,20 @@ async function sendCommand(op, name, condition = "", bias = 0, selectedSession =
             showProgress(name,"unknown","Unexpected Polar completion receipt; sensor stop is not qualified. Do not replay.");break;
           }
           showProgress(name, "confirmed", receipt.detail || "Confirmed by the Quest runtime.");
+          if (op === "set-bias") label("bias-confirmation", receipt.detail || `Applied and saved: ${bias}%`);
           commandTiming.rendered = performance.now();
           break;
         } else if (receipt.state === "rejected") {
           terminalReceipt = true;
           if (pendingOriginal?.id === id) clearOriginal();
           showProgress(name, "failed", receipt.detail || "Quest rejected the request.");
+          if (op === "set-bias") label("bias-confirmation", receipt.detail || "Bias change rejected; current bias is unchanged.");
           break;
         } else if (receipt.state === "outcome_unknown") {
           terminalReceipt = true;
           if (pendingOriginal?.id === id) clearOriginal();
           showProgress(name, "unknown", receipt.detail || "Quest could not confirm the result. Check the headset before retrying.");
+          if (op === "set-bias") label("bias-confirmation", "Bias outcome unknown; inspect current bias before another change.");
           break;
         }
       }
@@ -918,7 +948,10 @@ async function sendCommand(op, name, condition = "", bias = 0, selectedSession =
     }
     if (generation === connectionGeneration && !terminalReceipt && Date.now() >= deadline) showProgress(name, "unknown", "No confirmation arrived. Check the headset before retrying.");
   } catch (error) {
-    if (generation === connectionGeneration) showProgress(name, "unknown", `Command result unavailable: ${error.message}. Check the headset before retrying.`);
+    if (generation === connectionGeneration) {
+      showProgress(name, "unknown", `Command result unavailable: ${error.message}. Check the headset before retrying.`);
+      if (op === "set-bias") label("bias-confirmation", "Bias result unavailable. Check the current bias and original receipt before retrying.");
+    }
   } finally {
     if (pendingOriginal?.id === id && pendingOriginal.state === "live") pendingOriginal.state="uncertain";
     if (commandTiming?.id === id) {
@@ -978,6 +1011,12 @@ if (typeof window.addEventListener === "function") {
     render();
   });
 }
+byId("live-bias").addEventListener("input", () => label("live-bias-value", `${byId("live-bias").value}%`));
+byId("apply-live-bias").addEventListener("click", () => {
+  if (!canCommand() || !sessionControlAllowed("set-bias", questStatus)) return;
+  const bias = Number(byId("live-bias").value);
+  return sendCommand("set-bias", `Apply breathing bias ${bias}%`, "", bias, sessionControlCapability(questStatus));
+});
 byId("connect").addEventListener("click", connect);
 byId("reconnect").addEventListener("click", () => connect({reuseSelected: true}));
 function cancelConnection() {
