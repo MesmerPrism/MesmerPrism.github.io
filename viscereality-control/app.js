@@ -16,6 +16,7 @@ const preview = new URLSearchParams(location.search).get("preview") === "1";
 let device;
 let characteristics;
 let networkTransport;
+let networkRecovering = false;
 let bleOwnerIdentity;
 let selectedRoute = "ble";
 let questStatus;
@@ -299,6 +300,7 @@ function stageInstruction(status) {
 }
 
 function guidedStep(status) {
+  if (networkRecovering) return {title:"Reconnecting to Quest",instruction:"Recording controls are paused while the same enrolled headset is checked. No command will be replayed.",action:null};
   if (pendingOriginal && connected()) {
     if (pendingOriginal.state === "uncertain") return {title:"Command outcome unknown",instruction:"The original receipt is unavailable or belongs to another Quest owner. Check the headset and current session state, then acknowledge before issuing another recording action.",action:"reconcile",label:"I checked the Quest state"};
     return {title:"Checking original command",instruction:pendingOriginal.state === "reconciled_receipt" ? "The original receipt was found. Waiting for a fresh session readback." : "Reading the original Quest receipt without sending the command again.",action:null};
@@ -378,18 +380,18 @@ function renderGuide(s) {
 
 function render() {
   const live = connected();
-  byId("connection-options").hidden = live || preview;
+  byId("connection-options").hidden = live || networkRecovering || preview;
   const s = (live || preview) && freshStatus() ? questStatus : undefined;
   renderGuide(s);
   label('native-readback-age', nativeAgeLabel());
   const conn = byId("connection-label");
-  conn.textContent = preview ? "Preview · not connected" : live ? s ? "Quest status current" : "Transport connected · status unavailable" : "Not connected";
+  conn.textContent = preview ? "Preview · not connected" : networkRecovering ? "Reconnecting · controls paused" : live ? s ? "Quest status current" : "Transport connected · status unavailable" : "Not connected";
   conn.classList.toggle("connected", live && !!s && !preview);
   byId("connect").hidden = live || preview;
-  byId("connect").disabled = connecting;
-  byId("reconnect").hidden = live || connecting || preview || !device;
+  byId("connect").disabled = connecting || networkRecovering;
+  byId("reconnect").hidden = live || connecting || networkRecovering || preview || !device;
   byId("reconnect").disabled = connecting;
-  byId("disconnect").hidden = !live && !connecting;
+  byId("disconnect").hidden = !live && !connecting && !networkRecovering;
   byId("disconnect").textContent = connecting ? "Cancel connection" : "Disconnect";
   byId("refresh").disabled = !live || commandBusy;
   byId("cancel-polar-observation").hidden = !polarObservation && !durableObservation;
@@ -532,7 +534,22 @@ async function refreshStatus() {
   reading = true;
   try {
     const source = {readValue: () => transportRead("status")};
-    const status = parseJson(await gattOperation(() => source.readValue()));
+    let bytes;
+    try { bytes = await gattOperation(() => source.readValue()); }
+    catch (error) {
+      const recovering = networkTransport;
+      if (generation !== connectionGeneration || !recovering?.statusTimedOut || recovering.retired) throw error;
+      networkRecovering = true;
+      questStatus = undefined; lastStatusAt = 0; render();
+      try {
+        bytes = await recovering.recoverStatus((attempt,total)=>{
+          label("connection-detail",`Status timed out. Reconnecting to the same enrolled Quest (${attempt}/${total}); no commands are resent.`);
+        });
+        if (generation !== connectionGeneration || networkTransport !== recovering) throw new Error("Connection retired");
+        label("connection-detail","Enrolled headset reauthenticated. Current native status received; no command was replayed.");
+      } finally { if (generation === connectionGeneration) networkRecovering = false; }
+    }
+    const status = parseJson(bytes);
     if (!["open", "gated"].includes(status.m)) throw new Error("Invalid Quest access mode");
     if (status.p === "UNAVAILABLE") throw new Error("Quest status source unavailable");
     if (!["IDLE", "STARTING", "ARMING", "ARMED", "RUNNING", "PAUSED", "RECORDING", "FINALIZING", "SAVING", "RECOVERY", "ERROR"].includes(status.p)) throw new Error("Invalid Quest session phase");
@@ -563,6 +580,7 @@ function scheduleReconnect() {
   label("connection-detail", `Quest unreachable. Reconnecting to the previously selected headset in ${Math.ceil(wait/1000)} seconds (${reconnectTries}/5).`);
 }
 function disconnected(reason = "Quest GATT disconnected. Reconnecting to the selected Quest when available.") {
+  networkRecovering = false;
   if (pendingOriginal?.state === "live") pendingOriginal.state="observing";
   polarObservation?.cancel("Connection retired before a Polar receipt.");
   durableObservation?.cancel("Connection retired before a command receipt.");
@@ -1069,7 +1087,7 @@ function routeChanged() {
   render();
 }
 async function connectNetwork() {
-  if (connected() || connecting || preview || !pageActive) return;
+  if (connected() || connecting || networkRecovering || preview || !pageActive) return;
   connecting=true;
   const generation=++connectionGeneration;
   let candidate;

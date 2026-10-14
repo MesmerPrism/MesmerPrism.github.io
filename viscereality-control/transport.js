@@ -19,6 +19,9 @@
       if (!/^[0-9a-f]{32}$/.test(controller) || !/^[0-9a-f]{64}$/.test(key) || !/^[0-9a-f]{32}$/.test(device)) throw new Error("Enter the controller ID, device ID and controller key approved on the headset");
       if (routeToken && (!/\/v1\/relay\/[A-Za-z0-9_-]+\/exchange$/.test(new URL(this.url).pathname) || /[\r\n]/.test(routeToken))) throw new Error("Use the provisioned relay session exchange URL and token");
       Object.assign(this,{controller,key,device,routeToken,fetcher,cryptoApi,active:false,retired:false});
+      this.lifetime=new AbortController();
+      this.statusTimedOut=false;
+      this.recovering=false;
     }
     async sign(text) {
       const key = await this.cryptoApi.subtle.importKey("raw",enc.encode(this.key),{name:"HMAC",hash:"SHA-256"},false,["sign"]);
@@ -31,7 +34,7 @@
       // Relay exchanges may wait twelve seconds for the device; allow response
       // transit time without extending direct-LAN or identity request deadlines.
       const timeoutMs=this.routeToken && method==="POST" ? 15000 : 10000;
-      const response = await this.fetcher(url,{method,body:body && JSON.stringify(body),headers,cache:"no-store",credentials:"omit",redirect:"error",referrerPolicy:"no-referrer",signal:AbortSignal.timeout(timeoutMs)});
+      const response = await this.fetcher(url,{method,body:body && JSON.stringify(body),headers,cache:"no-store",credentials:"omit",redirect:"error",referrerPolicy:"no-referrer",signal:AbortSignal.any([this.lifetime.signal,AbortSignal.timeout(timeoutMs)])});
       if (!response.ok) throw new Error(`Gateway unavailable (${response.status}); reconnect and read current state`);
       const text = await response.text();
       if (text.length > 65536) throw new Error("Gateway response too large");
@@ -50,6 +53,7 @@
     }
     async exchange(action,payload) {
       if (this.retired) throw new Error("Connection retired");
+      if ((this.statusTimedOut || this.recovering) && action!=="status") throw new Error("Connection recovering; read current status before commands");
       const nonce=hex(this.cryptoApi.getRandomValues(new Uint8Array(16))), serialized=JSON.stringify(payload);
       const mac=await this.sign(`RQG1|${this.controller}|${this.epoch}|${nonce}|${action}|${serialized}`);
       try {
@@ -60,19 +64,56 @@
         const result=JSON.parse(reply.payload);
         if(action==="status" && this.nativeEpoch && (result.o?.e!==this.nativeEpoch || result.o?.s!=="observed")) throw new Error("Native runtime changed; reconnect without replaying commands");
         return result;
-      } catch(error) { this.close(); throw error; }
+      } catch(error) {
+        if(action==="status" && error?.name==="TimeoutError" && !this.retired && (this.active || this.recovering)) {
+          this.active=false;this.statusTimedOut=true;
+        } else this.close();
+        throw error;
+      }
+    }
+    waitForRecovery(ms) {
+      return new Promise((resolve,reject)=>{
+        const signal=this.lifetime.signal;
+        if(signal.aborted){reject(signal.reason);return;}
+        const cancel=()=>{clearTimeout(timer);reject(signal.reason);};
+        const timer=setTimeout(()=>{signal.removeEventListener("abort",cancel);resolve();},ms);
+        signal.addEventListener("abort",cancel,{once:true});
+      });
+    }
+    async recoverStatus(onAttempt=()=>{}) {
+      if(this.retired || !this.statusTimedOut || this.recovering) throw new Error("Status recovery unavailable");
+      this.recovering=true;
+      try {
+        for(let attempt=1;attempt<=2;attempt++) {
+          onAttempt(attempt,2);
+          await this.waitForRecovery(attempt===1?1000:3000);
+          if(this.retired) throw new Error("Connection retired");
+          try {
+            const hint=await this.request("GET");
+            if(hint.v!==1 || hint.device!==this.device || hint.epoch!==this.epoch || hint.enabled!==true) throw new Error("Gateway enrollment or owner changed; reconnect manually");
+            const status=await this.exchange("status",{});
+            if(status.o?.s!=="observed" || status.o.e!==this.nativeEpoch || this.retired) throw new Error("Native runtime changed; reconnect without replaying commands");
+            this.statusTimedOut=false;this.active=true;
+            return new DataView(enc.encode(JSON.stringify(status)).buffer);
+          } catch(error) {
+            if(error?.name!=="TimeoutError" || this.retired || attempt===2) throw error;
+          }
+        }
+      } catch(error) {this.close();throw error;}
+      finally {this.recovering=false;}
     }
     async read(name,id) {
       const payload=await this.exchange(name,name==="receipt"?{id}:{});
       return new DataView(enc.encode(JSON.stringify(payload)).buffer);
     }
     async write(bytes) {
+      if(!this.active) throw new Error("Connection unavailable; no command sent");
       const command=JSON.parse(new TextDecoder().decode(bytes));
       delete command.mac;
       this.lastId=command.id;
       return this.exchange("command",command);
     }
-    close() { this.active=false; this.retired=true; this.key=""; this.routeToken=""; }
+    close() { this.active=false; this.retired=true; this.statusTimedOut=false; this.recovering=false; this.key=""; this.routeToken=""; this.lifetime.abort(); }
   }
   function ble(characteristics) {
     return {read:(name)=>characteristics[name].readValue(),write:bytes=>characteristics.command.writeValueWithResponse(bytes)};
