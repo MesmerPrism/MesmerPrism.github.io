@@ -2,7 +2,7 @@
 
 Source: https://mesmerprism.com/
 Canonical HTML: https://mesmerprism.com/
-Generated: 2026-09-16
+Generated: 2026-10-27
 Description: Till Holzapfel: PhD research in mixed-ability human–swarm interaction, Combinatorial Swarmability, embodied perception, biofeedback, and open-source tools.
 Markdown: https://mesmerprism.com/index.md
 Plain text: https://mesmerprism.com/index.txt
@@ -71,8 +71,9 @@ Till Holzapfel
 
  [Rusty Morphospace](https://mesmerprism.com/projects/rusty-morphospace.html) is the
  open-source infrastructure thread: making immersive systems easier to
- build, operate, and inspect. Extending this work toward robotic systems,
- including Reachy Mini, is a planned next step.
+ build, operate, and inspect. The
+ [Reachy Mini browser controller](https://mesmerprism.com/reachy-mini/) is a working
+ robotics prototype; integration with that infrastructure remains planned.
 
  Projects
 
@@ -155,6 +156,29 @@ Till Holzapfel
 
  [Tooling overview](https://mesmerprism.com/projects/viscereality-companion.html)
  [Earlier docs](https://mesmerprism.github.io/ViscerealityCompanion/)
+
+ Browser controls for a desktop robot
+
+### [Reachy Mini](https://mesmerprism.com/reachy-mini/)
+
+ A browser interface for camera, audio, head and antenna controls, with
+ a hardware-free demo and guided connection and recovery. Requested
+ targets and measured robot state remain distinct. Movement accuracy
+ and serial reliability are active investigations.
+
+ Status
+ Working prototype; hardware qualification ongoing
+ Artifact
+ Browser app, local bridge and source download
+ License
+ MIT for original controller code
+
+ Reachy Mini / Robotics / Browser control / Diagnostics
+
+ [Open controller](https://mesmerprism.com/reachy-mini/)
+ [Try the demo](https://mesmerprism.com/reachy-mini/#demo)
+ [Verification notes](https://mesmerprism.com/reachy-mini/source/docs/STATUS.md)
+ [Source](https://github.com/MesmerPrism/reachy-mini-browser-control)
 
  Computational morphology platform
 
