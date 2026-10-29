@@ -1,20 +1,20 @@
 {
-  "version": "0.3.6",
+  "version": "0.3.7",
   "files": [
     {
-      "path": "assets/RobotModel-DwKFX63H.js",
+      "path": "assets/RobotModel-CKRnKoSB.js",
       "bytes": 85821,
-      "sha256": "1a9acda69b0c914bdc92dc6bfe699428adbc0a9ed86f61b6f557a69d20bb6116"
+      "sha256": "dbbd2f3fdb78f989d01b051cc2fda402166cc6876df26148630756c2875ecd8c"
     },
     {
-      "path": "assets/SimulatedCamera-DpFOAllz.js",
-      "bytes": 4565,
-      "sha256": "bcbd879782cd9d1a1594a3bc31e29e86683906c5b72c6d88b11f40fcbe3f76fc"
+      "path": "assets/SimulatedCamera-C-OXsNIr.js",
+      "bytes": 4552,
+      "sha256": "466deddecf3d9860af55c1dfbf6e175dfd997e815def5bdb8ebd0509ff804a84"
     },
     {
-      "path": "assets/WebXRControls-DfTIa-LB.js",
+      "path": "assets/WebXRControls-C9VNpTMi.js",
       "bytes": 9794,
-      "sha256": "d4fe029e85b1c69cc9aca9b9bdbc489bcdc541e1091278e73e58cbad0ab4dcee"
+      "sha256": "543e130fdd764f4fa0f5cac6723461219195ae8414914866337e41ec7524970f"
     },
     {
       "path": "assets/WebXRControls-YRAoBpK6.css",
@@ -27,14 +27,14 @@
       "sha256": "ea4fe2bad1e747547dfb20d1e1d1e17d02c20b41a9ac6b6ccf8bf2163a536e96"
     },
     {
-      "path": "assets/demo-sdk-B-DcS4x8.js",
+      "path": "assets/demo-sdk-C7EsTqsC.js",
       "bytes": 1317,
-      "sha256": "50d625acc5f7169553f96ca1f106b0479e5d2277c5b3adf4927bc06dfd5b7d35"
+      "sha256": "d76ee05228746e18d73907f4da2b269af7fb5b7764de3950ebada270abfe20b9"
     },
     {
-      "path": "assets/head-tracker-fX2IH65l.js",
-      "bytes": 4679,
-      "sha256": "47afb11a4b5b570baec68c87e035cfe9e3e05129f21d9080214d021600a48f19"
+      "path": "assets/head-tracker-Cvv6zmS1.js",
+      "bytes": 4677,
+      "sha256": "c45637fb2c69471551ffcd6d7f92ad457d76689f25a23c2cab5f9895b11707ba"
     },
     {
       "path": "assets/head-tracker.worker-CC2R4iy5.js",
@@ -42,14 +42,14 @@
       "sha256": "b97c31aafd45c7e885d6abe3ea85e3e7dc414294532c25741b64f4e017c5699a"
     },
     {
-      "path": "assets/index-BJ4Q_gAD.js",
-      "bytes": 468887,
-      "sha256": "843f216007ea08711ee9fc183f28eefa325cfcac217d2862b93410bcdaff8064"
+      "path": "assets/index-6wbluCx7.js",
+      "bytes": 476282,
+      "sha256": "4ced41f8d74638e1721bc0942fbaeabe58b5150c7a7ff2a9f88d2d692b234d3f"
     },
     {
-      "path": "assets/index-CiYp25PH.css",
-      "bytes": 21800,
-      "sha256": "0e04ea7aac1dba45ed8dd37b5e8142bcf11a4fcce666d242323432a2e1a7335b"
+      "path": "assets/index-CwH1LHxC.css",
+      "bytes": 22599,
+      "sha256": "ab0d37cbb1320748cfc426ac2a628938b6ce9a7d84769c2555759a0a354160f3"
     },
     {
       "path": "assets/newsreader-latin-ext-BQn1nviT.woff2",
@@ -78,8 +78,8 @@
     },
     {
       "path": "index.html",
-      "bytes": 492,
-      "sha256": "d685ca56ae3c01e376e5eb8c65591eaf17b64df2513ec43e5f074c8e3ffc6bc7"
+      "bytes": 514,
+      "sha256": "41b6c46db3b10a32cda34d226d57911e5574f712ce866ccbb19444af80fcd9f6"
     },
     {
       "path": "mediapipe/assets.json",

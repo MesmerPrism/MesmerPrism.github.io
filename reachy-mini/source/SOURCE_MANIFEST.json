@@ -1,9 +1,9 @@
 {
   "schema": "reachy.public-source.v1",
   "name": "reachy-mini-browser-control",
-  "version": "0.3.6",
-  "sourceRevision": "cef24c9e88dd15bce06dd34c4a4cc97da207e6bb",
-  "sourceTreeSha256": "61551025f45eb77f7906af8e9a753fa89c6bd2bc7f00843e1016b68ef3f8e9e2",
+  "version": "0.3.7",
+  "sourceRevision": "b11357c2311bbc058195436f74cdbb5ef71ac459",
+  "sourceTreeSha256": "b2b940ebbd0df250c3f39426dfe42d2573b7c33549966745971f14c5542304d7",
   "originalCodeLicense": "MIT",
   "dependencyLicenses": "THIRD_PARTY_NOTICES.md",
   "exclusions": [
@@ -52,8 +52,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 9690,
-      "sha256": "5fb756f84354d04ebc7dcfbdc97e82a59674bd05118a9e490de66008aec0000c",
+      "bytes": 9927,
+      "sha256": "93e87ab315a03cb65a2011dcd87acd620ba96a02a977b6c1235230cf082bc3b4",
       "sitePath": "README.md"
     },
     {
@@ -82,8 +82,8 @@
     },
     {
       "path": "docs/DAEMON_1_11_COMPATIBILITY.md",
-      "bytes": 5963,
-      "sha256": "d270bcdbcf150e163540c9c5a6827fb882bf94398ecd5eb6c01ef3a5c59223f6",
+      "bytes": 7316,
+      "sha256": "f56b98665e2d608469c8610dd8c542a4628457807b19cef98463f3659325cba8",
       "sitePath": "docs/DAEMON_1_11_COMPATIBILITY.md"
     },
     {
@@ -142,8 +142,8 @@
     },
     {
       "path": "docs/SETUP.md",
-      "bytes": 17051,
-      "sha256": "60c21ca9716ef961b9213bf72dcfa65540634c21be18631a547a8efed4f9717d",
+      "bytes": 17568,
+      "sha256": "df7b9063742df3c21fa4b5e8a02db8f70c20df235541cb08a4f04a0859cd2732",
       "sitePath": "docs/SETUP.md"
     },
     {
@@ -154,8 +154,8 @@
     },
     {
       "path": "docs/STATUS.md",
-      "bytes": 248662,
-      "sha256": "1c17d9c294fdd0c0ae1e593308c637874147c8a3b6047b0535e578ecc52bb336",
+      "bytes": 250290,
+      "sha256": "a5e47b8a49b22d0128dea3dd5b2229aa415123088b3506707eb50863163d0a96",
       "sitePath": "docs/STATUS.md"
     },
     {
@@ -305,14 +305,20 @@
     {
       "path": "package-lock.json",
       "bytes": 77313,
-      "sha256": "104e138a7c01017a2e3c528e55b50cb40f305077ee6c6c23e25fe3ccf8138a2a",
+      "sha256": "c0ef595d2a24291efdab268417a4666dd354e1d588ff7e1f6b03ff6f760e4ea9",
       "sitePath": "package-lock.json"
     },
     {
       "path": "package.json",
       "bytes": 1013,
-      "sha256": "2daaae86696c6f36ce44448c4d7f013f740aebc9a401bda14b1709c0597c47db",
+      "sha256": "5810f7e8b72447478a5466fe4827f48b1f88602f737c23ac3fa1a15ae03799ab",
       "sitePath": "package.json"
+    },
+    {
+      "path": "public-site/ConnectionGuide.jsx",
+      "bytes": 5966,
+      "sha256": "f04d44f771494e8edefb132a96beabf83b5e3b63b1f24f88645954dbb697dbad",
+      "sitePath": "public-site/ConnectionGuide.jsx"
     },
     {
       "path": "public-site/ControllerDiagnostics.jsx",
@@ -328,8 +334,8 @@
     },
     {
       "path": "public-site/FirstSetup.jsx",
-      "bytes": 31847,
-      "sha256": "950f3d28517426fa1954aa1a2905c750c35f62cf5a2d01e69cf4701cb7db7671",
+      "bytes": 32644,
+      "sha256": "f5ad6a2ae4c6b40559ac0c1ce616c5020e355ebd07b8182d8ed3cbc04cc09ed4",
       "sitePath": "public-site/FirstSetup.jsx"
     },
     {
@@ -376,8 +382,8 @@
     },
     {
       "path": "public-site/WirelessPanel.jsx",
-      "bytes": 29927,
-      "sha256": "09f18ab5884080e5e69c08bdfc250f168dc8dbaead3a5d26e9fd40841027ff3e",
+      "bytes": 32021,
+      "sha256": "05f3cfc0ecd46635c38a7c5c5fd0eab4344d985ce2741ab53f0bb130766d079b",
       "sitePath": "public-site/WirelessPanel.jsx"
     },
     {
@@ -400,8 +406,8 @@
     },
     {
       "path": "public-site/main.jsx",
-      "bytes": 11644,
-      "sha256": "17a4726d5c297a327e12fe440045e1d619af421f1518e18a2a3a69e5e31feeef",
+      "bytes": 11842,
+      "sha256": "2ec233a4ccc2f47dfa0a36b5c853703a7331d207c1ae47ed1dc2ffe94844dec3",
       "sitePath": "public-site/main.jsx"
     },
     {
@@ -418,8 +424,8 @@
     },
     {
       "path": "public-site/style.css",
-      "bytes": 19053,
-      "sha256": "633c4dc20c588fe891b172586d1ae325bf7bd51ae3ab5cf263df358559571070",
+      "bytes": 19925,
+      "sha256": "0c690cb1e703aa8e4b6a4edad0ead4f8c9f134898db3e51d698bfc1c1dbea77d",
       "sitePath": "public-site/style.css"
     },
     {
@@ -561,10 +567,22 @@
       "sitePath": "src/command-flight.mjs"
     },
     {
+      "path": "src/connection-readiness.mjs",
+      "bytes": 7613,
+      "sha256": "5e692dce45265026fde37d5a6dfb2a0b25dfb486a0f9e2f2c7e2a154dfd1ce5d",
+      "sitePath": "src/connection-readiness.mjs"
+    },
+    {
       "path": "src/controller-diagnostics.mjs",
       "bytes": 6365,
       "sha256": "33ac73b2ba218b781207c70432f25163a500954f2e17482c46cb7eaf56fb9b16",
       "sitePath": "src/controller-diagnostics.mjs"
+    },
+    {
+      "path": "src/daemon-compatibility.mjs",
+      "bytes": 408,
+      "sha256": "c77093dbf51636fd8b6cf06f3cbc148efb97d43a21e7137f7a62889d8448905b",
+      "sitePath": "src/daemon-compatibility.mjs"
     },
     {
       "path": "src/first-setup.mjs",
@@ -730,8 +748,8 @@
     },
     {
       "path": "src/wireless-control.mjs",
-      "bytes": 16881,
-      "sha256": "ec7af61e275250f5e33f0ec5499de149239f740ca6278a7051e70903d1870932",
+      "bytes": 17712,
+      "sha256": "cd3eda4114ecde5107e1939d0251da06b988156866eff7dba50ff13600e128e6",
       "sitePath": "src/wireless-control.mjs"
     },
     {
@@ -789,6 +807,12 @@
       "sitePath": "test/command-flight.test.mjs"
     },
     {
+      "path": "test/connection-readiness.test.mjs",
+      "bytes": 6264,
+      "sha256": "f3d8fc96b0bd13b28d38d03f0ef41342df6d85277b5f8f311cc708dfd0a1c6e5",
+      "sitePath": "test/connection-readiness.test.mjs"
+    },
+    {
       "path": "test/control-polling.test.mjs",
       "bytes": 5430,
       "sha256": "109769134b89b1cc4f495953e4fc3c7cffbc5f796b307ac5e05f02853b1ed6f1",
@@ -814,8 +838,8 @@
     },
     {
       "path": "test/daemon-1.11-compatibility.test.mjs",
-      "bytes": 12542,
-      "sha256": "2c4911084aa93e3ffcd19d1a8f61eed04e185de0f5802fa8954a07f5e35e77e2",
+      "bytes": 12934,
+      "sha256": "4f771e87b09365c68dfa53d6cf43ebd81e712ba4716ef31eeaf7c2ad53b869cd",
       "sitePath": "test/daemon-1.11-compatibility.test.mjs"
     },
     {
@@ -823,6 +847,18 @@
       "bytes": 41987,
       "sha256": "ced1a413b0b0468fb7e985a74aa3a88a008f2bb945ef5f7059845bcad33d0568",
       "sitePath": "test/first-setup.test.mjs"
+    },
+    {
+      "path": "test/fixtures/connection-qa.html",
+      "bytes": 268,
+      "sha256": "556e9f5b76c5a6064bcaa01792bc9ade28f50c100f58287413a7cfa39f180380",
+      "sitePath": "test/fixtures/connection-qa.html"
+    },
+    {
+      "path": "test/fixtures/connection-qa.jsx",
+      "bytes": 4181,
+      "sha256": "02a815f713f4737ca4cfe06d2d04dc339017fae10fbf8dde4187e0e774d22b2e",
+      "sitePath": "test/fixtures/connection-qa.jsx"
     },
     {
       "path": "test/fixtures/daemon-1.11-wire.mjs",
@@ -1114,8 +1150,8 @@
     },
     {
       "path": "tools/Export-Public.mjs",
-      "bytes": 17619,
-      "sha256": "9526abf51ed8db37a1f29767fd5ef55cd61a3985acb1488ae4843373a9c5ef6d",
+      "bytes": 17829,
+      "sha256": "a2b4b08e578675ee0a2ff1d53756a74f242f5c3a4a05b9501b63a62ce4de3564",
       "sitePath": "tools/Export-Public.mjs"
     },
     {
