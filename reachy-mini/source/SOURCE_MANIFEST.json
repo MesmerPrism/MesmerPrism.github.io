@@ -1,9 +1,9 @@
 {
   "schema": "reachy.public-source.v1",
   "name": "reachy-mini-browser-control",
-  "version": "0.3.9",
-  "sourceRevision": "e036d409dbcf4337b544519d43af2b2fbaacfb1e",
-  "sourceTreeSha256": "bde93ab500bc3a25337aaf55f4d47d00271b958a169f8ff1dcb74aeabfd6a5fc",
+  "version": "0.3.10",
+  "sourceRevision": "836230f166271d9e533a4551dff512025b0bbbf4",
+  "sourceTreeSha256": "31a8509c254194cb1e47951200879bef14f40fdac107a45124bf8f2c4da367e1",
   "originalCodeLicense": "MIT",
   "dependencyLicenses": "THIRD_PARTY_NOTICES.md",
   "exclusions": [
@@ -106,8 +106,8 @@
     },
     {
       "path": "docs/LOCAL_CONNECTION.md",
-      "bytes": 2531,
-      "sha256": "6bcc57bde3d020acd4a4b2c7c70d88a5c894c9e8faeafdf2314143ed529ddd9b",
+      "bytes": 3111,
+      "sha256": "6b22dcffd9727966c804f452bbbc91651ce3380fc6fe1308ab0ddbd8a9e89758",
       "sitePath": "docs/LOCAL_CONNECTION.md"
     },
     {
@@ -160,8 +160,8 @@
     },
     {
       "path": "docs/STATUS.md",
-      "bytes": 251383,
-      "sha256": "e793deb807e8c822c8981cb05b6055e5da2c50f671aa85b3618c434880072100",
+      "bytes": 252929,
+      "sha256": "673a36e4cd769263a7a9d43913e726ebc062898e9ada1d7ec49d946d71e5ee9f",
       "sitePath": "docs/STATUS.md"
     },
     {
@@ -310,14 +310,14 @@
     },
     {
       "path": "package-lock.json",
-      "bytes": 77313,
-      "sha256": "bbbdf1e3dfdb773513577f25f28ecb4b5e4d832e1ef88fe935a26192983887a1",
+      "bytes": 77315,
+      "sha256": "069da4bb98a30fb7e005c35ace3076d327a4cb9431884bdb0ad7387d22599775",
       "sitePath": "package-lock.json"
     },
     {
       "path": "package.json",
-      "bytes": 1013,
-      "sha256": "c10a6b0f04e6208a661f92b7d44205f089b08dc9bafc7ae9886067693973a597",
+      "bytes": 1014,
+      "sha256": "26d94f9a59e829d7773e802ee12a44efdaa56135ba0c58ccc917e80c5e88aa8d",
       "sitePath": "package.json"
     },
     {
@@ -328,8 +328,8 @@
     },
     {
       "path": "public-site/ControllerDiagnostics.jsx",
-      "bytes": 3665,
-      "sha256": "7f67937cb0d2ff2a58e5155e3a50a1236c983f6679815d4d531f8eced5b23392",
+      "bytes": 3757,
+      "sha256": "be49b1f821c3b76e42863333741b7fd9fd0a9968dc7fee18161564fdd6b5ffcc",
       "sitePath": "public-site/ControllerDiagnostics.jsx"
     },
     {
@@ -388,8 +388,8 @@
     },
     {
       "path": "public-site/WirelessPanel.jsx",
-      "bytes": 34260,
-      "sha256": "7629f68aafc54c58c93383bb169a587f962754eccb42e426a3b140566de7c92a",
+      "bytes": 35362,
+      "sha256": "a78d5d023008d41e92cdf2d8631beb5fc20477993b6072946b334859a19056d5",
       "sitePath": "public-site/WirelessPanel.jsx"
     },
     {
@@ -760,8 +760,8 @@
     },
     {
       "path": "src/wireless-control.mjs",
-      "bytes": 17712,
-      "sha256": "cd3eda4114ecde5107e1939d0251da06b988156866eff7dba50ff13600e128e6",
+      "bytes": 19296,
+      "sha256": "3e4a551cc120a3b1277eeab813e1d70d9ac992ad642447048f6fab9baabfdc78",
       "sitePath": "src/wireless-control.mjs"
     },
     {
@@ -1120,8 +1120,8 @@
     },
     {
       "path": "test/wireless-control.test.mjs",
-      "bytes": 14107,
-      "sha256": "58ee8e27303d895a48fe5f30c94e4c26c9bffe45628b7e9163669e53e93b2a8c",
+      "bytes": 21062,
+      "sha256": "104707f2a2e7fa86c01d9ebeef4208ba6f0d84f3afe605255bb70c8e1f2196a8",
       "sitePath": "test/wireless-control.test.mjs"
     },
     {
