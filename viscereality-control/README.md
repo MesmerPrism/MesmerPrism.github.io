@@ -97,6 +97,29 @@ Validation: `node --test viscereality-control/*.test.cjs shared/quest-ble/*.test
 Host tests do not establish deployed public-origin LAN permission, installed
 APK behavior, physical PMD acquisition, or Internet relay availability.
 
+## Live breathing monitor
+
+The session guide shows the desired phase and phase progress beside the actual
+unbiased sensor phase and normalized level. Its plot follows the headset's
+official active clock: 60 seconds of actual/desired history and 10 seconds of
+target preview. Pausing or holding the session clock stops the history. The
+desired curve is a schematic envelope of the packaged phase schedule; neither
+trace is a physical lung-volume measurement. Missing, rejected, stale, source
+switch and calibration-reset intervals break the actual trace.
+
+An updated LAN owner advertises `breath_monitor:1` in authenticated status.
+The read-only `breath-monitor` action takes exactly `{run,after}` with an empty
+run and zero cursor initially. Responses bind the native epoch and session run,
+carry at most 601 samples at 10 Hz and 256 target segments, and use bounded delta
+cursors. A new run resets history. Over-dense target windows are explicitly
+unavailable. The browser reads at most twice per second through its existing
+serialized transport queue, yields to commands/status, and marks delayed current
+readback unavailable. Reading works in either headset control mode and grants
+no command authority. The BLE status projection remains unchanged.
+
+Only the static monitor module enters the PWA cache. Observations stay in
+memory, are cleared on disconnect and are never stored by the service worker.
+
 LAN owners may include optional `control_mode: "choose"|"direct"|"remote"` in
 current status. The page shows that headset-owned choice and admits mutations
 only in Remote; a malformed present value also blocks commands. Direct/Choose

@@ -74,6 +74,35 @@ h1 { margin: 0; font-size: clamp(30px, 7.2vw, 39px); line-height: 1.12; letter-s
 .bias-control input { width: 100%; margin: 18px 0 5px; accent-color: #85e6bf; }
 .bias-control p { margin: 0; color: #aeb5bf; font-size: 12px; line-height: 1.45; }
 .stage { margin: 0 0 9px; font-size: 17px; font-weight: 600; color: #85e6bf; }
+.breath-monitor { margin: 22px 0 26px; padding: 20px 0 6px; border-top: 1px solid #373b43; border-bottom: 1px solid #373b43; }
+.breath-monitor h3 { margin: 0 0 7px; font-size: 21px; }
+.breath-monitor-status { margin: 0 0 20px; color: #aeb5bf; font-size: 13px; line-height: 1.5; }
+.breath-current { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 22px; }
+.breath-current > div { min-width: 0; }
+.breath-current span, .breath-current strong { display: block; }
+.breath-caption { margin-bottom: 7px; color: #aeb5bf; font-size: 13px; }
+.breath-current strong { font-size: clamp(16px, 3.8vw, 23px); font-weight: 650; overflow-wrap: anywhere; }
+.breath-actual-current strong { color: #85e6bf; }
+.breath-current progress { display: block; width: 100%; height: 7px; margin: 12px 0 9px; border: 0; border-radius: 0; accent-color: #d9dce2; background: #343941; }
+.breath-current progress::-webkit-progress-bar { background: #343941; }
+.breath-current progress::-webkit-progress-value { background: #d9dce2; }
+.breath-actual-current progress { accent-color: #85e6bf; }
+.breath-actual-current progress::-webkit-progress-value { background: #85e6bf; }
+#breath-target-detail, #breath-actual-detail { color: #aeb5bf; font-size: 12px; line-height: 1.5; }
+.breath-legend { display: flex; gap: 22px; margin-bottom: 4px; font-size: 12px; color: #d9dce2; }
+.breath-legend span::before { content: ''; display: inline-block; width: 22px; margin-right: 7px; border-top: 2px dashed #d9dce2; vertical-align: middle; }
+.breath-legend .legend-actual::before { border-top: 2px solid #85e6bf; }
+.breath-chart { display: block; width: 100%; overflow: visible; }
+.breath-preview { fill: #ffffff07; }
+.breath-grid path { stroke: #373b43; fill: none; }
+.breath-axis { fill: #aeb5bf; font: 21px system-ui, sans-serif; }
+.breath-target-line { fill: none; stroke: #d9dce2; stroke-width: 2; stroke-dasharray: 7 5; vector-effect: non-scaling-stroke; }
+.breath-actual-line { fill: none; stroke: #85e6bf; stroke-width: 2; vector-effect: non-scaling-stroke; }
+.breath-now-line { stroke: #8a929e; stroke-width: 1; stroke-dasharray: 3 4; }
+.breath-now-target { fill: #d9dce2; }
+.breath-now-actual { fill: #85e6bf; }
+.breath-chart-note { margin: 12px 0 16px; color: #aeb5bf; font-size: 12px; line-height: 1.5; }
+.monitor-stale .breath-chart { opacity: .4; }
 .session-list { margin-top: 27px; }
 .command-progress { margin-top: 31px; padding-top: 27px; border-top: 1px solid #373b43; }
 .command-progress h2 { font-size: 21px; margin-bottom: 15px; }

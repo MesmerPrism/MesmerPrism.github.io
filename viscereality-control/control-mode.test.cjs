@@ -13,7 +13,7 @@ const operations = [
 
 // Runs the complete application and its real serialized operation queue. Only
 // DOM, clock, and device I/O are replaced; no server or headset is involved.
-function fixture(mode = "remote", readReceipt) {
+function fixture(mode = "remote", readReceipt, breathView) {
   const nodes = new Map(), saved = new Map();
   function node(id) {
     if (!nodes.has(id)) {
@@ -45,6 +45,7 @@ function fixture(mode = "remote", readReceipt) {
     async write(bytes) {requests.push(JSON.parse(new TextDecoder().decode(bytes)));}};
   let now = 1000;
   const context = vm.createContext({QuestBleLifetime:core, TextEncoder, TextDecoder, URLSearchParams, Promise,
+    ViscerealityBreathMonitor:breathView&&{createView:()=>breathView},
     crypto:webcrypto, location:{search:""},
     document:{getElementById:node, querySelectorAll:()=>[], createElement:()=>({value:"",textContent:""})},
     window:{scrollTo(){},addEventListener(){}},
@@ -61,6 +62,32 @@ function fixture(mode = "remote", readReceipt) {
     setMode(value) {status.control_mode=value;run("render()");},
     useBle() {run('networkTransport=undefined;device=testDevice;characteristics=testCharacteristics;questStatus.m="gated";accessCode="ABCDEFGH2345"');}};
 }
+
+function monitorView() {
+  return {fresh:true,notices:[],accepted:0,resets:0,model:{query:()=>({run:'11:7',after:1})},
+    unavailable(message){this.fresh=false;this.notices.push(message);},
+    accept(){this.accepted++;this.fresh=true;},reset(){this.resets++;this.fresh=false;}};
+}
+test('breathing watchdog marks stale even after the route becomes inactive',async()=>{
+  const view=monitorView(),f=fixture('remote',undefined,view);
+  f.run('testTransport.active=false;breathReceivedAt=Date.now()-3000');
+  await f.run('refreshBreathing()');
+  assert.equal(view.fresh,false);assert.match(view.notices.at(-1),/delayed/);
+});
+test('a failed status read invalidates the breathing current state immediately',async()=>{
+  const view=monitorView(),f=fixture('remote',undefined,view);
+  f.context.testTransport.read=async()=>{throw new Error('lost gateway');};
+  await f.run('refreshStatus()');
+  assert.equal(view.fresh,false);assert.match(view.notices.at(-1),/Status unavailable/);
+});
+test('a breathing response arriving after disconnect cannot repopulate the previous run',async()=>{
+  const view=monitorView(),f=fixture('remote',undefined,view);let reply;
+  f.context.testTransport.exchange=()=>new Promise(resolve=>{reply=resolve;});
+  f.run('questStatus.breath_monitor=1');
+  const pending=f.run('refreshBreathing()');await tick();
+  f.run('disconnected("test disconnect")');reply({v:1});await pending;
+  assert.equal(view.accepted,0);assert.equal(view.resets,1);
+});
 
 for (const mode of ["direct", "choose"]) test(`${mode} keeps native status visible and directs mode selection to the headset`, async () => {
   const f = fixture(mode);

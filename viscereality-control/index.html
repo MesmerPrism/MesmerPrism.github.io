@@ -16,6 +16,7 @@
   <link rel="stylesheet" href="styles.css">
   <script src="../shared/quest-ble/gatt-lifetime.js" defer></script>
   <script src="transport.js" defer></script>
+  <script src="breath-monitor.js" defer></script>
   <script src="app.js" defer></script>
   <script src="pwa.js" defer></script>
 </head>
@@ -68,6 +69,33 @@
         <p id="guide-clock-label" class="clock-label">Official active time</p>
         <output id="guide-active-clock" class="active-clock" aria-live="off" hidden>00:00</output>
         <p id="guide-preparation-clock" class="clock-label" hidden></p>
+        <section id="breath-monitor" class="breath-monitor" aria-labelledby="breath-monitor-title" hidden>
+          <h3 id="breath-monitor-title">Breathing</h3>
+          <p id="breath-monitor-status" class="breath-monitor-status">Waiting for breathing readback</p>
+          <div class="breath-current">
+            <div class="breath-target-current"><span class="breath-caption">Desired</span>
+              <strong id="breath-target-phase">Unavailable</strong>
+              <progress id="breath-target-progress" max="1" value="0" aria-label="Desired phase progress"></progress>
+              <span id="breath-target-detail">Waiting for target</span></div>
+            <div class="breath-actual-current"><span class="breath-caption">Actual</span>
+              <strong id="breath-actual-phase">Unavailable</strong>
+              <progress id="breath-actual-progress" max="1" value="0" aria-label="Actual normalized breathing level"></progress>
+              <span id="breath-actual-detail">Waiting for sensor</span></div>
+          </div>
+          <div class="breath-legend"><span class="legend-target">Desired pattern</span><span class="legend-actual">Actual signal</span></div>
+          <svg id="breath-chart" class="breath-chart" viewBox="0 0 700 240" role="img" aria-label="Breathing history: waiting for data">
+            <defs><clipPath id="breath-plot-clip"><rect x="52" y="25" width="628" height="170"/></clipPath></defs>
+            <rect class="breath-preview" x="590.3" y="25" width="89.7" height="170"/>
+            <g class="breath-grid"><path d="M52,32H680 M52,111H680 M52,190H680"/></g>
+            <g class="breath-axis"><text x="44" y="38" text-anchor="end">100</text><text x="44" y="117" text-anchor="end">50</text><text x="44" y="196" text-anchor="end">0</text>
+              <text x="52" y="225" text-anchor="middle">−60s</text><text x="321" y="225" text-anchor="middle">−30s</text><text x="590" y="225" text-anchor="middle">Now</text><text x="680" y="225" text-anchor="middle">+10s</text></g>
+            <g clip-path="url(#breath-plot-clip)"><path id="breath-target-line" class="breath-target-line"/>
+              <g id="breath-actual-lines"></g><path class="breath-now-line" d="M590.3,25V195"/>
+              <circle id="breath-now-target" class="breath-now-target" r="5" visibility="hidden"/>
+              <circle id="breath-now-actual" class="breath-now-actual" r="5" visibility="hidden"/></g>
+          </svg>
+          <p class="breath-chart-note">60s history · 10s target preview. Normalized sensor level and schematic target; neither measures lung volume. Gaps indicate unavailable tracking.</p>
+        </section>
         <div id="guide-bias" hidden>
           <p id="current-bias" aria-live="polite">Current bias unavailable</p>
           <details class="foldout"><summary>Adjust breathing bias</summary>

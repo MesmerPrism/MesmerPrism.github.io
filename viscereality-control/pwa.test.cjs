@@ -1,6 +1,6 @@
 const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('node:vm');
 const tick=()=>new Promise(resolve=>setImmediate(resolve));
-function fixture({ready=true,cache='viscereality-shell-pwa-1',standalone=false,registrationFails=false}={}) {
+function fixture({ready=true,cache='viscereality-shell-pwa-2',standalone=false,registrationFails=false}={}) {
   const source=require('node:path').join(__dirname,'pwa.js');
   assert.ok(fs.existsSync(source),'PWA runtime must handle installation and verified offline readiness');
   const events={},nodes=new Map(),media={matches:standalone,addEventListener(){}};

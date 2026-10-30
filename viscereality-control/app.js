@@ -12,6 +12,8 @@ const UUID = Object.freeze({
 const encoder = new TextEncoder();
 const decoder = new TextDecoder();
 const byId = (id) => document.getElementById(id);
+const breathView = globalThis.ViscerealityBreathMonitor?.createView(document);
+let breathPollTimer, breathReading = false, breathReceivedAt = 0;
 const preview = new URLSearchParams(location.search).get("preview") === "1";
 let device;
 let characteristics;
@@ -594,6 +596,7 @@ async function refreshStatus() {
       const recovering = networkTransport;
       if (generation !== connectionGeneration || !recovering?.statusTimedOut || recovering.retired) throw error;
       networkRecovering = true;
+      breathView?.unavailable("Connection recovering; waiting for current breathing readback.");
       questStatus = undefined; lastStatusAt = 0; render();
       try {
         bytes = await recovering.recoverStatus((attempt,total)=>{
@@ -609,6 +612,10 @@ async function refreshStatus() {
     if (!["IDLE", "STARTING", "ARMING", "ARMED", "RUNNING", "PAUSED", "RECORDING", "FINALIZING", "SAVING", "RECOVERY", "ERROR"].includes(status.p)) throw new Error("Invalid Quest session phase");
     receiveNativeAge(status);
     questStatus = status;
+    if (breathView && status.breath_monitor !== 1) {
+      breathView.reset();
+      if (status.rec) breathView.unavailable("Live breathing history requires the updated Quest app and a Wi-Fi connection.");
+    }
     lastStatusAt = Date.now();
     label("connection-detail", "Quest status received.");
     if (pendingOriginal?.state === "reconciled_receipt" && !status.pending) clearOriginal();
@@ -618,6 +625,7 @@ async function refreshStatus() {
   } catch (error) {
     if (generation === connectionGeneration) {
       nativeAgeConnection(); nativeAgeScope.visible = null;
+      breathView?.unavailable("Status unavailable; waiting for current breathing readback.");
       questStatus = undefined; lastStatusAt = 0; render();
       label("connection-detail", `Status read failed: ${connectionErrorText(error)}`);
     }
@@ -625,6 +633,26 @@ async function refreshStatus() {
   } finally {
     if (generation === connectionGeneration) reading = false;
   }
+}
+
+async function refreshBreathing() {
+  const route=networkTransport,generation=connectionGeneration;
+  if(breathView?.fresh && breathReceivedAt && Date.now()-breathReceivedAt>2500)
+    breathView.unavailable("Breathing readback delayed; waiting for the Quest.");
+  if(!breathView || !route?.active || !pageActive || questStatus?.breath_monitor!==1) return;
+  if(breathReading || reading || commandBusy || networkRecovering) return;
+  breathReading=true;
+  try {
+    const data=await gattOperation(()=>route.exchange("breath-monitor",breathView.model.query()),generation);
+    if(generation!==connectionGeneration || route!==networkTransport || !pageActive)return;
+    breathView.accept(data,route.nativeEpoch);
+    breathReceivedAt=Date.now();
+  } catch(error) {
+    if(generation===connectionGeneration) {
+      breathView.unavailable("Breathing readback unavailable; waiting for the Quest.");
+      if(route.retired)disconnected("Gateway connection ended during breathing readback. Reconnect to read current state.");
+    }
+  } finally {if(generation===connectionGeneration)breathReading=false;}
 }
 
 function scheduleReconnect() {
@@ -647,6 +675,8 @@ function disconnected(reason = "Quest GATT disconnected. Reconnecting to the sel
   if (commandBusy) showProgress(byId("command-name").textContent, "unknown", "Quest disconnected before confirmation. Check the headset before retrying.");
   commandBusy = false;
   clearInterval(pollTimer);
+  clearInterval(breathPollTimer);breathPollTimer=undefined;breathReading=false;breathReceivedAt=0;
+  breathView?.reset();
   pollTimer = undefined;
   networkTransport?.close();
   networkTransport = undefined;
@@ -1185,6 +1215,7 @@ async function connectNetwork() {
     const initial=await refreshStatus();
     if (!initial.ok) throw initial.error;
     pollTimer=setInterval(refreshStatus,1000);
+    if(breathView) {breathView.reset();breathPollTimer=setInterval(refreshBreathing,500);await refreshBreathing();}
     label("connection-detail","Enrolled headset authenticated. Current native status received.");
   } catch(error) {
     candidate?.close();
