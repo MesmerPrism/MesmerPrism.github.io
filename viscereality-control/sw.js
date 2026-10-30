@@ -1,6 +1,6 @@
 "use strict";
 // Bump for every shell change. No credentials, status, command or receipt is cached.
-const CACHE="viscereality-shell-live-bias-clock-1";
+const CACHE="viscereality-shell-control-mode-1";
 const SHELL=["./","index.html","app.js","transport.js","styles.css","../shared/quest-ble/gatt-lifetime.js"];
 const URLS=new Set(SHELL.map(path=>new URL(path,self.location.href).href));
 self.addEventListener("install",event=>event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(SHELL))));

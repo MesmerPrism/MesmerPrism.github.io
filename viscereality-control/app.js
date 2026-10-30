@@ -172,7 +172,27 @@ function transportWrite(bytes) {
 function ownerIdentity() { return networkTransport ? `gateway:${networkTransport.device}:${networkTransport.epoch}` : bleOwnerIdentity || device?.id || ""; }
 function controlsUnlocked() { return connected() && (!!networkTransport?.active || questStatus?.m === "open" || !!accessCode); }
 function freshStatus() { return questStatus && (preview || Date.now() - lastStatusAt < 5000); }
-function canCommand(op="") { return !preview && controlsUnlocked() && freshStatus() && !commandBusy
+// LAN owners may advertise a process-local headset choice. Omission preserves
+// older owners; a present unrecognized value never grants browser mutations.
+function controlMode(status) {
+  if (!status || !Object.hasOwn(status, "control_mode")) return null;
+  return ["choose", "direct", "remote"].includes(status.control_mode) ? status.control_mode : "unavailable";
+}
+function remoteControlAllowed(status) { return [null, "remote"].includes(controlMode(status)); }
+function controlModeInstruction(status) {
+  const mode = controlMode(status);
+  if (mode === "direct") return "Direct mode. Use the headset experiment panel to switch to Remote before using browser controls.";
+  if (mode === "choose") return "Choose Direct or Remote. Use the headset experiment panel to select Remote before using browser controls.";
+  return mode === "unavailable" ? "Control mode unavailable. Use the headset experiment panel to select Remote, then refresh status." : "";
+}
+function assertControlMode() {
+  if (!remoteControlAllowed(questStatus)) {
+    const error = new Error(`Command not sent. ${controlModeInstruction(questStatus)}`);
+    error.name = "ControlModeError";
+    throw error;
+  }
+}
+function canCommand(op="") { return !preview && controlsUnlocked() && freshStatus() && remoteControlAllowed(questStatus) && !commandBusy
   && (!pendingOriginal || ["return-vr","ping"].includes(op)); }
 
 function polarSetupCapability(status) {
@@ -286,6 +306,12 @@ function stageTitle(status) {
 }
 
 function stageInstruction(status) {
+  if (!remoteControlAllowed(status)) return controlModeInstruction(status);
+  if (controlMode(status) === "remote") {
+    if (status.p === "ARMED") return "Fit the headset, then use Start session below when ready.";
+    if (status.p === "PAUSED") return "Use Resume session below when ready.";
+    if (status.p === "RUNNING" || status.p === "RECORDING") return "Use Pause session below if needed.";
+  }
   if (sessionControlCapability(status)) {
     if (status.p === "ARMED") return "Fit the headset, then use Start session below or hold Right Grip + A for at least 0.75 seconds.";
     if (status.p === "PAUSED") return "Use Resume session below or hold Right Grip + A for at least 0.75 seconds.";
@@ -309,6 +335,10 @@ function guidedStep(status) {
   if (!status) return connected()
     ? {title:"Quest status unavailable",instruction:"The Bluetooth link is present, but no usable app status is current. Read status again.",action:"refresh",label:"Refresh status"}
     : {title: "Connect to Quest", instruction: connecting ? "Connecting to the selected Quest…" : "Connect to read the current headset state.", action: device ? "reconnect" : "connect", label: device ? "Reconnect to Quest" : "Connect to Quest"};
+  if (!remoteControlAllowed(status)) return {
+    title: controlMode(status) === "direct" ? "Direct mode" : controlMode(status) === "choose" ? "Choose Direct or Remote" : "Control mode unavailable",
+    instruction: controlModeInstruction(status), action: "refresh", label: "Refresh status"
+  };
   if (status.h === "panel") return {title: "Headset panel open", instruction: "Return to VR before continuing the session.", action: null};
   if (status.h !== "vr-preparation" && status.h !== "vr-session") return {title: "Headset state unknown", instruction: "Refresh status and check the headset before continuing.", action: "refresh", label: "Refresh status"};
   if (status.recovery || status.p === "RECOVERY" || status.p === "ERROR") return {title: "Readiness needs attention", instruction: "Review the headset and recording storage, then refresh status.", action: "refresh", label: "Refresh status"};
@@ -396,7 +426,9 @@ function renderGuide(s) {
   byId("guide-return-vr").disabled = preview || !panel || !canCommand("return-vr");
   const presentation = !s ? "Headset state unknown or unreachable"
     : ({panel:"Headset panel open", "vr-preparation":"VR preparation", "vr-session":"VR session", unknown:"Headset state unknown"})[s.h] || "Headset state unknown";
-  label("presentation", presentation, panel || !s || s.h === "unknown" ? "attention" : "");
+  const mode = controlMode(s);
+  const modeLabel = mode === null ? "" : ({direct:"Direct mode", remote:"Remote mode", choose:"Choose Direct or Remote", unavailable:"Control mode unavailable"})[mode];
+  label("presentation", presentation + (modeLabel ? ` · ${modeLabel}` : ""), panel || !s || s.h === "unknown" ? "attention" : "");
 }
 
 function render() {
@@ -469,6 +501,7 @@ function render() {
     byId(`${op}-session`).disabled = !canCommand() || !sessionControlAllowed(op, s);
   }
   label("session-control-note", !s ? "Connect to the Quest to see available session controls."
+    : !remoteControlAllowed(s) ? controlModeInstruction(s)
     : s.pending || commandBusy ? "Wait for the current command to finish."
     : !sessionControlCapability(s) ? "No current browser session-control capability. Use the headset controls or refresh status."
     : "Session controls use the same run clock as the headset gestures.");
@@ -876,11 +909,13 @@ async function sendCommand(op, name, condition = "", bias = 0, selectedSession =
     const preparation = selectedSetup ? signedPolarSetup(id,op,selectedSetup) : selectedPolar ? signedPolarStop(id,op,selectedPolar) : selectedSession ? signedSessionCommand(id, op, selectedSession, bias)
       : signedCommand(id, op, condition, bias);
     const bytes = await (observer ? observer.wait(preparation) : preparation);
+    assertControlMode();
     if (selectedSession) assertSelectedSessionControl(op, selectedSession);
     if (selectedSetup) assertSelectedPolarSetup(op, selectedSetup);
     const command = {writeValueWithResponse: transportWrite};
     const write = gattOperation(() => {
       observer?.check();
+      assertControlMode();
       if(selectedPolar)assertSelectedPolarStop(op,selectedPolar);
       if(selectedSetup)assertSelectedPolarSetup(op,selectedSetup);
       // Persist original ID before transport admission: a lost response may hide an effect.
@@ -949,8 +984,13 @@ async function sendCommand(op, name, condition = "", bias = 0, selectedSession =
     if (generation === connectionGeneration && !terminalReceipt && Date.now() >= deadline) showProgress(name, "unknown", "No confirmation arrived. Check the headset before retrying.");
   } catch (error) {
     if (generation === connectionGeneration) {
-      showProgress(name, "unknown", `Command result unavailable: ${error.message}. Check the headset before retrying.`);
-      if (op === "set-bias") label("bias-confirmation", "Bias result unavailable. Check the current bias and original receipt before retrying.");
+      if (error.name === "ControlModeError" && commandTiming.writeStart === null) {
+        showProgress(name, "none", error.message);
+        if (op === "set-bias") label("bias-confirmation", error.message);
+      } else {
+        showProgress(name, "unknown", `Command result unavailable: ${error.message}. Check the headset before retrying.`);
+        if (op === "set-bias") label("bias-confirmation", "Bias result unavailable. Check the current bias and original receipt before retrying.");
+      }
     }
   } finally {
     if (pendingOriginal?.id === id && pendingOriginal.state === "live") pendingOriginal.state="uncertain";

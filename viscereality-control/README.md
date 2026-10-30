@@ -43,7 +43,8 @@ consent admits private IPv4 URLs for browsers that support local-network
 permission and mixed-content exemptions. Failure remains unavailable, with
 Bluetooth as the fallback. HTTP authenticates requests but provides no
 confidentiality. No flags, certificate-warning bypass or browser Wi-Fi APIs
-are used. Direct mode tells the operator to join the network in OS settings.
+are used. The Direct / offline connection route tells the operator to join the
+network in OS settings.
 
 The versioned service worker stores only an exact static shell allowlist.
 Credential-bearing, query-bearing, foreign-origin, status and command requests
@@ -55,6 +56,15 @@ new version, avoiding mixed asset versions during an experiment.
 Validation: `node --test viscereality-control/*.test.cjs shared/quest-ble/*.test.cjs`.
 Host tests do not establish deployed public-origin LAN permission, installed
 APK behavior, physical PMD acquisition, or Internet relay availability.
+
+LAN owners may include optional `control_mode: "choose"|"direct"|"remote"` in
+current status. The page shows that headset-owned choice and admits mutations
+only in Remote; a malformed present value also blocks commands. Direct/Choose
+instruct the operator to select Remote on the headset experiment panel. There
+is no browser mode-switch command. Owners omitting the field retain existing
+behavior. Mode is checked again after command signing and at the serialized
+write; status and original-receipt reconciliation remain available in every
+mode, and an issued command retains its original result without replay.
 
 ## Guided Quest operation
 
