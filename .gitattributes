@@ -36,6 +36,3 @@
 
 # Fleet is a cryptographically bound owner projection; retain dispatched bytes.
 Rusty-Fleet/** -text
-
-# Reachy's reviewed manifests and source ZIP bind the exact exported bytes.
-reachy-mini/** -text
