@@ -5,12 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#191b20">
   <meta name="referrer" content="no-referrer">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; connect-src https: http:; worker-src 'self'; img-src 'none'; base-uri 'none'; form-action 'none'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; connect-src https: http:; worker-src 'self'; manifest-src 'self'; img-src 'self'; base-uri 'none'; form-action 'none'">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Viscereality">
   <title>Viscereality Experimenter</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon-192.png" type="image/png">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
   <link rel="stylesheet" href="styles.css">
   <script src="../shared/quest-ble/gatt-lifetime.js" defer></script>
   <script src="transport.js" defer></script>
   <script src="app.js" defer></script>
+  <script src="pwa.js" defer></script>
 </head>
 <body>
   <div class="app-shell">
@@ -50,7 +57,9 @@
           <div id="trusted-lan-row"><label class="lan-consent"><input id="trusted-lan" type="checkbox"> Allow experimental plaintext access on this trusted local network</label><p>Plain HTTP authenticates commands but does not encrypt status or receipts. Your browser may request local-network permission or block access. Use Bluetooth when unavailable; do not bypass browser security.</p></div>
           <p>Approve this controller on the headset first. Keys stay in this tab and must be entered again after disconnection.</p>
         </div>
-        <p id="offline-note">Offline availability has not been checked.</p>
+        <button id="install-app" class="button button-small" type="button" hidden>Install Viscereality</button>
+        <p id="install-note">To install, open the Chrome menu and choose Install app or Add to Home screen.</p>
+        <p id="offline-note" role="status">Offline availability has not been checked.</p>
       </section>
       <section class="guide" aria-labelledby="guide-title">
         <h2 id="guide-title">Connect to Quest</h2>

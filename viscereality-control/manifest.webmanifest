@@ -1,0 +1,18 @@
+{
+  "id": "/viscereality-control/",
+  "name": "Viscereality Experimenter",
+  "short_name": "Viscereality",
+  "description": "Control a Quest experiment over a phone hotspot or local Wi-Fi.",
+  "lang": "en",
+  "start_url": "/viscereality-control/",
+  "scope": "/viscereality-control/",
+  "display": "standalone",
+  "background_color": "#191b20",
+  "theme_color": "#191b20",
+  "prefer_related_applications": false,
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

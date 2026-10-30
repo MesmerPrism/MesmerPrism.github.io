@@ -49,9 +49,49 @@ network in OS settings.
 The versioned service worker stores only an exact static shell allowlist.
 Credential-bearing, query-bearing, foreign-origin, status and command requests
 are never cached. Load once online and wait for offline-ready confirmation;
-then use this same page offline. Bump `CACHE` in `sw.js` after every shell edit.
+then use this same page offline. Bump the matching `CACHE` values in `sw.js`
+and `pwa.js` after every shell edit.
 An active page keeps its existing worker until the browser can activate the
 new version, avoiding mixed asset versions during an experiment.
+
+## Install on dedicated Android phones
+
+1. With Internet access, open
+   `https://mesmerprism.com/viscereality-control/` in Chrome.
+2. Tap **Install Viscereality** when offered, or use Chrome's menu →
+   **Install app** / **Add to Home screen**. The app is named
+   **Viscereality Experimenter** and opens in its own window.
+3. Open the installed app and wait for **Ready for offline use**. This checks
+   the complete current shell, manifest and icons in the app's cache; successful
+   service-worker registration alone is insufficient. If an update is waiting,
+   close all Viscereality tabs/windows and reopen while online.
+4. Enable the phone hotspot and connect the Quest to it. Open Viscereality on
+   the Quest, select Remote, and enter its gateway address and approved
+   controller enrollment in the phone app. Allow Chrome's local-network
+   permission when requested and confirm trusted-LAN consent for HTTP.
+5. Internet/mobile data can now be unavailable; keep the hotspot enabled. The
+   installed interface loads from its cache and commands still use the live
+   local connection to the Quest. Airplane mode or disabling all networking
+   also removes that local connection.
+
+The PWA does not turn on the hotspot, join networks or discover a changed
+headset address automatically. Enrollment keys remain in memory: enter them
+again after closing or disconnecting the app. Clearing Chrome/app site data
+removes offline files and requires another online setup. Installation and
+offline availability do not grant experiment authority; normal headset Remote
+mode, authentication and fresh owner status are still required.
+
+The app-specific manifest uses a stable `/viscereality-control/` identity,
+scope and launch URL, standalone display, and regular/maskable Viscereality
+icons. It is independent of the parent Mesmer Prism site's installation.
+Updates activate through the normal worker lifecycle, with no forced reload,
+skip-waiting or experiment-command retry. Offline readiness is confirmed by a
+closed worker message checking every static file in the matching cache version.
+
+Host browser QA can verify Chromium installability, cold offline reopening and
+authenticated controls against a synthetic local gateway with public requests
+blocked. That is separate from installation, hotspot routing and browser
+permission acceptance on the actual dedicated phone.
 
 Validation: `node --test viscereality-control/*.test.cjs shared/quest-ble/*.test.cjs`.
 Host tests do not establish deployed public-origin LAN permission, installed

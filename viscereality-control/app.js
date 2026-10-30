@@ -1201,11 +1201,4 @@ if (typeof navigator!=="undefined") {
   if (!navigator.bluetooth || !globalThis.isSecureContext) {
     bleOption.disabled=true; bleOption.textContent="Nearby Bluetooth  -  unavailable in this browser";
   }
-  if (navigator.serviceWorker && location.protocol==="https:") navigator.serviceWorker.register("sw.js",{scope:"./",updateViaCache:"none"}).then(()=>{
-    byId("offline-note").textContent="Offline page cache registered. Wait for the first download to complete before leaving Internet access.";
-    return navigator.serviceWorker.ready;
-  }).then(()=>{byId("offline-note").textContent="This page is saved for offline use. A live headset connection is still required.";}).catch(()=>{
-    byId("offline-note").textContent="Offline page storage is unavailable. Keep this page open.";
-  });
-  else byId("offline-note").textContent="Load the public HTTPS page once to save it for offline use.";
 }
