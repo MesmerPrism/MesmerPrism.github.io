@@ -18,7 +18,7 @@ let characteristics;
 let networkTransport;
 let networkRecovering = false;
 let bleOwnerIdentity;
-let selectedRoute = "ble";
+let selectedRoute = "lan";
 let questStatus;
 let lastStatusAt = 0;
 let accessCode = "";
@@ -1136,13 +1136,13 @@ render();
 // Browser permission is only a candidate handle. Fresh GATT characteristics and
 // a usable native status are required again before any control becomes available.
 async function resumeAuthorisedQuest() {
-  if (preview || !pageActive || typeof navigator === "undefined" || !navigator.bluetooth?.getDevices) return;
+  if (selectedRoute !== "ble" || preview || !pageActive || typeof navigator === "undefined" || !navigator.bluetooth?.getDevices) return;
   let id;
   try { id=localStorage.getItem("viscereality-authorised-quest"); } catch (_) { return; }
   if (!id) return;
   try {
     const permitted=await navigator.bluetooth.getDevices();
-    if (!pageActive || device || connecting) return;
+    if (selectedRoute !== "ble" || !pageActive || device || connecting) return;
     const previous=permitted.find(candidate=>candidate.id===id);
     if (!previous) { label("connection-detail", "Previous Quest permission is unavailable. Choose the headset again."); return; }
     device=previous;
@@ -1159,7 +1159,7 @@ function routeChanged() {
   byId("relay-token-row").hidden=selectedRoute!=="relay";
   byId("trusted-lan-row").hidden=selectedRoute==="relay";
   const notes={ble: "Choose the nearby Quest. Bluetooth permission is requested by your browser.",
-    lan:"Join the same Wi-Fi network in system settings. Enter the gateway address and controller enrollment shown by the headset. Secure HTTPS is preferred. Experimental HTTP on a trusted private network needs explicit consent and browser local-network permission support.",
+    lan:"Use the same Wi-Fi network as the Quest, including a phone hotspot. Enter the gateway address and controller enrollment shown by the headset. Secure HTTPS is preferred. Experimental HTTP on a trusted private network needs explicit consent and browser local-network permission support.",
     relay:"A private relay must be deployed and provisioned first. Enter its session exchange URL and private route token. No relay is configured by this website.",
     direct:"Join the headset's network using your device's Wi-Fi settings. This browser cannot join Wi-Fi for you. Keep this cached page open, then enter the gateway address. Nearby Bluetooth also works without Internet."};
   byId("route-note").textContent=notes[selectedRoute];
@@ -1194,6 +1194,8 @@ async function connectNetwork() {
   }
 }
 byId("connection-route").addEventListener("change",routeChanged);
+byId("connection-route").value=selectedRoute;
+routeChanged();
 if (typeof navigator!=="undefined") {
   const bleOption=byId("route-ble");
   if (!navigator.bluetooth || !globalThis.isSecureContext) {

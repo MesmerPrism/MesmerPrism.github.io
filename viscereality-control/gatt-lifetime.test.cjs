@@ -364,7 +364,7 @@ function connectionFixture(options={}) {
     }}};
   f.context.navigator={bluetooth:{requestDevice:async()=>{choices++;if(options.choose)await options.choose();return selected;}}};
   f.context.setInterval=()=>{polls++;return polls;};
-  vm.runInContext("device=undefined;characteristics=undefined;questStatus=undefined;",f.context);
+  vm.runInContext('device=undefined;characteristics=undefined;questStatus=undefined;byId("connection-route").value="ble";routeChanged();',f.context);
   return {...f,selected,listeners,choices:()=>choices,polls:()=>polls,disconnects:()=>disconnects,
     expire:()=>{for(const [id,callback] of [...timers]){timers.delete(id);callback();}},timers:()=>timers.size,
     connect:()=>vm.runInContext("connect()",f.context),canCommand:()=>vm.runInContext("canCommand()",f.context)};

@@ -19,7 +19,7 @@
         <h1>Viscereality</h1>
         <span class="connection-label" id="connection-label" aria-live="polite">Not connected</span>
       </div>
-      <p class="foreground-line" id="connection-detail" aria-live="polite">Choose a Quest to read its status.</p>
+      <p class="foreground-line" id="connection-detail" aria-live="polite">Enter the Quest gateway and controller enrollment to read its status.</p>
       <p class="presentation" id="presentation" role="status">Headset state unknown</p>
       <div id="access" class="access" hidden>
         <label for="pair-code">Quest pairing code</label>
@@ -36,12 +36,12 @@
         <label for="connection-route">Connect using</label>
         <select id="connection-route">
           <option id="route-ble" value="ble">Nearby Bluetooth</option>
-          <option value="lan">Same Wi-Fi  -  gateway enrollment required</option>
+          <option value="lan" selected>Same Wi-Fi  -  gateway enrollment required</option>
           <option value="relay">Internet relay  -  private setup required</option>
           <option value="direct">Direct / offline  -  join network in system settings</option>
         </select>
-        <p id="route-note">Choose the nearby Quest. Bluetooth permission is requested by your browser.</p>
-        <div id="network-enrollment" hidden>
+        <p id="route-note">Use the same Wi-Fi network as the Quest, including a phone hotspot. Enter the gateway address and controller enrollment shown by the headset. Secure HTTPS is preferred. Experimental HTTP on a trusted private network needs explicit consent and browser local-network permission support.</p>
+        <div id="network-enrollment">
           <label for="gateway-url">Gateway URL</label><input id="gateway-url" type="url" autocomplete="off" placeholder="https://your-gateway/v1/gateway">
           <label for="gateway-device">Headset device ID</label><input id="gateway-device" autocomplete="off" spellcheck="false" maxlength="32">
           <label for="controller-id">Approved controller ID</label><input id="controller-id" autocomplete="off" spellcheck="false" maxlength="32">
