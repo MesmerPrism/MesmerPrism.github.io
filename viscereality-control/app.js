@@ -25,6 +25,7 @@ let characteristics;
 let networkTransport;
 let networkRecovering = false;
 let recoveryController, recoveryWaitingRemote=false, statusAbort, receiptAbort;
+let automaticRecoveryBlock;
 const snapshots = new ViscerealitySnapshot.SnapshotState(() => performance.now());
 const INTENT_KEY="viscereality-last-connected";
 function loadReconnectIntent() {
@@ -220,7 +221,7 @@ function ownerIdentity() { return networkTransport ? `gateway:${networkTransport
 function controlsUnlocked() { return connected() && (!!networkTransport?.active || questStatus?.m === "open" || !!accessCode); }
 function freshStatus() {
   if(preview)return !!questStatus;
-  if(!pageActive || networkRecovering || !questStatus)return false;
+  if(!pageActive || document.hidden || automaticRecoveryBlock || networkRecovering || !questStatus)return false;
   if(selectedRoute==="local" && networkTransport && selectedHeadset
       && (selectedHeadset.device!==networkTransport.device || selectedHeadset.serial!==networkTransport.serial))return false;
   // Legacy no-marker callers retain compatibility before their first read.
@@ -755,7 +756,7 @@ async function joinVerifiedHeadset(selector,signal,remember=false) {
   return joined;
 }
 function beginNetworkRecovery() {
-  if(preview||!pageActive||!globalThis.ViscerealityRecovery?.RecoveryController)return;
+  if(preview||!pageActive||document.hidden||automaticRecoveryBlock||!globalThis.ViscerealityRecovery?.RecoveryController)return;
   if(networkRecovering&&recoveryController)return;
   networkRecovering=true;invalidateSnapshot();
   if(pendingOriginal && ["live","uncertain"].includes(pendingOriginal.state))pendingOriginal.state="observing";
@@ -1287,7 +1288,7 @@ if (typeof window.addEventListener === "function") {
     render();
     if(pageActive && reconnectIntent)beginNetworkRecovery();
   });
-  window.addEventListener("online",()=>{if(pageActive&&networkRecovering)recoveryController?.resume();});
+  window.addEventListener("online",()=>{if(pageActive&&!document.hidden&&networkRecovering&&!automaticRecoveryBlock)recoveryController?.resume();});
   window.addEventListener("offline",()=>{if(pageActive&&networkRecovering&&!recoveryController?.blocked)label("connection-detail","Internet connectivity changed. Local headset recovery still uses the known Wi-Fi route.");});
 }
 function suspendPage() {
@@ -1300,6 +1301,7 @@ function suspendPage() {
   breathView?.unavailable("Page hidden; state must be revalidated.");render();
 }
 function resumePage() {
+  if(document.hidden){suspendPage();return;}
   pageActive=true;
   if(networkTransport||reconnectIntent) {if(recoveryController)recoveryController.resume();else {networkRecovering=false;beginNetworkRecovery();}}
   render();
@@ -1317,6 +1319,7 @@ byId("apply-live-bias").addEventListener("click", () => {
 byId("connect").addEventListener("click", connect);
 byId("reconnect").addEventListener("click", () => connect({reuseSelected: true}));
 function cancelConnection() {
+  automaticRecoveryBlock=undefined;
   reconnectIntent=undefined;try{localStorage.removeItem(INTENT_KEY);}catch(_){}
   stopRecovery();
   cancelDiscovery();
@@ -1502,6 +1505,7 @@ async function findHeadset() {
     const found=await pending;
     if(generation!==discoveryGeneration || !pageActive)return;
     headsetRoster.remember(found);freshHeadsets.set(found.device,found);failedHeadsets.delete(found.device);selectedHeadset=found;
+    automaticRecoveryBlock=undefined;
     for(const id of freshHeadsets.keys())if(!headsetRoster.records.some(r=>r.device===id))freshHeadsets.delete(id);
     label("discovery-note",found.gateways.length ? "Serial read; discovery Bluetooth released. Connect to verify the headset over Wi-Fi." : "Serial read; no usable Wi-Fi route. Check the headset network, then Find again.");
   } catch(error) {if(generation===discoveryGeneration)label("discovery-note",`Discovery unavailable: ${connectionErrorText(error)}. Find again or enter the Wi-Fi address.`);}
@@ -1510,9 +1514,9 @@ async function findHeadset() {
 async function connectLocal({manual=false}={}) {
   if(connected() || connecting || findingHeadset || networkRecovering || preview || !pageActive)return;
   const expected=manual?undefined:selectedHeadset;
-  if(expected && failedHeadsets.has(expected.device)){label("connection-detail","Find the headset again to refresh its Wi-Fi address.");return;}
   const urls=manual?[byId("local-gateway-url").value.trim()]:expected?.gateways || (expected?.gateway?[expected.gateway]:[]);
   if(!urls.length){label("connection-detail","No current Wi-Fi route. Find the headset again or enter its address.");return;}
+  automaticRecoveryBlock=undefined;if(expected)failedHeadsets.delete(expected.device);
   stopRecovery();networkTransport?.close();networkTransport=undefined;invalidateSnapshot();
   connecting=true;reconnectAllowed=false;
   // An explicit selection replaces the automatic target before any I/O. A
@@ -1554,6 +1558,8 @@ async function connectLocal({manual=false}={}) {
     if(abort.signal.aborted)return;
     if(generation===connectionGeneration){
       if(error?.kind==="integrity" || error?.kind===undefined && !["TypeError","TimeoutError"].includes(error?.name) && !/Local gateway unavailable \((?:408|429|5[0-9][0-9])\)/.test(error?.message||"")) {
+        automaticRecoveryBlock=error;
+        try {localStorage.removeItem(INTENT_KEY);}catch(_){}
         if(expected){freshHeadsets.delete(expected.device);failedHeadsets.add(expected.device);}
         disconnected(`Connection unavailable: ${connectionErrorText(error)}. Find the headset again. No command was replayed.`);
       } else {

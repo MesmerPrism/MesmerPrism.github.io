@@ -190,3 +190,35 @@ for(const action of ['breath-monitor','receipt'])test(`fix1 ${action} guest expi
  guest.fetcher=async(target,options)=>{if(options.method==='POST'&&JSON.parse(options.body).action===action){f.head.serial='OTHER-PHYSICAL';return {ok:false,status:403};}return good(target,options);};
  await f.run(action==='receipt'?'refreshStatus()':'refreshBreathing()');await f.settle();assert.equal(f.head.joins,1);assert.equal(f.run('canCommand()'),false);assert.equal(f.run('recoveryController.blocked'),true);assert.deepEqual(f.head.writes,[]);if(action==='receipt')assert.equal(f.run('pendingOriginal.id'),'1111111111111111');
 });
+test('final I1 frozen to hidden resume sends no requests until actual visibility returns',async()=>{
+ const f=fixture();await f.connect();f.context.document.hidden=true;f.context.document.visibilityState='hidden';f.events.get('visibilitychange')();f.events.get('freeze')();const before=f.head.requests.length;
+ f.events.get('resume')();await f.settle();assert.equal(f.run('pageActive'),false);assert.equal(f.head.requests.length,before);assert.equal(f.run('canCommand()'),false);
+ f.events.get('pageshow')({persisted:false});await f.settle();assert.equal(f.head.requests.length,before);f.context.document.hidden=false;f.context.document.visibilityState='visible';f.events.get('visibilitychange')();await f.settle();assert.equal(f.run('canCommand()'),true);assert.equal(f.head.joins,1);assert.deepEqual(f.head.writes,[]);
+});
+for(const problem of ['serial','mac'])test(`final I3 initial ${problem} integrity stays blocked across every lifecycle return`,async()=>{
+ const f=fixture(),serial=f.head.serial,good=f.context.fetch;f.context.selector={device,serial,gateway:url};f.run('selectedHeadset=selector');
+ let invalid=true;f.context.fetch=async(target,options)=>{if(invalid&&problem==='serial')return {ok:true,text:async()=>JSON.stringify({v:1,device,serial:'WRONG',epoch:'123',native_epoch:'7',enabled:true,remote_available:true})};const response=await good(target,options);if(invalid&&options.method==='POST'&&JSON.parse(options.body).action==='status'){const reply=JSON.parse(await response.text());reply.mac='0'.repeat(64);return {ok:true,text:async()=>JSON.stringify(reply)};}return response;};
+ await f.run('connectLocal()');await f.settle();assert.equal(f.run('canCommand()'),false);const count=f.head.requests.length,joins=f.head.joins;invalid=false;
+ f.context.document.hidden=true;f.events.get('visibilitychange')();f.events.get('freeze')();f.events.get('resume')();f.context.document.hidden=false;f.events.get('visibilitychange')();f.events.get('pageshow')({persisted:false});f.events.get('online')();f.events.get('offline')();await f.settle();
+ assert.equal(f.head.requests.length,count);assert.equal(f.head.joins,joins);assert.equal(f.run('canCommand()'),false);
+ const reopened=fixture(f.saved);await reopened.settle();assert.equal(reopened.head.requests.length,0);assert.equal(reopened.run('canCommand()'),false);
+ await f.run('connectLocal({manual:true})');await f.settle();assert.equal(f.run('canCommand()'),true);assert.equal(f.run('networkTransport.device'),device);assert.deepEqual(f.head.writes,[]);
+});
+for(const phase of ['initial','expired'])test(`final I2 actual native capacity wire backs off ${phase} join until actual idle expiry`,{skip:!process.env.EXPERIMENT_CAPACITY_HTTP_EVIDENCE},async()=>{
+ const facts=JSON.parse(fs.readFileSync(process.env.EXPERIMENT_CAPACITY_HTTP_EVIDENCE,'utf8'));assert.equal(facts.guest_count,8);assert.equal(facts.idle_ms,120000);assert.equal(facts.no_eviction_verified,true);assert.equal(facts.experiment_dispatches_added,0);
+ const response=raw=>({ok:false,status:Number(raw.match(/^HTTP\/1.1 (\d+)/)[1]),text:async()=>raw.split('\r\n\r\n')[1]});
+ assert.equal(response(facts.capacity).status,429);assert.equal(response(facts.wrapped_capacity).status,429);assert.match(facts.after_expiry_status,/^HTTP\/1.1 200 /);
+ const f=fixture();if(phase==='expired'){await f.connect();retainOriginal(f);}else{f.context.selector={device,serial:f.head.serial,gateway:url};f.run('selectedHeadset=selector');}
+ const guest=phase==='expired'?f.run('networkTransport'):null,good=f.context.fetch;let elapsed=0,rejected=false;
+ const saturated=async(target,options)=>{if(options.method==='POST'){const action=JSON.parse(options.body).action;if(guest&&!rejected&&action==='status'){rejected=true;return {ok:false,status:403};}if(action==='connect'&&elapsed<120000)return response(elapsed===0?facts.wrapped_capacity:facts.before_expiry);}return good(target,options);};
+ f.context.fetch=saturated;if(guest)guest.fetcher=saturated;
+ await f.run(guest?'refreshStatus()':'connectLocal()');await f.settle();assert.equal(f.run('networkRecovering'),true);assert.equal(f.run('failedHeadsets.size'),0);assert.equal(f.run('canCommand()'),false);assert.equal(f.head.joins,guest?1:0);
+ elapsed=119999;await f.retry();assert.equal(f.run('networkRecovering'),true);assert.equal(f.head.joins,guest?1:0);if(guest)assert.equal(f.run('pendingOriginal.id'),'1111111111111111');
+ elapsed=120000;await f.retry();if(guest){assert.equal(f.run('pendingOriginal.id'),'1111111111111111');await f.run('refreshStatus()');}assert.equal(f.run('canCommand()'),true);assert.equal(f.head.joins,guest?2:1);assert.deepEqual(f.head.writes,[]);
+});
+test('final I2 other actual native HTTP403 classes never become capacity retries',{skip:!process.env.EXPERIMENT_CAPACITY_HTTP_EVIDENCE},async()=>{
+ const facts=JSON.parse(fs.readFileSync(process.env.EXPERIMENT_CAPACITY_HTTP_EVIDENCE,'utf8'));
+ for(const field of ['wrong_device','bad_mac','bad_shape','misleading_capacity']){const f=fixture(),good=f.context.fetch;f.context.selector={device,serial:f.head.serial,gateway:url};f.run('selectedHeadset=selector');f.context.fetch=async(target,options)=>options.method==='POST'&&JSON.parse(options.body).action==='connect'?{ok:false,status:Number(facts[field].match(/^HTTP\/1.1 (\d+)/)[1]),text:async()=>facts[field].split('\r\n\r\n')[1]}:good(target,options);
+  await f.run('connectLocal()');await f.settle();assert.equal(f.run('networkRecovering'),false);assert.equal(f.run('canCommand()'),false);assert.equal(f.head.joins,0);assert.equal(f.run('failedHeadsets.size'),1);assert.deepEqual(f.head.writes,[]);
+ }
+});

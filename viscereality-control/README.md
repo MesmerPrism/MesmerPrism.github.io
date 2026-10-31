@@ -357,3 +357,16 @@ retains installation support and the existing scroll/pull-to-refresh containment
 Run `node --test viscereality-control/*.test.cjs` for the browser source suite.
 Host and synthetic desktop/mobile/offline checks do not prove physical headset,
 phone permissions, installed-PWA background behavior or real network recovery.
+
+Initial identity/authentication failures block automatic recovery across hidden,
+resume and pageshow events. A successful Find or a new explicit Connect resolves
+that block; a corrected network route alone does not. Refused initial connections
+remove automatic reconnect intent so a page reopen cannot silently clear the
+block. A frozen page resuming while still hidden remains suspended.
+
+The native owner emits HTTP429 only for its typed eight-guest capacity limit;
+other HTTP403 rejections retain their integrity meaning. Optional cross-owner
+capacity tests consume `EXPERIMENT_CAPACITY_HTTP_EVIDENCE`, the JSON emitted by
+the native owner's inert registry/HTTP test with `--capacity-evidence`. Run the
+browser suite with that variable set to cover the actual generated capacity and
+non-capacity wire responses, idle expiry, original retention and no replay.
