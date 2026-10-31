@@ -312,7 +312,7 @@ issues no command. A selected finite window is an observer policy, not a Polar
 owner deadline or proof of failure. Session commands retain their separate
 existing owner receipt contract. No automatic retry is performed.
 
-Network status recovery is limited to a `TimeoutError` from an already
+The legacy network status recovery API is limited to a `TimeoutError` from an already
 authenticated connection's read-only status exchange. Recording controls become
 unavailable immediately. Two recovery attempts wait one and three seconds,
 respectively, then check the original device and gateway epoch and authenticate
@@ -326,3 +326,10 @@ reads are never automatically retried by recovery; an uncertain original command
 retains its ID and normal read-only reconciliation rules after status returns.
 Host tests simulate these transitions; they do not establish browser permission,
 background scheduling or headset acceptance.
+
+The new one-attempt authenticated read API and cancellable scheduler also
+classify ordinary network and retryable HTTP outages while retaining same-memory
+credentials. Recovery leaves commands disabled until explicit snapshot acceptance.
+See [Authenticated read recovery](CONNECTION_RECOVERY.md) for the exact result,
+error, cancellation and acceptance contracts. The app owns full snapshot
+freshness and selected-headset rejoin decisions.

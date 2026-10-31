@@ -247,3 +247,114 @@ test('abandoned local bootstrap settles promptly and late completion cannot crea
  const {localJoin}=require('./transport.js');assert.ok(localJoin);let release;const f=localFixture({hold:new Promise(resolve=>release=resolve)}),abort=new AbortController();
  const pending=localJoin({...f.options,signal:abort.signal});await new Promise(setImmediate);abort.abort();await assert.rejects(pending);release();await new Promise(setImmediate);assert.equal(f.calls.length,2);
 });
+
+function recoveryFixture() {
+  let identity={},status={},failure;
+  const f=fixture(reply=>{
+    if(reply.action==='status'){
+      reply.payload=JSON.stringify({v:1,m:'gated',wifi_snapshot:1,control_mode:'remote',p:'RUNNING',g:2,r:3,c:'test',rec:true,co:false,ms:25000,st:'ok',pending:false,h:'hidden',pi:{r:true,f:true,h:false},o:{v:1,s:'observed',e:epoch,i:'900',g:2,r:3,a:0},...status});
+      reply.mac=sign(`RQG1-REPLY|${controller}|${device}|${epoch}|${reply.nonce}|${reply.action}|${reply.payload}`);
+      if(failure==='mac')reply.mac='0'.repeat(64);
+    }return reply;
+  });
+  const good=f.gateway.fetcher;
+  f.gateway.serial='SYNTHETIC-SERIAL';f.gateway.guest=true;
+  f.gateway.fetcher=async(url,options)=>{
+    if(failure==='network')throw new TypeError('Failed to fetch');
+    if(failure==='timeout')throw timeout();
+    if(failure==='http503')return {ok:false,status:503};
+    if(options.method==='GET')return {ok:true,text:async()=>JSON.stringify({v:1,device,epoch,native_epoch:epoch,serial:'SYNTHETIC-SERIAL',enabled:true,remote_available:true,...identity})};
+    if(failure==='guest403')return {ok:false,status:403};
+    return good(url,options);
+  };
+  return {...f,setIdentity(value){identity=value;},setStatus(value){status=value;},fail(value){failure=value;}};
+}
+test('TypeError read outage retains guest and one-attempt recovery never replays a command or enables UI early',async()=>{
+  const f=recoveryFixture(),g=f.gateway;await g.connect();const originalNativeEpoch=g.nativeEpoch;
+  await g.write(new TextEncoder().encode('{"v":1,"id":"1111111111111111","op":"arm"}'));
+  f.fail('network');await assert.rejects(g.read('status'),e=>e.kind==='transient');assert.equal(g.key,key);assert.equal(g.retired,false);assert.equal(g.active,false);
+  f.fail();const result=await g.recoverStatusOnce();assert.equal(result.kind,'success');assert.equal(result.value.o.e,originalNativeEpoch);assert.equal(g.active,false);
+  await assert.rejects(g.write(new TextEncoder().encode('{}')),/no command sent/);
+  assert.equal(g.acceptRecoveredStatus({...result.value}),false);assert.equal(g.acceptRecoveredStatus(result.value),true);assert.equal(g.active,true);
+  const requests=f.calls.filter(c=>c.options.method==='POST').map(c=>JSON.parse(c.options.body));assert.equal(requests.filter(r=>r.action==='command').length,1);
+  assert.equal(new Set(requests.map(r=>r.controller)).size,1);
+});
+for(const failure of ['network','timeout','http503'])test(`${failure} is retryable and does not erase same-memory recovery key`,async()=>{
+  const f=recoveryFixture();await f.gateway.connect();f.fail(failure);const result=await f.gateway.recoverStatusOnce();
+  assert.equal(result.kind,'retry');assert.equal(result.error.kind,'transient');assert.equal(f.gateway.key,key);assert.equal(f.gateway.active,false);
+});
+for(const remote of [false])test('Direct/Choose availability waits without a status dispatch or command',async()=>{
+  const f=recoveryFixture();await f.gateway.connect();const before=f.calls.length;f.setIdentity({remote_available:remote});
+  const result=await f.gateway.recoverStatusOnce();assert.equal(result.kind,'retry');assert.equal(result.error.kind,'availability');assert.equal(f.calls.length,before);assert.equal(f.gateway.key,key);
+});
+for(const [change,kind]of [[{device:'d'.repeat(32)},'integrity'],[{serial:'OTHER-SERIAL'},'integrity'],[{epoch:'124'},'rejoin-needed'],[{native_epoch:'124'},'rejoin-needed']])test(`one-attempt recovery fences identity ${JSON.stringify(change)}`,async()=>{
+  const f=recoveryFixture();await f.gateway.connect();f.setIdentity(change);const result=await f.gateway.recoverStatusOnce();
+  assert.equal(result.kind,'blocked');assert.equal(result.error.kind,kind);assert.equal(f.gateway.key,'');assert.equal(f.gateway.retired,true);
+});
+for(const failure of ['guest403','mac'])test(`${failure} requires rejoin or integrity block without retry`,async()=>{
+  const f=recoveryFixture();await f.gateway.connect();f.fail(failure);const result=await f.gateway.recoverStatusOnce();
+  assert.equal(result.kind,'blocked');assert.equal(result.error.kind,failure==='guest403'?'rejoin-needed':'integrity');assert.equal(f.gateway.key,'');
+});
+test('signed native owner change is rejoin-needed and missing observation is unavailable',async()=>{
+  for(const [o,kind]of [[{v:1,s:'observed',e:'124'},'rejoin-needed'],[{v:1,s:'unknown'},'availability']]){
+    const f=recoveryFixture();await f.gateway.connect();f.setStatus({o});const result=await f.gateway.recoverStatusOnce();assert.equal(result.error.kind,kind);assert.equal(result.kind,kind==='availability'?'retry':'blocked');
+  }
+});
+for(const stage of ['GET','POST','body'])test(`external cancellation during ${stage} settles even when I/O ignores abort and late result cannot enable authority`,async()=>{
+  const f=recoveryFixture();await f.gateway.connect();const good=f.gateway.fetcher;let release,entered;
+  const ready=new Promise(resolve=>entered=resolve),hold=new Promise(resolve=>release=resolve);
+  f.gateway.fetcher=async(url,options)=>{
+    if(options.method===(stage==='body'?'POST':stage)){entered();if(stage==='body')return {ok:true,text:()=>hold};await hold;}
+    return good(url,options);
+  };
+  const abort=new AbortController(),pending=f.gateway.recoverStatusOnce({signal:abort.signal});await ready;abort.abort();await assert.rejects(pending,{name:'AbortError'});release('{}');await new Promise(setImmediate);
+  assert.equal(f.gateway.active,false);assert.equal(f.gateway.retired,false);assert.equal(f.gateway.key,key);
+});
+test('pre-cancelled recovery sends nothing and cancellation after success invalidates acceptance',async()=>{
+  const f=recoveryFixture();await f.gateway.connect();const abort=new AbortController();abort.abort();const before=f.calls.length;
+  await assert.rejects(f.gateway.recoverStatusOnce({signal:abort.signal}),{name:'AbortError'});assert.equal(f.calls.length,before);
+  const next=new AbortController(),result=await f.gateway.recoverStatusOnce({signal:next.signal});next.abort();assert.equal(f.gateway.acceptRecoveredStatus(result.value),false);
+});
+test('request deadlines cover stalled response bodies for LAN and relay without closing retryable status authority',async()=>{
+  const vm=require('node:vm'),fs=require('node:fs');
+  for(const relay of [false,true]){
+    let controllerForDeadline;const deadlines=[];
+    const context=vm.createContext({TextEncoder,TextDecoder,URL,AbortController,crypto:webcrypto,fetch:async()=>({ok:true,text:()=>new Promise(()=>{})}),AbortSignal:{any:AbortSignal.any.bind(AbortSignal),timeout(ms){deadlines.push(ms);controllerForDeadline=new AbortController();return controllerForDeadline.signal;}}});
+    vm.runInContext(fs.readFileSync(require.resolve('./transport.js'),'utf8'),context);
+    const g=new context.ViscerealityTransport.Gateway({url:relay?'https://relay.example/v1/relay/test/exchange':'https://gateway.example',routeToken:relay?'synthetic':'',controller,device,key});
+    const pending=g.request('POST',{action:'status'});await new Promise(setImmediate);controllerForDeadline.abort(timeout());await assert.rejects(pending,e=>e.kind==='transient');assert.deepEqual(deadlines,[relay?15000:10000]);
+  }
+});
+test('integrity failure in ordinary status cannot later masquerade as permission to rejoin',async()=>{
+  const f=recoveryFixture();await f.gateway.connect();f.fail('mac');await assert.rejects(f.gateway.read('status'),e=>e.kind==='integrity');
+  const result=await f.gateway.recoverStatusOnce();assert.equal(result.kind,'blocked');assert.equal(result.error.kind,'integrity');assert.equal(result.error.code,'reply-mac');
+});
+test('only a connected observed owner and the latest unconsumed recovery object can be accepted',async()=>{
+  const f=recoveryFixture();assert.equal(f.gateway.acceptRecoveredStatus(undefined),false);
+  const disconnected=await f.gateway.recoverStatusOnce();assert.equal(disconnected.kind,'blocked');assert.equal(disconnected.error.code,'not-connected');
+  await f.gateway.connect();const first=await f.gateway.recoverStatusOnce(),second=await f.gateway.recoverStatusOnce();
+  assert.equal(f.gateway.acceptRecoveredStatus(first.value),false);assert.equal(f.gateway.acceptRecoveredStatus(second.value),true);assert.equal(f.gateway.acceptRecoveredStatus(second.value),false);
+});
+test('same-memory local guest binds its physical serial and native epoch for subsequent recovery',async()=>{
+  const {localJoin}=require('./transport.js'),f=localFixture();const result=await localJoin(f.options);
+  assert.equal(result.gateway.serial,'SYNTHETIC-SERIAL');assert.equal(result.gateway.guest,true);
+  delete f.live.native_epoch;const recovery=await result.gateway.recoverStatusOnce();assert.equal(recovery.kind,'blocked');assert.equal(recovery.error.kind,'integrity');
+});
+test('initial wrong physical identity retires key and remains an integrity block',async()=>{
+  const f=recoveryFixture();f.setIdentity({device:'d'.repeat(32)});await assert.rejects(f.gateway.connect(),e=>e.kind==='integrity');assert.equal(f.gateway.key,'');
+  const result=await f.gateway.recoverStatusOnce();assert.equal(result.error.kind,'integrity');
+});
+test('ordinary expired-guest status retires the key but permits only fresh physically verified rejoin',async()=>{
+  const f=recoveryFixture();await f.gateway.connect();f.fail('guest403');
+  await assert.rejects(f.gateway.read('status'),e=>e.kind==='rejoin-needed' && e.code==='guest-expired');assert.equal(f.gateway.key,'');
+  const result=await f.gateway.recoverStatusOnce();assert.equal(result.kind,'blocked');assert.equal(result.error.kind,'rejoin-needed');assert.equal(result.error.code,'guest-expired');
+});
+test('real Gateway with neutral scheduler retries read outage, restores one authenticated snapshot and never dispatches mutations',async()=>{
+  const {RecoveryController}=require('./connection-recovery.js'),f=recoveryFixture();await f.gateway.connect();f.fail('network');
+  const scheduled=[],states=[];let active=0,max=0;
+  const recovery=new RecoveryController({attempt:async({signal})=>{max=Math.max(max,++active);try{return await f.gateway.recoverStatusOnce({signal});}finally{active--;}} ,onState:s=>states.push(s),setTimeout(callback,ms){scheduled.push({callback,ms});return scheduled.length;},clearTimeout(){}});
+  recovery.start();await new Promise(setImmediate);assert.equal(states.at(-1).state,'waiting');assert.equal(scheduled[0].ms,1000);assert.equal(f.gateway.key,key);
+  f.fail();scheduled.shift().callback();for(let i=0;i<10 && states.at(-1).state!=='recovered';i++)await new Promise(setImmediate);
+  assert.equal(states.at(-1).state,'recovered');assert.equal(states.at(-1).value.o.e,epoch);assert.equal(max,1);assert.equal(f.gateway.active,false);
+  assert.deepEqual(f.calls.filter(c=>c.options.method==='POST').map(c=>JSON.parse(c.options.body).action),['status','status']);recovery.stop();
+});
