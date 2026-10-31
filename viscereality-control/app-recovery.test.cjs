@@ -148,3 +148,45 @@ test('visibility and offline hints preserve an integrity block and its explanati
  const f=fixture();await f.connect();f.head.serial='WRONG';f.head.lost=true;await f.run('refreshBreathing()');await f.settle();f.head.lost=false;await f.retry();
  f.context.document.hidden=true;f.events.get('visibilitychange')();f.context.document.hidden=false;f.events.get('visibilitychange')();f.events.get('offline')();await f.settle();assert.equal(f.run('networkRecovering'),false);assert.match(f.node('connection-detail').textContent,/blocked/i);assert.equal(f.head.joins,1);
 });
+function retainOriginal(f){f.run('pendingOriginal={id:"1111111111111111",deviceId:ownerIdentity(),epoch:"7",name:"Pause",op:"pause",state:"observing"};saveOriginal()');}
+for(const action of ['breath-monitor','receipt'])for(const code of [401,403])test(`fix1 I1 ${action}-first guest ${code} rejoins only after fresh physical proof`,async()=>{
+ const f=fixture();await f.connect();if(action==='receipt')retainOriginal(f);const old=f.run('networkTransport'),good=old.fetcher;let failed=false;
+ old.fetcher=async(target,options)=>{if(!failed&&options.method==='POST'&&JSON.parse(options.body).action===action){failed=true;return {ok:false,status:code};}return good(target,options);};
+ await f.run(action==='receipt'?'refreshStatus()':'refreshBreathing()');await f.settle();
+ assert.equal(old.retirementError?.kind,'rejoin-needed');assert.equal(old.retirementError?.code,'guest-expired');assert.equal(f.head.joins,2);assert.equal(old.key,'');assert.equal(f.run('networkTransport.device'),device);assert.deepEqual(f.head.writes,[]);
+ if(action==='receipt'){assert.equal(f.run('pendingOriginal.id'),'1111111111111111');assert.equal(f.run('pendingOriginal.state'),'reconciled_receipt');await f.run('refreshStatus()');assert.equal(f.run('pendingOriginal'),null);}
+ assert.equal(f.run('canCommand()'),true);const at=f.head.requests.findLastIndex(r=>r.action==='connect');assert.equal(f.head.requests[at-1].action,'identity');
+});
+test('fix1 I2 retained receipt transient transfers to same-guest scheduler and keeps original',async()=>{
+ const f=fixture();await f.connect();retainOriginal(f);const guest=f.run('networkTransport'),good=guest.fetcher;let failed=false;
+ guest.fetcher=async(target,options)=>{if(!failed&&options.method==='POST'&&JSON.parse(options.body).action==='receipt'){failed=true;f.head.lost=true;throw new TypeError('receipt-first transient');}return good(target,options);};
+ await f.run('refreshStatus()');await f.settle();assert.equal(f.run('networkRecovering'),true);assert.equal(guest.retired,false);assert.ok(guest.key);assert.equal(f.run('pendingOriginal.id'),'1111111111111111');
+ f.head.lost=false;await f.retry();assert.equal(f.head.joins,1);assert.equal(f.run('pendingOriginal.id'),'1111111111111111');assert.match(f.node('command-detail').textContent,/ORIGINAL_ONLY/);await f.run('refreshStatus()');assert.equal(f.run('canCommand()'),true);assert.deepEqual(f.head.writes,[]);
+});
+for(const [op,phase] of [['pause','RUNNING'],['start','ARMED'],['resume','PAUSED'],['save-next','RUNNING']])test(`fix1 I3 held ${op} receipt cannot cross suspension and native owner replacement`,async()=>{
+ const f=fixture();f.head.phase=phase;await f.connect();const guest=f.run('networkTransport'),good=guest.fetcher;let release,waiting=false;const hold=new Promise(r=>release=r);
+ guest.fetcher=async(target,options)=>{const response=await good(target,options);if(options.method==='POST'&&JSON.parse(options.body).action==='receipt'){waiting=true;await hold;}return response;};
+ const command=f.run(op==='save-next'?'sendCommand("save-next","Save session")':`sendSessionControl("${op}")`);
+ for(let i=0;i<80&&!waiting;i++)await tick();assert.equal(waiting,true);const id=f.head.writes[0].id;
+ f.context.document.hidden=true;f.events.get('visibilitychange')();f.head.native_epoch='8';f.context.document.hidden=false;f.events.get('visibilitychange')();release();await command;await f.settle();
+ assert.equal(f.run('pendingOriginal?.id'),id);assert.equal(f.saved.has('viscereality-original-command'),true);assert.equal(f.run('pendingOriginal.state'),'uncertain');assert.equal(f.run('networkTransport.nativeEpoch'),'8');assert.equal(f.run('canCommand()'),false);assert.notEqual(f.node('command-detail').textContent,'ORIGINAL_ONLY');assert.equal(f.head.writes.length,1);
+});
+test('fix1 I4 initial app status loss preserves the successfully joined guest for recovery',async()=>{
+ const f=fixture(),good=f.context.fetch;let statuses=0,adopted;const join=f.context.ViscerealityTransport.localJoin;
+ f.context.fetch=async(target,options)=>{if(options.method==='POST'&&JSON.parse(options.body).action==='status'&&++statuses===2){f.head.lost=true;throw new TypeError('first app status after join lost');}return good(target,options);};
+ f.context.ViscerealityTransport.localJoin=async options=>{const joined=await join(options);adopted=joined.gateway;return joined;};
+ await f.connect();await f.settle();assert.equal(f.run('networkTransport'),adopted);assert.equal(adopted.retired,false);assert.ok(adopted.key);assert.equal(f.run('networkRecovering'),true);
+ f.head.lost=false;await f.retry();assert.equal(f.run('canCommand()'),true);assert.equal(f.head.joins,1);assert.deepEqual(f.head.writes,[]);
+});
+for(const stage of ['preproof','postproof'])test(`fix1 I5 selecting B retires A intent through ${stage} transient`,async()=>{
+ const f=fixture();await f.connect();f.run('disconnected("replace target")');const otherUrl='http://192.168.43.3:8766/v1/gateway',other='d'.repeat(32),serial='SECOND-60',good=f.context.fetch;let failed=false;
+ f.context.fetch=async(target,options)=>{if(target!==otherUrl)return good(target,options);if(!failed&&(stage==='preproof'||options.method==='POST')){failed=true;throw new TypeError('B route temporarily unavailable');}f.head.device=other;f.head.serial=serial;return good(url,options);};
+ f.context.selectorB={device:other,serial,gateway:otherUrl};f.run('selectedHeadset=selectorB');await f.run('connectLocal()');await f.settle();
+ assert.equal(f.run('reconnectIntent.device'),other);assert.equal(f.run('selectedHeadset.device'),other);assert.notEqual(f.run('networkTransport?.device'),device);if(f.run('networkRecovering'))await f.retry();
+ assert.equal(f.run('networkTransport.device'),other);assert.equal(f.run('canCommand()'),true);assert.equal(f.head.joins,2);assert.deepEqual(f.head.writes,[]);
+});
+for(const action of ['breath-monitor','receipt'])test(`fix1 ${action} guest expiry cannot rejoin a different physical selector`,async()=>{
+ const f=fixture();await f.connect();if(action==='receipt')retainOriginal(f);const guest=f.run('networkTransport'),good=guest.fetcher;
+ guest.fetcher=async(target,options)=>{if(options.method==='POST'&&JSON.parse(options.body).action===action){f.head.serial='OTHER-PHYSICAL';return {ok:false,status:403};}return good(target,options);};
+ await f.run(action==='receipt'?'refreshStatus()':'refreshBreathing()');await f.settle();assert.equal(f.head.joins,1);assert.equal(f.run('canCommand()'),false);assert.equal(f.run('recoveryController.blocked'),true);assert.deepEqual(f.head.writes,[]);if(action==='receipt')assert.equal(f.run('pendingOriginal.id'),'1111111111111111');
+});

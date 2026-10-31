@@ -105,7 +105,7 @@
         if(signal?.aborted && !this.retired){this.active=false;this.statusTimedOut=true;throw signal.reason;}
         if(["status","breath-monitor","receipt"].includes(action) && !this.retired && (this.active || this.recovering || this.statusTimedOut) && (error?.kind==="transient" || recovery && error?.kind==="availability")) {
           this.active=false;this.statusTimedOut=true;
-        } else if(action==="status" && this.guest && ["http-401","http-403"].includes(error?.code)) {
+        } else if(["status","breath-monitor","receipt"].includes(action) && this.guest && ["http-401","http-403"].includes(error?.code)) {
           const expired=failure("rejoin-needed","guest-expired","Guest expired or revoked; verify the same headset before joining",error);
           this.close(expired);throw expired;
         } else this.close(error);

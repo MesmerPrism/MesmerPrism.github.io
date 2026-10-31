@@ -58,6 +58,7 @@ let questStatus;
 let lastStatusAt = 0;
 let accessCode = "";
 let commandBusy = false;
+let commandReceiptAbort, pageObservationGeneration=0;
 let polarObservation;
 let durableObservation;
 let reading = false;
@@ -202,8 +203,13 @@ function label(id, value, tone = "") {
 }
 
 function connected() { return !!networkTransport?.active || !!device?.gatt?.connected && !!characteristics; }
-function transportRead(name) {
-  if (networkTransport) return networkTransport.read(name, commandBusy ? networkTransport.lastId : pendingOriginal?.id || networkTransport.lastId);
+function transportRead(name, signal) {
+  if (networkTransport) {
+    const id=commandBusy ? networkTransport.lastId : pendingOriginal?.id || networkTransport.lastId;
+    if(signal && networkTransport.exchange)return networkTransport.exchange(name,name==="receipt"?{id}:{},{signal})
+      .then(value=>new DataView(encoder.encode(JSON.stringify(value)).buffer));
+    return networkTransport.read(name,id);
+  }
   return typeof ViscerealityTransport === "undefined" ? characteristics[name].readValue() : ViscerealityTransport.ble(characteristics).read(name);
 }
 function transportWrite(bytes) {
@@ -215,6 +221,8 @@ function controlsUnlocked() { return connected() && (!!networkTransport?.active 
 function freshStatus() {
   if(preview)return !!questStatus;
   if(!pageActive || networkRecovering || !questStatus)return false;
+  if(selectedRoute==="local" && networkTransport && selectedHeadset
+      && (selectedHeadset.device!==networkTransport.device || selectedHeadset.serial!==networkTransport.serial))return false;
   // Legacy no-marker callers retain compatibility before their first read.
   return snapshots.current ? snapshots.owner===connectionGeneration && snapshots.fresh() : !Object.hasOwn(questStatus,"wifi_snapshot") && lastStatusAt>0 && Date.now()-lastStatusAt>=0 && Date.now()-lastStatusAt<5000;
 }
@@ -672,11 +680,12 @@ async function observeOriginalReceipt(status, generation, parentSignal) {
     }
   } catch (error) {
     if (generation !== connectionGeneration || pendingOriginal !== original || !pageActive || parentSignal?.aborted || route!==networkTransport) return;
-    original.state=error?.kind==="transient" ? "observing" : "uncertain";
+    original.state=["transient","rejoin-needed"].includes(error?.kind) ? "observing" : "uncertain";
     showProgress(original.name,"unknown",`Original receipt read unavailable: ${connectionErrorText(error)}. No command was replayed.`);
     if (String(error?.message).includes("retained receipt read timed out")) {
       disconnectLegacyGatt(device);
     }
+    if(route && (!route.active || route.retired))beginNetworkRecovery();
   } finally {if(receiptAbort===abort)receiptAbort=undefined;}
   render();
 }
@@ -832,6 +841,7 @@ function scheduleReconnect() {
   label("connection-detail", `Quest unreachable. Reconnecting to the previously selected headset in ${Math.ceil(wait/1000)} seconds (${reconnectTries}/5).`);
 }
 function disconnected(reason = "Quest GATT disconnected. Reconnecting to the selected Quest when available.") {
+  pageObservationGeneration++;commandReceiptAbort?.abort(Error("Connection retired; original result remains unknown."));
   legacyGattLease?.retire();
   stopRecovery();statusAbort?.abort();breathAbort?.abort();receiptAbort?.abort();statusAbort=undefined;invalidateSnapshot();
   if (pendingOriginal?.state === "live") pendingOriginal.state="observing";
@@ -1099,6 +1109,9 @@ async function sendCommand(op, name, condition = "", bias = 0, selectedSession =
   const observer = selectedPolar ? createPolarObservation(observationOptions)
     : durable || selectedSetup ? createReceiptObservation(observationOptions, "Command") : null;
   if (observer?.cancelled) { observer.close(); return; }
+  const receiptAbort=new AbortController(),observationGeneration=pageObservationGeneration,commandRoute=networkTransport;
+  const lifecycle=createReceiptObservation({signal:receiptAbort.signal},"Command");
+  commandReceiptAbort=receiptAbort;
   if (selectedPolar && observer) polarObservation = observer;
   if ((durable || selectedSetup) && observer) durableObservation = observer;
   commandBusy = true;
@@ -1106,19 +1119,26 @@ async function sendCommand(op, name, condition = "", bias = 0, selectedSession =
   const id = randomHex(8);
   commandTiming = {id, name, click: performance.now(), writeStart: null, writeEnd: null, receipt: null, rendered: null};
   const generation = connectionGeneration;
+  const checkObservation=()=>{
+    receiptAbort.signal.throwIfAborted();
+    if(observationGeneration!==pageObservationGeneration || generation!==connectionGeneration || !pageActive || commandRoute!==networkTransport)
+      throw new Error("Command observation retired; original result remains unknown.");
+  };
   showProgress(name, "none", "Preparing authenticated command…");
   if (op === "set-bias") label("bias-confirmation", "Waiting for saved bias confirmation…");
   render();
   try {
     const preparation = selectedSetup ? signedPolarSetup(id,op,selectedSetup) : selectedPolar ? signedPolarStop(id,op,selectedPolar) : selectedSession ? signedSessionCommand(id, op, selectedSession, bias)
       : signedCommand(id, op, condition, bias);
-    const bytes = await (observer ? observer.wait(preparation) : preparation);
+    const bytes = await lifecycle.wait(observer ? observer.wait(preparation) : preparation);
+    checkObservation();
     if(!freshStatus())throw new Error("Command not sent. Headset status is stale.");
     assertControlMode();
     if (selectedSession) assertSelectedSessionControl(op, selectedSession);
     if (selectedSetup) assertSelectedPolarSetup(op, selectedSetup);
     const command = {writeValueWithResponse: transportWrite};
     const write = gattOperation(() => {
+      checkObservation();
       observer?.check();
       if(!freshStatus())throw new Error("Command not sent. Headset status is stale.");
       assertControlMode();
@@ -1133,7 +1153,8 @@ async function sendCommand(op, name, condition = "", bias = 0, selectedSession =
       commandTiming.writeStart = performance.now();
       return command.writeValueWithResponse(bytes);
     }, generation);
-    await (observer ? observer.wait(write) : write);
+    await lifecycle.wait(observer ? observer.wait(write) : write);
+    checkObservation();
     commandTiming.writeEnd = performance.now();
     if (op !== "ping" && !pendingOriginal) {
       pendingOriginal={id,name,op,deviceId:ownerIdentity(),epoch:nativeAgeScope?.visible ? nativeAgeScope.epoch : null,state:"live"};
@@ -1147,9 +1168,9 @@ async function sendCommand(op, name, condition = "", bias = 0, selectedSession =
     const deadline = selectedPolar || durable || selectedSetup ? Infinity : Date.now() + 35000;
     let terminalReceipt = false;
     while (connected() && generation === connectionGeneration && Date.now() < deadline) {
-      const source = {readValue: () => transportRead("receipt")};
-      const receiptRead = gattOperation(() => source.readValue(), generation);
-      const rawReceipt=parseJson(await (observer ? observer.wait(receiptRead) : receiptRead));
+      const receiptRead = gattOperation(() => {checkObservation();return transportRead("receipt",receiptAbort.signal);}, generation);
+      const rawReceipt=parseJson(await lifecycle.wait(observer ? observer.wait(receiptRead) : receiptRead));
+      checkObservation();
       const receipt = selectedPolar&&rawReceipt.state==="dispatched" ? polarDispatchedReceipt(rawReceipt,id)
         : QuestBleLifetime.commandReceipt(rawReceipt, id);
       if (receipt) {
@@ -1186,7 +1207,8 @@ async function sendCommand(op, name, condition = "", bias = 0, selectedSession =
         }
       }
       const nextPoll = delay(550);
-      await (observer ? observer.wait(nextPoll) : nextPoll);
+      await lifecycle.wait(observer ? observer.wait(nextPoll) : nextPoll);
+      checkObservation();
     }
     if (generation === connectionGeneration && !terminalReceipt && Date.now() >= deadline) showProgress(name, "unknown", "No confirmation arrived. Check the headset before retrying.");
   } catch (error) {
@@ -1206,6 +1228,7 @@ async function sendCommand(op, name, condition = "", bias = 0, selectedSession =
       label("timing-detail", `${t.name} · request ${t.id} · click→write ${elapsed(t.click,t.writeStart)} · transport write ${elapsed(t.writeStart,t.writeEnd)} · write→receipt ${elapsed(t.writeEnd,t.receipt)} · receipt→render ${elapsed(t.receipt,t.rendered)}. Android admission, native action and durable acknowledgement require correlated owner timestamps; transport intervals alone do not identify them.`);
     }
     observer?.close();
+    lifecycle.close();if(commandReceiptAbort===receiptAbort)commandReceiptAbort=undefined;
     if (polarObservation === observer) polarObservation = undefined;
     if (durableObservation === observer) durableObservation = undefined;
     if (generation !== connectionGeneration) return;
@@ -1268,6 +1291,7 @@ if (typeof window.addEventListener === "function") {
   window.addEventListener("offline",()=>{if(pageActive&&networkRecovering&&!recoveryController?.blocked)label("connection-detail","Internet connectivity changed. Local headset recovery still uses the known Wi-Fi route.");});
 }
 function suspendPage() {
+  pageObservationGeneration++;commandReceiptAbort?.abort(Error("Page hidden; original result remains unknown."));
   pageActive=false;cancelDiscovery();statusAbort?.abort();breathAbort?.abort();receiptAbort?.abort();snapshots.invalidate();
   pendingConnection?.cancel();
   recoveryController?.suspend();
@@ -1491,6 +1515,11 @@ async function connectLocal({manual=false}={}) {
   if(!urls.length){label("connection-detail","No current Wi-Fi route. Find the headset again or enter its address.");return;}
   stopRecovery();networkTransport?.close();networkTransport=undefined;invalidateSnapshot();
   connecting=true;reconnectAllowed=false;
+  // An explicit selection replaces the automatic target before any I/O. A
+  // failed proof for B must never fall back to an earlier headset A.
+  reconnectIntent=expected?{device:expected.device,serial:expected.serial,gateway:urls[0]}:undefined;
+  try {localStorage.removeItem(INTENT_KEY);}catch(_){}
+  if(manual)selectedHeadset=undefined;
   const generation=++connectionGeneration,abort=new AbortController();
   let candidate;
   pendingConnection={cancel:()=>{abort.abort();candidate?.close();}};
@@ -1506,7 +1535,12 @@ async function connectLocal({manual=false}={}) {
     if(generation!==connectionGeneration || !pageActive || abort.signal.aborted){candidate.close();return;}
     networkTransport=candidate;gattOperations=operationQueue();
     const initial=await refreshStatus();
-    if(!initial.ok)throw initial.error;
+    if(!initial.ok) {
+      // The established guest is now owned by read recovery. Its next status
+      // may already be in flight; establishment cleanup must not close it.
+      if(networkTransport===candidate && !candidate.retired && recoveryController && !recoveryController.blocked)return;
+      throw initial.error;
+    }
     if(generation!==connectionGeneration || !pageActive){candidate.close();return;}
     const remembered=headsetRoster?.verified({...joined.identity,bluetoothId:expected?.bluetoothId},joined.url);
     if(remembered)selectedHeadset=remembered;

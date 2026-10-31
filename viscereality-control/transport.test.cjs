@@ -393,3 +393,12 @@ for(const malformed of [
   const result=await f.gateway.recoverStatusOnce();assert.equal(result.kind,'blocked');assert.equal(result.error.kind,'integrity');assert.equal(f.gateway.retired,true);assert.equal(f.gateway.key,'');
   assert.deepEqual(f.calls.filter(c=>c.options.method==='POST').map(c=>JSON.parse(c.options.body).action),['status']);
 });
+for(const action of ['breath-monitor','receipt'])for(const guest of [true,false])for(const code of [401,403])test(`fix1 read ${action} ${code} is guest rejoin only for guest=${guest}`,async()=>{
+ const f=recoveryFixture();await f.gateway.connect();f.gateway.guest=guest;f.gateway.fetcher=async()=>({ok:false,status:code});
+ await assert.rejects(f.gateway.read(action,'1111111111111111'),error=>error.kind===(guest?'rejoin-needed':'integrity')&&error.code===(guest?'guest-expired':`http-${code}`));assert.equal(f.gateway.key,'');assert.equal(f.gateway.active,false);
+});
+for(const action of ['breath-monitor','receipt'])test(`fix1 ${action} bad MAC is integrity and cannot turn into guest rejoin`,async()=>{
+ const f=recoveryFixture();await f.gateway.connect();const good=f.gateway.fetcher;
+ f.gateway.fetcher=async(url,options)=>{const response=await good(url,options),reply=JSON.parse(await response.text());reply.mac='0'.repeat(64);return {ok:true,text:async()=>JSON.stringify(reply)};};
+ await assert.rejects(f.gateway.read(action,'1111111111111111'),error=>error.kind==='integrity'&&error.code==='reply-mac');const next=await f.gateway.recoverStatusOnce();assert.equal(next.kind,'blocked');assert.equal(next.error.kind,'integrity');assert.equal(f.gateway.key,'');
+});
