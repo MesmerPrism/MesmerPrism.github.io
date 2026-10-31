@@ -1,6 +1,6 @@
 "use strict";
 // Bump for every shell change. No credentials, status, command or receipt is cached.
-const CACHE="viscereality-shell-pwa-2";
+const CACHE="viscereality-shell-pwa-3";
 const SHELL=["./","index.html","app.js","pwa.js","transport.js","breath-monitor.js","styles.css","manifest.webmanifest","icons/icon-192.png","icons/icon-512.png","icons/icon-maskable-512.png","icons/apple-touch-icon.png","../shared/quest-ble/gatt-lifetime.js"];
 const URLS=new Set(SHELL.map(path=>new URL(path,self.location.href).href));
 self.addEventListener("install",event=>event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(SHELL))));
