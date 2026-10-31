@@ -76,6 +76,14 @@ bad reply HMAC remain integrity blocks. Direct/Choose is represented by
 mutation. Changed gateway/native lifetimes erase the old key and remain distinct
 from wrong physical identity. Retirement preserves its typed reason.
 
+The native retirement identity can carry `native_epoch:"0"` with both
+`enabled:false` and `remote_available:false`. For the same verified physical
+identity and existing positive gateway epoch, that exact shape returns
+`availability/native-unavailable`, retaining the key with no status POST or
+command authority. Wrong device/serial or malformed zero-owner fields remain
+integrity failures. A later positive changed native/gateway lifetime still
+requires verified rejoin.
+
 Recovery success leaves `gateway.active` false. The app validates full snapshot
 shape, ordering, freshness, Remote mode and original-command policy, then calls
 `gateway.acceptRecoveredStatus(status)`. It returns true only for the exact

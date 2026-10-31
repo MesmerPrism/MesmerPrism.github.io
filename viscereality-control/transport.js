@@ -121,8 +121,12 @@
       try {
         const hint=await this.request("GET",undefined,{signal});
         if(!hint || hint.v!==1 || hint.device!==this.device || this.serial!==undefined && hint.serial!==this.serial)throw failure("integrity","physical-identity","Gateway device identity or serial changed");
-        if(!/^[1-9][0-9]{0,18}$/.test(hint.epoch) || (this.guest || hint.native_epoch!==undefined) && !/^[1-9][0-9]{0,18}$/.test(hint.native_epoch))throw failure("integrity","identity-schema","Gateway identity lifetime is malformed");
+        // Retirement exposes zero only with explicit unavailable flags under
+        // the existing gateway lifetime; it grants no native/status authority.
+        const ownerUnavailable=hint.native_epoch==="0" && hint.enabled===false && hint.remote_available===false && hint.epoch===this.epoch;
+        if(!/^[1-9][0-9]{0,18}$/.test(hint.epoch) || !ownerUnavailable && (this.guest || hint.native_epoch!==undefined) && !/^[1-9][0-9]{0,18}$/.test(hint.native_epoch))throw failure("integrity","identity-schema","Gateway identity lifetime is malformed");
         if(hint.epoch!==this.epoch)throw failure("rejoin-needed","gateway-lifetime","Gateway owner changed; verify the headset before joining");
+        if(ownerUnavailable)throw failure("availability","native-unavailable","Waiting for an available native owner on the headset");
         if(hint.native_epoch!==undefined && hint.native_epoch!==this.nativeEpoch)throw failure("rejoin-needed","native-lifetime","Native runtime changed; verify the headset before joining");
         if(hint.enabled!==true || hint.remote_available===false)throw failure("availability","remote-unavailable","Waiting for Remote on the headset");
         if(this.guest && hint.remote_available!==true)throw failure("integrity","identity-schema","Local Remote availability is missing");

@@ -358,3 +358,36 @@ test('real Gateway with neutral scheduler retries read outage, restores one auth
   assert.equal(states.at(-1).state,'recovered');assert.equal(states.at(-1).value.o.e,epoch);assert.equal(max,1);assert.equal(f.gateway.active,false);
   assert.deepEqual(f.calls.filter(c=>c.options.method==='POST').map(c=>JSON.parse(c.options.body).action),['status','status']);recovery.stop();
 });
+
+test('exact native zero-owner identity retries availability then fences a new lifetime for verified same-headset rejoin',async()=>{
+  const {RecoveryController}=require('./connection-recovery.js'),{localJoin}=require('./transport.js');
+  const f=recoveryFixture();await f.gateway.connect();
+  f.setIdentity({v:1,device,serial:'SYNTHETIC-SERIAL',epoch,native_epoch:'0',enabled:false,remote_available:false});
+  const scheduled=[],states=[];let notify;
+  const waitState=()=>new Promise(resolve=>notify=resolve);
+  const recovery=new RecoveryController({attempt:({signal})=>f.gateway.recoverStatusOnce({signal}),onState:state=>{states.push(state);if(['waiting','blocked'].includes(state.state))notify(state);},setTimeout(callback,ms){scheduled.push({callback,ms});return scheduled.length;},clearTimeout(){}});
+  const waiting=waitState();recovery.start();const unavailable=await waiting;
+  assert.equal(unavailable.state,'waiting');assert.equal(unavailable.error.kind,'availability');assert.equal(unavailable.error.code,'native-unavailable');assert.equal(scheduled[0].ms,1000);
+  assert.equal(f.gateway.retired,false);assert.equal(f.gateway.key,key);assert.equal(f.gateway.active,false);
+  assert.equal(f.gateway.acceptRecoveredStatus(undefined),false);
+  assert.deepEqual(f.calls.filter(c=>c.options.method==='POST').map(c=>JSON.parse(c.options.body).action),['status']);
+  f.setIdentity({native_epoch:'124'});const blocked=waitState();scheduled.shift().callback();const changed=await blocked;
+  assert.equal(changed.state,'blocked');assert.equal(changed.error.kind,'rejoin-needed');assert.equal(changed.error.code,'native-lifetime');assert.equal(f.gateway.key,'');
+  const joined=localFixture({identity:{native_epoch:'124'},nativeEpoch:'124'});joined.options.expected.native_epoch='124';
+  const fresh=await localJoin(joined.options);assert.equal(fresh.identity.device,device);assert.equal(fresh.identity.serial,'SYNTHETIC-SERIAL');assert.equal(fresh.status.o.e,'124');
+  const result=await fresh.gateway.recoverStatusOnce();assert.equal(result.kind,'success');assert.equal(result.value.o.e,'124');assert.equal(fresh.gateway.active,false);
+  const actions=[...f.calls,...joined.calls].filter(c=>c.options.method==='POST').map(c=>JSON.parse(c.options.body).action);
+  assert.equal(actions.filter(action=>action==='command').length,0);recovery.stop();fresh.gateway.close();
+});
+
+for(const malformed of [
+  {device:'d'.repeat(32)},{serial:'OTHER-SERIAL'},{epoch:'0'},{epoch:'124'},
+  {native_epoch:'00'},{native_epoch:0},{native_epoch:null},{native_epoch:undefined},
+  {enabled:true},{enabled:'false'},{enabled:undefined},
+  {remote_available:true},{remote_available:'false'},{remote_available:undefined}
+])test(`zero-owner exception rejects wrong physical or malformed identity ${JSON.stringify(malformed)}`,async()=>{
+  const f=recoveryFixture();await f.gateway.connect();
+  f.setIdentity({native_epoch:'0',enabled:false,remote_available:false,...malformed});
+  const result=await f.gateway.recoverStatusOnce();assert.equal(result.kind,'blocked');assert.equal(result.error.kind,'integrity');assert.equal(f.gateway.retired,true);assert.equal(f.gateway.key,'');
+  assert.deepEqual(f.calls.filter(c=>c.options.method==='POST').map(c=>JSON.parse(c.options.body).action),['status']);
+});
