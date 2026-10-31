@@ -95,6 +95,74 @@ function controlStatus(phase="ARMED") {
     q:{v:2,s:sessionRef,g:7,o:["start","pause","resume"]}};
 }
 
+for(const [op,phase] of [["start","ARMED"],["resume","PAUSED"]])test(`required Polar without fresh acquisition blocks ${op} but retains Finish and Save`,async()=>{
+  const f=fixture(()=>{throw Error("no receipt expected");});
+  f.setStatus({...controlStatus(phase),h:"vr-session",pi:{r:true,f:false,h:phase==="PAUSED"}});f.render();
+  assert.equal(f.node(op+"-session").disabled,true);
+  assert.equal(f.node("guide-action").disabled,true);
+  assert.match(f.node("guide-title").textContent,/waiting.*Polar/i);
+  assert.match(f.node("guide-instruction").textContent,/fresh.*motion/i);
+  assert.equal(f.node("save-next").disabled,false);assert.equal(f.node("save-exit").disabled,false);
+  assert.equal(f.node("guide-finish").hidden,false);assert.equal(f.node("guide-finish").disabled,false);
+  await f.control(op);assert.equal(f.writes(),0);
+});
+test("fresh recovered Polar leaves the session Paused until one explicit Resume and preserves its original receipt",async()=>{
+  const f=fixture(get=>({v:1,id:get().id,state:"confirmed",detail:"EXACT_RESUME_RECEIPT"}));
+  f.setStatus({...controlStatus("PAUSED"),h:"vr-session",ms:25000,pi:{r:true,f:false,h:true}});f.render();
+  f.setStatus({pi:{r:true,f:true,h:true}});f.render();f.render();
+  assert.match(f.node("guide-title").textContent,/recovered.*paused/i);
+  assert.match(f.node("guide-instruction").textContent,/Resume explicitly/i);
+  assert.equal(f.node("guide-action").textContent,"Resume session");assert.equal(f.node("guide-action").disabled,false);
+  assert.equal(f.node("phase").textContent,"PAUSED");assert.equal(f.node("guide-active-clock").textContent,"00:25");
+  assert.equal(f.writes(),0);
+  await f.control("resume");assert.equal(f.writes(),1);assert.equal(f.request().op,"resume");
+  assert.equal(f.node("command-detail").textContent,"EXACT_RESUME_RECEIPT");
+});
+for(const pi of [null,false,[],{}, {r:true,f:false}, {r:true,f:"true",h:true}, {r:1,f:true,h:false}, {r:true,f:true,h:false,extra:true}])
+  test(`malformed present Polar input ${JSON.stringify(pi)} blocks only Start and Resume`,async()=>{
+    for(const [op,phase] of [["start","ARMED"],["resume","PAUSED"]]) {
+      const f=fixture(()=>{throw Error("no receipt expected");});
+      f.setStatus({...controlStatus(phase),h:"vr-session",pi});f.render();
+      assert.equal(f.node(op+"-session").disabled,true);assert.match(f.node("guide-instruction").textContent,/Polar.*unavailable/i);
+      assert.equal(f.node("save-next").disabled,false);await f.control(op);assert.equal(f.writes(),0);
+    }
+    const f=fixture(get=>({v:1,id:get().id,state:"confirmed"}));
+    f.setStatus({...controlStatus("RUNNING"),pi});await f.control("pause");assert.equal(f.writes(),1);
+  });
+for(const pi of [undefined,{r:false,f:false,h:false},{r:true,f:true,h:false}])
+  test(`absent or nonblocking Polar input ${JSON.stringify(pi)} retains session controls`,async()=>{
+    for(const [op,phase] of [["start","ARMED"],["resume","PAUSED"]]) {
+      const f=fixture(get=>({v:1,id:get().id,state:"confirmed"}));
+      f.setStatus({...controlStatus(phase),...(pi===undefined?{}:{pi})});f.render();
+      assert.equal(f.node(op+"-session").disabled,false);await f.control(op);assert.equal(f.writes(),1);
+    }
+  });
+
+test("guided idle Polar scan, current selection, connect and motion start each keep one original request and exact receipt",async()=>{
+  const requests=[],ids=new Set();let reads=0;let f;
+  f=fixture(get=>{
+    const request=get();requests.push({...request});
+    if(++reads%2)return {v:1,id:"f".repeat(16),state:"confirmed",detail:"WRONG_ID"};
+    const y={...f.context.testStatus.y,r:f.context.testStatus.y.r+1};
+    if(request.op==="scan")y.d=["abcdef123456","123456abcdef"];
+    if(request.op==="select")y.x=request.d;
+    if(request.op==="connect")y.c=true;
+    if(request.op==="start-acc")y.a=true;
+    f.setStatus({y,pi:{r:true,f:y.a,h:false}});return {v:1,id:request.id,state:"confirmed",detail:"EXACT_"+request.op};
+  });
+  f.setStatus({p:"IDLE",h:"vr-preparation",g:0,r:1,o:{v:1,s:"observed",e:"7",i:"1",g:0,r:1,a:0},rec:false,st:"ready",y:{...setupGrant,x:"",d:[]},pi:{r:true,f:false,h:false},a:["track-ready","track-ready"]});
+  for(const [op,title,label] of [["scan","Find Polar sensor","Scan for Polar"],["select","Choose Polar sensor","Select Polar"],["connect","Connect Polar sensor","Connect Polar"],["start-acc","Start Polar motion","Start motion data"]]) {
+    f.render();assert.equal(f.node("guide-title").textContent,title);assert.equal(f.node("guide-action").textContent,label);assert.equal(f.node("guide-action").disabled,false);
+    if(op==="select")assert.equal(f.node("guide-polar-device").children.length,2);
+    await vm.runInContext(`sendPolarSetup("${op}","${op==="select"?"123456abcdef":""}")`,f.context);
+    assert.equal(f.request().v,4);assert.equal(f.request().op,op);assert.equal(f.request().s,sessionRef);
+    assert.equal(f.node("command-detail").textContent,"EXACT_"+op);ids.add(f.request().id);
+  }
+  assert.equal(f.writes(),4);assert.equal(ids.size,4);assert.equal(reads,8);
+  assert.equal(requests[2].d,"123456abcdef");assert.equal(f.node("guide-title").textContent,"Choose condition");
+  assert.match(f.node("guide-polar-status").textContent,/connected.*motion.*current/i);
+});
+
 const setupGrant={s:sessionRef,g:7,r:3,p:true,b:true,c:false,x:"abcdef123456",a:false,e:false,sc:false,d:["abcdef123456"]};
 test("paused preview shows current session stage while every guide action stays inert",()=>{
   const f=fixture(()=>({v:1,id:"unused",state:"pending"}),"?preview=1&state=paused");

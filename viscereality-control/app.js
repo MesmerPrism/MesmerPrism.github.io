@@ -233,6 +233,33 @@ function assertSelectedPolarSetup(op, selected) {
     throw new Error("Polar setup changed before the command was sent; refresh status");
 }
 
+// Optional native acquisition readback, independent of GATT/link and graph data.
+// Omission supports older owners; malformed present readback cannot enable a run.
+function polarInput(status) {
+  if (!status || !Object.hasOwn(status, "pi")) return undefined;
+  const input = status.pi;
+  return input && typeof input === "object" && !Array.isArray(input)
+    && Object.keys(input).sort().join(",") === "f,h,r"
+    && [input.r,input.f,input.h].every(value => typeof value === "boolean") ? input : null;
+}
+function polarInputReady(status) {
+  const input = polarInput(status);
+  return input !== null && (!input || !input.r || input.f);
+}
+function polarSessionStep(status) {
+  if (!status?.rec || !["ARMED","PAUSED"].includes(status.p)) return null;
+  const input = polarInput(status), paused = status.p === "PAUSED";
+  const action = paused ? "resume" : "start", label = paused ? "Resume session" : "Start session";
+  if (input === null) return {title:"Polar input unavailable",instruction:"Polar input readiness is unavailable. Refresh status before Start or Resume, or finish and save.",action,label,finish:true};
+  if (input?.r && !input.f) return {
+    title:paused ? "Paused · waiting for Polar" : "Waiting for Polar motion",
+    instruction:"Waiting for fresh Polar motion data. The Quest retries its selected sensor automatically. " + (paused ? "The session stays paused; choose Resume explicitly after motion recovers, or finish and save." : "Start when motion is current and the participant is ready, or finish and save."),
+    action,label,finish:true
+  };
+  if (paused && input?.r && input.f && input.h) return {title:"Polar recovered · paused",instruction:"Polar motion data has recovered. The session remains paused. Choose Resume explicitly when ready, or finish and save.",action,label,finish:true};
+  return null;
+}
+
 // Owner-issued session references fence a control to one actual native session.
 // Older APKs advertise no capability and retain their existing gesture route.
 function sessionControlCapability(status) {
@@ -250,10 +277,16 @@ function sessionControlAllowed(op, status) {
   const capability = sessionControlCapability(status);
   const phases = {start: ["ARMED"], pause: ["RUNNING", "RECORDING"], resume: ["PAUSED"], "set-bias": ["ARMED", "RUNNING", "RECORDING", "PAUSED"]};
   return !!capability && capability.o.includes(op) && status.rec === true
-    && !status.pending && phases[op]?.includes(status.p) === true;
+    && !status.pending && phases[op]?.includes(status.p) === true
+    && (!["start","resume"].includes(op) || polarInputReady(status));
 }
 
 function assertSelectedSessionControl(op, selected) {
+  if (["start","resume"].includes(op) && !polarInputReady(questStatus)) {
+    const error = new Error("Command not sent. Fresh Polar motion input is unavailable; refresh status before Start or Resume.");
+    error.name = "PolarInputError";
+    throw error;
+  }
   const current = sessionControlCapability(questStatus);
   if (!controlsUnlocked() || !freshStatus() || !sessionControlAllowed(op, questStatus)
       || !current || current.s !== selected.s || current.g !== selected.g) {
@@ -309,6 +342,7 @@ function conditionLabel(condition) {
 function stageTitle(status) {
   if (status.p === "RECOVERY" || status.recovery) return "Recovery needs attention";
   if (status.p === "ERROR") return status.rec ? "Session needs attention" : "Condition was not armed";
+  if (polarSessionStep(status)) return polarSessionStep(status).title;
   if (status.p === "PAUSED") return status.co === "DURABLE" ? "Paused · condition complete" : "Paused · resume when ready";
   if (status.co === "DURABLE" && status.rec) return "Condition complete · recording continues";
   if (status.co === "PERSISTENCE_PENDING" && status.rec) return "Condition time reached · confirming completion";
@@ -321,6 +355,7 @@ function stageTitle(status) {
 
 function stageInstruction(status) {
   if (!remoteControlAllowed(status)) return controlModeInstruction(status);
+  if (polarSessionStep(status)) return polarSessionStep(status).instruction;
   if (controlMode(status) === "remote") {
     if (status.p === "ARMED") return "Fit the headset, then use Start session below when ready.";
     if (status.p === "PAUSED") return "Use Resume session below when ready.";
@@ -362,6 +397,7 @@ function guidedStep(status) {
     if (status.co === "DURABLE" && status.p !== "PAUSED") return {title:"Condition complete · recording continues",instruction:"Finish and save this recording, then prepare the headset for the next participant.",action:"finish",label:"Finish & prepare next"};
     if (["ARMED","PAUSED","RUNNING","RECORDING"].includes(status.p)
         && !sessionControlCapability(status)) return {title:"Session control unavailable",instruction:"The Quest has not granted browser session controls. Refresh status and check the app before continuing.",action:"refresh",label:"Refresh status",finish:status.p!=="ARMED"};
+    if (polarSessionStep(status)) return polarSessionStep(status);
     if (status.p === "ARMED") return {title: "Armed", instruction: "The recording is prepared. Start when the participant is ready.", action: "start", label: "Start session"};
     if (status.p === "PAUSED") return {title: "Paused", instruction: "Resume when ready, or finish and prepare for the next participant.", action: "resume", label: "Resume session", finish: true};
     if (["RUNNING","RECORDING"].includes(status.p)) return {title: "Running", instruction: "The session is recording. Pause if needed, or finish and prepare for the next participant.", action: "pause", label: "Pause session", finish: true};
@@ -374,7 +410,7 @@ function guidedStep(status) {
   if (!y.p) return {title: "Polar permission needed", instruction: "Grant the Quest's sensor permission, then refresh status.", action: "refresh", label: "Refresh status"};
   if (!y.b) return {title: "Polar radio unavailable", instruction: "Enable the sensor radio on the Quest, then refresh status.", action: "refresh", label: "Refresh status"};
   if (y.sc) return {title: "Scanning for Polar", instruction: "Waiting for the current scan to finish.", action: null};
-  if (!y.x && !y.d.length) return {title: "Find Polar sensor", instruction: "Scan for the participant's Polar sensor.", action: "polar-scan", label: "Scan for Polar"};
+  if (!y.x && !y.d.length) return {title: "Find Polar sensor", instruction: "Ask the Quest to scan for the participant's Polar sensor.", action: "polar-scan", label: "Scan for Polar"};
   if (!y.x) return {title: "Choose Polar sensor", instruction: "Choose the intended sensor from the current scan.", action: "polar-select", label: "Select Polar", candidates: true};
   if (!y.c) return {title: "Connect Polar sensor", instruction: "Connect the selected Polar sensor.", action: "polar-connect", label: "Connect Polar"};
   if (!y.a) return {title: "Start Polar motion", instruction: "Start motion data and wait for fresh samples.", action: "polar-start-acc", label: "Start motion data"};
@@ -386,6 +422,14 @@ function renderGuide(s) {
   guideAction = step.action;
   label("guide-title", step.title);
   label("guide-instruction", step.instruction);
+  const setup = polarSetupCapability(s), input = polarInput(s);
+  const setupReadback = setup ? `Quest Polar: ${setup.sc ? "scanning" : setup.x ? "sensor selected" : "no sensor selected"} · ${setup.c ? "connected" : "not connected"} · motion data ${setup.a ? "current" : "not current"}` : "";
+  byId("guide-polar-status").hidden = !setup && input === undefined;
+  label("guide-polar-status", input === null ? "Polar motion readiness unavailable"
+    : setup && !s.rec ? setupReadback
+    : input?.r ? `Quest Polar motion: ${input.f ? "current" : "waiting for fresh data"}${input.h ? " · input-loss pause retained" : ""}`
+    : setup ? setupReadback
+    : "Polar motion input is not required for this session.");
   const facts=byId("guide-session-facts");
   facts.hidden = !s?.rec;
   if (s?.rec) facts.textContent = `${conditionLabel(s.c)}${s.co === "DURABLE" ? " · condition complete; recording continues" : ""}`;
@@ -519,6 +563,7 @@ function render() {
     : !remoteControlAllowed(s) ? controlModeInstruction(s)
     : s.pending || commandBusy ? "Wait for the current command to finish."
     : !sessionControlCapability(s) ? "No current browser session-control capability. Use the headset controls or refresh status."
+    : polarSessionStep(s) ? polarSessionStep(s).instruction
     : "Session controls use the same run clock as the headset gestures.");
   for(const mode of ["acc","ecg"])byId(`stop-polar-${mode}`).disabled=!canCommand()||!polarStopCapability(s);
   const polar=polarStopCapability(s),stream=b=>`${b&1?"requested":"not requested"}; ${b&2?"active PMD ACK":"no active PMD ACK"}; ${b&4?"recent data observed":"no recent data observed"}`;
@@ -964,6 +1009,7 @@ async function sendCommand(op, name, condition = "", bias = 0, selectedSession =
     const write = gattOperation(() => {
       observer?.check();
       assertControlMode();
+      if(selectedSession)assertSelectedSessionControl(op,selectedSession);
       if(selectedPolar)assertSelectedPolarStop(op,selectedPolar);
       if(selectedSetup)assertSelectedPolarSetup(op,selectedSetup);
       // Persist original ID before transport admission: a lost response may hide an effect.
@@ -1032,7 +1078,7 @@ async function sendCommand(op, name, condition = "", bias = 0, selectedSession =
     if (generation === connectionGeneration && !terminalReceipt && Date.now() >= deadline) showProgress(name, "unknown", "No confirmation arrived. Check the headset before retrying.");
   } catch (error) {
     if (generation === connectionGeneration) {
-      if (error.name === "ControlModeError" && commandTiming.writeStart === null) {
+      if (["ControlModeError","PolarInputError"].includes(error.name) && commandTiming.writeStart === null) {
         showProgress(name, "none", error.message);
         if (op === "set-bias") label("bias-confirmation", error.message);
       } else {
@@ -1176,6 +1222,8 @@ if (preview) {
   const readySetup={s:"a".repeat(32),g:1,r:2,p:true,b:true,c:true,x:"abcdef123456",a:true,e:false,sc:false,d:["abcdef123456"]};
   const setupState=(changes)=>({p:"IDLE",rec:false,h:"vr-preparation",y:{...readySetup,...changes}});
   const examples={idle:setupState({}),panel:{p:"IDLE",rec:false,h:"panel"},armed:{p:"ARMED",rec:true,h:"vr-session"},paused:{p:"PAUSED",rec:true,h:"vr-session"},running:{p:"RUNNING",rec:true,h:"vr-session"},complete:{p:"RUNNING",rec:true,h:"vr-session",co:"DURABLE",ms:30000},missing:setupState({c:false,x:"",a:false,e:false,d:[]}),scan:setupState({c:false,x:"",a:false,e:false,sc:true,d:[]}),select:setupState({c:false,x:"",a:false,e:false,d:["abcdef123456","123456abcdef"]}),connecting:setupState({c:false,a:false,e:false}),"no-permission":setupState({p:false,c:false,x:"",a:false,e:false,d:[]}),nogrant:{p:"IDLE",rec:false,h:"vr-preparation",y:null}};
+  examples["polar-waiting"]={p:"PAUSED",rec:true,h:"vr-session",pi:{r:true,f:false,h:true}};
+  examples["polar-recovered"]={p:"PAUSED",rec:true,h:"vr-session",pi:{r:true,f:true,h:true}};
   questStatus = { v: 1, m: "open", f: "focused", p: "RUNNING", h:"vr-session", g: 1, r: 9,
     c: "condition-a", rec: true, co: "NOT_REACHED", ms: 25000, st: "ready", k: "ready",
     bt: "ON", po: "CONNECTED", pf: true, done: 0, early: 0,

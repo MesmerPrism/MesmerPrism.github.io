@@ -191,6 +191,27 @@ test("an issued command keeps its exact original receipt after switching to Dire
   assert.equal(f.node("pause-session").disabled, true);
 });
 
+for (const [op,phase] of [["start","ARMED"],["resume","PAUSED"]]) {
+  for(const boundary of ["signing","queue"])test(`Polar freshness lost during ${boundary} prevents ${op} before write without an uncertain original`,async()=>{
+    const f=fixture();f.status.p=phase;f.status.pi={r:true,f:true,h:op==="resume"};
+    let release,started;
+    const blocked=new Promise(resolve=>{release=resolve;});
+    let occupied;
+    if(boundary==="signing") {
+      f.useBle();const signing=new Promise(resolve=>{started=resolve;});
+      f.context.crypto={getRandomValues:bytes=>webcrypto.getRandomValues(bytes),subtle:{
+        importKey:(...args)=>webcrypto.subtle.importKey(...args),async sign(...args){started();await blocked;return webcrypto.subtle.sign(...args);}}};
+      occupied=signing;
+    } else {f.context.blocked=blocked;occupied=f.run("gattOperation(()=>blocked)");}
+    const command=f.run(`sendSessionControl("${op}")`);
+    if(boundary==="signing")await occupied;else await tick();
+    f.status.pi={r:true,f:false,h:true};release();await occupied;await command;
+    assert.equal(f.requests.length,0);assert.equal(f.run("pendingOriginal"),null);assert.equal(f.saved.size,0);
+    assert.match(f.node("command-detail").textContent,/not sent.*Polar/i);
+    assert.doesNotMatch(f.node("command-detail").textContent,/unknown|result unavailable/i);
+  });
+}
+
 test("Direct reconnect reconciles the original ID without replay or a mode command", async () => {
   const id="1234567890abcdef";
   const f = fixture("direct", () => ({v:1,id,state:"confirmed",detail:"RETAINED_ORIGINAL"}));

@@ -45,7 +45,7 @@ trusted network remain required. **Advanced connections** retains enrolled
 Wi-Fi, legacy Bluetooth, and provisioned relay routes. Original-receipt
 reconciliation and uncertain-command handling retain their existing behavior.
 
-Shell PWA4 caches the complete discovery module with the existing app, worker,
+Shell PWA5 caches the complete discovery module with the existing app, worker,
 manifest and icons. Installation and cold offline shell checks do not prove
 physical Bluetooth, phone hotspot routing, or deployed-origin LAN permission.
 
@@ -194,7 +194,7 @@ used as evidence of XR focus or sleep.
 Maintenance controls contain Save and exit, explicit headset panel setup,
 controller gestures, sensor stops and breath bias. Diagnostics contain source
 age, raw sensor IDs, counters and command timing. Neither foldout is needed for
-the normal participant flow. `?preview=1&state=idle|missing|scan|select|connecting|no-permission|nogrant|armed|running|paused|complete|panel`
+the normal participant flow. `?preview=1&state=idle|missing|scan|select|connecting|no-permission|nogrant|armed|running|paused|polar-waiting|polar-recovered|complete|panel`
 offers inert render states for browser layout checks; commands remain disabled.
 
 The new Polar setup grant is the Quest-owned closed `y` status projection with
@@ -208,6 +208,29 @@ grants and failed readiness are shown as explicit blockers.
 Fresh motion data is part of the normal preparation path. ECG start remains an
 explicit optional maintenance action; the browser does not infer heart-rate
 freshness from the separate connection-evidence `pf` flag.
+
+During idle preparation the main guide offers **Scan for Polar**, the current
+app-owned candidate list, **Connect Polar**, and **Start motion data** in order.
+The live sensor line reports the Quest's selected sensor, connection and motion
+readback. These commands ask the Quest to operate its sensor; the phone does not
+connect directly to Polar. During a recording the original sensor's automatic
+Quest recovery remains responsible for reconnection; browser scanning and sensor
+replacement remain idle setup actions.
+
+An updated owner may include optional `pi:{r:boolean,f:boolean,h:boolean}`:
+Polar is required by the selected/current recording (`r`), actual acquisition
+is fresh (`f`), and an input-loss pause remains latched (`h`). Required input
+without fresh acquisition disables Start/Resume and shows waiting for Polar.
+Recovered data with a latched Paused session shows **Polar recovered · paused**
+and requires an explicit **Resume session**. Recovery never emits a command or
+advances the session clock. Finish and Save remain available through the usual
+session/receipt checks. The native owner independently gates Start/Resume;
+browser graph history and a connected Bluetooth link do not grant readiness.
+The page checks current native readback again after authentication and inside
+the serialized command write. Missing `pi` retains older-owner behavior (including
+size-bounded BLE projections that omit it); malformed present `pi` blocks
+Start/Resume until a usable readback returns, while Pause/Finish/Save retain
+their normal rules.
 
 After a selected Quest has yielded usable status, the browser may reconnect to
 that same handle with bounded backoff. On reload it uses Web Bluetooth's

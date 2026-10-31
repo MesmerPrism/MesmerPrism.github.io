@@ -17,7 +17,7 @@ function workerFixture({missing,broken=false}={}) {
   vm.runInNewContext(fs.readFileSync(require.resolve('./sw.js'),'utf8'),{URL,Set,Promise,
     self:{location:{href:'https://mesmerprism.com/viscereality-control/sw.js',origin:'https://mesmerprism.com'},
       clients:{claim:async()=>{}},addEventListener:(name,fn)=>handlers[name]=fn},
-    caches:{open:async name=>{cacheName=name;return cache;},keys:async()=>['viscereality-shell-old','unrelated-app'],delete:async name=>deleted.push(name)}});
+    caches:{open:async name=>{cacheName=name;return cache;},keys:async()=>['viscereality-shell-pwa-4','viscereality-shell-pwa-5','unrelated-app'],delete:async name=>deleted.push(name)}});
   const dispatch=async(type,extra={})=>{
     assert.equal(typeof handlers[type],'function',`Worker must handle ${type}`);
     let task;handlers[type]({waitUntil:value=>{task=value;},...extra});await task;
@@ -36,6 +36,7 @@ test('offline readiness covers the install manifest, icons and PWA runtime',asyn
     assert.ok(f.entries.has(new URL(path,'https://mesmerprism.com/viscereality-control/').href),`${path} must work on an offline launch`);
   const result=await f.check();
   assert.equal(result.type,'OFFLINE_READY');assert.equal(result.ready,true);assert.equal(result.cache,f.cacheName);
+  assert.equal(result.cache,'viscereality-shell-pwa-5');
 });
 
 test('offline readiness is false if even one required file was evicted',async()=>{
@@ -59,5 +60,5 @@ test('failed shell download preserves existing caches',async()=>{
 
 test('activation retires only this app previous shell caches',async()=>{
   const f=workerFixture();await f.install();await f.activate();
-  assert.deepEqual(f.deleted,['viscereality-shell-old']);
+  assert.deepEqual(f.deleted,['viscereality-shell-pwa-4']);
 });
