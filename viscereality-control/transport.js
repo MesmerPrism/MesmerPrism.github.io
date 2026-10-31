@@ -85,7 +85,7 @@
     }
     async exchange(action,payload,{signal,recovery=false}={}) {
       if (this.retired) throw new Error("Connection retired");
-      if ((this.statusTimedOut || this.recovering) && action!=="status") throw new Error("Connection recovering; read current status before commands");
+      if ((this.statusTimedOut || this.recovering) && !["status","receipt"].includes(action)) throw new Error("Connection recovering; read current status before commands");
       try {
         const lifetime=AbortSignal.any([this.lifetime.signal,...(signal?[signal]:[])]);
         lifetime.throwIfAborted();
@@ -103,7 +103,7 @@
         return result;
       } catch(error) {
         if(signal?.aborted && !this.retired){this.active=false;this.statusTimedOut=true;throw signal.reason;}
-        if(action==="status" && !this.retired && (this.active || this.recovering || this.statusTimedOut) && (error?.kind==="transient" || recovery && error?.kind==="availability")) {
+        if(["status","breath-monitor","receipt"].includes(action) && !this.retired && (this.active || this.recovering || this.statusTimedOut) && (error?.kind==="transient" || recovery && error?.kind==="availability")) {
           this.active=false;this.statusTimedOut=true;
         } else if(action==="status" && this.guest && ["http-401","http-403"].includes(error?.code)) {
           const expired=failure("rejoin-needed","guest-expired","Guest expired or revoked; verify the same headset before joining",error);

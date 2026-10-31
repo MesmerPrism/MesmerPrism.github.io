@@ -15,7 +15,7 @@ function fixture(readReceipt, search="", storage) {
   const data=value=>new DataView(new TextEncoder().encode(JSON.stringify(value)).buffer);
   let request,writes=0,now=1000;
   const events=new Map();
-  const context={QuestBleLifetime:core,TextEncoder,TextDecoder,URLSearchParams,Promise,
+  const context={QuestBleLifetime:core,ViscerealitySnapshot:require("./snapshot-state.js"),TextEncoder,TextDecoder,URLSearchParams,Promise,AbortController,AbortSignal,
      crypto:require("node:crypto").webcrypto,location:{search},localStorage:storage,window:{scrollTo(){},addEventListener:(name,fn)=>events.set(name,fn)},
      document:{getElementById:node,querySelectorAll:()=>[],createElement:()=>({value:"",textContent:""})},
     Date:{now:()=>now},performance:{now:()=>now},clearTimeout(){},setTimeout:(callback,ms)=>{now+=ms;queueMicrotask(callback);},clearInterval(){},
@@ -717,7 +717,7 @@ test("unavailable app source cannot freshen status or authorize a command using 
   vm.runInContext('accessCode="ABCDEFGHIJKL";showProgress("Previous", "unknown", "PRIOR_UNKNOWN");Object.keys(testStatus).forEach(key=>delete testStatus[key]);Object.assign(testStatus,{v:1,m:"gated",f:"unknown",p:"UNAVAILABLE"});',f.context);
   const result=await vm.runInContext("refreshStatus()",f.context);
   assert.equal(result.ok,false);assert.equal(vm.runInContext("!!canCommand()",f.context),false);
-  assert.equal(vm.runInContext("questStatus",f.context),undefined);
+  assert.equal(vm.runInContext("freshStatus()",f.context),false);
   assert.equal(f.node("open-polar").disabled,true);
   await f.run();assert.equal(f.writes(),0);
   assert.equal(f.node("command-detail").textContent,"PRIOR_UNKNOWN");
@@ -937,7 +937,7 @@ test("lost network command response preserves original ID before effect admissio
   await f.run();
   const original=JSON.parse(saved.get("viscereality-original-command"));
   assert.match(original.id,/^[0-9a-f]{16}$/);assert.equal(original.epoch,"123");assert.equal(original.deviceId,'gateway:'+ 'b'.repeat(32)+':321');
-  assert.equal(vm.runInContext('pendingOriginal.state',f.context),'uncertain');
+  assert.equal(vm.runInContext('pendingOriginal.state',f.context),'observing');
 });
 
 
@@ -979,11 +979,13 @@ test("Polar setup runtime change before write prevents dispatch",async()=>{
 for(const cancel of [false,true])test(`network timeout pauses controls and ${cancel?'human cancellation retires generation':'same-scope read resumes without replay'}`,async()=>{
   const f=fixture(()=>{throw Error('no command or receipt expected');});
   let release,closed=false;
+  f.context.ViscerealityRecovery=require("./connection-recovery.js");f.context.setInterval=()=>1;
   const bytes=new DataView(new TextEncoder().encode(JSON.stringify({v:1,m:'gated',p:'IDLE',o:{s:'observed',e:'123'}})).buffer);
   const transport={active:true,retired:false,statusTimedOut:false,
     read:async()=>{transport.active=false;transport.statusTimedOut=true;throw new DOMException('deadline','TimeoutError');},
-    recoverStatus:async report=>{report(1,2);await new Promise(resolve=>release=resolve);if(closed)throw Error('retired');transport.active=true;return bytes;},
-    close:()=>{closed=true;transport.active=false;transport.retired=true;release();}};
+    recoverStatusOnce:async()=>{await new Promise(resolve=>release=resolve);if(closed)return {kind:"blocked"};return {kind:"success",value:JSON.parse(new TextDecoder().decode(bytes))};},
+    acceptRecoveredStatus:()=>{transport.active=true;return true;},
+    close:()=>{closed=true;transport.active=false;transport.retired=true;release?.();}};
   f.context.transport=transport;
   vm.runInContext('networkTransport=transport;device=undefined;characteristics=undefined;pendingOriginal={id:"1111111111111111",state:"uncertain",deviceId:"original",epoch:"123"};',f.context);
   const operation=vm.runInContext('refreshStatus()',f.context);await tick();
@@ -991,7 +993,7 @@ for(const cancel of [false,true])test(`network timeout pauses controls and ${can
   for(const id of ['guide-action','guide-finish','save-next','save-exit','start-session','pause-session','resume-session','arm-one','arm-two'])assert.equal(f.node(id).disabled,true,id);
   assert.equal(f.node('disconnect').hidden,false);assert.equal(vm.runInContext('canCommand()',f.context),false);
   if(cancel)vm.runInContext('cancelConnection()',f.context);else release();
-  await operation;
+  await operation;await tick();await tick();
   assert.equal(f.writes(),0);assert.equal(vm.runInContext('pendingOriginal.id',f.context),'1111111111111111');
   assert.equal(vm.runInContext('networkRecovering',f.context),false);
   if(cancel){assert.equal(closed,true);assert.equal(vm.runInContext('connected()',f.context),false);assert.match(f.node('connection-detail').textContent,/cancelled/);}

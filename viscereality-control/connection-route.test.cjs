@@ -28,8 +28,8 @@ function fixture({remembered = false, permitted = [], localJoin, bluetooth, allo
   }
   const gateways = [];
   let choices=0,inventories=0;
-  const context = vm.createContext({QuestBleLifetime:core,TextEncoder,TextDecoder,URLSearchParams,Promise,
-    AbortController, location:{search:"",protocol:"https:"},isSecureContext:true,
+  const context = vm.createContext({QuestBleLifetime:core,ViscerealitySnapshot:require("./snapshot-state.js"),TextEncoder,TextDecoder,URLSearchParams,Promise,
+    AbortController,AbortSignal,fetch:async()=>({ok:true,text:async()=>JSON.stringify({...discovered,enabled:true,remote_available:true})}),location:{search:"",protocol:"https:"},isSecureContext:true,
     document:{getElementById:node,querySelectorAll:()=>[],createElement:()=>node("created-"+nodes.size)},
     window:{scrollTo(){},addEventListener(){}},
     localStorage:{getItem:key=>saved.get(key)||null,setItem:(key,value)=>saved.set(key,value),removeItem:key=>saved.delete(key)},
@@ -40,7 +40,7 @@ function fixture({remembered = false, permitted = [], localJoin, bluetooth, allo
       async connect(){throw new Error("Host fixture stops before gateway I/O");}
       close(){}
     }},
-    performance:{now:()=>1000},setTimeout:()=>1,clearTimeout(){},clearInterval(){},setInterval(){if(allowPolling)return 1;throw new Error("No polling expected");}});
+    performance:{now:()=>1000},setTimeout:()=>1,clearTimeout(){},clearInterval(){},setInterval(fn,ms){if(ms===250||allowPolling)return 1;throw new Error("No polling expected");}});
   const discovery=require('./discovery.js');
   context.ViscerealityDiscovery={...discovery,Discovery:class extends discovery.Discovery {constructor(){super({bluetooth:context.navigator.bluetooth});}}};
   vm.runInContext(fs.readFileSync(require.resolve("./app.js"),"utf8"),context);

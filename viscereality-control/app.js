@@ -13,7 +13,7 @@ const encoder = new TextEncoder();
 const decoder = new TextDecoder();
 const byId = (id) => document.getElementById(id);
 const breathView = globalThis.ViscerealityBreathMonitor?.createView(document);
-let breathPollTimer, breathReading = false, breathReceivedAt = 0;
+let breathPollTimer, breathReading = false, breathReceivedAt = 0, breathAbort;
 const preview = new URLSearchParams(location.search).get("preview") === "1";
 let device;
 let legacyGattLease;
@@ -24,6 +24,27 @@ function disconnectLegacyGatt(candidate,lease=legacyGattLease) {
 let characteristics;
 let networkTransport;
 let networkRecovering = false;
+let recoveryController, recoveryWaitingRemote=false, statusAbort, receiptAbort;
+const snapshots = new ViscerealitySnapshot.SnapshotState(() => performance.now());
+const INTENT_KEY="viscereality-last-connected";
+function loadReconnectIntent() {
+  try {
+    const raw=localStorage.getItem(INTENT_KEY);if(!raw||raw.length>512)return null;
+    const v=JSON.parse(raw);
+    if(v && Object.keys(v).sort().join(",")==="device,gateway,serial" && /^[0-9a-f]{32}$/.test(v.device)
+        && discoveryApi.serialValid(v.serial)) return {device:v.device,serial:v.serial,gateway:discoveryApi.localEndpoint(v.gateway)};
+  } catch(_) {}
+  return null;
+}
+let reconnectIntent; // Loaded only after discovery/route initialization.
+function rememberReconnect(identity,gateway) {
+  reconnectIntent={device:identity.device,serial:identity.serial,gateway};
+  try {localStorage.setItem(INTENT_KEY,JSON.stringify(reconnectIntent));}catch(_) {}
+}
+function stopRecovery() {recoveryController?.stop();recoveryController=undefined;networkRecovering=false;recoveryWaitingRemote=false;}
+function invalidateSnapshot() {snapshots.invalidate();lastStatusAt=0;nativeAgeConnection();nativeAgeScope.visible=null;breathView?.unavailable("Status unavailable; waiting for current breathing readback.");}
+function resetNativeView() {questStatus=undefined;lastStatusAt=0;snapshots.reset();nativeAgeScope=undefined;breathView?.reset();breathReceivedAt=0;if(pendingOriginal)pendingOriginal.state="observing";}
+
 let bleOwnerIdentity;
 let selectedRoute = "local";
 const discoveryApi=globalThis.ViscerealityDiscovery;
@@ -54,9 +75,11 @@ let guideAction;
 const ORIGINAL_KEY = "viscereality-original-command";
 function loadOriginal() {
   try {
-    const value=JSON.parse(localStorage.getItem(ORIGINAL_KEY));
+    const raw=localStorage.getItem(ORIGINAL_KEY);
+    if(!raw||raw.length>512)return null;
+    const value=JSON.parse(raw);
     if (value && /^[0-9a-f]{16}$/.test(value.id) && typeof value.deviceId === "string"
-        && /^[1-9][0-9]{0,18}$/.test(value.epoch)
+        && value.deviceId.length<=128 && /^[1-9][0-9]{0,18}$/.test(value.epoch)
         && typeof value.name === "string" && value.name.length <= 80
         && typeof value.op === "string" && value.op.length <= 24)
       return {...value,state:"observing"};
@@ -152,15 +175,19 @@ function receiveNativeAge(status) {
 }
 function nativeAgeLabel() {
   nativeAgeConnection();
+  if(questStatus?.wifi_snapshot===1) {
+    const age=snapshots.age();
+    return age===null?"Full native snapshot age unavailable":`Full native snapshot age: ${age} ms, including the complete browser read${freshStatus()?"":" · stale"}`;
+  }
   if (!connected() || preview) return "Native status-read age unavailable";
   const now = nativeAgeClock();
   const age = now === null ? null : nativeAgeAt(now);
   return age === null ? "Native status-read age unavailable"
     : `Native status read: at least ${age} ms old; delivery delay unknown`;
 }
-let pageActive = true;
+let pageActive = !document.hidden;
 function operationQueue() { return new QuestBleLifetime.OperationQueue(generation => {
-  if (generation !== connectionGeneration || !(networkTransport?.active || device?.gatt?.connected)) throw new Error("Connection retired");
+  if (generation !== connectionGeneration || !pageActive || !(networkTransport && (networkTransport.active || networkRecovering) || device?.gatt?.connected)) throw new Error("Connection retired");
 }); }
 let gattOperations = operationQueue();
 function gattOperation(task, generation = connectionGeneration) {
@@ -185,7 +212,12 @@ function transportWrite(bytes) {
 }
 function ownerIdentity() { return networkTransport ? `gateway:${networkTransport.device}:${networkTransport.epoch}` : bleOwnerIdentity || device?.id || ""; }
 function controlsUnlocked() { return connected() && (!!networkTransport?.active || questStatus?.m === "open" || !!accessCode); }
-function freshStatus() { return questStatus && (preview || Date.now() - lastStatusAt < 5000); }
+function freshStatus() {
+  if(preview)return !!questStatus;
+  if(!pageActive || networkRecovering || !questStatus)return false;
+  // Legacy no-marker callers retain compatibility before their first read.
+  return snapshots.current ? snapshots.owner===connectionGeneration && snapshots.fresh() : !Object.hasOwn(questStatus,"wifi_snapshot") && lastStatusAt>0 && Date.now()-lastStatusAt>=0 && Date.now()-lastStatusAt<5000;
+}
 // LAN owners may advertise a process-local headset choice. Omission preserves
 // older owners; a present unrecognized value never grants browser mutations.
 function controlMode(status) {
@@ -376,7 +408,8 @@ function stageInstruction(status) {
 }
 
 function guidedStep(status) {
-  if (networkRecovering) return {title:"Reconnecting to Quest",instruction:"Recording controls are paused while the same enrolled headset is checked. No command will be replayed.",action:null};
+  if (networkRecovering) return {title:recoveryWaitingRemote?"Waiting for Remote":"Reconnecting to Quest",instruction:"Last confirmed headset state is shown. The headset continues independently. Controls await verified reconnection.",action:null};
+  if (status && !freshStatus() && !preview) return {title:"Last confirmed state · stale",instruction:"Current headset state is unavailable. Controls wait for a fresh readback.",action:"refresh",label:"Refresh status"};
   if (pendingOriginal && connected()) {
     if (pendingOriginal.state === "uncertain") return {title:"Command outcome unknown",instruction:"The original receipt is unavailable or belongs to another Quest owner. Check the headset and current session state, then acknowledge before issuing another recording action.",action:"reconcile",label:"I checked the Quest state"};
     return {title:"Checking original command",instruction:pendingOriginal.state === "reconciled_receipt" ? "The original receipt was found. Waiting for a fresh session readback." : "Reading the original Quest receipt without sending the command again.",action:null};
@@ -430,6 +463,7 @@ function renderGuide(s) {
     : input?.r ? `Quest Polar motion: ${input.f ? "current" : "waiting for fresh data"}${input.h ? " · input-loss pause retained" : ""}`
     : setup ? setupReadback
     : "Polar motion input is not required for this session.");
+  if(s && !freshStatus() && !preview)byId("guide-polar-status").textContent="Last confirmed · "+byId("guide-polar-status").textContent;
   const facts=byId("guide-session-facts");
   facts.hidden = !s?.rec;
   if (s?.rec) facts.textContent = `${conditionLabel(s.c)}${s.co === "DURABLE" ? " · condition complete; recording continues" : ""}`;
@@ -438,6 +472,7 @@ function renderGuide(s) {
   timer.textContent = s?.rec ? formatMs(s.p === "ARMED" ? 0 : s.ms) : "—";
   byId("guide-clock-label").hidden = !s?.rec;
   label("guide-clock-label", s?.p === "ARMED" ? "Official active time · waiting for Start" : s?.p === "PAUSED" ? "Official active time · paused" : "Official active time");
+  if(s && !freshStatus() && !preview)byId("guide-clock-label").textContent="Last confirmed active time";
   const preparation = byId("guide-preparation-clock");
   preparation.hidden = s?.p !== "ARMED" || !Number.isSafeInteger(s?.pm);
   preparation.textContent = !preparation.hidden ? `Preparation recording ${formatMs(s.pm)}` : "";
@@ -486,26 +521,30 @@ function renderGuide(s) {
     : ({panel:"Headset panel open", "vr-preparation":"VR preparation", "vr-session":"VR session", unknown:"Headset state unknown"})[s.h] || "Headset state unknown";
   const mode = controlMode(s);
   const modeLabel = mode === null ? "" : ({direct:"Direct mode", remote:"Remote mode", choose:"Choose Direct or Remote", unavailable:"Control mode unavailable"})[mode];
-  label("presentation", presentation + (modeLabel ? ` · ${modeLabel}` : ""), panel || !s || s.h === "unknown" ? "attention" : "");
+  label("presentation", (s && !freshStatus() && !preview ? "Last confirmed · " : "") + presentation + (modeLabel ? ` · ${modeLabel}` : ""), panel || !s || s.h === "unknown" ? "attention" : "");
 }
 
 function render() {
   const live = connected();
   renderHeadsets();
   byId("connection-options").hidden = live || networkRecovering || preview;
-  const s = (live || preview) && freshStatus() ? questStatus : undefined;
+  const s = questStatus;
+  const current=freshStatus();
+  if(s && !current && !preview && /status received|revalidated/i.test(byId("connection-detail").textContent))label("connection-detail","Last confirmed headset status shown. Waiting for a current readback.");
   renderGuide(s);
   label('native-readback-age', nativeAgeLabel());
   const conn = byId("connection-label");
-  conn.textContent = preview ? "Preview · not connected" : networkRecovering ? "Reconnecting · controls paused" : live ? s ? "Quest status current" : "Transport connected · status unavailable" : "Not connected";
-  conn.classList.toggle("connected", live && !!s && !preview);
+  conn.textContent = preview ? "Preview · not connected" : networkRecovering ? recoveryWaitingRemote ? "Waiting for Remote" : "Reconnecting · state stale" : live && current ? "Live" : s ? "Last confirmed state · stale" : "Disconnected";
+  conn.classList.toggle("connected", live && current && !preview);
+  const updateAge=snapshots.age();
+  label("status-age",s ? `${current?"Updated":"Last confirmed"} ${updateAge===null?"age unavailable":`${Math.floor(updateAge)} ms ago`}${current?"":" · stale; controls disabled"}` : "No confirmed headset state");
   byId("connect").hidden = live || preview;
   byId("connect").disabled = connecting || networkRecovering;
   byId("reconnect").hidden = live || connecting || networkRecovering || preview || !device;
   byId("reconnect").disabled = connecting;
   byId("disconnect").hidden = !live && !connecting && !networkRecovering && !findingHeadset;
   byId("disconnect").textContent = connecting || findingHeadset ? "Cancel connection" : "Disconnect";
-  byId("refresh").disabled = !live || commandBusy;
+  byId("refresh").disabled = !pageActive || !live && !networkRecovering || commandBusy;
   byId("cancel-polar-observation").hidden = !polarObservation && !durableObservation;
   byId("cancel-polar-observation").textContent = durableObservation ? "Cancel command observation" : "Cancel stop observation";
   const foreground = s?.f;
@@ -593,24 +632,29 @@ function connectionErrorText(error) {
   return `${name}: ${message}`;
 }
 
-async function observeOriginalReceipt(status, generation) {
+async function observeOriginalReceipt(status, generation, parentSignal) {
   const original=pendingOriginal;
-  if (!original || original.state !== "observing" || commandBusy || !connected()) return;
-  const currentEpoch=nativeAgeScope?.visible ? nativeAgeScope.epoch : null;
+  if (!original || original.state !== "observing" || commandBusy || !(connected() || networkRecovering && networkTransport && !networkTransport.retired)) return;
+  const currentEpoch=status?.o?.s==="observed" ? status.o.e : null;
   if (!original.deviceId || ownerIdentity() !== original.deviceId || !original.epoch || currentEpoch !== original.epoch) {
     original.state="uncertain";
     showProgress(original.name,"unknown","Original Quest owner or native epoch is unavailable. The command was not replayed; check the headset before continuing.");
     render(); return;
   }
+  const route=networkTransport,abort=new AbortController();receiptAbort=abort;
+  const signal=AbortSignal.any([abort.signal,...(parentSignal?[parentSignal]:[])]);
   try {
-    let timer;
-    const read=gattOperation(()=>transportRead("receipt"),generation);
-    const bounded=new Promise((_,reject)=>{ timer=setTimeout(()=>reject(new Error("retained receipt read timed out")),5000); });
+    let timer,cancel;
+    const read=gattOperation(async()=>route?.exchange ? new DataView(encoder.encode(JSON.stringify(await route.exchange("receipt",{id:original.id},{signal}))).buffer) : transportRead("receipt"),generation);
+    const bounded=new Promise((_,reject)=>{
+      cancel=()=>reject(signal.reason);signal.addEventListener("abort",cancel,{once:true});
+      timer=setTimeout(()=>{const error=new Error("retained receipt read timed out");error.kind="transient";abort.abort(error);},5000);
+    });
     let value;
     try { value=await Promise.race([read,bounded]); }
-    finally { clearTimeout(timer); }
+    finally { clearTimeout(timer);signal.removeEventListener("abort",cancel); }
     const raw=parseJson(value);
-    if (generation !== connectionGeneration || pendingOriginal !== original) return;
+    if (generation !== connectionGeneration || pendingOriginal !== original || !pageActive || signal.aborted || route!==networkTransport) return;
     const receipt=["stop-acc","stop-ecg"].includes(original.op) && raw.state === "dispatched"
       ? polarDispatchedReceipt(raw,original.id) : QuestBleLifetime.commandReceipt(raw,original.id);
     if (!receipt) {
@@ -627,13 +671,13 @@ async function observeOriginalReceipt(status, generation) {
         receipt.detail || `Original Quest result: ${receipt.state}. Waiting for fresh session status.`);
     }
   } catch (error) {
-    if (generation !== connectionGeneration || pendingOriginal !== original) return;
-    original.state="uncertain";
+    if (generation !== connectionGeneration || pendingOriginal !== original || !pageActive || parentSignal?.aborted || route!==networkTransport) return;
+    original.state=error?.kind==="transient" ? "observing" : "uncertain";
     showProgress(original.name,"unknown",`Original receipt read unavailable: ${connectionErrorText(error)}. No command was replayed.`);
     if (String(error?.message).includes("retained receipt read timed out")) {
       disconnectLegacyGatt(device);
     }
-  }
+  } finally {if(receiptAbort===abort)receiptAbort=undefined;}
   render();
 }
 function acknowledgeUnknownOriginal() {
@@ -642,75 +686,142 @@ function acknowledgeUnknownOriginal() {
   render();
 }
 
+function acceptSnapshot(status,ticket,route=networkTransport) {
+  if(!snapshots.accept(status,ticket,route?.nativeEpoch))throw new Error(status?.p==="UNAVAILABLE"?"Quest status source unavailable":"Quest snapshot is malformed, reordered or stale");
+  receiveNativeAge(status);
+  const previous=questStatus;
+  if(previous && (previous.o?.e!==status.o?.e || previous.g!==status.g)) {breathView?.reset();breathReceivedAt=0;}
+  questStatus=status;lastStatusAt=Date.now();
+  if(breathView && status.breath_monitor!==1) {breathView.reset();if(status.rec)breathView.unavailable("Live breathing history requires the updated Quest app and a Wi-Fi connection.");}
+  if(pendingOriginal?.state==="reconciled_receipt" && !status.pending
+      && pendingOriginal.deviceId===ownerIdentity() && pendingOriginal.epoch===status.o?.e)clearOriginal();
+}
 async function refreshStatus() {
-  if (!connected() || reading || commandBusy) return {ok: false, error: new Error("Status read not ready")};
-  const generation = connectionGeneration;
-  reading = true;
+  if(!pageActive || reading || commandBusy)return {ok:false,error:new Error("Status read not ready")};
+  if(networkRecovering)return {ok:false,error:new Error("Recovery in progress; existing backoff retained")};
+  if(!connected())return {ok:false,error:new Error("Status read not ready")};
+  const generation=connectionGeneration,route=networkTransport,ticket=snapshots.begin(generation);
+  reading=true;statusAbort=new AbortController();const abort=statusAbort;
   try {
-    const source = {readValue: () => transportRead("status")};
-    let bytes;
-    try { bytes = await gattOperation(() => source.readValue()); }
-    catch (error) {
-      const recovering = networkTransport;
-      if (generation !== connectionGeneration || !recovering?.statusTimedOut || recovering.retired) throw error;
-      networkRecovering = true;
-      breathView?.unavailable("Connection recovering; waiting for current breathing readback.");
-      questStatus = undefined; lastStatusAt = 0; render();
-      try {
-        bytes = await recovering.recoverStatus((attempt,total)=>{
-          label("connection-detail",`Status timed out. Reconnecting to the same enrolled Quest (${attempt}/${total}); no commands are resent.`);
-        });
-        if (generation !== connectionGeneration || networkTransport !== recovering) throw new Error("Connection retired");
-        label("connection-detail","Enrolled headset reauthenticated. Current native status received; no command was replayed.");
-      } finally { if (generation === connectionGeneration) networkRecovering = false; }
-    }
-    const status = parseJson(bytes);
-    if (!["open", "gated"].includes(status.m)) throw new Error("Invalid Quest access mode");
-    if (status.p === "UNAVAILABLE") throw new Error("Quest status source unavailable");
-    if (!["IDLE", "STARTING", "ARMING", "ARMED", "RUNNING", "PAUSED", "RECORDING", "FINALIZING", "SAVING", "RECOVERY", "ERROR"].includes(status.p)) throw new Error("Invalid Quest session phase");
-    receiveNativeAge(status);
-    questStatus = status;
-    if (breathView && status.breath_monitor !== 1) {
-      breathView.reset();
-      if (status.rec) breathView.unavailable("Live breathing history requires the updated Quest app and a Wi-Fi connection.");
-    }
-    lastStatusAt = Date.now();
-    label("connection-detail", "Quest status received.");
-    if (pendingOriginal?.state === "reconciled_receipt" && !status.pending) clearOriginal();
-    render();
+    const status=await gattOperation(async()=>route ? route.exchange ? route.exchange("status",{},{signal:abort.signal}) : parseJson(await transportRead("status")) : parseJson(await transportRead("status")),generation);
+    if(generation!==connectionGeneration || route!==networkTransport || !pageActive || abort.signal.aborted)return {ok:false,error:new Error("Connection retired")};
+    acceptSnapshot(status,ticket,route);
+    if(route && !remoteControlAllowed(status) && globalThis.ViscerealityRecovery) {beginNetworkRecovery();return {ok:true};}
+    label("connection-detail","Quest status received.");render();
     await observeOriginalReceipt(status,generation);
-    return {ok: true};
-  } catch (error) {
-    if (generation === connectionGeneration) {
-      nativeAgeConnection(); nativeAgeScope.visible = null;
-      breathView?.unavailable("Status unavailable; waiting for current breathing readback.");
-      questStatus = undefined; lastStatusAt = 0; render();
-      label("connection-detail", `Status read failed: ${connectionErrorText(error)}`);
+    return {ok:true};
+  } catch(error) {
+    if(generation===connectionGeneration && pageActive && !abort.signal.aborted) {
+      invalidateSnapshot();render();label("connection-detail",`Status read failed: ${connectionErrorText(error)}`);
+      if(route)beginNetworkRecovery();
     }
-    return {ok: false, error};
-  } finally {
-    if (generation === connectionGeneration) reading = false;
-  }
+    return {ok:false,error};
+  } finally {if(generation===connectionGeneration){reading=false;if(statusAbort===abort)statusAbort=undefined;}}
+}
+function startNetworkPolling() {
+  clearInterval(pollTimer);clearInterval(breathPollTimer);
+  pollTimer=setInterval(()=>{if(pageActive&&!networkRecovering)refreshStatus();},1000);
+  if(breathView)breathPollTimer=setInterval(refreshBreathing,500);
+}
+async function joinVerifiedHeadset(selector,signal,remember=false) {
+  // Only a known exact route is used. No internet test, discovery or subnet scan.
+  const url=discoveryApi.localEndpoint(selector.gateway),bounded=AbortSignal.any([signal,AbortSignal.timeout(15000)]);
+  const run=async operation=>{
+    let abort;
+    const retired=new Promise((_,reject)=>{abort=()=>reject(bounded.reason);bounded.addEventListener("abort",abort,{once:true});});
+    try {const pending=Promise.race([operation,retired]);bounded.throwIfAborted();const value=await pending;bounded.throwIfAborted();return value;}
+    finally {bounded.removeEventListener("abort",abort);}
+  };
+  const response=await run(fetch(url,{method:"GET",cache:"no-store",credentials:"omit",redirect:"error",referrerPolicy:"no-referrer",signal:bounded}));
+  if(!response.ok)throw new ViscerealityTransport.GatewayError(response.status===408||response.status===429||response.status>=500?"transient":"integrity",`http-${response.status}`,"Known headset route unavailable");
+  const text=await run(response.text());
+  if(encoder.encode(text).length>4096)throw new ViscerealityTransport.GatewayError("integrity","identity-schema","Headset identity too large");
+  let live;try {live=JSON.parse(text);}catch(_){throw new ViscerealityTransport.GatewayError("integrity","identity-schema","Headset identity is malformed");}
+  if(live?.v!==1||!/^[0-9a-f]{32}$/.test(live.device||"")||!discoveryApi.serialValid(live.serial)||selector.device!==undefined&&(live.device!==selector.device||live.serial!==selector.serial))throw new ViscerealityTransport.GatewayError("integrity","physical-identity","The Wi-Fi address belongs to a different headset. Use Find to select it explicitly.");
+  if(!discoveryApi.epoch(live.epoch)||!(discoveryApi.epoch(live.native_epoch)||live.native_epoch==="0"&&live.enabled===false&&live.remote_available===false))throw new ViscerealityTransport.GatewayError("integrity","identity-schema","Headset lifetime is malformed");
+  if(typeof live.enabled!=="boolean"||typeof live.remote_available!=="boolean")throw new ViscerealityTransport.GatewayError("integrity","identity-schema","Headset availability is malformed");
+  if(remember)rememberReconnect(live,url);
+  if(live.enabled!==true||live.remote_available!==true)throw new ViscerealityTransport.GatewayError("availability","remote-unavailable","Waiting for Remote on the headset");
+  const joined=await ViscerealityTransport.localJoin({url,expected:{device:live.device,serial:live.serial,epoch:live.epoch,native_epoch:live.native_epoch},signal});
+  return joined;
+}
+function beginNetworkRecovery() {
+  if(preview||!pageActive||!globalThis.ViscerealityRecovery?.RecoveryController)return;
+  if(networkRecovering&&recoveryController)return;
+  networkRecovering=true;invalidateSnapshot();
+  if(pendingOriginal && ["live","uncertain"].includes(pendingOriginal.state))pendingOriginal.state="observing";
+  const generation=connectionGeneration;
+  stopRecovery();networkRecovering=true;
+  recoveryController=new ViscerealityRecovery.RecoveryController({
+    attempt:async({signal})=>{
+      if(!pageActive||generation!==connectionGeneration)return {kind:"blocked",error:new Error("Connection retired")};
+      try {
+        let route=networkTransport;
+        if(route?.retired && route.retirementError?.kind==="integrity")return {kind:"blocked",error:route.retirementError};
+        const ticket=snapshots.begin(generation);
+        let result=route&&!route.retired ? await gattOperation(()=>route.recoverStatusOnce({signal}),generation) : {kind:"blocked",error:route?.retirementError};
+        signal.throwIfAborted();
+        if(result.kind==="blocked" && result.error?.kind!=="integrity" && reconnectIntent) {
+          const joined=await joinVerifiedHeadset(reconnectIntent,signal);signal.throwIfAborted();
+          if(generation!==connectionGeneration){joined.gateway.close();return {kind:"blocked"};}
+          const oldOwner=route?`${route.epoch}:${route.nativeEpoch}`:null;
+          route?.close();networkTransport=route=joined.gateway;gattOperations=operationQueue();
+          if(oldOwner!==`${route.epoch}:${route.nativeEpoch}`)resetNativeView();
+          // Revalidation uses the exact candidate object from the reviewed API.
+          const rejoinedTicket=snapshots.begin(generation);rejoinedTicket.start=ticket.start;
+          result=await gattOperation(()=>route.recoverStatusOnce({signal}),generation);
+          if(result.kind!=="success")return result;
+          return finishRecovery(result.value,rejoinedTicket,route,signal,generation);
+        }
+        if(result.kind!=="success")return result;
+        return finishRecovery(result.value,ticket,route,signal,generation);
+      } catch(error) {
+        if(signal.aborted)throw signal.reason;
+        const retry=["transient","availability"].includes(error?.kind)||error?.name==="TypeError"||error?.name==="TimeoutError"||/Local gateway unavailable \((?:408|429|5[0-9][0-9])\)/.test(error?.message||"");
+        return {kind:retry?"retry":"blocked",error};
+      }
+    },
+    onState:event=>{
+      if(generation!==connectionGeneration)return;
+      recoveryWaitingRemote=event.error?.code==="remote-unavailable"||event.error?.code==="native-unavailable";
+      if(event.state==="recovered") {networkRecovering=false;recoveryWaitingRemote=false;startNetworkPolling();label("connection-detail","Same headset revalidated. Recovery sent no experiment command.");}
+      if(event.state==="blocked") {networkRecovering=false;invalidateSnapshot();label("connection-detail",`Recovery blocked: ${connectionErrorText(event.error)}. Use Find or Connect to resolve the identity; no command was replayed.`);}
+      if(event.state==="waiting")label("connection-detail",recoveryWaitingRemote?"Waiting for Remote on the headset. Its session is unchanged.":"Retrying the saved Wi-Fi address. If it moved, choose Disconnect, then Find headset. The headset session continues.");
+      render();
+    }
+  });
+  render();recoveryController.start();
+}
+async function finishRecovery(status,ticket,route,signal,generation) {
+  signal.throwIfAborted();
+  if(generation!==connectionGeneration||route!==networkTransport)return {kind:"blocked"};
+  try {acceptSnapshot(status,ticket,route);}catch(error){return {kind:"retry",error};}
+  if(!remoteControlAllowed(status))return {kind:"retry",error:{kind:"availability",code:"remote-unavailable"}};
+  // Receipt reads are allowed while Gateway authority is still inactive.
+  await observeOriginalReceipt(status,generation,signal);signal.throwIfAborted();
+  if(pendingOriginal?.state==="observing")return {kind:"retry",error:{kind:"availability",code:"original-pending"}};
+  if(!snapshots.fresh()||!route.acceptRecoveredStatus(status))return {kind:"retry",error:new Error("Snapshot expired before acceptance")};
+  return {kind:"success",value:status};
 }
 
 async function refreshBreathing() {
-  const route=networkTransport,generation=connectionGeneration;
+  const route=networkTransport,generation=connectionGeneration,status=questStatus;
   if(breathView?.fresh && breathReceivedAt && Date.now()-breathReceivedAt>2500)
     breathView.unavailable("Breathing readback delayed; waiting for the Quest.");
   if(!breathView || !route?.active || !pageActive || questStatus?.breath_monitor!==1) return;
-  if(breathReading || reading || commandBusy || networkRecovering) return;
-  breathReading=true;
+  if(breathReading || reading || commandBusy || networkRecovering || !freshStatus()) return;
+  breathReading=true;breathAbort=new AbortController();const abort=breathAbort;
   try {
-    const data=await gattOperation(()=>route.exchange("breath-monitor",breathView.model.query()),generation);
-    if(generation!==connectionGeneration || route!==networkTransport || !pageActive)return;
+    const data=await gattOperation(()=>route.exchange("breath-monitor",breathView.model.query(),{signal:abort.signal}),generation);
+    if(generation!==connectionGeneration || route!==networkTransport || !pageActive || abort.signal.aborted || status!==questStatus || !freshStatus())return;
     breathView.accept(data,route.nativeEpoch);
     breathReceivedAt=Date.now();
   } catch(error) {
-    if(generation===connectionGeneration) {
+    if(generation===connectionGeneration && !abort.signal.aborted && pageActive) {
       breathView.unavailable("Breathing readback unavailable; waiting for the Quest.");
-      if(route.retired)disconnected("Gateway connection ended during breathing readback. Reconnect to read current state.");
+      invalidateSnapshot();beginNetworkRecovery();render();
     }
-  } finally {if(generation===connectionGeneration)breathReading=false;}
+  } finally {if(generation===connectionGeneration){breathReading=false;if(breathAbort===abort)breathAbort=undefined;}}
 }
 
 function scheduleReconnect() {
@@ -722,7 +833,7 @@ function scheduleReconnect() {
 }
 function disconnected(reason = "Quest GATT disconnected. Reconnecting to the selected Quest when available.") {
   legacyGattLease?.retire();
-  networkRecovering = false;
+  stopRecovery();statusAbort?.abort();breathAbort?.abort();receiptAbort?.abort();statusAbort=undefined;invalidateSnapshot();
   if (pendingOriginal?.state === "live") pendingOriginal.state="observing";
   polarObservation?.cancel("Connection retired before a Polar receipt.");
   durableObservation?.cancel("Connection retired before a command receipt.");
@@ -741,7 +852,7 @@ function disconnected(reason = "Quest GATT disconnected. Reconnecting to the sel
   networkTransport = undefined;
   bleOwnerIdentity = undefined;
   characteristics = undefined;
-  questStatus = undefined;
+  questStatus = undefined; snapshots.reset();
   accessCode = "";
   byId("pair-code").value = "";
   label("connection-detail", reason);
@@ -1002,12 +1113,14 @@ async function sendCommand(op, name, condition = "", bias = 0, selectedSession =
     const preparation = selectedSetup ? signedPolarSetup(id,op,selectedSetup) : selectedPolar ? signedPolarStop(id,op,selectedPolar) : selectedSession ? signedSessionCommand(id, op, selectedSession, bias)
       : signedCommand(id, op, condition, bias);
     const bytes = await (observer ? observer.wait(preparation) : preparation);
+    if(!freshStatus())throw new Error("Command not sent. Headset status is stale.");
     assertControlMode();
     if (selectedSession) assertSelectedSessionControl(op, selectedSession);
     if (selectedSetup) assertSelectedPolarSetup(op, selectedSetup);
     const command = {writeValueWithResponse: transportWrite};
     const write = gattOperation(() => {
       observer?.check();
+      if(!freshStatus())throw new Error("Command not sent. Headset status is stale.");
       assertControlMode();
       if(selectedSession)assertSelectedSessionControl(op,selectedSession);
       if(selectedPolar)assertSelectedPolarStop(op,selectedPolar);
@@ -1087,7 +1200,7 @@ async function sendCommand(op, name, condition = "", bias = 0, selectedSession =
       }
     }
   } finally {
-    if (pendingOriginal?.id === id && pendingOriginal.state === "live") pendingOriginal.state="uncertain";
+    if (pendingOriginal?.id === id && pendingOriginal.state === "live") pendingOriginal.state=networkTransport ? "observing" : "uncertain";
     if (commandTiming?.id === id) {
       const t=commandTiming, elapsed=(a,b)=>a===null||b===null?"—":`${Math.max(0,Math.round(b-a))} ms`;
       label("timing-detail", `${t.name} · request ${t.id} · click→write ${elapsed(t.click,t.writeStart)} · transport write ${elapsed(t.writeStart,t.writeEnd)} · write→receipt ${elapsed(t.writeEnd,t.receipt)} · receipt→render ${elapsed(t.receipt,t.rendered)}. Android admission, native action and durable acknowledgement require correlated owner timestamps; transport intervals alone do not identify them.`);
@@ -1097,6 +1210,7 @@ async function sendCommand(op, name, condition = "", bias = 0, selectedSession =
     if (durableObservation === observer) durableObservation = undefined;
     if (generation !== connectionGeneration) return;
     commandBusy = false;
+    if(networkTransport && (!networkTransport.active || networkTransport.retired))beginNetworkRecovery();
     // A cancelled read may still own the GATT queue; do not await it just to refresh.
     if (!observer?.cancelled) await refreshStatus();
     render();
@@ -1127,6 +1241,7 @@ for (const button of document.querySelectorAll(".bottom-nav button")) {
 }
 // A page owns only its selected Web Bluetooth handle, not other tabs/clients.
 function retirePageConnection() {
+  stopRecovery();statusAbort?.abort();breathAbort?.abort();receiptAbort?.abort();
   cancelDiscovery();
   freshHeadsets.clear();
   selectedHeadset=headsetRoster?.records.find(record=>record.device===selectedHeadset?.device);
@@ -1145,9 +1260,29 @@ if (typeof window.addEventListener === "function") {
   window.addEventListener("pagehide", retirePageConnection);
   window.addEventListener("pageshow", event => {
     if (event.persisted) retirePageConnection();
-    pageActive = true;
+    pageActive = !document.hidden;
     render();
+    if(pageActive && reconnectIntent)beginNetworkRecovery();
   });
+  window.addEventListener("online",()=>{if(pageActive&&networkRecovering)recoveryController?.resume();});
+  window.addEventListener("offline",()=>{if(pageActive&&networkRecovering&&!recoveryController?.blocked)label("connection-detail","Internet connectivity changed. Local headset recovery still uses the known Wi-Fi route.");});
+}
+function suspendPage() {
+  pageActive=false;cancelDiscovery();statusAbort?.abort();breathAbort?.abort();receiptAbort?.abort();snapshots.invalidate();
+  pendingConnection?.cancel();
+  recoveryController?.suspend();
+  if(networkTransport){networkTransport.active=false;networkTransport.statusTimedOut=true;networkRecovering=!recoveryController?.blocked;}
+  polarObservation?.cancel("Page hidden; original result retained without replay.");durableObservation?.cancel("Page hidden; original result retained without replay.");
+  breathView?.unavailable("Page hidden; state must be revalidated.");render();
+}
+function resumePage() {
+  pageActive=true;
+  if(networkTransport||reconnectIntent) {if(recoveryController)recoveryController.resume();else {networkRecovering=false;beginNetworkRecovery();}}
+  render();
+}
+if(typeof document.addEventListener==="function") {
+  document.addEventListener("visibilitychange",()=>document.hidden?suspendPage():resumePage());
+  document.addEventListener("freeze",suspendPage);document.addEventListener("resume",resumePage);
 }
 byId("live-bias").addEventListener("input", () => label("live-bias-value", `${byId("live-bias").value}%`));
 byId("apply-live-bias").addEventListener("click", () => {
@@ -1158,6 +1293,8 @@ byId("apply-live-bias").addEventListener("click", () => {
 byId("connect").addEventListener("click", connect);
 byId("reconnect").addEventListener("click", () => connect({reuseSelected: true}));
 function cancelConnection() {
+  reconnectIntent=undefined;try{localStorage.removeItem(INTENT_KEY);}catch(_){}
+  stopRecovery();
   cancelDiscovery();
   reconnectAllowed = false;
   clearTimeout(reconnectTimer); reconnectTimer = undefined;
@@ -1256,7 +1393,7 @@ resumeAuthorisedQuest();
 
 function routeChanged() {
   cancelDiscovery();
-  if (connected() || connecting) cancelConnection();
+  if (networkTransport || recoveryController || reconnectIntent || connected() || connecting || networkRecovering) cancelConnection();
   selectedRoute=byId("connection-route").value;
   byId("network-enrollment").hidden=["ble","local"].includes(selectedRoute);
   byId("relay-token-row").hidden=selectedRoute!=="relay";
@@ -1271,6 +1408,7 @@ function routeChanged() {
 }
 async function connectNetwork() {
   if (connected() || connecting || networkRecovering || preview || !pageActive) return;
+  stopRecovery();networkTransport?.close();networkTransport=undefined;invalidateSnapshot();
   connecting=true;
   const generation=++connectionGeneration;
   let candidate;
@@ -1288,8 +1426,8 @@ async function connectNetwork() {
     gattOperations=operationQueue();
     const initial=await refreshStatus();
     if (!initial.ok) throw initial.error;
-    pollTimer=setInterval(refreshStatus,1000);
-    if(breathView) {breathView.reset();breathPollTimer=setInterval(refreshBreathing,500);await refreshBreathing();}
+    startNetworkPolling();
+    if(breathView) {breathView.reset();await refreshBreathing();}
     label("connection-detail","Enrolled headset authenticated. Current native status received.");
   } catch(error) {
     candidate?.close();
@@ -1351,6 +1489,7 @@ async function connectLocal({manual=false}={}) {
   if(expected && failedHeadsets.has(expected.device)){label("connection-detail","Find the headset again to refresh its Wi-Fi address.");return;}
   const urls=manual?[byId("local-gateway-url").value.trim()]:expected?.gateways || (expected?.gateway?[expected.gateway]:[]);
   if(!urls.length){label("connection-detail","No current Wi-Fi route. Find the headset again or enter its address.");return;}
+  stopRecovery();networkTransport?.close();networkTransport=undefined;invalidateSnapshot();
   connecting=true;reconnectAllowed=false;
   const generation=++connectionGeneration,abort=new AbortController();
   let candidate;
@@ -1359,7 +1498,7 @@ async function connectLocal({manual=false}={}) {
   try {
     let joined,lastError;
     for(const url of urls) {
-      try {joined=await ViscerealityTransport.localJoin({url,expected,signal:abort.signal});break;}
+      try {joined=await joinVerifiedHeadset({...expected,gateway:url},abort.signal,true);break;}
       catch(error){lastError=error;if(abort.signal.aborted || generation!==connectionGeneration)throw error;}
     }
     if(!joined)throw lastError;
@@ -1371,18 +1510,31 @@ async function connectLocal({manual=false}={}) {
     if(generation!==connectionGeneration || !pageActive){candidate.close();return;}
     const remembered=headsetRoster?.verified({...joined.identity,bluetoothId:expected?.bluetoothId},joined.url);
     if(remembered)selectedHeadset=remembered;
+    rememberReconnect(joined.identity,joined.url);
     if(expected)freshHeadsets.delete(expected.device);
-    pollTimer=setInterval(refreshStatus,1000);
-    if(breathView){breathView.reset();breathPollTimer=setInterval(refreshBreathing,500);await refreshBreathing();}
+    startNetworkPolling();
+    if(breathView){breathView.reset();await refreshBreathing();}
     label("connection-detail",`${joined.identity.serial || "Serial unavailable"} - Wi-Fi connected. Current native status received.`);
   } catch(error) {
     candidate?.close();
+    if(abort.signal.aborted)return;
     if(generation===connectionGeneration){
-      if(expected){freshHeadsets.delete(expected.device);failedHeadsets.add(expected.device);}
-      disconnected(`Connection unavailable: ${connectionErrorText(error)}. Find the headset again. No command was replayed.`);
+      if(error?.kind==="integrity" || error?.kind===undefined && !["TypeError","TimeoutError"].includes(error?.name) && !/Local gateway unavailable \((?:408|429|5[0-9][0-9])\)/.test(error?.message||"")) {
+        if(expected){freshHeadsets.delete(expected.device);failedHeadsets.add(expected.device);}
+        disconnected(`Connection unavailable: ${connectionErrorText(error)}. Find the headset again. No command was replayed.`);
+      } else {
+        networkTransport=undefined;connecting=false;pendingConnection=undefined;
+        if(!reconnectIntent && expected)reconnectIntent={device:expected.device,serial:expected.serial,gateway:urls[0]};
+        beginNetworkRecovery();
+      }
     }
   } finally {if(generation===connectionGeneration){connecting=false;pendingConnection=undefined;render();}}
 }
 byId("find-headset").addEventListener("click",findHeadset);
 byId("connect-local-address").addEventListener("click",()=>connectLocal({manual:true}));
 if(!globalThis.navigator?.bluetooth?.requestDevice || !globalThis.isSecureContext)label("discovery-note","Bluetooth discovery unavailable in this browser. Enter the headset Wi-Fi address manually.");
+
+// UI-only freshness watchdog: never dispatches transport or experiment work.
+if(typeof setInterval==="function")setInterval(()=>{if(pageActive&&questStatus){if(!freshStatus())breathView?.unavailable("Headset state is stale; waiting for a fresh snapshot.");render();}},250);
+reconnectIntent=loadReconnectIntent();
+if(reconnectIntent&&!preview&&pageActive)beginNetworkRecovery();

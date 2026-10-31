@@ -18,6 +18,8 @@
   <script src="discovery.js" defer></script>
   <script src="transport.js" defer></script>
   <script src="breath-monitor.js" defer></script>
+  <script src="connection-recovery.js" defer></script>
+  <script src="snapshot-state.js" defer></script>
   <script src="app.js" defer></script>
   <script src="pwa.js" defer></script>
 </head>
@@ -29,6 +31,7 @@
         <span class="connection-label" id="connection-label" aria-live="polite">Not connected</span>
       </div>
       <p class="foreground-line" id="connection-detail" aria-live="polite">Find the headset in Remote mode, then connect over the same Wi-Fi.</p>
+      <p id="status-age" class="foreground-line" aria-live="polite">No confirmed headset state</p>
       <p class="presentation" id="presentation" role="status">Headset state unknown</p>
       <div id="access" class="access" hidden>
         <label for="pair-code">Quest pairing code</label>

@@ -44,7 +44,7 @@ function fixture(mode = "remote", readReceipt, breathView) {
     },
     async write(bytes) {requests.push(JSON.parse(new TextDecoder().decode(bytes)));}};
   let now = 1000;
-  const context = vm.createContext({QuestBleLifetime:core, TextEncoder, TextDecoder, URLSearchParams, Promise,
+  const context = vm.createContext({QuestBleLifetime:core,ViscerealitySnapshot:require("./snapshot-state.js"), TextEncoder, TextDecoder, URLSearchParams, Promise, AbortController, AbortSignal,
     ViscerealityBreathMonitor:breathView&&{createView:()=>breathView},
     crypto:webcrypto, location:{search:""},
     document:{getElementById:node, querySelectorAll:()=>[], createElement:()=>({value:"",textContent:""})},
@@ -93,7 +93,7 @@ for (const mode of ["direct", "choose"]) test(`${mode} keeps native status visib
   const f = fixture(mode);
   const result = await f.run("refreshStatus()");
   assert.equal(result.ok, true);
-  assert.equal(f.node("connection-label").textContent, "Quest status current");
+  assert.equal(f.node("connection-label").textContent, "Live");
   assert.equal(f.node("phase").textContent, "RUNNING");
   assert.equal(f.node("active-time").textContent, "00:25");
   assert.match(f.node("presentation").textContent, new RegExp(mode, "i"));

@@ -156,11 +156,13 @@ test('status timeout disables writes then reauthenticates exact scope with fresh
   const {gateway,calls}=await interruptedStatus();
   assert.equal(gateway.active,false);assert.equal(gateway.key,key);
   await assert.rejects(gateway.write(new TextEncoder().encode('{}')),/no command sent/);
-  await assert.rejects(gateway.read('receipt','1'.repeat(16)),/recovering/);
+  const receipt=await gateway.read('receipt','1'.repeat(16));
+  assert.equal(JSON.parse(new TextDecoder().decode(receipt)).id,'1'.repeat(16));
+  assert.equal(gateway.active,false);
   const status=await gateway.recoverStatus();
   assert.equal(JSON.parse(new TextDecoder().decode(status)).p,'IDLE');assert.equal(gateway.active,true);
   const posts=calls.filter(c=>c.options.method==='POST').map(c=>JSON.parse(c.options.body));
-  assert.deepEqual(posts.map(p=>p.action),['status','status']);assert.notEqual(posts[0].nonce,posts[1].nonce);
+  assert.deepEqual(posts.map(p=>p.action),['status','receipt','status']);assert.notEqual(posts[0].nonce,posts[2].nonce);
 });
 test('permanent outage ends after two attempts and erases credentials',async()=>{
   const {gateway}=await interruptedStatus();let attempts=0;

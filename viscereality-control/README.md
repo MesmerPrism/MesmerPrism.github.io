@@ -45,7 +45,7 @@ trusted network remain required. **Advanced connections** retains enrolled
 Wi-Fi, legacy Bluetooth, and provisioned relay routes. Original-receipt
 reconciliation and uncertain-command handling retain their existing behavior.
 
-Shell PWA5 caches the complete discovery module with the existing app, worker,
+Shell PWA6 caches discovery, connection recovery and whole-snapshot validation with the existing app, worker,
 manifest and icons. Installation and cold offline shell checks do not prove
 physical Bluetooth, phone hotspot routing, or deployed-origin LAN permission.
 
@@ -312,24 +312,48 @@ issues no command. A selected finite window is an observer policy, not a Polar
 owner deadline or proof of failure. Session commands retain their separate
 existing owner receipt contract. No automatic retry is performed.
 
-The legacy network status recovery API is limited to a `TimeoutError` from an already
-authenticated connection's read-only status exchange. Recording controls become
-unavailable immediately. Two recovery attempts wait one and three seconds,
-respectively, then check the original device and gateway epoch and authenticate
-a fresh status reply under the original controller key and native runtime epoch.
-Each request retains its existing deadline (ten seconds for identity/direct
-network, fifteen seconds for relay exchanges). HTTP errors, failed authentication,
-revocation and changed scope retire the connection without recovery. Exhaustion,
-Disconnect and page retirement erase in-memory credentials and abort outstanding
-requests or recovery waits. Credentials are never persisted. Commands and receipt
-reads are never automatically retried by recovery; an uncertain original command
-retains its ID and normal read-only reconciliation rules after status returns.
-Host tests simulate these transitions; they do not establish browser permission,
-background scheduling or headset acceptance.
+The app uses the authenticated one-attempt API and the single cancellable
+`RecoveryController` documented in [Authenticated read recovery](CONNECTION_RECOVERY.md).
+Ordinary status, breathing-history and original-receipt outages disable commands
+and retain the same in-memory guest while valid. Recovery sends only identity,
+status and retained original-receipt reads. It never sends Start, Pause, Resume,
+Save, sensor actions or a mode change. The headset continues independently;
+Polar input loss and explicit manual Resume keep their native policy.
 
-The new one-attempt authenticated read API and cancellable scheduler also
-classify ordinary network and retryable HTTP outages while retaining same-memory
-credentials. Recovery leaves commands disabled until explicit snapshot acceptance.
-See [Authenticated read recovery](CONNECTION_RECOVERY.md) for the exact result,
-error, cancellation and acceptance contracts. The app owns full snapshot
-freshness and selected-headset rejoin decisions.
+Full `wifi_snapshot:1` status is admitted as one observation: mandatory state,
+clock, generation/revision, exact `o` and `pi`, native owner, and a 16 KiB payload
+bound. Its native age plus the complete monotonic browser read (queue, body and
+verification included) must be at most 5000 ms. The UI-only 250 ms freshness tick
+also expires controls while a request is still pending. Older/reordered or
+conflicting observations and rich-to-legacy downgrades cannot revive the UI.
+A newer valid revision may correct the native active clock backwards. A stale
+view keeps the explicitly last-confirmed state and clock; network loss never
+presents an invented native Pause or Idle. Older no-marker BLE, manual enrollment
+and relay owners retain their conservative compatibility route.
+
+Hidden/frozen pages abort reads, suspend retries and invalidate current authority.
+Foreground return revalidates the same in-memory guest. Pagehide retires memory
+credentials; refresh/reopen can rejoin only the explicitly selected local device
+and serial at its saved exact route. Storage contains a bounded non-secret
+`viscereality-last-connected` selector (device, serial, gateway), never controller
+keys or epochs. Explicit Disconnect removes that intent. Internet online/offline
+events are hints: local recovery has no internet-connectivity gate. There is no
+automatic Bluetooth chooser or subnet scan. If DHCP moved the address, use
+Disconnect, then Find headset to refresh it with a user gesture.
+
+Expired guests and changed native/gateway lifetimes require a fresh exact physical
+identity/serial proof before joining; changed lifetimes reset old state/history.
+The existing eight-guests/120-second owner limit and no-eviction rule remain
+unchanged. Capacity or lost join replies back off through the same scheduler;
+repeated Refresh clicks do not reset it. Wrong physical identity or HMAC blocks.
+Original command IDs/owner metadata are persisted before dispatch and never
+replayed. Recovery observes the original receipt, then fresh status. A new owner
+or unavailable original receipt remains uncertain and requires explicit checking
+and acknowledgement; Disconnect preserves that original uncertainty.
+
+PWA6 atomically caches all 16 shell entries, including `connection-recovery.js`
+and `snapshot-state.js`, while dynamic authenticated traffic stays uncached. It
+retains installation support and the existing scroll/pull-to-refresh containment.
+Run `node --test viscereality-control/*.test.cjs` for the browser source suite.
+Host and synthetic desktop/mobile/offline checks do not prove physical headset,
+phone permissions, installed-PWA background behavior or real network recovery.
