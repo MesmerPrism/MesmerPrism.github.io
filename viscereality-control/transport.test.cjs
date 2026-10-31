@@ -212,3 +212,38 @@ test('two status response timeouts exhaust recovery without command or receipt d
   await assert.rejects(gateway.recoverStatus(),{name:'TimeoutError'});
   assert.deepEqual(actions,['identity','status','identity','status']);assert.equal(gateway.key,'');
 });
+
+function localFixture({identity={},join={},nativeEpoch='456',hold}={}) {
+ const calls=[];const live={v:1,device,epoch,native_epoch:'456',enabled:true,serial:'SYNTHETIC-SERIAL',remote_available:true,...identity};
+ const fetcher=async(url,options)=>{calls.push({url,options});let reply=live;
+  if(options.method==='POST') {const request=JSON.parse(options.body);
+   if(request.action==='connect'){if(hold)await hold;reply={v:1,device,epoch,serial:'SYNTHETIC-SERIAL',controller,key,...join};}
+   else {const payload=JSON.stringify({v:1,o:{e:nativeEpoch,s:'observed'}});reply={v:1,device,epoch,nonce:request.nonce,action:request.action,payload,mac:sign(`RQG1-REPLY|${controller}|${device}|${epoch}|${request.nonce}|${request.action}|${payload}`)};}
+  }return {ok:true,text:async()=>JSON.stringify(reply)};};
+ return {calls,live,options:{url:'http://192.168.43.2:8766/v1/gateway',fetcher,cryptoApi:webcrypto,expected:{device,serial:'SYNTHETIC-SERIAL',epoch,native_epoch:'456'}}};
+}
+test('local join returns ordinary authenticated Gateway after exact bootstrap and fresh native status',async()=>{
+ const {localJoin}=require('./transport.js');assert.equal(typeof localJoin,'function','key-free local join is required');
+ const f=localFixture(),result=await localJoin(f.options);assert.ok(result.gateway instanceof Gateway);assert.equal(result.gateway.active,true);assert.equal(result.gateway.nativeEpoch,'456');
+ assert.deepEqual(JSON.parse(f.calls[1].options.body),{v:1,action:'connect',device,epoch});
+ assert.deepEqual(f.calls.map(c=>c.options.method),['GET','POST','POST']);
+ for(const c of f.calls){assert.equal(c.options.cache,'no-store');assert.equal(c.options.redirect,'error');assert.equal(c.options.credentials,'omit');assert.ok(c.options.signal);}
+ result.gateway.close();assert.equal(result.gateway.key,'');
+});
+for(const field of ['serial','device','epoch','native_epoch','remote_available'])test(`local join denies mismatching live ${field} before bootstrap`,async()=>{
+ const {localJoin}=require('./transport.js');assert.ok(localJoin);const f=localFixture({identity:{[field]:field==='remote_available'?false:'wrong'}});await assert.rejects(localJoin(f.options));assert.equal(f.calls.length,1);
+});
+test('remembered endpoint matches serial/device but binds fresh epochs without BLE inventory API',async()=>{
+ const {localJoin}=require('./transport.js');assert.ok(localJoin);const f=localFixture();delete f.options.expected.epoch;delete f.options.expected.native_epoch;
+ const result=await localJoin(f.options);assert.equal(result.gateway.epoch,'123');result.gateway.close();
+});
+for(const field of ['serial','device','epoch','key','controller'])test(`local join rejects mismatching or malformed bootstrap ${field}`,async()=>{
+ const {localJoin}=require('./transport.js');assert.ok(localJoin);const f=localFixture({join:{[field]:'wrong'}});await assert.rejects(localJoin(f.options));assert.equal(f.calls.length,2);
+});
+test('native owner changes before first status cannot admit controls',async()=>{
+ const {localJoin}=require('./transport.js');assert.ok(localJoin);const f=localFixture({nativeEpoch:'457'});await assert.rejects(localJoin(f.options),/native|identity/i);
+});
+test('abandoned local bootstrap settles promptly and late completion cannot create a Gateway',async()=>{
+ const {localJoin}=require('./transport.js');assert.ok(localJoin);let release;const f=localFixture({hold:new Promise(resolve=>release=resolve)}),abort=new AbortController();
+ const pending=localJoin({...f.options,signal:abort.signal});await new Promise(setImmediate);abort.abort();await assert.rejects(pending);release();await new Promise(setImmediate);assert.equal(f.calls.length,2);
+});

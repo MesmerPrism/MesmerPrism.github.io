@@ -40,8 +40,8 @@
       if (text.length > 65536) throw new Error("Gateway response too large");
       return JSON.parse(text);
     }
-    async connect() {
-      const hint = await this.request("GET");
+    async connect({identity} = {}) {
+      const hint = identity || await this.request("GET");
       if (hint.v !== 1 || hint.device !== this.device || !/^[1-9][0-9]{0,18}$/.test(hint.epoch) || hint.enabled !== true) throw new Error("Gateway device identity does not match headset enrollment");
       this.epoch=hint.epoch;
       const status = await this.exchange("status",{});
@@ -118,7 +118,33 @@
   function ble(characteristics) {
     return {read:(name)=>characteristics[name].readValue(),write:bytes=>characteristics.command.writeValueWithResponse(bytes)};
   }
-  const api={Gateway,ble,endpoint};
+  async function localJoin({url,expected,signal,fetcher=root.fetch.bind(root),cryptoApi=root.crypto}) {
+    const discovery=typeof module!=="undefined"?require('./discovery.js'):root.ViscerealityDiscovery;
+    url=discovery.localEndpoint(url);
+    const lifetime=AbortSignal.any([...(signal?[signal]:[]),AbortSignal.timeout(15000)]);
+    let candidate,abort;
+    const retired=new Promise((_,reject)=>{abort=()=>{candidate?.close();reject(lifetime.reason);};lifetime.addEventListener("abort",abort,{once:true});});
+    const run=async operation=>{lifetime.throwIfAborted();const result=await Promise.race([operation,retired]);lifetime.throwIfAborted();return result;};
+    async function request(body) {
+      const response=await run(fetcher(url,{method:body?"POST":"GET",body:body&&JSON.stringify(body),headers:body?{"Content-Type":"application/json"}:{},cache:"no-store",credentials:"omit",redirect:"error",referrerPolicy:"no-referrer",signal:lifetime}));
+      if(!response.ok)throw Error(`Local gateway unavailable (${response.status}). Find the headset again.`);
+      const text=await run(response.text());if(new TextEncoder().encode(text).length>4096)throw Error("Local identity response too large");return JSON.parse(text);
+    }
+    try {
+      lifetime.throwIfAborted();
+      const live=await request();
+      if(live.v!==1 || !/^[0-9a-f]{32}$/.test(live.device||"") || !discovery.epoch(live.epoch) || !discovery.epoch(live.native_epoch) || !discovery.serialValid(live.serial) || live.enabled!==true || live.remote_available!==true)throw Error("Live Remote headset identity unavailable. Find the headset again.");
+      if(expected && (live.device!==expected.device || live.serial!==expected.serial || expected.epoch!==undefined && live.epoch!==expected.epoch || expected.native_epoch!==undefined && live.native_epoch!==expected.native_epoch))throw Error("Headset identity or epochs changed. Find the headset again.");
+      const joined=await request({v:1,action:"connect",device:live.device,epoch:live.epoch});
+      if(!joined || Object.keys(joined).sort().join(",")!=="controller,device,epoch,key,serial,v" || joined.v!==1 || joined.device!==live.device || joined.epoch!==live.epoch || joined.serial!==live.serial)throw Error("Local join identity changed. Find the headset again.");
+      candidate=new Gateway({url,controller:joined.controller,key:joined.key,device:joined.device,trustedLan:true,fetcher,cryptoApi});
+      candidate.nativeEpoch=live.native_epoch;
+      const status=await run(candidate.connect({identity:live}));
+      return {gateway:candidate,status,identity:{device:live.device,serial:live.serial,epoch:live.epoch,native_epoch:live.native_epoch},url};
+    } catch(error) {candidate?.close();throw error;}
+    finally {lifetime.removeEventListener("abort",abort);}
+  }
+  const api={Gateway,ble,endpoint,localJoin};
   if(typeof module!=="undefined") module.exports=api;
   else root.ViscerealityTransport=api;
 })(globalThis);

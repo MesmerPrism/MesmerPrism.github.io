@@ -1,5 +1,54 @@
 # Experiment browser connection lifetime
 
+## Find a Remote headset and join local Wi-Fi
+
+The normal route is **Find headset**, then **Connect** beside its serial.
+Chrome opens its service-filtered Bluetooth chooser directly from that click.
+Discovery reads the app-owned serial characteristic independently of the
+advertised name, validates its metadata, and releases GATT. Commands and
+telemetry then use Wi-Fi through the existing authenticated `Gateway`.
+The headset must be in Remote mode and on the same Wi-Fi or phone hotspot.
+The browser cannot turn on a hotspot or join a network for you.
+
+Discovery uses service `9a7b2001-7d6a-4b7f-9d4a-6f7c0a020101`, serial
+characteristic `9a7b2001-7d6a-4b7f-9d4a-6f7c0a020102`, and metadata
+characteristic `9a7b2001-7d6a-4b7f-9d4a-6f7c0a020103`. Serial is at most
+64 UTF-8 bytes; metadata is at most 512 bytes and four private IPv4 HTTP
+`/v1/gateway` endpoints. Empty serial is shown as unavailable, and an empty
+endpoint list cannot supply a Connect route. No generated app ID is shown as
+a serial. Invalid UTF-8, changed serial, unsafe addresses, oversized records,
+and stale attempts fail closed.
+
+Before joining, GET identity must prove the expected device and serial plus
+live gateway/native epochs, `enabled`, and `remote_available`. Newly read
+Bluetooth metadata must match both exact epochs too. The only unauthenticated
+POST is `{v:1,action:"connect",device,epoch}` to that same local endpoint.
+Its ephemeral controller credentials enter the ordinary RQG1 HMAC transport;
+controls stay unavailable until authenticated current native status is read.
+Joining does not start or replay an experiment action. Identity changes,
+retired pages, failed candidates, and aborted joins cannot replace a newer
+connection. Discovery BLE has its own handle and lifetime, separate from
+legacy BLE control and Wi-Fi.
+
+At most eight nonsecret identities are remembered, with a Bluetooth ID and
+the last successfully verified local gateway. A remembered row makes no
+nearby-availability claim: its saved endpoint is only a hint and must prove
+device/serial again before binding fresh epochs. A changed or unreachable
+address requires **Find headset** to refresh it. This path does not require
+the experimental `Bluetooth.getDevices()` API or browser flags. Startup does
+not open a chooser. Controller keys never enter storage or the static cache.
+
+**Enter Wi-Fi address manually** provides the same key-free join when
+Bluetooth is unavailable. Use the exact private IPv4 HTTP gateway URL. Local
+plaintext has no confidentiality; browser local-network permission and the
+trusted network remain required. **Advanced connections** retains enrolled
+Wi-Fi, legacy Bluetooth, and provisioned relay routes. Original-receipt
+reconciliation and uncertain-command handling retain their existing behavior.
+
+Shell PWA4 caches the complete discovery module with the existing app, worker,
+manifest and icons. Installation and cold offline shell checks do not prove
+physical Bluetooth, phone hotspot routing, or deployed-origin LAN permission.
+
 ## One page, multiple connections
 
 The guided App32 surface starts from source commit
@@ -10,11 +59,11 @@ over same-network, direct-network or private relay routes. The guide still owns
 the same Polar, session, Finish and panel controls. A network socket or HTTP
 response alone never admits controls.
 
-Network enrollment requires the headset-approved controller ID and key plus
+Advanced network enrollment requires the headset-approved controller ID and key plus
 the headset device ID. These credentials remain in memory and input fields
 are cleared on connection attempts. Reconnect requires reentry; no network
-command is retried. The gateway has one active controller authority; switching
-routes does not grant another operator. Original command ID and owner identity
+command is retried. Switching routes does not grant experiment authority.
+Original command ID and owner identity
 are stored before transport admission, including when the response is lost.
 Stable BLE challenge `d` and `ge` fields, when present, bind original receipts
 to the same device and gateway lifetime across routes. Older BLE owners retain
@@ -66,17 +115,19 @@ new version, avoiding mixed asset versions during an experiment.
    service-worker registration alone is insufficient. If an update is waiting,
    close all Viscereality tabs/windows and reopen while online.
 4. Enable the phone hotspot and connect the Quest to it. Open Viscereality on
-   the Quest, select Remote, and enter its gateway address and approved
-   controller enrollment in the phone app. Allow Chrome's local-network
-   permission when requested and confirm trusted-LAN consent for HTTP.
+   the Quest, select Remote, then tap **Find headset** in the phone app and
+   choose it in Chrome. Check the returned serial, then **Connect**. Allow
+   Chrome's local-network permission when requested. Manual Wi-Fi address and
+   advanced enrollment remain available when needed.
 5. Internet/mobile data can now be unavailable; keep the hotspot enabled. The
    installed interface loads from its cache and commands still use the live
    local connection to the Quest. Airplane mode or disabling all networking
    also removes that local connection.
 
 The PWA does not turn on the hotspot, join networks or discover a changed
-headset address automatically. Enrollment keys remain in memory: enter them
-again after closing or disconnecting the app. Clearing Chrome/app site data
+headset address automatically. Local-join credentials remain in memory and are
+requested again on a verified reconnect. Advanced enrollment keys must be
+entered again after closing or disconnecting the app. Clearing Chrome/app site data
 removes offline files and requires another online setup. Installation and
 offline availability do not grant experiment authority; normal headset Remote
 mode, authentication and fresh owner status are still required.

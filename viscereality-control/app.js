@@ -20,7 +20,14 @@ let characteristics;
 let networkTransport;
 let networkRecovering = false;
 let bleOwnerIdentity;
-let selectedRoute = "lan";
+let selectedRoute = "local";
+const discoveryApi=globalThis.ViscerealityDiscovery;
+const headsetDiscovery=discoveryApi ? new discoveryApi.Discovery() : null;
+let headsetRoster;
+try {headsetRoster=discoveryApi ? new discoveryApi.Roster(localStorage) : null;}catch(_) {headsetRoster=discoveryApi ? new discoveryApi.Roster() : null;}
+const freshHeadsets=new Map();
+const failedHeadsets=new Set();
+let selectedHeadset, findingHeadset=false, discoveryGeneration=0;
 let questStatus;
 let lastStatusAt = 0;
 let accessCode = "";
@@ -435,6 +442,7 @@ function renderGuide(s) {
 
 function render() {
   const live = connected();
+  renderHeadsets();
   byId("connection-options").hidden = live || networkRecovering || preview;
   const s = (live || preview) && freshStatus() ? questStatus : undefined;
   renderGuide(s);
@@ -446,8 +454,8 @@ function render() {
   byId("connect").disabled = connecting || networkRecovering;
   byId("reconnect").hidden = live || connecting || networkRecovering || preview || !device;
   byId("reconnect").disabled = connecting;
-  byId("disconnect").hidden = !live && !connecting && !networkRecovering;
-  byId("disconnect").textContent = connecting ? "Cancel connection" : "Disconnect";
+  byId("disconnect").hidden = !live && !connecting && !networkRecovering && !findingHeadset;
+  byId("disconnect").textContent = connecting || findingHeadset ? "Cancel connection" : "Disconnect";
   byId("refresh").disabled = !live || commandBusy;
   byId("cancel-polar-observation").hidden = !polarObservation && !durableObservation;
   byId("cancel-polar-observation").textContent = durableObservation ? "Cancel command observation" : "Cancel stop observation";
@@ -691,6 +699,7 @@ function disconnected(reason = "Quest GATT disconnected. Reconnecting to the sel
 }
 
 async function connect({reuseSelected = false} = {}) {
+  if (selectedRoute === "local") return selectedHeadset && !failedHeadsets.has(selectedHeadset.device) ? connectLocal() : findHeadset();
   if (selectedRoute !== "ble") return connectNetwork();
   if (connected() || connecting || preview || !pageActive) return;
   // Only this page's previously user-selected handle may skip the chooser.
@@ -1063,6 +1072,9 @@ for (const button of document.querySelectorAll(".bottom-nav button")) {
 }
 // A page owns only its selected Web Bluetooth handle, not other tabs/clients.
 function retirePageConnection() {
+  cancelDiscovery();
+  freshHeadsets.clear();
+  selectedHeadset=headsetRoster?.records.find(record=>record.device===selectedHeadset?.device);
   pageActive = false;
   reconnectAllowed = false;
   clearTimeout(reconnectTimer); reconnectTimer = undefined;
@@ -1090,6 +1102,7 @@ byId("apply-live-bias").addEventListener("click", () => {
 byId("connect").addEventListener("click", connect);
 byId("reconnect").addEventListener("click", () => connect({reuseSelected: true}));
 function cancelConnection() {
+  cancelDiscovery();
   reconnectAllowed = false;
   clearTimeout(reconnectTimer); reconnectTimer = undefined;
   try { localStorage.removeItem("viscereality-authorised-quest"); } catch (_) { }
@@ -1177,22 +1190,24 @@ async function resumeAuthorisedQuest() {
     if (!previous) { label("connection-detail", "Previous Quest permission is unavailable. Choose the headset again."); return; }
     device=previous;
     reconnectAllowed=true;
-    await connect({reuseSelected:true});
+    if(previous.gatt) await connect({reuseSelected:true});
   } catch (_) { label("connection-detail", "Previous Quest could not be recovered. Choose the headset again."); }
 }
 resumeAuthorisedQuest();
 
 function routeChanged() {
+  cancelDiscovery();
   if (connected() || connecting) cancelConnection();
   selectedRoute=byId("connection-route").value;
-  byId("network-enrollment").hidden=selectedRoute==="ble";
+  byId("network-enrollment").hidden=["ble","local"].includes(selectedRoute);
   byId("relay-token-row").hidden=selectedRoute!=="relay";
   byId("trusted-lan-row").hidden=selectedRoute==="relay";
-  const notes={ble: "Choose the nearby Quest. Bluetooth permission is requested by your browser.",
+  const notes={local:"Find the headset, then connect on the same Wi-Fi. No enrollment key is needed in Remote mode.",ble: "Choose the nearby Quest. Bluetooth permission is requested by your browser.",
     lan:"Use the same Wi-Fi network as the Quest, including a phone hotspot. Enter the gateway address and controller enrollment shown by the headset. Secure HTTPS is preferred. Experimental HTTP on a trusted private network needs explicit consent and browser local-network permission support.",
     relay:"A private relay must be deployed and provisioned first. Enter its session exchange URL and private route token. No relay is configured by this website.",
     direct:"Join the headset's network using your device's Wi-Fi settings. This browser cannot join Wi-Fi for you. Keep this cached page open, then enter the gateway address. Nearby Bluetooth also works without Internet."};
   byId("route-note").textContent=notes[selectedRoute];
+  byId("local-discovery").hidden=selectedRoute!=="local";
   render();
 }
 async function connectNetwork() {
@@ -1233,3 +1248,82 @@ if (typeof navigator!=="undefined") {
     bleOption.disabled=true; bleOption.textContent="Nearby Bluetooth  -  unavailable in this browser";
   }
 }
+
+function cancelDiscovery() {
+  discoveryGeneration++;findingHeadset=false;headsetDiscovery?.cancel();
+}
+function renderHeadsets() {
+  if(!headsetRoster)return;
+  const container=byId("headset-roster");container.replaceChildren();
+  for(const remembered of headsetRoster.records) {
+    const fresh=freshHeadsets.get(remembered.device);
+    const row=document.createElement("div"),serial=document.createElement("strong"),note=document.createElement("p"),button=document.createElement("button");
+    row.className="headset-row";serial.textContent=remembered.serial || "Serial unavailable";
+    note.textContent=failedHeadsets.has(remembered.device) ? "Wi-Fi address changed or unavailable. Use Find to refresh the headset identity and address." : fresh ? fresh.gateways.length ? "Discovered by Bluetooth. Connect to verify live Wi-Fi identity." : "Serial read. No usable Wi-Fi route; check the headset network, then Find again."
+      : remembered.gateway ? "Remembered headset. Connect to verify its saved Wi-Fi address; use Find if it moved." : "Remembered identity. Use Find to read its current Wi-Fi address.";
+    button.type="button";button.className="button button-small";button.textContent="Connect";
+    button.disabled=connecting || findingHeadset || connected() || !pageActive || preview || failedHeadsets.has(remembered.device) || !(fresh ? fresh.gateways.length : remembered.gateway);
+    button.addEventListener("click",()=>{selectedHeadset=fresh || remembered;return connectLocal();});
+    row.append(serial,note,button);container.append(row);
+  }
+  byId("find-headset").disabled=connecting || findingHeadset || connected() || !pageActive || preview || !headsetDiscovery || !globalThis.navigator?.bluetooth?.requestDevice || !globalThis.isSecureContext;
+  byId("connect-local-address").disabled=connecting || findingHeadset || connected() || !pageActive || preview;
+}
+async function findHeadset() {
+  if(connected() || connecting || findingHeadset || preview || !pageActive)return;
+  if(!headsetDiscovery){label("discovery-note","Bluetooth discovery unavailable. Enter the Wi-Fi address manually.");return;}
+  const generation=++discoveryGeneration;
+  findingHeadset=true;
+  // find() invokes the chooser before the first await on this gesture stack.
+  const pending=headsetDiscovery.find();
+  label("discovery-note","Choose the headset in Chrome. Reading its app-provided serial and Wi-Fi address...");render();
+  try {
+    const found=await pending;
+    if(generation!==discoveryGeneration || !pageActive)return;
+    headsetRoster.remember(found);freshHeadsets.set(found.device,found);failedHeadsets.delete(found.device);selectedHeadset=found;
+    for(const id of freshHeadsets.keys())if(!headsetRoster.records.some(r=>r.device===id))freshHeadsets.delete(id);
+    label("discovery-note",found.gateways.length ? "Serial read; discovery Bluetooth released. Connect to verify the headset over Wi-Fi." : "Serial read; no usable Wi-Fi route. Check the headset network, then Find again.");
+  } catch(error) {if(generation===discoveryGeneration)label("discovery-note",`Discovery unavailable: ${connectionErrorText(error)}. Find again or enter the Wi-Fi address.`);}
+  finally {if(generation===discoveryGeneration){findingHeadset=false;render();}}
+}
+async function connectLocal({manual=false}={}) {
+  if(connected() || connecting || findingHeadset || networkRecovering || preview || !pageActive)return;
+  const expected=manual?undefined:selectedHeadset;
+  if(expected && failedHeadsets.has(expected.device)){label("connection-detail","Find the headset again to refresh its Wi-Fi address.");return;}
+  const urls=manual?[byId("local-gateway-url").value.trim()]:expected?.gateways || (expected?.gateway?[expected.gateway]:[]);
+  if(!urls.length){label("connection-detail","No current Wi-Fi route. Find the headset again or enter its address.");return;}
+  connecting=true;reconnectAllowed=false;
+  const generation=++connectionGeneration,abort=new AbortController();
+  let candidate;
+  pendingConnection={cancel:()=>{abort.abort();candidate?.close();}};
+  label("connection-detail","Verifying the live Remote headset identity over Wi-Fi...");render();
+  try {
+    let joined,lastError;
+    for(const url of urls) {
+      try {joined=await ViscerealityTransport.localJoin({url,expected,signal:abort.signal});break;}
+      catch(error){lastError=error;if(abort.signal.aborted || generation!==connectionGeneration)throw error;}
+    }
+    if(!joined)throw lastError;
+    candidate=joined.gateway;
+    if(generation!==connectionGeneration || !pageActive || abort.signal.aborted){candidate.close();return;}
+    networkTransport=candidate;gattOperations=operationQueue();
+    const initial=await refreshStatus();
+    if(!initial.ok)throw initial.error;
+    if(generation!==connectionGeneration || !pageActive){candidate.close();return;}
+    const remembered=headsetRoster?.verified({...joined.identity,bluetoothId:expected?.bluetoothId},joined.url);
+    if(remembered)selectedHeadset=remembered;
+    if(expected)freshHeadsets.delete(expected.device);
+    pollTimer=setInterval(refreshStatus,1000);
+    if(breathView){breathView.reset();breathPollTimer=setInterval(refreshBreathing,500);await refreshBreathing();}
+    label("connection-detail",`${joined.identity.serial || "Serial unavailable"} - Wi-Fi connected. Current native status received.`);
+  } catch(error) {
+    candidate?.close();
+    if(generation===connectionGeneration){
+      if(expected){freshHeadsets.delete(expected.device);failedHeadsets.add(expected.device);}
+      disconnected(`Connection unavailable: ${connectionErrorText(error)}. Find the headset again. No command was replayed.`);
+    }
+  } finally {if(generation===connectionGeneration){connecting=false;pendingConnection=undefined;render();}}
+}
+byId("find-headset").addEventListener("click",findHeadset);
+byId("connect-local-address").addEventListener("click",()=>connectLocal({manual:true}));
+if(!globalThis.navigator?.bluetooth?.requestDevice || !globalThis.isSecureContext)label("discovery-note","Bluetooth discovery unavailable in this browser. Enter the headset Wi-Fi address manually.");

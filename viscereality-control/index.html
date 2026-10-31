@@ -15,6 +15,7 @@
   <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
   <link rel="stylesheet" href="styles.css">
   <script src="../shared/quest-ble/gatt-lifetime.js" defer></script>
+  <script src="discovery.js" defer></script>
   <script src="transport.js" defer></script>
   <script src="breath-monitor.js" defer></script>
   <script src="app.js" defer></script>
@@ -27,7 +28,7 @@
         <h1>Viscereality</h1>
         <span class="connection-label" id="connection-label" aria-live="polite">Not connected</span>
       </div>
-      <p class="foreground-line" id="connection-detail" aria-live="polite">Enter the Quest gateway and controller enrollment to read its status.</p>
+      <p class="foreground-line" id="connection-detail" aria-live="polite">Find the headset in Remote mode, then connect over the same Wi-Fi.</p>
       <p class="presentation" id="presentation" role="status">Headset state unknown</p>
       <div id="access" class="access" hidden>
         <label for="pair-code">Quest pairing code</label>
@@ -41,10 +42,25 @@
 
     <main id="main-content" class="main-content">
       <section id="connection-options" class="connection-options" aria-label="Connection setup">
+        <div id="local-discovery">
+          <button id="find-headset" class="button button-primary" type="button">Find headset</button>
+          <p id="discovery-note" role="status">Chrome opens its Bluetooth chooser. The headset serial appears after connection. Put the headset in Remote mode and use the same Wi-Fi or phone hotspot.</p>
+          <div id="headset-roster" class="headset-roster" aria-label="Headsets"></div>
+          <details class="foldout">
+            <summary>Enter Wi-Fi address manually</summary>
+            <label for="local-gateway-url">Headset gateway URL</label>
+            <input id="local-gateway-url" type="url" autocomplete="off" spellcheck="false" placeholder="http://192.168.1.2:8766/v1/gateway">
+            <button id="connect-local-address" class="button button-small" type="button">Connect by address</button>
+          </details>
+          <p>Local Wi-Fi control uses plaintext on your trusted network. Chrome may request local-network permission. Controller keys stay in memory for this connection.</p>
+        </div>
+        <details class="foldout" id="advanced-connection">
+        <summary>Advanced connections</summary>
         <label for="connection-route">Connect using</label>
         <select id="connection-route">
+          <option value="local" selected>Find headset / local Wi-Fi</option>
           <option id="route-ble" value="ble">Nearby Bluetooth</option>
-          <option value="lan" selected>Same Wi-Fi  -  gateway enrollment required</option>
+          <option value="lan">Same Wi-Fi  -  gateway enrollment required</option>
           <option value="relay">Internet relay  -  private setup required</option>
           <option value="direct">Direct / offline  -  join network in system settings</option>
         </select>
@@ -58,6 +74,7 @@
           <div id="trusted-lan-row"><label class="lan-consent"><input id="trusted-lan" type="checkbox"> Allow experimental plaintext access on this trusted local network</label><p>Plain HTTP authenticates commands but does not encrypt status or receipts. Your browser may request local-network permission or block access. Use Bluetooth when unavailable; do not bypass browser security.</p></div>
           <p>Approve this controller on the headset first. Keys stay in this tab and must be entered again after disconnection.</p>
         </div>
+        </details>
         <button id="install-app" class="button button-small" type="button" hidden>Install Viscereality</button>
         <p id="install-note">To install, open the Chrome menu and choose Install app or Add to Home screen.</p>
         <p id="offline-note" role="status">Offline availability has not been checked.</p>

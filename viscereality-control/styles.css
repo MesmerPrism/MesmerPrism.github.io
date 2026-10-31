@@ -139,3 +139,8 @@ h1 { margin: 0; font-size: clamp(30px, 7.2vw, 39px); line-height: 1.12; letter-s
 .clock-label { margin: .4rem 0; color: var(--muted, #616775); }
 #live-bias { width: 100%; margin: .7rem 0; }
 #bias-confirmation:empty { display: none; }
+
+.headset-row { padding: 16px 0; border-bottom: 1px solid #373b43; overflow-wrap: anywhere; }
+.headset-row p { margin: 8px 0 12px; }
+#local-gateway-url { margin-bottom: 12px; }
+#advanced-connection > label { margin-top: 16px; }

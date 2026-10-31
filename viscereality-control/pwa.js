@@ -2,7 +2,7 @@
 
 // Installation and shell availability never grant Quest control authority.
 (() => {
-  const CACHE = "viscereality-shell-pwa-3";
+  const CACHE = "viscereality-shell-pwa-4";
   const installButton = document.getElementById("install-app");
   const installNote = document.getElementById("install-note");
   const offlineNote = document.getElementById("offline-note");
