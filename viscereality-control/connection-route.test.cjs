@@ -5,7 +5,7 @@ const tick = () => new Promise(resolve => setImmediate(resolve));
 
 // The checked-in select options supply the DOM's initial value. The full app
 // and its event listeners run unchanged; device and gateway I/O end locally.
-function fixture({remembered = false, permitted = [], localJoin, bluetooth} = {}) {
+function fixture({remembered = false, permitted = [], localJoin, bluetooth, allowPolling = false} = {}) {
   const html = fs.readFileSync(require.resolve("./index.html"), "utf8");
   const select = html.match(/<select id="connection-route">([\s\S]*?)<\/select>/)[1];
   const options = [...select.matchAll(/<option\b([^>]*)>([^<]*)<\/option>/g)].map(([,attributes,text]) => ({
@@ -35,12 +35,12 @@ function fixture({remembered = false, permitted = [], localJoin, bluetooth} = {}
     localStorage:{getItem:key=>saved.get(key)||null,setItem:(key,value)=>saved.set(key,value),removeItem:key=>saved.delete(key)},
     navigator:{bluetooth:bluetooth || {async requestDevice(){choices++;throw new Error("Chooser dismissed in host fixture");},
       async getDevices(){inventories++;return permitted;}}},
-    ViscerealityTransport:{localJoin: localJoin || (async()=>{throw Error("Host fixture stops before local I/O");}),Gateway:class {
+    ViscerealityTransport:{ble:require('./transport.js').ble,localJoin: localJoin || (async()=>{throw Error("Host fixture stops before local I/O");}),Gateway:class {
       constructor(options){gateways.push(options);}
       async connect(){throw new Error("Host fixture stops before gateway I/O");}
       close(){}
     }},
-    performance:{now:()=>1000},setTimeout:()=>1,clearTimeout(){},clearInterval(){},setInterval(){throw new Error("No polling expected");}});
+    performance:{now:()=>1000},setTimeout:()=>1,clearTimeout(){},clearInterval(){},setInterval(){if(allowPolling)return 1;throw new Error("No polling expected");}});
   const discovery=require('./discovery.js');
   context.ViscerealityDiscovery={...discovery,Discovery:class extends discovery.Discovery {constructor(){super({bluetooth:context.navigator.bluetooth});}}};
   vm.runInContext(fs.readFileSync(require.resolve("./app.js"),"utf8"),context);
@@ -173,4 +173,60 @@ test('page retirement clears fresh metadata epoch selection while retaining only
 
 test('browser without Bluetooth chooser keeps manual Wi-Fi enabled',()=>{
  const f=fixture({bluetooth:{}});assert.equal(f.node('find-headset').disabled,true);assert.equal(f.node('connect-local-address').disabled,false);
+});
+
+function crossRouteBluetooth({holdMetadata=false}={}) {
+ let connects=0,disconnects=0,releaseFirst,releaseMetadata;
+ const listeners=new Map(),bytes=value=>new DataView(new TextEncoder().encode(value).buffer);
+ const server={getPrimaryService:async service=>({getCharacteristic:async uuid=>({readValue:async()=>{
+  if(service.endsWith('020101')) {
+   if(uuid.endsWith('020102'))return bytes(discovered.serial);
+   if(holdMetadata)await new Promise(resolve=>releaseMetadata=resolve);
+   return bytes(JSON.stringify(discovered));
+  }
+  return bytes(JSON.stringify(uuid.endsWith('020003')?{v:1,n:'a'.repeat(32)}:{v:1,m:'open',p:'IDLE',a:[],b:[]}));
+ }})})};
+ const selected={id:'shared-route-handle',addEventListener:(name,fn)=>listeners.set(name,fn),gatt:{connected:false,
+  disconnect(){disconnects++;this.connected=false;listeners.get('gattserverdisconnected')?.();},
+  async connect(){if(++connects===1)await new Promise(resolve=>releaseFirst=resolve);this.connected=true;return server;}}};
+ return {requestDevice:()=>Promise.resolve(selected),selected,get disconnects(){return disconnects;},
+  finishFirst:()=>releaseFirst(),finishMetadata:()=>releaseMetadata()};
+}
+
+test('canceled discovery late connect cannot disconnect successor legacy BLE on the same handle',async()=>{
+ const bluetooth=crossRouteBluetooth(),f=fixture({bluetooth,allowPolling:true});
+ const finding=f.node('find-headset').events.get('click')();await tick();f.choose('ble');await finding;
+ await f.connect();assert.equal(bluetooth.selected.gatt.connected,true,f.node('connection-detail').textContent);const before=bluetooth.disconnects;
+ bluetooth.finishFirst();await tick();
+ assert.equal(bluetooth.selected.gatt.connected,true);assert.equal(bluetooth.disconnects,before);
+ assert.equal(f.run('!!characteristics'),true);
+});
+
+test('canceled legacy late connect cannot disconnect successor discovery on the same handle',async()=>{
+ const bluetooth=crossRouteBluetooth({holdMetadata:true}),f=fixture({bluetooth,allowPolling:true});f.choose('ble');
+ const legacy=f.connect();await tick();f.choose('local');await legacy;
+ const finding=f.node('find-headset').events.get('click')();await tick();const before=bluetooth.disconnects;
+ try {bluetooth.finishFirst();await tick();assert.equal(bluetooth.selected.gatt.connected,true);assert.equal(bluetooth.disconnects,before);}
+ finally {bluetooth.finishMetadata();await finding;}
+ assert.equal(f.run('selectedHeadset.serial'),discovered.serial);
+});
+
+test('canceled discovery still disconnects a genuinely abandoned late connect',async()=>{
+ const bluetooth=crossRouteBluetooth(),f=fixture({bluetooth});const finding=f.node('find-headset').events.get('click')();await tick();
+ f.run('cancelConnection()');await finding;const before=bluetooth.disconnects;bluetooth.finishFirst();await tick();
+ assert.equal(bluetooth.selected.gatt.connected,false);assert.equal(bluetooth.disconnects,before+1);
+});
+
+test('late discovery cleans an abandoned connection after successor legacy BLE has retired',async()=>{
+ const bluetooth=crossRouteBluetooth(),f=fixture({bluetooth,allowPolling:true});
+ const finding=f.node('find-headset').events.get('click')();await tick();f.choose('ble');await finding;await f.connect();
+ f.run('cancelConnection()');const before=bluetooth.disconnects;bluetooth.finishFirst();await tick();
+ assert.equal(bluetooth.selected.gatt.connected,false);assert.equal(bluetooth.disconnects,before+1);
+});
+
+test('late legacy cleans an abandoned connection after successor discovery has finished',async()=>{
+ const bluetooth=crossRouteBluetooth(),f=fixture({bluetooth,allowPolling:true});f.choose('ble');
+ const legacy=f.connect();await tick();f.choose('local');await legacy;
+ await f.node('find-headset').events.get('click')();const before=bluetooth.disconnects;bluetooth.finishFirst();await tick();
+ assert.equal(bluetooth.selected.gatt.connected,false);assert.equal(bluetooth.disconnects,before+1);
 });

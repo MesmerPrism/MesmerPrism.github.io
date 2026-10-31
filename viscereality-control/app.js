@@ -16,6 +16,11 @@ const breathView = globalThis.ViscerealityBreathMonitor?.createView(document);
 let breathPollTimer, breathReading = false, breathReceivedAt = 0;
 const preview = new URLSearchParams(location.search).get("preview") === "1";
 let device;
+let legacyGattLease;
+function disconnectLegacyGatt(candidate,lease=legacyGattLease) {
+  if(lease)lease.disconnect();
+  else {try {candidate?.gatt?.disconnect();}catch(_) {}}
+}
 let characteristics;
 let networkTransport;
 let networkRecovering = false;
@@ -581,7 +586,7 @@ async function observeOriginalReceipt(status, generation) {
     original.state="uncertain";
     showProgress(original.name,"unknown",`Original receipt read unavailable: ${connectionErrorText(error)}. No command was replayed.`);
     if (String(error?.message).includes("retained receipt read timed out")) {
-      try { device?.gatt?.disconnect(); } catch (_) { }
+      disconnectLegacyGatt(device);
     }
   }
   render();
@@ -671,6 +676,7 @@ function scheduleReconnect() {
   label("connection-detail", `Quest unreachable. Reconnecting to the previously selected headset in ${Math.ceil(wait/1000)} seconds (${reconnectTries}/5).`);
 }
 function disconnected(reason = "Quest GATT disconnected. Reconnecting to the selected Quest when available.") {
+  legacyGattLease?.retire();
   networkRecovering = false;
   if (pendingOriginal?.state === "live") pendingOriginal.state="observing";
   polarObservation?.cancel("Connection retired before a Polar receipt.");
@@ -708,6 +714,7 @@ async function connect({reuseSelected = false} = {}) {
   const attempt = ++connectionAttempt;
   const generation = ++connectionGeneration;
   const lifetime = connectionLifetime();
+  let selectedLease;
   pendingConnection = lifetime;
   let stage = "browser capability";
   render();
@@ -724,6 +731,8 @@ async function connect({reuseSelected = false} = {}) {
     }
     if (generation !== connectionGeneration) return;
     device = selectedDevice;
+    selectedLease=discoveryApi?.claimGatt(selectedDevice);
+    legacyGattLease=selectedLease;
     lifetime.arm();
     device.addEventListener("gattserverdisconnected", () => { if (generation === connectionGeneration) disconnected(); }, { once: true });
     stage = "GATT connect";
@@ -734,13 +743,13 @@ async function connect({reuseSelected = false} = {}) {
       // without disconnecting a newer attempt using the same handle.
       if (generation !== connectionGeneration
           && (selectedDevice !== device || !pageActive || (!connecting && !characteristics))) {
-        try { selectedDevice.gatt.disconnect(); } catch (_) { }
+        disconnectLegacyGatt(selectedDevice,selectedLease);
       }
     }, () => {});
     const server = await lifetime.run(connection);
     if (generation !== connectionGeneration) {
       // A restored page may already own this same BluetoothDevice handle.
-      if (selectedDevice !== device || !pageActive) selectedDevice.gatt.disconnect();
+      if (selectedDevice !== device || !pageActive) disconnectLegacyGatt(selectedDevice,selectedLease);
       return;
     }
     stage = "service discovery";
@@ -774,7 +783,7 @@ async function connect({reuseSelected = false} = {}) {
     // retired the GATT generation before the rejected promise resumed.
     if (attempt !== connectionAttempt) return;
     if (generation === connectionGeneration) {
-      if (device?.gatt?.connected) device.gatt.disconnect();
+      if (device?.gatt?.connected) disconnectLegacyGatt(device,selectedLease);
       if (generation === connectionGeneration) disconnected();
     }
     label("connection-detail", `Connection failed at ${stage}: ${connectionErrorText(error)}`);
@@ -1081,9 +1090,10 @@ function retirePageConnection() {
   connectionAttempt++;
   connecting = false;
   const retired = device;
+  const retiredLease=legacyGattLease;
   disconnected("Page retired the connection attempt.");
   device = undefined;
-  try { if (retired?.gatt?.connected) retired.gatt.disconnect(); } catch (_) { }
+  if (retired?.gatt?.connected) disconnectLegacyGatt(retired,retiredLease);
 }
 if (typeof window.addEventListener === "function") {
   window.addEventListener("pagehide", retirePageConnection);
@@ -1108,9 +1118,10 @@ function cancelConnection() {
   try { localStorage.removeItem("viscereality-authorised-quest"); } catch (_) { }
   connectionAttempt++;
   const retired = device;
+  const retiredLease=legacyGattLease;
   disconnected("Connection cancelled by the user.");
   device = undefined;
-  try { retired?.gatt?.disconnect(); } catch (_) { }
+  disconnectLegacyGatt(retired,retiredLease);
   label("connection-detail", "Connection cancelled. Connect again when ready.");
 }
 byId("disconnect").addEventListener("click", cancelConnection);
