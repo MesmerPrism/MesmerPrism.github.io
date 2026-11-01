@@ -1,0 +1,42 @@
+[
+  {
+    "id": "questmultistream",
+    "type": "webpage",
+    "title": "QuestMultiStream",
+    "URL": "https://github.com/MesmerPrism/QuestMultiStream",
+    "author": [
+      {
+        "literal": "MesmerPrism"
+      }
+    ],
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          11,
+          1
+        ]
+      ]
+    }
+  },
+  {
+    "id": "questmultistream-browser-pwa",
+    "type": "webpage",
+    "title": "Installable browser controls",
+    "URL": "https://github.com/MesmerPrism/QuestMultiStream/blob/main/docs/BROWSER_PWA.md",
+    "author": [
+      {
+        "literal": "MesmerPrism"
+      }
+    ],
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          11,
+          1
+        ]
+      ]
+    }
+  }
+]

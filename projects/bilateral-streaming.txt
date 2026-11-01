@@ -1,0 +1,60 @@
+Source: https://mesmerprism.com/projects/bilateral-streaming.html
+Canonical HTML: https://mesmerprism.com/projects/bilateral-streaming.html
+Updated: 2026-11-01
+Description: Two-headset streaming with explicit run controls, Own, Peer and Blend views, and independent display mirrors through a local PC operator gateway.
+
+Bilateral Streaming
+
+Two distinct headsets contribute to a shared streaming session. Each headset can show its Own view, its Peer’s view, or a Blend of both. A browser interface controls the pair through a local PC operator gateway.
+
+Updated November 1, 2026.
+Open browser app (https://mesmerprism.com/bilateral-control/) QuestMultiStream source (https://github.com/MesmerPrism/QuestMultiStream) How it works (https://mesmerprism.com/projects/bilateral-streaming.html#operation)
+
+The public app and local gateway integration are experimental and in development. Phone installation, media playback and background recovery have not yet been qualified for this route.
+
+One pair, explicit run choices
+
+The operator selects two distinct headsets, then chooses New run or an available Resume run. Selecting the pair does not start media. Starting app streaming requires reviewing and executing the chosen request.
+
+Own and Peer show the two contributions separately. Blend brings them together with adjustable strength, making it possible to compare separate views and their combination within the same session.
+
+The control model is visible in the QuestMultiStream browser source (https://github.com/MesmerPrism/QuestMultiStream/tree/main/src/QuestMultiStream.Browser).
+
+Own, Peer and Blend
+
+- Own uses the headset’s own view.
+- Peer uses the other headset’s contribution.
+- Blend mixes Peer input according to Own brightness and the selected strength.
+
+Mode changes are reviewed before execution. When the active runtime supports numeric Blend adjustment, a strength from 0 to 1 applies to both headsets. The interface shows the requested value separately from the observed headset state.
+
+Screen mirrors and app streaming
+
+App streaming carries each headset’s contribution to its peer. Optional browser mirrors show the headset display for observation. They have separate Start mirror, Stop mirror and Disconnect viewer controls.
+
+Disconnect viewer closes only the browser view; the mirror continues until Stop mirror. App streaming has its own Stop action. Use the mirrors to inspect each headset’s display while checking the app’s streaming state separately.
+
+Requested and effective
+
+A submitted command can be queued, running, effective, failed or unknown. Effective means both headsets have confirmed the change. If the outcome is unknown, the original request stays visible for checking; reconnecting does not send the command again.
+
+Normal Stop ends app streaming. Closing the app session is a separate action after app streaming and mirrors have stopped. Stop monitor closes the browser monitor host separately.
+
+A public interface with a local connection
+
+Open the Bilateral browser app (https://mesmerprism.com/bilateral-control/) from public HTTPS, then connect it to the local PC operator gateway. The website supplies the interface; the PC connects the controls to both headsets and must remain available during use.
+
+The phone needs a reachable gateway on the local network and a compatible browser for media playback. Allow local-network access when the browser asks. The gateway must accept the public app’s origin and authenticate the operator. Playback and background behavior depend on the phone and browser.
+
+See the source documentation for browser installation and reconnect behavior (https://github.com/MesmerPrism/QuestMultiStream/blob/main/docs/BROWSER_PWA.md).
+
+Related tools
+
+- Quest pair console (https://mesmerprism.com/quest-pair-control/) reads rendezvous diagnostics and exposes separately enrolled Connection Hub controls. It is a distinct console.
+- Quest Companion Tools (https://mesmerprism.com/projects/viscereality-companion.html) covers installation, launching, casting and diagnostics.
+- Rusty Morphospace (https://mesmerprism.com/projects/rusty-morphospace.html) provides the wider runtime and operator-tooling context.
+
+Source and references
+
+- QuestMultiStream (https://github.com/MesmerPrism/QuestMultiStream): source for the browser control hub and its host integration.
+- Installable browser controls (https://github.com/MesmerPrism/QuestMultiStream/blob/main/docs/BROWSER_PWA.md): authentication, installation, reconnect and physical-device checks.

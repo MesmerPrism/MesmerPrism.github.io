@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bilateral Streaming | Mesmer Prism</title>
+    <link rel="canonical" href="https://mesmerprism.com/projects/bilateral-streaming.html">
+    <meta name="description" content="Two-headset streaming with explicit run controls, Own, Peer and Blend views, and independent display mirrors through a local PC operator gateway.">
+    <meta property="og:title" content="Bilateral Streaming | Mesmer Prism">
+    <meta property="og:description" content="Two headset views, explicit session controls and independent screen mirrors. Public browser access is in development.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mesmerprism.com/projects/bilateral-streaming.html">
+    <meta name="theme-color" content="#f4efe7">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" href="/favicon-32x32.png" type="image/png">
+    <link rel="stylesheet" href="/assets/fonts.css">
+    <link rel="stylesheet" href="/styles.css?v=20260621-onboarding">
+    <!-- BEGIN agent-readable metadata -->
+    <link rel="alternate" type="text/markdown" href="/projects/bilateral-streaming.md" title="Markdown version">
+    <link rel="alternate" type="text/plain" href="/projects/bilateral-streaming.txt" title="Plain text version">
+    <link rel="alternate" type="application/x-bibtex" href="/projects/bilateral-streaming.bib" title="BibTeX references">
+    <link rel="alternate" type="application/vnd.citationstyles.csl+json" href="/projects/bilateral-streaming.references.csl.json" title="CSL JSON references">
+    <meta name="citation_title" content="Bilateral Streaming">
+    <meta name="citation_author" content="Till Holzapfel">
+    <meta name="citation_publication_date" content="2026-11-01">
+    <meta name="citation_online_date" content="2026-11-01">
+    <meta name="citation_public_url" content="https://mesmerprism.com/projects/bilateral-streaming.html">
+    <meta name="citation_language" content="en">
+    <script type="application/ld+json" data-agent-metadata>
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Bilateral Streaming",
+      "description": "Two-headset streaming with explicit run controls, Own, Peer and Blend views, and independent display mirrors through a local PC operator gateway.",
+      "author": {"@type": "Person", "name": "Till Holzapfel"},
+      "publisher": {"@type": "Organization", "name": "Mesmer Prism", "url": "https://mesmerprism.com/"},
+      "isPartOf": {"@type": "WebSite", "name": "Mesmer Prism", "url": "https://mesmerprism.com/"},
+      "url": "https://mesmerprism.com/projects/bilateral-streaming.html",
+      "dateModified": "2026-11-01",
+      "inLanguage": "en",
+      "encoding": [
+        {"@type": "MediaObject", "encodingFormat": "text/markdown", "contentUrl": "https://mesmerprism.com/projects/bilateral-streaming.md"},
+        {"@type": "MediaObject", "encodingFormat": "text/plain", "contentUrl": "https://mesmerprism.com/projects/bilateral-streaming.txt"},
+        {"@type": "MediaObject", "encodingFormat": "application/x-bibtex", "contentUrl": "https://mesmerprism.com/projects/bilateral-streaming.bib"},
+        {"@type": "MediaObject", "encodingFormat": "application/vnd.citationstyles.csl+json", "contentUrl": "https://mesmerprism.com/projects/bilateral-streaming.references.csl.json"}
+      ],
+      "citation": ["https://github.com/MesmerPrism/QuestMultiStream", "https://github.com/MesmerPrism/QuestMultiStream/blob/main/docs/BROWSER_PWA.md"]
+    }
+    </script>
+    <!-- END agent-readable metadata -->
+</head>
+<body class="project-page">
+    <header class="site-header">
+        <div class="shell header-row">
+            <a class="site-name" href="/" aria-label="Mesmer Prism home">
+                <img class="site-mark" src="/assets/brand/mesmer-prism-logo.png" alt="" width="1200" height="508" decoding="async">
+                <span>Mesmer Prism</span>
+            </a>
+            <nav class="site-nav" aria-label="Primary">
+                <a href="/#work">Work</a>
+                <a href="/#publications">Publications</a>
+                <a href="/#background">Background</a>
+                <a href="/#contact">Contact</a>
+                <a href="https://github.com/MesmerPrism" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="shell">
+        <section class="hero" aria-labelledby="bilateral-title">
+            <div class="hero-shell hero-shell--page">
+                <h1 id="bilateral-title">Bilateral Streaming</h1>
+                <p class="project-lede">Two distinct headsets contribute to a shared streaming session.
+                    Each headset can show its Own view, its Peer’s view, or a Blend of both.
+                    A browser interface controls the pair through a local PC operator gateway.</p>
+                <p class="reviewed-date">Updated November 1, 2026.</p>
+                <div class="hero-actions">
+                    <a class="action-link action-link--strong" href="/bilateral-control/">Open browser app</a>
+                    <a class="action-link" href="https://github.com/MesmerPrism/QuestMultiStream" target="_blank" rel="noopener noreferrer">QuestMultiStream source</a>
+                    <a class="action-link" href="#operation">How it works</a>
+                </div>
+                <p>The public app and local gateway integration are experimental and in development.
+                    Phone installation, media playback and background recovery have not yet been
+                    qualified for this route.</p>
+            </div>
+        </section>
+
+        <section class="section two-column" id="operation" aria-labelledby="operation-title">
+            <div>
+                <h2 id="operation-title">One pair, explicit run choices</h2>
+                <p>The operator selects two distinct headsets, then chooses <strong>New run</strong>
+                    or an available <strong>Resume run</strong>. Selecting the pair does not start media.
+                    Starting app streaming requires reviewing and executing the chosen request.</p>
+                <p>Own and Peer show the two contributions separately.
+                    Blend brings them together with adjustable strength, making it possible to compare
+                    separate views and their combination within the same session.</p>
+                <p>The control model is visible in the
+                    <a class="inline-citation" href="https://github.com/MesmerPrism/QuestMultiStream/tree/main/src/QuestMultiStream.Browser" target="_blank" rel="noopener noreferrer">QuestMultiStream browser source</a>.</p>
+            </div>
+            <div class="detail-stack">
+                <section class="detail-block" aria-labelledby="modes-title">
+                    <h3 id="modes-title">Own, Peer and Blend</h3>
+                    <ul class="plain-list">
+                        <li><strong>Own</strong> uses the headset’s own view.</li>
+                        <li><strong>Peer</strong> uses the other headset’s contribution.</li>
+                        <li><strong>Blend</strong> mixes Peer input according to Own brightness and the selected strength.</li>
+                    </ul>
+                    <p>Mode changes are reviewed before execution. When the active runtime supports
+                        numeric Blend adjustment, a strength from 0 to 1 applies to both headsets.
+                        The interface shows the requested value separately from the observed headset state.</p>
+                </section>
+            </div>
+        </section>
+
+        <section class="section two-column" aria-labelledby="mirrors-title">
+            <div>
+                <h2 id="mirrors-title">Screen mirrors and app streaming</h2>
+                <p>App streaming carries each headset’s contribution to its peer.
+                    Optional browser mirrors show the headset display for observation.
+                    They have separate Start mirror, Stop mirror and Disconnect viewer controls.</p>
+                <p>Disconnect viewer closes only the browser view; the mirror continues until Stop mirror.
+                    App streaming has its own Stop action. Use the mirrors to inspect each headset’s
+                    display while checking the app’s streaming state separately.</p>
+            </div>
+            <div class="detail-stack">
+                <section class="detail-block" aria-labelledby="readback-title">
+                    <h3 id="readback-title">Requested and effective</h3>
+                    <p>A submitted command can be queued, running, effective, failed or unknown.
+                        Effective means both headsets have confirmed the change.
+                        If the outcome is unknown, the original request stays visible for checking;
+                        reconnecting does not send the command again.</p>
+                    <p>Normal Stop ends app streaming. Closing the app session is a separate action
+                        after app streaming and mirrors have stopped. Stop monitor closes the
+                        browser monitor host separately.</p>
+                </section>
+            </div>
+        </section>
+
+        <section class="section two-column" id="browser" aria-labelledby="browser-title">
+            <div>
+                <h2 id="browser-title">A public interface with a local connection</h2>
+                <p>Open the <a href="/bilateral-control/">Bilateral browser app</a> from public HTTPS,
+                    then connect it to the local PC operator gateway. The website supplies the interface;
+                    the PC connects the controls to both headsets and must remain available during use.</p>
+                <p>The phone needs a reachable gateway on the local network and a compatible browser
+                    for media playback. Allow local-network access when the browser asks.
+                    The gateway must accept the public app’s origin and authenticate the operator.
+                    Playback and background behavior depend on the phone and browser.</p>
+                <p>See the source documentation for
+                    <a class="inline-citation" href="https://github.com/MesmerPrism/QuestMultiStream/blob/main/docs/BROWSER_PWA.md" target="_blank" rel="noopener noreferrer">browser installation and reconnect behavior</a>.</p>
+            </div>
+            <div class="detail-stack">
+                <section class="detail-block" aria-labelledby="related-title">
+                    <h3 id="related-title">Related tools</h3>
+                    <ul class="plain-list">
+                        <li><a href="/quest-pair-control/">Quest pair console</a> reads rendezvous diagnostics
+                            and exposes separately enrolled Connection Hub controls. It is a distinct console.</li>
+                        <li><a href="/projects/viscereality-companion.html">Quest Companion Tools</a>
+                            covers installation, launching, casting and diagnostics.</li>
+                        <li><a href="/projects/rusty-morphospace.html">Rusty Morphospace</a>
+                            provides the wider runtime and operator-tooling context.</li>
+                    </ul>
+                </section>
+            </div>
+        </section>
+
+        <section class="section" aria-labelledby="source-title">
+            <h2 id="source-title">Source and references</h2>
+            <ul class="plain-list">
+                <li><a href="https://github.com/MesmerPrism/QuestMultiStream" target="_blank" rel="noopener noreferrer">QuestMultiStream</a>:
+                    source for the browser control hub and its host integration.</li>
+                <li><a href="https://github.com/MesmerPrism/QuestMultiStream/blob/main/docs/BROWSER_PWA.md" target="_blank" rel="noopener noreferrer">Installable browser controls</a>:
+                    authentication, installation, reconnect and physical-device checks.</li>
+            </ul>
+        </section>
+        <!-- BEGIN page-export-links -->
+        <section class="agent-downloads" aria-labelledby="page-downloads">
+            <h2 id="page-downloads">Page exports</h2>
+            <div class="agent-downloads__links">
+                <a href="/projects/bilateral-streaming.md" download>Markdown</a>
+                <a href="/projects/bilateral-streaming.txt" download>Text</a>
+                <a href="/projects/bilateral-streaming.bib" download>BibTeX</a>
+                <a href="/projects/bilateral-streaming.references.csl.json" download>CSL JSON</a>
+            </div>
+        </section>
+        <!-- END page-export-links -->
+    </main>
+
+    <footer class="site-footer">
+        <div class="shell footer-row">
+            <p>XR systems, perception research, and essays by Till Holzapfel.</p>
+            <nav class="footer-links" aria-label="Legal">
+                <a href="/impressum.html">Impressum</a>
+                <a href="/datenschutz.html">Datenschutz</a>
+            </nav>
+        </div>
+    </footer>
+</body>
+</html>
+
