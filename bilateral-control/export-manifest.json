@@ -1,10 +1,10 @@
 {
   "schema": "questms.public-bilateral-export.v1",
   "sourceRepository": "https://github.com/MesmerPrism/QuestMultiStream",
-  "sourceRevision": "4c1f70075168d164c361143e52f00d37b1e6be28",
-  "exporterSha256": "125a0071287ba7c5487e2c6efc070cbe1a46b13e62c303879986fa25f02faeed",
+  "sourceRevision": "bd1d05473256e3bfaa100655422552c0eee139d6",
+  "exporterSha256": "7c2a8bdd0a675633a0341d2b4c8fda8e843729f01eee070341f215f20bdc1fef",
   "appScope": "/bilateral-control/",
-  "cacheVersion": "a37c3479612ad7987892bccca6b16fb405b88cff7fe6f9d6db7f322928e192c3",
+  "cacheVersion": "0ed0a17b7d27b60f8960922c926195ceb71c64d447f63931c3642773b069f664",
   "files": [
     {
       "path": "app.mjs",
@@ -20,21 +20,21 @@
     },
     {
       "path": "capture-mode.mjs",
-      "sha256": "1bd0704d8c306edc38fa6ed6398cedc60d6d759c089101694c0adf87c6cbc302",
+      "sha256": "5db079c8c183583a7a80161b2cf40a0f7b5a95b0fa9e2796f069a3c9c90344b5",
       "sourcePath": "src/QuestMultiStream.Browser/wwwroot/capture-mode.mjs",
-      "sourceSha256": "1bd0704d8c306edc38fa6ed6398cedc60d6d759c089101694c0adf87c6cbc302"
+      "sourceSha256": "5db079c8c183583a7a80161b2cf40a0f7b5a95b0fa9e2796f069a3c9c90344b5"
     },
     {
       "path": "decoder-policy.mjs",
-      "sha256": "d79cd9af872c8060362ecd105165a075b35638f263bd918aadc633bcdfaac680",
+      "sha256": "0831fbdf4f5db2edd0c3bcd5a3b4f8127eb8ecaff484ec57fbfe6e7c77ae73af",
       "sourcePath": "src/QuestMultiStream.Browser/wwwroot/decoder-policy.mjs",
-      "sourceSha256": "d79cd9af872c8060362ecd105165a075b35638f263bd918aadc633bcdfaac680"
+      "sourceSha256": "0831fbdf4f5db2edd0c3bcd5a3b4f8127eb8ecaff484ec57fbfe6e7c77ae73af"
     },
     {
       "path": "frame-status.mjs",
-      "sha256": "8a08d2073ea48ac1e61812790218851e300cae0e5168e8ebdfca3ba4e11ef923",
+      "sha256": "11dad4b38b4b5ca80511c8c2bdb884710d0962f6f5f33f47eba4e4342dcf8eb5",
       "sourcePath": "src/QuestMultiStream.Browser/wwwroot/frame-status.mjs",
-      "sourceSha256": "8a08d2073ea48ac1e61812790218851e300cae0e5168e8ebdfca3ba4e11ef923"
+      "sourceSha256": "11dad4b38b4b5ca80511c8c2bdb884710d0962f6f5f33f47eba4e4342dcf8eb5"
     },
     {
       "path": "gateway.mjs",
@@ -44,9 +44,9 @@
     },
     {
       "path": "hub.css",
-      "sha256": "ea08a9c4da9dd5b88e106949baf9e800b4f232cbb339e0c5022a1f061e4afd3d",
+      "sha256": "c595f160dd454bbfc8157704502c973765cfd6a40de60e6892e2b49c621d58c9",
       "sourcePath": "src/QuestMultiStream.Browser/wwwroot/hub.css",
-      "sourceSha256": "ea08a9c4da9dd5b88e106949baf9e800b4f232cbb339e0c5022a1f061e4afd3d"
+      "sourceSha256": "c595f160dd454bbfc8157704502c973765cfd6a40de60e6892e2b49c621d58c9"
     },
     {
       "path": "hub.mjs",
@@ -74,9 +74,9 @@
     },
     {
       "path": "index.html",
-      "sha256": "89d4747790855472bb2eb0c962540169fe1426596d882bada601d6178de1208c",
+      "sha256": "396eb8038be30c8520f6d05919f342777e138b914a6d6609b66e7540997457b1",
       "sourcePath": "src/QuestMultiStream.Browser/wwwroot/index.html",
-      "sourceSha256": "70ccbcd32fc768c37f9b6cd3859e3cdcaf84341361d995220467a3ab04c20140"
+      "sourceSha256": "d49ee04118f97d4f8e95011fcd2671aa4bf1ddab4f4c989a8231ae52b3c31c5d"
     },
     {
       "path": "live-owner.mjs",
@@ -86,9 +86,9 @@
     },
     {
       "path": "manifest.webmanifest",
-      "sha256": "5cd48fba9bd5985174fe17c394f49806077b5153289e971e8825c0a79a86a0d4",
+      "sha256": "865f2c298ba58f566af91fe7183bc706083611d11c5eec806e9c225e4b6c0b1a",
       "sourcePath": "src/QuestMultiStream.Browser/wwwroot/manifest.webmanifest",
-      "sourceSha256": "557dcd127b63c1bca5710d7a72f648aa44a5212c1d863e2c345ad932b234e4d8"
+      "sourceSha256": "9f01344ff954a1814db93625f636da5d3065064c9e7af3775cd758531b5bcb7c"
     },
     {
       "path": "public-cache.mjs",
@@ -98,39 +98,39 @@
     },
     {
       "path": "public-sw.mjs",
-      "sha256": "3d48428037ecb1859fcd3ddd851aa3d8b2ccdfc74526b06ce4f2fd8ab5c73ad0",
+      "sha256": "00f35b937ae3448681d7ac7fe6c20b2f7f045b9fce5f59b447b896efc9893d52",
       "sourcePath": "src/QuestMultiStream.Browser/wwwroot/public-sw.mjs",
       "sourceSha256": "d55a3e674c5b7af215b8e76edcc63e05160fc4d47eb4d933c640b944da560d16"
     },
     {
       "path": "pwa.mjs",
-      "sha256": "519c32911d5f4d13afdfe10aaa5a2e2363d17af461d969424b7b75d16d1e0024",
+      "sha256": "4b6c3cd5d500671ee43c9cf5913bf63f3c6836e6def39094a294cacb7971e22f",
       "sourcePath": "src/QuestMultiStream.Browser/wwwroot/pwa.mjs",
-      "sourceSha256": "519c32911d5f4d13afdfe10aaa5a2e2363d17af461d969424b7b75d16d1e0024"
+      "sourceSha256": "4b6c3cd5d500671ee43c9cf5913bf63f3c6836e6def39094a294cacb7971e22f"
     },
     {
       "path": "session-view.mjs",
-      "sha256": "df43404b31a075bf8af543a0710484064c650ecf6bbbc8c98d5799cd344c9ec4",
+      "sha256": "94b6b3acd8919032834a34bc64b3dafd92b1c343f43f2533eb2a6508cdc7000e",
       "sourcePath": "src/QuestMultiStream.Browser/wwwroot/session-view.mjs",
-      "sourceSha256": "df43404b31a075bf8af543a0710484064c650ecf6bbbc8c98d5799cd344c9ec4"
+      "sourceSha256": "94b6b3acd8919032834a34bc64b3dafd92b1c343f43f2533eb2a6508cdc7000e"
     },
     {
       "path": "style.css",
-      "sha256": "82e8a8ebac8b8631a38bf6cf3329bae5205068bfc0417dc2ddf92ff7fb594f78",
+      "sha256": "a7ac901e2238a86967ace81c804644f998107c59995f4d87bb8b366c018534e1",
       "sourcePath": "src/QuestMultiStream.Browser/wwwroot/style.css",
-      "sourceSha256": "82e8a8ebac8b8631a38bf6cf3329bae5205068bfc0417dc2ddf92ff7fb594f78"
+      "sourceSha256": "a7ac901e2238a86967ace81c804644f998107c59995f4d87bb8b366c018534e1"
     },
     {
       "path": "view.mjs",
-      "sha256": "454f61f8116a655180d659e33c8c32b50d7acd6dee99cadc9da97e480b978f25",
+      "sha256": "e1497e671a042d1c3578f78581d5b8f4c411508d308027cb7786b88fefdc5394",
       "sourcePath": "src/QuestMultiStream.Browser/wwwroot/view.mjs",
-      "sourceSha256": "454f61f8116a655180d659e33c8c32b50d7acd6dee99cadc9da97e480b978f25"
+      "sourceSha256": "e1497e671a042d1c3578f78581d5b8f4c411508d308027cb7786b88fefdc5394"
     },
     {
       "path": "viewer.html",
-      "sha256": "492452cecab29218f062e689d263dd4b890bcc55debddf58f6c89145678475b1",
+      "sha256": "df842f3aa41904f7c9da03c25b6d7208322c2e899788faf3a205be46ef0d9783",
       "sourcePath": "src/QuestMultiStream.Browser/wwwroot/viewer.html",
-      "sourceSha256": "c355d83ad5aa9a3d793a043a693ee7dc2eb5ecddace3e4a76f7a06c4906b115e"
+      "sourceSha256": "29c810bb04e3687885ec6d8c01d340b95b8d67a7f9c4431bb518a388ae21bc90"
     }
   ]
 }

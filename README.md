@@ -104,10 +104,14 @@ remain separate from source checks.
 
 Regenerate only `bilateral-control/` using the committed QuestMultiStream
 `tools/Export-PublicBilateralPwa.ps1 -DestinationPath <site-root>/bilateral-control`.
-Its export manifest records the exact source revision and hashes; `-Check`
-verifies the projection. Do not edit generated assets here. Run
-`python tools/test_bilateral_control.py --source-root <QuestMultiStream-root>`
-before publication. The app manifest and static-only worker are scoped to
+The owner checkout must be clean and committed. Its export manifest binds the
+exact source revision and Git-blob hashes; generated text uses LF independently
+of checkout settings, and `-Check` verifies the projection. Do not edit generated
+assets here. Commit the regenerated website projection, then run
+`python tools/test_bilateral_control.py --source-root <QuestMultiStream-root>
+--require-committed` before publication. This also checks exporter portability
+across LF/CRLF checkouts and exact committed website bytes. Verify actual
+deployed bytes after Pages builds. The app manifest and static-only worker are scoped to
 `/bilateral-control/`; credentials, API/media traffic and commands are never
 cached or queued, and sibling app caches are not managed by this worker.
 
