@@ -61,6 +61,7 @@ let questStatus;
 let lastStatusAt = 0;
 let accessCode = "";
 let commandBusy = false;
+let updateQuiesced = false, updateToken, updateLeaseTimer;
 let commandReceiptAbort, pageObservationGeneration=0;
 let polarObservation;
 let durableObservation;
@@ -216,6 +217,7 @@ function transportRead(name, signal) {
   return typeof ViscerealityTransport === "undefined" ? characteristics[name].readValue() : ViscerealityTransport.ble(characteristics).read(name);
 }
 function transportWrite(bytes) {
+  if(updateQuiesced)throw new Error("Update safety check in progress; command not sent.");
   if (networkTransport) return networkTransport.write(bytes);
   return typeof ViscerealityTransport === "undefined" ? characteristics.command.writeValueWithResponse(bytes) : ViscerealityTransport.ble(characteristics).write(bytes);
 }
@@ -249,11 +251,11 @@ function assertControlMode() {
     throw error;
   }
 }
-function canCommand(op="") { return !preview && controlsUnlocked() && freshStatus() && remoteControlAllowed(questStatus) && !commandBusy && !recordingTransfer?.busy
+function canCommand(op="") { return !updateQuiesced && !preview && controlsUnlocked() && freshStatus() && remoteControlAllowed(questStatus) && !commandBusy && !recordingTransfer?.busy
   && (!pendingOriginal || ["return-vr","ping"].includes(op)); }
 
 function canListRecordings() {
-  return !preview && !!globalThis.ViscerealityRecordings && !!networkTransport?.active && !networkTransport.routeToken
+  return !updateQuiesced && !preview && !!globalThis.ViscerealityRecordings && !!networkTransport?.active && !networkTransport.routeToken
     && !!networkTransport.url && new URL(networkTransport.url).protocol==="http:" && ["local","lan","direct"].includes(selectedRoute)
     && freshStatus() && questStatus?.wifi_snapshot===1 && questStatus.recordings===1 && questStatus.control_mode==="remote"
     && questStatus.p==="IDLE" && questStatus.rec===false && questStatus.pending===false && !commandBusy && !pendingOriginal;
@@ -264,6 +266,24 @@ function recordingScope() {
 }
 /** Read-only update-gate input: a prepared offer still owns page memory. */
 function recordingExportState() {return {busy:!!recordingTransfer?.busy,preparedOffer:!!recordingTransfer?.hasOffer};}
+// Stable protocol 1 is independent of the shell build, including future 7 -> 8.
+function safeForPwaUpdate() {
+  const exportState=recordingExportState();
+  return !preview && pageActive && !document.hidden && !!networkTransport?.active && controlsUnlocked()
+    && freshStatus() && questStatus?.wifi_snapshot===1 && questStatus.control_mode==="remote"
+    && questStatus.p==="IDLE" && questStatus.rec===false && questStatus.pending===false
+    && !pendingOriginal && !commandBusy && !reading && !connecting && !findingHeadset
+    && !exportState.busy && !exportState.preparedOffer;
+}
+globalThis.ViscerealityUpdateSafety=Object.freeze({
+  acquire(token) {
+    if(typeof token!=="string" || !token || token.length>128 || updateToken && updateToken!==token || !safeForPwaUpdate())return false;
+    updateQuiesced=true;updateToken=token;clearTimeout(updateLeaseTimer);
+    updateLeaseTimer=setTimeout(()=>this.release(token),30000);render();return true;
+  },
+  check(token){return updateQuiesced && updateToken===token && safeForPwaUpdate();},
+  release(token){if(updateToken!==token)return;clearTimeout(updateLeaseTimer);updateToken=undefined;updateQuiesced=false;render();}
+});
 function stopRecordings() {
   recordingTransfer?.cancel();
   if(recordingUrl){URL.revokeObjectURL(recordingUrl);recordingUrl=undefined;}
@@ -653,6 +673,10 @@ function render() {
   byId("breath-bias").disabled = !canCommand() || !guidanceAvailable || !!s?.rec;
   label("breath-bias-value", `${byId("breath-bias").value}%`);
 
+  const build=s?.build?.v===1?s.build:null;
+  const apkVersion=Number.isSafeInteger(build?.version_code)&&build.version_code>0&&build.version_code<=2147483647&&typeof build.version_name==="string"&&/^[A-Za-z0-9][A-Za-z0-9._+-]{0,63}$/.test(build.version_name)
+    ? `APK ${build.version_name} (${build.version_code})` : "APK version unavailable";
+  label("apk-build",apkVersion+(typeof build?.source_commit==="string"&&/^[0-9a-f]{40}$/.test(build.source_commit)?` | source ${build.source_commit.slice(0,12)}`:""));
   label("stage-title", s ? stageTitle(s) : "No live session readback");
   label("stage-instruction", s ? stageInstruction(s) : "Connect to the Quest to see the current run.");
   const polarDiagnostics=globalThis.ViscerealityPolarDiagnostics?.describe(s,snapshots.age());
@@ -1559,7 +1583,7 @@ function renderHeadsets() {
   byId("connect-local-address").disabled=connecting || findingHeadset || connected() || !pageActive || preview;
 }
 async function findHeadset() {
-  if(connected() || connecting || findingHeadset || preview || !pageActive)return;
+  if(updateQuiesced || connected() || connecting || findingHeadset || preview || !pageActive)return;
   if(!headsetDiscovery){label("discovery-note","Bluetooth discovery unavailable. Enter the Wi-Fi address manually.");return;}
   const generation=++discoveryGeneration;
   findingHeadset=true;
@@ -1577,7 +1601,7 @@ async function findHeadset() {
   finally {if(generation===discoveryGeneration){findingHeadset=false;render();}}
 }
 async function connectLocal({manual=false}={}) {
-  if(connected() || connecting || findingHeadset || networkRecovering || preview || !pageActive)return;
+  if(updateQuiesced || connected() || connecting || findingHeadset || networkRecovering || preview || !pageActive)return;
   const expected=manual?undefined:selectedHeadset;
   const urls=manual?[byId("local-gateway-url").value.trim()]:expected?.gateways || (expected?.gateway?[expected.gateway]:[]);
   if(!urls.length){label("connection-detail","No current Wi-Fi route. Find the headset again or enter its address.");return;}

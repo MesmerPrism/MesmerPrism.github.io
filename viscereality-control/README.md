@@ -351,7 +351,7 @@ replayed. Recovery observes the original receipt, then fresh status. A new owner
 or unavailable original receipt remains uncertain and requires explicit checking
 and acknowledgement; Disconnect preserves that original uncertainty.
 
-PWA6 atomically caches all 16 shell entries, including `connection-recovery.js`
+PWA7 atomically caches its static shell entries, including `connection-recovery.js`
 and `snapshot-state.js`, while dynamic authenticated traffic stays uncached. It
 retains installation support and the existing scroll/pull-to-refresh containment.
 Run `node --test viscereality-control/*.test.cjs` for the browser source suite.
@@ -414,6 +414,49 @@ the offer and its object URL. The browser offer does not confirm phone storage.
 The app exposes `recordingExportState()` returning `{busy,preparedOffer}` for the
 safe-update gate. Either true defers applying a PWA update. Cancellation leaves
 busy true until the in-flight operation settles; no experiment command is sent.
-The shell allowlist includes recordings.js; the coordinated PWA7 task owns the
-cache-version change. Host tests use synthetic bytes and independently extract
+The shell allowlist includes recordings.js and polar-diagnostics.js. Host tests use synthetic bytes and independently
+extract
 the ZIP with Python zipfile. Physical Quest/phone LAN and storage remain separate.
+
+## PWA updates and build identity
+
+The header shows the shell build (PWA7) and, when supported, installed APK
+version code/name plus a short generic source commit from full Wi-Fi status.
+Missing identity stays unavailable. These labels grant no native or release authority.
+
+A waiting worker exposes Update available and an explicit Apply update button.
+Applying requires fresh authenticated full native Remote/IDLE state, `rec=false`,
+`pending=false`, no unresolved original command, no command in flight, and neither
+an active export nor a prepared unsaved ZIP offer. Unknown, stale, disconnected,
+hidden or preview clients cannot approve. All same-scope windows must approve;
+legacy windows that do not answer protocol 1 block activation until closed.
+
+Protocol 1 is independent of the cache/build name so PWA7 clients can answer
+future PWA8 workers. The waiting worker enumerates same-scope window clients with
+`includeUncontrolled:true` to include pages controlled by its predecessor (see
+[Clients.matchAll](https://developer.mozilla.org/en-US/docs/Web/API/Clients/matchAll)).
+It freezes eligible pages, rechecks their native safety, and verifies the client
+set again immediately before skipWaiting. Each response uses a transferred port,
+an exact transaction token and a 2.5 second timeout. Any veto, timeout, changed
+client set or changed state releases the held pages without activation. Holds
+also expire after 30 seconds if the worker disappears. Existing read-only status
+polling continues; command writes, new connections/discovery and export starts
+are held. The gate sends no native experiment command and cannot pause/resume.
+
+Activation sends COMMIT only to approved pages. A page rechecks its held token
+and current safety before reloading once; ordinary controllerchange never reloads.
+Read-only reconnect behavior remains unchanged. A native action performed elsewhere
+after the final observation is outside this browser handshake's atomic boundary;
+a changed state at COMMIT defers that page's reload. Worker termination or a lost
+COMMIT can leave a safe page open on its current in-memory shell until reopening.
+
+Offline storage remains the exact static shell allowlist. Credentials, native
+status, receipts, recordings and export content never enter the service-worker
+cache. The first migration from legacy PWA6 has no protocol-aware Apply control;
+close its old windows and reopen when the native session is safely idle.
+
+Focused gates: `node --test viscereality-control/pwa.test.cjs
+viscereality-control/sw.test.cjs viscereality-control/update-worker.test.cjs
+viscereality-control/update-safety.test.cjs`. Actual Chromium lifecycle tests with
+synthetic native safety verify predecessor-controlled sibling vetoes and one
+reload per approved page, separately from physical Quest/phone qualification.

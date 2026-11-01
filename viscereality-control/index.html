@@ -33,6 +33,7 @@
         <span class="connection-label" id="connection-label" aria-live="polite">Not connected</span>
       </div>
       <p class="foreground-line" id="connection-detail" aria-live="polite">Find the headset in Remote mode, then connect over the same Wi-Fi.</p>
+      <p class="foreground-line"><span id="pwa-build">PWA7</span> | <span id="apk-build">APK version unavailable</span></p>
       <p id="status-age" class="foreground-line" aria-live="polite">No confirmed headset state</p>
       <p class="presentation" id="presentation" role="status">Headset state unknown</p>
       <div id="access" class="access" hidden>
@@ -82,6 +83,8 @@
         </details>
         <button id="install-app" class="button button-small" type="button" hidden>Install Viscereality</button>
         <p id="install-note">To install, open the Chrome menu and choose Install app or Add to Home screen.</p>
+        <button id="apply-update" class="button button-small" type="button" hidden>Apply update</button>
+        <p id="update-note" role="status"></p>
         <p id="offline-note" role="status">Offline availability has not been checked.</p>
       </section>
       <section class="guide" aria-labelledby="guide-title">
