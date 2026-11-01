@@ -94,9 +94,11 @@ binary and grants no catalog publication authority.
 ## Bilateral Streaming
 
 The [project overview](projects/bilateral-streaming.html) links to the separately
-installable [Bilateral Control app](bilateral-control/). QuestMultiStream owns
-the application source and private PC gateway; this site hosts its finite public
-shell. A supported Chrome browser connects to a deliberately selected private
+installable [Bilateral Control app](https://bilateral.mesmerprism.com/bilateral-control/).
+Its dedicated hostname provides a separate app origin from Viscereality.
+[The static hosting repository](https://github.com/MesmerPrism/bilateral-control)
+publishes the same finite export retained here. QuestMultiStream owns the
+application source and private PC gateway. A supported Chrome browser connects to a deliberately selected private
 gateway with explicit trusted-LAN consent and local-network permission. The
 public HTTPS page needs no development certificate import. LAN HTTP/WebSocket
 transport provides no confidentiality. Physical phone and media qualification
@@ -113,7 +115,9 @@ assets here. Commit the regenerated website projection, then run
 across LF/CRLF checkouts and exact committed website bytes. Verify actual
 deployed bytes after Pages builds. The app manifest and static-only worker are scoped to
 `/bilateral-control/`; credentials, API/media traffic and commands are never
-cached or queued, and sibling app caches are not managed by this worker.
+cached or queued, and sibling app caches are not managed by this worker. Refresh
+the dedicated hosting repository from the selected committed export as described
+in its README; do not customize runtime assets in either hosting projection.
 
 ## Privacy-sensitive assets
 
