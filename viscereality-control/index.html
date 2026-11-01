@@ -20,6 +20,7 @@
   <script src="breath-monitor.js" defer></script>
   <script src="connection-recovery.js" defer></script>
   <script src="snapshot-state.js" defer></script>
+  <script src="polar-diagnostics.js" defer></script>
   <script src="app.js" defer></script>
   <script src="pwa.js" defer></script>
 </head>
@@ -85,6 +86,7 @@
       <section class="guide" aria-labelledby="guide-title">
         <h2 id="guide-title">Connect to Quest</h2>
         <p id="guide-instruction" class="lead" aria-live="polite">Connect to read the current headset state.</p>
+        <p id="polar-pause-cause" class="guidance" aria-live="polite"></p>
         <p id="guide-polar-status" class="guidance" role="status" hidden></p>
         <p id="guide-session-facts" class="stage" hidden></p>
         <p id="guide-clock-label" class="clock-label">Official active time</p>
@@ -216,6 +218,7 @@
         <p id="native-readback-age">Native status-read age unavailable</p>
         <p id="foreground-line">Android input focus unavailable</p>
         <p id="timing-detail">No command timing yet.</p>
+        <p id="polar-diagnostic-detail">Polar diagnostics unavailable.</p>
         <p id="polar-candidate-ids">No Polar candidates observed.</p>
         <dl class="status-list session-list">
           <div><dt>Condition</dt><dd id="active-condition">—</dd></div>

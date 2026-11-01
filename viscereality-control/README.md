@@ -370,3 +370,20 @@ capacity tests consume `EXPERIMENT_CAPACITY_HTTP_EVIDENCE`, the JSON emitted by
 the native owner's inert registry/HTTP test with `--capacity-evidence`. Run the
 browser suite with that variable set to cover the actual generated capacity and
 non-capacity wire responses, idle expiry, original retention and no replay.
+
+## Polar acquisition observations
+
+New Wi-Fi owners add `pd:{v:1,native,java}` alongside the unchanged compact
+`pi:{r,f,h}` readiness fields. The session guide shows current readiness separately
+from the original acquisition pause. A recovered sensor never resumes a session;
+the experimenter still chooses Resume. An observed disconnected Polar link is
+shown explicitly, while missing accepted ACC alone leaves the radio or processing
+cause unknown. Older owners may omit diagnostics and retain their existing controls.
+
+The Diagnostics foldout shows separate callback, decode, JNI submission, native
+ingress and accepted counters plus their own measured ages. These are observations,
+not equivalent counts. Unknown or cached ages remain unavailable. Native ages use
+Rust Instant and Java ages use nanoTime; neither is subtracted from the other's
+clock. Displayed ages include the original snapshot observation/delivery age.
+`polar-diagnostics.js` exposes read-only `ViscerealityPolarDiagnostics.describe(status,
+observationAgeMs)` returning `{current,pause,detail}` and cannot grant controls.

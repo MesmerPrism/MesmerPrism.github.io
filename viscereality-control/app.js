@@ -292,9 +292,10 @@ function polarSessionStep(status) {
   const input = polarInput(status), paused = status.p === "PAUSED";
   const action = paused ? "resume" : "start", label = paused ? "Resume session" : "Start session";
   if (input === null) return {title:"Polar input unavailable",instruction:"Polar input readiness is unavailable. Refresh status before Start or Resume, or finish and save.",action,label,finish:true};
+  const diagnostics=globalThis.ViscerealityPolarDiagnostics?.describe(status);
   if (input?.r && !input.f) return {
     title:paused ? "Paused · waiting for Polar" : "Waiting for Polar motion",
-    instruction:"Waiting for fresh Polar motion data. The Quest retries its selected sensor automatically. " + (paused ? "The session stays paused; choose Resume explicitly after motion recovers, or finish and save." : "Start when motion is current and the participant is ready, or finish and save."),
+    instruction:(status.pd?.native?.diagnostics_observed===true && diagnostics ? diagnostics.current+" " : "Waiting for fresh Polar motion data. ") + "The Quest retries its selected sensor automatically. " + (paused ? "The session stays paused; choose Resume explicitly after motion recovers, or finish and save." : "Start when motion is current and the participant is ready, or finish and save."),
     action,label,finish:true
   };
   if (paused && input?.r && input.f && input.h) return {title:"Polar recovered · paused",instruction:"Polar motion data has recovered. The session remains paused. Choose Resume explicitly when ready, or finish and save.",action,label,finish:true};
@@ -593,6 +594,9 @@ function render() {
 
   label("stage-title", s ? stageTitle(s) : "No live session readback");
   label("stage-instruction", s ? stageInstruction(s) : "Connect to the Quest to see the current run.");
+  const polarDiagnostics=globalThis.ViscerealityPolarDiagnostics?.describe(s,snapshots.age());
+  label("polar-pause-cause",s?.rec ? polarDiagnostics?.pause || "" : "");
+  label("polar-diagnostic-detail",polarDiagnostics ? polarDiagnostics.current+" "+polarDiagnostics.detail : "Polar diagnostics unavailable.");
   label("active-condition", s ? conditionLabel(s.c) : "—");
   label("phase", s?.p || "Unavailable", ["ARMED", "RUNNING", "RECORDING"].includes(s?.p) ? "ready" : "");
   label("recording", s ? s.rec ? "On" : "Off" : "—", s?.rec ? "ready" : "");

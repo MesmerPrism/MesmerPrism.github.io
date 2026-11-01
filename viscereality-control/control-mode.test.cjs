@@ -44,7 +44,7 @@ function fixture(mode = "remote", readReceipt, breathView) {
     },
     async write(bytes) {requests.push(JSON.parse(new TextDecoder().decode(bytes)));}};
   let now = 1000;
-  const context = vm.createContext({QuestBleLifetime:core,ViscerealitySnapshot:require("./snapshot-state.js"), TextEncoder, TextDecoder, URLSearchParams, Promise, AbortController, AbortSignal,
+  const context = vm.createContext({ViscerealityPolarDiagnostics:require("./polar-diagnostics.js"),QuestBleLifetime:core,ViscerealitySnapshot:require("./snapshot-state.js"), TextEncoder, TextDecoder, URLSearchParams, Promise, AbortController, AbortSignal,
     ViscerealityBreathMonitor:breathView&&{createView:()=>breathView},
     crypto:webcrypto, location:{search:""},
     document:{getElementById:node, querySelectorAll:()=>[], createElement:()=>({value:"",textContent:""})},
@@ -226,4 +226,18 @@ test("Direct reconnect reconciles the original ID without replay or a mode comma
   assert.equal(f.run("pendingOriginal"), null);
   assert.equal(f.requests.length, 0);
   assert.equal(f.node("pause-session").disabled, true);
+});
+
+test("actual app retains original Polar pause after recovery and keeps diagnostic authority out of controls",()=>{
+ const f=fixture();f.status.p="PAUSED";f.status.pi={r:true,f:false,h:true};
+ f.status.pd={v:1,native:{reason:"acc-stale",diagnostics_observed:true,last_pause:{reason:"acc-stale"}}};
+ f.run("render()");const cause=f.node("polar-pause-cause").textContent;
+ assert.match(cause,/paused.*accepted.*motion/i);assert.equal(f.node("resume-session").disabled,true);
+ f.status.pd.native.reason="recovered-awaiting-resume";f.run("render()");
+ assert.equal(f.node("resume-session").disabled,true,"diagnostics cannot grant Resume");
+ f.status.pi.f=true;f.run("render()");
+ assert.equal(f.node("polar-pause-cause").textContent,cause);assert.equal(f.node("resume-session").disabled,false);
+ assert.match(f.node("stage-instruction").textContent,/Resume explicitly/i);assert.equal(f.requests.length,0);
+ f.status.pi.h=false;f.status.pd.native.last_pause=null;f.run("render()");
+ assert.equal(f.node("polar-pause-cause").textContent,"");
 });
