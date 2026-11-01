@@ -1,9 +1,9 @@
 {
   "schema": "reachy.public-source.v1",
   "name": "reachy-mini-browser-control",
-  "version": "0.3.10",
-  "sourceRevision": "836230f166271d9e533a4551dff512025b0bbbf4",
-  "sourceTreeSha256": "31a8509c254194cb1e47951200879bef14f40fdac107a45124bf8f2c4da367e1",
+  "version": "0.3.11",
+  "sourceRevision": "714e6d11480020d94c1c171ae0125830784bbb88",
+  "sourceTreeSha256": "9e6db63cb2cf892134eb2db2fc274c761f7151b60813e184005cab33b3828fb0",
   "originalCodeLicense": "MIT",
   "dependencyLicenses": "THIRD_PARTY_NOTICES.md",
   "exclusions": [
@@ -148,8 +148,8 @@
     },
     {
       "path": "docs/SETUP.md",
-      "bytes": 18449,
-      "sha256": "0f1c190020d9940494af169e1f742531e33a3fbf4308731ec6b4d2720f127157",
+      "bytes": 18971,
+      "sha256": "3a4cefd0ac1e5e70b5b672d522ec1e209e810cc9eaa9ae1002f61bb9ed4bd998",
       "sitePath": "docs/SETUP.md"
     },
     {
@@ -160,8 +160,8 @@
     },
     {
       "path": "docs/STATUS.md",
-      "bytes": 252929,
-      "sha256": "673a36e4cd769263a7a9d43913e726ebc062898e9ada1d7ec49d946d71e5ee9f",
+      "bytes": 254030,
+      "sha256": "9a1a90e347fdec94ebd552e43428e03972b0da0372967a7ca8f601cea39b9486",
       "sitePath": "docs/STATUS.md"
     },
     {
@@ -311,13 +311,13 @@
     {
       "path": "package-lock.json",
       "bytes": 77315,
-      "sha256": "069da4bb98a30fb7e005c35ace3076d327a4cb9431884bdb0ad7387d22599775",
+      "sha256": "acfbdc1d64ba2035981aec8772ea7b187f18ef1fff0d9798be23a7e9f0812071",
       "sitePath": "package-lock.json"
     },
     {
       "path": "package.json",
       "bytes": 1014,
-      "sha256": "26d94f9a59e829d7773e802ee12a44efdaa56135ba0c58ccc917e80c5e88aa8d",
+      "sha256": "270cb39ea2eef8858e1dadb7f7c234c9e90523dd6d211461f5a1be6fcc7829b2",
       "sitePath": "package.json"
     },
     {
@@ -592,8 +592,8 @@
     },
     {
       "path": "src/first-setup.mjs",
-      "bytes": 27705,
-      "sha256": "2c00d36b2448806343b698e184e1580168d429f0b18158f47a7f8a83b5a3efae",
+      "bytes": 28833,
+      "sha256": "6948a038da511460d84c0d51aeae60c4ffb6d65c97f998c653ec7d3330a9a952",
       "sitePath": "src/first-setup.mjs"
     },
     {
@@ -856,8 +856,8 @@
     },
     {
       "path": "test/first-setup.test.mjs",
-      "bytes": 41987,
-      "sha256": "ced1a413b0b0468fb7e985a74aa3a88a008f2bb945ef5f7059845bcad33d0568",
+      "bytes": 44713,
+      "sha256": "0bc7fa542a4fa16d9c5ce5d8d49067746e8e9bf0bde4798e040e809a6456941e",
       "sitePath": "test/first-setup.test.mjs"
     },
     {
