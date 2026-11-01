@@ -442,6 +442,12 @@ client set or changed state releases the held pages without activation. Holds
 also expire after 30 seconds if the worker disappears. Existing read-only status
 polling continues; command writes, new connections/discovery and export starts
 are held. The gate sends no native experiment command and cannot pause/resume.
+A returned or reconciled unknown command outcome retains its uncertain original
+request until the existing explicit operator acknowledgement resolves it; a fresh
+idle snapshot alone cannot settle that result. Ordinary read-only status polls
+may remain in flight while the current authenticated idle snapshot is fresh.
+Their presence alone does not veto confirm or COMMIT; actual stale, pending,
+unknown, recording or export state continues to veto.
 
 Activation sends COMMIT only to approved pages. A page rechecks its held token
 and current safety before reloading once; ordinary controllerchange never reloads.

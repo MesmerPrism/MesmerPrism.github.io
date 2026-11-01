@@ -272,7 +272,7 @@ function safeForPwaUpdate() {
   return !preview && pageActive && !document.hidden && !!networkTransport?.active && controlsUnlocked()
     && freshStatus() && questStatus?.wifi_snapshot===1 && questStatus.control_mode==="remote"
     && questStatus.p==="IDLE" && questStatus.rec===false && questStatus.pending===false
-    && !pendingOriginal && !commandBusy && !reading && !connecting && !findingHeadset
+    && !pendingOriginal && !commandBusy && !connecting && !findingHeadset
     && !exportState.busy && !exportState.preparedOffer;
 }
 globalThis.ViscerealityUpdateSafety=Object.freeze({
@@ -764,7 +764,8 @@ async function observeOriginalReceipt(status, generation, parentSignal) {
       original.state="reconciled_receipt";
       showProgress(original.name,"requested","Original Stop request was dispatched. Sensor ACK or data stop is not confirmed.");
     } else {
-      original.state="reconciled_receipt";
+      original.state=["confirmed","rejected"].includes(receipt.state)?"reconciled_receipt":"uncertain";
+      saveOriginal();
       showProgress(original.name,receipt.state === "confirmed" ? "confirmed" : receipt.state === "rejected" ? "failed" : "unknown",
         receipt.detail || `Original Quest result: ${receipt.state}. Waiting for fresh session status.`);
     }
@@ -1290,7 +1291,10 @@ async function sendCommand(op, name, condition = "", bias = 0, selectedSession =
           break;
         } else if (receipt.state === "outcome_unknown") {
           terminalReceipt = true;
-          if (pendingOriginal?.id === id) clearOriginal();
+          // Fresh current state does not settle this original request's result.
+          // Keep the existing explicit operator acknowledgement path available.
+          if(!pendingOriginal)pendingOriginal={id,name,op,deviceId:ownerIdentity(),epoch:nativeAgeScope?.visible?nativeAgeScope.epoch:null};
+          if(pendingOriginal.id===id){pendingOriginal.state="uncertain";saveOriginal();}
           showProgress(name, "unknown", receipt.detail || "Quest could not confirm the result. Check the headset before retrying.");
           if (op === "set-bias") label("bias-confirmation", "Bias outcome unknown; inspect current bias before another change.");
           break;

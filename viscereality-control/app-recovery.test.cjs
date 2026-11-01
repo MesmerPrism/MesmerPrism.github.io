@@ -22,7 +22,7 @@ function fixture(saved=new Map(),initialHidden=false) {
     let body;
     if(req.action==='status')body=head.mutate({v:1,m:'gated',wifi_snapshot:1,control_mode:head.mode,o:{v:1,s:'observed',e:head.native_epoch,i:String(++read),g:7,r:head.revision,a:0},p:head.phase,g:7,r:head.revision,c:'condition-a',rec:true,co:'NOT_REACHED',ms:head.ms,st:'ready',pending:false,h:'vr-session',pi:{r:true,f:true,h:false},breath_monitor:1,q:{v:2,s:'d'.repeat(32),g:7,o:['pause','resume','start']}});
     else if(req.action==='command'){assert.equal(JSON.parse(saved.get('viscereality-original-command')).id,JSON.parse(req.payload).id,'original persisted before send');head.writes.push(JSON.parse(req.payload));if(head.loseCommand){head.loseCommand=false;head.lost=true;throw new TypeError('reply lost after apply');}body={v:1};}
-    else if(req.action==='receipt'){if(head.holdReceipt)await head.holdReceipt;body={v:1,id:JSON.parse(req.payload).id,state:'confirmed',detail:'ORIGINAL_ONLY'};}
+    else if(req.action==='receipt'){if(head.holdReceipt)await head.holdReceipt;body={v:1,id:JSON.parse(req.payload).id,state:head.receiptState||'confirmed',detail:head.receiptDetail||'ORIGINAL_ONLY'};}
     else body={v:1};
     const payload=JSON.stringify(body),reply={v:1,device:head.device,epoch:head.epoch,nonce:req.nonce,action:req.action,payload};
     reply.mac=createHmac('sha256',key).update(`RQG1-REPLY|${controller}|${head.device}|${head.epoch}|${req.nonce}|${req.action}|${payload}`).digest('hex');
