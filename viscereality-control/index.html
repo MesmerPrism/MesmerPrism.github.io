@@ -21,6 +21,7 @@
   <script src="connection-recovery.js" defer></script>
   <script src="snapshot-state.js" defer></script>
   <script src="polar-diagnostics.js" defer></script>
+  <script src="recordings.js" defer></script>
   <script src="app.js" defer></script>
   <script src="pwa.js" defer></script>
 </head>
@@ -213,6 +214,17 @@
         <button id="save-exit" class="button button-secondary" type="button" disabled>Save and exit</button>
       </section>
 
+      </details>
+      <details class="foldout" id="saved-recordings" hidden>
+        <summary>Saved recordings</summary>
+        <p id="recordings-identity" class="guidance"></p>
+        <p id="recordings-note" role="status">Connect over local Wi-Fi to retrieve saved recordings.</p>
+        <button id="recordings-refresh" class="button button-secondary" type="button" disabled>Refresh saved list</button>
+        <ul id="recordings-list" class="recordings-list"></ul>
+        <button id="recordings-more" class="button button-secondary" type="button" disabled>Older recordings</button>
+        <a id="recording-download" class="button button-primary recording-offer" hidden>Save verified ZIP</a>
+        <button id="recordings-cancel" class="button button-secondary" type="button" hidden>Cancel / dismiss export</button>
+        <p class="guidance">Includes the eight original core files and an export manifest. Checkpoints and the device index remain on Quest. A download offer does not confirm storage on your phone.</p>
       </details>
       <details class="foldout" id="diagnostics"><summary>Diagnostics</summary>
         <p id="native-readback-age">Native status-read age unavailable</p>

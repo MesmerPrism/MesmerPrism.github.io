@@ -24,6 +24,8 @@ function disconnectLegacyGatt(candidate,lease=legacyGattLease) {
 let characteristics;
 let networkTransport;
 let networkRecovering = false;
+let recordingTransfer, recordingEntries=[], recordingNext=null, recordingUrl, recordingOfferScope, recordingListScope;
+let recordingNotice="Connect over local Wi-Fi with a supported APK to retrieve saved recordings.";
 let recoveryController, recoveryWaitingRemote=false, statusAbort, receiptAbort;
 let automaticRecoveryBlock;
 const snapshots = new ViscerealitySnapshot.SnapshotState(() => performance.now());
@@ -43,7 +45,7 @@ function rememberReconnect(identity,gateway) {
   try {localStorage.setItem(INTENT_KEY,JSON.stringify(reconnectIntent));}catch(_) {}
 }
 function stopRecovery() {recoveryController?.stop();recoveryController=undefined;networkRecovering=false;recoveryWaitingRemote=false;}
-function invalidateSnapshot() {snapshots.invalidate();lastStatusAt=0;nativeAgeConnection();nativeAgeScope.visible=null;breathView?.unavailable("Status unavailable; waiting for current breathing readback.");}
+function invalidateSnapshot() {stopRecordings();snapshots.invalidate();lastStatusAt=0;nativeAgeConnection();nativeAgeScope.visible=null;breathView?.unavailable("Status unavailable; waiting for current breathing readback.");}
 function resetNativeView() {questStatus=undefined;lastStatusAt=0;snapshots.reset();nativeAgeScope=undefined;breathView?.reset();breathReceivedAt=0;if(pendingOriginal)pendingOriginal.state="observing";}
 
 let bleOwnerIdentity;
@@ -247,8 +249,66 @@ function assertControlMode() {
     throw error;
   }
 }
-function canCommand(op="") { return !preview && controlsUnlocked() && freshStatus() && remoteControlAllowed(questStatus) && !commandBusy
+function canCommand(op="") { return !preview && controlsUnlocked() && freshStatus() && remoteControlAllowed(questStatus) && !commandBusy && !recordingTransfer?.busy
   && (!pendingOriginal || ["return-vr","ping"].includes(op)); }
+
+function canListRecordings() {
+  return !preview && !!globalThis.ViscerealityRecordings && !!networkTransport?.active && !networkTransport.routeToken
+    && !!networkTransport.url && new URL(networkTransport.url).protocol==="http:" && ["local","lan","direct"].includes(selectedRoute)
+    && freshStatus() && questStatus?.wifi_snapshot===1 && questStatus.recordings===1 && questStatus.control_mode==="remote"
+    && questStatus.p==="IDLE" && questStatus.rec===false && questStatus.pending===false && !commandBusy && !pendingOriginal;
+}
+function recordingScope() {
+  return JSON.stringify([connectionGeneration,networkTransport?.device,networkTransport?.serial,networkTransport?.epoch,
+    networkTransport?.controller,questStatus?.o?.e,questStatus?.g,questStatus?.r,questStatus?.control_mode]);
+}
+/** Read-only update-gate input: a prepared offer still owns page memory. */
+function recordingExportState() {return {busy:!!recordingTransfer?.busy,preparedOffer:!!recordingTransfer?.hasOffer};}
+function stopRecordings() {
+  recordingTransfer?.cancel();
+  if(recordingUrl){URL.revokeObjectURL(recordingUrl);recordingUrl=undefined;}
+  recordingOfferScope=undefined;
+  const link=byId("recording-download");if(link){link.hidden=true;link.removeAttribute("href");}
+}
+function makeRecordingTransfer() {
+  stopRecordings();const route=networkTransport,generation=connectionGeneration;
+  recordingTransfer=new ViscerealityRecordings.Transfer({device:route.device,serial:route.serial,scope:recordingScope,
+    admitted:()=>route===networkTransport&&generation===connectionGeneration&&canListRecordings(),
+    request:(query,{signal})=>gattOperation(()=>{signal.throwIfAborted();return route.exchange("recordings",query,{signal});},generation),
+    yieldStatus:async()=>{const deadline=performance.now()+5000;while(reading){if(!pageActive||route!==networkTransport||generation!==connectionGeneration||recordingTransfer?.abort?.signal.aborted||performance.now()>deadline)throw Error("Current status observation unavailable; retry manually.");await new Promise(resolve=>setTimeout(resolve,10));}const result=await refreshStatus();if(result?.ok===false)throw result.error;await new Promise(resolve=>setTimeout(resolve,0));},
+    onProgress:text=>{recordingNotice=text;render();}});
+  return recordingTransfer;
+}
+async function listSavedRecordings(more=false) {
+  if(!canListRecordings()||recordingTransfer?.busy)return;
+  const transfer=makeRecordingTransfer();recordingNotice="Validating saved recordings on Quest…";
+  const task=transfer.list(more?recordingNext||"":"");render();
+  try {const page=await task;if(transfer!==recordingTransfer||!canListRecordings())return;recordingEntries=more?[...recordingEntries,...page.entries].slice(-64):page.entries;recordingNext=page.next_before;recordingListScope=recordingScope();recordingNotice=page.entries.length?"Select Download to verify all original files. Recordings remain on Quest.":"No saved recordings found.";}
+  catch(error){recordingNotice=error.message;}
+  finally {render();}
+}
+async function downloadSavedRecording(id) {
+  if(!canListRecordings()||recordingTransfer?.busy)return;
+  const transfer=makeRecordingTransfer(),task=transfer.download(id);render();
+  try {const offer=await task;if(transfer!==recordingTransfer||!canListRecordings())return;recordingUrl=URL.createObjectURL(offer.blob);recordingOfferScope=recordingScope();const link=byId("recording-download");link.href=recordingUrl;link.download=offer.filename;link.textContent="Save verified ZIP";link.hidden=false;}
+  catch(error){stopRecordings();recordingNotice=error.message;}
+  finally {render();}
+}
+function renderRecordings() {
+  if(recordingListScope&&recordingListScope!==recordingScope()){recordingEntries=[];recordingNext=null;recordingListScope=undefined;}
+  const allowed=canListRecordings(),busy=!!recordingTransfer?.busy;
+  if(!allowed||recordingOfferScope&&recordingOfferScope!==recordingScope())stopRecordings();
+  byId("saved-recordings").hidden=questStatus?.recordings!==1&&!busy&&!recordingTransfer?.hasOffer;
+  byId("recordings-refresh").disabled=!allowed||busy;byId("recordings-more").disabled=!allowed||busy||!recordingNext;
+  byId("recordings-cancel").hidden=!busy&&!recordingTransfer?.hasOffer;
+  byId("recordings-note").textContent=allowed?recordingNotice:"Saved-recording retrieval requires fresh idle Remote state over local Wi-Fi.";
+  byId("recordings-identity").textContent=networkTransport?`Quest ${(recordingTransfer?.offer?.manifest?.serial??networkTransport.serial)||"serial unavailable"} · ${networkTransport.device}`:"";
+  const list=byId("recordings-list");list.replaceChildren();
+  for(const item of recordingEntries){const row=document.createElement("li"),text=document.createElement("p"),button=document.createElement("button");
+    text.textContent=`${item.id} · ${item.condition||"condition unavailable"} · ${item.disposition}${item.exportable?"":" · unavailable for export"}`;
+    button.type="button";button.className="button button-secondary";button.textContent="Download";button.disabled=!allowed||busy||!item.exportable;button.addEventListener("click",()=>downloadSavedRecording(item.id));row.append(text,button);list.append(row);
+  }
+}
 
 function polarSetupCapability(status) {
   const y = status?.y;
@@ -535,6 +595,7 @@ function renderGuide(s) {
 }
 
 function render() {
+  renderRecordings();
   const live = connected();
   renderHeadsets();
   byId("connection-options").hidden = live || networkRecovering || preview;
@@ -1582,3 +1643,7 @@ if(!globalThis.navigator?.bluetooth?.requestDevice || !globalThis.isSecureContex
 if(typeof setInterval==="function")setInterval(()=>{if(pageActive&&questStatus){if(!freshStatus())breathView?.unavailable("Headset state is stale; waiting for a fresh snapshot.");render();}},250);
 reconnectIntent=loadReconnectIntent();
 if(reconnectIntent&&!preview&&pageActive)beginNetworkRecovery();
+
+byId("recordings-refresh").addEventListener("click",()=>listSavedRecordings());
+byId("recordings-more").addEventListener("click",()=>listSavedRecordings(true));
+byId("recordings-cancel").addEventListener("click",()=>{stopRecordings();recordingNotice="Export cancelled. Originals remain on Quest.";render();});

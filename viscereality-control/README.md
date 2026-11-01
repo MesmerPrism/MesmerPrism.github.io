@@ -387,3 +387,33 @@ Rust Instant and Java ages use nanoTime; neither is subtracted from the other's
 clock. Displayed ages include the original snapshot observation/delivery age.
 `polar-diagnostics.js` exposes read-only `ViscerealityPolarDiagnostics.describe(status,
 observationAgeMs)` returning `{current,pause,detail}` and cannot grant controls.
+
+## Saved recordings
+
+A supported APK advertises `recordings:1` in authenticated full Wi-Fi status.
+The Saved recordings foldout is hidden for older APKs. Refresh and Download
+require fresh idle Remote state, no recording/pending/unknown command, and the
+local Wi-Fi route (discovered, enrolled LAN or direct network). Advanced relay and BLE do not expose export controls.
+
+Refresh validates a newest-first page of at most 16 entries; unavailable or
+unfinalized entries remain visibly unavailable. Download prepares an immutable
+manifest and reads one 32 KiB chunk request at a time, yielding to a complete
+status observation after each response. Owner/mode/generation changes, hidden
+page, stale state, disconnection, recovery, cancellation, short data or changed
+hash discard the attempt. Exports are never replayed automatically.
+
+`recordings.js` verifies the eight original core files against exact sizes and
+SHA-256, then offers one ZIP STORE archive with export-manifest.json. Device,
+serial, recording key, condition, disposition and core8 policy remain explicit.
+Checkpoints and the device index remain on Quest. The original payload limit is
+128 MiB, plus at most 32 KiB for the export manifest; ZIP32 bounds are enforced.
+File arrays and Blob storage are bounded by that payload limit, with browser
+object/WebCrypto overhead. Only one transfer/offer is retained. Dismiss releases
+the offer and its object URL. The browser offer does not confirm phone storage.
+
+The app exposes `recordingExportState()` returning `{busy,preparedOffer}` for the
+safe-update gate. Either true defers applying a PWA update. Cancellation leaves
+busy true until the in-flight operation settles; no experiment command is sent.
+The shell allowlist includes recordings.js; the coordinated PWA7 task owns the
+cache-version change. Host tests use synthetic bytes and independently extract
+the ZIP with Python zipfile. Physical Quest/phone LAN and storage remain separate.

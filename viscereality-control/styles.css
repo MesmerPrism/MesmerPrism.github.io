@@ -144,3 +144,8 @@ h1 { margin: 0; font-size: clamp(30px, 7.2vw, 39px); line-height: 1.12; letter-s
 .headset-row p { margin: 8px 0 12px; }
 #local-gateway-url { margin-bottom: 12px; }
 #advanced-connection > label { margin-top: 16px; }
+
+.recordings-list { list-style: none; padding: 0; margin: 16px 0; }
+.recordings-list li { padding: 12px 0; border-top: 1px solid #373b43; }
+.recordings-list p, #recordings-identity { overflow-wrap: anywhere; font-size: 14px; line-height: 1.5; }
+.recording-offer { display: block; margin-top: 16px; text-decoration: none; }

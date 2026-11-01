@@ -1,0 +1,29 @@
+const test=require('node:test'),assert=require('node:assert/strict');
+const {webcrypto,createHash}=require('node:crypto');
+const {Transfer,zipStore,CORE}=require('./recordings.js');
+const names=['manifest.json','final.json','events.jsonl','polar-acc.jsonl','polar-ecg.jsonl','polar-hr-rr.jsonl','breath.jsonl','radius.jsonl'];
+const hex=b=>createHash('sha256').update(b).digest('hex');
+function fixture(){const data=names.map((_,i)=>new Uint8Array(i===2?33000:i));for(let i=0;i<data.length;i++)data[i].forEach((_,n)=>data[i][n]=(n+i)%256);
+ const manifest={v:1,schema:'rusty.quest.recording_export.v1',id:'utc-ns-01725000000000000000',condition:'condition-a',disposition:'finalized-completed',saved:true,file_set_policy:'core8-original-no-checkpoints-or-index',manifest_id:'a'.repeat(64),device:'b'.repeat(32),serial:'SYNTHETIC',files:names.map((name,i)=>({name,size:data[i].length,sha256:hex(data[i])})),total_bytes:data.reduce((n,b)=>n+b.length,0)};
+ let scope='original',calls=[],yieldCount=0,mutate=x=>x;
+ const transfer=new Transfer({cryptoApi:webcrypto,scope:()=>scope,admitted:()=>scope==='original',device:manifest.device,serial:manifest.serial,yieldStatus:async()=>{yieldCount++;},request:async q=>{calls.push(q);if(q.query==='describe')return {v:1,state:'ready',manifest};if(q.query==='read'){const index=names.indexOf(q.file),bytes=data[index].subarray(q.offset,q.offset+q.length);return mutate({v:1,state:'chunk',manifest_id:q.manifest_id,file:q.file,offset:q.offset,length:q.length,sha256:manifest.files[index].sha256,data:Buffer.from(bytes).toString('base64')});}return {v:1,state:'ready',entries:[],next_before:null};}});
+ return {transfer,manifest,data,calls,scope:v=>scope=v,mutate:f=>mutate=f,yields:()=>yieldCount};}
+module.exports={fixture,names};
+test('download verifies all core8 and offers binary-preserving ZIP without deleting originals',async()=>{const f=fixture(),offer=await f.transfer.download(f.manifest.id);assert.equal(f.transfer.busy,false);assert.equal(f.transfer.hasOffer,true);assert.equal(offer.filename,`${f.manifest.id}.zip`);assert.equal(f.calls.filter(q=>q.query==='read').length,8);assert.equal(f.yields(),f.calls.length);assert.ok(offer.blob.size>33000);assert.ok(f.calls.every(q=>['describe','read'].includes(q.query)));});
+for(const [name,mutate] of [['truncated',r=>({...r,data:r.data.slice(4)})],['changed-hash',r=>({...r,sha256:'0'.repeat(64)})],['changed-offset',r=>({...r,offset:r.offset+1})],['changed-bytes',r=>({...r,data:Buffer.alloc(r.length,7).toString('base64')})]])test(`${name} never produces a download offer`,async()=>{const f=fixture();f.mutate(mutate);await assert.rejects(f.transfer.download(f.manifest.id));assert.equal(f.transfer.hasOffer,false);assert.equal(f.transfer.busy,false);});
+test('owner cancellation after awaited response and explicit cancellation discard all bytes',async()=>{const f=fixture();f.mutate(r=>{f.scope('replacement');return r;});await assert.rejects(f.transfer.download(f.manifest.id));assert.equal(f.transfer.hasOffer,false);});
+test('manifest duplicate file, non-saved and memory limit deny before chunk IO',async()=>{for(const damage of ['duplicate','unsaved','huge']){const f=fixture();if(damage==='duplicate')f.manifest.files[1].name='manifest.json';if(damage==='unsaved')f.manifest.saved=false;if(damage==='huge')f.manifest.files[0].size=129*1024*1024;await assert.rejects(f.transfer.download(f.manifest.id));assert.equal(f.calls.filter(q=>q.query==='read').length,0);}});
+test('ZIP is readable by independent Python zipfile with original bytes and export manifest',async()=>{const f=fixture();const offer=await f.transfer.download(f.manifest.id);const {mkdtempSync,writeFileSync,rmSync}=require('node:fs'),{tmpdir}=require('node:os'),{join}=require('node:path'),{spawnSync}=require('node:child_process');const dir=mkdtempSync(join(tmpdir(),'recordings-zip-'));try{const path=join(dir,'export.zip');writeFileSync(path,Buffer.from(await offer.blob.arrayBuffer()));const code='import zipfile,sys,json\nz=zipfile.ZipFile(sys.argv[1]); assert len(z.namelist())==9; assert z.testzip() is None\nfor i,n in enumerate('+JSON.stringify(names)+'):\n b=z.read(n); assert len(b)==(33000 if i==2 else i); assert all(v==(j+i)%256 for j,v in enumerate(b))\nm=json.loads(z.read("export-manifest.json")); assert m["saved"] is True; assert m["serial"]=="SYNTHETIC"\n';const r=spawnSync('python',['-c',code,path],{encoding:'utf8'});assert.equal(r.status,0,r.stderr);}finally{rmSync(dir,{recursive:true,force:true});}});
+
+test('preparation polls serialize requests and yield for fresh status before the next request',async()=>{
+ const f=fixture(),original=f.transfer.request;let preparing=2,active=0,peak=0;
+ f.transfer.wait=async()=>{};f.transfer.request=async q=>{active++;peak=Math.max(peak,active);try{await new Promise(r=>setImmediate(r));if(q.query==='describe'&&preparing-->0)return {v:1,state:'preparing'};return await original(q);}finally{active--;}};
+ await f.transfer.download(f.manifest.id);assert.equal(peak,1);assert.equal(f.yields(),11);assert.equal(f.transfer.hasOffer,true);
+});
+test('explicit cancellation during a pending chunk cannot publish or replay the export',async()=>{
+ const f=fixture(),original=f.transfer.request;let release,entered=false;const held=new Promise(r=>release=r);
+ f.transfer.request=async q=>{const value=await original(q);if(q.query==='read'){entered=true;await held;}return value;};
+ const job=f.transfer.download(f.manifest.id);while(!entered)await new Promise(r=>setImmediate(r));f.transfer.cancel();release();await assert.rejects(job);assert.equal(f.transfer.busy,false);assert.equal(f.transfer.hasOffer,false);assert.equal(f.calls.length,2);
+});
+
+test('enrolled LAN without an earlier serial hint uses the authenticated safe export serial',async()=>{const f=fixture();f.transfer.serial=undefined;const offer=await f.transfer.download(f.manifest.id);assert.equal(offer.manifest.serial,'SYNTHETIC');});
