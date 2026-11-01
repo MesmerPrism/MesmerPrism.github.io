@@ -91,6 +91,26 @@ commits that owned subtree, requests the canonical Pages build, and leaves the
 catalog plus every unrelated byte unchanged. This route publishes no owner
 binary and grants no catalog publication authority.
 
+## Bilateral Streaming
+
+The [project overview](projects/bilateral-streaming.html) links to the separately
+installable [Bilateral Control app](bilateral-control/). QuestMultiStream owns
+the application source and private PC gateway; this site hosts its finite public
+shell. A supported Chrome browser connects to a deliberately selected private
+gateway with explicit trusted-LAN consent and local-network permission. The
+public HTTPS page needs no development certificate import. LAN HTTP/WebSocket
+transport provides no confidentiality. Physical phone and media qualification
+remain separate from source checks.
+
+Regenerate only `bilateral-control/` using the committed QuestMultiStream
+`tools/Export-PublicBilateralPwa.ps1 -DestinationPath <site-root>/bilateral-control`.
+Its export manifest records the exact source revision and hashes; `-Check`
+verifies the projection. Do not edit generated assets here. Run
+`python tools/test_bilateral_control.py --source-root <QuestMultiStream-root>`
+before publication. The app manifest and static-only worker are scoped to
+`/bilateral-control/`; credentials, API/media traffic and commands are never
+cached or queued, and sibling app caches are not managed by this worker.
+
 ## Privacy-sensitive assets
 
 The site serves its fonts from [`assets/fonts.css`](assets/fonts.css) and local
