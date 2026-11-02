@@ -8,21 +8,21 @@ test('offline worker only intercepts exact static shell GET requests without cre
 });
 
 function workerFixture({missing,broken=false}={}) {
-  const handlers={},entries=new Set(),deleted=[];
+  const handlers={},entries=new Set(),deleted=[],requests=[];
   let cacheName,reply;
   const cache={
-    async addAll(paths){if(broken)throw Error('Download incomplete');paths.forEach(path=>entries.add(new URL(path,'https://mesmerprism.com/viscereality-control/').href));},
+    async addAll(paths){if(broken)throw Error('Download incomplete');requests.push(...paths);paths.forEach(path=>entries.add(new URL(path.url||path,'https://mesmerprism.com/viscereality-control/').href));},
     async match(path){return entries.has(new URL(typeof path==='string'?path:path.url,'https://mesmerprism.com/viscereality-control/').href)?{ok:true}:undefined;}
   };
-  vm.runInNewContext(fs.readFileSync(require.resolve('./sw.js'),'utf8'),{URL,Set,Promise,
+  vm.runInNewContext(fs.readFileSync(require.resolve('./sw.js'),'utf8'),{URL,Request,Set,Promise,
     self:{location:{href:'https://mesmerprism.com/viscereality-control/sw.js',origin:'https://mesmerprism.com'},
       clients:{claim:async()=>{}},addEventListener:(name,fn)=>handlers[name]=fn},
-    caches:{open:async name=>{cacheName=name;return cache;},keys:async()=>['viscereality-shell-pwa-4','viscereality-shell-pwa-5','viscereality-shell-pwa-6','viscereality-shell-pwa-7','viscereality-shell-pwa-8','viscereality-shell-pwa-9','unrelated-app'],delete:async name=>deleted.push(name)}});
+    caches:{open:async name=>{cacheName=name;return cache;},keys:async()=>['viscereality-shell-pwa-4','viscereality-shell-pwa-5','viscereality-shell-pwa-6','viscereality-shell-pwa-7','viscereality-shell-pwa-8','viscereality-shell-pwa-9','viscereality-shell-pwa-10','unrelated-app'],delete:async name=>deleted.push(name)}});
   const dispatch=async(type,extra={})=>{
     assert.equal(typeof handlers[type],'function',`Worker must handle ${type}`);
     let task;handlers[type]({waitUntil:value=>{task=value;},...extra});await task;
   };
-  return {entries,deleted,get cacheName(){return cacheName;},install:()=>dispatch('install'),activate:()=>dispatch('activate'),
+  return {entries,deleted,requests,get cacheName(){return cacheName;},install:()=>dispatch('install'),activate:()=>dispatch('activate'),
     async check(type='CHECK_OFFLINE_READY'){
       reply=undefined;
       await dispatch('message',{data:{type},ports:[{postMessage:value=>{reply=value;}}]});
@@ -36,7 +36,7 @@ test('offline readiness covers the install manifest, icons and PWA runtime',asyn
     assert.ok(f.entries.has(new URL(path,'https://mesmerprism.com/viscereality-control/').href),`${path} must work on an offline launch`);
   const result=await f.check();
   assert.equal(result.type,'OFFLINE_READY');assert.equal(result.ready,true);assert.equal(result.cache,f.cacheName);
-  assert.equal(result.cache,'viscereality-shell-pwa-9');
+  assert.equal(result.cache,'viscereality-shell-pwa-10');
 });
 
 test('offline readiness is false if even one required file was evicted',async()=>{
@@ -60,5 +60,12 @@ test('failed shell download preserves existing caches',async()=>{
 
 test('activation retires only this app previous shell caches',async()=>{
   const f=workerFixture();await f.install();await f.activate();
-  assert.deepEqual(f.deleted,['viscereality-shell-pwa-4','viscereality-shell-pwa-5','viscereality-shell-pwa-6','viscereality-shell-pwa-7','viscereality-shell-pwa-8']);
+  assert.deepEqual(f.deleted,['viscereality-shell-pwa-4','viscereality-shell-pwa-5','viscereality-shell-pwa-6','viscereality-shell-pwa-7','viscereality-shell-pwa-8','viscereality-shell-pwa-9']);
+});
+
+test('new shell install bypasses the predecessor HTTP cache for every asset',async()=>{
+ const f=workerFixture();await f.install();
+ assert.ok(f.requests.length>0);
+ const simulatedBodies=f.requests.map(request=>request.cache==='reload'?'new-build-bytes':'old-http-cache-bytes');
+ assert.ok(simulatedBodies.every(body=>body==='new-build-bytes'),'an installed new worker must not cache older shell responses from the HTTP cache');
 });

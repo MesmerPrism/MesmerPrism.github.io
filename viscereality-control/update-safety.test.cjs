@@ -34,7 +34,7 @@ for(const recovered of [false,true])test(`unknown ${recovered?'reconciled':'dire
 });
 async function appPwaFixture(){
  const f=fixture();await f.connect();f.head.phase='IDLE';f.head.mutate=s=>({...s,rec:false});await f.run('refreshStatus()');
- const workerEvents={},worker={postMessage(m,ports){ports?.[0]?.postMessage({type:'OFFLINE_READY',cache:'viscereality-shell-pwa-9',ready:true});}};
+ const workerEvents={},worker={postMessage(m,ports){ports?.[0]?.postMessage({type:'OFFLINE_READY',cache:'viscereality-shell-pwa-10',ready:true});}};
  const registration={active:worker,waiting:worker,addEventListener(){}};let reloads=0;
  f.context.navigator.serviceWorker={register:async()=>registration,ready:Promise.resolve(registration),addEventListener:(n,fn)=>workerEvents[n]=fn};
  f.context.window.matchMedia=()=>({matches:false,addEventListener(){}});f.context.location.reload=()=>reloads++;

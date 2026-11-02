@@ -1,6 +1,6 @@
 "use strict";
 // Bump for every shell change. No credentials, status, command or receipt is cached.
-const CACHE="viscereality-shell-pwa-9";
+const CACHE="viscereality-shell-pwa-10";
 const SHELL=["./","index.html","app.js","pwa.js","transport.js","connection-recovery.js","snapshot-state.js","polar-diagnostics.js","discovery.js","breath-monitor.js","recordings.js","styles.css","manifest.webmanifest","icons/icon-192.png","icons/icon-512.png","icons/icon-maskable-512.png","icons/apple-touch-icon.png","../shared/quest-ble/gatt-lifetime.js"];
 const URLS=new Set(SHELL.map(path=>new URL(path,self.location.href).href));
 // Protocol 1 remains stable across shell builds. Older/unresponsive pages veto.
@@ -40,7 +40,7 @@ async function applyUpdate(event) {
     await self.skipWaiting();reply("UPDATE_APPROVED");
   } catch(_) {release(transaction);updateTransaction=undefined;reply("UPDATE_BLOCKED");}
 }
-self.addEventListener("install",event=>event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(SHELL))));
+self.addEventListener("install",event=>event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(SHELL.map(path=>new Request(new URL(path,self.location.href),{cache:"reload"}))))));
 self.addEventListener("activate",event=>event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key.startsWith("viscereality-shell-")&&key!==CACHE).map(key=>caches.delete(key)))).then(()=>self.clients.claim()).then(()=>{if(updateTransaction){for(const client of updateTransaction.clients){try{client.postMessage({type:"RQ_UPDATE_COMMIT",protocol:1,token:updateTransaction.token});}catch(_){/* Client closed after approval. */}}updateTransaction=undefined;}})));
 self.addEventListener("message",event=>{
   if(event.data?.type==="APPLY_UPDATE"&&event.data.protocol===1&&event.ports?.[0]&&event.source){event.waitUntil(applyUpdate(event));return;}
