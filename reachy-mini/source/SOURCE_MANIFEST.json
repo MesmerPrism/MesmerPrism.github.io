@@ -1,9 +1,9 @@
 {
   "schema": "reachy.public-source.v1",
   "name": "reachy-mini-browser-control",
-  "version": "0.3.12",
-  "sourceRevision": "16abe205702d9377c4c0679ce8bba9733dcc9aa5",
-  "sourceTreeSha256": "45a6c8a104b82081a96e9ca13cecdb396b34bbeac0cf793ca62612c20fb909d9",
+  "version": "0.3.13",
+  "sourceRevision": "ee99a769942601e59afaa12244f604e6e466315d",
+  "sourceTreeSha256": "08cf993ac539bcc1d7a14e0e9a1cfbe0acb12a25c835b53953416aaab44e2804",
   "originalCodeLicense": "MIT",
   "dependencyLicenses": "THIRD_PARTY_NOTICES.md",
   "exclusions": [
@@ -106,8 +106,8 @@
     },
     {
       "path": "docs/LOCAL_CONNECTION.md",
-      "bytes": 3111,
-      "sha256": "6b22dcffd9727966c804f452bbbc91651ce3380fc6fe1308ab0ddbd8a9e89758",
+      "bytes": 3631,
+      "sha256": "7ae602067fbff3d14a8d26597abdea98fc5803a50b5b4ed887b11f5fe18d1e83",
       "sitePath": "docs/LOCAL_CONNECTION.md"
     },
     {
@@ -160,8 +160,8 @@
     },
     {
       "path": "docs/STATUS.md",
-      "bytes": 255395,
-      "sha256": "13a1a00467829896080636bac299f4677b89431f02d612ba12e77e4388f70748",
+      "bytes": 257096,
+      "sha256": "f3ad960732b1cebf8ea8096ad1f25a7ff96870ef139fc14f459a2258c6ad045d",
       "sitePath": "docs/STATUS.md"
     },
     {
@@ -311,13 +311,13 @@
     {
       "path": "package-lock.json",
       "bytes": 77315,
-      "sha256": "853157b9adddbba653d91d8ede9c67ba18ff994fe2e17018615a039ac12840b3",
+      "sha256": "90619c671730c6fefdfcb92b33cc09f7e5f60a1dbedcfcabb90fd3766647de0a",
       "sitePath": "package-lock.json"
     },
     {
       "path": "package.json",
       "bytes": 1014,
-      "sha256": "01478505b03a1b6da20a851044edecf101ff92bad4abd6f110184b4f217179a9",
+      "sha256": "95c8937e2ddf826a95e8b266e21798be6279ec99dccb4bfca98a1ef3670ec06c",
       "sitePath": "package.json"
     },
     {
@@ -388,8 +388,8 @@
     },
     {
       "path": "public-site/WirelessPanel.jsx",
-      "bytes": 35362,
-      "sha256": "a78d5d023008d41e92cdf2d8631beb5fc20477993b6072946b334859a19056d5",
+      "bytes": 35874,
+      "sha256": "8dcfce4f306d8054b31a9f27293cf6fbb45d52cddcf7cfcce3dac133c830fcbd",
       "sitePath": "public-site/WirelessPanel.jsx"
     },
     {
@@ -628,8 +628,8 @@
     },
     {
       "path": "src/local-wireless.mjs",
-      "bytes": 6127,
-      "sha256": "0c0ee021058ddd4ab1494a930bd3c25842a510e2063de159567cd5ffd762c056",
+      "bytes": 10031,
+      "sha256": "a75181ba4ac543d72dc607b8249ed744b8f9c91a59fb898a566d5b62b203a588",
       "sitePath": "src/local-wireless.mjs"
     },
     {
@@ -760,8 +760,8 @@
     },
     {
       "path": "src/wireless-control.mjs",
-      "bytes": 20040,
-      "sha256": "cd1e85e9c19388bd11788349dc0c32c932ee7753c12c1b409aa5b315b4f67840",
+      "bytes": 21083,
+      "sha256": "d90920cbc9ae204c28c2183f818362396ef0485644f6c92c872bd2965be61a68",
       "sitePath": "src/wireless-control.mjs"
     },
     {
@@ -970,8 +970,8 @@
     },
     {
       "path": "test/local-wireless.test.mjs",
-      "bytes": 4765,
-      "sha256": "ce9de0f94af3fd6be709753dc8e5f9efbaf6a3636d8b15a498b544e6580ca8da",
+      "bytes": 7735,
+      "sha256": "98dbc45c6f6278d8c052383260f69a431545e6876aa6222a6193386828e448f1",
       "sitePath": "test/local-wireless.test.mjs"
     },
     {
@@ -1120,8 +1120,8 @@
     },
     {
       "path": "test/wireless-control.test.mjs",
-      "bytes": 21062,
-      "sha256": "104707f2a2e7fa86c01d9ebeef4208ba6f0d84f3afe605255bb70c8e1f2196a8",
+      "bytes": 23040,
+      "sha256": "20ba711a22b0c4773823a3810b6644c0d5012a506d7212430584b9f54305ec09",
       "sitePath": "test/wireless-control.test.mjs"
     },
     {

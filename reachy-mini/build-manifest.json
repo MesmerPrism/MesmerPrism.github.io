@@ -1,20 +1,20 @@
 {
-  "version": "0.3.12",
+  "version": "0.3.13",
   "files": [
     {
-      "path": "assets/RobotModel-BRaFQkjC.js",
+      "path": "assets/RobotModel-CnPMwZxt.js",
       "bytes": 85821,
-      "sha256": "d97c35c6bc6b964d52a2f2b81079be2fcc9a142aa3a5176add85a933e51d976d"
+      "sha256": "b1ed504df321eb808057541941ae51d9438a1f049fb5e8ca08a995006e173454"
     },
     {
-      "path": "assets/SimulatedCamera-JjocSlBD.js",
+      "path": "assets/SimulatedCamera-DuHyP10X.js",
       "bytes": 4552,
-      "sha256": "7f9ec2e7aabdeb387130e6b6469fa6b2f870551847f9e784a6faf4da98f2651f"
+      "sha256": "4c3942a63f33ecbdac2519e5468914d1418df1eab8b501db80fc9155d0983d1d"
     },
     {
-      "path": "assets/WebXRControls-Dm440dqK.js",
+      "path": "assets/WebXRControls-D92gOGsP.js",
       "bytes": 9794,
-      "sha256": "d326275661a85e5a66e1cd0271a7eeb646d72194ce61d4a813162bf0ebd854e5"
+      "sha256": "9094f0141acf630ea4bd83a89d56c019ce9811e81830a89be12d0746bcbe80c8"
     },
     {
       "path": "assets/WebXRControls-YRAoBpK6.css",
@@ -27,9 +27,9 @@
       "sha256": "ea4fe2bad1e747547dfb20d1e1d1e17d02c20b41a9ac6b6ccf8bf2163a536e96"
     },
     {
-      "path": "assets/demo-sdk-DbRUPqj6.js",
+      "path": "assets/demo-sdk-BBobiSb8.js",
       "bytes": 1317,
-      "sha256": "3feb79f0540a1aedca8c9c9e89e1fe3228fd33d17310f60c68b887d0330326a5"
+      "sha256": "060c4a21611ae92ef3fc5dccc138c585533e4c84a91cff96eab075b1fb2eb710"
     },
     {
       "path": "assets/head-tracker-Cvv6zmS1.js",
@@ -42,14 +42,14 @@
       "sha256": "b97c31aafd45c7e885d6abe3ea85e3e7dc414294532c25741b64f4e017c5699a"
     },
     {
+      "path": "assets/index-C7YfH8do.js",
+      "bytes": 489682,
+      "sha256": "eaa9a47449163e999e5f45db538463c46a7327de4a5d2ae8d5b6d3a126959f30"
+    },
+    {
       "path": "assets/index-CwH1LHxC.css",
       "bytes": 22599,
       "sha256": "ab0d37cbb1320748cfc426ac2a628938b6ce9a7d84769c2555759a0a354160f3"
-    },
-    {
-      "path": "assets/index-DHtUQB2t.js",
-      "bytes": 485724,
-      "sha256": "5d275a8aca21d46da0a6468ed47ec40031db55f8c9433de399c1697c3b3a9f5f"
     },
     {
       "path": "assets/newsreader-latin-ext-BQn1nviT.woff2",
@@ -79,7 +79,7 @@
     {
       "path": "index.html",
       "bytes": 514,
-      "sha256": "fd2635b305d1056cc943221b4f7ea1ff82b2d7497bdfe0c53c5c0bdc0abc7439"
+      "sha256": "b331e53433769174a65af4e3307d78ee659417c2ed273df02486b15c4d2ebf66"
     },
     {
       "path": "mediapipe/assets.json",
