@@ -241,3 +241,16 @@ test("actual app retains original Polar pause after recovery and keeps diagnosti
  f.status.pi.h=false;f.status.pd.native.last_pause=null;f.run("render()");
  assert.equal(f.node("polar-pause-cause").textContent,"");
 });
+
+test('maintenance readiness uses current Wi-Fi Polar setup without legacy fields',()=>{
+ const f=fixture('remote');delete f.status.po;delete f.status.pf;delete f.status.bt;f.run('render()');
+ assert.equal(f.node('bluetooth-status').textContent,'On');
+ assert.equal(f.node('polar-status').textContent,'Connected');
+ assert.equal(f.node('prepare-guidance').textContent,'Sensor and session readiness are current.');
+ f.status.y.a=false;f.run('render()');
+ assert.match(f.node('prepare-guidance').textContent,/waiting for fresh motion data/i);
+ f.status.y.c=false;f.run('render()');
+ assert.match(f.node('polar-status').textContent,/not connected/i);
+ assert.match(f.node('prepare-guidance').textContent,/not connected/i);
+ f.status.y.b=false;f.run('render()');assert.equal(f.node('bluetooth-status').textContent,'OFF');
+});

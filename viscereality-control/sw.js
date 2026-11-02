@@ -1,6 +1,6 @@
 "use strict";
 // Bump for every shell change. No credentials, status, command or receipt is cached.
-const CACHE="viscereality-shell-pwa-7";
+const CACHE="viscereality-shell-pwa-8";
 const SHELL=["./","index.html","app.js","pwa.js","transport.js","connection-recovery.js","snapshot-state.js","polar-diagnostics.js","discovery.js","breath-monitor.js","recordings.js","styles.css","manifest.webmanifest","icons/icon-192.png","icons/icon-512.png","icons/icon-maskable-512.png","icons/apple-touch-icon.png","../shared/quest-ble/gatt-lifetime.js"];
 const URLS=new Set(SHELL.map(path=>new URL(path,self.location.href).href));
 // Protocol 1 remains stable across shell builds. Older/unresponsive pages veto.

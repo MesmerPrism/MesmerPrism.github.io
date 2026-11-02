@@ -466,3 +466,5 @@ viscereality-control/sw.test.cjs viscereality-control/update-worker.test.cjs
 viscereality-control/update-safety.test.cjs`. Actual Chromium lifecycle tests with
 synthetic native safety verify predecessor-controlled sibling vetoes and one
 reload per approved page, separately from physical Quest/phone qualification.
+
+PWA8 corrects Maintenance Polar readiness to use the same current Wi-Fi setup readback as the main guide, retaining legacy status fallback. Connected sensors awaiting motion are distinguished from disconnected sensors. Update protocol 1 remains unchanged.

@@ -650,12 +650,15 @@ function render() {
 
   const setup = polarSetupCapability(s);
   const bluetooth = setup ? (setup.b ? "ON" : "OFF") : s?.bt;
+  const polarConnected = setup ? setup.c : s?.po === "CONNECTED" && !!s.pf;
+  const polarCurrent = setup ? setup.c && setup.a : polarConnected;
   label("bluetooth-status", bluetooth === "ON" ? "On" : bluetooth || "Unavailable", bluetooth === "ON" ? "ready" : "attention");
-  label("polar-status", s?.po === "CONNECTED" && s.pf ? "Connected" : s?.po || "Unavailable", s?.po === "CONNECTED" && s.pf ? "ready" : "attention");
+  label("polar-status", setup ? setup.c ? "Connected" : "Not connected" : polarConnected ? "Connected" : s?.po || "Unavailable", polarCurrent ? "ready" : "attention");
   label("storage-status", s?.st || "Unavailable", s?.st === "ready" ? "ready" : "attention");
   label("kiosk-status", s?.k || "Unavailable", s?.k === "ready" ? "ready" : "attention");
   label("prepare-guidance", !s ? "Connect to the Quest to see live readiness."
-    : s.po !== "CONNECTED" || !s.pf ? "Polar is not connected. The headset can open its setup panel." : "Sensor and session readiness are current.");
+    : !polarConnected ? "Polar is not connected. The headset can open its setup panel."
+    : !polarCurrent ? "Polar is connected; waiting for fresh motion data." : "Sensor and session readiness are current.");
   byId("open-polar").disabled = !canCommand();
   byId("rescan-polar").disabled = !canCommand() || s?.p !== "IDLE" || !polarSetupCapability(s);
   byId("start-polar-ecg").disabled = !canCommand() || s?.p !== "IDLE" || !polarSetupCapability(s)?.c || polarSetupCapability(s)?.e;

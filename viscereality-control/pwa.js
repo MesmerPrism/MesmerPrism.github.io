@@ -2,8 +2,8 @@
 
 // Installation and shell availability never grant Quest control authority.
 (() => {
-  const BUILD = "PWA7";
-  const CACHE = "viscereality-shell-pwa-7";
+  const BUILD = "PWA8";
+  const CACHE = "viscereality-shell-pwa-8";
   const installButton = document.getElementById("install-app");
   const installNote = document.getElementById("install-note");
   const offlineNote = document.getElementById("offline-note");
@@ -96,7 +96,7 @@
         : "Update deferred. Each open page needs fresh idle Quest status, no pending command, and no export or unsaved download offer. Close older or unavailable pages, then retry.";
     }finally{applying=false;applyButton.disabled=false;}
   });
-  // Version-independent safety handshake: PWA7 can answer a future PWA8 worker.
+  // Version-independent safety handshake: PWA8 can answer a future PWA8 worker.
   navigator.serviceWorker?.addEventListener("message",event=>{
     const data=event.data,safety=globalThis.ViscerealityUpdateSafety;
     if(data?.protocol!==1||typeof data.token!=="string"||!data.token||data.token.length>128)return;
