@@ -468,3 +468,5 @@ synthetic native safety verify predecessor-controlled sibling vetoes and one
 reload per approved page, separately from physical Quest/phone qualification.
 
 PWA8 corrects Maintenance Polar readiness to use the same current Wi-Fi setup readback as the main guide, retaining legacy status fallback. Connected sensors awaiting motion are distinguished from disconnected sensors. Update protocol 1 remains unchanged.
+
+PWA9 keeps Apply update and its outcome outside the connection-setup section so they remain visible during live control. The existing idle/no-pending/no-export safety gates are unchanged.
