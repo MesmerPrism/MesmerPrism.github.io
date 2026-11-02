@@ -1,9 +1,9 @@
 {
   "schema": "reachy.public-source.v1",
   "name": "reachy-mini-browser-control",
-  "version": "0.3.11",
-  "sourceRevision": "714e6d11480020d94c1c171ae0125830784bbb88",
-  "sourceTreeSha256": "9e6db63cb2cf892134eb2db2fc274c761f7151b60813e184005cab33b3828fb0",
+  "version": "0.3.12",
+  "sourceRevision": "16abe205702d9377c4c0679ce8bba9733dcc9aa5",
+  "sourceTreeSha256": "45a6c8a104b82081a96e9ca13cecdb396b34bbeac0cf793ca62612c20fb909d9",
   "originalCodeLicense": "MIT",
   "dependencyLicenses": "THIRD_PARTY_NOTICES.md",
   "exclusions": [
@@ -160,8 +160,8 @@
     },
     {
       "path": "docs/STATUS.md",
-      "bytes": 254030,
-      "sha256": "9a1a90e347fdec94ebd552e43428e03972b0da0372967a7ca8f601cea39b9486",
+      "bytes": 255395,
+      "sha256": "13a1a00467829896080636bac299f4677b89431f02d612ba12e77e4388f70748",
       "sitePath": "docs/STATUS.md"
     },
     {
@@ -311,13 +311,13 @@
     {
       "path": "package-lock.json",
       "bytes": 77315,
-      "sha256": "acfbdc1d64ba2035981aec8772ea7b187f18ef1fff0d9798be23a7e9f0812071",
+      "sha256": "853157b9adddbba653d91d8ede9c67ba18ff994fe2e17018615a039ac12840b3",
       "sitePath": "package-lock.json"
     },
     {
       "path": "package.json",
       "bytes": 1014,
-      "sha256": "270cb39ea2eef8858e1dadb7f7c234c9e90523dd6d211461f5a1be6fcc7829b2",
+      "sha256": "01478505b03a1b6da20a851044edecf101ff92bad4abd6f110184b4f217179a9",
       "sitePath": "package.json"
     },
     {
@@ -760,8 +760,8 @@
     },
     {
       "path": "src/wireless-control.mjs",
-      "bytes": 19296,
-      "sha256": "3e4a551cc120a3b1277eeab813e1d70d9ac992ad642447048f6fab9baabfdc78",
+      "bytes": 20040,
+      "sha256": "cd1e85e9c19388bd11788349dc0c32c932ee7753c12c1b409aa5b315b4f67840",
       "sitePath": "src/wireless-control.mjs"
     },
     {
@@ -850,8 +850,8 @@
     },
     {
       "path": "test/daemon-1.11-compatibility.test.mjs",
-      "bytes": 12934,
-      "sha256": "4f771e87b09365c68dfa53d6cf43ebd81e712ba4716ef31eeaf7c2ad53b869cd",
+      "bytes": 13452,
+      "sha256": "f7de694e7771f8af996e55bb4f1c0d702c9ed399465a71d1cf1b900a6e50cb7c",
       "sitePath": "test/daemon-1.11-compatibility.test.mjs"
     },
     {
