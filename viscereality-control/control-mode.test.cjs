@@ -254,3 +254,13 @@ test('maintenance readiness uses current Wi-Fi Polar setup without legacy fields
  assert.match(f.node('prepare-guidance').textContent,/not connected/i);
  f.status.y.b=false;f.run('render()');assert.equal(f.node('bluetooth-status').textContent,'OFF');
 });
+
+test('maintenance uses observed Wi-Fi diagnostics while session setup capability is absent',()=>{
+ const f=fixture('remote');delete f.status.y;delete f.status.po;delete f.status.pf;delete f.status.bt;
+ f.status.wifi_snapshot=1;f.status.pd={v:1,java:{connected:true}};f.status.pi={r:true,f:true,h:false};f.run('render()');
+ assert.equal(f.node('polar-status').textContent,'Connected');
+ assert.equal(f.node('prepare-guidance').textContent,'Sensor and session readiness are current.');
+ f.status.pi.f=false;f.run('render()');assert.match(f.node('prepare-guidance').textContent,/waiting for fresh motion data/i);
+ f.status.pd.java.connected=false;f.run('render()');assert.match(f.node('polar-status').textContent,/not connected/i);
+ assert.equal(f.requests.length,0,'diagnostic display never sends a command');
+});

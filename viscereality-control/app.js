@@ -649,11 +649,13 @@ function render() {
   byId("access").hidden = !!networkTransport || !gated;
 
   const setup = polarSetupCapability(s);
-  const bluetooth = setup ? (setup.b ? "ON" : "OFF") : s?.bt;
-  const polarConnected = setup ? setup.c : s?.po === "CONNECTED" && !!s.pf;
-  const polarCurrent = setup ? setup.c && setup.a : polarConnected;
+  const diagnostics = s?.wifi_snapshot === 1 && s?.pd?.v === 1 ? s.pd.java : null;
+  const observedLink = typeof diagnostics?.connected === "boolean" ? diagnostics.connected : undefined;
+  const bluetooth = setup ? (setup.b ? "ON" : "OFF") : s?.bt || (observedLink === true ? "ON" : undefined);
+  const polarConnected = setup ? setup.c : observedLink ?? (s?.po === "CONNECTED" && !!s.pf);
+  const polarCurrent = setup ? setup.c && setup.a : observedLink !== undefined ? polarConnected && polarInput(s)?.f === true : polarConnected;
   label("bluetooth-status", bluetooth === "ON" ? "On" : bluetooth || "Unavailable", bluetooth === "ON" ? "ready" : "attention");
-  label("polar-status", setup ? setup.c ? "Connected" : "Not connected" : polarConnected ? "Connected" : s?.po || "Unavailable", polarCurrent ? "ready" : "attention");
+  label("polar-status", setup || observedLink !== undefined ? polarConnected ? "Connected" : "Not connected" : polarConnected ? "Connected" : s?.po || "Unavailable", polarCurrent ? "ready" : "attention");
   label("storage-status", s?.st || "Unavailable", s?.st === "ready" ? "ready" : "attention");
   label("kiosk-status", s?.k || "Unavailable", s?.k === "ready" ? "ready" : "attention");
   label("prepare-guidance", !s ? "Connect to the Quest to see live readiness."

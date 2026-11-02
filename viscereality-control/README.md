@@ -472,3 +472,5 @@ PWA8 corrects Maintenance Polar readiness to use the same current Wi-Fi setup re
 PWA9 keeps Apply update and its outcome outside the connection-setup section so they remain visible during live control. The existing idle/no-pending/no-export safety gates are unchanged.
 
 PWA10 installs every static shell asset with Request cache=reload so a new shell does not reuse predecessor responses from Chrome's HTTP cache. A failed addAll still preserves the active shell. Readiness and update safety policy remain unchanged.
+
+PWA11 also renders active-session Maintenance Polar status from the observed Java link and native input freshness when idle-only setup capability is absent. These diagnostics remain display-only and grant no command authority.
