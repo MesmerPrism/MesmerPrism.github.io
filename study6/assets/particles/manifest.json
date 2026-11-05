@@ -1,0 +1,42 @@
+{
+  "version": 1,
+  "format": "native little-endian binary, unchanged",
+  "sourceRevision": "c5c2d498",
+  "files": [
+    {
+      "name": "icosphere-l4-positions.f32.bin",
+      "bytes": 40992,
+      "sha256": "14cafd2d029f2106b77716bc443e62a8a151f7c28412efaa3730e3e4cd95d277"
+    },
+    {
+      "name": "icosphere-l4-normals.f32.bin",
+      "bytes": 40992,
+      "sha256": "ba4e4f2377096abae1449b28bca8193cff5734dd4df575ad95e9b1cc7dad62f6"
+    },
+    {
+      "name": "left-surface-distance-edges.u32.bin",
+      "bytes": 788080,
+      "sha256": "916a9a0d741c0151d5cc07746a096385f768affbe065396334843414b08f7317"
+    },
+    {
+      "name": "left-surface-distance-meters.f32.bin",
+      "bytes": 394040,
+      "sha256": "b8c1b96dea2d8cfe6f2d1e49968a36ae273b2fce7f5a25cfdd9fae22a8da189a"
+    },
+    {
+      "name": "right-surface-distance-edges.u32.bin",
+      "bytes": 796736,
+      "sha256": "1f166eb273c77893ce7c81d5b249b7e20de2ec9d41f431cd71a6c5502d4ba7b2"
+    },
+    {
+      "name": "right-surface-distance-meters.f32.bin",
+      "bytes": 398368,
+      "sha256": "33f5a83afdc4b185c69fe7b23289c6d90cb90c74b6f48071de71c9daf27aa8fb"
+    },
+    {
+      "name": "particle-mask-512.r8.bin",
+      "bytes": 262144,
+      "sha256": "c39807146770c83a188a104a8de8ca2fea216e899af466f6e2dd275c5a1b9de3"
+    }
+  ]
+}

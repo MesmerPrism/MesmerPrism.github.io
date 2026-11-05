@@ -1,0 +1,70 @@
+{
+  "schema": "study6.webxr.hand-rig.v1",
+  "side": "left",
+  "vertexCount": 1360,
+  "triangleCount": 2314,
+  "bindJointCount": 26,
+  "sampleCount": 1024,
+  "source": {
+    "runtimeRevision": "c5c2d498",
+    "rigRevision": "2d00b3d5259b6208ab6082734335217d91e919ae",
+    "attribution": "Study 6 / Rusty Kuramoto Mesh runtime hand rig; Meta Quest OpenXR provider geometry",
+    "authorization": "Project-owner grant for runtime rig and pinned samples in the standalone WebXR stimulus port (2026-11-05)"
+  },
+  "files": {
+    "bindVertices": {
+      "file": "recorded-meta-quest-hand-skinning-bind-vertices.f32.bin",
+      "type": "f32",
+      "count": 4080,
+      "sha256": "e37798d6045fa07e5e7485058b6b1f199d93ac2686aa94d126a86902f9faab5a"
+    },
+    "bindNormals": {
+      "file": "recorded-meta-quest-hand-skinning-bind-normals.f32.bin",
+      "type": "f32",
+      "count": 4080,
+      "sha256": "988ad2a753c7eefbc6835814c5478e6a77c51c20b8bd42d99575ed86f329d450"
+    },
+    "triangles": {
+      "file": "recorded-meta-quest-hand-mesh-triangles.u32.bin",
+      "type": "u32",
+      "count": 6942,
+      "sha256": "b96b390c2d8604cb366946aedc0201384a50b6100e8a26529f18739241677ac3"
+    },
+    "vertexJointIndices": {
+      "file": "recorded-meta-quest-hand-skinning-vertex-joint-indices.u32.bin",
+      "type": "u32",
+      "count": 5440,
+      "sha256": "b935df3695d3175d9a3482e538d809d39bc7f6b68572160f9e1d6e8ebcf74710"
+    },
+    "vertexJointWeights": {
+      "file": "recorded-meta-quest-hand-skinning-vertex-joint-weights.f32.bin",
+      "type": "f32",
+      "count": 5440,
+      "sha256": "bb4db7473c7cf595934c9c9bd1243f4c9c6e8b9e1b8ba19d2bc5481177fd1eb4"
+    },
+    "bindJointPoses": {
+      "file": "recorded-meta-quest-hand-skinning-bind-joint-poses.f32.bin",
+      "type": "f32",
+      "count": 182,
+      "sha256": "403578f3bff30b91c783f710a77f6adb0f3601237f10d7674e2db47ab6f0d638"
+    },
+    "bindJointSources": {
+      "file": "recorded-meta-quest-hand-skinning-bind-joint-sources.u32.bin",
+      "type": "u32",
+      "count": 104,
+      "sha256": "6bcb156f1b0d98342c19c2249abddd996919955427a872554e2ae0769deb28ea"
+    },
+    "sampleTriangles": {
+      "file": "recorded-meta-quest-hand-samples-1024-coordinate-triangles.u32.bin",
+      "type": "u32",
+      "count": 1024,
+      "sha256": "d709b9d00839bade80dad0ce17d3bd01a0877b6937380f5ba2c02d5ec26b3e7f"
+    },
+    "sampleBarycentric": {
+      "file": "recorded-meta-quest-hand-samples-1024-coordinate-barycentric.f32.bin",
+      "type": "f32",
+      "count": 3072,
+      "sha256": "5f6ce2027fe8f700430077587c3453bafeea103339ae2ed47934a6dc04f5fa9b"
+    }
+  }
+}

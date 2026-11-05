@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#090909"><link rel="icon" href="data:,"><title>Study 6 · WebXR stimulus</title>  <script type="module" crossorigin src="./assets/index-CllU9UYf.js"></script>
+  <link rel="modulepreload" crossorigin href="./assets/three-PVibAHUl.js">
+  <link rel="stylesheet" crossorigin href="./assets/index-C8-5XOrK.css">
+</head>
+<body>
+<header><h1>Study 6</h1><span class="subtitle">Browser stimulus</span><button id="enter-vr" disabled>Checking VR…</button></header>
+<main><section class="controls" aria-label="Stimulus controls">
+<label>Variant<select id="variant" disabled><option value="DHS">Dynamic hands · static sphere</option><option value="SHD">Static hands · dynamic sphere</option></select></label>
+<label>Coherence<select id="coherence" disabled><option value="HC">High</option><option value="LC">Low</option></select></label>
+<label>Energy<select id="energy" disabled><option value="HE">High</option><option value="LE">Low</option></select></label>
+<label>Input<select id="input" disabled><option value="preview">Synthetic hand preview</option><option value="live">Live hands · VR required</option></select></label>
+<div class="actions"><button id="pause" aria-pressed="false" disabled>Pause motion</button><button id="reset" disabled>Reset motion</button><button id="recenter" disabled>Recenter</button><button id="fullscreen" disabled>Fullscreen</button></div>
+</section>
+<div class="stage" id="stage"><canvas id="stimulus" aria-label="Particle hands and sphere stimulus"></canvas><p id="loading" role="status">Loading hand rigs and particle assets…</p></div>
+<footer><p id="input-status" role="status">Synthetic preview · not live hand tracking</p><p id="render-status">Preparing WebGL2</p><nav class="source-links" aria-label="Source and licensing"><a href="./source.zip">Source</a><a href="./LICENSE.txt">License</a><a href="./NOTICE.md">Notices</a></nav></footer>
+<details id="help"><summary>Using the stimulus</summary><p>Open this page in Quest Browser over HTTPS, then select Enter VR and use your hands. Desktop preview uses an animated rig. Missing live hands are hidden until tracking returns.</p><p>DHS moves the hand particles; SHD moves the sphere particles. Static hands still follow your pose. Coherence and energy select the four original stimulus conditions. Pause freezes oscillator motion while tracking continues.</p><p>There is no experiment recording or sensor connection. In the desktop view, drag the canvas to look around. Use Recenter after moving to a new position.</p></details>
+</main></body></html>
