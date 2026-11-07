@@ -1,46 +1,51 @@
-:root { color-scheme: dark; font-family: "Segoe UI Variable Text", "Segoe UI", system-ui, sans-serif; background: #19171e; color: #f3effa; font-synthesis: none; }
-* { box-sizing: border-box; }
-[hidden] { display: none !important; }
-body { margin: 0; min-width: 280px; }
-main { max-width: 640px; margin: auto; padding: max(24px, env(safe-area-inset-top)) max(20px, env(safe-area-inset-right)) max(36px, env(safe-area-inset-bottom)) max(20px, env(safe-area-inset-left)); }
-header { padding-bottom: 20px; }
-header a { font-size: 14px; }
-h1 { font-size: clamp(30px, 8vw, 38px); line-height: 1.15; margin: 16px 0 8px; letter-spacing: -.025em; }
-h2 { font-size: 21px; line-height: 1.3; margin: 0 0 14px; }
-p { margin: 10px 0 16px; line-height: 1.5; }
-header p { margin-bottom: 0; color: #b7b0c3; }
-section { padding: 24px 0; border-top: 1px solid #45404e; }
-a { color: #c4b5fd; }
-button, input { font: inherit; }
-button { min-height: 48px; border: 1px solid #867c94; border-radius: 6px; padding: 11px 15px; background: transparent; color: #f3effa; cursor: pointer; font-weight: 600; line-height: 1.3; }
-button:hover:not(:disabled) { background: #2d2737; }
-button:disabled { opacity: .45; cursor: not-allowed; }
-button.primary { background: #c4b5fd; border-color: #c4b5fd; color: #231b36; }
-button.primary:hover:not(:disabled) { background: #d2c7ff; }
-button:focus-visible, input:focus-visible, summary:focus-visible, a:focus-visible { outline: 3px solid #c4b5fd; outline-offset: 3px; }
-.actions { display: flex; flex-wrap: wrap; gap: 10px; }
-.actions:empty { display: none; }
-.actions .primary { flex: 1; }
-details { margin-top: 18px; }
-summary { cursor: pointer; padding: 8px 0; font-weight: 600; line-height: 1.5; }
-form { margin-top: 12px; }
-label { display: block; margin-bottom: 8px; font-size: 15px; font-weight: 600; }
-input { width: 100%; min-height: 48px; border: 1px solid #867c94; border-radius: 6px; background: #24202b; color: #f3effa; padding: 10px 12px; }
-form button { width: 100%; }
-.help, .help-section p { color: #b7b0c3; font-size: 14px; }
-dl { margin: 18px 0; }
-dl div { display: grid; grid-template-columns: 126px minmax(0, 1fr); gap: 12px; margin: 8px 0; line-height: 1.5; }
-dt { color: #b7b0c3; }
-dd { margin: 0; overflow-wrap: anywhere; }
-.steps { padding-left: 24px; margin: 20px 0; color: #b7b0c3; }
-.steps li { margin: 10px 0; line-height: 1.5; padding-left: 4px; }
-.steps li[aria-current="step"] { color: #f3effa; font-weight: 600; }
-.steps li[data-complete="true"] { color: #a6d9ba; }
-.progress { margin: 20px 0 16px; padding: 16px; border: 1px solid #655b73; border-radius: 6px; background: #24202b; }
-.progress p { margin: 7px 0 0; font-size: 15px; }
-.progress[data-kind="error"], .notice { border-color: #e4b38c; }
-.progress[data-kind="complete"] { border-color: #a6d9ba; }
-.notice { padding: 14px; border: 1px solid #e4b38c; border-radius: 6px; line-height: 1.5; }
-.help-section { border-top: 1px solid #45404e; padding-top: 12px; margin-top: 0; }
-@media (max-width: 360px) { main { padding-left: 16px; padding-right: 16px; } dl div { grid-template-columns: 100px minmax(0,1fr); } }
-@media (prefers-reduced-motion: no-preference) { button { transition: background-color 150ms; } }
+/* Fleet's exact theme, typography, gradient buttons and sky live in fleet.css.
+   This sheet only adapts those components to the phone enrollment flow. */
+:root { font-size:16px; font-synthesis:none; }
+[hidden] { display:none !important; }
+body { min-width:280px; }
+main.enrollment-shell { display:grid; grid-template-columns:minmax(0,1fr); gap:18px; max-width:960px; margin:auto; padding:max(24px,env(safe-area-inset-top)) max(18px,env(safe-area-inset-right)) max(36px,env(safe-area-inset-bottom)) max(18px,env(safe-area-inset-left)); align-content:start; }
+.enrollment-header { display:grid; grid-template-columns:minmax(0,1fr) auto; align-items:center; gap:14px; padding:0 2px 6px; }
+.site-home { grid-column:1/-1; width:fit-content; font-size:14px; text-decoration:none; color:var(--muted); }
+.site-home:hover { color:var(--accent); }
+.enrollment-header .brand { display:block; min-width:0; }
+.enrollment-header .brand h1 { gap:10px; }
+.enrollment-header .brand img { height:48px; }
+.enrollment-header .brand .shiny { display:inline; color:transparent; font-size:clamp(24px,4vw,28px); }
+.enrollment-header .brand p { margin:10px 0 0; font-size:15px; color:var(--muted); }
+.enrollment-header .theme-toggle { align-self:center; }
+.theme-toggle button.icon { width:40px; height:40px; min-height:40px; }
+.enrollment-step { min-width:0; padding:22px; }
+.enrollment-step h2 { font-size:20px; line-height:1.3; margin:0 0 14px; }
+p { margin:10px 0 16px; line-height:1.55; }
+a { overflow-wrap:anywhere; }
+button:not(.icon) { min-height:48px; line-height:1.3; white-space:normal; }
+button:not(.icon):disabled { cursor:default; }
+button:focus-visible,input:focus-visible,summary:focus-visible,a:focus-visible { outline:2px solid var(--focus); outline-offset:4px; }
+.actions { display:flex; flex-wrap:wrap; gap:10px; }
+.actions:empty { display:none; }
+.actions>button:not([hidden]) { flex:1 1 140px; }
+details { margin-top:18px; }
+summary { cursor:pointer; padding:8px 0; font-size:15px; font-weight:600; line-height:1.5; color:var(--accent); }
+form { margin-top:12px; }
+label { display:block; margin-bottom:8px; font-size:14px; font-weight:600; color:var(--muted); }
+input { width:100%; min-height:48px; font-size:16px; }
+form button { width:100%; }
+.help,.help-section p { color:var(--muted); font-size:14px; }
+dl { margin:18px 0; }
+dl div { display:grid; grid-template-columns:108px minmax(0,1fr); gap:12px; margin:8px 0; font-size:14px; line-height:1.5; }
+dt { color:var(--muted); }
+dd { margin:0; overflow-wrap:anywhere; }
+#hub-address,#candidate-serial,#candidate-address { font-family:var(--mono); font-size:13px; }
+.enrollment-step .steps { display:block; list-style:decimal; padding-left:23px; margin:20px 0; color:var(--muted); }
+.steps li { margin:10px 0; padding-left:4px; line-height:1.5; font-size:15px; }
+.steps li[aria-current="step"] { color:var(--text); font-weight:600; }
+.steps li[data-complete="true"] { color:var(--ok-text); }
+.progress { margin:20px 0 16px; padding:16px; border:1px solid var(--hair-strong); border-radius:var(--r-field); background:var(--inset); }
+.progress strong { font-size:16px; font-weight:650; }
+.progress p { margin:7px 0 0; font-size:14px; color:var(--muted); }
+.progress[data-kind="error"],.notice { border-color:var(--amber); }
+.progress[data-kind="complete"] { border-color:var(--ok); }
+.notice { grid-column:1/-1; margin:0; padding:16px; border:1px solid var(--amber); border-radius:var(--r-field); background:var(--card); line-height:1.5; }
+.help-section { grid-column:1/-1; border-top:1px solid var(--hair); padding:10px 2px 0; margin:0; }
+@media(min-width:780px) { main.enrollment-shell { grid-template-columns:minmax(0,1fr) minmax(0,1fr); align-items:start; } .enrollment-header { grid-column:1/-1; } }
+@media(max-width:360px) { .enrollment-header { grid-template-columns:minmax(0,1fr); } .enrollment-header .theme-toggle { justify-self:end; } .enrollment-step { padding:18px; } dl div { grid-template-columns:84px minmax(0,1fr); gap:8px; } }

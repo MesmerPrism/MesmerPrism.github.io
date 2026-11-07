@@ -1,7 +1,7 @@
 {
   "name": "quest-fleet-phone-enrollment",
   "version": "1.0.0",
-  "shellVersion": "c9bad225c635233f",
+  "shellVersion": "d85ea5ab76a6d498",
   "dependencies": {
     "@yume-chan/adb": "2.6.4",
     "@yume-chan/adb-credential-web": "2.1.0",
@@ -10,7 +10,10 @@
   "assets": [
     "index.html",
     "app.js",
+    "fleet.css",
     "styles.css",
+    "theme.js",
+    "logo.png",
     "manifest.webmanifest",
     "icons/icon.svg",
     "icons/icon-192.png",
