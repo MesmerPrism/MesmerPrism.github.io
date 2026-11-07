@@ -1,0 +1,23 @@
+{
+  "name": "quest-fleet-phone-enrollment",
+  "version": "1.0.0",
+  "shellVersion": "c9bad225c635233f",
+  "dependencies": {
+    "@yume-chan/adb": "2.6.4",
+    "@yume-chan/adb-credential-web": "2.1.0",
+    "@yume-chan/adb-daemon-webusb": "2.3.2"
+  },
+  "assets": [
+    "index.html",
+    "app.js",
+    "styles.css",
+    "manifest.webmanifest",
+    "icons/icon.svg",
+    "icons/icon-192.png",
+    "icons/icon-512.png",
+    "icons/icon-maskable-512.png",
+    "THIRD_PARTY_LICENSES.txt",
+    "sw.js"
+  ],
+  "externalImports": []
+}
