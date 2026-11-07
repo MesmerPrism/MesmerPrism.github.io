@@ -1,0 +1,2 @@
+# Preserve generated app bytes and their export-manifest hashes.
+* -text whitespace=cr-at-eol
