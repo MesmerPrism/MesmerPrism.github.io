@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="referrer" content="no-referrer">
+  <meta name="theme-color" content="#19171e">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self' http: https:; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <title>Add a headset · Quest Fleet</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" type="image/svg+xml" href="icons/icon.svg">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main>
+    <header><a href="https://mesmerprism.com/">MesmerPrism</a><h1>Quest Fleet</h1><p>Add a headset from your phone.</p></header>
+    <noscript><p class="notice">Enable JavaScript to connect a Quest.</p></noscript>
+    <p id="support" class="notice" role="alert" hidden></p>
+    <section aria-labelledby="fleet-title">
+      <h2 id="fleet-title">1. Connect to Fleet</h2>
+      <p id="pairing-status" role="status">Scan the pairing QR code in Quest Fleet on your PC, or paste its pairing link below.</p>
+      <dl id="hub-details" hidden><div><dt>PC</dt><dd id="hub-name"></dd></div><div><dt>Address</dt><dd id="hub-address"></dd></div><div><dt>Pairing expires</dt><dd id="hub-expiry"></dd></div></dl>
+      <div class="actions"><button id="check-hub" type="button" hidden>Reconnect to Fleet</button><button id="forget" type="button" hidden>Forget this pairing</button></div>
+      <details id="pairing-entry" open><summary>Paste a pairing link</summary><form id="pairing-form"><label for="pairing-link">Current Fleet pairing link</label><input id="pairing-link" type="password" autocomplete="off" autocapitalize="none" spellcheck="false" required aria-describedby="pairing-help"><p id="pairing-help" class="help">In Fleet on the PC, start phone pairing and copy the link. The PC must stay running.</p><button type="submit" id="pairing-submit">Connect to Fleet</button></form></details>
+    </section>
+    <section aria-labelledby="quest-title">
+      <h2 id="quest-title">2. Connect Quest by USB</h2>
+      <p>Use a USB data cable with your Android phone as the USB host. Keep Quest awake and on the same Wi-Fi network as the PC.</p>
+      <p class="help">Quest needs Developer Mode and USB debugging. Your phone needs neither Developer Options nor an APK.</p>
+      <ol class="steps" aria-label="Enrollment progress">
+        <li id="step-usb">Choose Quest in the USB prompt.</li>
+        <li id="step-phone">In Quest, allow the phone’s USB debugging key.</li>
+        <li id="step-pc">In Quest, allow the PC’s debugging key if asked.</li>
+      </ol>
+      <div id="progress" class="progress" role="status" aria-live="polite"><strong id="progress-title">Connect Fleet first</strong><p id="progress-message">Open the current pairing link from the PC to begin.</p></div>
+      <dl id="candidate" hidden><div><dt>Quest serial</dt><dd id="candidate-serial"></dd></div><div><dt>Wi-Fi ADB</dt><dd id="candidate-address"></dd></div></dl>
+      <div class="actions"><button id="connect-quest" class="primary" type="button" disabled>Connect headset</button><button id="cancel" type="button" hidden>Cancel</button></div>
+      <p id="cancel-note" class="help" hidden>Cancel stops this phone’s enrollment. If Wi-Fi ADB was enabled or the PC already received a job, check Fleet on the PC; it may still finish.</p>
+    </section>
+    <details class="help-section"><summary>Install or troubleshoot</summary><button id="install" type="button" hidden>Install app</button><p>Installation is optional. This page works directly in Android Chrome. To install, use Chrome’s menu → Add to Home screen or Install app.</p><p>After opening the installed app without a pairing, scan the PC’s QR code again or paste its current link here. Your browser decides whether a scanned link opens the installed app or Chrome.</p><p>If local network access is blocked, allow it for this site in Chrome, then choose Reconnect to Fleet. Check the PC firewall, Wi-Fi client isolation and any VPN if the PC is unreachable.</p><p>Pair only with a PC and network you trust. The hub may use local HTTP; the token and device details then travel unencrypted on that local network. No token, key or Quest data is uploaded to this public website.</p><p>The browser keeps a local ADB key for future Quest approval. Pairing credentials stay in this window’s session. Forget this pairing clears them; use Quest’s debugging settings to revoke trusted debugging keys.</p></details>
+  </main>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
