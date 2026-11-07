@@ -4,27 +4,34 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="referrer" content="no-referrer">
-  <meta name="theme-color" content="#19171e">
+  <meta name="theme-color" content="#030108">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self' http: https:; object-src 'none'; base-uri 'none'; form-action 'none'">
   <title>Add a headset · Quest Fleet</title>
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" type="image/svg+xml" href="icons/icon.svg">
   <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <link rel="stylesheet" href="fleet.css">
   <link rel="stylesheet" href="styles.css">
+  <script src="theme.js"></script>
 </head>
 <body>
-  <main>
-    <header><a href="https://mesmerprism.com/">MesmerPrism</a><h1>Quest Fleet</h1><p>Add a headset from your phone.</p></header>
+  <div class="backdrop" aria-hidden="true"><div class="stars"></div><i class="comet"></i><i class="comet"></i><i class="comet"></i><div class="grid"></div></div>
+  <main class="enrollment-shell">
+    <header class="enrollment-header">
+      <a class="site-home" href="https://mesmerprism.com/">MesmerPrism</a>
+      <div class="brand"><h1><img src="logo.png" alt="" width="96" height="64"><span class="shiny">Quest Fleet</span></h1><p>Add a headset from your phone.</p></div>
+      <div class="theme-toggle" role="group" aria-label="Colour theme"><button type="button" class="icon" data-set-theme="light" aria-pressed="false" aria-label="Light mode" title="Light mode"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg></button><button type="button" class="icon" data-set-theme="dark" aria-pressed="false" aria-label="Dark mode" title="Dark mode"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button></div>
+    </header>
     <noscript><p class="notice">Enable JavaScript to connect a Quest.</p></noscript>
     <p id="support" class="notice" role="alert" hidden></p>
-    <section aria-labelledby="fleet-title">
+    <section class="enrollment-step glow panel" aria-labelledby="fleet-title">
       <h2 id="fleet-title">1. Connect to Fleet</h2>
       <p id="pairing-status" role="status">Scan the pairing QR code in Quest Fleet on your PC, or paste its pairing link below.</p>
       <dl id="hub-details" hidden><div><dt>PC</dt><dd id="hub-name"></dd></div><div><dt>Address</dt><dd id="hub-address"></dd></div><div><dt>Pairing expires</dt><dd id="hub-expiry"></dd></div></dl>
       <div class="actions"><button id="check-hub" type="button" hidden>Reconnect to Fleet</button><button id="forget" type="button" hidden>Forget this pairing</button></div>
       <details id="pairing-entry" open><summary>Paste a pairing link</summary><form id="pairing-form"><label for="pairing-link">Current Fleet pairing link</label><input id="pairing-link" type="password" autocomplete="off" autocapitalize="none" spellcheck="false" required aria-describedby="pairing-help"><p id="pairing-help" class="help">In Fleet on the PC, start phone pairing and copy the link. The PC must stay running.</p><button type="submit" id="pairing-submit">Connect to Fleet</button></form></details>
     </section>
-    <section aria-labelledby="quest-title">
+    <section class="enrollment-step glow panel" aria-labelledby="quest-title">
       <h2 id="quest-title">2. Connect Quest by USB</h2>
       <p>Use a USB data cable with your Android phone as the USB host. Keep Quest awake and on the same Wi-Fi network as the PC.</p>
       <p class="help">Quest needs Developer Mode and USB debugging. Your phone needs neither Developer Options nor an APK.</p>

@@ -3,34 +3,49 @@
   "publicUrl": "https://mesmerprism.com/quest-fleet-enroll/",
   "upstream": "https://github.com/nesti024/quest_fleet",
   "upstreamBaseline": "ea9d148b14e1b514a992881158d73a749705b834",
-  "localFeatureCommit": "b6ac40494043ed9b5b1bdf630e5bc949b1e0a67e",
+  "localFeatureCommit": "a7b6104927d8e12a79696e7c93825fd101d6a28f",
   "application": "quest-fleet-phone-enrollment",
-  "shellVersion": "c9bad225c635233f",
+  "shellVersion": "d85ea5ab76a6d498",
   "files": [
     {
       "path": "build-info.json",
-      "bytes": 526,
-      "sha256": "72dcf031cad987433e88f466005a740871752f6bb82c96ab6b58be2ce89621f3"
+      "bytes": 575,
+      "sha256": "86433647a9e12bafee1fa07c4c0f54da52c7b75348852f8469f3e027bce9dfa6"
     },
     {
       "path": "index.html",
-      "bytes": 4771,
-      "sha256": "95dc5abdbdfcb6b4892c32fb3fe1a6268e5317915dd74d1a18df402746d9f837"
+      "bytes": 5924,
+      "sha256": "71cd32537225254e1f388110d505a82b35165a34ff0f5ff81d073200dcfee8f4"
     },
     {
       "path": "app.js",
-      "bytes": 74297,
-      "sha256": "baeed0b945fef5774868176f42313d0af6b333de3ea8aef6289f0bbb3c6048f4"
+      "bytes": 75170,
+      "sha256": "e050fff07fd7dd1c1c5d4f7d8d0cb0585c515a00ba2150dabcc05212e80c5a12"
+    },
+    {
+      "path": "fleet.css",
+      "bytes": 56509,
+      "sha256": "65371fc4bb701e95e942e5d3a2ef328aabda7d9d832c03c38d9ae3078e5b07d5"
     },
     {
       "path": "styles.css",
-      "bytes": 3209,
-      "sha256": "d7aa1781067a4739fb47855a1be0bb865c0c0ee60d42f050da58ef7108f4dfa0"
+      "bytes": 3993,
+      "sha256": "e51cfc566ef9d367fa5e6b0a1e42ab0b8a71f4a2fa736d82c5853eafdec41005"
+    },
+    {
+      "path": "theme.js",
+      "bytes": 1132,
+      "sha256": "14ed2ca3a3633a0aa4aea85c183bb536aaa18a8e491a935ec932935e7edb5a7b"
+    },
+    {
+      "path": "logo.png",
+      "bytes": 73951,
+      "sha256": "7d27e52915bdef7f5d5b5eb60b72b05f957f122264555bdc2b09db0aa07e8823"
     },
     {
       "path": "manifest.webmanifest",
       "bytes": 687,
-      "sha256": "c47250465f83e25f0b4ac55616e7b0987306608ae7d7194c8169d8f3a87d2f8b"
+      "sha256": "eddfc8c5b5e15241b2c6c87a4a7ca7b0555da6567d1b2ed677f8e069f6f2a92b"
     },
     {
       "path": "icons/icon.svg",
@@ -59,8 +74,8 @@
     },
     {
       "path": "sw.js",
-      "bytes": 1290,
-      "sha256": "dd0332c6d4693ab65e9d8c271c13233fc40454babe7332285acb867af072346c"
+      "bytes": 1324,
+      "sha256": "aa2f310acf4cf9489ff69ffebbcddd3da77137957229d305550f9854b04f7c61"
     }
   ]
 }
