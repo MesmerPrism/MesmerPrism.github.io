@@ -2,7 +2,7 @@
 
 Source: https://mesmerprism.com/
 Canonical HTML: https://mesmerprism.com/
-Generated: 2026-10-27
+Generated: 2026-11-17
 Description: Till Holzapfel: PhD research in mixed-ability human–swarm interaction, Combinatorial Swarmability, embodied perception, biofeedback, and open-source tools.
 Markdown: https://mesmerprism.com/index.md
 Plain text: https://mesmerprism.com/index.txt
@@ -179,6 +179,27 @@ Till Holzapfel
  [Try the demo](https://mesmerprism.com/reachy-mini/#demo)
  [Verification notes](https://mesmerprism.com/reachy-mini/source/docs/STATUS.md)
  [Source](https://github.com/MesmerPrism/reachy-mini-browser-control)
+
+ Two-headset streaming and browser controls
+
+### [Bilateral Streaming](https://mesmerprism.com/projects/bilateral-streaming.html)
+
+ Two headsets contribute to a shared session with Own, Peer and Blend views.
+ Explicit run controls and optional display mirrors connect through a local
+ PC operator gateway. App streaming and screen mirrors remain independent.
+
+ Status
+ In development; public app, gateway integration and phone qualification ongoing
+ Artifact
+ QuestMultiStream control hub and an intended installable browser interface
+ Use
+ Review session requests and compare two headset contributions
+
+ Meta Quest / Bilateral streaming / Browser controls / Local gateway
+
+ [Project overview](https://mesmerprism.com/projects/bilateral-streaming.html)
+ [Browser app · in development](https://mesmerprism.com/bilateral-control/)
+ [Source](https://github.com/MesmerPrism/QuestMultiStream)
 
  Computational morphology platform
 
@@ -458,20 +479,21 @@ Till Holzapfel
 
 ### [Deep Dream](https://mesmerprism.com/projects/deep-dream.html)
 
- An account of DeepDream, hallucination-machine methods, community
- replication culture, and the narrow conditions under which simulated
- DeepDream fits inside the wider history of psychedelic visual simulation.
+ DeepDream and the wider field of simulated psychedelic vision:
+ technical history, study findings, visual replications, measurement
+ tools, and the resources that connect them.
 
  Status
- Long-form research article
+ Research article · updated 17 November 2026
  Artifact
- Evidence guide + references
+ Evidence guide + research resources
  Focus
  Visual simulation and provenance
 
  Machine vision / VR / Psychedelic simulation / Provenance
 
  [Research overview](https://mesmerprism.com/projects/deep-dream.html)
+ [Research resources](https://mesmerprism.com/projects/deep-dream.html#knowledge-ecosystem)
  [References](https://mesmerprism.com/projects/deep-dream.html#references)
 
  Static motion and perceptual mechanics

@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-16",
+  "generated": "2026-11-17",
   "site": "https://mesmerprism.com",
   "pages": [
     {
@@ -252,7 +252,7 @@
       "text": "https://mesmerprism.com/projects/deep-dream.txt",
       "bibtex": "https://mesmerprism.com/projects/deep-dream.bib",
       "cslJson": "https://mesmerprism.com/projects/deep-dream.references.csl.json",
-      "references": 64
+      "references": 94
     },
     {
       "title": "Fractal Optics",
