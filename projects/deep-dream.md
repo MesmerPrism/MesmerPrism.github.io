@@ -2,7 +2,7 @@
 
 Source: https://mesmerprism.com/projects/deep-dream.html
 Canonical HTML: https://mesmerprism.com/projects/deep-dream.html
-Generated: 2026-07-17
+Generated: 2026-11-17
 Description: Deep Dream explains how machine-vision hallucination, community visual taxonomies, VR research, and cyberdelic systems shaped simulated psychedelic vision.
 Markdown: https://mesmerprism.com/projects/deep-dream.md
 Plain text: https://mesmerprism.com/projects/deep-dream.txt
@@ -33,11 +33,14 @@ Simulated psychedelic vision
  [PsychonautWiki](https://psychonautwiki.org/wiki/Replication_index);
  [Hartogsohn, 2023](https://doi.org/10.3389/fpsyg.2022.1073235)).
 
+ Updated 17 November 2026 · Evidence and resource status
+
  [Start with the basics](https://mesmerprism.com/projects/deep-dream.html#field-guide)
  [Cyberdelic prehistory](https://mesmerprism.com/projects/deep-dream.html#cyberdelic-prehistory)
  [Early VR lessons](https://mesmerprism.com/projects/deep-dream.html#early-vr)
  [Community role](https://mesmerprism.com/projects/deep-dream.html#community)
  [Evidence](https://mesmerprism.com/projects/deep-dream.html#evidence)
+ [Research resources](https://mesmerprism.com/projects/deep-dream.html#knowledge-ecosystem)
  [V1 form constants](https://mesmerprism.com/projects/bressloff-v1-form-constants.html)
  [References](https://mesmerprism.com/projects/deep-dream.html#references)
  [Back to work](https://mesmerprism.com/#work)
@@ -129,8 +132,7 @@ Simulated psychedelic vision
 
 ### The meaning widened from experience to art and network culture
 
- John Perry Barlow titled part of his 1990 VR essay "The Cyberdelic
- Experience." He compared virtual reality with psychedelic experience
+ In his 1990 VR essay, John Perry Barlow used the phrase "Cyberdelic Experience." He compared virtual reality with psychedelic experience
  while warning that the two were not identical. By December 1992, the
  FutureCulture FAQ defined "cyberdelic" as computer-based art:
  fractals, generated images and music, and virtual worlds. A 1994
@@ -305,7 +307,7 @@ Simulated psychedelic vision
  in the DeepDream story because they shaped the broader ecosystem of
  visual targets, craft standards, and comparison methods
  ([QRI, hyperbolic DMT](https://qri.org/blog/hyperbolic-geometry-dmt);
- [QRI OscillEditor](https://qri.org/oscilleditor/doc/reference-manual);
+ [QRI OscillEditor](https://qri.org/oscilleditor/doc/reference-manual.html);
  [Symmetric Vision](https://www.symmetric-vision.xyz/);
  [Scry](https://scry.art/blog/public/posts/atomic-discovery-collection/);
  [PsyKick](https://psykick.de/deepdream_fractals/Tutorial_deepdream_fractals_360_VR_4K_UltraHD.html)).
@@ -351,17 +353,7 @@ Simulated psychedelic vision
  ([Mordvintsev et al., 2015](https://research.google/blog/inceptionism-going-deeper-into-neural-networks/);
  [Suzuki, 2026](https://doi.org/10.3389/fpsyg.2026.1819038)).
 
- Still images were not enough for research VR. Frame-by-frame
- DeepDream flickers. The practical breakthrough was temporal
- continuity: frame inheritance, blending, and optical flow so that
- hallucinated structure persists and moves with the scene. Graphific's
- DeepDreamVideo, Samim Winiger's DeepDreamAnim, and Suzuki's
- DeepDreamVideoOpticalFlow belong in the credit line because they mark
- the open-code bridge from viral still images to coherent moving
- hallucinations
- ([Graphific, 2015](https://github.com/graphific/DeepDreamVideo);
- [Winiger, 2015](https://github.com/samim23/DeepDreamAnim);
- [Suzuki code](https://github.com/ksk-S/DeepDreamVideoOpticalFlow)).
+ Framewise DeepDream can flicker, so early developers used frame inheritance, blending, and optical flow to preserve structure through motion. Samim Winiger's repository already included optical-flow propagation in July 2015; Suzuki's implementation explicitly builds on both Samim and Graphific. Repository history establishes this shared lineage, while each experiment's methods must establish its actual settings ([Graphific](https://github.com/graphific/DeepDreamVideo); [Samim Winiger](https://github.com/samim23/DeepDreamAnim); [Suzuki code](https://github.com/ksk-S/DeepDreamVideoOpticalFlow)).
 
 ### Compressed timeline
 
@@ -383,7 +375,7 @@ Simulated psychedelic vision
 
 ### Technical levers
 
-- Network and training set
+- Network, exact checkpoint, and training corpus
 
 - Layer or feature target
 
@@ -395,28 +387,15 @@ Simulated psychedelic vision
 
  Synthesis
 
-## DeepDream is useful because it is partial
+## A partial model needs specific tests
 
- DeepDream isolates a tractable slice of altered visual interpretation.
- That is the strongest claim.
+ DeepDream provides a controllable transformation of visual input. Its value depends on whether a particular stimulus and comparison answer a particular question ([Suzuki et al., 2017](https://doi.org/10.1038/s41598-017-16316-2); [Suzuki et al., 2024](https://doi.org/10.3389/fnhum.2023.1159821)).
 
 ### Simulation has levels
 
- A system can resemble a report, match a community category, overlap
- with selected questionnaire dimensions, alter a neural or behavioral
- measure, or help researchers build a controlled stimulus. Those are
- different claims. DeepDream is strongest when the claim stays on the
- right rung of that ladder
- ([Suzuki et al., 2017](https://doi.org/10.1038/s41598-017-16316-2);
- [Suzuki, 2026](https://doi.org/10.3389/fpsyg.2026.1819038)).
+ A depiction can resemble a remembered experience, change selected questionnaire responses, alter a behavioral or physiological measure, or help test a computational model. Each claim needs its own evidence. Visual resemblance does not by itself establish an endogenous hallucination, a shared neural mechanism, or therapeutic benefit ([Suzuki et al., 2017](https://doi.org/10.1038/s41598-017-16316-2); [Suzuki et al., 2024](https://doi.org/10.3389/fnhum.2023.1159821)).
 
- The Hallucination Machine showed that DeepDream-transformed VR could
- raise selected altered-perception ratings relative to unaltered
- video. It also showed a boundary: visual stimulation did not reproduce
- the temporal-production effects associated with fuller psychedelic
- states. That dissociation gives the paradigm its use: it lets
- researchers ask what altered vision alone can do
- ([Suzuki et al., 2017](https://doi.org/10.1038/s41598-017-16316-2)).
+ The Hallucination Machine raised selected altered-perception ratings relative to its original video. The psilocybin comparison used a separate published dataset, rather than a drug arm in the same experiment. A second experiment found no effect on the tested time-production intervals. That is a task-specific limit; it does not settle every aspect of temporal experience ([Suzuki et al., 2017](https://doi.org/10.1038/s41598-017-16316-2)).
 
 ### The image is only one layer of the experience
 
@@ -435,27 +414,23 @@ Simulated psychedelic vision
  Those variables do not turn visual resemblance into a whole psychedelic
  state; they make the limited experience precise enough to compare.
 
+ A 2026 randomized study held the film and sound constant while varying headset versus screen presentation. Average mystical-experience scores were higher in VR, while the difference in the proportion meeting the complete-experience criterion was not significant. There was no DeepDream or drug condition. Immersive delivery is a variable to control in renderer comparisons ([Abouhav et al., 2026](https://doi.org/10.1007/s10055-026-01443-x)).
+
 ### The studies show selected effects
 
- Later papers extended the platform into EEG, cognition, and
- cognitive-affective work. Greco and colleagues reported changes in
- particular entropy, complexity, and functional-connectivity measures
- during DeepDream exposure. Rastelli and colleagues reported more
- flexible semantic-network structure and altered decision dynamics
- after DeepDream VR. A later cognition study found reduced switch
- costs and visually grounded effects, but not a broad shift in
- language-based automatic associations. Brizzi and colleagues reported
- cognitive-affective and autonomic changes under hallucinatory visual
- virtual experiences
- ([Greco et al., 2021](https://doi.org/10.3390/e23070839);
- [Rastelli et al., 2022](https://doi.org/10.1038/s41598-022-08047-w);
- [Greco et al., 2025](https://doi.org/10.1016/j.concog.2025.103808);
- [Brizzi et al., 2025](https://doi.org/10.1080/19585969.2025.2499459)).
+ Greco and colleagues' 2021 EEG experiment used a monitor, with the original clip always preceding DeepDream. Selected entropy and connectivity measures increased, Jensen–Shannon statistical complexity decreased, and neither Lempel–Ziv measure differed significantly. The fixed order leaves time, adaptation, and novelty as alternative explanations. These findings concern this experiment and these measures; they do not establish a shared psychedelic neural mechanism ([Greco et al., 2021](https://doi.org/10.3390/e23070839)).
 
- Those findings matter, but they should not be compressed into
- "DeepDream produces psychedelic cognition." They are measure-specific
- results from particular stimuli, tasks, samples, and parameter
- choices. The field gets stronger when the wording stays that exact.
+ The cognitive studies found selected effects alongside important nulls. Rastelli and colleagues reported differences in aggregate semantic networks and selected model-based measures, with no conventional fluency or Stroop accuracy/reaction-time advantage. Greco's 2025 study found a small congruent-trial switching effect, with incongruent switching and language-task nulls. Automated drawing differences do not establish a general creativity benefit ([Rastelli et al., 2022](https://doi.org/10.1038/s41598-022-08047-w); [Greco et al., 2025](https://doi.org/10.1016/j.concog.2025.103808)).
+
+ In Brizzi and colleagues' study, both garden videos reduced anxiety and some autonomic measures relative to the initial baseline. The ordinary garden was more calming, and the autonomic differences between videos were not significant. Relaxation relative to a baseline should therefore not be described as a DeepDream-specific effect ([Brizzi et al., 2025](https://doi.org/10.1080/19585969.2025.2499459)).
+
+### Measuring visual content
+
+ The Six-Dimensional Visual Hallucination Questionnaire measures geometry, semantics, detail, vividness, subjective entropy, and focality. Its initial validation combines ordinary-image ratings, laboratory strobe experiences, and retrospective closed-eye psychedelic reports. The headline 962 counts responses, including repeated trials, rather than independent people. The final paper reports cross-context differences on five dimensions; vividness did not differ significantly. Its DeepDream/VR use still needs validation, and subjective entropy is distinct from image or EEG entropy ([Hewitt et al., 2026](https://doi.org/10.1098/rsos.260647); [Final supplement](https://doi.org/10.6084/m9.figshare.c.8609570)).
+
+ Image recreation offers another route. A preprint compares freehand drawings and a parameterized pattern generator with 1,000 Rule-model simulations. Their differing radial detail profiles already provide an image-level model comparison, while memory, drawing skill, and interface vocabulary limit what can be inferred about the experience itself ([Hewitt et al., recreation preprint](https://doi.org/10.31234/osf.io/2gtsy_v1)).
+
+ Open descriptions can reveal effects outside a fixed questionnaire. The Dreamachine drawing-analysis preprint supplies a wider set of geometric test targets ([Grove et al., preprint](https://doi.org/10.64898/2026.02.18.705710)). The final MOSAIC study includes a nonstroboscopic Deep Listening comparator, although assignment was not randomized. The newer 3D-ASCr revalidation addresses broader altered-state dimensions. These methods complement a focused visual-content instrument ([Beauté et al., 2026](https://doi.org/10.1093/nc/niag008); [Stocker et al., 2026](https://doi.org/10.1177/02698811251397328)).
 
 ### What DeepDream captures and what it misses
 
@@ -478,6 +453,8 @@ Simulated psychedelic vision
  ([Roseman et al., 2016](https://doi.org/10.1002/hbm.23224);
  [Suzuki, 2026](https://doi.org/10.3389/fpsyg.2026.1819038)).
 
+ Retrospective image matching has already compared classical activation maximization with generator-constrained images. Preferences differed between psychedelic-experienced and clinical groups. This is resemblance evidence from different tasks and small subgroups, rather than an induction experiment or a neural-mechanism test ([Suzuki et al., 2024](https://doi.org/10.3389/fnhum.2023.1159821)).
+
 ### The 2026 update clarifies the next experiment
 
  Suzuki's 2026 theory paper gives the field a useful vocabulary for
@@ -494,18 +471,13 @@ Simulated psychedelic vision
  manipulating feature exposure, image priors, source-scene continuity,
  intensity, or the viewer's judgment of what feels real.
 
+ Direct parameter and method comparisons have also begun. Motyka and colleagues' conference programme varies layers and intensity and compares DeepDream with style transfer. A modest DeepDream advantage was not significant after adjustment for perceived visual alteration. That preliminary adjustment neither proves mediation nor establishes equivalence; full methods and validated common measures remain important ([Motyka et al., conference materials](https://osf.io/dj6rp/)).
+
  Current state
 
 ## The field after DeepDream
 
- As of July 17, 2026, DeepDream is no longer the frontier of generative
- image culture. Its importance is more historical and methodological:
- it made machine pareidolia vivid, gave researchers a controllable
- altered-vision stimulus, and forced the field to ask what kind of
- similarity a simulation claim actually names
- ([Mordvintsev et al., 2015](https://research.google/blog/inceptionism-going-deeper-into-neural-networks/);
- [Suzuki et al., 2017](https://doi.org/10.1038/s41598-017-16316-2);
- [Suzuki, 2026](https://doi.org/10.3389/fpsyg.2026.1819038)).
+ DeepDream's importance is historical and methodological: it made machine-vision feature amplification visible and supplied a controllable altered-vision stimulus. Newer renderers expand the available transformations, but their experiential fidelity and benefit still require specific tests ([Suzuki et al., 2017](https://doi.org/10.1038/s41598-017-16316-2); [Suzuki et al., 2024](https://doi.org/10.3389/fnhum.2023.1159821)).
 
  The broader field now includes style-transfer and intensity-varied
  Hallucination Machine variants, shader-based VR systems, generative
@@ -517,20 +489,11 @@ Simulated psychedelic vision
  compared, not collapsed
  ([Suzuki et al., 2024](https://doi.org/10.3389/fnhum.2023.1159821);
  [Hewitt et al., 2025](https://doi.org/10.1093/nc/niaf020);
- [QRI OscillEditor](https://qri.org/oscilleditor/doc/reference-manual);
+ [QRI OscillEditor](https://qri.org/oscilleditor/doc/reference-manual.html);
  [Kaup et al., 2023](https://doi.org/10.3389/fpsyt.2023.1088896);
  [Hartogsohn, 2023](https://doi.org/10.3389/fpsyg.2022.1073235)).
 
- Current public records also need careful separation. ClinicalTrials.gov
- lists Yale's NCT06581263 "Psychedelic Virtual Reality" record as
- completed, with primary completion and completion dates of March 22,
- 2026, but no results posted. The University of Tartu's NCT06174285
- Psyrreal record still says recruiting and still gives June 30, 2026 as
- its estimated completion date. That date has passed, and the record was
- last verified in March 2025, so its public status may be stale. These are
- registry facts, not evidence of efficacy
- ([ClinicalTrials.gov, NCT06581263](https://clinicaltrials.gov/study/NCT06581263);
- [ClinicalTrials.gov, NCT06174285](https://clinicaltrials.gov/study/NCT06174285)).
+ Registry records checked on 17 November 2026 list Yale's NCT06581263 as completed, with completion on 22 March 2026 and no posted results; the last posted update was 18 August. Tartu's NCT06174285 still says recruiting, despite a March 2025 verification date and an elapsed estimated completion date of 30 June 2026. That label may be stale. Neither record had posted results at the check date, which does not establish whether outcomes have appeared elsewhere ([Yale registry](https://clinicaltrials.gov/study/NCT06581263); [Tartu registry](https://clinicaltrials.gov/study/NCT06174285)).
 
 ### Keep distinct
 
@@ -556,6 +519,42 @@ Simulated psychedelic vision
 
 - Credit and provenance as community techniques move into institutional settings
 
+### New leads and bounded comparators
+
+ O.C.T.O.P.U.S. and PRISM appeared in October 2026. Their bibliographic identities are verified, but their full texts were unavailable in the reviewed material. Their actual interventions, substantive study types, and results remain unassessed ([O.C.T.O.P.U.S.](https://doi.org/10.1177/21522715261499536); [PRISM](https://doi.org/10.1177/21522715261497426)).
+
+ A generative digital-mirror study compared four active scenarios on a screen and found no overall awe difference; it had no neutral or DeepDream condition. Its online-first date is April 2026, despite a 2027 issue assignment. For stroboscopic comparators, the final October safety paper offers observational guidance and describes its proposed 4SQ screening tool as provisional and unvalidated ([Peters et al., 2026](https://doi.org/10.1177/02762374261437049); [Schwartzman et al., 2026](https://doi.org/10.1371/journal.pone.0359958)).
+
+ Resources and connections
+
+## Finding descriptions, examples, and measurements
+
+ A useful resource connects a visual feature to an example, its construction, or a way to measure it. These connections help turn resemblance into a testable question.
+
+### Define the visual target and trace the example
+
+ [Effect Index](https://www.effectindex.com/effects) supplies a vocabulary for effects such as drifting, tracers, geometry, and transformations. [dose.wiki’s replication tutorials](https://dose.wiki/replications/tutorials) connect that vocabulary to practical construction methods and credited examples. The two publications share content records, according to [dose.wiki’s technical documentation](https://dose.wiki/docs/code); matching entries are therefore not independent corroboration. Artist credit and an effect tag help locate an example, but neither establishes perceptual accuracy or permission to reuse it.
+
+ [DMTx’s study-to-term crosswalk](https://dmtx.ai/research/ontology/crosswalk) links a merged vocabulary to the published studies from which its terms were drawn. Its [methodology](https://dmtx.ai/research/methodology) describes language-model annotations of public DMT accounts. Those annotations and generated visual interpretations must remain distinguishable from what a person actually reported. Its [artist gallery](https://dmtx.ai/research/replication/artists) displays credited works via dose.wiki and explicitly excludes them from the report corpus and its statistics. It is another route into that collection, rather than an independent sample of replications.
+
+### Choose measures and inspect reconstructions
+
+ The [Altered States Database (ASDB)](https://asdb.info/) provides source-linked questionnaire comparisons across induction methods. Its stated publication cutoff is 31 December 2025, distinct from the date the website is accessed. The associated [Consciousness Assessment Resources](https://resources.asdb.info/questionnaires-for-acute-asc-phenomena.html) explain instrument history, versions, scoring, translations, and reported rights. Return to each original study before comparing scores: a VR category does not establish DeepDream coverage, and multiple conditions or questionnaires can describe the same cohort.
+
+ Hewitt and colleagues’ [Image Recreation Data Visualization](https://imagerecreationdataviz.netlify.app/) lets readers inspect reconstructions by experimental condition. The [6D-VHQ toolset](https://github.com/trevorhewitt/VHQ_tools) provides questionnaire and analysis materials alongside the [final validation paper](https://doi.org/10.1098/rsos.260647). These resources connect images, interfaces, and reported visual dimensions; they do not remove reconstruction, memory, or measurement limits. The final publication should take precedence over an older preprint label on a linked page.
+
+### Recover construction methods and evaluation context
+
+ [QRI’s Oscilleditor manual](https://qri.org/oscilleditor/doc/reference-manual.html) exposes controls for constructing dynamic visual stimuli. Its [2026 stimulus grid](https://heart.qri.org/retreats/2026-tepoz/andres-gomez-emilsson/stimulus-grid-post.html) organizes animations using retreat participants’ resemblance ratings for meditation and 5-MeO-DMT experiences. This is exploratory, operator-reported evaluation, with participant and artist roles requiring attention; it is not independent validation of a general psychedelic simulator. [Hallucination Research’s animated drawing archive](https://www.hallucination-research.com/experiment-handdrawn-recordings/) offers a different method: time-varying hand-drawn records, downloadable data, and recording/playback code. Each interface constrains what its records can express.
+
+ [Dreamachine’s Dream Grid](https://dreamachine.world/dream-grid/) presents participant drawings, while [MOSAIC](https://github.com/romybeaute/MOSAIC) supplies code for organizing programme reports. These are different kinds of contribution, and no record-level join between the displayed drawings and the analysed reports is established here. A public repository also needs an availability check: the inspected MOSAIC data directories contain placeholders, so the code alone does not establish a complete public-data rerun.
+
+### Use discovery platforms as routes to originals
+
+ [Cyberdelic Nexus’s knowledge collection](https://www.cyberdelic.nexus/explore/knowledge) connects relevant readings and experience design; its [XD Canvas](https://www.cyberdelic.nexus/explore/knowledge/cyberdelic-xd-canvas) is a design guide rather than a validated questionnaire. [The Consciousness Library](https://consciousnesslibrary.org/research?query=stroboscopic) offers literature discovery and mapping, with machine-assisted study facts and retrieval disclosed in its [AI policy](https://consciousnesslibrary.org/ai-ethics); that policy says displayed prose summaries were retired in August 2026. [Spirit Tech’s VR-filtered directory](https://spirit.tech/companies/?tags=VR) helps locate organizations. Use these as selective entry points, then verify methods and results in the original sources. Directory inclusion, a design score, or an automated summary is not additional experimental evidence.
+
+ The useful chain is specific: visual feature → original example or account → creator and construction method → exposure conditions → appropriate measure → outcome. It remains incomplete across these resources. Rights are a separate link: [dose.wiki’s reuse policy](https://dose.wiki/docs/license) distinguishes its own open material from creator-retained replication media. An accessible artwork, dataset, or report should not inherit the license of the website or code that links to it. Resource status and documentation were checked on 17 November 2026; these links do not imply endorsement or independent replication.
+
  Evidence audit
 
 ## What is solid, partial, and open
@@ -579,7 +578,7 @@ Simulated psychedelic vision
 
 - Community taxonomies made psychedelic visual effects more nameable and buildable ([Kins, 2011](https://disregardeverythingisay.com/post/9331287956/the-visual-components-of-a-psychedelic-experience); [Effect Index](https://www.effectindex.com/effects)).
 
-- DeepDream VR can alter selected subjective, EEG, cognitive, and affective measures ([Suzuki et al., 2017](https://doi.org/10.1038/s41598-017-16316-2); [Greco et al., 2021](https://doi.org/10.3390/e23070839); [Brizzi et al., 2025](https://doi.org/10.1080/19585969.2025.2499459)).
+- DeepDream exposure on monitors or in VR can alter selected subjective, EEG, cognitive, and affective measures, with important nulls and comparator-dependent effects ([Greco et al., 2021](https://doi.org/10.3390/e23070839); [Rastelli et al., 2022](https://doi.org/10.1038/s41598-022-08047-w); [Brizzi et al., 2025](https://doi.org/10.1080/19585969.2025.2499459)).
 
 - Suzuki 2026 gives a cleaner C x G x D vocabulary for future experiments ([Suzuki, 2026](https://doi.org/10.3389/fpsyg.2026.1819038)).
 
@@ -587,45 +586,27 @@ Simulated psychedelic vision
 
 - Community replications can guide target selection, but they are not controlled validation ([PsychonautWiki](https://psychonautwiki.org/wiki/Replication_index); [r/Replications](https://www.reddit.com/r/replications/)).
 
-- Most DeepDream VR studies still occupy a narrow parameter family ([Suzuki et al., 2017](https://doi.org/10.1038/s41598-017-16316-2); [Greco et al., 2021](https://doi.org/10.3390/e23070839)).
+- Several influential studies reuse a high-layer optical-flow family, while other work varies weights, layers, intensity, rendering, and delivery. Incomplete parameter reporting limits comparison ([Greco et al., 2025](https://doi.org/10.1016/j.concog.2025.103808); [Motyka et al., conference materials](https://osf.io/dj6rp/)).
 
 - Fractal-like and symmetry-rich stimuli are central to the design logic but rarely quantified in DeepDream studies ([Bressloff et al., 2002](https://doi.org/10.1162/089976602317250861); [Pangburn, 2015](https://www.vice.com/en/article/deepdreaming-a-fully-explorable-fractal-planet/); [PsyKick](https://psykick.de/deepdream_fractals/Tutorial_deepdream_fractals_360_VR_4K_UltraHD.html)).
 
 - Current clinical-facing records show interest and study activity, not established therapeutic efficacy ([NCT06581263](https://clinicaltrials.gov/study/NCT06581263); [NCT06174285](https://clinicaltrials.gov/study/NCT06174285)).
 
-- The field still needs direct comparisons across DeepDream, shaders, style transfer, flicker, oscillator tools, and generative models ([Suzuki, 2026](https://doi.org/10.3389/fpsyg.2026.1819038); [Hewitt et al., 2025](https://doi.org/10.1093/nc/niaf020)).
+- Direct comparisons have begun; better-matched, reproducible tests with validated common measures remain needed ([Suzuki et al., 2024](https://doi.org/10.3389/fnhum.2023.1159821); [Motyka et al., conference materials](https://osf.io/dj6rp/); [Hewitt et al., recreation preprint](https://doi.org/10.31234/osf.io/2gtsy_v1)).
 
  Open direction
 
 ## A better next comparison
 
- The next useful generation of studies would stop treating each system
- as a single condition label. It would compare induced-vision methods
- on shared axes: feature exposure, image prior, source-scene texture,
- motion continuity, symmetry, fractal statistics, semantic density,
- intensity, embodiment, and source-monitoring judgment. A DeepDream
- video, a stroboscopic field, an OscillEditor patch, a shader-based
- Psyrreal scene, and a style-transfer hallucination may all feel
- "psychedelic" in public language, but they reach that feeling through
- different mechanisms
- ([Suzuki, 2026](https://doi.org/10.3389/fpsyg.2026.1819038);
- [Hewitt et al., 2025](https://doi.org/10.1093/nc/niaf020);
- [QRI OscillEditor](https://qri.org/oscilleditor/doc/reference-manual);
- [Kaup et al., 2023](https://doi.org/10.3389/fpsyt.2023.1088896)).
+ A useful next benchmark would compare a few transformations of the same rights-cleared scenes, with pinned weights, objectives, temporal processing, and display settings. A separate measurement study should distinguish remembered resemblance from effects during exposure and validate the questions in that context. Existing layer, style-transfer, and recreation studies supply starting points ([Suzuki et al., 2024](https://doi.org/10.3389/fnhum.2023.1159821); [Motyka et al., conference materials](https://osf.io/dj6rp/); [Hewitt et al., recreation preprint](https://doi.org/10.31234/osf.io/2gtsy_v1)).
 
- That comparison would let DeepDream take its proper place: the first widely
- visible machine-vision method that made computational psychedelic simulation
- concrete enough for artists, developers, and scientists to argue with
- ([Mordvintsev et al., 2015](https://research.google/blog/inceptionism-going-deeper-into-neural-networks/);
- [Suzuki et al., 2017](https://doi.org/10.1038/s41598-017-16316-2)).
+ Stroboscopic fields cannot literally share a natural source scene with a video renderer. They belong in a later cross-context measurement comparison. Common labels such as “psychedelic” should not hide differences in input, delivery, mechanism, or the outcome being tested ([Hewitt et al., 2026](https://doi.org/10.1098/rsos.260647); [Hewitt et al., 2025](https://doi.org/10.1093/nc/niaf020)).
 
  References
 
 ## Sources and entry points
 
- These references are grouped by role. Living pages, repositories,
- and trial records were checked on July 17, 2026 unless a more specific
- update date is listed.
+ Core literature and trial records were reviewed on November 17, 2026. Historical and community resources retain their individual source dates; an updated bibliography does not imply that every living page was freshly checked.
 
 ### Visual phenomenology
 
@@ -655,7 +636,7 @@ Simulated psychedelic vision
 
 - Qualia Research Institute. "[Unveiling QRI's Consciousness Art Contests](https://qri.org/blog/contest)." QRI blog (2023).
 
-- Qualia Research Institute. "[Reference Manual for QRI's Oscilleditor](https://qri.org/oscilleditor/doc/reference-manual)." Tool documentation.
+- Qualia Research Institute. "[Reference Manual for QRI's Oscilleditor](https://qri.org/oscilleditor/doc/reference-manual.html)." Tool documentation.
 
 - Loka. "[Psychic Rendering](https://www.lokavision.com/psychic-rendering)." Practical hallucination-replication design page.
 
@@ -717,8 +698,6 @@ Simulated psychedelic vision
 
 - Brizzi et al. "[Cyberdelics: Virtual Reality Hallucinations Modulate Cognitive-Affective Processes](https://doi.org/10.1080/19585969.2025.2499459)." Dialogues in Clinical Neuroscience 27(1) (2025).
 
-- Motyka et al. "[Phenomenologically Distinct and Intensity-Varied VR Hallucinations](https://osf.io/dj6rp/overview)." OSF project (2025).
-
 ### Beyond DeepDream
 
 - Suzuki, Seth, and Schwartzman. "[Modelling Phenomenological Differences in Aetiologically Distinct Visual Hallucinations Using Deep Neural Networks](https://doi.org/10.3389/fnhum.2023.1159821)." Frontiers in Human Neuroscience (2024).
@@ -761,10 +740,76 @@ Simulated psychedelic vision
 
 - Psyrreal. "[Psyrreal VR](https://psyrreal.mozellosite.com/)." Public project page.
 
-- ClinicalTrials.gov. "[NCT06174285: Effect of Psychedelic VR-augmented Therapy on Patients With Clinical Depression](https://clinicaltrials.gov/study/NCT06174285)." University of Tartu registry record; status checked 2026-07-17.
+- ClinicalTrials.gov. "[NCT06174285: Effect of Psychedelic VR-augmented Therapy on Patients With Clinical Depression](https://clinicaltrials.gov/study/NCT06174285)." University of Tartu registry record; status checked 2026-11-17.
 
 - Yale Medicine. "[Can Virtual Reality Help with Psychedelic Research?](https://www.yalemedicine.org/clinical-trials/psychedelic-virtual-reality)" DeepDream VRP study page.
 
-- ClinicalTrials.gov. "[NCT06581263: Psychedelic Virtual Reality](https://clinicaltrials.gov/study/NCT06581263)." Yale University registry record; status checked 2026-07-17.
+- ClinicalTrials.gov. "[NCT06581263: Psychedelic Virtual Reality](https://clinicaltrials.gov/study/NCT06581263)." Yale University registry record; status checked 2026-11-17.
 
 - Yale Ventures. "[Simulated Psychedelic Immersive Experience: Healthcare Intervention for Depression (Si-PHI)](https://ventures.yale.edu/yale-technologies/simulated-psychedelic-immersive-experience-healthcare-intervention-depression-si)." Technology page.
+
+### Knowledge resources and methods
+
+- dose.wiki. "[Replication tutorials](https://dose.wiki/replications/tutorials)." Practical replication methods. Accessed 2026-11-17.
+
+- dose.wiki. "[How dose.wiki is built](https://dose.wiki/docs/code)." Technical documentation; shared publication records. Accessed 2026-11-17.
+
+- dose.wiki. "[Licensing and reuse](https://dose.wiki/docs/license)." Item-specific media rights distinguished from the site’s own material. Accessed 2026-11-17.
+
+- Altered States Database. "[ASDB](https://asdb.info/)." Questionnaire comparison database; stated literature cutoff 2025-12-31. Accessed 2026-11-17.
+
+- Consciousness Assessment Resources. "[Questionnaires for acute ASC phenomena](https://resources.asdb.info/questionnaires-for-acute-asc-phenomena.html)." Instrument history, versions, and scoring. Accessed 2026-11-17.
+
+- Hewitt et al. "[Image Recreation Data Visualization](https://imagerecreationdataviz.netlify.app/)." Interactive reconstruction viewer; see linked study methods. Accessed 2026-11-17.
+
+- Hewitt. "[VHQ_tools](https://github.com/trevorhewitt/VHQ_tools)." 6D-VHQ materials and analysis code; use with the final validation paper. Accessed 2026-11-17.
+
+- DMTx. "[What each study called it](https://dmtx.ai/research/ontology/crosswalk)." Crosswalk to source-study vocabularies. Accessed 2026-11-17.
+
+- DMTx. "[How it works](https://dmtx.ai/research/methodology)." Operator documentation of report classification and its limits. Accessed 2026-11-17.
+
+- DMTx. "[Artist works](https://dmtx.ai/research/replication/artists)." Credited works via dose.wiki, excluded from report statistics. Accessed 2026-11-17.
+
+- Gómez Emilsson. "[Stimulus Grid: Comparing Jhānas and 5-MeO-DMT Levels at a Glance](https://heart.qri.org/retreats/2026-tepoz/andres-gomez-emilsson/stimulus-grid-post.html)." QRI HEART, 11 September 2026; exploratory community evaluation. Accessed 2026-11-17.
+
+- Hallucination Research. "[Recording animated drawings/movies of open-eye visual hallucinations](https://www.hallucination-research.com/experiment-handdrawn-recordings/)." Dynamic reconstruction archive and recording/playback code. Accessed 2026-11-17.
+
+- Dreamachine / Collective Act. "[Dream Grid](https://dreamachine.world/dream-grid/)." Participant drawing collection; separate from the report-analysis corpus. Accessed 2026-11-17.
+
+- Beauté et al. "[MOSAIC repository](https://github.com/romybeaute/MOSAIC)." Analysis code; inspected data directories contain placeholders. Accessed 2026-11-17.
+
+- Cyberdelic Nexus. "[Knowledge](https://www.cyberdelic.nexus/explore/knowledge)." Curated discovery collection. Accessed 2026-11-17.
+
+- Cyberdelic Nexus. "[Cyberdelic XD Canvas](https://www.cyberdelic.nexus/explore/knowledge/cyberdelic-xd-canvas)." Experience-design guide; not a validated measurement scale. Accessed 2026-11-17.
+
+- The Consciousness Library. "[Stroboscopic research search](https://consciousnesslibrary.org/research?query=stroboscopic)." Literature discovery route. Accessed 2026-11-17.
+
+- The Consciousness Library. "[AI Ethics and Philosophy Framework](https://consciousnesslibrary.org/ai-ethics)." Machine-assistance disclosure; displayed prose-summary retirement dated August 2026. Accessed 2026-11-17.
+
+- Spirit Tech Collective. "[Organizations: VR filter](https://spirit.tech/companies/?tags=VR)." Selective organization-discovery route. Accessed 2026-11-17.
+
+### Measurement, comparisons, and new leads
+
+- Hewitt, Seth & Schwartzman. "[Measuring the contents of hallucinations from psychedelics and stroboscopic light: the Six-Dimensional Visual Hallucination Questionnaire](https://doi.org/10.1098/rsos.260647)." Royal Society Open Science 13(9), 260647 (2026).
+
+- Hewitt, Seth & Schwartzman. "[Final supplementary material](https://doi.org/10.6084/m9.figshare.c.8609570)." Royal Society Figshare (2026), Table S11.
+
+- Hewitt et al. "[Image Recreation Methods Enable Quantitative Characterization of Geometric Visual Hallucinations](https://doi.org/10.31234/osf.io/2gtsy_v1)." PsyArXiv preprint, version 1 (2026).
+
+- Grove et al. "[A Large-Scale Computer-Vision Mapping of the Geometric Structures of Stroboscopically-Induced Visual Hallucinations](https://doi.org/10.64898/2026.02.18.705710)." bioRxiv preprint (2026); source drawings have separate reuse conditions.
+
+- Beauté et al. "[Mapping of Subjective Accounts into Interpreted Clusters (MOSAIC): Topic Modelling and LLM applied to Stroboscopic Phenomenology](https://doi.org/10.1093/nc/niag008)." Neuroscience of Consciousness, niag008 (2026).
+
+- Stocker et al. "[The 3D-ASCr scale: A revalidation of the core dimensions of the Altered States of Consciousness Rating Scale 5D(11)-ASC](https://doi.org/10.1177/02698811251397328)." Journal of Psychopharmacology 40(5), 850–862 (2026); first online December 2025.
+
+- Motyka et al. "[Phenomenologically Distinct and Intensity-Varied VR Hallucinations](https://osf.io/dj6rp/)." Conference poster and talk (2025), public OSF project; preliminary findings.
+
+- Abouhav, Nitzan & Doron. "[Immersive virtual reality: distinct impact on altered states of consciousness](https://doi.org/10.1007/s10055-026-01443-x)." Virtual Reality (2026); accepted manuscript consulted.
+
+- Peters et al. "[Designing for Aesthetic Awe: Self-Transcendent Experiences with Generative AI and Augmented Self-Reflection](https://doi.org/10.1177/02762374261437049)." Empirical Studies of the Arts; online April 2026, January 2027 issue.
+
+- Schwartzman et al. "[Stroboscopic light stimulation safety within and beyond laboratory settings: Observational evidence and practical guidance](https://doi.org/10.1371/journal.pone.0359958)." PLOS ONE 21(10), e0359958 (2026).
+
+- Boz, Sansoni & Riva. "[The Project O.C.T.O.P.U.S.: Observing Cyberdelic Transformations of Priors Under Simulation](https://doi.org/10.1177/21522715261499536)." Cyberpsychology, Behavior, and Social Networking (October 2026); metadata-only watchlist.
+
+- Brizzi et al. "[PRISM Project—Predictive-Processing Reshaping via Immersive Simulated Multisensory Experiences](https://doi.org/10.1177/21522715261497426)." Cyberpsychology, Behavior, and Social Networking (October 2026); metadata-only watchlist.
